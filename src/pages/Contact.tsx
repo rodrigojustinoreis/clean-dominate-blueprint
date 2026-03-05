@@ -23,7 +23,7 @@ const Contact = () => {
             <div className="space-y-6">
               {[
                 { icon: Phone, label: "Phone", value: "(240) 704-2551", href: "tel:+12407042551" },
-                { icon: Mail, label: "Email", value: "hello@capitalcleancare.com", href: "mailto:hello@capitalcleancare.com" },
+                { icon: Mail, label: "Email", value: "capitalcleancare@gmail.com", href: "mailto:capitalcleancare@gmail.com" },
                 { icon: Clock, label: "Hours", value: "Mon–Sat: 7 AM – 7 PM" },
                 { icon: MapPin, label: "Address", value: "4111 Postgate Terrace, Silver Spring, MD 20906" },
               ].map((item) => (
