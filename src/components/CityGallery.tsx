@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, MapPin } from "lucide-react";
 import { cities, type CityData } from "@/data/locations";
 
 import imgKitchen from "@/assets/gallery/clean-kitchen.jpg";
@@ -49,13 +49,9 @@ const hoverPhrases: Record<string, string> = {
 };
 
 interface CityGalleryProps {
-  /** Filter cities by state slug, or show all if undefined */
   stateSlug?: string;
-  /** Max number of cards to show */
   limit?: number;
-  /** Section title */
   title?: string;
-  /** Section subtitle */
   subtitle?: string;
 }
 
@@ -75,13 +71,16 @@ const CityGallery = ({
     <section className="py-16 md:py-24">
       <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="text-center mb-10">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold mb-3">{title}</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">{subtitle}</p>
+        <div className="text-center mb-12">
+          <span className="inline-block text-accent font-medium text-sm tracking-wide uppercase mb-3">
+            Areas We Serve
+          </span>
+          <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">{title}</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto text-base leading-relaxed">{subtitle}</p>
         </div>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
           {filteredCities.map((city, index) => {
             const img = galleryImages[index % galleryImages.length];
             const phrase = hoverPhrases[city.slug] || `Professional cleaning services in ${city.name}.`;
@@ -91,34 +90,38 @@ const CityGallery = ({
               <Link
                 key={city.slug}
                 to={`/locations/${city.slug}`}
-                className="group relative block aspect-[4/3] rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow"
+                className="group relative block aspect-[4/3] rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
               >
                 {/* Image */}
                 <img
                   src={img}
                   alt={`House cleaning in ${label}`}
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                   loading="lazy"
                 />
 
                 {/* Default gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent transition-opacity duration-300 group-hover:opacity-0" />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/85 via-primary/30 to-transparent transition-opacity duration-400 group-hover:opacity-0" />
 
                 {/* Hover overlay */}
-                <div className="absolute inset-0 bg-primary/85 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-5 text-center">
-                  <p className="text-primary-foreground/90 text-sm leading-relaxed mb-3">
+                <div className="absolute inset-0 bg-primary/90 opacity-0 group-hover:opacity-100 transition-all duration-400 flex flex-col items-center justify-center p-6 text-center">
+                  <MapPin className="h-5 w-5 text-accent mb-2 opacity-0 group-hover:opacity-100 transition-all duration-300 delay-100 -translate-y-2 group-hover:translate-y-0" />
+                  <p className="text-primary-foreground text-sm leading-relaxed mb-4 opacity-0 group-hover:opacity-100 transition-all duration-300 delay-150 translate-y-2 group-hover:translate-y-0">
                     {phrase}
                   </p>
-                  <span className="inline-flex items-center gap-1 text-accent font-medium text-sm">
-                    Learn More <ArrowRight className="h-3.5 w-3.5" />
+                  <span className="inline-flex items-center gap-1.5 text-accent font-semibold text-sm opacity-0 group-hover:opacity-100 transition-all duration-300 delay-200 translate-y-2 group-hover:translate-y-0">
+                    Learn More <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
                   </span>
                 </div>
 
-                {/* City name (always visible) */}
-                <div className="absolute bottom-0 left-0 right-0 p-4 transition-opacity duration-300 group-hover:opacity-0">
-                  <h3 className="font-heading font-semibold text-lg text-primary-foreground drop-shadow-md">
-                    {label}
-                  </h3>
+                {/* City name badge (always visible) */}
+                <div className="absolute bottom-0 left-0 right-0 p-4 transition-all duration-300 group-hover:opacity-0 group-hover:translate-y-2">
+                  <div className="flex items-center gap-2">
+                    <MapPin className="h-3.5 w-3.5 text-accent shrink-0" />
+                    <h3 className="font-heading font-semibold text-base text-primary-foreground drop-shadow-lg">
+                      {label}
+                    </h3>
+                  </div>
                 </div>
               </Link>
             );
