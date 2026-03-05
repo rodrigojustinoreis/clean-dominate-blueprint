@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { CheckCircle, Shield, Leaf, Star, MapPin, Sparkles, ArrowRight } from "lucide-react";
 import PricingTable from "@/components/PricingTable";
+import CityGallery from "@/components/CityGallery";
+import { LocalBusinessSchema, FAQSchema } from "@/components/SchemaMarkup";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Layout from "@/components/layout/Layout";
@@ -51,6 +53,8 @@ const Index = () => {
 
   return (
     <Layout>
+      <LocalBusinessSchema />
+      <FAQSchema faqs={homeFaqs} />
       {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
@@ -135,7 +139,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Service Areas */}
+      {/* Service Areas - Region Cards */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
@@ -170,7 +174,9 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Testimonials */}
+      {/* City Gallery */}
+      <CityGallery limit={12} />
+
       <section className="py-16 md:py-24 bg-secondary">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">

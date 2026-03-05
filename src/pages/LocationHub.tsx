@@ -6,6 +6,8 @@ import Layout from "@/components/layout/Layout";
 import QuoteForm from "@/components/QuoteForm";
 import FAQ from "@/components/FAQ";
 import PricingTable from "@/components/PricingTable";
+import CityGallery from "@/components/CityGallery";
+import { LocalBusinessSchema, FAQSchema } from "@/components/SchemaMarkup";
 import { useSEO } from "@/hooks/useSEO";
 import { getHubBySlug, getCityBySlug } from "@/data/locations";
 import { services } from "@/data/services";
@@ -55,6 +57,8 @@ const LocationHub = () => {
 
   return (
     <Layout>
+      <LocalBusinessSchema />
+      <FAQSchema faqs={hub.faqs} />
       {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
@@ -93,39 +97,12 @@ const LocationHub = () => {
         </div>
       </section>
 
-      {/* Service Areas Grid */}
-      <section className="py-12 md:py-16 bg-secondary">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <div className="text-center mb-10">
-            <h2 className="font-heading text-3xl font-bold mb-3">Our {hub.stateAbbr} Service Areas</h2>
-            <p className="text-muted-foreground">Click on any area to learn more about our services in your neighborhood.</p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            {hubCities.map((city) => city && (
-              <Card key={city.slug} className="group hover:shadow-lg transition-all hover:-translate-y-0.5">
-                <CardContent className="p-5">
-                  <Link to={`/locations/${city.slug}`} className="block">
-                    <div className="flex items-start gap-3">
-                      <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center shrink-0">
-                        <MapPin className="h-5 w-5 text-accent" />
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <h3 className="font-heading font-semibold text-foreground group-hover:text-accent transition-colors">
-                          {city.name}{city.state !== "DC" ? `, ${city.state}` : ""}
-                        </h3>
-                        <p className="text-xs text-muted-foreground mt-1 line-clamp-2">
-                          {city.intro.split(".")[0]}.
-                        </p>
-                      </div>
-                      <ArrowRight className="h-4 w-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity shrink-0 mt-1" />
-                    </div>
-                  </Link>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* City Gallery */}
+      <CityGallery
+        stateSlug={hub.slug}
+        title={`Our ${hub.stateAbbr} Service Areas`}
+        subtitle="Click on any area to learn more about our services in your neighborhood."
+      />
 
       {/* Services Offered */}
       <section className="py-12 md:py-16">

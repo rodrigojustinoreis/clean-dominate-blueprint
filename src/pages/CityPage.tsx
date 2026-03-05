@@ -6,6 +6,7 @@ import Layout from "@/components/layout/Layout";
 import QuoteForm from "@/components/QuoteForm";
 import FAQ from "@/components/FAQ";
 import PricingTable from "@/components/PricingTable";
+import { FAQSchema, ServiceSchema } from "@/components/SchemaMarkup";
 import { useSEO } from "@/hooks/useSEO";
 import { getCityBySlug } from "@/data/locations";
 import { services } from "@/data/services";
@@ -33,6 +34,12 @@ const CityPage = () => {
 
   return (
     <Layout>
+      <FAQSchema faqs={city.faqs} />
+      <ServiceSchema
+        serviceName={`House Cleaning in ${city.name}`}
+        description={`Professional eco-friendly house cleaning services in ${city.name}${city.state !== "DC" ? `, ${city.state}` : ""}. Licensed, insured, background-checked teams.`}
+        url={`https://capitalcleancare.com/locations/${city.slug}`}
+      />
       {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">

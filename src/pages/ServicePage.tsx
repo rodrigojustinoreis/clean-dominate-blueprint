@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import QuoteForm from "@/components/QuoteForm";
 import FAQ from "@/components/FAQ";
+import { ServiceSchema, FAQSchema } from "@/components/SchemaMarkup";
 import { useSEO } from "@/hooks/useSEO";
 import { getServiceBySlug } from "@/data/services";
 import { cities } from "@/data/locations";
@@ -22,6 +23,12 @@ const ServicePage = () => {
 
   return (
     <Layout>
+      <ServiceSchema
+        serviceName={service.name}
+        description={service.shortDescription}
+        url={`https://capitalcleancare.com/services/${service.slug}`}
+      />
+      <FAQSchema faqs={service.faqs} />
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 max-w-4xl">
           <h1 className="font-heading text-4xl md:text-5xl font-bold mb-6">{service.name}</h1>
