@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { CheckCircle, Shield, Leaf, Star, MapPin, Sparkles, ArrowRight } from "lucide-react";
 import PricingTable from "@/components/PricingTable";
 import CityGallery from "@/components/CityGallery";
+import BeforeAfterGallery from "@/components/BeforeAfterGallery";
 import { LocalBusinessSchema, FAQSchema } from "@/components/SchemaMarkup";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -208,6 +209,10 @@ const Index = () => {
       {/* City Gallery */}
       <CityGallery limit={12} />
 
+      {/* Before & After */}
+      <BeforeAfterGallery />
+
+      {/* Testimonials */}
       <section className="py-16 md:py-24 bg-secondary">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
