@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Phone, Mail, Clock } from "lucide-react";
+import { Phone, Mail, Clock, Instagram, Facebook } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { services } from "@/data/services";
 import { mdCities, dcCities, vaCities } from "@/data/locations";
@@ -93,6 +93,14 @@ const Footer = () => (
 
       <div className="border-t border-primary-foreground/10 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-primary-foreground/50">
         <p>© {new Date().getFullYear()} Capital Clean Care. All rights reserved.</p>
+        <div className="flex items-center gap-4">
+          <a href="https://www.instagram.com/capital_cleancare" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors" aria-label="Instagram">
+            <Instagram className="h-5 w-5" />
+          </a>
+          <a href="https://www.facebook.com/capitalcleancare" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors" aria-label="Facebook">
+            <Facebook className="h-5 w-5" />
+          </a>
+        </div>
         <p>Serving Maryland • Washington DC • Northern Virginia</p>
       </div>
     </div>
