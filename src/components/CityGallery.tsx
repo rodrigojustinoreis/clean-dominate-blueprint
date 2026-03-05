@@ -11,41 +11,41 @@ import imgEntryway from "@/assets/gallery/clean-entryway.jpg";
 
 const galleryImages = [imgKitchen, imgBathroom, imgLiving, imgBedroom, imgDining, imgEntryway];
 
-/** Hover phrases keyed by city slug */
-const hoverPhrases: Record<string, string> = {
-  "rockville-md": "Personalized home cleaning services in Rockville.",
-  "silver-spring-md": "Reliable house cleaning services in Silver Spring.",
-  "bethesda-md": "Premium residential cleaning services in Bethesda.",
-  "germantown-md": "Convenient home cleaning services in Germantown.",
-  "gaithersburg-md": "Trusted house cleaning services in Gaithersburg.",
-  "potomac-md": "Residential cleaning expertise for Potomac homeowners.",
-  "frederick-md": "Professional house cleaning services in Frederick.",
-  "urbana-md": "Customized home cleaning services in Urbana.",
-  "clarksburg-md": "Reliable residential cleaning services in Clarksburg.",
-  "damascus-md": "Dependable house cleaning services in Damascus.",
-  "monrovia-md": "Personalized home cleaning services in Monrovia.",
-  "takoma-park-md": "Eco-friendly house cleaning services in Takoma Park.",
-  "columbia-md": "Premium home cleaning services in Columbia.",
-  "ellicott-city-md": "Trusted house cleaning solutions in Ellicott City.",
-  "new-market-md": "Professional home cleaning services in New Market.",
-  "montgomery-county-md": "Trusted house cleaning services throughout Montgomery County.",
-  "frederick-county-md": "Reliable home cleaning services across Frederick County.",
-  "howard-county-md": "Premium residential cleaning services in Howard County.",
-  "prince-georges-county-md": "Professional house cleaning solutions in Prince George's County.",
-  "washington-dc-nw": "Premium house cleaning services in Northwest Washington.",
-  "washington-dc-ne": "Reliable home cleaning services in Northeast Washington.",
-  "capitol-hill-dc": "Trusted residential cleaning services in Capitol Hill.",
-  "georgetown-dc": "Premium home cleaning services in Georgetown.",
-  "dupont-circle-dc": "Convenient house cleaning services in Dupont Circle.",
-  "adams-morgan-dc": "Personalized home cleaning services in Adams Morgan.",
-  "downtown-dc": "Professional house cleaning services in Downtown Washington.",
-  "arlington-va": "Reliable house cleaning services in Arlington.",
+/** Premium phrases keyed by city slug */
+const premiumPhrases: Record<string, string> = {
+  "rockville-md": "Premium residential cleaning for Rockville homeowners.",
+  "silver-spring-md": "Detail-driven house cleaning in Silver Spring.",
+  "bethesda-md": "Trusted home cleaning services in Bethesda.",
+  "germantown-md": "Convenient premium cleaning for Germantown families.",
+  "gaithersburg-md": "Professional recurring cleaning in Gaithersburg.",
+  "potomac-md": "Refined residential cleaning for Potomac homes.",
+  "frederick-md": "Reliable premium home cleaning in Frederick.",
+  "urbana-md": "Customized residential cleaning for Urbana homes.",
+  "clarksburg-md": "Dependable home care for Clarksburg families.",
+  "damascus-md": "Trusted house cleaning in the heart of Damascus.",
+  "monrovia-md": "Personalized premium cleaning in Monrovia.",
+  "takoma-park-md": "Eco-conscious home cleaning in Takoma Park.",
+  "columbia-md": "Premium cleaning expertise for Columbia homes.",
+  "ellicott-city-md": "Elevated cleaning solutions for Ellicott City.",
+  "new-market-md": "Professional home cleaning in New Market.",
+  "montgomery-county-md": "Trusted cleaning across Montgomery County.",
+  "frederick-county-md": "Reliable service throughout Frederick County.",
+  "howard-county-md": "Premium residential cleaning in Howard County.",
+  "prince-georges-county-md": "Professional cleaning in Prince George's County.",
+  "washington-dc-nw": "Premium house cleaning in Northwest Washington.",
+  "washington-dc-ne": "Reliable home cleaning in Northeast Washington.",
+  "capitol-hill-dc": "Trusted residential care on Capitol Hill.",
+  "georgetown-dc": "Elevated cleaning services in Georgetown.",
+  "dupont-circle-dc": "Refined home cleaning in Dupont Circle.",
+  "adams-morgan-dc": "Detail-driven cleaning in Adams Morgan.",
+  "downtown-dc": "Professional cleaning for Downtown Washington.",
+  "arlington-va": "Reliable premium cleaning in Arlington.",
   "fairfax-va": "Trusted home cleaning services in Fairfax.",
-  "mclean-va": "Premium residential cleaning services in McLean.",
-  "alexandria-va": "Professional house cleaning services in Alexandria.",
-  "falls-church-va": "Convenient home cleaning services in Falls Church.",
-  "vienna-va": "Customized house cleaning services in Vienna.",
-  "tysons-va": "Premium home cleaning services in Tysons.",
+  "mclean-va": "Elevated residential cleaning for McLean homes.",
+  "alexandria-va": "Professional house cleaning in Alexandria.",
+  "falls-church-va": "Convenient premium cleaning in Falls Church.",
+  "vienna-va": "Refined home cleaning services in Vienna.",
+  "tysons-va": "Premium residential cleaning in Tysons.",
 };
 
 interface CityGalleryProps {
@@ -58,8 +58,8 @@ interface CityGalleryProps {
 const CityGallery = ({
   stateSlug,
   limit,
-  title = "Cleaning Services Across the DMV",
-  subtitle = "Click on any area to explore our local cleaning services and get a free quote.",
+  title = "Trusted House Cleaning Across Maryland, DC & Northern Virginia",
+  subtitle = "Capital Clean Care provides premium, eco-friendly residential cleaning to families and homeowners across the DMV region. Explore your neighborhood below.",
 }: CityGalleryProps) => {
   let filteredCities: CityData[] = stateSlug
     ? cities.filter((c) => c.stateSlug === stateSlug)
@@ -68,62 +68,48 @@ const CityGallery = ({
   if (limit) filteredCities = filteredCities.slice(0, limit);
 
   return (
-    <section className="py-16 md:py-24">
+    <section className="py-20 md:py-28">
       <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="text-center mb-12">
-          <span className="inline-block text-accent font-medium text-sm tracking-wide uppercase mb-3">
+        <div className="text-center mb-16 max-w-3xl mx-auto">
+          <span className="inline-block text-accent font-medium text-xs tracking-[0.2em] uppercase mb-4">
             Areas We Serve
           </span>
-          <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">{title}</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-base leading-relaxed">{subtitle}</p>
+          <h2 className="font-heading text-3xl md:text-4xl lg:text-[2.75rem] font-bold mb-5 leading-tight">
+            {title}
+          </h2>
+          <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
+            {subtitle}
+          </p>
         </div>
 
-        {/* Gallery Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+        {/* Premium Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
           {filteredCities.map((city, index) => {
+            const isTextCard = index % 5 === 2; // every 5th card (position 3) is a text panel
             const img = galleryImages[index % galleryImages.length];
-            const phrase = hoverPhrases[city.slug] || `Professional cleaning services in ${city.name}.`;
+            const phrase = premiumPhrases[city.slug] || `Professional cleaning services in ${city.name}.`;
             const label = city.state !== "DC" ? `${city.name}, ${city.state}` : city.name;
 
-            return (
-              <Link
-                key={city.slug}
-                to={`/locations/${city.slug}`}
-                className="group relative block aspect-[4/3] rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-              >
-                {/* Image */}
-                <img
-                  src={img}
-                  alt={`House cleaning in ${label}`}
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-                  loading="lazy"
+            if (isTextCard) {
+              return (
+                <TextCard
+                  key={city.slug}
+                  city={city}
+                  label={label}
+                  phrase={phrase}
                 />
+              );
+            }
 
-                {/* Default gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/85 via-primary/30 to-transparent transition-opacity duration-400 group-hover:opacity-0" />
-
-                {/* Hover overlay */}
-                <div className="absolute inset-0 bg-primary/90 opacity-0 group-hover:opacity-100 transition-all duration-400 flex flex-col items-center justify-center p-6 text-center">
-                  <MapPin className="h-5 w-5 text-accent mb-2 opacity-0 group-hover:opacity-100 transition-all duration-300 delay-100 -translate-y-2 group-hover:translate-y-0" />
-                  <p className="text-primary-foreground text-sm leading-relaxed mb-4 opacity-0 group-hover:opacity-100 transition-all duration-300 delay-150 translate-y-2 group-hover:translate-y-0">
-                    {phrase}
-                  </p>
-                  <span className="inline-flex items-center gap-1.5 text-accent font-semibold text-sm opacity-0 group-hover:opacity-100 transition-all duration-300 delay-200 translate-y-2 group-hover:translate-y-0">
-                    Learn More <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
-                  </span>
-                </div>
-
-                {/* City name badge (always visible) */}
-                <div className="absolute bottom-0 left-0 right-0 p-4 transition-all duration-300 group-hover:opacity-0 group-hover:translate-y-2">
-                  <div className="flex items-center gap-2">
-                    <MapPin className="h-3.5 w-3.5 text-accent shrink-0" />
-                    <h3 className="font-heading font-semibold text-base text-primary-foreground drop-shadow-lg">
-                      {label}
-                    </h3>
-                  </div>
-                </div>
-              </Link>
+            return (
+              <ImageCard
+                key={city.slug}
+                city={city}
+                label={label}
+                phrase={phrase}
+                img={img}
+              />
             );
           })}
         </div>
@@ -131,5 +117,99 @@ const CityGallery = ({
     </section>
   );
 };
+
+/* ── Image Card ──────────────────────────────────────────── */
+
+function ImageCard({
+  city,
+  label,
+  phrase,
+  img,
+}: {
+  city: CityData;
+  label: string;
+  phrase: string;
+  img: string;
+}) {
+  return (
+    <Link
+      to={`/locations/${city.slug}`}
+      className="group relative block aspect-[4/3] rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 ring-1 ring-border/60"
+    >
+      {/* Image */}
+      <img
+        src={img}
+        alt={`House cleaning in ${label}`}
+        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+        loading="lazy"
+      />
+
+      {/* Resting gradient */}
+      <div className="absolute inset-0 bg-gradient-to-t from-foreground/70 via-foreground/20 to-transparent transition-opacity duration-500 group-hover:opacity-0" />
+
+      {/* Hover overlay */}
+      <div className="absolute inset-0 bg-primary/85 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col items-center justify-center p-8 text-center">
+        <MapPin className="h-5 w-5 text-accent mb-3 opacity-0 group-hover:opacity-100 transition-all duration-400 delay-75 -translate-y-2 group-hover:translate-y-0" />
+        <p className="text-primary-foreground/90 text-sm leading-relaxed mb-5 opacity-0 group-hover:opacity-100 transition-all duration-400 delay-150 translate-y-1 group-hover:translate-y-0 max-w-[220px]">
+          {phrase}
+        </p>
+        <span className="inline-flex items-center gap-1.5 text-accent font-semibold text-sm opacity-0 group-hover:opacity-100 transition-all duration-400 delay-200 translate-y-1 group-hover:translate-y-0">
+          Explore {city.name} <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+        </span>
+      </div>
+
+      {/* City badge */}
+      <div className="absolute bottom-0 left-0 right-0 p-5 transition-all duration-500 group-hover:opacity-0 group-hover:translate-y-1">
+        <div className="flex items-center gap-2">
+          <div className="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center backdrop-blur-sm">
+            <MapPin className="h-3 w-3 text-accent" />
+          </div>
+          <h3 className="font-heading font-semibold text-[0.95rem] text-primary-foreground drop-shadow-md tracking-wide">
+            {label}
+          </h3>
+        </div>
+      </div>
+    </Link>
+  );
+}
+
+/* ── Text / Feature Card ─────────────────────────────────── */
+
+function TextCard({
+  city,
+  label,
+  phrase,
+}: {
+  city: CityData;
+  label: string;
+  phrase: string;
+}) {
+  return (
+    <Link
+      to={`/locations/${city.slug}`}
+      className="group relative block aspect-[4/3] rounded-2xl overflow-hidden ring-1 ring-border shadow-sm hover:shadow-lg transition-all duration-500 bg-card"
+    >
+      <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center">
+        {/* Decorative accent line */}
+        <div className="w-8 h-[2px] bg-accent mb-5 transition-all duration-500 group-hover:w-12" />
+
+        <h3 className="font-heading text-lg font-bold text-foreground mb-2 tracking-tight">
+          {label}
+        </h3>
+
+        <p className="text-muted-foreground text-sm leading-relaxed max-w-[240px] mb-5">
+          {phrase}
+        </p>
+
+        <span className="inline-flex items-center gap-1.5 text-accent font-semibold text-sm transition-all duration-300 group-hover:gap-2.5">
+          View Services <ArrowRight className="h-3.5 w-3.5" />
+        </span>
+      </div>
+
+      {/* Subtle hover background shift */}
+      <div className="absolute inset-0 bg-accent/[0.03] opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
+    </Link>
+  );
+}
 
 export default CityGallery;
