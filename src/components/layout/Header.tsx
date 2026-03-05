@@ -4,6 +4,7 @@ import { Menu, X, ChevronDown, Phone, Leaf } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { services } from "@/data/services";
 import { hubs, mdCities, dcCities, vaCities } from "@/data/locations";
+import logo from "@/assets/logo.png";
 
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -30,7 +31,7 @@ const Header = () => {
         {/* Main nav */}
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center gap-2">
-            <Leaf className="h-7 w-7 text-accent" />
+            <img src={logo} alt="Capital Clean Care logo" className="h-8 w-8 object-contain" />
             <span className="font-heading font-bold text-xl text-foreground">Capital Clean Care</span>
           </Link>
 

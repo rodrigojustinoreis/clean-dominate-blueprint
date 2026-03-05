@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
-import { Leaf, Phone, Mail, Clock } from "lucide-react";
+import { Phone, Mail, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { services } from "@/data/services";
 import { mdCities, dcCities, vaCities } from "@/data/locations";
+import logo from "@/assets/logo.png";
 
 const Footer = () => (
   <footer className="bg-primary text-primary-foreground">
@@ -29,7 +30,7 @@ const Footer = () => (
         {/* Brand */}
         <div className="space-y-4">
           <div className="flex items-center gap-2">
-            <Leaf className="h-6 w-6 text-accent" />
+            <img src={logo} alt="Capital Clean Care logo" className="h-7 w-7 object-contain" />
             <span className="font-heading font-bold text-lg">Capital Clean Care</span>
           </div>
           <p className="text-primary-foreground/70 text-sm leading-relaxed">
