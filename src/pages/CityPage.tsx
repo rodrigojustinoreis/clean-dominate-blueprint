@@ -6,6 +6,8 @@ import Layout from "@/components/layout/Layout";
 import QuoteForm from "@/components/QuoteForm";
 import FAQ from "@/components/FAQ";
 import PricingTable from "@/components/PricingTable";
+import TrustBar from "@/components/TrustBar";
+import ConversionCTA from "@/components/ConversionCTA";
 import { FAQSchema, ServiceSchema } from "@/components/SchemaMarkup";
 import { useSEO } from "@/hooks/useSEO";
 import { getCityBySlug } from "@/data/locations";
@@ -21,6 +23,25 @@ const regionImages: Record<string, string> = {
   virginia: regionVA,
 };
 
+/** City-specific "why choose us" openers to reduce template feel */
+const cityWhyIntros: Record<string, string> = {
+  "rockville-md": "Rockville families trust us for consistent, thorough cleaning that fits their busy Montgomery County lifestyles.",
+  "silver-spring-md": "Silver Spring's diverse community deserves a cleaning team that adapts to every home style — from mid-century ranchers to modern apartments.",
+  "bethesda-md": "Bethesda homeowners expect premium quality, and our meticulous approach delivers the elevated cleaning experience this community deserves.",
+  "germantown-md": "Germantown families enjoy reliable, hassle-free cleaning from a team that understands the upcounty lifestyle.",
+  "gaithersburg-md": "From Kentlands to Lakelands, Gaithersburg homeowners count on us for dependable, eco-conscious cleaning.",
+  "potomac-md": "Potomac's elegant estates require a cleaning team with attention to detail and respect for fine finishes — that's our specialty.",
+  "frederick-md": "Frederick homeowners appreciate our blend of small-town reliability and professional-grade cleaning expertise.",
+  "columbia-md": "Columbia's planned communities deserve a cleaning service as thoughtful and organized as the neighborhoods themselves.",
+  "ellicott-city-md": "From historic Main Street homes to modern developments, Ellicott City trusts our gentle yet thorough approach.",
+  "arlington-va": "Arlington's fast-paced professionals rely on our flexible scheduling and consistent quality to keep their homes spotless.",
+  "fairfax-va": "Fairfax families choose us for our eco-friendly products and the peace of mind that comes with background-checked teams.",
+  "mclean-va": "McLean's distinguished homes receive the white-glove treatment they deserve — premium products, expert teams, impeccable results.",
+  "alexandria-va": "From Old Town rowhouses to West End condos, Alexandria homeowners trust our versatile, professional cleaning teams.",
+  "georgetown-dc": "Georgetown's historic homes and modern residences alike benefit from our careful, detail-oriented cleaning approach.",
+  "capitol-hill-dc": "Capitol Hill residents count on our reliable, eco-friendly service to keep their homes pristine amid busy District schedules.",
+};
+
 const CityPage = () => {
   const { slug } = useParams<{ slug: string }>();
   const city = getCityBySlug(slug || "");
@@ -31,15 +52,18 @@ const CityPage = () => {
 
   const nearbyCities = city.nearbySlugs.map(getCityBySlug).filter(Boolean);
   const stateLabel = city.stateSlug === "maryland" ? "Maryland" : city.stateSlug === "washington-dc" ? "Washington DC" : "Virginia";
+  const cityLabel = city.state !== "DC" ? `${city.name}, ${city.state}` : city.name;
+  const whyIntro = cityWhyIntros[city.slug] || `${city.name} homeowners choose Capital Clean Care for our reliable, eco-friendly cleaning services.`;
 
   return (
     <Layout>
       <FAQSchema faqs={city.faqs} />
       <ServiceSchema
         serviceName={`House Cleaning in ${city.name}`}
-        description={`Professional eco-friendly house cleaning services in ${city.name}${city.state !== "DC" ? `, ${city.state}` : ""}. Licensed, insured, background-checked teams.`}
+        description={`Professional eco-friendly house cleaning services in ${cityLabel}. Licensed, insured, background-checked teams.`}
         url={`https://capitalcleancare.com/locations/${city.slug}`}
       />
+
       {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
@@ -49,9 +73,9 @@ const CityPage = () => {
             className="w-full h-full object-cover"
             loading="eager"
           />
-          <div className="absolute inset-0 bg-primary/80" />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/80 to-primary/60" />
         </div>
-        <div className="relative container mx-auto px-4 max-w-4xl py-14 md:py-20">
+        <div className="relative container mx-auto px-4 max-w-4xl py-16 md:py-24">
           <div className="flex items-center gap-2 text-primary-foreground/60 text-sm mb-4">
             <Link to={`/${city.stateSlug}`} className="hover:text-primary-foreground transition-colors">
               {stateLabel}
@@ -59,25 +83,28 @@ const CityPage = () => {
             <span>/</span>
             <span className="text-primary-foreground/80">{city.name}</span>
           </div>
-          <h1 className="font-heading text-3xl md:text-5xl font-bold mb-4 text-primary-foreground">
-            House Cleaning Services in {city.name}{city.state !== "DC" ? `, ${city.state}` : ""}
+          <h1 className="font-heading text-3xl md:text-5xl lg:text-[3.25rem] font-bold mb-5 text-primary-foreground leading-tight">
+            House Cleaning Services in {cityLabel}
           </h1>
-          <p className="text-primary-foreground/80 text-lg max-w-2xl">
+          <p className="text-primary-foreground/85 text-lg md:text-xl max-w-2xl leading-relaxed mb-8">
             Professional, eco-friendly house cleaning for {city.name} homes. Licensed, insured, and background-checked teams you can trust.
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 mt-6">
-            <Button variant="cta" size="lg" asChild>
+          <div className="flex flex-col sm:flex-row gap-3">
+            <Button variant="cta" size="lg" className="text-base" asChild>
               <a href="#quote">Get a Free Quote <ArrowRight className="ml-1 h-4 w-4" /></a>
             </Button>
-            <Button variant="secondary" size="lg" asChild>
+            <Button variant="secondary" size="lg" className="text-base" asChild>
               <a href="tel:+12407042551"><Phone className="h-4 w-4 mr-2" /> (240) 704-2551</a>
             </Button>
           </div>
         </div>
       </section>
 
-      {/* About Our Work in This Neighborhood */}
-      <section className="py-12 md:py-16">
+      {/* Trust Bar */}
+      <TrustBar variant="dark" />
+
+      {/* About Our Work */}
+      <section className="py-14 md:py-20">
         <div className="container mx-auto px-4 max-w-4xl">
           <h2 className="font-heading text-2xl md:text-3xl font-bold mb-6">
             Our Work in {city.name}
@@ -90,14 +117,17 @@ const CityPage = () => {
         </div>
       </section>
 
+      {/* Mid-page Conversion CTA */}
+      <ConversionCTA cityName={city.name} variant="full" />
+
       {/* Services Available */}
-      <section className="py-12 md:py-16 bg-secondary">
+      <section className="py-14 md:py-20 bg-secondary">
         <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="font-heading text-2xl md:text-3xl font-bold mb-6">Cleaning Services in {city.name}</h2>
-          <p className="text-muted-foreground mb-6">We bring the full range of Capital Clean Care services to {city.name}. Click any service to learn more.</p>
+          <h2 className="font-heading text-2xl md:text-3xl font-bold mb-3">Cleaning Services in {city.name}</h2>
+          <p className="text-muted-foreground mb-8">We bring the full range of Capital Clean Care services to {city.name}. Click any service to learn more.</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {services.map((s) => (
-              <Card key={s.slug} className="group hover:shadow-md transition-all hover:-translate-y-0.5">
+              <Card key={s.slug} className="group hover:shadow-md transition-all duration-200 hover:-translate-y-0.5">
                 <CardContent className="p-5">
                   <Link to={`/services/${s.slug}`} className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center shrink-0">
@@ -116,10 +146,11 @@ const CityPage = () => {
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="py-12 md:py-16">
+      {/* Why Choose Us — city-specific intro */}
+      <section className="py-14 md:py-20">
         <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="font-heading text-2xl md:text-3xl font-bold mb-6">Why {city.name} Homeowners Choose Us</h2>
+          <h2 className="font-heading text-2xl md:text-3xl font-bold mb-3">Why {city.name} Homeowners Choose Us</h2>
+          <p className="text-muted-foreground mb-8 leading-relaxed">{whyIntro}</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {[
               { icon: Leaf, text: "Eco-friendly, non-toxic products safe for your family and pets" },
@@ -129,11 +160,11 @@ const CityPage = () => {
               { icon: MapPin, text: `Local teams that know ${city.name} neighborhoods` },
               { icon: Sparkles, text: "Flexible scheduling including weekday and Saturday" },
             ].map((item, i) => (
-              <div key={i} className="flex gap-3 items-start p-3 rounded-lg border border-border">
-                <div className="w-9 h-9 rounded-full bg-accent/10 flex items-center justify-center shrink-0">
-                  <item.icon className="h-4 w-4 text-accent" />
+              <div key={i} className="flex gap-3 items-start p-4 rounded-xl border border-border bg-card hover:shadow-sm transition-shadow">
+                <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center shrink-0">
+                  <item.icon className="h-4.5 w-4.5 text-accent" />
                 </div>
-                <span className="text-sm text-foreground mt-1.5">{item.text}</span>
+                <span className="text-sm text-foreground mt-2">{item.text}</span>
               </div>
             ))}
           </div>
@@ -141,7 +172,7 @@ const CityPage = () => {
       </section>
 
       {/* Pricing */}
-      <section className="py-12 md:py-16 bg-secondary">
+      <section className="py-14 md:py-20 bg-secondary">
         <div className="container mx-auto px-4 max-w-3xl">
           <div className="text-center mb-8">
             <h2 className="font-heading text-2xl md:text-3xl font-bold mb-3">Pricing in {city.name}</h2>
@@ -152,9 +183,9 @@ const CityPage = () => {
       </section>
 
       {/* Pricing Factors */}
-      <section className="py-12 md:py-16">
+      <section className="py-14 md:py-20">
         <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="font-heading text-2xl font-bold mb-4">What Affects Your Price in {city.name}</h2>
+          <h2 className="font-heading text-2xl font-bold mb-6">What Affects Your Price in {city.name}</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
             {[
               "Number of bedrooms & bathrooms",
@@ -174,7 +205,7 @@ const CityPage = () => {
       </section>
 
       {/* FAQ */}
-      <section className="py-12 md:py-16 bg-secondary">
+      <section className="py-14 md:py-20 bg-secondary">
         <div className="container mx-auto px-4 max-w-3xl">
           <h2 className="font-heading text-2xl md:text-3xl font-bold text-center mb-8">{city.name} Cleaning FAQ</h2>
           <FAQ faqs={city.faqs} />
@@ -183,7 +214,7 @@ const CityPage = () => {
 
       {/* Nearby Areas */}
       {nearbyCities.length > 0 && (
-        <section className="py-12 md:py-16">
+        <section className="py-14 md:py-20">
           <div className="container mx-auto px-4 max-w-4xl">
             <h2 className="font-heading text-2xl font-bold mb-6">Nearby Areas We Serve</h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
@@ -201,7 +232,7 @@ const CityPage = () => {
       )}
 
       {/* Quote Form */}
-      <section className="py-16 bg-secondary" id="quote">
+      <section className="py-16 md:py-20 bg-secondary" id="quote">
         <div className="container mx-auto px-4 max-w-2xl">
           <div className="text-center mb-8">
             <h2 className="font-heading text-3xl font-bold mb-3">Get a Free Quote in {city.name}</h2>
