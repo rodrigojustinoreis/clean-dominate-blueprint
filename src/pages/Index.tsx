@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { CheckCircle, Shield, Leaf, Star, MapPin, Sparkles, ArrowRight } from "lucide-react";
+import PricingTable from "@/components/PricingTable";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Layout from "@/components/layout/Layout";
@@ -177,6 +178,17 @@ const Index = () => {
               </Card>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Pricing */}
+      <section className="py-16 md:py-24 bg-secondary">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <div className="text-center mb-8">
+            <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">Sample Pricing</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">Transparent pricing based on home size and frequency. Select a cleaning type to see estimated ranges.</p>
+          </div>
+          <PricingTable />
         </div>
       </section>
 
