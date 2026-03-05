@@ -38,7 +38,7 @@ const Footer = () => (
           </p>
           <div className="space-y-2 text-sm text-primary-foreground/70">
             <p className="flex items-center gap-2"><Phone className="h-4 w-4" /> (240) 704-2551</p>
-            <p className="flex items-center gap-2"><Mail className="h-4 w-4" /> hello@capitalcleancare.com</p>
+            <p className="flex items-center gap-2"><Mail className="h-4 w-4" /> capitalcleancare@gmail.com</p>
             <p className="flex items-center gap-2"><Clock className="h-4 w-4" /> Mon–Sat: 7 AM – 7 PM</p>
           </div>
         </div>
