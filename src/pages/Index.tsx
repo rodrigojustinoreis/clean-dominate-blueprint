@@ -10,6 +10,9 @@ import { useSEO } from "@/hooks/useSEO";
 import { services } from "@/data/services";
 import { hubs, mdCities, dcCities, vaCities } from "@/data/locations";
 import heroImage from "@/assets/hero-clean-home.jpg";
+import regionMD from "@/assets/region-maryland.jpg";
+import regionDC from "@/assets/region-dc.jpg";
+import regionVA from "@/assets/region-virginia.jpg";
 
 const trustPoints = [
   { icon: Shield, label: "Licensed & Insured" },
@@ -35,9 +38,9 @@ const homeFaqs = [
 ];
 
 const locationAreas = [
-  { label: "Maryland", slug: "/maryland", count: mdCities.length },
-  { label: "Washington, DC", slug: "/washington-dc", count: dcCities.length },
-  { label: "Northern Virginia", slug: "/virginia", count: vaCities.length },
+  { label: "Maryland", slug: "/maryland", count: mdCities.length, image: regionMD },
+  { label: "Washington, DC", slug: "/washington-dc", count: dcCities.length, image: regionDC },
+  { label: "Northern Virginia", slug: "/virginia", count: vaCities.length, image: regionVA },
 ];
 
 const Index = () => {
@@ -141,13 +144,24 @@ const Index = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {locationAreas.map((area) => (
-              <Card key={area.slug} className="group hover:shadow-lg transition-shadow">
-                <CardContent className="p-6 text-center">
-                  <MapPin className="h-8 w-8 text-accent mx-auto mb-3" />
-                  <h3 className="font-heading text-xl font-semibold mb-2">{area.label}</h3>
-                  <p className="text-muted-foreground text-sm mb-4">{area.count} service areas</p>
-                  <Button variant="cta-outline" size="sm" asChild>
-                    <Link to={area.slug}>View Locations</Link>
+              <Card key={area.slug} className="group hover:shadow-lg transition-shadow overflow-hidden">
+                <div className="relative h-40 overflow-hidden">
+                  <img
+                    src={area.image}
+                    alt={`${area.label} neighborhoods`}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-primary/40" />
+                  <div className="absolute bottom-3 left-3 flex items-center gap-1.5 text-primary-foreground">
+                    <MapPin className="h-4 w-4" />
+                    <span className="font-heading font-semibold text-lg">{area.label}</span>
+                  </div>
+                </div>
+                <CardContent className="p-5 text-center">
+                  <p className="text-muted-foreground text-sm mb-3">{area.count} service areas</p>
+                  <Button variant="cta-outline" size="sm" className="w-full" asChild>
+                    <Link to={area.slug}>View Locations <ArrowRight className="ml-1 h-3 w-3" /></Link>
                   </Button>
                 </CardContent>
               </Card>

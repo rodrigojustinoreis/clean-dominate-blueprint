@@ -10,6 +10,15 @@ import { useSEO } from "@/hooks/useSEO";
 import { getCityBySlug } from "@/data/locations";
 import { services } from "@/data/services";
 import NotFound from "./NotFound";
+import regionMD from "@/assets/region-maryland.jpg";
+import regionDC from "@/assets/region-dc.jpg";
+import regionVA from "@/assets/region-virginia.jpg";
+
+const regionImages: Record<string, string> = {
+  maryland: regionMD,
+  "washington-dc": regionDC,
+  virginia: regionVA,
+};
 
 const CityPage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -25,8 +34,17 @@ const CityPage = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="bg-primary text-primary-foreground py-14 md:py-20">
-        <div className="container mx-auto px-4 max-w-4xl">
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src={regionImages[city.stateSlug] || regionMD}
+            alt={`${city.name} neighborhood`}
+            className="w-full h-full object-cover"
+            loading="eager"
+          />
+          <div className="absolute inset-0 bg-primary/80" />
+        </div>
+        <div className="relative container mx-auto px-4 max-w-4xl py-14 md:py-20">
           <div className="flex items-center gap-2 text-primary-foreground/60 text-sm mb-4">
             <Link to={`/${city.stateSlug}`} className="hover:text-primary-foreground transition-colors">
               {stateLabel}
@@ -34,7 +52,7 @@ const CityPage = () => {
             <span>/</span>
             <span className="text-primary-foreground/80">{city.name}</span>
           </div>
-          <h1 className="font-heading text-3xl md:text-5xl font-bold mb-4">
+          <h1 className="font-heading text-3xl md:text-5xl font-bold mb-4 text-primary-foreground">
             House Cleaning Services in {city.name}{city.state !== "DC" ? `, ${city.state}` : ""}
           </h1>
           <p className="text-primary-foreground/80 text-lg max-w-2xl">
