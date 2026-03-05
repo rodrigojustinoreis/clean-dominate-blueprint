@@ -28,7 +28,7 @@ const testimonials = [
 const homeFaqs = [
   { q: "What areas do you serve?", a: "We serve communities throughout Maryland (Montgomery, Frederick, Howard, and Prince George's Counties), Washington DC, and Northern Virginia (Arlington, Fairfax, McLean, Alexandria, and more)." },
   { q: "Are your cleaning products safe for children and pets?", a: "Absolutely. We exclusively use plant-based, non-toxic cleaning products that are safe for your entire family, including children and pets, while delivering professional-grade results." },
-  { q: "How do I get a quote?", a: "Fill out our free quote form on this page or any page on our website, or call us at (301) 555-1234. We typically respond with a personalized estimate within a few hours." },
+  { q: "How do I get a quote?", a: "Fill out our free quote form on this page or any page on our website, or call us at (240) 704-2551. We typically respond with a personalized estimate within a few hours." },
   { q: "Do I need to be home during cleaning?", a: "No. Many clients provide key, code, or smart lock access so we can clean while they're at work or running errands. All team members are background-checked and insured." },
   { q: "What's your cancellation policy?", a: "We ask for 24-48 hours notice for cancellations or rescheduling. There are no penalties for occasional schedule changes." },
   { q: "Are your cleaners insured and background-checked?", a: "Yes. Capital Clean Care is fully licensed and insured. Every team member undergoes thorough background checks before joining our team." },
@@ -67,7 +67,7 @@ const Index = () => {
                 <Link to="/contact">Get a Free Quote <ArrowRight className="ml-1 h-4 w-4" /></Link>
               </Button>
               <Button variant="secondary" size="lg" className="text-base" asChild>
-                <a href="tel:+13015551234">Call (301) 555-1234</a>
+                <a href="tel:+12407042551">Call (240) 704-2551</a>
               </Button>
             </div>
             <div className="flex flex-wrap gap-4 mt-8">

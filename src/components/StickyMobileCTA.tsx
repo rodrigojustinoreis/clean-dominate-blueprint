@@ -8,7 +8,7 @@ const StickyMobileCTA = () => (
       <Link to="/contact">Get a Free Quote</Link>
     </Button>
     <Button variant="secondary" size="lg" asChild>
-      <a href="tel:+13015551234" aria-label="Call us">
+      <a href="tel:+12407042551" aria-label="Call us">
         <Phone className="h-5 w-5" />
       </a>
     </Button>

@@ -1,9 +1,12 @@
-import { Star } from "lucide-react";
+import { Star, ExternalLink } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import QuoteForm from "@/components/QuoteForm";
 import { useSEO } from "@/hooks/useSEO";
+
+const GOOGLE_REVIEW_URL = "https://g.page/r/capitalcleancare/review";
+const GOOGLE_MAPS_URL = "https://www.google.com/maps/place/Capital+Clean+Care";
 
 const reviews = [
   { name: "Sarah M.", location: "Bethesda, MD", text: "Capital Clean Care transformed our home. The team was professional, thorough, and used products I feel safe having around my kids and pets.", rating: 5 },
@@ -21,7 +24,7 @@ const reviews = [
 const Reviews = () => {
   useSEO({
     title: "Client Reviews | Capital Clean Care",
-    description: "Read reviews from Capital Clean Care clients across MD, DC & VA. See why families trust us for eco-friendly, premium house cleaning services.",
+    description: "Read reviews from Capital Clean Care clients across MD, DC & VA. 5.0 stars on Google with 30+ reviews. See why families trust us for premium house cleaning.",
   });
 
   return (
@@ -31,19 +34,43 @@ const Reviews = () => {
           <div className="text-center mb-12">
             <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4">Client Reviews</h1>
             <p className="text-muted-foreground max-w-2xl mx-auto text-lg">Hear from homeowners across Maryland, DC, and Virginia who trust Capital Clean Care with their homes.</p>
-            <div className="flex items-center justify-center gap-2 mt-4">
-              <div className="flex gap-0.5">{Array.from({ length: 5 }).map((_, i) => <Star key={i} className="h-5 w-5 fill-accent text-accent" />)}</div>
-              <span className="font-semibold">4.9/5</span>
-              <span className="text-muted-foreground">based on 200+ reviews</span>
-            </div>
+
+            {/* Google Reviews Badge */}
+            <Card className="inline-block mt-6">
+              <CardContent className="px-6 py-4 flex items-center gap-4">
+                <div className="flex flex-col items-center">
+                  <span className="text-3xl font-bold text-foreground">5.0</span>
+                  <div className="flex gap-0.5 mt-1">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <Star key={i} className="h-4 w-4 fill-accent text-accent" />
+                    ))}
+                  </div>
+                </div>
+                <div className="text-left border-l border-border pl-4">
+                  <p className="font-semibold text-foreground">Google Reviews</p>
+                  <p className="text-sm text-muted-foreground">Based on 30+ reviews</p>
+                  <a
+                    href={GOOGLE_MAPS_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs text-accent hover:underline inline-flex items-center gap-1 mt-1"
+                  >
+                    View on Google <ExternalLink className="h-3 w-3" />
+                  </a>
+                </div>
+              </CardContent>
+            </Card>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {reviews.map((r, i) => (
               <Card key={i}>
                 <CardContent className="p-6">
-                  <div className="flex gap-0.5 mb-3">
-                    {Array.from({ length: r.rating }).map((_, j) => <Star key={j} className="h-4 w-4 fill-accent text-accent" />)}
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="flex gap-0.5">
+                      {Array.from({ length: r.rating }).map((_, j) => <Star key={j} className="h-4 w-4 fill-accent text-accent" />)}
+                    </div>
+                    <span className="text-xs text-muted-foreground">via Google</span>
                   </div>
                   <p className="text-foreground mb-4 italic">"{r.text}"</p>
                   <p className="text-sm font-semibold">{r.name}</p>
@@ -55,8 +82,12 @@ const Reviews = () => {
 
           <div className="text-center mt-12">
             <h3 className="font-heading text-xl font-semibold mb-3">Had a Great Experience?</h3>
-            <p className="text-muted-foreground mb-4">We'd love to hear from you! Leave us a review.</p>
-            <Button variant="cta">Leave a Review</Button>
+            <p className="text-muted-foreground mb-4">We'd love to hear from you! Leave us a review on Google.</p>
+            <Button variant="cta" asChild>
+              <a href={GOOGLE_REVIEW_URL} target="_blank" rel="noopener noreferrer">
+                Leave a Google Review <ExternalLink className="ml-1 h-4 w-4" />
+              </a>
+            </Button>
           </div>
         </div>
       </section>
