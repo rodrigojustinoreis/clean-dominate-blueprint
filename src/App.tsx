@@ -36,9 +36,7 @@ const App = () => (
             <Route path="/reviews" element={<Reviews />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/services/:slug" element={<ServicePage />} />
-            <Route path="/maryland" element={<LocationHub />} />
-            <Route path="/washington-dc" element={<LocationHub />} />
-            <Route path="/virginia" element={<LocationHub />} />
+            <Route path="/:stateSlug" element={<LocationHub />} />
             <Route path="/locations/:slug" element={<CityPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
