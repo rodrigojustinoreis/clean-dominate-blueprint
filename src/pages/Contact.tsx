@@ -7,7 +7,7 @@ import { useSEO } from "@/hooks/useSEO";
 const Contact = () => {
   useSEO({
     title: "Contact Us | Capital Clean Care",
-    description: "Get in touch with Capital Clean Care for a free house cleaning quote. Serving MD, DC & VA. Call (301) 555-1234 or fill out our form.",
+    description: "Get in touch with Capital Clean Care for a free house cleaning quote. Serving MD, DC & VA. Call (240) 704-2551 or fill out our form.",
   });
 
   return (
@@ -22,10 +22,10 @@ const Contact = () => {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
             <div className="space-y-6">
               {[
-                { icon: Phone, label: "Phone", value: "(301) 555-1234", href: "tel:+13015551234" },
+                { icon: Phone, label: "Phone", value: "(240) 704-2551", href: "tel:+12407042551" },
                 { icon: Mail, label: "Email", value: "hello@capitalcleancare.com", href: "mailto:hello@capitalcleancare.com" },
                 { icon: Clock, label: "Hours", value: "Mon–Sat: 7 AM – 7 PM" },
-                { icon: MapPin, label: "Service Area", value: "Maryland • DC • Northern Virginia" },
+                { icon: MapPin, label: "Address", value: "4111 Postgate Terrace, Silver Spring, MD 20906" },
               ].map((item) => (
                 <Card key={item.label}>
                   <CardContent className="p-4 flex items-start gap-3">
@@ -44,12 +44,20 @@ const Contact = () => {
                 </Card>
               ))}
 
-              {/* Map placeholder */}
+              {/* Google Maps Embed */}
               <Card>
-                <CardContent className="p-0">
-                  <div className="bg-muted h-48 rounded-lg flex items-center justify-center text-muted-foreground">
-                    <MapPin className="h-8 w-8 mr-2" /> Service Area Map
-                  </div>
+                <CardContent className="p-0 overflow-hidden rounded-lg">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3098.5!2d-77.02!3d39.08!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s4111+Postgate+Terrace+Silver+Spring+MD+20906!5e0!3m2!1sen!2sus!4v1"
+                    width="100%"
+                    height="200"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Capital Clean Care location"
+                    className="rounded-lg"
+                  />
                 </CardContent>
               </Card>
             </div>

@@ -19,7 +19,7 @@ const Footer = () => (
             <Link to="/contact">Get a Free Quote</Link>
           </Button>
           <Button variant="outline" size="lg" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10" asChild>
-            <a href="tel:+13015551234"><Phone className="h-4 w-4 mr-2" /> Call Now</a>
+            <a href="tel:+12407042551"><Phone className="h-4 w-4 mr-2" /> Call Now</a>
           </Button>
         </div>
       </div>
@@ -37,7 +37,7 @@ const Footer = () => (
             Premium residential cleaning with eco-friendly, non-toxic products. Licensed &amp; insured with background-checked teams across Maryland, Washington DC, and Northern Virginia.
           </p>
           <div className="space-y-2 text-sm text-primary-foreground/70">
-            <p className="flex items-center gap-2"><Phone className="h-4 w-4" /> (301) 555-1234</p>
+            <p className="flex items-center gap-2"><Phone className="h-4 w-4" /> (240) 704-2551</p>
             <p className="flex items-center gap-2"><Mail className="h-4 w-4" /> hello@capitalcleancare.com</p>
             <p className="flex items-center gap-2"><Clock className="h-4 w-4" /> Mon–Sat: 7 AM – 7 PM</p>
           </div>

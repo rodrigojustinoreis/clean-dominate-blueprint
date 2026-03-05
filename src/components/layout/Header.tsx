@@ -17,8 +17,8 @@ const Header = () => {
         {/* Top bar */}
         <div className="hidden md:flex items-center justify-between py-2 text-sm text-muted-foreground border-b border-border">
           <div className="flex items-center gap-4">
-            <a href="tel:+13015551234" className="hover:text-foreground flex items-center gap-1">
-              <Phone className="h-3 w-3" /> (301) 555-1234
+            <a href="tel:+12407042551" className="hover:text-foreground flex items-center gap-1">
+              <Phone className="h-3 w-3" /> (240) 704-2551
             </a>
             <span>Serving MD • DC • VA</span>
           </div>
@@ -71,8 +71,8 @@ const Header = () => {
           </nav>
 
           <div className="hidden lg:flex items-center gap-3">
-            <a href="tel:+13015551234" className="text-sm font-semibold text-foreground flex items-center gap-1">
-              <Phone className="h-4 w-4" /> (301) 555-1234
+            <a href="tel:+12407042551" className="text-sm font-semibold text-foreground flex items-center gap-1">
+              <Phone className="h-4 w-4" /> (240) 704-2551
             </a>
             <Button variant="cta" asChild>
               <Link to="/contact">Get a Free Quote</Link>
@@ -122,8 +122,8 @@ const Header = () => {
             <Link to="/contact" className="block px-3 py-2 rounded-md hover:bg-secondary" onClick={() => setMobileOpen(false)}>Contact</Link>
             
             <div className="pt-3 space-y-2">
-              <a href="tel:+13015551234" className="block text-center font-semibold text-foreground">
-                <Phone className="h-4 w-4 inline mr-1" /> (301) 555-1234
+              <a href="tel:+12407042551" className="block text-center font-semibold text-foreground">
+                <Phone className="h-4 w-4 inline mr-1" /> (240) 704-2551
               </a>
               <Button variant="cta" className="w-full" asChild>
                 <Link to="/contact" onClick={() => setMobileOpen(false)}>Get a Free Quote</Link>
