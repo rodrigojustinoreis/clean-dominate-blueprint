@@ -15,6 +15,10 @@ import heroImage from "@/assets/hero-clean-home.jpg";
 import regionMD from "@/assets/region-maryland.jpg";
 import regionDC from "@/assets/region-dc.jpg";
 import regionVA from "@/assets/region-virginia.jpg";
+import teamPhoto from "@/assets/team-photo.png";
+import happyClient from "@/assets/happy-client.png";
+import cleanerMopping from "@/assets/cleaner-mopping.png";
+import ecoProducts from "@/assets/eco-products.png";
 
 const trustPoints = [
   { icon: Shield, label: "Licensed & Insured" },
@@ -112,29 +116,56 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Why Choose Us */}
+      {/* Meet Our Team */}
       <section className="py-16 md:py-24 bg-secondary">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">Why Choose Capital Clean Care</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { icon: Leaf, title: "100% Eco-Friendly", desc: "Plant-based, non-toxic products safe for your family, pets, and the planet." },
-              { icon: Shield, title: "Licensed & Insured", desc: "Full coverage and liability protection for complete peace of mind." },
-              { icon: CheckCircle, title: "Background-Checked", desc: "Every team member is thoroughly vetted and professionally trained." },
-              { icon: Star, title: "Satisfaction Guaranteed", desc: "Not happy? We'll re-clean at no extra charge. That's our promise." },
-            ].map((item) => (
-              <Card key={item.title}>
-                <CardContent className="p-6 text-center">
-                  <div className="w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-4">
-                    <item.icon className="h-7 w-7 text-accent" />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center max-w-6xl mx-auto">
+            <div className="relative">
+              <img
+                src={teamPhoto}
+                alt="Capital Clean Care team members smiling in branded uniforms"
+                className="rounded-2xl shadow-lg w-full object-cover aspect-[4/5] lg:aspect-[3/4]"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <h2 className="font-heading text-3xl md:text-4xl font-bold mb-6">Meet the People Behind Every Clean</h2>
+              <p className="text-muted-foreground mb-6 leading-relaxed">
+                At Capital Clean Care, we're more than a cleaning company — we're a team of dedicated professionals who genuinely care about your home. Every team member is background-checked, professionally trained, and passionate about delivering exceptional results.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                {[
+                  { icon: Shield, title: "Licensed & Insured", desc: "Full coverage for your peace of mind." },
+                  { icon: CheckCircle, title: "Background-Checked", desc: "Every team member is thoroughly vetted." },
+                  { icon: Leaf, title: "100% Eco-Friendly", desc: "Safe for your family, pets, and planet." },
+                  { icon: Star, title: "Satisfaction Guaranteed", desc: "We'll re-clean at no extra charge." },
+                ].map((item) => (
+                  <div key={item.title} className="flex gap-3 items-start">
+                    <div className="w-9 h-9 rounded-full bg-accent/10 flex items-center justify-center shrink-0 mt-0.5">
+                      <item.icon className="h-4 w-4 text-accent" />
+                    </div>
+                    <div>
+                      <h3 className="font-heading font-semibold text-sm">{item.title}</h3>
+                      <p className="text-muted-foreground text-xs">{item.desc}</p>
+                    </div>
                   </div>
-                  <h3 className="font-heading font-semibold text-lg mb-2">{item.title}</h3>
-                  <p className="text-muted-foreground text-sm">{item.desc}</p>
-                </CardContent>
-              </Card>
-            ))}
+                ))}
+              </div>
+              <Button variant="cta" size="lg" asChild>
+                <Link to="/about">Learn More About Us <ArrowRight className="ml-1 h-4 w-4" /></Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Real Work Photo Strip */}
+      <section className="py-12 md:py-16">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
+            <img src={cleanerMopping} alt="Capital Clean Care professional mopping hardwood floors" className="rounded-xl shadow-md w-full aspect-square object-cover" loading="lazy" />
+            <img src={ecoProducts} alt="Eco-friendly non-toxic cleaning products used by Capital Clean Care" className="rounded-xl shadow-md w-full aspect-square object-cover" loading="lazy" />
+            <img src={happyClient} alt="Satisfied client relaxing while Capital Clean Care team cleans in background" className="rounded-xl shadow-md w-full aspect-square object-cover hidden md:block" loading="lazy" />
           </div>
         </div>
       </section>

@@ -3,6 +3,10 @@ import { Card, CardContent } from "@/components/ui/card";
 import Layout from "@/components/layout/Layout";
 import QuoteForm from "@/components/QuoteForm";
 import { useSEO } from "@/hooks/useSEO";
+import teamPhoto from "@/assets/team-photo.png";
+import cleanerBlinds from "@/assets/cleaner-blinds.png";
+import cleanerSupplies from "@/assets/cleaner-supplies.png";
+import happyClient from "@/assets/happy-client.png";
 
 const About = () => {
   useSEO({
@@ -13,20 +17,37 @@ const About = () => {
   return (
     <Layout>
       <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <h1 className="font-heading text-4xl md:text-5xl font-bold mb-6">About Capital Clean Care</h1>
-
-          <div className="prose prose-lg max-w-none text-foreground space-y-6">
-            <p className="text-xl text-muted-foreground leading-relaxed">
-              Capital Clean Care was founded with a simple belief: every family deserves a clean, healthy home — and achieving that shouldn't require toxic chemicals or unreliable service.
-            </p>
-            <p>
-              Based in the Washington DC metropolitan area, we serve homeowners across Maryland, Washington DC, and Northern Virginia with premium residential cleaning services that prioritize quality, consistency, and environmental responsibility.
-            </p>
-            <p>
-              Our teams are carefully selected and thoroughly vetted. Every cleaning professional undergoes comprehensive background checks, professional training, and ongoing quality assessments. When you open your door to a Capital Clean Care team, you can trust that you're welcoming experienced, trustworthy professionals into your home.
-            </p>
+        <div className="container mx-auto px-4 max-w-5xl">
+          {/* Hero with team photo */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center mb-16">
+            <div>
+              <h1 className="font-heading text-4xl md:text-5xl font-bold mb-6">About Capital Clean Care</h1>
+              <p className="text-xl text-muted-foreground leading-relaxed mb-4">
+                Capital Clean Care was founded with a simple belief: every family deserves a clean, healthy home — and achieving that shouldn't require toxic chemicals or unreliable service.
+              </p>
+              <p className="text-foreground leading-relaxed">
+                Based in the Washington DC metropolitan area, we serve homeowners across Maryland, Washington DC, and Northern Virginia with premium residential cleaning services that prioritize quality, consistency, and environmental responsibility.
+              </p>
+            </div>
+            <img
+              src={teamPhoto}
+              alt="Capital Clean Care team members in branded uniforms"
+              className="rounded-2xl shadow-lg w-full object-cover aspect-[4/5]"
+              loading="eager"
+            />
           </div>
+
+          {/* Action photos */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-16">
+            <img src={cleanerBlinds} alt="Team member cleaning window blinds" className="rounded-xl shadow-md w-full aspect-[3/4] object-cover" loading="lazy" />
+            <img src={cleanerSupplies} alt="Professional carrying eco-friendly cleaning supplies" className="rounded-xl shadow-md w-full aspect-[3/4] object-cover" loading="lazy" />
+            <img src={happyClient} alt="Happy client relaxing while our team cleans" className="rounded-xl shadow-md w-full aspect-[3/4] object-cover" loading="lazy" />
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+          <p className="text-foreground leading-relaxed mb-6">
+            Our teams are carefully selected and thoroughly vetted. Every cleaning professional undergoes comprehensive background checks, professional training, and ongoing quality assessments. When you open your door to a Capital Clean Care team, you can trust that you're welcoming experienced, trustworthy professionals into your home.
+          </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 my-12">
             {[
@@ -59,6 +80,7 @@ const About = () => {
                 </div>
               ))}
             </div>
+          </div>
           </div>
         </div>
       </section>
