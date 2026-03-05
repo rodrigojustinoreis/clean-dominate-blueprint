@@ -61,10 +61,10 @@ const Index = () => {
       <LocalBusinessSchema />
       <FAQSchema faqs={homeFaqs} />
       {/* Hero */}
-      <section className="relative overflow-hidden">
+      <section className="relative overflow-hidden min-h-[500px] md:min-h-[600px]">
         <div className="absolute inset-0">
-          <img src={heroImage} alt="Sparkling clean modern living room" className="w-full h-full object-cover" loading="eager" />
-          <div className="absolute inset-0 bg-primary/75" />
+          <img src={heroImage} alt="Capital Clean Care professional carrying eco-friendly cleaning supplies" className="w-full h-full object-cover object-center" loading="eager" />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/75 to-primary/40 md:to-transparent" />
         </div>
         <div className="relative container mx-auto px-4 py-20 md:py-32">
           <div className="max-w-2xl">
