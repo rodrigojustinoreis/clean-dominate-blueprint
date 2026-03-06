@@ -22,13 +22,15 @@ const reviews = [
 ];
 
 const Reviews = () => {
-  useSEO({
+  const { seoHelmet } = useSEO({
     title: "Client Reviews | Capital Clean Care",
     description: "Read reviews from Capital Clean Care clients across MD, DC & VA. 5.0 stars on Google with 30+ reviews. See why families trust us for premium house cleaning.",
+    canonical: "https://capitalcleancare.com/reviews",
   });
 
   return (
     <Layout>
+      {seoHelmet}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">

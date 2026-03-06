@@ -5,13 +5,15 @@ import QuoteForm from "@/components/QuoteForm";
 import { useSEO } from "@/hooks/useSEO";
 
 const Contact = () => {
-  useSEO({
+  const { seoHelmet } = useSEO({
     title: "Contact Us | Capital Clean Care",
     description: "Get in touch with Capital Clean Care for a free house cleaning quote. Serving MD, DC & VA. Call (240) 704-2551 or fill out our form.",
+    canonical: "https://capitalcleancare.com/contact",
   });
 
   return (
     <Layout>
+      {seoHelmet}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">

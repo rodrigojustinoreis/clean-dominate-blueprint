@@ -58,14 +58,15 @@ const faqCategories = [
 const allFaqs = faqCategories.flatMap((c) => c.faqs);
 
 const FAQPage = () => {
-  useSEO({
+  const { seoHelmet } = useSEO({
     title: "FAQ | Capital Clean Care — Frequently Asked Questions",
-    description:
-      "Find answers to common questions about Capital Clean Care's premium eco-friendly house cleaning services in Maryland, DC & Virginia.",
+    description: "Find answers to common questions about Capital Clean Care's premium eco-friendly house cleaning services in Maryland, DC & Virginia.",
+    canonical: "https://capitalcleancare.com/faq",
   });
 
   return (
     <Layout>
+      {seoHelmet}
       <FAQSchema faqs={allFaqs} />
 
       {/* Hero */}

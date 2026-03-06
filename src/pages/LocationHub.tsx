@@ -50,7 +50,7 @@ const LocationHub = () => {
 
   if (!hub) return <NotFound />;
 
-  useSEO({ title: hub.metaTitle, description: hub.metaDescription });
+  const { seoHelmet } = useSEO({ title: hub.metaTitle, description: hub.metaDescription, canonical: `https://capitalcleancare.com/${hub.slug}` });
 
   const hubCities = hub.citySlugs.map(getCityBySlug).filter(Boolean);
   const reviews = testimonialsByState[hub.stateAbbr] || [];

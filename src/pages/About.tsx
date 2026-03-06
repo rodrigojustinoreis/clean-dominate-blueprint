@@ -9,13 +9,15 @@ import cleanerSupplies from "@/assets/cleaner-supplies.png";
 import happyClient from "@/assets/happy-client.png";
 
 const About = () => {
-  useSEO({
+  const { seoHelmet } = useSEO({
     title: "About Capital Clean Care | Eco-Friendly Cleaning in MD, DC & VA",
     description: "Learn about Capital Clean Care's mission, eco-friendly values, and commitment to premium residential cleaning across Maryland, DC & Virginia.",
+    canonical: "https://capitalcleancare.com/about",
   });
 
   return (
     <Layout>
+      {seoHelmet}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 max-w-5xl">
           {/* Hero with team photo */}

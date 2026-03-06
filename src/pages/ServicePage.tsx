@@ -19,10 +19,11 @@ const ServicePage = () => {
 
   if (!service) return <NotFound />;
 
-  useSEO({ title: service.metaTitle, description: service.metaDescription });
+  const { seoHelmet } = useSEO({ title: service.metaTitle, description: service.metaDescription, canonical: `https://capitalcleancare.com/services/${service.slug}` });
 
   return (
     <Layout>
+      {seoHelmet}
       <ServiceSchema
         serviceName={service.name}
         description={service.shortDescription}
