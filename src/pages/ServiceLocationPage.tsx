@@ -7,6 +7,7 @@ import { LocalBusinessSchema, ServiceSchema, FAQSchema } from "@/components/Sche
 import { getCity, getService, getServiceLocationIntro, getWhyChooseUs, getServiceLocationFAQs, slCities, slServices } from "@/data/service-locations";
 import { CheckCircle, MapPin, ArrowRight, Shield, Leaf, Clock, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import NotFound from "./NotFound";
 
 const ServiceLocationPage = () => {

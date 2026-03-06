@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import Layout from "@/components/layout/Layout";
 import QuoteForm from "@/components/QuoteForm";
 import { useSEO } from "@/hooks/useSEO";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 const Contact = () => {
   const { seoHelmet } = useSEO({

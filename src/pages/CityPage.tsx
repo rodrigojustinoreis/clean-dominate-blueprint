@@ -13,6 +13,7 @@ import { useSEO } from "@/hooks/useSEO";
 import { getCityBySlug } from "@/data/locations";
 import { services } from "@/data/services";
 import { slServices, slCities } from "@/data/service-locations";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import NotFound from "./NotFound";
 import regionMD from "@/assets/region-maryland.jpg";
 import regionDC from "@/assets/region-dc.jpg";

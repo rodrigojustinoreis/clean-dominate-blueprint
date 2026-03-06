@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import QuoteForm from "@/components/QuoteForm";
 import { useSEO } from "@/hooks/useSEO";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 const GOOGLE_REVIEW_URL = "https://g.page/r/capitalcleancare/review";
 const GOOGLE_MAPS_URL = "https://www.google.com/maps/place/Capital+Clean+Care";

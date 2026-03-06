@@ -11,6 +11,7 @@ import { LocalBusinessSchema, FAQSchema } from "@/components/SchemaMarkup";
 import { useSEO } from "@/hooks/useSEO";
 import { getHubBySlug, getCityBySlug } from "@/data/locations";
 import { services } from "@/data/services";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import NotFound from "./NotFound";
 import regionMD from "@/assets/region-maryland.jpg";
 import regionDC from "@/assets/region-dc.jpg";

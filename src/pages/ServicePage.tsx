@@ -9,6 +9,7 @@ import { ServiceSchema, FAQSchema } from "@/components/SchemaMarkup";
 import { useSEO } from "@/hooks/useSEO";
 import { getServiceBySlug } from "@/data/services";
 import { cities } from "@/data/locations";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import NotFound from "./NotFound";
 
 const topCities = cities.filter(c => !c.slug.includes("county")).slice(0, 8);

@@ -1,4 +1,5 @@
 import { Shield, Leaf, Users, Heart, CheckCircle, Award } from "lucide-react";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { Card, CardContent } from "@/components/ui/card";
 import Layout from "@/components/layout/Layout";
 import QuoteForm from "@/components/QuoteForm";
@@ -20,6 +21,7 @@ const About = () => {
       {seoHelmet}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 max-w-5xl">
+          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "About" }]} className="mb-6" />
           {/* Hero with team photo */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center mb-16">
             <div>
