@@ -17,6 +17,7 @@ const Contact = () => {
       {seoHelmet}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
+          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Contact" }]} className="mb-6" />
           <div className="text-center mb-12">
             <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4">Contact Us</h1>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">Ready for a cleaner home? Reach out for a free, no-obligation quote.</p>

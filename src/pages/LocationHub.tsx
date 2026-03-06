@@ -73,6 +73,7 @@ const LocationHub = () => {
           <div className="absolute inset-0 bg-primary/80" />
         </div>
         <div className="relative container mx-auto px-4 max-w-4xl py-16 md:py-24">
+          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: hub.name }]} className="mb-6 text-primary-foreground/60 [&_a]:text-primary-foreground/60 [&_a:hover]:text-primary-foreground [&_span[aria-current]]:text-primary-foreground/80 [&_svg]:text-primary-foreground/40" />
           <h1 className="font-heading text-4xl md:text-5xl font-bold mb-6 text-primary-foreground">{hub.name}</h1>
           <p className="text-primary-foreground/80 text-lg max-w-2xl mb-8">
             Premium, eco-friendly house cleaning across {hub.stateAbbr === "MD" ? "Maryland" : hub.stateAbbr === "DC" ? "Washington, DC" : "Northern Virginia"}. Background-checked teams, flexible plans, satisfaction guaranteed.
