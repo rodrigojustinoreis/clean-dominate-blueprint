@@ -59,6 +59,7 @@ const CityPage = () => {
 
   return (
     <Layout>
+      {seoHelmet}
       <FAQSchema faqs={city.faqs} />
       <ServiceSchema
         serviceName={`House Cleaning in ${city.name}`}

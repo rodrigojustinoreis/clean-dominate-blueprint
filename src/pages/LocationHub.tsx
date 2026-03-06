@@ -57,6 +57,7 @@ const LocationHub = () => {
 
   return (
     <Layout>
+      {seoHelmet}
       <LocalBusinessSchema />
       <FAQSchema faqs={hub.faqs} />
       {/* Hero */}
