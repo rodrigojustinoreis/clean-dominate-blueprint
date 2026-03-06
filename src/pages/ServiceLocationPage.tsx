@@ -7,6 +7,7 @@ import { LocalBusinessSchema, ServiceSchema, FAQSchema } from "@/components/Sche
 import { getCity, getService, getServiceLocationIntro, getWhyChooseUs, getServiceLocationFAQs, slCities, slServices } from "@/data/service-locations";
 import { CheckCircle, MapPin, ArrowRight, Shield, Leaf, Clock, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import NotFound from "./NotFound";
 
 const ServiceLocationPage = () => {
@@ -46,13 +47,14 @@ const ServiceLocationPage = () => {
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-primary/5 via-background to-accent/5 pt-24 pb-12 md:pt-32 md:pb-16">
         <div className="container mx-auto px-4 max-w-4xl">
-          <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
-            <Link to="/" className="hover:text-primary transition-colors">Home</Link>
-            <span>/</span>
-            <Link to={`/locations/${city.slug}`} className="hover:text-primary transition-colors">{city.name}</Link>
-            <span>/</span>
-            <span className="text-foreground">{service.name}</span>
-          </div>
+          <Breadcrumbs
+            items={[
+              { label: "Home", href: "/" },
+              { label: city.name, href: `/locations/${city.slug}` },
+              { label: service.name },
+            ]}
+            className="mb-4"
+          />
           <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
             Professional {service.name} in {city.name}, {city.state}
           </h1>

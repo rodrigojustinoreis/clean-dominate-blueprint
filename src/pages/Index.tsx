@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { CheckCircle, Shield, Leaf, Star, MapPin, Sparkles, ArrowRight } from "lucide-react";
 import PricingTable from "@/components/PricingTable";
 import CityGallery from "@/components/CityGallery";

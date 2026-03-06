@@ -9,6 +9,7 @@ import { ServiceSchema, FAQSchema } from "@/components/SchemaMarkup";
 import { useSEO } from "@/hooks/useSEO";
 import { getServiceBySlug } from "@/data/services";
 import { cities } from "@/data/locations";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import NotFound from "./NotFound";
 
 const topCities = cities.filter(c => !c.slug.includes("county")).slice(0, 8);
@@ -32,6 +33,7 @@ const ServicePage = () => {
       <FAQSchema faqs={service.faqs} />
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 max-w-4xl">
+          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Services" }, { label: service.name }]} className="mb-6" />
           <h1 className="font-heading text-4xl md:text-5xl font-bold mb-6">{service.name}</h1>
           
           <div className="space-y-4 text-foreground leading-relaxed mb-12">

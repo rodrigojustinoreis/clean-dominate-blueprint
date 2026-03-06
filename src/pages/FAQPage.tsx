@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import QuoteForm from "@/components/QuoteForm";
 import { useSEO } from "@/hooks/useSEO";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 const faqCategories = [
   {
@@ -72,6 +73,7 @@ const FAQPage = () => {
       {/* Hero */}
       <section className="py-16 md:py-24 bg-secondary">
         <div className="container mx-auto px-4 text-center max-w-3xl">
+          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "FAQ" }]} className="mb-6 justify-center" />
           <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4">
             Frequently Asked Questions
           </h1>

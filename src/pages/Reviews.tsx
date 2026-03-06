@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import QuoteForm from "@/components/QuoteForm";
 import { useSEO } from "@/hooks/useSEO";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 const GOOGLE_REVIEW_URL = "https://g.page/r/capitalcleancare/review";
 const GOOGLE_MAPS_URL = "https://www.google.com/maps/place/Capital+Clean+Care";
@@ -33,6 +34,7 @@ const Reviews = () => {
       {seoHelmet}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
+          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Reviews" }]} className="mb-6" />
           <div className="text-center mb-12">
             <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4">Client Reviews</h1>
             <p className="text-muted-foreground max-w-2xl mx-auto text-lg">Hear from homeowners across Maryland, DC, and Virginia who trust Capital Clean Care with their homes.</p>
