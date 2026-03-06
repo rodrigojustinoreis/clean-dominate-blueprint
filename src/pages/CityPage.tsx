@@ -12,6 +12,7 @@ import { FAQSchema, ServiceSchema } from "@/components/SchemaMarkup";
 import { useSEO } from "@/hooks/useSEO";
 import { getCityBySlug } from "@/data/locations";
 import { services } from "@/data/services";
+import { slServices, slCities } from "@/data/service-locations";
 import NotFound from "./NotFound";
 import regionMD from "@/assets/region-maryland.jpg";
 import regionDC from "@/assets/region-dc.jpg";
@@ -54,6 +55,7 @@ const CityPage = () => {
   const stateLabel = city.stateSlug === "maryland" ? "Maryland" : city.stateSlug === "washington-dc" ? "Washington DC" : "Virginia";
   const cityLabel = city.state !== "DC" ? `${city.name}, ${city.state}` : city.name;
   const whyIntro = cityWhyIntros[city.slug] || `${city.name} homeowners choose Capital Clean Care for our reliable, eco-friendly cleaning services.`;
+  const hasServiceLocationPages = slCities.some((c) => c.slug === city.slug);
 
   return (
     <Layout>
@@ -120,11 +122,35 @@ const CityPage = () => {
       {/* Mid-page Conversion CTA */}
       <ConversionCTA cityName={city.name} variant="full" />
 
-      {/* Services Available */}
+      {/* Services Available — links to service-location pages when available */}
       <section className="py-14 md:py-20 bg-secondary">
         <div className="container mx-auto px-4 max-w-4xl">
           <h2 className="font-heading text-2xl md:text-3xl font-bold mb-3">Cleaning Services in {city.name}</h2>
-          <p className="text-muted-foreground mb-8">We bring the full range of Capital Clean Care services to {city.name}. Click any service to learn more.</p>
+          <p className="text-muted-foreground mb-8">We bring the full range of Capital Clean Care services to {city.name}. Click any service to learn more about how we serve your area.</p>
+
+          {/* Service-location specific links */}
+          {hasServiceLocationPages && (
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+              {slServices.map((sl) => (
+                <Card key={sl.slug} className="group hover:shadow-md transition-all duration-200 hover:-translate-y-0.5">
+                  <CardContent className="p-5">
+                    <Link to={`/locations/${city.slug}/${sl.slug}`} className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center shrink-0">
+                        <Sparkles className="h-5 w-5 text-accent" />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="font-medium text-foreground group-hover:text-accent transition-colors">{sl.name} in {city.name}</h3>
+                        <p className="text-xs text-muted-foreground mt-0.5">Professional {sl.shortName} tailored for {city.name} homes</p>
+                      </div>
+                      <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-accent transition-colors shrink-0" />
+                    </Link>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          )}
+
+          {/* General service links */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {services.map((s) => (
               <Card key={s.slug} className="group hover:shadow-md transition-all duration-200 hover:-translate-y-0.5">
