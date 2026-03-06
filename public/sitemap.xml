@@ -57,4 +57,186 @@
   <url><loc>https://capitalcleancare.com/locations/falls-church-va</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://capitalcleancare.com/locations/vienna-va</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://capitalcleancare.com/locations/tysons-va</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- Service + Location Pages (20 cities × 8 services = 160 pages) -->
+  <!-- Rockville -->
+  <url><loc>https://capitalcleancare.com/locations/rockville-md/house-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/rockville-md/deep-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/rockville-md/move-out-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/rockville-md/move-in-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/rockville-md/apartment-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/rockville-md/post-construction-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/rockville-md/recurring-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/rockville-md/eco-friendly-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <!-- Bethesda -->
+  <url><loc>https://capitalcleancare.com/locations/bethesda-md/house-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/bethesda-md/deep-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/bethesda-md/move-out-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/bethesda-md/move-in-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/bethesda-md/apartment-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/bethesda-md/post-construction-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/bethesda-md/recurring-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/bethesda-md/eco-friendly-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <!-- Silver Spring -->
+  <url><loc>https://capitalcleancare.com/locations/silver-spring-md/house-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/silver-spring-md/deep-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/silver-spring-md/move-out-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/silver-spring-md/move-in-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/silver-spring-md/apartment-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/silver-spring-md/post-construction-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/silver-spring-md/recurring-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/silver-spring-md/eco-friendly-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <!-- Gaithersburg -->
+  <url><loc>https://capitalcleancare.com/locations/gaithersburg-md/house-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/gaithersburg-md/deep-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/gaithersburg-md/move-out-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/gaithersburg-md/move-in-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/gaithersburg-md/apartment-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/gaithersburg-md/post-construction-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/gaithersburg-md/recurring-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/gaithersburg-md/eco-friendly-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <!-- Germantown -->
+  <url><loc>https://capitalcleancare.com/locations/germantown-md/house-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/germantown-md/deep-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/germantown-md/move-out-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/germantown-md/move-in-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/germantown-md/apartment-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/germantown-md/post-construction-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/germantown-md/recurring-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/germantown-md/eco-friendly-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <!-- Frederick -->
+  <url><loc>https://capitalcleancare.com/locations/frederick-md/house-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/frederick-md/deep-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/frederick-md/move-out-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/frederick-md/move-in-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/frederick-md/apartment-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/frederick-md/post-construction-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/frederick-md/recurring-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/frederick-md/eco-friendly-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <!-- Clarksburg -->
+  <url><loc>https://capitalcleancare.com/locations/clarksburg-md/house-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/clarksburg-md/deep-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/clarksburg-md/move-out-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/clarksburg-md/move-in-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/clarksburg-md/apartment-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/clarksburg-md/post-construction-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/clarksburg-md/recurring-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/clarksburg-md/eco-friendly-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <!-- Damascus -->
+  <url><loc>https://capitalcleancare.com/locations/damascus-md/house-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/damascus-md/deep-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/damascus-md/move-out-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/damascus-md/move-in-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/damascus-md/apartment-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/damascus-md/post-construction-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/damascus-md/recurring-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/damascus-md/eco-friendly-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <!-- Potomac -->
+  <url><loc>https://capitalcleancare.com/locations/potomac-md/house-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/potomac-md/deep-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/potomac-md/move-out-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/potomac-md/move-in-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/potomac-md/apartment-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/potomac-md/post-construction-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/potomac-md/recurring-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/potomac-md/eco-friendly-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <!-- Kensington -->
+  <url><loc>https://capitalcleancare.com/locations/kensington-md/house-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/kensington-md/deep-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/kensington-md/move-out-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/kensington-md/move-in-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/kensington-md/apartment-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/kensington-md/post-construction-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/kensington-md/recurring-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/kensington-md/eco-friendly-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <!-- Chevy Chase -->
+  <url><loc>https://capitalcleancare.com/locations/chevy-chase-md/house-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/chevy-chase-md/deep-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/chevy-chase-md/move-out-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/chevy-chase-md/move-in-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/chevy-chase-md/apartment-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/chevy-chase-md/post-construction-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/chevy-chase-md/recurring-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/chevy-chase-md/eco-friendly-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <!-- North Bethesda -->
+  <url><loc>https://capitalcleancare.com/locations/north-bethesda-md/house-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/north-bethesda-md/deep-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/north-bethesda-md/move-out-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/north-bethesda-md/move-in-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/north-bethesda-md/apartment-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/north-bethesda-md/post-construction-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/north-bethesda-md/recurring-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/north-bethesda-md/eco-friendly-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <!-- College Park -->
+  <url><loc>https://capitalcleancare.com/locations/college-park-md/house-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/college-park-md/deep-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/college-park-md/move-out-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/college-park-md/move-in-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/college-park-md/apartment-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/college-park-md/post-construction-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/college-park-md/recurring-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/college-park-md/eco-friendly-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <!-- Laurel -->
+  <url><loc>https://capitalcleancare.com/locations/laurel-md/house-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/laurel-md/deep-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/laurel-md/move-out-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/laurel-md/move-in-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/laurel-md/apartment-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/laurel-md/post-construction-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/laurel-md/recurring-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/laurel-md/eco-friendly-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <!-- Olney -->
+  <url><loc>https://capitalcleancare.com/locations/olney-md/house-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/olney-md/deep-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/olney-md/move-out-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/olney-md/move-in-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/olney-md/apartment-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/olney-md/post-construction-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/olney-md/recurring-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/olney-md/eco-friendly-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <!-- Bowie -->
+  <url><loc>https://capitalcleancare.com/locations/bowie-md/house-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/bowie-md/deep-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/bowie-md/move-out-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/bowie-md/move-in-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/bowie-md/apartment-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/bowie-md/post-construction-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/bowie-md/recurring-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/bowie-md/eco-friendly-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <!-- Hyattsville -->
+  <url><loc>https://capitalcleancare.com/locations/hyattsville-md/house-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/hyattsville-md/deep-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/hyattsville-md/move-out-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/hyattsville-md/move-in-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/hyattsville-md/apartment-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/hyattsville-md/post-construction-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/hyattsville-md/recurring-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/hyattsville-md/eco-friendly-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <!-- Takoma Park -->
+  <url><loc>https://capitalcleancare.com/locations/takoma-park-md/house-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/takoma-park-md/deep-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/takoma-park-md/move-out-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/takoma-park-md/move-in-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/takoma-park-md/apartment-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/takoma-park-md/post-construction-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/takoma-park-md/recurring-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/takoma-park-md/eco-friendly-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <!-- Burtonsville -->
+  <url><loc>https://capitalcleancare.com/locations/burtonsville-md/house-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/burtonsville-md/deep-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/burtonsville-md/move-out-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/burtonsville-md/move-in-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/burtonsville-md/apartment-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/burtonsville-md/post-construction-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/burtonsville-md/recurring-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/burtonsville-md/eco-friendly-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <!-- Montgomery Village -->
+  <url><loc>https://capitalcleancare.com/locations/montgomery-village-md/house-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/montgomery-village-md/deep-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/montgomery-village-md/move-out-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/montgomery-village-md/move-in-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/montgomery-village-md/apartment-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/montgomery-village-md/post-construction-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/montgomery-village-md/recurring-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/montgomery-village-md/eco-friendly-cleaning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
 </urlset>
