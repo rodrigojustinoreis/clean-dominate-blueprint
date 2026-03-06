@@ -15,6 +15,7 @@ const ServicePage = lazy(() => import("./pages/ServicePage"));
 const LocationHub = lazy(() => import("./pages/LocationHub"));
 const CityPage = lazy(() => import("./pages/CityPage"));
 const FAQPage = lazy(() => import("./pages/FAQPage"));
+const ServiceLocationPage = lazy(() => import("./pages/ServiceLocationPage"));
 
 const queryClient = new QueryClient();
 
@@ -39,6 +40,7 @@ const App = () => (
             <Route path="/services/:slug" element={<ServicePage />} />
             <Route path="/faq" element={<FAQPage />} />
             <Route path="/:stateSlug" element={<LocationHub />} />
+            <Route path="/locations/:slug/:serviceSlug" element={<ServiceLocationPage />} />
             <Route path="/locations/:slug" element={<CityPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
