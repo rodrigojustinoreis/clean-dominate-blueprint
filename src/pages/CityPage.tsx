@@ -55,6 +55,7 @@ const CityPage = () => {
   const stateLabel = city.stateSlug === "maryland" ? "Maryland" : city.stateSlug === "washington-dc" ? "Washington DC" : "Virginia";
   const cityLabel = city.state !== "DC" ? `${city.name}, ${city.state}` : city.name;
   const whyIntro = cityWhyIntros[city.slug] || `${city.name} homeowners choose Capital Clean Care for our reliable, eco-friendly cleaning services.`;
+  const hasServiceLocationPages = slCities.some((c) => c.slug === city.slug);
 
   return (
     <Layout>
