@@ -49,7 +49,7 @@ const CityPage = () => {
 
   if (!city) return <NotFound />;
 
-  useSEO({ title: city.metaTitle, description: city.metaDescription });
+  const { seoHelmet } = useSEO({ title: city.metaTitle, description: city.metaDescription, canonical: `https://capitalcleancare.com/locations/${city.slug}` });
 
   const nearbyCities = city.nearbySlugs.map(getCityBySlug).filter(Boolean);
   const stateLabel = city.stateSlug === "maryland" ? "Maryland" : city.stateSlug === "washington-dc" ? "Washington DC" : "Virginia";
@@ -59,6 +59,7 @@ const CityPage = () => {
 
   return (
     <Layout>
+      {seoHelmet}
       <FAQSchema faqs={city.faqs} />
       <ServiceSchema
         serviceName={`House Cleaning in ${city.name}`}

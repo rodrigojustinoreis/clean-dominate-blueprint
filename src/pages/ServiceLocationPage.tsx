@@ -23,7 +23,7 @@ const ServiceLocationPage = () => {
   const metaDescription = `Top-rated ${service.shortName} in ${city.name}, ${city.state}. Eco-friendly products, background-checked teams, satisfaction guaranteed. Serving ${city.county}. Free quotes.`;
   const pageUrl = `https://capitalcleancare.com/locations/${city.slug}/${service.slug}`;
 
-  useSEO({ title: metaTitle, description: metaDescription });
+  const { seoHelmet } = useSEO({ title: metaTitle, description: metaDescription, canonical: pageUrl });
 
   // Get related service pages for this city
   const relatedServices = slServices.filter(s => s.slug !== service.slug).slice(0, 4);
@@ -34,6 +34,7 @@ const ServiceLocationPage = () => {
 
   return (
     <Layout>
+      {seoHelmet}
       <LocalBusinessSchema areaServed={[city.name, city.county]} />
       <ServiceSchema
         serviceName={`${service.name} in ${city.name}`}

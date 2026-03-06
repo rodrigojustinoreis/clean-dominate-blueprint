@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { lazy, Suspense } from "react";
+import { HelmetProvider } from "react-helmet-async";
 
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
@@ -26,28 +27,30 @@ const Loading = () => (
 );
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Suspense fallback={<Loading />}>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/reviews" element={<Reviews />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/services/:slug" element={<ServicePage />} />
-            <Route path="/faq" element={<FAQPage />} />
-            <Route path="/:stateSlug" element={<LocationHub />} />
-            <Route path="/locations/:slug/:serviceSlug" element={<ServiceLocationPage />} />
-            <Route path="/locations/:slug" element={<CityPage />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Suspense>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
+  <HelmetProvider>
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <Suspense fallback={<Loading />}>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/reviews" element={<Reviews />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/services/:slug" element={<ServicePage />} />
+              <Route path="/faq" element={<FAQPage />} />
+              <Route path="/:stateSlug" element={<LocationHub />} />
+              <Route path="/locations/:slug/:serviceSlug" element={<ServiceLocationPage />} />
+              <Route path="/locations/:slug" element={<CityPage />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Suspense>
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  </HelmetProvider>
 );
 
 export default App;
