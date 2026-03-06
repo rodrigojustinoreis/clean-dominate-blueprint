@@ -45,9 +45,7 @@ function getAllRoutes(): string[] {
 }
 
 export async function prerender() {
-  // vite-prerender-plugin uses the rendered DOM content
-  // We return all routes to crawl
-  const root = document.getElementById("root");
+  const root = typeof document !== "undefined" ? document.getElementById("root") : null;
   return {
     html: root?.innerHTML || "",
     links: getAllRoutes(),
