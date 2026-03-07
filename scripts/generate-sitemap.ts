@@ -13,7 +13,8 @@ const cities = [
   "germantown-md", "frederick-md", "clarksburg-md", "damascus-md",
   "potomac-md", "kensington-md", "chevy-chase-md", "north-bethesda-md",
   "college-park-md", "laurel-md", "olney-md", "bowie-md",
-  "hyattsville-md", "takoma-park-md", "burtonsville-md", "montgomery-village-md"
+  "hyattsville-md", "takoma-park-md", "burtonsville-md", "montgomery-village-md",
+  "wheaton-md"
 ];
 
 const services = [
@@ -36,8 +37,9 @@ const staticPages = [
 ];
 
 const servicePages = [
-  "/services/house-cleaning", "/services/deep-cleaning", "/services/move-out-cleaning",
-  "/services/recurring-cleaning", "/services/eco-friendly-cleaning",
+  "/services/standard-cleaning", "/services/deep-cleaning",
+  "/services/move-in-move-out-cleaning", "/services/post-construction-cleaning",
+  "/services/recurring-cleaning",
 ];
 
 let urls = "";
