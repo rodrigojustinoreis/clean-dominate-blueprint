@@ -284,6 +284,19 @@ export const slCities: ServiceLocationCity[] = [
     challenges: "aging townhouse and condo interiors requiring refreshing, managing HOA-standard cleanliness, and addressing moisture issues in lower-level townhouse units",
     lifestyle: "Montgomery Village residents enjoy community amenities and neighborly connections. The diverse population includes retirees, young families, and professionals who value the community's convenience",
     seasonalNote: "The community's mature trees and proximity to Seneca Creek contribute to heavy seasonal pollen that settles throughout homes from early spring into summer"
+  },
+  {
+    name: "Wheaton",
+    slug: "wheaton-md",
+    state: "MD",
+    county: "Montgomery County",
+    population: "50,000",
+    neighborhoods: ["Wheaton Hills", "Kensington View", "Glenmont", "Arcola Towers", "Georgia Avenue Corridor", "Brookside"],
+    localDetails: "Wheaton is a culturally diverse community in central Montgomery County anchored by Wheaton Regional Park and Brookside Gardens. The area features a mix of well-maintained mid-century homes, growing infill development, and easy Metro access.",
+    housingTypes: "mid-century colonials, split-levels, ramblers, renovated bungalows, and apartment complexes near the Metro",
+    challenges: "urban dust from the Georgia Avenue corridor, aging home systems in mid-century housing stock, and pollen from Wheaton Regional Park's extensive tree coverage",
+    lifestyle: "Wheaton residents value diversity, affordability, and convenience. Many commute via the Red Line Metro and appreciate time-saving services that maintain their homes",
+    seasonalNote: "Proximity to Wheaton Regional Park and Brookside Gardens means heavy spring pollen and fall leaf debris tracked into homes year-round"
   }
 ];
 

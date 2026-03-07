@@ -28,7 +28,7 @@ export const hubs: HubData[] = [
     slug: "maryland",
     stateAbbr: "MD",
     intro: "Capital Clean Care proudly serves communities throughout Maryland with premium residential cleaning services. From the bustling suburbs of Montgomery County to the charming towns of Frederick County and the thriving communities of Howard County, our eco-friendly cleaning teams bring sparkle and freshness to homes across the state.\n\nMaryland homeowners deserve a cleaning service that understands the unique demands of mid-Atlantic living. Seasonal humidity, pollen, and the dust that accompanies both urban and suburban life require consistent, thorough cleaning routines. Our trained professionals use plant-based, non-toxic products that address these challenges while keeping your family and pets safe.\n\nWhether you live in a historic Bethesda colonial, a modern Rockville apartment, or a spacious Frederick farmhouse, Capital Clean Care adapts our services to your home's specific needs. We offer standard cleaning, deep cleaning, move-in/move-out services, post-construction cleanup, and flexible recurring plans throughout Maryland.\n\nOur Maryland coverage includes Montgomery County, Frederick County, Howard County, and Prince George's County, with service areas continuing to grow. Each community we serve receives the same commitment to quality, reliability, and eco-conscious cleaning that defines Capital Clean Care.\n\nBelow you'll find links to our service areas across Maryland. Each location page provides details specific to your community, including services available, pricing factors, and how to request a free quote.",
-    citySlugs: ["rockville-md", "silver-spring-md", "bethesda-md", "germantown-md", "gaithersburg-md", "potomac-md", "frederick-md", "urbana-md", "clarksburg-md", "damascus-md", "monrovia-md", "takoma-park-md", "columbia-md", "ellicott-city-md", "new-market-md", "montgomery-county-md", "frederick-county-md", "howard-county-md", "prince-georges-county-md"],
+    citySlugs: ["rockville-md", "silver-spring-md", "bethesda-md", "germantown-md", "gaithersburg-md", "potomac-md", "frederick-md", "urbana-md", "clarksburg-md", "damascus-md", "monrovia-md", "takoma-park-md", "columbia-md", "ellicott-city-md", "new-market-md", "wheaton-md", "montgomery-county-md", "frederick-county-md", "howard-county-md", "prince-georges-county-md"],
     faqs: [
       { q: "What areas in Maryland do you serve?", a: "We serve communities across Montgomery County, Frederick County, Howard County, and Prince George's County, including Rockville, Bethesda, Silver Spring, Germantown, Frederick, Columbia, Ellicott City, and many more." },
       { q: "How do I book a cleaning in Maryland?", a: "Simply fill out our free quote form, call us directly, or select your specific city page for location-specific booking. We typically respond within a few hours." },
@@ -662,6 +662,25 @@ export const cities: CityData[] = [
     ],
     metaTitle: "House Cleaning Services in Tysons, VA | Capital Clean Care",
     metaDescription: "Professional house cleaning in Tysons, VA. Serving luxury condos, apartments & townhomes. Eco-friendly, background-checked teams. Get a free quote today."
+  },
+  {
+    name: "Wheaton",
+    slug: "wheaton-md",
+    state: "MD",
+    stateSlug: "maryland",
+    county: "Montgomery County",
+    intro: "Wheaton is a vibrant, multicultural community in central Montgomery County known for its diverse dining scene, accessible Metro station, and welcoming neighborhood feel. Wheaton Regional Park — one of the largest parks in the county — anchors the area with trails, gardens, and recreational facilities that residents love.\n\nThe housing in Wheaton reflects its accessible character: well-maintained mid-century colonials, split-levels, ramblers, and a growing number of renovated homes attract first-time buyers, young families, and long-time residents alike. Capital Clean Care serves all Wheaton neighborhoods with cleaning services tailored to this diverse housing stock.\n\nWheaton's central location along Georgia Avenue and University Boulevard means busy traffic and urban dust can affect homes, making consistent cleaning important. Our eco-friendly, non-toxic products address these challenges while keeping your family and pets safe. Whether you live near the Wheaton Metro, along Arcola Avenue, or in the neighborhoods bordering Brookside Gardens, Capital Clean Care delivers reliable, high-quality cleaning you can count on.",
+    nearbySlugs: ["silver-spring-md", "kensington-md", "rockville-md", "gaithersburg-md", "takoma-park-md"],
+    faqs: [
+      { q: "What Wheaton neighborhoods do you serve?", a: "We serve all Wheaton neighborhoods including the areas around Wheaton Regional Park, Georgia Avenue corridor, Arcola Avenue, Kensington View, Glenmont, and surrounding communities." },
+      { q: "How much does house cleaning cost in Wheaton?", a: "Pricing depends on home size, condition, and service type. Wheaton homes are competitively priced. Fill out our free quote form for an accurate estimate." },
+      { q: "Do you serve apartments near the Wheaton Metro?", a: "Yes. We clean apartments, condos, and houses throughout Wheaton including those near the Metro station and Westfield Wheaton area." },
+      { q: "Are your products safe for children and pets?", a: "Absolutely. We use only plant-based, non-toxic cleaning products safe for families, kids, and pets." },
+      { q: "Can I get bi-weekly cleaning in Wheaton?", a: "Yes. Weekly, bi-weekly, and monthly plans are available with preferred pricing and dedicated teams for Wheaton residents." },
+      { q: "Do you clean on weekends in Wheaton?", a: "Yes, Saturday appointments are available. Weekend slots fill quickly, so book in advance." }
+    ],
+    metaTitle: "House Cleaning Services in Wheaton, MD | Capital Clean Care",
+    metaDescription: "Professional house cleaning in Wheaton, MD (ZIP 20902). Eco-friendly products, background-checked teams, serving all Wheaton neighborhoods. Free quotes."
   }
 ];
 
