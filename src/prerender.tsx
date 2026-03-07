@@ -27,7 +27,7 @@ function getAllRoutes(): string[] {
     "rockville-md", "bethesda-md", "silver-spring-md", "gaithersburg-md",
     "germantown-md", "frederick-md", "potomac-md", "kensington-md",
     "chevy-chase-md", "college-park-md", "laurel-md", "bowie-md",
-    "takoma-park-md", "arlington-va", "alexandria-va", "fairfax-va",
+    "takoma-park-md", "wheaton-md", "arlington-va", "alexandria-va", "fairfax-va",
     "mclean-va", "reston-va", "washington-dc",
   ];
   for (const c of citySlugs) {

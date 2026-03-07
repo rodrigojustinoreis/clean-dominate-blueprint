@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import { CheckCircle, ArrowRight } from "lucide-react";
+import { CheckCircle, ArrowRight, Star } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
@@ -43,7 +43,7 @@ const ServicePage = () => {
           </div>
 
           <div className="mb-12">
-            <h2 className="font-heading text-2xl font-bold mb-4">What's Included</h2>
+            <h2 className="font-heading text-2xl font-bold mb-4">What's Included — {service.whatsIncluded.length}-Point Checklist</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {service.whatsIncluded.map((item, i) => (
                 <div key={i} className="flex gap-2 items-start">
@@ -65,6 +65,29 @@ const ServicePage = () => {
               ))}
             </div>
           </div>
+
+          {/* Testimonials */}
+          {service.testimonials && service.testimonials.length > 0 && (
+            <div className="mb-12">
+              <h2 className="font-heading text-2xl font-bold mb-6">What Our Clients Say About {service.name}</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {service.testimonials.map((t, i) => (
+                  <Card key={i}>
+                    <CardContent className="p-5">
+                      <div className="flex gap-0.5 mb-3">
+                        {Array.from({ length: 5 }).map((_, j) => (
+                          <Star key={j} className="h-4 w-4 fill-accent text-accent" />
+                        ))}
+                      </div>
+                      <p className="text-foreground italic mb-3 text-sm leading-relaxed">"{t.text}"</p>
+                      <p className="text-sm font-semibold">{t.name}</p>
+                      <p className="text-xs text-muted-foreground">{t.location}</p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          )}
 
           {/* Service Areas */}
           <div className="mb-12">
