@@ -27,14 +27,7 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
-    // Minify CSS & JS
     minify: "esbuild",
-    esbuildOptions: {
-      compress: {
-        drop_console: true,
-        drop_debugger: true,
-      },
-    },
     // Code splitting for better caching
     rollupOptions: {
       output: {
