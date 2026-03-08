@@ -183,25 +183,6 @@ const PriceCalculator = () => {
           </div>
         </div>
 
-        {/* Add-ons */}
-        <div className="mb-6">
-          <Label className="mb-3 block">Optional Add-Ons</Label>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-            {addons.map((addon) => (
-              <label
-                key={addon.id}
-                className="flex items-center gap-2 p-2 rounded-lg border border-border hover:bg-accent/5 cursor-pointer transition-colors"
-              >
-                <Checkbox
-                  checked={selectedAddons.includes(addon.id)}
-                  onCheckedChange={() => toggleAddon(addon.id)}
-                />
-                <span className="text-sm flex-1">{addon.label}</span>
-                <span className="text-xs font-medium text-muted-foreground">+${addon.price}</span>
-              </label>
-            ))}
-          </div>
-        </div>
 
         {/* Result */}
         {estimate && (
