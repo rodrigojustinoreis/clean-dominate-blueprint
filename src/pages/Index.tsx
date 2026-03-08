@@ -15,7 +15,6 @@ import FAQ from "@/components/FAQ";
 import { useSEO } from "@/hooks/useSEO";
 import { services } from "@/data/services";
 import { hubs, mdCities, dcCities, vaCities } from "@/data/locations";
-import { hubs, mdCities, dcCities, vaCities } from "@/data/locations";
 import heroImage from "@/assets/hero-clean-home.jpg";
 import regionMD from "@/assets/region-maryland.jpg";
 import regionDC from "@/assets/region-dc.jpg";
