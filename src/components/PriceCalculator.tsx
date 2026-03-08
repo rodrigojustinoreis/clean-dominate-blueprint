@@ -207,7 +207,7 @@ const PriceCalculator = () => {
         {estimate && (
           <div className="bg-accent/10 rounded-xl p-6 text-center mb-6 animate-in fade-in duration-300">
             <p className="text-sm text-muted-foreground mb-1">Estimated Price Range</p>
-            <p className="font-heading text-4xl font-bold text-accent">
+            <p className="font-heading text-3xl md:text-4xl font-bold text-accent">
               ${estimate.low} – ${estimate.high}
             </p>
             {estimate.savings > 0 && (

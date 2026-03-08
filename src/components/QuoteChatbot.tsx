@@ -127,7 +127,7 @@ const QuoteChatbot = () => {
       {/* Floating button */}
       <button
         onClick={() => setOpen(!open)}
-        className="fixed bottom-20 right-4 z-50 w-14 h-14 rounded-full bg-accent text-accent-foreground shadow-lg flex items-center justify-center hover:scale-105 transition-transform md:bottom-6"
+        className="fixed bottom-[4.5rem] right-4 z-50 w-12 h-12 md:w-14 md:h-14 rounded-full bg-accent text-accent-foreground shadow-lg flex items-center justify-center hover:scale-105 transition-transform md:bottom-6"
         aria-label="Open chat for instant quote"
       >
         {open ? <X className="h-6 w-6" /> : <MessageCircle className="h-6 w-6" />}
@@ -135,7 +135,7 @@ const QuoteChatbot = () => {
 
       {/* Chat panel */}
       {open && (
-        <div className="fixed bottom-36 right-4 z-50 w-[340px] max-h-[480px] rounded-2xl border border-border bg-background shadow-2xl flex flex-col overflow-hidden md:bottom-22">
+        <div className="fixed bottom-[8rem] right-2 left-2 z-50 max-h-[60vh] rounded-2xl border border-border bg-background shadow-2xl flex flex-col overflow-hidden md:left-auto md:right-4 md:w-[340px] md:max-h-[480px] md:bottom-22">
           {/* Header */}
           <div className="bg-primary text-primary-foreground p-4 flex items-center justify-between">
             <span className="font-heading font-semibold text-sm">Capital Clean Care</span>
