@@ -24,6 +24,9 @@ function getAllRoutes(): string[] {
     "/services/move-out-cleaning",
     "/services/recurring-cleaning",
     "/services/eco-friendly-cleaning",
+    "/spring-cleaning-md",
+    "/privacy-policy",
+    "/terms-of-service",
   ];
 
   // City pages
