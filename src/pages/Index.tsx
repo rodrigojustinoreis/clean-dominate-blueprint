@@ -15,6 +15,7 @@ import FAQ from "@/components/FAQ";
 import { useSEO } from "@/hooks/useSEO";
 import { services } from "@/data/services";
 import { hubs, mdCities, dcCities, vaCities } from "@/data/locations";
+import { vanityLandingPages } from "@/data/vanity-landings";
 import heroImage from "@/assets/hero-clean-home.jpg";
 import regionMD from "@/assets/region-maryland.jpg";
 import regionDC from "@/assets/region-dc.jpg";
@@ -235,6 +236,39 @@ const Index = () => {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Location-Specific Pages — Content Silo Links */}
+      <section className="py-12 md:py-16 bg-muted/30">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="text-center mb-10">
+            <h2 className="font-heading text-2xl md:text-3xl font-bold mb-3">Local Cleaning Services Near You</h2>
+            <p className="text-muted-foreground">Explore our city-specific cleaning pages with tailored services, checklists, and local pricing.</p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {vanityLandingPages.slice(0, 9).map((vp) => (
+              <Card key={vp.slug} className="group hover:shadow-md transition-all duration-200 hover:-translate-y-0.5">
+                <CardContent className="p-5">
+                  <Link to={`/${vp.slug}`} className="block">
+                    <div className="flex items-center gap-2 mb-2">
+                      <MapPin className="h-4 w-4 text-accent shrink-0" aria-hidden="true" />
+                      <h3 className="font-heading font-semibold text-sm text-foreground group-hover:text-accent transition-colors">{vp.h1}</h3>
+                    </div>
+                    <p className="text-xs text-muted-foreground line-clamp-2">{vp.metaDescription}</p>
+                    <span className="text-accent font-medium text-xs mt-2 inline-flex items-center gap-1">
+                      View Details <ArrowRight className="h-3 w-3" />
+                    </span>
+                  </Link>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+          <div className="text-center mt-6">
+            <Button variant="outline" size="sm" asChild>
+              <Link to="/maryland" aria-label="View all Maryland cleaning service locations">View All Maryland Locations <ArrowRight className="ml-1 h-3 w-3" /></Link>
+            </Button>
           </div>
         </div>
       </section>
