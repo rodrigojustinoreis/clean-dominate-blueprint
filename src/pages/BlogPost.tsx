@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { useSEO } from "@/hooks/useSEO";
+import { ArticleSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import { blogPosts } from "./Blog";
 import NotFound from "./NotFound";
 
@@ -110,6 +111,13 @@ const BlogPost = () => {
   return (
     <Layout>
       {seoHelmet}
+      <ArticleSchema
+        title={post.title}
+        description={post.excerpt}
+        url={`https://capitalcleancare.com/blog/${post.slug}`}
+        datePublished={post.date}
+      />
+      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }, { label: post.title }]} />
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 max-w-3xl">
           <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }, { label: post.title }]} className="mb-6" />

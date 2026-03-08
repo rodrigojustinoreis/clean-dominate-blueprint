@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { useSEO } from "@/hooks/useSEO";
+import { BreadcrumbSchema } from "@/components/SchemaMarkup";
 
 export interface BlogPost {
   slug: string;
