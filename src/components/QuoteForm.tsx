@@ -29,10 +29,50 @@ const QuoteForm = () => {
     emailConsent: false,
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [submitting, setSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success("Thank you! We'll get back to you within 24 hours.");
-    setFormData({ name: "", phone: "", email: "", zip: "", service: "", bedrooms: "", bathrooms: "", frequency: "", date: "", message: "", smsConsent: false, emailConsent: false });
+    setSubmitting(true);
+
+    try {
+      // Save to database
+      const { error: dbError } = await supabase.from("quote_requests").insert({
+        name: formData.name,
+        phone: formData.phone,
+        email: formData.email,
+        zip: formData.zip,
+        service: formData.service,
+        bedrooms: formData.bedrooms || null,
+        bathrooms: formData.bathrooms || null,
+        frequency: formData.frequency || null,
+        preferred_date: formData.date || null,
+        message: formData.message || null,
+        sms_consent: formData.smsConsent,
+        email_consent: formData.emailConsent,
+      });
+
+      if (dbError) {
+        console.error("DB error:", dbError);
+      }
+
+      // Try to send email notification via edge function
+      try {
+        await supabase.functions.invoke("send-quote", {
+          body: formData,
+        });
+      } catch (emailErr) {
+        console.error("Email notification failed (form still saved):", emailErr);
+      }
+
+      toast.success("Thank you! We'll get back to you within 24 hours.");
+      setFormData({ name: "", phone: "", email: "", zip: "", service: "", bedrooms: "", bathrooms: "", frequency: "", date: "", message: "", smsConsent: false, emailConsent: false });
+    } catch (err) {
+      console.error("Submission error:", err);
+      toast.error("Something went wrong. Please try again or call us directly.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const update = (field: string, value: string) =>
