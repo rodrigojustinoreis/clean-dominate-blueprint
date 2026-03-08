@@ -187,8 +187,8 @@ const QuoteForm = () => {
         </label>
       </div>
 
-      <Button type="submit" variant="cta" size="lg" className="w-full text-base">
-        Get My Free Quote
+      <Button type="submit" variant="cta" size="lg" className="w-full text-base" disabled={submitting}>
+        {submitting ? "Sending..." : "Get My Free Quote"}
       </Button>
     </form>
   );
