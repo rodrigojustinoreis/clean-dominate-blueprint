@@ -30,6 +30,7 @@ const ServicePage = () => {
         serviceName={service.name}
         description={service.shortDescription}
         url={`https://capitalcleancare.com/services/${service.slug}`}
+        reviews={service.testimonials?.map(t => ({ name: t.name, text: t.text, location: t.location }))}
       />
       <FAQSchema faqs={service.faqs} />
       <section className="py-16 md:py-24">
