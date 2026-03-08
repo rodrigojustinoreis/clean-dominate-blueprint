@@ -1,4 +1,4 @@
-import { useParams, Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { CheckCircle, MapPin, ArrowRight, Shield, Leaf, Clock, Star, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -16,8 +16,9 @@ import { slServices } from "@/data/service-locations";
 import NotFound from "./NotFound";
 
 const VanityLandingPage = () => {
-  const { slug } = useParams<{ slug: string }>();
-  const config = getVanityPageBySlug(slug || "");
+  const location = useLocation();
+  const slug = location.pathname.replace(/^\//, "");
+  const config = getVanityPageBySlug(slug);
 
   if (!config) return <NotFound />;
 
