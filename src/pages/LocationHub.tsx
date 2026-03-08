@@ -10,6 +10,7 @@ import CityGallery from "@/components/CityGallery";
 import { LocalBusinessSchema, FAQSchema } from "@/components/SchemaMarkup";
 import { useSEO } from "@/hooks/useSEO";
 import { getHubBySlug, getCityBySlug } from "@/data/locations";
+import { vanityLandingPages } from "@/data/vanity-landings";
 import { services } from "@/data/services";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import NotFound from "./NotFound";
@@ -129,6 +130,30 @@ const LocationHub = () => {
           </div>
         </div>
       </section>
+
+      {/* Vanity Landing Page Links — MD only */}
+      {hub.stateAbbr === "MD" && (
+        <section className="py-12 md:py-16 bg-muted/30">
+          <div className="container mx-auto px-4 max-w-5xl">
+            <h2 className="font-heading text-2xl font-bold mb-3">Featured City-Specific Services in Maryland</h2>
+            <p className="text-muted-foreground text-sm mb-6">Explore detailed service pages with local checklists, FAQs, Google Maps, and tailored pricing for your city.</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+              {vanityLandingPages.filter(vp => vp.citySlug.endsWith("-md")).map((vp) => (
+                <Link
+                  key={vp.slug}
+                  to={`/${vp.slug}`}
+                  className="flex items-center gap-2 p-3 rounded-lg border border-border bg-background hover:shadow-sm hover:border-accent/30 transition-all text-sm"
+                  aria-label={vp.h1}
+                >
+                  <MapPin className="h-4 w-4 text-accent shrink-0" aria-hidden="true" />
+                  <span className="text-foreground font-medium">{vp.h1}</span>
+                  <ArrowRight className="h-3 w-3 text-muted-foreground ml-auto shrink-0" aria-hidden="true" />
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Why Choose Us */}
       <section className="py-12 md:py-16 bg-secondary">

@@ -1,4 +1,5 @@
 import { slCities, slServices } from "./data/service-locations";
+import { vanityLandingPages } from "./data/vanity-landings";
 
 /**
  * Prerender entry point for vite-prerender-plugin.
@@ -46,6 +47,11 @@ function getAllRoutes(): string[] {
     for (const service of slServices) {
       routes.push(`/locations/${city.slug}/${service.slug}`);
     }
+  }
+
+  // Vanity landing pages
+  for (const vp of vanityLandingPages) {
+    routes.push(`/${vp.slug}`);
   }
 
   return routes;
