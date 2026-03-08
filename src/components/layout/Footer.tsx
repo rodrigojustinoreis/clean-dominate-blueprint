@@ -107,12 +107,18 @@ const Footer = () => (
       </div>
 
       <div className="border-t border-primary-foreground/10 mt-8 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-primary-foreground/50">
-        <p>© {new Date().getFullYear()} Capital Clean Care. All rights reserved.</p>
+        <div className="flex flex-col sm:flex-row items-center gap-2">
+          <p>© {new Date().getFullYear()} Capital Clean Care. All rights reserved.</p>
+          <span className="hidden sm:inline">·</span>
+          <Link to="/privacy-policy" className="hover:text-accent transition-colors">Privacy Policy</Link>
+          <span className="hidden sm:inline">·</span>
+          <Link to="/terms-of-service" className="hover:text-accent transition-colors">Terms of Service</Link>
+        </div>
         <div className="flex items-center gap-4">
-          <a href="https://www.instagram.com/capital_cleancare" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors" aria-label="Instagram">
+          <a href="https://www.instagram.com/capital_cleancare" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors" aria-label="Follow Capital Clean Care on Instagram">
             <Instagram className="h-5 w-5" />
           </a>
-          <a href="https://www.facebook.com/capitalcleancare" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors" aria-label="Facebook">
+          <a href="https://www.facebook.com/capitalcleancare" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors" aria-label="Follow Capital Clean Care on Facebook">
             <Facebook className="h-5 w-5" />
           </a>
         </div>
