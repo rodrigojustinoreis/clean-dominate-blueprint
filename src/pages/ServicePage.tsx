@@ -10,6 +10,7 @@ import { useSEO } from "@/hooks/useSEO";
 import { getServiceBySlug } from "@/data/services";
 import { cities } from "@/data/locations";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import { slCities, slServices } from "@/data/service-locations";
 import NotFound from "./NotFound";
 
 const topCities = cities.filter(c => !c.slug.includes("county")).slice(0, 8);
@@ -89,16 +90,40 @@ const ServicePage = () => {
             </div>
           )}
 
-          {/* Service Areas */}
+          {/* Service Areas with keyword-rich anchor text */}
           <div className="mb-12">
-            <h2 className="font-heading text-2xl font-bold mb-4">Available In These Areas</h2>
-            <div className="flex flex-wrap gap-2">
+            <h2 className="font-heading text-2xl font-bold mb-4">{service.name} Available In These Areas</h2>
+            <div className="flex flex-wrap gap-2 mb-4">
               {topCities.map((c) => (
                 <Button key={c.slug} variant="outline" size="sm" asChild>
-                  <Link to={`/locations/${c.slug}`}>{c.name}, {c.state}</Link>
+                  <Link to={`/locations/${c.slug}`} aria-label={`${service.name} in ${c.name}, ${c.state}`}>
+                    {c.name}, {c.state}
+                  </Link>
                 </Button>
               ))}
             </div>
+            {/* Deep links to service-location pages */}
+            {slServices.some(sl => sl.slug === service.slug || sl.name.toLowerCase().includes(service.name.toLowerCase().split(" ")[0])) && (
+              <div className="mt-4">
+                <p className="text-sm text-muted-foreground mb-2">Detailed {service.name} pages by city:</p>
+                <div className="flex flex-wrap gap-2">
+                  {slCities.slice(0, 6).map((c) => {
+                    const matchedService = slServices.find(sl => sl.slug === service.slug || sl.name.toLowerCase().includes(service.name.toLowerCase().split(" ")[0]));
+                    if (!matchedService) return null;
+                    return (
+                      <Link
+                        key={c.slug}
+                        to={`/locations/${c.slug}/${matchedService.slug}`}
+                        className="text-sm text-accent hover:underline"
+                        aria-label={`${service.name} in ${c.name}`}
+                      >
+                        {service.name} in {c.name} →
+                      </Link>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
           </div>
 
           <div className="mb-12">
