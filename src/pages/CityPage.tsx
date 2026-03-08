@@ -14,6 +14,8 @@ import { getCityBySlug } from "@/data/locations";
 import { services } from "@/data/services";
 import { slServices, slCities } from "@/data/service-locations";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import GoogleMapEmbed from "@/components/GoogleMapEmbed";
+import GoogleBusinessLinks from "@/components/GoogleBusinessLinks";
 import NotFound from "./NotFound";
 import regionMD from "@/assets/region-maryland.jpg";
 import regionDC from "@/assets/region-dc.jpg";
@@ -237,9 +239,21 @@ const CityPage = () => {
         </div>
       </section>
 
+      {/* Google Map */}
+      <section className="py-14 md:py-20">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="font-heading text-2xl font-bold mb-4">Our {city.name} Service Area</h2>
+          <p className="text-muted-foreground mb-6">We serve all neighborhoods in and around {cityLabel}. See our coverage area below.</p>
+          <GoogleMapEmbed cityName={city.name} state={city.state === "DC" ? "DC" : city.state} />
+          <div className="mt-6">
+            <GoogleBusinessLinks />
+          </div>
+        </div>
+      </section>
+
       {/* Nearby Areas */}
       {nearbyCities.length > 0 && (
-        <section className="py-14 md:py-20">
+        <section className="py-14 md:py-20 bg-secondary">
           <div className="container mx-auto px-4 max-w-4xl">
             <h2 className="font-heading text-2xl font-bold mb-6">Nearby Areas We Serve</h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">

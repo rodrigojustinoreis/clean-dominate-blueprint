@@ -107,7 +107,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Services */}
+      {/* Internal Link Silo — Services × Locations */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
@@ -124,6 +124,23 @@ const Index = () => {
                   <Link to={`/services/${s.slug}`} className="text-accent font-medium text-sm inline-flex items-center gap-1 hover:gap-2 transition-all">
                     Learn More <ArrowRight className="h-3 w-3" />
                   </Link>
+                  {/* Keyword-rich internal links to service-location combos */}
+                  <div className="mt-3 flex flex-wrap gap-1.5">
+                    {["wheaton-md", "silver-spring-md", "bethesda-md", "arlington-va"].slice(0, 2).map((citySlug) => {
+                      const cityName = citySlug.replace(/-md|-va|-dc/g, "").split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
+                      const stateAbbr = citySlug.endsWith("-va") ? "VA" : citySlug.endsWith("-dc") ? "DC" : "MD";
+                      return (
+                        <Link
+                          key={citySlug}
+                          to={`/locations/${citySlug}`}
+                          className="text-xs text-muted-foreground hover:text-accent transition-colors"
+                          aria-label={`${s.name} in ${cityName}, ${stateAbbr}`}
+                        >
+                          {cityName}, {stateAbbr}
+                        </Link>
+                      );
+                    })}
+                  </div>
                 </CardContent>
               </Card>
             ))}

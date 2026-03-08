@@ -68,6 +68,7 @@ const Header = () => {
             <Link to="/about" className="px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">About</Link>
             <Link to="/reviews" className="px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">Reviews</Link>
             <Link to="/contact" className="px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">Contact</Link>
+            <Link to="/blog" className="px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">Blog</Link>
           </nav>
 
           <div className="hidden lg:flex items-center gap-3">
@@ -120,6 +121,7 @@ const Header = () => {
             <Link to="/about" className="block px-3 py-2 rounded-md hover:bg-secondary" onClick={() => setMobileOpen(false)}>About</Link>
             <Link to="/reviews" className="block px-3 py-2 rounded-md hover:bg-secondary" onClick={() => setMobileOpen(false)}>Reviews</Link>
             <Link to="/contact" className="block px-3 py-2 rounded-md hover:bg-secondary" onClick={() => setMobileOpen(false)}>Contact</Link>
+            <Link to="/blog" className="block px-3 py-2 rounded-md hover:bg-secondary" onClick={() => setMobileOpen(false)}>Blog</Link>
             
             <div className="pt-3 space-y-2">
               <a href="tel:+12407042551" className="block text-center font-semibold text-foreground">

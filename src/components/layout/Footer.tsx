@@ -3,6 +3,8 @@ import { Phone, Mail, Clock, Instagram, Facebook } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { services } from "@/data/services";
 import { mdCities, dcCities, vaCities } from "@/data/locations";
+import PartnerLinks from "@/components/PartnerLinks";
+import GoogleBusinessLinks from "@/components/GoogleBusinessLinks";
 import logo from "@/assets/logo.png";
 
 const Footer = () => (
@@ -91,7 +93,20 @@ const Footer = () => (
         </div>
       </div>
 
-      <div className="border-t border-primary-foreground/10 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-primary-foreground/50">
+      {/* Partners & GBP */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10 pt-8 border-t border-primary-foreground/10">
+        <PartnerLinks />
+        <div>
+          <h4 className="font-heading font-semibold mb-3 text-sm">Find Us Online</h4>
+          <GoogleBusinessLinks className="mb-3" />
+          <div className="space-y-1 text-xs text-primary-foreground/60">
+            <Link to="/blog" className="hover:text-accent transition-colors block">Read Our Blog →</Link>
+            <Link to="/reviews" className="hover:text-accent transition-colors block">Client Reviews →</Link>
+          </div>
+        </div>
+      </div>
+
+      <div className="border-t border-primary-foreground/10 mt-8 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-primary-foreground/50">
         <p>© {new Date().getFullYear()} Capital Clean Care. All rights reserved.</p>
         <div className="flex items-center gap-4">
           <a href="https://www.instagram.com/capital_cleancare" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors" aria-label="Instagram">
