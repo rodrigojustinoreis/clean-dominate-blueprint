@@ -43,8 +43,8 @@ export const hubs: HubData[] = [
       { q: "Can I get a free estimate for my Maryland home?", a: "Yes. All quotes are free with no obligation. Fill out our online form, call (240) 704-2551, or visit our contact page. We typically respond within a few hours." },
       { q: "Do you serve Maryland apartments and condos?", a: "Yes. We clean all types of Maryland residences including single-family homes, townhouses, apartments, condos, and high-rise units. We coordinate with building management when needed." }
     ],
-    metaTitle: "Maryland House Cleaning Services | Capital Clean Care",
-    metaDescription: "Premium house cleaning across Maryland — Montgomery, Frederick, Howard & Prince George's Counties. Eco-friendly, licensed & insured. Get a free quote today."
+    metaTitle: "House Cleaning Services in Maryland | Capital Clean Care",
+    metaDescription: "Premium eco-friendly house cleaning across Maryland — Montgomery, Frederick, Howard & Prince George's Counties. $25 off your first clean. Get a free quote!"
   },
   {
     name: "Washington DC Cleaning Services",
@@ -66,8 +66,8 @@ export const hubs: HubData[] = [
       { q: "Do you clean historic DC rowhouses?", a: "Yes. Our teams are trained in proper care for DC's historic properties, including appropriate products for original hardwood, plaster, vintage tile, and period fixtures." },
       { q: "Do you offer a satisfaction guarantee in DC?", a: "Yes. Our 100% satisfaction guarantee covers every DC cleaning. If any area doesn't meet your expectations, we'll return within 24 hours to make it right at no charge." }
     ],
-    metaTitle: "Washington DC House Cleaning Services | Capital Clean Care",
-    metaDescription: "Professional house cleaning throughout Washington, DC. Serving NW, NE, Capitol Hill, Georgetown & more. Eco-friendly, licensed & insured. Free quotes available."
+    metaTitle: "House Cleaning Services in Washington DC | Capital Clean Care",
+    metaDescription: "Eco-friendly house cleaning throughout Washington, DC. Serving NW, NE, Capitol Hill, Georgetown & more. Licensed & insured. $25 off — get a free quote!"
   },
   {
     name: "Northern Virginia Cleaning Services",
@@ -89,8 +89,8 @@ export const hubs: HubData[] = [
       { q: "Can I get a free estimate for my NoVA home?", a: "Absolutely. All quotes are free with no obligation. Fill out our online form or call (240) 704-2551 for a personalized estimate." },
       { q: "Do you serve luxury condos and high-rises in NoVA?", a: "Yes. We serve condos, apartments, townhomes, and single-family homes of all sizes throughout Northern Virginia, including luxury high-rises in Tysons and Arlington." }
     ],
-    metaTitle: "Northern Virginia House Cleaning Services | Capital Clean Care",
-    metaDescription: "Premium house cleaning in Northern Virginia — Arlington, McLean, Fairfax, Alexandria & more. Eco-friendly products, background-checked teams. Get a free quote."
+    metaTitle: "House Cleaning in Northern Virginia | Capital Clean Care",
+    metaDescription: "Eco-friendly house cleaning in Northern Virginia — Arlington, McLean, Fairfax & Alexandria. Licensed, insured, 5-star rated. $25 off — get your free quote!"
   }
 ];
 

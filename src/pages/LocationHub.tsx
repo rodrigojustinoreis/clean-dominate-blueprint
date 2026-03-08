@@ -67,7 +67,7 @@ const LocationHub = () => {
         <div className="absolute inset-0">
           <img
             src={regionImages[hub.stateAbbr] || regionMD}
-            alt={`${hub.name} neighborhood`}
+            alt={`Professional house cleaning service areas in ${hub.name} — Capital Clean Care`}
             className="w-full h-full object-cover"
             loading="eager"
           />

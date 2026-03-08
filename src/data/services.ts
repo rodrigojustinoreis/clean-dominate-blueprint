@@ -111,8 +111,8 @@ export const services: ServiceData[] = [
       { name: "Angela T.", location: "Silver Spring, MD", text: "I love that they use eco-friendly products. With two kids and a dog, knowing the products are safe gives me real peace of mind." },
       { name: "Mark S.", location: "Arlington, VA", text: "Best cleaning service we've used in the DMV. On time, efficient, and the quality is consistently excellent." }
     ],
-    metaTitle: "Standard House Cleaning Services | Capital Clean Care",
-    metaDescription: "Professional standard house cleaning in MD, DC & VA. Eco-friendly products, background-checked teams, satisfaction guaranteed. Get a free quote today."
+    metaTitle: "Standard House Cleaning in MD, DC & VA | Capital Clean Care",
+    metaDescription: "Routine eco-friendly house cleaning across Maryland, DC & Northern Virginia. Background-checked teams, non-toxic products, satisfaction guaranteed. Get $25 off your first clean!"
   },
   {
     name: "Deep Cleaning",
@@ -218,8 +218,8 @@ export const services: ServiceData[] = [
       { name: "Michael C.", location: "Germantown, MD", text: "After moving in, we had Capital Clean Care do a deep clean. They spent 7 hours making every inch spotless. The grout in the bathrooms looks brand new." },
       { name: "Jessica W.", location: "Bethesda, MD", text: "Quarterly deep cleans have become our routine. The team is meticulous and always finds things to address that we'd never think of." }
     ],
-    metaTitle: "Deep Cleaning Services in MD, DC & VA | Capital Clean Care",
-    metaDescription: "Intensive deep house cleaning across Maryland, DC & Virginia. Eco-friendly products, thorough top-to-bottom cleaning. Licensed & insured. Free quotes available."
+    metaTitle: "Deep House Cleaning in MD, DC & VA | Capital Clean Care",
+    metaDescription: "Top-to-bottom deep cleaning for Maryland, DC & Virginia homes. Inside appliances, baseboards, vents & more. Eco-friendly & insured. Book your free quote today!"
   },
   {
     name: "Move In / Move Out Cleaning",
@@ -320,8 +320,8 @@ export const services: ServiceData[] = [
       { name: "Samantha K.", location: "Georgetown, DC", text: "They cleaned our new home before we moved in. Every cabinet, every closet, every surface was pristine. It felt truly fresh and safe for our newborn." },
       { name: "Carlos M.", location: "Gaithersburg, MD", text: "Moved out of our house of 15 years. The team spent a full day and left it spotless. Absolutely worth it for the peace of mind." }
     ],
-    metaTitle: "Move In & Move Out Cleaning | Capital Clean Care",
-    metaDescription: "Professional move-in and move-out cleaning services in MD, DC & VA. Thorough property transition cleaning with eco-friendly products. Book your free quote."
+    metaTitle: "Move In & Move Out Cleaning in MD, DC & VA | Capital Clean Care",
+    metaDescription: "Professional move-in/move-out cleaning in Maryland, DC & Virginia. Pass inspection, maximize deposit return. Eco-friendly, licensed & insured. Get a free quote!"
   },
   {
     name: "Post-Construction Cleaning",
@@ -407,8 +407,8 @@ export const services: ServiceData[] = [
       { name: "Katherine W.", location: "Bethesda, MD", text: "Our contractor recommended Capital Clean Care for the final cleanup. They removed paint splatters, adhesive residue, and dust from places we never would have found." },
       { name: "Tom D.", location: "Columbia, MD", text: "Built a new home and hired them for the pre-move-in clean. They removed all the protective films, cleaned inside every cabinet, and made it truly move-in ready." }
     ],
-    metaTitle: "Post-Construction Cleaning Services | Capital Clean Care",
-    metaDescription: "Expert post-construction and renovation cleanup in MD, DC & VA. Specialized dust removal, multi-phase cleaning. Licensed, insured, eco-friendly. Free estimates."
+    metaTitle: "Post-Construction Cleaning in MD, DC & VA | Capital Clean Care",
+    metaDescription: "Expert post-renovation & new-build cleanup across Maryland, DC & Virginia. HEPA dust removal, multi-phase cleaning, eco-friendly. Get your free estimate today!"
   },
   {
     name: "Recurring Cleaning",
@@ -487,8 +487,8 @@ export const services: ServiceData[] = [
       { name: "Rachel B.", location: "Rockville, MD", text: "Switched from monthly to bi-weekly and the difference is remarkable. Our home never gets to that 'it needs cleaning' point anymore." },
       { name: "Linda P.", location: "Potomac, MD", text: "Love the rotating deep-clean focus. Each visit tackles a different area in depth, so over the month every part of the house gets extra attention." }
     ],
-    metaTitle: "Recurring House Cleaning Plans | Capital Clean Care",
-    metaDescription: "Weekly, bi-weekly & monthly house cleaning plans in MD, DC & VA. Dedicated teams, eco-friendly products, preferred pricing. No contracts. Get your free quote."
+    metaTitle: "Recurring House Cleaning Plans in MD, DC & VA | Capital Clean Care",
+    metaDescription: "Weekly, bi-weekly & monthly cleaning plans across Maryland, DC & Virginia. Save up to 25%, dedicated teams, eco-friendly products. No contracts — get a free quote!"
   }
 ];
 
