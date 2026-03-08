@@ -78,17 +78,17 @@ const Index = () => {
       <FAQSchema faqs={homeFaqs} />
       <DiscountBanner />
       {/* Hero */}
-      <section className="relative overflow-hidden min-h-[500px] md:min-h-[600px]">
+      <section className="relative overflow-hidden min-h-[420px] md:min-h-[600px]">
         <div className="absolute inset-0">
           <img src={heroImage} alt="Capital Clean Care professional carrying eco-friendly cleaning supplies" className="w-full h-full object-cover object-center" loading="eager" />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/75 to-primary/40 md:to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/60 md:from-primary/90 md:via-primary/75 md:to-transparent" />
         </div>
-        <div className="relative container mx-auto px-4 py-20 md:py-32">
+        <div className="relative container mx-auto px-4 py-14 md:py-32">
           <div className="max-w-2xl">
-            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6 leading-tight">
+            <h1 className="font-heading text-3xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-4 md:mb-6 leading-tight">
               Premium Eco-Friendly House Cleaning in MD, DC & VA
             </h1>
-            <p className="text-lg md:text-xl text-primary-foreground/85 mb-8 leading-relaxed">
+            <p className="text-base md:text-xl text-primary-foreground/85 mb-6 md:mb-8 leading-relaxed">
               Experience the difference of truly clean. Our background-checked professionals use non-toxic, plant-based products to make your home sparkle — safely.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
@@ -99,9 +99,9 @@ const Index = () => {
                 <a href="tel:+12407042551">Call (240) 704-2551</a>
               </Button>
             </div>
-            <div className="flex flex-wrap gap-4 mt-8">
+            <div className="flex flex-wrap gap-3 md:gap-4 mt-6 md:mt-8">
               {trustPoints.map((tp) => (
-                <span key={tp.label} className="flex items-center gap-1.5 text-sm text-primary-foreground/80">
+                <span key={tp.label} className="flex items-center gap-1 md:gap-1.5 text-xs md:text-sm text-primary-foreground/80">
                   <tp.icon className="h-4 w-4 text-accent" /> {tp.label}
                 </span>
               ))}

@@ -11,12 +11,12 @@ const Footer = () => (
   <footer className="bg-primary text-primary-foreground">
     {/* CTA Band */}
     <div className="bg-accent">
-      <div className="container mx-auto px-4 py-8 flex flex-col md:flex-row items-center justify-between gap-4 text-accent-foreground">
+      <div className="container mx-auto px-4 py-6 md:py-8 flex flex-col md:flex-row items-center justify-between gap-4 text-accent-foreground text-center md:text-left">
         <div>
-          <h3 className="font-heading text-2xl font-bold">Ready for a Spotless Home?</h3>
-          <p className="opacity-90">Get your free, no-obligation quote in minutes.</p>
+          <h3 className="font-heading text-xl md:text-2xl font-bold">Ready for a Spotless Home?</h3>
+          <p className="opacity-90 text-sm md:text-base">Get your free, no-obligation quote in minutes.</p>
         </div>
-        <div className="flex gap-3">
+        <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 w-full sm:w-auto">
           <Button variant="default" size="lg" asChild>
             <Link to="/contact">Get a Free Quote</Link>
           </Button>

@@ -32,7 +32,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center gap-2">
             <img src={logo} alt="Capital Clean Care logo" className="h-8 w-8 object-contain" />
-            <span className="font-heading font-bold text-xl text-foreground">Capital Clean Care</span>
+            <span className="font-heading font-bold text-lg md:text-xl text-foreground">Capital Clean Care</span>
           </Link>
 
           {/* Desktop nav */}

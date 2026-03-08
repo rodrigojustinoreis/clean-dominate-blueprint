@@ -14,7 +14,7 @@ const Layout = ({ children }: { children: ReactNode }) => (
     <QuoteChatbot />
     <ExitIntentPopup />
     {/* bottom padding for mobile sticky CTA */}
-    <div className="h-16 md:hidden" />
+    <div className="h-14 md:hidden" />
   </div>
 );
 
