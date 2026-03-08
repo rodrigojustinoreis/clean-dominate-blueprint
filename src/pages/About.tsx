@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import QuoteForm from "@/components/QuoteForm";
 import FAQ from "@/components/FAQ";
-import { FAQSchema } from "@/components/SchemaMarkup";
+import { FAQSchema, LocalBusinessSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import { useSEO } from "@/hooks/useSEO";
 import teamPhoto from "@/assets/team-photo.png";
 import cleanerBlinds from "@/assets/cleaner-blinds.png";
@@ -46,6 +46,8 @@ const About = () => {
   return (
     <Layout>
       {seoHelmet}
+      <LocalBusinessSchema />
+      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "About" }]} />
       <FAQSchema faqs={aboutFaqs} />
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 max-w-5xl">

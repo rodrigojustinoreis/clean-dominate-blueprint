@@ -6,7 +6,7 @@ import Layout from "@/components/layout/Layout";
 import QuoteForm from "@/components/QuoteForm";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { useSEO } from "@/hooks/useSEO";
-import { FAQSchema } from "@/components/SchemaMarkup";
+import { FAQSchema, ServiceSchema, LocalBusinessSchema } from "@/components/SchemaMarkup";
 import FAQ from "@/components/FAQ";
 import VideoTestimonials from "@/components/VideoTestimonials";
 
@@ -28,6 +28,12 @@ const SpringCleaningMD = () => {
   return (
     <Layout>
       {seoHelmet}
+      <LocalBusinessSchema />
+      <ServiceSchema
+        serviceName="Spring Deep Cleaning in Maryland"
+        description="Professional spring cleaning services in Maryland, DC & VA. Eco-friendly products, background-checked teams. $25 off for new clients."
+        url="https://capitalcleancare.com/spring-cleaning-md"
+      />
       <FAQSchema faqs={springFaqs} />
 
       {/* Hero */}
