@@ -31,7 +31,7 @@ const QuoteForm = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast.success("Thank you! We'll get back to you within 24 hours.");
-    setFormData({ name: "", phone: "", email: "", zip: "", service: "", bedrooms: "", bathrooms: "", frequency: "", date: "", message: "" });
+    setFormData({ name: "", phone: "", email: "", zip: "", service: "", bedrooms: "", bathrooms: "", frequency: "", date: "", message: "", smsConsent: false, emailConsent: false });
   };
 
   const update = (field: string, value: string) =>
@@ -117,6 +117,33 @@ const QuoteForm = () => {
       <div className="space-y-2">
         <Label htmlFor="message">Additional Details</Label>
         <Textarea id="message" value={formData.message} onChange={(e) => update("message", e.target.value)} placeholder="Special requests, access instructions, etc." rows={3} />
+      </div>
+
+      {/* Consent checkboxes */}
+      <div className="space-y-3 rounded-lg border border-border p-4">
+        <p className="text-sm font-medium">Communication Preferences</p>
+        <label className="flex items-start gap-2 cursor-pointer">
+          <input
+            type="checkbox"
+            checked={formData.smsConsent}
+            onChange={(e) => setFormData((p) => ({ ...p, smsConsent: e.target.checked }))}
+            className="mt-0.5 h-4 w-4 rounded border-border accent-accent"
+          />
+          <span className="text-sm text-muted-foreground">
+            I agree to receive SMS updates about my cleaning service. Message & data rates may apply. Reply STOP to opt out.
+          </span>
+        </label>
+        <label className="flex items-start gap-2 cursor-pointer">
+          <input
+            type="checkbox"
+            checked={formData.emailConsent}
+            onChange={(e) => setFormData((p) => ({ ...p, emailConsent: e.target.checked }))}
+            className="mt-0.5 h-4 w-4 rounded border-border accent-accent"
+          />
+          <span className="text-sm text-muted-foreground">
+            I'd like to receive email promotions and cleaning tips. Unsubscribe anytime.
+          </span>
+        </label>
       </div>
 
       <Button type="submit" variant="cta" size="lg" className="w-full text-base">
