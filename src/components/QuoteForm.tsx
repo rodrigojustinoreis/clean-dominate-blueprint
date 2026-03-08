@@ -54,16 +54,33 @@ const QuoteForm = () => {
 
       if (dbError) {
         console.error("DB error:", dbError);
+        throw new Error("Failed to save request");
       }
 
-      // Try to send email notification via edge function
-      try {
-        await supabase.functions.invoke("send-quote", {
-          body: formData,
-        });
-      } catch (emailErr) {
-        console.error("Email notification failed (form still saved):", emailErr);
-      }
+      // Send email via FormSubmit (free, no API key needed)
+      const formPayload = {
+        _subject: `New Quote Request from ${formData.name}`,
+        _template: "table",
+        _captcha: "false",
+        Name: formData.name,
+        Phone: formData.phone,
+        Email: formData.email,
+        "Zip Code": formData.zip,
+        Service: formData.service,
+        Bedrooms: formData.bedrooms || "N/A",
+        Bathrooms: formData.bathrooms || "N/A",
+        Frequency: formData.frequency || "N/A",
+        "Preferred Date": formData.date || "N/A",
+        Message: formData.message || "N/A",
+        "SMS Consent": formData.smsConsent ? "Yes" : "No",
+        "Email Consent": formData.emailConsent ? "Yes" : "No",
+      };
+
+      await fetch("https://formsubmit.co/ajax/capitalcleancare@gmail.com", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(formPayload),
+      });
 
       toast.success("Thank you! We'll get back to you within 24 hours.");
       setFormData({ name: "", phone: "", email: "", zip: "", service: "", bedrooms: "", bathrooms: "", frequency: "", date: "", message: "", smsConsent: false, emailConsent: false });
