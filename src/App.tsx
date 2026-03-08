@@ -48,10 +48,10 @@ const App = () => (
               <Route path="/faq" element={<FAQPage />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/blog/:slug" element={<BlogPost />} />
-              <Route path="/:stateSlug" element={<LocationHub />} />
               <Route path="/spring-cleaning-md" element={<SpringCleaningMD />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route path="/terms-of-service" element={<TermsOfService />} />
+              <Route path="/:stateSlug" element={<LocationHub />} />
               <Route path="/locations/:slug/:serviceSlug" element={<ServiceLocationPage />} />
               <Route path="/locations/:slug" element={<CityPage />} />
               <Route path="*" element={<NotFound />} />
