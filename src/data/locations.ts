@@ -714,3 +714,43 @@ export const getHubBySlug = (slug: string): HubData | undefined =>
 export const mdCities = cities.filter((c) => c.state === "MD");
 export const dcCities = cities.filter((c) => c.state === "DC");
 export const vaCities = cities.filter((c) => c.state === "VA");
+
+/**
+ * Generate expanded FAQs for a city by combining existing city-specific FAQs
+ * with common questions templated with the city name.
+ * Returns 12-15 FAQs per city.
+ */
+export const getExpandedCityFaqs = (city: CityData): { q: string; a: string }[] => {
+  const stateLabel = city.state === "DC" ? "Washington, DC" : city.state === "MD" ? "Maryland" : "Virginia";
+  const cityLabel = city.state !== "DC" ? `${city.name}, ${city.state}` : city.name;
+
+  const commonFaqs: { q: string; a: string }[] = [
+    { q: `How much does house cleaning cost in ${city.name}?`, a: `Pricing depends on home size, condition, and service type. Standard cleaning for a 2-3 bedroom ${city.name} home typically ranges from $150-$250. Deep cleaning runs $250-$450. Request a free, no-obligation quote for exact pricing tailored to your home.` },
+    { q: `Are your ${city.name} cleaning teams insured?`, a: `Yes. Capital Clean Care is fully licensed and insured with comprehensive liability coverage. Every team member serving ${city.name} undergoes thorough background checks and professional training.` },
+    { q: `What cleaning services do you offer in ${city.name}?`, a: `We offer standard house cleaning, deep cleaning, move-in/move-out cleaning, post-construction cleanup, recurring cleaning plans (weekly, bi-weekly, monthly), and eco-friendly cleaning throughout ${cityLabel}.` },
+    { q: `Do you use eco-friendly products in ${city.name}?`, a: `Yes. We exclusively use plant-based, non-toxic cleaning products in all ${city.name} homes. Our solutions are free from harsh chemicals and artificial fragrances — safe for families, pets, and the environment.` },
+    { q: `Do you offer recurring cleaning plans in ${city.name}?`, a: `Yes. Weekly, bi-weekly, and monthly plans are available with preferred pricing and dedicated teams. Bi-weekly is our most popular option for ${city.name} families.` },
+    { q: `Do you offer a satisfaction guarantee in ${city.name}?`, a: `Absolutely. We provide a 100% satisfaction guarantee on every ${city.name} cleaning. If any area doesn't meet your expectations, contact us within 24 hours and we'll return to re-clean it at no charge.` },
+    { q: `Can I get a free estimate for my ${city.name} home?`, a: `Yes. All quotes are free with no obligation. Fill out our online form, call us at (240) 704-2551, or visit our contact page for a personalized estimate.` },
+    { q: `Do you clean apartments and condos in ${city.name}?`, a: `Yes. We clean all types of ${city.name} residences including single-family homes, townhouses, apartments, and condominiums. We coordinate with building management when needed.` },
+    { q: `What are your hours for ${city.name} service?`, a: `We operate Monday through Saturday, 7 AM to 7 PM. We offer flexible scheduling to accommodate your ${city.name} lifestyle, including early morning and Saturday appointments.` },
+    { q: `Do you bring your own supplies to ${city.name} homes?`, a: `Yes. Our teams arrive fully equipped with eco-friendly cleaning products and professional-grade equipment. You don't need to provide anything.` },
+  ];
+
+  // Merge: keep existing city-specific FAQs first, then add common ones not already covered
+  const existingQuestions = new Set(city.faqs.map(f => f.q.toLowerCase()));
+  const additionalFaqs = commonFaqs.filter(f => {
+    const lower = f.q.toLowerCase();
+    // Skip if similar question already exists
+    return !existingQuestions.has(lower) && !Array.from(existingQuestions).some(eq =>
+      eq.includes(city.name.toLowerCase()) && lower.includes(city.name.toLowerCase()) &&
+      (eq.includes("cost") && lower.includes("cost") ||
+       eq.includes("insured") && lower.includes("insured") ||
+       eq.includes("eco") && lower.includes("eco") ||
+       eq.includes("recurring") && lower.includes("recurring") ||
+       eq.includes("supplies") && lower.includes("supplies"))
+    );
+  });
+
+  return [...city.faqs, ...additionalFaqs].slice(0, 15);
+};
