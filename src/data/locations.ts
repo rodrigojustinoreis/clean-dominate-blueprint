@@ -89,8 +89,8 @@ export const hubs: HubData[] = [
       { q: "Can I get a free estimate for my NoVA home?", a: "Absolutely. All quotes are free with no obligation. Fill out our online form or call (240) 704-2551 for a personalized estimate." },
       { q: "Do you serve luxury condos and high-rises in NoVA?", a: "Yes. We serve condos, apartments, townhomes, and single-family homes of all sizes throughout Northern Virginia, including luxury high-rises in Tysons and Arlington." }
     ],
-    metaTitle: "Northern Virginia House Cleaning Services | Capital Clean Care",
-    metaDescription: "Premium house cleaning in Northern Virginia — Arlington, McLean, Fairfax, Alexandria & more. Eco-friendly products, background-checked teams. Get a free quote."
+    metaTitle: "House Cleaning in Northern Virginia | Capital Clean Care",
+    metaDescription: "Eco-friendly house cleaning in Northern Virginia — Arlington, McLean, Fairfax & Alexandria. Licensed, insured, 5-star rated. $25 off — get your free quote!"
   }
 ];
 
