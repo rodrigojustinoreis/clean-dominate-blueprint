@@ -175,16 +175,6 @@ const LocationHub = () => {
         </div>
       </section>
 
-      {/* Pricing */}
-      <section className="py-12 md:py-16">
-        <div className="container mx-auto px-4 max-w-3xl">
-          <div className="text-center mb-8">
-            <h2 className="font-heading text-3xl font-bold mb-3">Sample Pricing</h2>
-            <p className="text-muted-foreground">Estimated ranges by home size and cleaning frequency.</p>
-          </div>
-          <PricingTable />
-        </div>
-      </section>
 
       {/* Reviews */}
       {reviews.length > 0 && (
