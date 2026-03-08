@@ -45,8 +45,8 @@ export const blogPosts: BlogPost[] = [
 
 const Blog = () => {
   const { seoHelmet } = useSEO({
-    title: "Cleaning Tips & Blog | Capital Clean Care",
-    description: "Expert cleaning tips, eco-friendly guides, and advice for Maryland, DC & Virginia homeowners from Capital Clean Care.",
+    title: "House Cleaning Tips & Blog for MD, DC & VA | Capital Clean Care",
+    description: "Expert eco-friendly cleaning tips, deep-cleaning guides & advice for Maryland, DC & Virginia homeowners. Stay spotless with Capital Clean Care's blog!",
     canonical: "https://capitalcleancare.com/blog",
   });
 

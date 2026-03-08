@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Phone, Mail, Clock, Instagram, Facebook } from "lucide-react";
+import { Phone, Mail, Clock, Instagram, Facebook, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { services } from "@/data/services";
 import { mdCities, dcCities, vaCities } from "@/data/locations";
@@ -39,6 +39,7 @@ const Footer = () => (
             Premium residential cleaning with eco-friendly, non-toxic products. Licensed &amp; insured with background-checked teams across Maryland, Washington DC, and Northern Virginia.
           </p>
           <div className="space-y-2 text-sm text-primary-foreground/70">
+            <p className="flex items-center gap-2"><MapPin className="h-4 w-4" /> 4111 Postgate Terrace, Silver Spring, MD 20906</p>
             <p className="flex items-center gap-2"><Phone className="h-4 w-4" /> (240) 704-2551</p>
             <p className="flex items-center gap-2"><Mail className="h-4 w-4" /> capitalcleancare@gmail.com</p>
             <p className="flex items-center gap-2"><Clock className="h-4 w-4" /> Mon–Sat: 7 AM – 7 PM</p>

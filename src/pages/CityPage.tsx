@@ -76,7 +76,7 @@ const CityPage = () => {
         <div className="absolute inset-0">
           <img
             src={regionImages[city.stateSlug] || regionMD}
-            alt={`${city.name} neighborhood`}
+            alt={`Eco-friendly house cleaning team serving ${city.name}, ${city.state} — Capital Clean Care`}
             className="w-full h-full object-cover"
             loading="eager"
           />

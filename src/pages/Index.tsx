@@ -64,8 +64,8 @@ const locationAreas = [
 
 const Index = () => {
   const { seoHelmet } = useSEO({
-    title: "Capital Clean Care | Premium House Cleaning in MD, DC & VA",
-    description: "Eco-friendly residential cleaning in Maryland, Washington DC & Northern Virginia. Licensed, insured, background-checked teams. Get a free quote today.",
+    title: "Eco-Friendly House Cleaning in Maryland, DC & Virginia | Capital Clean Care",
+    description: "Premium residential cleaning in MD, DC & Northern VA. Non-toxic products, background-checked teams, 5-star rated. $25 off your first clean — get a free quote!",
     canonical: "https://capitalcleancare.com/",
   });
 
@@ -218,7 +218,7 @@ const Index = () => {
                 <div className="relative h-40 overflow-hidden">
                   <img
                     src={area.image}
-                    alt={`${area.label} neighborhoods`}
+                    alt={`House cleaning service areas in ${area.label} — Capital Clean Care`}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
                   />

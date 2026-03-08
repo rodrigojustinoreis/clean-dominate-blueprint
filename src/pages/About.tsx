@@ -38,8 +38,8 @@ const aboutFaqs = [
 
 const About = () => {
   const { seoHelmet } = useSEO({
-    title: "About Capital Clean Care | Eco-Friendly Cleaning in MD, DC & VA",
-    description: "Learn about Capital Clean Care's mission, eco-friendly values, and commitment to premium residential cleaning across Maryland, DC & Virginia. Licensed, insured, background-checked teams.",
+    title: "About Us — Eco-Friendly Cleaning Team in MD, DC & VA | Capital Clean Care",
+    description: "Meet Capital Clean Care: licensed, insured, background-checked teams serving Maryland, DC & Virginia with non-toxic cleaning. 5-star rated. Learn our story!",
     canonical: "https://capitalcleancare.com/about",
   });
 
