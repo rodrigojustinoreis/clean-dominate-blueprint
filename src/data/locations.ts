@@ -34,7 +34,14 @@ export const hubs: HubData[] = [
       { q: "How do I book a cleaning in Maryland?", a: "Simply fill out our free quote form, call us directly, or select your specific city page for location-specific booking. We typically respond within a few hours." },
       { q: "Do you offer same-day service in Maryland?", a: "Same-day availability depends on our current schedule and your location. We do our best to accommodate urgent requests, especially in Montgomery County where we have the most teams." },
       { q: "Are your Maryland teams local?", a: "Yes. Our cleaning professionals live in and around the Maryland communities they serve, which means shorter travel times and a genuine understanding of local needs." },
-      { q: "What products do you use in Maryland homes?", a: "We exclusively use eco-friendly, non-toxic cleaning products throughout all our Maryland service areas. Our plant-based solutions are safe for families, pets, and local waterways." }
+      { q: "What products do you use in Maryland homes?", a: "We exclusively use eco-friendly, non-toxic cleaning products throughout all our Maryland service areas. Our plant-based solutions are safe for families, pets, and local waterways." },
+      { q: "How much does house cleaning cost in Maryland?", a: "Pricing varies by home size, condition, and service type. Standard cleaning for a 2-3 bedroom Maryland home typically ranges from $150-$250. Deep cleaning runs $250-$450. Request a free quote for exact pricing." },
+      { q: "Are your Maryland cleaning teams insured?", a: "Yes. Capital Clean Care is fully licensed and insured with comprehensive liability coverage. Every team member undergoes thorough background checks before entering any Maryland home." },
+      { q: "Do you offer recurring cleaning plans in Maryland?", a: "Yes. We offer weekly, bi-weekly, and monthly recurring plans throughout Maryland with preferred pricing and dedicated teams assigned to your home." },
+      { q: "What cleaning services do you offer in Maryland?", a: "We offer standard house cleaning, deep cleaning, move-in/move-out cleaning, post-construction cleanup, recurring cleaning plans, and eco-friendly cleaning throughout Maryland." },
+      { q: "Do you offer a satisfaction guarantee?", a: "Absolutely. We offer a 100% satisfaction guarantee on every cleaning in Maryland. If you're not completely happy, we'll return within 24 hours to re-clean the area at no additional charge." },
+      { q: "Can I get a free estimate for my Maryland home?", a: "Yes. All quotes are free with no obligation. Fill out our online form, call (240) 704-2551, or visit our contact page. We typically respond within a few hours." },
+      { q: "Do you serve Maryland apartments and condos?", a: "Yes. We clean all types of Maryland residences including single-family homes, townhouses, apartments, condos, and high-rise units. We coordinate with building management when needed." }
     ],
     metaTitle: "Maryland House Cleaning Services | Capital Clean Care",
     metaDescription: "Premium house cleaning across Maryland — Montgomery, Frederick, Howard & Prince George's Counties. Eco-friendly, licensed & insured. Get a free quote today."
@@ -50,7 +57,14 @@ export const hubs: HubData[] = [
       { q: "Can you clean condos and apartments in DC?", a: "Absolutely. We're experienced with all DC property types including condos, apartments, rowhouses, and single-family homes. We also coordinate with building management for access when needed." },
       { q: "Is parking an issue for your DC teams?", a: "Our teams are experienced with DC logistics. We handle parking arrangements and can coordinate with building concierges or parking garages. This never affects your service quality or timing." },
       { q: "Do you serve DC government housing?", a: "We serve any residential property in DC. If you have specific access requirements or building protocols, just let us know when booking and we'll coordinate accordingly." },
-      { q: "How quickly can you start service in DC?", a: "We typically schedule new clients within 3-5 business days. Rush availability may be possible depending on the neighborhood and our current schedule." }
+      { q: "How quickly can you start service in DC?", a: "We typically schedule new clients within 3-5 business days. Rush availability may be possible depending on the neighborhood and our current schedule." },
+      { q: "How much does house cleaning cost in Washington, DC?", a: "DC pricing depends on property type, size, and service. A standard cleaning for a 1-2 bedroom apartment starts around $130-$200. Rowhouses and larger homes range from $200-$350+. Request a free quote." },
+      { q: "Are your DC teams background-checked?", a: "Yes. Every Capital Clean Care team member undergoes comprehensive background screening. We're fully licensed and insured for your complete peace of mind." },
+      { q: "Do you offer move-in/move-out cleaning in DC?", a: "Yes. Our move-in/move-out service is popular with DC tenants and property managers. We ensure properties meet inspection standards and maximize deposit returns." },
+      { q: "What eco-friendly products do you use in DC?", a: "We use plant-based, non-toxic cleaning solutions that are safe for families, pets, and the environment. Our products are free from harsh chemicals and artificial fragrances." },
+      { q: "Can I schedule recurring cleaning in DC?", a: "Yes. Weekly, bi-weekly, and monthly plans are available throughout DC with dedicated teams and preferred pricing. Bi-weekly is our most popular option." },
+      { q: "Do you clean historic DC rowhouses?", a: "Yes. Our teams are trained in proper care for DC's historic properties, including appropriate products for original hardwood, plaster, vintage tile, and period fixtures." },
+      { q: "Do you offer a satisfaction guarantee in DC?", a: "Yes. Our 100% satisfaction guarantee covers every DC cleaning. If any area doesn't meet your expectations, we'll return within 24 hours to make it right at no charge." }
     ],
     metaTitle: "Washington DC House Cleaning Services | Capital Clean Care",
     metaDescription: "Professional house cleaning throughout Washington, DC. Serving NW, NE, Capitol Hill, Georgetown & more. Eco-friendly, licensed & insured. Free quotes available."
@@ -66,7 +80,14 @@ export const hubs: HubData[] = [
       { q: "Do you clean large homes in McLean and Great Falls?", a: "Yes. Our teams are experienced with larger estate-style properties common in McLean, Great Falls, and Potomac areas. We adjust team size and scheduling to accommodate larger homes." },
       { q: "Are your prices different in Northern Virginia?", a: "Our pricing is consistent across all service areas, based on home size, condition, and service type. Request a free quote for accurate pricing specific to your home." },
       { q: "Can you clean my home while I'm at work?", a: "Absolutely. Many of our Northern Virginia clients provide access arrangements so we can clean during business hours. We're fully insured and all team members are background-checked." },
-      { q: "Do you serve Fairfax County government buildings?", a: "Our focus is residential cleaning. We serve homes throughout Fairfax County and the surrounding Northern Virginia communities." }
+      { q: "Do you serve Fairfax County government buildings?", a: "Our focus is residential cleaning. We serve homes throughout Fairfax County and the surrounding Northern Virginia communities." },
+      { q: "How much does cleaning cost in Northern Virginia?", a: "Pricing varies by home size and service. Standard cleaning for a 2-3 bedroom NoVA home typically ranges $160-$260. Deep cleaning runs $275-$475. Request a free quote for exact pricing." },
+      { q: "Are your Northern Virginia teams insured?", a: "Yes. Capital Clean Care is fully licensed and insured. Every team member is background-checked and trained to our professional standards." },
+      { q: "Do you offer recurring plans in Northern Virginia?", a: "Yes. Weekly, bi-weekly, and monthly recurring plans with dedicated teams and preferred pricing. Recurring clients save up to 20% compared to one-time cleanings." },
+      { q: "What services are available in Northern Virginia?", a: "We offer standard cleaning, deep cleaning, move-in/move-out cleaning, post-construction cleanup, recurring plans, and eco-friendly cleaning throughout Northern Virginia." },
+      { q: "Do you offer a satisfaction guarantee in Virginia?", a: "Yes. Our 100% satisfaction guarantee applies to all Northern Virginia cleanings. Contact us within 24 hours and we'll return to re-clean any area at no charge." },
+      { q: "Can I get a free estimate for my NoVA home?", a: "Absolutely. All quotes are free with no obligation. Fill out our online form or call (240) 704-2551 for a personalized estimate." },
+      { q: "Do you serve luxury condos and high-rises in NoVA?", a: "Yes. We serve condos, apartments, townhomes, and single-family homes of all sizes throughout Northern Virginia, including luxury high-rises in Tysons and Arlington." }
     ],
     metaTitle: "Northern Virginia House Cleaning Services | Capital Clean Care",
     metaDescription: "Premium house cleaning in Northern Virginia — Arlington, McLean, Fairfax, Alexandria & more. Eco-friendly products, background-checked teams. Get a free quote."

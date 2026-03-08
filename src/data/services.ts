@@ -96,7 +96,14 @@ export const services: ServiceData[] = [
       { q: "How often should I schedule standard cleaning?", a: "Most clients find that weekly or bi-weekly cleanings keep their homes in excellent condition. Monthly cleanings work well for smaller households or those who maintain daily tidying habits." },
       { q: "Are your cleaning teams insured?", a: "Yes. Capital Clean Care is fully licensed and insured. Every team member is background-checked and trained to our exacting standards, giving you complete peace of mind." },
       { q: "What areas do you serve?", a: "We serve communities throughout Maryland (Montgomery, Frederick, Howard, and Prince George's Counties), Washington DC, and Northern Virginia (Arlington, Fairfax, McLean, Alexandria, and more)." },
-      { q: "Do I need to be home during the cleaning?", a: "No. Many clients provide key, code, or smart lock access so we can clean while they're at work. All team members are background-checked and insured." }
+      { q: "Do I need to be home during the cleaning?", a: "No. Many clients provide key, code, or smart lock access so we can clean while they're at work. All team members are background-checked and insured." },
+      { q: "What eco-friendly products do you use?", a: "We use plant-based, non-toxic cleaning solutions free from harsh chemicals, artificial fragrances, and allergens. Our products are EPA Safer Choice certified and safe for families, pets, and the environment." },
+      { q: "Do you offer a satisfaction guarantee?", a: "Yes. We offer a 100% satisfaction guarantee on every cleaning. If you're not happy with any aspect of our work, contact us within 24 hours and we'll return to re-clean the area at no additional charge." },
+      { q: "How do I pay for cleaning services?", a: "We accept all major credit cards, debit cards, and digital payments. Payment is processed after the cleaning is completed to your satisfaction. No cash needed." },
+      { q: "Can I book a one-time cleaning?", a: "Absolutely. While many clients prefer recurring plans for consistent results and preferred pricing, we welcome one-time cleaning appointments for any of our services." },
+      { q: "What happens if something is damaged during cleaning?", a: "Capital Clean Care carries full liability insurance. In the unlikely event of any damage, we handle it promptly and professionally. Report any concerns within 24 hours and we'll resolve them." },
+      { q: "Do you clean homes with pets?", a: "Yes! We love homes with pets. Our eco-friendly products are completely pet-safe, and our teams are experienced working around dogs, cats, and other household pets." },
+      { q: "How far in advance should I book?", a: "We recommend booking at least 3-5 business days in advance for new clients. Recurring clients enjoy priority scheduling with consistent day and time slots." }
     ],
     testimonials: [
       { name: "Sarah M.", location: "Bethesda, MD", text: "Our home has never looked better since switching to Capital Clean Care's standard cleaning. The team is consistent, thorough, and always leaves everything sparkling." },
@@ -197,7 +204,13 @@ export const services: ServiceData[] = [
       { q: "Can I combine deep cleaning with other services?", a: "Yes. Many clients pair deep cleaning with move-in/move-out services or add-ons like interior window washing or refrigerator cleaning for a comprehensive refresh." },
       { q: "What eco-friendly products do you use?", a: "We use plant-based, non-toxic cleaning solutions free from harsh chemicals, artificial fragrances, and allergens. Our products are safe for families, pets, and the environment while delivering professional-grade cleaning results." },
       { q: "Do you clean inside the refrigerator during a deep clean?", a: "Yes. Our deep cleaning includes a full refrigerator interior wipe-down — shelves, drawers, walls, and seals. We recommend removing perishable items before our visit." },
-      { q: "What if I only want certain rooms deep cleaned?", a: "We offer flexible deep cleaning packages. If you only need kitchens and bathrooms or specific rooms, let us know and we'll provide a tailored quote." }
+      { q: "What if I only want certain rooms deep cleaned?", a: "We offer flexible deep cleaning packages. If you only need kitchens and bathrooms or specific rooms, let us know and we'll provide a tailored quote." },
+      { q: "Do you offer a satisfaction guarantee on deep cleaning?", a: "Yes. Our 100% satisfaction guarantee applies to all services including deep cleaning. If any area doesn't meet your expectations, we'll return within 24 hours to re-clean it at no charge." },
+      { q: "How much does deep cleaning cost?", a: "Deep cleaning pricing depends on home size, number of bedrooms and bathrooms, and current condition. A typical 3-bedroom home ranges from $250-$450. Request a free quote for accurate pricing." },
+      { q: "Is deep cleaning recommended before starting a recurring plan?", a: "Yes, we strongly recommend it. Starting with a deep clean establishes a thorough baseline, making subsequent standard cleanings more efficient and effective." },
+      { q: "Do you clean air vents and ductwork covers?", a: "Yes. We remove and clean vent covers and register grilles as part of our deep cleaning service. This helps improve indoor air quality by removing accumulated dust." },
+      { q: "Can I be home during the deep cleaning?", a: "You're welcome to be home, but it's not required. Many clients provide access and go about their day. Our background-checked teams work independently and efficiently." },
+      { q: "Do you clean inside kitchen cabinets during deep cleaning?", a: "Yes. We wipe down the interior of all kitchen cabinets and drawers, including shelves and hardware. We recommend removing fragile items before our visit." }
     ],
     testimonials: [
       { name: "Lauren K.", location: "Capitol Hill, DC", text: "The deep cleaning was incredible. They got into places I didn't even know existed. My kitchen has never been this clean — inside the oven, behind the fridge, everything." },
@@ -292,7 +305,14 @@ export const services: ServiceData[] = [
       { q: "Do you clean the garage or outdoor spaces?", a: "Garage sweeping and basic outdoor area tidying can be included upon request. Please let us know when booking so we can plan accordingly." },
       { q: "Can you clean on the same day as my move?", a: "Yes, we can coordinate with your moving schedule. We recommend having us come in after the movers have finished for the most thorough results." },
       { q: "Do you work with property managers?", a: "Yes. We regularly work with property managers and landlords throughout the DMV. We can coordinate directly with building management for access and scheduling." },
-      { q: "What if the property hasn't been cleaned in months?", a: "No problem. Our teams handle properties in all conditions. Heavily soiled or neglected properties may require additional time, which we'll discuss during your quote." }
+      { q: "What if the property hasn't been cleaned in months?", a: "No problem. Our teams handle properties in all conditions. Heavily soiled or neglected properties may require additional time, which we'll discuss during your quote." },
+      { q: "How much does move-in/move-out cleaning cost?", a: "Pricing depends on property size and condition. A typical 2-bedroom apartment ranges from $250-$400. Larger homes or heavily soiled properties may cost more. Request a free quote for accurate pricing." },
+      { q: "Do you clean inside all appliances?", a: "Yes. Our move-in/move-out service includes cleaning inside the oven, refrigerator, dishwasher, and microwave — areas that are critical for inspection requirements." },
+      { q: "Can you provide a checklist for my landlord?", a: "Yes. We provide a detailed cleaning checklist that documents everything our team addressed. This can be shared with your landlord or property manager as verification." },
+      { q: "Do you offer same-day or next-day move-out cleaning?", a: "We do our best to accommodate rush requests. Same-day and next-day availability depends on our schedule, but we prioritize move-related cleanings due to their time-sensitive nature." },
+      { q: "Are your teams experienced with apartment complexes?", a: "Yes. We regularly clean apartments in complexes throughout the DMV, and we're experienced with building access procedures, elevators, and common area coordination." },
+      { q: "Do you clean basements and attics during move-out?", a: "Yes. We clean all accessible areas of the property including basements, attics, laundry rooms, and storage spaces as part of our comprehensive move-out service." },
+      { q: "What's included that isn't in a standard cleaning?", a: "Move-in/move-out cleaning includes inside all cabinets and drawers, inside all appliances, closet interiors, wall spot-cleaning, and detailed attention to areas typically hidden by furniture." }
     ],
     testimonials: [
       { name: "Emily R.", location: "Silver Spring, MD", text: "Got my entire security deposit back thanks to Capital Clean Care. My landlord said the apartment looked better than when I moved in." },
@@ -372,7 +392,14 @@ export const services: ServiceData[] = [
       { q: "Is post-construction dust harmful?", a: "Construction dust can contain irritants and fine particles that affect indoor air quality. Our HEPA-filtered equipment captures these particles effectively, creating a healthier environment." },
       { q: "How long does post-construction cleaning take?", a: "Timing depends on the scope of the construction project. A single-room renovation might take 4-6 hours, while a whole-home build could require multiple days of cleaning." },
       { q: "Do you clean newly built homes?", a: "Yes. New construction homes require thorough cleaning before move-in. We remove construction dust, protective films, adhesive residue, and debris left by builders." },
-      { q: "Can you clean while some construction is still ongoing?", a: "We can perform phased cleaning around ongoing punch-list work. We coordinate with your contractor to ensure cleaning happens at the right stage." }
+      { q: "Can you clean while some construction is still ongoing?", a: "We can perform phased cleaning around ongoing punch-list work. We coordinate with your contractor to ensure cleaning happens at the right stage." },
+      { q: "How much does post-construction cleaning cost?", a: "Pricing depends on the scope of the renovation project, the size of the affected area, and the level of dust and debris. A single-room renovation typically starts at $300-$500. Request a free quote for accurate pricing." },
+      { q: "Do you remove protective films from new appliances?", a: "Yes. We carefully remove all protective films, stickers, and labels from new appliances, fixtures, windows, and surfaces as part of our post-construction service." },
+      { q: "Can you clean after a kitchen or bathroom remodel?", a: "Kitchen and bathroom remodels are our most common post-construction projects. We address grout haze, adhesive residue, dust in cabinets, and all surfaces specific to these spaces." },
+      { q: "Do you handle drywall dust removal?", a: "Yes. Drywall dust is one of the most pervasive types of construction dust. Our HEPA-filtered vacuums and specialized techniques effectively capture this ultra-fine dust from all surfaces." },
+      { q: "Will post-construction cleaning damage new finishes?", a: "No. Our teams are trained to use appropriate products and techniques for new finishes. We protect fresh paint, new tile, sealed grout, and all other newly installed materials." },
+      { q: "Do you offer post-renovation air quality testing?", a: "We perform a visual and sensory assessment of air quality after cleaning. For formal air quality testing, we recommend a specialized HVAC or environmental service." },
+      { q: "Can I schedule a walkthrough before booking?", a: "Yes. For larger post-construction projects, we offer a pre-cleaning walkthrough to assess the scope of work and provide an accurate estimate." }
     ],
     testimonials: [
       { name: "Jennifer H.", location: "Potomac, MD", text: "After our complete kitchen renovation, Capital Clean Care made the space livable again. The construction dust was everywhere — they got every last bit of it." },
@@ -446,7 +473,13 @@ export const services: ServiceData[] = [
       { q: "Is there a contract or commitment?", a: "No long-term contracts. Our recurring plans are flexible — you can pause, adjust, or cancel at any time with reasonable notice." },
       { q: "Can I add deep cleaning to my recurring plan?", a: "Yes. Many recurring clients schedule a deep cleaning quarterly as a complement to their regular service. We can build this into your plan automatically." },
       { q: "What happens on the first visit?", a: "Your first recurring visit includes a more thorough initial cleaning to establish a baseline. Subsequent visits maintain that standard efficiently." },
-      { q: "Do you clean during holidays?", a: "We offer adjusted scheduling during major holidays. Many clients add a pre-holiday cleaning session to prepare for gatherings." }
+      { q: "Do you clean during holidays?", a: "We offer adjusted scheduling during major holidays. Many clients add a pre-holiday cleaning session to prepare for gatherings." },
+      { q: "How much do recurring plans cost?", a: "Pricing depends on home size and frequency. Weekly plans offer the deepest discounts (up to 20% off one-time rates), followed by bi-weekly (15%) and monthly (10%). Request a free quote for your specific home." },
+      { q: "What's included in each recurring visit?", a: "Every visit includes our full standard cleaning checklist: kitchen and bathroom sanitization, dusting, vacuuming, mopping, bed making, trash removal, and more. We also rotate focus areas for deeper attention each visit." },
+      { q: "Can I request extra tasks on specific visits?", a: "Yes. You can add tasks like interior window cleaning, refrigerator cleanout, or oven cleaning to any scheduled visit. Just let us know in advance and we'll adjust accordingly." },
+      { q: "What if my regular team is unavailable?", a: "In rare cases where your regular team is unavailable, we send a fully trained backup team with detailed notes about your home and preferences to ensure consistent quality." },
+      { q: "Do recurring plans include seasonal adjustments?", a: "Yes. We automatically adjust our cleaning focus based on the season — extra pollen attention in spring, holiday preparation in winter, leaf debris in fall, and humidity-related cleaning in summer." },
+      { q: "Can I pause my recurring plan for vacation?", a: "Absolutely. We offer flexible pausing for vacations or travel. Just give us advance notice and we'll hold your spot without any penalties." }
     ],
     testimonials: [
       { name: "Monica J.", location: "Georgetown, DC", text: "Our bi-weekly plan has been running for over a year now. The same wonderful team every time — they know exactly how we like things. It's like having a trusted friend help out." },
