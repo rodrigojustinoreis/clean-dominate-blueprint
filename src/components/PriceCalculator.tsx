@@ -211,7 +211,7 @@ const PriceCalculator = () => {
               ${estimate.low} – ${estimate.high}
             </p>
             {estimate.savings > 0 && (
-              <p className="text-sm text-green-600 dark:text-green-400 font-medium mt-2">
+              <p className="text-sm font-medium mt-2 text-accent">
                 You save ~${estimate.savings} per visit with recurring service!
               </p>
             )}
