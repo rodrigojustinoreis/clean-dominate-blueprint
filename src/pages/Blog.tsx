@@ -41,6 +41,30 @@ export const blogPosts: BlogPost[] = [
     readTime: "5 min read",
     category: "Tips & Advice",
   },
+  {
+    slug: "eco-cleaning-tips-winters-maryland",
+    title: "Eco Cleaning Tips for Winters in Maryland",
+    excerpt: "Keep your Maryland home clean and healthy through winter with these eco-friendly strategies — from salt stain removal to humidity control in Rockville, Bethesda & beyond.",
+    date: "2026-01-15",
+    readTime: "7 min read",
+    category: "Seasonal Guides",
+  },
+  {
+    slug: "best-cleaning-schedule-busy-families-dmv",
+    title: "The Best Cleaning Schedule for Busy DMV Families",
+    excerpt: "A practical weekly and monthly cleaning plan for busy families in Silver Spring, Arlington & DC — plus how recurring service saves time and money.",
+    date: "2026-01-01",
+    readTime: "6 min read",
+    category: "Tips & Advice",
+  },
+  {
+    slug: "post-renovation-cleaning-guide-maryland",
+    title: "Post-Renovation Cleaning Guide for Maryland Homeowners",
+    excerpt: "Just finished a remodel in Germantown or Frederick? Here's a step-by-step post-construction cleaning checklist to make your renovated home move-in ready.",
+    date: "2025-12-15",
+    readTime: "8 min read",
+    category: "Cleaning Guides",
+  },
 ];
 
 const Blog = () => {
