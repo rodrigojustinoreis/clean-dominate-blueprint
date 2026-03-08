@@ -10,7 +10,7 @@ import TrustBar from "@/components/TrustBar";
 import ConversionCTA from "@/components/ConversionCTA";
 import { FAQSchema, ServiceSchema } from "@/components/SchemaMarkup";
 import { useSEO } from "@/hooks/useSEO";
-import { getCityBySlug } from "@/data/locations";
+import { getCityBySlug, getExpandedCityFaqs } from "@/data/locations";
 import { services } from "@/data/services";
 import { slServices, slCities } from "@/data/service-locations";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -55,6 +55,7 @@ const CityPage = () => {
   const { seoHelmet } = useSEO({ title: city.metaTitle, description: city.metaDescription, canonical: `https://capitalcleancare.com/locations/${city.slug}` });
 
   const nearbyCities = city.nearbySlugs.map(getCityBySlug).filter(Boolean);
+  const expandedFaqs = getExpandedCityFaqs(city);
   const stateLabel = city.stateSlug === "maryland" ? "Maryland" : city.stateSlug === "washington-dc" ? "Washington DC" : "Virginia";
   const cityLabel = city.state !== "DC" ? `${city.name}, ${city.state}` : city.name;
   const whyIntro = cityWhyIntros[city.slug] || `${city.name} homeowners choose Capital Clean Care for our reliable, eco-friendly cleaning services.`;
@@ -63,7 +64,7 @@ const CityPage = () => {
   return (
     <Layout>
       {seoHelmet}
-      <FAQSchema faqs={city.faqs} />
+      <FAQSchema faqs={expandedFaqs} />
       <ServiceSchema
         serviceName={`House Cleaning in ${city.name}`}
         description={`Professional eco-friendly house cleaning services in ${cityLabel}. Licensed, insured, background-checked teams.`}
@@ -235,7 +236,7 @@ const CityPage = () => {
       <section className="py-14 md:py-20 bg-secondary">
         <div className="container mx-auto px-4 max-w-3xl">
           <h2 className="font-heading text-2xl md:text-3xl font-bold text-center mb-8">{city.name} Cleaning FAQ</h2>
-          <FAQ faqs={city.faqs} />
+          <FAQ faqs={expandedFaqs} />
         </div>
       </section>
 
