@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { useSEO } from "@/hooks/useSEO";
+import { BreadcrumbSchema } from "@/components/SchemaMarkup";
 
 export interface BlogPost {
   slug: string;
@@ -52,6 +53,7 @@ const Blog = () => {
   return (
     <Layout>
       {seoHelmet}
+      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Blog" }]} />
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 max-w-4xl">
           <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Blog" }]} className="mb-6" />

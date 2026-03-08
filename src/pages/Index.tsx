@@ -6,7 +6,7 @@ import PriceCalculator from "@/components/PriceCalculator";
 import DiscountBanner from "@/components/DiscountBanner";
 import CityGallery from "@/components/CityGallery";
 import BeforeAfterGallery from "@/components/BeforeAfterGallery";
-import { LocalBusinessSchema, FAQSchema } from "@/components/SchemaMarkup";
+import { LocalBusinessSchema, FAQSchema, WebSiteSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Layout from "@/components/layout/Layout";
@@ -72,6 +72,8 @@ const Index = () => {
     <Layout>
       {seoHelmet}
       <LocalBusinessSchema />
+      <WebSiteSchema />
+      <BreadcrumbSchema items={[{ label: "Home", href: "/" }]} />
       <FAQSchema faqs={homeFaqs} />
       <DiscountBanner />
       {/* Hero */}

@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import Layout from "@/components/layout/Layout";
 import QuoteForm from "@/components/QuoteForm";
 import { useSEO } from "@/hooks/useSEO";
+import { LocalBusinessSchema, ContactPageSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 const Contact = () => {
@@ -15,6 +16,9 @@ const Contact = () => {
   return (
     <Layout>
       {seoHelmet}
+      <LocalBusinessSchema />
+      <ContactPageSchema />
+      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Contact" }]} />
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
           <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Contact" }]} className="mb-6" />

@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import QuoteForm from "@/components/QuoteForm";
 import { useSEO } from "@/hooks/useSEO";
+import { LocalBusinessSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 const GOOGLE_REVIEW_URL = "https://g.page/r/capitalcleancare/review";
@@ -32,6 +33,8 @@ const Reviews = () => {
   return (
     <Layout>
       {seoHelmet}
+      <LocalBusinessSchema />
+      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Reviews" }]} />
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
           <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Reviews" }]} className="mb-6" />
