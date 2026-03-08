@@ -19,6 +19,9 @@ const FAQPage = lazy(() => import("./pages/FAQPage"));
 const ServiceLocationPage = lazy(() => import("./pages/ServiceLocationPage"));
 const Blog = lazy(() => import("./pages/Blog"));
 const BlogPost = lazy(() => import("./pages/BlogPost"));
+const SpringCleaningMD = lazy(() => import("./pages/SpringCleaningMD"));
+const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
+const TermsOfService = lazy(() => import("./pages/TermsOfService"));
 
 const queryClient = new QueryClient();
 
@@ -46,6 +49,9 @@ const App = () => (
               <Route path="/blog" element={<Blog />} />
               <Route path="/blog/:slug" element={<BlogPost />} />
               <Route path="/:stateSlug" element={<LocationHub />} />
+              <Route path="/spring-cleaning-md" element={<SpringCleaningMD />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="/terms-of-service" element={<TermsOfService />} />
               <Route path="/locations/:slug/:serviceSlug" element={<ServiceLocationPage />} />
               <Route path="/locations/:slug" element={<CityPage />} />
               <Route path="*" element={<NotFound />} />
