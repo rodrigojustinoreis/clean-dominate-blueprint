@@ -73,6 +73,7 @@ const Index = () => {
       {seoHelmet}
       <LocalBusinessSchema />
       <FAQSchema faqs={homeFaqs} />
+      <DiscountBanner />
       {/* Hero */}
       <section className="relative overflow-hidden min-h-[500px] md:min-h-[600px]">
         <div className="absolute inset-0">
@@ -251,6 +252,14 @@ const Index = () => {
       </section>
 
       {/* Pricing */}
+      {/* Price Calculator */}
+      <section className="py-16 md:py-24">
+        <div className="container mx-auto px-4 max-w-2xl">
+          <PriceCalculator />
+        </div>
+      </section>
+
+      {/* Sample Pricing */}
       <section className="py-16 md:py-24 bg-secondary">
         <div className="container mx-auto px-4 max-w-3xl">
           <div className="text-center mb-8">
