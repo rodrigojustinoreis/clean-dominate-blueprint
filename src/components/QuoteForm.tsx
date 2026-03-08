@@ -24,6 +24,8 @@ const QuoteForm = () => {
     frequency: "",
     date: "",
     message: "",
+    smsConsent: false,
+    emailConsent: false,
   });
 
   const handleSubmit = (e: React.FormEvent) => {
