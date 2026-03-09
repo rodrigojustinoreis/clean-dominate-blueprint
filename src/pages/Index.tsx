@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { CheckCircle, Shield, Leaf, Star, MapPin, Sparkles, ArrowRight } from "lucide-react";
 import PricingTable from "@/components/PricingTable";
-import PriceCalculator from "@/components/PriceCalculator";
+
 import DiscountBanner from "@/components/DiscountBanner";
 import CityGallery from "@/components/CityGallery";
 import BeforeAfterGallery from "@/components/BeforeAfterGallery";
@@ -304,13 +304,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Pricing */}
-      {/* Price Calculator */}
-      <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4 max-w-2xl">
-          <PriceCalculator />
-        </div>
-      </section>
 
       {/* Sample Pricing */}
       <section className="py-16 md:py-24 bg-secondary">
