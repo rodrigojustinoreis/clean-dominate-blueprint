@@ -108,7 +108,7 @@ const Index = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Button variant="cta" size="lg" className="text-base px-8" asChild>
-                <Link to="/contact">Book Now <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                <a href="#quote">Book Now <ArrowRight className="ml-2 h-4 w-4" /></a>
               </Button>
               <Button variant="secondary" size="lg" className="text-base px-8" asChild>
                 <a href="tel:+12407042551"><Phone className="mr-2 h-4 w-4" /> Call (240) 704-2551</a>
