@@ -75,7 +75,7 @@ const Header = () => {
               <Phone className="h-4 w-4" /> (240) 704-2551
             </a>
             <Button variant="cta" asChild>
-              <Link to="/contact">Book Now</Link>
+              <a href="/#quote">Book Now</a>
             </Button>
           </div>
 
@@ -126,7 +126,7 @@ const Header = () => {
                 <Phone className="h-4 w-4 inline mr-1" /> (240) 704-2551
               </a>
               <Button variant="cta" className="w-full" asChild>
-                <Link to="/contact" onClick={() => setMobileOpen(false)}>Book Now</Link>
+                <a href="/#quote" onClick={() => setMobileOpen(false)}>Book Now</a>
               </Button>
             </div>
           </nav>
