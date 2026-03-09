@@ -94,9 +94,9 @@ const PricingTable = () => {
 
       <div className="text-center">
         <Button variant="cta" size="lg" asChild>
-          <Link to="/contact">
+          <a href="/#quote">
             Get Your Free Quote <ArrowRight className="ml-1 h-4 w-4" />
-          </Link>
+          </a>
         </Button>
       </div>
     </div>
