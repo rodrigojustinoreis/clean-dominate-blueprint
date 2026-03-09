@@ -76,7 +76,6 @@ const Index = () => {
       <WebSiteSchema />
       <BreadcrumbSchema items={[{ label: "Home", href: "/" }]} />
       <FAQSchema faqs={homeFaqs} />
-      <DiscountBanner />
       {/* Hero */}
       <section className="relative overflow-hidden min-h-[420px] md:min-h-[600px]">
         <div className="absolute inset-0">
