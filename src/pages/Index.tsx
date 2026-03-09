@@ -90,23 +90,25 @@ const Index = () => {
       <FAQSchema faqs={homeFaqs} />
 
       {/* ══════════════ HERO ══════════════ */}
-      <section className="relative overflow-hidden min-h-[480px] md:min-h-[600px]">
-        <div className="absolute inset-0">
-          <img src={teamPhoto} alt="Capital Clean Care team of professional cleaners" className="w-full h-full object-cover object-top" loading="eager" />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/60" />
+      <section className="relative overflow-hidden">
+        {/* Team photo - full visibility */}
+        <div className="relative">
+          <img src={teamPhoto} alt="Capital Clean Care team of professional cleaners" className="w-full h-auto object-cover object-top max-h-[500px] md:max-h-[550px]" loading="eager" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
         </div>
-        <div className="relative container mx-auto px-4 flex flex-col justify-center min-h-[480px] md:min-h-[600px]">
-          <div className="max-w-2xl">
-            <h1 className="font-heading text-3xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-4 md:mb-6 leading-tight">
+        {/* CTA content below/over the photo */}
+        <div className="relative bg-background -mt-16 md:-mt-24 pt-8 md:pt-12 pb-12 md:pb-16">
+          <div className="container mx-auto px-4 text-center max-w-3xl">
+            <h1 className="font-heading text-3xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 md:mb-6 leading-tight">
               Professional Cleaning Services in MD, DC & VA
             </h1>
-            <p className="text-lg md:text-xl text-primary-foreground/85 mb-2 font-medium">
+            <p className="text-lg md:text-xl text-muted-foreground mb-2 font-medium">
               Trusted Local Cleaners Serving the DMV Area
             </p>
-            <p className="text-base md:text-lg text-primary-foreground/75 mb-8 leading-relaxed max-w-xl">
+            <p className="text-base md:text-lg text-muted-foreground mb-8 leading-relaxed max-w-xl mx-auto">
               Experience premium cleaning with our eco-friendly approach and satisfaction guarantee. Background-checked professionals using non-toxic, plant-based products.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3">
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Button variant="cta" size="lg" className="text-base px-8" asChild>
                 <a href="#quote">Book Now <ArrowRight className="ml-2 h-4 w-4" /></a>
               </Button>
