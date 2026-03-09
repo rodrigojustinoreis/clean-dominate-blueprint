@@ -15,6 +15,5 @@ Allow: /
 User-agent: *
 Allow: /
 Disallow: /api/
-Disallow: /_next/
 
 Sitemap: https://capitalcleancare.com/sitemap.xml
