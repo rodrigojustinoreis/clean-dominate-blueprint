@@ -118,25 +118,25 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ══════════════ TEAM HERO STRIP ══════════════ */}
-      <section className="relative">
-        <div className="relative w-full">
-          <img
-            src={teamPhoto}
-            alt="Capital Clean Care team members smiling in branded uniforms"
-            className="w-full object-cover aspect-[4/3] md:aspect-[16/7]"
-            loading="lazy"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
-          <div className="absolute bottom-0 left-0 right-0 p-6 md:p-12">
-            <div className="container mx-auto">
-              <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground mb-3 max-w-lg leading-tight">
-                A Cleaning Team You Can Trust With Your Home
-              </h2>
-              <p className="text-muted-foreground max-w-md mb-4 text-sm md:text-base">
-                Family-owned, 9+ years of experience, licensed & insured. Over 150 homes cleaned with the care we'd give our own.
+      {/* ══════════════ FAMILY-OWNED / ABOUT STRIP ══════════════ */}
+      <section className="py-16 md:py-24 bg-secondary">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center max-w-6xl mx-auto">
+            <div className="relative">
+              <img
+                src={teamPhoto}
+                alt="Capital Clean Care team members smiling in branded uniforms"
+                className="rounded-2xl shadow-lg w-full object-cover aspect-[4/5] lg:aspect-[3/4]"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <h2 className="font-heading text-3xl md:text-4xl font-bold mb-3">Family-Owned Excellence</h2>
+              <p className="text-accent font-semibold mb-4">Over 150 homes cleaned with the care we'd give our own.</p>
+              <p className="text-muted-foreground mb-6 leading-relaxed">
+                At Capital Clean Care, we're more than a cleaning company — we're a team of dedicated professionals who genuinely care about your home. Our DMV expertise ensures your home shines every time.
               </p>
-              <div className="flex flex-wrap gap-4 mb-5">
+              <div className="flex flex-wrap gap-4 mb-6">
                 <div className="flex items-center gap-2 text-sm text-foreground">
                   <Clock className="h-5 w-5 text-accent" /> <span>9+ Years Experience</span>
                 </div>
