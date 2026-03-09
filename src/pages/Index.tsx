@@ -3,7 +3,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { CheckCircle, Shield, Leaf, Star, MapPin, Sparkles, ArrowRight } from "lucide-react";
 import PricingTable from "@/components/PricingTable";
 
-import DiscountBanner from "@/components/DiscountBanner";
+
 import CityGallery from "@/components/CityGallery";
 import BeforeAfterGallery from "@/components/BeforeAfterGallery";
 import { LocalBusinessSchema, FAQSchema, WebSiteSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
