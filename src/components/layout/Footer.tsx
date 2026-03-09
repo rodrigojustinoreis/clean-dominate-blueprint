@@ -99,6 +99,15 @@ const Footer = () => (
         <PartnerLinks />
         <div>
           <h4 className="font-heading font-semibold mb-3 text-sm">Find Us Online</h4>
+          <a 
+            href="https://www.capitalcleancare.com" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="flex items-center gap-2 mb-3 hover:text-accent transition-colors"
+          >
+            <img src={logo} alt="Capital Clean Care" className="h-5 w-5 object-contain" />
+            <span className="text-sm">www.capitalcleancare.com</span>
+          </a>
           <GoogleBusinessLinks className="mb-3" />
           <div className="space-y-1 text-xs text-primary-foreground/60">
             <Link to="/blog" className="hover:text-accent transition-colors block">Read Our Blog →</Link>
