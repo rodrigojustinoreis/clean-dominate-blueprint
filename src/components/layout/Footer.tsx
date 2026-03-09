@@ -18,7 +18,7 @@ const Footer = () => (
         </div>
         <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 w-full sm:w-auto">
           <Button variant="default" size="lg" asChild>
-            <Link to="/contact">Get a Free Quote</Link>
+            <a href="/#quote">Get a Free Quote</a>
           </Button>
           <Button variant="outline" size="lg" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10" asChild>
             <a href="tel:+12407042551"><Phone className="h-4 w-4 mr-2" /> Call Now</a>
