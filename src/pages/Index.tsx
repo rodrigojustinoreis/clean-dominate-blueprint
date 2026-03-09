@@ -3,7 +3,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { CheckCircle, Shield, Leaf, Star, MapPin, Sparkles, ArrowRight } from "lucide-react";
 import PricingTable from "@/components/PricingTable";
 
-import DiscountBanner from "@/components/DiscountBanner";
+
 import CityGallery from "@/components/CityGallery";
 import BeforeAfterGallery from "@/components/BeforeAfterGallery";
 import { LocalBusinessSchema, FAQSchema, WebSiteSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
@@ -76,7 +76,6 @@ const Index = () => {
       <WebSiteSchema />
       <BreadcrumbSchema items={[{ label: "Home", href: "/" }]} />
       <FAQSchema faqs={homeFaqs} />
-      <DiscountBanner />
       {/* Hero */}
       <section className="relative overflow-hidden min-h-[420px] md:min-h-[600px]">
         <div className="absolute inset-0">
