@@ -3,7 +3,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { CheckCircle, Shield, Leaf, Star, MapPin, Sparkles, ArrowRight } from "lucide-react";
 import PricingTable from "@/components/PricingTable";
 
-
+import DiscountBanner from "@/components/DiscountBanner";
 import CityGallery from "@/components/CityGallery";
 import BeforeAfterGallery from "@/components/BeforeAfterGallery";
 import { LocalBusinessSchema, FAQSchema, WebSiteSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
@@ -76,31 +76,35 @@ const Index = () => {
       <WebSiteSchema />
       <BreadcrumbSchema items={[{ label: "Home", href: "/" }]} />
       <FAQSchema faqs={homeFaqs} />
+      <DiscountBanner />
       {/* Hero */}
-      <section className="relative overflow-hidden min-h-[520px] md:min-h-[680px] flex items-end">
+      <section className="relative overflow-hidden min-h-[420px] md:min-h-[600px]">
         <div className="absolute inset-0">
           <img src={heroImage} alt="Capital Clean Care professional carrying eco-friendly cleaning supplies" className="w-full h-full object-cover object-center" loading="eager" />
-          <div className="absolute inset-0 bg-black/30" />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/60 md:from-primary/90 md:via-primary/75 md:to-transparent" />
         </div>
-        <div className="relative container mx-auto px-4 pb-14 md:pb-20 pt-32">
+        <div className="relative container mx-auto px-4 py-14 md:py-32">
           <div className="max-w-2xl">
-            <div className="inline-block bg-primary/85 backdrop-blur-sm rounded-xl px-5 py-3 mb-3">
-              <h1 className="font-heading text-2xl md:text-4xl lg:text-5xl font-bold text-primary-foreground leading-tight">
-                Premium Eco-Friendly House Cleaning in MD, DC & VA
-              </h1>
-            </div>
-            <div className="inline-block bg-primary/70 backdrop-blur-sm rounded-xl px-5 py-2.5 mb-5">
-              <p className="text-sm md:text-lg text-primary-foreground/95 leading-relaxed">
-                Background-checked professionals · Non-toxic products · 5-star rated
-              </p>
-            </div>
+            <h1 className="font-heading text-3xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-4 md:mb-6 leading-tight">
+              Premium Eco-Friendly House Cleaning in MD, DC & VA
+            </h1>
+            <p className="text-base md:text-xl text-primary-foreground/85 mb-6 md:mb-8 leading-relaxed">
+              Experience the difference of truly clean. Our background-checked professionals use non-toxic, plant-based products to make your home sparkle — safely.
+            </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Button variant="cta" size="lg" className="text-base" asChild>
                 <Link to="/contact">Get a Free Quote <ArrowRight className="ml-1 h-4 w-4" /></Link>
               </Button>
-              <Button size="lg" className="text-base bg-card/20 backdrop-blur-sm border border-primary-foreground/30 text-primary-foreground hover:bg-card/30" asChild>
+              <Button variant="secondary" size="lg" className="text-base" asChild>
                 <a href="tel:+12407042551">Call (240) 704-2551</a>
               </Button>
+            </div>
+            <div className="flex flex-wrap gap-3 md:gap-4 mt-6 md:mt-8">
+              {trustPoints.map((tp) => (
+                <span key={tp.label} className="flex items-center gap-1 md:gap-1.5 text-xs md:text-sm text-primary-foreground/80">
+                  <tp.icon className="h-4 w-4 text-accent" /> {tp.label}
+                </span>
+              ))}
             </div>
           </div>
         </div>
