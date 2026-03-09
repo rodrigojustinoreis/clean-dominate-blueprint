@@ -92,7 +92,7 @@ const Index = () => {
       {/* ══════════════ HERO ══════════════ */}
       <section className="relative overflow-hidden min-h-[480px] md:min-h-[600px]">
         <div className="absolute inset-0">
-          <img src={heroImage} alt="Capital Clean Care professional carrying eco-friendly cleaning supplies" className="w-full h-full object-cover object-center" loading="eager" />
+          <img src={teamPhoto} alt="Capital Clean Care team of professional cleaners" className="w-full h-full object-cover object-top" loading="eager" />
           <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/60" />
         </div>
         <div className="relative container mx-auto px-4 flex flex-col justify-center min-h-[480px] md:min-h-[600px]">
