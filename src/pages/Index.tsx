@@ -304,13 +304,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Pricing */}
-      {/* Price Calculator */}
-      <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4 max-w-2xl">
-          <PriceCalculator />
-        </div>
-      </section>
 
       {/* Sample Pricing */}
       <section className="py-16 md:py-24 bg-secondary">
