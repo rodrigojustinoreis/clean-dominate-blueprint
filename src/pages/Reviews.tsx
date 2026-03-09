@@ -7,8 +7,8 @@ import { useSEO } from "@/hooks/useSEO";
 import { LocalBusinessSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
-const GOOGLE_REVIEW_URL = "https://g.page/r/capitalcleancare/review";
-const GOOGLE_MAPS_URL = "https://www.google.com/maps/place/Capital+Clean+Care";
+const GOOGLE_REVIEW_URL = "https://g.page/r/CUlLBE9aAqAYEAE/review";
+const GOOGLE_MAPS_URL = "https://www.google.com/maps/place//data=!4m3!3m2!1s0xa2bc172727d57413:0x18a0025a4f044b49!12e1";
 
 const reviews = [
   { name: "Sarah M.", location: "Bethesda, MD", text: "Capital Clean Care transformed our home. The team was professional, thorough, and used products I feel safe having around my kids and pets.", rating: 5 },
