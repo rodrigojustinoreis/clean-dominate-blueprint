@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Menu, X, ChevronDown, Phone, Leaf } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { services } from "@/data/services";
-import { hubs, mdCities, dcCities, vaCities } from "@/data/locations";
+import { hubs } from "@/data/locations";
 import logo from "@/assets/logo.png";
 
 const Header = () => {
@@ -38,7 +38,8 @@ const Header = () => {
           {/* Desktop nav */}
           <nav className="hidden lg:flex items-center gap-1">
             <Link to="/" className="px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">Home</Link>
-            
+            <Link to="/about" className="px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">About Us</Link>
+
             <div className="relative group">
               <button className="px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors flex items-center gap-1">
                 Services <ChevronDown className="h-3 w-3" />
@@ -65,10 +66,8 @@ const Header = () => {
               </div>
             </div>
 
-            <Link to="/about" className="px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">About</Link>
             <Link to="/reviews" className="px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">Reviews</Link>
-            <Link to="/contact" className="px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">Contact</Link>
-            <Link to="/blog" className="px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">Blog</Link>
+            <Link to="/contact" className="px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">Contact Us</Link>
           </nav>
 
           <div className="hidden lg:flex items-center gap-3">
@@ -76,7 +75,7 @@ const Header = () => {
               <Phone className="h-4 w-4" /> (240) 704-2551
             </a>
             <Button variant="cta" asChild>
-              <Link to="/contact">Get a Free Quote</Link>
+              <Link to="/contact">Book Now</Link>
             </Button>
           </div>
 
@@ -91,7 +90,8 @@ const Header = () => {
         <div className="lg:hidden bg-card border-t border-border">
           <nav className="container mx-auto px-4 py-4 space-y-1">
             <Link to="/" className="block px-3 py-2 rounded-md hover:bg-secondary" onClick={() => setMobileOpen(false)}>Home</Link>
-            
+            <Link to="/about" className="block px-3 py-2 rounded-md hover:bg-secondary" onClick={() => setMobileOpen(false)}>About Us</Link>
+
             <button className="w-full flex items-center justify-between px-3 py-2 rounded-md hover:bg-secondary" onClick={() => setServicesOpen(!servicesOpen)}>
               Services <ChevronDown className={`h-4 w-4 transition-transform ${servicesOpen ? "rotate-180" : ""}`} />
             </button>
@@ -118,17 +118,15 @@ const Header = () => {
               </div>
             )}
 
-            <Link to="/about" className="block px-3 py-2 rounded-md hover:bg-secondary" onClick={() => setMobileOpen(false)}>About</Link>
             <Link to="/reviews" className="block px-3 py-2 rounded-md hover:bg-secondary" onClick={() => setMobileOpen(false)}>Reviews</Link>
-            <Link to="/contact" className="block px-3 py-2 rounded-md hover:bg-secondary" onClick={() => setMobileOpen(false)}>Contact</Link>
-            <Link to="/blog" className="block px-3 py-2 rounded-md hover:bg-secondary" onClick={() => setMobileOpen(false)}>Blog</Link>
-            
+            <Link to="/contact" className="block px-3 py-2 rounded-md hover:bg-secondary" onClick={() => setMobileOpen(false)}>Contact Us</Link>
+
             <div className="pt-3 space-y-2">
               <a href="tel:+12407042551" className="block text-center font-semibold text-foreground">
                 <Phone className="h-4 w-4 inline mr-1" /> (240) 704-2551
               </a>
               <Button variant="cta" className="w-full" asChild>
-                <Link to="/contact" onClick={() => setMobileOpen(false)}>Get a Free Quote</Link>
+                <Link to="/contact" onClick={() => setMobileOpen(false)}>Book Now</Link>
               </Button>
             </div>
           </nav>

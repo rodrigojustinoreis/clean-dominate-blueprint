@@ -1,10 +1,6 @@
 import { Link } from "react-router-dom";
-import Breadcrumbs from "@/components/Breadcrumbs";
-import { CheckCircle, Shield, Leaf, Star, MapPin, Sparkles, ArrowRight } from "lucide-react";
+import { CheckCircle, Shield, Leaf, Star, MapPin, Sparkles, ArrowRight, Phone, Users, Clock } from "lucide-react";
 import PricingTable from "@/components/PricingTable";
-
-
-import CityGallery from "@/components/CityGallery";
 import BeforeAfterGallery from "@/components/BeforeAfterGallery";
 import { LocalBusinessSchema, FAQSchema, WebSiteSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import { Button } from "@/components/ui/button";
@@ -14,22 +10,38 @@ import QuoteForm from "@/components/QuoteForm";
 import FAQ from "@/components/FAQ";
 import { useSEO } from "@/hooks/useSEO";
 import { services } from "@/data/services";
-import { hubs, mdCities, dcCities, vaCities } from "@/data/locations";
+import { mdCities, dcCities, vaCities } from "@/data/locations";
 import { vanityLandingPages } from "@/data/vanity-landings";
 import heroImage from "@/assets/hero-clean-home.jpg";
 import regionMD from "@/assets/region-maryland.jpg";
 import regionDC from "@/assets/region-dc.jpg";
 import regionVA from "@/assets/region-virginia.jpg";
 import teamPhoto from "@/assets/team-photo.png";
-import happyClient from "@/assets/happy-client.png";
 import cleanerMopping from "@/assets/cleaner-mopping.png";
 import ecoProducts from "@/assets/eco-products.png";
+import happyClient from "@/assets/happy-client.png";
 
-const trustPoints = [
-  { icon: Shield, label: "Licensed & Insured" },
-  { icon: CheckCircle, label: "Background-Checked Teams" },
-  { icon: Leaf, label: "Eco-Friendly Products" },
-  { icon: Star, label: "Satisfaction Guaranteed" },
+const whyChooseUs = [
+  {
+    icon: Users,
+    title: "Local Experts Who Care",
+    desc: "We're not just another cleaning company — we're your neighbors. We understand DMV homes and deliver personalized service.",
+  },
+  {
+    icon: Shield,
+    title: "Fully Insured, Background-Checked",
+    desc: "Peace of mind comes standard. Every team member is vetted, insured, and professionally trained.",
+  },
+  {
+    icon: Leaf,
+    title: "100% Eco-Friendly Products",
+    desc: "Safe for your family, pets, and planet. EPA Safer Choice certified, plant-based, no harsh chemicals.",
+  },
+  {
+    icon: Star,
+    title: "Satisfaction Guaranteed",
+    desc: "Not happy? We'll re-clean at no extra charge within 24 hours. Your satisfaction is our priority.",
+  },
 ];
 
 const testimonials = [
@@ -76,41 +88,98 @@ const Index = () => {
       <WebSiteSchema />
       <BreadcrumbSchema items={[{ label: "Home", href: "/" }]} />
       <FAQSchema faqs={homeFaqs} />
-      {/* Hero */}
-      <section className="relative overflow-hidden min-h-[420px] md:min-h-[600px]">
+
+      {/* ══════════════ HERO ══════════════ */}
+      <section className="relative overflow-hidden min-h-[480px] md:min-h-[600px]">
         <div className="absolute inset-0">
           <img src={heroImage} alt="Capital Clean Care professional carrying eco-friendly cleaning supplies" className="w-full h-full object-cover object-center" loading="eager" />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/60 md:from-primary/90 md:via-primary/75 md:to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/60" />
         </div>
-        <div className="relative container mx-auto px-4 py-14 md:py-32">
+        <div className="relative container mx-auto px-4 flex flex-col justify-center min-h-[480px] md:min-h-[600px]">
           <div className="max-w-2xl">
             <h1 className="font-heading text-3xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-4 md:mb-6 leading-tight">
-              Premium Eco-Friendly House Cleaning in MD, DC & VA
+              Professional Cleaning Services in MD, DC & VA
             </h1>
-            <p className="text-base md:text-xl text-primary-foreground/85 mb-6 md:mb-8 leading-relaxed">
-              Experience the difference of truly clean. Our background-checked professionals use non-toxic, plant-based products to make your home sparkle — safely.
+            <p className="text-lg md:text-xl text-primary-foreground/85 mb-2 font-medium">
+              Trusted Local Cleaners Serving the DMV Area
+            </p>
+            <p className="text-base md:text-lg text-primary-foreground/75 mb-8 leading-relaxed max-w-xl">
+              Experience premium cleaning with our eco-friendly approach and satisfaction guarantee. Background-checked professionals using non-toxic, plant-based products.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
-              <Button variant="cta" size="lg" className="text-base" asChild>
-                <Link to="/contact">Get a Free Quote <ArrowRight className="ml-1 h-4 w-4" /></Link>
+              <Button variant="cta" size="lg" className="text-base px-8" asChild>
+                <Link to="/contact">Book Now <ArrowRight className="ml-2 h-4 w-4" /></Link>
               </Button>
-              <Button variant="secondary" size="lg" className="text-base" asChild>
-                <a href="tel:+12407042551">Call (240) 704-2551</a>
+              <Button variant="secondary" size="lg" className="text-base px-8" asChild>
+                <a href="tel:+12407042551"><Phone className="mr-2 h-4 w-4" /> Call (240) 704-2551</a>
               </Button>
-            </div>
-            <div className="flex flex-wrap gap-3 md:gap-4 mt-6 md:mt-8">
-              {trustPoints.map((tp) => (
-                <span key={tp.label} className="flex items-center gap-1 md:gap-1.5 text-xs md:text-sm text-primary-foreground/80">
-                  <tp.icon className="h-4 w-4 text-accent" /> {tp.label}
-                </span>
-              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Internal Link Silo — Services × Locations */}
+      {/* ══════════════ FAMILY-OWNED / ABOUT STRIP ══════════════ */}
+      <section className="py-16 md:py-24 bg-secondary">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center max-w-6xl mx-auto">
+            <div className="relative">
+              <img
+                src={teamPhoto}
+                alt="Capital Clean Care team members smiling in branded uniforms"
+                className="rounded-2xl shadow-lg w-full object-cover aspect-[4/5] lg:aspect-[3/4]"
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <h2 className="font-heading text-3xl md:text-4xl font-bold mb-3">Family-Owned Excellence</h2>
+              <p className="text-accent font-semibold mb-4">Over 150 homes cleaned with the care we'd give our own.</p>
+              <p className="text-muted-foreground mb-6 leading-relaxed">
+                At Capital Clean Care, we're more than a cleaning company — we're a team of dedicated professionals who genuinely care about your home. Our DMV expertise ensures your home shines every time.
+              </p>
+              <div className="flex flex-wrap gap-4 mb-6">
+                <div className="flex items-center gap-2 text-sm text-foreground">
+                  <Clock className="h-5 w-5 text-accent" /> <span>9+ Years Experience</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-foreground">
+                  <Shield className="h-5 w-5 text-accent" /> <span>Licensed & Insured</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-foreground">
+                  <Leaf className="h-5 w-5 text-accent" /> <span>Eco-Friendly</span>
+                </div>
+              </div>
+              <Button variant="cta" size="lg" asChild>
+                <Link to="/about">Learn More About Us <ArrowRight className="ml-1 h-4 w-4" /></Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════ WHY CHOOSE US ══════════════ */}
       <section className="py-16 md:py-24">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">Why Homeowners Choose Capital Clean Care</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">We deliver consistent, reliable cleaning with a personal touch that big franchises can't match.</p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            {whyChooseUs.map((item) => (
+              <Card key={item.title} className="text-center hover:shadow-lg transition-shadow">
+                <CardContent className="p-6">
+                  <div className="w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-4">
+                    <item.icon className="h-7 w-7 text-accent" />
+                  </div>
+                  <h3 className="font-heading font-semibold text-lg mb-2">{item.title}</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════ OUR SERVICES ══════════════ */}
+      <section className="py-16 md:py-24 bg-secondary">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">Our Cleaning Services</h2>
@@ -126,74 +195,19 @@ const Index = () => {
                   <Link to={`/services/${s.slug}`} className="text-accent font-medium text-sm inline-flex items-center gap-1 hover:gap-2 transition-all">
                     Learn More <ArrowRight className="h-3 w-3" />
                   </Link>
-                  {/* Keyword-rich internal links to service-location combos */}
-                  <div className="mt-3 flex flex-wrap gap-1.5">
-                    {["wheaton-md", "silver-spring-md", "bethesda-md", "arlington-va"].slice(0, 2).map((citySlug) => {
-                      const cityName = citySlug.replace(/-md|-va|-dc/g, "").split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
-                      const stateAbbr = citySlug.endsWith("-va") ? "VA" : citySlug.endsWith("-dc") ? "DC" : "MD";
-                      return (
-                        <Link
-                          key={citySlug}
-                          to={`/locations/${citySlug}`}
-                          className="text-xs text-muted-foreground hover:text-accent transition-colors"
-                          aria-label={`${s.name} in ${cityName}, ${stateAbbr}`}
-                        >
-                          {cityName}, {stateAbbr}
-                        </Link>
-                      );
-                    })}
-                  </div>
                 </CardContent>
               </Card>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Meet Our Team */}
-      <section className="py-16 md:py-24 bg-secondary">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center max-w-6xl mx-auto">
-            <div className="relative">
-              <img
-                src={teamPhoto}
-                alt="Capital Clean Care team members smiling in branded uniforms"
-                className="rounded-2xl shadow-lg w-full object-cover aspect-[4/5] lg:aspect-[3/4]"
-                loading="lazy"
-              />
-            </div>
-            <div>
-              <h2 className="font-heading text-3xl md:text-4xl font-bold mb-6">Meet the People Behind Every Clean</h2>
-              <p className="text-muted-foreground mb-6 leading-relaxed">
-                At Capital Clean Care, we're more than a cleaning company — we're a team of dedicated professionals who genuinely care about your home. Every team member is background-checked, professionally trained, and passionate about delivering exceptional results.
-              </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-                {[
-                  { icon: Shield, title: "Licensed & Insured", desc: "Full coverage for your peace of mind." },
-                  { icon: CheckCircle, title: "Background-Checked", desc: "Every team member is thoroughly vetted." },
-                  { icon: Leaf, title: "100% Eco-Friendly", desc: "Safe for your family, pets, and planet." },
-                  { icon: Star, title: "Satisfaction Guaranteed", desc: "We'll re-clean at no extra charge." },
-                ].map((item) => (
-                  <div key={item.title} className="flex gap-3 items-start">
-                    <div className="w-9 h-9 rounded-full bg-accent/10 flex items-center justify-center shrink-0 mt-0.5">
-                      <item.icon className="h-4 w-4 text-accent" />
-                    </div>
-                    <div>
-                      <h3 className="font-heading font-semibold text-sm">{item.title}</h3>
-                      <p className="text-muted-foreground text-xs">{item.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <Button variant="cta" size="lg" asChild>
-                <Link to="/about">Learn More About Us <ArrowRight className="ml-1 h-4 w-4" /></Link>
-              </Button>
-            </div>
+          <div className="text-center mt-10">
+            <Button variant="cta" size="lg" asChild>
+              <Link to="/contact">Get a Free Quote <ArrowRight className="ml-1 h-4 w-4" /></Link>
+            </Button>
           </div>
         </div>
       </section>
 
-      {/* Real Work Photo Strip */}
+      {/* ══════════════ REAL WORK PHOTOS ══════════════ */}
       <section className="py-12 md:py-16">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
@@ -204,7 +218,41 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Service Areas - Region Cards */}
+      {/* ══════════════ BEFORE & AFTER ══════════════ */}
+      <BeforeAfterGallery />
+
+      {/* ══════════════ TESTIMONIALS ══════════════ */}
+      <section className="py-16 md:py-24 bg-secondary">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">What Our Clients Say</h2>
+            <p className="text-muted-foreground">Real reviews from real homeowners across MD, DC & VA.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {testimonials.map((t, i) => (
+              <Card key={i}>
+                <CardContent className="p-6">
+                  <div className="flex gap-0.5 mb-3">
+                    {Array.from({ length: t.rating }).map((_, j) => (
+                      <Star key={j} className="h-4 w-4 fill-accent text-accent" />
+                    ))}
+                  </div>
+                  <p className="text-foreground mb-4 italic">"{t.text}"</p>
+                  <p className="text-sm font-semibold">{t.name}</p>
+                  <p className="text-xs text-muted-foreground">{t.location}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+          <div className="text-center mt-8">
+            <Button variant="outline" asChild>
+              <Link to="/reviews">Read All Reviews <ArrowRight className="ml-1 h-3 w-3" /></Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════ SERVICE AREAS ══════════════ */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
@@ -239,7 +287,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Featured Location-Specific Pages — Content Silo Links */}
+      {/* ══════════════ LOCAL CLEANING PAGES ══════════════ */}
       <section className="py-12 md:py-16 bg-muted/30">
         <div className="container mx-auto px-4 max-w-5xl">
           <div className="text-center mb-10">
@@ -266,46 +314,14 @@ const Index = () => {
           </div>
           <div className="text-center mt-6">
             <Button variant="outline" size="sm" asChild>
-              <Link to="/maryland" aria-label="View all Maryland cleaning service locations">View All Maryland Locations <ArrowRight className="ml-1 h-3 w-3" /></Link>
+              <Link to="/maryland">View All Maryland Locations <ArrowRight className="ml-1 h-3 w-3" /></Link>
             </Button>
           </div>
         </div>
       </section>
 
-      {/* City Gallery */}
-      <CityGallery limit={12} />
-
-      {/* Before & After */}
-      <BeforeAfterGallery />
-
-      {/* Testimonials */}
-      <section className="py-16 md:py-24 bg-secondary">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">What Our Clients Say</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            {testimonials.map((t, i) => (
-              <Card key={i}>
-                <CardContent className="p-6">
-                  <div className="flex gap-0.5 mb-3">
-                    {Array.from({ length: t.rating }).map((_, j) => (
-                      <Star key={j} className="h-4 w-4 fill-accent text-accent" />
-                    ))}
-                  </div>
-                  <p className="text-foreground mb-4 italic">"{t.text}"</p>
-                  <p className="text-sm font-semibold">{t.name}</p>
-                  <p className="text-xs text-muted-foreground">{t.location}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-
-      {/* Sample Pricing */}
-      <section className="py-16 md:py-24 bg-secondary">
+      {/* ══════════════ PRICING ══════════════ */}
+      <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 max-w-3xl">
           <div className="text-center mb-8">
             <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">Sample Pricing</h2>
@@ -315,16 +331,16 @@ const Index = () => {
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="py-16 md:py-24">
+      {/* ══════════════ FAQ ══════════════ */}
+      <section className="py-16 md:py-24 bg-secondary">
         <div className="container mx-auto px-4 max-w-3xl">
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-center mb-8">Frequently Asked Questions</h2>
           <FAQ faqs={homeFaqs} />
         </div>
       </section>
 
-      {/* Quote Form */}
-      <section className="py-16 md:py-24 bg-secondary" id="quote">
+      {/* ══════════════ QUOTE FORM ══════════════ */}
+      <section className="py-16 md:py-24" id="quote">
         <div className="container mx-auto px-4 max-w-2xl">
           <div className="text-center mb-8">
             <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">Get Your Free Quote</h2>
