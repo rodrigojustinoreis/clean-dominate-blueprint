@@ -1,13 +1,12 @@
 import { Link } from "react-router-dom";
-import { Star, ArrowRight, Quote } from "lucide-react";
+import { Star, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 
 const testimonials = [
-  { name: "Sarah M.", location: "Bethesda, MD", text: "Capital Clean Care transformed our home. The team was professional, thorough, and used products that I feel safe having around my kids and pets. Highly recommend!", rating: 5 },
-  { name: "James T.", location: "Arlington, VA", text: "We've used their bi-weekly service for six months and every visit exceeds expectations. Our dedicated team knows our home and preferences perfectly.", rating: 5 },
+  { name: "Sarah M.", location: "Bethesda, MD", text: "Capital Clean Care transformed our home. The team was professional, thorough, and used products that I feel safe having around my kids and pets.", rating: 5 },
+  { name: "James T.", location: "Arlington, VA", text: "We've used their bi-weekly service for six months and every visit exceeds expectations. Our dedicated team knows our home perfectly.", rating: 5 },
   { name: "Lauren K.", location: "Capitol Hill, DC", text: "After our kitchen renovation, the post-construction cleaning was incredible. They removed every trace of dust from places I didn't even know existed.", rating: 5 },
-  { name: "David R.", location: "Rockville, MD", text: "Switching to Capital Clean Care was the best decision. Their eco-friendly approach and consistent quality make them stand out. Our home has never looked better.", rating: 5 },
+  { name: "David R.", location: "Rockville, MD", text: "Their eco-friendly approach and consistent quality make them stand out. Switching to Capital Clean Care was the best decision we've made.", rating: 5 },
 ];
 
 const TestimonialsSection = () => (
@@ -18,27 +17,44 @@ const TestimonialsSection = () => (
         <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mt-2 mb-4">What Our Clients Say</h2>
         <p className="text-muted-foreground text-base md:text-lg">Real reviews from real homeowners across MD, DC & VA.</p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
         {testimonials.map((t, i) => (
-          <Card key={i} className="hover:shadow-lg transition-shadow duration-300">
-            <CardContent className="p-7">
-              <Quote className="h-8 w-8 text-accent/20 mb-3" />
-              <div className="flex gap-0.5 mb-4">
-                {Array.from({ length: t.rating }).map((_, j) => (
-                  <Star key={j} className="h-4 w-4 fill-accent text-accent" />
-                ))}
+          <div
+            key={i}
+            className="group relative bg-card rounded-2xl p-8 border border-border hover:border-accent/20 transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+          >
+            {/* Decorative accent line */}
+            <div className="absolute top-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-accent/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+
+            {/* Stars */}
+            <div className="flex gap-1 mb-5">
+              {Array.from({ length: t.rating }).map((_, j) => (
+                <Star key={j} className="h-4 w-4 fill-accent text-accent" />
+              ))}
+            </div>
+
+            {/* Quote */}
+            <p className="text-foreground leading-relaxed mb-6 text-sm md:text-base">
+              "{t.text}"
+            </p>
+
+            {/* Author */}
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center">
+                <span className="font-heading font-bold text-accent text-sm">{t.name.charAt(0)}</span>
               </div>
-              <p className="text-foreground mb-5 leading-relaxed">"{t.text}"</p>
-              <div className="border-t border-border pt-4">
-                <p className="text-sm font-semibold">{t.name}</p>
+              <div>
+                <p className="text-sm font-semibold text-foreground">{t.name}</p>
                 <p className="text-xs text-muted-foreground">{t.location}</p>
               </div>
-            </CardContent>
-          </Card>
+            </div>
+          </div>
         ))}
       </div>
-      <div className="text-center mt-10">
-        <Button variant="outline" asChild>
+
+      <div className="text-center mt-12">
+        <Button variant="outline" className="rounded-full" asChild>
           <Link to="/reviews">Read All Reviews <ArrowRight className="ml-1 h-3 w-3" /></Link>
         </Button>
       </div>
