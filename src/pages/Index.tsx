@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { CheckCircle, Shield, Leaf, Star, MapPin, Sparkles, ArrowRight, Phone, Users, Clock } from "lucide-react";
+import { CheckCircle, Shield, Leaf, Star, MapPin, Sparkles, ArrowRight, Phone, Users, Clock, Check } from "lucide-react";
 import PricingTable from "@/components/PricingTable";
 import BeforeAfterGallery from "@/components/BeforeAfterGallery";
 import { LocalBusinessSchema, FAQSchema, WebSiteSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
@@ -12,7 +12,6 @@ import { useSEO } from "@/hooks/useSEO";
 import { services } from "@/data/services";
 import { mdCities, dcCities, vaCities } from "@/data/locations";
 import { vanityLandingPages } from "@/data/vanity-landings";
-import heroImage from "@/assets/hero-clean-home.jpg";
 import regionMD from "@/assets/region-maryland.jpg";
 import regionDC from "@/assets/region-dc.jpg";
 import regionVA from "@/assets/region-virginia.jpg";
@@ -20,36 +19,10 @@ import teamPhoto from "@/assets/team-photo.png";
 import cleanerMopping from "@/assets/cleaner-mopping.png";
 import ecoProducts from "@/assets/eco-products.png";
 import happyClient from "@/assets/happy-client.png";
-
-const whyChooseUs = [
-  {
-    icon: Users,
-    title: "Local Experts Who Care",
-    desc: "We're not just another cleaning company — we're your neighbors. We understand DMV homes and deliver personalized service.",
-  },
-  {
-    icon: Shield,
-    title: "Fully Insured, Background-Checked",
-    desc: "Peace of mind comes standard. Every team member is vetted, insured, and professionally trained.",
-  },
-  {
-    icon: Leaf,
-    title: "100% Eco-Friendly Products",
-    desc: "Safe for your family, pets, and planet. EPA Safer Choice certified, plant-based, no harsh chemicals.",
-  },
-  {
-    icon: Star,
-    title: "Satisfaction Guaranteed",
-    desc: "Not happy? We'll re-clean at no extra charge within 24 hours. Your satisfaction is our priority.",
-  },
-];
-
-const testimonials = [
-  { name: "Sarah M.", location: "Bethesda, MD", text: "Capital Clean Care transformed our home. The team was professional, thorough, and used products that I feel safe having around my kids and pets. Highly recommend!", rating: 5 },
-  { name: "James T.", location: "Arlington, VA", text: "We've used their bi-weekly service for six months and every visit exceeds expectations. Our dedicated team knows our home and preferences perfectly.", rating: 5 },
-  { name: "Lauren K.", location: "Capitol Hill, DC", text: "After our kitchen renovation, the post-construction cleaning was incredible. They removed every trace of dust from places I didn't even know existed. Worth every penny.", rating: 5 },
-  { name: "David R.", location: "Rockville, MD", text: "Switching to Capital Clean Care was the best decision. Their eco-friendly approach and consistent quality make them stand out. Our home has never looked better.", rating: 5 },
-];
+import HeroSection from "@/components/home/HeroSection";
+import WhyChooseUs from "@/components/home/WhyChooseUs";
+import ServicesSection from "@/components/home/ServicesSection";
+import TestimonialsSection from "@/components/home/TestimonialsSection";
 
 const homeFaqs = [
   { q: "What areas do you serve?", a: "We serve communities throughout Maryland (Montgomery, Frederick, Howard, and Prince George's Counties), Washington DC, and Northern Virginia (Arlington, Fairfax, McLean, Alexandria, and more)." },
@@ -90,64 +63,66 @@ const Index = () => {
       <FAQSchema faqs={homeFaqs} />
 
       {/* ══════════════ HERO ══════════════ */}
-      <section className="relative overflow-hidden">
-        {/* Team photo - full visibility */}
-        <div className="relative">
-          <img src={teamPhoto} alt="Capital Clean Care team of professional cleaners" className="w-full h-auto object-cover object-top max-h-[500px] md:max-h-[550px]" loading="eager" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
-        </div>
-        {/* CTA content below/over the photo */}
-        <div className="relative bg-background -mt-16 md:-mt-24 pt-8 md:pt-12 pb-12 md:pb-16">
-          <div className="container mx-auto px-4 text-center max-w-3xl">
-            <h1 className="font-heading text-3xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 md:mb-6 leading-tight">
-              Professional Cleaning Services in MD, DC & VA
-            </h1>
-            <p className="text-lg md:text-xl text-muted-foreground mb-2 font-medium">
-              Trusted Local Cleaners Serving the DMV Area
-            </p>
-            <p className="text-base md:text-lg text-muted-foreground mb-8 leading-relaxed max-w-xl mx-auto">
-              Experience premium cleaning with our eco-friendly approach and satisfaction guarantee. Background-checked professionals using non-toxic, plant-based products.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Button variant="cta" size="lg" className="text-base px-8" asChild>
-                <a href="#quote">Book Now <ArrowRight className="ml-2 h-4 w-4" /></a>
-              </Button>
-              <Button variant="secondary" size="lg" className="text-base px-8" asChild>
-                <a href="tel:+12407042551"><Phone className="mr-2 h-4 w-4" /> Call (240) 704-2551</a>
-              </Button>
-            </div>
+      <HeroSection />
+
+      {/* ══════════════ TRUST STRIP ══════════════ */}
+      <section className="border-b border-border bg-card">
+        <div className="container mx-auto px-4 py-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+            {[
+              { icon: Shield, label: "Licensed & Insured", sub: "Full coverage" },
+              { icon: Users, label: "Background-Checked", sub: "Vetted teams" },
+              { icon: Leaf, label: "Eco-Friendly", sub: "Non-toxic products" },
+              { icon: Star, label: "5-Star Rated", sub: "150+ happy clients" },
+            ].map((item) => (
+              <div key={item.label} className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center shrink-0">
+                  <item.icon className="h-5 w-5 text-accent" />
+                </div>
+                <div>
+                  <p className="font-semibold text-sm text-foreground">{item.label}</p>
+                  <p className="text-xs text-muted-foreground">{item.sub}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* ══════════════ FAMILY-OWNED / ABOUT STRIP ══════════════ */}
-      <section className="py-16 md:py-24 bg-secondary">
+      {/* ══════════════ FAMILY-OWNED / ABOUT ══════════════ */}
+      <section className="py-20 md:py-28">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center max-w-6xl mx-auto">
-            <div className="relative">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
+            <div className="relative order-2 lg:order-1">
               <img
                 src={teamPhoto}
                 alt="Capital Clean Care team members smiling in branded uniforms"
-                className="rounded-2xl shadow-lg w-full object-cover aspect-[4/5] lg:aspect-[3/4]"
+                className="rounded-2xl shadow-xl w-full object-cover aspect-[4/5]"
                 loading="lazy"
               />
+              {/* Floating badge */}
+              <div className="absolute -bottom-4 -right-4 md:bottom-6 md:-right-6 bg-accent text-accent-foreground rounded-xl p-4 shadow-lg">
+                <p className="font-heading font-bold text-2xl">9+</p>
+                <p className="text-xs font-medium">Years of<br />Experience</p>
+              </div>
             </div>
-            <div>
-              <h2 className="font-heading text-3xl md:text-4xl font-bold mb-3">Family-Owned Excellence</h2>
-              <p className="text-accent font-semibold mb-4">Over 150 homes cleaned with the care we'd give our own.</p>
-              <p className="text-muted-foreground mb-6 leading-relaxed">
-                At Capital Clean Care, we're more than a cleaning company — we're a team of dedicated professionals who genuinely care about your home. Our DMV expertise ensures your home shines every time.
+            <div className="order-1 lg:order-2">
+              <span className="text-accent font-semibold text-sm uppercase tracking-wider">About Us</span>
+              <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mt-2 mb-4">
+                Family-Owned<br />Cleaning Excellence
+              </h2>
+              <p className="text-muted-foreground mb-6 leading-relaxed text-base md:text-lg">
+                At Capital Clean Care, we're more than a cleaning company — we're a team of dedicated professionals who genuinely care about your home. Over 150 homes cleaned with the care we'd give our own.
               </p>
-              <div className="flex flex-wrap gap-4 mb-6">
-                <div className="flex items-center gap-2 text-sm text-foreground">
-                  <Clock className="h-5 w-5 text-accent" /> <span>9+ Years Experience</span>
-                </div>
-                <div className="flex items-center gap-2 text-sm text-foreground">
-                  <Shield className="h-5 w-5 text-accent" /> <span>Licensed & Insured</span>
-                </div>
-                <div className="flex items-center gap-2 text-sm text-foreground">
-                  <Leaf className="h-5 w-5 text-accent" /> <span>Eco-Friendly</span>
-                </div>
+              <div className="space-y-3 mb-8">
+                {["Licensed, bonded & fully insured", "EPA Safer Choice certified products", "Consistent dedicated cleaning teams", "24-hour satisfaction guarantee"].map((item) => (
+                  <div key={item} className="flex items-center gap-3">
+                    <div className="w-5 h-5 rounded-full bg-accent/15 flex items-center justify-center shrink-0">
+                      <Check className="h-3 w-3 text-accent" />
+                    </div>
+                    <span className="text-foreground text-sm">{item}</span>
+                  </div>
+                ))}
               </div>
               <Button variant="cta" size="lg" asChild>
                 <Link to="/about">Learn More About Us <ArrowRight className="ml-1 h-4 w-4" /></Link>
@@ -158,99 +133,58 @@ const Index = () => {
       </section>
 
       {/* ══════════════ SERVICE AREAS ══════════════ */}
-      <section className="py-16 md:py-24">
+      <section className="py-20 md:py-28 bg-secondary">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">Where We Clean</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">Proudly serving communities across the DMV region with premium residential cleaning.</p>
+          <div className="text-center mb-14">
+            <span className="text-accent font-semibold text-sm uppercase tracking-wider">Service Areas</span>
+            <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mt-2 mb-4">Where We Clean</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto text-base md:text-lg">Proudly serving communities across the DMV region with premium residential cleaning.</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {locationAreas.map((area) => (
-              <Card key={area.slug} className="group hover:shadow-lg transition-shadow overflow-hidden">
-                <div className="relative h-40 overflow-hidden">
+              <Link key={area.slug} to={area.slug} className="group block">
+                <div className="relative h-56 md:h-64 rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl transition-shadow duration-300">
                   <img
                     src={area.image}
-                    alt={`House cleaning service areas in ${area.label} — Capital Clean Care`}
+                    alt={`House cleaning service areas in ${area.label}`}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-primary/40" />
-                  <div className="absolute bottom-3 left-3 flex items-center gap-1.5 text-primary-foreground">
-                    <MapPin className="h-4 w-4" />
-                    <span className="font-heading font-semibold text-lg">{area.label}</span>
+                  <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/20 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-5">
+                    <div className="flex items-center gap-2 mb-1">
+                      <MapPin className="h-4 w-4 text-accent" />
+                      <h3 className="font-heading font-bold text-lg text-card">{area.label}</h3>
+                    </div>
+                    <p className="text-card/70 text-sm">{area.count} service areas</p>
+                    <span className="text-accent font-medium text-sm mt-2 inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                      View Locations <ArrowRight className="h-3 w-3" />
+                    </span>
                   </div>
                 </div>
-                <CardContent className="p-5 text-center">
-                  <p className="text-muted-foreground text-sm mb-3">{area.count} service areas</p>
-                  <Button variant="cta-outline" size="sm" className="w-full" asChild>
-                    <Link to={area.slug}>View Locations <ArrowRight className="ml-1 h-3 w-3" /></Link>
-                  </Button>
-                </CardContent>
-              </Card>
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
       {/* ══════════════ WHY CHOOSE US ══════════════ */}
-      <section className="py-16 md:py-24 bg-secondary">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">Why Homeowners Choose Capital Clean Care</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">We deliver consistent, reliable cleaning with a personal touch that big franchises can't match.</p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            {whyChooseUs.map((item) => (
-              <Card key={item.title} className="text-center hover:shadow-lg transition-shadow">
-                <CardContent className="p-6">
-                  <div className="w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-4">
-                    <item.icon className="h-7 w-7 text-accent" />
-                  </div>
-                  <h3 className="font-heading font-semibold text-lg mb-2">{item.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+      <WhyChooseUs />
 
       {/* ══════════════ OUR SERVICES ══════════════ */}
-      <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">Our Cleaning Services</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">From routine maintenance to intensive deep cleans, we offer comprehensive cleaning solutions for every need.</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((s) => (
-              <Card key={s.slug} className="group hover:shadow-lg transition-shadow">
-                <CardContent className="p-6">
-                  <Sparkles className="h-8 w-8 text-accent mb-4" />
-                  <h3 className="font-heading text-xl font-semibold mb-2">{s.name}</h3>
-                  <p className="text-muted-foreground text-sm mb-4">{s.shortDescription}</p>
-                  <Link to={`/services/${s.slug}`} className="text-accent font-medium text-sm inline-flex items-center gap-1 hover:gap-2 transition-all">
-                    Learn More <ArrowRight className="h-3 w-3" />
-                  </Link>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-          <div className="text-center mt-10">
-            <Button variant="cta" size="lg" asChild>
-              <Link to="/contact">Get a Free Quote <ArrowRight className="ml-1 h-4 w-4" /></Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+      <ServicesSection />
 
       {/* ══════════════ REAL WORK PHOTOS ══════════════ */}
-      <section className="py-12 md:py-16 bg-secondary">
+      <section className="py-16 md:py-20 bg-secondary">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
-            <img src={cleanerMopping} alt="Capital Clean Care professional mopping hardwood floors" className="rounded-xl shadow-md w-full aspect-square object-cover" loading="lazy" />
-            <img src={ecoProducts} alt="Eco-friendly non-toxic cleaning products used by Capital Clean Care" className="rounded-xl shadow-md w-full aspect-square object-cover" loading="lazy" />
-            <img src={happyClient} alt="Satisfied client relaxing while Capital Clean Care team cleans in background" className="rounded-xl shadow-md w-full aspect-square object-cover hidden md:block" loading="lazy" />
+          <div className="text-center mb-10">
+            <span className="text-accent font-semibold text-sm uppercase tracking-wider">Our Work</span>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold mt-2">See Us in Action</h2>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-5xl mx-auto">
+            <img src={cleanerMopping} alt="Capital Clean Care professional mopping hardwood floors" className="rounded-2xl shadow-md w-full aspect-[4/5] object-cover" loading="lazy" />
+            <img src={ecoProducts} alt="Eco-friendly non-toxic cleaning products used by Capital Clean Care" className="rounded-2xl shadow-md w-full aspect-[4/5] object-cover" loading="lazy" />
+            <img src={happyClient} alt="Satisfied client relaxing while Capital Clean Care team cleans" className="rounded-2xl shadow-md w-full aspect-[4/5] object-cover" loading="lazy" />
           </div>
         </div>
       </section>
@@ -259,48 +193,21 @@ const Index = () => {
       <BeforeAfterGallery />
 
       {/* ══════════════ TESTIMONIALS ══════════════ */}
-      <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">What Our Clients Say</h2>
-            <p className="text-muted-foreground">Real reviews from real homeowners across MD, DC & VA.</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            {testimonials.map((t, i) => (
-              <Card key={i}>
-                <CardContent className="p-6">
-                  <div className="flex gap-0.5 mb-3">
-                    {Array.from({ length: t.rating }).map((_, j) => (
-                      <Star key={j} className="h-4 w-4 fill-accent text-accent" />
-                    ))}
-                  </div>
-                  <p className="text-foreground mb-4 italic">"{t.text}"</p>
-                  <p className="text-sm font-semibold">{t.name}</p>
-                  <p className="text-xs text-muted-foreground">{t.location}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-          <div className="text-center mt-8">
-            <Button variant="outline" asChild>
-              <Link to="/reviews">Read All Reviews <ArrowRight className="ml-1 h-3 w-3" /></Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+      <TestimonialsSection />
 
       {/* ══════════════ LOCAL CLEANING PAGES ══════════════ */}
-      <section className="py-12 md:py-16 bg-muted/30">
+      <section className="py-16 md:py-20 bg-muted/30">
         <div className="container mx-auto px-4 max-w-5xl">
-          <div className="text-center mb-10">
-            <h2 className="font-heading text-2xl md:text-3xl font-bold mb-3">Local Cleaning Services Near You</h2>
-            <p className="text-muted-foreground">Explore our city-specific cleaning pages with tailored services, checklists, and local pricing.</p>
+          <div className="text-center mb-12">
+            <span className="text-accent font-semibold text-sm uppercase tracking-wider">Local Services</span>
+            <h2 className="font-heading text-2xl md:text-3xl font-bold mt-2 mb-3">Cleaning Services Near You</h2>
+            <p className="text-muted-foreground">Explore our city-specific cleaning pages with tailored services and local pricing.</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {vanityLandingPages.slice(0, 9).map((vp) => (
-              <Card key={vp.slug} className="group hover:shadow-md transition-all duration-200 hover:-translate-y-0.5">
-                <CardContent className="p-5">
-                  <Link to={`/${vp.slug}`} className="block">
+              <Link key={vp.slug} to={`/${vp.slug}`} className="group block">
+                <Card className="hover:shadow-md transition-all duration-200 hover:-translate-y-0.5 h-full">
+                  <CardContent className="p-5">
                     <div className="flex items-center gap-2 mb-2">
                       <MapPin className="h-4 w-4 text-accent shrink-0" aria-hidden="true" />
                       <h3 className="font-heading font-semibold text-sm text-foreground group-hover:text-accent transition-colors">{vp.h1}</h3>
@@ -309,12 +216,12 @@ const Index = () => {
                     <span className="text-accent font-medium text-xs mt-2 inline-flex items-center gap-1">
                       View Details <ArrowRight className="h-3 w-3" />
                     </span>
-                  </Link>
-                </CardContent>
-              </Card>
+                  </CardContent>
+                </Card>
+              </Link>
             ))}
           </div>
-          <div className="text-center mt-6">
+          <div className="text-center mt-8">
             <Button variant="outline" size="sm" asChild>
               <Link to="/maryland">View All Maryland Locations <ArrowRight className="ml-1 h-3 w-3" /></Link>
             </Button>
@@ -323,33 +230,38 @@ const Index = () => {
       </section>
 
       {/* ══════════════ PRICING ══════════════ */}
-      <section className="py-16 md:py-24">
+      <section className="py-20 md:py-28">
         <div className="container mx-auto px-4 max-w-3xl">
-          <div className="text-center mb-8">
-            <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">Sample Pricing</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">Transparent pricing based on home size and frequency. Select a cleaning type to see estimated ranges.</p>
+          <div className="text-center mb-10">
+            <span className="text-accent font-semibold text-sm uppercase tracking-wider">Pricing</span>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold mt-2 mb-4">Transparent Pricing</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">Honest pricing based on home size and frequency. No hidden fees, ever.</p>
           </div>
           <PricingTable />
         </div>
       </section>
 
       {/* ══════════════ FAQ ══════════════ */}
-      <section className="py-16 md:py-24 bg-secondary">
+      <section className="py-20 md:py-28 bg-secondary">
         <div className="container mx-auto px-4 max-w-3xl">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-center mb-8">Frequently Asked Questions</h2>
+          <div className="text-center mb-10">
+            <span className="text-accent font-semibold text-sm uppercase tracking-wider">FAQ</span>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold mt-2">Frequently Asked Questions</h2>
+          </div>
           <FAQ faqs={homeFaqs} />
         </div>
       </section>
 
       {/* ══════════════ QUOTE FORM ══════════════ */}
-      <section className="py-16 md:py-24" id="quote">
+      <section className="py-20 md:py-28" id="quote">
         <div className="container mx-auto px-4 max-w-2xl">
-          <div className="text-center mb-8">
-            <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">Get Your Free Quote</h2>
-            <p className="text-muted-foreground">Fill out the form below and we'll get back to you within 24 hours with a personalized estimate.</p>
+          <div className="text-center mb-10">
+            <span className="text-accent font-semibold text-sm uppercase tracking-wider">Free Estimate</span>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold mt-2 mb-4">Get Your Free Quote</h2>
+            <p className="text-muted-foreground">Fill out the form and we'll get back to you within 24 hours with a personalized estimate.</p>
           </div>
-          <Card>
-            <CardContent className="p-6 md:p-8">
+          <Card className="shadow-xl">
+            <CardContent className="p-6 md:p-10">
               <QuoteForm />
             </CardContent>
           </Card>
