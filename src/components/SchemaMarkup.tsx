@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { Helmet } from "react-helmet-async";
 
 // Shared business info constants
 const BUSINESS = {
@@ -39,22 +39,14 @@ const defaultAreaServedRegions = [
   { "@type": "State" as const, name: "Virginia" },
 ];
 
-function useJsonLd(id: string, schema: Record<string, unknown>) {
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.type = "application/ld+json";
-    script.id = id;
-    script.textContent = JSON.stringify(schema);
-
-    const existing = document.getElementById(id);
-    if (existing) existing.remove();
-    document.head.appendChild(script);
-
-    return () => {
-      const el = document.getElementById(id);
-      if (el) el.remove();
-    };
-  }, [id, JSON.stringify(schema)]);
+function JsonLd({ id, schema }: { id: string; schema: Record<string, unknown> }) {
+  return (
+    <Helmet>
+      <script type="application/ld+json" id={id}>
+        {JSON.stringify(schema)}
+      </script>
+    </Helmet>
+  );
 }
 
 // ── LocalBusiness Schema ──────────────────────────────────────
@@ -151,8 +143,7 @@ export const LocalBusinessSchema = ({ areaServed }: LocalBusinessSchemaProps = {
     },
   };
 
-  useJsonLd("local-business-schema", schema);
-  return null;
+  return <JsonLd id="local-business-schema" schema={schema} />;
 };
 
 // ── Service Schema ────────────────────────────────────────────
@@ -207,8 +198,7 @@ export const ServiceSchema = ({
   }
 
   const id = `service-schema-${serviceName.replace(/\s/g, "-").toLowerCase()}`;
-  useJsonLd(id, schema);
-  return null;
+  return <JsonLd id={id} schema={schema} />;
 };
 
 // ── FAQ Schema ────────────────────────────────────────────────
@@ -230,8 +220,7 @@ export const FAQSchema = ({ faqs }: FAQSchemaProps) => {
     })),
   };
 
-  useJsonLd("faq-schema", schema);
-  return null;
+  return <JsonLd id="faq-schema" schema={schema} />;
 };
 
 // ── BreadcrumbList Schema ─────────────────────────────────────
@@ -251,8 +240,7 @@ export const BreadcrumbSchema = ({ items }: BreadcrumbSchemaProps) => {
     })),
   };
 
-  useJsonLd("breadcrumb-schema", schema);
-  return null;
+  return <JsonLd id="breadcrumb-schema" schema={schema} />;
 };
 
 // ── WebSite Schema (for sitelinks search) ─────────────────────
@@ -269,8 +257,7 @@ export const WebSiteSchema = () => {
     },
   };
 
-  useJsonLd("website-schema", schema);
-  return null;
+  return <JsonLd id="website-schema" schema={schema} />;
 };
 
 // ── Blog/Article Schema ───────────────────────────────────────
@@ -312,8 +299,7 @@ export const ArticleSchema = ({
   };
 
   const id = `article-schema-${title.replace(/\s/g, "-").toLowerCase().slice(0, 40)}`;
-  useJsonLd(id, schema);
-  return null;
+  return <JsonLd id={id} schema={schema} />;
 };
 
 // ── ContactPage Schema ────────────────────────────────────────
@@ -327,6 +313,5 @@ export const ContactPageSchema = () => {
     mainEntity: businessRef,
   };
 
-  useJsonLd("contact-page-schema", schema);
-  return null;
+  return <JsonLd id="contact-page-schema" schema={schema} />;
 };

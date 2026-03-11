@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import { createElement } from "react";
 
@@ -15,25 +14,28 @@ interface SEOProps {
  * Usage: place {seoHelmet} in your component's JSX.
  */
 export const useSEO = ({ title, description, canonical, ogType = "website", ogImage }: SEOProps) => {
-  // Fallback for crawlers that don't execute useEffect
-  useEffect(() => {
-    document.title = title;
-  }, [title]);
+  const children = [
+    createElement("title", { key: "title" }, title),
+    createElement("meta", { key: "desc", name: "description", content: description }),
+    createElement("meta", { key: "og-site", property: "og:site_name", content: "Capital Clean Care" }),
+    createElement("meta", { key: "og-locale", property: "og:locale", content: "en_US" }),
+    createElement("meta", { key: "og-title", property: "og:title", content: title }),
+    createElement("meta", { key: "og-desc", property: "og:description", content: description }),
+    createElement("meta", { key: "og-type", property: "og:type", content: ogType }),
+    createElement("meta", { key: "tw-card", name: "twitter:card", content: "summary_large_image" }),
+    createElement("meta", { key: "tw-title", name: "twitter:title", content: title }),
+    createElement("meta", { key: "tw-desc", name: "twitter:description", content: description }),
+    ...(canonical ? [
+      createElement("link", { key: "canonical", rel: "canonical", href: canonical }),
+      createElement("meta", { key: "og-url", property: "og:url", content: canonical }),
+    ] : []),
+    ...(ogImage ? [
+      createElement("meta", { key: "og-img", property: "og:image", content: ogImage }),
+      createElement("meta", { key: "tw-img", name: "twitter:image", content: ogImage }),
+    ] : []),
+  ];
 
-  const seoHelmet = createElement(Helmet, null,
-    createElement("title", null, title),
-    createElement("meta", { name: "description", content: description }),
-    canonical && createElement("link", { rel: "canonical", href: canonical }),
-    createElement("meta", { property: "og:title", content: title }),
-    createElement("meta", { property: "og:description", content: description }),
-    createElement("meta", { property: "og:type", content: ogType }),
-    canonical && createElement("meta", { property: "og:url", content: canonical }),
-    ogImage && createElement("meta", { property: "og:image", content: ogImage }),
-    createElement("meta", { name: "twitter:card", content: "summary_large_image" }),
-    createElement("meta", { name: "twitter:title", content: title }),
-    createElement("meta", { name: "twitter:description", content: description }),
-    ogImage && createElement("meta", { name: "twitter:image", content: ogImage }),
-  );
+  const seoHelmet = createElement(Helmet, null, ...children);
 
   return { seoHelmet };
 };
