@@ -1,0 +1,20 @@
+# Redirects from old Wix/GoDaddy site (HTTP 301 permanent)
+/apartment-cleaning             /services/house-cleaning        301
+/airbnb-cleaning                /services/airbnb-cleaning       301
+/house-cleaning                 /services/house-cleaning        301
+/deep-cleaning-service          /services/deep-cleaning         301
+/move-in-move-out               /services/move-out-cleaning     301
+/move-in-move-out-cleaning      /services/move-out-cleaning     301
+/recurring-cleaning-service     /services/recurring-cleaning    301
+/post-construction              /services/post-construction-cleaning 301
+/office-cleaning                /services/office-cleaning       301
+/commercial-cleaning            /services/office-cleaning       301
+/eco-friendly-cleaning-service  /services/eco-friendly-cleaning 301
+/about-us                       /about                          301
+/contact-us                     /contact                        301
+/book-now                       /                               301
+/pricing                        /                               301
+/services                       /                               301
+
+# SPA fallback — all other routes serve index.html
+/*                              /index.html                     200
