@@ -28,6 +28,8 @@ function getAllRoutes(): string[] {
     "/services/move-out-cleaning",
     "/services/recurring-cleaning",
     "/services/eco-friendly-cleaning",
+    "/services/airbnb-cleaning",
+    "/house-cleaning-near-me",
     "/spring-cleaning-md",
     "/privacy-policy",
     "/terms-of-service",

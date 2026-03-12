@@ -23,6 +23,7 @@ const SpringCleaningMD = lazy(() => import("./pages/SpringCleaningMD"));
 const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
 const TermsOfService = lazy(() => import("./pages/TermsOfService"));
 const VanityLandingPage = lazy(() => import("./pages/VanityLandingPage"));
+const HouseCleaningNearMe = lazy(() => import("./pages/HouseCleaningNearMe"));
 
 const queryClient = new QueryClient();
 
@@ -50,6 +51,7 @@ const App = () => (
               <Route path="/blog" element={<Blog />} />
               <Route path="/blog/:slug" element={<BlogPost />} />
               <Route path="/spring-cleaning-md" element={<SpringCleaningMD />} />
+              <Route path="/house-cleaning-near-me" element={<HouseCleaningNearMe />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route path="/terms-of-service" element={<TermsOfService />} />
               {/* Vanity landing pages - must be before :stateSlug catch-all */}

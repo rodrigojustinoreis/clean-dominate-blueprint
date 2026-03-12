@@ -13,8 +13,8 @@ export interface ServiceData {
 
 export const services: ServiceData[] = [
   {
-    name: "Standard Cleaning",
-    slug: "standard-cleaning",
+    name: "House Cleaning",
+    slug: "house-cleaning",
     shortDescription: "Routine cleaning that keeps your home consistently fresh and tidy between deeper sessions.",
     intro: "Our standard cleaning service is designed for homeowners who want to maintain a consistently clean and comfortable living environment. Whether you need a one-time refresh or regular upkeep, our trained professionals handle every room with care and precision.\n\nWe use only eco-friendly, non-toxic cleaning products that are safe for your family, pets, and the environment. Every visit follows a detailed checklist tailored to your home's specific needs, ensuring nothing gets overlooked.\n\nCapital Clean Care's standard cleaning covers all the essential tasks that keep your home looking its best. From dusting and vacuuming to kitchen and bathroom sanitization, we deliver thorough results you can see and feel. Our background-checked teams arrive on time, fully equipped, and ready to transform your space.\n\nChoosing a professional cleaning service means reclaiming your weekends and evenings. Instead of spending hours scrubbing and organizing, you can focus on what matters most while we handle the rest. Our satisfaction guarantee means you never have to worry about the quality of our work.",
     whatsIncluded: [
@@ -223,7 +223,7 @@ export const services: ServiceData[] = [
   },
   {
     name: "Move In / Move Out Cleaning",
-    slug: "move-in-move-out-cleaning",
+    slug: "move-out-cleaning",
     shortDescription: "Comprehensive cleaning for property transitions — leave or arrive to a spotless space.",
     intro: "Moving is stressful enough without worrying about cleaning. Capital Clean Care's move-in and move-out cleaning service ensures every property transition starts or ends with a perfectly clean space. Whether you're a homeowner, tenant, or property manager, we deliver the thorough cleaning needed to meet inspection standards and personal expectations.\n\nOur move-in/move-out service is specifically designed for empty or near-empty properties, allowing our teams unrestricted access to every surface, corner, and fixture. Without furniture in the way, we can address areas that are typically difficult to reach during regular cleanings.\n\nWe understand that timing is critical during moves. Our flexible scheduling accommodates tight timelines, and our efficient teams work quickly without sacrificing quality. We coordinate with your moving schedule to ensure the property is ready exactly when you need it.\n\nFor landlords and property managers, our service helps maximize security deposit returns for tenants and ensures properties are move-in ready for new occupants. We provide detailed cleaning that covers every requirement typically found on move-out inspection checklists.",
     whatsIncluded: [
@@ -489,6 +489,101 @@ export const services: ServiceData[] = [
     ],
     metaTitle: "Recurring House Cleaning Plans in MD, DC & VA | Capital Clean Care",
     metaDescription: "Weekly, bi-weekly & monthly cleaning plans across Maryland, DC & Virginia. Save up to 25%, dedicated teams, eco-friendly products. No contracts — get a free quote!"
+  },
+  {
+    name: "Eco-Friendly Cleaning",
+    slug: "eco-friendly-cleaning",
+    shortDescription: "Non-toxic, plant-based cleaning that's safe for your family, pets, and the planet.",
+    intro: "Capital Clean Care was built on a simple belief: your home should be clean and safe — not just for you, but for your children, pets, and the environment. Our eco-friendly cleaning service uses exclusively EPA Safer Choice certified, plant-based products that deliver professional-grade results without harsh chemicals.\n\nConventional cleaning products often contain chlorine, ammonia, synthetic fragrances, and other compounds that can irritate airways, trigger allergies, and leave residues on surfaces your family touches every day. Our non-toxic alternatives are just as effective without the risks.\n\nEco-friendly cleaning isn't a compromise — it's an upgrade. Our products remove grease, bacteria, soap scum, and grime as effectively as chemical cleaners, and they leave no harmful residues behind. Your home will smell clean and fresh, not like a chemical factory.\n\nWe serve Maryland, Washington DC, and Northern Virginia homeowners who care about their health and the environment. Whether you have young children, allergy sufferers, or beloved pets at home, our green cleaning approach provides peace of mind with every visit.",
+    whatsIncluded: [
+      "All surfaces cleaned with EPA Safer Choice certified products",
+      "Plant-based, biodegradable cleaning solutions throughout",
+      "No ammonia, chlorine, or synthetic fragrances used",
+      "HEPA-filtered vacuuming to capture allergens and dust",
+      "Microfiber cloths that trap particles without chemicals",
+      "Kitchen counters, appliances, and sink sanitized naturally",
+      "Bathrooms disinfected with non-toxic botanical cleaners",
+      "All floors mopped with plant-based floor solutions",
+      "Glass and mirrors cleaned streak-free, chemical-free",
+      "Dusting with electrostatic microfiber — no spray chemicals",
+      "Trash removal and liner replacement",
+      "Bed making and bedroom tidying",
+      "Living areas vacuumed and surfaces wiped",
+      "Safe cleaning inside homes with pets and children",
+      "Recyclable or reusable packaging for all supplies"
+    ],
+    benefits: [
+      "Safe for children, infants, and toddlers — no toxic residues",
+      "Pet-safe formulas approved for homes with cats and dogs",
+      "Ideal for allergy and asthma sufferers — fewer irritants",
+      "Reduces indoor air pollution from chemical off-gassing",
+      "Biodegradable products — better for local waterways",
+      "No harsh chemical smell — just clean, fresh air",
+      "Supports your family's long-term health",
+      "Same cleaning power as conventional products"
+    ],
+    faqs: [
+      { q: "Are eco-friendly products as effective as regular cleaners?", a: "Absolutely. Our EPA Safer Choice certified products remove bacteria, grease, soap scum, and grime as effectively as conventional cleaners — without the harmful chemicals." },
+      { q: "What products do you use?", a: "We use plant-based, biodegradable formulas that are free from chlorine, ammonia, synthetic fragrances, and parabens. All products carry EPA Safer Choice certification." },
+      { q: "Is eco-friendly cleaning safe for my pets?", a: "Yes. Our products are specifically chosen to be safe for cats, dogs, and other household pets. No fumes, no residues that could harm animals." },
+      { q: "Does eco-friendly cleaning cost more?", a: "No. Our eco-friendly cleaning is priced the same as our standard services. Choosing green cleaning doesn't come with a premium at Capital Clean Care." },
+      { q: "Can I request eco-friendly products for any service type?", a: "Yes — eco-friendly products are our default for all services, including deep cleaning, move-out cleaning, and recurring plans." }
+    ],
+    testimonials: [
+      { name: "Jennifer H.", location: "Bethesda, MD", text: "Finally a cleaning company that uses safe products. With two toddlers and a dog, I couldn't be happier. The house is spotless and I don't worry about chemical residues." },
+      { name: "David R.", location: "Arlington, VA", text: "My daughter has severe asthma and conventional cleaners always triggered reactions. Capital Clean Care's eco products have been a game changer for us." },
+      { name: "Sarah K.", location: "Silver Spring, MD", text: "Love that they're eco-conscious. The cleaning is just as thorough as any company I've used, but without the chemical smell. Our home feels genuinely clean." }
+    ],
+    metaTitle: "Eco-Friendly House Cleaning in MD, DC & VA | Capital Clean Care",
+    metaDescription: "Non-toxic, plant-based cleaning safe for kids, pets & the environment. EPA Safer Choice certified products. Serving Maryland, DC & Northern Virginia. Free quote!"
+  },
+  {
+    name: "Airbnb & Short-Term Rental Cleaning",
+    slug: "airbnb-cleaning",
+    shortDescription: "Fast, reliable turnover cleaning for Airbnb, VRBO, and short-term rental properties in MD, DC & VA.",
+    intro: "Running a successful Airbnb or short-term rental depends on consistently delivering a spotless property to every guest. Capital Clean Care specializes in fast, thorough turnover cleanings that meet the highest hospitality standards — helping you earn 5-star reviews and maximize your rental income.\n\nOur Airbnb cleaning service is designed around your rental schedule. We coordinate with your booking calendar, work efficiently between checkouts and check-ins, and ensure your property is guest-ready every single time. No delays, no shortcuts — just professional results that impress guests from the moment they walk in.\n\nWe serve Airbnb and VRBO hosts throughout Maryland, Washington DC, and Northern Virginia. Whether you manage a single property or a portfolio, we provide the reliability and consistency your rental business depends on.\n\nFrom fresh linens and restocked essentials to deep bathroom sanitization and kitchen reset, we handle every detail so you can focus on being a great host. Our background-checked, insured teams treat your property with the same care as their own home.",
+    whatsIncluded: [
+      "Full kitchen reset — wipe all surfaces, appliances, and sink",
+      "Wash and replace dishes left in sink or dishwasher",
+      "Restock paper towels, dish soap, and kitchen essentials",
+      "Deep clean all bathrooms — toilet, shower, sink, mirror",
+      "Replace used toiletries and restock guest amenities",
+      "Fresh towel staging for all bathrooms",
+      "Strip and remake all beds with fresh linens",
+      "Vacuum all carpets, rugs, and upholstered surfaces",
+      "Mop all hard floors",
+      "Dust all surfaces, shelves, and furniture",
+      "Empty all trash cans and replace liners",
+      "Wipe down light switches, door handles, and remotes",
+      "Check for and remove any left-behind guest items",
+      "Stage throw pillows, blankets, and decorative items",
+      "Final walkthrough and photo-ready inspection"
+    ],
+    benefits: [
+      "Earn more 5-star reviews with consistently clean properties",
+      "Coordinate cleanings around your Airbnb booking calendar",
+      "Same-day turnover availability for back-to-back bookings",
+      "Linen laundry and fresh bed setup included",
+      "Restocking of guest essentials available",
+      "Insured and background-checked cleaning professionals",
+      "Eco-friendly products safe for all surfaces and guests",
+      "Reliable service you can count on — no last-minute cancellations"
+    ],
+    faqs: [
+      { q: "Can you work around my Airbnb booking schedule?", a: "Yes. We coordinate directly with your rental calendar and schedule cleanings between guest checkout and check-in, including same-day turnovers when needed." },
+      { q: "Do you handle linen changes?", a: "Yes. We strip used beds and remake them with fresh linens as part of every turnover cleaning. We can also handle linen laundry if arranged in advance." },
+      { q: "What areas do you serve for Airbnb cleaning?", a: "We serve Airbnb and short-term rental properties throughout Maryland (Montgomery, Frederick, Howard, and Prince George's Counties), Washington DC, and Northern Virginia." },
+      { q: "Can you restock guest supplies?", a: "Yes. We can restock items like paper towels, dish soap, shampoo, and other guest essentials during each cleaning. Just provide the supplies and we'll take care of placement." },
+      { q: "How quickly can you turn over a property?", a: "Typical turnovers take 1.5–3 hours depending on property size. We can accommodate same-day turnovers with advance notice." },
+      { q: "Are your cleaners insured for rental properties?", a: "Yes. Capital Clean Care is fully licensed and insured. Every team member is background-checked for your peace of mind." }
+    ],
+    testimonials: [
+      { name: "Marcus L.", location: "Washington, DC", text: "I manage 4 Airbnb properties and Capital Clean Care handles all of them. They're reliable, fast, and guests always comment on how clean everything is." },
+      { name: "Amanda F.", location: "Bethesda, MD", text: "My Airbnb rating went from 4.6 to 5.0 stars after I switched to Capital Clean Care. Their attention to detail is incredible." },
+      { name: "Carlos M.", location: "Arlington, VA", text: "Same-day turnovers used to stress me out. Now I just send them the checkout time and it's done. Professional, fast, and thorough every time." }
+    ],
+    metaTitle: "Airbnb & Short-Term Rental Cleaning in MD, DC & VA | Capital Clean Care",
+    metaDescription: "Professional Airbnb & VRBO turnover cleaning in Maryland, DC & Northern Virginia. 5-star results, same-day turnovers, linen changes included. Get a free quote!"
   }
 ];
 
