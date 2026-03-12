@@ -6,9 +6,12 @@ import QuoteForm from "@/components/QuoteForm";
 import { useSEO } from "@/hooks/useSEO";
 import { LocalBusinessSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import GoogleReviewsLive from "@/components/GoogleReviewsLive";
 
-const GOOGLE_REVIEW_URL = "https://g.page/r/CUlLBE9aAqAYEAE/review";
-const GOOGLE_MAPS_URL = "https://www.google.com/maps/place//data=!4m3!3m2!1s0xa2bc172727d57413:0x18a0025a4f044b49!12e1";
+const HAS_GOOGLE_API = !!(import.meta.env.VITE_GOOGLE_MAPS_API_KEY && import.meta.env.VITE_GOOGLE_PLACE_ID);
+
+const GOOGLE_REVIEW_URL = "https://share.google/4lygNFQSUZrkfaVh7";
+const GOOGLE_MAPS_URL = "https://www.google.com/maps/search/?api=1&query=Capital+Clean+Care";
 
 const reviews = [
   { name: "Sarah M.", location: "Bethesda, MD", text: "Capital Clean Care transformed our home. The team was professional, thorough, and used products I feel safe having around my kids and pets.", rating: 5 },
@@ -43,56 +46,67 @@ const Reviews = () => {
             <p className="text-muted-foreground max-w-2xl mx-auto text-lg">Hear from homeowners across Maryland, DC, and Virginia who trust Capital Clean Care with their homes.</p>
 
             {/* Google Reviews Badge */}
-            <Card className="inline-block mt-6">
-              <CardContent className="px-6 py-4 flex items-center gap-4">
-                <div className="flex flex-col items-center">
-                  <span className="text-3xl font-bold text-foreground">5.0</span>
-                  <div className="flex gap-0.5 mt-1">
-                    {Array.from({ length: 5 }).map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-accent text-accent" />
-                    ))}
-                  </div>
-                </div>
-                <div className="text-left border-l border-border pl-4">
-                  <p className="font-semibold text-foreground">Google Reviews</p>
-                  <p className="text-sm text-muted-foreground">Based on 30+ reviews</p>
-                  <a
-                    href={GOOGLE_MAPS_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-xs text-accent hover:underline inline-flex items-center gap-1 mt-1"
-                  >
-                    View on Google <ExternalLink className="h-3 w-3" />
-                  </a>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            {reviews.map((r, i) => (
-              <Card key={i}>
-                <CardContent className="p-6">
-                  <div className="flex items-center justify-between mb-3">
-                    <div className="flex gap-0.5">
-                      {Array.from({ length: r.rating }).map((_, j) => <Star key={j} className="h-4 w-4 fill-accent text-accent" />)}
+            <a
+              href={GOOGLE_MAPS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block mt-6 hover:opacity-90 transition-opacity"
+            >
+              <Card className="border-accent/20 hover:shadow-lg transition-shadow cursor-pointer">
+                <CardContent className="px-6 py-4 flex items-center gap-4">
+                  <div className="flex flex-col items-center">
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
+                      alt="Google"
+                      className="h-5 mb-1"
+                    />
+                    <span className="text-3xl font-bold text-foreground">5.0</span>
+                    <div className="flex gap-0.5 mt-1">
+                      {Array.from({ length: 5 }).map((_, i) => (
+                        <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                      ))}
                     </div>
-                    <span className="text-xs text-muted-foreground">via Google</span>
                   </div>
-                  <p className="text-foreground mb-4 italic">"{r.text}"</p>
-                  <p className="text-sm font-semibold">{r.name}</p>
-                  <p className="text-xs text-muted-foreground">{r.location}</p>
+                  <div className="text-left border-l border-border pl-4">
+                    <p className="font-semibold text-foreground">Google Reviews</p>
+                    <p className="text-sm text-muted-foreground">Based on 30+ reviews</p>
+                    <span className="text-xs text-accent inline-flex items-center gap-1 mt-1">
+                      View on Google <ExternalLink className="h-3 w-3" />
+                    </span>
+                  </div>
                 </CardContent>
               </Card>
-            ))}
+            </a>
           </div>
+
+          {HAS_GOOGLE_API ? (
+            <GoogleReviewsLive />
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              {reviews.map((r, i) => (
+                <Card key={i}>
+                  <CardContent className="p-6">
+                    <div className="flex items-center justify-between mb-3">
+                      <div className="flex gap-0.5">
+                        {Array.from({ length: r.rating }).map((_, j) => <Star key={j} className="h-4 w-4 fill-yellow-400 text-yellow-400" />)}
+                      </div>
+                      <span className="text-xs text-muted-foreground">via Google</span>
+                    </div>
+                    <p className="text-foreground mb-4 italic">"{r.text}"</p>
+                    <p className="text-sm font-semibold">{r.name}</p>
+                    <p className="text-xs text-muted-foreground">{r.location}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          )}
 
           {/* Google Reviews Embed */}
           <div className="max-w-4xl mx-auto mt-12">
             <h2 className="font-heading text-2xl font-bold text-center mb-6">Google Reviews</h2>
             <div className="w-full rounded-lg overflow-hidden border border-border shadow-sm">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3098.5!2d-77.05!3d39.07!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa2bc172727d57413%3A0x18a0025a4f044b49!2sCapital%20Clean%20Care!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+                src="https://maps.google.com/maps?q=Capital+Clean+Care&output=embed"
                 width="100%"
                 height="500"
                 style={{ border: 0 }}

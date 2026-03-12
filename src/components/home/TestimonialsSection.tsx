@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
-import { Star, ArrowRight } from "lucide-react";
+import { Star, ArrowRight, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
+
+const GOOGLE_REVIEWS_URL = "https://share.google/4lygNFQSUZrkfaVh7";
 
 const testimonials = [
   { name: "Sarah M.", location: "Bethesda, MD", text: "Capital Clean Care transformed our home. The team was professional, thorough, and used products that I feel safe having around my kids and pets.", rating: 5 },
@@ -53,10 +55,24 @@ const TestimonialsSection = () => (
         ))}
       </div>
 
-      <div className="text-center mt-12">
+      <div className="text-center mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
         <Button variant="outline" className="rounded-full" asChild>
           <Link to="/reviews">Read All Reviews <ArrowRight className="ml-1 h-3 w-3" /></Link>
         </Button>
+        <a
+          href={GOOGLE_REVIEWS_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-border hover:border-accent/40 hover:bg-accent/5 transition-all text-sm font-medium"
+        >
+          <div className="flex gap-0.5">
+            {Array.from({ length: 5 }).map((_, i) => (
+              <Star key={i} className="h-3.5 w-3.5 fill-yellow-400 text-yellow-400" />
+            ))}
+          </div>
+          <span>5.0 on Google</span>
+          <ExternalLink className="h-3 w-3 text-muted-foreground" />
+        </a>
       </div>
     </div>
   </section>
