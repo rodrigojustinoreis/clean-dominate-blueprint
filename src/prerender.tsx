@@ -64,6 +64,7 @@ export async function prerender() {
   const root = typeof document !== "undefined" ? document.getElementById("root") : null;
   return {
     html: root?.innerHTML || "",
+    head: typeof document !== "undefined" ? document.head.innerHTML : "",
     links: getAllRoutes(),
   };
 }
