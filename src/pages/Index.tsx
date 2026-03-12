@@ -23,6 +23,7 @@ import HeroSection from "@/components/home/HeroSection";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
 import ServicesSection from "@/components/home/ServicesSection";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
+import ScrollReveal from "@/components/ScrollReveal";
 
 const homeFaqs = [
   { q: "What areas do you serve?", a: "We serve communities throughout Maryland (Montgomery, Frederick, Howard, and Prince George's Counties), Washington DC, and Northern Virginia (Arlington, Fairfax, McLean, Alexandria, and more)." },
