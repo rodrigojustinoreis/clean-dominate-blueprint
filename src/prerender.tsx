@@ -31,6 +31,7 @@ function getAllRoutes(): string[] {
     "/services/airbnb-cleaning",
     "/services/office-cleaning",
     "/house-cleaning-near-me",
+    "/careers",
     "/spring-cleaning-md",
     "/privacy-policy",
     "/terms-of-service",

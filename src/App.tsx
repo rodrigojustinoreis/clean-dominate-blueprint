@@ -24,6 +24,7 @@ const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
 const TermsOfService = lazy(() => import("./pages/TermsOfService"));
 const VanityLandingPage = lazy(() => import("./pages/VanityLandingPage"));
 const HouseCleaningNearMe = lazy(() => import("./pages/HouseCleaningNearMe"));
+const Careers = lazy(() => import("./pages/Careers"));
 
 const queryClient = new QueryClient();
 
@@ -52,6 +53,8 @@ const App = () => (
               <Route path="/blog/:slug" element={<BlogPost />} />
               <Route path="/spring-cleaning-md" element={<SpringCleaningMD />} />
               <Route path="/house-cleaning-near-me" element={<HouseCleaningNearMe />} />
+              <Route path="/careers" element={<Careers />} />
+              <Route path="/join-our-team" element={<Careers />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route path="/terms-of-service" element={<TermsOfService />} />
               {/* Redirects from old Wix/GoDaddy site */}

@@ -106,6 +106,8 @@ const Footer = () => (
           <Link to="/privacy-policy" className="hover:text-accent transition-colors">Privacy Policy</Link>
           <span className="hidden sm:inline">·</span>
           <Link to="/terms-of-service" className="hover:text-accent transition-colors">Terms of Service</Link>
+          <span className="hidden sm:inline">·</span>
+          <Link to="/careers" className="hover:text-accent transition-colors">Join Our Team</Link>
         </div>
         <div className="flex items-center gap-4">
           <a href="https://www.instagram.com/capital_cleancare" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors" aria-label="Follow Capital Clean Care on Instagram">
