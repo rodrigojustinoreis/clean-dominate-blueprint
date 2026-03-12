@@ -30,8 +30,12 @@ const HeroSection = () => (
           <span className="text-accent">for DMV Homes</span>
         </h1>
 
-        <p className="text-card/80 font-medium text-sm md:text-base mb-8 leading-relaxed">
+        <p className="text-card/80 font-medium text-base md:text-lg lg:text-xl mb-3 leading-relaxed">
           Trusted Local Cleaners Serving Frederick County & Surrounding Areas
+        </p>
+
+        <p className="text-card/70 text-sm md:text-base mb-8 leading-relaxed max-w-md">
+          Experience premium cleaning services in Urbana, MD with our eco-friendly approach and satisfaction guarantee.
         </p>
 
         {/* Trust points - minimal pills */}
