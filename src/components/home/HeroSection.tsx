@@ -24,14 +24,18 @@ const HeroSection = () => (
           <span className="text-xs font-medium text-card/90 uppercase tracking-wider">Same-day availability</span>
         </div>
 
-        <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-card leading-[1.15] mb-5">
+        <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-card leading-[1.15] mb-3">
           Premium Cleaning
           <br />
           <span className="text-accent">for DMV Homes</span>
         </h1>
 
+        <p className="text-card/90 font-medium text-sm md:text-base mb-2">
+          Trusted Local Cleaners Serving Frederick County & Surrounding Areas
+        </p>
+
         <p className="text-card/70 text-sm md:text-base mb-8 leading-relaxed max-w-md">
-          Eco-friendly, detail-oriented cleaning by background-checked professionals. Your home deserves more than just a clean.
+          Experience premium cleaning services in Urbana, MD with our eco-friendly approach and satisfaction guarantee.
         </p>
 
         {/* Trust points - minimal pills */}
