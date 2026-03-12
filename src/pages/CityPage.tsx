@@ -8,7 +8,7 @@ import FAQ from "@/components/FAQ";
 import PricingTable from "@/components/PricingTable";
 import TrustBar from "@/components/TrustBar";
 import ConversionCTA from "@/components/ConversionCTA";
-import { FAQSchema, ServiceSchema } from "@/components/SchemaMarkup";
+import { FAQSchema, ServiceSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import { useSEO } from "@/hooks/useSEO";
 import { getCityBySlug, getExpandedCityFaqs } from "@/data/locations";
 import { services } from "@/data/services";
@@ -64,6 +64,7 @@ const CityPage = () => {
   return (
     <Layout>
       {seoHelmet}
+      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: stateLabel, href: `/${city.stateSlug}` }, { label: city.name }]} />
       <FAQSchema faqs={expandedFaqs} />
       <ServiceSchema
         serviceName={`House Cleaning in ${city.name}`}

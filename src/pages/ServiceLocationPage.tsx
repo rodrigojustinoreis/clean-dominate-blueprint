@@ -3,7 +3,7 @@ import Layout from "@/components/layout/Layout";
 import { useSEO } from "@/hooks/useSEO";
 import FAQ from "@/components/FAQ";
 import ConversionCTA from "@/components/ConversionCTA";
-import { LocalBusinessSchema, ServiceSchema, FAQSchema } from "@/components/SchemaMarkup";
+import { LocalBusinessSchema, ServiceSchema, FAQSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import { getCity, getService, getServiceLocationIntro, getWhyChooseUs, getServiceLocationFAQs, slCities, slServices } from "@/data/service-locations";
 import { CheckCircle, MapPin, ArrowRight, Shield, Leaf, Clock, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -21,21 +21,23 @@ const ServiceLocationPage = () => {
   const whyChoose = getWhyChooseUs(city, service);
   const intro = getServiceLocationIntro(city, service);
   const metaTitle = `Professional ${service.name} in ${city.name}, ${city.state} | Capital Clean Care`;
-  const metaDescription = `Top-rated ${service.shortName} in ${city.name}, ${city.state}. Eco-friendly products, background-checked teams, satisfaction guaranteed. Serving ${city.county}. Free quotes.`;
+  const metaDescription = `Top-rated ${service.shortName} & maid service in ${city.name}, ${city.state}. Eco-friendly products, background-checked teams, satisfaction guaranteed. Serving ${city.county}. Free quotes.`;
   const pageUrl = `https://capitalcleancare.com/locations/${city.slug}/${service.slug}`;
 
   const { seoHelmet } = useSEO({ title: metaTitle, description: metaDescription, canonical: pageUrl });
 
   // Get related service pages for this city
   const relatedServices = slServices.filter(s => s.slug !== service.slug).slice(0, 4);
-  // Get nearby cities offering this service
+  // Get nearby cities — same county first, then fallback to same state
   const nearbyCities = slCities
-    .filter(c => c.slug !== city.slug && c.county === city.county)
+    .filter(c => c.slug !== city.slug)
+    .sort((a, b) => (a.county === city.county ? -1 : 1))
     .slice(0, 5);
 
   return (
     <Layout>
       {seoHelmet}
+      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: city.name, href: `/locations/${city.slug}` }, { label: service.name }]} />
       <LocalBusinessSchema areaServed={[city.name, city.county]} />
       <ServiceSchema
         serviceName={`${service.name} in ${city.name}`}

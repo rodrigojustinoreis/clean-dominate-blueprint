@@ -51,7 +51,7 @@ export const hubs: HubData[] = [
     slug: "washington-dc",
     stateAbbr: "DC",
     intro: "Capital Clean Care brings premium residential cleaning to neighborhoods throughout Washington, DC. From the tree-lined streets of Georgetown to the vibrant communities of Adams Morgan, our professional teams deliver exceptional cleaning services tailored to the unique needs of District living.\n\nDC homes come in every shape and size — historic rowhouses, modern condominiums, spacious apartments, and classic brownstones. Our cleaning professionals are experienced with all property types and understand the specific care each requires. Whether you need delicate treatment for historic woodwork or efficient cleaning for a compact urban apartment, we adapt our approach accordingly.\n\nCity living brings unique cleaning challenges. Construction dust from ongoing development, seasonal pollen from the Capitol's famous cherry blossoms, and the everyday grime of urban life all demand consistent professional attention. Our eco-friendly products are specifically chosen to address these challenges without introducing harsh chemicals into your living space.\n\nWe serve all four quadrants of Washington, DC, including Northwest, Northeast, Southeast, and Southwest. Our most popular service areas include Georgetown, Dupont Circle, Capitol Hill, Adams Morgan, and Downtown. Wherever you call home in the District, Capital Clean Care is ready to provide the premium cleaning experience you deserve.\n\nExplore our neighborhood-specific pages below to learn more about our services in your area of DC.",
-    citySlugs: ["washington-dc-nw", "washington-dc-ne", "capitol-hill-dc", "georgetown-dc", "dupont-circle-dc", "adams-morgan-dc", "downtown-dc"],
+    citySlugs: ["washington-dc", "washington-dc", "capitol-hill-dc", "georgetown-dc", "dupont-circle-dc", "adams-morgan-dc", "downtown-dc"],
     faqs: [
       { q: "Do you serve all of Washington, DC?", a: "Yes, we provide cleaning services throughout all four quadrants of DC, including NW, NE, SE, and SW. Our teams are familiar with neighborhoods across the entire District." },
       { q: "Can you clean condos and apartments in DC?", a: "Absolutely. We're experienced with all DC property types including condos, apartments, rowhouses, and single-family homes. We also coordinate with building management for access when needed." },
@@ -122,7 +122,7 @@ export const cities: CityData[] = [
     stateSlug: "maryland",
     county: "Montgomery County",
     intro: "Silver Spring is one of the DMV's most dynamic and diverse communities, known for its vibrant downtown, excellent transit connections, and eclectic mix of residential neighborhoods. From the bustling shops and restaurants along Georgia Avenue to the quiet, tree-lined streets of Woodside and Forest Glen, Silver Spring offers a unique blend of urban energy and suburban tranquility.\n\nThe diversity of Silver Spring's housing stock — mid-century ranchers, modern apartment complexes, charming bungalows, and renovated Victorians — means every home has different cleaning needs. Capital Clean Care's trained professionals understand these differences and customize their approach for each property type, ensuring thorough results regardless of your home's style or age.\n\nWhether you commute to DC from the Silver Spring Metro, work from a home office in Takoma Park's neighboring streets, or manage a busy household in Four Corners, Capital Clean Care provides the reliable, eco-friendly cleaning services that fit your lifestyle. Our Montgomery County teams know Silver Spring intimately and deliver consistent quality you can count on.",
-    nearbySlugs: ["takoma-park-md", "rockville-md", "bethesda-md", "washington-dc-nw", "columbia-md"],
+    nearbySlugs: ["takoma-park-md", "rockville-md", "bethesda-md", "washington-dc", "columbia-md"],
     faqs: [
       { q: "What Silver Spring neighborhoods do you serve?", a: "We serve all Silver Spring neighborhoods including Downtown Silver Spring, Woodside, Forest Glen, Four Corners, Wheaton, Colesville, White Oak, and surrounding communities." },
       { q: "How much does cleaning cost in Silver Spring?", a: "Costs vary based on home size and service type. Silver Spring homes are competitively priced. Fill out our free quote form for an accurate estimate tailored to your home." },
@@ -141,7 +141,7 @@ export const cities: CityData[] = [
     stateSlug: "maryland",
     county: "Montgomery County",
     intro: "Bethesda stands as one of the most affluent and sought-after communities in the Washington metropolitan area. Known for exceptional schools, upscale dining, premier shopping destinations, and proximity to the National Institutes of Health, Bethesda attracts discerning homeowners who expect the very best — including their cleaning services.\n\nThe homes in Bethesda reflect the community's premium character: stately colonials, elegant Tudor-style residences, contemporary new builds, and luxurious condominiums in downtown Bethesda's high-rise developments. Capital Clean Care understands the elevated expectations of Bethesda homeowners and delivers cleaning services that match the quality of the homes we serve.\n\nOur Bethesda teams pay special attention to the details that matter in premium homes — careful treatment of high-end finishes, thorough cleaning of expansive floor plans, and meticulous attention to entertaining spaces. Whether you're preparing for guests, maintaining your home between social gatherings, or simply want a consistently pristine living environment, Capital Clean Care delivers results that meet Bethesda's high standards.",
-    nearbySlugs: ["potomac-md", "rockville-md", "silver-spring-md", "washington-dc-nw", "mclean-va"],
+    nearbySlugs: ["potomac-md", "rockville-md", "silver-spring-md", "washington-dc", "mclean-va"],
     faqs: [
       { q: "Do you specialize in large Bethesda homes?", a: "Yes. Our teams are experienced with larger properties common in Bethesda. We adjust team size and scheduling to ensure thorough cleaning of homes of all sizes." },
       { q: "What cleaning services are available in Bethesda?", a: "We offer standard cleaning, deep cleaning, move-in/move-out cleaning, post-construction cleanup, and recurring cleaning plans throughout all Bethesda neighborhoods." },
@@ -304,7 +304,7 @@ export const cities: CityData[] = [
     stateSlug: "maryland",
     county: "Montgomery County",
     intro: "Takoma Park is known for its progressive character, arts community, and commitment to environmental sustainability — values that align perfectly with Capital Clean Care's eco-friendly approach. This unique Montgomery County community, often called 'Azalea City,' features charming bungalows, Victorians, and craftsman homes nestled among mature trees and beautiful gardens.\n\nOur Takoma Park cleaning services respect the community's environmental values. We use only plant-based, non-toxic products that align with the eco-conscious lifestyle that defines this neighborhood. Our cleaning approach is as green as the community we serve.\n\nThe older housing stock in Takoma Park requires knowledgeable care. Our teams understand the proper treatment for original hardwood floors, vintage tile, plaster walls, and the unique features found in the area's character homes. We clean with respect for your home's history.",
-    nearbySlugs: ["silver-spring-md", "washington-dc-nw", "washington-dc-ne", "rockville-md", "bethesda-md"],
+    nearbySlugs: ["silver-spring-md", "washington-dc", "washington-dc", "rockville-md", "bethesda-md"],
     faqs: [
       { q: "Are your products truly eco-friendly?", a: "Yes. We use 100% plant-based, non-toxic products — no harsh chemicals, artificial fragrances, or harmful ingredients. Perfect for Takoma Park's environmentally conscious community." },
       { q: "Can you clean older Takoma Park homes?", a: "Absolutely. Our teams are experienced with the older homes common in Takoma Park, including proper care for original woodwork, vintage tile, and plaster." },
@@ -431,7 +431,7 @@ export const cities: CityData[] = [
     stateSlug: "maryland",
     county: "Prince George's County",
     intro: "Capital Clean Care is expanding our premium cleaning services into Prince George's County, serving communities across Maryland's second most populous county. From College Park to Bowie, Laurel to Upper Marlboro, PG County offers diverse neighborhoods that benefit from professional, eco-friendly cleaning services.\n\nPrince George's County's proximity to Washington, DC makes it home to many federal employees, military families, and professionals who value reliable home services. Capital Clean Care understands the busy schedules of PG County residents and offers flexible scheduling to accommodate demanding lifestyles.\n\nOur eco-friendly approach resonates with Prince George's County communities that value health, safety, and environmental responsibility. Every cleaning visit uses plant-based, non-toxic products that deliver exceptional results without compromising your family's wellbeing.",
-    nearbySlugs: ["silver-spring-md", "takoma-park-md", "columbia-md", "washington-dc-ne", "washington-dc-nw"],
+    nearbySlugs: ["silver-spring-md", "takoma-park-md", "columbia-md", "washington-dc", "washington-dc"],
     faqs: [
       { q: "What PG County areas do you serve?", a: "We're expanding in Prince George's County. Contact us with your zip code to confirm availability in your specific area." },
       { q: "Do you serve College Park?", a: "Yes. College Park and surrounding areas are within our PG County service area." },
@@ -445,7 +445,7 @@ export const cities: CityData[] = [
   // WASHINGTON DC
   {
     name: "Washington, DC (NW)",
-    slug: "washington-dc-nw",
+    slug: "washington-dc",
     state: "DC",
     stateSlug: "washington-dc",
     intro: "Northwest Washington is the District's largest and most diverse quadrant, home to iconic neighborhoods like Georgetown, Dupont Circle, Cleveland Park, Tenleytown, Chevy Chase DC, and countless others. NW DC features an extraordinary range of residential properties, from historic rowhouses and grand Victorians to modern condominiums and luxury apartments.\n\nCapital Clean Care serves Northwest DC residents with premium cleaning services adapted to the quadrant's diverse housing stock. Our teams understand the specific needs of DC rowhouses — multi-level layouts, narrow staircases, and period details that require careful attention. We also excel at cleaning modern condos and apartments in the quadrant's many residential buildings.\n\nLiving in NW DC means a busy lifestyle with demanding careers, active social lives, and the cultural richness of the nation's capital at your doorstep. Capital Clean Care handles the cleaning so you can make the most of everything Northwest Washington has to offer.",
@@ -462,11 +462,11 @@ export const cities: CityData[] = [
   },
   {
     name: "Washington, DC (NE)",
-    slug: "washington-dc-ne",
+    slug: "washington-dc",
     state: "DC",
     stateSlug: "washington-dc",
     intro: "Northeast Washington has undergone a remarkable transformation, with vibrant neighborhoods like Brookland, NoMa, Trinidad, and Woodridge attracting new residents drawn to the area's character, culture, and growing amenities. NE DC's mix of renovated rowhomes, modern developments, and established family neighborhoods creates a dynamic residential landscape.\n\nCapital Clean Care serves Northeast DC's evolving communities with cleaning services that match the neighborhood's energy and diversity. Whether you've recently moved into a renovated Brookland bungalow or live in a longstanding Woodridge family home, our teams provide thorough, reliable cleaning tailored to your property.\n\nThe ongoing development in NE DC also means many residents are dealing with post-renovation cleanup and the settling dust that comes with neighborhood growth. Our post-construction and deep cleaning services are particularly popular in areas experiencing development.",
-    nearbySlugs: ["capitol-hill-dc", "washington-dc-nw", "downtown-dc", "takoma-park-md", "silver-spring-md"],
+    nearbySlugs: ["capitol-hill-dc", "washington-dc", "downtown-dc", "takoma-park-md", "silver-spring-md"],
     faqs: [
       { q: "What NE DC neighborhoods do you serve?", a: "We serve all Northeast DC neighborhoods including Brookland, NoMa, Trinidad, Woodridge, Michigan Park, Fort Lincoln, and surrounding areas." },
       { q: "Do you offer post-renovation cleaning in NE DC?", a: "Yes. With ongoing development in NE DC, our post-construction cleaning service addresses the dust and debris from renovations." },
@@ -483,7 +483,7 @@ export const cities: CityData[] = [
     state: "DC",
     stateSlug: "washington-dc",
     intro: "Capitol Hill is one of Washington's most iconic and sought-after residential neighborhoods. Known for its stunning rowhouses, the historic Eastern Market, and proximity to the US Capitol, this neighborhood attracts professionals, families, and anyone who appreciates the intersection of history and vibrant community life.\n\nCapital Clean Care understands the prestige and character of Capitol Hill living. The neighborhood's beautifully maintained rowhouses feature period details — crown moldings, original hardwood, marble mantels, and decorative tilework — that require knowledgeable cleaning teams who know how to preserve these features while delivering spotless results.\n\nCapitol Hill residents lead busy lives in one of the world's most important neighborhoods. Between demanding careers, community involvement, and enjoying the area's exceptional dining and cultural scene, professional cleaning is an investment in quality of life that Capitol Hill residents appreciate.",
-    nearbySlugs: ["washington-dc-ne", "washington-dc-nw", "downtown-dc", "dupont-circle-dc", "adams-morgan-dc"],
+    nearbySlugs: ["washington-dc", "washington-dc", "downtown-dc", "dupont-circle-dc", "adams-morgan-dc"],
     faqs: [
       { q: "Do you specialize in Capitol Hill rowhouses?", a: "Yes. Our teams are experienced with the multi-level rowhouse layouts and period features that characterize Capitol Hill homes." },
       { q: "Can you clean around antique fixtures?", a: "Absolutely. We train our teams in proper care for historic features, including original woodwork, vintage tile, and antique fixtures." },
@@ -500,7 +500,7 @@ export const cities: CityData[] = [
     state: "DC",
     stateSlug: "washington-dc",
     intro: "Georgetown stands as one of Washington's most prestigious and historic neighborhoods, predating the District of Columbia itself. This cobblestoned enclave along the Potomac River features stunning Federal and Georgian architecture, world-class dining, exclusive boutiques, and some of the most valuable residential real estate in the nation's capital.\n\nCapital Clean Care provides Georgetown homeowners with cleaning services that match the neighborhood's exceptional standards. Our teams are specially trained in caring for fine homes — proper treatment for marble, crystal, hardwood, and the museum-quality finishes often found in Georgetown residences. We understand that these homes require elevated attention and expertise.\n\nGeorgetown's social calendar is legendary, and many residents rely on Capital Clean Care to keep their homes entertaining-ready year-round. From pre-event preparations to regular maintenance that ensures your Georgetown home always reflects your standards, we deliver the premium service this extraordinary neighborhood demands.",
-    nearbySlugs: ["washington-dc-nw", "dupont-circle-dc", "adams-morgan-dc", "bethesda-md", "mclean-va"],
+    nearbySlugs: ["washington-dc", "dupont-circle-dc", "adams-morgan-dc", "bethesda-md", "mclean-va"],
     faqs: [
       { q: "Do you have experience with Georgetown's historic homes?", a: "Yes. Our teams are trained in proper care for Georgetown's Federal and Georgian architecture, including appropriate products for period materials." },
       { q: "Can you provide pre-event cleaning in Georgetown?", a: "Absolutely. Many Georgetown clients schedule cleanings before dinner parties, receptions, and social events." },
@@ -517,7 +517,7 @@ export const cities: CityData[] = [
     state: "DC",
     stateSlug: "washington-dc",
     intro: "Dupont Circle is one of Washington's most beloved neighborhoods, known for its vibrant culture, beautiful rowhouses, Embassy Row's architectural grandeur, and a cosmopolitan atmosphere that attracts diverse residents from across the world. The neighborhood's tree-lined streets and stunning Beaux-Arts and Victorian architecture make it one of DC's most visually striking residential areas.\n\nCapital Clean Care serves Dupont Circle residents with cleaning services tailored to the neighborhood's distinctive properties. Whether you live in a classic Victorian rowhouse, a renovated condo in a historic building, or a modern apartment, our teams deliver thorough cleaning that respects your space's unique character.\n\nDupont Circle's central location and walkable lifestyle mean residents are constantly on the go. Professional cleaning from Capital Clean Care means coming home to a spotless space after a busy day, without sacrificing weekend time to household chores.",
-    nearbySlugs: ["washington-dc-nw", "georgetown-dc", "adams-morgan-dc", "downtown-dc", "capitol-hill-dc"],
+    nearbySlugs: ["washington-dc", "georgetown-dc", "adams-morgan-dc", "downtown-dc", "capitol-hill-dc"],
     faqs: [
       { q: "Do you serve the Dupont Circle neighborhood?", a: "Yes. We serve all of Dupont Circle including surrounding blocks and adjacent neighborhoods." },
       { q: "Can you clean historic Dupont Circle rowhouses?", a: "Absolutely. Our teams are experienced with the Victorian and Beaux-Arts properties that define Dupont Circle." },
@@ -534,7 +534,7 @@ export const cities: CityData[] = [
     state: "DC",
     stateSlug: "washington-dc",
     intro: "Adams Morgan is Washington's most colorful and culturally diverse neighborhood, famous for its international restaurants, vibrant nightlife, street murals, and eclectic mix of residents. This energetic community north of Dupont Circle features beautiful residential blocks lined with renovated rowhouses, character apartments, and condominiums.\n\nCapital Clean Care serves Adams Morgan residents with the reliable, eco-friendly cleaning services that complement the neighborhood's lively character. The area's housing mix — from classic DC rowhouses to converted apartment buildings — requires adaptable cleaning teams, and our professionals are up to the challenge.\n\nAdams Morgan residents value authenticity and quality — characteristics that define Capital Clean Care's approach. Our plant-based cleaning products and honest, professional service resonate with this community's values.",
-    nearbySlugs: ["dupont-circle-dc", "washington-dc-nw", "georgetown-dc", "downtown-dc", "silver-spring-md"],
+    nearbySlugs: ["dupont-circle-dc", "washington-dc", "georgetown-dc", "downtown-dc", "silver-spring-md"],
     faqs: [
       { q: "Do you serve Adams Morgan?", a: "Yes. We serve all of Adams Morgan including surrounding streets and adjacent neighborhoods." },
       { q: "Can you clean apartments in Adams Morgan?", a: "Yes. We clean apartments, condos, rowhouses, and all residential properties in Adams Morgan." },
@@ -551,7 +551,7 @@ export const cities: CityData[] = [
     state: "DC",
     stateSlug: "washington-dc",
     intro: "Downtown Washington, DC is the bustling center of the nation's capital, home to a growing residential population attracted by luxury condominiums, renovated lofts, and modern apartment buildings. The area around CityCenter, Penn Quarter, and Chinatown has seen tremendous residential growth, creating demand for premium cleaning services tailored to urban living.\n\nCapital Clean Care serves Downtown DC residents with cleaning services designed for the area's predominantly high-rise and mid-rise residential properties. Our teams understand the logistics of building access, concierge coordination, and the efficient cleaning of modern urban layouts.\n\nDowntown DC professionals lead intensely busy lives, and the convenience of professional cleaning is especially valuable. Capital Clean Care provides reliable, scheduled cleaning that keeps your downtown residence spotless without adding another task to your packed schedule.",
-    nearbySlugs: ["capitol-hill-dc", "dupont-circle-dc", "washington-dc-nw", "washington-dc-ne", "georgetown-dc"],
+    nearbySlugs: ["capitol-hill-dc", "dupont-circle-dc", "washington-dc", "washington-dc", "georgetown-dc"],
     faqs: [
       { q: "Do you serve Downtown DC buildings?", a: "Yes. We serve residential buildings throughout Downtown DC including CityCenter, Penn Quarter, Chinatown, and surrounding areas." },
       { q: "Can you coordinate with building concierges?", a: "Absolutely. We regularly work with building management, concierges, and front desk staff for seamless access." },
@@ -569,7 +569,7 @@ export const cities: CityData[] = [
     state: "VA",
     stateSlug: "virginia",
     intro: "Arlington is one of Northern Virginia's most desirable communities, offering urban convenience, excellent transit via the Metro system, and a diverse range of neighborhoods from the high-rises of Rosslyn and Ballston to the charming single-family homes of Lyon Village and Ashton Heights. Arlington's proximity to DC and its own thriving commercial corridors make it a premier residential destination.\n\nCapital Clean Care serves Arlington residents with premium cleaning services adapted to the community's varied housing stock. Whether you live in a high-rise condo along the Rosslyn-Ballston corridor, a townhome in Columbia Pike, or a craftsman bungalow in Cherrydale, our teams deliver thorough, customized cleaning every visit.\n\nArlington's active, professional population values efficiency and quality. Our flexible scheduling, dedicated cleaning teams, and eco-friendly approach align with the values of this dynamic community. Let us handle the cleaning while you enjoy everything Arlington has to offer.",
-    nearbySlugs: ["mclean-va", "falls-church-va", "alexandria-va", "washington-dc-nw", "fairfax-va"],
+    nearbySlugs: ["mclean-va", "falls-church-va", "alexandria-va", "washington-dc", "fairfax-va"],
     faqs: [
       { q: "What Arlington neighborhoods do you serve?", a: "We serve all Arlington neighborhoods including Rosslyn, Ballston, Clarendon, Lyon Village, Ashton Heights, Columbia Pike, Cherrydale, and more." },
       { q: "Do you clean high-rise condos in Arlington?", a: "Yes. We serve condos and apartments throughout the Rosslyn-Ballston corridor and all Arlington residential buildings." },
@@ -621,7 +621,7 @@ export const cities: CityData[] = [
     state: "VA",
     stateSlug: "virginia",
     intro: "Alexandria is one of Northern Virginia's most charming and historically rich communities. Old Town Alexandria's cobblestone streets, waterfront dining, and beautifully preserved 18th and 19th-century architecture create a residential experience unlike anything else in the metropolitan area. Beyond Old Town, Alexandria offers diverse neighborhoods from Del Ray's artsy charm to West End's modern developments.\n\nCapital Clean Care serves Alexandria residents with cleaning services that respect the city's architectural heritage while meeting modern standards of cleanliness. Our teams are experienced with Old Town's historic rowhouses, Del Ray's craftsman homes, and the contemporary condos and townhomes found throughout the city.\n\nAlexandria residents take pride in their community's character and invest in maintaining beautiful homes. Capital Clean Care supports that pride with professional, eco-friendly cleaning that enhances your home's beauty while protecting its historic value.",
-    nearbySlugs: ["arlington-va", "falls-church-va", "fairfax-va", "washington-dc-nw", "capitol-hill-dc"],
+    nearbySlugs: ["arlington-va", "falls-church-va", "fairfax-va", "washington-dc", "capitol-hill-dc"],
     faqs: [
       { q: "Do you serve Old Town Alexandria?", a: "Yes. We serve all of Alexandria including Old Town, Del Ray, West End, Carlyle, and surrounding neighborhoods." },
       { q: "Can you clean historic Alexandria homes?", a: "Yes. Our teams are trained in proper care for historic properties, including appropriate products for original surfaces." },
