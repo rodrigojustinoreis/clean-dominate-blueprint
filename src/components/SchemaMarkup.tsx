@@ -129,6 +129,7 @@ export const LocalBusinessSchema = ({ areaServed }: LocalBusinessSchemaProps = {
     sameAs: [
       "https://www.instagram.com/capital_cleancare",
       "https://www.facebook.com/capitalcleancare",
+      "https://maps.app.goo.gl/capitalcleancare",
     ],
     hasOfferCatalog: {
       "@type": "OfferCatalog",

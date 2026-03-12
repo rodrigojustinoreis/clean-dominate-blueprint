@@ -79,9 +79,14 @@ const Header = () => {
             </Button>
           </div>
 
-          <button className="lg:hidden p-2" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Toggle menu">
-            {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
+          <div className="lg:hidden flex items-center gap-2">
+            <a href="tel:+12407042551" className="text-sm font-semibold text-foreground flex items-center gap-1" aria-label="Call us">
+              <Phone className="h-4 w-4 text-accent" /> <span className="hidden sm:inline">(240) 704-2551</span>
+            </a>
+            <button className="p-2" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Toggle menu">
+              {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
+          </div>
         </div>
       </div>
 

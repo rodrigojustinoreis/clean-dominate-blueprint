@@ -584,6 +584,61 @@ export const services: ServiceData[] = [
     ],
     metaTitle: "Airbnb & Short-Term Rental Cleaning in MD, DC & VA | Capital Clean Care",
     metaDescription: "Professional Airbnb & VRBO turnover cleaning in Maryland, DC & Northern Virginia. 5-star results, same-day turnovers, linen changes included. Get a free quote!"
+  },
+  {
+    name: "Office & Commercial Cleaning",
+    slug: "office-cleaning",
+    shortDescription: "Professional commercial cleaning for offices, small businesses, and workspaces in MD, DC & VA.",
+    intro: "A clean workspace directly impacts employee productivity, client impressions, and overall business performance. Capital Clean Care provides reliable, professional office and commercial cleaning services for businesses throughout Maryland, Washington DC, and Northern Virginia.\n\nOur commercial cleaning teams are trained to work efficiently in professional environments — arriving before or after business hours, minimizing disruptions, and delivering consistent results with every visit. We understand that businesses need cleaning they can count on without fail.\n\nFrom small professional offices and medical waiting rooms to retail spaces and co-working environments, we handle commercial spaces of all types. Our eco-friendly, non-toxic cleaning products are safe for employees, clients, and customers — and leave no harsh chemical odors behind.\n\nWe offer flexible scheduling including early morning, evening, and weekend cleaning to work around your business hours. Whether you need daily, weekly, or monthly service, we build a cleaning plan that fits your operation and budget.",
+    whatsIncluded: [
+      "Vacuum all office carpets, rugs, and fabric furniture",
+      "Mop all hard floors — tile, hardwood, and laminate",
+      "Dust and wipe all desks, workstations, and surfaces",
+      "Clean and sanitize all door handles and light switches",
+      "Empty and reline all trash and recycling bins",
+      "Clean and disinfect all bathroom fixtures and surfaces",
+      "Restock bathroom paper products and soap dispensers",
+      "Clean and wipe kitchen/break room counters and sinks",
+      "Wipe down microwave, coffee maker, and appliances",
+      "Clean inside and outside of office refrigerator",
+      "Sanitize shared surfaces — conference tables, chairs, phones",
+      "Clean interior windows and glass partition walls",
+      "Dust blinds, window ledges, and baseboards",
+      "Wipe down reception desk and waiting area surfaces",
+      "Sanitize keyboards, mice, and shared equipment (dry cloth)",
+      "Clean elevator interior and call buttons",
+      "Mop lobby and entrance areas",
+      "Remove cobwebs from corners and ceilings",
+      "Clean restroom mirrors, counters, and floors",
+      "Final walkthrough quality inspection"
+    ],
+    benefits: [
+      "Flexible scheduling — before hours, after hours, or weekends",
+      "Consistent, reliable service your business can depend on",
+      "Non-toxic, eco-friendly products safe for all staff",
+      "Background-checked, insured commercial cleaning teams",
+      "Customizable cleaning plans for any business type",
+      "No long-term contracts required",
+      "Dedicated account contact for scheduling and requests",
+      "Improves employee wellbeing and client first impressions"
+    ],
+    faqs: [
+      { q: "Do you clean outside of business hours?", a: "Yes. We offer early morning, evening, and weekend scheduling so cleaning never interrupts your operations. Most commercial clients prefer after-hours service." },
+      { q: "What types of commercial spaces do you clean?", a: "We clean professional offices, medical and dental waiting rooms, retail stores, co-working spaces, real estate offices, law firms, and small business offices throughout MD, DC, and VA." },
+      { q: "Can you handle daily cleaning schedules?", a: "Yes. We offer daily, weekly, bi-weekly, and monthly commercial cleaning plans. High-traffic businesses often benefit from 3-5x per week service." },
+      { q: "Are your cleaners insured for commercial work?", a: "Yes. Capital Clean Care is fully licensed and insured for commercial cleaning. Every team member is background-checked and trained for professional environments." },
+      { q: "Do you use eco-friendly products in offices?", a: "Yes. We use the same EPA Safer Choice certified, non-toxic products in all our commercial work. No harsh chemical odors that linger in your workspace." },
+      { q: "How much does office cleaning cost?", a: "Pricing depends on office size, frequency, and specific services required. A small office (under 1,000 sq ft) typically starts at $150-$250 per visit. Request a free quote for your space." },
+      { q: "Can you provide cleaning supplies and equipment?", a: "Yes. We bring all cleaning products, equipment, and supplies. You don't need to stock anything — we handle it all." },
+      { q: "Do you offer one-time office deep cleaning?", a: "Yes. We offer one-time deep cleaning for offices moving in or out, post-renovation cleanup, or seasonal refreshes." }
+    ],
+    testimonials: [
+      { name: "Patricia W.", location: "Rockville, MD", text: "We switched our office cleaning to Capital Clean Care and the difference is immediate. The team is professional, quiet, and thorough. Clients always comment on how clean our space looks." },
+      { name: "James R.", location: "Washington, DC", text: "Running a small law firm, presentation matters. Capital Clean Care keeps our office immaculate without any disruption to our schedule. They clean after hours and everything is perfect every morning." },
+      { name: "Linda M.", location: "Arlington, VA", text: "I manage a co-working space and cleanliness is everything for our members. Capital Clean Care handles our daily cleaning and it's been flawless. Highly recommend for any commercial space." }
+    ],
+    metaTitle: "Office & Commercial Cleaning in MD, DC & VA | Capital Clean Care",
+    metaDescription: "Professional office and commercial cleaning in Maryland, DC & Northern Virginia. After-hours scheduling, eco-friendly products, background-checked teams. Get a free quote!"
   }
 ];
 
