@@ -48,6 +48,12 @@
   <url><loc>https://capitalcleancare.com/locations/takoma-park-md</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://capitalcleancare.com/locations/wheaton-md</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
+  <!-- Maryland County Pages -->
+  <url><loc>https://capitalcleancare.com/locations/montgomery-county-md</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/frederick-county-md</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/howard-county-md</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/prince-georges-county-md</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
   <!-- Washington DC City Page -->
   <url><loc>https://capitalcleancare.com/locations/washington-dc</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 

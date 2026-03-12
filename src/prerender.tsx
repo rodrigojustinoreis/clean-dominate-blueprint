@@ -43,6 +43,7 @@ function getAllRoutes(): string[] {
     "chevy-chase-md", "college-park-md", "laurel-md", "bowie-md",
     "takoma-park-md", "wheaton-md", "arlington-va", "alexandria-va", "fairfax-va",
     "mclean-va", "reston-va", "washington-dc",
+    "montgomery-county-md", "frederick-county-md", "howard-county-md", "prince-georges-county-md",
   ];
   for (const c of citySlugs) {
     routes.push(`/locations/${c}`);
