@@ -3,6 +3,7 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
 import { vitePrerenderPlugin } from "vite-prerender-plugin";
+import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
@@ -20,6 +21,13 @@ export default defineConfig(({ mode }) => ({
       renderTarget: "#root",
       prerenderScript: path.resolve(__dirname, "src/prerender.tsx"),
     }),
+    ViteImageOptimizer({
+      png: { quality: 80 },
+      jpeg: { quality: 80 },
+      jpg: { quality: 80 },
+      webp: { lossless: false, quality: 80 },
+      svg: { multipass: true },
+    }),
   ].filter(Boolean),
   resolve: {
     alias: {
@@ -28,18 +36,28 @@ export default defineConfig(({ mode }) => ({
   },
   build: {
     minify: "esbuild",
-    // Code splitting for better caching
+    target: "es2020",
+    cssMinify: true,
+    sourcemap: false,
+    assetsInlineLimit: 4096,
+    chunkSizeWarningLimit: 600,
     rollupOptions: {
       output: {
         manualChunks: {
           vendor: ["react", "react-dom", "react-router-dom"],
-          ui: ["@radix-ui/react-accordion", "@radix-ui/react-dialog", "@radix-ui/react-tooltip"],
+          ui: [
+            "@radix-ui/react-accordion",
+            "@radix-ui/react-dialog",
+            "@radix-ui/react-tooltip",
+            "@radix-ui/react-select",
+            "@radix-ui/react-tabs",
+            "@radix-ui/react-label",
+          ],
+          forms: ["react-hook-form", "@hookform/resolvers", "zod"],
+          charts: ["recharts"],
+          carousel: ["embla-carousel-react"],
         },
       },
     },
-    // Asset size optimization
-    assetsInlineLimit: 4096,
-    cssMinify: true,
-    sourcemap: false,
   },
 }));

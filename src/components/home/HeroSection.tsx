@@ -10,6 +10,10 @@ const HeroSection = () => (
       alt="Capital Clean Care team of professional cleaners"
       className="absolute inset-0 w-full h-full object-cover object-top scale-105"
       loading="eager"
+      fetchPriority="high"
+      decoding="async"
+      width={1920}
+      height={1080}
     />
     {/* Gradient overlays for depth */}
     <div className="absolute inset-0 bg-gradient-to-r from-foreground/80 via-foreground/60 to-foreground/30" />
