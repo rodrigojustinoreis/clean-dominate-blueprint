@@ -1,10 +1,11 @@
+import { renderToString } from "react-dom/server";
+import { StaticRouter } from "react-router-dom";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { HelmetProvider } from "react-helmet-async";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import AppRoutes from "./AppRoutes";
 import { slCities, slServices } from "./data/service-locations";
 import { vanityLandingPages } from "./data/vanity-landings";
-
-/**
- * Prerender entry point for vite-prerender-plugin.
- * Exports all routes and a prerender function that captures rendered HTML.
- */
 
 function getAllRoutes(): string[] {
   const routes: string[] = [
@@ -52,7 +53,7 @@ function getAllRoutes(): string[] {
     routes.push(`/locations/${c}`);
   }
 
-  // Service-location combinations (160 pages)
+  // Service-location combinations
   for (const city of slCities) {
     for (const service of slServices) {
       routes.push(`/locations/${city.slug}/${service.slug}`);
@@ -67,11 +68,32 @@ function getAllRoutes(): string[] {
   return routes;
 }
 
-export async function prerender() {
-  const root = typeof document !== "undefined" ? document.getElementById("root") : null;
-  return {
-    html: root?.innerHTML || "",
-    head: typeof document !== "undefined" ? document.head.innerHTML : "",
-    links: getAllRoutes(),
-  };
+export async function prerender(data: { url: string }) {
+  const queryClient = new QueryClient({
+    defaultOptions: { queries: { retry: false, staleTime: 0 } },
+  });
+
+  const helmetContext: Record<string, unknown> = {};
+
+  const html = renderToString(
+    <HelmetProvider context={helmetContext}>
+      <QueryClientProvider client={queryClient}>
+        <TooltipProvider>
+          {/* Toaster and Sonner omitted — use browser APIs, no SEO value */}
+          <StaticRouter location={data.url}>
+            <AppRoutes />
+          </StaticRouter>
+        </TooltipProvider>
+      </QueryClientProvider>
+    </HelmetProvider>
+  );
+
+  const helmet = (helmetContext as any).helmet;
+  const head = helmet
+    ? [helmet.title?.toString(), helmet.meta?.toString(), helmet.link?.toString()]
+        .filter(Boolean)
+        .join("\n")
+    : "";
+
+  return { html, head, links: getAllRoutes() };
 }

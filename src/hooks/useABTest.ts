@@ -8,6 +8,9 @@ import { useState } from "react";
 
 export function useABTest<T>(testName: string, variants: T[]): T {
   const [variant] = useState<T>(() => {
+    if (typeof window === "undefined" || typeof localStorage === "undefined") {
+      return variants[0];
+    }
     const key = `ab_${testName}`;
     const stored = localStorage.getItem(key);
     if (stored !== null) {
