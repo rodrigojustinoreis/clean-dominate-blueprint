@@ -89,11 +89,41 @@ export async function prerender(data: { url: string }) {
   );
 
   const helmet = (helmetContext as any).helmet;
-  const head = helmet
-    ? [helmet.title?.toString(), helmet.meta?.toString(), helmet.link?.toString()]
-        .filter(Boolean)
-        .join("\n")
+
+  // Build head elements Set — serializeElement handles raw strings directly
+  const elements = new Set<string>();
+  if (helmet) {
+    // Canonical and other <link> tags
+    const linkStr = helmet.link?.toString();
+    if (linkStr) elements.add(linkStr);
+    // <meta> tags (page-specific ones from Helmet, not the static index.html ones)
+    const metaStr = helmet.meta?.toString();
+    if (metaStr) elements.add(metaStr);
+    // JSON-LD schema scripts
+    const scriptStr = helmet.script?.toString();
+    if (scriptStr) elements.add(scriptStr);
+    // <noscript> tags
+    const noscriptStr = helmet.noscript?.toString();
+    if (noscriptStr) elements.add(noscriptStr);
+  }
+
+  // Page title from helmet — decode HTML entities before passing to plugin (plugin re-encodes)
+  const titleText = helmet?.title?.toString()
+    ? (() => {
+        const m = helmet.title.toString().match(/<title[^>]*>([\s\S]*?)<\/title>/i);
+        if (!m) return "";
+        return m[1]
+          .replace(/&amp;/g, "&")
+          .replace(/&lt;/g, "<")
+          .replace(/&gt;/g, ">")
+          .replace(/&quot;/g, '"')
+          .replace(/&#39;/g, "'");
+      })()
     : "";
 
-  return { html, head, links: getAllRoutes() };
+  return {
+    html,
+    head: { lang: "en", title: titleText, elements },
+    links: getAllRoutes(),
+  };
 }
