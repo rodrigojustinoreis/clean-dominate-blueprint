@@ -8,10 +8,22 @@ import kitchenStove from "@/assets/before-after/kitchen-stove.png";
 import bedroom from "@/assets/before-after/bedroom.png";
 import kidsRoom from "@/assets/before-after/kids-room.png";
 import teenRoom from "@/assets/before-after/teen-room.png";
+import cleanKitchen from "@/assets/gallery/clean-kitchen.jpg";
+import cleanBathroom from "@/assets/gallery/clean-bathroom.jpg";
+import cleanLivingRoom from "@/assets/gallery/clean-living-room.jpg";
+import cleanBedroom from "@/assets/gallery/clean-bedroom.jpg";
+import cleanDining from "@/assets/gallery/clean-dining.jpg";
+import cleanEntryway from "@/assets/gallery/clean-entryway.jpg";
 
 const transformations = [
   { src: kitchenStove, alt: "Kitchen stovetop before and after deep cleaning", label: "Kitchen Deep Clean" },
+  { src: cleanKitchen, alt: "Professionally cleaned kitchen — Capital Clean Care", label: "Spotless Kitchen" },
   { src: bedroom, alt: "Bedroom before and after professional cleaning", label: "Bedroom Transformation" },
+  { src: cleanBedroom, alt: "Professionally cleaned bedroom — Capital Clean Care", label: "Fresh Bedroom" },
+  { src: cleanBathroom, alt: "Professionally cleaned bathroom — Capital Clean Care", label: "Sparkling Bathroom" },
+  { src: cleanLivingRoom, alt: "Professionally cleaned living room — Capital Clean Care", label: "Living Room Reset" },
+  { src: cleanDining, alt: "Professionally cleaned dining room — Capital Clean Care", label: "Dining Room Shine" },
+  { src: cleanEntryway, alt: "Professionally cleaned entryway — Capital Clean Care", label: "Entryway Welcome" },
   { src: kidsRoom, alt: "Kids room before and after cleaning service", label: "Kids Room Reset" },
   { src: teenRoom, alt: "Teen room before and after organizing and cleaning", label: "Full Room Cleanup" },
 ];
@@ -47,13 +59,13 @@ const BeforeAfterGallery = () => {
         </div>
 
         {/* Thumbnails */}
-        <div className="flex justify-center gap-3 mb-8">
+        <div className="flex flex-wrap justify-center gap-2 mb-8">
           {transformations.map((t, i) => (
             <button
               key={i}
               onClick={() => setActiveIndex(i)}
               className={cn(
-                "rounded-lg overflow-hidden border-2 transition-all w-20 h-20 md:w-24 md:h-24",
+                "rounded-lg overflow-hidden border-2 transition-all w-16 h-16 md:w-20 md:h-20",
                 i === activeIndex
                   ? "border-accent shadow-md scale-105"
                   : "border-transparent opacity-60 hover:opacity-100"
