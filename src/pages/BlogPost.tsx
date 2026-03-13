@@ -9,6 +9,322 @@ import { blogPosts } from "./Blog";
 import NotFound from "./NotFound";
 
 const blogContent: Record<string, React.ReactNode> = {
+  "spring-cleaning-checklist-maryland-2026": (
+    <article className="prose prose-lg max-w-none">
+      <p>Spring in Maryland means cherry blossoms, warming temperatures — and one of the highest pollen counts in the country. For homeowners in <Link to="/locations/rockville-md" className="text-accent hover:underline">Rockville</Link>, <Link to="/locations/bethesda-md" className="text-accent hover:underline">Bethesda</Link>, <Link to="/locations/silver-spring-md" className="text-accent hover:underline">Silver Spring</Link>, and across the DMV, spring cleaning isn't optional. It's how you reclaim your home after a long winter and prepare for the months ahead.</p>
+
+      <p>This checklist is built specifically for Maryland's climate — high humidity, heavy pollen, and the unique challenges of mid-Atlantic homes. Work through it room by room, or hire a professional team to handle the heavy lifting.</p>
+
+      <h2>Kitchen — Spring Deep Clean</h2>
+      <ul>
+        <li>Degrease range hood filters and stovetop burners</li>
+        <li>Clean inside oven — walls, door glass, and racks</li>
+        <li>Wipe inside refrigerator: shelves, drawers, door seals, and underneath coils</li>
+        <li>Descale coffee maker and other appliances</li>
+        <li>Scrub backsplash grout and tile</li>
+        <li>Wipe all cabinet doors, handles, and interior shelves</li>
+        <li>Clean under and behind the refrigerator and stove</li>
+        <li>Sanitize sink, garbage disposal, and drain</li>
+      </ul>
+
+      <h2>Bathrooms — Mold and Mildew Prevention</h2>
+      <p>Maryland's humidity creates the perfect conditions for mold in bathrooms. Pay extra attention here during spring.</p>
+      <ul>
+        <li>Scrub tile grout with a stiff brush and eco-friendly grout cleaner</li>
+        <li>Descale shower head, fixtures, and glass doors</li>
+        <li>Recaulk shower/tub if old caulk shows mold or cracks</li>
+        <li>Deep clean toilet — bowl, base, behind tank, and flush handle</li>
+        <li>Clean exhaust fan cover (remove and wash)</li>
+        <li>Wash shower curtain and liner in hot water</li>
+        <li>Organize and declutter under-sink cabinets</li>
+      </ul>
+
+      <h2>Bedrooms — Allergy Season Prep</h2>
+      <p>Spring pollen is relentless in <Link to="/locations/germantown-md" className="text-accent hover:underline">Germantown</Link> and <Link to="/locations/gaithersburg-md" className="text-accent hover:underline">Gaithersburg</Link>. Reduce indoor allergens with these steps:</p>
+      <ul>
+        <li>Wash all bedding — comforters, pillows, mattress covers — in hot water</li>
+        <li>HEPA vacuum mattress tops and sides</li>
+        <li>Dust ceiling fan blades (both sides)</li>
+        <li>Wipe all surfaces, nightstands, and lamps</li>
+        <li>Clean window tracks and sills — pollen accumulates here</li>
+        <li>Vacuum under beds, dressers, and along baseboards</li>
+        <li>Rotate seasonal clothes and donate unused items</li>
+      </ul>
+
+      <h2>Living Areas</h2>
+      <ul>
+        <li>Dust and wipe all bookshelves, entertainment centers, and decorative items</li>
+        <li>Clean upholstered furniture — vacuum cushions, under cushions, and arms</li>
+        <li>Wipe baseboards, crown molding, and door frames</li>
+        <li>Clean window blinds — individual slats with a damp microfiber cloth</li>
+        <li>Wash throw pillows and decorative blankets</li>
+        <li>Deep vacuum carpets with slow, overlapping passes</li>
+        <li>Polish hardwood or clean tile grout if applicable</li>
+      </ul>
+
+      <h2>Windows and Entryways</h2>
+      <ul>
+        <li>Wash all interior window glass and frames</li>
+        <li>Clean and organize entryway closet and coat storage</li>
+        <li>Wash front door, doorbell, and mailbox</li>
+        <li>Sweep and pressure-wash front porch or steps</li>
+        <li>Replace doormats that no longer trap pollen and dirt effectively</li>
+      </ul>
+
+      <h2>Whole-Home Tasks</h2>
+      <ul>
+        <li>Replace HVAC filters — critical in Maryland pollen season</li>
+        <li>Test smoke and CO detectors; replace batteries</li>
+        <li>Check under sinks for any winter moisture or leaks</li>
+        <li>Declutter and donate items from every room</li>
+        <li>Clean all light fixtures and switch plates</li>
+      </ul>
+
+      <h2>Too Much to Tackle Alone?</h2>
+      <p>Capital Clean Care's <Link to="/services/deep-cleaning" className="text-accent hover:underline">spring deep cleaning service</Link> covers 60+ checklist items across your entire home. Our eco-friendly, non-toxic products are safe for children, pets, and the <Link to="/services/eco-friendly-cleaning" className="text-accent hover:underline">Chesapeake Bay watershed</Link>. We serve all of <Link to="/maryland" className="text-accent hover:underline">Maryland</Link>, <Link to="/washington-dc" className="text-accent hover:underline">Washington DC</Link>, and <Link to="/virginia" className="text-accent hover:underline">Northern Virginia</Link>.</p>
+
+      <p><Link to="/contact" className="text-accent hover:underline font-semibold">Book your spring deep clean today</Link> — $25 off your first service for new clients.</p>
+    </article>
+  ),
+  "house-cleaning-prices-maryland-2026": (
+    <article className="prose prose-lg max-w-none">
+      <p>One of the most common questions from <Link to="/maryland" className="text-accent hover:underline">Maryland</Link> homeowners is simple: <em>How much does house cleaning cost?</em> The answer depends on your home's size, the type of service, how often you book, and your location. This guide breaks it all down with real pricing for the DMV market in 2026.</p>
+
+      <h2>Average House Cleaning Prices in Maryland (2026)</h2>
+      <p>Here are typical price ranges for professional house cleaning in the Maryland, DC, and Northern Virginia area:</p>
+      <ul>
+        <li><strong>Studio / 1-bedroom apartment:</strong> $90 – $130 per standard clean</li>
+        <li><strong>2-bedroom home:</strong> $120 – $180 per standard clean</li>
+        <li><strong>3-bedroom home:</strong> $150 – $220 per standard clean</li>
+        <li><strong>4-bedroom home:</strong> $180 – $280 per standard clean</li>
+        <li><strong>5+ bedroom home:</strong> $240 – $400+ per standard clean</li>
+      </ul>
+      <p>These are ranges for a standard recurring clean. First-time or one-time cleans typically cost 20–40% more due to the extra time required to get the home to a baseline standard.</p>
+
+      <h2>Deep Cleaning Prices</h2>
+      <p>A <Link to="/services/deep-cleaning" className="text-accent hover:underline">deep cleaning</Link> goes well beyond a standard clean — inside the oven, refrigerator, cabinets, grout scrubbing, and more. Typical prices:</p>
+      <ul>
+        <li><strong>2-bedroom home:</strong> $200 – $280</li>
+        <li><strong>3-bedroom home:</strong> $260 – $360</li>
+        <li><strong>4-bedroom home:</strong> $320 – $450</li>
+      </ul>
+
+      <h2>Move-Out Cleaning Prices</h2>
+      <p><Link to="/services/move-out-cleaning" className="text-accent hover:underline">Move-out cleaning</Link> is the most thorough service — landlords expect pristine results. In cities like <Link to="/locations/rockville-md" className="text-accent hover:underline">Rockville</Link> and <Link to="/locations/arlington-va" className="text-accent hover:underline">Arlington</Link>, typical move-out cleaning prices range from $250 to $500 depending on square footage and condition of the property.</p>
+
+      <h2>Recurring Cleaning Discounts</h2>
+      <p>Most professional cleaning companies in Maryland offer recurring discounts:</p>
+      <ul>
+        <li><strong>Weekly service:</strong> 20–25% off per visit vs. one-time rate</li>
+        <li><strong>Bi-weekly service:</strong> 10–15% off per visit</li>
+        <li><strong>Monthly service:</strong> 5–8% off per visit</li>
+      </ul>
+      <p>Our <Link to="/services/recurring-cleaning" className="text-accent hover:underline">recurring cleaning plans</Link> at Capital Clean Care lock in your discounted rate for as long as you're a client.</p>
+
+      <h2>What Affects the Price?</h2>
+      <ul>
+        <li><strong>Square footage:</strong> Larger homes take more time and product</li>
+        <li><strong>Number of bathrooms:</strong> Bathrooms are the most labor-intensive rooms</li>
+        <li><strong>Condition:</strong> Homes that haven't been professionally cleaned recently require more work</li>
+        <li><strong>Pets:</strong> Pet hair and dander add time to every room</li>
+        <li><strong>Add-ons:</strong> Inside oven, inside refrigerator, laundry, window cleaning</li>
+        <li><strong>Location:</strong> Urban areas like <Link to="/washington-dc" className="text-accent hover:underline">Washington DC</Link> and <Link to="/locations/bethesda-md" className="text-accent hover:underline">Bethesda</Link> tend to have slightly higher rates than outer suburbs</li>
+      </ul>
+
+      <h2>Why Eco-Friendly Cleaning Doesn't Cost More</h2>
+      <p>Many homeowners assume that <Link to="/services/eco-friendly-cleaning" className="text-accent hover:underline">eco-friendly cleaning</Link> is a premium add-on. At Capital Clean Care, plant-based, non-toxic products are standard — included in every service at no extra charge. You don't pay more to keep your family safe.</p>
+
+      <h2>Get an Instant Quote</h2>
+      <p>Pricing depends on your specific home. Use our free quote form to get an accurate estimate for your address in <Link to="/locations/silver-spring-md" className="text-accent hover:underline">Silver Spring</Link>, <Link to="/locations/bethesda-md" className="text-accent hover:underline">Bethesda</Link>, <Link to="/locations/fairfax-va" className="text-accent hover:underline">Fairfax</Link>, or anywhere in the DMV.</p>
+
+      <p><Link to="/contact" className="text-accent hover:underline font-semibold">Get your free quote today</Link> — no obligation, instant pricing.</p>
+    </article>
+  ),
+  "airbnb-cleaning-tips-dmv-hosts": (
+    <article className="prose prose-lg max-w-none">
+      <p>Running an Airbnb in <Link to="/washington-dc" className="text-accent hover:underline">Washington DC</Link>, <Link to="/locations/bethesda-md" className="text-accent hover:underline">Bethesda</Link>, <Link to="/locations/arlington-va" className="text-accent hover:underline">Arlington</Link>, or anywhere in the DMV is highly competitive. Guests arriving from around the world have high expectations — and cleanliness is the single most cited factor in 5-star reviews. One bad review mentioning dirt or odors can cost you weeks of bookings.</p>
+
+      <p>Here's how professional Airbnb hosts across Maryland and Virginia keep their properties spotless between every guest.</p>
+
+      <h2>The 5-Star Turnover Checklist</h2>
+      <p>Every turnover — no matter how short the stay — should follow this sequence:</p>
+      <ol>
+        <li><strong>Strip and launder all linens:</strong> Sheets, pillowcases, towels, and bath mats. Guests notice immediately if linens aren't crisp and fresh.</li>
+        <li><strong>Check for forgotten guest items:</strong> Check under beds, in closets, in bathroom cabinets. Left items damage trust and generate bad reviews.</li>
+        <li><strong>Deep-clean bathrooms:</strong> Scrub toilet inside and out, descale shower, wipe every surface. Leave a pristine environment.</li>
+        <li><strong>Kitchen reset:</strong> Unload dishwasher, wipe all appliance exteriors, clean stovetop, check inside microwave, clean sink. Restock coffee, tea, soap.</li>
+        <li><strong>Floor-to-ceiling clean:</strong> Dust all surfaces, vacuum, and mop. Don't skip ceiling corners where cobwebs form.</li>
+        <li><strong>Restock consumables:</strong> Toilet paper, hand soap, dish soap, paper towels, and any welcome amenities.</li>
+        <li><strong>Final walkthrough:</strong> Check every room from a guest's perspective — lights, smells, staging, and temperature.</li>
+      </ol>
+
+      <h2>Common Mistakes That Cost DMV Hosts 5-Star Reviews</h2>
+      <ul>
+        <li><strong>Skipping under-bed cleaning:</strong> Guests often look. Dust bunnies lead to complaints.</li>
+        <li><strong>Reusing towels:</strong> Even if they look clean, guests expect fresh linens every stay.</li>
+        <li><strong>Ignoring odors:</strong> Cooking smells, pet dander, and stale air are invisible to owners but obvious to guests. Open windows and use natural odor absorbers.</li>
+        <li><strong>Dirty HVAC vents:</strong> Dusty vents signal neglect. Clean them monthly in active properties.</li>
+        <li><strong>Sticky kitchen surfaces:</strong> Grease and residue on cabinets are a top complaint in DC-area Airbnb reviews.</li>
+      </ul>
+
+      <h2>How Often to Schedule Professional Airbnb Cleaning</h2>
+      <p>For properties with frequent bookings (4+ nights per week), professional <Link to="/services/airbnb-cleaning" className="text-accent hover:underline">Airbnb cleaning</Link> after every checkout is essential. For longer-stay properties, a deep clean every 2–3 weeks supplements your between-guest turnovers.</p>
+
+      <h2>Eco-Friendly Products for Guest-Friendly Spaces</h2>
+      <p>Many guests — especially families with children — are sensitive to harsh chemical cleaners. Using non-toxic, plant-based products eliminates the chemical smell that can greet guests at check-in and demonstrates your commitment to a healthy environment. This is a differentiator worth mentioning in your listing description.</p>
+
+      <h2>Why Rockville and Silver Spring Airbnb Hosts Trust Capital Clean Care</h2>
+      <p>We provide professional <Link to="/services/airbnb-cleaning" className="text-accent hover:underline">Airbnb turnover cleaning</Link> across <Link to="/maryland" className="text-accent hover:underline">Maryland</Link>, <Link to="/washington-dc" className="text-accent hover:underline">Washington DC</Link>, and <Link to="/virginia" className="text-accent hover:underline">Northern Virginia</Link>. Our same-day availability, consistent team assignments, and 5-star results have helped dozens of DMV hosts improve their ratings and increase bookings.</p>
+
+      <p>One of our clients in <Link to="/locations/silver-spring-md" className="text-accent hover:underline">Silver Spring</Link> went from a 4.6 to a 5.0-star average within three months of switching to our service. Guests consistently mentioned cleanliness as the best part of their stay.</p>
+
+      <p><Link to="/contact" className="text-accent hover:underline font-semibold">Get a free Airbnb cleaning quote</Link> — flexible scheduling, same-day availability, 5-star results.</p>
+    </article>
+  ),
+  "move-out-cleaning-checklist-maryland-tenants": (
+    <article className="prose prose-lg max-w-none">
+      <p>Moving out of your apartment or home in <Link to="/locations/rockville-md" className="text-accent hover:underline">Rockville</Link>, <Link to="/locations/bethesda-md" className="text-accent hover:underline">Bethesda</Link>, <Link to="/locations/silver-spring-md" className="text-accent hover:underline">Silver Spring</Link>, or anywhere in Maryland? Your security deposit is on the line. Maryland landlords are legally allowed to deduct cleaning costs from your deposit — and the threshold for "clean enough" is higher than most tenants expect.</p>
+
+      <p>This checklist is based on what Maryland property managers actually inspect during move-out walkthroughs. Follow it exactly, and you'll have a strong case for your full deposit back.</p>
+
+      <h2>Kitchen — The Most Scrutinized Room</h2>
+      <ul>
+        <li><strong>Oven:</strong> Clean interior walls, door glass, and racks. Remove all grease and burnt food. This is the #1 deduction reason in Maryland rentals.</li>
+        <li><strong>Refrigerator:</strong> Remove all food, clean all shelves and drawers, wipe down door seals. Leave it running or off per lease instructions.</li>
+        <li><strong>Range hood:</strong> Degrease filter, wipe interior and exterior</li>
+        <li><strong>Dishwasher:</strong> Run a cleaning cycle, wipe door interior and exterior</li>
+        <li><strong>Cabinets:</strong> Wipe all interior shelves and exterior doors, including handles</li>
+        <li><strong>Sink:</strong> Scrub and sanitize, clean disposal, remove lime scale from faucet</li>
+        <li><strong>Countertops and backsplash:</strong> Remove stains and grease, clean grout lines</li>
+        <li><strong>Floors:</strong> Sweep and mop, including behind and under appliances</li>
+      </ul>
+
+      <h2>Bathrooms</h2>
+      <ul>
+        <li>Scrub toilet inside and out, including behind and base</li>
+        <li>Descale shower walls, doors, and faucets — hard water stains are a common deduction</li>
+        <li>Clean inside medicine cabinet and vanity drawers</li>
+        <li>Scrub tile grout in shower and floor</li>
+        <li>Clean exhaust fan cover</li>
+        <li>Wipe all surfaces, mirrors, and light fixtures</li>
+        <li>Mop floor including corners</li>
+      </ul>
+
+      <h2>Bedrooms and Living Areas</h2>
+      <ul>
+        <li>Patch and touch up any nail holes in walls (check lease — some landlords expect this)</li>
+        <li>Clean all windows — glass, sills, and tracks</li>
+        <li>Wipe baseboards, door frames, and light switch plates</li>
+        <li>Clean inside all closets — shelves, walls, and floor</li>
+        <li>Dust and wipe ceiling fan blades</li>
+        <li>HEPA vacuum all carpets — landlords check for embedded dirt and pet hair</li>
+        <li>Mop hard floors</li>
+        <li>Clean all light fixtures and replace any burned-out bulbs</li>
+      </ul>
+
+      <h2>Final Checklist Before Handover</h2>
+      <ul>
+        <li>Remove all personal belongings — check every cabinet, closet, and storage area</li>
+        <li>Return all keys, remotes, parking passes, and mailbox keys</li>
+        <li>Take timestamped photos of every room before you leave</li>
+        <li>Request a walkthrough with the landlord so you can address any concerns immediately</li>
+        <li>Keep a copy of your lease and the original move-in inspection report</li>
+      </ul>
+
+      <h2>Why Professional Move-Out Cleaning Is Worth It</h2>
+      <p>A professional <Link to="/services/move-out-cleaning" className="text-accent hover:underline">move-out cleaning service</Link> typically costs $200–$400 in the Maryland market. Compare that to a potential deposit deduction of $500–$1,500 for cleaning fees in most Montgomery County and Prince George's County rentals. The math is clear.</p>
+
+      <p>Capital Clean Care provides certified <Link to="/services/move-out-cleaning" className="text-accent hover:underline">move-out cleaning</Link> throughout <Link to="/maryland" className="text-accent hover:underline">Maryland</Link>, <Link to="/washington-dc" className="text-accent hover:underline">DC</Link>, and <Link to="/virginia" className="text-accent hover:underline">Northern Virginia</Link>. We include all items on standard landlord inspection checklists and offer a re-clean guarantee if anything is flagged.</p>
+
+      <p><Link to="/contact" className="text-accent hover:underline font-semibold">Book your move-out cleaning today</Link> and get your full deposit back.</p>
+    </article>
+  ),
+  "remove-pet-hair-odors-dmv-homes": (
+    <article className="prose prose-lg max-w-none">
+      <p>Maryland families love their pets — and their pets love to leave hair on every surface in sight. Whether you have a golden retriever in <Link to="/locations/potomac-md" className="text-accent hover:underline">Potomac</Link>, two cats in <Link to="/locations/arlington-va" className="text-accent hover:underline">Arlington</Link>, or a pack of rescues in <Link to="/locations/laurel-md" className="text-accent hover:underline">Laurel</Link>, keeping a clean, odor-free home requires a consistent strategy. Here's what actually works.</p>
+
+      <h2>Controlling Pet Hair: Room by Room</h2>
+
+      <h3>Carpets and Rugs</h3>
+      <p>Pet hair embeds deep in carpet fibers. A standard vacuum pass won't get it all. Use a vacuum with a HEPA filter and a motorized pet brush head, making slow, overlapping passes in multiple directions. For stubborn embedded hair, a rubber pet hair squeegee tool worked in circular motions before vacuuming lifts hair to the surface.</p>
+
+      <h3>Upholstered Furniture</h3>
+      <p>Rubber gloves — dampened and wiped across cushions in one direction — collect more hair than lint rollers. For deep cleaning sofas and chairs, vacuum first with an upholstery attachment, then use the rubber glove method. Cover furniture with washable throws that you can launder weekly.</p>
+
+      <h3>Hard Floors</h3>
+      <p>Pet hair on hardwood, tile, or LVP is easier to manage. Dry microfiber mops trap hair without scattering it the way brooms do. Follow with a damp mop using a plant-based floor cleaner. Pay attention to baseboards and corners where hair accumulates.</p>
+
+      <h2>Eliminating Pet Odors (Not Just Masking Them)</h2>
+      <p>Air fresheners and candles mask odors temporarily. To actually eliminate them:</p>
+      <ul>
+        <li><strong>Find the source:</strong> Pet odors usually come from bedding, litter areas, urine spots on carpet or upholstery, and HVAC systems circulating dander. Identify each source before treating it.</li>
+        <li><strong>Enzyme cleaners for urine:</strong> Standard cleaners don't break down uric acid crystals. Use an enzyme-based cleaner on any urine spots — carpet, upholstery, or grout. Allow it to sit for 10–15 minutes before blotting.</li>
+        <li><strong>Wash pet bedding weekly:</strong> This is the single highest-impact habit for odor control. Use hot water and an unscented, pet-safe detergent.</li>
+        <li><strong>Clean HVAC filters monthly:</strong> Pet dander circulates through your air system constantly. HEPA-rated filters trap more dander and significantly reduce airborne odor.</li>
+        <li><strong>Baking soda treatment for carpets:</strong> Sprinkle liberally, let sit 30 minutes, then vacuum. Safe, non-toxic, and effective for light odor refreshing between deep cleans.</li>
+      </ul>
+
+      <h2>How Often Should Pet Owners Deep Clean?</h2>
+      <p>For homes with one or two pets, a professional <Link to="/services/deep-cleaning" className="text-accent hover:underline">deep cleaning</Link> every 6–8 weeks keeps allergens and odors under control. For multiple pets or heavy shedders, monthly deep cleaning is recommended. Our team uses HEPA-equipped vacuums and plant-based, pet-safe products — no harsh chemicals that could harm your animals.</p>
+
+      <h2>Eco-Friendly Products Safe for Pets</h2>
+      <p>Many conventional cleaning products — bleach, ammonia, certain essential oils — are toxic to dogs and cats. Our <Link to="/services/eco-friendly-cleaning" className="text-accent hover:underline">eco-friendly cleaning service</Link> uses only EPA Safer Choice certified, plant-based products that are safe for pets, children, and your home's surfaces.</p>
+
+      <h2>Professional Pet-Friendly Cleaning in the DMV</h2>
+      <p>Capital Clean Care specializes in homes with pets throughout <Link to="/maryland" className="text-accent hover:underline">Maryland</Link>, <Link to="/washington-dc" className="text-accent hover:underline">Washington DC</Link>, and <Link to="/virginia" className="text-accent hover:underline">Northern Virginia</Link>. We bring the right equipment and products — no shortcuts.</p>
+
+      <p><Link to="/contact" className="text-accent hover:underline font-semibold">Get your free pet-friendly cleaning quote today</Link> — $25 off your first service!</p>
+    </article>
+  ),
+  "recurring-cleaning-weekly-biweekly-monthly": (
+    <article className="prose prose-lg max-w-none">
+      <p>One of the most common questions from new clients in <Link to="/locations/silver-spring-md" className="text-accent hover:underline">Silver Spring</Link>, <Link to="/locations/bethesda-md" className="text-accent hover:underline">Bethesda</Link>, and <Link to="/locations/rockville-md" className="text-accent hover:underline">Rockville</Link> is: <em>"How often should I schedule professional cleaning?"</em> The honest answer: it depends on your household. Here's a practical guide to choosing the right frequency.</p>
+
+      <h2>Weekly Cleaning — Best For:</h2>
+      <ul>
+        <li>Families with young children (ages 0–8)</li>
+        <li>Homes with 3+ people actively cooking and living in the space</li>
+        <li>Pet owners with heavy shedders</li>
+        <li>Anyone who works from home and needs a consistently clean environment</li>
+        <li>Allergy or asthma sufferers who need minimal dust and dander buildup</li>
+        <li>Hosts of frequent guests or short-term rental properties</li>
+      </ul>
+      <p><strong>What to expect:</strong> Each visit is typically 1.5–2.5 hours. Since the home is cleaned regularly, visits stay focused on maintenance — vacuuming, bathrooms, kitchen surfaces, dusting. Our <Link to="/services/recurring-cleaning" className="text-accent hover:underline">recurring service</Link> clients on weekly plans save up to 25% per visit vs. one-time pricing.</p>
+
+      <h2>Bi-Weekly Cleaning — Best For:</h2>
+      <ul>
+        <li>Couples or small families (1–3 people)</li>
+        <li>Homes where residents maintain baseline tidiness between visits</li>
+        <li>Moderate pet situations (one dog or cat)</li>
+        <li>Professionals who travel frequently but want to return to a clean home</li>
+        <li>Homeowners who do light daily maintenance themselves</li>
+      </ul>
+      <p><strong>What to expect:</strong> Each visit is typically 2–3 hours. Homes cleaned every two weeks need slightly more attention per visit than weekly clients. This is the most popular frequency for <Link to="/locations/bethesda-md" className="text-accent hover:underline">Bethesda</Link> and <Link to="/locations/arlington-va" className="text-accent hover:underline">Arlington</Link> households.</p>
+
+      <h2>Monthly Cleaning — Best For:</h2>
+      <ul>
+        <li>Single occupants or couples who are meticulous about daily upkeep</li>
+        <li>Vacation homes or properties used part-time</li>
+        <li>Seniors who live alone and need help with heavy tasks</li>
+        <li>Clients who want a monthly deep clean on top of their own regular maintenance</li>
+      </ul>
+      <p><strong>What to expect:</strong> Monthly visits require more time per visit since more buildup has accumulated. Expect 3–4 hours for an average home. Many monthly clients schedule quarterly deep cleans to address areas like inside appliances, grout, and detailed dusting.</p>
+
+      <h2>The Cost Comparison</h2>
+      <p>Here's a simplified example for a 3-bedroom Maryland home:</p>
+      <ul>
+        <li><strong>Weekly:</strong> ~$140/visit × 52 visits = ~$7,280/year — but the discount per visit is highest</li>
+        <li><strong>Bi-weekly:</strong> ~$170/visit × 26 visits = ~$4,420/year</li>
+        <li><strong>Monthly:</strong> ~$200/visit × 12 visits = ~$2,400/year</li>
+      </ul>
+      <p>The less frequent the service, the more time each visit requires — which is why per-visit rates increase. The best value over time is weekly service, where discounts are maximized and the home stays consistently clean.</p>
+
+      <h2>Starting Out: We Recommend a Deep Clean First</h2>
+      <p>New recurring clients almost always start with a <Link to="/services/deep-cleaning" className="text-accent hover:underline">one-time deep cleaning</Link> to establish a baseline. After that, maintenance visits are faster, more focused, and more affordable. Think of it like a car — detailed first, maintained regularly.</p>
+
+      <p><Link to="/contact" className="text-accent hover:underline font-semibold">Start your recurring cleaning plan today</Link> — $25 off your first visit, flexible scheduling across MD, DC & VA.</p>
+    </article>
+  ),
   "eco-cleaning-tips-maryland-homes": (
     <article className="prose prose-lg max-w-none">
       <p>Maryland homeowners are increasingly choosing eco-friendly cleaning products — and for good reason. The Chesapeake Bay watershed, which spans much of central Maryland, is directly affected by the chemicals we use in our homes. By switching to plant-based, non-toxic cleaning solutions, you protect both your family and the local environment.</p>

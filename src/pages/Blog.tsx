@@ -18,12 +18,28 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "spring-cleaning-checklist-maryland-2026",
+    title: "Spring Cleaning Checklist for Maryland Homes 2026",
+    excerpt: "Tackle spring cleaning the right way with this room-by-room checklist built for Maryland's climate — pollen season, humidity, and all. Includes Rockville, Bethesda & Silver Spring tips.",
+    date: "2026-03-10",
+    readTime: "7 min read",
+    category: "Seasonal Guides",
+  },
+  {
     slug: "eco-cleaning-tips-maryland-homes",
     title: "Eco-Friendly Cleaning Tips for Maryland Homes",
     excerpt: "Discover how plant-based, non-toxic products can keep your Maryland home sparkling while protecting your family, pets, and the Chesapeake Bay watershed.",
     date: "2026-03-01",
     readTime: "6 min read",
     category: "Eco Living",
+  },
+  {
+    slug: "house-cleaning-prices-maryland-2026",
+    title: "House Cleaning Prices in Maryland: What to Expect in 2026",
+    excerpt: "How much does house cleaning cost in Maryland, DC & Virginia? A transparent pricing breakdown by home size, service type, and city — updated for 2026.",
+    date: "2026-02-22",
+    readTime: "6 min read",
+    category: "Tips & Advice",
   },
   {
     slug: "deep-cleaning-checklist-dmv-homeowners",
@@ -34,12 +50,28 @@ export const blogPosts: BlogPost[] = [
     category: "Cleaning Guides",
   },
   {
+    slug: "airbnb-cleaning-tips-dmv-hosts",
+    title: "Airbnb Cleaning Tips for DMV Hosts: How to Get 5 Stars Every Time",
+    excerpt: "Running an Airbnb in Washington DC, Maryland or Northern Virginia? These professional turnover cleaning tips will help you earn 5-star guest reviews consistently.",
+    date: "2026-02-08",
+    readTime: "7 min read",
+    category: "Airbnb & Rentals",
+  },
+  {
     slug: "how-to-choose-cleaning-service-silver-spring",
     title: "How to Choose a Cleaning Service in Silver Spring, MD",
     excerpt: "What to look for when hiring a house cleaning company in Silver Spring — from background checks and insurance to eco-friendly products and satisfaction guarantees.",
     date: "2026-02-01",
     readTime: "5 min read",
     category: "Tips & Advice",
+  },
+  {
+    slug: "move-out-cleaning-checklist-maryland-tenants",
+    title: "Move-Out Cleaning Checklist for Maryland Tenants: Get Your Deposit Back",
+    excerpt: "Moving out in Rockville, Bethesda or Silver Spring? Use this landlord-approved move-out cleaning checklist to ensure your full security deposit is returned.",
+    date: "2026-01-25",
+    readTime: "7 min read",
+    category: "Cleaning Guides",
   },
   {
     slug: "eco-cleaning-tips-winters-maryland",
@@ -58,12 +90,28 @@ export const blogPosts: BlogPost[] = [
     category: "Tips & Advice",
   },
   {
+    slug: "remove-pet-hair-odors-dmv-homes",
+    title: "How to Remove Pet Hair and Odors: A Guide for DMV Pet Owners",
+    excerpt: "Dogs and cats love Maryland homes — but pet hair, dander, and odors don't have to. Here's how DMV pet owners can keep a clean, fresh home year-round.",
+    date: "2025-12-28",
+    readTime: "6 min read",
+    category: "Tips & Advice",
+  },
+  {
     slug: "post-renovation-cleaning-guide-maryland",
     title: "Post-Renovation Cleaning Guide for Maryland Homeowners",
     excerpt: "Just finished a remodel in Germantown or Frederick? Here's a step-by-step post-construction cleaning checklist to make your renovated home move-in ready.",
     date: "2025-12-15",
     readTime: "8 min read",
     category: "Cleaning Guides",
+  },
+  {
+    slug: "recurring-cleaning-weekly-biweekly-monthly",
+    title: "Weekly vs. Bi-Weekly vs. Monthly Cleaning: Which Plan Is Right for You?",
+    excerpt: "Can't decide how often to schedule professional house cleaning in Maryland? This guide helps DMV homeowners choose the right recurring cleaning frequency for their lifestyle and budget.",
+    date: "2025-12-01",
+    readTime: "5 min read",
+    category: "Tips & Advice",
   },
 ];
 

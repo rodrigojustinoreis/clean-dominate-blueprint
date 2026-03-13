@@ -27,12 +27,18 @@
 
   <!-- Blog -->
   <url><loc>https://capitalcleancare.com/blog</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/blog/spring-cleaning-checklist-maryland-2026</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://capitalcleancare.com/blog/eco-cleaning-tips-maryland-homes</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/blog/house-cleaning-prices-maryland-2026</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://capitalcleancare.com/blog/deep-cleaning-checklist-dmv-homeowners</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/blog/airbnb-cleaning-tips-dmv-hosts</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://capitalcleancare.com/blog/how-to-choose-cleaning-service-silver-spring</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/blog/move-out-cleaning-checklist-maryland-tenants</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://capitalcleancare.com/blog/eco-cleaning-tips-winters-maryland</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://capitalcleancare.com/blog/best-cleaning-schedule-busy-families-dmv</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/blog/remove-pet-hair-odors-dmv-homes</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://capitalcleancare.com/blog/post-renovation-cleaning-guide-maryland</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://capitalcleancare.com/blog/recurring-cleaning-weekly-biweekly-monthly</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
 
   <!-- Maryland City Pages -->
   <url><loc>https://capitalcleancare.com/locations/rockville-md</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
