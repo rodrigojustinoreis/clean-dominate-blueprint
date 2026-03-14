@@ -2,8 +2,8 @@ name: Weekly Blog Post Generator
 
 on:
   schedule:
-    # Every Monday at 9:00 AM ET (14:00 UTC)
-    - cron: "0 14 * * 1"
+    # Every Saturday at 9:00 AM ET (14:00 UTC)
+    - cron: "0 14 * * 6"
   workflow_dispatch: # Allow manual trigger from GitHub UI
 
 permissions:
@@ -40,3 +40,8 @@ jobs:
           git add src/data/auto-blog-posts.ts src/prerender.tsx public/sitemap.xml
           git diff --staged --quiet || git commit -m "feat(blog): auto-generate weekly cleaning tips post [skip ci]"
           git push
+
+      - name: Ping Google to index new sitemap
+        run: |
+          curl -s "https://www.google.com/ping?sitemap=https://capitalcleancare.com/sitemap.xml" || true
+          echo "✅ Google sitemap ping sent"

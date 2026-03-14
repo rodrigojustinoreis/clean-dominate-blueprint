@@ -143,31 +143,52 @@ The article should target ${season} cleaning topics relevant to the Maryland/DMV
 
 Existing slugs to AVOID duplicating: ${existingSlugs.join(", ")}
 
-CONTENT FOCUS — rotate through these practical, how-to topics every week:
-1. How to deep clean a kitchen using eco-friendly products (grease, oven, appliances)
-2. How to clean a bathroom naturally (toilet, tiles, mold, mildew)
-3. How to remove tough stains from mattresses, bedding, and upholstery with plant-based products
-4. Eco-friendly products to clean hardwood floors, carpets, and area rugs
-5. How to eliminate pet odors and stains using non-toxic cleaners
-6. How to clean windows, mirrors, and glass streak-free with green products
-7. Deep cleaning the refrigerator, dishwasher, and washing machine naturally
-8. How to disinfect and sanitize high-touch surfaces without harsh chemicals
-9. How to remove mold and mildew from bathrooms and basements eco-friendly
-10. Spring/fall/winter/summer seasonal cleaning routines for Maryland homes
-11. Eco-friendly laundry tips: remove stains from clothes, sheets, and towels
-12. How to clean and deodorize trash cans, garbage disposals, and drains naturally
+CONTENT FOCUS — pick one topic per week, rotating through all of these:
 
-Always tie the practical tips back to Capital Clean Care's eco-friendly professional services.
+ROOM-BY-ROOM CLEANING:
+- How to deep clean a kitchen (grease, oven, stovetop, appliances, cabinets)
+- How to clean a bathroom professionally (toilet, shower, tiles, grout, mildew)
+- How to clean a bedroom and remove dust mites, allergens, and odors
+- How to clean a living room (upholstery, cushions, baseboards, ceiling fans)
+- How to clean hardwood floors, tile, and carpets without damaging them
+- How to clean windows, mirrors, and glass surfaces streak-free
 
-HIGH-VALUE SEO KEYWORDS to include naturally:
-- "eco-friendly cleaning products Maryland"
-- "how to clean [kitchen/bathroom/mattress] naturally"
-- "non-toxic cleaning tips DMV"
-- "plant-based cleaning products Maryland"
-- "remove tough stains eco-friendly"
-- "green cleaning company Silver Spring"
-- "professional eco cleaning service Maryland"
-- "natural cleaning tips for Maryland homes"
+TOUGH STAIN REMOVAL:
+- How to remove tough stains from mattresses using eco-friendly products
+- How to remove wine, coffee, and food stains from carpets and upholstery
+- How to remove grease stains from kitchen surfaces and appliances
+- How to eliminate mold and mildew from bathrooms and basements
+- How to remove hard water stains and soap scum from showers and faucets
+- Eco-friendly laundry: remove stains from clothes, sheets, and towels
+
+APPLIANCES & DEEP CLEANING:
+- How to deep clean a refrigerator, dishwasher, and washing machine
+- How to clean and deodorize trash cans, garbage disposals, and drains
+- How to disinfect high-touch surfaces without harsh chemicals
+- How to clean air vents, filters, and improve indoor air quality
+
+ECO-FRIENDLY PRODUCTS & TIPS:
+- Best plant-based cleaning products for every room in the house
+- How to make DIY natural cleaners with vinegar, baking soda, and lemon
+- Non-toxic cleaning tips for homes with kids, pets, and allergies
+- Benefits of switching to eco-friendly cleaning products in Maryland
+
+SERVICES & SEASONAL:
+- Spring/summer/fall/winter deep cleaning checklist for Maryland homes
+- Move-in / move-out cleaning checklist for Maryland renters
+- How to prepare your home for professional cleaning service
+- Recurring cleaning schedule: what to clean daily, weekly, monthly
+- Airbnb and short-term rental cleaning checklist for DMV hosts
+- Post-construction and renovation cleaning guide for Maryland homeowners
+- How to choose a professional cleaning service in Silver Spring / DMV
+
+Always tie practical tips back to Capital Clean Care's eco-friendly services with a natural CTA.
+
+HIGH-VALUE SEO KEYWORDS to weave in naturally:
+- "house cleaning service Maryland", "maid service DMV", "professional cleaners Silver Spring"
+- "eco-friendly cleaning products Maryland", "non-toxic cleaning tips", "plant-based cleaners"
+- "how to clean [room/surface/appliance]", "remove tough stains", "deep cleaning checklist"
+- "recurring cleaning service Maryland", "move-out cleaning checklist", "Airbnb cleaning DMV"
 
 Return this exact JSON structure:
 {
