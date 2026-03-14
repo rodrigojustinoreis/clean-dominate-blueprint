@@ -1,133 +1,148 @@
 import { useState, useRef, useEffect } from "react";
-import { MessageCircle, X, Send, CheckCircle, Loader2 } from "lucide-react";
+import { MessageCircle, X, Send, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
 interface Message {
   from: "bot" | "user";
   text: string;
+  options?: string[];
 }
 
-interface LeadData {
-  name: string;
-  zip: string;
-  phone: string;
-  address: string;
-}
+type Step = "name" | "zip" | "phone" | "address" | "service" | "done";
 
-const GREETING =
-  "Hi! 👋 I'm Maya from Capital Clean Care. How can I help you today? I can answer questions about our services or get you a free quote!";
-
-const sendLeadEmail = async (lead: LeadData) => {
-  try {
-    await fetch("https://formsubmit.co/ajax/capitalcleancare@gmail.com", {
-      method: "POST",
-      headers: { "Content-Type": "application/json", Accept: "application/json" },
-      body: JSON.stringify({
-        _subject: `New Chat Lead — ${lead.name}`,
-        _template: "table",
-        _captcha: "false",
-        Source: "AI Chat Widget",
-        Name: lead.name,
-        Phone: lead.phone,
-        "Zip Code": lead.zip,
-        "Service Address": lead.address,
-      }),
-    });
-  } catch (e) {
-    console.error("Email send error:", e);
-  }
+const STEPS: Record<Step, { ask: string; next: Step | null; placeholder?: string; options?: string[] }> = {
+  name: {
+    ask: "Hi! 👋 I'm Maya from Capital Clean Care. What's your first name?",
+    next: "zip",
+    placeholder: "Your first name",
+  },
+  zip: {
+    ask: "Nice to meet you, {name}! What's your zip code? We serve MD, DC & Northern VA.",
+    next: "phone",
+    placeholder: "e.g. 20850",
+  },
+  phone: {
+    ask: "Great, we cover that area! What's the best phone number to reach you?",
+    next: "address",
+    placeholder: "(301) 555-0123",
+  },
+  address: {
+    ask: "Perfect! And what's the service address? (Street address is fine)",
+    next: "service",
+    placeholder: "123 Main St, Bethesda MD",
+  },
+  service: {
+    ask: "Almost done! What type of cleaning are you looking for?",
+    next: "done",
+    options: ["Standard Cleaning", "Deep Cleaning", "Move In / Move Out", "Post-Construction", "Recurring Service"],
+  },
+  done: { ask: "", next: null },
 };
 
 const QuoteChatbot = () => {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
+  const [step, setStep] = useState<Step>("name");
+  const [answers, setAnswers] = useState<Record<string, string>>({});
   const [input, setInput] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [leadDone, setLeadDone] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [done, setDone] = useState(false);
   const [hasUnread, setHasUnread] = useState(false);
   const bottomRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  // Show greeting when chat opens for the first time
+  // Initial greeting
   useEffect(() => {
     if (open && messages.length === 0) {
-      setMessages([{ from: "bot", text: GREETING }]);
+      setMessages([{ from: "bot", text: STEPS.name.ask }]);
     }
     if (open) {
       setHasUnread(false);
-      setTimeout(() => inputRef.current?.focus(), 100);
+      setTimeout(() => inputRef.current?.focus(), 150);
     }
   }, [open]);
 
-  // Show pulsing unread dot after 8s if chat never opened
+  // Unread dot after 8s
   useEffect(() => {
-    const t = setTimeout(() => {
-      if (!open) setHasUnread(true);
-    }, 8000);
+    const t = setTimeout(() => { if (!open) setHasUnread(true); }, 8000);
     return () => clearTimeout(t);
   }, []);
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages, loading]);
+  }, [messages]);
 
-  const sendMessage = async (text: string) => {
-    if (!text.trim() || loading || leadDone) return;
+  const addBot = (text: string, opts?: string[]) => {
+    setMessages((prev) => [...prev, { from: "bot", text, options: opts }]);
+  };
 
-    const userMsg: Message = { from: "user", text: text.trim() };
-    const updatedMessages = [...messages, userMsg];
-    setMessages(updatedMessages);
+  const advance = async (value: string) => {
+    if (done || sending) return;
+
+    // Record answer
+    const newAnswers = { ...answers, [step]: value };
+    setAnswers(newAnswers);
+    setMessages((prev) => [...prev, { from: "user", text: value }]);
     setInput("");
-    setLoading(true);
 
-    // Build history for API
-    const apiMessages = updatedMessages.map((m) => ({
-      role: m.from === "user" ? "user" : "assistant",
-      content: m.text,
-    }));
+    const current = STEPS[step];
+    const nextStep = current.next;
 
-    try {
-      const res = await fetch("/.netlify/functions/ai-chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ messages: apiMessages }),
-      });
-
-      const data = await res.json();
-      const botReply =
-        data.reply ??
-        "Sorry, something went wrong. Please call us at (240) 704-2551.";
-
-      setMessages((prev) => [...prev, { from: "bot", text: botReply }]);
-
-      if (data.leadComplete && data.leadData) {
-        setLeadDone(true);
-        await sendLeadEmail(data.leadData);
+    if (!nextStep || nextStep === "done") {
+      // All collected — send via FormSubmit
+      setSending(true);
+      try {
+        await fetch("https://formsubmit.co/ajax/capitalcleancare@gmail.com", {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Accept: "application/json" },
+          body: JSON.stringify({
+            _subject: `New Chat Lead — ${newAnswers.name}`,
+            _template: "table",
+            _captcha: "false",
+            Source: "Chat Widget",
+            Name: newAnswers.name,
+            "Zip Code": newAnswers.zip,
+            Phone: newAnswers.phone,
+            "Service Address": newAnswers.address,
+            "Service Type": value,
+          }),
+        });
+      } catch (e) {
+        console.error("FormSubmit error:", e);
+      } finally {
+        setSending(false);
       }
-    } catch {
-      setMessages((prev) => [
-        ...prev,
-        {
-          from: "bot",
-          text: "Sorry, I'm having trouble connecting. Please call us at (240) 704-2551 or fill out our quote form.",
-        },
-      ]);
-    } finally {
-      setLoading(false);
+
+      setDone(true);
+      addBot(
+        `Thank you, ${newAnswers.name}! ✅ Our team will contact you at ${newAnswers.phone} shortly to confirm your free quote.\n\n🎉 New clients get $25 OFF their first cleaning!`
+      );
+      return;
     }
+
+    // Build next question (interpolate {name})
+    const nextConfig = STEPS[nextStep];
+    const text = nextConfig.ask.replace("{name}", newAnswers.name ?? "");
+    setTimeout(() => addBot(text, nextConfig.options), 400);
+    setStep(nextStep);
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    sendMessage(input);
+    if (input.trim()) advance(input.trim());
   };
 
   const restart = () => {
-    setMessages([{ from: "bot", text: GREETING }]);
-    setLeadDone(false);
+    setMessages([{ from: "bot", text: STEPS.name.ask }]);
+    setStep("name");
+    setAnswers({});
     setInput("");
+    setDone(false);
   };
+
+  const currentConfig = STEPS[step];
+  const showInput = !done && !currentConfig.options;
 
   return (
     <>
@@ -160,15 +175,11 @@ const QuoteChatbot = () => {
             <div className="w-9 h-9 rounded-full bg-accent flex items-center justify-center font-bold text-accent-foreground text-sm shrink-0">
               M
             </div>
-            <div className="flex-1 min-w-0">
+            <div className="flex-1">
               <p className="font-semibold text-sm leading-tight">Maya</p>
-              <p className="text-xs opacity-70">Capital Clean Care · Online</p>
+              <p className="text-xs opacity-70">Capital Clean Care · Online now</p>
             </div>
-            <button
-              onClick={() => setOpen(false)}
-              aria-label="Close chat"
-              className="opacity-70 hover:opacity-100 transition-opacity"
-            >
+            <button onClick={() => setOpen(false)} aria-label="Close" className="opacity-70 hover:opacity-100 transition-opacity">
               <X className="h-4 w-4" />
             </button>
           </div>
@@ -176,12 +187,9 @@ const QuoteChatbot = () => {
           {/* Messages */}
           <div className="flex-1 overflow-y-auto p-4 space-y-3 min-h-0">
             {messages.map((m, i) => (
-              <div
-                key={i}
-                className={`flex gap-2 ${m.from === "user" ? "justify-end" : "justify-start"}`}
-              >
+              <div key={i} className={`flex gap-2 ${m.from === "user" ? "justify-end" : "justify-start"}`}>
                 {m.from === "bot" && (
-                  <div className="w-7 h-7 rounded-full bg-accent flex items-center justify-center font-bold text-accent-foreground text-xs shrink-0 mt-0.5">
+                  <div className="w-7 h-7 rounded-full bg-accent flex items-center justify-center text-accent-foreground text-xs font-bold shrink-0 mt-0.5">
                     M
                   </div>
                 )}
@@ -193,44 +201,41 @@ const QuoteChatbot = () => {
                   }`}
                 >
                   {m.text}
+                  {m.options && !done && (
+                    <div className="flex flex-col gap-1.5 mt-2.5">
+                      {m.options.map((opt) => (
+                        <button
+                          key={opt}
+                          onClick={() => advance(opt)}
+                          className="text-xs text-left bg-background border border-border rounded-xl px-3 py-2 hover:bg-accent/10 hover:border-accent/40 transition-colors"
+                        >
+                          {opt}
+                        </button>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
 
-            {/* Typing indicator */}
-            {loading && (
+            {sending && (
               <div className="flex gap-2 justify-start">
-                <div className="w-7 h-7 rounded-full bg-accent flex items-center justify-center font-bold text-accent-foreground text-xs shrink-0">
-                  M
-                </div>
+                <div className="w-7 h-7 rounded-full bg-accent flex items-center justify-center text-accent-foreground text-xs font-bold shrink-0">M</div>
                 <div className="bg-secondary rounded-2xl rounded-bl-sm px-4 py-3 flex items-center gap-1">
-                  <span
-                    className="w-1.5 h-1.5 bg-muted-foreground/50 rounded-full animate-bounce"
-                    style={{ animationDelay: "0ms" }}
-                  />
-                  <span
-                    className="w-1.5 h-1.5 bg-muted-foreground/50 rounded-full animate-bounce"
-                    style={{ animationDelay: "150ms" }}
-                  />
-                  <span
-                    className="w-1.5 h-1.5 bg-muted-foreground/50 rounded-full animate-bounce"
-                    style={{ animationDelay: "300ms" }}
-                  />
+                  <span className="w-1.5 h-1.5 bg-muted-foreground/50 rounded-full animate-bounce" style={{ animationDelay: "0ms" }} />
+                  <span className="w-1.5 h-1.5 bg-muted-foreground/50 rounded-full animate-bounce" style={{ animationDelay: "150ms" }} />
+                  <span className="w-1.5 h-1.5 bg-muted-foreground/50 rounded-full animate-bounce" style={{ animationDelay: "300ms" }} />
                 </div>
               </div>
             )}
 
-            {/* Lead captured confirmation */}
-            {leadDone && (
-              <div className="bg-accent/10 border border-accent/20 rounded-xl p-3 flex items-start gap-2 mt-2">
+            {done && (
+              <div className="bg-accent/10 border border-accent/20 rounded-xl p-3 flex items-start gap-2">
                 <CheckCircle className="h-4 w-4 text-accent shrink-0 mt-0.5" />
                 <p className="text-xs text-foreground leading-relaxed">
-                  Your info was sent to our team! We'll reach out shortly.{" "}
-                  <button
-                    onClick={restart}
-                    className="text-accent font-semibold underline underline-offset-2"
-                  >
-                    New chat
+                  Info sent to our team!{" "}
+                  <button onClick={restart} className="text-accent font-semibold underline underline-offset-2">
+                    Start new chat
                   </button>
                 </p>
               </div>
@@ -239,41 +244,25 @@ const QuoteChatbot = () => {
             <div ref={bottomRef} />
           </div>
 
-          {/* Input */}
-          {!leadDone && (
-            <form
-              onSubmit={handleSubmit}
-              className="p-3 border-t border-border flex gap-2 shrink-0"
-            >
+          {/* Text input */}
+          {showInput && (
+            <form onSubmit={handleSubmit} className="p-3 border-t border-border flex gap-2 shrink-0">
               <Input
                 ref={inputRef}
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                placeholder="Type a message…"
+                placeholder={currentConfig.placeholder ?? "Type here…"}
                 className="text-sm"
-                disabled={loading}
+                type={step === "phone" ? "tel" : "text"}
               />
-              <Button
-                type="submit"
-                size="icon"
-                variant="cta"
-                disabled={loading || !input.trim()}
-                aria-label="Send"
-              >
-                {loading ? (
-                  <Loader2 className="h-4 w-4 animate-spin" />
-                ) : (
-                  <Send className="h-4 w-4" />
-                )}
+              <Button type="submit" size="icon" variant="cta" disabled={!input.trim()} aria-label="Send">
+                <Send className="h-4 w-4" />
               </Button>
             </form>
           )}
 
-          {/* Footer */}
           <div className="px-4 pb-3 text-center shrink-0">
-            <p className="text-xs text-muted-foreground/50">
-              Capital Clean Care AI Assistant
-            </p>
+            <p className="text-xs text-muted-foreground/50">Capital Clean Care · Free Quote Chat</p>
           </div>
         </div>
       )}
