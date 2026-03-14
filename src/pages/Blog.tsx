@@ -6,6 +6,7 @@ import Layout from "@/components/layout/Layout";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { useSEO } from "@/hooks/useSEO";
 import { BreadcrumbSchema } from "@/components/SchemaMarkup";
+import { autoBlogPosts } from "@/data/auto-blog-posts";
 
 export interface BlogPost {
   slug: string;
@@ -115,6 +116,11 @@ export const blogPosts: BlogPost[] = [
   },
 ];
 
+// Merge manual + auto-generated posts, sorted newest first
+const allPosts = [...blogPosts, ...autoBlogPosts].sort(
+  (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+);
+
 const Blog = () => {
   const { seoHelmet } = useSEO({
     title: "House Cleaning Tips & Blog for MD, DC & VA | Capital Clean Care",
@@ -133,7 +139,7 @@ const Blog = () => {
           <p className="text-muted-foreground text-lg mb-12">Expert advice for keeping your Maryland, DC & Virginia home spotless with eco-friendly methods.</p>
 
           <div className="space-y-6">
-            {blogPosts.map((post) => (
+            {allPosts.map((post) => (
               <Card key={post.slug} className="group hover:shadow-lg transition-shadow">
                 <CardContent className="p-6 md:p-8">
                   <div className="flex items-center gap-3 text-xs text-muted-foreground mb-3">

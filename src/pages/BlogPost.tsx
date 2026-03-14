@@ -6,6 +6,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { useSEO } from "@/hooks/useSEO";
 import { ArticleSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import { blogPosts } from "./Blog";
+import { autoBlogPosts } from "@/data/auto-blog-posts";
 import NotFound from "./NotFound";
 
 const blogContent: Record<string, React.ReactNode> = {
@@ -533,11 +534,17 @@ const blogContent: Record<string, React.ReactNode> = {
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
-  const post = blogPosts.find((p) => p.slug === slug);
+
+  // Check auto-generated posts first, then manual posts
+  const autoPost = autoBlogPosts.find((p) => p.slug === slug);
+  const post = autoPost ?? blogPosts.find((p) => p.slug === slug);
 
   if (!post) return <NotFound />;
 
-  const content = blogContent[post.slug];
+  // Auto-generated posts render HTML; manual posts render JSX
+  const content = autoPost
+    ? <article className="prose prose-lg max-w-none" dangerouslySetInnerHTML={{ __html: autoPost.content }} />
+    : blogContent[post.slug];
   const { seoHelmet } = useSEO({
     title: `${post.title} | Capital Clean Care Blog`,
     description: post.excerpt,
