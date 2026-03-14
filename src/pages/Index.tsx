@@ -274,20 +274,82 @@ const Index = () => {
         </section>
       </ScrollReveal>
 
+      {/* ══════════════ POST-FAQ CTA ══════════════ */}
+      <ScrollReveal>
+        <section className="py-12 md:py-16 bg-accent">
+          <div className="container mx-auto px-4 text-center">
+            <h2 className="font-heading text-2xl md:text-3xl font-bold text-accent-foreground mb-3">
+              Still have questions? We're here to help.
+            </h2>
+            <p className="text-accent-foreground/80 mb-6 max-w-xl mx-auto">
+              Call us at <a href="tel:+12407042551" className="font-semibold underline underline-offset-2">(240) 704-2551</a> or get a free, no-obligation quote in minutes.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <Button variant="secondary" size="lg" asChild>
+                <a href="#quote">Get My Free Quote →</a>
+              </Button>
+              <Button variant="outline" size="lg" className="border-accent-foreground/40 text-accent-foreground hover:bg-accent-foreground/10" asChild>
+                <a href="tel:+12407042551">
+                  <Phone className="mr-2 h-4 w-4" /> Call Now
+                </a>
+              </Button>
+            </div>
+          </div>
+        </section>
+      </ScrollReveal>
+
       {/* ══════════════ QUOTE FORM ══════════════ */}
       <ScrollReveal>
         <section className="py-20 md:py-28" id="quote">
-          <div className="container mx-auto px-4 max-w-2xl">
+          <div className="container mx-auto px-4 max-w-6xl">
             <div className="text-center mb-10">
               <span className="text-accent font-semibold text-sm uppercase tracking-wider">Free Estimate</span>
               <h2 className="font-heading text-3xl md:text-4xl font-bold mt-2 mb-4">Get Your Free Quote</h2>
-              <p className="text-muted-foreground">Fill out the form and we'll get back to you within 24 hours with a personalized estimate.</p>
+              <p className="text-muted-foreground">No commitment required. We respond within a few hours with a personalized estimate.</p>
             </div>
-            <Card className="shadow-xl">
-              <CardContent className="p-6 md:p-10">
-                <QuoteForm />
-              </CardContent>
-            </Card>
+
+            <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-16 items-start">
+              {/* Trust signals column */}
+              <div className="lg:col-span-2 space-y-6">
+                <div className="space-y-4">
+                  {[
+                    { icon: Shield, title: "Licensed & Insured", desc: "Fully bonded and covered — your home is protected." },
+                    { icon: Users, title: "Background-Checked Team", desc: "Every cleaner passes a thorough background screening." },
+                    { icon: Leaf, title: "Eco-Friendly Products", desc: "EPA-certified, non-toxic, safe for kids and pets." },
+                    { icon: Star, title: "Satisfaction Guarantee", desc: "Not happy? We re-clean for free within 24 hours." },
+                    { icon: CheckCircle, title: "No Hidden Fees", desc: "Transparent pricing — what we quote is what you pay." },
+                  ].map((item) => (
+                    <div key={item.title} className="flex gap-4 items-start">
+                      <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center shrink-0">
+                        <item.icon className="h-5 w-5 text-accent" />
+                      </div>
+                      <div>
+                        <p className="font-semibold text-sm text-foreground">{item.title}</p>
+                        <p className="text-xs text-muted-foreground mt-0.5 leading-relaxed">{item.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Quick contact */}
+                <div className="rounded-xl bg-secondary border border-border p-5 space-y-3">
+                  <p className="text-sm font-semibold">Prefer to talk first?</p>
+                  <a href="tel:+12407042551" className="flex items-center gap-2 text-accent font-semibold text-sm hover:underline">
+                    <Phone className="h-4 w-4" /> (240) 704-2551
+                  </a>
+                  <p className="text-xs text-muted-foreground">Mon–Sat 8am–6pm. We also respond to texts!</p>
+                </div>
+              </div>
+
+              {/* Form column */}
+              <div className="lg:col-span-3">
+                <Card className="shadow-xl">
+                  <CardContent className="p-6 md:p-10">
+                    <QuoteForm />
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
           </div>
         </section>
       </ScrollReveal>

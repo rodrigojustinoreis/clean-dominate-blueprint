@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import { ChevronDown, ChevronUp } from "lucide-react";
 import {
   Select,
   SelectContent,
@@ -30,6 +31,7 @@ const QuoteForm = () => {
   });
 
   const [submitting, setSubmitting] = useState(false);
+  const [showDetails, setShowDetails] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -84,6 +86,7 @@ const QuoteForm = () => {
 
       toast.success("Thank you! We'll get back to you within 24 hours.");
       setFormData({ name: "", phone: "", email: "", zip: "", service: "", bedrooms: "", bathrooms: "", frequency: "", date: "", message: "", smsConsent: false, emailConsent: false });
+      setShowDetails(false);
     } catch (err) {
       console.error("Submission error:", err);
       toast.error("Something went wrong. Please try again or call us directly.");
@@ -97,6 +100,21 @@ const QuoteForm = () => {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
+      {/* ── Essential fields (always visible) ── */}
+      <div className="space-y-2">
+        <Label>Service Type *</Label>
+        <Select required value={formData.service} onValueChange={(v) => update("service", v)}>
+          <SelectTrigger><SelectValue placeholder="What type of cleaning do you need?" /></SelectTrigger>
+          <SelectContent>
+            <SelectItem value="standard">Standard Cleaning</SelectItem>
+            <SelectItem value="deep">Deep Cleaning</SelectItem>
+            <SelectItem value="recurring">Recurring Cleaning (Weekly / Bi-Weekly)</SelectItem>
+            <SelectItem value="move">Move In / Move Out Cleaning</SelectItem>
+            <SelectItem value="post-construction">Post-Construction Cleaning</SelectItem>
+          </SelectContent>
+        </Select>
+      </div>
+
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div className="space-y-2">
           <Label htmlFor="name">Full Name *</Label>
@@ -116,97 +134,101 @@ const QuoteForm = () => {
         </div>
       </div>
 
-      <div className="space-y-2">
-        <Label>Service Type *</Label>
-        <Select required value={formData.service} onValueChange={(v) => update("service", v)}>
-          <SelectTrigger><SelectValue placeholder="Select a service" /></SelectTrigger>
-          <SelectContent>
-            <SelectItem value="standard">Standard Cleaning</SelectItem>
-            <SelectItem value="deep">Deep Cleaning</SelectItem>
-            <SelectItem value="move">Move In / Move Out</SelectItem>
-            <SelectItem value="post-construction">Post-Construction</SelectItem>
-            <SelectItem value="recurring">Recurring Cleaning</SelectItem>
-          </SelectContent>
-        </Select>
-      </div>
+      {/* ── Optional details (collapsible) ── */}
+      <button
+        type="button"
+        onClick={() => setShowDetails((v) => !v)}
+        className="flex items-center gap-2 text-sm text-accent font-medium hover:underline"
+      >
+        {showDetails ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
+        {showDetails ? "Hide" : "Add"} home details (optional — helps us give a more accurate quote)
+      </button>
 
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <div className="space-y-2">
-          <Label>Bedrooms</Label>
-          <Select value={formData.bedrooms} onValueChange={(v) => update("bedrooms", v)}>
-            <SelectTrigger><SelectValue placeholder="Beds" /></SelectTrigger>
-            <SelectContent>
-              {["1", "2", "3", "4", "5+"].map((n) => (
-                <SelectItem key={n} value={n}>{n}</SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
+      {showDetails && (
+        <div className="space-y-4 rounded-lg border border-border bg-secondary/40 p-4">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div className="space-y-2">
+              <Label>Bedrooms</Label>
+              <Select value={formData.bedrooms} onValueChange={(v) => update("bedrooms", v)}>
+                <SelectTrigger><SelectValue placeholder="Beds" /></SelectTrigger>
+                <SelectContent>
+                  {["1", "2", "3", "4", "5+"].map((n) => (
+                    <SelectItem key={n} value={n}>{n}</SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+            <div className="space-y-2">
+              <Label>Bathrooms</Label>
+              <Select value={formData.bathrooms} onValueChange={(v) => update("bathrooms", v)}>
+                <SelectTrigger><SelectValue placeholder="Baths" /></SelectTrigger>
+                <SelectContent>
+                  {["1", "1.5", "2", "2.5", "3", "4+"].map((n) => (
+                    <SelectItem key={n} value={n}>{n}</SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+            <div className="space-y-2">
+              <Label>Frequency</Label>
+              <Select value={formData.frequency} onValueChange={(v) => update("frequency", v)}>
+                <SelectTrigger><SelectValue placeholder="How often?" /></SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="once">One-Time</SelectItem>
+                  <SelectItem value="weekly">Weekly</SelectItem>
+                  <SelectItem value="biweekly">Bi-Weekly</SelectItem>
+                  <SelectItem value="monthly">Monthly</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="date">Preferred Date</Label>
+            <Input id="date" type="date" value={formData.date} onChange={(e) => update("date", e.target.value)} />
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="message">Special Requests</Label>
+            <Textarea id="message" value={formData.message} onChange={(e) => update("message", e.target.value)} placeholder="Access instructions, areas to focus on, pets, allergies…" rows={3} />
+          </div>
+
+          {/* Consent checkboxes */}
+          <div className="space-y-3 rounded-lg border border-border bg-background p-4">
+            <p className="text-sm font-medium">Communication Preferences</p>
+            <label className="flex items-start gap-2 cursor-pointer">
+              <input
+                type="checkbox"
+                checked={formData.smsConsent}
+                onChange={(e) => setFormData((p) => ({ ...p, smsConsent: e.target.checked }))}
+                className="mt-0.5 h-4 w-4 rounded border-border accent-accent"
+              />
+              <span className="text-sm text-muted-foreground">
+                I agree to receive SMS updates about my cleaning service. Message & data rates may apply. Reply STOP to opt out.
+              </span>
+            </label>
+            <label className="flex items-start gap-2 cursor-pointer">
+              <input
+                type="checkbox"
+                checked={formData.emailConsent}
+                onChange={(e) => setFormData((p) => ({ ...p, emailConsent: e.target.checked }))}
+                className="mt-0.5 h-4 w-4 rounded border-border accent-accent"
+              />
+              <span className="text-sm text-muted-foreground">
+                I'd like to receive email promotions and cleaning tips. Unsubscribe anytime.
+              </span>
+            </label>
+          </div>
         </div>
-        <div className="space-y-2">
-          <Label>Bathrooms</Label>
-          <Select value={formData.bathrooms} onValueChange={(v) => update("bathrooms", v)}>
-            <SelectTrigger><SelectValue placeholder="Baths" /></SelectTrigger>
-            <SelectContent>
-              {["1", "1.5", "2", "2.5", "3", "4+"].map((n) => (
-                <SelectItem key={n} value={n}>{n}</SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
-        </div>
-        <div className="space-y-2">
-          <Label>Frequency</Label>
-          <Select value={formData.frequency} onValueChange={(v) => update("frequency", v)}>
-            <SelectTrigger><SelectValue placeholder="How often?" /></SelectTrigger>
-            <SelectContent>
-              <SelectItem value="once">One-Time</SelectItem>
-              <SelectItem value="weekly">Weekly</SelectItem>
-              <SelectItem value="biweekly">Bi-Weekly</SelectItem>
-              <SelectItem value="monthly">Monthly</SelectItem>
-            </SelectContent>
-          </Select>
-        </div>
-      </div>
-
-      <div className="space-y-2">
-        <Label htmlFor="date">Preferred Date</Label>
-        <Input id="date" type="date" value={formData.date} onChange={(e) => update("date", e.target.value)} />
-      </div>
-
-      <div className="space-y-2">
-        <Label htmlFor="message">Additional Details</Label>
-        <Textarea id="message" value={formData.message} onChange={(e) => update("message", e.target.value)} placeholder="Special requests, access instructions, etc." rows={3} />
-      </div>
-
-      {/* Consent checkboxes */}
-      <div className="space-y-3 rounded-lg border border-border p-4">
-        <p className="text-sm font-medium">Communication Preferences</p>
-        <label className="flex items-start gap-2 cursor-pointer">
-          <input
-            type="checkbox"
-            checked={formData.smsConsent}
-            onChange={(e) => setFormData((p) => ({ ...p, smsConsent: e.target.checked }))}
-            className="mt-0.5 h-4 w-4 rounded border-border accent-accent"
-          />
-          <span className="text-sm text-muted-foreground">
-            I agree to receive SMS updates about my cleaning service. Message & data rates may apply. Reply STOP to opt out.
-          </span>
-        </label>
-        <label className="flex items-start gap-2 cursor-pointer">
-          <input
-            type="checkbox"
-            checked={formData.emailConsent}
-            onChange={(e) => setFormData((p) => ({ ...p, emailConsent: e.target.checked }))}
-            className="mt-0.5 h-4 w-4 rounded border-border accent-accent"
-          />
-          <span className="text-sm text-muted-foreground">
-            I'd like to receive email promotions and cleaning tips. Unsubscribe anytime.
-          </span>
-        </label>
-      </div>
+      )}
 
       <Button type="submit" variant="cta" size="lg" className="w-full text-base" disabled={submitting}>
-        {submitting ? "Sending..." : "Get My Free Quote"}
+        {submitting ? "Sending…" : "Get My Free Quote →"}
       </Button>
+
+      <p className="text-center text-xs text-muted-foreground">
+        No commitment required. We typically respond within a few hours.
+      </p>
     </form>
   );
 };

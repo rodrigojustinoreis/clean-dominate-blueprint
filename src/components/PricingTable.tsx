@@ -82,12 +82,12 @@ const PricingTable = () => {
         ))}
       </Tabs>
 
-      {/* Disclaimer */}
+      {/* Pricing note */}
       <Card className="border-accent/30 bg-accent/5">
         <CardContent className="p-4 flex gap-3 items-start">
           <Info className="h-5 w-5 text-accent shrink-0 mt-0.5" />
           <p className="text-sm text-muted-foreground leading-relaxed">
-            The prices above are averages from past experience and are <strong>not guaranteed</strong>. Your actual price depends on the number of bedrooms, bathrooms, kitchens, levels, cleaning type, and overall condition. Please reach out for an accurate quote.
+            Prices shown are typical ranges based on home size. Your exact quote is tailored to your home's specific details — bedrooms, bathrooms, cleaning type, and condition. <strong>Request a free quote for your personalized price.</strong>
           </p>
         </CardContent>
       </Card>
