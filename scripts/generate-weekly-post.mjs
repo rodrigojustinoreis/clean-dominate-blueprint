@@ -197,7 +197,13 @@ const apiResult = await response.json();
 const rawText = apiResult.content[0].text.trim();
 
 // Strip markdown code fences if Claude added them
-const jsonText = rawText.replace(/^```(?:json)?\s*/i, "").replace(/\s*```$/i, "");
+let jsonText = rawText.replace(/^```(?:json)?\s*/i, "").replace(/\s*```$/i, "");
+
+// Fix literal newlines inside JSON strings (Claude sometimes breaks strings across lines)
+// Strategy: replace newlines that appear inside quoted strings with a space
+jsonText = jsonText.replace(/"(?:[^"\\]|\\.)*"/gs, (match) =>
+  match.replace(/\r?\n/g, " ")
+);
 
 let article;
 try {
