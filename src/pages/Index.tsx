@@ -92,6 +92,40 @@ const Index = () => {
         </section>
       </ScrollReveal>
 
+      {/* ══════════════ PROBLEM / AGITATION ══════════════ */}
+      <ScrollReveal>
+        <section className="py-16 md:py-20 bg-secondary">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <div className="text-center mb-10">
+              <span className="text-accent font-semibold text-sm uppercase tracking-wider">Sound Familiar?</span>
+              <h2 className="font-heading text-3xl md:text-4xl font-bold mt-2 mb-3">
+                You shouldn't have to spend your weekend cleaning.
+              </h2>
+              <p className="text-muted-foreground max-w-xl mx-auto">You work hard all week. The last thing you need is to spend your free time scrubbing bathrooms.</p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+              {[
+                { emoji: "😩", text: "You come home exhausted and the house is still a mess" },
+                { emoji: "🧪", text: "Worried about harsh chemicals around your kids or pets" },
+                { emoji: "😤", text: "Previous cleaners didn't meet your expectations" },
+                { emoji: "⏰", text: "Never enough time to keep up with deep cleaning" },
+              ].map((item) => (
+                <div key={item.text} className="flex items-start gap-4 bg-card rounded-xl p-5 border border-border">
+                  <span className="text-2xl shrink-0">{item.emoji}</span>
+                  <p className="text-sm text-foreground leading-relaxed">{item.text}</p>
+                </div>
+              ))}
+            </div>
+            <div className="text-center">
+              <p className="text-lg font-semibold text-foreground mb-4">That's exactly why Capital Clean Care exists.</p>
+              <Button variant="cta" size="lg" asChild>
+                <a href="#quote">Let Us Handle It <ArrowRight className="ml-2 h-4 w-4" /></a>
+              </Button>
+            </div>
+          </div>
+        </section>
+      </ScrollReveal>
+
       {/* ══════════════ FAMILY-OWNED / ABOUT ══════════════ */}
       <ScrollReveal>
         <section className="py-20 md:py-28">
@@ -182,6 +216,58 @@ const Index = () => {
       {/* ══════════════ OUR SERVICES ══════════════ */}
       <ScrollReveal>
         <ServicesSection />
+      </ScrollReveal>
+
+      {/* ══════════════ HOW IT WORKS ══════════════ */}
+      <ScrollReveal>
+        <section className="py-20 md:py-28">
+          <div className="container mx-auto px-4 max-w-5xl">
+            <div className="text-center mb-14">
+              <span className="text-accent font-semibold text-sm uppercase tracking-wider">The Process</span>
+              <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mt-2 mb-4">Getting a clean home is simple</h2>
+              <p className="text-muted-foreground max-w-xl mx-auto">From first contact to sparkling home — we make it effortless.</p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+              {/* Connector line (desktop only) */}
+              <div className="hidden md:block absolute top-10 left-[calc(16.66%+1rem)] right-[calc(16.66%+1rem)] h-px bg-gradient-to-r from-accent/30 via-accent to-accent/30 z-0" />
+              {[
+                {
+                  step: "01",
+                  title: "Get Your Free Quote",
+                  desc: "Fill out our quick form or call (240) 704-2551. We respond within a few hours with a personalized estimate — no obligation.",
+                  icon: Sparkles,
+                },
+                {
+                  step: "02",
+                  title: "We Clean Your Home",
+                  desc: "Our background-checked, eco-friendly team arrives on schedule. You don't even need to be home.",
+                  icon: CheckCircle,
+                },
+                {
+                  step: "03",
+                  title: "Enjoy Your Space",
+                  desc: "Come home to a spotless house. If anything isn't perfect, we re-clean for free within 24 hours. Guaranteed.",
+                  icon: Star,
+                },
+              ].map((s) => (
+                <div key={s.step} className="relative z-10 flex flex-col items-center text-center">
+                  <div className="w-20 h-20 rounded-full bg-accent flex items-center justify-center mb-5 shadow-lg">
+                    <s.icon className="h-8 w-8 text-accent-foreground" />
+                  </div>
+                  <span className="text-xs font-bold text-accent uppercase tracking-widest mb-2">Step {s.step}</span>
+                  <h3 className="font-heading text-xl font-semibold mb-3">{s.title}</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{s.desc}</p>
+                </div>
+              ))}
+            </div>
+            <div className="text-center mt-12">
+              <Button variant="cta" size="lg" className="rounded-full" asChild>
+                <a href="#quote">Start with a Free Quote <ArrowRight className="ml-2 h-4 w-4" /></a>
+              </Button>
+              <p className="text-xs text-muted-foreground mt-3">No commitment • Response within hours • $25 OFF first clean</p>
+            </div>
+          </div>
+        </section>
       </ScrollReveal>
 
       {/* ══════════════ REAL WORK PHOTOS ══════════════ */}
