@@ -28,7 +28,7 @@ if (!ANTHROPIC_API_KEY) {
   process.exit(1);
 }
 
-const PEXELS_API_KEY = process.env.PEXELS_API_KEY || "";
+const PIXABAY_API_KEY = process.env.PIXABAY_API_KEY || "";
 
 // ── Curated fallback images by category (Pexels CDN — no API key needed) ─────
 const FALLBACK_IMAGES = {
@@ -207,27 +207,26 @@ console.log(`✅  Generated article: "${article.title}" (${article.slug})`);
 // ── 3. Fetch a professional matching image ────────────────────────────────────
 let heroImage = null;
 
-if (PEXELS_API_KEY && article.imageQuery) {
+if (PIXABAY_API_KEY && article.imageQuery) {
   try {
-    console.log(`🖼️   Fetching image from Pexels: "${article.imageQuery}"...`);
-    const query = encodeURIComponent(`${article.imageQuery} professional`);
-    const pexelsRes = await fetch(
-      `https://api.pexels.com/v1/search?query=${query}&per_page=5&orientation=landscape`,
-      { headers: { Authorization: PEXELS_API_KEY } }
+    console.log(`🖼️   Fetching image from Pixabay: "${article.imageQuery}"...`);
+    const query = encodeURIComponent(`${article.imageQuery} cleaning`);
+    const pixabayRes = await fetch(
+      `https://pixabay.com/api/?key=${PIXABAY_API_KEY}&q=${query}&image_type=photo&orientation=horizontal&per_page=5&safesearch=true&min_width=1200`
     );
-    if (pexelsRes.ok) {
-      const pexelsData = await pexelsRes.json();
-      if (pexelsData.photos && pexelsData.photos.length > 0) {
-        const photo = pexelsData.photos[0];
+    if (pixabayRes.ok) {
+      const pixabayData = await pixabayRes.json();
+      if (pixabayData.hits && pixabayData.hits.length > 0) {
+        const photo = pixabayData.hits[0];
         heroImage = {
-          url: photo.src.large2x || photo.src.large,
-          alt: article.imageAlt || photo.alt || article.title,
+          url: photo.largeImageURL || photo.webformatURL,
+          alt: article.imageAlt || article.title,
         };
-        console.log(`✅  Image from Pexels: ${heroImage.url}`);
+        console.log(`✅  Image from Pixabay: ${heroImage.url}`);
       }
     }
   } catch (e) {
-    console.warn("⚠️   Pexels fetch failed, using fallback image:", e.message);
+    console.warn("⚠️   Pixabay fetch failed, using fallback image:", e.message);
   }
 }
 
