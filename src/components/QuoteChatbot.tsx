@@ -1,278 +1,280 @@
 import { useState, useRef, useEffect } from "react";
-import { MessageCircle, X, Send, ArrowRight, CheckCircle } from "lucide-react";
+import { MessageCircle, X, Send, CheckCircle, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Link } from "react-router-dom";
-import { supabase } from "@/integrations/supabase/client";
-
-type Step =
-  | "greeting"
-  | "service"
-  | "bedrooms"
-  | "bathrooms"
-  | "frequency"
-  | "zip"
-  | "name"
-  | "phone"
-  | "result";
 
 interface Message {
   from: "bot" | "user";
   text: string;
-  options?: string[];
 }
 
-const botQuestions: Record<Step, { text: string; options?: string[]; placeholder?: string }> = {
-  greeting: {
-    text: "Hi! 👋 I can get you an instant estimate. What type of cleaning do you need?",
-    options: ["Standard Cleaning", "Deep Cleaning", "Move In/Out", "Post-Construction"],
-  },
-  service: {
-    text: "Great! How many bedrooms does your home have?",
-    options: ["1", "2", "3", "4", "5+"],
-  },
-  bedrooms: {
-    text: "And how many bathrooms?",
-    options: ["1", "1.5", "2", "2.5", "3", "4+"],
-  },
-  bathrooms: {
-    text: "How often would you like us to clean?",
-    options: ["One-Time", "Weekly", "Bi-Weekly", "Monthly"],
-  },
-  frequency: {
-    text: "What's your zip code? (We serve MD, DC & VA)",
-    placeholder: "e.g. 20850",
-  },
-  zip: {
-    text: "Almost there! What's your first name?",
-    placeholder: "Your first name",
-  },
-  name: {
-    text: "And your best phone number? We'll text you the full quote.",
-    placeholder: "(301) 555-0123",
-  },
-  phone: { text: "" },
-  result: { text: "" },
-};
+interface LeadData {
+  name: string;
+  zip: string;
+  phone: string;
+  address: string;
+}
 
-const basePrices: Record<string, number> = {
-  "Standard Cleaning": 120,
-  "Deep Cleaning": 250,
-  "Move In/Out": 300,
-  "Post-Construction": 350,
-};
-const bedAddon = [0, 0, 25, 50, 80, 110];
-const bathAddon: Record<string, number> = {
-  "1": 0, "1.5": 15, "2": 30, "2.5": 45, "3": 60, "4+": 80,
-};
-const freqMult: Record<string, number> = {
-  "One-Time": 1, Weekly: 0.75, "Bi-Weekly": 0.85, Monthly: 0.95,
-};
+const GREETING =
+  "Hi! 👋 I'm Maya from Capital Clean Care. How can I help you today? I can answer questions about our services or get you a free quote!";
 
-const stepOrder: Step[] = [
-  "greeting", "service", "bedrooms", "bathrooms", "frequency", "zip", "name", "phone", "result",
-];
-
-const answerKey: Partial<Record<Step, string>> = {
-  greeting: "service",
-  service: "bedrooms",
-  bedrooms: "bathrooms",
-  bathrooms: "frequency",
-  frequency: "zip",
-  zip: "name",
-  name: "phone",
+const sendLeadEmail = async (lead: LeadData) => {
+  try {
+    await fetch("https://formsubmit.co/ajax/capitalcleancare@gmail.com", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify({
+        _subject: `New Chat Lead — ${lead.name}`,
+        _template: "table",
+        _captcha: "false",
+        Source: "AI Chat Widget",
+        Name: lead.name,
+        Phone: lead.phone,
+        "Zip Code": lead.zip,
+        "Service Address": lead.address,
+      }),
+    });
+  } catch (e) {
+    console.error("Email send error:", e);
+  }
 };
 
 const QuoteChatbot = () => {
   const [open, setOpen] = useState(false);
-  const [step, setStep] = useState<Step>("greeting");
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
-  const [answers, setAnswers] = useState<Record<string, string>>({});
-  const [saving, setSaving] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [leadDone, setLeadDone] = useState(false);
+  const [hasUnread, setHasUnread] = useState(false);
   const bottomRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
 
+  // Show greeting when chat opens for the first time
   useEffect(() => {
     if (open && messages.length === 0) {
-      const q = botQuestions.greeting;
-      setMessages([{ from: "bot", text: q.text, options: q.options }]);
+      setMessages([{ from: "bot", text: GREETING }]);
+    }
+    if (open) {
+      setHasUnread(false);
+      setTimeout(() => inputRef.current?.focus(), 100);
     }
   }, [open]);
 
+  // Show pulsing unread dot after 8s if chat never opened
+  useEffect(() => {
+    const t = setTimeout(() => {
+      if (!open) setHasUnread(true);
+    }, 8000);
+    return () => clearTimeout(t);
+  }, []);
+
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages]);
+  }, [messages, loading]);
 
-  const advance = async (userText: string, currentStep: Step) => {
-    const newAnswers = { ...answers };
-    const key = answerKey[currentStep];
-    if (key) newAnswers[key] = userText;
-    setAnswers(newAnswers);
+  const sendMessage = async (text: string) => {
+    if (!text.trim() || loading || leadDone) return;
 
-    const currentIdx = stepOrder.indexOf(currentStep);
-    const nextStep = stepOrder[currentIdx + 1] as Step;
+    const userMsg: Message = { from: "user", text: text.trim() };
+    const updatedMessages = [...messages, userMsg];
+    setMessages(updatedMessages);
+    setInput("");
+    setLoading(true);
 
-    // Show user message immediately
-    const addUser = (text: string): Message => ({ from: "user", text });
+    // Build history for API
+    const apiMessages = updatedMessages.map((m) => ({
+      role: m.from === "user" ? "user" : "assistant",
+      content: m.text,
+    }));
 
-    if (nextStep === "result") {
-      const base = basePrices[newAnswers.service] ?? 120;
-      const beds = bedAddon[parseInt(newAnswers.bedrooms) || 1] ?? 0;
-      const baths = bathAddon[newAnswers.bathrooms] ?? 0;
-      const mult = freqMult[newAnswers.frequency] ?? 1;
-      const total = Math.round((base + beds + baths) * mult);
-      const low = Math.round(total * 0.9);
-      const high = Math.round(total * 1.15);
+    try {
+      const res = await fetch("/.netlify/functions/ai-chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ messages: apiMessages }),
+      });
 
+      const data = await res.json();
+      const botReply =
+        data.reply ??
+        "Sorry, something went wrong. Please call us at (240) 704-2551.";
+
+      setMessages((prev) => [...prev, { from: "bot", text: botReply }]);
+
+      if (data.leadComplete && data.leadData) {
+        setLeadDone(true);
+        await sendLeadEmail(data.leadData);
+      }
+    } catch {
       setMessages((prev) => [
         ...prev,
-        addUser(userText),
         {
           from: "bot",
-          text: `Perfect, ${newAnswers.name}! Here's your estimate:\n\n💰 $${low} – $${high}\n\nWe'll reach out to confirm the exact price. 🎉 New clients get $25 off their first cleaning!`,
+          text: "Sorry, I'm having trouble connecting. Please call us at (240) 704-2551 or fill out our quote form.",
         },
       ]);
-      setStep("result");
-
-      // Save lead to Supabase
-      setSaving(true);
-      try {
-        await supabase.from("quote_requests").insert({
-          name: newAnswers.name,
-          phone: userText,
-          zip: newAnswers.zip,
-          service: newAnswers.service,
-          bedrooms: newAnswers.bedrooms || null,
-          bathrooms: newAnswers.bathrooms || null,
-          frequency: newAnswers.frequency || null,
-          message: `Chatbot lead — estimate $${low}–$${high}`,
-          sms_consent: true,
-        });
-      } catch (e) {
-        console.error("Chatbot lead save error:", e);
-      } finally {
-        setSaving(false);
-      }
-      return;
+    } finally {
+      setLoading(false);
     }
-
-    const nextQ = botQuestions[nextStep];
-    setMessages((prev) => [
-      ...prev,
-      addUser(userText),
-      { from: "bot", text: nextQ.text, options: nextQ.options },
-    ]);
-    setStep(nextStep);
   };
-
-  const handleOption = (option: string) => advance(option, step);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!input.trim()) return;
-    advance(input.trim(), step);
-    setInput("");
+    sendMessage(input);
   };
 
   const restart = () => {
-    setMessages([]);
-    setStep("greeting");
-    setAnswers({});
-    const q = botQuestions.greeting;
-    setMessages([{ from: "bot", text: q.text, options: q.options }]);
+    setMessages([{ from: "bot", text: GREETING }]);
+    setLeadDone(false);
+    setInput("");
   };
-
-  const isTextInput = ["frequency", "zip", "name", "phone"].includes(step);
-  const placeholder = botQuestions[step]?.placeholder ?? "Type here…";
 
   return (
     <>
       {/* Floating button */}
       <button
-        onClick={() => setOpen(!open)}
-        className="fixed bottom-[4.5rem] right-4 z-50 w-12 h-12 md:w-14 md:h-14 rounded-full bg-accent text-accent-foreground shadow-lg flex items-center justify-center hover:scale-105 transition-transform md:bottom-6"
-        aria-label="Open chat for instant quote"
+        onClick={() => setOpen((v) => !v)}
+        className="fixed bottom-[4.5rem] right-4 z-50 w-14 h-14 rounded-full bg-accent text-accent-foreground shadow-xl flex items-center justify-center hover:scale-105 transition-transform md:bottom-6"
+        aria-label={open ? "Close chat" : "Chat with us"}
       >
-        {open ? <X className="h-6 w-6" /> : <MessageCircle className="h-6 w-6" />}
+        {open ? (
+          <X className="h-6 w-6" />
+        ) : (
+          <>
+            <MessageCircle className="h-6 w-6" />
+            {hasUnread && (
+              <span className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full border-2 border-white animate-pulse" />
+            )}
+          </>
+        )}
       </button>
 
       {/* Chat panel */}
       {open && (
-        <div className="fixed bottom-[8rem] right-2 left-2 z-50 max-h-[65vh] rounded-2xl border border-border bg-background shadow-2xl flex flex-col overflow-hidden md:left-auto md:right-4 md:w-[360px] md:max-h-[500px] md:bottom-22">
+        <div
+          className="fixed bottom-[8rem] right-2 left-2 z-50 rounded-2xl border border-border bg-background shadow-2xl flex flex-col overflow-hidden md:left-auto md:right-4 md:w-[370px] md:bottom-24"
+          style={{ maxHeight: "min(520px, 65vh)" }}
+        >
           {/* Header */}
-          <div className="bg-primary text-primary-foreground p-4 flex items-center justify-between shrink-0">
-            <div>
-              <span className="font-heading font-semibold text-sm block">Capital Clean Care</span>
-              <span className="text-xs opacity-70">Instant Estimate — Takes 30 seconds</span>
+          <div className="bg-primary text-primary-foreground p-4 flex items-center gap-3 shrink-0">
+            <div className="w-9 h-9 rounded-full bg-accent flex items-center justify-center font-bold text-accent-foreground text-sm shrink-0">
+              M
             </div>
-            <button onClick={() => setOpen(false)} aria-label="Close chat">
-              <X className="h-4 w-4 opacity-70 hover:opacity-100" />
+            <div className="flex-1 min-w-0">
+              <p className="font-semibold text-sm leading-tight">Maya</p>
+              <p className="text-xs opacity-70">Capital Clean Care · Online</p>
+            </div>
+            <button
+              onClick={() => setOpen(false)}
+              aria-label="Close chat"
+              className="opacity-70 hover:opacity-100 transition-opacity"
+            >
+              <X className="h-4 w-4" />
             </button>
           </div>
 
           {/* Messages */}
-          <div className="flex-1 overflow-y-auto p-3 space-y-3">
+          <div className="flex-1 overflow-y-auto p-4 space-y-3 min-h-0">
             {messages.map((m, i) => (
-              <div key={i} className={`flex ${m.from === "user" ? "justify-end" : "justify-start"}`}>
+              <div
+                key={i}
+                className={`flex gap-2 ${m.from === "user" ? "justify-end" : "justify-start"}`}
+              >
+                {m.from === "bot" && (
+                  <div className="w-7 h-7 rounded-full bg-accent flex items-center justify-center font-bold text-accent-foreground text-xs shrink-0 mt-0.5">
+                    M
+                  </div>
+                )}
                 <div
-                  className={`max-w-[88%] rounded-2xl px-3.5 py-2.5 text-sm leading-relaxed whitespace-pre-line ${
+                  className={`max-w-[82%] rounded-2xl px-3.5 py-2.5 text-sm leading-relaxed whitespace-pre-line ${
                     m.from === "user"
                       ? "bg-accent text-accent-foreground rounded-br-sm"
                       : "bg-secondary text-foreground rounded-bl-sm"
                   }`}
                 >
                   {m.text}
-                  {m.options && step !== "result" && (
-                    <div className="flex flex-wrap gap-1.5 mt-2.5">
-                      {m.options.map((opt) => (
-                        <button
-                          key={opt}
-                          onClick={() => handleOption(opt)}
-                          className="text-xs bg-background border border-border rounded-full px-3 py-1.5 hover:bg-accent/10 hover:border-accent/40 transition-colors"
-                        >
-                          {opt}
-                        </button>
-                      ))}
-                    </div>
-                  )}
                 </div>
               </div>
             ))}
 
-            {step === "result" && (
-              <div className="flex flex-col gap-2 mt-1">
-                <div className="flex items-center gap-2 text-xs text-muted-foreground bg-secondary rounded-xl px-3 py-2">
-                  <CheckCircle className="h-3.5 w-3.5 text-accent shrink-0" />
-                  {saving ? "Saving your request…" : "We'll contact you shortly to confirm!"}
+            {/* Typing indicator */}
+            {loading && (
+              <div className="flex gap-2 justify-start">
+                <div className="w-7 h-7 rounded-full bg-accent flex items-center justify-center font-bold text-accent-foreground text-xs shrink-0">
+                  M
                 </div>
-                <Button variant="cta" size="sm" className="rounded-full" asChild>
-                  <Link to="/contact">Get Exact Quote <ArrowRight className="ml-1 h-3 w-3" /></Link>
-                </Button>
-                <Button variant="outline" size="sm" className="rounded-full" onClick={restart}>
-                  Start Over
-                </Button>
+                <div className="bg-secondary rounded-2xl rounded-bl-sm px-4 py-3 flex items-center gap-1">
+                  <span
+                    className="w-1.5 h-1.5 bg-muted-foreground/50 rounded-full animate-bounce"
+                    style={{ animationDelay: "0ms" }}
+                  />
+                  <span
+                    className="w-1.5 h-1.5 bg-muted-foreground/50 rounded-full animate-bounce"
+                    style={{ animationDelay: "150ms" }}
+                  />
+                  <span
+                    className="w-1.5 h-1.5 bg-muted-foreground/50 rounded-full animate-bounce"
+                    style={{ animationDelay: "300ms" }}
+                  />
+                </div>
+              </div>
+            )}
+
+            {/* Lead captured confirmation */}
+            {leadDone && (
+              <div className="bg-accent/10 border border-accent/20 rounded-xl p-3 flex items-start gap-2 mt-2">
+                <CheckCircle className="h-4 w-4 text-accent shrink-0 mt-0.5" />
+                <p className="text-xs text-foreground leading-relaxed">
+                  Your info was sent to our team! We'll reach out shortly.{" "}
+                  <button
+                    onClick={restart}
+                    className="text-accent font-semibold underline underline-offset-2"
+                  >
+                    New chat
+                  </button>
+                </p>
               </div>
             )}
 
             <div ref={bottomRef} />
           </div>
 
-          {/* Text input (for non-option steps) */}
-          {isTextInput && step !== "result" && (
-            <form onSubmit={handleSubmit} className="p-3 border-t border-border flex gap-2 shrink-0">
+          {/* Input */}
+          {!leadDone && (
+            <form
+              onSubmit={handleSubmit}
+              className="p-3 border-t border-border flex gap-2 shrink-0"
+            >
               <Input
+                ref={inputRef}
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                placeholder={placeholder}
+                placeholder="Type a message…"
                 className="text-sm"
-                type={step === "phone" ? "tel" : "text"}
-                autoFocus
+                disabled={loading}
               />
-              <Button type="submit" size="icon" variant="cta" aria-label="Send">
-                <Send className="h-4 w-4" />
+              <Button
+                type="submit"
+                size="icon"
+                variant="cta"
+                disabled={loading || !input.trim()}
+                aria-label="Send"
+              >
+                {loading ? (
+                  <Loader2 className="h-4 w-4 animate-spin" />
+                ) : (
+                  <Send className="h-4 w-4" />
+                )}
               </Button>
             </form>
           )}
+
+          {/* Footer */}
+          <div className="px-4 pb-3 text-center shrink-0">
+            <p className="text-xs text-muted-foreground/50">
+              Capital Clean Care AI Assistant
+            </p>
+          </div>
         </div>
       )}
     </>
