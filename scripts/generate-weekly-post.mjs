@@ -143,20 +143,31 @@ The article should target ${season} cleaning topics relevant to the Maryland/DMV
 
 Existing slugs to AVOID duplicating: ${existingSlugs.join(", ")}
 
-HIGH-VALUE KEYWORD TARGETS to rotate through (pick the most relevant for this season):
-- "house cleaning service Maryland"
-- "professional house cleaners DMV"
-- "deep cleaning tips Maryland homes"
+CONTENT FOCUS — rotate through these practical, how-to topics every week:
+1. How to deep clean a kitchen using eco-friendly products (grease, oven, appliances)
+2. How to clean a bathroom naturally (toilet, tiles, mold, mildew)
+3. How to remove tough stains from mattresses, bedding, and upholstery with plant-based products
+4. Eco-friendly products to clean hardwood floors, carpets, and area rugs
+5. How to eliminate pet odors and stains using non-toxic cleaners
+6. How to clean windows, mirrors, and glass streak-free with green products
+7. Deep cleaning the refrigerator, dishwasher, and washing machine naturally
+8. How to disinfect and sanitize high-touch surfaces without harsh chemicals
+9. How to remove mold and mildew from bathrooms and basements eco-friendly
+10. Spring/fall/winter/summer seasonal cleaning routines for Maryland homes
+11. Eco-friendly laundry tips: remove stains from clothes, sheets, and towels
+12. How to clean and deodorize trash cans, garbage disposals, and drains naturally
+
+Always tie the practical tips back to Capital Clean Care's eco-friendly professional services.
+
+HIGH-VALUE SEO KEYWORDS to include naturally:
 - "eco-friendly cleaning products Maryland"
-- "move-out cleaning checklist Maryland"
-- "recurring cleaning service Silver Spring"
-- "how to clean [kitchen/bathroom/bedroom] professionally"
-- "maid service Rockville MD"
-- "Airbnb cleaning service DC"
-- "post-construction cleaning Maryland"
-- "house cleaning near me Maryland"
-- "residential cleaning service Bethesda"
-- "green cleaning company Montgomery County"
+- "how to clean [kitchen/bathroom/mattress] naturally"
+- "non-toxic cleaning tips DMV"
+- "plant-based cleaning products Maryland"
+- "remove tough stains eco-friendly"
+- "green cleaning company Silver Spring"
+- "professional eco cleaning service Maryland"
+- "natural cleaning tips for Maryland homes"
 
 Return this exact JSON structure:
 {
