@@ -30,34 +30,54 @@ if (!ANTHROPIC_API_KEY) {
 
 const PIXABAY_API_KEY = process.env.PIXABAY_API_KEY || "";
 
-// ── Curated fallback images by category (Pexels CDN — no API key needed) ─────
-const FALLBACK_IMAGES = {
+// ── Curated professional cleaning images by category (no API key needed) ──────
+// Photos sourced from Pexels & Unsplash free CDN — rotate via slug hash
+const CURATED_IMAGES = {
   "Seasonal Guides": [
     { url: "https://images.pexels.com/photos/4239091/pexels-photo-4239091.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Professional seasonal home cleaning service in Maryland" },
     { url: "https://images.pexels.com/photos/4099354/pexels-photo-4099354.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Seasonal deep cleaning checklist for DMV homeowners" },
+    { url: "https://images.pexels.com/photos/6195129/pexels-photo-6195129.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Spring and fall cleaning tips for Maryland homes" },
+    { url: "https://images.pexels.com/photos/4107278/pexels-photo-4107278.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Seasonal cleaning routine for Silver Spring MD homeowners" },
+    { url: "https://images.pexels.com/photos/6197124/pexels-photo-6197124.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Professional cleaning service for DMV area seasonal prep" },
   ],
   "Cleaning Guides": [
     { url: "https://images.pexels.com/photos/4253925/pexels-photo-4253925.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Professional house cleaning guide for Maryland homes" },
-    { url: "https://images.pexels.com/photos/6195122/pexels-photo-6195122.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Step-by-step cleaning guide for DMV area homes" },
+    { url: "https://images.pexels.com/photos/6195122/pexels-photo-6195122.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Step-by-step deep cleaning guide for DMV area homes" },
+    { url: "https://images.pexels.com/photos/4108715/pexels-photo-4108715.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "House cleaning checklist for Maryland homeowners" },
+    { url: "https://images.pexels.com/photos/3768914/pexels-photo-3768914.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Professional cleaning team at work in Maryland home" },
+    { url: "https://images.pexels.com/photos/6197117/pexels-photo-6197117.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Kitchen deep cleaning service in Silver Spring Rockville MD" },
+    { url: "https://images.pexels.com/photos/4099467/pexels-photo-4099467.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Bathroom cleaning guide for DMV homeowners" },
   ],
   "Eco Living": [
     { url: "https://images.pexels.com/photos/4099356/pexels-photo-4099356.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Eco-friendly plant-based cleaning products for Maryland homes" },
     { url: "https://images.pexels.com/photos/5591581/pexels-photo-5591581.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Non-toxic eco cleaning supplies for sustainable home care" },
+    { url: "https://images.pexels.com/photos/4207892/pexels-photo-4207892.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Green cleaning products safe for kids and pets in Maryland" },
+    { url: "https://images.pexels.com/photos/6197113/pexels-photo-6197113.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Sustainable eco-friendly cleaning service in DMV area" },
+    { url: "https://images.pexels.com/photos/3685530/pexels-photo-3685530.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Natural cleaning ingredients for eco-friendly home care" },
   ],
   "Tips & Advice": [
     { url: "https://images.pexels.com/photos/4108714/pexels-photo-4108714.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Expert house cleaning tips for Maryland homeowners" },
-    { url: "https://images.pexels.com/photos/3768914/pexels-photo-3768914.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Professional cleaning advice for DMV area residents" },
+    { url: "https://images.pexels.com/photos/6197119/pexels-photo-6197119.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Professional cleaning advice for Bethesda Rockville MD homes" },
+    { url: "https://images.pexels.com/photos/4108797/pexels-photo-4108797.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Maid service tips and tricks for spotless Maryland homes" },
+    { url: "https://images.pexels.com/photos/6197121/pexels-photo-6197121.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "House cleaning schedule tips for busy DMV families" },
+    { url: "https://images.pexels.com/photos/4239130/pexels-photo-4239130.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Residential cleaning service advice for Northern Virginia" },
+    { url: "https://images.pexels.com/photos/4099358/pexels-photo-4099358.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Professional cleaner with supplies in Maryland home" },
   ],
   "Airbnb & Rentals": [
     { url: "https://images.pexels.com/photos/1648776/pexels-photo-1648776.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Professional Airbnb cleaning service for DMV hosts" },
     { url: "https://images.pexels.com/photos/3288103/pexels-photo-3288103.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "5-star rental property cleaning in Maryland DC Virginia" },
+    { url: "https://images.pexels.com/photos/6969935/pexels-photo-6969935.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Airbnb turnover cleaning checklist for Washington DC hosts" },
+    { url: "https://images.pexels.com/photos/4239091/pexels-photo-4239091.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Move-out cleaning service for rental properties in Maryland" },
+    { url: "https://images.pexels.com/photos/6195125/pexels-photo-6195125.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Short-term rental cleaning service Silver Spring Arlington VA" },
   ],
 };
 
-const DEFAULT_FALLBACK = {
-  url: "https://images.pexels.com/photos/4239091/pexels-photo-4239091.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750",
-  alt: "Professional house cleaning service in Maryland, DC, and Virginia",
-};
+// Pick image deterministically by slug so the same post always gets the same photo
+function pickImage(category, slug) {
+  const pool = CURATED_IMAGES[category] || CURATED_IMAGES["Tips & Advice"];
+  const hash = [...slug].reduce((acc, ch) => acc + ch.charCodeAt(0), 0);
+  return pool[hash % pool.length];
+}
 
 // ── 1. Read existing posts to avoid duplicate topics ──────────────────────────
 const autoBlogPath = path.join(ROOT, "src/data/auto-blog-posts.ts");
@@ -231,14 +251,9 @@ if (PIXABAY_API_KEY && article.imageQuery) {
 }
 
 if (!heroImage) {
-  const categoryImages = FALLBACK_IMAGES[article.category] || [];
-  if (categoryImages.length > 0) {
-    heroImage = categoryImages[Math.floor(Math.random() * categoryImages.length)];
-    heroImage = { ...heroImage, alt: article.imageAlt || heroImage.alt };
-  } else {
-    heroImage = { ...DEFAULT_FALLBACK, alt: article.imageAlt || DEFAULT_FALLBACK.alt };
-  }
-  console.log(`✅  Using curated fallback image for category: ${article.category}`);
+  const curated = pickImage(article.category, article.slug);
+  heroImage = { url: curated.url, alt: article.imageAlt || curated.alt };
+  console.log(`✅  Using curated image for category: ${article.category}`);
 }
 
 // ── 4. Prepend hero image to article content ──────────────────────────────────
