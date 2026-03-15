@@ -30,45 +30,45 @@ if (!ANTHROPIC_API_KEY) {
 
 const PIXABAY_API_KEY = process.env.PIXABAY_API_KEY || "";
 
-// ── Curated professional cleaning images by category (no API key needed) ──────
-// Photos sourced from Pexels & Unsplash free CDN — rotate via slug hash
+// ── Curated clean home environment images (no people) ─────────────────────────
+// All photos show clean interiors: kitchens, bathrooms, living rooms, bedrooms
 const CURATED_IMAGES = {
   "Seasonal Guides": [
-    { url: "https://images.pexels.com/photos/4239091/pexels-photo-4239091.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Professional seasonal home cleaning service in Maryland" },
-    { url: "https://images.pexels.com/photos/4099354/pexels-photo-4099354.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Seasonal deep cleaning checklist for DMV homeowners" },
-    { url: "https://images.pexels.com/photos/6195129/pexels-photo-6195129.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Spring and fall cleaning tips for Maryland homes" },
-    { url: "https://images.pexels.com/photos/4107278/pexels-photo-4107278.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Seasonal cleaning routine for Silver Spring MD homeowners" },
-    { url: "https://images.pexels.com/photos/6197124/pexels-photo-6197124.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Professional cleaning service for DMV area seasonal prep" },
+    { url: "https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Spotless modern kitchen ready for spring in Maryland home" },
+    { url: "https://images.pexels.com/photos/2724749/pexels-photo-2724749.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Clean bright kitchen after seasonal deep cleaning in DMV" },
+    { url: "https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Freshly cleaned living room for Maryland seasonal home prep" },
+    { url: "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Clean cozy bedroom after seasonal cleaning in Silver Spring" },
+    { url: "https://images.pexels.com/photos/667838/pexels-photo-667838.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Spotless living room interior after deep cleaning in Maryland" },
   ],
   "Cleaning Guides": [
-    { url: "https://images.pexels.com/photos/4253925/pexels-photo-4253925.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Professional house cleaning guide for Maryland homes" },
-    { url: "https://images.pexels.com/photos/6195122/pexels-photo-6195122.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Step-by-step deep cleaning guide for DMV area homes" },
-    { url: "https://images.pexels.com/photos/4108715/pexels-photo-4108715.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "House cleaning checklist for Maryland homeowners" },
-    { url: "https://images.pexels.com/photos/3768914/pexels-photo-3768914.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Professional cleaning team at work in Maryland home" },
-    { url: "https://images.pexels.com/photos/6197117/pexels-photo-6197117.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Kitchen deep cleaning service in Silver Spring Rockville MD" },
-    { url: "https://images.pexels.com/photos/4099467/pexels-photo-4099467.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Bathroom cleaning guide for DMV homeowners" },
+    { url: "https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Immaculate kitchen after professional deep cleaning in DMV area" },
+    { url: "https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Sparkling clean bathroom after professional cleaning in Maryland" },
+    { url: "https://images.pexels.com/photos/1643384/pexels-photo-1643384.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Clean modern bathroom with white tiles in Silver Spring home" },
+    { url: "https://images.pexels.com/photos/1909652/pexels-photo-1909652.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Bright spotless kitchen interior after house cleaning in Maryland" },
+    { url: "https://images.pexels.com/photos/2635038/pexels-photo-2635038.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Clean modern living room after deep cleaning service in DMV" },
+    { url: "https://images.pexels.com/photos/3935349/pexels-photo-3935349.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Tidy clean home interior after professional house cleaning Maryland" },
   ],
   "Eco Living": [
-    { url: "https://images.pexels.com/photos/4099356/pexels-photo-4099356.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Eco-friendly plant-based cleaning products for Maryland homes" },
-    { url: "https://images.pexels.com/photos/5591581/pexels-photo-5591581.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Non-toxic eco cleaning supplies for sustainable home care" },
-    { url: "https://images.pexels.com/photos/4207892/pexels-photo-4207892.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Green cleaning products safe for kids and pets in Maryland" },
-    { url: "https://images.pexels.com/photos/6197113/pexels-photo-6197113.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Sustainable eco-friendly cleaning service in DMV area" },
-    { url: "https://images.pexels.com/photos/3685530/pexels-photo-3685530.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Natural cleaning ingredients for eco-friendly home care" },
+    { url: "https://images.pexels.com/photos/4099356/pexels-photo-4099356.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Eco-friendly plant-based cleaning products on clean kitchen counter" },
+    { url: "https://images.pexels.com/photos/3685530/pexels-photo-3685530.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Natural cleaning ingredients vinegar baking soda lemon for eco home care" },
+    { url: "https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Spotlessly clean kitchen using eco-friendly non-toxic products in Maryland" },
+    { url: "https://images.pexels.com/photos/2724749/pexels-photo-2724749.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Bright clean kitchen interior with eco-friendly cleaning results in DMV" },
+    { url: "https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Sparkling bathroom cleaned with non-toxic plant-based products in Maryland" },
   ],
   "Tips & Advice": [
-    { url: "https://images.pexels.com/photos/4108714/pexels-photo-4108714.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Expert house cleaning tips for Maryland homeowners" },
-    { url: "https://images.pexels.com/photos/6197119/pexels-photo-6197119.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Professional cleaning advice for Bethesda Rockville MD homes" },
-    { url: "https://images.pexels.com/photos/4108797/pexels-photo-4108797.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Maid service tips and tricks for spotless Maryland homes" },
-    { url: "https://images.pexels.com/photos/6197121/pexels-photo-6197121.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "House cleaning schedule tips for busy DMV families" },
-    { url: "https://images.pexels.com/photos/4239130/pexels-photo-4239130.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Residential cleaning service advice for Northern Virginia" },
-    { url: "https://images.pexels.com/photos/4099358/pexels-photo-4099358.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Professional cleaner with supplies in Maryland home" },
+    { url: "https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Clean and organized living room interior in Maryland home" },
+    { url: "https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Spotless kitchen interior cleaning tips for DMV homeowners" },
+    { url: "https://images.pexels.com/photos/1643384/pexels-photo-1643384.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Clean bathroom tips for Maryland homes in Silver Spring Bethesda" },
+    { url: "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Tidy clean bedroom cleaning advice for Northern Virginia homes" },
+    { url: "https://images.pexels.com/photos/667838/pexels-photo-667838.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Clean organized living room house cleaning tips for DMV families" },
+    { url: "https://images.pexels.com/photos/3935349/pexels-photo-3935349.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Clean modern home interior cleaning schedule advice Maryland" },
   ],
   "Airbnb & Rentals": [
-    { url: "https://images.pexels.com/photos/1648776/pexels-photo-1648776.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Professional Airbnb cleaning service for DMV hosts" },
-    { url: "https://images.pexels.com/photos/3288103/pexels-photo-3288103.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "5-star rental property cleaning in Maryland DC Virginia" },
-    { url: "https://images.pexels.com/photos/6969935/pexels-photo-6969935.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Airbnb turnover cleaning checklist for Washington DC hosts" },
-    { url: "https://images.pexels.com/photos/4239091/pexels-photo-4239091.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Move-out cleaning service for rental properties in Maryland" },
-    { url: "https://images.pexels.com/photos/6195125/pexels-photo-6195125.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Short-term rental cleaning service Silver Spring Arlington VA" },
+    { url: "https://images.pexels.com/photos/1648776/pexels-photo-1648776.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Spotless Airbnb bedroom ready for guests in Washington DC Maryland" },
+    { url: "https://images.pexels.com/photos/2062426/pexels-photo-2062426.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Clean modern rental property interior in DMV area" },
+    { url: "https://images.pexels.com/photos/1909652/pexels-photo-1909652.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Immaculate rental kitchen after turnover cleaning in Maryland" },
+    { url: "https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Spotless rental bathroom after Airbnb cleaning service in DMV" },
+    { url: "https://images.pexels.com/photos/2635038/pexels-photo-2635038.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750", alt: "Clean rental living space ready for guests in Northern Virginia" },
   ],
 };
 

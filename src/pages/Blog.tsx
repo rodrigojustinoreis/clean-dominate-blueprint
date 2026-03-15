@@ -26,7 +26,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-03-10",
     readTime: "7 min read",
     category: "Seasonal Guides",
-    coverImage: "https://images.pexels.com/photos/4239091/pexels-photo-4239091.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
+    coverImage: "https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
   },
   {
     slug: "eco-cleaning-tips-maryland-homes",
@@ -44,7 +44,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-02-22",
     readTime: "6 min read",
     category: "Tips & Advice",
-    coverImage: "https://images.pexels.com/photos/4108714/pexels-photo-4108714.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
+    coverImage: "https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
   },
   {
     slug: "deep-cleaning-checklist-dmv-homeowners",
@@ -53,7 +53,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-02-15",
     readTime: "8 min read",
     category: "Cleaning Guides",
-    coverImage: "https://images.pexels.com/photos/4253925/pexels-photo-4253925.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
+    coverImage: "https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
   },
   {
     slug: "airbnb-cleaning-tips-dmv-hosts",
@@ -71,7 +71,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-02-01",
     readTime: "5 min read",
     category: "Tips & Advice",
-    coverImage: "https://images.pexels.com/photos/6197119/pexels-photo-6197119.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
+    coverImage: "https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
   },
   {
     slug: "move-out-cleaning-checklist-maryland-tenants",
@@ -80,7 +80,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-01-25",
     readTime: "7 min read",
     category: "Cleaning Guides",
-    coverImage: "https://images.pexels.com/photos/6195122/pexels-photo-6195122.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
+    coverImage: "https://images.pexels.com/photos/1909652/pexels-photo-1909652.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
   },
   {
     slug: "eco-cleaning-tips-winters-maryland",
@@ -89,7 +89,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-01-15",
     readTime: "7 min read",
     category: "Seasonal Guides",
-    coverImage: "https://images.pexels.com/photos/6195129/pexels-photo-6195129.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
+    coverImage: "https://images.pexels.com/photos/667838/pexels-photo-667838.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
   },
   {
     slug: "best-cleaning-schedule-busy-families-dmv",
@@ -98,7 +98,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-01-01",
     readTime: "6 min read",
     category: "Tips & Advice",
-    coverImage: "https://images.pexels.com/photos/4108797/pexels-photo-4108797.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
+    coverImage: "https://images.pexels.com/photos/3935349/pexels-photo-3935349.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
   },
   {
     slug: "remove-pet-hair-odors-dmv-homes",
@@ -107,7 +107,7 @@ export const blogPosts: BlogPost[] = [
     date: "2025-12-28",
     readTime: "6 min read",
     category: "Tips & Advice",
-    coverImage: "https://images.pexels.com/photos/4239130/pexels-photo-4239130.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
+    coverImage: "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
   },
   {
     slug: "post-renovation-cleaning-guide-maryland",
@@ -116,7 +116,7 @@ export const blogPosts: BlogPost[] = [
     date: "2025-12-15",
     readTime: "8 min read",
     category: "Cleaning Guides",
-    coverImage: "https://images.pexels.com/photos/3768914/pexels-photo-3768914.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
+    coverImage: "https://images.pexels.com/photos/2635038/pexels-photo-2635038.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
   },
   {
     slug: "recurring-cleaning-weekly-biweekly-monthly",
@@ -125,7 +125,7 @@ export const blogPosts: BlogPost[] = [
     date: "2025-12-01",
     readTime: "5 min read",
     category: "Tips & Advice",
-    coverImage: "https://images.pexels.com/photos/6197117/pexels-photo-6197117.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
+    coverImage: "https://images.pexels.com/photos/2062426/pexels-photo-2062426.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
   },
 ];
 
