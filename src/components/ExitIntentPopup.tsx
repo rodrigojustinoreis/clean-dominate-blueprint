@@ -1,7 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import { X, Gift } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
 
 const EXIT_INTENT_KEY = "ccc_exit_popup_dismissed";
 
@@ -54,18 +53,18 @@ const ExitIntentPopup = () => {
           <div className="w-14 h-14 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
             <Gift className="h-7 w-7 text-accent" />
           </div>
-          <h2 className="font-heading text-2xl font-bold mb-2">Wait! Don't Leave Yet</h2>
+          <h2 className="font-heading text-2xl font-bold mb-2">Wait — Before You Go!</h2>
           <p className="text-muted-foreground mb-4">
-            Get <span className="text-accent font-bold text-xl">10% OFF</span> your first cleaning when you book today.
+            Get <span className="text-accent font-bold text-xl">$25 OFF</span> your first cleaning — automatically applied, no code needed.
           </p>
           <p className="text-sm text-muted-foreground mb-6">
-            Eco-friendly, background-checked teams across MD, DC & VA. Use code <strong className="text-foreground">STAY10</strong> at checkout.
+            Eco-friendly, background-checked teams across MD, DC & VA. Takes 60 seconds to request your free quote.
           </p>
           <div className="space-y-3">
             <Button variant="cta" size="lg" className="w-full" asChild>
-              <Link to="/contact" onClick={() => setShow(false)}>
-                Claim My 10% Discount
-              </Link>
+              <a href="/#quote" onClick={() => setShow(false)}>
+                Claim My $25 Discount →
+              </a>
             </Button>
             <button
               onClick={() => setShow(false)}

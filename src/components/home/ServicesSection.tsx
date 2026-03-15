@@ -21,16 +21,21 @@ const ServicesSection = () => (
               </div>
               <h3 className="font-heading text-xl font-semibold mb-3">{s.name}</h3>
               <p className="text-muted-foreground text-sm mb-5 leading-relaxed">{s.shortDescription}</p>
-              <Link to={`/services/${s.slug}`} className="text-accent font-medium text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">
-                Learn More <ArrowRight className="h-3 w-3" />
-              </Link>
+              <div className="flex items-center justify-between">
+                <Link to={`/services/${s.slug}`} className="text-accent font-medium text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                  Learn More <ArrowRight className="h-3 w-3" />
+                </Link>
+                <a href="/#quote" className="text-xs font-semibold bg-accent/10 text-accent hover:bg-accent hover:text-accent-foreground transition-colors rounded-full px-3 py-1.5">
+                  Get Quote →
+                </a>
+              </div>
             </CardContent>
           </Card>
         ))}
       </div>
       <div className="text-center mt-12">
         <Button variant="cta" size="lg" asChild>
-          <Link to="/contact">Get a Free Quote <ArrowRight className="ml-1 h-4 w-4" /></Link>
+          <a href="/#quote">Get a Free Quote <ArrowRight className="ml-1 h-4 w-4" /></a>
         </Button>
       </div>
     </div>
