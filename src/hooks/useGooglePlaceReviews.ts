@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { Loader } from "@googlemaps/js-api-loader";
 
 export interface GoogleReview {
   author_name: string;
@@ -19,7 +18,8 @@ interface UseGooglePlaceReviewsResult {
   error: string | null;
 }
 
-export function useGooglePlaceReviews(placeId: string): UseGooglePlaceReviewsResult {
+/** Fetches reviews via Netlify Function proxy — API key stays server-side. */
+export function useGooglePlaceReviews(): UseGooglePlaceReviewsResult {
   const [reviews, setReviews] = useState<GoogleReview[]>([]);
   const [rating, setRating] = useState<number | null>(null);
   const [totalRatings, setTotalRatings] = useState<number | null>(null);
@@ -27,40 +27,20 @@ export function useGooglePlaceReviews(placeId: string): UseGooglePlaceReviewsRes
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
-    if (!apiKey || !placeId) {
-      setLoading(false);
-      setError("Missing API key or Place ID.");
-      return;
-    }
-
-    const loader = new Loader({ apiKey, libraries: ["places"] });
-
-    loader.load().then((google) => {
-      const service = new google.maps.places.PlacesService(
-        document.createElement("div")
-      );
-      service.getDetails(
-        {
-          placeId,
-          fields: ["reviews", "rating", "user_ratings_total"],
-        },
-        (place, status) => {
-          if (status === google.maps.places.PlacesServiceStatus.OK && place) {
-            setReviews((place.reviews as GoogleReview[]) ?? []);
-            setRating(place.rating ?? null);
-            setTotalRatings(place.user_ratings_total ?? null);
-          } else {
-            setError("Could not load reviews.");
-          }
-          setLoading(false);
-        }
-      );
-    }).catch(() => {
-      setError("Failed to load Google Maps.");
-      setLoading(false);
-    });
-  }, [placeId]);
+    fetch("/.netlify/functions/google-reviews")
+      .then((res) => {
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        return res.json();
+      })
+      .then((data) => {
+        if (data.error) throw new Error(data.error);
+        setReviews(data.reviews ?? []);
+        setRating(data.rating ?? null);
+        setTotalRatings(data.totalRatings ?? null);
+      })
+      .catch((err) => setError(err.message ?? "Failed to load reviews."))
+      .finally(() => setLoading(false));
+  }, []);
 
   return { reviews, rating, totalRatings, loading, error };
 }

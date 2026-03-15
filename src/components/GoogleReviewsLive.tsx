@@ -2,10 +2,8 @@ import { Star } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { useGooglePlaceReviews } from "@/hooks/useGooglePlaceReviews";
 
-const PLACE_ID = import.meta.env.VITE_GOOGLE_PLACE_ID ?? "";
-
 const GoogleReviewsLive = () => {
-  const { reviews, rating, totalRatings, loading, error } = useGooglePlaceReviews(PLACE_ID);
+  const { reviews, rating, totalRatings, loading, error } = useGooglePlaceReviews();
 
   if (loading) {
     return (
