@@ -324,6 +324,7 @@ const newEntry = `  {
     date: "${dateStr}",
     readTime: "${article.readTime}",
     category: "${article.category}",
+    coverImage: "${heroImage.url.replace(/"/g, '\\"')}",
     content: \`${escapedContent}\`,
   },`;
 

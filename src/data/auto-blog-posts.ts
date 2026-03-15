@@ -8,6 +8,7 @@ export interface AutoBlogPost {
   date: string;
   readTime: string;
   category: string;
+  coverImage?: string;
   content: string; // HTML string rendered via dangerouslySetInnerHTML
 }
 
@@ -20,6 +21,7 @@ export const autoBlogPosts: AutoBlogPost[] = [
     date: "2026-03-14",
     readTime: "7 min read",
     category: "Seasonal Guides",
+    coverImage: "https://images.pexels.com/photos/6197124/pexels-photo-6197124.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
     content: `<figure style="margin:0 0 2rem;border-radius:12px;overflow:hidden;">
   <img
     src="https://images.pexels.com/photos/6197124/pexels-photo-6197124.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750"
