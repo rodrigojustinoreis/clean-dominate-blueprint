@@ -6,6 +6,78 @@
   directory = "netlify/functions"
   node_bundler = "esbuild"
 
+# ── HTTP → HTTPS ──────────────────────────────────────────────────────────────
+[[redirects]]
+  from = "http://capitalcleancare.com/*"
+  to = "https://capitalcleancare.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.capitalcleancare.com/*"
+  to = "https://capitalcleancare.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.capitalcleancare.com/*"
+  to = "https://capitalcleancare.com/:splat"
+  status = 301
+  force = true
+
+# ── Trailing slash normalization ──────────────────────────────────────────────
+[[redirects]]
+  from = "/about/"
+  to = "/about"
+  status = 301
+
+[[redirects]]
+  from = "/contact/"
+  to = "/contact"
+  status = 301
+
+[[redirects]]
+  from = "/blog/"
+  to = "/blog"
+  status = 301
+
+[[redirects]]
+  from = "/reviews/"
+  to = "/reviews"
+  status = 301
+
+[[redirects]]
+  from = "/faq/"
+  to = "/faq"
+  status = 301
+
+[[redirects]]
+  from = "/careers/"
+  to = "/careers"
+  status = 301
+
+# ── Old/dead URLs ─────────────────────────────────────────────────────────────
+[[redirects]]
+  from = "/home"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/home/"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/house-cleaning-1"
+  to = "/services/house-cleaning"
+  status = 301
+
+[[redirects]]
+  from = "/f/*"
+  to = "/blog"
+  status = 301
+
+# ── SPA fallback (must be last) ───────────────────────────────────────────────
 [[redirects]]
   from = "/*"
   to = "/index.html"

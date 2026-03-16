@@ -36,6 +36,9 @@ const AppRoutes = () => (
     <Route path="/join-our-team" element={<Careers />} />
     <Route path="/privacy-policy" element={<PrivacyPolicy />} />
     <Route path="/terms-of-service" element={<TermsOfService />} />
+    {/* SEO redirects for dead/old URLs */}
+    <Route path="/home" element={<Navigate to="/" replace />} />
+    <Route path="/house-cleaning-1" element={<Navigate to="/services/house-cleaning" replace />} />
     {/* Redirects from old Wix/GoDaddy site */}
     <Route path="/apartment-cleaning" element={<Navigate to="/services/house-cleaning" replace />} />
     <Route path="/airbnb-cleaning" element={<Navigate to="/services/airbnb-cleaning" replace />} />
