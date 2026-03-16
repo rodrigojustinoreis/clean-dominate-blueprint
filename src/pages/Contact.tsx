@@ -39,8 +39,9 @@ const Contact = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
             {[
               { icon: Phone, label: "Phone", value: "(240) 704-2551", href: "tel:+12407042551" },
+              // TODO: update to hello@capitalcleancare.com when domain email is configured
               { icon: Mail, label: "Email", value: "capitalcleancare@gmail.com", href: "mailto:capitalcleancare@gmail.com" },
-              { icon: Clock, label: "Hours", value: "Mon–Sat: 7 AM – 7 PM" },
+              { icon: Clock, label: "Hours", value: "Mon–Sat: 8 AM – 6 PM" },
               { icon: MapPin, label: "Address", value: "4111 Postgate Terrace, Silver Spring, MD 20906" },
             ].map((item) => (
               <Card key={item.label}>

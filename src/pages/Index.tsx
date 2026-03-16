@@ -146,7 +146,7 @@ const Index = () => {
               <div className="order-1 lg:order-2">
                 <span className="text-accent font-semibold text-sm uppercase tracking-wider">About Us</span>
                 <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mt-2 mb-4">
-                  Family-Owned<br />Cleaning Excellence
+                  Family-Owned Cleaning Excellence
                 </h2>
                 <p className="text-muted-foreground mb-6 leading-relaxed text-base md:text-lg">
                   At Capital Clean Care, we're more than a cleaning company — we're a team of dedicated professionals who genuinely care about your home. Over 150 homes cleaned with the care we'd give our own.

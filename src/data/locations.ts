@@ -462,7 +462,7 @@ export const cities: CityData[] = [
   },
   {
     name: "Washington, DC (NE)",
-    slug: "washington-dc",
+    slug: "washington-dc-ne",
     state: "DC",
     stateSlug: "washington-dc",
     intro: "Northeast Washington has undergone a remarkable transformation, with vibrant neighborhoods like Brookland, NoMa, Trinidad, and Woodridge attracting new residents drawn to the area's character, culture, and growing amenities. NE DC's mix of renovated rowhomes, modern developments, and established family neighborhoods creates a dynamic residential landscape.\n\nCapital Clean Care serves Northeast DC's evolving communities with cleaning services that match the neighborhood's energy and diversity. Whether you've recently moved into a renovated Brookland bungalow or live in a longstanding Woodridge family home, our teams provide thorough, reliable cleaning tailored to your property.\n\nThe ongoing development in NE DC also means many residents are dealing with post-renovation cleanup and the settling dust that comes with neighborhood growth. Our post-construction and deep cleaning services are particularly popular in areas experiencing development.",

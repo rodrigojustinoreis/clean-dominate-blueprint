@@ -151,8 +151,8 @@ export const LocalBusinessSchema = ({ areaServed }: LocalBusinessSchemaProps = {
     openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",
       dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-      opens: "07:00",
-      closes: "19:00",
+      opens: "08:00",
+      closes: "18:00",
     },
     sameAs: [
       "https://www.instagram.com/capital_cleancare",

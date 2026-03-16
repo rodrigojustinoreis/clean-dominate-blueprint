@@ -20,7 +20,7 @@ const categories = [
     label: "Every 2 Weeks",
     rows: [
       { size: "1,000 – 2,000 sq ft", price: "$150 – $200" },
-      { size: "2,000 – 3,000 sq ft", price: "$150 – $250" },
+      { size: "2,000 – 3,000 sq ft", price: "$200 – $300" },
       { size: "3,000 – 4,000+ sq ft", price: "$300 – $400+" },
     ],
   },

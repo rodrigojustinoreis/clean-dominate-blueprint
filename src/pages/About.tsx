@@ -31,7 +31,7 @@ const aboutFaqs = [
   { q: "How do I get a free quote?", a: "Fill out our online quote form, call us at (240) 704-2551, or email capitalcleancare@gmail.com. We typically respond within a few hours with a personalized estimate." },
   { q: "Are you licensed and insured?", a: "Yes. Capital Clean Care is fully licensed, bonded, and insured with comprehensive liability coverage. We carry worker's compensation and general liability insurance for your complete protection." },
   { q: "Do I need to be home during the cleaning?", a: "No. Many clients provide key, code, or smart lock access so we can clean while they're at work. All team members are background-checked and insured." },
-  { q: "What are your hours of operation?", a: "We operate Monday through Saturday, 7 AM to 7 PM. We offer flexible scheduling including early morning and Saturday appointments to accommodate your lifestyle." },
+  { q: "What are your hours of operation?", a: "We operate Monday through Saturday, 8 AM to 6 PM. We offer flexible scheduling including early morning and Saturday appointments to accommodate your lifestyle." },
   { q: "Do you bring your own cleaning supplies?", a: "Yes. Our teams arrive fully equipped with all necessary eco-friendly cleaning products and professional-grade equipment. You don't need to provide anything." },
   { q: "Can I customize my cleaning service?", a: "Absolutely. While we follow comprehensive checklists, we're happy to adjust priorities based on your preferences. Just let us know your specific needs when booking." },
 ];
@@ -125,7 +125,7 @@ const About = () => {
                 { icon: Award, text: "Continuous training and quality improvement" },
                 { icon: Leaf, text: "100% eco-friendly, non-toxic, plant-based products" },
                 { icon: Shield, text: "Fully licensed, bonded, and insured" },
-                { icon: Clock, text: "Flexible scheduling: Monday-Saturday, 7 AM-7 PM" },
+                { icon: Clock, text: "Flexible scheduling: Monday–Saturday, 8 AM–6 PM" },
                 { icon: Star, text: "5.0-star Google rating from verified clients" },
                 { icon: MapPin, text: "Serving MD, DC & Northern VA — local teams" },
               ].map((v, i) => (
@@ -226,7 +226,7 @@ const About = () => {
           <h2 className="font-heading text-2xl font-bold mb-4">Contact Capital Clean Care</h2>
           <div className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground mb-6">
             <span className="flex items-center gap-2"><MapPin className="h-4 w-4 text-accent" aria-hidden="true" /> 4111 Postgate Terrace, Silver Spring, MD 20906</span>
-            <span className="flex items-center gap-2"><Clock className="h-4 w-4 text-accent" aria-hidden="true" /> Mon-Sat 7AM-7PM</span>
+            <span className="flex items-center gap-2"><Clock className="h-4 w-4 text-accent" aria-hidden="true" /> Mon–Sat: 8 AM–6 PM</span>
           </div>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Button variant="cta" size="lg" asChild>

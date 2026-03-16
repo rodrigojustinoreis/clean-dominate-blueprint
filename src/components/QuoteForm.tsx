@@ -111,6 +111,8 @@ const QuoteForm = () => {
             <SelectItem value="recurring">Recurring Cleaning (Weekly / Bi-Weekly)</SelectItem>
             <SelectItem value="move">Move In / Move Out Cleaning</SelectItem>
             <SelectItem value="post-construction">Post-Construction Cleaning</SelectItem>
+            <SelectItem value="airbnb">Airbnb &amp; Short-Term Rental Cleaning</SelectItem>
+            <SelectItem value="office">Office &amp; Commercial Cleaning</SelectItem>
           </SelectContent>
         </Select>
       </div>
