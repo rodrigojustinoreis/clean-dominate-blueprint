@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import QuoteForm from "@/components/QuoteForm";
 import FAQ from "@/components/FAQ";
-import { ServiceSchema, FAQSchema } from "@/components/SchemaMarkup";
+import { ServiceSchema, FAQSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import { useSEO } from "@/hooks/useSEO";
 import { getServiceBySlug } from "@/data/services";
 import { cities } from "@/data/locations";
@@ -26,6 +26,7 @@ const ServicePage = () => {
   return (
     <Layout>
       {seoHelmet}
+      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: service.name, href: `/services/${service.slug}` }]} />
       <ServiceSchema
         serviceName={service.name}
         description={service.shortDescription}
