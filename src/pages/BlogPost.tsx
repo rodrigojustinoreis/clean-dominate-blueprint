@@ -560,7 +560,7 @@ const BlogPost = () => {
         url={`https://capitalcleancare.com/blog/${post.slug}`}
         datePublished={post.date}
       />
-      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }, { label: post.title }]} />
+      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }, { label: post.title, href: `/blog/${post.slug}` }]} />
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 max-w-3xl">
           <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }, { label: post.title }]} className="mb-6" />

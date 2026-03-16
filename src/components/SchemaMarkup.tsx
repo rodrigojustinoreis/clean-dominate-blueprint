@@ -254,7 +254,7 @@ export const FAQSchema = ({ faqs }: FAQSchemaProps) => {
 
 // ── BreadcrumbList Schema ─────────────────────────────────────
 interface BreadcrumbSchemaProps {
-  items: { label: string; href?: string }[];
+  items: { label: string; href: string }[];
 }
 
 export const BreadcrumbSchema = ({ items }: BreadcrumbSchemaProps) => {
@@ -265,7 +265,7 @@ export const BreadcrumbSchema = ({ items }: BreadcrumbSchemaProps) => {
       "@type": "ListItem",
       position: i + 1,
       name: item.label,
-      ...(item.href ? { item: `${BUSINESS.url}${item.href}` } : {}),
+      item: `${BUSINESS.url}${item.href}`,
     })),
   };
 

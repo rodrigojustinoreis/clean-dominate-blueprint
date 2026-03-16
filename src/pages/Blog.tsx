@@ -144,7 +144,7 @@ const Blog = () => {
   return (
     <Layout>
       {seoHelmet}
-      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Blog" }]} />
+      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }]} />
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 max-w-4xl">
           <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Blog" }]} className="mb-6" />

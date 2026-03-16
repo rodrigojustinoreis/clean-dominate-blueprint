@@ -50,7 +50,7 @@ const HouseCleaningNearMe = () => {
     <Layout>
       {seoHelmet}
       <LocalBusinessSchema />
-      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "House Cleaning Near Me" }]} />
+      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "House Cleaning Near Me", href: "/house-cleaning-near-me" }]} />
       <FAQSchema faqs={faqs} />
 
       {/* Hero */}

@@ -64,7 +64,7 @@ const CityPage = () => {
   return (
     <Layout>
       {seoHelmet}
-      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: stateLabel, href: `/${city.stateSlug}` }, { label: city.name }]} />
+      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: stateLabel, href: `/${city.stateSlug}` }, { label: city.name, href: `/locations/${city.slug}` }]} />
       <FAQSchema faqs={expandedFaqs} />
       <ServiceSchema
         serviceName={`House Cleaning in ${city.name}`}

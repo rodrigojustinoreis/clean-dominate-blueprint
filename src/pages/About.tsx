@@ -47,7 +47,7 @@ const About = () => {
     <Layout>
       {seoHelmet}
       <LocalBusinessSchema />
-      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "About" }]} />
+      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "About", href: "/about" }]} />
       <FAQSchema faqs={aboutFaqs} />
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 max-w-5xl">

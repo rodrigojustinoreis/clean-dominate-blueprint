@@ -55,7 +55,7 @@ const VanityLandingPage = () => {
         { label: "Home", href: "/" },
         { label: city.state === "MD" ? "Maryland" : city.state === "DC" ? "Washington DC" : "Virginia", href: `/${city.state === "MD" ? "maryland" : city.state === "DC" ? "washington-dc" : "virginia"}` },
         { label: city.name, href: `/locations/${city.slug}` },
-        { label: service.name },
+        { label: service.name, href: `/${config.slug}` },
       ]} />
 
       {/* Hero */}

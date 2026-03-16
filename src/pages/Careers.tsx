@@ -18,7 +18,7 @@ const Careers = () => {
     <Layout>
       {seoHelmet}
       <LocalBusinessSchema />
-      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Join Our Team" }]} />
+      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Join Our Team", href: "/careers" }]} />
 
       {/* Hero */}
       <section className="py-16 md:py-24 bg-secondary">
