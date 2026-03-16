@@ -18,7 +18,6 @@ import regionVA from "@/assets/region-virginia.jpg";
 import teamPhoto from "@/assets/team-photo.png";
 import cleanerMopping from "@/assets/cleaner-mopping.png";
 import ecoProducts from "@/assets/eco-products.png";
-import happyClient from "@/assets/happy-client.png";
 import HeroSection from "@/components/home/HeroSection";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
 import ServicesSection from "@/components/home/ServicesSection";
@@ -278,10 +277,9 @@ const Index = () => {
               <span className="text-accent font-semibold text-sm uppercase tracking-wider">Our Work</span>
               <h2 className="font-heading text-3xl md:text-4xl font-bold mt-2">See Us in Action</h2>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
               <img src={cleanerMopping} alt="Capital Clean Care professional mopping hardwood floors" className="rounded-2xl shadow-md w-full aspect-[4/5] object-cover" loading="lazy" />
               <img src={ecoProducts} alt="Eco-friendly non-toxic cleaning products used by Capital Clean Care" className="rounded-2xl shadow-md w-full aspect-[4/5] object-cover" loading="lazy" />
-              <img src={happyClient} alt="Satisfied client relaxing while Capital Clean Care team cleans" className="rounded-2xl shadow-md w-full aspect-[4/5] object-cover" loading="lazy" />
             </div>
           </div>
         </section>
