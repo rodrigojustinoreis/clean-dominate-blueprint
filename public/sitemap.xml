@@ -72,6 +72,7 @@
 
   <!-- Washington DC City Page -->
   <url><loc>https://capitalcleancare.com/locations/washington-dc</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/washington-dc-ne</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
   <!-- Northern Virginia City Pages -->
   <url><loc>https://capitalcleancare.com/locations/arlington-va</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>

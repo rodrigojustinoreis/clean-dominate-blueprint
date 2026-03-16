@@ -52,7 +52,7 @@ function getAllRoutes(): string[] {
     "germantown-md", "frederick-md", "potomac-md", "kensington-md",
     "chevy-chase-md", "college-park-md", "laurel-md", "bowie-md",
     "takoma-park-md", "wheaton-md", "arlington-va", "alexandria-va", "fairfax-va",
-    "mclean-va", "reston-va", "washington-dc",
+    "mclean-va", "reston-va", "washington-dc", "washington-dc-ne",
     "montgomery-county-md", "frederick-county-md", "howard-county-md", "prince-georges-county-md",
     "columbia-md", "ellicott-city-md", "clarksburg-md", "damascus-md",
     "urbana-md", "new-market-md",
