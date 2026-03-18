@@ -3,65 +3,86 @@
 @tailwind utilities;
 
 @layer base {
+  /* Ultra-modern premium colors for Light Mode */
   :root {
-    --background: 210 20% 98%;
-    --foreground: 210 50% 15%;
+    --background: 210 20% 99%;         /* Pure, clean white with slight coolness */
+    --foreground: 220 45% 12%;         /* Deep, stark ink blue */
+    
     --card: 0 0% 100%;
-    --card-foreground: 210 50% 15%;
+    --card-foreground: 220 45% 12%;
+    
     --popover: 0 0% 100%;
-    --popover-foreground: 210 50% 15%;
-    --primary: 207 70% 22%;
+    --popover-foreground: 220 45% 12%;
+    
+    --primary: 214 70% 30%;            /* Rich, sophisticated blue */
     --primary-foreground: 0 0% 100%;
-    --secondary: 207 20% 93%;
-    --secondary-foreground: 210 50% 15%;
-    --muted: 210 15% 94%;
-    --muted-foreground: 210 15% 47%;
-    --accent: 197 62% 52%;
+    
+    --secondary: 213 25% 95%;          /* Soft, frosty gray-blue */
+    --secondary-foreground: 220 45% 12%;
+    
+    --muted: 210 20% 95%;
+    --muted-foreground: 215 15% 45%;
+    
+    --accent: 195 85% 45%;             /* Vibrant, energetic teal/cyan */
     --accent-foreground: 0 0% 100%;
-    --destructive: 4 78% 60%;
+    
+    --destructive: 348 83% 53%;        /* Modern soft red */
     --destructive-foreground: 0 0% 100%;
-    --border: 210 25% 90%;
-    --input: 210 25% 90%;
-    --ring: 197 62% 52%;
-    --radius: 0.75rem;
-    --sidebar-background: 207 70% 14%;
-    --sidebar-foreground: 210 20% 95%;
-    --sidebar-primary: 197 62% 52%;
+    
+    --border: 214 20% 90%;
+    --input: 214 20% 90%;
+    --ring: 195 85% 45%;
+    
+    --radius: 1rem;                    /* Increased border-radius for smoother UI */
+    
+    --sidebar-background: 214 70% 18%;
+    --sidebar-foreground: 210 20% 98%;
+    --sidebar-primary: 195 85% 45%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 207 60% 22%;
-    --sidebar-accent-foreground: 210 20% 95%;
-    --sidebar-border: 207 60% 20%;
-    --sidebar-ring: 197 62% 52%;
+    --sidebar-accent: 214 60% 25%;
+    --sidebar-accent-foreground: 210 20% 98%;
+    --sidebar-border: 214 50% 22%;
+    --sidebar-ring: 195 85% 45%;
   }
 
+  /* Sleek, deep Dark Mode */
   .dark {
-    --background: 207 50% 8%;
-    --foreground: 210 20% 95%;
-    --card: 207 45% 11%;
-    --card-foreground: 210 20% 95%;
-    --popover: 207 45% 11%;
-    --popover-foreground: 210 20% 95%;
-    --primary: 197 55% 70%;
-    --primary-foreground: 207 70% 12%;
-    --secondary: 207 30% 18%;
-    --secondary-foreground: 210 20% 95%;
-    --muted: 207 25% 16%;
-    --muted-foreground: 210 15% 60%;
-    --accent: 197 55% 50%;
-    --accent-foreground: 0 0% 100%;
-    --destructive: 4 62% 40%;
-    --destructive-foreground: 210 20% 95%;
-    --border: 207 25% 18%;
-    --input: 207 25% 18%;
-    --ring: 197 55% 50%;
-    --sidebar-background: 207 60% 6%;
-    --sidebar-foreground: 210 20% 90%;
-    --sidebar-primary: 197 55% 50%;
+    --background: 222 47% 7%;          /* Very deep, almost-black blue */
+    --foreground: 210 20% 98%;         /* Crisp white */
+    
+    --card: 222 47% 10%;
+    --card-foreground: 210 20% 98%;
+    
+    --popover: 222 47% 10%;
+    --popover-foreground: 210 20% 98%;
+    
+    --primary: 214 80% 60%;            /* Luminous blue for dark backgrounds */
+    --primary-foreground: 222 47% 7%;
+    
+    --secondary: 220 35% 14%;
+    --secondary-foreground: 210 20% 98%;
+    
+    --muted: 220 30% 16%;
+    --muted-foreground: 215 15% 65%;
+    
+    --accent: 195 85% 55%;             /* Neon teal pop */
+    --accent-foreground: 222 47% 7%;
+    
+    --destructive: 348 83% 60%;
+    --destructive-foreground: 210 20% 98%;
+    
+    --border: 220 30% 18%;
+    --input: 220 30% 18%;
+    --ring: 195 85% 55%;
+    
+    --sidebar-background: 222 47% 6%;
+    --sidebar-foreground: 210 20% 98%;
+    --sidebar-primary: 195 85% 55%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 207 45% 14%;
-    --sidebar-accent-foreground: 210 20% 90%;
-    --sidebar-border: 207 40% 14%;
-    --sidebar-ring: 197 55% 50%;
+    --sidebar-accent: 220 35% 12%;
+    --sidebar-accent-foreground: 210 20% 98%;
+    --sidebar-border: 220 30% 12%;
+    --sidebar-ring: 195 85% 55%;
   }
 }
 
@@ -70,6 +91,21 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased selection:bg-accent/30 selection:text-foreground;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/70 dark:bg-black/40 backdrop-blur-xl border border-white/20 dark:border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.05)] dark:shadow-[0_8px_32px_0_rgba(0,0,0,0.3)];
+  }
+  .glass-card {
+    @apply bg-card/60 backdrop-blur-md border border-border/50 shadow-sm hover:shadow-md transition-all duration-300;
+  }
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-accent to-primary animate-gradient-x bg-[length:200%_auto];
+  }
+  .bg-mesh {
+    @apply bg-mesh-light dark:bg-mesh-dark bg-fixed;
   }
 }

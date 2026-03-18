@@ -93,25 +93,25 @@ const Index = () => {
 
       {/* ══════════════ PROBLEM / AGITATION ══════════════ */}
       <ScrollReveal>
-        <section className="py-16 md:py-20 bg-secondary">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <div className="text-center mb-10">
-              <span className="text-accent font-semibold text-sm uppercase tracking-wider">Sound Familiar?</span>
-              <h2 className="font-heading text-3xl md:text-4xl font-bold mt-2 mb-3">
+        <section className="relative py-20 md:py-28 bg-mesh overflow-hidden">
+          <div className="container mx-auto px-4 max-w-4xl relative z-10">
+            <div className="text-center mb-12">
+              <span className="inline-block bg-accent/10 text-accent font-semibold text-sm uppercase tracking-wider px-3 py-1 rounded-full mb-3">Sound Familiar?</span>
+              <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mt-2 mb-4">
                 You shouldn't have to spend your weekend cleaning.
               </h2>
-              <p className="text-muted-foreground max-w-xl mx-auto">You work hard all week. The last thing you need is to spend your free time scrubbing bathrooms.</p>
+              <p className="text-muted-foreground max-w-xl mx-auto text-lg">You work hard all week. The last thing you need is to spend your free time scrubbing bathrooms.</p>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
               {[
                 { emoji: "😩", text: "You come home exhausted and the house is still a mess" },
                 { emoji: "🧪", text: "Worried about harsh chemicals around your kids or pets" },
                 { emoji: "😤", text: "Previous cleaners didn't meet your expectations" },
                 { emoji: "⏰", text: "Never enough time to keep up with deep cleaning" },
               ].map((item) => (
-                <div key={item.text} className="flex items-start gap-4 bg-card rounded-xl p-5 border border-border">
-                  <span className="text-2xl shrink-0">{item.emoji}</span>
-                  <p className="text-sm text-foreground leading-relaxed">{item.text}</p>
+                <div key={item.text} className="flex items-start gap-4 glass-card rounded-2xl p-6">
+                  <span className="text-3xl shrink-0 animate-float">{item.emoji}</span>
+                  <p className="text-base text-foreground font-medium leading-relaxed">{item.text}</p>
                 </div>
               ))}
             </div>
@@ -143,11 +143,11 @@ const Index = () => {
                 </div>
               </div>
               <div className="order-1 lg:order-2">
-                <span className="text-accent font-semibold text-sm uppercase tracking-wider">About Us</span>
-                <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mt-2 mb-4">
-                  Family-Owned Cleaning Excellence
+                <span className="inline-block bg-accent/10 text-accent font-semibold text-sm uppercase tracking-wider px-3 py-1 rounded-full mb-3">About Us</span>
+                <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mt-2 mb-6 leading-tight">
+                  <span className="text-gradient">Family-Owned</span> Cleaning Excellence
                 </h2>
-                <p className="text-muted-foreground mb-6 leading-relaxed text-base md:text-lg">
+                <p className="text-muted-foreground mb-8 leading-relaxed text-base md:text-lg">
                   At Capital Clean Care, we're more than a cleaning company — we're a team of dedicated professionals who genuinely care about your home. Over 150 homes cleaned with the care we'd give our own.
                 </p>
                 <div className="space-y-3 mb-8">
@@ -171,10 +171,10 @@ const Index = () => {
 
       {/* ══════════════ SERVICE AREAS ══════════════ */}
       <ScrollReveal>
-        <section className="py-20 md:py-28 bg-secondary">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-14">
-              <span className="text-accent font-semibold text-sm uppercase tracking-wider">Service Areas</span>
+        <section className="py-20 md:py-28 bg-mesh relative">
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="text-center mb-16">
+              <span className="inline-block bg-accent/10 text-accent font-semibold text-sm uppercase tracking-wider px-3 py-1 rounded-full mb-3">Service Areas</span>
               <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mt-2 mb-4">Where We Clean</h2>
               <p className="text-muted-foreground max-w-2xl mx-auto text-base md:text-lg">Proudly serving communities across the DMV region with premium residential cleaning.</p>
             </div>
@@ -219,16 +219,16 @@ const Index = () => {
 
       {/* ══════════════ HOW IT WORKS ══════════════ */}
       <ScrollReveal>
-        <section className="py-20 md:py-28">
+        <section className="py-24 md:py-32 relative">
           <div className="container mx-auto px-4 max-w-5xl">
-            <div className="text-center mb-14">
-              <span className="text-accent font-semibold text-sm uppercase tracking-wider">The Process</span>
+            <div className="text-center mb-16">
+              <span className="inline-block bg-accent/10 text-accent font-semibold text-sm uppercase tracking-wider px-3 py-1 rounded-full mb-3">The Process</span>
               <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mt-2 mb-4">Getting a clean home is simple</h2>
-              <p className="text-muted-foreground max-w-xl mx-auto">From first contact to sparkling home — we make it effortless.</p>
+              <p className="text-muted-foreground max-w-xl mx-auto text-lg">From first contact to sparkling home — we make it effortless.</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
               {/* Connector line (desktop only) */}
-              <div className="hidden md:block absolute top-10 left-[calc(16.66%+1rem)] right-[calc(16.66%+1rem)] h-px bg-gradient-to-r from-accent/30 via-accent to-accent/30 z-0" />
+              <div className="hidden md:block absolute top-[2.5rem] left-[calc(16.66%+2rem)] right-[calc(16.66%+2rem)] h-0.5 bg-gradient-to-r from-accent/10 via-accent/50 to-accent/10 z-0" />
               {[
                 {
                   step: "01",
@@ -249,12 +249,12 @@ const Index = () => {
                   icon: Star,
                 },
               ].map((s) => (
-                <div key={s.step} className="relative z-10 flex flex-col items-center text-center">
-                  <div className="w-20 h-20 rounded-full bg-accent flex items-center justify-center mb-5 shadow-lg">
-                    <s.icon className="h-8 w-8 text-accent-foreground" />
+                <div key={s.step} className="relative z-10 flex flex-col items-center text-center group">
+                  <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-accent to-primary flex items-center justify-center mb-6 shadow-xl shadow-accent/20 group-hover:-translate-y-2 transition-transform duration-300 rotate-3 group-hover:rotate-6">
+                    <s.icon className="h-8 w-8 text-white -rotate-3 group-hover:-rotate-6 transition-transform" />
                   </div>
-                  <span className="text-xs font-bold text-accent uppercase tracking-widest mb-2">Step {s.step}</span>
-                  <h3 className="font-heading text-xl font-semibold mb-3">{s.title}</h3>
+                  <span className="text-xs font-bold text-accent uppercase tracking-widest mb-3 bg-accent/10 px-3 py-1 rounded-full">Step {s.step}</span>
+                  <h3 className="font-heading text-xl font-bold mb-3">{s.title}</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">{s.desc}</p>
                 </div>
               ))}
@@ -271,11 +271,11 @@ const Index = () => {
 
       {/* ══════════════ REAL WORK PHOTOS ══════════════ */}
       <ScrollReveal>
-        <section className="py-16 md:py-20 bg-secondary">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-10">
-              <span className="text-accent font-semibold text-sm uppercase tracking-wider">Our Work</span>
-              <h2 className="font-heading text-3xl md:text-4xl font-bold mt-2">See Us in Action</h2>
+        <section className="py-20 md:py-28 bg-mesh">
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="text-center mb-12">
+              <span className="inline-block bg-accent/10 text-accent font-semibold text-sm uppercase tracking-wider px-3 py-1 rounded-full mb-3">Our Work</span>
+              <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mt-2">See Us in Action</h2>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
               <img src={cleanerMopping} alt="Capital Clean Care professional mopping hardwood floors" className="rounded-2xl shadow-md w-full aspect-[4/5] object-cover" loading="lazy" />
@@ -297,12 +297,15 @@ const Index = () => {
 
       {/* ══════════════ LOCAL CLEANING PAGES ══════════════ */}
       <ScrollReveal>
-        <section className="py-16 md:py-20 bg-muted/30">
-          <div className="container mx-auto px-4 max-w-5xl">
-            <div className="text-center mb-12">
-              <span className="text-accent font-semibold text-sm uppercase tracking-wider">Local Services</span>
-              <h2 className="font-heading text-2xl md:text-3xl font-bold mt-2 mb-3">Cleaning Services Near You</h2>
-              <p className="text-muted-foreground">Explore our city-specific cleaning pages with tailored services and local pricing.</p>
+        <section className="py-20 md:py-28 bg-background relative overflow-hidden">
+          {/* Decorative blur elements for modern touch */}
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/5 rounded-full mix-blend-multiply filter blur-[100px] opacity-70 animate-blob pointer-events-none" />
+          
+          <div className="container mx-auto px-4 max-w-5xl relative z-10">
+            <div className="text-center mb-14">
+              <span className="inline-block bg-accent/10 text-accent font-semibold text-sm uppercase tracking-wider px-3 py-1 rounded-full mb-3">Local Services</span>
+              <h2 className="font-heading text-3xl md:text-4xl font-bold mt-2 mb-4">Cleaning Services Near You</h2>
+              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">Explore our city-specific cleaning pages with tailored services and local pricing.</p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {vanityLandingPages.slice(0, 9).map((vp) => (
