@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/select";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
+import { trackQuoteFormSubmit } from "@/lib/analytics";
 
 const QuoteForm = () => {
   const [formData, setFormData] = useState({
@@ -84,6 +85,7 @@ const QuoteForm = () => {
         body: JSON.stringify(formPayload),
       });
 
+      trackQuoteFormSubmit(formData.service);
       toast.success("Thank you! We'll get back to you within 24 hours.");
       setFormData({ name: "", phone: "", email: "", zip: "", service: "", bedrooms: "", bathrooms: "", frequency: "", date: "", message: "", smsConsent: false, emailConsent: false });
       setShowDetails(false);

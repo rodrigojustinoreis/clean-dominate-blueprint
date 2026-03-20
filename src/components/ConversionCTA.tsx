@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Phone, Shield, Leaf, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { trackPhoneClick, trackBookNowClick } from "@/lib/analytics";
 
 interface ConversionCTAProps {
   cityName?: string;
@@ -21,10 +22,10 @@ const ConversionCTA = ({ cityName, variant = "full" }: ConversionCTAProps) => {
         </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <Button variant="cta" size="lg" asChild>
-            <a href="#quote">Get a Free Quote <ArrowRight className="ml-1 h-4 w-4" /></a>
+            <a href="#quote" onClick={() => trackBookNowClick("conversion_cta_compact")}>Get a Free Quote <ArrowRight className="ml-1 h-4 w-4" /></a>
           </Button>
           <Button variant="secondary" size="lg" asChild>
-            <a href="tel:+12407042551"><Phone className="h-4 w-4 mr-2" /> (240) 704-2551</a>
+            <a href="tel:+12407042551" onClick={() => trackPhoneClick("conversion_cta_compact")}><Phone className="h-4 w-4 mr-2" /> (240) 704-2551</a>
           </Button>
         </div>
       </div>
@@ -50,10 +51,10 @@ const ConversionCTA = ({ cityName, variant = "full" }: ConversionCTAProps) => {
             </div>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Button variant="cta" size="lg" className="text-base" asChild>
-                <a href="#quote">Get a Free Quote <ArrowRight className="ml-1 h-4 w-4" /></a>
+                <a href="#quote" onClick={() => trackBookNowClick("conversion_cta_full")}>Get a Free Quote <ArrowRight className="ml-1 h-4 w-4" /></a>
               </Button>
               <Button variant="secondary" size="lg" className="text-base" asChild>
-                <a href="tel:+12407042551"><Phone className="h-4 w-4 mr-2" /> (240) 704-2551</a>
+                <a href="tel:+12407042551" onClick={() => trackPhoneClick("conversion_cta_full")}><Phone className="h-4 w-4 mr-2" /> (240) 704-2551</a>
               </Button>
             </div>
           </div>

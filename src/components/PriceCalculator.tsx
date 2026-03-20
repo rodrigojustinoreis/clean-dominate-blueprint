@@ -4,6 +4,7 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
+import { trackQuoteFormSubmit } from "@/lib/analytics";
 import {
   Select,
   SelectContent,
@@ -178,6 +179,7 @@ const PriceCalculator = () => {
         body: JSON.stringify(formPayload),
       });
 
+      trackQuoteFormSubmit(service || "calculator");
       toast({
         title: "Quote Sent Successfully!",
         description: "We'll be in touch shortly to confirm your booking.",

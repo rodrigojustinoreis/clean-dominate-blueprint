@@ -3,6 +3,7 @@ import { Phone, Mail, Clock, Instagram, Facebook, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { services } from "@/data/services";
 import { mdCities, dcCities, vaCities } from "@/data/locations";
+import { trackPhoneClick, trackBookNowClick } from "@/lib/analytics";
 import PartnerLinks from "@/components/PartnerLinks";
 import GoogleBusinessLinks from "@/components/GoogleBusinessLinks";
 import logo from "@/assets/logo.png";
@@ -18,10 +19,10 @@ const Footer = () => (
         </div>
         <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 w-full sm:w-auto">
           <Button variant="default" size="lg" asChild>
-            <a href="/#quote">Get a Free Quote</a>
+            <a href="/#quote" onClick={() => trackBookNowClick("footer_cta_band")}>Get a Free Quote</a>
           </Button>
           <Button variant="outline" size="lg" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10" asChild>
-            <a href="tel:+12407042551"><Phone className="h-4 w-4 mr-2" /> Call Now</a>
+            <a href="tel:+12407042551" onClick={() => trackPhoneClick("footer_cta_band")}><Phone className="h-4 w-4 mr-2" /> Call Now</a>
           </Button>
         </div>
       </div>

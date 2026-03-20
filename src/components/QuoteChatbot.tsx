@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { MessageCircle, X, Send, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { trackQuoteFormSubmit } from "@/lib/analytics";
 
 interface Message {
   from: "bot" | "user";
@@ -114,6 +115,7 @@ const QuoteChatbot = () => {
         setSending(false);
       }
 
+      trackQuoteFormSubmit(value);
       setDone(true);
       addBot(
         `Thank you, ${newAnswers.name}! ✅ Our team will contact you at ${newAnswers.phone} shortly to confirm your free quote.\n\n🎉 New clients get $25 OFF their first cleaning!`

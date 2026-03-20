@@ -1,6 +1,7 @@
 import { ArrowRight, Phone, Check, Star, Shield, Leaf } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import teamPhoto from "@/assets/team-photo.png";
+import { trackPhoneClick, trackBookNowClick } from "@/lib/analytics";
 
 const avatars = [
   { initials: "SM", color: "bg-emerald-500" },
@@ -73,7 +74,7 @@ const HeroSection = () => (
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row gap-4 animate-fade-up" style={{ animationDelay: "400ms" }}>
           <Button variant="default" size="lg" className="text-sm px-8 h-14 rounded-full shadow-lg shadow-accent/25 hover:shadow-accent/40 hover:-translate-y-0.5 transition-all duration-300" asChild>
-            <a href="#quote">Get Free Quote <ArrowRight className="ml-2 h-4 w-4" /></a>
+            <a href="#quote" onClick={() => trackBookNowClick("hero_section")}>Get Free Quote <ArrowRight className="ml-2 h-4 w-4" /></a>
           </Button>
           <Button
             size="lg"
@@ -81,7 +82,7 @@ const HeroSection = () => (
             className="text-sm px-8 h-14 rounded-full glass hover:bg-white/40 dark:hover:bg-black/40 transition-all duration-300"
             asChild
           >
-            <a href="tel:+12407042551"><Phone className="mr-2 h-4 w-4" /> (240) 704-2551</a>
+            <a href="tel:+12407042551" onClick={() => trackPhoneClick("hero_section")}><Phone className="mr-2 h-4 w-4" /> (240) 704-2551</a>
           </Button>
         </div>
 

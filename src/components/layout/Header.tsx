@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { services } from "@/data/services";
 import { hubs } from "@/data/locations";
 import logo from "@/assets/logo.png";
+import { trackPhoneClick, trackBookNowClick } from "@/lib/analytics";
 
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -17,7 +18,7 @@ const Header = () => {
         {/* Top bar */}
         <div className="hidden md:flex items-center justify-between py-2 text-sm text-muted-foreground border-b border-border">
           <div className="flex items-center gap-4">
-            <a href="tel:+12407042551" className="hover:text-foreground flex items-center gap-1">
+            <a href="tel:+12407042551" className="hover:text-foreground flex items-center gap-1" onClick={() => trackPhoneClick("header_topbar")}>
               <Phone className="h-3 w-3" /> (240) 704-2551
             </a>
             <span>Serving MD • DC • VA</span>
@@ -72,16 +73,16 @@ const Header = () => {
           </nav>
 
           <div className="hidden lg:flex items-center gap-3">
-            <a href="tel:+12407042551" className="text-sm font-semibold text-foreground flex items-center gap-1">
+            <a href="tel:+12407042551" className="text-sm font-semibold text-foreground flex items-center gap-1" onClick={() => trackPhoneClick("header_desktop_nav")}>
               <Phone className="h-4 w-4" /> (240) 704-2551
             </a>
             <Button variant="cta" asChild>
-              <a href="/#quote">Book Now</a>
+              <a href="/#quote" onClick={() => trackBookNowClick("header_desktop_nav")}>Book Now</a>
             </Button>
           </div>
 
           <div className="lg:hidden flex items-center gap-2">
-            <a href="tel:+12407042551" className="text-sm font-semibold text-foreground flex items-center gap-1" aria-label="Call us">
+            <a href="tel:+12407042551" className="text-sm font-semibold text-foreground flex items-center gap-1" aria-label="Call us" onClick={() => trackPhoneClick("header_mobile_topbar")}>
               <Phone className="h-4 w-4 text-accent" /> <span className="hidden sm:inline">(240) 704-2551</span>
             </a>
             <button className="p-2" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Toggle menu">
@@ -128,11 +129,11 @@ const Header = () => {
             <Link to="/contact" className="block px-3 py-2 rounded-md hover:bg-secondary" onClick={() => setMobileOpen(false)}>Contact Us</Link>
 
             <div className="pt-3 space-y-2">
-              <a href="tel:+12407042551" className="block text-center font-semibold text-foreground">
+              <a href="tel:+12407042551" className="block text-center font-semibold text-foreground" onClick={() => trackPhoneClick("header_mobile_menu")}>
                 <Phone className="h-4 w-4 inline mr-1" /> (240) 704-2551
               </a>
               <Button variant="cta" className="w-full" asChild>
-                <a href="/#quote" onClick={() => setMobileOpen(false)}>Book Now</a>
+                <a href="/#quote" onClick={() => { setMobileOpen(false); trackBookNowClick("header_mobile_menu"); }}>Book Now</a>
               </Button>
             </div>
           </nav>
