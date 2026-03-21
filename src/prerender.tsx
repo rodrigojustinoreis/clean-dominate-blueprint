@@ -27,6 +27,7 @@ function getAllRoutes(): string[] {
     "/blog/remove-pet-hair-odors-dmv-homes",
     "/blog/post-renovation-cleaning-guide-maryland",
     "/blog/recurring-cleaning-weekly-biweekly-monthly",
+    "/blog/how-to-clean-air-vents-filters-improve-indoor-air-quality-maryland",
     "/blog/deep-cleaning-tips-maryland-homes-spring-prep-march-2026",
     "/maryland",
     "/virginia",
