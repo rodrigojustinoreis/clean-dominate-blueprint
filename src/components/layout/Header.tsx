@@ -4,7 +4,7 @@ import { Menu, X, ChevronDown, Phone, Leaf } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { services } from "@/data/services";
 import { hubs } from "@/data/locations";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo.webp";
 import { trackPhoneClick, trackBookNowClick } from "@/lib/analytics";
 
 const Header = () => {

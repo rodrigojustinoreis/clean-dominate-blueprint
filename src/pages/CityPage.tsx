@@ -17,9 +17,9 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import GoogleMapEmbed from "@/components/GoogleMapEmbed";
 import GoogleBusinessLinks from "@/components/GoogleBusinessLinks";
 import NotFound from "./NotFound";
-import regionMD from "@/assets/region-maryland.jpg";
-import regionDC from "@/assets/region-dc.jpg";
-import regionVA from "@/assets/region-virginia.jpg";
+import regionMD from "@/assets/region-maryland.webp";
+import regionDC from "@/assets/region-dc.webp";
+import regionVA from "@/assets/region-virginia.webp";
 
 const regionImages: Record<string, string> = {
   maryland: regionMD,

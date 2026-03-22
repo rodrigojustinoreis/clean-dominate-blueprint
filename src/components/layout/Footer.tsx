@@ -6,7 +6,7 @@ import { mdCities, dcCities, vaCities } from "@/data/locations";
 import { trackPhoneClick, trackBookNowClick } from "@/lib/analytics";
 import PartnerLinks from "@/components/PartnerLinks";
 import GoogleBusinessLinks from "@/components/GoogleBusinessLinks";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo.webp";
 
 const Footer = () => (
   <footer className="bg-primary text-primary-foreground">

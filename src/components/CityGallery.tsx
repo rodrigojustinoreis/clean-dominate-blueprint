@@ -2,12 +2,12 @@ import { Link } from "react-router-dom";
 import { ArrowRight, MapPin } from "lucide-react";
 import { cities, type CityData } from "@/data/locations";
 
-import imgKitchen from "@/assets/gallery/clean-kitchen.jpg";
-import imgBathroom from "@/assets/gallery/clean-bathroom.jpg";
-import imgLiving from "@/assets/gallery/clean-living-room.jpg";
-import imgBedroom from "@/assets/gallery/clean-bedroom.jpg";
-import imgDining from "@/assets/gallery/clean-dining.jpg";
-import imgEntryway from "@/assets/gallery/clean-entryway.jpg";
+import imgKitchen from "@/assets/gallery/clean-kitchen.webp";
+import imgBathroom from "@/assets/gallery/clean-bathroom.webp";
+import imgLiving from "@/assets/gallery/clean-living-room.webp";
+import imgBedroom from "@/assets/gallery/clean-bedroom.webp";
+import imgDining from "@/assets/gallery/clean-dining.webp";
+import imgEntryway from "@/assets/gallery/clean-entryway.webp";
 
 const galleryImages = [imgKitchen, imgBathroom, imgLiving, imgBedroom, imgDining, imgEntryway];
 

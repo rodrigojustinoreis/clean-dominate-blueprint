@@ -4,16 +4,16 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
 
-import kitchenStove from "@/assets/before-after/kitchen-stove.png";
-import bedroom from "@/assets/before-after/bedroom.png";
-import kidsRoom from "@/assets/before-after/kids-room.png";
-import teenRoom from "@/assets/before-after/teen-room.png";
-import cleanKitchen from "@/assets/gallery/clean-kitchen.jpg";
-import cleanBathroom from "@/assets/gallery/clean-bathroom.jpg";
-import cleanLivingRoom from "@/assets/gallery/clean-living-room.jpg";
-import cleanBedroom from "@/assets/gallery/clean-bedroom.jpg";
-import cleanDining from "@/assets/gallery/clean-dining.jpg";
-import cleanEntryway from "@/assets/gallery/clean-entryway.jpg";
+import kitchenStove from "@/assets/before-after/kitchen-stove.webp";
+import bedroom from "@/assets/before-after/bedroom.webp";
+import kidsRoom from "@/assets/before-after/kids-room.webp";
+import teenRoom from "@/assets/before-after/teen-room.webp";
+import cleanKitchen from "@/assets/gallery/clean-kitchen.webp";
+import cleanBathroom from "@/assets/gallery/clean-bathroom.webp";
+import cleanLivingRoom from "@/assets/gallery/clean-living-room.webp";
+import cleanBedroom from "@/assets/gallery/clean-bedroom.webp";
+import cleanDining from "@/assets/gallery/clean-dining.webp";
+import cleanEntryway from "@/assets/gallery/clean-entryway.webp";
 
 const transformations = [
   { src: kitchenStove, alt: "Kitchen stovetop before and after deep cleaning", label: "Kitchen Deep Clean" },

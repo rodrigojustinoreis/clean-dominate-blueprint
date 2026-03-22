@@ -1,6 +1,6 @@
 import { ArrowRight, Phone, Check, Star, Shield, Leaf } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import teamPhoto from "@/assets/team-photo.png";
+import teamPhoto from "@/assets/team-photo.webp";
 import { trackPhoneClick, trackBookNowClick } from "@/lib/analytics";
 
 const avatars = [

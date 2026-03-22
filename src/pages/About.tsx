@@ -8,10 +8,10 @@ import QuoteForm from "@/components/QuoteForm";
 import FAQ from "@/components/FAQ";
 import { FAQSchema, LocalBusinessSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import { useSEO } from "@/hooks/useSEO";
-import teamPhoto from "@/assets/team-photo.png";
-import cleanerBlinds from "@/assets/cleaner-blinds.png";
-import cleanerSupplies from "@/assets/cleaner-supplies.png";
-import happyClient from "@/assets/happy-client.png";
+import teamPhoto from "@/assets/team-photo.webp";
+import cleanerBlinds from "@/assets/cleaner-blinds.webp";
+import cleanerSupplies from "@/assets/cleaner-supplies.webp";
+import happyClient from "@/assets/happy-client.webp";
 
 const testimonials = [
   { name: "Sarah M.", location: "Bethesda, MD", text: "Capital Clean Care transformed our home. The team is professional, thorough, and uses products safe for my kids and pets. I couldn't be happier with the service." },
