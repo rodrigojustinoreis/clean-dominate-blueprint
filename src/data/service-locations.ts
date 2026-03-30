@@ -938,14 +938,14 @@ export function getServiceLocationIntro(city: ServiceLocationCity, service: Serv
 // Generate unique "Why Choose Us" section
 export function getWhyChooseUs(city: ServiceLocationCity, service: ServiceLocationService): string[] {
   return [
-    `Fully licensed, bonded, and insured ${service.shortName} professionals serving ${city.name}`,
-    `100% eco-friendly, plant-based cleaning products safe for ${city.name} families and pets`,
-    `Background-checked, trained teams familiar with ${city.county} homes`,
-    `Flexible scheduling designed around ${city.name} residents' busy lifestyles`,
-    `Detailed ${service.shortName} checklist ensuring nothing is overlooked`,
-    `Satisfaction guaranteed on every ${service.shortName} visit in ${city.name}`,
-    `No hidden fees — transparent pricing for ${city.name} homeowners`,
-    `Experience with ${city.housingTypes} throughout ${city.name}`
+    `Fully licensed, bonded, and insured ${service.shortName} professionals serving ${city.name}, ${city.state}`,
+    `100% eco-friendly, plant-based products — safe for ${city.name} families, children, and pets`,
+    `Background-checked teams experienced with ${city.housingTypes} throughout ${city.county}`,
+    `Scheduling built around ${city.lifestyle.toLowerCase().split(".")[0]}`,
+    `${service.shortName.charAt(0).toUpperCase() + service.shortName.slice(1)} checklist covering every area of your ${city.name} home`,
+    `Satisfaction guaranteed — we re-clean free if you are not 100% happy`,
+    `Transparent, no-surprise pricing for ${city.name} homeowners`,
+    `Local knowledge of ${city.neighborhoods.slice(0, 3).join(", ")} and surrounding ${city.name} neighborhoods`
   ];
 }
 
