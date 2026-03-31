@@ -21,12 +21,6 @@ const PHONE_HREF = "tel:+12407042551";
 const service = getServiceBySlug("deep-cleaning")!;
 const topCities = cities.filter((c) => !c.slug.includes("county")).slice(0, 8);
 
-const checklistGroups = [
-  { icon: "🍳", title: "Kitchen", items: service.whatsIncluded.slice(0, 20) },
-  { icon: "🚿", title: "Bathrooms", items: service.whatsIncluded.slice(20, 35) },
-  { icon: "🛏", title: "Bedrooms & Living Areas", items: service.whatsIncluded.slice(35, 50) },
-  { icon: "🏠", title: "Whole Home", items: service.whatsIncluded.slice(50) },
-];
 
 const trustBadges = [
   { Icon: Shield, text: "Licensed & Insured" },
@@ -172,37 +166,6 @@ const DeepCleaningPage = () => {
         </p>
       </div>
 
-      {/* ── Checklist Section ── */}
-      <section className="py-12">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <div className="bg-[#2E7D32] text-white text-center font-bold py-3 px-6 rounded-t-lg text-base md:text-lg">
-            60-Point Deep Clean Checklist — Nothing Gets Missed
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
-            {checklistGroups.map((group) => (
-              <Card key={group.title} className="border border-border">
-                <CardContent className="p-5">
-                  <div className="flex items-center gap-2 mb-4">
-                    <span className="text-2xl" role="img" aria-label={group.title}>{group.icon}</span>
-                    <div>
-                      <h3 className="font-heading font-bold text-base">{group.title}</h3>
-                      <span className="text-xs text-muted-foreground">{group.items.length} items</span>
-                    </div>
-                  </div>
-                  <ul className="space-y-1.5">
-                    {group.items.map((item, i) => (
-                      <li key={i} className="flex items-start gap-2 text-xs text-foreground">
-                        <span className="text-[#2E7D32] font-bold shrink-0 mt-0.5">✓</span>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* ── Trust Bar ── */}
       <section className="py-8 bg-secondary/40">
