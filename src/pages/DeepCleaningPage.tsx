@@ -6,7 +6,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import QuoteForm from "@/components/QuoteForm";
 import FAQ from "@/components/FAQ";
-
+import BeforeAfterTabs from "@/components/BeforeAfterTabs";
 import ExitIntentPopup from "@/components/ExitIntentPopup";
 import { ServiceSchema, FAQSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import { useSEO } from "@/hooks/useSEO";
@@ -319,28 +319,12 @@ const DeepCleaningPage = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {beforeAfterImages.map((item, index) => (
-              <div key={index} className="rounded-xl overflow-hidden shadow-lg bg-white">
-                <div className="relative">
-                  <img
-                    src={item.image}
-                    alt={item.alt}
-                    className="w-full h-auto object-cover"
-                    loading="lazy"
-                  />
-                </div>
-                <div className="p-4 text-center">
-                  <div className="flex items-center justify-center gap-3 mb-2">
-                    <span className="inline-flex items-center gap-1.5 bg-red-100 text-red-700 text-xs font-bold px-3 py-1 rounded-full">
-                      BEFORE
-                    </span>
-                    <span className="text-gray-400">→</span>
-                    <span className="inline-flex items-center gap-1.5 bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-full">
-                      AFTER
-                    </span>
-                  </div>
-                  <p className="text-sm font-medium text-gray-700">{item.caption}</p>
-                </div>
-              </div>
+              <BeforeAfterTabs
+                key={index}
+                combinedImage={item.image}
+                alt={item.alt}
+                caption={item.caption}
+              />
             ))}
           </div>
 
