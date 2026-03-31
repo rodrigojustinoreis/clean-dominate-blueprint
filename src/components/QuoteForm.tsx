@@ -15,13 +15,18 @@ import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 import { trackQuoteFormSubmit } from "@/lib/analytics";
 
-const QuoteForm = () => {
+interface QuoteFormProps {
+  submitLabel?: string;
+  defaultService?: string;
+}
+
+const QuoteForm = ({ submitLabel = "Get My Free Quote →", defaultService = "" }: QuoteFormProps) => {
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
     email: "",
     zip: "",
-    service: "",
+    service: defaultService,
     bedrooms: "",
     bathrooms: "",
     frequency: "",
@@ -227,7 +232,7 @@ const QuoteForm = () => {
       )}
 
       <Button type="submit" variant="cta" size="lg" className="w-full text-base" disabled={submitting}>
-        {submitting ? "Sending…" : "Get My Free Quote →"}
+        {submitting ? "Sending…" : submitLabel}
       </Button>
 
       <p className="text-center text-xs text-muted-foreground">

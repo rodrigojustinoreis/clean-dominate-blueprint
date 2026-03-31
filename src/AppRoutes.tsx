@@ -6,6 +6,7 @@ import About from "./pages/About";
 import Reviews from "./pages/Reviews";
 import Contact from "./pages/Contact";
 import ServicePage from "./pages/ServicePage";
+import DeepCleaningPage from "./pages/DeepCleaningPage";
 import LocationHub from "./pages/LocationHub";
 import CityPage from "./pages/CityPage";
 import FAQPage from "./pages/FAQPage";
@@ -26,6 +27,7 @@ const AppRoutes = () => (
     <Route path="/about" element={<About />} />
     <Route path="/reviews" element={<Reviews />} />
     <Route path="/contact" element={<Contact />} />
+    <Route path="/services/deep-cleaning" element={<DeepCleaningPage />} />
     <Route path="/services/:slug" element={<ServicePage />} />
     <Route path="/faq" element={<FAQPage />} />
     <Route path="/blog" element={<Blog />} />
