@@ -3,28 +3,35 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 
-import kitchenStove from "@/assets/before-after/kitchen-stove.webp";
-import bedroom from "@/assets/before-after/bedroom.webp";
-import kidsRoom from "@/assets/before-after/kids-room.webp";
-import cleanKitchen from "@/assets/gallery/clean-kitchen.webp";
-import cleanBedroom from "@/assets/gallery/clean-bedroom.webp";
-import cleanLivingRoom from "@/assets/gallery/clean-living-room.webp";
+import stoveBefore from "@/assets/before-after/stove-before.webp";
+import stoveAfter from "@/assets/before-after/stove-after.webp";
+import kitchenIslandBefore from "@/assets/before-after/kitchen-island-before.webp";
+import kitchenIslandAfter from "@/assets/before-after/kitchen-island-after.webp";
+import kitchenBrownBefore from "@/assets/before-after/kitchen-brown-before.webp";
+import kitchenBrownAfter from "@/assets/before-after/kitchen-brown-after.webp";
+import kitchenGraniteBefore from "@/assets/before-after/kitchen-granite-before.webp";
+import kitchenGraniteAfter from "@/assets/before-after/kitchen-granite-after.webp";
 
 const sliders = [
   {
-    beforeImage: kitchenStove,
-    afterImage: cleanKitchen,
-    caption: "Kitchen Deep Clean — Rockville, MD",
+    beforeImage: kitchenIslandBefore,
+    afterImage: kitchenIslandAfter,
+    caption: "Kitchen Deep Clean — Silver Spring, MD",
   },
   {
-    beforeImage: bedroom,
-    afterImage: cleanBedroom,
-    caption: "Bedroom Transformation — Bethesda, MD",
+    beforeImage: kitchenBrownBefore,
+    afterImage: kitchenBrownAfter,
+    caption: "Full Kitchen Transformation — Rockville, MD",
   },
   {
-    beforeImage: kidsRoom,
-    afterImage: cleanLivingRoom,
-    caption: "Living Room Refresh — Silver Spring, MD",
+    beforeImage: kitchenGraniteBefore,
+    afterImage: kitchenGraniteAfter,
+    caption: "Deep Clean — Bethesda, MD",
+  },
+  {
+    beforeImage: stoveBefore,
+    afterImage: stoveAfter,
+    caption: "Stovetop Restoration — Silver Spring, MD",
   },
 ];
 
@@ -43,7 +50,7 @@ const BeforeAfterGallery = () => (
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-10">
         {sliders.map((s) => (
           <BeforeAfterSlider
             key={s.caption}
