@@ -6,6 +6,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import QuoteForm from "@/components/QuoteForm";
 import FAQ from "@/components/FAQ";
+import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import ExitIntentPopup from "@/components/ExitIntentPopup";
 import { ServiceSchema, FAQSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import { useSEO } from "@/hooks/useSEO";
@@ -276,6 +277,57 @@ const DeepCleaningPage = () => {
               </div>
             </div>
           )}
+        </div>
+      </section>
+
+      {/* ── Before & After Sliders ── */}
+      <section className="py-16" style={{ background: "#F5F5F5" }}>
+        <div className="container mx-auto px-4 max-w-5xl">
+          <h2 className="font-heading text-3xl font-bold text-center text-gray-800 mb-2">
+            See the Capital Clean Care Difference
+          </h2>
+          <p className="text-center text-gray-500 text-base mb-10">
+            Drag the slider to reveal the transformation
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <BeforeAfterSlider
+              beforeImage="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800"
+              afterImage="https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=800"
+              caption="Kitchen Deep Clean — Rockville, MD"
+              height={300}
+            />
+            <BeforeAfterSlider
+              beforeImage="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800"
+              afterImage="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800"
+              caption="Bathroom Restoration — Bethesda, MD"
+              height={300}
+            />
+            <BeforeAfterSlider
+              beforeImage="https://images.unsplash.com/photo-1586105251261-72a756497a11?w=800"
+              afterImage="https://images.unsplash.com/photo-1586105251261-72a756497a11?w=800"
+              caption="Living Room Refresh — Silver Spring, MD"
+              height={300}
+            />
+          </div>
+
+          <div className="text-center mt-10">
+            <p className="text-gray-700 font-medium mb-4 text-lg">
+              Want results like these in your home?
+            </p>
+            <button
+              onClick={scrollToForm}
+              className="inline-flex items-center justify-center bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-bold text-base px-8 py-3 rounded-md shadow-lg transition-colors mb-3"
+            >
+              Get My Free Deep Cleaning Quote
+            </button>
+            <p className="text-sm text-gray-500">
+              Or call{" "}
+              <a href={PHONE_HREF} className="font-semibold text-[#2E7D32] hover:underline">
+                {PHONE}
+              </a>
+            </p>
+          </div>
         </div>
       </section>
 
