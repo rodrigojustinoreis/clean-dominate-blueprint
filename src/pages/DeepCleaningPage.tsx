@@ -6,7 +6,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import QuoteForm from "@/components/QuoteForm";
 import FAQ from "@/components/FAQ";
-import BeforeAfterSlider from "@/components/BeforeAfterSlider";
+
 import ExitIntentPopup from "@/components/ExitIntentPopup";
 import { ServiceSchema, FAQSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import { useSEO } from "@/hooks/useSEO";
@@ -15,12 +15,39 @@ import { cities } from "@/data/locations";
 import { slCities, slServices } from "@/data/service-locations";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import logo from "@/assets/logo.webp";
+import kitchenStoveBA from "@/assets/before-after/kitchen-stove.webp";
+import bedroomBA from "@/assets/before-after/bedroom.webp";
+import kidsRoomBA from "@/assets/before-after/kids-room.webp";
+import teenRoomBA from "@/assets/before-after/teen-room.webp";
 
 const PHONE = "(240) 704-2551";
 const PHONE_HREF = "tel:+12407042551";
 
 const service = getServiceBySlug("deep-cleaning")!;
 const topCities = cities.filter((c) => !c.slug.includes("county")).slice(0, 8);
+
+const beforeAfterImages = [
+  {
+    image: kitchenStoveBA,
+    alt: "Kitchen stove before and after deep cleaning",
+    caption: "Kitchen Stove Deep Clean — Montgomery County, MD",
+  },
+  {
+    image: bedroomBA,
+    alt: "Bedroom before and after deep cleaning",
+    caption: "Bedroom Deep Clean — Rockville, MD",
+  },
+  {
+    image: kidsRoomBA,
+    alt: "Kids room before and after deep cleaning",
+    caption: "Kids Room Deep Clean — Bethesda, MD",
+  },
+  {
+    image: teenRoomBA,
+    alt: "Teen room before and after deep cleaning",
+    caption: "Teen Room Deep Clean — Silver Spring, MD",
+  },
+];
 
 
 const trustBadges = [
@@ -280,35 +307,41 @@ const DeepCleaningPage = () => {
         </div>
       </section>
 
-      {/* ── Before & After Sliders ── */}
+      {/* ── Before & After Gallery ── */}
       <section className="py-16" style={{ background: "#F5F5F5" }}>
         <div className="container mx-auto px-4 max-w-5xl">
           <h2 className="font-heading text-3xl font-bold text-center text-gray-800 mb-2">
             See the Capital Clean Care Difference
           </h2>
           <p className="text-center text-gray-500 text-base mb-10">
-            Drag the slider to reveal the transformation
+            Real results from real homes in Montgomery County
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <BeforeAfterSlider
-              beforeImage="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800"
-              afterImage="https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=800"
-              caption="Kitchen Deep Clean — Rockville, MD"
-              height={300}
-            />
-            <BeforeAfterSlider
-              beforeImage="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800"
-              afterImage="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800"
-              caption="Bathroom Restoration — Bethesda, MD"
-              height={300}
-            />
-            <BeforeAfterSlider
-              beforeImage="https://images.unsplash.com/photo-1586105251261-72a756497a11?w=800"
-              afterImage="https://images.unsplash.com/photo-1586105251261-72a756497a11?w=800"
-              caption="Living Room Refresh — Silver Spring, MD"
-              height={300}
-            />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {beforeAfterImages.map((item, index) => (
+              <div key={index} className="rounded-xl overflow-hidden shadow-lg bg-white">
+                <div className="relative">
+                  <img
+                    src={item.image}
+                    alt={item.alt}
+                    className="w-full h-auto object-cover"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="p-4 text-center">
+                  <div className="flex items-center justify-center gap-3 mb-2">
+                    <span className="inline-flex items-center gap-1.5 bg-red-100 text-red-700 text-xs font-bold px-3 py-1 rounded-full">
+                      BEFORE
+                    </span>
+                    <span className="text-gray-400">→</span>
+                    <span className="inline-flex items-center gap-1.5 bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-full">
+                      AFTER
+                    </span>
+                  </div>
+                  <p className="text-sm font-medium text-gray-700">{item.caption}</p>
+                </div>
+              </div>
+            ))}
           </div>
 
           <div className="text-center mt-10">
