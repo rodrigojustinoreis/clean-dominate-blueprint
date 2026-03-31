@@ -168,7 +168,7 @@ const DeepCleaningPage = () => {
 
 
       {/* ── Trust Bar ── */}
-      <section className="py-8 bg-secondary/40">
+      <section className="py-8">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             {trustBadges.map(({ Icon, text }) => (
@@ -201,7 +201,7 @@ const DeepCleaningPage = () => {
 
       {/* ── Testimonials ── */}
       {service.testimonials && service.testimonials.length > 0 && (
-        <section className="py-12 bg-secondary/30">
+        <section className="py-12">
           <div className="container mx-auto px-4 max-w-4xl">
             <p className="text-center text-xs font-semibold text-muted-foreground uppercase tracking-widest mb-2">
               What Montgomery County Homeowners Say
@@ -280,7 +280,7 @@ const DeepCleaningPage = () => {
       </section>
 
       {/* ── FAQ ── */}
-      <section className="py-12 bg-secondary/30">
+      <section className="py-12">
         <div className="container mx-auto px-4 max-w-4xl">
           <h2 className="font-heading text-2xl font-bold mb-6">Deep Cleaning FAQ</h2>
           <FAQ faqs={service.faqs} />
