@@ -6,7 +6,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import QuoteForm from "@/components/QuoteForm";
 import FAQ from "@/components/FAQ";
-import BeforeAfterTabs from "@/components/BeforeAfterTabs";
+import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 import ExitIntentPopup from "@/components/ExitIntentPopup";
 import { ServiceSchema, FAQSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import { useSEO } from "@/hooks/useSEO";
@@ -15,10 +15,14 @@ import { cities } from "@/data/locations";
 import { slCities, slServices } from "@/data/service-locations";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import logo from "@/assets/logo.webp";
-import kitchenStoveBA from "@/assets/before-after/kitchen-stove.webp";
-import bedroomBA from "@/assets/before-after/bedroom.webp";
-import kidsRoomBA from "@/assets/before-after/kids-room.webp";
-import teenRoomBA from "@/assets/before-after/teen-room.webp";
+import stoveBefore from "@/assets/before-after/stove-before.webp";
+import stoveAfter from "@/assets/before-after/stove-after.webp";
+import kitchenIslandBefore from "@/assets/before-after/kitchen-island-before.webp";
+import kitchenIslandAfter from "@/assets/before-after/kitchen-island-after.webp";
+import kitchenBrownBefore from "@/assets/before-after/kitchen-brown-before.webp";
+import kitchenBrownAfter from "@/assets/before-after/kitchen-brown-after.webp";
+import kitchenGraniteBefore from "@/assets/before-after/kitchen-granite-before.webp";
+import kitchenGraniteAfter from "@/assets/before-after/kitchen-granite-after.webp";
 
 const PHONE = "(240) 704-2551";
 const PHONE_HREF = "tel:+12407042551";
@@ -28,24 +32,28 @@ const topCities = cities.filter((c) => !c.slug.includes("county")).slice(0, 8);
 
 const beforeAfterImages = [
   {
-    image: kitchenStoveBA,
-    alt: "Kitchen stove before and after deep cleaning",
-    caption: "Kitchen Stove Deep Clean — Montgomery County, MD",
+    beforeImage: kitchenIslandBefore,
+    afterImage: kitchenIslandAfter,
+    alt: "Kitchen island before and after deep cleaning",
+    caption: "Kitchen Deep Clean — Silver Spring, MD",
   },
   {
-    image: bedroomBA,
-    alt: "Bedroom before and after deep cleaning",
-    caption: "Bedroom Deep Clean — Rockville, MD",
+    beforeImage: kitchenBrownBefore,
+    afterImage: kitchenBrownAfter,
+    alt: "Full kitchen before and after deep cleaning",
+    caption: "Full Kitchen Transformation — Rockville, MD",
   },
   {
-    image: kidsRoomBA,
-    alt: "Kids room before and after deep cleaning",
-    caption: "Kids Room Deep Clean — Bethesda, MD",
+    beforeImage: kitchenGraniteBefore,
+    afterImage: kitchenGraniteAfter,
+    alt: "Kitchen granite before and after deep cleaning",
+    caption: "Deep Clean — Bethesda, MD",
   },
   {
-    image: teenRoomBA,
-    alt: "Teen room before and after deep cleaning",
-    caption: "Teen Room Deep Clean — Silver Spring, MD",
+    beforeImage: stoveBefore,
+    afterImage: stoveAfter,
+    alt: "Stovetop before and after deep cleaning",
+    caption: "Stovetop Restoration — Silver Spring, MD",
   },
 ];
 
@@ -319,11 +327,12 @@ const DeepCleaningPage = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {beforeAfterImages.map((item, index) => (
-              <BeforeAfterTabs
+              <BeforeAfterSlider
                 key={index}
-                combinedImage={item.image}
-                alt={item.alt}
+                beforeImage={item.beforeImage}
+                afterImage={item.afterImage}
                 caption={item.caption}
+                height={300}
               />
             ))}
           </div>
