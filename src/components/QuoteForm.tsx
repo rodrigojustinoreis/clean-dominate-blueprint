@@ -91,6 +91,13 @@ const QuoteForm = ({ submitLabel = "Get My Free Quote →", defaultService = "" 
       });
 
       trackQuoteFormSubmit(formData.service);
+      if (typeof gtag !== "undefined") {
+        gtag('event', 'conversion', {
+          'send_to': 'AW-16450100951/quote_form_submit',
+          'value': 50.0,
+          'currency': 'USD'
+        });
+      }
       toast.success("Thank you! We'll get back to you within 24 hours.");
       setFormData({ name: "", phone: "", email: "", zip: "", service: "", bedrooms: "", bathrooms: "", frequency: "", date: "", message: "", smsConsent: false, emailConsent: false });
       setShowDetails(false);
