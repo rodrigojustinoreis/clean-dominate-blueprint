@@ -68,6 +68,7 @@ const Header = () => {
             </div>
 
             <Link to="/reviews" className="px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">Reviews</Link>
+            <Link to="/blog" className="px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">Blog</Link>
             <Link to="/contact" className="px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">Contact Us</Link>
             <Link to="/careers" className="px-3 py-2 text-sm font-medium text-accent hover:text-accent/80 transition-colors">Join Our Team</Link>
           </nav>
@@ -126,6 +127,7 @@ const Header = () => {
             )}
 
             <Link to="/reviews" className="block px-3 py-2 rounded-md hover:bg-secondary" onClick={() => setMobileOpen(false)}>Reviews</Link>
+            <Link to="/blog" className="block px-3 py-2 rounded-md hover:bg-secondary" onClick={() => setMobileOpen(false)}>Blog</Link>
             <Link to="/contact" className="block px-3 py-2 rounded-md hover:bg-secondary" onClick={() => setMobileOpen(false)}>Contact Us</Link>
 
             <div className="pt-3 space-y-2">
