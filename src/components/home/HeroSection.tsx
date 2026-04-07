@@ -73,9 +73,12 @@ const HeroSection = () => (
 
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row gap-4 animate-fade-up" style={{ animationDelay: "400ms" }}>
-          <Button variant="default" size="lg" className="text-sm px-8 h-14 rounded-full shadow-lg shadow-accent/25 hover:shadow-accent/40 hover:-translate-y-0.5 transition-all duration-300" asChild>
-            <a href="#quote" onClick={() => trackBookNowClick("hero_section")}>Get Free Quote <ArrowRight className="ml-2 h-4 w-4" /></a>
-          </Button>
+          <div className="flex flex-col items-start gap-1">
+            <Button variant="cta" size="lg" className="text-sm px-8 h-14 rounded-full shadow-lg shadow-accent/25 hover:shadow-accent/40 hover:-translate-y-0.5 transition-all duration-300" asChild>
+              <a href="#quote" onClick={() => trackBookNowClick("hero_section")}>Get $25 OFF — Free Quote <ArrowRight className="ml-2 h-4 w-4" /></a>
+            </Button>
+            <span className="text-xs text-muted-foreground pl-2">No commitment · Response within hours</span>
+          </div>
           <Button
             size="lg"
             variant="outline"
@@ -87,25 +90,34 @@ const HeroSection = () => (
         </div>
 
         {/* Social proof */}
-        <div className="flex items-center gap-4 mt-12 pt-8 border-t border-border/50 animate-fade-up" style={{ animationDelay: "500ms" }}>
-          <div className="flex -space-x-3">
-            {avatars.map((a) => (
-              <div
-                key={a.initials}
-                className={`w-10 h-10 rounded-full ${a.color} border-2 border-background flex items-center justify-center shadow-sm`}
-              >
-                <span className="text-white text-xs font-bold">{a.initials}</span>
-              </div>
-            ))}
-          </div>
-          <div>
-            <div className="flex items-center gap-1">
-              {[1, 2, 3, 4, 5].map((i) => (
-                <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" />
+        <div className="flex flex-col gap-4 mt-12 pt-8 border-t border-border/50 animate-fade-up" style={{ animationDelay: "500ms" }}>
+          <div className="flex items-center gap-4">
+            <div className="flex -space-x-3">
+              {avatars.map((a) => (
+                <div
+                  key={a.initials}
+                  className={`w-10 h-10 rounded-full ${a.color} border-2 border-background flex items-center justify-center shadow-sm`}
+                >
+                  <span className="text-white text-xs font-bold">{a.initials}</span>
+                </div>
               ))}
-              <span className="text-sm text-foreground ml-1.5 font-bold">5.0</span>
             </div>
-            <p className="text-xs text-muted-foreground mt-0.5 font-medium">Trusted by 150+ homeowners in MD, DC & VA</p>
+            <div>
+              <div className="flex items-center gap-1">
+                {[1, 2, 3, 4, 5].map((i) => (
+                  <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" />
+                ))}
+                <span className="text-sm text-foreground ml-1.5 font-bold">5.0</span>
+              </div>
+              <p className="text-xs text-muted-foreground mt-0.5 font-medium">Trusted by homeowners in MD, DC & VA</p>
+            </div>
+          </div>
+          {/* Mini testimonial */}
+          <div className="glass-card rounded-xl px-4 py-3 max-w-sm">
+            <p className="text-xs text-foreground italic leading-relaxed">
+              "Capital Clean Care transformed our home. The team was thorough and used products safe for my kids and pets."
+            </p>
+            <p className="text-xs text-muted-foreground mt-1.5 font-semibold">— Sarah M., Bethesda MD</p>
           </div>
         </div>
       </div>

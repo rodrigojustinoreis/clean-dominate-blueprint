@@ -342,8 +342,21 @@ const Index = () => {
               <span className="text-accent font-semibold text-sm uppercase tracking-wider">Pricing</span>
               <h2 className="font-heading text-3xl md:text-4xl font-bold mt-2 mb-4">Transparent Pricing</h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">Honest pricing based on home size and frequency. No hidden fees, ever.</p>
+              {/* Urgency badge */}
+              <div className="inline-flex items-center gap-2 mt-4 bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800 text-amber-800 dark:text-amber-300 rounded-full px-4 py-1.5 text-xs font-semibold">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-400"></span>
+                </span>
+                New clients save $25 on their first clean — limited availability
+              </div>
             </div>
             <PricingTable />
+            <div className="text-center mt-8">
+              <Button variant="cta" size="lg" className="rounded-full" asChild>
+                <a href="#quote">Claim $25 OFF — Get My Free Quote <ArrowRight className="ml-2 h-4 w-4" /></a>
+              </Button>
+            </div>
           </div>
         </section>
       </ScrollReveal>
@@ -391,7 +404,9 @@ const Index = () => {
           <div className="container mx-auto px-4 max-w-6xl">
             <div className="text-center mb-10">
               <span className="text-accent font-semibold text-sm uppercase tracking-wider">Free Estimate</span>
-              <h2 className="font-heading text-3xl md:text-4xl font-bold mt-2 mb-4">Get Your Free Quote</h2>
+              <h2 className="font-heading text-3xl md:text-4xl font-bold mt-2 mb-4">
+                Get Your Free Quote + <span className="text-accent">$25 OFF</span>
+              </h2>
               <p className="text-muted-foreground">No commitment required. We respond within a few hours with a personalized estimate.</p>
             </div>
 
