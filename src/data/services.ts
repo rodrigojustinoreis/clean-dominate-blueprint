@@ -112,7 +112,7 @@ export const services: ServiceData[] = [
       { name: "Mark S.", location: "Arlington, VA", text: "Best cleaning service we've used in the DMV. On time, efficient, and the quality is consistently excellent." }
     ],
     metaTitle: "Standard House Cleaning in MD, DC & VA | Capital Clean Care",
-    metaDescription: "Routine eco-friendly house cleaning across Maryland, DC & Northern Virginia. Background-checked teams, non-toxic products, satisfaction guaranteed. Get $25 off your first clean!"
+    metaDescription: "Routine eco-friendly house cleaning across Maryland, DC & Northern Virginia. Background-checked teams, non-toxic products, satisfaction guaranteed. Get 15% off your first clean!"
   },
   {
     name: "Deep Cleaning",

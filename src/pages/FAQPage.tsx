@@ -61,7 +61,7 @@ const allFaqs = faqCategories.flatMap((c) => c.faqs);
 const FAQPage = () => {
   const { seoHelmet } = useSEO({
     title: "House Cleaning FAQ — MD, DC & VA | Capital Clean Care",
-    description: "Answers to 30+ questions about eco-friendly house cleaning in Maryland, DC & Virginia — pricing, products, scheduling & more. Get $25 off your first clean!",
+    description: "Answers to 30+ questions about eco-friendly house cleaning in Maryland, DC & Virginia — pricing, products, scheduling & more. Get 15% off your first clean!",
     canonical: "https://capitalcleancare.com/faq",
   });
 

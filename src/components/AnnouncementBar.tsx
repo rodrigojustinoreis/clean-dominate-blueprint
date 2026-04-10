@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 import { X, Gift, Clock } from "lucide-react";
 
 const MESSAGES = [
-  { text: <><strong>$25 OFF</strong> your first cleaning — limited spots this week</>, cta: "Claim Now →" },
-  { text: <>New clients save <strong>$25</strong> — eco-friendly, background-checked team</>, cta: "Book Today →" },
-  { text: <>Same-day availability in DMV — <strong>$25 OFF</strong> your first clean</>, cta: "Get Quote →" },
+  { text: <><strong>15% OFF</strong> your first cleaning — limited spots this week</>, cta: "Claim Now →" },
+  { text: <>New clients save <strong>15%</strong> — eco-friendly, background-checked team</>, cta: "Book Today →" },
+  { text: <>Same-day availability in DMV — <strong>15% OFF</strong> your first clean</>, cta: "Get Quote →" },
 ];
 
 const AnnouncementBar = () => {

@@ -78,7 +78,7 @@ const DeepCleaningPage = () => {
             ⭐⭐⭐⭐⭐ 5-Star Rated in Montgomery County
           </span>
           <span className="text-sm font-bold text-center flex-1 md:flex-none">
-            🎁 $25 OFF Your First Deep Clean
+            🎁 15% OFF Your First Deep Clean
           </span>
           <a
             href={PHONE_HREF}
@@ -307,7 +307,7 @@ const DeepCleaningPage = () => {
 
           {/* Offer callout */}
           <div className="bg-[#2E7D32] text-white rounded-lg py-3 px-5 text-center mb-6 font-medium text-sm">
-            🎁 $25 OFF your first deep cleaning — mention this offer when booking
+            🎁 15% OFF your first deep cleaning — mention this offer when booking
           </div>
 
           <Card>

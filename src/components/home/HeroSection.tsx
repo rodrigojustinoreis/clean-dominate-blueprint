@@ -75,7 +75,7 @@ const HeroSection = () => (
         <div className="flex flex-col sm:flex-row gap-4 animate-fade-up" style={{ animationDelay: "400ms" }}>
           <div className="flex flex-col items-start gap-1">
             <Button variant="cta" size="lg" className="text-sm px-8 h-14 rounded-full shadow-lg shadow-accent/25 hover:shadow-accent/40 hover:-translate-y-0.5 transition-all duration-300" asChild>
-              <a href="#quote" onClick={() => trackBookNowClick("hero_section")}>Get $25 OFF — Free Quote <ArrowRight className="ml-2 h-4 w-4" /></a>
+              <a href="#quote" onClick={() => trackBookNowClick("hero_section")}>Get 15% OFF — Free Quote <ArrowRight className="ml-2 h-4 w-4" /></a>
             </Button>
             <span className="text-xs text-muted-foreground pl-2">No commitment · Response within hours</span>
           </div>

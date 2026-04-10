@@ -9,7 +9,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 const Contact = () => {
   const { seoHelmet } = useSEO({
     title: "Get a Free Cleaning Quote in MD, DC & VA | Capital Clean Care",
-    description: "Request your free house cleaning quote from Capital Clean Care. Serving Maryland, DC & Virginia. Call (240) 704-2551 or fill out our form — $25 off first clean!",
+    description: "Request your free house cleaning quote from Capital Clean Care. Serving Maryland, DC & Virginia. Call (240) 704-2551 or fill out our form — 15% off first clean!",
     canonical: "https://capitalcleancare.com/contact",
   });
 

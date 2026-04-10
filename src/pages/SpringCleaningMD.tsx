@@ -13,15 +13,15 @@ import VideoTestimonials from "@/components/VideoTestimonials";
 const springFaqs = [
   { q: "When should I schedule spring cleaning?", a: "We recommend booking in March or April before the peak pollen season. Early scheduling ensures availability and helps you stay ahead of seasonal allergen buildup." },
   { q: "What does spring deep cleaning include?", a: "Our spring cleaning covers everything in a deep clean plus seasonal extras: window track cleaning, pollen removal from surfaces, baseboard scrubbing, vent cleaning, and detailed attention to areas that accumulate winter dust." },
-  { q: "How much does spring cleaning cost in Maryland?", a: "Spring cleaning starts at $150 for 1–2 bedroom homes and varies by size and condition. New clients receive $25 off their first service. Request a free quote for your exact price." },
+  { q: "How much does spring cleaning cost in Maryland?", a: "Spring cleaning starts at $150 for 1–2 bedroom homes and varies by size and condition. New clients get 15% off their first service. Request a free quote for your exact price." },
   { q: "Do you use eco-friendly products for spring cleaning?", a: "Absolutely. All our cleaning products are plant-based, non-toxic, and EPA Safer Choice certified — safe for your family, pets, and Maryland's Chesapeake Bay watershed." },
   { q: "Can I book spring cleaning for my DC or Virginia home?", a: "Yes! We serve Maryland, Washington DC, and Northern Virginia. Spring cleaning is available across all our service areas." },
 ];
 
 const SpringCleaningMD = () => {
   const { seoHelmet } = useSEO({
-    title: "Spring Cleaning Services in Maryland | $25 Off | Capital Clean Care",
-    description: "Book your spring deep cleaning in Maryland, DC & VA. Eco-friendly products, background-checked teams. $25 off for new clients. Call (240) 704-2551.",
+    title: "Spring Cleaning Services in Maryland | 15% Off | Capital Clean Care",
+    description: "Book your spring deep cleaning in Maryland, DC & VA. Eco-friendly products, background-checked teams. 15% off for new clients. Call (240) 704-2551.",
     canonical: "https://capitalcleancare.com/spring-cleaning-md",
   });
 
@@ -31,7 +31,7 @@ const SpringCleaningMD = () => {
       <LocalBusinessSchema />
       <ServiceSchema
         serviceName="Spring Deep Cleaning in Maryland"
-        description="Professional spring cleaning services in Maryland, DC & VA. Eco-friendly products, background-checked teams. $25 off for new clients."
+        description="Professional spring cleaning services in Maryland, DC & VA. Eco-friendly products, background-checked teams. 15% off for new clients."
         url="https://capitalcleancare.com/spring-cleaning-md"
       />
       <FAQSchema faqs={springFaqs} />
@@ -51,7 +51,7 @@ const SpringCleaningMD = () => {
             Shake off winter dust and prepare for spring with our intensive eco-friendly deep cleaning. Available across Maryland, Washington DC, and Northern Virginia.
           </p>
           <div className="bg-accent/10 border border-accent/20 rounded-xl p-4 mb-8 inline-block">
-            <p className="text-accent font-bold text-lg">🌸 $25 OFF your first spring cleaning — New clients only</p>
+            <p className="text-accent font-bold text-lg">🌸 15% OFF your first spring cleaning — New clients only</p>
             <p className="text-muted-foreground text-sm">Use code <strong>SPRING25</strong> when booking. Valid through May 31, 2026.</p>
           </div>
           <div className="flex flex-col sm:flex-row gap-3">
@@ -154,7 +154,7 @@ const SpringCleaningMD = () => {
         <div className="container mx-auto px-4 max-w-2xl">
           <div className="text-center mb-8">
             <h2 className="font-heading text-3xl font-bold mb-3">Book Your Spring Cleaning</h2>
-            <p className="text-muted-foreground">New clients get <strong className="text-accent">$25 off</strong>. Fill out the form and we'll respond with your personalized quote.</p>
+            <p className="text-muted-foreground">New clients get <strong className="text-accent">15% off</strong>. Fill out the form and we'll respond with your personalized quote.</p>
           </div>
           <Card><CardContent className="p-6 md:p-8"><QuoteForm /></CardContent></Card>
         </div>

@@ -84,7 +84,7 @@ const blogContent: Record<string, React.ReactNode> = {
       <h2>Too Much to Tackle Alone?</h2>
       <p>Capital Clean Care's <Link to="/services/deep-cleaning" className="text-accent hover:underline">spring deep cleaning service</Link> covers 60+ checklist items across your entire home. Our eco-friendly, non-toxic products are safe for children, pets, and the <Link to="/services/eco-friendly-cleaning" className="text-accent hover:underline">Chesapeake Bay watershed</Link>. We serve all of <Link to="/maryland" className="text-accent hover:underline">Maryland</Link>, <Link to="/washington-dc" className="text-accent hover:underline">Washington DC</Link>, and <Link to="/virginia" className="text-accent hover:underline">Northern Virginia</Link>.</p>
 
-      <p><Link to="/contact" className="text-accent hover:underline font-semibold">Book your spring deep clean today</Link> — $25 off your first service for new clients.</p>
+      <p><Link to="/contact" className="text-accent hover:underline font-semibold">Book your spring deep clean today</Link> — 15% off your first service for new clients.</p>
     </article>
   ),
   "house-cleaning-prices-maryland-2026": (
@@ -274,7 +274,7 @@ const blogContent: Record<string, React.ReactNode> = {
       <h2>Professional Pet-Friendly Cleaning in the DMV</h2>
       <p>Capital Clean Care specializes in homes with pets throughout <Link to="/maryland" className="text-accent hover:underline">Maryland</Link>, <Link to="/washington-dc" className="text-accent hover:underline">Washington DC</Link>, and <Link to="/virginia" className="text-accent hover:underline">Northern Virginia</Link>. We bring the right equipment and products — no shortcuts.</p>
 
-      <p><Link to="/contact" className="text-accent hover:underline font-semibold">Get your free pet-friendly cleaning quote today</Link> — $25 off your first service!</p>
+      <p><Link to="/contact" className="text-accent hover:underline font-semibold">Get your free pet-friendly cleaning quote today</Link> — 15% off your first service!</p>
     </article>
   ),
   "recurring-cleaning-weekly-biweekly-monthly": (
@@ -323,7 +323,7 @@ const blogContent: Record<string, React.ReactNode> = {
       <h2>Starting Out: We Recommend a Deep Clean First</h2>
       <p>New recurring clients almost always start with a <Link to="/services/deep-cleaning" className="text-accent hover:underline">one-time deep cleaning</Link> to establish a baseline. After that, maintenance visits are faster, more focused, and more affordable. Think of it like a car — detailed first, maintained regularly.</p>
 
-      <p><Link to="/contact" className="text-accent hover:underline font-semibold">Start your recurring cleaning plan today</Link> — $25 off your first visit, flexible scheduling across MD, DC & VA.</p>
+      <p><Link to="/contact" className="text-accent hover:underline font-semibold">Start your recurring cleaning plan today</Link> — 15% off your first visit, flexible scheduling across MD, DC & VA.</p>
     </article>
   ),
   "eco-cleaning-tips-maryland-homes": (
@@ -433,7 +433,7 @@ const blogContent: Record<string, React.ReactNode> = {
       <p>Melting snow and wet boots can warp hardwood floors common in <Link to="/locations/kensington-md" className="text-accent hover:underline">Kensington</Link> and <Link to="/locations/chevy-chase-md" className="text-accent hover:underline">Chevy Chase</Link> homes. Wipe spills immediately, avoid excess water when mopping, and use a plant-based floor cleaner designed for sealed hardwood.</p>
 
       <h2>Schedule Your Winter Deep Clean</h2>
-      <p>Don't let winter grime build up. Our <Link to="/services/eco-friendly-cleaning" className="text-accent hover:underline">eco-friendly cleaning service</Link> is available throughout Maryland, DC, and Northern Virginia. <Link to="/contact" className="text-accent hover:underline font-semibold">Get your free winter cleaning quote today</Link> — $25 off your first service!</p>
+      <p>Don't let winter grime build up. Our <Link to="/services/eco-friendly-cleaning" className="text-accent hover:underline">eco-friendly cleaning service</Link> is available throughout Maryland, DC, and Northern Virginia. <Link to="/contact" className="text-accent hover:underline font-semibold">Get your free winter cleaning quote today</Link> — 15% off your first service!</p>
     </article>
   ),
   "best-cleaning-schedule-busy-families-dmv": (
@@ -483,7 +483,7 @@ const blogContent: Record<string, React.ReactNode> = {
       <h2>How Recurring Service Saves Time and Money</h2>
       <p>Families on our weekly plan save 25% per visit. That's hundreds of dollars annually — plus the hours you reclaim each week. Most <Link to="/locations/rockville-md" className="text-accent hover:underline">Rockville</Link> and <Link to="/locations/bethesda-md" className="text-accent hover:underline">Bethesda</Link> clients tell us recurring service is their best household investment.</p>
 
-      <p><Link to="/contact" className="text-accent hover:underline font-semibold">Start your recurring cleaning plan today</Link> — $25 off your first visit for new clients!</p>
+      <p><Link to="/contact" className="text-accent hover:underline font-semibold">Start your recurring cleaning plan today</Link> — 15% off your first visit for new clients!</p>
     </article>
   ),
   "post-renovation-cleaning-guide-maryland": (

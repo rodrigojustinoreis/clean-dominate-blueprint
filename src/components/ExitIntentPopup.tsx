@@ -41,7 +41,7 @@ const ExitIntentPopup = () => {
         name,
         phone,
         service: "deep",
-        message: "Exit intent popup — $25 discount claimed",
+        message: "Exit intent popup — 15% discount claimed",
       });
       await fetch("https://formsubmit.co/ajax/capitalcleancare@gmail.com", {
         method: "POST",
@@ -50,10 +50,10 @@ const ExitIntentPopup = () => {
           _subject: `Exit Intent Lead: ${name}`,
           Name: name,
           Phone: phone,
-          Source: "Exit Intent Popup — $25 Discount",
+          Source: "Exit Intent Popup — 15% Discount",
         }),
       });
-      toast.success("Got it! We'll call you shortly with your $25 discount.");
+      toast.success("Got it! We'll call you shortly with your 15% discount.");
       setShow(false);
     } catch {
       toast.error("Something went wrong. Please try again.");
@@ -89,10 +89,10 @@ const ExitIntentPopup = () => {
             <Gift className="h-7 w-7 text-accent" />
           </div>
           <h2 className="font-heading text-2xl font-bold mb-2">
-            Wait — Don't Leave Without Your $25 Discount!
+            Wait — Don't Leave Without Your 15% Discount!
           </h2>
           <p className="text-muted-foreground text-sm">
-            Get <span className="text-accent font-bold text-lg">$25 OFF</span> your first cleaning
+            Get <span className="text-accent font-bold text-lg">15% OFF</span> your first cleaning
             anywhere in the DMV area. Enter your info and we'll call you back within hours.
           </p>
           <div className="mt-3 flex items-center justify-center gap-1.5 text-xs text-muted-foreground">
@@ -120,7 +120,7 @@ const ExitIntentPopup = () => {
             onChange={(e) => setPhone(e.target.value)}
           />
           <Button variant="cta" size="lg" className="w-full" type="submit" disabled={submitting}>
-            {submitting ? "Sending…" : "Claim My $25 Discount"}
+            {submitting ? "Sending…" : "Claim My 15% Discount"}
           </Button>
         </form>
 

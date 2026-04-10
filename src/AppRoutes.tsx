@@ -19,11 +19,13 @@ import TermsOfService from "./pages/TermsOfService";
 import VanityLandingPage from "./pages/VanityLandingPage";
 import HouseCleaningNearMe from "./pages/HouseCleaningNearMe";
 import Careers from "./pages/Careers";
+import PremiumFanPage from "./pages/PremiumFanPage";
 import NotFound from "./pages/NotFound";
 
 const AppRoutes = () => (
   <Routes>
     <Route path="/" element={<Index />} />
+    <Route path="/premium-clean" element={<PremiumFanPage />} />
     <Route path="/about" element={<About />} />
     <Route path="/reviews" element={<Reviews />} />
     <Route path="/contact" element={<Contact />} />

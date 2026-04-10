@@ -11,7 +11,7 @@ const DiscountBanner = ({ city }: DiscountBannerProps) => (
     <div className="container mx-auto px-4 flex flex-col sm:flex-row items-center justify-center gap-3 text-center">
       <Gift className="h-5 w-5 shrink-0" />
       <p className="font-heading font-semibold text-sm md:text-base">
-        🎉 New Client Special: <strong>$25 OFF</strong> your first cleaning
+        🎉 New Client Special: <strong>15% OFF</strong> your first cleaning
         {city ? ` in ${city}` : ""}!
       </p>
       <Button

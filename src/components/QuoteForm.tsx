@@ -255,7 +255,7 @@ const QuoteForm = ({ submitLabel = "Get My Free Quote →", defaultService = "" 
       </Button>
 
       <p className="text-center text-xs text-muted-foreground">
-        No commitment · $25 OFF first clean · Response within hours
+        No commitment · 15% OFF first clean · Response within hours
       </p>
     </form>
   );

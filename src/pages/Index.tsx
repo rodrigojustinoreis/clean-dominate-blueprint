@@ -38,7 +38,7 @@ const homeFaqs = [
   { q: "How do recurring cleaning discounts work?", a: "Weekly clients save up to 25%, bi-weekly clients save 15%, and monthly clients save 5% compared to one-time pricing. The more frequently we clean, the less time each visit takes — savings we pass on to you." },
   { q: "Can I change or skip a scheduled cleaning?", a: "Of course. Life happens! Simply let us know 24–48 hours in advance and we'll reschedule at no charge. You can also pause recurring service anytime without penalty." },
   { q: "Do you bring your own supplies and equipment?", a: "Yes, we bring all cleaning supplies, equipment, and products. If you have preferred products or specific sensitivities, let us know and we'll gladly accommodate." },
-  { q: "Is there a new client discount?", a: "Yes! New clients receive $25 off their first cleaning service. This applies to all service types and is automatically applied when you mention it during booking." },
+  { q: "Is there a new client discount?", a: "Yes! New clients get 15% off their first cleaning service. This applies to all service types and is automatically applied when you mention it during booking." },
 ];
 
 const locationAreas = [
@@ -50,7 +50,7 @@ const locationAreas = [
 const Index = () => {
   const { seoHelmet } = useSEO({
     title: "Eco-Friendly House Cleaning in Maryland, DC & Virginia | Capital Clean Care",
-    description: "Premium residential cleaning in MD, DC & Northern VA. Non-toxic products, background-checked teams, 5-star rated. $25 off your first clean — get a free quote!",
+    description: "Premium residential cleaning in MD, DC & Northern VA. Non-toxic products, background-checked teams, 5-star rated. 15% off your first clean — get a free quote!",
     canonical: "https://capitalcleancare.com/",
   });
 
@@ -263,7 +263,7 @@ const Index = () => {
               <Button variant="cta" size="lg" className="rounded-full" asChild>
                 <a href="#quote">Start with a Free Quote <ArrowRight className="ml-2 h-4 w-4" /></a>
               </Button>
-              <p className="text-xs text-muted-foreground mt-3">No commitment • Response within hours • $25 OFF first clean</p>
+              <p className="text-xs text-muted-foreground mt-3">No commitment • Response within hours • 15% OFF first clean</p>
             </div>
           </div>
         </section>
@@ -348,13 +348,13 @@ const Index = () => {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-400"></span>
                 </span>
-                New clients save $25 on their first clean — limited availability
+                New clients save 15% on their first clean — limited availability
               </div>
             </div>
             <PricingTable />
             <div className="text-center mt-8">
               <Button variant="cta" size="lg" className="rounded-full" asChild>
-                <a href="#quote">Claim $25 OFF — Get My Free Quote <ArrowRight className="ml-2 h-4 w-4" /></a>
+                <a href="#quote">Claim 15% OFF — Get My Free Quote <ArrowRight className="ml-2 h-4 w-4" /></a>
               </Button>
             </div>
           </div>
@@ -405,7 +405,7 @@ const Index = () => {
             <div className="text-center mb-10">
               <span className="text-accent font-semibold text-sm uppercase tracking-wider">Free Estimate</span>
               <h2 className="font-heading text-3xl md:text-4xl font-bold mt-2 mb-4">
-                Get Your Free Quote + <span className="text-accent">$25 OFF</span>
+                Get Your Free Quote + <span className="text-accent">15% OFF</span>
               </h2>
               <p className="text-muted-foreground">No commitment required. We respond within a few hours with a personalized estimate.</p>
             </div>
