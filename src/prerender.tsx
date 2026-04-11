@@ -28,6 +28,7 @@ function getAllRoutes(): string[] {
     "/blog/post-renovation-cleaning-guide-maryland",
     "/blog/recurring-cleaning-weekly-biweekly-monthly",
     "/blog/how-to-clean-bathroom-professionally-maryland-spring-2026",
+    "/blog/how-to-clean-bathroom-professionally-maryland-spring-2026",
     "/blog/how-to-clean-air-vents-filters-improve-indoor-air-quality-maryland",
     "/blog/how-to-clean-air-vents-filters-improve-indoor-air-quality-maryland",
     "/blog/deep-cleaning-tips-maryland-homes-spring-prep-march-2026",
