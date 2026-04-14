@@ -60,6 +60,16 @@ const cityNeighborhoods: Record<string, string[]> = {
   "falls-church-va": ["City of Falls Church", "Pimmit Hills", "West Falls Church", "Seven Corners", "Tuckahoe", "Holmes Run", "Bren Mar", "Lake Barcroft border", "Baileys Crossroads", "Willston"],
   "vienna-va": ["Tysons border", "Vienna Woods", "Courthouse Road area", "Maple Ave corridor", "Windover Heights", "Nottoway Park area", "Old Courthouse Road", "Westwood Hills", "Swinks Mill", "Center Street"],
   "tysons-va": ["Tysons Corner", "Greensboro", "Spring Hill", "McLean border", "Wolf Trap", "Westpark", "Scotts Run", "Chain Bridge Road", "International Drive", "Westwood"],
+  "kensington-md": ["Kensington Heights", "Rock Creek Hills", "Alta Vista", "Strathmore", "Connecticut Ave corridor", "Detrick area", "Armory area", "Kensington Estates", "Knowles area", "Howard Avenue Historic District"],
+  "chevy-chase-md": ["Chevy Chase Section 3", "Chevy Chase Section 5", "Chevy Chase Village border", "Somerset", "Bradley Hills", "North Chevy Chase", "Connecticut Ave corridor", "East Chevy Chase", "Western Ave border", "Brookdale"],
+  "college-park-md": ["Old Town College Park", "Hollywood", "Berwyn", "Calvert Hills", "College Park Woods", "University Park border", "Lakeland", "Greenbelt border", "Adelphi border", "Guilford"],
+  "laurel-md": ["Old Town Laurel", "Montpelier", "Pheasant Ridge", "Russett", "Bond Mill", "South Laurel", "Quaint Acres", "Laurel Lakes", "Stone Lake", "Carillon"],
+  "bowie-md": ["Belair", "Mitchellville", "Pointer Ridge", "Whitehall", "Kenilworth", "Westgate", "Bowie Town Center area", "Tulip Grove", "Millbrook", "Foxhill"],
+  "reston-va": ["Reston Town Center", "North Point", "South Lakes", "Lake Newport", "Hunters Woods", "Tall Oaks", "Lakepoint", "Willowpond", "Baron Cameron", "Sunrise Valley"],
+  "montgomery-county-md": ["Silver Spring", "Rockville", "Bethesda", "Gaithersburg", "Germantown", "Potomac", "Wheaton", "Kensington", "Chevy Chase MD", "Takoma Park", "Clarksburg", "Damascus", "Glenmont", "Laytonsville", "Boyds"],
+  "frederick-county-md": ["Frederick City", "Urbana", "New Market", "Monrovia", "Middletown", "Walkersville", "Thurmont", "Brunswick", "Mount Airy border", "Jefferson"],
+  "howard-county-md": ["Columbia", "Ellicott City", "Savage", "Jessup", "Elkridge", "Fulton", "Clarksville", "Dayton", "Woodstock", "Glenwood"],
+  "prince-georges-county-md": ["College Park", "Bowie", "Laurel", "Greenbelt", "Hyattsville", "Upper Marlboro", "Langley Park", "Seat Pleasant", "Capitol Heights", "Riverdale Park"],
 };
 
 /** City-specific "why choose us" openers to reduce template feel */
@@ -79,6 +89,16 @@ const cityWhyIntros: Record<string, string> = {
   "alexandria-va": "From Old Town rowhouses to West End condos, Alexandria homeowners trust our versatile, professional cleaning teams.",
   "georgetown-dc": "Georgetown's historic homes and modern residences alike benefit from our careful, detail-oriented cleaning approach.",
   "capitol-hill-dc": "Capitol Hill residents count on our reliable, eco-friendly service to keep their homes pristine amid busy District schedules.",
+  "kensington-md": "Kensington's historic Victorian and craftsman homes deserve a cleaning team that understands their unique character — we bring the care and expertise these properties require.",
+  "chevy-chase-md": "Chevy Chase homeowners expect premium quality and meticulous attention to detail — we deliver the white-glove cleaning experience this distinguished community deserves.",
+  "college-park-md": "College Park families and residents count on our reliable, eco-friendly cleaning to maintain healthy, beautiful homes close to one of the nation's top universities.",
+  "laurel-md": "Laurel residents value reliability and professionalism, and our consistent, eco-friendly cleaning service delivers exactly that — every single visit.",
+  "bowie-md": "Bowie families trust us for thorough, dependable cleaning that keeps their homes pristine while our plant-based products keep everyone safe.",
+  "reston-va": "Reston's innovation-driven community appreciates our modern, eco-conscious approach — professional cleaning that aligns with the values of this forward-thinking planned community.",
+  "montgomery-county-md": "Montgomery County homeowners across all communities count on our reliable eco-friendly cleaning services to maintain beautiful, healthy homes.",
+  "frederick-county-md": "From Frederick City to Urbana, Frederick County families trust our professional teams to deliver consistent, high-quality cleaning throughout this growing region.",
+  "howard-county-md": "Howard County consistently ranks among America's best counties — our premium cleaning services match the exceptional quality of life this community provides.",
+  "prince-georges-county-md": "Prince George's County families deserve the same premium, eco-friendly cleaning quality we deliver across the broader DMV region.",
 };
 
 const CityPage = () => {

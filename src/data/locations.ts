@@ -685,6 +685,120 @@ export const cities: CityData[] = [
     metaDescription: "Professional house cleaning in Tysons, VA. Serving luxury condos, apartments & townhomes. Eco-friendly, background-checked teams. Get a free quote today."
   },
   {
+    name: "Kensington",
+    slug: "kensington-md",
+    state: "MD",
+    stateSlug: "maryland",
+    county: "Montgomery County",
+    intro: "Kensington is a charming small town in Montgomery County known for its Victorian architecture, antique shops along Howard Avenue, and tight-knit community character. Situated between Wheaton and Chevy Chase, Kensington's tree-lined streets and historic homes attract residents who value character and community while remaining close to Washington, DC.\n\nThe town's housing stock reflects its late-19th century origins: Victorian cottages, craftsman bungalows, and well-maintained colonials predominate, interspersed with mid-century additions and careful modern renovations. Capital Clean Care's teams appreciate the unique cleaning needs of older homes — delicate woodwork, hardwood floors, and period details that require careful handling and the right products.\n\nKensington's proximity to the Bethesda-Chevy Chase corridor makes it a popular choice for families seeking a quieter alternative to busier suburbs without sacrificing access to excellent schools and amenities. Our eco-friendly cleaning services help Kensington homeowners maintain their homes beautifully while using products that are safe for families and the environment.",
+    nearbySlugs: ["silver-spring-md", "wheaton-md", "bethesda-md", "rockville-md", "chevy-chase-md"],
+    faqs: [
+      { q: "What Kensington neighborhoods do you serve?", a: "We serve all of Kensington including the historic town center, neighborhoods along Connecticut Avenue, the areas near Rock Creek Park, and surrounding communities." },
+      { q: "How much does cleaning cost in Kensington?", a: "Pricing varies by home size and service type. Kensington's Victorian and craftsman homes are priced competitively. Request a free quote for an accurate estimate." },
+      { q: "Can you clean historic homes in Kensington?", a: "Yes. Our teams are experienced with older homes and use gentle, non-abrasive eco-friendly products appropriate for vintage woodwork, hardwood floors, and period details." },
+      { q: "Do you offer recurring plans in Kensington?", a: "Yes. Weekly, bi-weekly, and monthly recurring plans are available with preferred pricing and dedicated teams for Kensington residents." },
+      { q: "Are your products safe for pets?", a: "Absolutely. Our plant-based, non-toxic products are safe for dogs, cats, and all household pets." },
+      { q: "How quickly can I book in Kensington?", a: "Kensington is centrally located in our Montgomery County service area. We typically schedule new clients within 3-5 business days." }
+    ],
+    metaTitle: "House Cleaning in Kensington, MD | Capital Clean Care",
+    metaDescription: "Professional house cleaning in Kensington, MD. Eco-friendly products, background-checked teams serving Victorian & historic homes. Free quotes."
+  },
+  {
+    name: "Chevy Chase",
+    slug: "chevy-chase-md",
+    state: "MD",
+    stateSlug: "maryland",
+    county: "Montgomery County",
+    intro: "Chevy Chase, Maryland occupies a prime location along the DC border, offering residents the best of both worlds — the spacious lots and tree-canopied streets of suburban Montgomery County with immediate access to Washington's urban amenities. The community is known for its elegant homes, prestigious address, and exceptional quality of life.\n\nThe homes in Chevy Chase, MD reflect the community's distinguished character: grand colonials, brick Tudors, stately Federal-style homes, and gracious estate properties set on generous lots. Many properties feature mature landscaping, original period details, and the kind of craftsmanship rarely found in newer construction. Capital Clean Care's teams are trained to care for premium homes with the attention to detail that Chevy Chase homeowners expect.\n\nOur Chevy Chase cleaning services cover every home type in this prestigious community. We use only EPA Safer Choice certified products to protect the fine finishes, hardwood floors, and delicate surfaces common in the area's older homes. Whether you need regular maintenance or a thorough deep clean before a gathering, Capital Clean Care delivers results that meet Chevy Chase standards.",
+    nearbySlugs: ["bethesda-md", "kensington-md", "silver-spring-md", "washington-dc", "potomac-md"],
+    faqs: [
+      { q: "What Chevy Chase neighborhoods do you serve?", a: "We serve all of Chevy Chase, MD including the sections along Connecticut Avenue, Bradley Boulevard, East-West Highway, and the communities bordering the DC line." },
+      { q: "Can you clean luxury homes in Chevy Chase?", a: "Yes. We specialize in premium home cleaning and are experienced with Chevy Chase's estate properties, fine finishes, and high-end materials." },
+      { q: "Do you serve Chevy Chase condos and apartments?", a: "Yes. We clean apartments and condos in addition to single-family homes throughout Chevy Chase, MD." },
+      { q: "How often should I schedule cleaning in Chevy Chase?", a: "Most Chevy Chase homeowners choose bi-weekly service for optimal maintenance. We also offer weekly, monthly, and one-time service options." },
+      { q: "Are your Chevy Chase teams insured?", a: "Yes. We're fully licensed, insured, and every team member is background-checked. You're completely protected." },
+      { q: "Do you use products safe for hardwood floors?", a: "Yes. Our pH-neutral, plant-based floor cleaners are specifically safe for hardwood and won't dull or damage finishes." }
+    ],
+    metaTitle: "House Cleaning in Chevy Chase, MD | Capital Clean Care",
+    metaDescription: "Premium house cleaning in Chevy Chase, MD. Eco-friendly products, background-checked teams for luxury homes. Serving Chevy Chase sections along Connecticut Ave. Free quotes."
+  },
+  {
+    name: "College Park",
+    slug: "college-park-md",
+    state: "MD",
+    stateSlug: "maryland",
+    county: "Prince George's County",
+    intro: "College Park is a dynamic community in northern Prince George's County anchored by the University of Maryland's flagship campus. Beyond the university, College Park's residential neighborhoods attract a diverse mix of families, professionals, and long-term residents who value the area's accessibility, established character, and proximity to both Washington, DC and the beltway.\n\nThe city's housing includes established single-family neighborhoods with mid-century and craftsman-style homes, apartment complexes serving the university community, and townhome developments throughout. Capital Clean Care serves College Park's residential community with professional cleaning services tailored to every property type.\n\nCollege Park's location at the intersection of major commuter routes and its growing investment in infrastructure make it an increasingly attractive residential choice. Our eco-friendly cleaning services support College Park families who want a clean, healthy home environment without the chemical concerns of conventional cleaning products.",
+    nearbySlugs: ["silver-spring-md", "takoma-park-md", "prince-georges-county-md", "washington-dc", "laurel-md"],
+    faqs: [
+      { q: "Do you serve houses near the University of Maryland?", a: "Yes. We serve all College Park neighborhoods including those near the UMD campus, Old Town College Park, and surrounding residential areas." },
+      { q: "Do you clean apartments and townhomes in College Park?", a: "Yes. We clean all types of residences in College Park including apartments, townhomes, condos, and single-family homes." },
+      { q: "How much does cleaning cost in College Park?", a: "Pricing depends on home size and service type. College Park homes are competitively priced. Fill out our free quote form for an accurate estimate." },
+      { q: "Are your products safe for families in College Park?", a: "Yes. We use only EPA Safer Choice certified, plant-based products — safe for children, pets, and allergy sufferers." },
+      { q: "Can I schedule cleaning on weekends in College Park?", a: "Yes. Saturday appointments are available for College Park clients. Book early as weekend slots fill quickly." },
+      { q: "Do you offer recurring plans in College Park?", a: "Yes. We offer weekly, bi-weekly, and monthly plans with preferred pricing and consistent teams for College Park residents." }
+    ],
+    metaTitle: "House Cleaning in College Park, MD | Capital Clean Care",
+    metaDescription: "Professional house cleaning in College Park, MD. Serving families & residents near UMD. Eco-friendly, background-checked teams. Free quotes."
+  },
+  {
+    name: "Laurel",
+    slug: "laurel-md",
+    state: "MD",
+    stateSlug: "maryland",
+    county: "Prince George's County",
+    intro: "Laurel occupies a strategic location at the meeting point of Prince George's, Howard, and Montgomery Counties, making it one of the most centrally located communities in the DMV region. With excellent highway access via I-95 and Route 1, and MARC train service for commuters, Laurel attracts residents who want connectivity without the higher price points of closer-in suburbs.\n\nLaurel's housing stock spans decades of development, from established mid-century neighborhoods in Old Town Laurel to newer townhome developments, condominiums, and single-family communities throughout the city. Capital Clean Care serves the full range of Laurel residences with professional cleaning services customized to each home's specific needs.\n\nThe city's growing commercial corridor along Route 1 and the BeltWay Plaza area have brought new investment and residents. Capital Clean Care supports Laurel's residential community with eco-friendly cleaning services that protect families and pets while delivering the clean, fresh home environment that every household deserves.",
+    nearbySlugs: ["college-park-md", "bowie-md", "silver-spring-md", "columbia-md", "prince-georges-county-md"],
+    faqs: [
+      { q: "What Laurel neighborhoods do you serve?", a: "We serve all of Laurel including Old Town Laurel, Montpelier, Pheasant Ridge, Russett, Bond Mill, South Laurel, and surrounding communities." },
+      { q: "Do you serve Prince George's and Howard County parts of Laurel?", a: "Yes. We serve all of Laurel regardless of which county the property falls in — Prince George's, Howard, or Montgomery." },
+      { q: "How much does cleaning cost in Laurel?", a: "Pricing depends on home size, condition, and service type. Laurel is competitively priced. Request a free, no-obligation quote for accurate pricing." },
+      { q: "Can I get same-week cleaning in Laurel?", a: "Availability depends on our current schedule. Laurel is a core service area and we often have openings. Contact us to check current availability." },
+      { q: "Do you clean apartments and townhomes in Laurel?", a: "Yes. We serve all residential property types including apartments, condos, townhomes, and single-family homes throughout Laurel." },
+      { q: "Are your Laurel teams background-checked?", a: "Yes. Every Capital Clean Care team member serving Laurel has passed thorough background checks. We're fully licensed and insured." }
+    ],
+    metaTitle: "House Cleaning in Laurel, MD | Capital Clean Care",
+    metaDescription: "Professional house cleaning in Laurel, MD. Serving all Laurel neighborhoods in PG, Howard & Montgomery Counties. Eco-friendly, background-checked teams. Free quotes."
+  },
+  {
+    name: "Bowie",
+    slug: "bowie-md",
+    state: "MD",
+    stateSlug: "maryland",
+    county: "Prince George's County",
+    intro: "Bowie is one of Prince George's County's largest and most established communities, combining the spaciousness of suburban living with convenient access to both Washington, DC and Annapolis. Known for its excellent parks, quality schools, and strong community spirit, Bowie attracts families and professionals who want room to breathe without sacrificing quality of life.\n\nThe city's residential neighborhoods span several decades of development, from the original planned communities of the 1960s and 1970s to more recent developments on Bowie's western edge. This variety means homes range from classic colonial and split-level designs to contemporary townhomes and single-family properties with modern amenities. Capital Clean Care adapts its approach to every Bowie home type.\n\nBowie residents appreciate reliability and professionalism — values that define Capital Clean Care's service. Our background-checked teams, eco-friendly products, and consistent quality make us the right choice for Bowie homeowners who want cleaning they can count on every visit.",
+    nearbySlugs: ["laurel-md", "college-park-md", "prince-georges-county-md", "washington-dc", "silver-spring-md"],
+    faqs: [
+      { q: "What Bowie neighborhoods do you serve?", a: "We serve all Bowie neighborhoods including Belair, Mitchellville, Pointer Ridge, Whitehall, Bowie Town Center area, Kenilworth, Westgate, and surrounding communities." },
+      { q: "How much does cleaning cost in Bowie?", a: "Pricing depends on home size and service type. Bowie homes are competitively priced. Request a free, no-obligation quote for accurate pricing tailored to your home." },
+      { q: "Can I get recurring cleaning in Bowie?", a: "Yes. We offer weekly, bi-weekly, and monthly recurring plans for Bowie homes. Recurring clients receive preferred pricing and consistent team assignments." },
+      { q: "Are weekend appointments available in Bowie?", a: "Yes. Saturday appointments are available for Bowie clients. Weekend slots are popular, so we recommend booking at least a week in advance." },
+      { q: "Do you clean townhomes and condos in Bowie?", a: "Yes. We clean all residential property types in Bowie including townhomes, single-family homes, and condominiums." },
+      { q: "Are your Bowie teams background-checked?", a: "Yes. Every team member undergoes thorough background checks. We're fully licensed and insured for your complete peace of mind." }
+    ],
+    metaTitle: "House Cleaning in Bowie, MD | Capital Clean Care",
+    metaDescription: "Professional house cleaning in Bowie, MD. Eco-friendly products, background-checked teams serving all Bowie neighborhoods. Get a free quote today."
+  },
+  {
+    name: "Reston",
+    slug: "reston-va",
+    state: "VA",
+    stateSlug: "virginia",
+    county: "Fairfax County",
+    intro: "Reston stands as one of America's first planned communities, designed by Robert E. Simon in 1964 with a visionary emphasis on mixed-use living, abundant green space, and community connectivity. Today, Reston has evolved into a vibrant hub of technology companies, transit-oriented development, and residential neighborhoods that attract professionals from across the region.\n\nThe community's housing ranges from classic townhomes and garden apartments in the original Reston clusters to luxury high-rises near Reston Town Center and the Silver Line Metro stations. Single-family homes in Reston's residential neighborhoods offer mature tree canopies and access to the community's extensive pathway system and recreational facilities. Capital Clean Care serves all Reston property types with professional, eco-friendly cleaning services.\n\nReston's tech-forward community appreciates innovation, quality, and environmental responsibility — values that align perfectly with Capital Clean Care's approach. Our eco-friendly, EPA Safer Choice certified products protect Reston families while our professional teams deliver the consistent quality that busy Reston professionals expect and deserve.",
+    nearbySlugs: ["fairfax-va", "mclean-va", "arlington-va", "vienna-va", "falls-church-va"],
+    faqs: [
+      { q: "What Reston neighborhoods do you serve?", a: "We serve all of Reston including Reston Town Center, North Point, South Lakes, Lake Newport, Hunters Woods, Tall Oaks, and neighborhoods along the Silver Line corridor." },
+      { q: "Do you clean high-rises and condos in Reston?", a: "Yes. We're experienced with high-rise and condominium cleaning throughout Reston, including luxury units near the Town Center and Silver Line Metro stations." },
+      { q: "How much does cleaning cost in Reston?", a: "Pricing depends on home size and service type. Reston condos typically range from $150-$250 for standard cleaning. Single-family homes vary by size. Request a free quote for accurate pricing." },
+      { q: "Can I get bi-weekly cleaning in Reston?", a: "Yes. Weekly, bi-weekly, and monthly recurring plans are available with preferred pricing for Reston residents." },
+      { q: "Are your products safe for tech equipment?", a: "Yes. Our plant-based, low-VOC products are safe for use around electronics. We use appropriate microfiber and cleaning methods for tech-sensitive environments." },
+      { q: "Do you serve apartments near Reston Town Center?", a: "Yes. We serve all Reston Town Center area apartments and condos. Our teams coordinate with building management for access when needed." }
+    ],
+    metaTitle: "House Cleaning in Reston, VA | Capital Clean Care",
+    metaDescription: "Professional house cleaning in Reston, VA. Serving Town Center, Silver Line corridor & all Reston neighborhoods. Eco-friendly, background-checked teams. Free quotes."
+  },
+  {
     name: "Wheaton",
     slug: "wheaton-md",
     state: "MD",
