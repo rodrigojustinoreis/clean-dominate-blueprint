@@ -214,6 +214,68 @@ const EcoFriendlyCleaningPage = () => {
         </div>
       </section>
 
+      {/* ── Who Benefits Most ── */}
+      <section className="py-16 md:py-20 bg-gradient-to-b from-[#F1F8F1] to-white">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="text-center mb-12">
+            <span className="inline-block bg-accent/10 text-accent font-semibold text-sm uppercase tracking-wider px-3 py-1 rounded-full mb-4">
+              Who It's For
+            </span>
+            <h2 className="font-heading text-3xl font-bold mb-4">
+              Eco-Friendly Cleaning Is Especially Important If You Have...
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {[
+              {
+                icon: "👶",
+                title: "Infants or Toddlers",
+                desc: "Children under 3 crawl on floors and put their hands in their mouths constantly — making surface residues from conventional cleaners a direct ingestion risk. Our plant-based products leave no harmful residues.",
+              },
+              {
+                icon: "🐾",
+                title: "Dogs or Cats",
+                desc: "Pets absorb cleaning chemicals through their paw pads and ingest them during grooming. Certain conventional cleaners — including pine-oil and quat-based products — are acutely toxic to cats and irritating to dogs.",
+              },
+              {
+                icon: "🫁",
+                title: "Asthma or Allergies",
+                desc: "Synthetic fragrances and VOCs from conventional cleaners are among the most common asthma and allergy triggers. Our fragrance-free, low-VOC formulas are recommended by allergists for chemically sensitive individuals.",
+              },
+              {
+                icon: "🤰",
+                title: "Pregnant Women",
+                desc: "Prenatal chemical exposure is a known risk factor for developmental issues. The American College of Obstetricians and Gynecologists recommends avoiding toxic household chemicals during pregnancy — our products meet this standard.",
+              },
+              {
+                icon: "🏠",
+                title: "Poorly Ventilated Homes",
+                desc: "Older homes, high-rise condos, and apartments without cross-ventilation concentrate VOCs from conventional cleaners to dangerous levels. Our low-VOC products significantly reduce this accumulation risk.",
+              },
+              {
+                icon: "🌊",
+                title: "Chesapeake Bay Watershed",
+                desc: "Every home in Maryland, DC, and Northern Virginia sits in the Chesapeake Bay watershed. Biodegradable cleaning products don't contribute to the nutrient pollution that threatens the Bay's ecosystem.",
+              },
+            ].map((item) => (
+              <div key={item.title} className="bg-white rounded-xl border border-border p-5 hover:shadow-md transition-shadow">
+                <div className="text-3xl mb-3">{item.icon}</div>
+                <h3 className="font-heading font-bold text-foreground mb-2">{item.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+          <div className="text-center mt-8">
+            <Link
+              to="/why-eco-friendly-cleaning"
+              className="inline-flex items-center gap-2 text-accent font-semibold hover:underline text-sm"
+            >
+              Read the full science behind eco-friendly cleaning <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* ── What We Use ── */}
       <section className="py-16 md:py-20 bg-gradient-to-b from-[#F1F8F1] to-white">
         <div className="container mx-auto px-4 max-w-5xl">
@@ -310,6 +372,32 @@ const EcoFriendlyCleaningPage = () => {
             <Link to="/washington-dc" className="text-accent hover:underline">Washington DC</Link>, and{" "}
             <Link to="/virginia" className="text-accent hover:underline">Northern Virginia</Link>.
           </p>
+        </div>
+      </section>
+
+      {/* ── Related Reading ── */}
+      <section className="py-12 bg-secondary/40">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="font-heading text-xl font-bold mb-4">Learn More About Eco-Friendly Cleaning</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {[
+              { label: "Why Eco-Friendly Cleaning Matters (Deep Dive)", href: "/why-eco-friendly-cleaning" },
+              { label: "Eco Cleaning Tips for Maryland Homes", href: "/blog/eco-cleaning-tips-maryland-homes" },
+              { label: "Eco Cleaning for Maryland Winters", href: "/blog/eco-cleaning-tips-winters-maryland" },
+              { label: "Allergy-Proofing Your DMV Home", href: "/blog/allergy-proofing-home-dmv" },
+              { label: "Remove Pet Hair & Odors from DMV Homes", href: "/blog/remove-pet-hair-odors-dmv-homes" },
+              { label: "Best Cleaning Schedule for Busy Families", href: "/blog/best-cleaning-schedule-busy-families-dmv" },
+            ].map((link) => (
+              <Link
+                key={link.href}
+                to={link.href}
+                className="flex items-center gap-2 px-4 py-3 rounded-lg border border-border bg-white hover:border-accent hover:shadow-sm transition-all text-sm font-medium text-foreground hover:text-accent"
+              >
+                <ArrowRight className="h-3.5 w-3.5 text-accent shrink-0" />
+                {link.label}
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
