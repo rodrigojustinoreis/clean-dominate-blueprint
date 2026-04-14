@@ -60,6 +60,7 @@ function getAllRoutes(): string[] {
     "montgomery-county-md", "frederick-county-md", "howard-county-md", "prince-georges-county-md",
     "columbia-md", "ellicott-city-md", "clarksburg-md", "damascus-md",
     "urbana-md", "new-market-md",
+    "capitol-hill-dc", "georgetown-dc", "dupont-circle-dc", "adams-morgan-dc", "falls-church-va",
   ];
   for (const c of citySlugs) {
     routes.push(`/locations/${c}`);
