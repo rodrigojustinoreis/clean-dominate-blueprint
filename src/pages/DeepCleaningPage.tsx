@@ -7,6 +7,7 @@ import Footer from "@/components/layout/Footer";
 import QuoteForm from "@/components/QuoteForm";
 import FAQ from "@/components/FAQ";
 import BeforeAfterGallery from "@/components/BeforeAfterGallery";
+import GreenShield5Step from "@/components/GreenShield5Step";
 import ExitIntentPopup from "@/components/ExitIntentPopup";
 import { ServiceSchema, FAQSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import { useSEO } from "@/hooks/useSEO";
@@ -282,6 +283,9 @@ const DeepCleaningPage = () => {
 
       {/* ── Before & After Gallery ── */}
       <BeforeAfterGallery />
+
+      {/* ── GreenShield 5-Step Clean ── */}
+      <GreenShield5Step compact showCTA={false} />
 
       {/* ── FAQ ── */}
       <section className="py-12">
