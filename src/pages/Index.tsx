@@ -21,7 +21,8 @@ import ecoProducts from "@/assets/eco-products.webp";
 import HeroSection from "@/components/home/HeroSection";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
 import ServicesSection from "@/components/home/ServicesSection";
-import TestimonialsSection from "@/components/home/TestimonialsSection";
+import TestimonialsCarousel from "@/components/home/TestimonialsCarousel";
+import EcoCallout from "@/components/home/EcoCallout";
 import ScrollReveal from "@/components/ScrollReveal";
 import GreenShield5Step from "@/components/GreenShield5Step";
 import TrustBadges from "@/components/TrustBadges";
@@ -67,24 +68,26 @@ const Index = () => {
       {/* ══════════════ HERO ══════════════ */}
       <HeroSection />
 
-      {/* ══════════════ TRUST STRIP ══════════════ */}
+      {/* ══════════════ TRUST BAR ══════════════ */}
       <ScrollReveal>
-        <section className="border-b border-border bg-card">
-          <div className="container mx-auto px-4 py-6">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+        <section className="border-b border-border bg-card shadow-sm">
+          <div className="container mx-auto px-4 py-5">
+            <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-4">
               {[
-                { icon: Shield, label: "Licensed & Insured", sub: "Full coverage" },
-                { icon: Users, label: "Background-Checked", sub: "Vetted teams" },
-                { icon: Leaf, label: "Eco-Friendly", sub: "Non-toxic products" },
-                { icon: Star, label: "5-Star Rated", sub: "150+ happy clients" },
+                { icon: Shield, label: "Licensed & Insured", sub: "Full liability coverage" },
+                { icon: Users, label: "Background-Checked", sub: "Every team member" },
+                { icon: Leaf, label: "EPA Safer Choice", sub: "100% non-toxic products" },
+                { icon: Star, label: "5-Star Rated", sub: "500+ happy clients" },
+                { icon: CheckCircle, label: "Satisfaction Guarantee", sub: "Re-clean free in 24h" },
+                { icon: Clock, label: "9+ Years in DMV", sub: "Family-owned & trusted" },
               ].map((item) => (
-                <div key={item.label} className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center shrink-0">
-                    <item.icon className="h-5 w-5 text-accent" />
+                <div key={item.label} className="flex items-center gap-2.5">
+                  <div className="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center shrink-0">
+                    <item.icon className="h-4 w-4 text-accent" />
                   </div>
                   <div>
-                    <p className="font-semibold text-sm text-foreground">{item.label}</p>
-                    <p className="text-xs text-muted-foreground">{item.sub}</p>
+                    <p className="font-semibold text-sm text-foreground leading-tight">{item.label}</p>
+                    <p className="text-xs text-muted-foreground leading-tight">{item.sub}</p>
                   </div>
                 </div>
               ))}
@@ -169,6 +172,11 @@ const Index = () => {
             </div>
           </div>
         </section>
+      </ScrollReveal>
+
+      {/* ══════════════ ECO CALLOUT ══════════════ */}
+      <ScrollReveal>
+        <EcoCallout />
       </ScrollReveal>
 
       {/* ══════════════ SERVICE AREAS ══════════════ */}
@@ -271,6 +279,18 @@ const Index = () => {
         </section>
       </ScrollReveal>
 
+      {/* ══════════════ GREENSHIELD INTRO BANNER ══════════════ */}
+      <ScrollReveal>
+        <div className="bg-accent/5 border-y border-accent/20 py-5">
+          <div className="container mx-auto px-4 text-center">
+            <p className="text-sm md:text-base font-medium text-foreground">
+              🛡️ Every Capital Clean Care visit follows the <strong>GreenShield 5-Step Clean™</strong> — our proprietary method developed over 9 years and 500+ homes.{" "}
+              <a href="/about" className="text-accent font-semibold hover:underline">Learn the story behind it →</a>
+            </p>
+          </div>
+        </div>
+      </ScrollReveal>
+
       {/* ══════════════ GREENSHIELD 5-STEP CLEAN ══════════════ */}
       <ScrollReveal>
         <GreenShield5Step />
@@ -302,9 +322,9 @@ const Index = () => {
         <BeforeAfterGallery />
       </ScrollReveal>
 
-      {/* ══════════════ TESTIMONIALS ══════════════ */}
+      {/* ══════════════ TESTIMONIALS CAROUSEL ══════════════ */}
       <ScrollReveal>
-        <TestimonialsSection />
+        <TestimonialsCarousel />
       </ScrollReveal>
 
       {/* ══════════════ LOCAL CLEANING PAGES ══════════════ */}
