@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import Layout from "@/components/layout/Layout";
 import FAQ from "@/components/FAQ";
 import ConversionCTA from "@/components/ConversionCTA";
+import TrustBadges from "@/components/TrustBadges";
 import GoogleMapEmbed from "@/components/GoogleMapEmbed";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import QuoteForm from "@/components/QuoteForm";
@@ -248,6 +249,9 @@ const VanityLandingPage = () => {
           </div>
         </div>
       </section>
+
+      {/* Trust Badges */}
+      <TrustBadges compact />
 
       {/* CTA */}
       <ConversionCTA cityName={city.name} />

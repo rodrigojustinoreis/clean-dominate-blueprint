@@ -6,6 +6,7 @@ import Layout from "@/components/layout/Layout";
 import QuoteForm from "@/components/QuoteForm";
 import FAQ from "@/components/FAQ";
 import GreenShield5Step from "@/components/GreenShield5Step";
+import TrustBadges from "@/components/TrustBadges";
 import { useSEO } from "@/hooks/useSEO";
 import { BreadcrumbSchema, FAQSchema } from "@/components/SchemaMarkup";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -359,6 +360,9 @@ const WhyEcoFriendlyPage = () => {
 
       {/* ── GreenShield Process ── */}
       <GreenShield5Step showCTA={false} />
+
+      {/* ── Trust Badges ── */}
+      <TrustBadges compact withBackground={false} />
 
       {/* ── Testimonials ── */}
       <section className="py-16 md:py-20">

@@ -24,6 +24,7 @@ import ServicesSection from "@/components/home/ServicesSection";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
 import ScrollReveal from "@/components/ScrollReveal";
 import GreenShield5Step from "@/components/GreenShield5Step";
+import TrustBadges from "@/components/TrustBadges";
 
 const homeFaqs = [
   { q: "What areas do you serve?", a: "We serve communities throughout Maryland (Montgomery, Frederick, Howard, and Prince George's Counties), Washington DC, and Northern Virginia (Arlington, Fairfax, McLean, Alexandria, and more)." },
@@ -273,6 +274,11 @@ const Index = () => {
       {/* ══════════════ GREENSHIELD 5-STEP CLEAN ══════════════ */}
       <ScrollReveal>
         <GreenShield5Step />
+      </ScrollReveal>
+
+      {/* ══════════════ TRUST BADGES ══════════════ */}
+      <ScrollReveal>
+        <TrustBadges />
       </ScrollReveal>
 
       {/* ══════════════ REAL WORK PHOTOS ══════════════ */}

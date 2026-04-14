@@ -6,6 +6,7 @@ import Layout from "@/components/layout/Layout";
 import QuoteForm from "@/components/QuoteForm";
 import FAQ from "@/components/FAQ";
 import GreenShield5Step from "@/components/GreenShield5Step";
+import TrustBadges from "@/components/TrustBadges";
 import BeforeAfterGallery from "@/components/BeforeAfterGallery";
 import { useSEO } from "@/hooks/useSEO";
 import { ServiceSchema, FAQSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
@@ -253,6 +254,9 @@ const EcoFriendlyCleaningPage = () => {
 
       {/* ── GreenShield 5-Step ── */}
       <GreenShield5Step compact showCTA={false} />
+
+      {/* ── Trust Badges ── */}
+      <TrustBadges compact withBackground={false} />
 
       {/* ── Before & After ── */}
       <BeforeAfterGallery />

@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import QuoteForm from "@/components/QuoteForm";
+import TrustBadges from "@/components/TrustBadges";
 import FAQ from "@/components/FAQ";
 import { FAQSchema, LocalBusinessSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import { useSEO } from "@/hooks/useSEO";
@@ -238,6 +239,8 @@ const About = () => {
           </div>
         </div>
       </section>
+
+      <TrustBadges compact />
 
       <section className="py-16 bg-secondary" id="quote">
         <div className="container mx-auto px-4 max-w-2xl">

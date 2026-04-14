@@ -3,6 +3,7 @@ import Layout from "@/components/layout/Layout";
 import { useSEO } from "@/hooks/useSEO";
 import FAQ from "@/components/FAQ";
 import ConversionCTA from "@/components/ConversionCTA";
+import TrustBadges from "@/components/TrustBadges";
 import { LocalBusinessSchema, ServiceSchema, FAQSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import { getCity, getService, getServiceLocationIntro, getWhyChooseUs, getServiceLocationFAQs, slCities, slServices } from "@/data/service-locations";
 import { vanityLandingPages } from "@/data/vanity-landings";
@@ -231,6 +232,9 @@ const ServiceLocationPage = () => {
           </div>
         </div>
       </section>
+
+      {/* Trust Badges */}
+      <TrustBadges compact />
 
       {/* CTA */}
       <ConversionCTA cityName={city.name} />

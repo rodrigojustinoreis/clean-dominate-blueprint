@@ -10,6 +10,7 @@ import { FAQSchema, ServiceSchema, LocalBusinessSchema } from "@/components/Sche
 import FAQ from "@/components/FAQ";
 import VideoTestimonials from "@/components/VideoTestimonials";
 import GreenShield5Step from "@/components/GreenShield5Step";
+import TrustBadges from "@/components/TrustBadges";
 
 const springFaqs = [
   { q: "When should I schedule spring cleaning?", a: "We recommend booking in March or April before the peak pollen season. Early scheduling ensures availability and helps you stay ahead of seasonal allergen buildup." },
@@ -144,6 +145,9 @@ const SpringCleaningMD = () => {
 
       {/* GreenShield 5-Step */}
       <GreenShield5Step compact showCTA={false} />
+
+      {/* Trust Badges */}
+      <TrustBadges compact withBackground={false} />
 
       {/* FAQ */}
       <section className="py-16 md:py-24 bg-secondary">

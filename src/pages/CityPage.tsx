@@ -7,6 +7,7 @@ import QuoteForm from "@/components/QuoteForm";
 import FAQ from "@/components/FAQ";
 import PricingTable from "@/components/PricingTable";
 import TrustBar from "@/components/TrustBar";
+import TrustBadges from "@/components/TrustBadges";
 import ConversionCTA from "@/components/ConversionCTA";
 import { FAQSchema, ServiceSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import { useSEO } from "@/hooks/useSEO";
@@ -333,6 +334,9 @@ const CityPage = () => {
           </div>
         </section>
       )}
+
+      {/* Trust Badges */}
+      <TrustBadges compact />
 
       {/* Quote Form */}
       <section className="py-16 md:py-20 bg-secondary" id="quote">

@@ -13,6 +13,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { slCities, slServices } from "@/data/service-locations";
 import NotFound from "./NotFound";
 import GreenShield5Step from "@/components/GreenShield5Step";
+import TrustBadges from "@/components/TrustBadges";
 
 const topCities = cities.filter(c => !c.slug.includes("county")).slice(0, 8);
 
@@ -137,6 +138,8 @@ const ServicePage = () => {
       </section>
 
       <GreenShield5Step compact showCTA={false} />
+
+      <TrustBadges compact withBackground={false} />
 
       <section className="py-16 bg-secondary">
         <div className="container mx-auto px-4 max-w-2xl">

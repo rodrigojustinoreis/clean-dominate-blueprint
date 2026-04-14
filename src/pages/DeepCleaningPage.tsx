@@ -8,6 +8,7 @@ import QuoteForm from "@/components/QuoteForm";
 import FAQ from "@/components/FAQ";
 import BeforeAfterGallery from "@/components/BeforeAfterGallery";
 import GreenShield5Step from "@/components/GreenShield5Step";
+import TrustBadges from "@/components/TrustBadges";
 import ExitIntentPopup from "@/components/ExitIntentPopup";
 import { ServiceSchema, FAQSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import { useSEO } from "@/hooks/useSEO";
@@ -286,6 +287,9 @@ const DeepCleaningPage = () => {
 
       {/* ── GreenShield 5-Step Clean ── */}
       <GreenShield5Step compact showCTA={false} />
+
+      {/* ── Trust Badges ── */}
+      <TrustBadges compact withBackground={false} />
 
       {/* ── FAQ ── */}
       <section className="py-12">

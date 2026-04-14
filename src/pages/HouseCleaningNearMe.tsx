@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Layout from "@/components/layout/Layout";
 import QuoteForm from "@/components/QuoteForm";
+import TrustBadges from "@/components/TrustBadges";
 import FAQ from "@/components/FAQ";
 import { LocalBusinessSchema, FAQSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import { useSEO } from "@/hooks/useSEO";
@@ -225,6 +226,9 @@ const HouseCleaningNearMe = () => {
           <FAQ faqs={faqs} />
         </div>
       </section>
+
+      {/* Trust Badges */}
+      <TrustBadges compact />
 
       {/* Quote Form */}
       <section className="py-16 bg-secondary" id="quote">
