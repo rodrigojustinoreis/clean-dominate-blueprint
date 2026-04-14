@@ -403,4 +403,105 @@
   <url><loc>https://capitalcleancare.com/locations/falls-church-va/post-construction-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://capitalcleancare.com/locations/falls-church-va/recurring-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://capitalcleancare.com/locations/falls-church-va/eco-friendly-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+
+  <!-- New DC Neighborhood City Pages (Phase 5) -->
+  <url><loc>https://capitalcleancare.com/locations/shaw-dc</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/columbia-heights-dc</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/navy-yard-dc</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- New Virginia City Pages (Phase 5) -->
+  <url><loc>https://capitalcleancare.com/locations/herndon-va</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/annandale-va</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- Service + Location Pages (Phase 5: 10 new cities × 8 services = 80 pages) -->
+  <!-- Washington DC NE -->
+  <url><loc>https://capitalcleancare.com/locations/washington-dc-ne/house-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/washington-dc-ne/deep-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/washington-dc-ne/move-out-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/washington-dc-ne/move-in-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/washington-dc-ne/apartment-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/washington-dc-ne/post-construction-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/washington-dc-ne/recurring-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/washington-dc-ne/eco-friendly-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <!-- Downtown DC -->
+  <url><loc>https://capitalcleancare.com/locations/downtown-dc/house-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/downtown-dc/deep-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/downtown-dc/move-out-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/downtown-dc/move-in-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/downtown-dc/apartment-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/downtown-dc/post-construction-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/downtown-dc/recurring-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/downtown-dc/eco-friendly-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <!-- Shaw DC -->
+  <url><loc>https://capitalcleancare.com/locations/shaw-dc/house-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/shaw-dc/deep-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/shaw-dc/move-out-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/shaw-dc/move-in-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/shaw-dc/apartment-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/shaw-dc/post-construction-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/shaw-dc/recurring-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/shaw-dc/eco-friendly-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <!-- Columbia Heights DC -->
+  <url><loc>https://capitalcleancare.com/locations/columbia-heights-dc/house-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/columbia-heights-dc/deep-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/columbia-heights-dc/move-out-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/columbia-heights-dc/move-in-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/columbia-heights-dc/apartment-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/columbia-heights-dc/post-construction-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/columbia-heights-dc/recurring-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/columbia-heights-dc/eco-friendly-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <!-- Navy Yard DC -->
+  <url><loc>https://capitalcleancare.com/locations/navy-yard-dc/house-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/navy-yard-dc/deep-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/navy-yard-dc/move-out-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/navy-yard-dc/move-in-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/navy-yard-dc/apartment-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/navy-yard-dc/post-construction-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/navy-yard-dc/recurring-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/navy-yard-dc/eco-friendly-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <!-- Reston VA -->
+  <url><loc>https://capitalcleancare.com/locations/reston-va/house-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/reston-va/deep-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/reston-va/move-out-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/reston-va/move-in-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/reston-va/apartment-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/reston-va/post-construction-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/reston-va/recurring-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/reston-va/eco-friendly-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <!-- Vienna VA -->
+  <url><loc>https://capitalcleancare.com/locations/vienna-va/house-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/vienna-va/deep-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/vienna-va/move-out-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/vienna-va/move-in-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/vienna-va/apartment-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/vienna-va/post-construction-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/vienna-va/recurring-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/vienna-va/eco-friendly-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <!-- Tysons VA -->
+  <url><loc>https://capitalcleancare.com/locations/tysons-va/house-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/tysons-va/deep-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/tysons-va/move-out-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/tysons-va/move-in-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/tysons-va/apartment-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/tysons-va/post-construction-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/tysons-va/recurring-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/tysons-va/eco-friendly-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <!-- Herndon VA -->
+  <url><loc>https://capitalcleancare.com/locations/herndon-va/house-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/herndon-va/deep-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/herndon-va/move-out-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/herndon-va/move-in-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/herndon-va/apartment-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/herndon-va/post-construction-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/herndon-va/recurring-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/herndon-va/eco-friendly-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <!-- Annandale VA -->
+  <url><loc>https://capitalcleancare.com/locations/annandale-va/house-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/annandale-va/deep-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/annandale-va/move-out-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/annandale-va/move-in-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/annandale-va/apartment-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/annandale-va/post-construction-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/annandale-va/recurring-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://capitalcleancare.com/locations/annandale-va/eco-friendly-cleaning</loc><lastmod>2026-04-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>

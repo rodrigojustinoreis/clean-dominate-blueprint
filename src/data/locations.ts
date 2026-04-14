@@ -816,6 +816,98 @@ export const cities: CityData[] = [
     ],
     metaTitle: "House Cleaning Services in Wheaton, MD | Capital Clean Care",
     metaDescription: "Professional house cleaning in Wheaton, MD (ZIP 20902). Eco-friendly products, background-checked teams, serving all Wheaton neighborhoods. Free quotes."
+  },
+  {
+    name: "Shaw",
+    slug: "shaw-dc",
+    state: "DC",
+    stateSlug: "washington-dc",
+    intro: "Shaw is one of DC's most historically significant and rapidly transforming neighborhoods, long celebrated as the \"Black Broadway\" era cultural heart. Today, Shaw and its neighboring Logan Circle area offer a vibrant mix of renovated Victorians, new luxury condos, and acclaimed restaurants along 14th Street and 7th Street NW. Capital Clean Care proudly serves Shaw homeowners and renters with professional eco-friendly cleaning.\n\nShaw's housing stock ranges from stunning 19th-century rowhouses meticulously preserved to sleek modern condominiums and loft conversions in former industrial buildings. Many Shaw residents are young professionals and creative types who appreciate quality services that match their aesthetic standards. Our eco-conscious products are perfect for Shaw's renters and owners who prioritize sustainable living.\n\nUrban living in Shaw means dust from nearby construction, foot traffic bringing in city grime, and compact spaces requiring efficient cleaning. Capital Clean Care's teams are trained for urban DC cleaning challenges, delivering spotless results in rowhouses, condos, and apartments alike. Whether you're near Howard University or the 9:30 Club, we've got you covered.",
+    nearbySlugs: ["columbia-heights-dc", "dupont-circle-dc", "adams-morgan-dc", "capitol-hill-dc", "downtown-dc"],
+    faqs: [
+      { q: "What Shaw neighborhoods and areas do you serve?", a: "We serve all of Shaw including Logan Circle, the 14th Street corridor, 7th Street NW, O Street Market area, Howard University neighborhood, Blagden Alley, and all surrounding blocks." },
+      { q: "Do you clean rowhouses in Shaw?", a: "Yes. Our teams are experienced with Shaw's historic Victorian rowhouses, including appropriate care for original hardwood floors, plaster walls, and period architectural details." },
+      { q: "How much does house cleaning cost in Shaw, DC?", a: "Pricing depends on property type and size. Shaw condos and apartments typically range $130-$200 for standard cleaning. Historic rowhouses with multiple levels range from $200-$350+. Request a free quote for accurate pricing." },
+      { q: "Do you clean condos and loft apartments in Shaw?", a: "Absolutely. We're experienced with Shaw's modern condominiums, converted loft apartments, and all types of urban residential spaces along the 14th Street and 7th Street corridors." },
+      { q: "Can I get recurring cleaning service in Shaw?", a: "Yes. Weekly, bi-weekly, and monthly recurring plans are available for Shaw residents. Recurring cleaning is especially popular with young professionals who want a consistently clean home without the hassle." },
+      { q: "Are your products safe for use in Shaw apartments with shared ventilation?", a: "Yes. We exclusively use plant-based, low-VOC cleaning products that are safe for shared building environments. Our products are free from harsh chemicals and strong artificial fragrances." }
+    ],
+    metaTitle: "House Cleaning in Shaw, DC | Capital Clean Care",
+    metaDescription: "Professional house cleaning in Shaw, DC. Serving rowhouses, condos & apartments near 14th St & 7th St NW. Eco-friendly, insured teams. Free quotes."
+  },
+  {
+    name: "Columbia Heights",
+    slug: "columbia-heights-dc",
+    state: "DC",
+    stateSlug: "washington-dc",
+    intro: "Columbia Heights is one of DC's most diverse and energetic neighborhoods, anchored by the Columbia Heights Metro station and a commercial strip along 14th Street NW that's home to Target, Giant, and a growing roster of independent restaurants and cafes. The neighborhood's residential blocks feature a beautiful mix of DC rowhouses, historic apartment buildings, and newer mixed-use developments.\n\nLong a hub for DC's Latino community, Columbia Heights continues to evolve while maintaining its multicultural character. The housing stock includes ornate Victorian rowhouses, mid-century apartment buildings, and modern condo complexes. Capital Clean Care serves all Columbia Heights property types with professional cleaning services tailored to each unit's specific needs.\n\nThe neighborhood's urban density means residents often deal with street dust, nearby construction particulates, and the grime that comes with city living. Our eco-friendly cleaning products and thorough protocols address these challenges effectively. Whether you rent an apartment on 16th Street or own a rowhouse on Kenyon Street, Capital Clean Care delivers consistent quality.",
+    nearbySlugs: ["shaw-dc", "adams-morgan-dc", "dupont-circle-dc", "downtown-dc", "washington-dc"],
+    faqs: [
+      { q: "What areas of Columbia Heights do you serve?", a: "We serve all of Columbia Heights including the 14th Street NW corridor, 16th Street Heights, Mount Pleasant border, Park View, Petworth corridor, and Sherman Circle area." },
+      { q: "Do you clean apartments in Columbia Heights near the Metro?", a: "Yes. We clean all types of Columbia Heights residences including apartments near the Metro station, Victorian rowhouses, mid-century apartment buildings, and newer condo complexes." },
+      { q: "How much does cleaning cost in Columbia Heights?", a: "Apartments typically range $130-$200 for standard cleaning. Rowhouses vary by size from $180-$320+. Request a free quote for accurate, personalized pricing for your Columbia Heights home." },
+      { q: "Do you offer Spanish-language scheduling for Columbia Heights residents?", a: "We welcome all Columbia Heights residents and work to accommodate communication preferences. Contact us and we'll ensure clear communication throughout the booking and service process." },
+      { q: "Can I get a deep cleaning in Columbia Heights?", a: "Yes. Deep cleaning is available throughout Columbia Heights and includes comprehensive cleaning of all surfaces, inside appliances, window tracks, baseboards, and hard-to-reach areas." },
+      { q: "Are your Columbia Heights cleaning teams background-checked?", a: "Absolutely. Every Capital Clean Care team member serving Columbia Heights undergoes thorough background screening. We're fully licensed and insured for your complete peace of mind." }
+    ],
+    metaTitle: "House Cleaning in Columbia Heights, DC | Capital Clean Care",
+    metaDescription: "Professional house cleaning in Columbia Heights, DC. Serving rowhouses, apartments & condos near 14th St NW Metro. Eco-friendly teams. Free quotes."
+  },
+  {
+    name: "Navy Yard",
+    slug: "navy-yard-dc",
+    state: "DC",
+    stateSlug: "washington-dc",
+    intro: "Navy Yard has transformed from an industrial waterfront district into one of DC's most sought-after urban neighborhoods in under a decade. Anchored by Nationals Park and the booming development along the Anacostia riverfront, Navy Yard now offers some of DC's newest and most modern residential options with stunning water views and premium amenities.\n\nThe neighborhood's housing is predominantly newer construction: luxury condominiums, modern apartment towers, and townhomes built within the last 15 years. These properties feature high-end finishes, open floor plans, and premium materials that benefit from professional, detail-oriented cleaning care. Capital Clean Care specializes in maintaining these contemporary spaces.\n\nNavy Yard residents are typically young professionals and couples who appreciate quality and convenience. Our recurring cleaning plans are especially popular here — residents love coming home to a perfectly clean space after a game at Nationals Park or dinner at one of the neighborhood's acclaimed restaurants. Let us handle the cleaning so you can enjoy everything Navy Yard has to offer.",
+    nearbySlugs: ["capitol-hill-dc", "downtown-dc", "washington-dc", "shaw-dc", "columbia-heights-dc"],
+    faqs: [
+      { q: "What Navy Yard neighborhoods and developments do you serve?", a: "We serve all of Navy Yard including The Yards, Canal Park area, Half Street corridor, Anacostia waterfront residences, and all new residential buildings near Nationals Park." },
+      { q: "Do you clean luxury condos in Navy Yard?", a: "Yes. We specialize in luxury condominium cleaning throughout Navy Yard. Our teams are experienced with premium finishes, large open-plan layouts, and the specific care required for modern construction materials." },
+      { q: "How much does cleaning cost in Navy Yard, DC?", a: "Navy Yard condos and apartments typically range $140-$220 for standard cleaning depending on size. Luxury units with premium finishes may be priced accordingly. Request a free quote for accurate pricing." },
+      { q: "Do you coordinate with Navy Yard building management for access?", a: "Yes. We work with building concierges and management teams throughout Navy Yard to coordinate access for our cleaning appointments. Just provide building instructions when booking." },
+      { q: "Can I schedule Navy Yard cleaning around Nationals game days?", a: "Absolutely. We're familiar with Navy Yard's event schedule and can schedule around busy game days. We also offer evening cleanup services after entertainment events." },
+      { q: "Do you offer move-in cleaning for new Navy Yard residents?", a: "Yes. Move-in cleaning is extremely popular in Navy Yard given the neighborhood's constant new resident turnover. We ensure your new unit is spotless before you move in." }
+    ],
+    metaTitle: "House Cleaning in Navy Yard, DC | Capital Clean Care",
+    metaDescription: "Professional house cleaning in Navy Yard, DC. Serving luxury condos & apartments near Nationals Park & Anacostia waterfront. Eco-friendly teams. Free quotes."
+  },
+  {
+    name: "Herndon",
+    slug: "herndon-va",
+    state: "VA",
+    stateSlug: "virginia",
+    county: "Fairfax County",
+    intro: "Herndon is a thriving town in Fairfax County that serves as a major hub for the technology and aerospace industries clustered along the Dulles Corridor. With direct Silver Line Metro access at the Herndon station and proximity to Dulles International Airport, Herndon attracts professionals from across the globe. The town blends a charming historic downtown with modern residential developments and corporate campuses.\n\nHerndon's housing ranges from historic Victorian homes near the downtown historic district to modern single-family homes, townhouses, and condominiums in newer communities throughout the town. The diverse housing stock accommodates first-time buyers, growing families, and tech executives alike. Capital Clean Care serves all Herndon neighborhoods with professional, eco-friendly cleaning services.\n\nThe Dulles Corridor's ongoing development means Herndon residents sometimes deal with construction-related dust and the general demands of busy professional lives. Our flexible scheduling accommodates the demanding schedules of tech workers and their families. Whether you live near the Herndon Metro station or in an established neighborhood near the town center, Capital Clean Care delivers reliable, quality cleaning.",
+    nearbySlugs: ["reston-va", "falls-church-va", "tysons-va", "vienna-va", "fairfax-va"],
+    faqs: [
+      { q: "What Herndon neighborhoods do you serve?", a: "We serve all of Herndon including Historic Downtown Herndon, Hunters Creek, Elden Street corridor, Worldgate, Sugarland Run, Stuart Road area, and all neighborhoods throughout the town." },
+      { q: "How much does cleaning cost in Herndon, VA?", a: "Pricing depends on home size and service type. Standard cleaning for a 3-bedroom Herndon home typically ranges $150-$250. Deep cleaning runs $275-$450. Request a free quote for exact pricing." },
+      { q: "Do you serve tech professionals in Herndon with flexible scheduling?", a: "Yes. We understand the demanding schedules of Herndon's tech community. We offer early morning, evening, and weekend appointments to accommodate busy professional households." },
+      { q: "Do you clean near the Herndon Metro station?", a: "Yes. We serve all Herndon neighborhoods including newer developments near the Silver Line Metro stations. Our teams are familiar with the entire town and its growing corridors." },
+      { q: "Are your Herndon cleaning teams background-checked?", a: "Yes. Every Capital Clean Care team member is thoroughly background-screened. We're fully licensed and insured, giving Herndon homeowners complete confidence in our teams." },
+      { q: "Do you offer move-in/move-out cleaning in Herndon?", a: "Yes. Move-in and move-out cleaning is available throughout Herndon. We're experienced with all Herndon property types including townhomes, single-family homes, and condominiums." }
+    ],
+    metaTitle: "House Cleaning in Herndon, VA | Capital Clean Care",
+    metaDescription: "Professional house cleaning in Herndon, VA. Serving all Herndon neighborhoods near Silver Line Metro & Dulles Corridor. Eco-friendly, insured teams. Free quotes."
+  },
+  {
+    name: "Annandale",
+    slug: "annandale-va",
+    state: "VA",
+    stateSlug: "virginia",
+    county: "Fairfax County",
+    intro: "Annandale is a vibrant unincorporated community in Fairfax County known for its exceptional Korean culinary scene, diverse residential neighborhoods, and convenient access to major employment centers. Located just 12 miles from downtown DC, Annandale offers a suburban atmosphere with excellent value — making it one of Northern Virginia's most popular communities for families and professionals.\n\nAnnandale's housing stock features a mix of 1950s-1970s suburban ranchers and split-levels, updated colonials, and newer townhouse communities. Many homes in Annandale are larger than comparable DC-area properties at better price points, giving families more space to maintain. Capital Clean Care serves all Annandale neighborhoods with professional cleaning tailored to each home's unique needs.\n\nAnnandale's wooded residential streets and mature tree canopy mean seasonal cleaning challenges: spring pollen, fall leaves tracked indoors, and year-round allergens. Our eco-friendly products effectively address these DMV-specific cleaning needs while keeping your family and pets safe. Whether you're in Sleepy Hollow, Heritage Hills, or near the Little River Turnpike corridor, Capital Clean Care is your trusted local cleaning partner.",
+    nearbySlugs: ["fairfax-va", "falls-church-va", "arlington-va", "mclean-va", "vienna-va"],
+    faqs: [
+      { q: "What Annandale neighborhoods do you serve?", a: "We serve all of Annandale including Sleepy Hollow, Heritage Hills, Ravenwood, Mason District, Braddock Road area, Little River Turnpike corridor, Wakefield Forest, and all surrounding neighborhoods." },
+      { q: "How much does house cleaning cost in Annandale, VA?", a: "Annandale's larger suburban homes are priced by size and service type. Standard cleaning for a 3-4 bedroom rancher or split-level typically ranges $160-$270. Deep cleaning runs $280-$475. Get a free quote for your specific home." },
+      { q: "Do you clean older homes in Annandale?", a: "Yes. We're experienced with Annandale's 1950s-1970s housing stock including ranchers, split-levels, and colonials. We use appropriate products and techniques for older homes and their surfaces." },
+      { q: "Do you serve Annandale's international community?", a: "Absolutely. Annandale's multicultural community is warmly welcomed. We serve all Annandale residents and work to ensure clear communication and consistent quality for every household." },
+      { q: "Can I get recurring cleaning in Annandale?", a: "Yes. Weekly, bi-weekly, and monthly recurring plans are available throughout Annandale. Many families find bi-weekly service ideal for maintaining their larger suburban homes." },
+      { q: "Are your Annandale products safe for children and pets?", a: "Yes. We exclusively use plant-based, non-toxic cleaning products throughout all Annandale homes. Our eco-friendly formulas are safe for kids, pets, and the environment." }
+    ],
+    metaTitle: "House Cleaning in Annandale, VA | Capital Clean Care",
+    metaDescription: "Professional house cleaning in Annandale, VA. Serving all Annandale neighborhoods in Fairfax County. Eco-friendly products, background-checked teams. Free quotes."
   }
 ];
 

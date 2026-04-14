@@ -71,6 +71,16 @@ const cityNeighborhoods: Record<string, string[]> = {
   "frederick-county-md": ["Frederick City", "Urbana", "New Market", "Monrovia", "Middletown", "Walkersville", "Thurmont", "Brunswick", "Mount Airy border", "Jefferson"],
   "howard-county-md": ["Columbia", "Ellicott City", "Savage", "Jessup", "Elkridge", "Fulton", "Clarksville", "Dayton", "Woodstock", "Glenwood"],
   "prince-georges-county-md": ["College Park", "Bowie", "Laurel", "Greenbelt", "Hyattsville", "Upper Marlboro", "Langley Park", "Seat Pleasant", "Capitol Heights", "Riverdale Park"],
+  "washington-dc-ne": ["Brookland", "Edgewood", "Fort Lincoln", "Trinidad", "Ivy City", "Brentwood", "Michigan Park", "Queens Chapel", "Manor Park", "Langdon"],
+  "downtown-dc": ["Penn Quarter", "Chinatown", "Mount Vernon Triangle", "NoMa", "Union Station Area", "City Center DC", "Gallery Place", "Judiciary Square", "L'Enfant Plaza", "Federal Triangle"],
+  "shaw-dc": ["Logan Circle", "14th Street Corridor", "7th Street NW", "O Street Market", "Howard University Area", "Blagden Alley", "P Street NW", "Rhode Island Ave NW", "Vermont Ave NW", "S Street NW"],
+  "columbia-heights-dc": ["14th Street NW", "16th Street Heights", "Mount Pleasant", "Park View", "Petworth Corridor", "Sherman Circle", "Meridian Hill", "Kenyon Street", "Columbia Road", "Irving Street NW"],
+  "navy-yard-dc": ["Nationals Park Area", "Canal Park", "The Yards", "Half Street", "Anacostia Waterfront", "SE Waterfront", "Barracks Row", "Eastern Market Area", "South Capitol Street", "Potomac Avenue SE"],
+  "reston-va": ["Reston Town Center", "Lake Newport", "South Lakes", "Hunters Woods", "Tall Oaks", "North Point", "Lake Anne", "Midtown Reston", "Sunrise Valley", "Herndon-Monroe Area"],
+  "vienna-va": ["Town of Vienna", "Maple Avenue Corridor", "Beulah Road Area", "Wolf Trap", "Cunningham Park", "Lawyers Road Area", "Tapawingo", "Glyndon", "Vienna Woods", "Westwood Hills"],
+  "tysons-va": ["Tysons Corner", "McLean Metro Area", "Greensboro Station", "Spring Hill Area", "Scotts Run", "Tysons West", "Capital One Center Area", "Galleria District", "International Drive", "Old Courthouse Road"],
+  "herndon-va": ["Historic Downtown Herndon", "Hunters Creek", "Elden Street Corridor", "Worldgate", "Sugarland Run", "Stuart Road Area", "Herndon Parkway Area", "Spring Lake", "Folkstone", "Habitat Road"],
+  "annandale-va": ["Sleepy Hollow", "Heritage Hills", "Ravenwood", "Mason District", "Braddock Road Area", "Little River Turnpike Corridor", "Wakefield Forest", "Lincoln Park", "West Springfield Area", "Canterbury Woods"],
 };
 
 /** City-specific "why choose us" openers to reduce template feel */
@@ -100,6 +110,16 @@ const cityWhyIntros: Record<string, string> = {
   "frederick-county-md": "From Frederick City to Urbana, Frederick County families trust our professional teams to deliver consistent, high-quality cleaning throughout this growing region.",
   "howard-county-md": "Howard County consistently ranks among America's best counties — our premium cleaning services match the exceptional quality of life this community provides.",
   "prince-georges-county-md": "Prince George's County families deserve the same premium, eco-friendly cleaning quality we deliver across the broader DMV region.",
+  "washington-dc-ne": "NE DC's vibrant communities — from Brookland's craftsman homes to Ivy City's loft conversions — deserve professional cleaning that matches their unique character.",
+  "downtown-dc": "Downtown DC's urban professionals and condo residents trust us for efficient, discreet cleaning that keeps their premium residences immaculate.",
+  "shaw-dc": "Shaw's creative professionals and historic rowhouse owners count on our detail-oriented team to maintain their beautiful homes and condos to the highest standard.",
+  "columbia-heights-dc": "Columbia Heights' diverse community deserves a cleaning service that adapts to every property type — from Victorian rowhouses to modern condos — with consistent excellence.",
+  "navy-yard-dc": "Navy Yard's young professionals appreciate coming home to a perfectly clean space — we handle the details so you can enjoy everything this dynamic neighborhood offers.",
+  "reston-va": "Reston's innovation-driven community appreciates our modern, eco-conscious approach — professional cleaning that aligns with the values of this forward-thinking planned community.",
+  "vienna-va": "Vienna's family-oriented homeowners value quality and reliability above all — we deliver the consistent, detail-focused cleaning this beloved small-town community deserves.",
+  "tysons-va": "Tysons' executives and global professionals trust us for premium cleaning services that match the luxury standard of this rapidly transforming urban destination.",
+  "herndon-va": "Herndon's tech-focused community values efficiency and reliability — our professional teams deliver consistent, thorough cleaning around your demanding schedule.",
+  "annandale-va": "Annandale's welcoming, multicultural community deserves a cleaning service that treats every home with genuine care — dependable, eco-friendly, and always consistent.",
 };
 
 const CityPage = () => {

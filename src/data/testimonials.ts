@@ -95,6 +95,46 @@ const cityTestimonialsMap: Record<string, Testimonial[]> = {
     { name: "Jennifer O.", location: "Reston, VA", date: "2026-02-28", text: "Our Town Center condo gets a perfect cleaning every two weeks. The team is efficient, professional, and the eco-friendly products are exactly right for a LEED-certified building." },
     { name: "Scott M.", location: "Reston, VA", date: "2026-01-20", text: "As a tech professional, I appreciate Capital Clean Care's organized, systematic approach. Their eco-friendly products and consistent quality match the innovation-focused culture of our community." },
   ],
+  "downtown-dc": [
+    { name: "Margaret T.", location: "Downtown DC", date: "2026-03-10", text: "My Penn Quarter condo gets spotless results every bi-weekly visit. Capital Clean Care understands luxury finishes and the eco products leave no chemical smell in my unit." },
+    { name: "Andrew B.", location: "Downtown DC", date: "2026-02-15", text: "NoMa loft cleaned to absolute perfection. The team is efficient, respects my time, and the quality is exactly what I'd expect for a downtown DC residence." },
+    { name: "Priya K.", location: "Downtown DC", date: "2026-01-22", text: "City Center condo has never looked this good. Reliable, professional, and they coordinate with my building's concierge effortlessly. Worth every penny." },
+  ],
+  "shaw-dc": [
+    { name: "Dominique R.", location: "Shaw, DC", date: "2026-03-05", text: "Our Logan Circle rowhouse requires careful handling of original hardwood and period details. Capital Clean Care's team handles everything beautifully and uses products that are safe for our historic finishes." },
+    { name: "James V.", location: "Shaw, DC", date: "2026-02-18", text: "Shaw condo on 14th Street cleaned impeccably every two weeks. The team is discreet, thorough, and their eco-friendly products meet our building's green certification requirements." },
+    { name: "Claire N.", location: "Shaw, DC", date: "2026-01-12", text: "Finally found a cleaning service that truly understands Shaw rowhouses. The attention to original architectural details and commitment to eco products is exactly what we were looking for." },
+  ],
+  "columbia-heights-dc": [
+    { name: "Maria G.", location: "Columbia Heights, DC", date: "2026-03-08", text: "Our 16th Street Heights apartment gets a thorough cleaning every two weeks. Professional team, excellent eco-friendly products, and always on schedule. Highly recommend for Columbia Heights residents." },
+    { name: "David K.", location: "Columbia Heights, DC", date: "2026-02-10", text: "Victorian rowhouse on Kenyon Street cleaned perfectly. The team understands older DC homes and uses products safe for original woodwork. Consistent excellence every visit." },
+    { name: "Sofia M.", location: "Columbia Heights, DC", date: "2026-01-28", text: "Best cleaning service in Columbia Heights. Reliable, affordable, and the eco-friendly products are perfect for our family with young children. We've recommended them to everyone on our block." },
+  ],
+  "navy-yard-dc": [
+    { name: "Tyler B.", location: "Navy Yard, DC", date: "2026-03-12", text: "Our Yards condo has premium finishes that need careful treatment. Capital Clean Care delivers white-glove results every time and the eco products are safe for our high-end surfaces." },
+    { name: "Amanda S.", location: "Navy Yard, DC", date: "2026-02-20", text: "Love coming home after a Nationals game to a perfectly clean apartment. Capital Clean Care has been a game changer for our busy Navy Yard lifestyle." },
+    { name: "Marcus L.", location: "Navy Yard, DC", date: "2026-01-15", text: "Half Street apartment cleaned to an exceptional standard every bi-weekly visit. The team is professional, efficient, and the results are always flawless." },
+  ],
+  "vienna-va": [
+    { name: "Patricia M.", location: "Vienna, VA", date: "2026-03-02", text: "Our Vienna Woods colonial gets exceptional cleaning every two weeks. The team is thorough, the eco-friendly products protect our original hardwood floors, and the consistency is outstanding." },
+    { name: "Robert C.", location: "Vienna, VA", date: "2026-02-08", text: "Wolf Trap area home cleaned to the highest standard every visit. Capital Clean Care understands Vienna's family-oriented community and delivers the quality this neighborhood expects." },
+    { name: "Susan H.", location: "Vienna, VA", date: "2026-01-25", text: "Vienna's a community where reputation matters, and Capital Clean Care has earned ours. Reliable, professional, eco-friendly — exactly the service our family was looking for." },
+  ],
+  "tysons-va": [
+    { name: "Jonathan W.", location: "Tysons, VA", date: "2026-03-15", text: "Our Greensboro Metro condo gets a perfect cleaning every two weeks. Luxury finishes require expert care and Capital Clean Care delivers exactly that — along with eco products safe for our building." },
+    { name: "Lisa T.", location: "Tysons, VA", date: "2026-02-22", text: "Tysons Corner high-rise cleaned impeccably. As an executive with no time to spare, having a reliable, premium cleaning service is essential. Capital Clean Care has been outstanding." },
+    { name: "Kevin R.", location: "Tysons, VA", date: "2026-01-30", text: "Spring Hill area townhome cleaned to perfection. The team coordinates access with our building seamlessly and the quality never wavers. Exactly what Tysons residents expect." },
+  ],
+  "herndon-va": [
+    { name: "Rajesh P.", location: "Herndon, VA", date: "2026-03-08", text: "As a tech professional in the Dulles Corridor, flexible scheduling is essential. Capital Clean Care accommodates my demanding schedule and delivers consistently excellent results every visit." },
+    { name: "Catherine O.", location: "Herndon, VA", date: "2026-02-14", text: "Our Worldgate townhome gets thorough cleaning every two weeks. The eco-friendly products are perfect for our family with two young kids, and the team is always professional and on time." },
+    { name: "Michael F.", location: "Herndon, VA", date: "2026-01-20", text: "Historic downtown Herndon home requires careful attention to older finishes. Capital Clean Care's team understands this and delivers thorough results without damaging our period details." },
+  ],
+  "annandale-va": [
+    { name: "Young-Soo K.", location: "Annandale, VA", date: "2026-03-05", text: "Annandale's diverse community deserves excellent service providers. Capital Clean Care delivers consistent, professional cleaning with eco-friendly products that are safe for our family. Outstanding." },
+    { name: "Barbara L.", location: "Annandale, VA", date: "2026-02-12", text: "Our Sleepy Hollow rancher has been cleaned bi-weekly for six months now. The quality never wavers — thorough, professional, and the plant-based products mean no chemical smell in our home." },
+    { name: "David M.", location: "Annandale, VA", date: "2026-01-18", text: "Heritage Hills colonial cleaned to a high standard every visit. Capital Clean Care understands larger suburban homes and delivers thorough results that justify every dollar. Highly recommend." },
+  ],
 };
 
 /** Fallback pool for cities without specific testimonials */

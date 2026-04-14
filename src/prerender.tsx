@@ -70,6 +70,7 @@ function getAllRoutes(): string[] {
     "columbia-md", "ellicott-city-md", "clarksburg-md", "damascus-md",
     "urbana-md", "new-market-md",
     "capitol-hill-dc", "georgetown-dc", "dupont-circle-dc", "adams-morgan-dc", "falls-church-va",
+    "shaw-dc", "columbia-heights-dc", "navy-yard-dc", "herndon-va", "annandale-va",
   ];
   for (const c of citySlugs) {
     routes.push(`/locations/${c}`);
