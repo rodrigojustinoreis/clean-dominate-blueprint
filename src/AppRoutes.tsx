@@ -20,6 +20,8 @@ import VanityLandingPage from "./pages/VanityLandingPage";
 import HouseCleaningNearMe from "./pages/HouseCleaningNearMe";
 import Careers from "./pages/Careers";
 import PremiumFanPage from "./pages/PremiumFanPage";
+import WhyEcoFriendlyPage from "./pages/WhyEcoFriendlyPage";
+import EcoFriendlyCleaningPage from "./pages/EcoFriendlyCleaningPage";
 import NotFound from "./pages/NotFound";
 
 const AppRoutes = () => (
@@ -30,7 +32,9 @@ const AppRoutes = () => (
     <Route path="/reviews" element={<Reviews />} />
     <Route path="/contact" element={<Contact />} />
     <Route path="/services/deep-cleaning" element={<DeepCleaningPage />} />
+    <Route path="/services/eco-friendly-cleaning" element={<EcoFriendlyCleaningPage />} />
     <Route path="/services/:slug" element={<ServicePage />} />
+    <Route path="/why-eco-friendly-cleaning" element={<WhyEcoFriendlyPage />} />
     <Route path="/faq" element={<FAQPage />} />
     <Route path="/blog" element={<Blog />} />
     <Route path="/blog/:slug" element={<BlogPost />} />
