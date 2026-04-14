@@ -417,3 +417,51 @@ export const ContactPageSchema = () => {
 
   return <JsonLd id="contact-page-schema" schema={schema} />;
 };
+
+// ── Founder / Person Schema ───────────────────────────────────
+export const FounderPersonSchema = () => {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Rodrigo Reis",
+    jobTitle: "Founder & Owner",
+    worksFor: {
+      "@type": "LocalBusiness",
+      "@id": `${BUSINESS.url}/#business`,
+      name: BUSINESS.name,
+    },
+    url: `${BUSINESS.url}/about`,
+    description: "Founder of Capital Clean Care, a family-owned eco-friendly residential cleaning company serving Maryland, Washington DC, and Northern Virginia since 2015.",
+    knowsAbout: ["Eco-Friendly Cleaning", "Residential House Cleaning", "Green Cleaning Products", "Home Sanitation", "DMV Area Cleaning Services"],
+    address: businessAddress,
+  };
+  return <JsonLd id="founder-person-schema" schema={schema} />;
+};
+
+// ── AboutPage Schema ──────────────────────────────────────────
+export const AboutPageSchema = () => {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    name: "About Capital Clean Care — Founder Story, GreenShield Method & Our Team",
+    description: "The story behind Capital Clean Care: a family-founded eco-friendly cleaning service serving MD, DC & VA for 9+ years. Learn about our GreenShield 5-Step Clean™ methodology and our dedicated team.",
+    url: `${BUSINESS.url}/about`,
+    mainEntity: {
+      "@type": "LocalBusiness",
+      "@id": `${BUSINESS.url}/#business`,
+      name: BUSINESS.name,
+      foundingDate: "2015",
+      foundingLocation: {
+        "@type": "Place",
+        name: "Silver Spring, MD",
+      },
+      founder: {
+        "@type": "Person",
+        name: "Rodrigo Reis",
+      },
+      numberOfEmployees: { "@type": "QuantitativeValue", minValue: 5, maxValue: 20 },
+      slogan: "We Clean Like It's Our Own Home",
+    },
+  };
+  return <JsonLd id="about-page-schema" schema={schema} />;
+};
