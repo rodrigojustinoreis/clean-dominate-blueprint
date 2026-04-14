@@ -7,6 +7,7 @@ import { useSEO } from "@/hooks/useSEO";
 import { LocalBusinessSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import GoogleReviewsLive from "@/components/GoogleReviewsLive";
+import TrustBadges from "@/components/TrustBadges";
 
 const HAS_GOOGLE_API = !!(import.meta.env.VITE_GOOGLE_MAPS_API_KEY && import.meta.env.VITE_GOOGLE_PLACE_ID);
 
@@ -129,6 +130,8 @@ const Reviews = () => {
           </div>
         </div>
       </section>
+
+      <TrustBadges withBackground={false} />
 
       <section className="py-16 bg-secondary">
         <div className="container mx-auto px-4 max-w-2xl">

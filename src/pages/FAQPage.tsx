@@ -8,6 +8,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import QuoteForm from "@/components/QuoteForm";
 import { useSEO } from "@/hooks/useSEO";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import TrustBadges from "@/components/TrustBadges";
 
 const faqCategories = [
   {
@@ -97,6 +98,8 @@ const FAQPage = () => {
           ))}
         </div>
       </section>
+
+      <TrustBadges compact withBackground={false} />
 
       {/* CTA */}
       <section className="py-16 md:py-24 bg-secondary">

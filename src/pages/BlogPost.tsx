@@ -10,6 +10,7 @@ import { autoBlogPosts } from "@/data/auto-blog-posts";
 import NotFound from "./NotFound";
 import RelatedPosts from "@/components/blog/RelatedPosts";
 import BlogInlineCTA from "@/components/blog/BlogInlineCTA";
+import TrustBadges from "@/components/TrustBadges";
 
 const blogContent: Record<string, React.ReactNode> = {
   "spring-cleaning-checklist-maryland-2026": (
@@ -1211,6 +1212,8 @@ const BlogPost = () => {
           </div>
         </div>
       </section>
+
+      <TrustBadges compact withBackground={false} />
     </Layout>
   );
 };

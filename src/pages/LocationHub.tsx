@@ -14,6 +14,7 @@ import { vanityLandingPages } from "@/data/vanity-landings";
 import { services } from "@/data/services";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import NotFound from "./NotFound";
+import TrustBadges from "@/components/TrustBadges";
 import regionMD from "@/assets/region-maryland.webp";
 import regionDC from "@/assets/region-dc.webp";
 import regionVA from "@/assets/region-virginia.webp";
@@ -208,6 +209,8 @@ const LocationHub = () => {
           <FAQ faqs={hub.faqs} />
         </div>
       </section>
+
+      <TrustBadges compact withBackground={false} />
 
       {/* Quote Form */}
       <section className="py-16 bg-secondary" id="quote">

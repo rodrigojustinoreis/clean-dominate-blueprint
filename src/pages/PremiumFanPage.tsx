@@ -17,6 +17,7 @@ import {
 import { Button } from '@/components/ui/button';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
+import TrustBadges from '@/components/TrustBadges';
 
 const PremiumFanPage = () => {
   return (
@@ -202,6 +203,8 @@ const PremiumFanPage = () => {
           </div>
         </section>
       </main>
+
+      <TrustBadges compact withBackground={false} />
 
       <Footer />
     </div>

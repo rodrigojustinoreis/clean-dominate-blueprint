@@ -5,6 +5,7 @@ import QuoteForm from "@/components/QuoteForm";
 import { useSEO } from "@/hooks/useSEO";
 import { LocalBusinessSchema, ContactPageSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import TrustBadges from "@/components/TrustBadges";
 
 const Contact = () => {
   const { seoHelmet } = useSEO({
@@ -80,6 +81,8 @@ const Contact = () => {
           </Card>
         </div>
       </section>
+
+      <TrustBadges compact withBackground={false} />
     </Layout>
   );
 };

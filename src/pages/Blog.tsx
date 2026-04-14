@@ -7,6 +7,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { useSEO } from "@/hooks/useSEO";
 import { BreadcrumbSchema } from "@/components/SchemaMarkup";
 import { autoBlogPosts } from "@/data/auto-blog-posts";
+import TrustBadges from "@/components/TrustBadges";
 
 export interface BlogPost {
   slug: string;
@@ -275,6 +276,8 @@ const Blog = () => {
           </div>
         </div>
       </section>
+
+      <TrustBadges compact withBackground={false} />
     </Layout>
   );
 };

@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import Layout from "@/components/layout/Layout";
 import { useSEO } from "@/hooks/useSEO";
 import { LocalBusinessSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
+import TrustBadges from "@/components/TrustBadges";
 
 const Careers = () => {
   const { seoHelmet } = useSEO({
@@ -124,6 +125,8 @@ const Careers = () => {
           </div>
         </div>
       </section>
+
+      <TrustBadges compact withBackground={false} />
 
       {/* Apply CTA */}
       <section className="py-16 bg-accent text-accent-foreground">
