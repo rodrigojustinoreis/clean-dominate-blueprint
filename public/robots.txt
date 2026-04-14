@@ -1,3 +1,6 @@
+# Capital Clean Care — robots.txt
+# https://capitalcleancare.com
+
 User-agent: Googlebot
 Allow: /
 Crawl-delay: 1
@@ -12,8 +15,17 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
 User-agent: *
 Allow: /
 Disallow: /api/
+Disallow: /*?*utm_
+Disallow: /*?*fbclid=
+Disallow: /*?*gclid=
 
 Sitemap: https://capitalcleancare.com/sitemap.xml

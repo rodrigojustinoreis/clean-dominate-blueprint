@@ -296,6 +296,7 @@ interface ArticleSchemaProps {
   url: string;
   datePublished: string;
   dateModified?: string;
+  image?: string;
 }
 
 export const ArticleSchema = ({
@@ -304,8 +305,9 @@ export const ArticleSchema = ({
   url,
   datePublished,
   dateModified,
+  image,
 }: ArticleSchemaProps) => {
-  const schema = {
+  const schema: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: title,
@@ -327,8 +329,46 @@ export const ArticleSchema = ({
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
   };
 
+  if (image) schema.image = { "@type": "ImageObject", url: image, width: 800, height: 450 };
+
   const id = `article-schema-${title.replace(/\s/g, "-").toLowerCase().slice(0, 40)}`;
   return <JsonLd id={id} schema={schema} />;
+};
+
+// ── HowTo Schema ──────────────────────────────────────────────
+interface HowToStep {
+  name: string;
+  text: string;
+}
+
+interface HowToSchemaProps {
+  name: string;
+  description: string;
+  url: string;
+  steps: HowToStep[];
+  totalTime?: string; // ISO 8601 duration, e.g. "PT3H"
+  image?: string;
+}
+
+export const HowToSchema = ({ name, description, url, steps, totalTime, image }: HowToSchemaProps) => {
+  const schema: Record<string, unknown> = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name,
+    description,
+    url,
+    step: steps.map((step, i) => ({
+      "@type": "HowToStep",
+      position: i + 1,
+      name: step.name,
+      text: step.text,
+    })),
+  };
+
+  if (totalTime) schema.totalTime = totalTime;
+  if (image) schema.image = { "@type": "ImageObject", url: image };
+
+  return <JsonLd id="howto-schema" schema={schema} />;
 };
 
 // ── ContactPage Schema ────────────────────────────────────────

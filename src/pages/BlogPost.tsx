@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { useSEO } from "@/hooks/useSEO";
-import { ArticleSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
+import { ArticleSchema, BreadcrumbSchema, HowToSchema } from "@/components/SchemaMarkup";
 import { blogPosts } from "./Blog";
 import { autoBlogPosts } from "@/data/auto-blog-posts";
 import NotFound from "./NotFound";
@@ -1091,6 +1091,57 @@ const blogContent: Record<string, React.ReactNode> = {
   ),
 };
 
+// HowTo structured data for checklist posts
+const HOWTO_DATA: Record<string, { steps: { name: string; text: string }[]; totalTime: string }> = {
+  "spring-cleaning-checklist-maryland-2026": {
+    totalTime: "PT8H",
+    steps: [
+      { name: "Kitchen Deep Clean", text: "Degrease range hood, clean inside oven, wipe inside refrigerator, scrub backsplash grout, and clean under appliances." },
+      { name: "Bathroom Mold Prevention", text: "Scrub tile grout, descale shower head, recaulk if needed, deep clean toilet, and clean exhaust fan cover." },
+      { name: "Bedroom Allergy Prep", text: "Wash all bedding in hot water, HEPA vacuum mattress, dust ceiling fans, and clean window tracks and sills." },
+      { name: "Living Areas", text: "Dust bookshelves, vacuum upholstery cushions, wipe baseboards, clean window blinds, and deep vacuum carpets." },
+      { name: "Windows and Entryways", text: "Wash all interior windows, organize entryway closet, wash front door, and replace worn doormats." },
+      { name: "Whole-Home Tasks", text: "Replace HVAC filters, test smoke and CO detectors, check under sinks for leaks, and clean light fixtures." },
+    ],
+  },
+  "move-out-cleaning-checklist-maryland-tenants": {
+    totalTime: "PT6H",
+    steps: [
+      { name: "Kitchen", text: "Clean inside oven, refrigerator, range hood, and dishwasher. Wipe all cabinet interiors and exteriors, scrub sink and countertops, and mop floors including behind appliances." },
+      { name: "Bathrooms", text: "Scrub toilet inside and out, descale shower walls and faucets, clean grout, wipe medicine cabinet, mirrors, and all surfaces. Mop floor including corners." },
+      { name: "Bedrooms and Living Areas", text: "Clean all windows, wipe baseboards and door frames, HEPA vacuum carpets, mop hard floors, and clean light fixtures." },
+      { name: "Final Walkthrough", text: "Remove all personal belongings, return all keys and remotes, take timestamped photos of every room, and request a walkthrough with the landlord." },
+    ],
+  },
+  "deep-cleaning-checklist-dmv-homeowners": {
+    totalTime: "PT5H",
+    steps: [
+      { name: "Kitchen Deep Clean", text: "Degrease range hood and oven interior, clean inside refrigerator, scrub backsplash grout, wipe all cabinet interiors, and clean under and behind appliances." },
+      { name: "Bathroom Deep Clean", text: "Descale shower walls, doors, and fixtures, scrub tile grout, deep clean toilet inside and out, clean exhaust fan, and wash floor on hands and knees." },
+      { name: "Living Areas and Bedrooms", text: "Dust ceiling fans and light fixtures, clean behind and under accessible furniture, wipe baseboards and crown molding, HEPA vacuum carpets, and clean window blinds." },
+    ],
+  },
+  "fall-cleaning-checklist-maryland": {
+    totalTime: "PT6H",
+    steps: [
+      { name: "HVAC and Heating Preparation", text: "Replace HVAC filters, clean and wash heating vents and registers, test smoke and CO detectors, and clean dryer vent to prevent fire hazards." },
+      { name: "Kitchen Deep Clean", text: "Degrease range hood and stovetop, clean inside oven before holiday cooking, wipe all cabinets, clean refrigerator coils, and sanitize sink with enzyme cleaner." },
+      { name: "Bathroom Mold Prevention", text: "Scrub grout lines, recaulk gaps in shower or tub, deep clean exhaust fans, and check under sinks for moisture or leaks before sealing up for winter." },
+      { name: "Entryways and Mudrooms", text: "Deep clean entry floors, wash or replace doormats for wet fall weather, organize coat closets, and clean front door and exterior fixtures." },
+      { name: "Bedrooms and Living Areas", text: "Wash and rotate all bedding, HEPA vacuum mattresses, switch ceiling fans to winter mode (clockwise), and clean all interior windows." },
+    ],
+  },
+  "best-cleaning-schedule-busy-families-dmv": {
+    totalTime: "PT1H",
+    steps: [
+      { name: "Daily Tasks (10 Minutes)", text: "Wipe kitchen counters and stovetop after cooking, load or unload dishwasher, quick bathroom counter wipe, sort mail, and do one laundry load." },
+      { name: "Weekly Cleaning Service Tasks", text: "Vacuum all floors and carpets, mop hard floors, clean all bathrooms, dust furniture and ceiling fans, clean appliance exteriors, change bed linens, and empty trash." },
+      { name: "Monthly Tasks", text: "Clean inside microwave and oven, wipe baseboards and door frames, vacuum under furniture, clean interior windows, and sanitize all trash cans." },
+      { name: "Quarterly Deep Cleaning", text: "Clean inside refrigerator and all cabinets, behind and under appliances, light fixtures and vent covers, carpet deep-cleaning, and grout scrubbing in kitchen and bathrooms." },
+    ],
+  },
+};
+
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
 
@@ -1104,10 +1155,16 @@ const BlogPost = () => {
   const content = autoPost
     ? <article className="prose prose-lg max-w-none" dangerouslySetInnerHTML={{ __html: autoPost.content }} />
     : blogContent[post.slug];
+
+  const postUrl = `https://capitalcleancare.com/blog/${post.slug}`;
+  const howtoData = HOWTO_DATA[post.slug];
+
   const { seoHelmet } = useSEO({
     title: `${post.title} | Capital Clean Care Blog`,
     description: post.excerpt,
-    canonical: `https://capitalcleancare.com/blog/${post.slug}`,
+    canonical: postUrl,
+    ogType: "article",
+    ogImage: post.coverImage,
   });
 
   return (
@@ -1116,9 +1173,20 @@ const BlogPost = () => {
       <ArticleSchema
         title={post.title}
         description={post.excerpt}
-        url={`https://capitalcleancare.com/blog/${post.slug}`}
+        url={postUrl}
         datePublished={post.date}
+        image={post.coverImage}
       />
+      {howtoData && (
+        <HowToSchema
+          name={post.title}
+          description={post.excerpt}
+          url={postUrl}
+          steps={howtoData.steps}
+          totalTime={howtoData.totalTime}
+          image={post.coverImage}
+        />
+      )}
       <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }, { label: post.title, href: `/blog/${post.slug}` }]} />
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 max-w-3xl">
