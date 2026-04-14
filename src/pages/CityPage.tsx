@@ -27,6 +27,40 @@ const regionImages: Record<string, string> = {
   virginia: regionVA,
 };
 
+/** Specific neighborhoods served per city — boosts local SEO relevance */
+const cityNeighborhoods: Record<string, string[]> = {
+  "rockville-md": ["Fallsgrove", "King Farm", "Twinbrook", "West End", "Town Center", "Potomac Woods", "Hungerford", "Montrose", "Brightview", "Congressional"],
+  "silver-spring-md": ["Downtown Silver Spring", "Woodside", "Forest Glen", "Four Corners", "Long Branch", "Colesville", "White Oak", "Wheaton Hills", "Kemp Mill", "Burnt Mills"],
+  "bethesda-md": ["Chevy Chase", "Friendship Heights", "Edgemoor", "Wildwood", "Burning Tree", "Woodmont Triangle", "Battery Park", "Somerset", "Westmoreland Hills", "Bradley Hills"],
+  "germantown-md": ["Churchill Village", "Seneca Valley", "Middlebrook", "Gunners Lake", "Milestone", "Neelsville", "Clopper Mill", "Waring Station", "Kingsview", "Fox Chapel"],
+  "gaithersburg-md": ["Kentlands", "Lakelands", "Crown Farm", "Montgomery Village", "Rio District", "Quince Orchard", "Shady Grove", "Flower Hill", "Goshen Estate", "Darnestown"],
+  "potomac-md": ["Cabin John", "River Falls", "Avenel", "Brickyard", "Old Potomac", "Tara", "Westmore", "Inverness", "Regency Estates", "Piney Glen"],
+  "frederick-md": ["Downtown Frederick", "Westside", "Ballenger Creek", "Rosemont", "Worman's Mill", "Whittier", "Clover Hill", "Tuscarora", "Amber Meadows", "Shookstown"],
+  "urbana-md": ["Urbana Village", "Landsdale", "Maryland Point", "Sugarloaf Crossing", "Woodlands", "Victory Farm", "Waverly", "Greenleigh at Crossroads", "Ijamsville border", "New Market border"],
+  "clarksburg-md": ["Clarksburg Village", "Cabin Branch", "Clarksburg Town Center", "Briar Creek", "Ten Mile Creek", "West Clarksburg", "Arora Hills", "Snowden Farm", "Little Seneca Creek area", "Black Hill"],
+  "damascus-md": ["Damascus Village", "Goshen", "Laytonsville", "Upper Damascus", "Meadowside", "Damascus South", "Arora Hills", "Brink Road area", "Sweepstakes Road area", "Prices Distillery Road area"],
+  "monrovia-md": ["Monrovia Village", "New Market", "Ijamsville", "Hyattstown", "Green Valley", "Fingerboard", "Detrick area", "Boyers Mill", "Kemptown", "Lilypons"],
+  "takoma-park-md": ["Old Town Takoma Park", "Langley Park", "East Silver Spring", "Flower Avenue", "Carroll Avenue", "Sligo Creek", "Columbia Road", "Manor", "Maple Avenue area", "New Hampshire Avenue corridor"],
+  "columbia-md": ["Owen Brown", "Harper's Choice", "Oakland Mills", "Wilde Lake", "Hickory Ridge", "Long Reach", "River Hill", "Kings Contrivance", "Town Center", "Dorsey's Search"],
+  "ellicott-city-md": ["Historic Ellicott City", "Turf Valley", "Centennial", "Oella", "Daniels", "Plumtree", "Dunloggin", "Dorsey Hall", "Lawyers Hill", "Stone Gate"],
+  "new-market-md": ["New Market Village", "Lake Linganore", "Kemptown", "Eaglehead", "Pinehurst", "Rosemont Manor", "Greenfield", "Linganore area", "Ijamsville border", "Monrovia border"],
+  "wheaton-md": ["Wheaton Hills", "Glenmont", "Arcola", "White Oak border", "Westover Hills", "Kemp Mill", "Layhill", "Shorefield", "Norbeck", "Randolph Hills"],
+  "washington-dc": ["Georgetown", "Friendship Heights", "Tenleytown", "Cleveland Park", "Woodley Park", "Cathedral Heights", "Palisades", "Spring Valley", "American University Park", "Wesley Heights"],
+  "washington-dc-ne": ["Brookland", "Eckington", "Edgewood", "Woodridge", "Ivy City", "Trinidad", "Brentwood", "Langdon", "Rigby", "Fort Lincoln"],
+  "capitol-hill-dc": ["Eastern Market", "Barracks Row", "Lincoln Park", "SE Capitol Hill", "H Street NE", "Union Station area", "Navy Yard", "Stanton Park", "Hill East", "Kingman Park"],
+  "georgetown-dc": ["West Village", "East Village", "Burleith", "Hillandale", "Foxhall", "Georgetown Heights", "Glover Park border", "Canal Road area", "Whitehaven", "Battery Kemble"],
+  "dupont-circle-dc": ["Logan Circle", "Scott Circle", "Kalorama", "U Street", "Embassy Row", "P Street Beach", "17th Street corridor", "Connecticut Avenue", "Adams Morgan border", "West Dupont"],
+  "adams-morgan-dc": ["Mount Pleasant", "Columbia Heights", "Lanier Heights", "Kalorama", "Meridian Hill", "Pleasant Plains", "Park View", "16th Street Heights", "Woodley Park border", "Harvard Street"],
+  "downtown-dc": ["Penn Quarter", "Chinatown", "Gallery Place", "Federal Triangle", "L'Enfant Plaza", "NoMa", "Mount Vernon Square", "Shaw", "City Center", "Union Station area"],
+  "arlington-va": ["Clarendon", "Ballston", "Rosslyn", "Crystal City", "Pentagon City", "Lyon Village", "Cherrydale", "Shirlington", "Buckingham", "Aurora Hills"],
+  "fairfax-va": ["Fair Lakes", "Fairfax City", "Burke", "Centreville", "Clifton", "Annandale", "Oakton", "Chantilly border", "Fairfax Station", "Greenbriar"],
+  "mclean-va": ["Great Falls border", "Langley", "Chain Bridge", "Spring Hill", "Chesterbrook", "Lewinsville", "Dolley Madison", "Old Dominion", "Turkey Run", "Balls Hill"],
+  "alexandria-va": ["Old Town", "Del Ray", "Eisenhower Valley", "Cameron Station", "Rosemont", "West End", "Mount Vernon", "Potomac Yard", "Carlyle", "Seminary Hill"],
+  "falls-church-va": ["City of Falls Church", "Pimmit Hills", "West Falls Church", "Seven Corners", "Tuckahoe", "Holmes Run", "Bren Mar", "Lake Barcroft border", "Baileys Crossroads", "Willston"],
+  "vienna-va": ["Tysons border", "Vienna Woods", "Courthouse Road area", "Maple Ave corridor", "Windover Heights", "Nottoway Park area", "Old Courthouse Road", "Westwood Hills", "Swinks Mill", "Center Street"],
+  "tysons-va": ["Tysons Corner", "Greensboro", "Spring Hill", "McLean border", "Wolf Trap", "Westpark", "Scotts Run", "Chain Bridge Road", "International Drive", "Westwood"],
+};
+
 /** City-specific "why choose us" openers to reduce template feel */
 const cityWhyIntros: Record<string, string> = {
   "rockville-md": "Rockville families trust us for consistent, thorough cleaning that fits their busy Montgomery County lifestyles.",
@@ -241,8 +275,36 @@ const CityPage = () => {
         </div>
       </section>
 
+      {/* Neighborhoods */}
+      {cityNeighborhoods[city.slug] && (
+        <section className="py-14 md:py-20">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <h2 className="font-heading text-2xl md:text-3xl font-bold mb-3">
+              Neighborhoods We Serve in {city.name}
+            </h2>
+            <p className="text-muted-foreground mb-8">
+              Our cleaning teams are familiar with {city.name}'s specific neighborhoods — from the street layout to the home styles. We serve all of the following areas and everything in between.
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {cityNeighborhoods[city.slug].map((neighborhood) => (
+                <span
+                  key={neighborhood}
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-accent/10 text-accent text-sm font-medium border border-accent/20 hover:bg-accent/15 transition-colors"
+                >
+                  <MapPin className="h-3 w-3 shrink-0" />
+                  {neighborhood}
+                </span>
+              ))}
+            </div>
+            <p className="text-sm text-muted-foreground mt-6">
+              Don't see your neighborhood? <a href="tel:+12407042551" className="text-accent font-semibold hover:underline">Call (240) 704-2551</a> — we likely serve your area.
+            </p>
+          </div>
+        </section>
+      )}
+
       {/* Google Map */}
-      <section className="py-14 md:py-20">
+      <section className="py-14 md:py-20 bg-secondary">
         <div className="container mx-auto px-4 max-w-4xl">
           <h2 className="font-heading text-2xl font-bold mb-4">Our {city.name} Service Area</h2>
           <p className="text-muted-foreground mb-6">We serve all neighborhoods in and around {cityLabel}. See our coverage area below.</p>
