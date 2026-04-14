@@ -8,6 +8,8 @@ import { ArticleSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import { blogPosts } from "./Blog";
 import { autoBlogPosts } from "@/data/auto-blog-posts";
 import NotFound from "./NotFound";
+import RelatedPosts from "@/components/blog/RelatedPosts";
+import BlogInlineCTA from "@/components/blog/BlogInlineCTA";
 
 const blogContent: Record<string, React.ReactNode> = {
   "spring-cleaning-checklist-maryland-2026": (
@@ -84,6 +86,13 @@ const blogContent: Record<string, React.ReactNode> = {
       <h2>Too Much to Tackle Alone?</h2>
       <p>Capital Clean Care's <Link to="/services/deep-cleaning" className="text-accent hover:underline">spring deep cleaning service</Link> covers 60+ checklist items across your entire home. Our eco-friendly, non-toxic products are safe for children, pets, and the <Link to="/services/eco-friendly-cleaning" className="text-accent hover:underline">Chesapeake Bay watershed</Link>. We serve all of <Link to="/maryland" className="text-accent hover:underline">Maryland</Link>, <Link to="/washington-dc" className="text-accent hover:underline">Washington DC</Link>, and <Link to="/virginia" className="text-accent hover:underline">Northern Virginia</Link>.</p>
 
+      <BlogInlineCTA
+        headline="Ready for a Professional Spring Deep Clean?"
+        subtext="We serve Rockville, Bethesda, Silver Spring, Germantown, Gaithersburg, and 20+ more Maryland communities. Eco-friendly, background-checked teams. 15% OFF your first visit."
+        ctaLabel="Book My Spring Clean →"
+        ctaTo="/contact"
+      />
+
       <p><Link to="/contact" className="text-accent hover:underline font-semibold">Book your spring deep clean today</Link> — 15% off your first service for new clients.</p>
     </article>
   ),
@@ -138,6 +147,13 @@ const blogContent: Record<string, React.ReactNode> = {
       <h2>Get an Instant Quote</h2>
       <p>Pricing depends on your specific home. Use our free quote form to get an accurate estimate for your address in <Link to="/locations/silver-spring-md" className="text-accent hover:underline">Silver Spring</Link>, <Link to="/locations/bethesda-md" className="text-accent hover:underline">Bethesda</Link>, <Link to="/locations/fairfax-va" className="text-accent hover:underline">Fairfax</Link>, or anywhere in the DMV.</p>
 
+      <BlogInlineCTA
+        headline="Get Transparent Pricing for Your Home"
+        subtext="No hidden fees. Instant estimates for Maryland, DC, and Northern Virginia homes. Background-checked teams, eco-friendly products, 100% satisfaction guarantee."
+        ctaLabel="Get My Free Quote →"
+        ctaTo="/contact"
+      />
+
       <p><Link to="/contact" className="text-accent hover:underline font-semibold">Get your free quote today</Link> — no obligation, instant pricing.</p>
     </article>
   ),
@@ -178,6 +194,13 @@ const blogContent: Record<string, React.ReactNode> = {
       <p>We provide professional <Link to="/services/airbnb-cleaning" className="text-accent hover:underline">Airbnb turnover cleaning</Link> across <Link to="/maryland" className="text-accent hover:underline">Maryland</Link>, <Link to="/washington-dc" className="text-accent hover:underline">Washington DC</Link>, and <Link to="/virginia" className="text-accent hover:underline">Northern Virginia</Link>. Our same-day availability, consistent team assignments, and 5-star results have helped dozens of DMV hosts improve their ratings and increase bookings.</p>
 
       <p>One of our clients in <Link to="/locations/silver-spring-md" className="text-accent hover:underline">Silver Spring</Link> went from a 4.6 to a 5.0-star average within three months of switching to our service. Guests consistently mentioned cleanliness as the best part of their stay.</p>
+
+      <BlogInlineCTA
+        headline="5-Star Airbnb Turnovers in the DMV"
+        subtext="Serving Washington DC, Bethesda, Arlington, Silver Spring, and all major DMV markets. Flexible scheduling, eco-friendly products, same-day availability."
+        ctaLabel="Get My Airbnb Cleaning Quote →"
+        ctaTo="/contact"
+      />
 
       <p><Link to="/contact" className="text-accent hover:underline font-semibold">Get a free Airbnb cleaning quote</Link> — flexible scheduling, same-day availability, 5-star results.</p>
     </article>
@@ -237,6 +260,13 @@ const blogContent: Record<string, React.ReactNode> = {
 
       <p>Capital Clean Care provides certified <Link to="/services/move-out-cleaning" className="text-accent hover:underline">move-out cleaning</Link> throughout <Link to="/maryland" className="text-accent hover:underline">Maryland</Link>, <Link to="/washington-dc" className="text-accent hover:underline">DC</Link>, and <Link to="/virginia" className="text-accent hover:underline">Northern Virginia</Link>. We include all items on standard landlord inspection checklists and offer a re-clean guarantee if anything is flagged.</p>
 
+      <BlogInlineCTA
+        headline="Get Your Full Security Deposit Back"
+        subtext="Capital Clean Care's move-out cleaning covers every item on Maryland landlord inspection checklists. Re-clean guarantee included. Serving Rockville, Bethesda, Silver Spring, Alexandria, and more."
+        ctaLabel="Book My Move-Out Clean →"
+        ctaTo="/contact"
+      />
+
       <p><Link to="/contact" className="text-accent hover:underline font-semibold">Book your move-out cleaning today</Link> and get your full deposit back.</p>
     </article>
   ),
@@ -272,7 +302,14 @@ const blogContent: Record<string, React.ReactNode> = {
       <p>Many conventional cleaning products — bleach, ammonia, certain essential oils — are toxic to dogs and cats. Our <Link to="/services/eco-friendly-cleaning" className="text-accent hover:underline">eco-friendly cleaning service</Link> uses only EPA Safer Choice certified, plant-based products that are safe for pets, children, and your home's surfaces.</p>
 
       <h2>Professional Pet-Friendly Cleaning in the DMV</h2>
-      <p>Capital Clean Care specializes in homes with pets throughout <Link to="/maryland" className="text-accent hover:underline">Maryland</Link>, <Link to="/washington-dc" className="text-accent hover:underline">Washington DC</Link>, and <Link to="/virginia" className="text-accent hover:underline">Northern Virginia</Link>. We bring the right equipment and products — no shortcuts.</p>
+      <p>Capital Clean Care specializes in homes with pets throughout <Link to="/maryland" className="text-accent hover:underline">Maryland</Link>, <Link to="/washington-dc" className="text-accent hover:underline">Washington DC</Link>, and <Link to="/virginia" className="text-accent hover:underline">Northern Virginia</Link>. We bring the right equipment and products — no shortcuts. Learn more about <Link to="/why-eco-friendly-cleaning" className="text-accent hover:underline">why our eco-friendly, pet-safe products matter</Link>.</p>
+
+      <BlogInlineCTA
+        headline="Pet-Friendly Cleaning for DMV Families"
+        subtext="HEPA-filtered vacuums, enzyme odor eliminators, and 100% pet-safe products. Serving Potomac, Arlington, Laurel, and 20+ more DMV communities. 15% OFF your first visit."
+        ctaLabel="Get My Pet-Friendly Cleaning Quote →"
+        ctaTo="/contact"
+      />
 
       <p><Link to="/contact" className="text-accent hover:underline font-semibold">Get your free pet-friendly cleaning quote today</Link> — 15% off your first service!</p>
     </article>
@@ -323,6 +360,13 @@ const blogContent: Record<string, React.ReactNode> = {
       <h2>Starting Out: We Recommend a Deep Clean First</h2>
       <p>New recurring clients almost always start with a <Link to="/services/deep-cleaning" className="text-accent hover:underline">one-time deep cleaning</Link> to establish a baseline. After that, maintenance visits are faster, more focused, and more affordable. Think of it like a car — detailed first, maintained regularly.</p>
 
+      <BlogInlineCTA
+        headline="Never Think About Cleaning Again"
+        subtext="Weekly, bi-weekly, or monthly service across MD, DC & VA. Same trusted team every visit. Background-checked, eco-friendly, and 100% satisfaction guaranteed."
+        ctaLabel="Start My Recurring Plan →"
+        ctaTo="/contact"
+      />
+
       <p><Link to="/contact" className="text-accent hover:underline font-semibold">Start your recurring cleaning plan today</Link> — 15% off your first visit, flexible scheduling across MD, DC & VA.</p>
     </article>
   ),
@@ -345,12 +389,21 @@ const blogContent: Record<string, React.ReactNode> = {
       <h2>Professional Eco-Friendly Cleaning</h2>
       <p>At Capital Clean Care, every cleaning across <Link to="/maryland" className="text-accent hover:underline">Maryland</Link>, <Link to="/washington-dc" className="text-accent hover:underline">Washington DC</Link>, and <Link to="/virginia" className="text-accent hover:underline">Northern Virginia</Link> uses exclusively non-toxic, plant-based products. Our <Link to="/services/eco-friendly-cleaning" className="text-accent hover:underline">eco-friendly cleaning service</Link> ensures your home is spotless without compromising your family's health or the environment.</p>
 
+      <p>Want to understand exactly which chemicals we avoid and why it matters for your family? Read our in-depth guide: <Link to="/why-eco-friendly-cleaning" className="text-accent hover:underline font-semibold">Why Eco-Friendly Cleaning Matters →</Link></p>
+
+      <BlogInlineCTA
+        headline="Switch to Non-Toxic Cleaning Today"
+        subtext="Every Capital Clean Care visit uses 100% plant-based, EPA Safer Choice products — safe for your kids, pets, and the Chesapeake Bay. 15% OFF your first clean."
+        ctaLabel="Get My Free Eco-Clean Quote"
+        ctaTo="/contact"
+      />
+
       <p>Ready to experience the difference? <Link to="/contact" className="text-accent hover:underline font-semibold">Get a free quote today</Link> and join thousands of DMV families who've made the switch to green cleaning.</p>
     </article>
   ),
   "deep-cleaning-checklist-dmv-homeowners": (
     <article className="prose prose-lg max-w-none">
-      <p>Whether you live in a <Link to="/locations/georgetown-dc" className="text-accent hover:underline">Georgetown</Link> rowhouse, a <Link to="/locations/arlington-va" className="text-accent hover:underline">Arlington</Link> condo, or a spacious <Link to="/locations/potomac-md" className="text-accent hover:underline">Potomac</Link> estate, deep cleaning is essential for maintaining a healthy home. The mid-Atlantic climate brings unique challenges — humidity, pollen, and seasonal temperature swings — that make periodic deep cleaning a necessity, not a luxury.</p>
+      <p>Whether you live in a <Link to="/locations/georgetown-dc" className="text-accent hover:underline">Georgetown</Link> rowhouse, a <Link to="/locations/capitol-hill-dc" className="text-accent hover:underline">Capitol Hill</Link> Victorian, an <Link to="/locations/arlington-va" className="text-accent hover:underline">Arlington</Link> condo, or a spacious <Link to="/locations/potomac-md" className="text-accent hover:underline">Potomac</Link> estate, deep cleaning is essential for maintaining a healthy home. The mid-Atlantic climate brings unique challenges — humidity, pollen, and seasonal temperature swings — that make periodic deep cleaning a necessity, not a luxury.</p>
 
       <h2>Kitchen Deep Cleaning Checklist</h2>
       <ul>
@@ -380,9 +433,16 @@ const blogContent: Record<string, React.ReactNode> = {
       </ul>
 
       <h2>When to Schedule a Deep Clean</h2>
-      <p>We recommend quarterly deep cleans for most DMV homes. Spring is especially important to address pollen buildup, and fall prepares your home for the winter months. Our <Link to="/services/deep-cleaning" className="text-accent hover:underline">deep cleaning service</Link> covers 60+ checklist items across every room.</p>
+      <p>We recommend quarterly deep cleans for most DMV homes. Spring is especially important to address pollen buildup, and fall prepares your home for the winter months. Our <Link to="/services/deep-cleaning" className="text-accent hover:underline">deep cleaning service</Link> covers 60+ checklist items across every room. Also see: <Link to="/why-eco-friendly-cleaning" className="text-accent hover:underline">why we use only non-toxic products</Link> for every deep clean.</p>
 
-      <p><Link to="/contact" className="text-accent hover:underline font-semibold">Book your deep clean today</Link> — serving <Link to="/locations/rockville-md" className="text-accent hover:underline">Rockville</Link>, <Link to="/locations/bethesda-md" className="text-accent hover:underline">Bethesda</Link>, <Link to="/locations/fairfax-va" className="text-accent hover:underline">Fairfax</Link>, and 20+ more DMV communities.</p>
+      <BlogInlineCTA
+        headline="Schedule Your DMV Deep Clean"
+        subtext="Serving Georgetown, Capitol Hill, Arlington, Rockville, Bethesda, Fairfax, and 20+ more communities. Eco-friendly, background-checked teams."
+        ctaLabel="Book My Deep Clean →"
+        ctaTo="/contact"
+      />
+
+      <p><Link to="/contact" className="text-accent hover:underline font-semibold">Book your deep clean today</Link> — serving <Link to="/locations/rockville-md" className="text-accent hover:underline">Rockville</Link>, <Link to="/locations/bethesda-md" className="text-accent hover:underline">Bethesda</Link>, <Link to="/locations/fairfax-va" className="text-accent hover:underline">Fairfax</Link>, <Link to="/locations/alexandria-va" className="text-accent hover:underline">Alexandria</Link>, and 20+ more DMV communities.</p>
     </article>
   ),
   "how-to-choose-cleaning-service-silver-spring": (
@@ -393,10 +453,10 @@ const blogContent: Record<string, React.ReactNode> = {
       <p>Always confirm that your cleaning service is licensed and carries liability insurance. This protects you if anything is damaged during a cleaning. At Capital Clean Care, we're fully licensed and insured with comprehensive coverage.</p>
 
       <h2>2. Ask About Background Checks</h2>
-      <p>You're inviting people into your home — make sure they've been vetted. Our entire team undergoes thorough background checks before their first day.</p>
+      <p>You're inviting people into your home — make sure they've been vetted. Our entire team undergoes thorough background checks before their first day. <Link to="/about" className="text-accent hover:underline">Meet the Capital Clean Care team →</Link></p>
 
       <h2>3. Check for Eco-Friendly Options</h2>
-      <p>If you have children, pets, or allergies, non-toxic products are essential. Our <Link to="/services/eco-friendly-cleaning" className="text-accent hover:underline">eco-friendly cleaning</Link> uses only plant-based, EPA Safer Choice certified products.</p>
+      <p>If you have children, pets, or allergies, non-toxic products are essential. Our <Link to="/services/eco-friendly-cleaning" className="text-accent hover:underline">eco-friendly cleaning</Link> uses only plant-based, EPA Safer Choice certified products. Learn <Link to="/why-eco-friendly-cleaning" className="text-accent hover:underline">why eco-friendly cleaning matters</Link> for your family's health.</p>
 
       <h2>4. Read Reviews from Local Clients</h2>
       <p>Look for reviews from other <Link to="/locations/silver-spring-md" className="text-accent hover:underline">Silver Spring</Link> homeowners. Local experience matters — a company familiar with your neighborhood understands the specific cleaning challenges of the area. Check our <Link to="/reviews" className="text-accent hover:underline">Google reviews</Link> for real feedback from DMV clients.</p>
@@ -433,7 +493,16 @@ const blogContent: Record<string, React.ReactNode> = {
       <p>Melting snow and wet boots can warp hardwood floors common in <Link to="/locations/kensington-md" className="text-accent hover:underline">Kensington</Link> and <Link to="/locations/chevy-chase-md" className="text-accent hover:underline">Chevy Chase</Link> homes. Wipe spills immediately, avoid excess water when mopping, and use a plant-based floor cleaner designed for sealed hardwood.</p>
 
       <h2>Schedule Your Winter Deep Clean</h2>
-      <p>Don't let winter grime build up. Our <Link to="/services/eco-friendly-cleaning" className="text-accent hover:underline">eco-friendly cleaning service</Link> is available throughout Maryland, DC, and Northern Virginia. <Link to="/contact" className="text-accent hover:underline font-semibold">Get your free winter cleaning quote today</Link> — 15% off your first service!</p>
+      <p>Don't let winter grime build up. Our <Link to="/services/eco-friendly-cleaning" className="text-accent hover:underline">eco-friendly cleaning service</Link> is available throughout Maryland, DC, and Northern Virginia. Read our full guide on <Link to="/why-eco-friendly-cleaning" className="text-accent hover:underline">why eco-friendly cleaning matters</Link> — especially in winter when homes are sealed tight.</p>
+
+      <BlogInlineCTA
+        headline="Winter-Ready Cleaning for Maryland Homes"
+        subtext="Salt stains, holiday prep, dry-air dust — we handle it all with plant-based, non-toxic products. Serving Rockville, Bethesda, Germantown, Kensington, Chevy Chase, and more."
+        ctaLabel="Get My Winter Cleaning Quote →"
+        ctaTo="/contact"
+      />
+
+      <p><Link to="/contact" className="text-accent hover:underline font-semibold">Get your free winter cleaning quote today</Link> — 15% off your first service!</p>
     </article>
   ),
   "best-cleaning-schedule-busy-families-dmv": (
@@ -483,6 +552,13 @@ const blogContent: Record<string, React.ReactNode> = {
       <h2>How Recurring Service Saves Time and Money</h2>
       <p>Families on our weekly plan save 25% per visit. That's hundreds of dollars annually — plus the hours you reclaim each week. Most <Link to="/locations/rockville-md" className="text-accent hover:underline">Rockville</Link> and <Link to="/locations/bethesda-md" className="text-accent hover:underline">Bethesda</Link> clients tell us recurring service is their best household investment.</p>
 
+      <BlogInlineCTA
+        headline="Take Your Weekends Back"
+        subtext="Our recurring cleaning plans cover everything your family needs — weekly, bi-weekly, or monthly. Serving Silver Spring, Arlington, Rockville, Bethesda, and all of MD, DC & VA."
+        ctaLabel="Start My Cleaning Plan →"
+        ctaTo="/contact"
+      />
+
       <p><Link to="/contact" className="text-accent hover:underline font-semibold">Start your recurring cleaning plan today</Link> — 15% off your first visit for new clients!</p>
     </article>
   ),
@@ -525,7 +601,14 @@ const blogContent: Record<string, React.ReactNode> = {
       <p>A typical post-renovation clean for a Maryland home takes 4-8 hours depending on scope. Costs start at $350 for a single room and scale with square footage. Use our <Link to="/#price-calculator" className="text-accent hover:underline">price calculator</Link> for an instant estimate.</p>
 
       <h2>DIY vs. Professional: What Maryland Homeowners Should Know</h2>
-      <p>While you can handle surface-level cleanup, construction dust in HVAC systems and embedded in carpets requires professional equipment. Our teams serving <Link to="/locations/gaithersburg-md" className="text-accent hover:underline">Gaithersburg</Link>, <Link to="/locations/potomac-md" className="text-accent hover:underline">Potomac</Link>, and surrounding areas use commercial HEPA vacuums and eco-friendly degreasers that won't damage new finishes.</p>
+      <p>While you can handle surface-level cleanup, construction dust in HVAC systems and embedded in carpets requires professional equipment. Our teams serving <Link to="/locations/gaithersburg-md" className="text-accent hover:underline">Gaithersburg</Link>, <Link to="/locations/potomac-md" className="text-accent hover:underline">Potomac</Link>, <Link to="/locations/mclean-va" className="text-accent hover:underline">McLean</Link>, and <Link to="/locations/washington-dc" className="text-accent hover:underline">Washington DC</Link> use commercial HEPA vacuums and eco-friendly degreasers that won't damage new finishes. <Link to="/about" className="text-accent hover:underline">Meet our background-checked teams →</Link></p>
+
+      <BlogInlineCTA
+        headline="Post-Renovation Cleaning Done Right"
+        subtext="3-phase construction dust removal with HEPA filtration. Serving Germantown, Frederick, Gaithersburg, Potomac, McLean, Washington DC, and all of MD, DC & VA."
+        ctaLabel="Book My Post-Reno Clean →"
+        ctaTo="/contact"
+      />
 
       <p><Link to="/contact" className="text-accent hover:underline font-semibold">Book your post-renovation cleaning today</Link> — serving all of Maryland, DC & Northern Virginia.</p>
     </article>
@@ -574,6 +657,8 @@ const BlogPost = () => {
           <h1 className="font-heading text-3xl md:text-4xl font-bold mb-8">{post.title}</h1>
 
           {content}
+
+          <RelatedPosts currentSlug={post.slug} />
 
           <div className="mt-12 pt-8 border-t border-border">
             <Button variant="outline" asChild>
