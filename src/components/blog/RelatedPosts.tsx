@@ -12,7 +12,7 @@ const RELATED_MAP: Record<string, string[]> = {
     "best-cleaning-schedule-busy-families-dmv",
   ],
   "eco-cleaning-tips-maryland-homes": [
-    "why-eco-friendly-cleaning-matters",
+    "allergy-proofing-home-dmv",
     "remove-pet-hair-odors-dmv-homes",
     "eco-cleaning-tips-winters-maryland",
   ],
@@ -28,12 +28,12 @@ const RELATED_MAP: Record<string, string[]> = {
   ],
   "airbnb-cleaning-tips-dmv-hosts": [
     "move-out-cleaning-checklist-maryland-tenants",
-    "best-cleaning-schedule-busy-families-dmv",
-    "house-cleaning-prices-maryland-2026",
+    "move-in-cleaning-guide-dmv",
+    "recurring-cleaning-weekly-biweekly-monthly",
   ],
   "how-to-choose-cleaning-service-silver-spring": [
-    "eco-cleaning-tips-maryland-homes",
     "house-cleaning-prices-maryland-2026",
+    "house-cleaning-bethesda-md",
     "recurring-cleaning-weekly-biweekly-monthly",
   ],
   "move-out-cleaning-checklist-maryland-tenants": [
@@ -72,14 +72,14 @@ const RELATED_MAP: Record<string, string[]> = {
     "eco-cleaning-tips-maryland-homes",
   ],
   "house-cleaning-bethesda-md": [
-    "how-to-choose-cleaning-service-silver-spring",
-    "deep-cleaning-checklist-dmv-homeowners",
+    "house-cleaning-prices-maryland-2026",
     "allergy-proofing-home-dmv",
+    "deep-cleaning-rockville-md",
   ],
   "cleaning-service-arlington-va": [
     "house-cleaning-washington-dc",
-    "cleaning-service-fairfax-va",
-    "recurring-cleaning-weekly-biweekly-monthly",
+    "move-out-cleaning-checklist-maryland-tenants",
+    "remove-pet-hair-odors-dmv-homes",
   ],
   "deep-cleaning-rockville-md": [
     "spring-cleaning-checklist-maryland-2026",
@@ -112,14 +112,14 @@ const RELATED_MAP: Record<string, string[]> = {
     "house-cleaning-prices-maryland-2026",
   ],
   "allergy-proofing-home-dmv": [
-    "eco-cleaning-tips-maryland-homes",
-    "deep-cleaning-rockville-md",
     "remove-pet-hair-odors-dmv-homes",
+    "spring-cleaning-checklist-maryland-2026",
+    "eco-cleaning-tips-maryland-homes",
   ],
   "fall-cleaning-checklist-maryland": [
     "spring-cleaning-checklist-maryland-2026",
     "eco-cleaning-tips-winters-maryland",
-    "deep-cleaning-checklist-dmv-homeowners",
+    "allergy-proofing-home-dmv",
   ],
 };
 
