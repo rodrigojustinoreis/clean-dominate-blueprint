@@ -98,7 +98,7 @@ const EcoCallout = () => (
       </div>
 
       {/* CTA */}
-      <div className="text-center">
+      <div className="text-center flex flex-col sm:flex-row items-center justify-center gap-4">
         <Button
           asChild
           size="lg"
@@ -108,10 +108,20 @@ const EcoCallout = () => (
             Why Eco-Friendly Matters <ArrowRight className="ml-2 h-4 w-4" />
           </Link>
         </Button>
-        <p className="text-white/50 text-xs mt-3">
-          Learn about the 6 common household chemicals we've eliminated — and what we use instead.
-        </p>
+        <Button
+          asChild
+          size="lg"
+          variant="outline"
+          className="rounded-full border-white/30 text-white hover:bg-white/10"
+        >
+          <Link to="/contact">
+            Book an Eco Clean <ArrowRight className="ml-2 h-4 w-4" />
+          </Link>
+        </Button>
       </div>
+      <p className="text-white/40 text-xs mt-4 text-center">
+        EPA Safer Choice™ certified · non-toxic · safe for children & pets · no artificial fragrances
+      </p>
     </div>
   </section>
 );

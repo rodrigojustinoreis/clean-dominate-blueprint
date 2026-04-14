@@ -143,6 +143,27 @@ const TestimonialsCarousel = () => {
           </a>
         </div>
 
+        {/* Featured review highlight */}
+        <div className="max-w-2xl mx-auto mb-10 bg-white rounded-2xl border border-accent/20 p-6 md:p-8 shadow-sm text-center">
+          <div className="flex justify-center gap-0.5 mb-3">
+            {Array.from({ length: 5 }).map((_, i) => (
+              <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+            ))}
+          </div>
+          <blockquote className="text-base md:text-lg font-medium text-foreground italic leading-relaxed mb-4">
+            "Best cleaning service in the DMV, hands down. They remember every preference we have and my house smells amazing without any harsh chemicals."
+          </blockquote>
+          <div className="flex items-center justify-center gap-3">
+            <div className="w-9 h-9 rounded-full bg-indigo-500 flex items-center justify-center shrink-0">
+              <span className="text-white text-xs font-bold">P</span>
+            </div>
+            <div className="text-left">
+              <p className="text-sm font-semibold">Priya N.</p>
+              <p className="text-xs text-muted-foreground">Alexandria, VA · verified Google review</p>
+            </div>
+          </div>
+        </div>
+
         {/* Carousel */}
         <div
           className="relative"

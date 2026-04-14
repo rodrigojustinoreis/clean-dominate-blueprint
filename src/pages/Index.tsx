@@ -96,6 +96,28 @@ const Index = () => {
         </section>
       </ScrollReveal>
 
+      {/* ══════════════ SOCIAL PROOF NUMBERS ══════════════ */}
+      <ScrollReveal>
+        <div className="py-10 bg-white border-b border-border">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto text-center">
+              {[
+                { value: "500+", label: "Homes Cleaned", icon: "🏠" },
+                { value: "9+",   label: "Years Serving DMV", icon: "📅" },
+                { value: "5.0★", label: "Google Rating", icon: "⭐" },
+                { value: "100%", label: "Satisfaction Promise", icon: "🛡️" },
+              ].map((s) => (
+                <div key={s.label} className="flex flex-col items-center gap-1">
+                  <span className="text-2xl">{s.icon}</span>
+                  <p className="font-heading font-bold text-3xl md:text-4xl text-accent">{s.value}</p>
+                  <p className="text-sm text-muted-foreground font-medium leading-tight">{s.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </ScrollReveal>
+
       {/* ══════════════ PROBLEM / AGITATION ══════════════ */}
       <ScrollReveal>
         <section className="relative py-20 md:py-28 bg-mesh overflow-hidden">
