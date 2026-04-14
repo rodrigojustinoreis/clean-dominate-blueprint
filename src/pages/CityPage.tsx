@@ -9,7 +9,8 @@ import PricingTable from "@/components/PricingTable";
 import TrustBar from "@/components/TrustBar";
 import TrustBadges from "@/components/TrustBadges";
 import ConversionCTA from "@/components/ConversionCTA";
-import { FAQSchema, ServiceSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
+import { FAQSchema, ServiceSchema, BreadcrumbSchema, CityReviewSchema } from "@/components/SchemaMarkup";
+import { getTestimonialsForCity } from "@/data/testimonials";
 import { useSEO } from "@/hooks/useSEO";
 import { getCityBySlug, getExpandedCityFaqs } from "@/data/locations";
 import { services } from "@/data/services";
@@ -115,6 +116,7 @@ const CityPage = () => {
   const cityLabel = city.state !== "DC" ? `${city.name}, ${city.state}` : city.name;
   const whyIntro = cityWhyIntros[city.slug] || `${city.name} homeowners choose Capital Clean Care for our reliable, eco-friendly cleaning services.`;
   const hasServiceLocationPages = slCities.some((c) => c.slug === city.slug);
+  const testimonials = getTestimonialsForCity(city.slug);
 
   return (
     <Layout>
@@ -125,6 +127,12 @@ const CityPage = () => {
         serviceName={`House Cleaning in ${city.name}`}
         description={`Professional eco-friendly house cleaning services in ${cityLabel}. Licensed, insured, background-checked teams.`}
         url={`https://capitalcleancare.com/locations/${city.slug}`}
+        reviews={testimonials.map(t => ({ name: t.name, text: t.text, location: t.location }))}
+      />
+      <CityReviewSchema
+        cityName={city.name}
+        cityUrl={`https://capitalcleancare.com/locations/${city.slug}`}
+        reviews={testimonials}
       />
 
       {/* Hero */}
@@ -250,6 +258,34 @@ const CityPage = () => {
                 </div>
                 <span className="text-sm text-foreground mt-2">{item.text}</span>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-14 md:py-20 bg-secondary">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="text-center mb-8">
+            <span className="inline-block bg-accent/10 text-accent font-semibold text-sm uppercase tracking-wider px-3 py-1 rounded-full mb-3">
+              Client Reviews
+            </span>
+            <h2 className="font-heading text-2xl md:text-3xl font-bold">
+              What {city.name} Homeowners Say
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {testimonials.map((t) => (
+              <Card key={t.name} className="border-border hover:shadow-md transition-shadow">
+                <CardContent className="p-5">
+                  <div className="flex items-center gap-0.5 mb-3">
+                    {[1,2,3,4,5].map((i) => <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" />)}
+                  </div>
+                  <p className="text-sm text-foreground italic mb-3 leading-relaxed">"{t.text}"</p>
+                  <p className="text-sm font-semibold text-foreground">{t.name}</p>
+                  <p className="text-xs text-muted-foreground">{t.location}</p>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>

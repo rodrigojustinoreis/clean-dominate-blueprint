@@ -371,6 +371,39 @@ export const HowToSchema = ({ name, description, url, steps, totalTime, image }:
   return <JsonLd id="howto-schema" schema={schema} />;
 };
 
+// ── City/Location Review Schema ───────────────────────────────
+interface CityReviewSchemaProps {
+  cityName: string;
+  cityUrl: string;
+  reviews: { name: string; text: string; location: string; date: string }[];
+}
+
+export const CityReviewSchema = ({ cityName, cityUrl, reviews }: CityReviewSchemaProps) => {
+  if (!reviews || reviews.length === 0) return null;
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: `House Cleaning in ${cityName}`,
+    provider: businessRef,
+    url: cityUrl,
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "5.0",
+      reviewCount: String(reviews.length),
+      bestRating: "5",
+      worstRating: "1",
+    },
+    review: reviews.map((r) => ({
+      "@type": "Review",
+      author: { "@type": "Person", name: r.name },
+      datePublished: r.date,
+      reviewBody: r.text,
+      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+    })),
+  };
+  return <JsonLd id={`city-review-schema-${cityName.toLowerCase().replace(/\s/g, "-")}`} schema={schema} />;
+};
+
 // ── ContactPage Schema ────────────────────────────────────────
 export const ContactPageSchema = () => {
   const schema = {

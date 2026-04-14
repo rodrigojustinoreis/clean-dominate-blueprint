@@ -4,7 +4,8 @@ import { useSEO } from "@/hooks/useSEO";
 import FAQ from "@/components/FAQ";
 import ConversionCTA from "@/components/ConversionCTA";
 import TrustBadges from "@/components/TrustBadges";
-import { LocalBusinessSchema, ServiceSchema, FAQSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
+import { LocalBusinessSchema, ServiceSchema, FAQSchema, BreadcrumbSchema, CityReviewSchema } from "@/components/SchemaMarkup";
+import { getTestimonialsForServiceCity } from "@/data/testimonials";
 import { getCity, getService, getServiceLocationIntro, getWhyChooseUs, getServiceLocationFAQs, slCities, slServices } from "@/data/service-locations";
 import { vanityLandingPages } from "@/data/vanity-landings";
 import { CheckCircle, MapPin, ArrowRight, Shield, Leaf, Clock, Star } from "lucide-react";
@@ -36,6 +37,8 @@ const ServiceLocationPage = () => {
 
   const { seoHelmet } = useSEO({ title: metaTitle, description: metaDescription, canonical: canonicalUrl });
 
+  const testimonials = getTestimonialsForServiceCity(city.slug, service.slug);
+
   // Get related service pages for this city
   const relatedServices = slServices.filter(s => s.slug !== service.slug).slice(0, 4);
   // Get nearby cities — same county first, then fallback to same state
@@ -53,6 +56,12 @@ const ServiceLocationPage = () => {
         serviceName={`${service.name} in ${city.name}`}
         description={metaDescription}
         url={pageUrl}
+        reviews={testimonials.map(t => ({ name: t.name, text: t.text, location: t.location }))}
+      />
+      <CityReviewSchema
+        cityName={`${city.name} — ${service.name}`}
+        cityUrl={pageUrl}
+        reviews={testimonials}
       />
       <FAQSchema faqs={faqs} />
 
@@ -158,6 +167,39 @@ const ServiceLocationPage = () => {
           </div>
         </div>
       </section>
+
+      {/* Testimonials */}
+      {testimonials.length > 0 && (
+        <section className="py-12 md:py-16">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <div className="text-center mb-8">
+              <span className="inline-flex items-center gap-1.5 bg-accent/10 text-accent font-semibold text-sm uppercase tracking-wider px-3 py-1 rounded-full mb-3">
+                <Star className="h-3.5 w-3.5 fill-accent" /> Client Reviews
+              </span>
+              <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground">
+                What {city.name} Clients Say About Our {service.name}
+              </h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {testimonials.map((t) => (
+                <div key={t.name} className="bg-card border border-border rounded-xl p-5 hover:shadow-md transition-shadow">
+                  <div className="flex items-center gap-0.5 mb-3">
+                    {[1,2,3,4,5].map((i) => (
+                      <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" />
+                    ))}
+                  </div>
+                  <p className="text-sm text-foreground italic mb-3 leading-relaxed">"{t.text}"</p>
+                  <p className="text-sm font-semibold text-foreground">{t.name}</p>
+                  <p className="text-xs text-muted-foreground">{t.location}</p>
+                </div>
+              ))}
+            </div>
+            <p className="text-center text-sm text-muted-foreground mt-6">
+              <span className="font-semibold text-foreground">5.0 ★</span> average rating across all {city.name} {service.shortName} reviews
+            </p>
+          </div>
+        </section>
+      )}
 
       {/* Ideal For */}
       <section className="py-12 md:py-16">
