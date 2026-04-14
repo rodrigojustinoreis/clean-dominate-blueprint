@@ -71,6 +71,56 @@ const RELATED_MAP: Record<string, string[]> = {
     "deep-cleaning-checklist-dmv-homeowners",
     "eco-cleaning-tips-maryland-homes",
   ],
+  "house-cleaning-bethesda-md": [
+    "how-to-choose-cleaning-service-silver-spring",
+    "deep-cleaning-checklist-dmv-homeowners",
+    "allergy-proofing-home-dmv",
+  ],
+  "cleaning-service-arlington-va": [
+    "house-cleaning-washington-dc",
+    "cleaning-service-fairfax-va",
+    "recurring-cleaning-weekly-biweekly-monthly",
+  ],
+  "deep-cleaning-rockville-md": [
+    "spring-cleaning-checklist-maryland-2026",
+    "deep-cleaning-checklist-dmv-homeowners",
+    "allergy-proofing-home-dmv",
+  ],
+  "house-cleaning-washington-dc": [
+    "cleaning-service-georgetown-dc",
+    "cleaning-service-arlington-va",
+    "move-in-cleaning-guide-dmv",
+  ],
+  "cleaning-service-fairfax-va": [
+    "cleaning-service-arlington-va",
+    "recurring-cleaning-weekly-biweekly-monthly",
+    "remove-pet-hair-odors-dmv-homes",
+  ],
+  "cleaning-service-georgetown-dc": [
+    "house-cleaning-washington-dc",
+    "cleaning-service-alexandria-va",
+    "eco-cleaning-tips-maryland-homes",
+  ],
+  "cleaning-service-alexandria-va": [
+    "cleaning-service-arlington-va",
+    "move-out-cleaning-checklist-maryland-tenants",
+    "move-in-cleaning-guide-dmv",
+  ],
+  "move-in-cleaning-guide-dmv": [
+    "move-out-cleaning-checklist-maryland-tenants",
+    "deep-cleaning-checklist-dmv-homeowners",
+    "house-cleaning-prices-maryland-2026",
+  ],
+  "allergy-proofing-home-dmv": [
+    "eco-cleaning-tips-maryland-homes",
+    "deep-cleaning-rockville-md",
+    "remove-pet-hair-odors-dmv-homes",
+  ],
+  "fall-cleaning-checklist-maryland": [
+    "spring-cleaning-checklist-maryland-2026",
+    "eco-cleaning-tips-winters-maryland",
+    "deep-cleaning-checklist-dmv-homeowners",
+  ],
 };
 
 const allPosts = [...blogPosts, ...autoBlogPosts];

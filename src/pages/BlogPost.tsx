@@ -562,6 +562,482 @@ const blogContent: Record<string, React.ReactNode> = {
       <p><Link to="/contact" className="text-accent hover:underline font-semibold">Start your recurring cleaning plan today</Link> — 15% off your first visit for new clients!</p>
     </article>
   ),
+  "house-cleaning-bethesda-md": (
+    <article className="prose prose-lg max-w-none">
+      <p><Link to="/locations/bethesda-md" className="text-accent hover:underline">Bethesda, MD</Link> is one of the most health-conscious communities in the entire DMV. Residents here prioritize organic food, walkable neighborhoods, and — increasingly — the products used inside their homes. If you're looking for professional house cleaning in Bethesda, here's what to expect, what to look for, and what the best local services offer.</p>
+
+      <h2>What Makes Bethesda Homes Unique</h2>
+      <p>Bethesda homes range from pre-war Cape Cods in Chevy Chase sections to modern luxury condos near Bethesda Row and spacious colonials in Burning Tree and Bradley Hills. Each has distinct cleaning needs:</p>
+      <ul>
+        <li><strong>Older homes:</strong> More surface area, crown molding, hardwood floors, and period details that need careful, non-abrasive cleaning</li>
+        <li><strong>Condos and apartments:</strong> Smaller square footage but high-touch shared amenities and limited ventilation</li>
+        <li><strong>Large family homes:</strong> Multiple bathrooms, finished basements, and frequent guest use all require thorough recurring service</li>
+      </ul>
+
+      <h2>What Professional House Cleaning Covers in Bethesda</h2>
+      <p>A standard recurring clean at a Bethesda home typically includes:</p>
+      <ul>
+        <li>All bathrooms — scrub toilets, showers, sinks, mirrors, and floors</li>
+        <li>Kitchen surfaces, appliance exteriors, stovetop, and sink</li>
+        <li>Vacuum all carpets and area rugs with HEPA equipment</li>
+        <li>Mop all hard floors with appropriate solutions for the floor type</li>
+        <li>Dust furniture, shelves, ceiling fans, and light fixtures</li>
+        <li>Empty trash cans and replace liners</li>
+      </ul>
+      <p>A <Link to="/services/deep-cleaning" className="text-accent hover:underline">deep cleaning</Link> adds inside appliances, grout scrubbing, cabinet interiors, baseboards, and window sills.</p>
+
+      <h2>Pricing for House Cleaning in Bethesda</h2>
+      <p>Bethesda pricing reflects the area's cost of living. Typical ranges for a professional clean:</p>
+      <ul>
+        <li><strong>2-bedroom condo:</strong> $130 – $180 per standard visit</li>
+        <li><strong>3-bedroom home:</strong> $160 – $230 per standard visit</li>
+        <li><strong>4-bedroom home:</strong> $200 – $290 per standard visit</li>
+        <li><strong>First-time / deep clean:</strong> 25–40% higher than recurring rates</li>
+      </ul>
+      <p>Recurring clients save significantly — weekly plans can reduce per-visit cost by 20–25%.</p>
+
+      <h2>Why Bethesda Families Choose Eco-Friendly Cleaning</h2>
+      <p>Given Bethesda's proximity to Rock Creek Park and the broader Chesapeake Bay watershed, many residents are thoughtful about the chemicals entering their homes and drains. Our <Link to="/services/eco-friendly-cleaning" className="text-accent hover:underline">eco-friendly cleaning service</Link> uses only EPA Safer Choice certified, plant-based products — no chlorine, ammonia, phthalates, or VOCs. Read more about <Link to="/why-eco-friendly-cleaning" className="text-accent hover:underline">why eco-friendly cleaning matters</Link> for your family's health.</p>
+
+      <h2>Vetting a Cleaning Service in Bethesda</h2>
+      <ol>
+        <li><strong>Confirm insurance:</strong> Liability coverage protects you if anything is damaged</li>
+        <li><strong>Ask about background checks:</strong> Every Capital Clean Care team member is background-verified before entering a client's home — <Link to="/about" className="text-accent hover:underline">learn about our hiring process</Link></li>
+        <li><strong>Check local reviews:</strong> Look specifically for Bethesda and Montgomery County reviews on Google</li>
+        <li><strong>Request a walkthrough quote:</strong> Be wary of one-size-fits-all pricing without assessing your home</li>
+      </ol>
+
+      <BlogInlineCTA
+        headline="Bethesda's Trusted Eco-Friendly Cleaning Service"
+        subtext="Background-checked teams, EPA Safer Choice products, 100% satisfaction guarantee. Serving Bethesda, Chevy Chase, Potomac, Rockville, and all of Montgomery County."
+        ctaLabel="Get My Bethesda Quote →"
+        ctaTo="/contact"
+      />
+
+      <p>Capital Clean Care has served <Link to="/locations/bethesda-md" className="text-accent hover:underline">Bethesda</Link> and surrounding Montgomery County communities for 9+ years. <Link to="/contact" className="text-accent hover:underline font-semibold">Get your free quote today</Link> — 15% off for new clients.</p>
+    </article>
+  ),
+  "cleaning-service-arlington-va": (
+    <article className="prose prose-lg max-w-none">
+      <p><Link to="/locations/arlington-va" className="text-accent hover:underline">Arlington, VA</Link> is one of the most densely populated and professionally active communities in the DMV. With a mix of high-rise condos, townhomes, and detached houses, Arlington residents have diverse cleaning needs — and high standards. Here's what Northern Virginia homeowners should know when choosing a professional cleaning service.</p>
+
+      <h2>Arlington's Unique Cleaning Challenges</h2>
+      <p>Arlington's urban density and busy commuter culture create specific cleaning situations:</p>
+      <ul>
+        <li><strong>Condo buildings:</strong> High-touch surfaces, limited natural ventilation, and small square footage that still needs thorough coverage</li>
+        <li><strong>Pets in smaller spaces:</strong> Dogs and cats in Arlington apartments and condos create concentrated odor and hair buildup</li>
+        <li><strong>High turnover:</strong> Residents often relocate every 2–3 years, creating consistent demand for move-in and move-out cleaning</li>
+        <li><strong>Urban pollen:</strong> Arlington's tree canopy is one of the county's greatest assets — but it also deposits heavy pollen in spring</li>
+      </ul>
+
+      <h2>What to Look for in an Arlington Cleaning Service</h2>
+      <p>The best cleaning services in Arlington share these qualities:</p>
+      <ul>
+        <li><strong>Licensed and insured:</strong> Non-negotiable for any service entering your home</li>
+        <li><strong>Background-checked staff:</strong> Especially critical in condos and apartment buildings where security is a shared concern</li>
+        <li><strong>Flexible scheduling:</strong> Arlington commuters need evening and weekend availability</li>
+        <li><strong>Eco-friendly products:</strong> Many Arlington residents have children, pets, or respiratory conditions — plant-based products are safer and equally effective. Read our guide on <Link to="/why-eco-friendly-cleaning" className="text-accent hover:underline">why eco-friendly cleaning matters</Link></li>
+        <li><strong>Consistent teams:</strong> The same cleaners each visit build familiarity with your home and preferences</li>
+      </ul>
+
+      <h2>Popular Arlington Neighborhoods We Serve</h2>
+      <p>Capital Clean Care covers all of Arlington, including Clarendon, Courthouse, Ballston, Pentagon City, Crystal City, Rosslyn, Lyon Village, Cherrydale, and Westover. Whether you're in a high-rise condo near Metro or a detached colonial near <Link to="/locations/falls-church-va" className="text-accent hover:underline">Falls Church</Link>, our teams know the area.</p>
+
+      <h2>Arlington Cleaning Prices</h2>
+      <ul>
+        <li><strong>Studio / 1BR condo:</strong> $95 – $140 per standard clean</li>
+        <li><strong>2BR condo or townhome:</strong> $130 – $185 per standard clean</li>
+        <li><strong>3BR home:</strong> $160 – $240 per standard clean</li>
+      </ul>
+      <p>Recurring clients (weekly or bi-weekly) receive discounted rates. See our full <Link to="/services/recurring-cleaning" className="text-accent hover:underline">recurring cleaning plans</Link>.</p>
+
+      <BlogInlineCTA
+        headline="Arlington's Go-To Professional Cleaning Service"
+        subtext="Serving Clarendon, Ballston, Pentagon City, Crystal City, Lyon Village, and all of Arlington. Eco-friendly products, background-checked teams, 15% OFF first visit."
+        ctaLabel="Get My Arlington Quote →"
+        ctaTo="/contact"
+      />
+
+      <p>Ready to experience the difference? <Link to="/contact" className="text-accent hover:underline font-semibold">Get your free Arlington cleaning quote today</Link>.</p>
+    </article>
+  ),
+  "deep-cleaning-rockville-md": (
+    <article className="prose prose-lg max-w-none">
+      <p><Link to="/locations/rockville-md" className="text-accent hover:underline">Rockville, MD</Link> is one of Montgomery County's largest cities — and its suburban character means larger homes, more square footage, and more spaces that accumulate dust, allergens, and grime between visits. Whether you're scheduling your first professional deep clean or setting up a recurring plan, here's what Rockville homeowners need to know.</p>
+
+      <h2>Why Deep Cleaning Matters for Rockville Homes</h2>
+      <p>Rockville's suburban sprawl means most homes are larger than the DMV average — three to five bedrooms, finished basements, two-car garages, and multiple bathrooms. Standard cleaning keeps surfaces tidy; deep cleaning addresses the accumulation underneath, inside, and behind:</p>
+      <ul>
+        <li>Inside the oven, refrigerator, and dishwasher</li>
+        <li>Behind and under appliances and heavy furniture</li>
+        <li>Grout lines in kitchen and bathroom tile</li>
+        <li>Inside all cabinets and drawers</li>
+        <li>Baseboards, crown molding, door frames, and window tracks</li>
+        <li>Ceiling fans, light fixtures, and vent covers</li>
+      </ul>
+
+      <h2>When to Schedule a Deep Clean in Rockville</h2>
+      <p>Most Rockville homeowners benefit from deep cleaning in these situations:</p>
+      <ul>
+        <li><strong>Spring:</strong> After a long winter, to address dust buildup, pollen infiltration, and post-heating-season grime</li>
+        <li><strong>Before a major event:</strong> Holidays, family visits, or home listing preparation</li>
+        <li><strong>After renovation:</strong> Construction dust embeds in HVAC systems — see our <Link to="/blog/post-renovation-cleaning-guide-maryland" className="text-accent hover:underline">post-renovation cleaning guide</Link></li>
+        <li><strong>New recurring clients:</strong> A deep clean establishes the baseline before maintenance visits</li>
+        <li><strong>Quarterly maintenance:</strong> Even well-maintained homes benefit from a quarterly reset</li>
+      </ul>
+
+      <h2>Rockville's Allergy Season Challenge</h2>
+      <p>Rockville's tree canopy and proximity to Rock Creek Park means pollen season is intense — typically March through June. For allergy-prone families, a professional <Link to="/services/deep-cleaning" className="text-accent hover:underline">deep cleaning</Link> in late March eliminates pollen that's infiltrated the home and resets surfaces before the worst of the season hits. Our HEPA-equipped vacuums capture particles down to 0.3 microns — far more effective than standard residential vacuums.</p>
+
+      <h2>Eco-Friendly Deep Cleaning in Rockville</h2>
+      <p>Our plant-based, EPA Safer Choice certified products are used in every deep clean — whether you have children, pets, or specific sensitivities. No chlorine bleach, ammonia, or artificial fragrances enter your home. Learn more about <Link to="/why-eco-friendly-cleaning" className="text-accent hover:underline">why we chose to go chemical-free</Link> from day one.</p>
+
+      <h2>Neighborhoods We Serve in Rockville</h2>
+      <p>We cover all of Rockville including Twinbrook, Lincoln Park, Fallsmead, Hungerford, King Farm, Potomac Woods, East Rockville, and communities near <Link to="/locations/gaithersburg-md" className="text-accent hover:underline">Gaithersburg</Link> and <Link to="/locations/germantown-md" className="text-accent hover:underline">Germantown</Link>.</p>
+
+      <BlogInlineCTA
+        headline="Rockville's Deep Cleaning Specialists"
+        subtext="Full home deep cleans for Rockville families — inside appliances, grout scrubbing, HEPA vacuuming, eco-friendly products. 15% OFF your first visit."
+        ctaLabel="Book My Rockville Deep Clean →"
+        ctaTo="/contact"
+      />
+
+      <p><Link to="/contact" className="text-accent hover:underline font-semibold">Schedule your Rockville deep clean today</Link> — serving all of Montgomery County and surrounding areas.</p>
+    </article>
+  ),
+  "house-cleaning-washington-dc": (
+    <article className="prose prose-lg max-w-none">
+      <p>Washington DC is one of the most diverse real estate markets in the country — from <Link to="/locations/capitol-hill-dc" className="text-accent hover:underline">Capitol Hill</Link> Victorian rowhouses and <Link to="/locations/georgetown-dc" className="text-accent hover:underline">Georgetown</Link> Federal townhomes to <Link to="/locations/adams-morgan-dc" className="text-accent hover:underline">Adams Morgan</Link> apartments and <Link to="/locations/dupont-circle-dc" className="text-accent hover:underline">Dupont Circle</Link> condos. Each property type has unique cleaning needs, and DC residents have equally high expectations. Here's what DC homeowners and renters need to know about professional house cleaning.</p>
+
+      <h2>DC Home Types and Their Cleaning Needs</h2>
+
+      <h3>Historic Rowhouses (Capitol Hill, Georgetown, Logan Circle)</h3>
+      <p>DC's brick rowhouses are architectural treasures — and cleaning challenges. High ceilings, original hardwood floors, ornate molding, and deep window casements require careful, non-abrasive techniques. We use products and methods that clean thoroughly without damaging historic finishes.</p>
+
+      <h3>Condos and Apartments (Dupont, Adams Morgan, Shaw, Navy Yard)</h3>
+      <p>Urban condos benefit from frequent maintenance cleaning — weekly or bi-weekly. Limited square footage doesn't mean limited complexity: kitchen surfaces, bathrooms, hardwood floors, and shared air quality all need consistent attention.</p>
+
+      <h3>Larger Homes (Georgetown, Chevy Chase DC, Spring Valley)</h3>
+      <p>Larger DC homes in established neighborhoods often have multiple floors, formal dining rooms, home offices, and finished basements. These benefit most from quarterly <Link to="/services/deep-cleaning" className="text-accent hover:underline">deep cleaning</Link> alongside regular maintenance service.</p>
+
+      <h2>What DC Residents Value in a Cleaning Service</h2>
+      <ul>
+        <li><strong>Reliability:</strong> DC professionals can't afford missed appointments or inconsistent results</li>
+        <li><strong>Security:</strong> Background-checked, vetted teams are non-negotiable in urban environments</li>
+        <li><strong>Eco-consciousness:</strong> DC residents are among the most environmentally aware in the country — plant-based, non-toxic products are standard at Capital Clean Care. Learn <Link to="/why-eco-friendly-cleaning" className="text-accent hover:underline">why this matters</Link></li>
+        <li><strong>Flexible hours:</strong> Early morning, evening, and weekend availability for busy schedules</li>
+      </ul>
+
+      <h2>DC Neighborhoods We Serve</h2>
+      <p>Capital Clean Care covers all of Washington DC including <Link to="/locations/capitol-hill-dc" className="text-accent hover:underline">Capitol Hill</Link>, <Link to="/locations/georgetown-dc" className="text-accent hover:underline">Georgetown</Link>, <Link to="/locations/dupont-circle-dc" className="text-accent hover:underline">Dupont Circle</Link>, <Link to="/locations/adams-morgan-dc" className="text-accent hover:underline">Adams Morgan</Link>, <Link to="/locations/washington-dc" className="text-accent hover:underline">Northwest DC</Link>, Logan Circle, Shaw, Columbia Heights, Foggy Bottom, Navy Yard, and more.</p>
+
+      <h2>DC Cleaning Prices</h2>
+      <ul>
+        <li><strong>Studio / 1BR:</strong> $95 – $145 per standard clean</li>
+        <li><strong>2BR condo/apartment:</strong> $135 – $195 per standard clean</li>
+        <li><strong>3BR rowhouse:</strong> $175 – $255 per standard clean</li>
+        <li><strong>4BR+ home:</strong> $220 – $320+ per standard clean</li>
+      </ul>
+
+      <BlogInlineCTA
+        headline="Professional Cleaning for Washington DC Homes"
+        subtext="Serving Capitol Hill, Georgetown, Dupont Circle, Adams Morgan, and all DC neighborhoods. Background-checked teams, eco-friendly products, same-week scheduling."
+        ctaLabel="Get My DC Cleaning Quote →"
+        ctaTo="/contact"
+      />
+
+      <p>Capital Clean Care has served the DC metro for 9+ years. <Link to="/contact" className="text-accent hover:underline font-semibold">Get your free quote today</Link> — 15% off your first visit.</p>
+    </article>
+  ),
+  "cleaning-service-fairfax-va": (
+    <article className="prose prose-lg max-w-none">
+      <p><Link to="/locations/fairfax-va" className="text-accent hover:underline">Fairfax, VA</Link> is one of Northern Virginia's most family-oriented communities — with excellent schools, large suburban homes, and a lifestyle that keeps families constantly on the move. Between jobs in DC, kids' activities, and weekend commitments, Fairfax homeowners are among the busiest in the DMV. Professional cleaning isn't a luxury here — it's a practical necessity.</p>
+
+      <h2>Fairfax Home Characteristics</h2>
+      <p>Most Fairfax homes are larger suburban properties — colonials, split-levels, and traditional two-stories with three to five bedrooms, two-car garages, and finished basements. These homes take significantly longer to clean than urban condos, and the cleaning challenges are different:</p>
+      <ul>
+        <li><strong>Finished basements:</strong> Often used as playrooms, home gyms, or guest suites — require regular vacuuming, surface cleaning, and bathroom attention</li>
+        <li><strong>Multiple kids' rooms:</strong> High-touch surfaces, more textiles, and concentrated messes</li>
+        <li><strong>Large kitchens:</strong> Granite or quartz countertops, stainless appliances, and often a double oven and large island</li>
+        <li><strong>Hardwood floors throughout:</strong> Common in Fairfax homes built 1990–2010, require the right products and technique</li>
+      </ul>
+
+      <h2>Recommended Cleaning Frequency for Fairfax Families</h2>
+      <p>For most Fairfax households with children and pets, bi-weekly professional cleaning is the sweet spot — frequent enough to maintain a clean home, affordable enough to sustain long-term. See our full breakdown: <Link to="/blog/recurring-cleaning-weekly-biweekly-monthly" className="text-accent hover:underline">weekly vs. bi-weekly vs. monthly cleaning</Link>.</p>
+
+      <h2>Fairfax Neighborhoods We Serve</h2>
+      <p>We cover all of Fairfax City and surrounding communities including Fair Oaks, Burke, Annandale, Springfield, Reston, Herndon, Centreville, Chantilly, and areas near <Link to="/locations/mclean-va" className="text-accent hover:underline">McLean</Link> and <Link to="/locations/falls-church-va" className="text-accent hover:underline">Falls Church</Link>.</p>
+
+      <h2>Eco-Friendly Cleaning for Fairfax Kids and Pets</h2>
+      <p>Fairfax families with young children and pets need products that are genuinely safe — not just "green-washed" marketing. Every Capital Clean Care visit uses EPA Safer Choice certified, plant-based products with no toxic residue. Read more: <Link to="/why-eco-friendly-cleaning" className="text-accent hover:underline">why eco-friendly cleaning matters for your family</Link>.</p>
+
+      <BlogInlineCTA
+        headline="Fairfax Families Trust Capital Clean Care"
+        subtext="Large homes, busy schedules, kids and pets — we handle it all. Serving Fairfax, Fair Oaks, Burke, Annandale, Reston, McLean, Falls Church, and all of Northern Virginia."
+        ctaLabel="Get My Fairfax Cleaning Quote →"
+        ctaTo="/contact"
+      />
+
+      <p><Link to="/contact" className="text-accent hover:underline font-semibold">Start your Fairfax cleaning plan today</Link> — 15% off your first visit for new clients.</p>
+    </article>
+  ),
+  "cleaning-service-georgetown-dc": (
+    <article className="prose prose-lg max-w-none">
+      <p><Link to="/locations/georgetown-dc" className="text-accent hover:underline">Georgetown</Link> is Washington DC's oldest and most architecturally significant neighborhood — a place where Federal-style rowhouses, Italianate townhomes, and historic brick carriage houses coexist with modern renovations and luxury finishes. Cleaning Georgetown homes requires knowledge, care, and the right products. Here's what residents should know.</p>
+
+      <h2>What Makes Georgetown Homes Different</h2>
+      <p>Georgetown's housing stock is predominantly pre-1950 construction, with many homes dating to the 18th and 19th centuries. This creates distinct cleaning considerations:</p>
+      <ul>
+        <li><strong>Original hardwood floors:</strong> Many Georgetown homes have century-old pine or oak floors that require gentle, non-stripping cleaning solutions — never harsh alkaline cleaners</li>
+        <li><strong>Plaster walls:</strong> Unlike modern drywall, plaster can be damaged by excessive moisture. Microfiber dusting and careful spot cleaning are essential</li>
+        <li><strong>Multi-story rowhouses:</strong> Three and four floors of stairs, bannisters, and narrow hallways that take more time and care than open-plan modern homes</li>
+        <li><strong>Intricate molding and millwork:</strong> Crown molding, chair rails, wainscoting, and detailed window casements that collect dust and require careful attention</li>
+        <li><strong>Modern renovations:</strong> Many Georgetown homes blend historic shells with high-end modern kitchens and bathrooms — requiring expertise across both old and new surfaces</li>
+      </ul>
+
+      <h2>Why Non-Toxic Products Matter Even More in Older Homes</h2>
+      <p>Older Georgetown homes often have less air circulation than modern construction — windows that don't seal perfectly, limited HVAC airflow, and smaller rooms. Harsh chemical cleaners leave residues and fumes that linger longer in these spaces. Our <Link to="/services/eco-friendly-cleaning" className="text-accent hover:underline">eco-friendly cleaning service</Link> uses only plant-based, EPA Safer Choice products that are safe for historic finishes and home occupants alike. Learn more: <Link to="/why-eco-friendly-cleaning" className="text-accent hover:underline">why eco-friendly cleaning matters</Link>.</p>
+
+      <h2>Georgetown Cleaning Services We Offer</h2>
+      <ul>
+        <li><Link to="/services/recurring-cleaning" className="text-accent hover:underline">Recurring cleaning</Link> — weekly or bi-weekly maintenance</li>
+        <li><Link to="/services/deep-cleaning" className="text-accent hover:underline">Deep cleaning</Link> — seasonal or first-time comprehensive cleans</li>
+        <li><Link to="/services/move-out-cleaning" className="text-accent hover:underline">Move-out cleaning</Link> — landlord-approved thoroughness for Georgetown rentals</li>
+        <li>Vacation rental turnover — ideal for Georgetown short-term rentals</li>
+      </ul>
+
+      <h2>Serving Georgetown and Surrounding DC Neighborhoods</h2>
+      <p>In addition to Georgetown, we serve <Link to="/locations/dupont-circle-dc" className="text-accent hover:underline">Dupont Circle</Link>, <Link to="/locations/capitol-hill-dc" className="text-accent hover:underline">Capitol Hill</Link>, <Link to="/locations/adams-morgan-dc" className="text-accent hover:underline">Adams Morgan</Link>, <Link to="/locations/washington-dc" className="text-accent hover:underline">Northwest DC</Link>, Foggy Bottom, Kalorama, and all DC neighborhoods. Our team is familiar with the unique characteristics of every DC enclave.</p>
+
+      <BlogInlineCTA
+        headline="Expert Cleaning for Georgetown's Historic Homes"
+        subtext="We understand historic hardwood floors, plaster walls, and delicate millwork. Plant-based, non-toxic products safe for your home's original finishes. Serving all of DC."
+        ctaLabel="Get My Georgetown Quote →"
+        ctaTo="/contact"
+      />
+
+      <p><Link to="/contact" className="text-accent hover:underline font-semibold">Book your Georgetown cleaning today</Link> — 15% off for new clients.</p>
+    </article>
+  ),
+  "cleaning-service-alexandria-va": (
+    <article className="prose prose-lg max-w-none">
+      <p><Link to="/locations/alexandria-va" className="text-accent hover:underline">Alexandria, VA</Link> is one of Northern Virginia's most beloved cities — a community that blends 18th-century Old Town charm with modern Del Ray bungalows, Carlyle townhomes, and Potomac Yard condos. Each Alexandria neighborhood has its own character, and professional cleaning services need to understand the range. Here's what Alexandria homeowners should know.</p>
+
+      <h2>Alexandria Neighborhoods and What They Need</h2>
+
+      <h3>Old Town Alexandria</h3>
+      <p>Old Town's historic brick rowhouses and Federal-style townhomes share many characteristics with <Link to="/locations/georgetown-dc" className="text-accent hover:underline">Georgetown</Link> — original hardwood floors, intricate millwork, and period details that need gentle care. Non-abrasive, plant-based cleaning products are especially important here.</p>
+
+      <h3>Del Ray</h3>
+      <p>Del Ray's bungalows and craftsman-style homes from the early 20th century are popular with young families and professionals. These compact homes require thorough cleaning despite their size — especially in kitchens and bathrooms where space is limited but use is intensive.</p>
+
+      <h3>Carlyle and Eisenhower</h3>
+      <p>Modern condos and townhomes in these newer developments have contemporary finishes — quartz countertops, LVP flooring, and open-plan kitchens — that benefit from regular professional maintenance cleaning.</p>
+
+      <h3>Potomac Yard and Braddock Road</h3>
+      <p>Urban condo buildings near Metro stations attract professionals and commuters who need flexible scheduling — evening and weekend availability is essential.</p>
+
+      <h2>Eco-Friendly Cleaning in Alexandria</h2>
+      <p>Alexandria borders the Potomac River and is a community that values environmental stewardship. Our plant-based, <Link to="/services/eco-friendly-cleaning" className="text-accent hover:underline">eco-friendly cleaning service</Link> uses EPA Safer Choice certified products that don't harm Potomac watershed ecosystems when they enter the water system. Read our detailed guide: <Link to="/why-eco-friendly-cleaning" className="text-accent hover:underline">why eco-friendly cleaning matters</Link>.</p>
+
+      <h2>Move-In and Move-Out Cleaning in Alexandria</h2>
+      <p>Alexandria's vibrant rental market — especially near Metro corridors — creates constant demand for move-in and move-out cleaning. See our guides: <Link to="/blog/move-out-cleaning-checklist-maryland-tenants" className="text-accent hover:underline">move-out cleaning checklist</Link> and our <Link to="/blog/move-in-cleaning-guide-dmv" className="text-accent hover:underline">move-in cleaning guide for DMV renters</Link>.</p>
+
+      <h2>Alexandria Pricing</h2>
+      <ul>
+        <li><strong>1BR condo:</strong> $100 – $145 per standard clean</li>
+        <li><strong>2BR home or condo:</strong> $135 – $195 per standard clean</li>
+        <li><strong>3BR home:</strong> $165 – $240 per standard clean</li>
+      </ul>
+
+      <BlogInlineCTA
+        headline="Alexandria's Trusted House Cleaning Service"
+        subtext="From Old Town rowhouses to Del Ray bungalows and Potomac Yard condos — we know Alexandria. Eco-friendly, background-checked, 15% OFF your first visit."
+        ctaLabel="Get My Alexandria Quote →"
+        ctaTo="/contact"
+      />
+
+      <p><Link to="/contact" className="text-accent hover:underline font-semibold">Get your free Alexandria cleaning quote today</Link>.</p>
+    </article>
+  ),
+  "move-in-cleaning-guide-dmv": (
+    <article className="prose prose-lg max-w-none">
+      <p>Moving into a new home in <Link to="/maryland" className="text-accent hover:underline">Maryland</Link>, <Link to="/washington-dc" className="text-accent hover:underline">Washington DC</Link>, or <Link to="/virginia" className="text-accent hover:underline">Northern Virginia</Link>? Before you unpack a single box, consider a professional move-in clean. Even if the previous owners left the home looking presentable, a truly clean home — sanitized surfaces, deep-cleaned bathrooms, fresh floors — is the foundation for starting right in a new space.</p>
+
+      <h2>Why Move-In Cleaning Is Different from a Standard Clean</h2>
+      <p>A move-in clean is more thorough than routine maintenance cleaning. It addresses accumulated grime in areas that are rarely cleaned during regular service:</p>
+      <ul>
+        <li>Inside the oven, refrigerator, and all kitchen cabinets</li>
+        <li>Inside all bathroom vanities and medicine cabinets</li>
+        <li>Behind and under appliances (previous residents may have left debris)</li>
+        <li>Inside closets — shelves, walls, and floors</li>
+        <li>Window tracks, sills, and blinds</li>
+        <li>Baseboards, door frames, and light switch plates throughout</li>
+        <li>All bathroom fixtures — descaling, sanitizing, and detailing</li>
+      </ul>
+      <p>For new buyers, this is your one opportunity to access the entire empty home before furniture arrives. Don't miss it.</p>
+
+      <h2>Move-In vs. Move-Out: What's the Difference?</h2>
+      <p>A <Link to="/services/move-out-cleaning" className="text-accent hover:underline">move-out clean</Link> focuses on satisfying a landlord's inspection checklist. A move-in clean focuses on your family's standards and comfort — sanitizing previous occupants' spaces and creating a fresh start. Both are thorough; the audience and emphasis differ.</p>
+
+      <h2>What to Ask Your Move-In Cleaning Service</h2>
+      <ol>
+        <li><strong>Do they clean inside all appliances?</strong> Oven interior and refrigerator should be standard on a move-in clean</li>
+        <li><strong>Do they use non-toxic products?</strong> Your first hours in a new home shouldn't be spent breathing chemical fumes. See why <Link to="/why-eco-friendly-cleaning" className="text-accent hover:underline">eco-friendly products matter</Link></li>
+        <li><strong>Is a re-clean guarantee included?</strong> Capital Clean Care offers a 100% satisfaction guarantee on every visit</li>
+        <li><strong>Can they accommodate an empty home?</strong> Move-in cleans work best before furniture arrives — confirm the service works in vacant spaces</li>
+      </ol>
+
+      <h2>Move-In Cleaning Prices in the DMV</h2>
+      <ul>
+        <li><strong>1–2BR apartment:</strong> $180 – $280</li>
+        <li><strong>3BR home:</strong> $260 – $370</li>
+        <li><strong>4BR+ home:</strong> $340 – $480</li>
+      </ul>
+      <p>Pricing varies based on home condition, square footage, and specific add-ons. <Link to="/contact" className="text-accent hover:underline">Get an instant estimate</Link>.</p>
+
+      <h2>Serving New Residents Across the DMV</h2>
+      <p>Capital Clean Care provides move-in cleaning throughout <Link to="/locations/rockville-md" className="text-accent hover:underline">Rockville</Link>, <Link to="/locations/bethesda-md" className="text-accent hover:underline">Bethesda</Link>, <Link to="/locations/silver-spring-md" className="text-accent hover:underline">Silver Spring</Link>, <Link to="/locations/arlington-va" className="text-accent hover:underline">Arlington</Link>, <Link to="/locations/fairfax-va" className="text-accent hover:underline">Fairfax</Link>, <Link to="/locations/alexandria-va" className="text-accent hover:underline">Alexandria</Link>, <Link to="/locations/washington-dc" className="text-accent hover:underline">Washington DC</Link>, and 20+ more communities. <Link to="/about" className="text-accent hover:underline">Meet our background-checked team →</Link></p>
+
+      <BlogInlineCTA
+        headline="Start Fresh in Your New DMV Home"
+        subtext="Professional move-in cleaning before you unpack. Eco-friendly, background-checked, satisfaction guaranteed. Available across MD, DC & VA — book with 24-hour notice."
+        ctaLabel="Book My Move-In Clean →"
+        ctaTo="/contact"
+      />
+
+      <p><Link to="/contact" className="text-accent hover:underline font-semibold">Book your move-in cleaning today</Link> — 15% off for new clients across MD, DC & VA.</p>
+    </article>
+  ),
+  "allergy-proofing-home-dmv": (
+    <article className="prose prose-lg max-w-none">
+      <p>The DMV region is consistently ranked among the worst in the country for allergy sufferers. Maryland, DC, and Northern Virginia sit in the mid-Atlantic pollen corridor — with tree pollen starting in February, grass pollen peaking through summer, and ragweed closing out the season in fall. If anyone in your household suffers from allergies or asthma, your indoor environment is as important as the outdoor one.</p>
+
+      <h2>The Indoor Allergen Problem</h2>
+      <p>Most people spend 90% of their time indoors — but indoor air can be 2 to 5 times more polluted than outdoor air. The main indoor allergen sources:</p>
+      <ul>
+        <li><strong>Dust mites:</strong> Live in bedding, upholstery, and carpets. Thrive in Maryland's humid climate.</li>
+        <li><strong>Pet dander:</strong> Tiny proteins from pet skin cells that become airborne and settle on surfaces. Nearly impossible to eliminate completely without consistent deep cleaning.</li>
+        <li><strong>Mold spores:</strong> Bathrooms, basements, and kitchens in humid climates like Maryland are prime mold environments.</li>
+        <li><strong>Pollen infiltration:</strong> Tracked in on shoes, clothing, pets, and through open windows and HVAC systems during peak season.</li>
+        <li><strong>VOCs from cleaning products:</strong> Ironically, conventional cleaning products release volatile organic compounds that worsen indoor air quality.</li>
+      </ul>
+
+      <h2>Room-by-Room Allergy-Reduction Strategy</h2>
+
+      <h3>Bedroom</h3>
+      <ul>
+        <li>Wash bedding weekly in hot water (≥130°F kills dust mites)</li>
+        <li>Use allergen-proof mattress and pillow covers</li>
+        <li>HEPA vacuum the mattress monthly</li>
+        <li>Keep windows closed during high pollen days (check AirNow.gov)</li>
+        <li>Vacuum under the bed weekly — dust mite colonies concentrate here</li>
+      </ul>
+
+      <h3>Living Areas</h3>
+      <ul>
+        <li>HEPA vacuum carpets twice weekly during pollen season</li>
+        <li>Hardwood or tile floors are significantly easier to keep allergen-free than carpet</li>
+        <li>Wash throw pillows, blankets, and curtains monthly</li>
+        <li>Dust blinds and ceiling fan blades before vacuuming (allergens fall to floor)</li>
+      </ul>
+
+      <h3>Bathrooms and Kitchen</h3>
+      <ul>
+        <li>Run exhaust fans during and after showers — moisture is the enemy of allergy sufferers</li>
+        <li>Scrub grout monthly to prevent mold growth</li>
+        <li>Check under sinks for moisture and fix any leaks immediately</li>
+      </ul>
+
+      <h2>Why Eco-Friendly Cleaning Is Non-Negotiable for Allergy Sufferers</h2>
+      <p>Conventional cleaning products — bleach, ammonia, synthetic fragrances — release airborne irritants that trigger allergy and asthma symptoms even hours after cleaning. Our <Link to="/services/eco-friendly-cleaning" className="text-accent hover:underline">eco-friendly cleaning service</Link> uses only EPA Safer Choice certified products with no VOC-releasing ingredients. Read the full breakdown: <Link to="/why-eco-friendly-cleaning" className="text-accent hover:underline">why eco-friendly cleaning matters for sensitive households</Link>.</p>
+
+      <h2>Professional Allergy-Reduction Cleaning in the DMV</h2>
+      <p>Our HEPA-equipped teams serve allergy-conscious families throughout <Link to="/locations/bethesda-md" className="text-accent hover:underline">Bethesda</Link>, <Link to="/locations/rockville-md" className="text-accent hover:underline">Rockville</Link>, <Link to="/locations/silver-spring-md" className="text-accent hover:underline">Silver Spring</Link>, <Link to="/locations/arlington-va" className="text-accent hover:underline">Arlington</Link>, <Link to="/locations/fairfax-va" className="text-accent hover:underline">Fairfax</Link>, and across the DMV. Scheduling a <Link to="/services/deep-cleaning" className="text-accent hover:underline">deep cleaning</Link> before peak pollen season is one of the highest-impact things you can do for your home's air quality.</p>
+
+      <BlogInlineCTA
+        headline="Breathe Easier in Your DMV Home"
+        subtext="HEPA vacuums, allergen-safe products, and professional deep cleaning for allergy-prone households. Serving MD, DC & VA — with 15% OFF your first visit."
+        ctaLabel="Book My Allergy-Safe Clean →"
+        ctaTo="/contact"
+      />
+
+      <p><Link to="/contact" className="text-accent hover:underline font-semibold">Get your free allergy-proofing cleaning quote</Link> — serving all of Maryland, DC & Northern Virginia.</p>
+    </article>
+  ),
+  "fall-cleaning-checklist-maryland": (
+    <article className="prose prose-lg max-w-none">
+      <p>Maryland falls are beautiful — crisp air, foliage along the Potomac, and the end of pollen season. But before the cold arrives, your home needs a thorough seasonal reset. Fall is the ideal time to address summer's grime, prepare your HVAC for heating season, and ensure your home is sealed and clean before windows close for winter.</p>
+
+      <p>Here's the complete fall cleaning checklist for Maryland homeowners in <Link to="/locations/rockville-md" className="text-accent hover:underline">Rockville</Link>, <Link to="/locations/bethesda-md" className="text-accent hover:underline">Bethesda</Link>, <Link to="/locations/silver-spring-md" className="text-accent hover:underline">Silver Spring</Link>, and across the DMV.</p>
+
+      <h2>HVAC and Heating Preparation</h2>
+      <ul>
+        <li><strong>Replace HVAC filters:</strong> After a summer of cooling, filters are loaded with dust and dander. Replace before you switch to heating mode.</li>
+        <li><strong>Clean heating vents and registers:</strong> Remove covers, wash in warm soapy water, vacuum inside duct openings.</li>
+        <li><strong>Test smoke and CO detectors:</strong> Replace batteries in all detectors before fireplace and heating season begins.</li>
+        <li><strong>Clean dryer vent:</strong> Lint buildup in dryer vents is a fire hazard — fall is a good time for this safety check.</li>
+      </ul>
+
+      <h2>Kitchen — End of Summer Deep Clean</h2>
+      <ul>
+        <li>Degrease range hood and stovetop — summer cooking builds significant grease</li>
+        <li>Clean inside the oven before holiday cooking season begins</li>
+        <li>Wipe down all cabinet doors and interior shelves</li>
+        <li>Clean refrigerator coils (underneath or behind) for winter efficiency</li>
+        <li>Descale coffee maker and small appliances</li>
+        <li>Deep clean the sink and disposal — sanitize with enzyme cleaner</li>
+      </ul>
+
+      <h2>Bathrooms — Mold Prevention Before Sealing Up</h2>
+      <p>Maryland's transition to cooler temperatures means reduced ventilation — windows close, air circulates less. Address any moisture issues now before they become mold problems in winter.</p>
+      <ul>
+        <li>Scrub grout lines in shower, tub, and floor tile</li>
+        <li>Recaulk anywhere old caulk shows darkening or gaps</li>
+        <li>Deep clean exhaust fans — remove covers and vacuum fan blades</li>
+        <li>Check under sinks for any slow leaks or moisture</li>
+        <li>Clean inside all vanity drawers and cabinets</li>
+      </ul>
+
+      <h2>Entryways and Mudrooms — Fall Prep</h2>
+      <ul>
+        <li>Deep clean entry floors — leaf debris and mud begin in October</li>
+        <li>Wash or replace doormats before wet fall weather sets in</li>
+        <li>Organize coat closets — rotate to heavier coats and boots</li>
+        <li>Clean front door and exterior light fixtures</li>
+        <li>Wipe down garage entry and interior — summer debris accumulates here</li>
+      </ul>
+
+      <h2>Bedrooms and Living Areas</h2>
+      <ul>
+        <li>Wash all summer bedding and store; bring out heavier winter comforters (wash these too)</li>
+        <li>HEPA vacuum mattresses and upholstered furniture</li>
+        <li>Dust ceiling fans — switch direction for winter (clockwise pushes warm air down)</li>
+        <li>Clean all windows inside — last chance before winter closes them</li>
+        <li>Vacuum under beds, behind furniture, and along baseboards</li>
+      </ul>
+
+      <h2>Whole-Home Fall Tasks</h2>
+      <ul>
+        <li>Declutter — donate items before holiday gifts arrive</li>
+        <li>Clean all light fixtures — shorter days mean you'll rely on indoor lighting more</li>
+        <li>Organize storage areas (basement, attic) before holiday decorations come out</li>
+        <li>Check weather stripping on all exterior doors and windows</li>
+      </ul>
+
+      <h2>Why Fall Is the Best Time for a Professional Deep Clean</h2>
+      <p>Fall cleaning is the mirror of spring cleaning — while spring addresses post-winter buildup, fall resets the home after summer and prepares for the months ahead. Our <Link to="/services/deep-cleaning" className="text-accent hover:underline">fall deep cleaning service</Link> covers 60+ checklist items and uses only <Link to="/services/eco-friendly-cleaning" className="text-accent hover:underline">eco-friendly, non-toxic products</Link> — no harsh fumes in your sealed winter home. Learn more: <Link to="/why-eco-friendly-cleaning" className="text-accent hover:underline">why eco-friendly cleaning matters when homes are sealed tight</Link>.</p>
+
+      <BlogInlineCTA
+        headline="Get Your Maryland Home Fall-Ready"
+        subtext="Pre-winter deep cleaning covering HVAC prep, mold prevention, and 60+ checklist items. Serving Rockville, Bethesda, Silver Spring, Germantown, and all of MD, DC & VA."
+        ctaLabel="Book My Fall Deep Clean →"
+        ctaTo="/contact"
+      />
+
+      <p><Link to="/contact" className="text-accent hover:underline font-semibold">Schedule your fall cleaning today</Link> — 15% off for new clients across Maryland, DC & Northern Virginia.</p>
+    </article>
+  ),
   "post-renovation-cleaning-guide-maryland": (
     <article className="prose prose-lg max-w-none">
       <p>Renovating your <Link to="/locations/germantown-md" className="text-accent hover:underline">Germantown</Link> kitchen or finishing a <Link to="/locations/frederick-md" className="text-accent hover:underline">Frederick</Link> basement? Construction dust, debris, and adhesive residue don't disappear on their own. Post-renovation cleaning requires specialized techniques — here's your complete guide.</p>
