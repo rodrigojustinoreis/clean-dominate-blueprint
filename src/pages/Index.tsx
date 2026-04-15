@@ -52,8 +52,8 @@ const locationAreas = [
 
 const Index = () => {
   const { seoHelmet } = useSEO({
-    title: "Eco-Friendly House Cleaning in Maryland, DC & Virginia | Capital Clean Care",
-    description: "Premium residential cleaning in MD, DC & Northern VA. Non-toxic products, background-checked teams, 5-star rated. 15% off your first clean — get a free quote!",
+    title: "Eco-Friendly House Cleaning MD, DC & VA | Capital Clean Care",
+    description: "Professional eco-friendly house cleaning in Maryland, DC & Virginia. EPA Safer Choice certified. 5.0 stars. 15% OFF first clean. Call (240) 704-2551.",
     canonical: "https://capitalcleancare.com/",
   });
 
@@ -207,7 +207,7 @@ const Index = () => {
           <div className="container mx-auto px-4 relative z-10">
             <div className="text-center mb-16">
               <span className="inline-block bg-accent/10 text-accent font-semibold text-sm uppercase tracking-wider px-3 py-1 rounded-full mb-3">Service Areas</span>
-              <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mt-2 mb-4">Where We Clean</h2>
+              <h3 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mt-2 mb-4">Where We Clean</h3>
               <p className="text-muted-foreground max-w-2xl mx-auto text-base md:text-lg">Proudly serving communities across the DMV region with premium residential cleaning.</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
@@ -329,7 +329,7 @@ const Index = () => {
           <div className="container mx-auto px-4 relative z-10">
             <div className="text-center mb-12">
               <span className="inline-block bg-accent/10 text-accent font-semibold text-sm uppercase tracking-wider px-3 py-1 rounded-full mb-3">Our Work</span>
-              <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mt-2">See Us in Action</h2>
+              <h3 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mt-2">See Us in Action</h3>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
               <img src={cleanerMopping} alt="Capital Clean Care professional mopping hardwood floors" className="rounded-2xl shadow-md w-full aspect-[4/5] object-cover" loading="lazy" />
@@ -358,7 +358,7 @@ const Index = () => {
           <div className="container mx-auto px-4 max-w-5xl relative z-10">
             <div className="text-center mb-14">
               <span className="inline-block bg-accent/10 text-accent font-semibold text-sm uppercase tracking-wider px-3 py-1 rounded-full mb-3">Local Services</span>
-              <h2 className="font-heading text-3xl md:text-4xl font-bold mt-2 mb-4">Cleaning Services Near You</h2>
+              <h3 className="font-heading text-3xl md:text-4xl font-bold mt-2 mb-4">Cleaning Services Near You</h3>
               <p className="text-muted-foreground text-lg max-w-2xl mx-auto">Explore our city-specific cleaning pages with tailored services and local pricing.</p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -432,9 +432,9 @@ const Index = () => {
       <ScrollReveal>
         <section className="py-12 md:py-16 bg-accent">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="font-heading text-2xl md:text-3xl font-bold text-accent-foreground mb-3">
+            <h3 className="font-heading text-2xl md:text-3xl font-bold text-accent-foreground mb-3">
               Still have questions? We're here to help.
-            </h2>
+            </h3>
             <p className="text-accent-foreground/80 mb-6 max-w-xl mx-auto">
               Call us at <a href="tel:+12407042551" className="font-semibold underline underline-offset-2">(240) 704-2551</a> or get a free, no-obligation quote in minutes.
             </p>

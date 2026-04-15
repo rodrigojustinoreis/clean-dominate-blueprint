@@ -48,9 +48,9 @@ const HeroSection = () => (
         </div>
 
         <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] font-bold text-foreground leading-[1.1] mb-6 animate-fade-up drop-shadow-sm" style={{ animationDelay: "100ms" }}>
-          Come Home to a
+          Eco-Friendly House Cleaning
           <br />
-          <span className="text-gradient">Spotless House.</span>
+          <span className="text-gradient">in Maryland, DC & Virginia</span>
         </h1>
 
         <p className="text-muted-foreground text-sm md:text-lg mb-8 leading-relaxed max-w-xl animate-fade-up" style={{ animationDelay: "200ms" }}>
