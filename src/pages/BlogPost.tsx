@@ -1043,6 +1043,362 @@ const blogContent: Record<string, React.ReactNode> = {
       <p><Link to="/contact" className="text-accent hover:underline font-semibold">Schedule your fall cleaning today</Link> — 15% off for new clients across Maryland, DC & Northern Virginia.</p>
     </article>
   ),
+  "house-cleaning-gaithersburg-md": (
+    <article className="prose prose-lg max-w-none">
+      <p><Link to="/locations/gaithersburg-md" className="text-accent hover:underline">Gaithersburg, MD</Link> is one of Montgomery County's most dynamic cities — a place where master-planned communities like Kentlands and Crown Farm sit alongside established neighborhoods near Shady Grove and Rio. With a mix of young families, commuters, and tech professionals, Gaithersburg homeowners share one challenge: not enough time to keep up with a home that sees heavy daily use.</p>
+
+      <h2>Gaithersburg Neighborhoods and Their Cleaning Needs</h2>
+
+      <h3>Kentlands and Lakelands</h3>
+      <p>These New Urbanist communities feature townhomes, singles, and carriage homes designed for walkability. HVAC systems work hard, and pet-friendly streets mean more tracked-in debris. Regular <Link to="/services/recurring-cleaning" className="text-accent hover:underline">recurring cleaning</Link> is popular here among young families.</p>
+
+      <h3>Crown Farm and Rio</h3>
+      <p>Newer mixed-use developments with modern condos and single-family homes near I-270. Open-plan kitchens and large windows require consistent maintenance — grease on stainless appliances and fingerprints on glass accumulate quickly in active households.</p>
+
+      <h3>Shady Grove and Quince Orchard</h3>
+      <p>Established subdivisions with larger colonial and split-level homes from the 1980s–2000s. More square footage means more to clean — basements, multiple bathrooms, and home offices. Quarterly <Link to="/services/deep-cleaning" className="text-accent hover:underline">deep cleaning</Link> alongside monthly maintenance is common here.</p>
+
+      <h2>What to Expect from a Professional Clean in Gaithersburg</h2>
+      <p>A standard recurring clean covers all bathrooms, kitchen surfaces, appliance exteriors, HEPA vacuuming, mopping, dusting, and trash. New clients and seasonal resets start with a <Link to="/services/deep-cleaning" className="text-accent hover:underline">deep cleaning</Link> that adds inside appliances, grout scrubbing, and detailed baseboards. For pricing: <Link to="/blog/house-cleaning-prices-maryland-2026" className="text-accent hover:underline">2026 Maryland pricing guide →</Link></p>
+
+      <h2>Gaithersburg Cleaning Prices</h2>
+      <ul>
+        <li><strong>2-bedroom townhome:</strong> $120 – $175 per standard clean</li>
+        <li><strong>3-bedroom home:</strong> $150 – $220 per standard clean</li>
+        <li><strong>4-bedroom home:</strong> $190 – $270 per standard clean</li>
+      </ul>
+
+      <h2>Eco-Friendly Cleaning for Gaithersburg Families</h2>
+      <p>Every Capital Clean Care visit uses EPA Safer Choice certified, plant-based products with no chlorine, ammonia, or artificial fragrances. Gaithersburg sits within the Chesapeake Bay watershed — our product choices reflect that responsibility. <Link to="/why-eco-friendly-cleaning" className="text-accent hover:underline">Why eco-friendly matters for your family →</Link></p>
+
+      <h2>Choosing a Cleaning Service in Gaithersburg</h2>
+      <p>Look for full liability insurance, background-checked teams, local reviews, and transparent pricing. Our guide on <Link to="/blog/how-to-choose-cleaning-service-silver-spring" className="text-accent hover:underline">how to choose a cleaning service</Link> covers the exact questions to ask. For the full Montgomery County picture, see our <Link to="/blog/deep-cleaning-montgomery-county-md" className="text-accent hover:underline">Montgomery County deep cleaning guide →</Link></p>
+
+      <BlogInlineCTA
+        headline="Gaithersburg's Eco-Friendly Cleaning Specialists"
+        subtext="Serving Kentlands, Crown Farm, Lakelands, Shady Grove, Quince Orchard, and all of Gaithersburg. Background-checked teams, plant-based products, 15% OFF your first visit."
+        ctaLabel="Get My Gaithersburg Quote →"
+        ctaTo="/contact"
+      />
+
+      <p>Capital Clean Care has served <Link to="/locations/gaithersburg-md" className="text-accent hover:underline">Gaithersburg</Link> for 9+ years. <Link to="/contact" className="text-accent hover:underline font-semibold">Get your free quote today</Link> — 15% off for new clients.</p>
+    </article>
+  ),
+  "cleaning-service-mclean-va": (
+    <article className="prose prose-lg max-w-none">
+      <p><Link to="/locations/mclean-va" className="text-accent hover:underline">McLean, VA</Link> is home to some of the most prestigious residential properties in the DMV — a community of executives, diplomats, and established families who expect the highest level of service. Professional house cleaning in McLean requires discretion, attention to fine materials, and consistent quality that matches the home's standard.</p>
+
+      <h2>McLean Homes: What Makes Them Different</h2>
+      <ul>
+        <li><strong>Large colonial estates (4,000–8,000+ sq ft):</strong> Multiple formal rooms, grand entryways, and hardwood throughout — requiring a full team and several hours per visit</li>
+        <li><strong>Luxury townhomes near Tysons:</strong> High-end finishes — quartz, marble, glass — that require products that clean without etching or streaking</li>
+        <li><strong>Modern custom homes:</strong> Architectural details and premium materials that reward careful, non-abrasive cleaning techniques</li>
+      </ul>
+
+      <h2>Why Background Checks and Insurance Matter More in McLean</h2>
+      <p>McLean clients routinely allow cleaning teams access while away. Every team member undergoes a thorough background check before their first client visit. We carry full general liability insurance. <Link to="/about" className="text-accent hover:underline">Learn about our hiring process →</Link></p>
+
+      <h2>Services for McLean Homeowners</h2>
+      <ul>
+        <li><Link to="/services/recurring-cleaning" className="text-accent hover:underline">Recurring maintenance cleaning</Link> — weekly or bi-weekly, dedicated team</li>
+        <li><Link to="/services/deep-cleaning" className="text-accent hover:underline">Seasonal deep cleaning</Link></li>
+        <li><Link to="/services/move-out-cleaning" className="text-accent hover:underline">Move-out cleaning</Link> — estate-level thoroughness</li>
+      </ul>
+
+      <h2>Eco-Friendly Products for Fine Finishes</h2>
+      <p>Our plant-based, EPA Safer Choice certified products won't damage marble countertops, hardwood floors, or specialty finishes. No ammonia, no chlorine, no abrasives on delicate surfaces. <Link to="/why-eco-friendly-cleaning" className="text-accent hover:underline">Why this matters for high-end homes →</Link></p>
+
+      <h2>Serving McLean and Northern Virginia</h2>
+      <p>In addition to McLean, we serve <Link to="/locations/falls-church-va" className="text-accent hover:underline">Falls Church</Link>, <Link to="/locations/arlington-va" className="text-accent hover:underline">Arlington</Link>, <Link to="/locations/fairfax-va" className="text-accent hover:underline">Fairfax</Link>, and <Link to="/locations/reston-va" className="text-accent hover:underline">Reston</Link>. See our <Link to="/blog/cleaning-service-fairfax-va" className="text-accent hover:underline">Fairfax cleaning guide</Link> and <Link to="/blog/cleaning-service-reston-va" className="text-accent hover:underline">Reston cleaning guide →</Link></p>
+
+      <BlogInlineCTA
+        headline="McLean's Trusted Professional Cleaning Service"
+        subtext="Discretion, precision, and plant-based products for McLean's finest homes. Background-checked, fully insured, 15% OFF first visit. Throughout Northern Virginia."
+        ctaLabel="Get My McLean Quote →"
+        ctaTo="/contact"
+      />
+
+      <p><Link to="/contact" className="text-accent hover:underline font-semibold">Get your free McLean cleaning quote today</Link> — 15% off for new clients.</p>
+    </article>
+  ),
+  "cleaning-service-columbia-md": (
+    <article className="prose prose-lg max-w-none">
+      <p><Link to="/locations/columbia-md" className="text-accent hover:underline">Columbia, MD</Link> is one of America's most celebrated planned communities — Howard County's largest city bringing together diverse housing types, from historic Wilde Lake townhomes to newer developments in Owen Brown and River Hill. Columbia families tend to be health-conscious and community-oriented — values that align with our eco-friendly approach.</p>
+
+      <h2>Columbia's Villages and Their Cleaning Needs</h2>
+
+      <h3>Wilde Lake and Harper's Choice</h3>
+      <p>Columbia's original villages feature townhomes and ramblers from the 1970s — functional, well-built, and often shared by multi-generational households. Older homes benefit from focused attention on baseboards, older tile grout, and HVAC vent cleaning.</p>
+
+      <h3>Owen Brown, Long Reach, and Oakland Mills</h3>
+      <p>Mid-century development with a mix of single-family homes. Families with children are common — high-touch surfaces, kids' rooms, and busy kitchens define the cleaning challenge.</p>
+
+      <h3>River Hill and Clarksville</h3>
+      <p>Newer, larger homes with contemporary finishes — open kitchens, formal dining rooms, and primary suites. These homes reward consistent <Link to="/services/recurring-cleaning" className="text-accent hover:underline">maintenance cleaning</Link> to keep surfaces looking new.</p>
+
+      <h2>Deep Cleaning in Columbia</h2>
+      <p>A <Link to="/services/deep-cleaning" className="text-accent hover:underline">deep cleaning</Link> is the ideal starting point for new recurring clients. Our <Link to="/blog/deep-cleaning-checklist-dmv-homeowners" className="text-accent hover:underline">deep cleaning checklist</Link> covers every room with 60+ items.</p>
+
+      <h2>Columbia Cleaning Prices</h2>
+      <ul>
+        <li><strong>2-bedroom townhome:</strong> $115 – $165 per standard clean</li>
+        <li><strong>3-bedroom home:</strong> $145 – $210 per standard clean</li>
+        <li><strong>4-bedroom home:</strong> $185 – $265 per standard clean</li>
+      </ul>
+      <p>For detailed pricing: <Link to="/blog/house-cleaning-prices-maryland-2026" className="text-accent hover:underline">Maryland pricing guide →</Link></p>
+
+      <h2>Eco-Friendly for Howard County's Sustainability-Minded Community</h2>
+      <p>Columbia's residents are among the most environmentally aware in Maryland. Our plant-based, EPA Safer Choice certified products align with the values of this community. <Link to="/why-eco-friendly-cleaning" className="text-accent hover:underline">Why eco-friendly cleaning matters →</Link></p>
+
+      <BlogInlineCTA
+        headline="Professional Cleaning for Columbia's Diverse Homes"
+        subtext="Serving all villages — Wilde Lake, Owen Brown, River Hill, Harper's Choice, and more. Eco-friendly, background-checked, 15% OFF first visit."
+        ctaLabel="Get My Columbia Quote →"
+        ctaTo="/contact"
+      />
+
+      <p><Link to="/contact" className="text-accent hover:underline font-semibold">Book your Columbia cleaning today</Link> — serving all of Howard County.</p>
+    </article>
+  ),
+  "house-cleaning-potomac-md": (
+    <article className="prose prose-lg max-w-none">
+      <p><Link to="/locations/potomac-md" className="text-accent hover:underline">Potomac, MD</Link> is one of the wealthiest communities in the mid-Atlantic — a zip code synonymous with estate homes, rolling horse country, and the discretion and quality that high-value properties demand. Professional house cleaning in Potomac isn't just a convenience; it's a standard of living.</p>
+
+      <h2>Potomac Homes: Unique Cleaning Challenges</h2>
+      <ul>
+        <li><strong>Size:</strong> 4,000–12,000+ square foot estates require full professional teams and several hours per visit</li>
+        <li><strong>Materials:</strong> Imported marble, limestone, hardwood plank, and custom cabinetry demand products that clean without etching or leaving residue</li>
+        <li><strong>Outdoor living spaces:</strong> Screened porches, conservatories, and home gyms add surface area beyond standard residential work</li>
+      </ul>
+
+      <h2>Why Eco-Friendly Matters in Potomac</h2>
+      <p>Potomac borders the Potomac River and sits within the Chesapeake Bay watershed. The estate grounds and waterway access that make Potomac distinctive are directly impacted by household chemicals. Our EPA Safer Choice certified, plant-based products clean thoroughly without watershed pollution. <Link to="/why-eco-friendly-cleaning" className="text-accent hover:underline">Our full eco commitment →</Link></p>
+
+      <h2>Services for Potomac Estate Homes</h2>
+      <ul>
+        <li><Link to="/services/recurring-cleaning" className="text-accent hover:underline">Weekly and bi-weekly recurring service</Link> with a dedicated, background-checked team</li>
+        <li><Link to="/services/deep-cleaning" className="text-accent hover:underline">Seasonal deep cleaning</Link> — spring and fall resets for large-home complexity</li>
+        <li>Post-event cleaning for homes that host frequently</li>
+      </ul>
+
+      <h2>Serving Potomac and Surrounding Montgomery County</h2>
+      <p>We also serve <Link to="/locations/bethesda-md" className="text-accent hover:underline">Bethesda</Link>, <Link to="/locations/chevy-chase-md" className="text-accent hover:underline">Chevy Chase</Link>, <Link to="/locations/rockville-md" className="text-accent hover:underline">Rockville</Link>, and <Link to="/locations/kensington-md" className="text-accent hover:underline">Kensington</Link>. For the county-wide picture: <Link to="/blog/deep-cleaning-montgomery-county-md" className="text-accent hover:underline">Montgomery County deep cleaning guide →</Link></p>
+
+      <BlogInlineCTA
+        headline="Estate-Level Cleaning for Potomac Homeowners"
+        subtext="Full-team service for large Potomac properties. Eco-friendly products, 100% satisfaction guarantee. Serving Potomac, Bethesda, Chevy Chase, and all of Montgomery County."
+        ctaLabel="Get My Potomac Quote →"
+        ctaTo="/contact"
+      />
+
+      <p><Link to="/contact" className="text-accent hover:underline font-semibold">Book your Potomac cleaning today</Link> — 15% off first visit for new clients.</p>
+    </article>
+  ),
+  "cleaning-service-chevy-chase-md": (
+    <article className="prose prose-lg max-w-none">
+      <p><Link to="/locations/chevy-chase-md" className="text-accent hover:underline">Chevy Chase, MD</Link> is one of the DMV's most storied communities — a neighborhood where 1920s Craftsman bungalows, Georgian Revivals, and Tudor-style homes coexist with modern renovations and luxury townhomes near the DC line. Cleaning services here need to respect historic architecture as much as modern finishes.</p>
+
+      <h2>Chevy Chase Homes: What You're Working With</h2>
+      <ul>
+        <li><strong>Pre-war construction:</strong> Plaster walls, original hardwood, and period millwork that require non-abrasive, gentle cleaning — harsh products can damage 100-year-old finishes permanently</li>
+        <li><strong>Mature canopy and pollen:</strong> Chevy Chase's mature oaks deposit heavy pollen in spring, requiring rigorous HEPA vacuuming and surface dusting</li>
+        <li><strong>Modern renovations in historic shells:</strong> Many homes blend original character with high-end modern kitchens — our teams handle both surfaces with equal care</li>
+      </ul>
+
+      <h2>Spring Allergy Season in Chevy Chase</h2>
+      <p>Chevy Chase's proximity to Rock Creek Park makes pollen season intense. A professional <Link to="/services/deep-cleaning" className="text-accent hover:underline">deep clean</Link> before peak season is essential for allergy households. See: <Link to="/blog/allergy-proofing-home-dmv" className="text-accent hover:underline">how to allergy-proof your DMV home →</Link></p>
+
+      <h2>Chevy Chase Cleaning Prices</h2>
+      <ul>
+        <li><strong>2-bedroom home:</strong> $130 – $185 per standard clean</li>
+        <li><strong>3-bedroom home:</strong> $165 – $240 per standard clean</li>
+        <li><strong>4-bedroom home:</strong> $210 – $300 per standard clean</li>
+      </ul>
+      <p>Detailed pricing: <Link to="/blog/house-cleaning-prices-maryland-2026" className="text-accent hover:underline">Maryland pricing guide →</Link></p>
+
+      <h2>Non-Toxic Products for Historic Homes</h2>
+      <p>Chevy Chase's older homes have less airtight construction — chemical products linger longer and can react with period finishes. Our EPA Safer Choice certified approach protects both your family and your home's original materials. <Link to="/why-eco-friendly-cleaning" className="text-accent hover:underline">Our eco commitment →</Link></p>
+
+      <h2>Serving Chevy Chase and Nearby Neighborhoods</h2>
+      <p>We serve both the Maryland and DC sides of Chevy Chase, as well as <Link to="/locations/kensington-md" className="text-accent hover:underline">Kensington</Link>, <Link to="/locations/bethesda-md" className="text-accent hover:underline">Bethesda</Link>, and DC neighborhoods like <Link to="/locations/georgetown-dc" className="text-accent hover:underline">Georgetown</Link>. See our <Link to="/blog/house-cleaning-bethesda-md" className="text-accent hover:underline">Bethesda cleaning guide →</Link></p>
+
+      <BlogInlineCTA
+        headline="Chevy Chase's Trusted House Cleaning Service"
+        subtext="Historic homes, modern renovations — handled with care. Eco-friendly, background-checked, 9+ years in the DMV. 15% OFF your first visit."
+        ctaLabel="Get My Chevy Chase Quote →"
+        ctaTo="/contact"
+      />
+
+      <p><Link to="/contact" className="text-accent hover:underline font-semibold">Book your Chevy Chase cleaning today</Link> — 15% off for new clients.</p>
+    </article>
+  ),
+  "house-cleaning-frederick-md": (
+    <article className="prose prose-lg max-w-none">
+      <p><Link to="/locations/frederick-md" className="text-accent hover:underline">Frederick, MD</Link> is one of Maryland's fastest-growing cities — balancing a charming historic downtown with expanding neighborhoods from Urbana to New Market. Frederick homeowners span from young families in new subdivisions to long-time residents in century-old row homes, each with distinct professional cleaning needs.</p>
+
+      <h2>Frederick's Diverse Housing Stock</h2>
+
+      <h3>Historic Downtown Frederick</h3>
+      <p>18th and 19th century townhomes share the care requirements of any historic construction — plaster walls, original hardwood, and limited HVAC circulation make non-toxic products especially important. Our plant-based formulas are safe in these tight, historic spaces.</p>
+
+      <h3>New Subdivisions: Urbana, New Market, and Linton at Ballenger</h3>
+      <p>Large colonials and craftsman-style homes with modern open-plan kitchens and multiple bathrooms. Families with children need reliable <Link to="/services/recurring-cleaning" className="text-accent hover:underline">recurring cleaning</Link> to stay ahead of daily use.</p>
+
+      <h2>Frederick's Seasonal Cleaning Needs</h2>
+      <p>Frederick's location in western Maryland's foothills means distinct seasons. Our <Link to="/blog/spring-cleaning-checklist-maryland-2026" className="text-accent hover:underline">spring cleaning checklist</Link> and <Link to="/blog/fall-cleaning-checklist-maryland" className="text-accent hover:underline">fall cleaning guide</Link> are both tailored to Maryland's climate.</p>
+
+      <h2>Post-Renovation Cleaning in Frederick</h2>
+      <p>Frederick's active real estate market drives constant renovation. After any construction project, professional <Link to="/blog/post-renovation-cleaning-guide-maryland" className="text-accent hover:underline">post-renovation cleaning</Link> is essential to remove fine construction dust from HVAC systems before occupancy.</p>
+
+      <h2>Frederick Cleaning Prices</h2>
+      <ul>
+        <li><strong>2-bedroom home:</strong> $110 – $160 per standard clean</li>
+        <li><strong>3-bedroom home:</strong> $140 – $200 per standard clean</li>
+        <li><strong>4-bedroom home:</strong> $175 – $255 per standard clean</li>
+      </ul>
+
+      <h2>Eco-Friendly Cleaning in Frederick</h2>
+      <p>Frederick County's proximity to the Monocacy River makes environmental responsibility important to many residents. Every visit uses EPA Safer Choice certified, plant-based products. <Link to="/why-eco-friendly-cleaning" className="text-accent hover:underline">Why this matters for your family →</Link></p>
+
+      <BlogInlineCTA
+        headline="Frederick's Professional Eco-Friendly Cleaning Service"
+        subtext="Serving historic downtown, Urbana, New Market, Linton, and all of Frederick County. Background-checked teams, plant-based products, 15% OFF your first visit."
+        ctaLabel="Get My Frederick Quote →"
+        ctaTo="/contact"
+      />
+
+      <p>Capital Clean Care serves <Link to="/locations/frederick-md" className="text-accent hover:underline">Frederick</Link> and the surrounding county. <Link to="/contact" className="text-accent hover:underline font-semibold">Get your free quote today</Link>.</p>
+    </article>
+  ),
+  "deep-cleaning-montgomery-county-md": (
+    <article className="prose prose-lg max-w-none">
+      <p>Montgomery County is home to 1 million+ residents across communities as different as downtown <Link to="/locations/silver-spring-md" className="text-accent hover:underline">Silver Spring</Link> and rural <Link to="/locations/damascus-md" className="text-accent hover:underline">Damascus</Link>. This guide covers deep cleaning across the county's most distinct communities and the seasonal challenges they share.</p>
+
+      <h2>Why Montgomery County Homes Need Regular Deep Cleaning</h2>
+      <ul>
+        <li><strong>Pollen season (March–June):</strong> Montgomery County sits in one of the highest pollen corridors on the East Coast. Fine pollen accumulates on every surface until a deep clean removes it</li>
+        <li><strong>Humidity and mold risk (June–September):</strong> Maryland summers create conditions for mold in bathrooms and around windows — annual deep cleaning addresses grout and caulk before problems develop</li>
+        <li><strong>Road salt season (November–March):</strong> Salt tracked onto hardwood and tile accelerates surface damage without regular removal</li>
+      </ul>
+
+      <h2>Deep Cleaning by Area</h2>
+
+      <h3>Bethesda and Chevy Chase</h3>
+      <p>Older homes with historic hardwood and heavy tree canopy. See: <Link to="/blog/house-cleaning-bethesda-md" className="text-accent hover:underline">house cleaning in Bethesda →</Link></p>
+
+      <h3>Rockville and Gaithersburg</h3>
+      <p>Larger suburban homes with finished basements and active families. See: <Link to="/blog/deep-cleaning-rockville-md" className="text-accent hover:underline">deep cleaning in Rockville →</Link> and <Link to="/blog/house-cleaning-gaithersburg-md" className="text-accent hover:underline">house cleaning in Gaithersburg →</Link></p>
+
+      <h3>Potomac</h3>
+      <p>Estate-level homes with fine materials. See: <Link to="/blog/house-cleaning-potomac-md" className="text-accent hover:underline">house cleaning in Potomac →</Link></p>
+
+      <h3>Silver Spring and Takoma Park</h3>
+      <p>Urban/suburban transition with older bungalows and newer condos. High foot traffic means faster surface buildup and more frequent professional cleaning needs.</p>
+
+      <h2>What's Included in a Deep Clean</h2>
+      <p>Our <Link to="/services/deep-cleaning" className="text-accent hover:underline">deep cleaning service</Link> covers 60+ items: inside appliances, grout scrubbing, baseboards, ceiling fans, vent covers, and window sills throughout. See the full list: <Link to="/blog/deep-cleaning-checklist-dmv-homeowners" className="text-accent hover:underline">deep cleaning checklist →</Link></p>
+
+      <h2>Eco-Friendly Across the Chesapeake Bay Watershed</h2>
+      <p>All of Montgomery County sits within the Chesapeake Bay watershed. Our EPA Safer Choice certified, plant-based products clean at the same level as conventional products without contributing to watershed pollution. <Link to="/why-eco-friendly-cleaning" className="text-accent hover:underline">Why this matters →</Link></p>
+
+      <BlogInlineCTA
+        headline="Montgomery County's Deep Cleaning Specialists"
+        subtext="Serving Rockville, Bethesda, Silver Spring, Gaithersburg, Germantown, Potomac, Chevy Chase, Kensington, and all of Montgomery County. 15% OFF your first visit."
+        ctaLabel="Book My Montgomery County Deep Clean →"
+        ctaTo="/contact"
+      />
+
+      <p><Link to="/contact" className="text-accent hover:underline font-semibold">Schedule your deep cleaning today</Link> — serving all of Montgomery County and the broader DMV.</p>
+    </article>
+  ),
+  "cleaning-service-reston-va": (
+    <article className="prose prose-lg max-w-none">
+      <p><Link to="/locations/reston-va" className="text-accent hover:underline">Reston, VA</Link> was America's first planned community — today a thriving tech hub where townhomes, condos, mid-century singles, and luxury lake-view properties coexist. Reston's diversity of housing types means a professional cleaning service needs to be equally versatile.</p>
+
+      <h2>Reston Neighborhoods and Their Cleaning Profiles</h2>
+
+      <h3>Lake Anne Village</h3>
+      <p>Mid-century modern architecture with flat roofs and large windows — beautiful but prone to condensation dust and window-track debris. These homes benefit from meticulous detail cleaning that conventional services often skip.</p>
+
+      <h3>North Point and South Lakes</h3>
+      <p>Established single-family neighborhoods with colonials and split-levels. Active families with children and pets are the norm — regular <Link to="/services/recurring-cleaning" className="text-accent hover:underline">recurring service</Link> keeps pace with daily use.</p>
+
+      <h3>Town Center Condos and Apartments</h3>
+      <p>Reston Town Center's high-rise buildings attract tech workers who want efficiency and reliability. Flexible scheduling around busy work schedules is essential.</p>
+
+      <h2>Allergy Control in Reston</h2>
+      <p>Reston's tree canopy and natural areas make pollen season impactful. For allergy households, HEPA deep cleaning before peak season is valuable. See: <Link to="/blog/allergy-proofing-home-dmv" className="text-accent hover:underline">allergy-proofing your DMV home →</Link></p>
+
+      <h2>Reston Cleaning Prices</h2>
+      <ul>
+        <li><strong>1-2BR condo:</strong> $100 – $150 per standard clean</li>
+        <li><strong>2-3BR townhome:</strong> $135 – $195 per standard clean</li>
+        <li><strong>3-4BR single family:</strong> $165 – $250 per standard clean</li>
+      </ul>
+      <p>Full pricing breakdown: <Link to="/blog/house-cleaning-prices-maryland-2026" className="text-accent hover:underline">DMV pricing guide →</Link></p>
+
+      <h2>Eco-Friendly for Reston's Tech Community</h2>
+      <p>Reston's tech-forward community is one of the most environmentally conscious in Northern Virginia. Our EPA Safer Choice certified, plant-based products resonate with Reston's values. <Link to="/why-eco-friendly-cleaning" className="text-accent hover:underline">Our eco commitment →</Link></p>
+
+      <h2>Serving Reston and Northern Virginia</h2>
+      <p>We also serve <Link to="/locations/herndon-va" className="text-accent hover:underline">Herndon</Link>, <Link to="/locations/fairfax-va" className="text-accent hover:underline">Fairfax</Link>, <Link to="/locations/mclean-va" className="text-accent hover:underline">McLean</Link>, and <Link to="/locations/arlington-va" className="text-accent hover:underline">Arlington</Link>. See our <Link to="/blog/cleaning-service-mclean-va" className="text-accent hover:underline">McLean guide</Link> and <Link to="/blog/cleaning-service-fairfax-va" className="text-accent hover:underline">Fairfax guide →</Link></p>
+
+      <BlogInlineCTA
+        headline="Reston's Professional Eco-Friendly Cleaning Service"
+        subtext="Serving Lake Anne, North Point, Town Center, Hunters Woods, and all of Reston. Background-checked, plant-based products, 15% OFF your first visit."
+        ctaLabel="Get My Reston Cleaning Quote →"
+        ctaTo="/contact"
+      />
+
+      <p><Link to="/contact" className="text-accent hover:underline font-semibold">Book your Reston cleaning today</Link> — 15% off for new clients.</p>
+    </article>
+  ),
+  "office-cleaning-small-business-dmv": (
+    <article className="prose prose-lg max-w-none">
+      <p>A clean office is one of the most underrated investments a small business can make. Studies show employees are more productive in clean environments, clients form impressions within seconds, and reduced surface bacteria cuts sick-day frequency. For small businesses across <Link to="/maryland" className="text-accent hover:underline">Maryland</Link>, <Link to="/washington-dc" className="text-accent hover:underline">Washington DC</Link>, and <Link to="/virginia" className="text-accent hover:underline">Northern Virginia</Link>, professional office cleaning is a competitive advantage.</p>
+
+      <h2>What Professional Office Cleaning Covers</h2>
+      <p>Our <Link to="/services/office-cleaning" className="text-accent hover:underline">commercial office cleaning service</Link> for small businesses includes:</p>
+      <ul>
+        <li><strong>Workstations:</strong> Dust and sanitize desks, monitors, keyboards, and phones — high-touch surfaces that harbor bacteria throughout the day</li>
+        <li><strong>Conference rooms:</strong> Wipe tables and chairs, clean whiteboards, vacuum, and sanitize all surfaces</li>
+        <li><strong>Restrooms:</strong> Full sanitization with restocked supplies</li>
+        <li><strong>Kitchen and break room:</strong> Counters, appliance interiors (microwave, refrigerator), sink, and floors</li>
+        <li><strong>Reception area:</strong> Vacuum, dust, sanitize high-touch surfaces including door handles and light switches</li>
+      </ul>
+
+      <h2>Cleaning Frequency for DMV Small Businesses</h2>
+      <ul>
+        <li><strong>Daily:</strong> High-traffic offices with 10+ employees</li>
+        <li><strong>3x per week:</strong> Small offices (5–15 people)</li>
+        <li><strong>Weekly:</strong> Solo practices and boutique offices — keeps the space guest-ready at all times</li>
+      </ul>
+      <p>Our <Link to="/blog/recurring-cleaning-weekly-biweekly-monthly" className="text-accent hover:underline">frequency guide</Link> applies to both residential and commercial spaces.</p>
+
+      <h2>Why Eco-Friendly Products Matter for Your Office</h2>
+      <p>Conventional products release VOCs that linger in office air for hours — reducing the air quality of the space you just cleaned. This particularly affects smaller offices without industrial ventilation. Our EPA Safer Choice certified products deliver professional results without chemical fumes. <Link to="/why-eco-friendly-cleaning" className="text-accent hover:underline">Why this matters →</Link></p>
+
+      <h2>What to Look for in a DMV Office Cleaning Service</h2>
+      <ol>
+        <li><strong>Commercial liability insurance</strong></li>
+        <li><strong>Background-checked staff:</strong> You're giving access to your business</li>
+        <li><strong>Flexible scheduling:</strong> Early morning or evening to minimize disruption</li>
+        <li><strong>Consistent teams:</strong> The same cleaners build familiarity with your space</li>
+      </ol>
+
+      <h2>Markets We Serve</h2>
+      <p>Capital Clean Care provides commercial cleaning throughout <Link to="/locations/silver-spring-md" className="text-accent hover:underline">Silver Spring</Link>, <Link to="/locations/bethesda-md" className="text-accent hover:underline">Bethesda</Link>, <Link to="/locations/rockville-md" className="text-accent hover:underline">Rockville</Link>, <Link to="/locations/washington-dc" className="text-accent hover:underline">Washington DC</Link>, <Link to="/locations/arlington-va" className="text-accent hover:underline">Arlington</Link>, and throughout the DMV.</p>
+
+      <BlogInlineCTA
+        headline="Professional Office Cleaning for DMV Small Businesses"
+        subtext="Background-checked teams, eco-friendly products, flexible scheduling. Serving offices across MD, DC & VA — starting from weekly service."
+        ctaLabel="Get My Office Cleaning Quote →"
+        ctaTo="/contact"
+      />
+
+      <p><Link to="/contact" className="text-accent hover:underline font-semibold">Get your free office cleaning quote today</Link>.</p>
+    </article>
+  ),
   "post-renovation-cleaning-guide-maryland": (
     <article className="prose prose-lg max-w-none">
       <p>Renovating your <Link to="/locations/germantown-md" className="text-accent hover:underline">Germantown</Link> kitchen or finishing a <Link to="/locations/frederick-md" className="text-accent hover:underline">Frederick</Link> basement? Construction dust, debris, and adhesive residue don't disappear on their own. Post-renovation cleaning requires specialized techniques — here's your complete guide.</p>

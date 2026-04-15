@@ -121,6 +121,51 @@ const RELATED_MAP: Record<string, string[]> = {
     "eco-cleaning-tips-winters-maryland",
     "allergy-proofing-home-dmv",
   ],
+  "house-cleaning-gaithersburg-md": [
+    "deep-cleaning-montgomery-county-md",
+    "house-cleaning-prices-maryland-2026",
+    "how-to-choose-cleaning-service-silver-spring",
+  ],
+  "cleaning-service-mclean-va": [
+    "cleaning-service-fairfax-va",
+    "cleaning-service-arlington-va",
+    "cleaning-service-reston-va",
+  ],
+  "cleaning-service-columbia-md": [
+    "deep-cleaning-checklist-dmv-homeowners",
+    "house-cleaning-prices-maryland-2026",
+    "recurring-cleaning-weekly-biweekly-monthly",
+  ],
+  "house-cleaning-potomac-md": [
+    "deep-cleaning-montgomery-county-md",
+    "house-cleaning-bethesda-md",
+    "cleaning-service-chevy-chase-md",
+  ],
+  "cleaning-service-chevy-chase-md": [
+    "house-cleaning-bethesda-md",
+    "allergy-proofing-home-dmv",
+    "deep-cleaning-montgomery-county-md",
+  ],
+  "house-cleaning-frederick-md": [
+    "post-renovation-cleaning-guide-maryland",
+    "spring-cleaning-checklist-maryland-2026",
+    "house-cleaning-prices-maryland-2026",
+  ],
+  "deep-cleaning-montgomery-county-md": [
+    "deep-cleaning-rockville-md",
+    "house-cleaning-bethesda-md",
+    "house-cleaning-gaithersburg-md",
+  ],
+  "cleaning-service-reston-va": [
+    "cleaning-service-mclean-va",
+    "cleaning-service-fairfax-va",
+    "allergy-proofing-home-dmv",
+  ],
+  "office-cleaning-small-business-dmv": [
+    "recurring-cleaning-weekly-biweekly-monthly",
+    "eco-cleaning-tips-maryland-homes",
+    "how-to-choose-cleaning-service-silver-spring",
+  ],
 };
 
 const allPosts = [...blogPosts, ...autoBlogPosts];
