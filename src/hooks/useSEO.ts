@@ -29,8 +29,12 @@ export const useSEO = ({ title, description, canonical, ogType = "website", ogIm
       createElement("link", { key: "canonical", rel: "canonical", href: canonical }),
       createElement("meta", { key: "og-url", property: "og:url", content: canonical }),
     ] : []),
+    createElement("meta", { key: "tw-site", name: "twitter:site", content: "@CapitalCleanCare" }),
     ...(ogImage ? [
       createElement("meta", { key: "og-img", property: "og:image", content: ogImage }),
+      createElement("meta", { key: "og-img-w", property: "og:image:width", content: "1200" }),
+      createElement("meta", { key: "og-img-h", property: "og:image:height", content: "630" }),
+      createElement("meta", { key: "og-img-alt", property: "og:image:alt", content: title }),
       createElement("meta", { key: "tw-img", name: "twitter:image", content: ogImage }),
     ] : []),
   ];

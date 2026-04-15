@@ -1501,6 +1501,38 @@ const HOWTO_DATA: Record<string, { steps: { name: string; text: string }[]; tota
       { name: "Quarterly Deep Cleaning", text: "Clean inside refrigerator and all cabinets, behind and under appliances, light fixtures and vent covers, carpet deep-cleaning, and grout scrubbing in kitchen and bathrooms." },
     ],
   },
+  "allergy-proofing-home-dmv": {
+    totalTime: "PT4H",
+    steps: [
+      { name: "HEPA Vacuum All Carpets and Upholstery", text: "Use a HEPA-filtered vacuum to clean all carpets, area rugs, sofas, and upholstered chairs. Vacuum slowly in overlapping passes to capture buried allergens." },
+      { name: "Replace HVAC and Air Purifier Filters", text: "Swap out HVAC filters (MERV-11 or higher) and replace air purifier filters. Clean vent covers with a damp microfiber cloth to remove dust buildup." },
+      { name: "Wash All Bedding in Hot Water", text: "Wash pillows, duvet covers, mattress protectors, and sheets at 130°F or higher to kill dust mites. Vacuum the mattress itself with a HEPA attachment." },
+      { name: "Damp-Wipe All Hard Surfaces", text: "Use a damp microfiber cloth (never dry dusting) on shelves, nightstands, window sills, baseboards, and ceiling fan blades to capture rather than redistribute allergens." },
+      { name: "Deep Clean Bathrooms for Mold Prevention", text: "Scrub tile grout with a hydrogen peroxide solution, clean exhaust fans, and check under sinks for moisture. Mold spores are a major allergy trigger." },
+      { name: "Declutter to Reduce Dust Traps", text: "Remove unnecessary items from shelves and floors that collect dust. Use closed storage bins. Wash throw rugs or replace with washable alternatives." },
+    ],
+  },
+  "eco-cleaning-tips-winters-maryland": {
+    totalTime: "PT3H",
+    steps: [
+      { name: "Switch to Plant-Based All-Purpose Cleaners", text: "Replace conventional sprays with EPA Safer Choice certified plant-based formulas for kitchen counters, bathroom surfaces, and appliance exteriors." },
+      { name: "Use Microfiber Cloths Instead of Paper Towels", text: "Microfiber cloths trap and remove bacteria and dust with water alone, eliminating the need for chemical sprays. Wash them in hot water after use." },
+      { name: "Make a DIY Non-Toxic Scrub for Grout", text: "Mix baking soda and hydrogen peroxide into a paste. Apply to grout lines, let sit for 10 minutes, and scrub with a stiff brush — no bleach required." },
+      { name: "Ventilate While Cleaning", text: "Open windows and run exhaust fans even in winter. Good ventilation prevents moisture buildup and ensures any cleaning product vapors dissipate quickly." },
+      { name: "Replace Plug-In Air Fresheners", text: "Synthetic air fresheners release VOCs. Switch to essential-oil diffusers or simmer orange peels with cinnamon sticks for a natural winter scent." },
+      { name: "Dispose of Old Products Responsibly", text: "Take conventional cleaning chemicals to your county's household hazardous waste facility rather than pouring them down the drain or into recycling." },
+    ],
+  },
+  "airbnb-cleaning-tips-dmv-hosts": {
+    totalTime: "PT3H",
+    steps: [
+      { name: "Kitchen Reset", text: "Wash all dishes and store away, wipe all counters and appliances, sanitize the sink, check for leftover food in the refrigerator, and restock any starter supplies (coffee, dish soap, sponge)." },
+      { name: "Bathroom Full Refresh", text: "Replace used towels with fresh ones, restock toiletries, scrub toilet, sink, and shower, wipe mirror and fixtures, and mop the floor." },
+      { name: "Bedroom Linen Changeover", text: "Strip and replace all bedding with freshly laundered linens. Check under the bed for forgotten items, fluff pillows, and straighten décor." },
+      { name: "Living Areas and Entry", text: "Vacuum or sweep all floors, wipe remotes and light switches, remove any trash, straighten cushions, and check that all welcome materials are in place." },
+      { name: "Full Property Walkthrough", text: "Check every drawer and cabinet for forgotten guest items, replace any missing or damaged amenities, test all electronics, and confirm doors and windows close and lock properly." },
+    ],
+  },
 };
 
 const BlogPost = () => {
