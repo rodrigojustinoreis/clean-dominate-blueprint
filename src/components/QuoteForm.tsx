@@ -67,29 +67,23 @@ const QuoteForm = ({ submitLabel = "Get My Free Quote →", defaultService = "" 
         throw new Error("Failed to save request");
       }
 
-      // Send email via FormSubmit (free, no API key needed)
-      const formPayload = {
-        _subject: `New Quote Request from ${formData.name}`,
-        _template: "table",
-        _captcha: "false",
-        Name: formData.name,
-        Phone: formData.phone,
-        Email: formData.email,
-        "Zip Code": formData.zip,
-        Service: formData.service,
-        Bedrooms: formData.bedrooms || "N/A",
-        Bathrooms: formData.bathrooms || "N/A",
-        Frequency: formData.frequency || "N/A",
-        "Preferred Date": formData.date || "N/A",
-        Message: formData.message || "N/A",
-        "SMS Consent": formData.smsConsent ? "Yes" : "No",
-        "Email Consent": formData.emailConsent ? "Yes" : "No",
-      };
-
-      await fetch("https://formsubmit.co/ajax/capitalcleancare@gmail.com", {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify(formPayload),
+      // Send notifications via Supabase Edge Function
+      // — business email, client confirmation email, and client SMS (if consent given)
+      await supabase.functions.invoke("send-quote", {
+        body: {
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          zip: formData.zip,
+          service: formData.service,
+          bedrooms: formData.bedrooms || null,
+          bathrooms: formData.bathrooms || null,
+          frequency: formData.frequency || null,
+          date: formData.date || null,
+          message: formData.message || null,
+          smsConsent: formData.smsConsent,
+          emailConsent: formData.emailConsent,
+        },
       });
 
       trackQuoteFormSubmit(formData.service);
