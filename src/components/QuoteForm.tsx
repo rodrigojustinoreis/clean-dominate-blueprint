@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronDown, ChevronUp, CheckCircle, MessageCircle, Clock, Phone } from "lucide-react";
 import {
   Select,
   SelectContent,
@@ -38,6 +38,8 @@ const QuoteForm = ({ submitLabel = "Get My Free Quote →", defaultService = "" 
 
   const [submitting, setSubmitting] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [submittedName, setSubmittedName] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -98,9 +100,10 @@ const QuoteForm = ({ submitLabel = "Get My Free Quote →", defaultService = "" 
           'currency': 'USD'
         });
       }
-      toast.success("Thank you! We'll get back to you within 24 hours.");
+      setSubmittedName(formData.name.split(" ")[0]);
       setFormData({ name: "", phone: "", email: "", zip: "", service: "", bedrooms: "", bathrooms: "", frequency: "", date: "", message: "", smsConsent: false, emailConsent: false });
       setShowDetails(false);
+      setSubmitted(true);
     } catch (err) {
       console.error("Submission error:", err);
       toast.error("Something went wrong. Please try again or call us directly.");
@@ -111,6 +114,101 @@ const QuoteForm = ({ submitLabel = "Get My Free Quote →", defaultService = "" 
 
   const update = (field: string, value: string) =>
     setFormData((p) => ({ ...p, [field]: value }));
+
+  if (submitted) {
+    const now = new Date();
+    const timeStr = now.toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit", hour12: true });
+    return (
+      <div className="flex flex-col items-center gap-6 py-6 px-2 animate-fade-up">
+        {/* Phone mockup */}
+        <div className="w-full max-w-sm bg-[#F2F2F7] rounded-3xl shadow-2xl overflow-hidden border border-white/60">
+          {/* Status bar */}
+          <div className="bg-[#1B3A2D] px-5 py-3 flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-8 rounded-full bg-accent flex items-center justify-center shrink-0">
+                <span className="text-white text-xs font-bold">CC</span>
+              </div>
+              <div>
+                <p className="text-white text-sm font-semibold leading-none">Capital Clean Care</p>
+                <p className="text-white/60 text-xs mt-0.5">Business</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+              <span className="text-white/70 text-xs">Now</span>
+            </div>
+          </div>
+
+          {/* Messages area */}
+          <div className="bg-[#F2F2F7] px-4 py-5 space-y-3 min-h-[220px]">
+            <p className="text-center text-xs text-gray-400 mb-4">Today {timeStr}</p>
+
+            {/* Incoming SMS bubble */}
+            <div className="flex items-end gap-2">
+              <div className="w-7 h-7 rounded-full bg-accent flex items-center justify-center shrink-0 mb-0.5">
+                <span className="text-white text-[10px] font-bold">CC</span>
+              </div>
+              <div className="max-w-[85%] bg-white rounded-2xl rounded-bl-sm px-4 py-3 shadow-sm">
+                <p className="text-[13px] text-gray-800 leading-relaxed">
+                  Hi <strong>{submittedName}</strong>! 🏠 Thank you for trusting Capital Clean Care.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-end gap-2">
+              <div className="w-7 h-7 shrink-0" />
+              <div className="max-w-[85%] bg-white rounded-2xl rounded-bl-sm px-4 py-3 shadow-sm">
+                <p className="text-[13px] text-gray-800 leading-relaxed">
+                  We received your quote request and our team will contact you <strong>within a few hours</strong> with a personalized estimate. ✨
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-end gap-2">
+              <div className="w-7 h-7 shrink-0" />
+              <div className="max-w-[85%] bg-white rounded-2xl rounded-bl-sm px-4 py-3 shadow-sm">
+                <p className="text-[13px] text-gray-800 leading-relaxed">
+                  We look forward to making your home spotless! 💚
+                </p>
+                <p className="text-[11px] text-gray-400 mt-1.5 font-medium">— Capital Clean Care Team</p>
+              </div>
+            </div>
+
+            {/* Read receipt */}
+            <div className="flex justify-end pr-1">
+              <div className="flex items-center gap-1 text-[11px] text-gray-400">
+                <CheckCircle className="h-3 w-3 text-accent" />
+                <span>Delivered</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Action buttons */}
+        <div className="flex flex-col sm:flex-row gap-3 w-full max-w-sm">
+          <Button asChild size="sm" variant="outline" className="flex-1 rounded-full gap-2">
+            <a href="tel:+12407042551">
+              <Phone className="h-3.5 w-3.5" /> Call Us Now
+            </a>
+          </Button>
+          <Button
+            size="sm"
+            variant="ghost"
+            className="flex-1 rounded-full text-muted-foreground gap-2"
+            onClick={() => setSubmitted(false)}
+          >
+            <MessageCircle className="h-3.5 w-3.5" /> Submit Another Request
+          </Button>
+        </div>
+
+        {/* Expectation note */}
+        <div className="flex items-center gap-2 text-xs text-muted-foreground bg-accent/5 border border-accent/15 rounded-full px-4 py-2">
+          <Clock className="h-3.5 w-3.5 text-accent shrink-0" />
+          <span>We typically respond within <strong className="text-foreground">2–4 hours</strong> during business hours</span>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
