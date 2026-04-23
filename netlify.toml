@@ -56,7 +56,93 @@
   to = "/careers"
   status = 301
 
-# ── Old/dead URLs ─────────────────────────────────────────────────────────────
+[[redirects]]
+  from = "/services/"
+  to = "/services/house-cleaning"
+  status = 301
+
+# ── Old Wix/GoDaddy URLs → new structure (server-side 301) ───────────────────
+[[redirects]]
+  from = "/apartment-cleaning"
+  to = "/services/house-cleaning"
+  status = 301
+
+[[redirects]]
+  from = "/airbnb-cleaning"
+  to = "/services/airbnb-cleaning"
+  status = 301
+
+[[redirects]]
+  from = "/house-cleaning"
+  to = "/services/house-cleaning"
+  status = 301
+
+[[redirects]]
+  from = "/deep-cleaning-service"
+  to = "/services/deep-cleaning"
+  status = 301
+
+[[redirects]]
+  from = "/move-in-move-out"
+  to = "/services/move-out-cleaning"
+  status = 301
+
+[[redirects]]
+  from = "/move-in-move-out-cleaning"
+  to = "/services/move-out-cleaning"
+  status = 301
+
+[[redirects]]
+  from = "/recurring-cleaning-service"
+  to = "/services/recurring-cleaning"
+  status = 301
+
+[[redirects]]
+  from = "/post-construction"
+  to = "/services/post-construction-cleaning"
+  status = 301
+
+[[redirects]]
+  from = "/office-cleaning"
+  to = "/services/office-cleaning"
+  status = 301
+
+[[redirects]]
+  from = "/commercial-cleaning"
+  to = "/services/office-cleaning"
+  status = 301
+
+[[redirects]]
+  from = "/eco-friendly-cleaning-service"
+  to = "/services/eco-friendly-cleaning"
+  status = 301
+
+[[redirects]]
+  from = "/about-us"
+  to = "/about"
+  status = 301
+
+[[redirects]]
+  from = "/contact-us"
+  to = "/contact"
+  status = 301
+
+[[redirects]]
+  from = "/book-now"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/pricing"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/services"
+  to = "/"
+  status = 301
+
+# ── Dead/old internal URLs ────────────────────────────────────────────────────
 [[redirects]]
   from = "/home"
   to = "/"
