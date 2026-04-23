@@ -3,10 +3,14 @@ import { Phone, Mail, Clock, Instagram, Facebook, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { services } from "@/data/services";
 import { mdCities, dcCities, vaCities } from "@/data/locations";
+import { slCities, slServices } from "@/data/service-locations";
 import { trackPhoneClick, trackBookNowClick } from "@/lib/analytics";
 import PartnerLinks from "@/components/PartnerLinks";
 import GoogleBusinessLinks from "@/components/GoogleBusinessLinks";
 import logo from "@/assets/logo.webp";
+
+const TOP_SERVICE_CITIES = ["rockville-md", "bethesda-md", "silver-spring-md", "arlington-va", "alexandria-va", "washington-dc", "fairfax-va", "gaithersburg-md"];
+const TOP_SERVICES = ["house-cleaning", "deep-cleaning", "move-out-cleaning", "recurring-cleaning"];
 
 const Footer = () => (
   <footer className="bg-primary text-primary-foreground">
@@ -96,8 +100,26 @@ const Footer = () => (
         </div>
       </div>
 
-      {/* Partners & GBP */}
+      {/* Service + City Links */}
       <div className="mt-10 pt-8 border-t border-primary-foreground/10">
+        <h4 className="font-heading font-semibold mb-4 text-sm">Popular Services by Area</h4>
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-4 gap-y-1">
+          {slCities.filter(c => TOP_SERVICE_CITIES.includes(c.slug)).flatMap(city =>
+            slServices.filter(s => TOP_SERVICES.includes(s.slug)).map(svc => (
+              <Link
+                key={`${city.slug}-${svc.slug}`}
+                to={`/locations/${city.slug}/${svc.slug}`}
+                className="text-xs text-primary-foreground/50 hover:text-accent transition-colors truncate"
+              >
+                {svc.shortName} – {city.name}
+              </Link>
+            ))
+          )}
+        </div>
+      </div>
+
+      {/* Partners & GBP */}
+      <div className="mt-6 pt-6 border-t border-primary-foreground/10">
         <PartnerLinks />
       </div>
 
