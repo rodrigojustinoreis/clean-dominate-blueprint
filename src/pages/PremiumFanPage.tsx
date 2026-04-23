@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useSEO } from '@/hooks/useSEO';
 import { 
   Shield, 
   Star, 
@@ -20,8 +21,14 @@ import Footer from '@/components/layout/Footer';
 import TrustBadges from '@/components/TrustBadges';
 
 const PremiumFanPage = () => {
+  const { seoHelmet } = useSEO({
+    title: "Premium House Cleaning Service | Capital Clean Care",
+    description: "Experience white-glove residential cleaning in Maryland, DC & Virginia. Eco-friendly products, background-checked teams, 100% satisfaction guaranteed.",
+    canonical: "https://capitalcleancare.com/premium-clean",
+  });
   return (
     <div className="min-h-screen bg-[#FDFDFD] text-[#050B1B] font-sans selection:bg-[#10B981]/30">
+      {seoHelmet}
       <Header />
 
       <main>
