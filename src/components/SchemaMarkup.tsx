@@ -316,9 +316,10 @@ export const ArticleSchema = ({
     datePublished,
     dateModified: dateModified || datePublished,
     author: {
-      "@type": "Organization",
-      name: BUSINESS.name,
-      url: BUSINESS.url,
+      "@type": "Person",
+      name: "Rodrigo Reis",
+      url: `${BUSINESS.url}/about`,
+      worksFor: { "@type": "Organization", name: BUSINESS.name },
     },
     publisher: {
       "@type": "Organization",

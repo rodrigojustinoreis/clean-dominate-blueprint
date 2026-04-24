@@ -1552,12 +1552,17 @@ const BlogPost = () => {
   const postUrl = `https://capitalcleancare.com/blog/${post.slug}`;
   const howtoData = HOWTO_DATA[post.slug];
 
+  const postTitle = post.title.length > 50
+    ? `${post.title} | Capital Clean Care`
+    : `${post.title} | Capital Clean Care Blog`;
+  const postImage = post.coverImage || "https://capitalcleancare.com/og-image.jpg";
+
   const { seoHelmet } = useSEO({
-    title: `${post.title} | Capital Clean Care Blog`,
+    title: postTitle,
     description: post.excerpt,
     canonical: postUrl,
     ogType: "article",
-    ogImage: post.coverImage,
+    ogImage: postImage,
   });
 
   return (
@@ -1568,7 +1573,7 @@ const BlogPost = () => {
         description={post.excerpt}
         url={postUrl}
         datePublished={post.date}
-        image={post.coverImage}
+        image={postImage}
       />
       {howtoData && (
         <HowToSchema
@@ -1589,6 +1594,7 @@ const BlogPost = () => {
             <span className="bg-accent/10 text-accent px-2 py-0.5 rounded-full font-medium">{post.category}</span>
             <span className="flex items-center gap-1"><Calendar className="h-3 w-3" /> {new Date(post.date).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}</span>
             <span className="flex items-center gap-1"><Clock className="h-3 w-3" /> {post.readTime}</span>
+            <span className="flex items-center gap-1">By <span className="font-medium text-foreground" itemProp="author" itemScope itemType="https://schema.org/Person"><span itemProp="name">Rodrigo Reis</span></span></span>
           </div>
 
           <h1 className="font-heading text-3xl md:text-4xl font-bold mb-8">{post.title}</h1>

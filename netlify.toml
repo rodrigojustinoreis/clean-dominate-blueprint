@@ -163,6 +163,24 @@
   to = "/blog"
   status = 301
 
+[[redirects]]
+  from = "/services/recurring-cleaning/"
+  to = "/services/recurring-cleaning"
+  status = 301
+
+# ── Blog query-parameter cleanup ─────────────────────────────────────────────
+[[redirects]]
+  from = "/"
+  to = "/blog"
+  status = 301
+  query = {blog = "y"}
+
+[[redirects]]
+  from = "/"
+  to = "/blog"
+  status = 301
+  query = {blogcategory = ":cat"}
+
 # ── SPA fallback (must be last) ───────────────────────────────────────────────
 [[redirects]]
   from = "/*"
