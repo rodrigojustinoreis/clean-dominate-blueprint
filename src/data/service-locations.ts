@@ -299,6 +299,32 @@ export const slCities: ServiceLocationCity[] = [
     seasonalNote: "Proximity to Wheaton Regional Park and Brookside Gardens means heavy spring pollen and fall leaf debris tracked into homes year-round"
   },
   {
+    name: "Columbia",
+    slug: "columbia-md",
+    state: "MD",
+    county: "Howard County",
+    population: "105,000",
+    neighborhoods: ["Hickory Ridge", "Owen Brown", "River Hill", "Wilde Lake", "Long Reach", "Kings Contrivance", "Harpers Choice"],
+    localDetails: "Columbia is a nationally acclaimed master-planned community in Howard County, consistently ranked among the best places to live in America. Its village structure, lakefront parks, and top-rated schools attract high-income families who expect premium home services.",
+    housingTypes: "lakefront condos, village center townhomes, single-family homes, and luxury estates in River Hill and Clary's Forest",
+    challenges: "high humidity near Columbia's lakes and ponds, pollen from mature tree canopy throughout the villages, and fine dust in newer construction zones",
+    lifestyle: "Columbia residents are busy professionals and families who value quality, sustainability, and reliability — making recurring eco-friendly cleaning a natural fit",
+    seasonalNote: "Columbia's lake-adjacent neighborhoods see elevated humidity and mold risk in summer; fall brings heavy leaf debris from the extensive village green tree coverage"
+  },
+  {
+    name: "Ellicott City",
+    slug: "ellicott-city-md",
+    state: "MD",
+    county: "Howard County",
+    population: "75,000",
+    neighborhoods: ["Old Ellicott City", "Turf Valley", "Waverly Woods", "Font Hill", "Ellicott City Historic District", "Centennial"],
+    localDetails: "Ellicott City blends historic 18th-century charm along the Patapsco River with upscale modern subdivisions. The eclectic housing mix — from stone mill buildings to luxury new-construction — requires experienced cleaning teams who adapt their approach to each property type.",
+    housingTypes: "historic stone and brick properties, luxury single-family homes, townhomes in Turf Valley, and new-construction in Waverly Woods",
+    challenges: "historic homes require gentle products for original surfaces, heavy humidity near the Patapsco River, and post-storm debris cleanup from the frequent flooding in low-lying areas",
+    lifestyle: "Ellicott City homeowners are detail-oriented and proud of their properties — both historic and modern — expecting thorough, careful cleaning with professional-grade eco-friendly products",
+    seasonalNote: "Spring flooding risk near Old Ellicott City increases demand for post-storm deep cleaning; fall foliage from the Patapsco valley creates heavy tracked-in debris"
+  },
+  {
     name: "Washington DC",
     slug: "washington-dc",
     state: "DC",
