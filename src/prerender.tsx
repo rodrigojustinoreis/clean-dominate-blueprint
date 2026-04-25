@@ -72,14 +72,15 @@ function getAllRoutes(): string[] {
   const citySlugs = [
     "rockville-md", "bethesda-md", "silver-spring-md", "gaithersburg-md",
     "germantown-md", "frederick-md", "potomac-md", "kensington-md",
-    "chevy-chase-md", "college-park-md", "laurel-md", "bowie-md",
-    "takoma-park-md", "wheaton-md", "arlington-va", "alexandria-va", "fairfax-va",
-    "mclean-va", "reston-va", "washington-dc", "washington-dc-ne",
+    "chevy-chase-md", "north-bethesda-md", "college-park-md", "laurel-md", "bowie-md",
+    "olney-md", "hyattsville-md", "takoma-park-md", "burtonsville-md",
+    "montgomery-village-md", "wheaton-md", "arlington-va", "alexandria-va", "fairfax-va",
+    "mclean-va", "reston-va", "vienna-va", "tysons-va", "washington-dc", "washington-dc-ne",
     "montgomery-county-md", "frederick-county-md", "howard-county-md", "prince-georges-county-md",
     "columbia-md", "ellicott-city-md", "clarksburg-md", "damascus-md",
     "urbana-md", "new-market-md",
-    "capitol-hill-dc", "georgetown-dc", "dupont-circle-dc", "adams-morgan-dc", "falls-church-va",
-    "shaw-dc", "columbia-heights-dc", "navy-yard-dc", "herndon-va", "annandale-va",
+    "capitol-hill-dc", "georgetown-dc", "dupont-circle-dc", "adams-morgan-dc", "downtown-dc",
+    "falls-church-va", "shaw-dc", "columbia-heights-dc", "navy-yard-dc", "herndon-va", "annandale-va",
   ];
   for (const c of citySlugs) {
     routes.push(`/locations/${c}`);
