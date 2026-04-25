@@ -15,8 +15,8 @@ export interface AutoBlogPost {
 export const autoBlogPosts: AutoBlogPost[] = [
   // Posts are appended here automatically by scripts/generate-weekly-post.mjs
   {
-    slug: "deep-cleaning-tips-maryland-homes-spring-prep-march-2026",
-    title: "Deep Cleaning Tips for Maryland Homes: Spring-Prep Guide 2026",
+    slug: "deep-cleaning-tips-maryland-homes-spring-prep",
+    title: "Deep Cleaning Tips for Maryland Homes: Complete Spring-Prep Guide",
     excerpt: "Deep cleaning tips for Maryland homes to transition from winter to spring. Expert advice on tackling dust, allergens, and grime in the DMV area.",
     date: "2026-03-14",
     readTime: "7 min read",

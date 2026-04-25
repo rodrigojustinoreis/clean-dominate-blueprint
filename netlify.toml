@@ -25,6 +25,12 @@
   status = 301
   force = true
 
+# ── /premium-clean → homepage ─────────────────────────────────────────────────
+[[redirects]]
+  from = "/premium-clean"
+  to = "/"
+  status = 301
+
 # ── Trailing slash normalization ──────────────────────────────────────────────
 [[redirects]]
   from = "/about/"
@@ -197,6 +203,12 @@
 [[redirects]]
   from = "/services/recurring-cleaning/"
   to = "/services/recurring-cleaning"
+  status = 301
+
+# ── Blog slug with date → evergreen slug ─────────────────────────────────────
+[[redirects]]
+  from = "/blog/deep-cleaning-tips-maryland-homes-spring-prep-march-2026"
+  to = "/blog/deep-cleaning-tips-maryland-homes-spring-prep"
   status = 301
 
 # ── Blog query-parameter cleanup ─────────────────────────────────────────────

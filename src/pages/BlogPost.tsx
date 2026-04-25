@@ -1560,7 +1560,7 @@ const BlogPost = () => {
   const { seoHelmet } = useSEO({
     title: postTitle,
     description: post.excerpt,
-    canonical: postUrl,
+    canonical: ('canonical' in post && post.canonical) ? post.canonical : postUrl,
     ogType: "article",
     ogImage: postImage,
   });

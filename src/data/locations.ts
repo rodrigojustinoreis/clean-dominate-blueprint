@@ -44,7 +44,7 @@ export const hubs: HubData[] = [
       { q: "Do you serve Maryland apartments and condos?", a: "Yes. We clean all types of Maryland residences including single-family homes, townhouses, apartments, condos, and high-rise units. We coordinate with building management when needed." }
     ],
     metaTitle: "House Cleaning Services in Maryland | Capital Clean Care",
-    metaDescription: "Premium eco-friendly house cleaning across Maryland — Montgomery, Frederick, Howard & Prince George's Counties. 15% off your first clean. Get a free quote!"
+    metaDescription: "Professional eco-friendly house cleaning across Maryland — Bethesda, Rockville, Silver Spring, Germantown, Gaithersburg and 20+ cities. Licensed, insured, background-checked teams. Get a free quote today."
   },
   {
     name: "Washington DC Cleaning Services",
@@ -67,7 +67,7 @@ export const hubs: HubData[] = [
       { q: "Do you offer a satisfaction guarantee in DC?", a: "Yes. Our 100% satisfaction guarantee covers every DC cleaning. If any area doesn't meet your expectations, we'll return within 24 hours to make it right at no charge." }
     ],
     metaTitle: "House Cleaning Services in Washington DC | Capital Clean Care",
-    metaDescription: "Eco-friendly house cleaning throughout Washington, DC. Serving NW, NE, Capitol Hill, Georgetown & more. Licensed & insured. 15% off — get a free quote!"
+    metaDescription: "Eco-friendly house cleaning in Washington DC — Capitol Hill, Georgetown, Dupont Circle, Adams Morgan and all four quadrants. Licensed teams, plant-based products. Call (240) 704-2551."
   },
   {
     name: "Northern Virginia Cleaning Services",
@@ -90,7 +90,7 @@ export const hubs: HubData[] = [
       { q: "Do you serve luxury condos and high-rises in NoVA?", a: "Yes. We serve condos, apartments, townhomes, and single-family homes of all sizes throughout Northern Virginia, including luxury high-rises in Tysons and Arlington." }
     ],
     metaTitle: "House Cleaning in Northern Virginia | Capital Clean Care",
-    metaDescription: "Eco-friendly house cleaning in Northern Virginia — Arlington, McLean, Fairfax & Alexandria. Licensed, insured, 5-star rated. 15% off — get your free quote!"
+    metaDescription: "Professional house cleaning in Northern Virginia — Arlington, Fairfax, McLean, Alexandria, Reston and more. Eco-friendly, licensed and insured. Get your free quote today."
   }
 ];
 

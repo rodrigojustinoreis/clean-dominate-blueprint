@@ -41,8 +41,8 @@ const testimonials = [
 
 const HouseCleaningNearMe = () => {
   const { seoHelmet } = useSEO({
-    title: "House Cleaning Near Me in MD, DC & VA | Capital Clean Care",
-    description: "Looking for house cleaning near you? Capital Clean Care serves Maryland, Washington DC & Northern Virginia. Background-checked teams, eco-friendly products. Free quote!",
+    title: "House Cleaning Near Me — Same-Week Availability | MD, DC & VA | Capital Clean Care",
+    description: "Need house cleaning near you today or this week? Capital Clean Care serves Maryland, DC & Northern Virginia with same-week availability. Licensed, eco-friendly, background-checked. Book online.",
     canonical: "https://capitalcleancare.com/house-cleaning-near-me",
     ogImage: "https://capitalcleancare.com/og-image.jpg",
   });
@@ -62,7 +62,7 @@ const HouseCleaningNearMe = () => {
             <span className="text-accent font-semibold text-sm uppercase tracking-wider">Serving MD, DC & VA</span>
           </div>
           <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-            House Cleaning Near Me
+            Professional House Cleaning Near You — Maryland, DC & Northern Virginia
           </h1>
           <p className="text-muted-foreground text-lg md:text-xl mb-8 max-w-2xl mx-auto">
             Professional, eco-friendly house cleaning serving Maryland, Washington DC, and Northern Virginia. Background-checked teams, non-toxic products, 5-star results.
@@ -70,6 +70,22 @@ const HouseCleaningNearMe = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="cta" size="lg" asChild>
               <Link to="/#quote">Get a Free Quote <ArrowRight className="ml-1 h-4 w-4" /></Link>
+            </Button>
+            <Button variant="outline" size="lg" asChild>
+              <a href="tel:+12407042551"><Phone className="mr-2 h-4 w-4" /> (240) 704-2551</a>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Same-week availability */}
+      <section className="py-10 bg-accent/5 border-b border-border">
+        <div className="container mx-auto px-4 max-w-3xl text-center">
+          <h2 className="font-heading text-2xl md:text-3xl font-bold mb-3">Check Same-Week Availability in Your Area</h2>
+          <p className="text-muted-foreground mb-5">We typically have openings within <strong>2–5 business days</strong> for most Maryland, DC, and Virginia locations. Same-week slots available for many zip codes — call or submit your quote to confirm.</p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <Button variant="cta" size="lg" asChild>
+              <Link to="/#quote">Check Availability <ArrowRight className="ml-1 h-4 w-4" /></Link>
             </Button>
             <Button variant="outline" size="lg" asChild>
               <a href="tel:+12407042551"><Phone className="mr-2 h-4 w-4" /> (240) 704-2551</a>

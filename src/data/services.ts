@@ -1,5 +1,6 @@
 export interface ServiceData {
   name: string;
+  h1?: string;
   slug: string;
   shortDescription: string;
   intro: string;
@@ -14,6 +15,7 @@ export interface ServiceData {
 export const services: ServiceData[] = [
   {
     name: "House Cleaning",
+    h1: "Professional Eco-Friendly House Cleaning in Maryland, DC & Virginia",
     slug: "house-cleaning",
     shortDescription: "Routine cleaning that keeps your home consistently fresh and tidy between deeper sessions.",
     intro: "Our standard cleaning service is designed for homeowners who want to maintain a consistently clean and comfortable living environment. Whether you need a one-time refresh or regular upkeep, our trained professionals handle every room with care and precision.\n\nWe use only eco-friendly, non-toxic cleaning products that are safe for your family, pets, and the environment. Every visit follows a detailed checklist tailored to your home's specific needs, ensuring nothing gets overlooked.\n\nCapital Clean Care's standard cleaning covers all the essential tasks that keep your home looking its best. From dusting and vacuuming to kitchen and bathroom sanitization, we deliver thorough results you can see and feel. Our background-checked teams arrive on time, fully equipped, and ready to transform your space.\n\nChoosing a professional cleaning service means reclaiming your weekends and evenings. Instead of spending hours scrubbing and organizing, you can focus on what matters most while we handle the rest. Our satisfaction guarantee means you never have to worry about the quality of our work.",
@@ -116,6 +118,7 @@ export const services: ServiceData[] = [
   },
   {
     name: "Deep Cleaning",
+    h1: "Deep Cleaning Services in Maryland, Washington DC & Northern Virginia",
     slug: "deep-cleaning",
     shortDescription: "An intensive, top-to-bottom clean that reaches every hidden corner and neglected surface.",
     intro: "When routine cleaning isn't enough, Capital Clean Care's deep cleaning service delivers the thorough, intensive treatment your home deserves. Our deep cleaning goes far beyond surface-level tidying to address built-up grime, hidden dust, and neglected areas that accumulate over time.\n\nEvery deep cleaning session begins with a walkthrough assessment of your home. Our team identifies priority areas and customizes the cleaning plan to address your specific concerns. Whether it's soap scum buildup in bathrooms, grease accumulation in the kitchen, or dust collected behind furniture, we tackle it all.\n\nOur eco-friendly approach means we never compromise your family's health for cleanliness. We use plant-based, non-toxic cleaning solutions that are tough on dirt but gentle on surfaces and safe for children and pets. Combined with professional-grade equipment, we achieve results that standard cleaning simply cannot match.\n\nDeep cleaning is ideal as a first-time service before transitioning to regular maintenance, as a seasonal refresh, or whenever your home needs extra attention. Many clients schedule deep cleanings quarterly to complement their regular cleaning routine, ensuring their home stays in pristine condition year-round.",
@@ -223,6 +226,7 @@ export const services: ServiceData[] = [
   },
   {
     name: "Move In / Move Out Cleaning",
+    h1: "Move Out & Move In Cleaning Services in MD, DC & Northern Virginia",
     slug: "move-out-cleaning",
     shortDescription: "Comprehensive cleaning for property transitions — leave or arrive to a spotless space.",
     intro: "Moving is stressful enough without worrying about cleaning. Capital Clean Care's move-in and move-out cleaning service ensures every property transition starts or ends with a perfectly clean space. Whether you're a homeowner, tenant, or property manager, we deliver the thorough cleaning needed to meet inspection standards and personal expectations.\n\nOur move-in/move-out service is specifically designed for empty or near-empty properties, allowing our teams unrestricted access to every surface, corner, and fixture. Without furniture in the way, we can address areas that are typically difficult to reach during regular cleanings.\n\nWe understand that timing is critical during moves. Our flexible scheduling accommodates tight timelines, and our efficient teams work quickly without sacrificing quality. We coordinate with your moving schedule to ensure the property is ready exactly when you need it.\n\nFor landlords and property managers, our service helps maximize security deposit returns for tenants and ensures properties are move-in ready for new occupants. We provide detailed cleaning that covers every requirement typically found on move-out inspection checklists.",
@@ -325,6 +329,7 @@ export const services: ServiceData[] = [
   },
   {
     name: "Post-Construction Cleaning",
+    h1: "Post-Construction Cleaning in Maryland, Washington DC & Northern Virginia",
     slug: "post-construction-cleaning",
     shortDescription: "Specialized cleanup after renovations, removing construction dust, debris, and residue.",
     intro: "Renovations and construction projects transform spaces, but they also leave behind layers of dust, debris, and residue that require specialized cleaning. Capital Clean Care's post-construction cleaning service is designed to handle the unique challenges that come after building or remodeling work is completed.\n\nConstruction dust is unlike regular household dust — it's finer, more pervasive, and can settle in places you'd never expect. Our trained teams use specialized equipment and techniques to capture and remove this stubborn dust from every surface, vent, and crevice in your home.\n\nOur post-construction cleaning typically involves multiple phases. The initial rough clean removes large debris and bulk dust. The detailed clean addresses surfaces, fixtures, and finishes. The final touch-up ensures everything meets our exacting standards and your expectations.\n\nWhether you've completed a kitchen remodel, bathroom renovation, room addition, or whole-home construction, our team has the expertise and equipment to transform your construction site into a livable, pristine space. We work with homeowners, contractors, and property developers throughout the DMV area.",
@@ -412,6 +417,7 @@ export const services: ServiceData[] = [
   },
   {
     name: "Recurring Cleaning",
+    h1: "Recurring House Cleaning in Maryland, DC & Virginia | Weekly & Biweekly",
     slug: "recurring-cleaning",
     shortDescription: "Scheduled weekly, bi-weekly, or monthly cleaning plans with preferred pricing.",
     intro: "Consistency is the key to a truly clean home. Capital Clean Care's recurring cleaning plans provide scheduled, reliable cleaning on a weekly, bi-weekly, or monthly basis — whichever frequency fits your lifestyle and household needs.\n\nWhen you choose a recurring plan, you're assigned a dedicated cleaning team that gets to know your home and your preferences. Over time, your team becomes familiar with your specific needs, priority areas, and any special instructions, resulting in increasingly personalized and efficient service.\n\nRecurring clients enjoy preferred pricing that makes professional cleaning more affordable than you might expect. The more frequently we visit, the less intensive each session needs to be, which means shorter visit times and lower costs per cleaning. It's an investment in your time, health, and peace of mind.\n\nOur eco-friendly cleaning products ensure that frequent cleanings never expose your family to harsh chemical buildup. The plant-based solutions we use are gentle enough for regular application while remaining effective against dirt, germs, and allergens. With Capital Clean Care handling the cleaning, you can spend your free time on the things you actually enjoy.",
@@ -492,6 +498,7 @@ export const services: ServiceData[] = [
   },
   {
     name: "Eco-Friendly Cleaning",
+    h1: "Eco-Friendly House Cleaning Service | Non-Toxic & Plant-Based | MD, DC & VA",
     slug: "eco-friendly-cleaning",
     shortDescription: "Non-toxic, plant-based cleaning that's safe for your family, pets, and the planet.",
     intro: "Capital Clean Care was built on a simple belief: your home should be clean and safe — not just for you, but for your children, pets, and the environment. Our eco-friendly cleaning service uses exclusively EPA Safer Choice certified, plant-based products that deliver professional-grade results without harsh chemicals.\n\nConventional cleaning products often contain chlorine, ammonia, synthetic fragrances, and other compounds that can irritate airways, trigger allergies, and leave residues on surfaces your family touches every day. Our non-toxic alternatives are just as effective without the risks.\n\nEco-friendly cleaning isn't a compromise — it's an upgrade. Our products remove grease, bacteria, soap scum, and grime as effectively as chemical cleaners, and they leave no harmful residues behind. Your home will smell clean and fresh, not like a chemical factory.\n\nWe serve Maryland, Washington DC, and Northern Virginia homeowners who care about their health and the environment. Whether you have young children, allergy sufferers, or beloved pets at home, our green cleaning approach provides peace of mind with every visit.",
@@ -539,6 +546,7 @@ export const services: ServiceData[] = [
   },
   {
     name: "Airbnb & Short-Term Rental Cleaning",
+    h1: "Airbnb & Short-Term Rental Cleaning in Maryland, DC & Northern Virginia",
     slug: "airbnb-cleaning",
     shortDescription: "Fast, reliable turnover cleaning for Airbnb, VRBO, and short-term rental properties in MD, DC & VA.",
     intro: "Running a successful Airbnb or short-term rental depends on consistently delivering a spotless property to every guest. Capital Clean Care specializes in fast, thorough turnover cleanings that meet the highest hospitality standards — helping you earn 5-star reviews and maximize your rental income.\n\nOur Airbnb cleaning service is designed around your rental schedule. We coordinate with your booking calendar, work efficiently between checkouts and check-ins, and ensure your property is guest-ready every single time. No delays, no shortcuts — just professional results that impress guests from the moment they walk in.\n\nWe serve Airbnb and VRBO hosts throughout Maryland, Washington DC, and Northern Virginia. Whether you manage a single property or a portfolio, we provide the reliability and consistency your rental business depends on.\n\nFrom fresh linens and restocked essentials to deep bathroom sanitization and kitchen reset, we handle every detail so you can focus on being a great host. Our background-checked, insured teams treat your property with the same care as their own home.",
@@ -587,6 +595,7 @@ export const services: ServiceData[] = [
   },
   {
     name: "Office & Commercial Cleaning",
+    h1: "Office & Commercial Cleaning Services in Maryland, DC & Virginia",
     slug: "office-cleaning",
     shortDescription: "Professional commercial cleaning for offices, small businesses, and workspaces in MD, DC & VA.",
     intro: "A clean workspace directly impacts employee productivity, client impressions, and overall business performance. Capital Clean Care provides reliable, professional office and commercial cleaning services for businesses throughout Maryland, Washington DC, and Northern Virginia.\n\nOur commercial cleaning teams are trained to work efficiently in professional environments — arriving before or after business hours, minimizing disruptions, and delivering consistent results with every visit. We understand that businesses need cleaning they can count on without fail.\n\nFrom small professional offices and medical waiting rooms to retail spaces and co-working environments, we handle commercial spaces of all types. Our eco-friendly, non-toxic cleaning products are safe for employees, clients, and customers — and leave no harsh chemical odors behind.\n\nWe offer flexible scheduling including early morning, evening, and weekend cleaning to work around your business hours. Whether you need daily, weekly, or monthly service, we build a cleaning plan that fits your operation and budget.",

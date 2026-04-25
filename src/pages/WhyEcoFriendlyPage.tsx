@@ -198,9 +198,9 @@ const howToSteps = [
 
 const WhyEcoFriendlyPage = () => {
   const { seoHelmet } = useSEO({
-    title: "Why Eco-Friendly Cleaning Matters | Non-Toxic Home Cleaning MD, DC & VA | Capital Clean Care",
+    title: "Why Eco-Friendly Cleaning Is Safer for Your Family | Research & Science | Capital Clean Care",
     description:
-      "Discover why non-toxic, plant-based cleaning is safer for your children, pets, and health. Capital Clean Care uses EPA Safer Choice certified products across Maryland, DC & Virginia. Learn the science behind green cleaning.",
+      "Discover the science behind non-toxic cleaning. Learn how common household chemicals affect children, pets, and indoor air quality — and what plant-based alternatives actually work.",
     canonical: "https://capitalcleancare.com/why-eco-friendly-cleaning",
     ogImage: "https://capitalcleancare.com/og-image.jpg",
   });
@@ -237,7 +237,7 @@ const WhyEcoFriendlyPage = () => {
             <Leaf className="h-3.5 w-3.5" /> The Science of Green Cleaning
           </span>
           <h1 className="font-heading text-4xl md:text-5xl font-bold mb-6 leading-tight">
-            Why Eco-Friendly Cleaning Is the Safer Choice for Your Family
+            Why Eco-Friendly Cleaning Is the Safer Choice for Your Family and Home
           </h1>
           <p className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-3xl">
             Most households use cleaning products that contain dozens of chemicals never tested for long-term safety. Here's what the science says — and why Capital Clean Care made the switch to plant-based, EPA-certified products for every home we clean across Maryland, DC, and Virginia.
