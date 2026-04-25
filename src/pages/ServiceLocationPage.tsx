@@ -7,7 +7,6 @@ import TrustBadges from "@/components/TrustBadges";
 import { LocalBusinessSchema, ServiceSchema, FAQSchema, BreadcrumbSchema, CityReviewSchema } from "@/components/SchemaMarkup";
 import { getTestimonialsForServiceCity } from "@/data/testimonials";
 import { getCity, getService, getServiceLocationIntro, getWhyChooseUs, getServiceLocationFAQs, slCities, slServices } from "@/data/service-locations";
-import { vanityLandingPages } from "@/data/vanity-landings";
 import { CheckCircle, MapPin, ArrowRight, Shield, Leaf, Clock, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -27,15 +26,7 @@ const ServiceLocationPage = () => {
   const metaDescription = `Top-rated ${service.shortName} & maid service in ${city.name}, ${city.state}. Eco-friendly products, background-checked teams, satisfaction guaranteed. Serving ${city.county}. Free quotes.`;
   const pageUrl = `https://capitalcleancare.com/locations/${city.slug}/${service.slug}`;
 
-  // If a vanity page exists for this city+service combo, point canonical there (better keyword URL)
-  const vanityMatch = vanityLandingPages.find(
-    (v) => v.citySlug === city.slug && v.serviceSlug === service.slug
-  );
-  const canonicalUrl = vanityMatch
-    ? `https://capitalcleancare.com/${vanityMatch.slug}`
-    : pageUrl;
-
-  const { seoHelmet } = useSEO({ title: metaTitle, description: metaDescription, canonical: canonicalUrl });
+  const { seoHelmet } = useSEO({ title: metaTitle, description: metaDescription, canonical: pageUrl });
 
   const testimonials = getTestimonialsForServiceCity(city.slug, service.slug);
 
