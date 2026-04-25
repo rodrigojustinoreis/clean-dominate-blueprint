@@ -226,6 +226,30 @@
   force = true
   query = {blogcategory = ":cat"}
 
+# ── Serve prerendered pages at canonical non-trailing-slash URLs (200 rewrite)─
+# Netlify would otherwise 301 /blog/slug → /blog/slug/ because files are in
+# dist/blog/slug/index.html. These rewrites intercept before that happens,
+# serving the same index.html content at the clean canonical URL.
+[[redirects]]
+  from = "/blog/:slug"
+  to = "/blog/:slug/"
+  status = 200
+
+[[redirects]]
+  from = "/locations/:city"
+  to = "/locations/:city/"
+  status = 200
+
+[[redirects]]
+  from = "/locations/:city/:service"
+  to = "/locations/:city/:service/"
+  status = 200
+
+[[redirects]]
+  from = "/services/:slug"
+  to = "/services/:slug/"
+  status = 200
+
 # ── SPA fallback (must be last) ───────────────────────────────────────────────
 [[redirects]]
   from = "/*"

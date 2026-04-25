@@ -29,7 +29,7 @@ function getAllRoutes(): string[] {
     "/blog/recurring-cleaning-weekly-biweekly-monthly",
     "/blog/how-to-remove-tough-stains-from-mattresses-eco-friendly-april-2026",
     "/blog/how-to-clean-bathroom-professionally-maryland-spring-2026",
-    "/blog/deep-cleaning-tips-maryland-homes-spring-prep-march-2026",
+    "/blog/deep-cleaning-tips-maryland-homes-spring-prep",
     "/blog/house-cleaning-bethesda-md",
     "/blog/cleaning-service-arlington-va",
     "/blog/deep-cleaning-rockville-md",
