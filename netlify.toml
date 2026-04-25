@@ -61,6 +61,37 @@
   to = "/services/house-cleaning"
   status = 301
 
+# ── Soft 404 / old URL patterns found in Search Console ─────────────────────
+[[redirects]]
+  from = "/clean-service-chevy-chase"
+  to = "/locations/chevy-chase-md"
+  status = 301
+
+[[redirects]]
+  from = "/clean-service-kentlands"
+  to = "/locations/gaithersburg-md"
+  status = 301
+
+[[redirects]]
+  from = "/services-areas"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/seasonal-cleaning/f/*"
+  to = "/blog"
+  status = 301
+
+[[redirects]]
+  from = "/seasonal-cleaning"
+  to = "/spring-cleaning-md"
+  status = 301
+
+[[redirects]]
+  from = "/blog/how-to-clean-air-vents-filters-improve-indoor-air-quality-maryland"
+  to = "/blog"
+  status = 301
+
 # ── Old Wix/GoDaddy URLs → new structure (server-side 301) ───────────────────
 [[redirects]]
   from = "/apartment-cleaning"
