@@ -96,6 +96,13 @@ const ServiceLocationPage = () => {
           <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-6">
             {service.name} Services for {city.name} Homeowners
           </h2>
+          {city.localIntro && (
+            <div className="border-l-4 border-primary bg-muted/40 rounded-r-lg px-6 py-5 mb-6">
+              <p className="text-foreground leading-relaxed">
+                {city.localIntro.replace(/\[SERVICE_NAME\]/g, service.shortName)}
+              </p>
+            </div>
+          )}
           <div className="prose prose-lg max-w-none text-muted-foreground">
             {intro.split("\n\n").map((paragraph, i) => (
               <p key={i} className="mb-4 leading-relaxed">{paragraph}</p>

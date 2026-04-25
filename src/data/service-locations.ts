@@ -13,6 +13,7 @@ export interface ServiceLocationCity {
   challenges: string;
   lifestyle: string;
   seasonalNote: string;
+  localIntro?: string;
 }
 
 export interface ServiceLocationService {
@@ -36,7 +37,8 @@ export const slCities: ServiceLocationCity[] = [
     housingTypes: "single-family homes, townhouses, condominiums, and apartment complexes",
     challenges: "seasonal pollen from extensive tree coverage, construction dust from ongoing downtown redevelopment, and high foot traffic in multi-family residences",
     lifestyle: "Many residents commute to DC or work in the Rockville biotech corridor, leaving little time for thorough housekeeping",
-    seasonalNote: "Spring pollen from Rockville's abundant oak and maple trees demands extra dusting and air quality attention"
+    seasonalNote: "Spring pollen from Rockville's abundant oak and maple trees demands extra dusting and air quality attention",
+    localIntro: "Rockville is one of Montgomery County's most diverse communities, with modern townhouses in King Farm and Fallsgrove alongside older single-family homes in Twinbrook and Woodley Gardens. Many properties built in the 1960s–1980s feature carpeted bedrooms, tile bathrooms, and finished basements that require extra attention during [SERVICE_NAME]. Rockville's busy families — many commuting to NIH, Johns Hopkins, or downtown DC — consistently choose recurring cleaning plans to maintain their homes without the time investment. We cover all Rockville ZIP codes (20850–20853) and are typically available within 3–5 business days."
   },
   {
     name: "Bethesda",
@@ -49,7 +51,8 @@ export const slCities: ServiceLocationCity[] = [
     housingTypes: "stately colonials, Tudor-style residences, contemporary new builds, and downtown high-rise condominiums",
     challenges: "maintaining premium surfaces like marble and hardwood, managing large floor plans, and keeping entertaining spaces spotless for frequent social gatherings",
     lifestyle: "Bethesda homeowners often host guests and expect meticulous presentation. Many families rely on professional cleaning to maintain their high standards",
-    seasonalNote: "Fall leaf debris tracked indoors from Bethesda's tree-lined streets requires consistent floor care throughout autumn"
+    seasonalNote: "Fall leaf debris tracked indoors from Bethesda's tree-lined streets requires consistent floor care throughout autumn",
+    localIntro: "Bethesda homes range from pre-war Cape Cods near Woodmont Triangle to modern luxury condos along Wisconsin Avenue and sprawling estates in Kenwood and Edgemoor. These varied property types — many featuring original hardwood floors, crown molding, and high-end finishes — require experienced, detail-oriented cleaning teams. Our crews are familiar with the seasonal pollen that accumulates along Crescent Trail corridors and the fine dust that settles in older Tudor-style homes near Battery Park. We serve ZIP codes 20814, 20815, and 20816 with same-week availability and use only EPA Safer Choice certified, plant-based products — the standard Bethesda families expect."
   },
   {
     name: "Silver Spring",
@@ -62,7 +65,8 @@ export const slCities: ServiceLocationCity[] = [
     housingTypes: "mid-century ranchers, modern apartment complexes, renovated Victorians, and bungalows",
     challenges: "urban dust and particulates from busy Georgia Avenue corridor, aging HVAC systems in older homes, and compact living spaces requiring efficient cleaning approaches",
     lifestyle: "The diverse population includes young professionals, growing families, and long-time residents who value both affordability and quality of life",
-    seasonalNote: "Winter salt and grit tracked from Silver Spring sidewalks demands regular hard floor maintenance during colder months"
+    seasonalNote: "Winter salt and grit tracked from Silver Spring sidewalks demands regular hard floor maintenance during colder months",
+    localIntro: "Silver Spring is one of the DMV's most culturally diverse communities, with a mix of mid-century single-family homes, apartment buildings near the transit center, and newer condos along Colesville Road. Many Silver Spring homes from the 1950s–70s have original hardwood floors and older HVAC systems that circulate dust more than modern builds — making [SERVICE_NAME] especially important for indoor air quality. We serve all Silver Spring ZIP codes (20901–20910), including the Four Corners area, Wheaton border neighborhoods, and downtown apartments, with licensed, background-checked teams and non-toxic products safe for children and pets."
   },
   {
     name: "Gaithersburg",
@@ -75,7 +79,8 @@ export const slCities: ServiceLocationCity[] = [
     housingTypes: "planned community homes, traditional single-family residences, townhouses, and garden-style apartments",
     challenges: "pollen accumulation in neighborhoods bordered by parkland, pet dander in family-oriented communities, and dust from nearby construction growth areas",
     lifestyle: "Gaithersburg families juggle work commutes, children's activities, and weekend errands, making professional cleaning a practical necessity",
-    seasonalNote: "Gaithersburg's proximity to Seneca Creek State Park means spring and summer bring heavy pollen loads into homes near wooded areas"
+    seasonalNote: "Gaithersburg's proximity to Seneca Creek State Park means spring and summer bring heavy pollen loads into homes near wooded areas",
+    localIntro: "Gaithersburg has grown rapidly with master-planned communities like Kentlands, Lakelands, Crown Farm, and Rio bringing thousands of newer homes, townhouses, and mixed-use condos to the area. These modern properties often feature open floor plans, quartz countertops, and light-colored flooring that shows dust and footprints quickly — making [SERVICE_NAME] a regular priority for Gaithersburg families. With many households including young children and pets, our plant-based, fragrance-free products are a natural fit. We serve ZIP codes 20877, 20878, and 20879 and can usually schedule within a week."
   },
   {
     name: "Germantown",
@@ -88,7 +93,8 @@ export const slCities: ServiceLocationCity[] = [
     housingTypes: "newer construction single-family homes, townhouse communities, condominiums, and apartment complexes",
     challenges: "construction residue in newer developments, dust buildup from rapid area growth, and allergen management in energy-efficient sealed homes",
     lifestyle: "Germantown residents appreciate value and convenience. The community's growth has brought new amenities but also busier schedules that benefit from professional cleaning help",
-    seasonalNote: "Summer humidity in Germantown can lead to moisture-related cleaning needs, especially in basements and lower-level living spaces"
+    seasonalNote: "Summer humidity in Germantown can lead to moisture-related cleaning needs, especially in basements and lower-level living spaces",
+    localIntro: "Germantown is one of Montgomery County's largest planned communities, with a high density of HOA-managed townhomes, condos, and single-family homes across neighborhoods like Churchill Village, Clopper Mill, Milestone, and Gunners Lake. [SERVICE_NAME] in Germantown often involves consistent floor plans but widely varying cleanliness baselines — especially in rental properties and homes preparing for HOA inspections. Many Germantown residents also schedule recurring cleanings to stay ahead of strict community standards. We serve ZIP codes 20874, 20875, and 20876 with same-week availability for most locations."
   },
   {
     name: "Frederick",
@@ -348,7 +354,8 @@ export const slCities: ServiceLocationCity[] = [
     housingTypes: "Victorian and Federal-style rowhouses, English basement apartments, carriage houses converted to residences, and small apartment buildings",
     challenges: "aging rowhouse systems with plaster walls and older fixtures, narrow street access for service vehicles, and maintaining period detail while achieving a deep clean",
     lifestyle: "Capitol Hill residents include congressional staffers, lawyers, long-time DC families, and young professionals who take pride in their historic homes and appreciate meticulous care",
-    seasonalNote: "The neighborhood's dense tree canopy drops significant pollen in spring and leaves in fall that find their way into every corner of these open-plan rowhouses"
+    seasonalNote: "The neighborhood's dense tree canopy drops significant pollen in spring and leaves in fall that find their way into every corner of these open-plan rowhouses",
+    localIntro: "Capitol Hill's iconic 19th-century rowhouses — brick Federals and Victorians near Eastern Market, Barracks Row, and Lincoln Park — present unique [SERVICE_NAME] challenges. Original hardwood floors, plaster walls, historic trim, and narrow staircases require gentle, non-abrasive techniques that preserve architectural integrity. Many Capitol Hill residents have strict condo association or historic preservation standards that limit which products can be used inside their homes — which is exactly why our EPA Safer Choice certified, plant-based products are the right fit for this neighborhood. We serve all Capitol Hill zip codes and quadrants with experienced, background-checked teams."
   },
   {
     name: "Georgetown",
@@ -361,7 +368,8 @@ export const slCities: ServiceLocationCity[] = [
     housingTypes: "Federal and Georgian-period rowhouses, grand detached mansions, carriage houses, luxury condos, and historic university properties",
     challenges: "preserving historic surfaces like original hardwood floors and plaster moldings, working within secure embassy residences, and managing dust from cobblestone streets and construction",
     lifestyle: "Georgetown residents include diplomats, university affiliates, executives, and established DC families who expect white-glove service and premium products safe for fine furnishings",
-    seasonalNote: "Georgetown's proximity to the Potomac means added humidity in summer months, and its signature cobblestone streets track in fine grit year-round"
+    seasonalNote: "Georgetown's proximity to the Potomac means added humidity in summer months, and its signature cobblestone streets track in fine grit year-round",
+    localIntro: "Georgetown's Federal and Victorian rowhouses, brick townhomes, and converted carriage houses are among DC's most architecturally significant — and most demanding — properties to clean. Many feature original 18th and 19th century woodwork, exposed brick, narrow staircases, and premium finishes that require [SERVICE_NAME] techniques tailored to historic materials. Georgetown residents tend to have high expectations and a strong preference for fragrance-free, non-toxic products — which aligns directly with our plant-based cleaning methodology. We serve Georgetown, Georgetown Heights, Foxhall, and Burleith with fully licensed and insured teams."
   },
   {
     name: "Dupont Circle",
@@ -400,7 +408,8 @@ export const slCities: ServiceLocationCity[] = [
     housingTypes: "high-rise condominiums, contemporary townhomes, Colonial-style single-family homes, garden apartments, and mixed-use residential buildings",
     challenges: "construction dust from constant development along the Orange/Silver Line corridor, managing pet dander in pet-friendly buildings, and maintaining cleanliness in compact urban units",
     lifestyle: "Arlington residents are predominantly young professionals, government contractors, and tech workers with high incomes and little time. Recurring cleaning services that can be booked online are heavily preferred",
-    seasonalNote: "Proximity to the Potomac and Rock Creek Park means elevated spring pollen counts and fall allergens that accumulate quickly in high-traffic condos"
+    seasonalNote: "Proximity to the Potomac and Rock Creek Park means elevated spring pollen counts and fall allergens that accumulate quickly in high-traffic condos",
+    localIntro: "Arlington is one of the DMV's densest urban communities, with a high concentration of apartment buildings, condos, and older townhomes clustered around Metro corridors in Clarendon, Rosslyn, Ballston, and Pentagon City. The high turnover rate — driven by young professionals, military families, and government contractors — makes [SERVICE_NAME] one of our most requested services in Arlington. Many buildings here have elevators, parking restrictions, and HOA rules that our crews are experienced navigating. We serve all Arlington ZIP codes from 22201 to 22206 and can often accommodate same-week or next-day booking."
   },
   {
     name: "Fairfax",
@@ -413,7 +422,8 @@ export const slCities: ServiceLocationCity[] = [
     housingTypes: "Colonial and Cape Cod single-family homes, brick ramblers, townhome communities, apartment complexes near GMU, and modern infill condominiums",
     challenges: "heavy pollen from mature suburban landscaping, pet hair in family-oriented homes, and managing post-renovation dust in homes undergoing kitchen and bathroom updates",
     lifestyle: "Fairfax residents include GMU faculty and staff, federal contractors, military families, and established Northern Virginia families who value reliable, thorough cleaning services",
-    seasonalNote: "The city's mature tree canopy generates significant oak and cherry pollen in spring, with ragweed allergies peaking in late summer through fall"
+    seasonalNote: "The city's mature tree canopy generates significant oak and cherry pollen in spring, with ragweed allergies peaking in late summer through fall",
+    localIntro: "Fairfax is home to a mix of established suburban neighborhoods and newer developments, with many properties built in the 1980s and 1990s featuring multiple bedrooms, finished basements, and large kitchens. Fairfax's family-oriented character means homes here see heavy daily use — kids, pets, and packed schedules make [SERVICE_NAME] one of the most popular services we provide in the area. We cover Fairfax City and surrounding communities including Oakton, Burke, and Fair Lakes, across ZIP codes 22030, 22031, 22032, and 22033, with licensed and insured teams using 100% plant-based products."
   },
   {
     name: "McLean",
@@ -426,7 +436,8 @@ export const slCities: ServiceLocationCity[] = [
     housingTypes: "grand estate homes, luxury new-construction singles, large Colonial and Tudor detached homes, upscale townhome communities, and luxury high-rise condominiums at Tysons",
     challenges: "maintaining large square footage properties with premium finishes, coordinating with household staff and property managers, and using only approved products safe for luxury surfaces",
     lifestyle: "McLean residents demand white-glove service, premium eco-certified products, and complete discretion. Many maintain multiple properties and require highly customized cleaning plans",
-    seasonalNote: "McLean's expansive private yards and wooded lots mean pollen season is intense in spring, with leaf management a persistent concern from October through December"
+    seasonalNote: "McLean's expansive private yards and wooded lots mean pollen season is intense in spring, with leaf management a persistent concern from October through December",
+    localIntro: "McLean is home to some of Northern Virginia's most prestigious properties — from executive estates near Langley and the Potomac River to luxury condos in the Tysons Corner corridor. Many McLean homes feature custom finishes, imported stone, premium appliances, and architectural details that require [SERVICE_NAME] techniques tailored to high-end materials. Our crews are specifically trained to handle delicate surfaces without the abrasive chemicals that damage premium finishes over time. We serve ZIP codes 22101 and 22102, including properties near Great Falls, Chain Bridge Road, and the Beltway corridor."
   },
   {
     name: "Alexandria",
