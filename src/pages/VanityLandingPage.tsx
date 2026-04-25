@@ -18,7 +18,7 @@ import NotFound from "./NotFound";
 
 const VanityLandingPage = () => {
   const location = useLocation();
-  const slug = location.pathname.replace(/^\//, "");
+  const slug = location.pathname.replace(/^\//, "").replace(/\/$/, "");
   const config = getVanityPageBySlug(slug);
 
   if (!config) return <NotFound />;

@@ -226,6 +226,82 @@
   force = true
   query = {blogcategory = ":cat"}
 
+# ── Vanity landing page trailing-slash normalization ─────────────────────────
+[[redirects]]
+  from = "/house-cleaning-wheaton-md/"
+  to = "/house-cleaning-wheaton-md"
+  status = 301
+
+[[redirects]]
+  from = "/eco-cleaning-bethesda-md/"
+  to = "/eco-cleaning-bethesda-md"
+  status = 301
+
+[[redirects]]
+  from = "/deep-cleaning-germantown-md/"
+  to = "/deep-cleaning-germantown-md"
+  status = 301
+
+[[redirects]]
+  from = "/house-cleaning-frederick-md/"
+  to = "/house-cleaning-frederick-md"
+  status = 301
+
+[[redirects]]
+  from = "/move-out-cleaning-rockville-md/"
+  to = "/move-out-cleaning-rockville-md"
+  status = 301
+
+[[redirects]]
+  from = "/house-cleaning-silver-spring-md/"
+  to = "/house-cleaning-silver-spring-md"
+  status = 301
+
+[[redirects]]
+  from = "/eco-cleaning-potomac-md/"
+  to = "/eco-cleaning-potomac-md"
+  status = 301
+
+[[redirects]]
+  from = "/deep-cleaning-gaithersburg-md/"
+  to = "/deep-cleaning-gaithersburg-md"
+  status = 301
+
+[[redirects]]
+  from = "/recurring-cleaning-columbia-md/"
+  to = "/recurring-cleaning-columbia-md"
+  status = 301
+
+[[redirects]]
+  from = "/house-cleaning-ellicott-city-md/"
+  to = "/house-cleaning-ellicott-city-md"
+  status = 301
+
+[[redirects]]
+  from = "/apartment-cleaning-takoma-park-md/"
+  to = "/apartment-cleaning-takoma-park-md"
+  status = 301
+
+[[redirects]]
+  from = "/post-construction-cleaning-clarksburg-md/"
+  to = "/post-construction-cleaning-clarksburg-md"
+  status = 301
+
+[[redirects]]
+  from = "/house-cleaning-damascus-md/"
+  to = "/house-cleaning-damascus-md"
+  status = 301
+
+[[redirects]]
+  from = "/deep-cleaning-kensington-md/"
+  to = "/deep-cleaning-kensington-md"
+  status = 301
+
+[[redirects]]
+  from = "/eco-cleaning-chevy-chase-md/"
+  to = "/eco-cleaning-chevy-chase-md"
+  status = 301
+
 # ── Serve prerendered pages at canonical non-trailing-slash URLs (200 rewrite)─
 # Netlify would otherwise 301 /blog/slug → /blog/slug/ because files are in
 # dist/blog/slug/index.html. These rewrites intercept before that happens,
