@@ -204,12 +204,14 @@
   from = "/"
   to = "/blog"
   status = 301
+  force = true
   query = {blog = "y"}
 
 [[redirects]]
   from = "/"
   to = "/blog"
   status = 301
+  force = true
   query = {blogcategory = ":cat"}
 
 # ── SPA fallback (must be last) ───────────────────────────────────────────────
