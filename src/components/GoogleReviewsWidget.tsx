@@ -1,6 +1,6 @@
 // Replace ELFSIGHT_APP_ID with your real ID from elfsight.com
 // Example: "elfsight-app-a1b2c3d4-e5f6-7890-abcd-ef1234567890"
-const ELFSIGHT_APP_ID = "elfsight-app-PLACEHOLDER";
+const ELFSIGHT_APP_ID = "elfsight-app-0f09526e-a50e-47c3-916a-da919ce5e531";
 
 const GoogleReviewsWidget = () => (
   <section className="py-16 md:py-20">
