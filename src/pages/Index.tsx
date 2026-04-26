@@ -26,7 +26,6 @@ import EcoCallout from "@/components/home/EcoCallout";
 import ScrollReveal from "@/components/ScrollReveal";
 import GreenShield5Step from "@/components/GreenShield5Step";
 import TrustBadges from "@/components/TrustBadges";
-import GoogleReviewsWidget from "@/components/GoogleReviewsWidget";
 
 const homeFaqs = [
   { q: "What areas do you serve?", a: "We serve communities throughout Maryland (Montgomery, Frederick, Howard, and Prince George's Counties), Washington DC, and Northern Virginia (Arlington, Fairfax, McLean, Alexandria, and more)." },
@@ -348,11 +347,6 @@ const Index = () => {
       {/* ══════════════ TESTIMONIALS CAROUSEL ══════════════ */}
       <ScrollReveal>
         <TestimonialsCarousel />
-      </ScrollReveal>
-
-      {/* ══════════════ GOOGLE REVIEWS WIDGET ══════════════ */}
-      <ScrollReveal>
-        <GoogleReviewsWidget />
       </ScrollReveal>
 
       {/* ══════════════ LOCAL CLEANING PAGES ══════════════ */}
