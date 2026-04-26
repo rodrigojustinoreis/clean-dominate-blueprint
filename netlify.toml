@@ -303,28 +303,31 @@
   status = 301
 
 # ── Serve prerendered pages at canonical non-trailing-slash URLs (200 rewrite)─
-# Netlify would otherwise 301 /blog/slug → /blog/slug/ because files are in
-# dist/blog/slug/index.html. These rewrites intercept before that happens,
-# serving the same index.html content at the clean canonical URL.
+# force = true is required to override Netlify's built-in Pretty URLs behavior
+# which sends a 301 to the trailing-slash version before redirect rules run.
 [[redirects]]
   from = "/blog/:slug"
   to = "/blog/:slug/"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/locations/:city"
   to = "/locations/:city/"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/locations/:city/:service"
   to = "/locations/:city/:service/"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/services/:slug"
   to = "/services/:slug/"
   status = 200
+  force = true
 
 # ── SPA fallback (must be last) ───────────────────────────────────────────────
 [[redirects]]
