@@ -167,6 +167,25 @@ const ServicePage = () => {
             </div>
             <Card><CardContent className="p-6 md:p-8"><QuoteForm /></CardContent></Card>
           </div>
+
+          {/* Bathroom cleaning Short — shown only on house-cleaning page */}
+          {slug === "house-cleaning" && (
+            <div className="mt-10">
+              <p className="text-center text-sm font-semibold text-muted-foreground mb-3">
+                See how we clean a bathroom, step by step 👇
+              </p>
+              <div className="mx-auto w-full max-w-[320px] rounded-2xl overflow-hidden shadow-lg border border-border" style={{ aspectRatio: "9/16" }}>
+                <iframe
+                  src="https://www.youtube.com/embed/Lg9BasRK5FQ"
+                  title="Step by step bathroom cleaning — Capital Clean Care"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          )}
         </div>
       </section>
     </Layout>
