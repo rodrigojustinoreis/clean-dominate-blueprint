@@ -516,27 +516,6 @@ const Index = () => {
                   <p className="text-xs text-muted-foreground">Mon–Sat 8am–6pm. We also respond to texts!</p>
                 </div>
 
-                {/* Video testimonial */}
-                <div className="rounded-xl overflow-hidden border border-border shadow-sm">
-                  <div className="bg-secondary px-4 py-2.5 border-b border-border flex items-center gap-2">
-                    <div className="flex gap-0.5">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="h-3 w-3 text-yellow-400 fill-yellow-400" />
-                      ))}
-                    </div>
-                    <p className="text-xs font-semibold text-foreground">Real Client Review</p>
-                  </div>
-                  <div className="aspect-video">
-                    <iframe
-                      src="https://www.youtube.com/embed/xI602FI_iOU"
-                      title="Capital Clean Care client video testimonial"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      className="w-full h-full"
-                      loading="lazy"
-                    />
-                  </div>
-                </div>
               </div>
 
               {/* Form column */}
@@ -546,6 +525,24 @@ const Index = () => {
                     <QuoteForm />
                   </CardContent>
                 </Card>
+              </div>
+            </div>
+
+            {/* Video testimonial below form */}
+            <div className="mt-10 max-w-3xl mx-auto">
+              <p className="text-center text-sm font-semibold text-muted-foreground mb-4 flex items-center justify-center gap-2">
+                <span className="flex gap-0.5">{[...Array(5)].map((_, i) => <Star key={i} className="h-3.5 w-3.5 text-yellow-400 fill-yellow-400" />)}</span>
+                Hear directly from one of our clients
+              </p>
+              <div className="rounded-2xl overflow-hidden shadow-lg border border-border aspect-video">
+                <iframe
+                  src="https://www.youtube.com/embed/xI602FI_iOU"
+                  title="Capital Clean Care client video testimonial"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                  loading="lazy"
+                />
               </div>
             </div>
           </div>
