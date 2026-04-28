@@ -46,7 +46,7 @@ const QuoteForm = ({ submitLabel = "Get My Free Quote →", defaultService = "" 
     setSubmitting(true);
 
     try {
-      // Save to database (non-blocking — email is the critical path)
+      // Save to database (non-blocking)
       supabase.from("quote_requests").insert({
         name: formData.name,
         phone: formData.phone,
@@ -62,30 +62,29 @@ const QuoteForm = ({ submitLabel = "Get My Free Quote →", defaultService = "" 
         email_consent: formData.emailConsent,
       }).then(({ error }) => { if (error) console.error("DB error:", error); });
 
-      // Send email notification via FormSubmit
-      const emailRes = await fetch("https://formsubmit.co/ajax/capitalcleancare@gmail.com", {
+      // Submit via Netlify Forms
+      const encode = (data: Record<string, string>) =>
+        Object.keys(data).map(k => `${encodeURIComponent(k)}=${encodeURIComponent(data[k])}`).join("&");
+
+      const netlifyRes = await fetch("/", {
         method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({
-          _subject: `🏠 New Quote Request from ${formData.name} — ${formData.zip}`,
-          Name: formData.name,
-          Phone: formData.phone,
-          Email: formData.email,
-          "Zip Code": formData.zip,
-          Service: formData.service,
-          Bedrooms: formData.bedrooms || "N/A",
-          Bathrooms: formData.bathrooms || "N/A",
-          Frequency: formData.frequency || "N/A",
-          "Preferred Date": formData.date || "N/A",
-          Message: formData.message || "N/A",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({
+          "form-name": "quote",
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          zip: formData.zip,
+          service: formData.service,
+          bedrooms: formData.bedrooms || "",
+          bathrooms: formData.bathrooms || "",
+          frequency: formData.frequency || "",
+          preferred_date: formData.date || "",
+          message: formData.message || "",
         }),
       });
 
-      if (!emailRes.ok) {
-        const errData = await emailRes.json().catch(() => ({}));
-        console.error("FormSubmit error:", errData);
-        throw new Error("Failed to send email notification");
-      }
+      if (!netlifyRes.ok) throw new Error("Failed to submit form");
 
       trackQuoteFormSubmit(formData.service);
       if (typeof gtag !== "undefined") {

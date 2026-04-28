@@ -49,6 +49,20 @@
   </head>
 
   <body>
+    <!-- Hidden form for Netlify Forms detection at build time -->
+    <form name="quote" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="tel" name="phone" />
+      <input type="email" name="email" />
+      <input type="text" name="zip" />
+      <input type="text" name="service" />
+      <input type="text" name="bedrooms" />
+      <input type="text" name="bathrooms" />
+      <input type="text" name="frequency" />
+      <input type="text" name="preferred_date" />
+      <textarea name="message"></textarea>
+    </form>
+
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
