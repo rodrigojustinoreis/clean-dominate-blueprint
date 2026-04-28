@@ -46,8 +46,8 @@ const QuoteForm = ({ submitLabel = "Get My Free Quote →", defaultService = "" 
     setSubmitting(true);
 
     try {
-      // Save to database
-      const { error: dbError } = await supabase.from("quote_requests").insert({
+      // Save to database (non-blocking — email is the critical path)
+      supabase.from("quote_requests").insert({
         name: formData.name,
         phone: formData.phone,
         email: formData.email,
@@ -60,31 +60,32 @@ const QuoteForm = ({ submitLabel = "Get My Free Quote →", defaultService = "" 
         message: formData.message || null,
         sms_consent: formData.smsConsent,
         email_consent: formData.emailConsent,
+      }).then(({ error }) => { if (error) console.error("DB error:", error); });
+
+      // Send email notification via FormSubmit
+      const emailRes = await fetch("https://formsubmit.co/ajax/capitalcleancare@gmail.com", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          _subject: `🏠 New Quote Request from ${formData.name} — ${formData.zip}`,
+          Name: formData.name,
+          Phone: formData.phone,
+          Email: formData.email,
+          "Zip Code": formData.zip,
+          Service: formData.service,
+          Bedrooms: formData.bedrooms || "N/A",
+          Bathrooms: formData.bathrooms || "N/A",
+          Frequency: formData.frequency || "N/A",
+          "Preferred Date": formData.date || "N/A",
+          Message: formData.message || "N/A",
+        }),
       });
 
-      if (dbError) {
-        console.error("DB error:", dbError);
-        throw new Error("Failed to save request");
+      if (!emailRes.ok) {
+        const errData = await emailRes.json().catch(() => ({}));
+        console.error("FormSubmit error:", errData);
+        throw new Error("Failed to send email notification");
       }
-
-      // Send notifications via Supabase Edge Function
-      // — business email, client confirmation email, and client SMS (if consent given)
-      await supabase.functions.invoke("send-quote", {
-        body: {
-          name: formData.name,
-          phone: formData.phone,
-          email: formData.email,
-          zip: formData.zip,
-          service: formData.service,
-          bedrooms: formData.bedrooms || null,
-          bathrooms: formData.bathrooms || null,
-          frequency: formData.frequency || null,
-          date: formData.date || null,
-          message: formData.message || null,
-          smsConsent: formData.smsConsent,
-          emailConsent: formData.emailConsent,
-        },
-      });
 
       trackQuoteFormSubmit(formData.service);
       if (typeof gtag !== "undefined") {
