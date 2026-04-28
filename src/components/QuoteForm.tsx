@@ -62,11 +62,11 @@ const QuoteForm = ({ submitLabel = "Get My Free Quote →", defaultService = "" 
         email_consent: formData.emailConsent,
       }).then(({ error }) => { if (error) console.error("DB error:", error); });
 
-      // Submit via Netlify Forms
+      // Submit via Netlify Forms (backup record)
       const encode = (data: Record<string, string>) =>
         Object.keys(data).map(k => `${encodeURIComponent(k)}=${encodeURIComponent(data[k])}`).join("&");
 
-      const netlifyRes = await fetch("/", {
+      fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: encode({
@@ -82,9 +82,27 @@ const QuoteForm = ({ submitLabel = "Get My Free Quote →", defaultService = "" 
           preferred_date: formData.date || "",
           message: formData.message || "",
         }),
+      }).catch(console.error);
+
+      // Send formatted HTML email via Netlify Function
+      const emailRes = await fetch("/api/send-quote-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          zip: formData.zip,
+          service: formData.service,
+          bedrooms: formData.bedrooms || null,
+          bathrooms: formData.bathrooms || null,
+          frequency: formData.frequency || null,
+          preferred_date: formData.date || null,
+          message: formData.message || null,
+        }),
       });
 
-      if (!netlifyRes.ok) throw new Error("Failed to submit form");
+      if (!emailRes.ok) throw new Error("Failed to send email");
 
       trackQuoteFormSubmit(formData.service);
       if (typeof gtag !== "undefined") {
