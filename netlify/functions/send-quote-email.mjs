@@ -163,22 +163,14 @@ export default async (req) => {
 </body></html>`;
 
   try {
-    // Send both emails in parallel
-    await Promise.all([
-      sendEmail(RESEND_API_KEY, {
-        from: "Capital Clean Care <onboarding@resend.dev>",
-        to: ["capitalcleancare@gmail.com"],
-        reply_to: email,
-        subject: `🏠 New Quote — ${name} · ${serviceName} · ${zip}`,
-        html: businessHtml,
-      }),
-      sendEmail(RESEND_API_KEY, {
-        from: "Capital Clean Care <onboarding@resend.dev>",
-        to: [email],
-        subject: `✅ We got your request, ${firstName}! Here's what happens next`,
-        html: clientHtml,
-      }),
-    ]);
+    // Send business notification only (client email requires verified domain)
+    await sendEmail(RESEND_API_KEY, {
+      from: "Capital Clean Care <onboarding@resend.dev>",
+      to: ["capitalcleancare@gmail.com"],
+      reply_to: email,
+      subject: `🏠 New Quote — ${name} · ${serviceName} · ${zip}`,
+      html: businessHtml,
+    });
 
     return new Response(JSON.stringify({ success: true }), {
       status: 200,
