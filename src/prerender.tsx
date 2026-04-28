@@ -30,6 +30,8 @@ function getAllRoutes(): string[] {
     "/blog/how-to-remove-tough-stains-from-mattresses-eco-friendly-april-2026",
     "/blog/how-to-clean-bathroom-professionally-maryland-spring-2026",
     "/blog/deep-cleaning-tips-maryland-homes-spring-prep",
+    "/blog/how-to-deep-clean-a-stove-maryland",
+    "/blog/how-to-clean-a-bathroom-step-by-step",
     "/blog/house-cleaning-bethesda-md",
     "/blog/cleaning-service-arlington-va",
     "/blog/deep-cleaning-rockville-md",
