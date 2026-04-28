@@ -32,6 +32,7 @@ function getAllRoutes(): string[] {
     "/blog/deep-cleaning-tips-maryland-homes-spring-prep",
     "/blog/how-to-deep-clean-a-stove-maryland",
     "/blog/how-to-clean-a-bathroom-step-by-step",
+    "/blog/mrs-meyers-clean-day-review-how-to-use",
     "/blog/house-cleaning-bethesda-md",
     "/blog/cleaning-service-arlington-va",
     "/blog/deep-cleaning-rockville-md",

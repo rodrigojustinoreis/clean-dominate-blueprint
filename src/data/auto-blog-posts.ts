@@ -155,4 +155,136 @@ export const autoBlogPosts: AutoBlogPost[] = [
 
 <p><strong>Want this result in your home without the work?</strong> <a href="/contact">Request a free quote</a> or call <strong>(240) 704-2551</strong>. Capital Clean Care serves Maryland, Washington DC, and Northern Virginia with eco-friendly, professional cleaning you can trust.</p>`,
   },
+  {
+    slug: "mrs-meyers-clean-day-review-how-to-use",
+    title: "Mrs. Meyer's Clean Day: The Eco-Friendly Cleaning Line We Trust",
+    excerpt: "Mrs. Meyer's Clean Day makes cleaning smell like a garden and work like a pro. Here's everything you need to know about the products, scents, ingredients, and how to use them at home.",
+    date: "2026-04-28",
+    readTime: "6 min read",
+    category: "Cleaning Tips",
+    coverImage: "https://images.pexels.com/photos/4108715/pexels-photo-4108715.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
+    content: `<p>If you've ever walked down the cleaning aisle and grabbed a bottle just because it smelled like lavender or lemon verbena, there's a good chance it was <strong>Mrs. Meyer's Clean Day</strong>. But this brand is more than just a pretty scent — it's one of the most trusted plant-based cleaning lines in the United States, and one that the team at <strong>Capital Clean Care</strong> has tested firsthand in homes across Maryland, DC, and Virginia.</p>
+
+<p>Here's everything you need to know about Mrs. Meyer's Clean Day — the story behind it, the products, the ingredients, and exactly how to use each one.</p>
+
+<h2>The Story Behind the Brand</h2>
+
+<p>Mrs. Meyer's Clean Day is inspired by a real person: <strong>Thelma A. Meyer</strong>, an avid gardener and mother of nine from the Midwest. The brand was built around her philosophy that a clean home should smell like a garden in full bloom — not a chemistry lab. Every product carries that garden-inspired DNA, from the packaging to the fragrances.</p>
+
+<p>Today the brand is part of SC Johnson and has earned recognition from <strong>Better Homes & Gardens 2026 Clean House Awards</strong>, making it one of the most awarded eco-friendly cleaning lines on the market.</p>
+
+<h2>What Makes Mrs. Meyer's Different</h2>
+
+<p>In a market full of "green" claims that don't hold up, Mrs. Meyer's stands out for transparency. Here's what's actually in (and not in) their products:</p>
+
+<h3>What They Use</h3>
+<ul>
+  <li><strong>Plant-derived ingredients</strong> — sourced from coconut, corn, soy, and olive whenever possible</li>
+  <li><strong>Essential oils</strong> — real lavender, lemon, basil, and other botanical extracts for fragrance</li>
+  <li><strong>Biodegradable formulas</strong> — all drain-safe products meet and exceed European OECD biodegradability standards</li>
+  <li><strong>USDA Certified Biobased</strong> — verified percentage of bio-based content in formulas</li>
+  <li><strong>Leaping Bunny Certified</strong> — cruelty-free, never tested on animals</li>
+</ul>
+
+<h3>What They Leave Out</h3>
+<ul>
+  <li>No ammonia</li>
+  <li>No chlorine bleach</li>
+  <li>No parabens or phthalates</li>
+  <li>No formaldehyde</li>
+  <li>No artificial colorants</li>
+  <li>No phosphates</li>
+  <li>No petroleum distillates</li>
+</ul>
+
+<p>This makes Mrs. Meyer's a solid choice for homes with children, pets, or anyone with sensitivities to harsh chemical fragrances and irritants.</p>
+
+<h2>The Full Product Line</h2>
+
+<p>Mrs. Meyer's has expanded far beyond dish soap. Here's a breakdown of their core product categories:</p>
+
+<h3>🍽️ Dish Soap</h3>
+<p>One of their bestsellers. Concentrated formula means a little goes a long way. Available in Lavender, Lemon Verbena, Basil, Honeysuckle, and more. <strong>How to use:</strong> Add a small squirt to warm water or directly to a wet sponge. Scrape food off dishes first, wash glassware before greasy pans, and rinse with warm water.</p>
+
+<h3>🧴 Hand Soap</h3>
+<p>Available in pump and foaming versions. The foaming formula uses less product per wash while still providing effective cleaning. <strong>How to use:</strong> Pump once onto wet hands, lather for 20 seconds, rinse. The essential oils leave hands smelling clean without drying them out.</p>
+
+<h3>🧺 Laundry Detergent</h3>
+<p>Concentrated liquid and powder formulas work in standard and HE washing machines. <strong>How to use:</strong> Use cold water for darks and brights to protect color. Hot water for whites and heavily soiled items. One cap of liquid detergent is enough for a full load — resist the urge to add more.</p>
+
+<h3>🏠 Multi-Surface Everyday Cleaner</h3>
+<p>A ready-to-use spray that tackles countertops, tile, floors, stovetops, and walls. No rinsing required on most surfaces. <strong>How to use:</strong> Spray directly onto the surface, wipe with a clean microfiber cloth. For stuck-on residue, let it sit for 60 seconds before wiping. Safe on sealed stone, laminate, and tile.</p>
+
+<h3>🚿 Bathroom Cleaner</h3>
+<p>Formulated specifically for tubs, sinks, and tile. Cuts through soap scum and hard water deposits. <strong>How to use:</strong> Spray on the surface, let it dwell for 1–2 minutes, then scrub with a non-scratch pad and rinse thoroughly. For grout lines, apply and use a stiff brush.</p>
+
+<h3>🪟 Glass & Surface Cleaner</h3>
+<p>Streak-free formula for mirrors, windows, and glass surfaces. <strong>How to use:</strong> Spray lightly and wipe with a microfiber cloth in an S-pattern from top to bottom. Avoid circular motions — they leave swirl marks on glass.</p>
+
+<h3>🕯️ Room Sprays & Candles</h3>
+<p>Their newer home fragrance line brings the same garden-inspired scents into the air. In 2026, they also launched a premium scented oil diffuser for continuous fragrance throughout the home.</p>
+
+<h2>Best Scents — and Which Room to Use Them In</h2>
+
+<table style="width:100%;border-collapse:collapse;font-size:14px;margin:1.5rem 0;">
+  <thead>
+    <tr style="background:#1B3A2D;color:#fff;">
+      <th style="padding:10px 14px;text-align:left;">Scent</th>
+      <th style="padding:10px 14px;text-align:left;">Best Room</th>
+      <th style="padding:10px 14px;text-align:left;">Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style="border-bottom:1px solid #e5e7eb;">
+      <td style="padding:10px 14px;font-weight:600;">Lavender</td>
+      <td style="padding:10px 14px;">Bedroom, Bathroom</td>
+      <td style="padding:10px 14px;">Calming, classic — most popular scent</td>
+    </tr>
+    <tr style="background:#f9fafb;border-bottom:1px solid #e5e7eb;">
+      <td style="padding:10px 14px;font-weight:600;">Lemon Verbena</td>
+      <td style="padding:10px 14px;">Kitchen</td>
+      <td style="padding:10px 14px;">Fresh and citrusy — great for cutting grease smell</td>
+    </tr>
+    <tr style="border-bottom:1px solid #e5e7eb;">
+      <td style="padding:10px 14px;font-weight:600;">Basil</td>
+      <td style="padding:10px 14px;">Kitchen, Living Room</td>
+      <td style="padding:10px 14px;">Herbal and clean — unique and long-lasting</td>
+    </tr>
+    <tr style="background:#f9fafb;border-bottom:1px solid #e5e7eb;">
+      <td style="padding:10px 14px;font-weight:600;">Honeysuckle</td>
+      <td style="padding:10px 14px;">Living Room, Hallways</td>
+      <td style="padding:10px 14px;">Light floral — great for open living areas</td>
+    </tr>
+    <tr style="border-bottom:1px solid #e5e7eb;">
+      <td style="padding:10px 14px;font-weight:600;">Iowa Pine</td>
+      <td style="padding:10px 14px;">Garage, Basement</td>
+      <td style="padding:10px 14px;">Fresh and woodsy — seasonal holiday scent</td>
+    </tr>
+    <tr style="background:#f9fafb;">
+      <td style="padding:10px 14px;font-weight:600;">Peony</td>
+      <td style="padding:10px 14px;">Bathroom, Bedroom</td>
+      <td style="padding:10px 14px;">Soft floral — subtle and elegant</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Is Mrs. Meyer's Worth It?</h2>
+
+<p>Mrs. Meyer's is priced slightly above conventional cleaners — a bottle of dish soap runs around $4–$5, and multi-surface cleaner around $5–$6. For most people, the premium is worth it because:</p>
+
+<ul>
+  <li>The concentrated formulas last longer than they appear to</li>
+  <li>The scents are genuine essential oils, not synthetic masking agents</li>
+  <li>The certifications (Leaping Bunny, USDA Biobased) are independently verified — not just marketing claims</li>
+  <li>Safe for homes with children, pets, and people with chemical sensitivities</li>
+</ul>
+
+<p>The one honest caveat: Mrs. Meyer's is not a heavy-duty disinfectant. For deep sanitization — especially in bathrooms after illness or in kitchens after raw meat — you'll want to pair it with a hydrogen peroxide spray or a certified disinfectant. For everyday cleaning, it performs beautifully.</p>
+
+<h2>How Capital Clean Care Uses Mrs. Meyer's</h2>
+
+<p>Our teams serving homes across <a href="/locations/silver-spring-md">Silver Spring</a>, <a href="/locations/bethesda-md">Bethesda</a>, <a href="/locations/rockville-md">Rockville</a>, and Northern Virginia regularly use plant-based products like Mrs. Meyer's for clients who want non-toxic cleaning in their homes. It's particularly popular with families with young children and pet owners who want effective cleaning without chemical residues on floors and surfaces their kids and animals touch every day.</p>
+
+<p>If you'd like a professional clean using eco-friendly, non-toxic products in your home, <a href="/contact">request a free quote</a> or call us at <strong>(240) 704-2551</strong>. We serve the entire DMV area and respond within 2 hours.</p>`,
+  },
 ];
