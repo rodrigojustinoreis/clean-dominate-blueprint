@@ -110,7 +110,6 @@ const cityWhyIntros: Record<string, string> = {
   "shaw-dc": "Shaw's creative professionals and historic rowhouse owners count on our detail-oriented team to maintain their beautiful homes and condos to the highest standard.",
   "columbia-heights-dc": "Columbia Heights' diverse community deserves a cleaning service that adapts to every property type — from Victorian rowhouses to modern condos — with consistent excellence.",
   "navy-yard-dc": "Navy Yard's young professionals appreciate coming home to a perfectly clean space — we handle the details so you can enjoy everything this dynamic neighborhood offers.",
-  "reston-va": "Reston's innovation-driven community appreciates our modern, eco-conscious approach — professional cleaning that aligns with the values of this forward-thinking planned community.",
   "vienna-va": "Vienna's family-oriented homeowners value quality and reliability above all — we deliver the consistent, detail-focused cleaning this beloved small-town community deserves.",
   "tysons-va": "Tysons' executives and global professionals trust us for premium cleaning services that match the luxury standard of this rapidly transforming urban destination.",
   "herndon-va": "Herndon's tech-focused community values efficiency and reliability — our professional teams deliver consistent, thorough cleaning around your demanding schedule.",
