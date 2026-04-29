@@ -162,7 +162,7 @@ export const autoBlogPosts: AutoBlogPost[] = [
     date: "2026-04-28",
     readTime: "6 min read",
     category: "Cleaning Tips",
-    coverImage: "https://images.pexels.com/photos/4108715/pexels-photo-4108715.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
+    coverImage: "/capital-cleaner.jpg",
     content: `<p>If you've ever walked down the cleaning aisle and grabbed a bottle just because it smelled like lavender or lemon verbena, there's a good chance it was <strong>Mrs. Meyer's Clean Day</strong>. But this brand is more than just a pretty scent — it's one of the most trusted plant-based cleaning lines in the United States, and one that the team at <strong>Capital Clean Care</strong> has tested firsthand in homes across Maryland, DC, and Virginia.</p>
 
 <p>Here's everything you need to know about Mrs. Meyer's Clean Day — the story behind it, the products, the ingredients, and exactly how to use each one.</p>
