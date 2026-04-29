@@ -167,6 +167,11 @@ export const autoBlogPosts: AutoBlogPost[] = [
 
 <p>Here's everything you need to know about Mrs. Meyer's Clean Day — the story behind it, the products, the ingredients, and exactly how to use each one.</p>
 
+<figure style="margin:2rem 0;text-align:center;">
+  <img src="https://images.pexels.com/photos/9230462/pexels-photo-9230462.jpeg?auto=compress&cs=tinysrgb&w=800&h=500" alt="Eco-friendly cleaning products including Mrs. Meyer's style bottles and wooden brushes" style="width:100%;max-width:720px;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.10);" loading="lazy" />
+  <figcaption style="margin-top:8px;font-size:13px;color:#6b7280;">Plant-based cleaning products — the kind Mrs. Meyer's champions for everyday home care.</figcaption>
+</figure>
+
 <h2>The Story Behind the Brand</h2>
 
 <p>Mrs. Meyer's Clean Day is inspired by a real person: <strong>Thelma A. Meyer</strong>, an avid gardener and mother of nine from the Midwest. The brand was built around her philosophy that a clean home should smell like a garden in full bloom — not a chemistry lab. Every product carries that garden-inspired DNA, from the packaging to the fragrances.</p>
