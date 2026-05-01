@@ -25,6 +25,7 @@ User-agent: *
 Allow: /
 Disallow: /api/
 Disallow: /*?blog=
+Disallow: /*?*blogcategory=
 Disallow: /*?*utm_
 Disallow: /*?*fbclid=
 Disallow: /*?*gclid=

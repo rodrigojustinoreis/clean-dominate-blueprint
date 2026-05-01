@@ -338,6 +338,32 @@
   to = "/eco-cleaning-chevy-chase-md"
   status = 301
 
+# ── Trailing slash 301s for dynamic routes (prevents duplicate indexing) ───────
+# Must come BEFORE the 200 rewrites below so Googlebot only sees one canonical URL
+[[redirects]]
+  from = "/blog/:slug/"
+  to = "/blog/:slug"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/locations/:city/"
+  to = "/locations/:city"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/locations/:city/:service/"
+  to = "/locations/:city/:service"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/services/:slug/"
+  to = "/services/:slug"
+  status = 301
+  force = true
+
 # ── Serve prerendered pages at canonical non-trailing-slash URLs (200 rewrite)─
 # force = true is required to override Netlify's built-in Pretty URLs behavior
 # which sends a 301 to the trailing-slash version before redirect rules run.
