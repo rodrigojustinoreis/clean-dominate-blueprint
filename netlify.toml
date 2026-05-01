@@ -67,22 +67,58 @@
   to = "/services/house-cleaning"
   status = 301
 
-# ── Soft 404 / old URL patterns found in Search Console ─────────────────────
+# ── Soft 404 / old URL patterns confirmed in Search Console ──────────────────
+
+# Error #1 — /detailed-cleaning: soft 404 (returns 200 but shows 404 page)
 [[redirects]]
-  from = "/clean-service-chevy-chase"
-  to = "/locations/chevy-chase-md"
+  from = "/detailed-cleaning"
+  to = "/services/deep-cleaning"
   status = 301
 
 [[redirects]]
-  from = "/clean-service-kentlands"
-  to = "/locations/gaithersburg-md"
+  from = "/detailed-cleaning/"
+  to = "/services/deep-cleaning"
   status = 301
 
+# Error #2 — /services-areas: was pointing away with no canonical
 [[redirects]]
   from = "/services-areas"
+  to = "/contact"
+  status = 301
+
+[[redirects]]
+  from = "/services-areas/"
+  to = "/contact"
+  status = 301
+
+# Error #3 — /home/f/* dead URLs from old Wix blog
+[[redirects]]
+  from = "/home/f/*"
+  to = "/blog"
+  status = 301
+
+[[redirects]]
+  from = "/home/*"
   to = "/"
   status = 301
 
+# Error #5 — specific /f/* old blog articles (catch-all /f/* already covers these)
+[[redirects]]
+  from = "/f/streamlining-your-cleaning-routine"
+  to = "/blog"
+  status = 301
+
+[[redirects]]
+  from = "/f/12-things-you-forget-to-clean"
+  to = "/blog"
+  status = 301
+
+[[redirects]]
+  from = "/f/how-to-clean-glass"
+  to = "/blog"
+  status = 301
+
+# Error #7 — /seasonal-cleaning gets proper destination
 [[redirects]]
   from = "/seasonal-cleaning/f/*"
   to = "/blog"
