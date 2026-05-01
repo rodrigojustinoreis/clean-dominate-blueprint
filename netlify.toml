@@ -364,6 +364,25 @@
   status = 301
   force = true
 
+# State hub trailing-slash 301s
+[[redirects]]
+  from = "/maryland/"
+  to = "/maryland"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/virginia/"
+  to = "/virginia"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/washington-dc/"
+  to = "/washington-dc"
+  status = 301
+  force = true
+
 # ── Serve prerendered pages at canonical non-trailing-slash URLs (200 rewrite)─
 # force = true is required to override Netlify's built-in Pretty URLs behavior
 # which sends a 301 to the trailing-slash version before redirect rules run.
@@ -388,6 +407,25 @@
 [[redirects]]
   from = "/services/:slug"
   to = "/services/:slug/"
+  status = 200
+  force = true
+
+# State hub 200 rewrites (bypass Netlify Pretty URLs auto-redirect)
+[[redirects]]
+  from = "/maryland"
+  to = "/maryland/"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/virginia"
+  to = "/virginia/"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/washington-dc"
+  to = "/washington-dc/"
   status = 200
   force = true
 
