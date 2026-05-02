@@ -80,10 +80,8 @@ const AppRoutes = () => (
     <Route path="/house-cleaning-damascus-md" element={<VanityLandingPage />} />
     <Route path="/deep-cleaning-kensington-md" element={<VanityLandingPage />} />
     <Route path="/eco-cleaning-chevy-chase-md" element={<VanityLandingPage />} />
-    {/* State hub pages — explicit routes prevent soft-404s for unknown single-segment paths */}
-    <Route path="/maryland" element={<LocationHub />} />
-    <Route path="/virginia" element={<LocationHub />} />
-    <Route path="/washington-dc" element={<LocationHub />} />
+    {/* State hub pages — catch-all for single-segment paths; LocationHub returns <NotFound /> for unknown slugs */}
+    <Route path="/:stateSlug" element={<LocationHub />} />
     <Route path="/locations/:slug/:serviceSlug" element={<ServiceLocationPage />} />
     <Route path="/locations/:slug" element={<CityPage />} />
     <Route path="*" element={<NotFound />} />
