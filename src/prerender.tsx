@@ -27,6 +27,7 @@ function getAllRoutes(): string[] {
     "/blog/remove-pet-hair-odors-dmv-homes",
     "/blog/post-renovation-cleaning-guide-maryland",
     "/blog/recurring-cleaning-weekly-biweekly-monthly",
+    "/blog/how-to-clean-windows-streak-free-maryland-spring",
     "/blog/how-to-remove-tough-stains-from-mattresses-eco-friendly-april-2026",
     "/blog/how-to-clean-bathroom-professionally-maryland-spring-2026",
     "/blog/deep-cleaning-tips-maryland-homes-spring-prep",
