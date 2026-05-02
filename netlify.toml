@@ -134,6 +134,26 @@
   to = "/blog"
   status = 301
 
+[[redirects]]
+  from = "/clean-service-chevy-chase"
+  to = "/eco-cleaning-chevy-chase-md"
+  status = 301
+
+[[redirects]]
+  from = "/clean-service-chevy-chase/"
+  to = "/eco-cleaning-chevy-chase-md"
+  status = 301
+
+[[redirects]]
+  from = "/clean-service-kentlands"
+  to = "/locations/gaithersburg-md"
+  status = 301
+
+[[redirects]]
+  from = "/clean-service-kentlands/"
+  to = "/locations/gaithersburg-md"
+  status = 301
+
 # ── Old Wix/GoDaddy URLs → new structure (server-side 301) ───────────────────
 [[redirects]]
   from = "/apartment-cleaning"
