@@ -64,7 +64,7 @@ const AppRoutes = () => (
     <Route path="/book-now" element={<Navigate to="/#quote" replace />} />
     <Route path="/pricing" element={<Navigate to="/" replace />} />
     <Route path="/services" element={<Navigate to="/" replace />} />
-    {/* Vanity landing pages — must be before :stateSlug catch-all */}
+    {/* Vanity landing pages */}
     <Route path="/house-cleaning-wheaton-md" element={<VanityLandingPage />} />
     <Route path="/eco-cleaning-bethesda-md" element={<VanityLandingPage />} />
     <Route path="/deep-cleaning-germantown-md" element={<VanityLandingPage />} />
@@ -80,7 +80,10 @@ const AppRoutes = () => (
     <Route path="/house-cleaning-damascus-md" element={<VanityLandingPage />} />
     <Route path="/deep-cleaning-kensington-md" element={<VanityLandingPage />} />
     <Route path="/eco-cleaning-chevy-chase-md" element={<VanityLandingPage />} />
-    <Route path="/:stateSlug" element={<LocationHub />} />
+    {/* State hub pages — explicit routes prevent soft-404s for unknown single-segment paths */}
+    <Route path="/maryland" element={<LocationHub />} />
+    <Route path="/virginia" element={<LocationHub />} />
+    <Route path="/washington-dc" element={<LocationHub />} />
     <Route path="/locations/:slug/:serviceSlug" element={<ServiceLocationPage />} />
     <Route path="/locations/:slug" element={<CityPage />} />
     <Route path="*" element={<NotFound />} />
