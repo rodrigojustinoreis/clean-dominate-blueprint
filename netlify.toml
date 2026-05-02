@@ -226,6 +226,62 @@
   status = 301
 
 [[redirects]]
+  from = "/book-now.html"
+  to = "/"
+  status = 301
+
+# ── Old Wix .html extension URLs ─────────────────────────────────────────────
+[[redirects]]
+  from = "/about.html"
+  to = "/about"
+  status = 301
+
+[[redirects]]
+  from = "/contact.html"
+  to = "/contact"
+  status = 301
+
+[[redirects]]
+  from = "/services.html"
+  to = "/services/house-cleaning"
+  status = 301
+
+[[redirects]]
+  from = "/house-cleaning.html"
+  to = "/services/house-cleaning"
+  status = 301
+
+[[redirects]]
+  from = "/deep-cleaning.html"
+  to = "/services/deep-cleaning"
+  status = 301
+
+[[redirects]]
+  from = "/move-out-cleaning.html"
+  to = "/services/move-out-cleaning"
+  status = 301
+
+[[redirects]]
+  from = "/recurring-cleaning.html"
+  to = "/services/recurring-cleaning"
+  status = 301
+
+[[redirects]]
+  from = "/eco-friendly-cleaning.html"
+  to = "/services/eco-friendly-cleaning"
+  status = 301
+
+[[redirects]]
+  from = "/office-cleaning.html"
+  to = "/services/office-cleaning"
+  status = 301
+
+[[redirects]]
+  from = "/airbnb-cleaning.html"
+  to = "/services/airbnb-cleaning"
+  status = 301
+
+[[redirects]]
   from = "/pricing"
   to = "/"
   status = 301
