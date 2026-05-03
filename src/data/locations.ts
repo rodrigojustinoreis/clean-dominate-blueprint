@@ -28,7 +28,7 @@ export const hubs: HubData[] = [
     slug: "maryland",
     stateAbbr: "MD",
     intro: "Capital Clean Care proudly serves communities throughout Maryland with premium residential cleaning services. From the bustling suburbs of Montgomery County to the charming towns of Frederick County and the thriving communities of Howard County, our eco-friendly cleaning teams bring sparkle and freshness to homes across the state.\n\nMaryland homeowners deserve a cleaning service that understands the unique demands of mid-Atlantic living. Seasonal humidity, pollen, and the dust that accompanies both urban and suburban life require consistent, thorough cleaning routines. Our trained professionals use plant-based, non-toxic products that address these challenges while keeping your family and pets safe.\n\nWhether you live in a historic Bethesda colonial, a modern Rockville apartment, or a spacious Frederick farmhouse, Capital Clean Care adapts our services to your home's specific needs. We offer standard cleaning, deep cleaning, move-in/move-out services, post-construction cleanup, and flexible recurring plans throughout Maryland.\n\nOur Maryland coverage includes Montgomery County, Frederick County, Howard County, and Prince George's County, with service areas continuing to grow. Each community we serve receives the same commitment to quality, reliability, and eco-conscious cleaning that defines Capital Clean Care.\n\nBelow you'll find links to our service areas across Maryland. Each location page provides details specific to your community, including services available, pricing factors, and how to request a free quote.",
-    citySlugs: ["rockville-md", "silver-spring-md", "bethesda-md", "germantown-md", "gaithersburg-md", "potomac-md", "frederick-md", "urbana-md", "clarksburg-md", "damascus-md", "monrovia-md", "takoma-park-md", "columbia-md", "ellicott-city-md", "new-market-md", "wheaton-md", "montgomery-county-md", "frederick-county-md", "howard-county-md", "prince-georges-county-md"],
+    citySlugs: ["rockville-md", "silver-spring-md", "bethesda-md", "germantown-md", "gaithersburg-md", "potomac-md", "north-potomac-md", "kentlands-md", "frederick-md", "urbana-md", "clarksburg-md", "damascus-md", "monrovia-md", "boyds-md", "brookeville-md", "mount-airy-md", "takoma-park-md", "columbia-md", "ellicott-city-md", "new-market-md", "wheaton-md", "montgomery-county-md", "frederick-county-md", "howard-county-md", "prince-georges-county-md"],
     faqs: [
       { q: "What areas in Maryland do you serve?", a: "We serve communities across Montgomery County, Frederick County, Howard County, and Prince George's County, including Rockville, Bethesda, Silver Spring, Germantown, Frederick, Columbia, Ellicott City, and many more." },
       { q: "How do I book a cleaning in Maryland?", a: "Simply fill out our free quote form, call us directly, or select your specific city page for location-specific booking. We typically respond within a few hours." },
@@ -908,6 +908,101 @@ export const cities: CityData[] = [
     ],
     metaTitle: "House Cleaning in Annandale, VA | Capital Clean Care",
     metaDescription: "Professional house cleaning in Annandale, VA. Serving all Annandale neighborhoods in Fairfax County. Eco-friendly products, background-checked teams. Free quotes."
+  },
+  {
+    name: "North Potomac",
+    slug: "north-potomac-md",
+    state: "MD",
+    stateSlug: "maryland",
+    county: "Montgomery County",
+    intro: "North Potomac is one of Montgomery County's most affluent unincorporated communities, situated between Gaithersburg and Potomac along Route 28. The area is defined by large executive homes on generous lots, top-ranked schools, and a wooded suburban character that attracts senior executives, healthcare professionals, and government officials seeking discretion, space, and quality.\n\nNorth Potomac homes are unlike anywhere else in Montgomery County — many properties exceed 4,000 to 7,000 square feet with custom finishes, premium hardwood, imported stone, and detailed millwork that requires careful, knowledgeable cleaning. Capital Clean Care's North Potomac teams are trained specifically for high-value homes, with documented expertise in caring for premium surfaces without the abrasive chemicals that damage finishes over time.\n\nNorth Potomac's wooded estate character means seasonal cleaning challenges are amplified — heavy spring pollen drifting through screens, abundant fall leaf debris tracked indoors from large lots, and the sheer scale of estate floor plans that demands more thorough attention. Our recurring cleaning plans for North Potomac include estate-appropriate scheduling and team assignments that respect the discretion these homes require.",
+    nearbySlugs: ["potomac-md", "gaithersburg-md", "rockville-md", "bethesda-md", "kentlands-md"],
+    faqs: [
+      { q: "Do you serve large estate homes in North Potomac?", a: "Yes. Our North Potomac teams are specifically trained to handle large executive homes ranging from 4,000 to 7,000+ square feet, including those in Travilah, Dufief, and Quince Orchard Estates. We adjust team size and scheduling to deliver thorough cleaning without rushing." },
+      { q: "Can you handle premium finishes and custom millwork?", a: "Absolutely. Our North Potomac crews are trained in proper care for hardwood, marble, granite, custom stone, and detailed architectural millwork. We use only EPA Safer Choice products that are gentle on premium finishes." },
+      { q: "What North Potomac neighborhoods do you cover?", a: "We serve all of North Potomac including Dufief, Travilah, Quince Orchard Estates, Seneca Crossing, and adjacent Kentlands and Lakeland communities." },
+      { q: "Are your North Potomac teams discreet?", a: "Yes. Many North Potomac residents include senior executives, healthcare professionals, and government officials who require discretion. Our background-checked teams are trained on professional conduct and confidentiality standards." },
+      { q: "How much does cleaning cost in North Potomac?", a: "North Potomac homes are typically larger than the county average, so pricing reflects square footage and complexity. Request a free in-home consultation for accurate pricing based on your specific property." },
+      { q: "Do you offer pre-event cleaning in North Potomac?", a: "Yes. Many North Potomac clients schedule cleanings before dinner parties, holiday gatherings, and family events. We accommodate flexible scheduling to ensure the home is presentation-ready." }
+    ],
+    metaTitle: "House Cleaning in North Potomac, MD | Capital Clean Care",
+    metaDescription: "Premium house cleaning in North Potomac, MD. Specialized care for executive homes & large estates. Eco-friendly products, discreet background-checked teams. Free quotes."
+  },
+  {
+    name: "Boyds",
+    slug: "boyds-md",
+    state: "MD",
+    stateSlug: "maryland",
+    county: "Montgomery County",
+    intro: "Boyds is a small, semi-rural community in northwestern Montgomery County where farmland, wooded lots, and residential neighborhoods create a distinctly different character from the county's suburban core. Homes here tend to sit on larger parcels, and the community retains a quiet, unhurried atmosphere even as surrounding areas like Clarksburg develop rapidly.\n\nCapital Clean Care serves Boyds with cleaning services tailored to the community's unique character — larger homes on rural lots, custom-built residences, and farmhouse-style properties that often include workshops, mudrooms, and outbuildings. Our teams understand that Boyds homes face different challenges than suburban properties: rural dust from surrounding farmland, well water mineral deposits causing fixture staining, and dense wooded lot coverage generating heavy seasonal debris.\n\nBoyds residents specifically chose this community for its rural character — many have horses, large gardens, or work-from-home setups that keep them in their homes throughout the day. Our recurring cleaning plans accommodate these schedules with flexible timing and the kind of thorough attention that larger rural homes require. Eco-friendly products are particularly valuable for Boyds homeowners who appreciate the natural surroundings their community is built around.",
+    nearbySlugs: ["clarksburg-md", "damascus-md", "germantown-md", "gaithersburg-md", "frederick-md"],
+    faqs: [
+      { q: "Do you serve rural and semi-rural Boyds properties?", a: "Yes. Boyds is part of our Montgomery County service area, and our teams are experienced with the larger homes and rural settings common in this community. We serve properties throughout Boyds Village, West Boyds, and the surrounding areas." },
+      { q: "Can you handle farmhouse-style and custom homes?", a: "Absolutely. Many Boyds homes are custom-built or farmhouse-style with unique features like mudrooms, workshops, and large family areas. We adapt our approach to each property type." },
+      { q: "Do you address well water mineral deposits in Boyds?", a: "Yes. Hard water staining is common in Boyds properties using well water systems. Our crews use specialized descaling techniques and products appropriate for the mineral buildup typical in this part of Montgomery County." },
+      { q: "Is there a travel fee for Boyds?", a: "No. Boyds is part of our Montgomery County service area with no additional travel charges. Pricing is based on home size and service type." },
+      { q: "Can you accommodate work-from-home schedules in Boyds?", a: "Yes. Many Boyds residents work from home, and we coordinate scheduling around their workday. Flexible morning, midday, or after-work appointments are all available." },
+      { q: "Do you serve agricultural or equestrian properties in Boyds?", a: "Yes. Many Boyds homes are adjacent to or include equestrian facilities and gardens. Our teams handle the additional indoor cleaning challenges these lifestyles create — hay debris, garden soil, and outdoor track-in." }
+    ],
+    metaTitle: "House Cleaning in Boyds, MD | Capital Clean Care",
+    metaDescription: "Professional house cleaning in Boyds, MD. Serving rural and semi-rural Montgomery County properties. Eco-friendly products, background-checked teams. Free quotes."
+  },
+  {
+    name: "Brookeville",
+    slug: "brookeville-md",
+    state: "MD",
+    stateSlug: "maryland",
+    county: "Montgomery County",
+    intro: "Brookeville is a nationally historic small town in eastern Montgomery County — it served as the U.S. capital for a day during the War of 1812, when President Madison took refuge in a Brookeville home while British forces burned Washington. Today the town is characterized by preserved historic homes, equestrian estates, and a slower-paced lifestyle that has intentionally resisted the development pressure that transformed neighboring communities.\n\nCapital Clean Care serves Brookeville with the careful, knowledgeable cleaning services that historic and equestrian properties require. Our teams are trained in the proper treatment of original woodwork, historic plaster, vintage tile, and antique fixtures — surfaces that demand gentle, non-abrasive techniques to preserve their character. We use only EPA Safer Choice plant-based products that are safe for delicate historic materials.\n\nBrookeville residents are historic preservation enthusiasts, equestrian families, and professionals who specifically sought out this community for its peace, character, and resistance to over-development. Our cleaning approach respects that character — discreet scheduling, careful handling of valuable items, and the kind of attention to detail that owners of historic and equestrian properties expect.",
+    nearbySlugs: ["olney-md", "damascus-md", "burtonsville-md", "rockville-md", "silver-spring-md"],
+    faqs: [
+      { q: "Do you clean historic homes in Brookeville?", a: "Yes. Our Brookeville teams are specifically trained to handle historic properties, including proper care for original woodwork, plaster walls, vintage tile, and antique fixtures. We use only EPA Safer Choice plant-based products safe for delicate historic surfaces." },
+      { q: "Can you handle equestrian properties in Brookeville?", a: "Yes. Many Brookeville homes are part of equestrian estates with adjacent stables and outbuildings. Our crews handle the additional cleaning challenges these properties face — hay and barn dust tracked indoors, outdoor debris in mudrooms, and dirt from active outdoor lifestyles." },
+      { q: "What Brookeville areas do you serve?", a: "We serve all of Historic Brookeville, the Gold Mine Road corridor, the Brookeville Historic District, and surrounding properties extending toward Sandy Spring and Laytonsville." },
+      { q: "Are your products safe for historic surfaces?", a: "Absolutely. Our plant-based, pH-neutral cleaning solutions are specifically chosen to be safe on original hardwood, vintage tile, plaster, and antique materials. We never use harsh chemicals that could damage delicate historic surfaces." },
+      { q: "Do you offer scheduled recurring cleaning in Brookeville?", a: "Yes. Bi-weekly and monthly recurring plans are popular in Brookeville. The slower pace of the community fits well with consistent recurring service." },
+      { q: "Are your Brookeville teams discreet?", a: "Yes. Brookeville residents value privacy and quiet, and our teams are trained on appropriate conduct for the community. Many residents prefer specific scheduled times to maintain the peaceful character of the area." }
+    ],
+    metaTitle: "House Cleaning in Brookeville, MD | Capital Clean Care",
+    metaDescription: "Professional house cleaning in historic Brookeville, MD. Specialized care for historic and equestrian properties. Eco-friendly products, careful background-checked teams. Free quotes."
+  },
+  {
+    name: "Mount Airy",
+    slug: "mount-airy-md",
+    state: "MD",
+    stateSlug: "maryland",
+    county: "Carroll County / Frederick County",
+    intro: "Mount Airy straddles the Carroll and Frederick county lines at the highest elevation point along the I-70 corridor, giving it a distinct character as a commuter crossroads with small-town roots. The historic downtown anchors a community that has grown significantly with new residential development while maintaining its identity as a place where neighbors know each other.\n\nCapital Clean Care serves Mount Airy with cleaning services tailored to the community's mix of established village-style homes near downtown and newer suburban subdivisions in Twin Ridge, Linganore Estates, and Parr's Ridge. Our teams adapt their approach to each property type, whether it's an older home with character details or a newer home with modern open floor plans.\n\nMount Airy sits at 900+ feet elevation, which means winter arrives earlier and spring comes later than the rest of Maryland. The agricultural surroundings contribute heavy seasonal pollen from April through June, and the elevation means harder water deposits and longer winters affecting indoor air quality. Our cleaning protocols adjust seasonally to address these specific Mount Airy conditions, and our recurring plans are popular for the consistency they provide year-round.",
+    nearbySlugs: ["damascus-md", "frederick-md", "new-market-md", "monrovia-md", "urbana-md"],
+    faqs: [
+      { q: "Do you serve both Carroll and Frederick County sides of Mount Airy?", a: "Yes. We serve all of Mount Airy regardless of which county side your home is on. Our teams cover Mount Airy Village, Twin Ridge, Linganore Estates, Parr's Ridge, and the surrounding rural areas." },
+      { q: "How much does cleaning cost in Mount Airy?", a: "Mount Airy homes vary widely in size — from older village-style homes to newer suburban properties. Pricing depends on bedrooms, bathrooms, and condition. Request a free quote for accurate pricing." },
+      { q: "Do you address hard water deposits in Mount Airy?", a: "Yes. Hard water mineral deposits are common in Carroll and Frederick County properties, particularly those using well water. Our descaling techniques and specialized products handle this effectively." },
+      { q: "Can you accommodate Mount Airy's commuter schedules?", a: "Yes. Many Mount Airy residents commute to Frederick, Gaithersburg, or Baltimore with long workdays. We coordinate scheduling around demanding commutes — early morning, evening, or weekend appointments are all options." },
+      { q: "Do you handle agricultural pollen seasonally?", a: "Yes. Mount Airy's agricultural surroundings mean heavy spring pollen and seasonal debris from the surrounding farmland. Our seasonal protocols include extra dusting and surface cleaning during peak pollen months." },
+      { q: "Are your teams familiar with Mount Airy's elevation effects?", a: "Yes. Mount Airy's 900+ foot elevation creates earlier winter, later spring, and more pronounced humidity and cold cycles than lower-elevation Maryland communities. Our teams adjust technique accordingly." }
+    ],
+    metaTitle: "House Cleaning in Mount Airy, MD | Capital Clean Care",
+    metaDescription: "Professional house cleaning in Mount Airy, MD. Serving both Carroll and Frederick County sides of Mount Airy. Eco-friendly products, background-checked teams. Free quotes."
+  },
+  {
+    name: "Kentlands",
+    slug: "kentlands-md",
+    state: "MD",
+    stateSlug: "maryland",
+    county: "Montgomery County",
+    intro: "Kentlands is one of the most celebrated New Urbanist planned communities in America — a walkable, architecturally intentional neighborhood in Gaithersburg built since 1991 around town squares, front porches, and pedestrian streets. It has consistently ranked as one of the most desirable addresses in Montgomery County, and homes in Kentlands command premium prices because of the community's unique design and active lifestyle.\n\nCapital Clean Care serves Kentlands with cleaning services tailored to the community's distinctive home typology. Many Kentlands homes feature wood trim, detailed facades, front porches, and open floor plans that circulate dust differently than standard suburban construction. The community's walkability means homes see more foot traffic, and the front porch culture means outdoor debris tracks in more readily than in typical suburban communities.\n\nKentlands residents are a mix of young professionals, growing families, and long-time homeowners who chose this community specifically for its walkability, community events, and design-forward character. Our cleaning teams are experienced with the architectural details characteristic of New Urbanist homes and the HOA standards that residents take seriously. We serve all of Kentlands, Lakelands, Crown Farm, and the surrounding Gaithersburg community.",
+    nearbySlugs: ["gaithersburg-md", "north-potomac-md", "rockville-md", "germantown-md", "potomac-md"],
+    faqs: [
+      { q: "Do you serve all of Kentlands and Lakelands?", a: "Yes. We serve Kentlands proper, Lakelands, Crown Farm, the Washingtonian Center area, Great Seneca Crossing, and the surrounding Gaithersburg community. Our crews are familiar with the New Urbanist home typology unique to this area." },
+      { q: "Can you handle Kentlands' architectural details?", a: "Absolutely. Kentlands homes feature wood trim, detailed facades, front porches, and architectural elements that require attentive cleaning. Our teams are trained to handle these details properly without damage." },
+      { q: "Are your teams aware of Kentlands HOA standards?", a: "Yes. Kentlands' HOA standards apply to certain shared facilities and exterior elements. Our cleaning focus is interior, but we're respectful of community standards and can coordinate with HOA-managed common areas if needed." },
+      { q: "How does Kentlands' walkability affect cleaning needs?", a: "Walkable, pedestrian-friendly Kentlands means homes see more foot traffic and more outdoor debris is tracked in. Front porch culture in particular brings in extra outdoor material. Our cleaning addresses these specific patterns with extra entryway and floor attention." },
+      { q: "How much does cleaning cost in Kentlands?", a: "Kentlands homes vary in size from townhomes to single-family. Pricing depends on bedrooms, bathrooms, and condition. Request a free quote for accurate pricing tailored to your specific Kentlands home." },
+      { q: "Do you offer recurring cleaning in Kentlands?", a: "Yes. Bi-weekly recurring is the most popular frequency for Kentlands families. Weekly is common for higher-traffic households. Recurring clients receive preferred pricing and dedicated team assignments." }
+    ],
+    metaTitle: "House Cleaning in Kentlands, MD | Capital Clean Care",
+    metaDescription: "Professional house cleaning in Kentlands, MD. Specialized care for New Urbanist homes in Kentlands, Lakelands & Crown Farm. Eco-friendly products, background-checked teams. Free quotes."
   }
 ];
 

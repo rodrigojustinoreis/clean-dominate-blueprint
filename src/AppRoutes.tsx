@@ -22,6 +22,7 @@ import Careers from "./pages/Careers";
 import PremiumFanPage from "./pages/PremiumFanPage";
 import WhyEcoFriendlyPage from "./pages/WhyEcoFriendlyPage";
 import EcoFriendlyCleaningPage from "./pages/EcoFriendlyCleaningPage";
+import GiftCards from "./pages/GiftCards";
 import NotFound from "./pages/NotFound";
 
 const AppRoutes = () => (
@@ -42,6 +43,7 @@ const AppRoutes = () => (
     <Route path="/house-cleaning-near-me" element={<HouseCleaningNearMe />} />
     <Route path="/careers" element={<Careers />} />
     <Route path="/join-our-team" element={<Careers />} />
+    <Route path="/gift-cards" element={<GiftCards />} />
     <Route path="/privacy-policy" element={<PrivacyPolicy />} />
     <Route path="/terms-of-service" element={<TermsOfService />} />
     {/* SEO redirects for dead/old URLs */}

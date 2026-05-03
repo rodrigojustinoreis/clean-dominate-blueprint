@@ -13,6 +13,7 @@ function getAllRoutes(): string[] {
     "/about",
     "/reviews",
     "/contact",
+    "/gift-cards",
     "/faq",
     "/blog",
     "/blog/spring-cleaning-checklist-maryland-2026",
@@ -85,6 +86,8 @@ function getAllRoutes(): string[] {
     "urbana-md", "new-market-md",
     "capitol-hill-dc", "georgetown-dc", "dupont-circle-dc", "adams-morgan-dc", "downtown-dc",
     "falls-church-va", "shaw-dc", "columbia-heights-dc", "navy-yard-dc", "herndon-va", "annandale-va",
+    // New cities — Phase 4 SEO expansion
+    "monrovia-md", "north-potomac-md", "boyds-md", "brookeville-md", "mount-airy-md", "kentlands-md",
   ];
   for (const c of citySlugs) {
     routes.push(`/locations/${c}`);
