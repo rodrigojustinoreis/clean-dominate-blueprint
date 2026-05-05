@@ -14,6 +14,8 @@ export interface ServiceLocationCity {
   lifestyle: string;
   seasonalNote: string;
   localIntro?: string;
+  lat?: number;
+  lng?: number;
 }
 
 export interface ServiceLocationService {
@@ -38,7 +40,8 @@ export const slCities: ServiceLocationCity[] = [
     challenges: "seasonal pollen from extensive tree coverage, construction dust from ongoing downtown redevelopment, and high foot traffic in multi-family residences",
     lifestyle: "Many residents commute to DC or work in the Rockville biotech corridor, leaving little time for thorough housekeeping",
     seasonalNote: "Spring pollen from Rockville's abundant oak and maple trees demands extra dusting and air quality attention",
-    localIntro: "Rockville is one of Montgomery County's most diverse communities, with modern townhouses in King Farm and Fallsgrove alongside older single-family homes in Twinbrook and Woodley Gardens. Many properties built in the 1960s–1980s feature carpeted bedrooms, tile bathrooms, and finished basements that require extra attention during [SERVICE_NAME]. Rockville's busy families — many commuting to NIH, Johns Hopkins, or downtown DC — consistently choose recurring cleaning plans to maintain their homes without the time investment. We cover all Rockville ZIP codes (20850–20853) and are typically available within 3–5 business days."
+    localIntro: "Rockville is one of Montgomery County's most diverse communities, with modern townhouses in King Farm and Fallsgrove alongside older single-family homes in Twinbrook and Woodley Gardens. Many properties built in the 1960s–1980s feature carpeted bedrooms, tile bathrooms, and finished basements that require extra attention during [SERVICE_NAME]. Rockville's busy families — many commuting to NIH, Johns Hopkins, or downtown DC — consistently choose recurring cleaning plans to maintain their homes without the time investment. We cover all Rockville ZIP codes (20850–20853) and are typically available within 3–5 business days.",
+    lat: 39.0840, lng: -77.1528,
   },
   {
     name: "Bethesda",
@@ -52,7 +55,8 @@ export const slCities: ServiceLocationCity[] = [
     challenges: "maintaining premium surfaces like marble and hardwood, managing large floor plans, and keeping entertaining spaces spotless for frequent social gatherings",
     lifestyle: "Bethesda homeowners often host guests and expect meticulous presentation. Many families rely on professional cleaning to maintain their high standards",
     seasonalNote: "Fall leaf debris tracked indoors from Bethesda's tree-lined streets requires consistent floor care throughout autumn",
-    localIntro: "Bethesda homes range from pre-war Cape Cods near Woodmont Triangle to modern luxury condos along Wisconsin Avenue and sprawling estates in Kenwood and Edgemoor. These varied property types — many featuring original hardwood floors, crown molding, and high-end finishes — require experienced, detail-oriented cleaning teams. Our crews are familiar with the seasonal pollen that accumulates along Crescent Trail corridors and the fine dust that settles in older Tudor-style homes near Battery Park. We serve ZIP codes 20814, 20815, and 20816 with same-week availability and use only EPA Safer Choice certified, plant-based products — the standard Bethesda families expect."
+    localIntro: "Bethesda homes range from pre-war Cape Cods near Woodmont Triangle to modern luxury condos along Wisconsin Avenue and sprawling estates in Kenwood and Edgemoor. These varied property types — many featuring original hardwood floors, crown molding, and high-end finishes — require experienced, detail-oriented cleaning teams. Our crews are familiar with the seasonal pollen that accumulates along Crescent Trail corridors and the fine dust that settles in older Tudor-style homes near Battery Park. We serve ZIP codes 20814, 20815, and 20816 with same-week availability and use only EPA Safer Choice certified, plant-based products — the standard Bethesda families expect.",
+    lat: 38.9807, lng: -77.1002,
   },
   {
     name: "Silver Spring",
@@ -66,7 +70,8 @@ export const slCities: ServiceLocationCity[] = [
     challenges: "urban dust and particulates from busy Georgia Avenue corridor, aging HVAC systems in older homes, and compact living spaces requiring efficient cleaning approaches",
     lifestyle: "The diverse population includes young professionals, growing families, and long-time residents who value both affordability and quality of life",
     seasonalNote: "Winter salt and grit tracked from Silver Spring sidewalks demands regular hard floor maintenance during colder months",
-    localIntro: "Silver Spring is one of the DMV's most culturally diverse communities, with a mix of mid-century single-family homes, apartment buildings near the transit center, and newer condos along Colesville Road. Many Silver Spring homes from the 1950s–70s have original hardwood floors and older HVAC systems that circulate dust more than modern builds — making [SERVICE_NAME] especially important for indoor air quality. We serve all Silver Spring ZIP codes (20901–20910), including the Four Corners area, Wheaton border neighborhoods, and downtown apartments, with licensed, background-checked teams and non-toxic products safe for children and pets."
+    localIntro: "Silver Spring is one of the DMV's most culturally diverse communities, with a mix of mid-century single-family homes, apartment buildings near the transit center, and newer condos along Colesville Road. Many Silver Spring homes from the 1950s–70s have original hardwood floors and older HVAC systems that circulate dust more than modern builds — making [SERVICE_NAME] especially important for indoor air quality. We serve all Silver Spring ZIP codes (20901–20910), including the Four Corners area, Wheaton border neighborhoods, and downtown apartments, with licensed, background-checked teams and non-toxic products safe for children and pets.",
+    lat: 38.9940, lng: -77.0260,
   },
   {
     name: "Gaithersburg",
@@ -80,7 +85,8 @@ export const slCities: ServiceLocationCity[] = [
     challenges: "pollen accumulation in neighborhoods bordered by parkland, pet dander in family-oriented communities, and dust from nearby construction growth areas",
     lifestyle: "Gaithersburg families juggle work commutes, children's activities, and weekend errands, making professional cleaning a practical necessity",
     seasonalNote: "Gaithersburg's proximity to Seneca Creek State Park means spring and summer bring heavy pollen loads into homes near wooded areas",
-    localIntro: "Gaithersburg has grown rapidly with master-planned communities like Kentlands, Lakelands, Crown Farm, and Rio bringing thousands of newer homes, townhouses, and mixed-use condos to the area. These modern properties often feature open floor plans, quartz countertops, and light-colored flooring that shows dust and footprints quickly — making [SERVICE_NAME] a regular priority for Gaithersburg families. With many households including young children and pets, our plant-based, fragrance-free products are a natural fit. We serve ZIP codes 20877, 20878, and 20879 and can usually schedule within a week."
+    localIntro: "Gaithersburg has grown rapidly with master-planned communities like Kentlands, Lakelands, Crown Farm, and Rio bringing thousands of newer homes, townhouses, and mixed-use condos to the area. These modern properties often feature open floor plans, quartz countertops, and light-colored flooring that shows dust and footprints quickly — making [SERVICE_NAME] a regular priority for Gaithersburg families. With many households including young children and pets, our plant-based, fragrance-free products are a natural fit. We serve ZIP codes 20877, 20878, and 20879 and can usually schedule within a week.",
+    lat: 39.1435, lng: -77.2013,
   },
   {
     name: "Germantown",
@@ -94,7 +100,8 @@ export const slCities: ServiceLocationCity[] = [
     challenges: "construction residue in newer developments, dust buildup from rapid area growth, and allergen management in energy-efficient sealed homes",
     lifestyle: "Germantown residents appreciate value and convenience. The community's growth has brought new amenities but also busier schedules that benefit from professional cleaning help",
     seasonalNote: "Summer humidity in Germantown can lead to moisture-related cleaning needs, especially in basements and lower-level living spaces",
-    localIntro: "Germantown is one of Montgomery County's largest planned communities, with a high density of HOA-managed townhomes, condos, and single-family homes across neighborhoods like Churchill Village, Clopper Mill, Milestone, and Gunners Lake. [SERVICE_NAME] in Germantown often involves consistent floor plans but widely varying cleanliness baselines — especially in rental properties and homes preparing for HOA inspections. Many Germantown residents also schedule recurring cleanings to stay ahead of strict community standards. We serve ZIP codes 20874, 20875, and 20876 with same-week availability for most locations."
+    localIntro: "Germantown is one of Montgomery County's largest planned communities, with a high density of HOA-managed townhomes, condos, and single-family homes across neighborhoods like Churchill Village, Clopper Mill, Milestone, and Gunners Lake. [SERVICE_NAME] in Germantown often involves consistent floor plans but widely varying cleanliness baselines — especially in rental properties and homes preparing for HOA inspections. Many Germantown residents also schedule recurring cleanings to stay ahead of strict community standards. We serve ZIP codes 20874, 20875, and 20876 with same-week availability for most locations.",
+    lat: 39.1735, lng: -77.2741,
   },
   {
     name: "Frederick",
@@ -107,7 +114,8 @@ export const slCities: ServiceLocationCity[] = [
     housingTypes: "historic row homes, sprawling suburban estates, new construction communities, and downtown loft apartments",
     challenges: "preserving historic surfaces in older homes, managing agricultural dust from surrounding farmland, and addressing hard water staining common in Frederick County",
     lifestyle: "Frederick residents enjoy a slower pace than closer-in suburbs but increasingly commute to Montgomery County or DC, creating demand for time-saving services",
-    seasonalNote: "Frederick's agricultural surroundings mean harvest season brings elevated dust levels that settle on surfaces throughout the home"
+    seasonalNote: "Frederick's agricultural surroundings mean harvest season brings elevated dust levels that settle on surfaces throughout the home",
+    lat: 39.4143, lng: -77.4105,
   },
   {
     name: "Clarksburg",
@@ -120,7 +128,8 @@ export const slCities: ServiceLocationCity[] = [
     housingTypes: "modern single-family homes, townhouses, and newly built condominiums in planned communities",
     challenges: "construction dust from ongoing community development, new-home off-gassing requiring thorough ventilation cleaning, and managing allergens in tightly sealed modern homes",
     lifestyle: "Young families drawn to Clarksburg's excellent schools and new amenities often need cleaning support as they balance career growth with raising children",
-    seasonalNote: "New construction dust settles persistently in Clarksburg homes, especially during the active building seasons of spring and fall"
+    seasonalNote: "New construction dust settles persistently in Clarksburg homes, especially during the active building seasons of spring and fall",
+    lat: 39.2354, lng: -77.2697,
   },
   {
     name: "Damascus",
@@ -133,7 +142,8 @@ export const slCities: ServiceLocationCity[] = [
     housingTypes: "large single-family homes on spacious lots, farmhouse-style properties, and custom-built residences",
     challenges: "agricultural dust and pollen from surrounding farmland, larger home sizes requiring more extensive cleaning time, and well water mineral deposits on fixtures",
     lifestyle: "Damascus residents value their quiet, rural-adjacent lifestyle. Many maintain larger properties that benefit from professional cleaning due to the sheer square footage involved",
-    seasonalNote: "Damascus's rural setting means spring through fall brings significant pollen and agricultural particles that infiltrate homes near open farmland"
+    seasonalNote: "Damascus's rural setting means spring through fall brings significant pollen and agricultural particles that infiltrate homes near open farmland",
+    lat: 39.2726, lng: -77.0047,
   },
   {
     name: "Potomac",
@@ -146,7 +156,8 @@ export const slCities: ServiceLocationCity[] = [
     housingTypes: "luxury estates, grand colonials, contemporary mansions, and exclusive gated community residences",
     challenges: "maintaining expansive floor plans with multiple living areas, caring for premium materials like marble and exotic hardwoods, and managing properties with extensive entertaining spaces",
     lifestyle: "Potomac families often employ multiple household services. Professional cleaning is essential for maintaining the pristine presentation these homes demand",
-    seasonalNote: "Potomac's heavily wooded lots create beautiful shade but also generate significant leaf litter and pollen that requires year-round attention"
+    seasonalNote: "Potomac's heavily wooded lots create beautiful shade but also generate significant leaf litter and pollen that requires year-round attention",
+    lat: 39.0176, lng: -77.2072,
   },
   {
     name: "Kensington",
@@ -159,7 +170,8 @@ export const slCities: ServiceLocationCity[] = [
     housingTypes: "Cape Cods, colonial revivals, craftsman bungalows, and mid-century split-levels",
     challenges: "older home layouts with more surfaces and moldings to clean, original hardwood floors requiring gentle care, and mature tree pollen in this heavily wooded neighborhood",
     lifestyle: "Kensington's small-town feel attracts families who appreciate community but still need professional help maintaining their character-filled older homes",
-    seasonalNote: "Kensington's mature tree canopy produces heavy pollen in spring and leaf debris in fall, requiring thorough seasonal cleaning attention"
+    seasonalNote: "Kensington's mature tree canopy produces heavy pollen in spring and leaf debris in fall, requiring thorough seasonal cleaning attention",
+    lat: 39.0315, lng: -77.0760,
   },
   {
     name: "Chevy Chase",
@@ -172,7 +184,8 @@ export const slCities: ServiceLocationCity[] = [
     housingTypes: "grand colonials, Georgian-style estates, renovated historic homes, and select luxury condominiums",
     challenges: "preserving delicate historic finishes, maintaining large properties with formal living spaces, and managing the high standards expected by discerning homeowners",
     lifestyle: "Chevy Chase residents frequently entertain and expect their homes to reflect impeccable taste. Many divide time between DC offices and their Chevy Chase residences",
-    seasonalNote: "The neighborhood's grand landscaping and mature gardens track seasonal debris through entryways, requiring consistent floor and surface maintenance"
+    seasonalNote: "The neighborhood's grand landscaping and mature gardens track seasonal debris through entryways, requiring consistent floor and surface maintenance",
+    lat: 38.9807, lng: -77.0780,
   },
   {
     name: "North Bethesda",
@@ -185,7 +198,8 @@ export const slCities: ServiceLocationCity[] = [
     housingTypes: "modern luxury apartments, established single-family homes, townhouses, and mixed-use residential units",
     challenges: "construction dust from rapid Pike & Rose area development, maintaining newer high-end finishes in luxury buildings, and managing compact apartment spaces efficiently",
     lifestyle: "North Bethesda attracts professionals who value walkability and urban amenities. Busy careers mean professional cleaning is a practical investment rather than a luxury",
-    seasonalNote: "Ongoing development in North Bethesda creates ambient construction dust that accumulates on surfaces faster than in fully established neighborhoods"
+    seasonalNote: "Ongoing development in North Bethesda creates ambient construction dust that accumulates on surfaces faster than in fully established neighborhoods",
+    lat: 39.0455, lng: -77.1194,
   },
   {
     name: "College Park",
@@ -198,7 +212,8 @@ export const slCities: ServiceLocationCity[] = [
     housingTypes: "single-family homes, student-oriented apartments, renovated bungalows, and newer mixed-use developments",
     challenges: "high turnover in rental properties requiring frequent deep cleans, construction dust from Purple Line development, and maintaining older homes with dated fixtures",
     lifestyle: "College Park serves a diverse population of university staff, young families, and long-time residents who appreciate the community's energy and improving amenities",
-    seasonalNote: "Move-in and move-out seasons aligned with the university calendar create peak demand for cleaning services in August and May"
+    seasonalNote: "Move-in and move-out seasons aligned with the university calendar create peak demand for cleaning services in August and May",
+    lat: 38.9807, lng: -76.9369,
   },
   {
     name: "Laurel",
@@ -211,7 +226,8 @@ export const slCities: ServiceLocationCity[] = [
     housingTypes: "historic downtown homes, planned community residences, townhouses, and garden-style apartments",
     challenges: "maintaining diverse housing ages from historic to modern, managing higher humidity levels near the Patuxent River, and addressing hard water mineral deposits",
     lifestyle: "Laurel's central location makes it popular with commuters to both DC and Baltimore. Families here value affordable, quality services that save time on busy workdays",
-    seasonalNote: "Laurel's location near the Patuxent River corridor creates elevated humidity that can lead to moisture-related cleaning needs, especially in basements"
+    seasonalNote: "Laurel's location near the Patuxent River corridor creates elevated humidity that can lead to moisture-related cleaning needs, especially in basements",
+    lat: 39.0993, lng: -76.8483,
   },
   {
     name: "Olney",
@@ -224,7 +240,8 @@ export const slCities: ServiceLocationCity[] = [
     housingTypes: "spacious single-family homes, colonial-style residences, and select townhouse communities",
     challenges: "larger home sizes requiring comprehensive cleaning, mature tree pollen and leaf debris, and managing homes with multiple levels and finished basements",
     lifestyle: "Olney families prioritize education and community involvement. Professional cleaning helps parents focus on their children's activities while maintaining an orderly home",
-    seasonalNote: "Olney's suburban-rural boundary location means homes experience heavy pollen loads from both cultivated landscapes and nearby wooded areas"
+    seasonalNote: "Olney's suburban-rural boundary location means homes experience heavy pollen loads from both cultivated landscapes and nearby wooded areas",
+    lat: 39.1534, lng: -77.0658,
   },
   {
     name: "Bowie",
@@ -237,7 +254,8 @@ export const slCities: ServiceLocationCity[] = [
     housingTypes: "single-family homes ranging from 1960s ranchers to modern construction, townhouses, and planned community residences",
     challenges: "managing homes with aging systems alongside newer construction, pet dander from the community's dog-friendly culture, and seasonal allergens from extensive green spaces",
     lifestyle: "Bowie families enjoy outdoor recreation and community events. The city's family-oriented atmosphere means homes see heavy daily use that benefits from regular professional cleaning",
-    seasonalNote: "Bowie's extensive park system and green spaces contribute to higher pollen counts in spring, requiring thorough dusting and surface cleaning"
+    seasonalNote: "Bowie's extensive park system and green spaces contribute to higher pollen counts in spring, requiring thorough dusting and surface cleaning",
+    lat: 38.9426, lng: -76.7791,
   },
   {
     name: "Hyattsville",
@@ -250,7 +268,8 @@ export const slCities: ServiceLocationCity[] = [
     housingTypes: "renovated bungalows, Victorian-era homes, modern apartments near the Metro, and Arts District loft spaces",
     challenges: "preserving character in renovated older homes, managing construction dust from ongoing neighborhood revitalization, and addressing compact living spaces in historic floor plans",
     lifestyle: "Hyattsville residents embrace an artsy, community-focused lifestyle. Many work from home or have short DC commutes, spending significant time in their living spaces",
-    seasonalNote: "Hyattsville's urban tree planting initiatives create beautiful streetscapes but also contribute pollen that drifts into homes during warmer months"
+    seasonalNote: "Hyattsville's urban tree planting initiatives create beautiful streetscapes but also contribute pollen that drifts into homes during warmer months",
+    lat: 38.9560, lng: -76.9455,
   },
   {
     name: "Takoma Park",
@@ -263,7 +282,8 @@ export const slCities: ServiceLocationCity[] = [
     housingTypes: "Victorian-era homes, craftsman bungalows, mid-century houses, and co-op apartments",
     challenges: "maintaining historic homes with original woodwork and detailed trim, managing homes with gardens that track soil indoors, and addressing older plumbing that creates mineral deposits",
     lifestyle: "Takoma Park residents are environmentally conscious and specifically seek cleaning services using green, non-toxic products that align with their values",
-    seasonalNote: "The famous Takoma Park azaleas and extensive community gardens mean homeowners track seasonal soil and pollen through their homes from spring through fall"
+    seasonalNote: "The famous Takoma Park azaleas and extensive community gardens mean homeowners track seasonal soil and pollen through their homes from spring through fall",
+    lat: 38.9818, lng: -77.0027,
   },
   {
     name: "Burtonsville",
@@ -276,7 +296,8 @@ export const slCities: ServiceLocationCity[] = [
     housingTypes: "spacious single-family homes on generous lots, townhouse communities, and select apartment complexes",
     challenges: "larger homes requiring extended cleaning sessions, wooded lots that generate significant leaf and pollen debris, and managing well water mineral buildup in some properties",
     lifestyle: "Burtonsville residents choose this community for space and affordability. Families here often have larger homes that benefit from professional cleaning due to the square footage involved",
-    seasonalNote: "Burtonsville's heavily wooded residential areas create beautiful natural settings but generate substantial seasonal debris that finds its way indoors"
+    seasonalNote: "Burtonsville's heavily wooded residential areas create beautiful natural settings but generate substantial seasonal debris that finds its way indoors",
+    lat: 39.1115, lng: -76.9366,
   },
   {
     name: "Montgomery Village",
@@ -289,7 +310,8 @@ export const slCities: ServiceLocationCity[] = [
     housingTypes: "townhouses, single-family homes, condominiums, and garden-style apartments within planned community sections",
     challenges: "aging townhouse and condo interiors requiring refreshing, managing HOA-standard cleanliness, and addressing moisture issues in lower-level townhouse units",
     lifestyle: "Montgomery Village residents enjoy community amenities and neighborly connections. The diverse population includes retirees, young families, and professionals who value the community's convenience",
-    seasonalNote: "The community's mature trees and proximity to Seneca Creek contribute to heavy seasonal pollen that settles throughout homes from early spring into summer"
+    seasonalNote: "The community's mature trees and proximity to Seneca Creek contribute to heavy seasonal pollen that settles throughout homes from early spring into summer",
+    lat: 39.1751, lng: -77.1952,
   },
   {
     name: "Wheaton",
@@ -302,7 +324,8 @@ export const slCities: ServiceLocationCity[] = [
     housingTypes: "mid-century colonials, split-levels, ramblers, renovated bungalows, and apartment complexes near the Metro",
     challenges: "urban dust from the Georgia Avenue corridor, aging home systems in mid-century housing stock, and pollen from Wheaton Regional Park's extensive tree coverage",
     lifestyle: "Wheaton residents value diversity, affordability, and convenience. Many commute via the Red Line Metro and appreciate time-saving services that maintain their homes",
-    seasonalNote: "Proximity to Wheaton Regional Park and Brookside Gardens means heavy spring pollen and fall leaf debris tracked into homes year-round"
+    seasonalNote: "Proximity to Wheaton Regional Park and Brookside Gardens means heavy spring pollen and fall leaf debris tracked into homes year-round",
+    lat: 39.0390, lng: -77.0544,
   },
   {
     name: "Columbia",
@@ -315,7 +338,8 @@ export const slCities: ServiceLocationCity[] = [
     housingTypes: "lakefront condos, village center townhomes, single-family homes, and luxury estates in River Hill and Clary's Forest",
     challenges: "high humidity near Columbia's lakes and ponds, pollen from mature tree canopy throughout the villages, and fine dust in newer construction zones",
     lifestyle: "Columbia residents are busy professionals and families who value quality, sustainability, and reliability — making recurring eco-friendly cleaning a natural fit",
-    seasonalNote: "Columbia's lake-adjacent neighborhoods see elevated humidity and mold risk in summer; fall brings heavy leaf debris from the extensive village green tree coverage"
+    seasonalNote: "Columbia's lake-adjacent neighborhoods see elevated humidity and mold risk in summer; fall brings heavy leaf debris from the extensive village green tree coverage",
+    lat: 39.2037, lng: -76.8610,
   },
   {
     name: "Ellicott City",
@@ -328,7 +352,8 @@ export const slCities: ServiceLocationCity[] = [
     housingTypes: "historic stone and brick properties, luxury single-family homes, townhomes in Turf Valley, and new-construction in Waverly Woods",
     challenges: "historic homes require gentle products for original surfaces, heavy humidity near the Patapsco River, and post-storm debris cleanup from the frequent flooding in low-lying areas",
     lifestyle: "Ellicott City homeowners are detail-oriented and proud of their properties — both historic and modern — expecting thorough, careful cleaning with professional-grade eco-friendly products",
-    seasonalNote: "Spring flooding risk near Old Ellicott City increases demand for post-storm deep cleaning; fall foliage from the Patapsco valley creates heavy tracked-in debris"
+    seasonalNote: "Spring flooding risk near Old Ellicott City increases demand for post-storm deep cleaning; fall foliage from the Patapsco valley creates heavy tracked-in debris",
+    lat: 39.2676, lng: -76.7986,
   },
   {
     name: "Washington DC",
@@ -606,7 +631,8 @@ export const slCities: ServiceLocationCity[] = [
     housingTypes: "newer single-family homes in planned subdivisions, townhouse communities, and custom-built estates on larger lots",
     challenges: "construction dust from ongoing development, hard water mineral deposits from Frederick County well and municipal systems, and large home square footage requiring extended cleaning time",
     lifestyle: "Monrovia families are predominantly dual-income households commuting to Montgomery County or DC who choose this area for larger homes and stronger school options",
-    seasonalNote: "Monrovia's location along the Monocacy valley corridor means spring brings agricultural pollen and summer brings elevated humidity that affects cleaning needs in basements and lower levels"
+    seasonalNote: "Monrovia's location along the Monocacy valley corridor means spring brings agricultural pollen and summer brings elevated humidity that affects cleaning needs in basements and lower levels",
+    lat: 39.3343, lng: -77.2427,
   },
   {
     name: "North Potomac",
@@ -620,7 +646,8 @@ export const slCities: ServiceLocationCity[] = [
     challenges: "maintaining large estate-size floor plans, managing heavy pollen from extensive mature tree coverage, and caring for premium finishes including hardwood, stone, and custom millwork",
     lifestyle: "North Potomac residents are predominantly professionals with high household incomes who value discretion, consistency, and premium service standards matching their investment in their homes",
     seasonalNote: "North Potomac's wooded estate character means spring and fall bring heavy pollen and leaf debris that requires intensive seasonal cleaning attention",
-    localIntro: "North Potomac is home to some of Montgomery County's largest and most elegant private residences — executive colonials, custom Federals, and luxury estates along Travilah and Dufief roads where home values consistently exceed $1M. [SERVICE_NAME] in North Potomac homes requires experience with premium surfaces, large floor plans (often 4,000–7,000+ sq ft), and the discretion expected by clients who include senior executives, healthcare professionals, and government officials. Our background-checked teams are trained to work in high-value homes with proper care for custom flooring, specialty stone, and antique furnishings. We serve all North Potomac ZIP codes and can typically schedule within 3–5 business days."
+    localIntro: "North Potomac is home to some of Montgomery County's largest and most elegant private residences — executive colonials, custom Federals, and luxury estates along Travilah and Dufief roads where home values consistently exceed $1M. [SERVICE_NAME] in North Potomac homes requires experience with premium surfaces, large floor plans (often 4,000–7,000+ sq ft), and the discretion expected by clients who include senior executives, healthcare professionals, and government officials. Our background-checked teams are trained to work in high-value homes with proper care for custom flooring, specialty stone, and antique furnishings. We serve all North Potomac ZIP codes and can typically schedule within 3–5 business days.",
+    lat: 39.0748, lng: -77.2275,
   },
   {
     name: "Boyds",
@@ -633,7 +660,8 @@ export const slCities: ServiceLocationCity[] = [
     housingTypes: "single-family homes on large lots, farmhouse-style properties, custom-built residences, and older homes with character mixed with newer infill construction",
     challenges: "rural dust and pollen from surrounding farmland and wooded areas, well water mineral deposits causing staining, and large home footprints requiring more thorough cleaning sessions",
     lifestyle: "Boyds residents specifically chose this community for its rural character and space — many have horses, large gardens, or work-from-home setups that keep them in their homes throughout the day",
-    seasonalNote: "Boyds's agricultural surroundings mean spring brings heavy pollen from farmland and orchards, while fall creates significant leaf debris from the dense tree coverage on large residential lots"
+    seasonalNote: "Boyds's agricultural surroundings mean spring brings heavy pollen from farmland and orchards, while fall creates significant leaf debris from the dense tree coverage on large residential lots",
+    lat: 39.2032, lng: -77.3063,
   },
   {
     name: "Brookeville",
@@ -646,7 +674,8 @@ export const slCities: ServiceLocationCity[] = [
     housingTypes: "historic stone and wood-frame homes, equestrian properties with accompanying structures, classic colonial residences, and select modern homes on large lots",
     challenges: "preserving delicate historic surfaces in older properties, managing equestrian-adjacent dirt and hay debris that enters homes, and addressing hard water staining common in this part of Montgomery County",
     lifestyle: "Brookeville residents include historic preservation enthusiasts, equestrian families, and professionals who specifically sought out this community for its peace, character, and resistance to over-development",
-    seasonalNote: "Brookeville's equestrian and agricultural surroundings create seasonal cleaning challenges from spring through fall, with hay, pollen, and outdoor debris tracked consistently into homes"
+    seasonalNote: "Brookeville's equestrian and agricultural surroundings create seasonal cleaning challenges from spring through fall, with hay, pollen, and outdoor debris tracked consistently into homes",
+    lat: 39.1785, lng: -77.0589,
   },
   {
     name: "Mount Airy",
@@ -659,7 +688,8 @@ export const slCities: ServiceLocationCity[] = [
     housingTypes: "older village-style homes near downtown, newer suburban subdivisions in Twin Ridge and Linganore, and farmhouse properties on the rural outskirts",
     challenges: "hard water mineral deposits characteristic of Carroll and Frederick counties, elevated pollen from agricultural surroundings, and managing large suburban home floor plans efficiently",
     lifestyle: "Mount Airy residents are primarily families who commute to Frederick, Gaithersburg, or Baltimore — choosing Mount Airy for space, school quality, and relative affordability at the region's edge",
-    seasonalNote: "Mount Airy sits on Parr's Ridge at 900+ feet elevation, meaning winter arrives earlier, spring comes later, and the agricultural surroundings contribute heavy seasonal pollen from April through June"
+    seasonalNote: "Mount Airy sits on Parr's Ridge at 900+ feet elevation, meaning winter arrives earlier, spring comes later, and the agricultural surroundings contribute heavy seasonal pollen from April through June",
+    lat: 39.3776, lng: -77.1558,
   },
   {
     name: "Kentlands",
@@ -673,7 +703,8 @@ export const slCities: ServiceLocationCity[] = [
     challenges: "maintaining the architectural details characteristic of New Urbanist homes (front porches, wood trim, detailed facades), managing community standards that HOA enforces, and coordinating cleaning around the active pedestrian streetscape",
     lifestyle: "Kentlands residents are a mix of young professionals, growing families, and long-time homeowners who chose this community specifically for its walkability, community events, and design-forward character",
     seasonalNote: "Kentlands' mature street trees and community parks create beautiful spring blooms but also contribute significant pollen that settles on the community's characteristic front porches and open living spaces",
-    localIntro: "Kentlands is unlike any other community in Montgomery County — its New Urbanist design means homes have front porches, rear garages, and architectural details that create a distinctly different [SERVICE_NAME] experience. Many Kentlands homes were built with wood trim, detailed facades, and open floor plans that circulate dust differently than standard suburban construction. The community's walkability means homes see more foot traffic, and the front porch culture means outdoor debris tracks in more readily. Our teams are experienced with the Kentlands home typology and the HOA standards that residents take seriously. We serve all of Kentlands, Lakelands, Crown Farm, and the surrounding Gaithersburg community."
+    localIntro: "Kentlands is unlike any other community in Montgomery County — its New Urbanist design means homes have front porches, rear garages, and architectural details that create a distinctly different [SERVICE_NAME] experience. Many Kentlands homes were built with wood trim, detailed facades, and open floor plans that circulate dust differently than standard suburban construction. The community's walkability means homes see more foot traffic, and the front porch culture means outdoor debris tracks in more readily. Our teams are experienced with the Kentlands home typology and the HOA standards that residents take seriously. We serve all of Kentlands, Lakelands, Crown Farm, and the surrounding Gaithersburg community.",
+    lat: 39.1406, lng: -77.2155,
   }
 ];
 

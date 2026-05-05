@@ -199,6 +199,30 @@ const ServiceLocationPage = () => {
         </section>
       )}
 
+      {/* City Map Image — MD cities only */}
+      {city.lat && city.lng && (
+        <section className="py-12 md:py-16">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-6">
+              Our {service.name} Coverage Area in {city.name}
+            </h2>
+            <div className="rounded-xl overflow-hidden border border-border shadow-sm">
+              <img
+                src={`https://staticmap.openstreetmap.de/staticmap.php?center=${city.lat},${city.lng}&zoom=14&size=800x400&markers=${city.lat},${city.lng},ltblu-pushpin`}
+                alt={`Map of ${city.name}, ${city.state} showing Capital Clean Care ${service.shortName} service coverage area — ${city.neighborhoods.slice(0, 3).join(", ")} and surrounding neighborhoods`}
+                width={800}
+                height={400}
+                className="w-full h-auto"
+                loading="lazy"
+              />
+            </div>
+            <p className="text-sm text-muted-foreground mt-3">
+              Serving <span className="font-medium text-foreground">{city.name}</span> and nearby neighborhoods: {city.neighborhoods.join(", ")}.
+            </p>
+          </div>
+        </section>
+      )}
+
       {/* Ideal For */}
       <section className="py-12 md:py-16">
         <div className="container mx-auto px-4 max-w-4xl">
