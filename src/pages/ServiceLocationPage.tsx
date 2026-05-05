@@ -208,8 +208,8 @@ const ServiceLocationPage = () => {
             </h2>
             <div className="rounded-xl overflow-hidden border border-border shadow-sm">
               <img
-                src={`https://staticmap.openstreetmap.de/staticmap.php?center=${city.lat},${city.lng}&zoom=14&size=800x400&markers=${city.lat},${city.lng},ltblu-pushpin`}
-                alt={`Map of ${city.name}, ${city.state} showing Capital Clean Care ${service.shortName} service coverage area — ${city.neighborhoods.slice(0, 3).join(", ")} and surrounding neighborhoods`}
+                src={`https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/export?bbox=${city.lng - 0.025},${city.lat - 0.015},${city.lng + 0.025},${city.lat + 0.015}&bboxSR=4326&imageSR=4326&size=800,400&format=png&f=image`}
+                alt={`Aerial view of ${city.name}, ${city.state} — Capital Clean Care ${service.shortName} service area covering ${city.neighborhoods.slice(0, 3).join(", ")} and surrounding neighborhoods in ${city.county}`}
                 width={800}
                 height={400}
                 className="w-full h-auto"
