@@ -422,7 +422,6 @@
   from = "/blog/:slug"
   to = "/blog/:slug/"
   status = 200
-  force = true
 
 [[redirects]]
   from = "/locations/:city"
