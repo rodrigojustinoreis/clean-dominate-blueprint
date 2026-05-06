@@ -294,8 +294,8 @@ export const autoBlogPosts: AutoBlogPost[] = [
   },
   {
     slug: "deep-cleaning-bathroom-complete-guide",
-    title: "Como Fazer Deep Cleaning no Banheiro: Guia Completo Passo a Passo",
-    excerpt: "Aprenda o método exato que nossos profissionais usam para fazer um deep cleaning completo no banheiro — grout, box, vaso, espelhos e mais. Inclui vídeo demonstrativo.",
+    title: "How to Deep Clean a Bathroom: Complete Step-by-Step Guide",
+    excerpt: "Learn the exact method our professionals use to deep clean a bathroom — grout, shower, toilet, mirrors and more. Includes a demonstration video.",
     date: "2026-05-05",
     readTime: "7 min read",
     category: "Cleaning Tips",
@@ -311,30 +311,30 @@ export const autoBlogPosts: AutoBlogPost[] = [
   />
 </figure>
 
-<p>Uma limpeza comum no banheiro remove a sujeira visível — mas o <strong>deep cleaning de banheiro</strong> vai muito além. Significa remover o calcário embutido nos rejuntes, o biofilme atrás do vaso, a gordura nas juntas do box, e os depósitos minerais que se acumulam nos metais durante meses. Se o seu banheiro nunca parece verdadeiramente limpo mesmo depois de passar, é porque precisa de um deep cleaning — não de mais produto.</p>
+<p>A regular bathroom cleaning removes visible dirt — but a <strong>bathroom deep clean</strong> goes much further. It means removing mineral deposits embedded in grout lines, the biofilm behind the toilet, soap scum buildup in the shower, and the hard water stains that accumulate on fixtures over months. If your bathroom never looks truly clean even after scrubbing, the issue isn't effort — it's that it needs a deep clean, not just more product.</p>
 
-<p>A equipe da Capital Clean Care realiza centenas de deep cleanings por ano em banheiros de residências no Maryland, Washington DC e Norte da Virgínia. Abaixo está o método exato que nossos profissionais seguem.</p>
+<p>The Capital Clean Care team performs hundreds of deep cleans every year in homes across Maryland, Washington DC, and Northern Virginia. Below is the exact method our professionals follow.</p>
 
-<h2>O Que é Deep Cleaning de Banheiro (e Por Que Difere da Limpeza Normal)</h2>
+<h2>What Is a Bathroom Deep Clean (and How It Differs from Regular Cleaning)</h2>
 
-<p>A limpeza de rotina mantém o que já está limpo. O deep cleaning restaura superfícies que acumularam meses ou anos de sujeira encrostada. A diferença prática:</p>
+<p>Routine cleaning maintains what's already clean. A deep clean restores surfaces that have accumulated months — or years — of built-up grime. The practical difference:</p>
 
 <ul>
-  <li><strong>Limpeza normal:</strong> limpa superfícies visíveis, remove sujeira fresca, demora 15–25 minutos</li>
-  <li><strong>Deep cleaning:</strong> trata rejunte, descalcifica metais, limpa atrás e embaixo de tudo, remove biofilme, demora 60–90 minutos num banheiro médio</li>
+  <li><strong>Regular cleaning:</strong> wipes visible surfaces, removes fresh dirt, takes 15–25 minutes</li>
+  <li><strong>Deep cleaning:</strong> treats grout, descales fixtures, cleans behind and underneath everything, removes biofilm — takes 60–90 minutes in an average bathroom</li>
 </ul>
 
-<p>Recomendamos deep cleaning no banheiro a cada 3–4 meses, com manutenção semanal entre as sessões.</p>
+<p>We recommend deep cleaning your bathroom every 3–4 months, with a weekly maintenance routine in between.</p>
 
-<h2>Veja o Deep Cleaning em Ação</h2>
+<h2>Watch the Deep Clean in Action</h2>
 
-<p>Antes de começar, assista ao processo completo no vídeo abaixo para entender a sequência e as técnicas usadas:</p>
+<p>Before you start, watch the full process in the video below to understand the sequence and techniques used:</p>
 
 <div style="display:flex;justify-content:center;margin:2rem 0;">
   <div style="width:100%;max-width:340px;border-radius:16px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,0.15);aspect-ratio:9/16;">
     <iframe
       src="https://www.youtube.com/embed/eC5JWxAufWQ"
-      title="Deep cleaning de banheiro passo a passo — Capital Clean Care"
+      title="Bathroom deep clean step by step — Capital Clean Care"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowfullscreen
       style="width:100%;height:100%;border:none;"
@@ -343,93 +343,93 @@ export const autoBlogPosts: AutoBlogPost[] = [
   </div>
 </div>
 
-<h2>Produtos Necessários para Deep Cleaning de Banheiro</h2>
+<h2>Supplies You Need for a Bathroom Deep Clean</h2>
 
-<p>Todos os produtos que usamos são plant-based e livres de químicos agressivos — seguros para famílias com crianças e pets:</p>
-
-<ul>
-  <li><strong>Desincrustante de calcário</strong> (base ácida suave ou vinagre branco concentrado) — para metais, box e vaso</li>
-  <li><strong>Pasta de bicarbonato de sódio</strong> — abrasivo suave para rejunte e juntas</li>
-  <li><strong>Desinfetante em spray</strong> (base álcool ou ácido cítrico) — para superfícies de toque frequente</li>
-  <li><strong>Peróxido de hidrogênio 3%</strong> — para manchas de mofo em silicone e rejunte escuro</li>
-  <li><strong>Microfibras dedicadas por superfície</strong> — nunca use a mesma microfibra do vaso no espelho</li>
-  <li><strong>Escova de dente velha</strong> — indispensável para rejuntes estreitos e juntas do vaso</li>
-  <li><strong>Raspador plástico</strong> — remove depósitos de sabão do box sem arranhar o vidro</li>
-</ul>
-
-<h2>Passo a Passo: Deep Cleaning Profissional do Banheiro</h2>
-
-<h3>Passo 1 — Aplique produtos e deixe agir (não pule esta etapa)</h3>
-<p>Antes de esfregar qualquer coisa, distribua os produtos químicos para que comecem a trabalhar enquanto você faz outra coisa. Coloque desincrustante no interior do vaso, vinagre no box, e desincrustante nos metais. Espere 10–15 minutos. Este tempo de contato é o segredo que separa resultados medianos de resultados profissionais.</p>
-
-<h3>Passo 2 — Comece pelo teto e paredes (sempre de cima para baixo)</h3>
-<p>Remova teias de aranha nos cantos do teto. Limpe a luminária, ventilação e armários altos com microfibra seca. Wipe nas paredes — preste atenção na área atrás da porta e nos rodapés, que acumulam poeira mesmo em banheiros aparentemente limpos.</p>
-
-<h3>Passo 3 — Trate o rejunte e o silicone</h3>
-<p>Esta é a etapa mais trabalhosa e a que mais transforma o resultado visual. Aplique pasta de bicarbonato diretamente no rejunte e esfregue com escova de dente velha em movimentos circulares. Para rejuntes escuros com mofo, aplique peróxido de hidrogênio, espere 5 minutos e esfregue. Em silicones pretos ou cinzas de mofo, peróxido + escova faz diferença dramática — mas silicone muito degradado precisa ser substituído.</p>
-
-<h3>Passo 4 — Box e chuveiro</h3>
-<p>O vinagre que você aplicou 15 minutos atrás já amoleceu o calcário. Use o raspador plástico em movimentos firmes e retos para remover os depósitos mais grossos do vidro antes de passar a microfibra. Para o metal do chuveiro, envolva a saída do chuveiro num saco plástico com vinagre puro por 30 minutos — os furos ficam completamente desobstruídos.</p>
-
-<h3>Passo 5 — Pia, bancada e torneira</h3>
-<p>Limpe o interior da pia com desincrustante e esponja não-abrasiva. Esfregue a torneira e o ralo com escova de dente para atingir a base dos metais onde água e sabão ficam parados. Polir os metais com microfibra seca ao final evita marcas d'água.</p>
-
-<h3>Passo 6 — Vaso sanitário (por completo)</h3>
-<p>O desincrustante que você colocou no início já trabalhou no interior. Esfregue com escovinha. Mas o exterior do vaso — base, parte de trás, a área entre o vaso e o tanque, e o tanque em si — precisam de igual atenção. Use microfibra com desinfetante em spray. A base do vaso no encontro com o piso acumula a maior concentração de bactérias de todo o banheiro e é frequentemente esquecida.</p>
-
-<h3>Passo 7 — Espelhos e superfícies de vidro</h3>
-<p>Spray de vinagre diluído + microfibra limpa funciona melhor que qualquer limpador de vidro comercial. O segredo para sem manchas: esfregar em S da esquerda para direita, não em círculos. Círculos redistribuem o produto; o S remove com cada passagem.</p>
-
-<h3>Passo 8 — Piso por último</h3>
-<p>Varra antes de molhar. Aplique desincrustante no piso de cerâmica ou porcelana e esfregue o rejunte do piso com escova de cabo curto. Mopa úmida de microfibra para finalizar — nunca use pano de chão convencional em banheiro, pois redistribui bactérias ao invés de remover.</p>
-
-<h2>Checklist Completo de Deep Cleaning de Banheiro</h2>
+<p>All the products we use are plant-based and free of harsh chemicals — safe for households with children and pets:</p>
 
 <ul>
-  <li>☐ Teto e ventilação: remoção de teias e poeira</li>
-  <li>☐ Paredes: limpeza de cima para baixo incluindo atrás da porta</li>
-  <li>☐ Rejunte das paredes: pasta de bicarbonato + escova</li>
-  <li>☐ Silicone: tratamento com peróxido de hidrogênio</li>
-  <li>☐ Box: descalcificação com vinagre + raspador plástico</li>
-  <li>☐ Chuveiro: desobstrução dos furos com vinagre</li>
-  <li>☐ Torneira e metais: descalcificação e polimento</li>
-  <li>☐ Interior do vaso: desincrustante + escovinha</li>
-  <li>☐ Exterior do vaso: base, laterais, tanque, atrás</li>
-  <li>☐ Pia: interior e ralo</li>
-  <li>☐ Armários: interior e frentes externas</li>
-  <li>☐ Espelhos: sem manchas com técnica em S</li>
-  <li>☐ Rodapé e entrada da porta</li>
-  <li>☐ Rejunte do piso: escova + desincrustante</li>
-  <li>☐ Piso: varrido e mopado com microfibra</li>
+  <li><strong>Lime and calcium remover</strong> (mild acid-based or concentrated white vinegar) — for fixtures, shower glass, and toilet bowl</li>
+  <li><strong>Baking soda paste</strong> — gentle abrasive for grout lines and caulk joints</li>
+  <li><strong>Disinfectant spray</strong> (alcohol or citric acid-based) — for high-touch surfaces</li>
+  <li><strong>3% hydrogen peroxide</strong> — for mold stains on silicone caulk and dark grout</li>
+  <li><strong>Dedicated microfiber cloths per surface</strong> — never use the same cloth from the toilet on the mirror</li>
+  <li><strong>Old toothbrush</strong> — essential for narrow grout lines and the base of fixtures</li>
+  <li><strong>Plastic scraper</strong> — removes soap scum from shower glass without scratching</li>
 </ul>
 
-<h2>Com Que Frequência Fazer Deep Cleaning no Banheiro?</h2>
+<h2>Step-by-Step: Professional Bathroom Deep Clean</h2>
 
-<p>A regra geral que seguimos para nossos clientes no Maryland e DC:</p>
+<h3>Step 1 — Apply cleaners first and let them dwell (don't skip this)</h3>
+<p>Before scrubbing anything, apply your cleaning products so they can start working while you focus elsewhere. Pour lime remover inside the toilet bowl, spray vinegar on the shower glass, and apply descaler to the faucet and showerhead. Wait 10–15 minutes. This dwell time is the single biggest difference between mediocre and professional results.</p>
+
+<h3>Step 2 — Start at the ceiling and work down</h3>
+<p>Remove cobwebs from ceiling corners. Wipe the light fixture, exhaust fan cover, and top of cabinets with a dry microfiber. Wipe down the walls — pay special attention to the area behind the door and the baseboards, which collect dust even in bathrooms that look clean.</p>
+
+<h3>Step 3 — Treat the grout and caulk</h3>
+<p>This is the most labor-intensive step and the one that makes the biggest visual difference. Apply baking soda paste directly onto the grout and scrub with an old toothbrush using small circular motions. For dark or moldy grout, apply hydrogen peroxide, wait 5 minutes, then scrub. For black or gray mold on silicone caulk, hydrogen peroxide plus a toothbrush works dramatically well — though heavily degraded caulk will need to be replaced.</p>
+
+<h3>Step 4 — Shower and glass enclosure</h3>
+<p>The vinegar you applied 15 minutes ago has already softened the mineral deposits. Use the plastic scraper in firm, straight strokes to remove the thicker buildup from the glass before wiping with a microfiber. For a clogged showerhead, fill a plastic bag with undiluted white vinegar, tie it around the showerhead so the nozzle is submerged, and leave it for 30 minutes — the holes will clear completely.</p>
+
+<h3>Step 5 — Sink, countertop, and faucet</h3>
+<p>Clean the inside of the sink basin with a descaler and a non-abrasive sponge. Scrub the faucet base and drain with a toothbrush to reach where water and soap sit stagnant. Finish by polishing all chrome fixtures with a dry microfiber to prevent water spots.</p>
+
+<h3>Step 6 — Toilet (every surface)</h3>
+<p>The bowl treatment you applied at the start has been working. Scrub with a toilet brush. But the exterior of the toilet — the base, the back, the space between the tank and bowl, and the tank itself — all need equal attention. Wipe with a disinfectant spray and a fresh microfiber. The base of the toilet where it meets the floor collects the highest concentration of bacteria in the entire bathroom and is almost always overlooked.</p>
+
+<h3>Step 7 — Mirrors and glass surfaces</h3>
+<p>Diluted white vinegar in a spray bottle plus a clean microfiber outperforms any commercial glass cleaner. The trick to a streak-free finish: wipe in an S-pattern from left to right, not in circles. Circular motions redistribute the product; the S-pattern lifts it off with each pass.</p>
+
+<h3>Step 8 — Floor last</h3>
+<p>Sweep before you wet anything. Apply descaler to ceramic or porcelain tile and scrub the floor grout with a stiff-bristle brush. Finish with a damp microfiber mop — never use a traditional cotton mop in a bathroom, as it redistributes bacteria rather than removing them.</p>
+
+<h2>Complete Bathroom Deep Clean Checklist</h2>
 
 <ul>
-  <li><strong>Banheiro de uso diário por 1–2 pessoas:</strong> deep cleaning a cada 4 meses</li>
-  <li><strong>Banheiro de uso diário por família com filhos:</strong> a cada 2–3 meses</li>
-  <li><strong>Banheiro de uso frequente com chuveiro:</strong> a cada 6–8 semanas</li>
-  <li><strong>Antes de visitas ou para aluguel por temporada (Airbnb):</strong> a cada troca de hóspede</li>
+  <li>☐ Ceiling and exhaust fan: cobwebs and dust removed</li>
+  <li>☐ Walls: wiped top to bottom including behind the door</li>
+  <li>☐ Wall grout: baking soda paste + toothbrush</li>
+  <li>☐ Caulk/silicone: hydrogen peroxide mold treatment</li>
+  <li>☐ Shower glass: descaled with vinegar + plastic scraper</li>
+  <li>☐ Showerhead: nozzles cleared with vinegar soak</li>
+  <li>☐ Faucet and fixtures: descaled and polished</li>
+  <li>☐ Toilet bowl interior: descaler + brush</li>
+  <li>☐ Toilet exterior: base, sides, tank, back</li>
+  <li>☐ Sink basin: interior and drain</li>
+  <li>☐ Cabinets: interior and exterior fronts</li>
+  <li>☐ Mirrors: streak-free with S-pattern technique</li>
+  <li>☐ Baseboards and door threshold</li>
+  <li>☐ Floor grout: brush + descaler</li>
+  <li>☐ Floor: swept and mopped with microfiber</li>
 </ul>
 
-<p>Entre os deep cleanings, uma limpeza de manutenção semanal de 10–15 minutos — vaso, pia, espelho e piso — evita que a sujeira se encrustar e mantém o banheiro sempre apresentável.</p>
+<h2>How Often Should You Deep Clean Your Bathroom?</h2>
 
-<h2>Quando Chamar um Profissional</h2>
-
-<p>Alguns sinais de que o deep cleaning do seu banheiro precisa de mãos profissionais:</p>
+<p>The general schedule we follow for our clients in Maryland and DC:</p>
 
 <ul>
-  <li>Rejunte preto ou cinza que não sai com escovação doméstica</li>
-  <li>Manchas amarelas ou alaranjadas no interior do vaso resistentes a desincrustante comum</li>
-  <li>Box com calcário espesso que não cede ao vinagre</li>
-  <li>Cheirinho persistente mesmo depois de limpar</li>
-  <li>Não tem tempo para um processo que leva 60–90 minutos corretamente</li>
+  <li><strong>Daily-use bathroom for 1–2 people:</strong> deep clean every 4 months</li>
+  <li><strong>Daily-use bathroom for a family with kids:</strong> every 2–3 months</li>
+  <li><strong>High-use bathroom with a shower:</strong> every 6–8 weeks</li>
+  <li><strong>Before guests arrive or for short-term rental (Airbnb):</strong> between every guest turnover</li>
 </ul>
 
-<p>A Capital Clean Care faz <a href="/services/deep-cleaning">deep cleaning profissional</a> em residências em todo o Maryland — Bethesda, Rockville, Silver Spring, Gaithersburg e regiões — além de Washington DC e Norte da Virgínia. Usamos exclusivamente produtos plant-based, sem químicos agressivos, seguros para crianças e animais.</p>
+<p>Between deep cleans, a 10–15 minute weekly maintenance routine — toilet, sink, mirror, and floor — keeps dirt from hardening and your bathroom looking consistently fresh.</p>
 
-<p><strong>Quer agendar um deep cleaning de banheiro?</strong> <a href="/contact">Solicite um orçamento gratuito</a> ou ligue para <strong>(240) 704-2551</strong>. Respondemos em até 2 horas.</p>`,
+<h2>When to Call a Professional</h2>
+
+<p>Signs that your bathroom deep clean needs professional hands:</p>
+
+<ul>
+  <li>Black or gray grout that won't brighten with home scrubbing</li>
+  <li>Yellow or orange stains inside the toilet bowl that resist standard bowl cleaner</li>
+  <li>Shower glass with thick mineral scale that doesn't respond to vinegar</li>
+  <li>Persistent odor even after a thorough cleaning</li>
+  <li>No time for a process that takes 60–90 minutes done properly</li>
+</ul>
+
+<p>Capital Clean Care provides <a href="/services/deep-cleaning">professional deep cleaning</a> in homes throughout Maryland — Bethesda, Rockville, Silver Spring, Gaithersburg, and surrounding areas — as well as Washington DC and Northern Virginia. We use exclusively plant-based products, free of harsh chemicals, safe for children and pets.</p>
+
+<p><strong>Ready to schedule a bathroom deep clean?</strong> <a href="/contact">Request a free quote</a> or call <strong>(240) 704-2551</strong>. We respond within 2 hours.</p>`,
   },
 ];
