@@ -20,18 +20,17 @@ const Contact = () => {
       <LocalBusinessSchema />
       <ContactPageSchema />
       <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Contact", href: "/contact" }]} />
-      <section className="py-16 md:py-24">
+      <section className="pt-4 pb-16 md:py-24">
         <div className="container mx-auto px-4">
-          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Contact", href: "/contact" }]} className="mb-6" />
-          <div className="text-center mb-12">
-            <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4">Contact Us</h1>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">Ready for a cleaner home? Reach out for a free, no-obligation quote.</p>
+          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Contact", href: "/contact" }]} className="hidden md:block mb-6" />
+          <div className="text-center mb-4 md:mb-12">
+            <h1 className="font-heading text-2xl md:text-5xl font-bold mb-1 md:mb-4">Get a Free Quote</h1>
+            <p className="hidden md:block text-muted-foreground text-lg max-w-2xl mx-auto">Ready for a cleaner home? Reach out for a free, no-obligation quote.</p>
           </div>
 
           {/* Quote Form — top */}
           <Card className="max-w-3xl mx-auto mb-12">
-            <CardContent className="p-6 md:p-8">
-              <h2 className="font-heading text-2xl font-bold mb-6">Get a Free Quote</h2>
+            <CardContent className="p-4 md:p-8">
               <QuoteForm />
             </CardContent>
           </Card>
