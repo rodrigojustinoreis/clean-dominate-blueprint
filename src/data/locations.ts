@@ -1003,6 +1003,96 @@ export const cities: CityData[] = [
     ],
     metaTitle: "House Cleaning in Kentlands, MD | Capital Clean Care",
     metaDescription: "Professional house cleaning in Kentlands, MD. Specialized care for New Urbanist homes in Kentlands, Lakelands & Crown Farm. Eco-friendly products, background-checked teams. Free quotes."
+  },
+  {
+    name: "North Bethesda",
+    slug: "north-bethesda-md",
+    state: "MD",
+    stateSlug: "maryland",
+    county: "Montgomery County",
+    intro: "North Bethesda is one of Montgomery County's fastest-growing communities, home to the White Flint redevelopment corridor, luxury high-rises, and established residential neighborhoods like Garrett Park Estates and Luxmanor. Capital Clean Care provides professional, eco-friendly house cleaning tailored to the diverse mix of condos, townhomes, and single-family residences throughout North Bethesda.\n\nWith easy Metro access and proximity to major employers along Rockville Pike, North Bethesda attracts busy professionals and families who value efficiency and quality. Our background-checked cleaning teams arrive fully equipped and on schedule, so you can focus on work and family without worrying about your home.\n\nWe offer standard cleaning, deep cleaning, move-in/move-out services, and flexible recurring plans for all North Bethesda home types.",
+    nearbySlugs: ["bethesda-md", "rockville-md", "kensington-md", "chevy-chase-md", "gaithersburg-md"],
+    faqs: [
+      { q: "What North Bethesda neighborhoods do you serve?", a: "We serve all North Bethesda neighborhoods including White Flint, Luxmanor, Garrett Park Estates, Nicholson Lane corridor, and surrounding areas." },
+      { q: "Do you clean condos and high-rises in North Bethesda?", a: "Yes, we regularly clean condos, apartments, and high-rise units throughout North Bethesda including buildings near the White Flint Metro." },
+      { q: "How much does cleaning cost in North Bethesda?", a: "Pricing depends on home size and service type. Request a free, no-obligation quote for your specific North Bethesda residence." },
+      { q: "Are your cleaners background-checked?", a: "Yes. Every Capital Clean Care team member passes a thorough background check before joining our team. We are fully licensed, bonded, and insured." },
+      { q: "Do you offer recurring cleaning plans in North Bethesda?", a: "Yes, we offer weekly, bi-weekly, and monthly recurring plans with preferred pricing for North Bethesda clients." }
+    ],
+    metaTitle: "House Cleaning Services in North Bethesda, MD | Capital Clean Care",
+    metaDescription: "Professional house cleaning in North Bethesda, MD. Eco-friendly products, background-checked teams, flexible scheduling. Serving all North Bethesda neighborhoods. Free quotes."
+  },
+  {
+    name: "Olney",
+    slug: "olney-md",
+    state: "MD",
+    stateSlug: "maryland",
+    county: "Montgomery County",
+    intro: "Olney is a charming, semi-rural community in northern Montgomery County known for its peaceful neighborhoods, excellent schools, and strong sense of community. Homes here range from classic colonials and split-levels to newer construction in planned communities. Capital Clean Care brings professional, eco-friendly cleaning to Olney families who want to maintain their homes without sacrificing weekend time.\n\nOlney's spacious homes often feature multiple levels, finished basements, and large kitchens that benefit from thorough, methodical cleaning. Our teams are experienced with the type of detailed work that larger single-family homes require, and we use non-toxic products safe for children, pets, and the area's surrounding natural environment.\n\nWe offer standard cleaning, deep cleaning, move-in/move-out services, post-renovation cleanup, and recurring plans for Olney homeowners.",
+    nearbySlugs: ["damascus-md", "burtonsville-md", "clarksburg-md", "gaithersburg-md", "rockville-md"],
+    faqs: [
+      { q: "What Olney neighborhoods do you serve?", a: "We serve all Olney neighborhoods including Olney Mill, Olney Outside, Ashton, and surrounding communities along Route 108." },
+      { q: "How far in advance do I need to book in Olney?", a: "We recommend booking 3–5 days in advance. For recurring clients, your schedule is held automatically." },
+      { q: "Do you bring your own supplies to Olney homes?", a: "Yes. Our teams arrive fully equipped with eco-friendly products and professional equipment." },
+      { q: "Can you handle large Olney homes with multiple floors?", a: "Absolutely. We regularly service large single-family homes and price based on bedrooms and bathrooms." },
+      { q: "Are you insured to work in Olney?", a: "Yes, Capital Clean Care is fully licensed, bonded, and insured in Maryland." }
+    ],
+    metaTitle: "House Cleaning Services in Olney, MD | Capital Clean Care",
+    metaDescription: "Professional house cleaning in Olney, MD. Eco-friendly products, background-checked teams, flexible scheduling for Olney families. Montgomery County's trusted cleaning service. Free quotes."
+  },
+  {
+    name: "Hyattsville",
+    slug: "hyattsville-md",
+    state: "MD",
+    stateSlug: "maryland",
+    county: "Prince George's County",
+    intro: "Hyattsville is a vibrant, arts-focused community in Prince George's County with a diverse population and a rich mix of housing styles — from early-20th-century bungalows and colonials in the Arts District to modern apartments near the Prince George's Plaza Metro. Capital Clean Care provides reliable, eco-friendly cleaning for Hyattsville homeowners and renters who value quality and consistency.\n\nHyattsville's proximity to Washington DC and the University of Maryland makes it a hub for young professionals and families. Our flexible scheduling and same-week availability accommodate busy lifestyles, while our plant-based products are ideal for older homes that may have sensitivities to harsh chemical cleaners.\n\nWe serve all Hyattsville neighborhoods with standard cleaning, deep cleaning, move-in/move-out services, and recurring plans.",
+    nearbySlugs: ["college-park-md", "takoma-park-md", "bowie-md", "washington-dc", "silver-spring-md"],
+    faqs: [
+      { q: "What Hyattsville areas do you serve?", a: "We serve all Hyattsville neighborhoods including the Arts District, University Hills, Queens Chapel Manor, and areas near the Prince George's Plaza Metro." },
+      { q: "Do you clean apartments and rental units in Hyattsville?", a: "Yes, we offer move-in/move-out cleaning and recurring cleaning for Hyattsville apartments and rental properties." },
+      { q: "How much does cleaning cost in Hyattsville?", a: "Pricing is based on home size and service type. Contact us for a free, no-obligation quote specific to your Hyattsville home." },
+      { q: "Are your cleaners background-checked?", a: "Yes. Every team member passes a thorough background check and we are fully licensed, bonded, and insured." },
+      { q: "Do you offer eco-friendly cleaning in Hyattsville?", a: "Yes, all our products are plant-based and EPA Safer Choice certified — safe for children, pets, and older home finishes." }
+    ],
+    metaTitle: "House Cleaning Services in Hyattsville, MD | Capital Clean Care",
+    metaDescription: "Professional house cleaning in Hyattsville, MD. Eco-friendly, background-checked cleaning teams serving all Hyattsville neighborhoods. Prince George's County trusted service. Free quotes."
+  },
+  {
+    name: "Burtonsville",
+    slug: "burtonsville-md",
+    state: "MD",
+    stateSlug: "maryland",
+    county: "Montgomery County",
+    intro: "Burtonsville is a quiet, family-oriented community in the northeastern corner of Montgomery County, known for its suburban calm, good schools, and convenient access to both I-95 and Route 29. Homes here are predominantly single-family with spacious yards, and residents take pride in keeping their properties in excellent condition.\n\nCapital Clean Care serves Burtonsville families with the same eco-friendly, professional cleaning that homeowners across Montgomery County trust. Whether you need a one-time deep clean, regular maintenance, or a thorough move-in/move-out cleaning, our background-checked teams handle every visit with care and consistency.\n\nOur plant-based products are safe for children and pets — ideal for the family-focused households throughout Burtonsville.",
+    nearbySlugs: ["olney-md", "damascus-md", "silver-spring-md", "laurel-md", "columbia-md"],
+    faqs: [
+      { q: "What Burtonsville areas do you cover?", a: "We serve all Burtonsville neighborhoods and surrounding communities along Route 29 and the I-95 corridor in northeastern Montgomery County." },
+      { q: "Can I get same-week cleaning in Burtonsville?", a: "Yes, we often have availability within the same week. Contact us to confirm the earliest slot in Burtonsville." },
+      { q: "Do you bring cleaning supplies to Burtonsville homes?", a: "Yes. All supplies and equipment are included. Our eco-friendly products are safe for children and pets." },
+      { q: "Are you licensed and insured in Maryland?", a: "Yes, Capital Clean Care is fully licensed, bonded, and insured throughout Maryland including Burtonsville." },
+      { q: "Do you offer recurring cleaning in Burtonsville?", a: "Yes, we offer weekly, bi-weekly, and monthly recurring plans with preferred pricing and a dedicated team." }
+    ],
+    metaTitle: "House Cleaning Services in Burtonsville, MD | Capital Clean Care",
+    metaDescription: "Professional house cleaning in Burtonsville, MD. Eco-friendly products, background-checked teams. Serving Burtonsville and surrounding Montgomery County communities. Free quotes."
+  },
+  {
+    name: "Montgomery Village",
+    slug: "montgomery-village-md",
+    state: "MD",
+    stateSlug: "maryland",
+    county: "Montgomery County",
+    intro: "Montgomery Village is a large planned community in Gaithersburg offering an array of housing types — from garden condos and townhomes to single-family homes across more than a dozen distinct villages. With lake access, parks, and a strong homeowners association culture, residents here maintain high standards for their properties.\n\nCapital Clean Care provides eco-friendly, professional house cleaning tailored to the variety of homes throughout Montgomery Village. Our experienced teams understand the layout and character of planned community homes and deliver consistent, detailed cleaning on every visit.\n\nWhether you need standard upkeep, a deep clean for a special occasion, or a recurring plan that keeps your home consistently fresh, we serve all Montgomery Village neighborhoods with the same commitment to quality and reliability.",
+    nearbySlugs: ["gaithersburg-md", "germantown-md", "rockville-md", "north-bethesda-md", "clarksburg-md"],
+    faqs: [
+      { q: "Which Montgomery Village neighborhoods do you serve?", a: "We serve all Montgomery Village neighborhoods including Stedwick, Whetstone, Watkins Mill, Sequoyah, and all other villages within the community." },
+      { q: "Do you clean townhomes and condos in Montgomery Village?", a: "Yes, we regularly clean all housing types in Montgomery Village including condos, townhomes, and single-family homes." },
+      { q: "How is pricing determined for Montgomery Village homes?", a: "Pricing is based on the number of bedrooms and bathrooms and the type of service. Request a free quote for your specific home." },
+      { q: "Are your products safe for HOA-sensitive communities?", a: "Yes, our plant-based, non-toxic products are safe for all home types and leave no harsh chemical residues." },
+      { q: "Can I get recurring service in Montgomery Village?", a: "Yes, we offer weekly, bi-weekly, and monthly plans. Recurring clients receive preferred pricing and a consistent dedicated team." }
+    ],
+    metaTitle: "House Cleaning Services in Montgomery Village, MD | Capital Clean Care",
+    metaDescription: "Professional house cleaning in Montgomery Village, MD. Eco-friendly products, background-checked teams. Serving all Montgomery Village neighborhoods in Gaithersburg. Free quotes."
   }
 ];
 

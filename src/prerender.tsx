@@ -6,6 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import AppRoutes from "./AppRoutes";
 import { slCities, slServices } from "./data/service-locations";
 import { vanityLandingPages } from "./data/vanity-landings";
+import { cities as locationCities } from "./data/locations";
 
 function getAllRoutes(): string[] {
   const routes: string[] = [
@@ -74,24 +75,10 @@ function getAllRoutes(): string[] {
     "/terms-of-service",
   ];
 
-  // City pages
-  const citySlugs = [
-    "rockville-md", "bethesda-md", "silver-spring-md", "gaithersburg-md",
-    "germantown-md", "frederick-md", "potomac-md", "kensington-md",
-    "chevy-chase-md", "north-bethesda-md", "college-park-md", "laurel-md", "bowie-md",
-    "olney-md", "hyattsville-md", "takoma-park-md", "burtonsville-md",
-    "montgomery-village-md", "wheaton-md", "arlington-va", "alexandria-va", "fairfax-va",
-    "mclean-va", "reston-va", "vienna-va", "tysons-va", "washington-dc", "washington-dc-ne",
-    "montgomery-county-md", "frederick-county-md", "howard-county-md", "prince-georges-county-md",
-    "columbia-md", "ellicott-city-md", "clarksburg-md", "damascus-md",
-    "urbana-md", "new-market-md",
-    "capitol-hill-dc", "georgetown-dc", "dupont-circle-dc", "adams-morgan-dc", "downtown-dc",
-    "falls-church-va", "shaw-dc", "columbia-heights-dc", "navy-yard-dc", "herndon-va", "annandale-va",
-    // New cities — Phase 4 SEO expansion
-    "monrovia-md", "north-potomac-md", "boyds-md", "brookeville-md", "mount-airy-md", "kentlands-md",
-  ];
-  for (const c of citySlugs) {
-    routes.push(`/locations/${c}`);
+  // City pages — auto-derived from locations.ts so adding a city there
+  // automatically prerenders its hub page. No manual list to maintain.
+  for (const city of locationCities) {
+    routes.push(`/locations/${city.slug}`);
   }
 
   // Service-location combinations
