@@ -162,7 +162,12 @@ const Index = () => {
         </section>
       </ScrollReveal>
 
-      {/* ══════════════ 5. SERVIÇOS ══════════════ */}
+      {/* ══════════════ 5. DEPOIMENTOS (Google Reviews) ══════════════ */}
+      <ScrollReveal>
+        <TestimonialsCarousel />
+      </ScrollReveal>
+
+      {/* ══════════════ 6. SERVIÇOS ══════════════ */}
       <ScrollReveal>
         <ServicesSection />
       </ScrollReveal>
@@ -210,10 +215,6 @@ const Index = () => {
         <BeforeAfterGallery />
       </ScrollReveal>
 
-      {/* ══════════════ 7. DEPOIMENTOS (Google Reviews) ══════════════ */}
-      <ScrollReveal>
-        <TestimonialsCarousel />
-      </ScrollReveal>
 
       {/* ══════════════ FIM DO BLOCO DE AUTORIDADE ══════════════ */}
 
