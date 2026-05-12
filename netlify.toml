@@ -25,6 +25,25 @@
   status = 301
   force = true
 
+# ── State hub canonical URLs (trailing-slash → canonical, must run before Pretty URLs) ──
+[[redirects]]
+  from = "/maryland/"
+  to = "/maryland"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/virginia/"
+  to = "/virginia"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/washington-dc/"
+  to = "/washington-dc"
+  status = 301
+  force = true
+
 # ── /premium-clean → homepage ─────────────────────────────────────────────────
 [[redirects]]
   from = "/premium-clean"
@@ -422,6 +441,7 @@
   from = "/blog/:slug"
   to = "/blog/:slug/"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/locations/:city"
