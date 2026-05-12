@@ -9,15 +9,12 @@ import Layout from "@/components/layout/Layout";
 import QuoteForm from "@/components/QuoteForm";
 import FAQ from "@/components/FAQ";
 import { useSEO } from "@/hooks/useSEO";
-import { services } from "@/data/services";
 import { mdCities, dcCities, vaCities } from "@/data/locations";
 import { vanityLandingPages } from "@/data/vanity-landings";
 import regionMD from "@/assets/region-maryland.webp";
 import regionDC from "@/assets/region-dc.webp";
 import regionVA from "@/assets/region-virginia.webp";
 import teamPhoto from "@/assets/team-photo.webp";
-import cleanerMopping from "@/assets/cleaner-mopping.webp";
-import ecoProducts from "@/assets/eco-products.webp";
 import HeroSection from "@/components/home/HeroSection";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
 import ServicesSection from "@/components/home/ServicesSection";
@@ -25,7 +22,6 @@ import TestimonialsCarousel from "@/components/home/TestimonialsCarousel";
 import EcoCallout from "@/components/home/EcoCallout";
 import ScrollReveal from "@/components/ScrollReveal";
 import GreenShield5Step from "@/components/GreenShield5Step";
-import TrustBadges from "@/components/TrustBadges";
 
 const homeFaqs = [
   { q: "What areas do you serve?", a: "We serve communities throughout Maryland (Montgomery, Frederick, Howard, and Prince George's Counties), Washington DC, and Northern Virginia (Arlington, Fairfax, McLean, Alexandria, and more)." },
@@ -65,14 +61,14 @@ const Index = () => {
       <BreadcrumbSchema items={[{ label: "Home", href: "/" }]} />
       <FAQSchema faqs={homeFaqs} />
 
-      {/* ══════════════ HERO ══════════════ */}
+      {/* ══════════════ 1. HERO ══════════════ */}
       <HeroSection />
 
-      {/* ══════════════ TRUST BAR ══════════════ */}
+      {/* ══════════════ 2. TRUST BAR + NÚMEROS (merged) ══════════════ */}
       <ScrollReveal>
         <section className="border-b border-border bg-card shadow-sm">
-          <div className="container mx-auto px-4 py-5">
-            <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-4">
+          <div className="container mx-auto px-4 py-6">
+            <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-4 mb-6">
               {[
                 { icon: Shield, label: "Licensed & Insured", sub: "Full liability coverage" },
                 { icon: Users, label: "Background-Checked", sub: "Every team member" },
@@ -92,33 +88,27 @@ const Index = () => {
                 </div>
               ))}
             </div>
+            <div className="border-t border-border pt-5">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto text-center">
+                {[
+                  { value: "500+", label: "Homes Cleaned", icon: "🏠" },
+                  { value: "9+",   label: "Years Serving DMV", icon: "📅" },
+                  { value: "5.0★", label: "Google Rating", icon: "⭐" },
+                  { value: "100%", label: "Satisfaction Promise", icon: "🛡️" },
+                ].map((s) => (
+                  <div key={s.label} className="flex flex-col items-center gap-1">
+                    <span className="text-2xl">{s.icon}</span>
+                    <p className="font-heading font-bold text-3xl md:text-4xl text-accent">{s.value}</p>
+                    <p className="text-sm text-muted-foreground font-medium leading-tight">{s.label}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
       </ScrollReveal>
 
-      {/* ══════════════ SOCIAL PROOF NUMBERS ══════════════ */}
-      <ScrollReveal>
-        <div className="py-10 bg-white border-b border-border">
-          <div className="container mx-auto px-4">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto text-center">
-              {[
-                { value: "500+", label: "Homes Cleaned", icon: "🏠" },
-                { value: "9+",   label: "Years Serving DMV", icon: "📅" },
-                { value: "5.0★", label: "Google Rating", icon: "⭐" },
-                { value: "100%", label: "Satisfaction Promise", icon: "🛡️" },
-              ].map((s) => (
-                <div key={s.label} className="flex flex-col items-center gap-1">
-                  <span className="text-2xl">{s.icon}</span>
-                  <p className="font-heading font-bold text-3xl md:text-4xl text-accent">{s.value}</p>
-                  <p className="text-sm text-muted-foreground font-medium leading-tight">{s.label}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </ScrollReveal>
-
-      {/* ══════════════ PROBLEM / AGITATION ══════════════ */}
+      {/* ══════════════ 3. PROBLEMA / AGITAÇÃO ══════════════ */}
       <ScrollReveal>
         <section className="relative py-20 md:py-28 bg-mesh overflow-hidden">
           <div className="container mx-auto px-4 max-w-4xl relative z-10">
@@ -152,7 +142,82 @@ const Index = () => {
         </section>
       </ScrollReveal>
 
-      {/* ══════════════ FAMILY-OWNED / ABOUT ══════════════ */}
+      {/* ══════════════ 4. SERVIÇOS ══════════════ */}
+      <ScrollReveal>
+        <ServicesSection />
+      </ScrollReveal>
+
+      {/* ══════════════ 5. COMO FUNCIONA ══════════════ */}
+      <ScrollReveal>
+        <section className="py-24 md:py-32 relative">
+          <div className="container mx-auto px-4 max-w-5xl">
+            <div className="text-center mb-16">
+              <span className="inline-block bg-accent/10 text-accent font-semibold text-sm uppercase tracking-wider px-3 py-1 rounded-full mb-3">The Process</span>
+              <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mt-2 mb-4">Getting a clean home is simple</h2>
+              <p className="text-muted-foreground max-w-xl mx-auto text-lg">From first contact to sparkling home — we make it effortless.</p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+              <div className="hidden md:block absolute top-[2.5rem] left-[calc(16.66%+2rem)] right-[calc(16.66%+2rem)] h-0.5 bg-gradient-to-r from-accent/10 via-accent/50 to-accent/10 z-0" />
+              {[
+                { step: "01", title: "Get Your Free Quote", desc: "Fill out our quick form or call (240) 704-2551. We respond within a few hours with a personalized estimate — no obligation.", icon: Sparkles },
+                { step: "02", title: "We Clean Your Home", desc: "Our background-checked, eco-friendly team arrives on schedule. You don't even need to be home.", icon: CheckCircle },
+                { step: "03", title: "Enjoy Your Space", desc: "Come home to a spotless house. If anything isn't perfect, we re-clean for free within 24 hours. Guaranteed.", icon: Star },
+              ].map((s) => (
+                <div key={s.step} className="relative z-10 flex flex-col items-center text-center group">
+                  <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-accent to-primary flex items-center justify-center mb-6 shadow-xl shadow-accent/20 group-hover:-translate-y-2 transition-transform duration-300 rotate-3 group-hover:rotate-6">
+                    <s.icon className="h-8 w-8 text-white -rotate-3 group-hover:-rotate-6 transition-transform" />
+                  </div>
+                  <span className="text-xs font-bold text-accent uppercase tracking-widest mb-3 bg-accent/10 px-3 py-1 rounded-full">Step {s.step}</span>
+                  <h3 className="font-heading text-xl font-bold mb-3">{s.title}</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{s.desc}</p>
+                </div>
+              ))}
+            </div>
+            <div className="text-center mt-12">
+              <Button variant="cta" size="lg" className="rounded-full" asChild>
+                <a href="#quote">Start with a Free Quote <ArrowRight className="ml-2 h-4 w-4" /></a>
+              </Button>
+              <p className="text-xs text-muted-foreground mt-3">No commitment • Response within hours • 15% OFF first clean</p>
+            </div>
+          </div>
+        </section>
+      </ScrollReveal>
+
+      {/* ══════════════ BLOCO DE AUTORIDADE ══════════════ */}
+
+      {/* ══════════════ 6. BEFORE & AFTER ══════════════ */}
+      <ScrollReveal>
+        <BeforeAfterGallery />
+      </ScrollReveal>
+
+      {/* ══════════════ 7. VÍDEO TESTIMONIAL ══════════════ */}
+      <ScrollReveal>
+        <section className="py-16 md:py-20">
+          <div className="container mx-auto px-4 max-w-3xl text-center">
+            <span className="inline-block bg-accent/10 text-accent font-semibold text-sm uppercase tracking-wider px-3 py-1 rounded-full mb-3">Real Client</span>
+            <h2 className="font-heading text-2xl md:text-3xl font-bold mt-2 mb-8">Hear It Directly From Our Client</h2>
+            <div className="rounded-2xl overflow-hidden shadow-xl border border-border aspect-video">
+              <iframe
+                src="https://www.youtube.com/embed/xI602FI_iOU"
+                title="Capital Clean Care client video testimonial"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </section>
+      </ScrollReveal>
+
+      {/* ══════════════ 8. DEPOIMENTOS ══════════════ */}
+      <ScrollReveal>
+        <TestimonialsCarousel />
+      </ScrollReveal>
+
+      {/* ══════════════ FIM DO BLOCO DE AUTORIDADE ══════════════ */}
+
+      {/* ══════════════ 9. SOBRE + ECO + GREENSHIELD ══════════════ */}
       <ScrollReveal>
         <section className="py-20 md:py-28">
           <div className="container mx-auto px-4">
@@ -196,12 +261,140 @@ const Index = () => {
         </section>
       </ScrollReveal>
 
-      {/* ══════════════ ECO CALLOUT ══════════════ */}
       <ScrollReveal>
         <EcoCallout />
       </ScrollReveal>
 
-      {/* ══════════════ SERVICE AREAS ══════════════ */}
+      <ScrollReveal>
+        <WhyChooseUs />
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <div className="bg-accent/5 border-y border-accent/20 py-5">
+          <div className="container mx-auto px-4 text-center">
+            <p className="text-sm md:text-base font-medium text-foreground">
+              🛡️ Every Capital Clean Care visit follows the <strong>GreenShield 5-Step Clean™</strong> — our proprietary method developed over 9 years and 500+ homes.{" "}
+              <a href="/about" className="text-accent font-semibold hover:underline">Learn the story behind it →</a>
+            </p>
+          </div>
+        </div>
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <GreenShield5Step />
+      </ScrollReveal>
+
+      {/* ══════════════ 10. PREÇOS ══════════════ */}
+      <ScrollReveal>
+        <section className="py-20 md:py-28">
+          <div className="container mx-auto px-4 max-w-3xl">
+            <div className="text-center mb-10">
+              <span className="text-accent font-semibold text-sm uppercase tracking-wider">Pricing</span>
+              <h2 className="font-heading text-3xl md:text-4xl font-bold mt-2 mb-4">Transparent Pricing</h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">Honest pricing based on home size and frequency. No hidden fees, ever.</p>
+              <div className="inline-flex items-center gap-2 mt-4 bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800 text-amber-800 dark:text-amber-300 rounded-full px-4 py-1.5 text-xs font-semibold">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-400"></span>
+                </span>
+                New clients save 15% on their first clean — limited availability
+              </div>
+            </div>
+            <PricingTable />
+          </div>
+        </section>
+      </ScrollReveal>
+
+      {/* ══════════════ 11. FORMULÁRIO DE ORÇAMENTO ══════════════ */}
+      <ScrollReveal>
+        <section className="py-20 md:py-28 bg-mesh" id="quote">
+          <div className="container mx-auto px-4 max-w-6xl">
+            <div className="text-center mb-10">
+              <span className="text-accent font-semibold text-sm uppercase tracking-wider">Free Estimate</span>
+              <h2 className="font-heading text-3xl md:text-4xl font-bold mt-2 mb-4">
+                Get Your Free Quote + <span className="text-accent">15% OFF</span>
+              </h2>
+              <p className="text-muted-foreground">No commitment required. We respond within a few hours with a personalized estimate.</p>
+            </div>
+            <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-16 items-start">
+              <div className="lg:col-span-2 space-y-6">
+                <div className="space-y-4">
+                  {[
+                    { icon: Shield, title: "Licensed & Insured", desc: "Fully bonded and covered — your home is protected." },
+                    { icon: Users, title: "Background-Checked Team", desc: "Every cleaner passes a thorough background screening." },
+                    { icon: Leaf, title: "Eco-Friendly Products", desc: "EPA-certified, non-toxic, safe for kids and pets." },
+                    { icon: Star, title: "Satisfaction Guarantee", desc: "Not happy? We re-clean for free within 24 hours." },
+                    { icon: CheckCircle, title: "No Hidden Fees", desc: "Transparent pricing — what we quote is what you pay." },
+                  ].map((item) => (
+                    <div key={item.title} className="flex gap-4 items-start">
+                      <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center shrink-0">
+                        <item.icon className="h-5 w-5 text-accent" />
+                      </div>
+                      <div>
+                        <p className="font-semibold text-sm text-foreground">{item.title}</p>
+                        <p className="text-xs text-muted-foreground mt-0.5 leading-relaxed">{item.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div className="rounded-xl bg-secondary border border-border p-5 space-y-3">
+                  <p className="text-sm font-semibold">Prefer to talk first?</p>
+                  <a href="tel:+12407042551" className="flex items-center gap-2 text-accent font-semibold text-sm hover:underline">
+                    <Phone className="h-4 w-4" /> (240) 704-2551
+                  </a>
+                  <p className="text-xs text-muted-foreground">Mon–Sat 8am–6pm. We also respond to texts!</p>
+                </div>
+              </div>
+              <div className="lg:col-span-3">
+                <Card className="shadow-xl">
+                  <CardContent className="p-6 md:p-10">
+                    <QuoteForm />
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+          </div>
+        </section>
+      </ScrollReveal>
+
+      {/* ══════════════ 12. FAQ ══════════════ */}
+      <ScrollReveal>
+        <section className="py-20 md:py-28 bg-secondary">
+          <div className="container mx-auto px-4 max-w-3xl">
+            <div className="text-center mb-10">
+              <span className="text-accent font-semibold text-sm uppercase tracking-wider">FAQ</span>
+              <h2 className="font-heading text-3xl md:text-4xl font-bold mt-2">Frequently Asked Questions</h2>
+            </div>
+            <FAQ faqs={homeFaqs} />
+          </div>
+        </section>
+      </ScrollReveal>
+
+      {/* ══════════════ POST-FAQ CTA ══════════════ */}
+      <ScrollReveal>
+        <section className="py-12 md:py-16 bg-accent">
+          <div className="container mx-auto px-4 text-center">
+            <h3 className="font-heading text-2xl md:text-3xl font-bold text-accent-foreground mb-3">
+              Still have questions? We're here to help.
+            </h3>
+            <p className="text-accent-foreground/80 mb-6 max-w-xl mx-auto">
+              Call us at <a href="tel:+12407042551" className="font-semibold underline underline-offset-2">(240) 704-2551</a> or get a free, no-obligation quote in minutes.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <Button variant="secondary" size="lg" asChild>
+                <a href="#quote">Get My Free Quote →</a>
+              </Button>
+              <Button variant="outline" size="lg" className="border-accent-foreground/40 text-accent-foreground hover:bg-accent-foreground/10" asChild>
+                <a href="tel:+12407042551">
+                  <Phone className="mr-2 h-4 w-4" /> Call Now
+                </a>
+              </Button>
+            </div>
+          </div>
+        </section>
+      </ScrollReveal>
+
+      {/* ══════════════ 13. ÁREAS DE SERVIÇO + PÁGINAS LOCAIS ══════════════ */}
       <ScrollReveal>
         <section className="py-20 md:py-28 bg-mesh relative">
           <div className="container mx-auto px-4 relative z-10">
@@ -239,142 +432,9 @@ const Index = () => {
         </section>
       </ScrollReveal>
 
-      {/* ══════════════ WHY CHOOSE US ══════════════ */}
-      <ScrollReveal>
-        <WhyChooseUs />
-      </ScrollReveal>
-
-      {/* ══════════════ OUR SERVICES ══════════════ */}
-      <ScrollReveal>
-        <ServicesSection />
-      </ScrollReveal>
-
-      {/* ══════════════ HOW IT WORKS ══════════════ */}
-      <ScrollReveal>
-        <section className="py-24 md:py-32 relative">
-          <div className="container mx-auto px-4 max-w-5xl">
-            <div className="text-center mb-16">
-              <span className="inline-block bg-accent/10 text-accent font-semibold text-sm uppercase tracking-wider px-3 py-1 rounded-full mb-3">The Process</span>
-              <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mt-2 mb-4">Getting a clean home is simple</h2>
-              <p className="text-muted-foreground max-w-xl mx-auto text-lg">From first contact to sparkling home — we make it effortless.</p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
-              {/* Connector line (desktop only) */}
-              <div className="hidden md:block absolute top-[2.5rem] left-[calc(16.66%+2rem)] right-[calc(16.66%+2rem)] h-0.5 bg-gradient-to-r from-accent/10 via-accent/50 to-accent/10 z-0" />
-              {[
-                {
-                  step: "01",
-                  title: "Get Your Free Quote",
-                  desc: "Fill out our quick form or call (240) 704-2551. We respond within a few hours with a personalized estimate — no obligation.",
-                  icon: Sparkles,
-                },
-                {
-                  step: "02",
-                  title: "We Clean Your Home",
-                  desc: "Our background-checked, eco-friendly team arrives on schedule. You don't even need to be home.",
-                  icon: CheckCircle,
-                },
-                {
-                  step: "03",
-                  title: "Enjoy Your Space",
-                  desc: "Come home to a spotless house. If anything isn't perfect, we re-clean for free within 24 hours. Guaranteed.",
-                  icon: Star,
-                },
-              ].map((s) => (
-                <div key={s.step} className="relative z-10 flex flex-col items-center text-center group">
-                  <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-accent to-primary flex items-center justify-center mb-6 shadow-xl shadow-accent/20 group-hover:-translate-y-2 transition-transform duration-300 rotate-3 group-hover:rotate-6">
-                    <s.icon className="h-8 w-8 text-white -rotate-3 group-hover:-rotate-6 transition-transform" />
-                  </div>
-                  <span className="text-xs font-bold text-accent uppercase tracking-widest mb-3 bg-accent/10 px-3 py-1 rounded-full">Step {s.step}</span>
-                  <h3 className="font-heading text-xl font-bold mb-3">{s.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{s.desc}</p>
-                </div>
-              ))}
-            </div>
-            <div className="text-center mt-12">
-              <Button variant="cta" size="lg" className="rounded-full" asChild>
-                <a href="#quote">Start with a Free Quote <ArrowRight className="ml-2 h-4 w-4" /></a>
-              </Button>
-              <p className="text-xs text-muted-foreground mt-3">No commitment • Response within hours • 15% OFF first clean</p>
-            </div>
-          </div>
-        </section>
-      </ScrollReveal>
-
-      {/* ══════════════ GREENSHIELD INTRO BANNER ══════════════ */}
-      <ScrollReveal>
-        <div className="bg-accent/5 border-y border-accent/20 py-5">
-          <div className="container mx-auto px-4 text-center">
-            <p className="text-sm md:text-base font-medium text-foreground">
-              🛡️ Every Capital Clean Care visit follows the <strong>GreenShield 5-Step Clean™</strong> — our proprietary method developed over 9 years and 500+ homes.{" "}
-              <a href="/about" className="text-accent font-semibold hover:underline">Learn the story behind it →</a>
-            </p>
-          </div>
-        </div>
-      </ScrollReveal>
-
-      {/* ══════════════ GREENSHIELD 5-STEP CLEAN ══════════════ */}
-      <ScrollReveal>
-        <GreenShield5Step />
-      </ScrollReveal>
-
-      {/* ══════════════ TRUST BADGES ══════════════ */}
-      <ScrollReveal>
-        <TrustBadges />
-      </ScrollReveal>
-
-      {/* ══════════════ REAL WORK PHOTOS ══════════════ */}
-      <ScrollReveal>
-        <section className="py-20 md:py-28 bg-mesh">
-          <div className="container mx-auto px-4 relative z-10">
-            <div className="text-center mb-12">
-              <span className="inline-block bg-accent/10 text-accent font-semibold text-sm uppercase tracking-wider px-3 py-1 rounded-full mb-3">Our Work</span>
-              <h3 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mt-2">See Us in Action</h3>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
-              <img src={cleanerMopping} alt="Capital Clean Care professional mopping hardwood floors" className="rounded-2xl shadow-md w-full aspect-[4/5] object-cover" loading="lazy" />
-              <img src={ecoProducts} alt="Eco-friendly non-toxic cleaning products used by Capital Clean Care" className="rounded-2xl shadow-md w-full aspect-[4/5] object-cover" loading="lazy" />
-            </div>
-          </div>
-        </section>
-      </ScrollReveal>
-
-      {/* ══════════════ BEFORE & AFTER ══════════════ */}
-      <ScrollReveal>
-        <BeforeAfterGallery />
-      </ScrollReveal>
-
-      {/* ══════════════ TESTIMONIALS CAROUSEL ══════════════ */}
-      <ScrollReveal>
-        <TestimonialsCarousel />
-      </ScrollReveal>
-
-      {/* ══════════════ VIDEO TESTIMONIAL ══════════════ */}
-      <ScrollReveal>
-        <section className="py-16 md:py-20">
-          <div className="container mx-auto px-4 max-w-3xl text-center">
-            <span className="inline-block bg-accent/10 text-accent font-semibold text-sm uppercase tracking-wider px-3 py-1 rounded-full mb-3">Real Client</span>
-            <h2 className="font-heading text-2xl md:text-3xl font-bold mt-2 mb-8">Hear It Directly From Our Client</h2>
-            <div className="rounded-2xl overflow-hidden shadow-xl border border-border aspect-video">
-              <iframe
-                src="https://www.youtube.com/embed/xI602FI_iOU"
-                title="Capital Clean Care client video testimonial"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="w-full h-full"
-                loading="lazy"
-              />
-            </div>
-          </div>
-        </section>
-      </ScrollReveal>
-
-      {/* ══════════════ LOCAL CLEANING PAGES ══════════════ */}
       <ScrollReveal>
         <section className="py-20 md:py-28 bg-background relative overflow-hidden">
-          {/* Decorative blur elements for modern touch */}
           <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/5 rounded-full mix-blend-multiply filter blur-[100px] opacity-70 animate-blob pointer-events-none" />
-          
           <div className="container mx-auto px-4 max-w-5xl relative z-10">
             <div className="text-center mb-14">
               <span className="inline-block bg-accent/10 text-accent font-semibold text-sm uppercase tracking-wider px-3 py-1 rounded-full mb-3">Local Services</span>
@@ -408,146 +468,6 @@ const Index = () => {
         </section>
       </ScrollReveal>
 
-      {/* ══════════════ PRICING ══════════════ */}
-      <ScrollReveal>
-        <section className="py-20 md:py-28">
-          <div className="container mx-auto px-4 max-w-3xl">
-            <div className="text-center mb-10">
-              <span className="text-accent font-semibold text-sm uppercase tracking-wider">Pricing</span>
-              <h2 className="font-heading text-3xl md:text-4xl font-bold mt-2 mb-4">Transparent Pricing</h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto">Honest pricing based on home size and frequency. No hidden fees, ever.</p>
-              {/* Urgency badge */}
-              <div className="inline-flex items-center gap-2 mt-4 bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800 text-amber-800 dark:text-amber-300 rounded-full px-4 py-1.5 text-xs font-semibold">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-400"></span>
-                </span>
-                New clients save 15% on their first clean — limited availability
-              </div>
-            </div>
-            <PricingTable />
-            <div className="text-center mt-8">
-              <Button variant="cta" size="lg" className="rounded-full" asChild>
-                <a href="#quote">Claim 15% OFF — Get My Free Quote <ArrowRight className="ml-2 h-4 w-4" /></a>
-              </Button>
-            </div>
-          </div>
-        </section>
-      </ScrollReveal>
-
-      {/* ══════════════ FAQ ══════════════ */}
-      <ScrollReveal>
-        <section className="py-20 md:py-28 bg-secondary">
-          <div className="container mx-auto px-4 max-w-3xl">
-            <div className="text-center mb-10">
-              <span className="text-accent font-semibold text-sm uppercase tracking-wider">FAQ</span>
-              <h2 className="font-heading text-3xl md:text-4xl font-bold mt-2">Frequently Asked Questions</h2>
-            </div>
-            <FAQ faqs={homeFaqs} />
-          </div>
-        </section>
-      </ScrollReveal>
-
-      {/* ══════════════ POST-FAQ CTA ══════════════ */}
-      <ScrollReveal>
-        <section className="py-12 md:py-16 bg-accent">
-          <div className="container mx-auto px-4 text-center">
-            <h3 className="font-heading text-2xl md:text-3xl font-bold text-accent-foreground mb-3">
-              Still have questions? We're here to help.
-            </h3>
-            <p className="text-accent-foreground/80 mb-6 max-w-xl mx-auto">
-              Call us at <a href="tel:+12407042551" className="font-semibold underline underline-offset-2">(240) 704-2551</a> or get a free, no-obligation quote in minutes.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Button variant="secondary" size="lg" asChild>
-                <a href="#quote">Get My Free Quote →</a>
-              </Button>
-              <Button variant="outline" size="lg" className="border-accent-foreground/40 text-accent-foreground hover:bg-accent-foreground/10" asChild>
-                <a href="tel:+12407042551">
-                  <Phone className="mr-2 h-4 w-4" /> Call Now
-                </a>
-              </Button>
-            </div>
-          </div>
-        </section>
-      </ScrollReveal>
-
-      {/* ══════════════ QUOTE FORM ══════════════ */}
-      <ScrollReveal>
-        <section className="py-20 md:py-28" id="quote">
-          <div className="container mx-auto px-4 max-w-6xl">
-            <div className="text-center mb-10">
-              <span className="text-accent font-semibold text-sm uppercase tracking-wider">Free Estimate</span>
-              <h2 className="font-heading text-3xl md:text-4xl font-bold mt-2 mb-4">
-                Get Your Free Quote + <span className="text-accent">15% OFF</span>
-              </h2>
-              <p className="text-muted-foreground">No commitment required. We respond within a few hours with a personalized estimate.</p>
-            </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-16 items-start">
-              {/* Trust signals column */}
-              <div className="lg:col-span-2 space-y-6">
-                <div className="space-y-4">
-                  {[
-                    { icon: Shield, title: "Licensed & Insured", desc: "Fully bonded and covered — your home is protected." },
-                    { icon: Users, title: "Background-Checked Team", desc: "Every cleaner passes a thorough background screening." },
-                    { icon: Leaf, title: "Eco-Friendly Products", desc: "EPA-certified, non-toxic, safe for kids and pets." },
-                    { icon: Star, title: "Satisfaction Guarantee", desc: "Not happy? We re-clean for free within 24 hours." },
-                    { icon: CheckCircle, title: "No Hidden Fees", desc: "Transparent pricing — what we quote is what you pay." },
-                  ].map((item) => (
-                    <div key={item.title} className="flex gap-4 items-start">
-                      <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center shrink-0">
-                        <item.icon className="h-5 w-5 text-accent" />
-                      </div>
-                      <div>
-                        <p className="font-semibold text-sm text-foreground">{item.title}</p>
-                        <p className="text-xs text-muted-foreground mt-0.5 leading-relaxed">{item.desc}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Quick contact */}
-                <div className="rounded-xl bg-secondary border border-border p-5 space-y-3">
-                  <p className="text-sm font-semibold">Prefer to talk first?</p>
-                  <a href="tel:+12407042551" className="flex items-center gap-2 text-accent font-semibold text-sm hover:underline">
-                    <Phone className="h-4 w-4" /> (240) 704-2551
-                  </a>
-                  <p className="text-xs text-muted-foreground">Mon–Sat 8am–6pm. We also respond to texts!</p>
-                </div>
-
-              </div>
-
-              {/* Form column */}
-              <div className="lg:col-span-3">
-                <Card className="shadow-xl">
-                  <CardContent className="p-6 md:p-10">
-                    <QuoteForm />
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
-
-            {/* Video testimonial below form */}
-            <div className="mt-10 max-w-3xl mx-auto">
-              <p className="text-center text-sm font-semibold text-muted-foreground mb-4 flex items-center justify-center gap-2">
-                <span className="flex gap-0.5">{[...Array(5)].map((_, i) => <Star key={i} className="h-3.5 w-3.5 text-yellow-400 fill-yellow-400" />)}</span>
-                Hear directly from one of our clients
-              </p>
-              <div className="rounded-2xl overflow-hidden shadow-lg border border-border aspect-video">
-                <iframe
-                  src="https://www.youtube.com/embed/xI602FI_iOU"
-                  title="Capital Clean Care client video testimonial"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="w-full h-full"
-                  loading="lazy"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-      </ScrollReveal>
     </Layout>
   );
 };
