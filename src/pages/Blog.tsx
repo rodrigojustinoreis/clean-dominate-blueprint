@@ -137,7 +137,6 @@ export const blogPosts: BlogPost[] = [
     readTime: "6 min read",
     category: "Local Guides",
     coverImage: "https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
-    canonical: "https://capitalcleancare.com/locations/bethesda-md",
   },
   {
     slug: "cleaning-service-arlington-va",
@@ -147,7 +146,6 @@ export const blogPosts: BlogPost[] = [
     readTime: "6 min read",
     category: "Local Guides",
     coverImage: "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
-    canonical: "https://capitalcleancare.com/locations/arlington-va",
   },
   {
     slug: "deep-cleaning-rockville-md",
@@ -157,7 +155,6 @@ export const blogPosts: BlogPost[] = [
     readTime: "7 min read",
     category: "Local Guides",
     coverImage: "https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
-    canonical: "https://capitalcleancare.com/locations/rockville-md",
   },
   {
     slug: "house-cleaning-washington-dc",
@@ -167,7 +164,6 @@ export const blogPosts: BlogPost[] = [
     readTime: "7 min read",
     category: "Local Guides",
     coverImage: "https://images.pexels.com/photos/1510595/pexels-photo-1510595.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
-    canonical: "https://capitalcleancare.com/washington-dc",
   },
   {
     slug: "cleaning-service-fairfax-va",
@@ -177,7 +173,6 @@ export const blogPosts: BlogPost[] = [
     readTime: "6 min read",
     category: "Local Guides",
     coverImage: "https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
-    canonical: "https://capitalcleancare.com/locations/fairfax-va",
   },
   {
     slug: "cleaning-service-georgetown-dc",
@@ -187,7 +182,6 @@ export const blogPosts: BlogPost[] = [
     readTime: "6 min read",
     category: "Local Guides",
     coverImage: "https://images.pexels.com/photos/1648776/pexels-photo-1648776.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
-    canonical: "https://capitalcleancare.com/locations/georgetown-dc",
   },
   {
     slug: "cleaning-service-alexandria-va",
@@ -197,7 +191,6 @@ export const blogPosts: BlogPost[] = [
     readTime: "6 min read",
     category: "Local Guides",
     coverImage: "https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
-    canonical: "https://capitalcleancare.com/locations/alexandria-va",
   },
   {
     slug: "move-in-cleaning-guide-dmv",
@@ -234,7 +227,6 @@ export const blogPosts: BlogPost[] = [
     readTime: "6 min read",
     category: "Local Guides",
     coverImage: "https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
-    canonical: "https://capitalcleancare.com/locations/gaithersburg-md",
   },
   {
     slug: "cleaning-service-mclean-va",
@@ -244,7 +236,6 @@ export const blogPosts: BlogPost[] = [
     readTime: "6 min read",
     category: "Local Guides",
     coverImage: "https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
-    canonical: "https://capitalcleancare.com/locations/mclean-va",
   },
   {
     slug: "cleaning-service-columbia-md",
@@ -254,7 +245,6 @@ export const blogPosts: BlogPost[] = [
     readTime: "6 min read",
     category: "Local Guides",
     coverImage: "https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
-    canonical: "https://capitalcleancare.com/locations/columbia-md",
   },
   {
     slug: "house-cleaning-potomac-md",
@@ -264,7 +254,6 @@ export const blogPosts: BlogPost[] = [
     readTime: "6 min read",
     category: "Local Guides",
     coverImage: "https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
-    canonical: "https://capitalcleancare.com/locations/potomac-md",
   },
   {
     slug: "cleaning-service-chevy-chase-md",
@@ -274,7 +263,6 @@ export const blogPosts: BlogPost[] = [
     readTime: "5 min read",
     category: "Local Guides",
     coverImage: "https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
-    canonical: "https://capitalcleancare.com/locations/chevy-chase-md",
   },
   {
     slug: "house-cleaning-frederick-md",
@@ -284,7 +272,6 @@ export const blogPosts: BlogPost[] = [
     readTime: "7 min read",
     category: "Local Guides",
     coverImage: "https://images.pexels.com/photos/3935349/pexels-photo-3935349.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
-    canonical: "https://capitalcleancare.com/locations/frederick-md",
   },
   {
     slug: "deep-cleaning-montgomery-county-md",
@@ -294,7 +281,6 @@ export const blogPosts: BlogPost[] = [
     readTime: "7 min read",
     category: "Cleaning Guides",
     coverImage: "https://images.pexels.com/photos/2724749/pexels-photo-2724749.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
-    canonical: "https://capitalcleancare.com/maryland",
   },
   {
     slug: "cleaning-service-reston-va",
@@ -304,7 +290,6 @@ export const blogPosts: BlogPost[] = [
     readTime: "6 min read",
     category: "Local Guides",
     coverImage: "https://images.pexels.com/photos/1648776/pexels-photo-1648776.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
-    canonical: "https://capitalcleancare.com/locations/reston-va",
   },
   {
     slug: "office-cleaning-small-business-dmv",
