@@ -142,7 +142,27 @@ const Index = () => {
         </section>
       </ScrollReveal>
 
-      {/* ══════════════ 4. SERVIÇOS ══════════════ */}
+      {/* ══════════════ 4. VÍDEO TESTIMONIAL ══════════════ */}
+      <ScrollReveal>
+        <section className="py-16 md:py-20">
+          <div className="container mx-auto px-4 max-w-3xl text-center">
+            <span className="inline-block bg-accent/10 text-accent font-semibold text-sm uppercase tracking-wider px-3 py-1 rounded-full mb-3">Real Client</span>
+            <h2 className="font-heading text-2xl md:text-3xl font-bold mt-2 mb-8">Hear It Directly From Our Client</h2>
+            <div className="rounded-2xl overflow-hidden shadow-xl border border-border aspect-video">
+              <iframe
+                src="https://www.youtube.com/embed/xI602FI_iOU"
+                title="Capital Clean Care client video testimonial"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </section>
+      </ScrollReveal>
+
+      {/* ══════════════ 5. SERVIÇOS ══════════════ */}
       <ScrollReveal>
         <ServicesSection />
       </ScrollReveal>
@@ -190,27 +210,7 @@ const Index = () => {
         <BeforeAfterGallery />
       </ScrollReveal>
 
-      {/* ══════════════ 7. VÍDEO TESTIMONIAL ══════════════ */}
-      <ScrollReveal>
-        <section className="py-16 md:py-20">
-          <div className="container mx-auto px-4 max-w-3xl text-center">
-            <span className="inline-block bg-accent/10 text-accent font-semibold text-sm uppercase tracking-wider px-3 py-1 rounded-full mb-3">Real Client</span>
-            <h2 className="font-heading text-2xl md:text-3xl font-bold mt-2 mb-8">Hear It Directly From Our Client</h2>
-            <div className="rounded-2xl overflow-hidden shadow-xl border border-border aspect-video">
-              <iframe
-                src="https://www.youtube.com/embed/xI602FI_iOU"
-                title="Capital Clean Care client video testimonial"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="w-full h-full"
-                loading="lazy"
-              />
-            </div>
-          </div>
-        </section>
-      </ScrollReveal>
-
-      {/* ══════════════ 8. DEPOIMENTOS (Google Reviews) ══════════════ */}
+      {/* ══════════════ 7. DEPOIMENTOS (Google Reviews) ══════════════ */}
       <ScrollReveal>
         <TestimonialsCarousel />
       </ScrollReveal>
