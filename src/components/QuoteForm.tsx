@@ -84,6 +84,29 @@ const QuoteForm = ({ submitLabel = "Get My Free Quote →", defaultService = "" 
         }),
       }).catch(console.error);
 
+      // Forward lead to Capital Clean Care scheduling app
+      fetch('https://jzxhejqokcjyxxklnnza.supabase.co/functions/v1/receive-lead', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-webhook-secret': 'ccc-lead-webhook-2026',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          zip: formData.zip,
+          service: formData.service,
+          bedrooms: formData.bedrooms,
+          bathrooms: formData.bathrooms,
+          frequency: formData.frequency,
+          date: formData.date,
+          message: formData.message,
+          smsConsent: formData.smsConsent,
+          emailConsent: formData.emailConsent,
+        }),
+      }).catch(() => { /* non-blocking */ });
+
       // Send formatted HTML email via Netlify Function (non-blocking — form succeeds regardless)
       fetch("/api/send-quote-email", {
         method: "POST",
