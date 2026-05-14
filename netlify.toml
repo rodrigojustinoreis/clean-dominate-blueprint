@@ -300,11 +300,12 @@
   to = "/blog/"
   status = 301
 
-# ── Blog slug with date → evergreen slug ─────────────────────────────────────
+# ── Blog slugs with date → evergreen slugs ───────────────────────────────────
 [[redirects]]
   from = "/blog/deep-cleaning-tips-maryland-homes-spring-prep-march-2026"
   to = "/blog/deep-cleaning-tips-maryland-homes-spring-prep"
   status = 301
+
 
 # ── Blog/legacy query-parameter cleanup ──────────────────────────────────────
 [[redirects]]
