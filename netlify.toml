@@ -25,7 +25,7 @@
   status = 301
   force = true
 
-# ── State hub canonical URLs (trailing-slash → canonical, must run before Pretty URLs) ──
+# ── State hub: trailing-slash → canonical (force=true overrides static file) ─
 [[redirects]]
   from = "/maryland/"
   to = "/maryland"
@@ -44,51 +44,7 @@
   status = 301
   force = true
 
-# ── /premium-clean → homepage ─────────────────────────────────────────────────
-[[redirects]]
-  from = "/premium-clean"
-  to = "/"
-  status = 301
-
-# ── Trailing slash normalization ──────────────────────────────────────────────
-[[redirects]]
-  from = "/about/"
-  to = "/about"
-  status = 301
-
-[[redirects]]
-  from = "/contact/"
-  to = "/contact"
-  status = 301
-
-[[redirects]]
-  from = "/blog/"
-  to = "/blog"
-  status = 301
-
-[[redirects]]
-  from = "/reviews/"
-  to = "/reviews"
-  status = 301
-
-[[redirects]]
-  from = "/faq/"
-  to = "/faq"
-  status = 301
-
-[[redirects]]
-  from = "/careers/"
-  to = "/careers"
-  status = 301
-
-[[redirects]]
-  from = "/services/"
-  to = "/services/house-cleaning"
-  status = 301
-
 # ── Soft 404 / old URL patterns confirmed in Search Console ──────────────────
-
-# Error #1 — /detailed-cleaning: soft 404 (returns 200 but shows 404 page)
 [[redirects]]
   from = "/detailed-cleaning"
   to = "/services/deep-cleaning"
@@ -99,21 +55,19 @@
   to = "/services/deep-cleaning"
   status = 301
 
-# Error #2 — /services-areas: was pointing away with no canonical
 [[redirects]]
   from = "/services-areas"
-  to = "/contact"
+  to = "/contact/"
   status = 301
 
 [[redirects]]
   from = "/services-areas/"
-  to = "/contact"
+  to = "/contact/"
   status = 301
 
-# Error #3 — /home/f/* dead URLs from old Wix blog
 [[redirects]]
   from = "/home/f/*"
-  to = "/blog"
+  to = "/blog/"
   status = 301
 
 [[redirects]]
@@ -121,46 +75,44 @@
   to = "/"
   status = 301
 
-# Error #5 — specific /f/* old blog articles (catch-all /f/* already covers these)
 [[redirects]]
   from = "/f/streamlining-your-cleaning-routine"
-  to = "/blog"
+  to = "/blog/"
   status = 301
 
 [[redirects]]
   from = "/f/12-things-you-forget-to-clean"
-  to = "/blog"
+  to = "/blog/"
   status = 301
 
 [[redirects]]
   from = "/f/how-to-clean-glass"
-  to = "/blog"
+  to = "/blog/"
   status = 301
 
-# Error #7 — /seasonal-cleaning gets proper destination
 [[redirects]]
   from = "/seasonal-cleaning/f/*"
-  to = "/blog"
+  to = "/blog/"
   status = 301
 
 [[redirects]]
   from = "/seasonal-cleaning"
-  to = "/spring-cleaning-md"
+  to = "/spring-cleaning-md/"
   status = 301
 
 [[redirects]]
   from = "/blog/how-to-clean-air-vents-filters-improve-indoor-air-quality-maryland"
-  to = "/blog"
+  to = "/blog/"
   status = 301
 
 [[redirects]]
   from = "/clean-service-chevy-chase"
-  to = "/eco-cleaning-chevy-chase-md"
+  to = "/eco-cleaning-chevy-chase-md/"
   status = 301
 
 [[redirects]]
   from = "/clean-service-chevy-chase/"
-  to = "/eco-cleaning-chevy-chase-md"
+  to = "/eco-cleaning-chevy-chase-md/"
   status = 301
 
 [[redirects]]
@@ -173,7 +125,7 @@
   to = "/locations/gaithersburg-md"
   status = 301
 
-# ── Old Wix/GoDaddy URLs → new structure (server-side 301) ───────────────────
+# ── Old Wix/GoDaddy URLs → new structure ─────────────────────────────────────
 [[redirects]]
   from = "/apartment-cleaning"
   to = "/services/house-cleaning"
@@ -231,12 +183,12 @@
 
 [[redirects]]
   from = "/about-us"
-  to = "/about"
+  to = "/about/"
   status = 301
 
 [[redirects]]
   from = "/contact-us"
-  to = "/contact"
+  to = "/contact/"
   status = 301
 
 [[redirects]]
@@ -252,12 +204,12 @@
 # ── Old Wix .html extension URLs ─────────────────────────────────────────────
 [[redirects]]
   from = "/about.html"
-  to = "/about"
+  to = "/about/"
   status = 301
 
 [[redirects]]
   from = "/contact.html"
-  to = "/contact"
+  to = "/contact/"
   status = 301
 
 [[redirects]]
@@ -300,17 +252,27 @@
   to = "/services/airbnb-cleaning"
   status = 301
 
+# ── Dead/old internal URLs ────────────────────────────────────────────────────
 [[redirects]]
   from = "/pricing"
   to = "/"
   status = 301
 
 [[redirects]]
-  from = "/services"
+  from = "/premium-clean"
   to = "/"
   status = 301
 
-# ── Dead/old internal URLs ────────────────────────────────────────────────────
+[[redirects]]
+  from = "/services"
+  to = "/services/house-cleaning"
+  status = 301
+
+[[redirects]]
+  from = "/services/"
+  to = "/services/house-cleaning"
+  status = 301
+
 [[redirects]]
   from = "/home"
   to = "/"
@@ -328,12 +290,7 @@
 
 [[redirects]]
   from = "/f/*"
-  to = "/blog"
-  status = 301
-
-[[redirects]]
-  from = "/services/recurring-cleaning/"
-  to = "/services/recurring-cleaning"
+  to = "/blog/"
   status = 301
 
 # ── Blog slug with date → evergreen slug ─────────────────────────────────────
@@ -345,98 +302,20 @@
 # ── Blog query-parameter cleanup ─────────────────────────────────────────────
 [[redirects]]
   from = "/"
-  to = "/blog"
+  to = "/blog/"
   status = 301
   force = true
   query = {blog = "y"}
 
 [[redirects]]
   from = "/"
-  to = "/blog"
+  to = "/blog/"
   status = 301
   force = true
   query = {blogcategory = ":cat"}
 
-# ── Vanity landing page trailing-slash normalization ─────────────────────────
-[[redirects]]
-  from = "/house-cleaning-wheaton-md/"
-  to = "/house-cleaning-wheaton-md"
-  status = 301
-
-[[redirects]]
-  from = "/eco-cleaning-bethesda-md/"
-  to = "/eco-cleaning-bethesda-md"
-  status = 301
-
-[[redirects]]
-  from = "/deep-cleaning-germantown-md/"
-  to = "/deep-cleaning-germantown-md"
-  status = 301
-
-[[redirects]]
-  from = "/house-cleaning-frederick-md/"
-  to = "/house-cleaning-frederick-md"
-  status = 301
-
-[[redirects]]
-  from = "/move-out-cleaning-rockville-md/"
-  to = "/move-out-cleaning-rockville-md"
-  status = 301
-
-[[redirects]]
-  from = "/house-cleaning-silver-spring-md/"
-  to = "/house-cleaning-silver-spring-md"
-  status = 301
-
-[[redirects]]
-  from = "/eco-cleaning-potomac-md/"
-  to = "/eco-cleaning-potomac-md"
-  status = 301
-
-[[redirects]]
-  from = "/deep-cleaning-gaithersburg-md/"
-  to = "/deep-cleaning-gaithersburg-md"
-  status = 301
-
-[[redirects]]
-  from = "/recurring-cleaning-columbia-md/"
-  to = "/recurring-cleaning-columbia-md"
-  status = 301
-
-[[redirects]]
-  from = "/house-cleaning-ellicott-city-md/"
-  to = "/house-cleaning-ellicott-city-md"
-  status = 301
-
-[[redirects]]
-  from = "/apartment-cleaning-takoma-park-md/"
-  to = "/apartment-cleaning-takoma-park-md"
-  status = 301
-
-[[redirects]]
-  from = "/post-construction-cleaning-clarksburg-md/"
-  to = "/post-construction-cleaning-clarksburg-md"
-  status = 301
-
-[[redirects]]
-  from = "/house-cleaning-damascus-md/"
-  to = "/house-cleaning-damascus-md"
-  status = 301
-
-[[redirects]]
-  from = "/deep-cleaning-kensington-md/"
-  to = "/deep-cleaning-kensington-md"
-  status = 301
-
-[[redirects]]
-  from = "/eco-cleaning-chevy-chase-md/"
-  to = "/eco-cleaning-chevy-chase-md"
-  status = 301
-
-
 # ── Serve prerendered pages at canonical non-trailing-slash URLs (200 rewrite)─
-# force = true is required to override Netlify's built-in Pretty URLs behavior
-# which sends a 301 to the trailing-slash version before redirect rules run.
+# force = true overrides Netlify Pretty URLs before redirect rules run.
 [[redirects]]
   from = "/blog/:slug"
   to = "/blog/:slug/"
@@ -461,7 +340,6 @@
   status = 200
   force = true
 
-# State hub 200 rewrites (bypass Netlify Pretty URLs auto-redirect)
 [[redirects]]
   from = "/maryland"
   to = "/maryland/"
