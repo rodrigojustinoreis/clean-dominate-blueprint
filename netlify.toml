@@ -25,24 +25,8 @@
   status = 301
   force = true
 
-# ── State hub: trailing-slash → canonical (force=true overrides static file) ─
-[[redirects]]
-  from = "/maryland/"
-  to = "/maryland"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/virginia/"
-  to = "/virginia"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/washington-dc/"
-  to = "/washington-dc"
-  status = 301
-  force = true
+# ── State hub: trailing-slash normalisation removed (was causing infinite redirect loop)
+# The 200 force=true rewrites below serve /maryland, /virginia, /washington-dc directly.
 
 # ── 404 fixes: missing pages that Google has indexed ─────────────────────────
 # These paths match a 200-rewrite pattern but have no prerendered file,
