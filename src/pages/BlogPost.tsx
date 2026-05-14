@@ -104,11 +104,11 @@ const blogContent: Record<string, React.ReactNode> = {
       <h2>Average House Cleaning Prices in Maryland (2026)</h2>
       <p>Here are typical price ranges for professional house cleaning in the Maryland, DC, and Northern Virginia area:</p>
       <ul>
-        <li><strong>Studio / 1-bedroom apartment:</strong> $90 – $130 per standard clean</li>
-        <li><strong>2-bedroom home:</strong> $120 – $180 per standard clean</li>
-        <li><strong>3-bedroom home:</strong> $150 – $220 per standard clean</li>
-        <li><strong>4-bedroom home:</strong> $180 – $280 per standard clean</li>
-        <li><strong>5+ bedroom home:</strong> $240 – $400+ per standard clean</li>
+        <li><strong>Studio / 1-bedroom apartment:</strong> $150 – $180 per standard clean</li>
+        <li><strong>2-bedroom home:</strong> $180 – $230 per standard clean</li>
+        <li><strong>3-bedroom home:</strong> $220 – $290 per standard clean</li>
+        <li><strong>4-bedroom home:</strong> $270 – $360 per standard clean</li>
+        <li><strong>5+ bedroom home:</strong> $340 – $480+ per standard clean</li>
       </ul>
       <p>These are ranges for a standard recurring clean. First-time or one-time cleans typically cost 20–40% more due to the extra time required to get the home to a baseline standard.</p>
 
@@ -354,9 +354,9 @@ const blogContent: Record<string, React.ReactNode> = {
       <h2>The Cost Comparison</h2>
       <p>Here's a simplified example for a 3-bedroom Maryland home:</p>
       <ul>
-        <li><strong>Weekly:</strong> ~$140/visit × 52 visits = ~$7,280/year — but the discount per visit is highest</li>
-        <li><strong>Bi-weekly:</strong> ~$170/visit × 26 visits = ~$4,420/year</li>
-        <li><strong>Monthly:</strong> ~$200/visit × 12 visits = ~$2,400/year</li>
+        <li><strong>Weekly:</strong> ~$165/visit × 52 visits = ~$8,580/year — but the discount per visit is highest</li>
+        <li><strong>Bi-weekly:</strong> ~$195/visit × 26 visits = ~$5,070/year</li>
+        <li><strong>Monthly:</strong> ~$230/visit × 12 visits = ~$2,760/year</li>
       </ul>
       <p>The less frequent the service, the more time each visit requires — which is why per-visit rates increase. The best value over time is weekly service, where discounts are maximized and the home stays consistently clean.</p>
 
@@ -594,9 +594,9 @@ const blogContent: Record<string, React.ReactNode> = {
       <h2>Pricing for House Cleaning in Bethesda</h2>
       <p>Bethesda pricing reflects the area's cost of living. Typical ranges for a professional clean:</p>
       <ul>
-        <li><strong>2-bedroom condo:</strong> $130 – $180 per standard visit</li>
-        <li><strong>3-bedroom home:</strong> $160 – $230 per standard visit</li>
-        <li><strong>4-bedroom home:</strong> $200 – $290 per standard visit</li>
+        <li><strong>2-bedroom condo:</strong> $160 – $210 per standard visit</li>
+        <li><strong>3-bedroom home:</strong> $200 – $270 per standard visit</li>
+        <li><strong>4-bedroom home:</strong> $250 – $340 per standard visit</li>
         <li><strong>First-time / deep clean:</strong> 25–40% higher than recurring rates</li>
       </ul>
       <p>Recurring clients save significantly — weekly plans can reduce per-visit cost by 20–25%. For a detailed DMV-wide pricing breakdown, see our <Link to="/blog/house-cleaning-prices-maryland-2026" className="text-accent hover:underline">2026 house cleaning price guide →</Link></p>
@@ -650,9 +650,9 @@ const blogContent: Record<string, React.ReactNode> = {
 
       <h2>Arlington Cleaning Prices</h2>
       <ul>
-        <li><strong>Studio / 1BR condo:</strong> $95 – $140 per standard clean</li>
-        <li><strong>2BR condo or townhome:</strong> $130 – $185 per standard clean</li>
-        <li><strong>3BR home:</strong> $160 – $240 per standard clean</li>
+        <li><strong>Studio / 1BR condo:</strong> $150 – $180 per standard clean</li>
+        <li><strong>2BR condo or townhome:</strong> $180 – $230 per standard clean</li>
+        <li><strong>3BR home:</strong> $220 – $290 per standard clean</li>
       </ul>
       <p>Recurring clients (weekly or bi-weekly) receive discounted rates. See our full <Link to="/services/recurring-cleaning" className="text-accent hover:underline">recurring cleaning plans</Link>.</p>
 
@@ -738,10 +738,10 @@ const blogContent: Record<string, React.ReactNode> = {
 
       <h2>DC Cleaning Prices</h2>
       <ul>
-        <li><strong>Studio / 1BR:</strong> $95 – $145 per standard clean</li>
-        <li><strong>2BR condo/apartment:</strong> $135 – $195 per standard clean</li>
-        <li><strong>3BR rowhouse:</strong> $175 – $255 per standard clean</li>
-        <li><strong>4BR+ home:</strong> $220 – $320+ per standard clean</li>
+        <li><strong>Studio / 1BR:</strong> $150 – $185 per standard clean</li>
+        <li><strong>2BR condo/apartment:</strong> $185 – $240 per standard clean</li>
+        <li><strong>3BR rowhouse:</strong> $240 – $310 per standard clean</li>
+        <li><strong>4BR+ home:</strong> $300 – $400+ per standard clean</li>
       </ul>
 
       <BlogInlineCTA
@@ -850,9 +850,9 @@ const blogContent: Record<string, React.ReactNode> = {
 
       <h2>Alexandria Pricing</h2>
       <ul>
-        <li><strong>1BR condo:</strong> $100 – $145 per standard clean</li>
-        <li><strong>2BR home or condo:</strong> $135 – $195 per standard clean</li>
-        <li><strong>3BR home:</strong> $165 – $240 per standard clean</li>
+        <li><strong>1BR condo:</strong> $150 – $185 per standard clean</li>
+        <li><strong>2BR home or condo:</strong> $185 – $240 per standard clean</li>
+        <li><strong>3BR home:</strong> $230 – $300 per standard clean</li>
       </ul>
 
       <BlogInlineCTA
@@ -1063,9 +1063,9 @@ const blogContent: Record<string, React.ReactNode> = {
 
       <h2>Gaithersburg Cleaning Prices</h2>
       <ul>
-        <li><strong>2-bedroom townhome:</strong> $120 – $175 per standard clean</li>
-        <li><strong>3-bedroom home:</strong> $150 – $220 per standard clean</li>
-        <li><strong>4-bedroom home:</strong> $190 – $270 per standard clean</li>
+        <li><strong>2-bedroom townhome:</strong> $160 – $210 per standard clean</li>
+        <li><strong>3-bedroom home:</strong> $200 – $270 per standard clean</li>
+        <li><strong>4-bedroom home:</strong> $250 – $330 per standard clean</li>
       </ul>
 
       <h2>Eco-Friendly Cleaning for Gaithersburg Families</h2>
@@ -1141,9 +1141,9 @@ const blogContent: Record<string, React.ReactNode> = {
 
       <h2>Columbia Cleaning Prices</h2>
       <ul>
-        <li><strong>2-bedroom townhome:</strong> $115 – $165 per standard clean</li>
-        <li><strong>3-bedroom home:</strong> $145 – $210 per standard clean</li>
-        <li><strong>4-bedroom home:</strong> $185 – $265 per standard clean</li>
+        <li><strong>2-bedroom townhome:</strong> $160 – $210 per standard clean</li>
+        <li><strong>3-bedroom home:</strong> $200 – $270 per standard clean</li>
+        <li><strong>4-bedroom home:</strong> $250 – $320 per standard clean</li>
       </ul>
       <p>For detailed pricing: <Link to="/blog/house-cleaning-prices-maryland-2026" className="text-accent hover:underline">Maryland pricing guide →</Link></p>
 
@@ -1210,9 +1210,9 @@ const blogContent: Record<string, React.ReactNode> = {
 
       <h2>Chevy Chase Cleaning Prices</h2>
       <ul>
-        <li><strong>2-bedroom home:</strong> $130 – $185 per standard clean</li>
-        <li><strong>3-bedroom home:</strong> $165 – $240 per standard clean</li>
-        <li><strong>4-bedroom home:</strong> $210 – $300 per standard clean</li>
+        <li><strong>2-bedroom home:</strong> $165 – $215 per standard clean</li>
+        <li><strong>3-bedroom home:</strong> $210 – $280 per standard clean</li>
+        <li><strong>4-bedroom home:</strong> $270 – $360 per standard clean</li>
       </ul>
       <p>Detailed pricing: <Link to="/blog/house-cleaning-prices-maryland-2026" className="text-accent hover:underline">Maryland pricing guide →</Link></p>
 
@@ -1252,9 +1252,9 @@ const blogContent: Record<string, React.ReactNode> = {
 
       <h2>Frederick Cleaning Prices</h2>
       <ul>
-        <li><strong>2-bedroom home:</strong> $110 – $160 per standard clean</li>
-        <li><strong>3-bedroom home:</strong> $140 – $200 per standard clean</li>
-        <li><strong>4-bedroom home:</strong> $175 – $255 per standard clean</li>
+        <li><strong>2-bedroom home:</strong> $155 – $200 per standard clean</li>
+        <li><strong>3-bedroom home:</strong> $195 – $260 per standard clean</li>
+        <li><strong>4-bedroom home:</strong> $245 – $320 per standard clean</li>
       </ul>
 
       <h2>Eco-Friendly Cleaning in Frederick</h2>
@@ -1331,9 +1331,9 @@ const blogContent: Record<string, React.ReactNode> = {
 
       <h2>Reston Cleaning Prices</h2>
       <ul>
-        <li><strong>1-2BR condo:</strong> $100 – $150 per standard clean</li>
-        <li><strong>2-3BR townhome:</strong> $135 – $195 per standard clean</li>
-        <li><strong>3-4BR single family:</strong> $165 – $250 per standard clean</li>
+        <li><strong>1-2BR condo:</strong> $150 – $190 per standard clean</li>
+        <li><strong>2-3BR townhome:</strong> $190 – $250 per standard clean</li>
+        <li><strong>3-4BR single family:</strong> $250 – $330 per standard clean</li>
       </ul>
       <p>Full pricing breakdown: <Link to="/blog/house-cleaning-prices-maryland-2026" className="text-accent hover:underline">DMV pricing guide →</Link></p>
 
@@ -1600,6 +1600,13 @@ const BlogPost = () => {
           <h1 className="font-heading text-3xl md:text-4xl font-bold mb-8">{post.title}</h1>
 
           {content}
+
+          <BlogInlineCTA
+            headline="Ready to Have Your Home Professionally Cleaned?"
+            subtext="Capital Clean Care serves Maryland, DC & Northern Virginia with eco-friendly, background-checked teams. New clients get 15% OFF their first visit — no commitment needed."
+            ctaLabel="Request a Free Quote →"
+            ctaTo="/contact"
+          />
 
           <RelatedPosts currentSlug={post.slug} />
 

@@ -27,7 +27,7 @@ const areas = [
 const faqs = [
   { q: "How do I find a reliable house cleaning service near me?", a: "Capital Clean Care serves Maryland, Washington DC, and Northern Virginia with licensed, insured, and background-checked cleaning teams. Call (240) 704-2551 or fill out our quote form to book your first cleaning." },
   { q: "What areas near me do you cover?", a: "We cover communities throughout Montgomery, Frederick, Howard, and Prince George's Counties in Maryland, all of Washington DC, and Northern Virginia including Arlington, Fairfax, McLean, Alexandria, and Reston." },
-  { q: "How much does house cleaning near me cost?", a: "A standard cleaning for a 1-2 bedroom home starts at $100–$150. Larger homes range $150–$350+. Recurring clients save up to 25%. Request a free quote for your exact price." },
+  { q: "How much does house cleaning near me cost?", a: "A standard cleaning for a 1-2 bedroom home starts at $150–$180. Larger homes range $200–$400+. Recurring clients save up to 25%. Request a free quote for your exact price." },
   { q: "Can I get same-week house cleaning?", a: "Yes, we often have availability within the same week. Call (240) 704-2551 or use our quote form and we'll confirm the earliest available slot near you." },
   { q: "Are your cleaners background checked?", a: "Every Capital Clean Care team member passes a thorough background check before joining our team. We are fully licensed, bonded, and insured for your peace of mind." },
   { q: "Do you bring your own cleaning supplies?", a: "Yes. We bring all supplies and equipment, including our eco-friendly, non-toxic plant-based products. No need to provide anything." },

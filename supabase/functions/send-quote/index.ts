@@ -230,6 +230,15 @@ serve(async (req) => {
       await sendSMS(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, TWILIO_FROM_NUMBER, clientPhone, openingMessage);
     }
 
+    // ── 4. Forward lead to Capital Clean Care app ──────────────────────────
+    try {
+      await fetch('https://jzxhejqokcjyxxklnnza.supabase.co/functions/v1/receive-lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'x-webhook-secret': 'ccc-lead-webhook-2026' },
+        body: JSON.stringify({ name, phone, email, zip, service, bedrooms, bathrooms, frequency, date, message, smsConsent, emailConsent }),
+      });
+    } catch (_) { /* non-blocking — don't fail the main flow */ }
+
     return new Response(JSON.stringify({ success: true }), {
       status: 200,
       headers: { ...corsHeaders, "Content-Type": "application/json" },

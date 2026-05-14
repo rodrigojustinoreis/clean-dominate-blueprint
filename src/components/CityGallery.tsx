@@ -8,8 +8,88 @@ import imgLiving from "@/assets/gallery/clean-living-room.webp";
 import imgBedroom from "@/assets/gallery/clean-bedroom.webp";
 import imgDining from "@/assets/gallery/clean-dining.webp";
 import imgEntryway from "@/assets/gallery/clean-entryway.webp";
+import imgBedroomBA from "@/assets/before-after/bedroom.webp";
+import imgKidsRoom from "@/assets/before-after/kids-room.webp";
+import imgKitchenBrown from "@/assets/before-after/kitchen-brown-after.webp";
+import imgKitchenGranite from "@/assets/before-after/kitchen-granite-after.webp";
+import imgKitchenIsland from "@/assets/before-after/kitchen-island-after.webp";
+import imgStove from "@/assets/before-after/stove-after.webp";
+import imgTeenRoom from "@/assets/before-after/teen-room.webp";
+import imgCleanerBlinds from "@/assets/cleaner-blinds.webp";
+import imgCleanerMopping from "@/assets/cleaner-mopping.webp";
+import imgCleanerSupplies from "@/assets/cleaner-supplies.webp";
+import imgEcoProducts from "@/assets/eco-products.webp";
+import imgHappyClient from "@/assets/happy-client.webp";
+import imgHeroHome from "@/assets/hero-clean-home.webp";
 
-const galleryImages = [imgKitchen, imgBathroom, imgLiving, imgBedroom, imgDining, imgEntryway];
+/** One unique image per city slug */
+const cityImageMap: Record<string, string> = {
+  // Maryland
+  "rockville-md": imgKitchen,
+  "silver-spring-md": imgBathroom,
+  "bethesda-md": imgLiving,
+  "germantown-md": imgBedroom,
+  "gaithersburg-md": imgDining,
+  "potomac-md": imgEntryway,
+  "frederick-md": imgBedroomBA,
+  "urbana-md": imgKidsRoom,
+  "clarksburg-md": imgKitchenBrown,
+  "damascus-md": imgKitchenGranite,
+  "monrovia-md": imgKitchenIsland,
+  "takoma-park-md": imgStove,
+  "columbia-md": imgTeenRoom,
+  "ellicott-city-md": imgCleanerBlinds,
+  "new-market-md": imgCleanerMopping,
+  "montgomery-county-md": imgCleanerSupplies,
+  "frederick-county-md": imgEcoProducts,
+  "howard-county-md": imgHappyClient,
+  "prince-georges-county-md": imgHeroHome,
+  "kensington-md": imgEntryway,
+  "chevy-chase-md": imgKitchenGranite,
+  "college-park-md": imgBedroomBA,
+  "laurel-md": imgTeenRoom,
+  "bowie-md": imgKitchenBrown,
+  "wheaton-md": imgDining,
+  "montgomery-village-md": imgBathroom,
+  "hyattsville-md": imgLiving,
+  "north-potomac-md": imgBedroom,
+  "kentlands-md": imgKitchenIsland,
+  "north-bethesda-md": imgKidsRoom,
+  "olney-md": imgStove,
+  "burtonsville-md": imgCleanerMopping,
+  "boyds-md": imgCleanerBlinds,
+  "brookeville-md": imgHeroHome,
+  // Washington DC
+  "washington-dc-nw": imgHeroHome,
+  "washington-dc-ne": imgKitchenIsland,
+  "capitol-hill-dc": imgKitchen,
+  "georgetown-dc": imgLiving,
+  "dupont-circle-dc": imgBathroom,
+  "adams-morgan-dc": imgDining,
+  "downtown-dc": imgBedroom,
+  "shaw-dc": imgTeenRoom,
+  "columbia-heights-dc": imgKidsRoom,
+  "navy-yard-dc": imgKitchenGranite,
+  // Northern Virginia
+  "arlington-va": imgHeroHome,
+  "fairfax-va": imgKitchenIsland,
+  "mclean-va": imgBedroomBA,
+  "alexandria-va": imgCleanerBlinds,
+  "falls-church-va": imgCleanerMopping,
+  "vienna-va": imgHappyClient,
+  "tysons-va": imgKitchenBrown,
+  "reston-va": imgEcoProducts,
+  "herndon-va": imgStove,
+  "annandale-va": imgCleanerSupplies,
+};
+
+/** Fallback pool for any city not in the map above */
+const fallbackImages = [
+  imgKitchen, imgBathroom, imgLiving, imgBedroom, imgDining, imgEntryway,
+  imgBedroomBA, imgKidsRoom, imgKitchenBrown, imgKitchenGranite,
+  imgKitchenIsland, imgStove, imgTeenRoom, imgCleanerBlinds,
+  imgCleanerMopping, imgCleanerSupplies, imgEcoProducts, imgHappyClient, imgHeroHome,
+];
 
 /** Premium phrases keyed by city slug */
 const premiumPhrases: Record<string, string> = {
@@ -46,6 +126,27 @@ const premiumPhrases: Record<string, string> = {
   "falls-church-va": "Convenient premium cleaning in Falls Church.",
   "vienna-va": "Refined home cleaning services in Vienna.",
   "tysons-va": "Premium residential cleaning in Tysons.",
+  "kensington-md": "Personalized cleaning services in Kensington.",
+  "chevy-chase-md": "Premium home cleaning in Chevy Chase.",
+  "college-park-md": "Reliable house cleaning in College Park.",
+  "laurel-md": "Professional cleaning services in Laurel.",
+  "bowie-md": "Trusted home care for Bowie families.",
+  "wheaton-md": "Dependable cleaning in Wheaton.",
+  "montgomery-village-md": "Quality home cleaning in Montgomery Village.",
+  "hyattsville-md": "Professional cleaning in Hyattsville.",
+  "north-potomac-md": "Premium cleaning for North Potomac homes.",
+  "kentlands-md": "Eco-friendly cleaning in Kentlands.",
+  "north-bethesda-md": "Premium residential care in North Bethesda.",
+  "olney-md": "Trusted cleaning services in Olney.",
+  "burtonsville-md": "Reliable home cleaning in Burtonsville.",
+  "boyds-md": "Professional cleaning for Boyds homes.",
+  "brookeville-md": "Premium home cleaning in Brookeville.",
+  "shaw-dc": "Detail-driven cleaning in Shaw.",
+  "columbia-heights-dc": "Trusted home care in Columbia Heights.",
+  "navy-yard-dc": "Professional cleaning at Navy Yard.",
+  "reston-va": "Refined residential cleaning in Reston.",
+  "herndon-va": "Reliable premium cleaning in Herndon.",
+  "annandale-va": "Trusted home cleaning in Annandale.",
 };
 
 interface CityGalleryProps {
@@ -83,34 +184,13 @@ const CityGallery = ({
           </p>
         </div>
 
-        {/* Premium Grid */}
+        {/* Grid — every city gets its own image */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
           {filteredCities.map((city, index) => {
-            const isTextCard = index % 5 === 2; // every 5th card (position 3) is a text panel
-            const img = galleryImages[index % galleryImages.length];
+            const img = cityImageMap[city.slug] ?? fallbackImages[index % fallbackImages.length];
             const phrase = premiumPhrases[city.slug] || `Professional cleaning services in ${city.name}.`;
             const label = city.state !== "DC" ? `${city.name}, ${city.state}` : city.name;
-
-            if (isTextCard) {
-              return (
-                <TextCard
-                  key={city.slug}
-                  city={city}
-                  label={label}
-                  phrase={phrase}
-                />
-              );
-            }
-
-            return (
-              <ImageCard
-                key={city.slug}
-                city={city}
-                label={label}
-                phrase={phrase}
-                img={img}
-              />
-            );
+            return <ImageCard key={city.slug} city={city} label={label} phrase={phrase} img={img} />;
           })}
         </div>
       </div>
@@ -136,7 +216,6 @@ function ImageCard({
       to={`/locations/${city.slug}`}
       className="group relative block aspect-[4/3] rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 ring-1 ring-border/60"
     >
-      {/* Image */}
       <img
         src={img}
         alt={`House cleaning in ${label}`}
@@ -169,45 +248,6 @@ function ImageCard({
           </h3>
         </div>
       </div>
-    </Link>
-  );
-}
-
-/* ── Text / Feature Card ─────────────────────────────────── */
-
-function TextCard({
-  city,
-  label,
-  phrase,
-}: {
-  city: CityData;
-  label: string;
-  phrase: string;
-}) {
-  return (
-    <Link
-      to={`/locations/${city.slug}`}
-      className="group relative block aspect-[4/3] rounded-2xl overflow-hidden ring-1 ring-border shadow-sm hover:shadow-lg transition-all duration-500 bg-card"
-    >
-      <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center">
-        {/* Decorative accent line */}
-        <div className="w-8 h-[2px] bg-accent mb-5 transition-all duration-500 group-hover:w-12" />
-
-        <h3 className="font-heading text-lg font-bold text-foreground mb-2 tracking-tight">
-          {label}
-        </h3>
-
-        <p className="text-muted-foreground text-sm leading-relaxed max-w-[240px] mb-5">
-          {phrase}
-        </p>
-
-        <span className="inline-flex items-center gap-1.5 text-accent font-semibold text-sm transition-all duration-300 group-hover:gap-2.5">
-          View Services <ArrowRight className="h-3.5 w-3.5" />
-        </span>
-      </div>
-
-      {/* Subtle hover background shift */}
-      <div className="absolute inset-0 bg-accent/[0.03] opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
     </Link>
   );
 }

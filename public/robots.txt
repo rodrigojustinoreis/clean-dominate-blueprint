@@ -23,6 +23,7 @@ Allow: /
 User-agent: *
 Allow: /
 Disallow: /api/
+Disallow: /.netlify/
 Disallow: /*?blog=
 Disallow: /*?*blogcategory=
 Disallow: /*?*utm_

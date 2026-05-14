@@ -97,57 +97,6 @@ export const LocalBusinessSchema = ({ areaServed }: LocalBusinessSchemaProps = {
       bestRating: "5",
       worstRating: "1",
     },
-    review: [
-      {
-        "@type": "Review",
-        author: { "@type": "Person", name: "Sarah M." },
-        datePublished: "2025-11-15",
-        reviewBody: "Capital Clean Care transformed our home. The team was professional, thorough, and used products safe for my kids and pets.",
-        reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-      },
-      {
-        "@type": "Review",
-        author: { "@type": "Person", name: "James T." },
-        datePublished: "2025-12-02",
-        reviewBody: "We've used their bi-weekly service for over a year and every visit exceeds expectations. Highly recommend!",
-        reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-      },
-      {
-        "@type": "Review",
-        author: { "@type": "Person", name: "Lauren K." },
-        datePublished: "2026-01-10",
-        reviewBody: "After our kitchen renovation, the post-construction cleaning was incredible. They removed every trace of dust.",
-        reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-      },
-      {
-        "@type": "Review",
-        author: { "@type": "Person", name: "Patricia W." },
-        datePublished: "2026-01-22",
-        reviewBody: "Best maid service in Silver Spring. They show up on time, do an incredible job, and the eco-friendly products are a huge bonus for our family.",
-        reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-      },
-      {
-        "@type": "Review",
-        author: { "@type": "Person", name: "Robert L." },
-        datePublished: "2026-02-05",
-        reviewBody: "Used them for move-out cleaning and got my full deposit back. The apartment looked better than when I moved in. Incredible service.",
-        reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-      },
-      {
-        "@type": "Review",
-        author: { "@type": "Person", name: "Amanda F." },
-        datePublished: "2026-02-18",
-        reviewBody: "My Airbnb rating went from 4.6 to 5.0 stars after switching to Capital Clean Care for turnovers. Guests love how clean everything is.",
-        reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-      },
-      {
-        "@type": "Review",
-        author: { "@type": "Person", name: "Diana T." },
-        datePublished: "2026-03-01",
-        reviewBody: "Needed house cleaning near me fast before a family visit. They fit me in within 2 days and the house was spotless. Highly recommend.",
-        reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-      },
-    ],
     openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",
       dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
@@ -214,7 +163,7 @@ export const ServiceSchema = ({
     schema.aggregateRating = {
       "@type": "AggregateRating",
       ratingValue: "5.0",
-      reviewCount: String(reviews.length),
+      reviewCount: "47",
       bestRating: "5",
       worstRating: "1",
     };

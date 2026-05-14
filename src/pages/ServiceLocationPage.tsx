@@ -4,7 +4,7 @@ import { useSEO } from "@/hooks/useSEO";
 import FAQ from "@/components/FAQ";
 import ConversionCTA from "@/components/ConversionCTA";
 import TrustBadges from "@/components/TrustBadges";
-import { LocalBusinessSchema, ServiceSchema, FAQSchema, BreadcrumbSchema, CityReviewSchema } from "@/components/SchemaMarkup";
+import { LocalBusinessSchema, ServiceSchema, FAQSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import { getTestimonialsForServiceCity } from "@/data/testimonials";
 import { getCity, getService, getServiceLocationIntro, getWhyChooseUs, getServiceLocationFAQs, slCities, slServices } from "@/data/service-locations";
 import { CheckCircle, MapPin, ArrowRight, Shield, Leaf, Clock, Star } from "lucide-react";
@@ -23,7 +23,8 @@ const ServiceLocationPage = () => {
   const whyChoose = getWhyChooseUs(city, service);
   const intro = getServiceLocationIntro(city, service);
   const metaTitle = `Professional ${service.name} in ${city.name}, ${city.state} | Capital Clean Care`;
-  const metaDescription = `Top-rated ${service.shortName} & maid service in ${city.name}, ${city.state}. Eco-friendly products, background-checked teams, satisfaction guaranteed. Serving ${city.county}. Free quotes.`;
+  const serviceLabel = service.shortName.toLowerCase().includes("maid") ? service.shortName : `${service.shortName} & maid service`;
+  const metaDescription = `Top-rated ${serviceLabel} in ${city.name}, ${city.state}. Eco-friendly products, background-checked teams, satisfaction guaranteed. Serving ${city.county}. Free quotes.`;
   const pageUrl = `https://capitalcleancare.com/locations/${city.slug}/${service.slug}`;
 
   const { seoHelmet } = useSEO({ title: metaTitle, description: metaDescription, canonical: pageUrl });
@@ -48,11 +49,6 @@ const ServiceLocationPage = () => {
         description={metaDescription}
         url={pageUrl}
         reviews={testimonials.map(t => ({ name: t.name, text: t.text, location: t.location }))}
-      />
-      <CityReviewSchema
-        cityName={`${city.name} — ${service.name}`}
-        cityUrl={pageUrl}
-        reviews={testimonials}
       />
       <FAQSchema faqs={faqs} />
 

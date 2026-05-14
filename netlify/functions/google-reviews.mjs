@@ -5,6 +5,7 @@
  */
 
 const CACHE_TTL_MS = 60 * 60 * 1000; // 1 hour
+const FETCH_TIMEOUT_MS = 6000;        // 6s — well under Netlify's 10s limit
 let cache = { data: null, ts: 0 };
 
 const HEADERS = {
@@ -12,6 +13,8 @@ const HEADERS = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers": "Content-Type",
 };
+
+const EMPTY_RESULT = { rating: null, totalRatings: null, reviews: [] };
 
 export const handler = async (event) => {
   if (event.httpMethod === "OPTIONS") {
@@ -22,10 +25,11 @@ export const handler = async (event) => {
   const placeId = process.env.GOOGLE_PLACE_ID;
 
   if (!apiKey || !placeId) {
+    // Return empty data so the page renders without breaking
     return {
-      statusCode: 503,
+      statusCode: 200,
       headers: HEADERS,
-      body: JSON.stringify({ error: "Google Places API not configured." }),
+      body: JSON.stringify(EMPTY_RESULT),
     };
   }
 
@@ -42,14 +46,21 @@ export const handler = async (event) => {
   const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=name,rating,user_ratings_total,reviews&reviews_sort=newest&key=${apiKey}`;
 
   try {
-    const res = await fetch(url);
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
+
+    const res = await fetch(url, { signal: controller.signal });
+    clearTimeout(timeout);
+
     const json = await res.json();
 
     if (json.status !== "OK") {
+      console.error("Places API error status:", json.status);
+      // Return empty data gracefully — don't expose 5XX to crawlers
       return {
-        statusCode: 502,
+        statusCode: 200,
         headers: HEADERS,
-        body: JSON.stringify({ error: `Places API: ${json.status}` }),
+        body: JSON.stringify(EMPTY_RESULT),
       };
     }
 
@@ -76,10 +87,11 @@ export const handler = async (event) => {
     };
   } catch (err) {
     console.error("Google Places fetch error:", err);
+    // Return empty data gracefully on any error (timeout, network, etc.)
     return {
-      statusCode: 500,
+      statusCode: 200,
       headers: HEADERS,
-      body: JSON.stringify({ error: "Internal error fetching reviews." }),
+      body: JSON.stringify(EMPTY_RESULT),
     };
   }
 };

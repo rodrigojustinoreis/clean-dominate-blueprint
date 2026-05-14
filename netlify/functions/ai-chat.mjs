@@ -30,6 +30,8 @@ STYLE RULES:
 - If asked about something outside cleaning services, gently redirect
 - Always use the customer's name once you have it`;
 
+const FETCH_TIMEOUT_MS = 8000; // 8s — under Netlify's 10s limit
+
 export const handler = async (event) => {
   const headers = {
     "Content-Type": "application/json",
@@ -45,11 +47,25 @@ export const handler = async (event) => {
     return { statusCode: 405, headers, body: JSON.stringify({ error: "Method not allowed" }) };
   }
 
+  let messages;
   try {
-    const { messages } = JSON.parse(event.body);
+    const body = JSON.parse(event.body || "{}");
+    messages = body.messages;
+  } catch {
+    return { statusCode: 400, headers, body: JSON.stringify({ error: "Invalid request body" }) };
+  }
+
+  if (!Array.isArray(messages) || messages.length === 0) {
+    return { statusCode: 400, headers, body: JSON.stringify({ error: "messages array required" }) };
+  }
+
+  try {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
 
     const response = await fetch("https://api.anthropic.com/v1/messages", {
       method: "POST",
+      signal: controller.signal,
       headers: {
         "x-api-key": process.env.ANTHROPIC_API_KEY,
         "anthropic-version": "2023-06-01",
@@ -62,6 +78,8 @@ export const handler = async (event) => {
         messages,
       }),
     });
+
+    clearTimeout(timeout);
 
     if (!response.ok) {
       const err = await response.text();

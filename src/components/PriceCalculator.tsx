@@ -18,12 +18,12 @@ import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 
 const basePrices: Record<string, number> = {
-  standard: 120,
-  deep: 250,
-  move: 300,
-  "post-construction": 350,
-  recurring: 110,
-  "eco-friendly": 140,
+  standard: 160,
+  deep: 280,
+  move: 320,
+  "post-construction": 380,
+  recurring: 160,
+  "eco-friendly": 170,
 };
 
 const bedroomAddon: Record<string, number> = {
@@ -97,7 +97,7 @@ const PriceCalculator = () => {
 
   const estimate = useMemo(() => {
     if (!service || !bedrooms || !bathrooms || !frequency) return null;
-    const base = basePrices[service] ?? 120;
+    const base = basePrices[service] ?? 160;
     const beds = bedroomAddon[bedrooms] ?? 0;
     const baths = bathroomAddon[bathrooms] ?? 0;
     const area = sqftAddon(sqft[0]);
@@ -106,7 +106,7 @@ const PriceCalculator = () => {
       .filter((a) => selectedAddons.includes(a.id))
       .reduce((sum, a) => sum + a.price, 0);
     const subtotal = base + beds + baths + area + addonTotal;
-    const total = Math.round(subtotal * mult);
+    const total = Math.max(150, Math.round(subtotal * mult));
     const low = Math.round(total * 0.9);
     const high = Math.round(total * 1.15);
     const savings = frequency !== "once" ? Math.round(subtotal - total) : 0;
