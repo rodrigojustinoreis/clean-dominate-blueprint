@@ -44,6 +44,29 @@
   status = 301
   force = true
 
+# ── 404 fixes: missing pages that Google has indexed ─────────────────────────
+# These paths match a 200-rewrite pattern but have no prerendered file,
+# so they return 404 instead of falling through to the SPA. Fix with explicit 301s.
+[[redirects]]
+  from = "/services/move-in-cleaning"
+  to = "/services/move-out-cleaning"
+  status = 301
+
+[[redirects]]
+  from = "/locations/washington-dc-nw"
+  to = "/locations/washington-dc"
+  status = 301
+
+[[redirects]]
+  from = "/locations/washington-dc-sw"
+  to = "/locations/washington-dc"
+  status = 301
+
+[[redirects]]
+  from = "/locations/washington-dc-se"
+  to = "/locations/washington-dc"
+  status = 301
+
 # ── Soft 404 / old URL patterns confirmed in Search Console ──────────────────
 [[redirects]]
   from = "/detailed-cleaning"
