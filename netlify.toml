@@ -365,6 +365,79 @@
   status = 200
   force = true
 
+# ── Core pages: canonical no-trailing-slash served directly (avoids Pretty URLs 301) ─
+[[redirects]]
+  from = "/about"
+  to = "/about/"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/contact"
+  to = "/contact/"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/reviews"
+  to = "/reviews/"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/faq"
+  to = "/faq/"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/gift-cards"
+  to = "/gift-cards/"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/blog"
+  to = "/blog/"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/house-cleaning-near-me"
+  to = "/house-cleaning-near-me/"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/spring-cleaning-md"
+  to = "/spring-cleaning-md/"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/why-eco-friendly-cleaning"
+  to = "/why-eco-friendly-cleaning/"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/careers"
+  to = "/careers/"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/privacy-policy"
+  to = "/privacy-policy/"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/terms-of-service"
+  to = "/terms-of-service/"
+  status = 200
+  force = true
+
 # ── SPA fallback (must be last) ───────────────────────────────────────────────
 [[redirects]]
   from = "/*"
