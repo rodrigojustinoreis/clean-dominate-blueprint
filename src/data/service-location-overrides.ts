@@ -170,6 +170,195 @@ Kensington also sits within the Rock Creek watershed, and our plant-based produc
     ],
   },
 
+  // ── Tier-2 pages ──────────────────────────────────────────────────────────
+
+  "washington-dc/house-cleaning": {
+    uniqueContent: `Washington DC's residential landscape is unlike any other city in the country. On the same block you can find a 150-year-old rowhouse with original plaster walls and heart-pine floors sitting next to a converted carriage house and a brand-new glass-and-steel condo. Our DC house cleaning teams are trained for this exact variety — knowing when to use soft-touch technique on historic surfaces and when to deploy professional-grade degreasers on modern appliances and high-touch countertops.
+
+DC residents have demanding schedules — legislative sessions, agency deadlines, diplomatic events — and they expect cleaning services that work around them, not the other way around. Our Capitol Hill, Georgetown, Adams Morgan, and Dupont Circle clients book recurring plans because consistency matters: the same team, the same standards, the same result every visit, whether there's a dinner party at 7pm or not. Building access requirements, parking restrictions, and elevator reservation windows are logistics we've navigated across dozens of DC buildings and rowhouses. We show up on time, work efficiently, and leave before your afternoon calls start.`,
+    photos: [
+      { src: "/images/team/team-post-construction.jpg", alt: "Capital Clean Care team cleaning spacious DC home — professional house cleaning in Washington DC" },
+      { src: "/images/team/cleaning-window-blinds.png", alt: "Capital Clean Care team member cleaning window blinds in Washington DC home" },
+      { src: "/images/team/team-mopping-uniform.jpg", alt: "Capital Clean Care team member in uniform — house cleaning service in Washington, DC" },
+    ],
+  },
+
+  "washington-dc/deep-cleaning": {
+    uniqueContent: `Washington DC rowhouses are beautiful — and they accumulate grime in ways that newer construction doesn't. Original hardwood floors with decades of finish build-up, radiator covers that haven't been properly cleaned since the Carter administration, plaster walls that hold fine dust differently than drywall, and basement levels that see humidity from both the Potomac moisture and the city's aging infrastructure. A deep cleaning in a DC rowhouse isn't the same job as a deep clean in a modern suburban home, and our teams know the difference.
+
+Our DC deep cleaning protocol starts with a surface-type inventory: what floors are we working with, what's the wall material, where are the hidden buildup zones unique to this property. Older DC homes typically have radiators, original tile bathrooms, and kitchen interiors that haven't been fully cleaned in years — these get the most intensive attention. We use HEPA-filtered vacuums, professional-grade citric acid descalers for mineral deposits, and microfiber technology that captures sub-micron particles from plaster and historic wood surfaces without scratching or dulling them.`,
+    photos: [
+      { src: "/images/team/power-scrubber-tile.jpg", alt: "Capital Clean Care team using power scrubber on tile — deep cleaning in Washington DC" },
+      { src: "/images/team/scrubbing-door-frame.jpg", alt: "Capital Clean Care team member scrubbing detail areas during deep cleaning in Washington, DC" },
+      { src: "/images/team/cleaning-under-cabinet.jpg", alt: "Capital Clean Care team cleaning under cabinet in Washington DC deep cleaning service" },
+    ],
+  },
+
+  "arlington-va/house-cleaning": {
+    uniqueContent: `Arlington's density — the highest in Virginia — means most clients live in condos, high-rises, or compact townhomes along the Rosslyn-Ballston corridor. Our Arlington house cleaning teams are built for urban logistics: arriving within your building's access window, using compact equipment sized for hallways and tight entryways, completing the work efficiently, and leaving without needing you to supervise. If your building has elevator reservations, parking permits, or HOA restrictions, we've navigated all of them across Arlington's major residential buildings.
+
+The Clarendon, Pentagon City, and Crystal City areas attract a high volume of military families and government contractors who relocate frequently — many of them on tight timelines needing move-in or move-out cleans coordinated around PCS moves. We've become a trusted resource for this community because we show up on time, complete the job to a standard that satisfies base housing inspectors and civilian property managers alike, and never require hand-holding. Lyon Village and Nauck homeowners get a different service scope — larger single-family homes with yards — and we staff accordingly.`,
+    photos: [
+      { src: "/images/team/two-team-members.jpg", alt: "Capital Clean Care two-person team cleaning Arlington, VA home — professional house cleaning service" },
+      { src: "/images/team/team-mopping-uniform.jpg", alt: "Capital Clean Care team member in uniform — house cleaning in Arlington, VA" },
+      { src: "/images/team/vacuuming-living-room.jpg", alt: "Capital Clean Care team member vacuuming Arlington, VA apartment or condo" },
+    ],
+  },
+
+  "arlington-va/recurring-cleaning": {
+    uniqueContent: `Recurring cleaning in Arlington is a different calculus than in the suburbs. Most Arlington units are smaller — 700 to 1,400 sq ft is typical for condos — but they get significantly heavier daily use per square foot than larger suburban homes. Professionals who work from home, pets in pet-friendly buildings, and the urban particulate that comes through high-traffic corridors all mean that surfaces in Arlington apartments build up grime faster than the room count suggests. A bi-weekly plan keeps this under control without requiring a periodic deep clean to reset.
+
+Our Arlington recurring clients get the same team every visit, which matters more in a dense building than people expect. Your team knows which building entrance to use, which floor your unit is on, whether your doorbell works, and how you prefer the living room arranged. They also know your surfaces — that the kitchen backsplash is glossy and shows water spots, that the bathroom grout is light-colored and needs special attention, and that the balcony door track collects street grit quickly. This accumulated knowledge is what makes a recurring service genuinely different from booking one-off cleans.`,
+    photos: [
+      { src: "/images/team/mopping-hardwood-floor.jpg", alt: "Capital Clean Care team member on recurring cleaning visit in Arlington, VA" },
+      { src: "/images/team/vacuuming-living-room.jpg", alt: "Capital Clean Care team member vacuuming during recurring cleaning in Arlington, VA" },
+      { src: "/images/team/team-mopping-uniform.jpg", alt: "Capital Clean Care professional in uniform — recurring cleaning service in Arlington, VA" },
+    ],
+  },
+
+  "alexandria-va/house-cleaning": {
+    uniqueContent: `Alexandria's Old Town is one of the most historically significant neighborhoods in the country — and one of the most demanding to clean properly. Federal-period brick rowhouses with original heart-pine floors, plaster walls, and antique tile require a different approach than standard residential cleaning. We don't use abrasive scrubbers on historic hardwood, we don't apply bleach-based products near original grout lines, and we train our teams on the specific care requirements for the materials found in pre-1900 Alexandria homes. Del Ray's craftsman bungalows and Potomac Yard's glass-and-steel condos each have their own requirements, and our teams adjust accordingly.
+
+Alexandria's dog-friendly culture — particularly in Del Ray and Old Town — means pet hair, paw prints, and pet-zone odors are part of almost every job. Our house cleaning service in Alexandria uses HEPA-filtered vacuums that capture pet allergens from hardwood, upholstery, and area rugs, and our plant-based deodorizing formulas neutralize pet odors at the source rather than masking them. We've cleaned for Old Town homes where the Labrador has been there for a decade, and the floors still look like they were refinished last week.`,
+    photos: [
+      { src: "/images/team/eco-friendly-products.png", alt: "Capital Clean Care team member with eco-friendly products — house cleaning in Alexandria, VA" },
+      { src: "/images/team/cleaning-window-blinds.png", alt: "Capital Clean Care team member cleaning windows in Alexandria, VA home" },
+      { src: "/images/team/team-mopping-uniform.jpg", alt: "Capital Clean Care professional in uniform — house cleaning service in Alexandria, VA" },
+    ],
+  },
+
+  "columbia-md/house-cleaning": {
+    uniqueContent: `Columbia is one of the most thoughtfully planned communities in America, and the homes here reflect that intentionality — from the lakefront condos in Wilde Lake and the village center townhomes in Owen Brown to the large single-family homes in River Hill and Harper's Choice. Each Columbia village has a distinct housing character, and our house cleaning teams are familiar with all of them: the split-levels from the 1970s original construction, the newer custom builds along the reservoir, and the mixed-use residential above retail that has become a feature of the evolving Columbia Town Center.
+
+Columbia's heavy tree canopy — part of Robert Simon's original vision — creates beautiful shade and intense pollen seasons. Spring oak and maple release in Columbia is significant, and it settles on every horizontal surface indoors within days of opening windows. Our Columbia house cleaning clients on recurring plans consistently tell us that the spring and fall visits are the ones where the difference is most visible: coming home to a house where the pollen and leaf residue has been completely removed from surfaces, floors, and window sills rather than redistributed. We use HEPA filtration and microfiber throughout to capture rather than spread these seasonal particles.`,
+    photos: [
+      { src: "/images/team/team-post-construction.jpg", alt: "Capital Clean Care team cleaning a Columbia, MD home — professional house cleaning service" },
+      { src: "/images/team/two-team-members.jpg", alt: "Capital Clean Care two-person team working in Columbia, MD home" },
+      { src: "/images/team/team-mopping-uniform.jpg", alt: "Capital Clean Care team member in uniform — house cleaning service in Columbia, MD" },
+    ],
+  },
+
+  "columbia-md/recurring-cleaning": {
+    uniqueContent: `Columbia families who've switched to a recurring cleaning plan consistently describe the same turning point: they realized they were spending every Saturday morning cleaning a house that was never quite at the level they wanted it to be, no matter how much effort they put in. A professional recurring plan shifts that time back to your family while maintaining a consistent baseline that Saturday cleaning never achieved.
+
+Our Columbia recurring clients span the spectrum — dual-income households in River Hill with young children and two dogs, empty nesters in Hickory Ridge who want their home consistently guest-ready, and Howard County professionals who travel mid-week and want to come home Friday to a clean house. Each household gets a plan built around their schedule and priorities, not a generic template. Columbia's lake-adjacent neighborhoods also face elevated humidity in summer — our recurring teams flag any developing moisture concerns like mold-prone grout or HVAC condensation issues before they become problems. That proactive attention is something a one-off service can't provide.`,
+    photos: [
+      { src: "/images/team/mopping-hardwood-floor.jpg", alt: "Capital Clean Care team member on recurring cleaning visit in Columbia, MD" },
+      { src: "/images/team/vacuuming-living-room.jpg", alt: "Capital Clean Care team member vacuuming during recurring cleaning in Columbia, MD" },
+      { src: "/images/team/eco-friendly-products.png", alt: "Capital Clean Care eco-friendly recurring cleaning products — Columbia, MD" },
+    ],
+  },
+
+  "mclean-va/house-cleaning": {
+    uniqueContent: `McLean's homes are among the most demanding cleaning assignments in Northern Virginia — not because they're difficult, but because the standard is exceptionally high and the materials are exceptional. Carrera marble countertops, wide-plank white oak floors, imported stone tile in primary bathrooms, coffered ceilings with custom millwork: each of these surfaces requires specific product chemistry and technique that generic cleaning services don't have the training for. Using the wrong pH-level cleaner on natural stone causes etching; using an abrasive pad on white oak floors creates micro-scratches that accumulate over months. Our McLean teams know the difference.
+
+Many McLean properties are managed by household managers or estate managers who coordinate multiple service providers. We work within those management structures — following product specifications on file, coordinating schedules with other vendors, and reporting any surface concerns to the property manager rather than improvising. For McLean homeowners who manage their own cleaning arrangements, we provide the same level of documentation and communication. Every visit is logged, every product used is on file, and our satisfaction guarantee is backed by a free return visit within 24 hours.`,
+    photos: [
+      { src: "/images/team/team-post-construction.jpg", alt: "Capital Clean Care team cleaning a large McLean, VA home — professional house cleaning service" },
+      { src: "/images/team/cleaning-window-blinds.png", alt: "Capital Clean Care team member cleaning windows in McLean, VA home" },
+      { src: "/images/team/eco-friendly-products.png", alt: "Capital Clean Care eco-certified products for McLean, VA premium house cleaning" },
+    ],
+  },
+
+  "fairfax-va/house-cleaning": {
+    uniqueContent: `Fairfax City's residential neighborhoods — Old Town, Providence, Mosby Woods — have a distinctive mix of mid-century colonials and ranchers built in the 1950s–70s alongside newer construction near George Mason University. The older homes typically have original hardwood floors, tile bathrooms with vintage grout lines, and kitchens that have been updated multiple times over the decades. Each renovation generation leaves a different surface and finish that needs different care. Our Fairfax house cleaning teams are used to working through these layered histories.
+
+George Mason University's presence brings a significant rental population to Fairfax, and we work with both tenants and homeowners throughout the city. Tenants booking move-out cleans often have tight timelines — security deposit disputes are common in Fairfax's competitive rental market, and a documented professional cleaning goes a long way. We photograph the post-clean state of high-scrutiny areas on request, giving tenants documentation that's held up in Fairfax County housing disputes. Homeowners on recurring plans get a different service: a consistent team that knows their preferences and builds on the relationship over time.`,
+    photos: [
+      { src: "/images/team/two-team-members.jpg", alt: "Capital Clean Care team cleaning a Fairfax, VA home — professional house cleaning service" },
+      { src: "/images/team/team-mopping-uniform.jpg", alt: "Capital Clean Care team member in uniform — house cleaning in Fairfax, VA" },
+      { src: "/images/team/wiping-door-microfiber.jpg", alt: "Capital Clean Care team member cleaning surfaces in Fairfax, VA home" },
+    ],
+  },
+
+  "falls-church-va/house-cleaning": {
+    uniqueContent: `The City of Falls Church is one of the most tightly defined communities in Northern Virginia — 2.2 square miles with some of the best public schools in Virginia, a walkable downtown, and a housing stock that runs from 1940s Cape Cods to brand-new custom builds on infill lots. The city's small size means our teams are already familiar with most of the residential streets, and the high owner-occupancy rate means clients tend to be long-term — many of our Falls Church clients have been on recurring plans for three or more years.
+
+Falls Church's housing mix creates interesting cleaning requirements. The 1950s split-levels and ramblers often have original hardwood, cast-iron baseboards, and basement family rooms with older carpet that holds pet dander and dust differently than modern flooring. The newer construction — particularly around the West Broad Street corridor — has modern open-plan layouts, quartz counters, and large-format tile that requires streak-free technique. Our teams adjust without needing direction from the homeowner, which is what "professional" actually means in practice.`,
+    photos: [
+      { src: "/images/team/two-team-members.jpg", alt: "Capital Clean Care team cleaning a Falls Church, VA home — professional house cleaning service" },
+      { src: "/images/team/team-mopping-uniform.jpg", alt: "Capital Clean Care team member in uniform — house cleaning in Falls Church, VA" },
+      { src: "/images/team/mopping-hardwood-floor.jpg", alt: "Capital Clean Care team member mopping hardwood floor in Falls Church, VA home" },
+    ],
+  },
+
+  "herndon-va/house-cleaning": {
+    uniqueContent: `Herndon's position in the Dulles Corridor tech ecosystem means it attracts a high concentration of software engineers, cybersecurity professionals, and tech executives — many of them working from home or hybrid. Work-from-home households have specific cleaning needs: the home office needs more frequent attention, the kitchen sees more use during the day, and the general traffic patterns are heavier throughout the space. Our Herndon house cleaning clients who work remotely consistently tell us that recurring cleaning is more valuable to them than it was when they commuted daily.
+
+Historic downtown Herndon's Victorian and Craftsman homes require gentler technique than the newer townhouse communities along the Elden Street corridor and in Worldgate. Our teams know both environments — when to use soft microfiber on period-accurate trim and when to use professional degreasers on a 2022 kitchen. Herndon's Silver Line Metro connection has also increased rental activity near the Herndon station, and we work frequently with both long-term homeowners and tenants managing move-in and move-out cleaning on tight timelines.`,
+    photos: [
+      { src: "/images/team/eco-friendly-products.png", alt: "Capital Clean Care eco-friendly cleaning products — house cleaning in Herndon, VA" },
+      { src: "/images/team/team-mopping-uniform.jpg", alt: "Capital Clean Care team member in uniform — house cleaning service in Herndon, VA" },
+      { src: "/images/team/cleaning-appliances.jpg", alt: "Capital Clean Care team member cleaning kitchen appliances in Herndon, VA home" },
+    ],
+  },
+
+  "annandale-va/house-cleaning": {
+    uniqueContent: `Annandale's internationally diverse community — one of the most culturally rich in Northern Virginia — means our house cleaning teams work in homes where cooking traditions, religious customs, and household practices vary significantly from one address to the next. We've learned to ask, listen, and adapt: some Annandale clients prefer we avoid certain areas of the home during religious observances, others have specific product requirements related to health conditions, and many households have multi-generational family members with different needs than a typical household profile would suggest.
+
+Annandale's housing stock is predominantly 1950s–1970s ranchers and split-levels — solid construction with original hardwood floors under carpet in many cases, tile bathrooms that have been updated multiple times, and kitchens that have served decades of serious home cooking. These homes often have more accumulated residue in kitchen surfaces than newer construction would — hood filters, cabinet interiors, and the areas around stoves that see intense cooking daily. Our Annandale house cleaning teams are experienced with kitchen deep-cleaning in homes where cooking is a serious daily activity, not just occasional weeknight meals.`,
+    photos: [
+      { src: "/images/team/two-team-members.jpg", alt: "Capital Clean Care team cleaning an Annandale, VA home — professional house cleaning service" },
+      { src: "/images/team/team-mopping-uniform.jpg", alt: "Capital Clean Care team member in uniform — house cleaning in Annandale, VA" },
+      { src: "/images/team/wiping-door-microfiber.jpg", alt: "Capital Clean Care team member cleaning surfaces in Annandale, VA home" },
+    ],
+  },
+
+  "reston-va/house-cleaning": {
+    uniqueContent: `Reston's tech-forward community has consistently been ahead of the curve on sustainability — the planned community's original 1964 vision of integrated living with nature has evolved into a population that actively chooses eco-certified services, sustainable products, and businesses with documented environmental practices. Our eco-friendly approach resonates particularly well in Reston: EPA Safer Choice certified formulas, OEKO-TEX certified microfiber, HEPA filtration that improves indoor air quality rather than just moving dust around, and zero disposable single-use materials brought into client homes.
+
+Reston's housing varies dramatically — the original 1960s cluster homes around Lake Newport were designed to be architecturally distinctive, and many have unique materials and layouts that require customized cleaning approaches. The Silver Line corridor has brought modern luxury condominiums near Reston Town Center, with high-end finishes, floor-to-ceiling windows requiring streak-free technique, and building logistics including elevator reservations and parking permits. Our teams are experienced with both ends of the Reston spectrum — historic cluster homes and modern high-rises — and bring the right equipment and products for each.`,
+    photos: [
+      { src: "/images/team/eco-friendly-products.png", alt: "Capital Clean Care eco-friendly cleaning products — house cleaning in Reston, VA" },
+      { src: "/images/team/team-post-construction.jpg", alt: "Capital Clean Care team cleaning spacious Reston, VA home — professional cleaning service" },
+      { src: "/images/team/cleaning-window-blinds.png", alt: "Capital Clean Care team member cleaning windows in Reston, VA home" },
+    ],
+  },
+
+  "potomac-md/house-cleaning": {
+    uniqueContent: `Potomac homes average among the largest and most valuable in the entire Washington metropolitan area — 5,000 to 12,000 square foot estates are common, and properties in Avenel, River Falls, and Bradley Farms regularly command multi-million dollar valuations. Cleaning at this scale and standard requires teams that understand premium materials, can work within security-conscious household environments, and deliver results that meet the expectations of homeowners who have very high standards for everything.
+
+Our Potomac house cleaning teams are selected for experience with luxury surfaces: marble and quartzite countertops, exotic hardwood floors, custom lacquered cabinetry, specialty tile in primary suites, and outdoor entertaining spaces that connect to interior floors. We use exclusively EPA Safer Choice certified, pH-neutral formulas on sensitive surfaces — no ammonia near natural stone, no bleach near specialty finishes, and no synthetic fragrances in homes where occupants have sensitivities. Many Potomac clients have household managers who coordinate our visits; others manage directly. Either way, our communication is clear, our timing is reliable, and our results are documented.`,
+    photos: [
+      { src: "/images/team/team-post-construction.jpg", alt: "Capital Clean Care team cleaning large Potomac, MD estate — professional house cleaning service" },
+      { src: "/images/team/cleaning-window-blinds.png", alt: "Capital Clean Care team member cleaning windows in Potomac, MD home" },
+      { src: "/images/team/eco-friendly-products.png", alt: "Capital Clean Care eco-certified products for Potomac, MD premium house cleaning" },
+    ],
+  },
+
+  "silver-spring-md/house-cleaning": {
+    uniqueContent: `Silver Spring is one of the DMV's most genuinely diverse communities — a place where the houses on the same block might include a 1940s brick colonial, a converted Victorian rooming house, a mid-century rambler, and a 2020 infill townhouse. This diversity is exactly what makes Silver Spring interesting to live in and exactly what requires adaptable, experienced cleaning teams. Our Silver Spring house cleaning crews work in all of these housing types regularly, adjusting technique for each surface and floor type rather than applying a one-size-fits-all approach.
+
+The Georgia Avenue and Colesville Road corridors bring significant urban particulate into Silver Spring homes — bus traffic, construction from ongoing development, and the general density of a major transit hub all mean that horizontal surfaces in Silver Spring homes accumulate dust faster than comparable suburban homes. For clients on recurring plans, our teams notice this pattern and adjust their cadence accordingly: more frequent dusting during high-pollen and high-traffic seasons, extra attention to entryway floors and window sills that catch what comes in from the street. This attentiveness to local conditions is what distinguishes a community-focused service from a generic cleaning company.`,
+    photos: [
+      { src: "/images/team/two-team-members.jpg", alt: "Capital Clean Care two-person team cleaning Silver Spring, MD home — professional house cleaning" },
+      { src: "/images/team/team-mopping-uniform.jpg", alt: "Capital Clean Care team member in uniform — house cleaning in Silver Spring, MD" },
+      { src: "/images/team/mopping-hardwood-floor.jpg", alt: "Capital Clean Care team member mopping hardwood floor — house cleaning in Silver Spring, MD" },
+    ],
+  },
+
+  "bethesda-md/recurring-cleaning": {
+    uniqueContent: `Bethesda's professional households — the NIH researchers, the Chevy Chase physicians, the downtown lawyers who live in Wyngate and Burning Tree — don't want to manage a cleaning service. They want to set it up once, trust it completely, and never think about it again. Our Bethesda recurring clients have been on plans for an average of two-plus years, which tells you something about how this service works when it's built correctly: the same dedicated team, learning the home, building the relationship, and improving with every visit.
+
+The practical detail that matters most to Bethesda recurring clients: key access and security. We're bonded and insured, and every team member is background-checked and documented before their first visit. Many Bethesda clients provide a code or key that their team uses on a predictable schedule, and the communication protocol is simple — confirmation the day before, a note when the visit is complete, and immediate contact if anything needs attention. Bethesda homes with premium finishes also benefit from recurring maintenance rather than periodic deep cleans: it's far easier to maintain marble countertops and hardwood floors than to restore them after months of surface buildup.`,
+    photos: [
+      { src: "/images/team/cleaning-window-blinds.png", alt: "Capital Clean Care team member on recurring cleaning visit in Bethesda, MD" },
+      { src: "/images/team/team-mopping-uniform.jpg", alt: "Capital Clean Care professional in uniform — recurring cleaning service in Bethesda, MD" },
+      { src: "/images/team/vacuuming-living-room.jpg", alt: "Capital Clean Care team member vacuuming during recurring cleaning in Bethesda, MD" },
+    ],
+  },
+
+  "chevy-chase-md/deep-cleaning": {
+    uniqueContent: `Chevy Chase's housing stock is a study in graceful aging — Georgian colonials, Tudor revivals, and pre-war Colonials that have been meticulously maintained by successive owners who understood what they had. Deep cleaning in these homes isn't about correcting neglect; it's about reaching the places that regular cleaning, by definition, doesn't touch: inside the cast-iron radiator covers that have circulated dust for decades, along the crown molding profiles that collect fine particles, behind the appliances in kitchens that were last renovated in the 1990s, and inside the tile grout of primary bathrooms where mineral scale has built up over years of DC area hard water.
+
+Our Chevy Chase deep cleaning protocol includes a pre-visit walkthrough where we identify which surfaces are historic (requiring gentle technique and specialized products) and which are updated (allowing more thorough treatment). Original hardwood gets a different approach than engineered flooring. Plaster walls with original decorative molding get soft microfiber and neutral-pH cleaners, not the scrubbing pads appropriate for painted drywall. This surface-by-surface judgment is the difference between a deep clean that restores a Chevy Chase home and one that accidentally damages it.`,
+    photos: [
+      { src: "/images/team/power-scrubber-tile.jpg", alt: "Capital Clean Care team using power scrubber on tile — deep cleaning in Chevy Chase, MD" },
+      { src: "/images/team/scrubbing-door-frame.jpg", alt: "Capital Clean Care team member scrubbing detail surfaces during deep cleaning in Chevy Chase, MD" },
+      { src: "/images/team/wiping-door-microfiber.jpg", alt: "Capital Clean Care team member using microfiber technique — deep cleaning in Chevy Chase, MD" },
+    ],
+  },
+
 };
 
 export function getServiceLocationOverride(citySlug: string, serviceSlug: string): ServiceLocationOverride | null {
