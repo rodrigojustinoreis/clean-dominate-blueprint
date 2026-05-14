@@ -7,6 +7,7 @@ import TrustBadges from "@/components/TrustBadges";
 import { LocalBusinessSchema, ServiceSchema, FAQSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import { getTestimonialsForServiceCity } from "@/data/testimonials";
 import { getCity, getService, getServiceLocationIntro, getWhyChooseUs, getServiceLocationFAQs, slCities, slServices } from "@/data/service-locations";
+import { getServiceLocationOverride } from "@/data/service-location-overrides";
 import { CheckCircle, MapPin, ArrowRight, Shield, Leaf, Clock, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -30,6 +31,7 @@ const ServiceLocationPage = () => {
   const { seoHelmet } = useSEO({ title: metaTitle, description: metaDescription, canonical: pageUrl });
 
   const testimonials = getTestimonialsForServiceCity(city.slug, service.slug);
+  const override = getServiceLocationOverride(city.slug, service.slug);
 
   // Get related service pages for this city
   const relatedServices = slServices.filter(s => s.slug !== service.slug).slice(0, 4);
@@ -106,6 +108,38 @@ const ServiceLocationPage = () => {
           </div>
         </div>
       </section>
+
+      {/* Unique local content + team photos (only on priority pages) */}
+      {override && (
+        <section className="py-12 md:py-16 bg-muted/10">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-6">
+              Our {service.name} Team in {city.name}
+            </h2>
+            <div className="prose prose-lg max-w-none text-muted-foreground mb-8">
+              {override.uniqueContent.split("\n\n").map((paragraph, i) => (
+                <p key={i} className="mb-4 leading-relaxed">{paragraph}</p>
+              ))}
+            </div>
+            {override.photos.length > 0 && (
+              <div className={`grid gap-4 ${override.photos.length === 2 ? "grid-cols-2" : "grid-cols-1 sm:grid-cols-2 md:grid-cols-3"}`}>
+                {override.photos.map((photo, i) => (
+                  <div key={i} className="rounded-xl overflow-hidden border border-border shadow-sm">
+                    <img
+                      src={photo.src}
+                      alt={photo.alt}
+                      className="w-full h-56 object-cover"
+                      loading="lazy"
+                      width={400}
+                      height={300}
+                    />
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </section>
+      )}
 
       {/* Service Checklist */}
       <section className="py-12 md:py-16 bg-muted/30">
