@@ -306,7 +306,7 @@
   to = "/blog/deep-cleaning-tips-maryland-homes-spring-prep"
   status = 301
 
-# ── Blog query-parameter cleanup ─────────────────────────────────────────────
+# ── Blog/legacy query-parameter cleanup ──────────────────────────────────────
 [[redirects]]
   from = "/"
   to = "/blog/"
@@ -319,6 +319,18 @@
   to = "/blog/"
   status = 301
   force = true
+  query = {blogcategory = ":cat"}
+
+[[redirects]]
+  from = "/seasonal-cleaning"
+  to = "/spring-cleaning-md/"
+  status = 301
+  query = {blog = "y"}
+
+[[redirects]]
+  from = "/seasonal-cleaning"
+  to = "/spring-cleaning-md/"
+  status = 301
   query = {blogcategory = ":cat"}
 
 # ── Serve prerendered pages at canonical non-trailing-slash URLs (200 rewrite)─

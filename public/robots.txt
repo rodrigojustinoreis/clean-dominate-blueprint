@@ -25,6 +25,7 @@ Allow: /
 Disallow: /api/
 Disallow: /.netlify/
 Disallow: /*?blog=
+Disallow: /*?*blog=
 Disallow: /*?*blogcategory=
 Disallow: /*?*utm_
 Disallow: /*?*fbclid=
