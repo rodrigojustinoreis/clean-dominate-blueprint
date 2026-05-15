@@ -13,6 +13,8 @@ const steps = [
   {
     number: "01",
     emoji: "🔍",
+    photo: "/images/team/scrubbing-door-frame.jpg",
+    photoAlt: "Capital Clean Care technician assessing and cleaning door frame detail",
     title: "Assess & Protect",
     description:
       "Before touching a single surface, our technician walks through your home to identify priorities, protect delicate items, and customize the clean to your space.",
@@ -21,6 +23,8 @@ const steps = [
   {
     number: "02",
     emoji: "🌬️",
+    photo: "/images/team/cleaning-window-blinds.png",
+    photoAlt: "Cleaner dusting window blinds from top to bottom",
     title: "Dust-Free Air Start",
     description:
       "Top-to-bottom dry dusting of ceiling fans, vents, blinds, baseboards, and high surfaces — always before any wet cleaning so dust doesn't resettle.",
@@ -29,6 +33,8 @@ const steps = [
   {
     number: "03",
     emoji: "🌿",
+    photo: "/images/team/eco-friendly-products.png",
+    photoAlt: "EPA Safer Choice eco-friendly cleaning products used by Capital Clean Care",
     title: "GreenShield Sanitize",
     description:
       "We apply our EPA Safer Choice™ plant-based disinfectants to every high-touch surface, bathroom, and kitchen area. Safe for children, pets, and allergy sufferers.",
@@ -37,6 +43,8 @@ const steps = [
   {
     number: "04",
     emoji: "✨",
+    photo: "/images/team/power-scrubber-tile.jpg",
+    photoAlt: "Professional cleaner using electric scrubber for deep clean on bathroom tiles",
     title: "Deep Scrub & Polish",
     description:
       "Detailed scrubbing of all surfaces, floors, appliances, sinks, and fixtures — including inside microwaves, stovetops, and shower grout — to a streak-free shine.",
@@ -45,6 +53,8 @@ const steps = [
   {
     number: "05",
     emoji: "✅",
+    photo: "/images/team/cleaning-kitchen-detail.jpg",
+    photoAlt: "Cleaner performing white-glove inspection of kitchen detail",
     title: "White-Glove Inspection",
     description:
       "Before we leave, we run a white-glove quality inspection against our 50-point checklist. If anything isn't perfect, we re-clean it immediately — no questions asked.",
@@ -96,24 +106,34 @@ const GreenShield5Step = ({ showCTA = true, compact = false }: GreenShield5StepP
 
                 {/* Content card */}
                 <div
-                  className={`flex-1 bg-white rounded-2xl border border-border shadow-sm p-6 md:p-8 hover:shadow-md transition-shadow duration-300 md:w-[calc(50%-4rem)] ${
+                  className={`flex-1 bg-white rounded-2xl border border-border shadow-sm overflow-hidden hover:shadow-md transition-shadow duration-300 md:w-[calc(50%-4rem)] ${
                     i % 2 === 0 ? "md:mr-[calc(50%+1rem)]" : "md:ml-[calc(50%+1rem)]"
                   }`}
                 >
-                  <div className="flex items-start gap-4">
-                    <span className="text-3xl shrink-0">{step.emoji}</span>
-                    <div>
-                      <div className="flex items-center flex-wrap gap-2 mb-2">
-                        <h3 className="font-heading text-lg font-bold text-foreground">
-                          {step.title}
-                        </h3>
-                        <span className="text-xs bg-accent/10 text-accent font-semibold px-2 py-0.5 rounded-full whitespace-nowrap">
-                          {step.badge}
-                        </span>
+                  <div className="h-36 overflow-hidden">
+                    <img
+                      src={step.photo}
+                      alt={step.photoAlt}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="p-6 md:p-8">
+                    <div className="flex items-start gap-4">
+                      <span className="text-3xl shrink-0">{step.emoji}</span>
+                      <div>
+                        <div className="flex items-center flex-wrap gap-2 mb-2">
+                          <h3 className="font-heading text-lg font-bold text-foreground">
+                            {step.title}
+                          </h3>
+                          <span className="text-xs bg-accent/10 text-accent font-semibold px-2 py-0.5 rounded-full whitespace-nowrap">
+                            {step.badge}
+                          </span>
+                        </div>
+                        <p className="text-muted-foreground text-sm leading-relaxed">
+                          {step.description}
+                        </p>
                       </div>
-                      <p className="text-muted-foreground text-sm leading-relaxed">
-                        {step.description}
-                      </p>
                     </div>
                   </div>
                 </div>

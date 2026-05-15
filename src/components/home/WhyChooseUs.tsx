@@ -4,21 +4,25 @@ import { Card, CardContent } from "@/components/ui/card";
 const items = [
   {
     icon: Users,
+    photo: "/images/team/two-team-members.jpg",
     title: "Local Experts Who Care",
     desc: "We're not just another cleaning company — we're your neighbors. Personalized service for every DMV home.",
   },
   {
     icon: Shield,
+    photo: "/images/team/team-post-construction.jpg",
     title: "Fully Insured & Vetted",
     desc: "Peace of mind comes standard. Every team member is background-checked, insured, and professionally trained.",
   },
   {
     icon: Leaf,
+    photo: "/images/team/eco-friendly-products.png",
     title: "100% Eco-Friendly",
     desc: "Safe for your family, pets, and planet. EPA Safer Choice certified, plant-based, no harsh chemicals.",
   },
   {
     icon: Star,
+    photo: "/images/team/mopping-hardwood-floor.jpg",
     title: "Satisfaction Guaranteed",
     desc: "Not happy? We'll re-clean at no extra charge within 24 hours. Your satisfaction is our top priority.",
   },
@@ -34,12 +38,20 @@ const WhyChooseUs = () => (
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
         {items.map((item) => (
-          <Card key={item.title} className="text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-transparent hover:border-accent/20">
-            <CardContent className="p-8">
-              <div className="w-16 h-16 rounded-2xl bg-accent/10 flex items-center justify-center mx-auto mb-5">
-                <item.icon className="h-8 w-8 text-accent" />
+          <Card key={item.title} className="overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-transparent hover:border-accent/20">
+            <div className="h-44 overflow-hidden">
+              <img
+                src={item.photo}
+                alt={item.title}
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              />
+            </div>
+            <CardContent className="p-6 text-center">
+              <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center mx-auto mb-3">
+                <item.icon className="h-5 w-5 text-accent" />
               </div>
-              <h3 className="font-heading font-semibold text-lg mb-3">{item.title}</h3>
+              <h3 className="font-heading font-semibold text-base mb-2">{item.title}</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
             </CardContent>
           </Card>

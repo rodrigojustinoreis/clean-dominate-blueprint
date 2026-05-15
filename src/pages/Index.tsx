@@ -242,6 +242,34 @@ const Index = () => {
 
       {/* ══════════════ BLOCO DE AUTORIDADE ══════════════ */}
 
+      {/* ══════════════ TEAM IN ACTION STRIP ══════════════ */}
+      <ScrollReveal>
+        <section className="py-10 bg-secondary border-y border-border overflow-hidden">
+          <div className="container mx-auto px-4">
+            <p className="text-center text-xs font-semibold text-muted-foreground uppercase tracking-widest mb-5">
+              Our team — real professionals, real results
+            </p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-5xl mx-auto">
+              {[
+                { src: "/images/team/team-mopping-uniform.jpg",   alt: "Capital Clean Care cleaner mopping hardwood floors in uniform" },
+                { src: "/images/team/power-scrubber-tile.jpg",    alt: "Professional cleaner using electric scrubber on bathroom tiles" },
+                { src: "/images/team/cleaning-window-blinds.png", alt: "Cleaner carefully cleaning window blinds — DMV area" },
+                { src: "/images/team/vacuuming-living-room.jpg",  alt: "Team member vacuuming living room professionally" },
+              ].map((img, i) => (
+                <div key={i} className="rounded-xl overflow-hidden aspect-square shadow-sm border border-border">
+                  <img
+                    src={img.src}
+                    alt={img.alt}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </ScrollReveal>
+
       {/* ══════════════ 6. BEFORE & AFTER ══════════════ */}
       <ScrollReveal>
         <BeforeAfterGallery />
@@ -257,8 +285,8 @@ const Index = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
               <div className="relative order-2 lg:order-1">
                 <img
-                  src={teamPhoto}
-                  alt="Capital Clean Care team members smiling in branded uniforms"
+                  src="/images/team/two-team-members.jpg"
+                  alt="Capital Clean Care two team members actively cleaning a client's home"
                   className="rounded-2xl shadow-xl w-full object-cover aspect-[4/5]"
                   loading="lazy"
                 />
