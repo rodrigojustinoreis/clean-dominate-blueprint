@@ -1,5 +1,30 @@
 import { useParams, Link } from "react-router-dom";
 import { CheckCircle, MapPin, ArrowRight, Phone, Shield, Leaf, Star, Sparkles } from "lucide-react";
+
+const teamPhotos = [
+  "/images/team/team-mopping-dark-floor.jpg",
+  "/images/team/team-two-large-room.jpg",
+  "/images/team/team-scrubbing-door-detail.jpg",
+  "/images/team/team-cleaning-glass-door.jpg",
+  "/images/team/team-polishing-fridge.jpg",
+  "/images/team/team-mopping-bright-room.jpg",
+  "/images/team/team-vacuuming-furniture.jpg",
+  "/images/team/team-window-blinds-pro.png",
+  "/images/team/team-wiping-door-orange.jpg",
+  "/images/team/team-two-living-room.jpg",
+  "/images/team/team-tile-scrubber.jpg",
+  "/images/team/team-supplies-basket.png",
+  "/images/team/team-cleaning-appliances-male.jpg",
+  "/images/team/team-kitchen-detail.jpg",
+  "/images/team/team-making-bed.jpg",
+  "/images/team/team-window-frame-detail.jpg",
+];
+
+function cityPhotoIndex(slug: string): number {
+  let h = 0;
+  for (const c of slug) h = (h * 31 + c.charCodeAt(0)) & 0xffff;
+  return h % teamPhotos.length;
+}
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
@@ -188,13 +213,30 @@ const CityPage = () => {
       {/* About Our Work */}
       <section className="py-14 md:py-20">
         <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="font-heading text-2xl md:text-3xl font-bold mb-6">
-            Our Work in {city.name}
-          </h2>
-          <div className="space-y-4 text-foreground leading-relaxed">
-            {city.intro.split("\n\n").map((p, i) => (
-              <p key={i}>{p}</p>
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
+            <div>
+              <h2 className="font-heading text-2xl md:text-3xl font-bold mb-6">
+                Our Work in {city.name}
+              </h2>
+              <div className="space-y-4 text-foreground leading-relaxed">
+                {city.intro.split("\n\n").map((p, i) => (
+                  <p key={i}>{p}</p>
+                ))}
+              </div>
+            </div>
+            <div className="md:sticky md:top-28">
+              <div className="rounded-2xl overflow-hidden shadow-lg border border-border">
+                <img
+                  src={teamPhotos[cityPhotoIndex(city.slug)]}
+                  alt={`Capital Clean Care team cleaning a home in ${city.name}, ${city.state}`}
+                  className="w-full aspect-[4/3] object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <p className="text-xs text-muted-foreground text-center mt-2">
+                Our team serving {city.name} and surrounding areas
+              </p>
+            </div>
           </div>
         </div>
       </section>
