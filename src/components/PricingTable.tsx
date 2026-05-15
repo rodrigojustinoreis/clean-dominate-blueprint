@@ -99,9 +99,9 @@ const services = [
 ];
 
 const frequencyDiscounts = [
-  { label: "Weekly",     discount: "25% off",  example: "Save ~$50/visit on a 3-bed home" },
-  { label: "Bi-Weekly",  discount: "15% off",  example: "Save ~$35/visit on a 3-bed home" },
-  { label: "Monthly",    discount: "5% off",   example: "Save ~$12/visit on a 3-bed home" },
+  { label: "Weekly",     discount: "25% off" },
+  { label: "Bi-Weekly",  discount: "15% off" },
+  { label: "Monthly",    discount: "5% off"  },
 ];
 
 const addons = [
@@ -212,7 +212,6 @@ const PricingTable = () => {
               <CardContent className="p-4 text-center">
                 <p className="text-sm font-semibold text-foreground mb-1">{d.label}</p>
                 <p className="text-2xl font-bold text-accent mb-1">{d.discount}</p>
-                <p className="text-xs text-muted-foreground">{d.example}</p>
               </CardContent>
             </Card>
           ))}
