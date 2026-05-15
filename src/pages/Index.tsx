@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { CheckCircle, Shield, Leaf, Star, MapPin, Sparkles, ArrowRight, Phone, Users, Clock, Check } from "lucide-react";
 import PricingTable from "@/components/PricingTable";
-import BeforeAfterGallery from "@/components/BeforeAfterGallery";
 import { LocalBusinessSchema, FAQSchema, WebSiteSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -270,10 +269,6 @@ const Index = () => {
         </section>
       </ScrollReveal>
 
-      {/* ══════════════ 6. BEFORE & AFTER ══════════════ */}
-      <ScrollReveal>
-        <BeforeAfterGallery />
-      </ScrollReveal>
 
 
       {/* ══════════════ FIM DO BLOCO DE AUTORIDADE ══════════════ */}
