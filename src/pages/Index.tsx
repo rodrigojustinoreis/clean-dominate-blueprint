@@ -210,33 +210,6 @@ const Index = () => {
 
       {/* ══════════════ BLOCO DE AUTORIDADE ══════════════ */}
 
-      {/* ══════════════ TEAM IN ACTION STRIP ══════════════ */}
-      <ScrollReveal>
-        <section className="py-10 bg-secondary border-y border-border overflow-hidden">
-          <div className="container mx-auto px-4">
-            <p className="text-center text-xs font-semibold text-muted-foreground uppercase tracking-widest mb-5">
-              Our team — real professionals, real results
-            </p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-5xl mx-auto">
-              {[
-                { src: "/images/team/team-mopping-dark-floor.jpg",    alt: "Capital Clean Care cleaner mopping dark hardwood floors" },
-                { src: "/images/team/team-tile-scrubber.jpg",        alt: "Professional cleaner using electric scrubber on bathroom tiles" },
-                { src: "/images/team/team-cleaning-glass-door.jpg",  alt: "Capital Clean Care cleaner cleaning glass door — logo visible" },
-                { src: "/images/team/team-two-large-room.jpg",       alt: "Two Capital Clean Care team members cleaning large living room" },
-              ].map((img, i) => (
-                <div key={i} className="rounded-xl overflow-hidden aspect-square shadow-sm border border-border">
-                  <img
-                    src={img.src}
-                    alt={img.alt}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      </ScrollReveal>
 
 
 
