@@ -3,24 +3,26 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 
-import stoveBefore from "@/assets/before-after/stove-before.webp";
-import stoveAfter from "@/assets/before-after/stove-after.webp";
-import kitchenIslandBefore from "@/assets/before-after/kitchen-island-before.webp";
-import kitchenIslandAfter from "@/assets/before-after/kitchen-island-after.webp";
-import kitchenBrownBefore from "@/assets/before-after/kitchen-brown-before.webp";
-import kitchenBrownAfter from "@/assets/before-after/kitchen-brown-after.webp";
-import kitchenGraniteBefore from "@/assets/before-after/kitchen-granite-before.webp";
-import kitchenGraniteAfter from "@/assets/before-after/kitchen-granite-after.webp";
+import kitchenIslandBefore from "@/assets/real-work/kitchen-island-before.png";
+import kitchenIslandAfter from "@/assets/real-work/kitchen-island-after.png";
+import kitchenDarkBefore from "@/assets/real-work/kitchen-dark-before.png";
+import kitchenDarkAfter from "@/assets/real-work/kitchen-dark-after.png";
+import kitchenGraniteBefore from "@/assets/real-work/kitchen-granite-before.png";
+import kitchenGraniteAfter from "@/assets/real-work/kitchen-granite-after.png";
+import stoveBefore from "@/assets/real-work/stove-before.png";
+import stoveAfter from "@/assets/real-work/stove-after.png";
+import deepCleanBefore from "@/assets/real-work/deep-clean-before.png";
+import deepCleanAfter from "@/assets/real-work/deep-clean-after.png";
 
 const sliders = [
   {
     beforeImage: kitchenIslandBefore,
     afterImage: kitchenIslandAfter,
-    caption: "Kitchen Deep Clean — Silver Spring, MD",
+    caption: "Luxury Kitchen Deep Clean — DMV Area",
   },
   {
-    beforeImage: kitchenBrownBefore,
-    afterImage: kitchenBrownAfter,
+    beforeImage: kitchenDarkBefore,
+    afterImage: kitchenDarkAfter,
     caption: "Full Kitchen Transformation — Rockville, MD",
   },
   {
@@ -33,6 +35,11 @@ const sliders = [
     afterImage: stoveAfter,
     caption: "Stovetop Restoration — Silver Spring, MD",
   },
+  {
+    beforeImage: deepCleanBefore,
+    afterImage: deepCleanAfter,
+    caption: "Specialists Deep Clean — Maryland",
+  },
 ];
 
 const BeforeAfterGallery = () => (
@@ -40,7 +47,7 @@ const BeforeAfterGallery = () => (
     <div className="container mx-auto px-4">
       <div className="text-center mb-10">
         <span className="inline-block bg-accent/10 text-accent font-semibold text-sm uppercase tracking-wider px-3 py-1 rounded-full mb-3">
-          Our Work
+          Our Real Work
         </span>
         <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mt-2 mb-3">
           See the Difference We Make
@@ -50,7 +57,7 @@ const BeforeAfterGallery = () => (
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto mb-10">
         {sliders.map((s) => (
           <BeforeAfterSlider
             key={s.caption}

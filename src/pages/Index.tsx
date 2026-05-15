@@ -15,6 +15,11 @@ import regionMD from "@/assets/region-maryland.webp";
 import regionDC from "@/assets/region-dc.webp";
 import regionVA from "@/assets/region-virginia.webp";
 import teamPhoto from "@/assets/team-photo.webp";
+import realKitchenAfter from "@/assets/real-work/kitchen-island-after.png";
+import realKitchenDarkAfter from "@/assets/real-work/kitchen-dark-after.png";
+import realKitchenGraniteAfter from "@/assets/real-work/kitchen-granite-after.png";
+import realStoveAfter from "@/assets/real-work/stove-after.png";
+import realBathroomAfter from "@/assets/real-work/bathroom-after.png";
 import HeroSection from "@/components/home/HeroSection";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
 import ServicesSection from "@/components/home/ServicesSection";
@@ -103,6 +108,33 @@ const Index = () => {
                   </div>
                 ))}
               </div>
+            </div>
+          </div>
+        </section>
+      </ScrollReveal>
+
+      {/* ══════════════ FAIXA DE FOTOS REAIS ══════════════ */}
+      <ScrollReveal>
+        <section className="py-6 bg-background border-b border-border overflow-hidden">
+          <div className="container mx-auto px-4">
+            <p className="text-center text-xs font-semibold text-muted-foreground uppercase tracking-widest mb-4">Real results from real homes across the DMV</p>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
+              {[
+                { src: realKitchenAfter,        alt: "Luxury kitchen after deep cleaning — Capital Clean Care" },
+                { src: realKitchenDarkAfter,    alt: "Kitchen transformation after clean — Rockville MD" },
+                { src: realKitchenGraniteAfter, alt: "Granite kitchen after cleaning — Bethesda MD" },
+                { src: realStoveAfter,          alt: "Stovetop restored after cleaning — Silver Spring MD" },
+                { src: realBathroomAfter,       alt: "Bathroom after deep clean — Capital Clean Care DMV" },
+              ].map((img, i) => (
+                <div key={i} className="rounded-xl overflow-hidden aspect-square shadow-sm border border-border">
+                  <img
+                    src={img.src}
+                    alt={img.alt}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                </div>
+              ))}
             </div>
           </div>
         </section>
