@@ -13,6 +13,28 @@ import { Button } from "@/components/ui/button";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import NotFound from "./NotFound";
 
+const teamPhotos = [
+  "/images/team/mopping-hardwood-floor.jpg",
+  "/images/team/two-team-members.jpg",
+  "/images/team/power-scrubber-tile.jpg",
+  "/images/team/cleaning-window-blinds.png",
+  "/images/team/vacuuming-living-room.jpg",
+  "/images/team/team-mopping-uniform.jpg",
+  "/images/team/scrubbing-door-frame.jpg",
+  "/images/team/cleaning-kitchen-detail.jpg",
+  "/images/team/cleaning-appliances.jpg",
+  "/images/team/wiping-door-microfiber.jpg",
+  "/images/team/cleaning-under-cabinet.jpg",
+  "/images/team/team-post-construction.jpg",
+  "/images/team/power-scrubber-tile-2.jpg",
+];
+
+function cityPhotoIndex(slug: string): number {
+  let h = 0;
+  for (const c of slug) h = (h * 31 + c.charCodeAt(0)) & 0xffff;
+  return h % teamPhotos.length;
+}
+
 const ServiceLocationPage = () => {
   const { slug, serviceSlug } = useParams<{ slug: string; serviceSlug: string }>();
   const city = getCity(slug || "");
@@ -91,20 +113,37 @@ const ServiceLocationPage = () => {
       {/* Intro Section */}
       <section className="py-12 md:py-16">
         <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-6">
-            {service.name} Services for {city.name} Homeowners
-          </h2>
-          {city.localIntro && (
-            <div className="border-l-4 border-primary bg-muted/40 rounded-r-lg px-6 py-5 mb-6">
-              <p className="text-foreground leading-relaxed">
-                {city.localIntro.replace(/\[SERVICE_NAME\]/g, service.shortName)}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
+            <div>
+              <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-6">
+                {service.name} Services for {city.name} Homeowners
+              </h2>
+              {city.localIntro && (
+                <div className="border-l-4 border-primary bg-muted/40 rounded-r-lg px-6 py-5 mb-6">
+                  <p className="text-foreground leading-relaxed">
+                    {city.localIntro.replace(/\[SERVICE_NAME\]/g, service.shortName)}
+                  </p>
+                </div>
+              )}
+              <div className="prose prose-lg max-w-none text-muted-foreground">
+                {intro.split("\n\n").map((paragraph, i) => (
+                  <p key={i} className="mb-4 leading-relaxed">{paragraph}</p>
+                ))}
+              </div>
+            </div>
+            <div className="md:sticky md:top-28">
+              <div className="rounded-2xl overflow-hidden shadow-lg border border-border">
+                <img
+                  src={teamPhotos[cityPhotoIndex(city.slug)]}
+                  alt={`Capital Clean Care team providing ${service.shortName} in ${city.name}, ${city.state}`}
+                  className="w-full aspect-[4/3] object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <p className="text-xs text-muted-foreground text-center mt-2">
+                Our team serving {city.name} and the {city.county} area
               </p>
             </div>
-          )}
-          <div className="prose prose-lg max-w-none text-muted-foreground">
-            {intro.split("\n\n").map((paragraph, i) => (
-              <p key={i} className="mb-4 leading-relaxed">{paragraph}</p>
-            ))}
           </div>
         </div>
       </section>
