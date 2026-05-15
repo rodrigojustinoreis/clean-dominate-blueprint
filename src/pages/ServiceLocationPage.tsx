@@ -14,19 +14,22 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import NotFound from "./NotFound";
 
 const teamPhotos = [
-  "/images/team/mopping-hardwood-floor.jpg",
-  "/images/team/two-team-members.jpg",
-  "/images/team/power-scrubber-tile.jpg",
-  "/images/team/cleaning-window-blinds.png",
-  "/images/team/vacuuming-living-room.jpg",
-  "/images/team/team-mopping-uniform.jpg",
-  "/images/team/scrubbing-door-frame.jpg",
-  "/images/team/cleaning-kitchen-detail.jpg",
-  "/images/team/cleaning-appliances.jpg",
-  "/images/team/wiping-door-microfiber.jpg",
-  "/images/team/cleaning-under-cabinet.jpg",
-  "/images/team/team-post-construction.jpg",
-  "/images/team/power-scrubber-tile-2.jpg",
+  "/images/team/team-mopping-dark-floor.jpg",
+  "/images/team/team-mopping-bright-room.jpg",
+  "/images/team/team-scrubbing-door-detail.jpg",
+  "/images/team/team-wiping-door-orange.jpg",
+  "/images/team/team-cleaning-appliances-male.jpg",
+  "/images/team/team-kitchen-detail.jpg",
+  "/images/team/team-vacuuming-furniture.jpg",
+  "/images/team/team-two-living-room.jpg",
+  "/images/team/team-window-frame-detail.jpg",
+  "/images/team/team-cleaning-glass-door.jpg",
+  "/images/team/team-polishing-fridge.jpg",
+  "/images/team/team-two-large-room.jpg",
+  "/images/team/team-tile-scrubber.jpg",
+  "/images/team/team-making-bed.jpg",
+  "/images/team/team-supplies-basket.png",
+  "/images/team/team-window-blinds-pro.png",
 ];
 
 function cityPhotoIndex(slug: string): number {

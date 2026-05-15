@@ -4,25 +4,25 @@ import { Card, CardContent } from "@/components/ui/card";
 const items = [
   {
     icon: Users,
-    photo: "/images/team/two-team-members.jpg",
+    photo: "/images/team/team-two-large-room.jpg",
     title: "Local Experts Who Care",
     desc: "We're not just another cleaning company — we're your neighbors. Personalized service for every DMV home.",
   },
   {
     icon: Shield,
-    photo: "/images/team/team-post-construction.jpg",
+    photo: "/images/team/team-two-living-room.jpg",
     title: "Fully Insured & Vetted",
     desc: "Peace of mind comes standard. Every team member is background-checked, insured, and professionally trained.",
   },
   {
     icon: Leaf,
-    photo: "/images/team/eco-friendly-products.png",
+    photo: "/images/team/team-supplies-basket.png",
     title: "100% Eco-Friendly",
     desc: "Safe for your family, pets, and planet. EPA Safer Choice certified, plant-based, no harsh chemicals.",
   },
   {
     icon: Star,
-    photo: "/images/team/mopping-hardwood-floor.jpg",
+    photo: "/images/team/team-mopping-bright-room.jpg",
     title: "Satisfaction Guaranteed",
     desc: "Not happy? We'll re-clean at no extra charge within 24 hours. Your satisfaction is our top priority.",
   },

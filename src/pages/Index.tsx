@@ -251,10 +251,10 @@ const Index = () => {
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-5xl mx-auto">
               {[
-                { src: "/images/team/team-mopping-uniform.jpg",   alt: "Capital Clean Care cleaner mopping hardwood floors in uniform" },
-                { src: "/images/team/power-scrubber-tile.jpg",    alt: "Professional cleaner using electric scrubber on bathroom tiles" },
-                { src: "/images/team/cleaning-window-blinds.png", alt: "Cleaner carefully cleaning window blinds — DMV area" },
-                { src: "/images/team/vacuuming-living-room.jpg",  alt: "Team member vacuuming living room professionally" },
+                { src: "/images/team/team-mopping-dark-floor.jpg",    alt: "Capital Clean Care cleaner mopping dark hardwood floors" },
+                { src: "/images/team/team-tile-scrubber.jpg",        alt: "Professional cleaner using electric scrubber on bathroom tiles" },
+                { src: "/images/team/team-cleaning-glass-door.jpg",  alt: "Capital Clean Care cleaner cleaning glass door — logo visible" },
+                { src: "/images/team/team-two-large-room.jpg",       alt: "Two Capital Clean Care team members cleaning large living room" },
               ].map((img, i) => (
                 <div key={i} className="rounded-xl overflow-hidden aspect-square shadow-sm border border-border">
                   <img
@@ -285,8 +285,8 @@ const Index = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
               <div className="relative order-2 lg:order-1">
                 <img
-                  src="/images/team/two-team-members.jpg"
-                  alt="Capital Clean Care two team members actively cleaning a client's home"
+                  src="/images/team/team-two-large-room.jpg"
+                  alt="Capital Clean Care two team members cleaning a client's home"
                   className="rounded-2xl shadow-xl w-full object-cover aspect-[4/5]"
                   loading="lazy"
                 />

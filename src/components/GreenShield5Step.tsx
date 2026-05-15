@@ -13,7 +13,7 @@ const steps = [
   {
     number: "01",
     emoji: "🔍",
-    photo: "/images/team/scrubbing-door-frame.jpg",
+    photo: "/images/team/team-scrubbing-door-detail.jpg",
     photoAlt: "Capital Clean Care technician assessing and cleaning door frame detail",
     title: "Assess & Protect",
     description:
@@ -23,7 +23,7 @@ const steps = [
   {
     number: "02",
     emoji: "🌬️",
-    photo: "/images/team/cleaning-window-blinds.png",
+    photo: "/images/team/team-window-blinds-pro.png",
     photoAlt: "Cleaner dusting window blinds from top to bottom",
     title: "Dust-Free Air Start",
     description:
@@ -33,8 +33,8 @@ const steps = [
   {
     number: "03",
     emoji: "🌿",
-    photo: "/images/team/eco-friendly-products.png",
-    photoAlt: "EPA Safer Choice eco-friendly cleaning products used by Capital Clean Care",
+    photo: "/images/team/team-supplies-basket.png",
+    photoAlt: "Capital Clean Care team with eco-friendly cleaning supplies basket",
     title: "GreenShield Sanitize",
     description:
       "We apply our EPA Safer Choice™ plant-based disinfectants to every high-touch surface, bathroom, and kitchen area. Safe for children, pets, and allergy sufferers.",
@@ -43,7 +43,7 @@ const steps = [
   {
     number: "04",
     emoji: "✨",
-    photo: "/images/team/power-scrubber-tile.jpg",
+    photo: "/images/team/team-tile-scrubber.jpg",
     photoAlt: "Professional cleaner using electric scrubber for deep clean on bathroom tiles",
     title: "Deep Scrub & Polish",
     description:
@@ -53,8 +53,8 @@ const steps = [
   {
     number: "05",
     emoji: "✅",
-    photo: "/images/team/cleaning-kitchen-detail.jpg",
-    photoAlt: "Cleaner performing white-glove inspection of kitchen detail",
+    photo: "/images/team/team-polishing-fridge.jpg",
+    photoAlt: "Cleaner performing white-glove inspection polishing stainless steel appliance",
     title: "White-Glove Inspection",
     description:
       "Before we leave, we run a white-glove quality inspection against our 50-point checklist. If anything isn't perfect, we re-clean it immediately — no questions asked.",
