@@ -311,11 +311,6 @@ const PriceCalculator = () => {
             <p className="font-heading text-3xl md:text-4xl font-bold text-accent">
               ${estimate.low} – ${estimate.high}
             </p>
-            {estimate.savings > 0 && (
-              <p className="text-sm font-medium mt-2 text-accent">
-                You save ~${estimate.savings} per visit with recurring service!
-              </p>
-            )}
             <p className="text-xs text-muted-foreground mt-2">
               Final price may vary based on home condition and specific requirements.
             </p>
