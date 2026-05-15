@@ -255,7 +255,7 @@ const ServiceLocationPage = () => {
         </section>
       )}
 
-      {/* City Map Image — MD cities only */}
+      {/* City Map */}
       {city.lat && city.lng && (
         <section className="py-12 md:py-16">
           <div className="container mx-auto px-4 max-w-4xl">
@@ -263,13 +263,14 @@ const ServiceLocationPage = () => {
               Our {service.name} Coverage Area in {city.name}
             </h2>
             <div className="rounded-xl overflow-hidden border border-border shadow-sm">
-              <img
-                src={`https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/export?bbox=${city.lng - 0.025},${city.lat - 0.015},${city.lng + 0.025},${city.lat + 0.015}&bboxSR=4326&imageSR=4326&size=800,400&format=png&f=image`}
-                alt={`Aerial view of ${city.name}, ${city.state} — Capital Clean Care ${service.shortName} service area covering ${city.neighborhoods.slice(0, 3).join(", ")} and surrounding neighborhoods in ${city.county}`}
-                width={800}
-                height={400}
-                className="w-full h-auto"
+              <iframe
+                title={`Capital Clean Care ${service.shortName} service area in ${city.name}, ${city.state}`}
+                src={`https://www.openstreetmap.org/export/embed.html?bbox=${city.lng - 0.045}%2C${city.lat - 0.028}%2C${city.lng + 0.045}%2C${city.lat + 0.028}&layer=mapnik&marker=${city.lat}%2C${city.lng}`}
+                width="100%"
+                height="400"
                 loading="lazy"
+                className="w-full"
+                style={{ border: 0 }}
               />
             </div>
             <p className="text-sm text-muted-foreground mt-3">
