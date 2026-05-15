@@ -148,34 +148,18 @@ const ServiceLocationPage = () => {
         </div>
       </section>
 
-      {/* Unique local content + team photos (only on priority pages) */}
+      {/* Unique local content (only on priority pages) */}
       {override && (
         <section className="py-12 md:py-16 bg-muted/10">
           <div className="container mx-auto px-4 max-w-4xl">
             <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-6">
               Our {service.name} Team in {city.name}
             </h2>
-            <div className="prose prose-lg max-w-none text-muted-foreground mb-8">
+            <div className="prose prose-lg max-w-none text-muted-foreground">
               {override.uniqueContent.split("\n\n").map((paragraph, i) => (
                 <p key={i} className="mb-4 leading-relaxed">{paragraph}</p>
               ))}
             </div>
-            {override.photos.length > 0 && (
-              <div className={`grid gap-4 ${override.photos.length === 2 ? "grid-cols-2" : "grid-cols-1 sm:grid-cols-2 md:grid-cols-3"}`}>
-                {override.photos.map((photo, i) => (
-                  <div key={i} className="rounded-xl overflow-hidden border border-border shadow-sm">
-                    <img
-                      src={photo.src}
-                      alt={photo.alt}
-                      className="w-full h-56 object-cover"
-                      loading="lazy"
-                      width={400}
-                      height={300}
-                    />
-                  </div>
-                ))}
-              </div>
-            )}
           </div>
         </section>
       )}
