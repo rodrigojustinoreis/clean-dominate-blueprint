@@ -2,93 +2,23 @@ import { Link } from "react-router-dom";
 import { ArrowRight, MapPin } from "lucide-react";
 import { cities, type CityData } from "@/data/locations";
 
-import imgKitchen from "@/assets/gallery/clean-kitchen.webp";
-import imgBathroom from "@/assets/gallery/clean-bathroom.webp";
-import imgLiving from "@/assets/gallery/clean-living-room.webp";
-import imgBedroom from "@/assets/gallery/clean-bedroom.webp";
-import imgDining from "@/assets/gallery/clean-dining.webp";
-import imgEntryway from "@/assets/gallery/clean-entryway.webp";
-import imgBedroomBA from "@/assets/before-after/bedroom.webp";
-import imgKidsRoom from "@/assets/before-after/kids-room.webp";
-import imgKitchenBrown from "@/assets/before-after/kitchen-brown-after.webp";
-import imgKitchenGranite from "@/assets/before-after/kitchen-granite-after.webp";
-import imgKitchenIsland from "@/assets/before-after/kitchen-island-after.webp";
-import imgStove from "@/assets/before-after/stove-after.webp";
-import imgTeenRoom from "@/assets/before-after/teen-room.webp";
-import imgCleanerBlinds from "@/assets/cleaner-blinds.webp";
-import imgCleanerMopping from "@/assets/cleaner-mopping.webp";
-import imgCleanerSupplies from "@/assets/cleaner-supplies.webp";
-import imgEcoProducts from "@/assets/eco-products.webp";
-import imgHappyClient from "@/assets/happy-client.webp";
-import imgHeroHome from "@/assets/hero-clean-home.webp";
-
-/** One unique image per city slug */
-const cityImageMap: Record<string, string> = {
-  // Maryland
-  "rockville-md": imgKitchen,
-  "silver-spring-md": imgBathroom,
-  "bethesda-md": imgLiving,
-  "germantown-md": imgBedroom,
-  "gaithersburg-md": imgDining,
-  "potomac-md": imgEntryway,
-  "frederick-md": imgBedroomBA,
-  "urbana-md": imgKidsRoom,
-  "clarksburg-md": imgKitchenBrown,
-  "damascus-md": imgKitchenGranite,
-  "monrovia-md": imgKitchenIsland,
-  "takoma-park-md": imgStove,
-  "columbia-md": imgTeenRoom,
-  "ellicott-city-md": imgCleanerBlinds,
-  "new-market-md": imgCleanerMopping,
-  "montgomery-county-md": imgCleanerSupplies,
-  "frederick-county-md": imgEcoProducts,
-  "howard-county-md": imgHappyClient,
-  "prince-georges-county-md": imgHeroHome,
-  "kensington-md": imgEntryway,
-  "chevy-chase-md": imgKitchenGranite,
-  "college-park-md": imgBedroomBA,
-  "laurel-md": imgTeenRoom,
-  "bowie-md": imgKitchenBrown,
-  "wheaton-md": imgDining,
-  "montgomery-village-md": imgBathroom,
-  "hyattsville-md": imgLiving,
-  "north-potomac-md": imgBedroom,
-  "kentlands-md": imgKitchenIsland,
-  "north-bethesda-md": imgKidsRoom,
-  "olney-md": imgStove,
-  "burtonsville-md": imgCleanerMopping,
-  "boyds-md": imgCleanerBlinds,
-  "brookeville-md": imgHeroHome,
-  // Washington DC
-  "washington-dc-nw": imgHeroHome,
-  "washington-dc-ne": imgKitchenIsland,
-  "capitol-hill-dc": imgKitchen,
-  "georgetown-dc": imgLiving,
-  "dupont-circle-dc": imgBathroom,
-  "adams-morgan-dc": imgDining,
-  "downtown-dc": imgBedroom,
-  "shaw-dc": imgTeenRoom,
-  "columbia-heights-dc": imgKidsRoom,
-  "navy-yard-dc": imgKitchenGranite,
-  // Northern Virginia
-  "arlington-va": imgHeroHome,
-  "fairfax-va": imgKitchenIsland,
-  "mclean-va": imgBedroomBA,
-  "alexandria-va": imgCleanerBlinds,
-  "falls-church-va": imgCleanerMopping,
-  "vienna-va": imgHappyClient,
-  "tysons-va": imgKitchenBrown,
-  "reston-va": imgEcoProducts,
-  "herndon-va": imgStove,
-  "annandale-va": imgCleanerSupplies,
-};
-
-/** Fallback pool for any city not in the map above */
-const fallbackImages = [
-  imgKitchen, imgBathroom, imgLiving, imgBedroom, imgDining, imgEntryway,
-  imgBedroomBA, imgKidsRoom, imgKitchenBrown, imgKitchenGranite,
-  imgKitchenIsland, imgStove, imgTeenRoom, imgCleanerBlinds,
-  imgCleanerMopping, imgCleanerSupplies, imgEcoProducts, imgHappyClient, imgHeroHome,
+const teamPhotos = [
+  "/images/team/team-mopping-dark-floor.jpg",
+  "/images/team/team-two-large-room.jpg",
+  "/images/team/team-scrubbing-door-detail.jpg",
+  "/images/team/team-cleaning-glass-door.jpg",
+  "/images/team/team-polishing-fridge.jpg",
+  "/images/team/team-mopping-bright-room.jpg",
+  "/images/team/team-vacuuming-furniture.jpg",
+  "/images/team/team-window-blinds-pro.png",
+  "/images/team/team-wiping-door-orange.jpg",
+  "/images/team/team-two-living-room.jpg",
+  "/images/team/team-tile-scrubber.jpg",
+  "/images/team/team-supplies-basket.png",
+  "/images/team/team-cleaning-appliances-male.jpg",
+  "/images/team/team-kitchen-detail.jpg",
+  "/images/team/team-making-bed.jpg",
+  "/images/team/team-window-frame-detail.jpg",
 ];
 
 /** Premium phrases keyed by city slug */
@@ -187,7 +117,7 @@ const CityGallery = ({
         {/* Grid — every city gets its own image */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
           {filteredCities.map((city, index) => {
-            const img = cityImageMap[city.slug] ?? fallbackImages[index % fallbackImages.length];
+            const img = teamPhotos[index % teamPhotos.length];
             const phrase = premiumPhrases[city.slug] || `Professional cleaning services in ${city.name}.`;
             const label = city.state !== "DC" ? `${city.name}, ${city.state}` : city.name;
             return <ImageCard key={city.slug} city={city} label={label} phrase={phrase} img={img} />;
