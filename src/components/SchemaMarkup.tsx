@@ -160,13 +160,6 @@ export const ServiceSchema = ({
   };
 
   if (reviews && reviews.length > 0) {
-    schema.aggregateRating = {
-      "@type": "AggregateRating",
-      ratingValue: "5.0",
-      reviewCount: "47",
-      bestRating: "5",
-      worstRating: "1",
-    };
     schema.review = reviews.map((r) => ({
       "@type": "Review",
       author: { "@type": "Person", name: r.name },
@@ -332,14 +325,16 @@ export const CityReviewSchema = ({ cityName, cityUrl, reviews }: CityReviewSchem
   if (!reviews || reviews.length === 0) return null;
   const schema = {
     "@context": "https://schema.org",
-    "@type": "Service",
-    name: `House Cleaning in ${cityName}`,
-    provider: businessRef,
+    "@type": "LocalBusiness",
+    "@id": `${BUSINESS.url}/#business-${cityName.toLowerCase().replace(/\s/g, "-")}`,
+    name: BUSINESS.name,
     url: cityUrl,
+    telephone: BUSINESS.phone,
+    address: businessAddress,
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: "5.0",
-      reviewCount: String(reviews.length),
+      reviewCount: "47",
       bestRating: "5",
       worstRating: "1",
     },
