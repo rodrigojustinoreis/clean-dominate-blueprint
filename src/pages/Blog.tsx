@@ -22,6 +22,24 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "how-to-clean-carpet-home-apartment",
+    title: "How to Clean the Carpet in Your Home or Apartment (And Why It Matters More Than You Think)",
+    excerpt: "Step-by-step guide to deep cleaning your carpet — vacuuming, stain removal, steam cleaning, and drying. Plus apartment renter tips and when to call a pro.",
+    date: "2026-05-18",
+    readTime: "8 min read",
+    category: "Home Care Guides",
+    coverImage: "https://images.pexels.com/photos/4107120/pexels-photo-4107120.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
+  },
+  {
+    slug: "spring-carpet-cleaning",
+    title: "Spring Carpet Cleaning: Why It Matters & How to Do It Right",
+    excerpt: "Discover why spring carpet cleaning is essential for Montgomery County homes. Learn what hides in your carpet after winter and how Capital Clean Care removes it all.",
+    date: "2026-05-15",
+    readTime: "7 min read",
+    category: "Seasonal Guides",
+    coverImage: "/images/blog/carpet-steam-cleaning-hero.jpg",
+  },
+  {
     slug: "spring-cleaning-checklist-maryland-2026",
     title: "Spring Cleaning Checklist for Maryland Homes 2026",
     excerpt: "Tackle spring cleaning the right way with this room-by-room checklist built for Maryland's climate — pollen season, humidity, and all. Includes Rockville, Bethesda & Silver Spring tips.",

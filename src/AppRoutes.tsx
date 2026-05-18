@@ -13,6 +13,8 @@ import FAQPage from "./pages/FAQPage";
 import ServiceLocationPage from "./pages/ServiceLocationPage";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
+import SpringCarpetCleaningBlog from "./pages/SpringCarpetCleaningBlog";
+import HowToCleanCarpetBlog from "./pages/HowToCleanCarpetBlog";
 import SpringCleaningMD from "./pages/SpringCleaningMD";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
@@ -38,6 +40,8 @@ const AppRoutes = () => (
     <Route path="/why-eco-friendly-cleaning" element={<WhyEcoFriendlyPage />} />
     <Route path="/faq" element={<FAQPage />} />
     <Route path="/blog" element={<Blog />} />
+    <Route path="/blog/spring-carpet-cleaning" element={<SpringCarpetCleaningBlog />} />
+    <Route path="/blog/how-to-clean-carpet-home-apartment" element={<HowToCleanCarpetBlog />} />
     <Route path="/blog/:slug" element={<BlogPost />} />
     <Route path="/spring-cleaning-md" element={<SpringCleaningMD />} />
     <Route path="/house-cleaning-near-me" element={<HouseCleaningNearMe />} />
