@@ -127,7 +127,7 @@ const Index = () => {
                 { emoji: "⏰", text: "Never enough time to keep up with deep cleaning" },
               ].map((item) => (
                 <div key={item.text} className="flex items-start gap-4 glass-card rounded-2xl p-6">
-                  <span className="text-3xl shrink-0 animate-float">{item.emoji}</span>
+                  <span className="text-3xl shrink-0 md:animate-float">{item.emoji}</span>
                   <p className="text-base text-foreground font-medium leading-relaxed">{item.text}</p>
                 </div>
               ))}

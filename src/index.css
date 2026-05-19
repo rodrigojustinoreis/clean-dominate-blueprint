@@ -109,3 +109,17 @@
     @apply bg-mesh-light dark:bg-mesh-dark bg-fixed;
   }
 }
+
+/* Disable continuous animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .animate-blob,
+  .animate-float,
+  .animate-gradient-x,
+  .animate-ping {
+    animation: none !important;
+  }
+  .text-gradient {
+    background-size: 100% auto !important;
+    background-position: left center !important;
+  }
+}

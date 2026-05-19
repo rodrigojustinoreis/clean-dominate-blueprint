@@ -12,10 +12,10 @@ const avatars = [
 
 const HeroSection = () => (
   <section className="relative min-h-[580px] md:min-h-[700px] lg:min-h-[820px] flex items-center overflow-hidden">
-    {/* Animated background blobs for depth behind the image */}
-    <div className="absolute top-0 -left-1/4 w-96 h-96 bg-accent/30 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob" />
-    <div className="absolute top-0 -right-1/4 w-96 h-96 bg-primary/30 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-2000" />
-    <div className="absolute -bottom-32 left-1/3 w-96 h-96 bg-blue-400/30 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-4000" />
+    {/* Animated background blobs — desktop only (heavy filter on mobile hurts PageSpeed) */}
+    <div className="hidden md:block absolute top-0 -left-1/4 w-96 h-96 bg-accent/30 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob" />
+    <div className="hidden md:block absolute top-0 -right-1/4 w-96 h-96 bg-primary/30 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-2000" />
+    <div className="hidden md:block absolute -bottom-32 left-1/3 w-96 h-96 bg-blue-400/30 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-4000" />
 
     {/* Background image */}
     <div className="absolute inset-0 z-0">
