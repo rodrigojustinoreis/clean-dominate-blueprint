@@ -70,12 +70,14 @@ const ServiceLocationPage = () => {
     <Layout>
       {seoHelmet}
       <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: city.name, href: `/locations/${city.slug}` }, { label: service.name, href: `/locations/${city.slug}/${service.slug}` }]} />
-      <LocalBusinessSchema areaServed={[city.name, city.county]} />
+      <LocalBusinessSchema
+        areaServed={[city.name, city.county]}
+        reviews={testimonials.map(t => ({ name: t.name, text: t.text, location: t.location }))}
+      />
       <ServiceSchema
         serviceName={`${service.name} in ${city.name}`}
         description={metaDescription}
         url={pageUrl}
-        reviews={testimonials.map(t => ({ name: t.name, text: t.text, location: t.location }))}
       />
       <FAQSchema faqs={faqs} />
 

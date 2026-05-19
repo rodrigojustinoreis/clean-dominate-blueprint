@@ -52,9 +52,10 @@ function JsonLd({ id, schema }: { id: string; schema: Record<string, unknown> })
 // ── LocalBusiness Schema ──────────────────────────────────────
 interface LocalBusinessSchemaProps {
   areaServed?: string[];
+  reviews?: { name: string; text: string; location?: string }[];
 }
 
-export const LocalBusinessSchema = ({ areaServed }: LocalBusinessSchemaProps = {}) => {
+export const LocalBusinessSchema = ({ areaServed, reviews }: LocalBusinessSchemaProps = {}) => {
   const defaultCityAreas = [
     "Silver Spring, MD", "Rockville, MD", "Bethesda, MD", "Germantown, MD",
     "Gaithersburg, MD", "Potomac, MD", "Frederick, MD", "Columbia, MD",
@@ -66,7 +67,7 @@ export const LocalBusinessSchema = ({ areaServed }: LocalBusinessSchemaProps = {
 
   const areas = areaServed || defaultCityAreas;
 
-  const schema = {
+  const schema: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "@id": `${BUSINESS.url}/#business`,
@@ -121,6 +122,16 @@ export const LocalBusinessSchema = ({ areaServed }: LocalBusinessSchemaProps = {
     },
   };
 
+  // Reviews must live on LocalBusiness — Google does not accept Service as parent type
+  if (reviews && reviews.length > 0) {
+    schema.review = reviews.map((r) => ({
+      "@type": "Review",
+      author: { "@type": "Person", name: r.name },
+      reviewBody: r.text,
+      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+    }));
+  }
+
   return <JsonLd id="local-business-schema" schema={schema} />;
 };
 
@@ -130,7 +141,6 @@ interface ServiceSchemaProps {
   description: string;
   url: string;
   areaServed?: string[];
-  reviews?: { name: string; text: string; location?: string }[];
 }
 
 export const ServiceSchema = ({
@@ -138,9 +148,8 @@ export const ServiceSchema = ({
   description,
   url,
   areaServed,
-  reviews,
 }: ServiceSchemaProps) => {
-  const schema: Record<string, unknown> = {
+  const schema = {
     "@context": "https://schema.org",
     "@type": "Service",
     name: serviceName,
@@ -158,23 +167,6 @@ export const ServiceSchema = ({
       eligibleRegion: defaultAreaServedRegions,
     },
   };
-
-  if (reviews && reviews.length > 0) {
-    schema.review = reviews.map((r) => ({
-      "@type": "Review",
-      author: { "@type": "Person", name: r.name },
-      reviewBody: r.text,
-      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-    }));
-    // Google requires aggregateRating when multiple reviews are present
-    schema.aggregateRating = {
-      "@type": "AggregateRating",
-      ratingValue: "5.0",
-      reviewCount: "47",
-      bestRating: "5",
-      worstRating: "1",
-    };
-  }
 
   const id = `service-schema-${serviceName.replace(/\s/g, "-").toLowerCase()}`;
   return <JsonLd id={id} schema={schema} />;
