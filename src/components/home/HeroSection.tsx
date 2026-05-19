@@ -4,10 +4,10 @@ import teamPhoto from "@/assets/team-photo.webp";
 import { trackPhoneClick, trackBookNowClick } from "@/lib/analytics";
 
 const avatars = [
-  { initials: "SM", color: "bg-emerald-500" },
-  { initials: "JT", color: "bg-sky-500" },
-  { initials: "LK", color: "bg-violet-500" },
-  { initials: "DR", color: "bg-amber-500" },
+  { src: "/images/team/team-scrubbing-door-detail.jpg", alt: "Capital Clean Care team member" },
+  { src: "/images/team/team-cleaning-glass-door.jpg",   alt: "Capital Clean Care team member" },
+  { src: "/images/team/team-polishing-fridge.jpg",      alt: "Capital Clean Care team member" },
+  { src: "/images/team/team-mopping-uniform.jpg",       alt: "Capital Clean Care team member" },
 ];
 
 const HeroSection = () => (
@@ -94,11 +94,8 @@ const HeroSection = () => (
           <div className="flex items-center gap-4">
             <div className="flex -space-x-3">
               {avatars.map((a) => (
-                <div
-                  key={a.initials}
-                  className={`w-10 h-10 rounded-full ${a.color} border-2 border-background flex items-center justify-center shadow-sm`}
-                >
-                  <span className="text-white text-xs font-bold">{a.initials}</span>
+                <div key={a.src} className="w-10 h-10 rounded-full border-2 border-background shadow-sm overflow-hidden">
+                  <img src={a.src} alt={a.alt} className="w-full h-full object-cover" loading="lazy" />
                 </div>
               ))}
             </div>

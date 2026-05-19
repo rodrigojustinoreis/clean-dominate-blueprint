@@ -43,27 +43,32 @@ const Header = () => {
 
             <div className="relative group">
               <button className="px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors flex items-center gap-1">
-                Services <ChevronDown className="h-3 w-3" />
+                Services <ChevronDown className="h-3 w-3 transition-transform group-hover:rotate-180 duration-200" />
               </button>
-              <div className="absolute top-full left-0 hidden group-hover:block bg-card border border-border rounded-lg shadow-lg py-2 min-w-[220px]">
-                {services.map((s) => (
-                  <Link key={s.slug} to={`/services/${s.slug}`} className="block px-4 py-2 text-sm hover:bg-secondary transition-colors">
-                    {s.name}
-                  </Link>
-                ))}
+              {/* pt-2 creates invisible buffer so menu doesn't close when mouse moves between button and list */}
+              <div className="absolute top-full left-0 pt-2 hidden group-hover:block">
+                <div className="bg-card border border-border rounded-lg shadow-lg py-2 min-w-[220px]">
+                  {services.map((s) => (
+                    <Link key={s.slug} to={`/services/${s.slug}`} className="block px-4 py-2 text-sm hover:bg-secondary transition-colors">
+                      {s.name}
+                    </Link>
+                  ))}
+                </div>
               </div>
             </div>
 
             <div className="relative group">
               <button className="px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors flex items-center gap-1">
-                Locations <ChevronDown className="h-3 w-3" />
+                Locations <ChevronDown className="h-3 w-3 transition-transform group-hover:rotate-180 duration-200" />
               </button>
-              <div className="absolute top-full left-0 hidden group-hover:block bg-card border border-border rounded-lg shadow-lg py-2 min-w-[220px]">
-                {hubs.map((h) => (
-                  <Link key={h.slug} to={`/${h.slug}`} className="block px-4 py-2 text-sm font-semibold hover:bg-secondary transition-colors">
-                    {h.name}
-                  </Link>
-                ))}
+              <div className="absolute top-full left-0 pt-2 hidden group-hover:block">
+                <div className="bg-card border border-border rounded-lg shadow-lg py-2 min-w-[220px]">
+                  {hubs.map((h) => (
+                    <Link key={h.slug} to={`/${h.slug}`} className="block px-4 py-2 text-sm font-semibold hover:bg-secondary transition-colors">
+                      {h.name}
+                    </Link>
+                  ))}
+                </div>
               </div>
             </div>
 
