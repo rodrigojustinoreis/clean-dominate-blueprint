@@ -132,12 +132,6 @@ const Index = () => {
                 </div>
               ))}
             </div>
-            <div className="text-center">
-              <p className="text-lg font-semibold text-foreground mb-4">That's exactly why Capital Clean Care exists.</p>
-              <Button variant="cta" size="lg" asChild>
-                <a href="#quote">Let Us Handle It <ArrowRight className="ml-2 h-4 w-4" /></a>
-              </Button>
-            </div>
           </div>
         </section>
       </ScrollReveal>
