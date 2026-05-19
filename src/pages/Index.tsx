@@ -119,7 +119,7 @@ const Index = () => {
               </h2>
               <p className="text-muted-foreground max-w-xl mx-auto text-lg">You work hard all week. The last thing you need is to spend your free time scrubbing bathrooms.</p>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
               {[
                 { emoji: "😩", text: "You come home exhausted and the house is still a mess" },
                 { emoji: "🧪", text: "Worried about harsh chemicals around your kids or pets" },
@@ -131,6 +131,28 @@ const Index = () => {
                   <p className="text-base text-foreground font-medium leading-relaxed">{item.text}</p>
                 </div>
               ))}
+            </div>
+
+            {/* Resolution */}
+            <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-primary to-accent/80 p-8 md:p-10 text-white text-center shadow-xl">
+              <div className="absolute inset-0 bg-mesh opacity-10" />
+              <div className="relative z-10">
+                <p className="text-sm font-semibold uppercase tracking-widest text-white/70 mb-3">The solution</p>
+                <h3 className="font-heading text-2xl md:text-3xl font-bold mb-3 leading-snug">
+                  We handle every detail — so you can enjoy your home, not clean it.
+                </h3>
+                <p className="text-white/80 mb-8 max-w-xl mx-auto leading-relaxed">
+                  Eco-friendly products. Background-checked team. 24-hour satisfaction guarantee. Capital Clean Care shows up so you don't have to think about it.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                  <Button size="lg" className="bg-white text-primary hover:bg-white/90 font-bold px-8 h-12 rounded-full shadow-lg" asChild>
+                    <a href="#quote">Get a Free Quote <ArrowRight className="ml-2 h-4 w-4" /></a>
+                  </Button>
+                  <Button size="lg" variant="outline" className="border-white/40 text-white hover:bg-white/10 px-8 h-12 rounded-full" asChild>
+                    <Link to="/services/house-cleaning">See Our Services</Link>
+                  </Button>
+                </div>
+              </div>
             </div>
           </div>
         </section>
