@@ -78,14 +78,17 @@ const Header = () => {
               <Phone className="h-4 w-4" /> (240) 704-2551
             </a>
             <Button variant="cta" asChild>
-              <a href="/#quote" onClick={() => trackBookNowClick("header_desktop_nav")}>Get 15% OFF</a>
+              <a href="/#quote" onClick={() => trackBookNowClick("header_desktop_nav")}>Free Quote</a>
             </Button>
           </div>
 
           <div className="lg:hidden flex items-center gap-2">
             <a href="tel:+12407042551" className="text-sm font-semibold text-foreground flex items-center gap-1" aria-label="Call us" onClick={() => trackPhoneClick("header_mobile_topbar")}>
-              <Phone className="h-4 w-4 text-accent" /> <span className="hidden sm:inline">(240) 704-2551</span>
+              <Phone className="h-4 w-4 text-accent" />
             </a>
+            <Button variant="cta" size="sm" className="text-xs px-3 h-8 rounded-full" asChild>
+              <a href="/#quote" onClick={() => trackBookNowClick("header_mobile_cta")}>Free Quote</a>
+            </Button>
             <button className="p-2" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Toggle menu">
               {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
@@ -135,7 +138,7 @@ const Header = () => {
                 <Phone className="h-4 w-4 inline mr-1" /> (240) 704-2551
               </a>
               <Button variant="cta" className="w-full" asChild>
-                <a href="/#quote" onClick={() => { setMobileOpen(false); trackBookNowClick("header_mobile_menu"); }}>Get 15% OFF — Free Quote</a>
+                <a href="/#quote" onClick={() => { setMobileOpen(false); trackBookNowClick("header_mobile_menu"); }}>Get a Free Quote</a>
               </Button>
             </div>
           </nav>
