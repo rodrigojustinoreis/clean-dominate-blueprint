@@ -26,7 +26,7 @@ const HowToCleanCarpetBlog = () => {
         description="Step-by-step guide to deep cleaning your carpet — vacuuming, stain removal, steam cleaning, and drying. Plus apartment renter tips and when to call a pro."
         url="https://capitalcleancare.com/blog/how-to-clean-carpet-home-apartment"
         datePublished="2026-05-18"
-        image="https://images.pexels.com/photos/4107120/pexels-photo-4107120.jpeg?auto=compress&cs=tinysrgb&w=800&h=450"
+        image="https://capitalcleancare.com/images/blog/carpet-steam-vapor.jpg"
       />
       <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }, { label: "How to Clean the Carpet in Your Home or Apartment", href: "/blog/how-to-clean-carpet-home-apartment" }]} />
 
@@ -41,8 +41,8 @@ const HowToCleanCarpetBlog = () => {
       <section className="relative w-full overflow-hidden bg-gray-900 text-white py-20 lg:py-32">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.pexels.com/photos/4107120/pexels-photo-4107120.jpeg?auto=compress&cs=tinysrgb&w=1400"
-            alt="Professional cleaning a carpet with steam cleaner in bright home"
+            src="/images/blog/carpet-steam-vapor.jpg"
+            alt="Steam cleaner removing dirt from carpet with vapor"
             className="w-full h-full object-cover opacity-40"
             loading="eager"
             fetchPriority="high"
@@ -84,8 +84,8 @@ const HowToCleanCarpetBlog = () => {
 
           <div className="rounded-2xl overflow-hidden shadow-md mb-8">
             <img
-              src="https://images.pexels.com/photos/6195121/pexels-photo-6195121.jpeg?auto=compress&cs=tinysrgb&w=800&h=450"
-              alt="Close-up of carpet fibers showing embedded dirt and dust"
+              src="/images/blog/carpet-steam-vapor.jpg"
+              alt="Steam cleaner on carpet with vapor — deep cleaning removes what vacuuming leaves behind"
               className="w-full max-h-[400px] object-cover"
               loading="lazy"
             />
@@ -125,8 +125,8 @@ const HowToCleanCarpetBlog = () => {
           <h2 className="font-heading text-3xl font-bold text-foreground mb-6">The Real Benefits of Clean Carpets</h2>
           <div className="rounded-2xl overflow-hidden shadow-md mb-8">
             <img
-              src="https://images.pexels.com/photos/4108715/pexels-photo-4108715.jpeg?auto=compress&cs=tinysrgb&w=800&h=450"
-              alt="Child playing on a clean, freshly cleaned carpet in a bright living room"
+              src="/images/blog/carpet-vacuum-living-room.jpg"
+              alt="Vacuuming a clean white carpet in a bright living room"
               className="w-full max-h-[400px] object-cover"
               loading="lazy"
             />
@@ -173,13 +173,13 @@ const HowToCleanCarpetBlog = () => {
 
           <div className="rounded-2xl overflow-hidden shadow-md mb-8">
             <img
-              src="/images/team/team-vacuuming-furniture.jpg"
-              alt="Capital Clean Care team vacuuming carpet thoroughly in a home in Montgomery County, MD"
+              src="/images/blog/carpet-vacuum-living-room.jpg"
+              alt="Vacuuming carpet in a bright living room before deep cleaning"
               className="w-full max-h-[400px] object-cover"
               loading="lazy"
             />
             <p className="text-xs text-center text-muted-foreground bg-gray-50 py-2 px-4">
-              Our team vacuuming in multiple directions before the deep clean — the step most DIYers skip.
+              Vacuum in multiple directions before the deep clean — the step most DIYers skip.
             </p>
           </div>
 
@@ -271,8 +271,8 @@ const HowToCleanCarpetBlog = () => {
           <h2 className="font-heading text-3xl font-bold text-foreground mb-6">Apartment-Specific Tips: What Renters Should Know</h2>
           <div className="rounded-2xl overflow-hidden shadow-md mb-8">
             <img
-              src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800&h=450"
-              alt="Modern apartment living room with clean carpeted floor"
+              src="/images/blog/carpet-steam-gloves.jpg"
+              alt="Professional with black gloves using steam cleaner on upholstered carpet surface"
               className="w-full max-h-[400px] object-cover"
               loading="lazy"
             />
@@ -302,8 +302,8 @@ const HowToCleanCarpetBlog = () => {
           <h2 className="font-heading text-3xl font-bold text-foreground mb-6">DIY vs. Professional Carpet Cleaning: Honest Comparison</h2>
           <div className="rounded-2xl overflow-hidden shadow-md mb-8">
             <img
-              src="/images/team/team-tile-scrubber.jpg"
-              alt="Capital Clean Care professional deep cleaning a floor surface in a Maryland home"
+              src="/images/blog/carpet-steam-vapor.jpg"
+              alt="Steam cleaner on carpet — professional deep cleaning equipment"
               className="w-full max-h-[400px] object-cover"
               loading="lazy"
             />
@@ -350,8 +350,8 @@ const HowToCleanCarpetBlog = () => {
           <h2 className="font-heading text-3xl font-bold text-foreground mb-6">5 Habits That Keep Your Carpet Cleaner, Longer</h2>
           <div className="rounded-2xl overflow-hidden shadow-md mb-8">
             <img
-              src="https://images.pexels.com/photos/4098369/pexels-photo-4098369.jpeg?auto=compress&cs=tinysrgb&w=800&h=450"
-              alt="Clean entryway with doormat preventing dirt from reaching carpet"
+              src="/images/blog/carpet-vacuum-living-room.jpg"
+              alt="Vacuum cleaner on a clean white carpet in a bright living room"
               className="w-full max-h-[400px] object-cover"
               loading="lazy"
             />

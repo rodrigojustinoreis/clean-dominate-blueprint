@@ -28,7 +28,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-05-18",
     readTime: "8 min read",
     category: "Home Care Guides",
-    coverImage: "https://images.pexels.com/photos/4107120/pexels-photo-4107120.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
+    coverImage: "/images/blog/carpet-steam-vapor.jpg",
   },
   {
     slug: "spring-carpet-cleaning",
