@@ -300,6 +300,12 @@
   to = "/blog/"
   status = 301
 
+# ── Removed/replaced blog posts ──────────────────────────────────────────────
+[[redirects]]
+  from = "/blog/spring-carpet-cleaning"
+  to = "/blog/how-to-clean-carpet-home-apartment"
+  status = 301
+
 # ── Blog slugs with date → evergreen slugs ───────────────────────────────────
 [[redirects]]
   from = "/blog/deep-cleaning-tips-maryland-homes-spring-prep-march-2026"

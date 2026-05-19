@@ -31,15 +31,6 @@ export const blogPosts: BlogPost[] = [
     coverImage: "/images/blog/carpet-steam-vapor.jpg",
   },
   {
-    slug: "spring-carpet-cleaning",
-    title: "Spring Carpet Cleaning: Why It Matters & How to Do It Right",
-    excerpt: "Discover why spring carpet cleaning is essential for Montgomery County homes. Learn what hides in your carpet after winter and how Capital Clean Care removes it all.",
-    date: "2026-05-15",
-    readTime: "7 min read",
-    category: "Seasonal Guides",
-    coverImage: "/images/blog/carpet-steam-cleaning-hero.jpg",
-  },
-  {
     slug: "spring-cleaning-checklist-maryland-2026",
     title: "Spring Cleaning Checklist for Maryland Homes 2026",
     excerpt: "Tackle spring cleaning the right way with this room-by-room checklist built for Maryland's climate — pollen season, humidity, and all. Includes Rockville, Bethesda & Silver Spring tips.",

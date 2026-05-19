@@ -17,7 +17,6 @@ const FAQPage                = lazy(() => import("./pages/FAQPage"));
 const ServiceLocationPage    = lazy(() => import("./pages/ServiceLocationPage"));
 const Blog                   = lazy(() => import("./pages/Blog"));
 const BlogPost               = lazy(() => import("./pages/BlogPost"));
-const SpringCarpetCleaningBlog = lazy(() => import("./pages/SpringCarpetCleaningBlog"));
 const HowToCleanCarpetBlog    = lazy(() => import("./pages/HowToCleanCarpetBlog"));
 const SpringCleaningMD       = lazy(() => import("./pages/SpringCleaningMD"));
 const PrivacyPolicy          = lazy(() => import("./pages/PrivacyPolicy"));
@@ -42,7 +41,6 @@ const AppRoutesLazy = () => (
     <Route path="/why-eco-friendly-cleaning" element={<WhyEcoFriendlyPage />} />
     <Route path="/faq" element={<FAQPage />} />
     <Route path="/blog" element={<Blog />} />
-    <Route path="/blog/spring-carpet-cleaning" element={<SpringCarpetCleaningBlog />} />
     <Route path="/blog/how-to-clean-carpet-home-apartment" element={<HowToCleanCarpetBlog />} />
     <Route path="/blog/:slug" element={<BlogPost />} />
     <Route path="/spring-cleaning-md" element={<SpringCleaningMD />} />
