@@ -39,17 +39,12 @@ const MeetTheTeamSection = ({ city }: MeetTheTeamSectionProps) => {
 
           {/* María */}
           <div className="flex flex-col items-center text-center">
-            <div className="w-full max-w-[400px] mx-auto aspect-square rounded-2xl bg-secondary flex items-center justify-center">
-              <div className="text-center">
-                <div className="w-20 h-20 rounded-full bg-accent/20 flex items-center justify-center mx-auto mb-3">
-                  <span className="text-3xl font-bold text-accent">M</span>
-                </div>
-                <p className="text-sm text-muted-foreground italic">Foto próximamente</p>
-              </div>
-            </div>
-            <figcaption className="mt-2 text-center text-sm italic text-muted-foreground">
-              María · Supervisora · 5 años con CCC
-            </figcaption>
+            <TeamImage
+              src="/images/team/real-team-maria-fridge.jpg"
+              alt="Equipo Capital Clean Care — limpieza profunda de cocina"
+              caption="María · Supervisora · 5 años con CCC"
+              aspectRatio="square"
+            />
             <h3 className="font-heading font-semibold text-foreground mt-4 mb-2">María — Supervisora</h3>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Lidera el equipo de limpieza profunda. Originaria de El Salvador,
@@ -60,8 +55,8 @@ const MeetTheTeamSection = ({ city }: MeetTheTeamSectionProps) => {
           {/* Equipo */}
           <div className="flex flex-col items-center text-center">
             <TeamImage
-              src="/team/equipo-grupo.svg"
-              alt="Equipo completo de Capital Clean Care"
+              src="/images/team/real-team-two-members.png"
+              alt="Equipo Capital Clean Care trabajando en casa de cliente"
               caption="Nuestro equipo · Bilingüe · Background-checked · Asegurado"
               aspectRatio="square"
             />

@@ -4,6 +4,7 @@ import { useSEO } from "@/hooks/useSEO";
 import { LocalBusinessSchema } from "@/components/SchemaMarkup";
 import { trackPhoneClick } from "@/lib/analytics";
 import QuoteForm from "@/components/QuoteForm";
+import MeetTheTeamSection from "@/components/sections/MeetTheTeamSection";
 
 const PHONE = "(240) 704-2551";
 const PHONE_TEL = "tel:+12407042551";
@@ -106,6 +107,8 @@ export default function ContactoPage() {
             </div>
           </div>
         </section>
+
+        <MeetTheTeamSection />
       </main>
     </>
   );

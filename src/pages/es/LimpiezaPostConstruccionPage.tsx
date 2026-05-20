@@ -6,6 +6,7 @@ import { trackPhoneClick, trackBookNowClick } from "@/lib/analytics";
 import ProcessSection from "@/components/sections/ProcessSection";
 import TransparencySection from "@/components/sections/TransparencySection";
 import FAQExpandedSection from "@/components/sections/FAQExpandedSection";
+import MeetTheTeamSection from "@/components/sections/MeetTheTeamSection";
 
 const PHONE = "(240) 704-2551";
 const PHONE_TEL = "tel:+12407042551";
@@ -110,6 +111,8 @@ export default function LimpiezaPostConstruccionPage() {
         </section>
 
         <ProcessSection />
+
+        <MeetTheTeamSection />
 
         <TransparencySection />
         <FAQExpandedSection schemaId="faq-limpieza-post-construccion" />
