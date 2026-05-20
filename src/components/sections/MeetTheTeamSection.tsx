@@ -1,8 +1,14 @@
-import TeamImage from "@/components/team/TeamImage";
-
 interface MeetTheTeamSectionProps {
   city?: string;
 }
+
+const PHOTOS = [
+  { src: "/images/team/real-team-luxury-home.jpg", alt: "Equipo Capital Clean Care limpiando casa grande", cls: "col-span-2 row-span-2" },
+  { src: "/images/team/real-team-maria-fridge.jpg", alt: "Limpieza profunda de cocina", cls: "" },
+  { src: "/images/team/real-team-door.jpg", alt: "Profesional Capital Clean Care en uniforme", cls: "" },
+  { src: "/images/team/real-team-mopping.jpg", alt: "Trapeando pisos de madera", cls: "" },
+  { src: "/images/team/real-team-man-cleaning.jpg", alt: "Limpieza detallada de electrodomésticos", cls: "" },
+];
 
 const MeetTheTeamSection = ({ city }: MeetTheTeamSectionProps) => {
   const cityText = city ? ` de ${city}` : " de Montgomery County";
@@ -20,47 +26,60 @@ const MeetTheTeamSection = ({ city }: MeetTheTeamSectionProps) => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-          {/* Rodrigo */}
-          <div className="flex flex-col items-center text-center">
-            <TeamImage
-              src="/team/rodrigo-portrait.svg"
-              alt="Rodrigo Reis — Fundador de Capital Clean Care"
-              caption="Rodrigo · Dueño · 10 años en MoCo"
-              aspectRatio="square"
-              priority
-            />
-            <h3 className="font-heading font-semibold text-foreground mt-4 mb-2">Rodrigo Reis</h3>
+        {/* Photo grid */}
+        <div className="grid grid-cols-3 grid-rows-2 gap-2 md:gap-3 h-72 md:h-96 rounded-2xl overflow-hidden mb-10">
+          {PHOTOS.map(({ src, alt, cls }, i) => (
+            <div key={i} className={`relative overflow-hidden bg-secondary ${cls}`}>
+              <img
+                src={src}
+                alt={alt}
+                loading={i === 0 ? "eager" : "lazy"}
+                decoding="async"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          ))}
+        </div>
+
+        {/* Bio cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div className="bg-background border border-border rounded-xl p-5 text-center">
+            <div className="w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-3">
+              <span className="text-2xl font-bold text-accent">R</span>
+            </div>
+            <h3 className="font-heading font-semibold text-foreground mb-1">Rodrigo Reis — Dueño</h3>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Empezó Capital Clean Care en 2015 con una sola clienta en Silver Spring.
               Hoy atendemos a 200+ familias en Montgomery County. Habla español, portugués e inglés.
             </p>
           </div>
 
-          {/* María */}
-          <div className="flex flex-col items-center text-center">
-            <TeamImage
-              src="/images/team/real-team-maria-fridge.jpg"
-              alt="Equipo Capital Clean Care — limpieza profunda de cocina"
-              caption="María · Supervisora · 5 años con CCC"
-              aspectRatio="square"
-            />
-            <h3 className="font-heading font-semibold text-foreground mt-4 mb-2">María — Supervisora</h3>
+          <div className="bg-background border border-border rounded-xl p-5 text-center">
+            <div className="w-14 h-14 rounded-full overflow-hidden mx-auto mb-3">
+              <img
+                src="/images/team/real-team-maria-fridge.jpg"
+                alt="María supervisora Capital Clean Care"
+                loading="lazy"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <h3 className="font-heading font-semibold text-foreground mb-1">María — Supervisora</h3>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Lidera el equipo de limpieza profunda. Originaria de El Salvador,
               vive en Wheaton desde 2018. Conoce cada casa como si fuera la suya.
             </p>
           </div>
 
-          {/* Equipo */}
-          <div className="flex flex-col items-center text-center">
-            <TeamImage
-              src="/images/team/real-team-two-members.png"
-              alt="Equipo Capital Clean Care trabajando en casa de cliente"
-              caption="Nuestro equipo · Bilingüe · Background-checked · Asegurado"
-              aspectRatio="square"
-            />
-            <h3 className="font-heading font-semibold text-foreground mt-4 mb-2">El Equipo Completo</h3>
+          <div className="bg-background border border-border rounded-xl p-5 text-center">
+            <div className="w-14 h-14 rounded-full overflow-hidden mx-auto mb-3">
+              <img
+                src="/images/team/real-team-luxury-home.jpg"
+                alt="Equipo completo Capital Clean Care"
+                loading="lazy"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <h3 className="font-heading font-semibold text-foreground mb-1">El Equipo Completo</h3>
             <p className="text-sm text-muted-foreground leading-relaxed">
               8 profesionales en total. Cada uno con verificación de antecedentes y entrenamiento interno.
               Mismas caras conocidas en cada visita — nunca extraños.
@@ -68,7 +87,7 @@ const MeetTheTeamSection = ({ city }: MeetTheTeamSectionProps) => {
           </div>
         </div>
 
-        <div className="mt-10 bg-accent/10 border border-accent/30 rounded-xl p-6 text-center max-w-2xl mx-auto">
+        <div className="mt-8 bg-accent/10 border border-accent/30 rounded-xl p-6 text-center max-w-2xl mx-auto">
           <p className="text-foreground font-medium mb-1">
             "Cuando llamas, hablas con Rodrigo directamente."
           </p>
