@@ -6,7 +6,7 @@ import { LocalBusinessSchema } from "@/components/SchemaMarkup";
 import { trackPhoneClick, trackBookNowClick } from "@/lib/analytics";
 import MeetTheTeamSection from "@/components/sections/MeetTheTeamSection";
 import TransparencySection from "@/components/sections/TransparencySection";
-import QuoteFormES from "@/components/forms/QuoteFormES";
+import QuoteForm from "@/components/QuoteForm";
 
 const PHONE = "(240) 704-2551";
 const PHONE_TEL = "tel:+12407042551";
@@ -121,7 +121,7 @@ export default function RockvilleES() {
         <TransparencySection />
 
         <div id="cotizacion">
-          <QuoteFormES id="cotizacion" submitLabel="Solicitar Cotización en Rockville" />
+          <QuoteForm lang="es" submitLabel="Solicitar Cotización en Rockville" />
         </div>
 
         <section className="bg-accent text-accent-foreground py-14">

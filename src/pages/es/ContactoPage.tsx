@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { useSEO } from "@/hooks/useSEO";
 import { LocalBusinessSchema } from "@/components/SchemaMarkup";
 import { trackPhoneClick } from "@/lib/analytics";
-import QuoteFormES from "@/components/forms/QuoteFormES";
+import QuoteForm from "@/components/QuoteForm";
 
 const PHONE = "(240) 704-2551";
 const PHONE_TEL = "tel:+12407042551";
@@ -88,7 +88,7 @@ export default function ContactoPage() {
               </div>
 
               <div id="cotizacion">
-                <QuoteFormES id="cotizacion" submitLabel="Solicitar Cotización Gratis" />
+                <QuoteForm lang="es" submitLabel="Solicitar Cotización Gratis" />
               </div>
             </div>
           </div>

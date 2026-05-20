@@ -6,7 +6,7 @@ import { trackPhoneClick, trackBookNowClick } from "@/lib/analytics";
 import ProcessSection from "@/components/sections/ProcessSection";
 import TransparencySection from "@/components/sections/TransparencySection";
 import FAQExpandedSection from "@/components/sections/FAQExpandedSection";
-import QuoteFormES from "@/components/forms/QuoteFormES";
+import QuoteForm from "@/components/QuoteForm";
 
 const PHONE = "(240) 704-2551";
 const PHONE_TEL = "tel:+12407042551";
@@ -135,7 +135,7 @@ export default function LimpiezaRecurrentePage() {
         <TransparencySection />
 
         <div id="cotizacion">
-          <QuoteFormES id="cotizacion" defaultService="standard" submitLabel="Solicitar Cotización de Limpieza Recurrente" />
+          <QuoteForm lang="es" defaultService="standard" submitLabel="Solicitar Cotización de Limpieza Recurrente" />
         </div>
 
         <FAQExpandedSection schemaId="faq-limpieza-recurrente" />
