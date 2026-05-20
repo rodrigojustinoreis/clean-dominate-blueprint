@@ -55,9 +55,10 @@ function JsonLd({ id, schema }: { id: string; schema: Record<string, unknown> })
 interface LocalBusinessSchemaProps {
   areaServed?: string[];
   reviews?: { name: string; text: string; location?: string }[];
+  inLanguage?: string;
 }
 
-export const LocalBusinessSchema = ({ areaServed, reviews }: LocalBusinessSchemaProps = {}) => {
+export const LocalBusinessSchema = ({ areaServed, reviews, inLanguage = "en-US" }: LocalBusinessSchemaProps = {}) => {
   const defaultCityAreas = [
     "Silver Spring, MD", "Rockville, MD", "Bethesda, MD", "Germantown, MD",
     "Gaithersburg, MD", "Potomac, MD", "Frederick, MD", "Columbia, MD",
@@ -73,6 +74,7 @@ export const LocalBusinessSchema = ({ areaServed, reviews }: LocalBusinessSchema
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "@id": `${BUSINESS.url}/#business`,
+    inLanguage,
     name: BUSINESS.name,
     legalName: BUSINESS.legalName,
     description: "Premium eco-friendly residential cleaning services in Maryland, Washington DC, and Northern Virginia. Licensed, insured, background-checked teams using non-toxic plant-based products.",

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <!-- ═══════════════════════════════════════════════
        HOME — priority 1.0
@@ -191,5 +192,171 @@
   <url><loc>https://capitalcleancare.com/blog/how-to-remove-tough-stains-from-mattresses-eco-friendly-april-2026</loc><lastmod>2026-05-20</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
   <url><loc>https://capitalcleancare.com/blog/how-to-clean-bathroom-professionally-maryland-spring-2026</loc><lastmod>2026-05-20</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
   <url><loc>https://capitalcleancare.com/blog/how-to-clean-windows-streak-free-maryland-spring</loc><lastmod>2026-05-20</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+
+  <!-- ═══════════════════════════════════════════════
+       SPANISH PAGES — /es/ hierarchy (17 pages)
+       Bilateral hreflang EN ↔ ES
+  ═══════════════════════════════════════════════ -->
+
+  <!-- ES Home -->
+  <url>
+    <loc>https://capitalcleancare.com/es/</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es-us" href="https://capitalcleancare.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://capitalcleancare.com/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://capitalcleancare.com/"/>
+  </url>
+
+  <!-- ES Service Hubs -->
+  <url>
+    <loc>https://capitalcleancare.com/es/limpieza-de-casas</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es-us" href="https://capitalcleancare.com/es/limpieza-de-casas"/>
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://capitalcleancare.com/services/house-cleaning"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://capitalcleancare.com/services/house-cleaning"/>
+  </url>
+  <url>
+    <loc>https://capitalcleancare.com/es/limpieza-profunda</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es-us" href="https://capitalcleancare.com/es/limpieza-profunda"/>
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://capitalcleancare.com/services/deep-cleaning"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://capitalcleancare.com/services/deep-cleaning"/>
+  </url>
+  <url>
+    <loc>https://capitalcleancare.com/es/limpieza-de-mudanza</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es-us" href="https://capitalcleancare.com/es/limpieza-de-mudanza"/>
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://capitalcleancare.com/services/move-out-cleaning"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://capitalcleancare.com/services/move-out-cleaning"/>
+  </url>
+  <url>
+    <loc>https://capitalcleancare.com/es/limpieza-airbnb</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es-us" href="https://capitalcleancare.com/es/limpieza-airbnb"/>
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://capitalcleancare.com/services/airbnb-cleaning"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://capitalcleancare.com/services/airbnb-cleaning"/>
+  </url>
+  <url>
+    <loc>https://capitalcleancare.com/es/limpieza-post-construccion</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es-us" href="https://capitalcleancare.com/es/limpieza-post-construccion"/>
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://capitalcleancare.com/services/post-construction-cleaning"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://capitalcleancare.com/services/post-construction-cleaning"/>
+  </url>
+  <url>
+    <loc>https://capitalcleancare.com/es/limpieza-recurrente</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es-us" href="https://capitalcleancare.com/es/limpieza-recurrente"/>
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://capitalcleancare.com/services/recurring-cleaning"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://capitalcleancare.com/services/recurring-cleaning"/>
+  </url>
+
+  <!-- ES About & Contact -->
+  <url>
+    <loc>https://capitalcleancare.com/es/nosotros</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es-us" href="https://capitalcleancare.com/es/nosotros"/>
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://capitalcleancare.com/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://capitalcleancare.com/about"/>
+  </url>
+  <url>
+    <loc>https://capitalcleancare.com/es/contacto</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es-us" href="https://capitalcleancare.com/es/contacto"/>
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://capitalcleancare.com/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://capitalcleancare.com/contact"/>
+  </url>
+
+  <!-- ES City Hubs -->
+  <url>
+    <loc>https://capitalcleancare.com/es/areas/silver-spring-md</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es-us" href="https://capitalcleancare.com/es/areas/silver-spring-md"/>
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://capitalcleancare.com/locations/silver-spring-md"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://capitalcleancare.com/locations/silver-spring-md"/>
+  </url>
+  <url>
+    <loc>https://capitalcleancare.com/es/areas/wheaton-md</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es-us" href="https://capitalcleancare.com/es/areas/wheaton-md"/>
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://capitalcleancare.com/locations/wheaton-md"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://capitalcleancare.com/locations/wheaton-md"/>
+  </url>
+  <url>
+    <loc>https://capitalcleancare.com/es/areas/rockville-md</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es-us" href="https://capitalcleancare.com/es/areas/rockville-md"/>
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://capitalcleancare.com/locations/rockville-md"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://capitalcleancare.com/locations/rockville-md"/>
+  </url>
+  <url>
+    <loc>https://capitalcleancare.com/es/areas/gaithersburg-md</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es-us" href="https://capitalcleancare.com/es/areas/gaithersburg-md"/>
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://capitalcleancare.com/locations/gaithersburg-md"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://capitalcleancare.com/locations/gaithersburg-md"/>
+  </url>
+  <url>
+    <loc>https://capitalcleancare.com/es/areas/germantown-md</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es-us" href="https://capitalcleancare.com/es/areas/germantown-md"/>
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://capitalcleancare.com/locations/germantown-md"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://capitalcleancare.com/locations/germantown-md"/>
+  </url>
+  <url>
+    <loc>https://capitalcleancare.com/es/areas/aspen-hill-md</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es-us" href="https://capitalcleancare.com/es/areas/aspen-hill-md"/>
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://capitalcleancare.com/locations/aspen-hill-md"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://capitalcleancare.com/locations/aspen-hill-md"/>
+  </url>
+  <url>
+    <loc>https://capitalcleancare.com/es/areas/takoma-park-md</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es-us" href="https://capitalcleancare.com/es/areas/takoma-park-md"/>
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://capitalcleancare.com/locations/takoma-park-md"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://capitalcleancare.com/locations/takoma-park-md"/>
+  </url>
+  <url>
+    <loc>https://capitalcleancare.com/es/areas/montgomery-village-md</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es-us" href="https://capitalcleancare.com/es/areas/montgomery-village-md"/>
+    <xhtml:link rel="alternate" hreflang="en-us" href="https://capitalcleancare.com/locations/montgomery-village-md"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://capitalcleancare.com/locations/montgomery-village-md"/>
+  </url>
 
 </urlset>

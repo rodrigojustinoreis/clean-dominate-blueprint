@@ -6,6 +6,7 @@ import { services } from "@/data/services";
 import { hubs } from "@/data/locations";
 import logo from "@/assets/logo.webp";
 import { trackPhoneClick, trackBookNowClick } from "@/lib/analytics";
+import LanguageSwitcher from "@/components/layout/LanguageSwitcher";
 
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -79,6 +80,7 @@ const Header = () => {
           </nav>
 
           <div className="hidden lg:flex items-center gap-3">
+            <LanguageSwitcher />
             <a href="tel:+12407042551" className="text-sm font-semibold text-foreground flex items-center gap-1" onClick={() => trackPhoneClick("header_desktop_nav")}>
               <Phone className="h-4 w-4" /> (240) 704-2551
             </a>
@@ -88,6 +90,7 @@ const Header = () => {
           </div>
 
           <div className="lg:hidden flex items-center gap-2">
+            <LanguageSwitcher />
             <a href="tel:+12407042551" className="text-sm font-semibold text-foreground flex items-center gap-1" aria-label="Call us" onClick={() => trackPhoneClick("header_mobile_topbar")}>
               <Phone className="h-4 w-4 text-accent" />
             </a>

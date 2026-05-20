@@ -75,6 +75,24 @@ function getAllRoutes(): string[] {
     "/spring-cleaning-md",
     "/privacy-policy",
     "/terms-of-service",
+    // Spanish pages — Fase 1 (17 pages)
+    "/es/",
+    "/es/limpieza-de-casas",
+    "/es/limpieza-profunda",
+    "/es/limpieza-de-mudanza",
+    "/es/limpieza-airbnb",
+    "/es/limpieza-post-construccion",
+    "/es/limpieza-recurrente",
+    "/es/nosotros",
+    "/es/contacto",
+    "/es/areas/silver-spring-md",
+    "/es/areas/wheaton-md",
+    "/es/areas/rockville-md",
+    "/es/areas/gaithersburg-md",
+    "/es/areas/germantown-md",
+    "/es/areas/aspen-hill-md",
+    "/es/areas/takoma-park-md",
+    "/es/areas/montgomery-village-md",
   ];
 
   // City pages — auto-derived from locations.ts so adding a city there
@@ -153,7 +171,7 @@ export async function prerender(data: { url: string }) {
 
   return {
     html,
-    head: { lang: "en", title: titleText, elements },
+    head: { lang: data.url.startsWith("/es") ? "es" : "en", title: titleText, elements },
     links: getAllRoutes(),
   };
 }

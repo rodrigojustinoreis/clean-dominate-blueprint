@@ -25,6 +25,12 @@
   status = 301
   force = true
 
+# ── Spanish section: /es (no trailing slash) → /es/ ──────────────────────────
+[[redirects]]
+  from = "/es"
+  to = "/es/"
+  status = 301
+
 # ── State hub: trailing-slash normalisation removed (was causing infinite redirect loop)
 # The 200 force=true rewrites below serve /maryland, /virginia, /washington-dc directly.
 

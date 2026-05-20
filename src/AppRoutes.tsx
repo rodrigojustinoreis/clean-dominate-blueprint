@@ -103,6 +103,24 @@ import KensingtonMoveOutCleaningPage      from "./pages/locations/kensington-md/
 import KensingtonAirbnbCleaningPage       from "./pages/locations/kensington-md/AirbnbCleaningPage";
 import KensingtonOfficeCleaningPage       from "./pages/locations/kensington-md/OfficeCleaningPage";
 import KensingtonPostConstructionPage     from "./pages/locations/kensington-md/PostConstructionCleaningPage";
+// Spanish pages — Fase 1 (17 pages)
+import HomeES                  from "./pages/es/HomeES";
+import LimpiezaDeCasasPage     from "./pages/es/LimpiezaDeCasasPage";
+import LimpiezaProfundaPage    from "./pages/es/LimpiezaProfundaPage";
+import LimpiezaDeMudanzaPage   from "./pages/es/LimpiezaDeMudanzaPage";
+import LimpiezaAirbnbPage      from "./pages/es/LimpiezaAirbnbPage";
+import LimpiezaPostConstruccionPage from "./pages/es/LimpiezaPostConstruccionPage";
+import LimpiezaRecurrentePage  from "./pages/es/LimpiezaRecurrentePage";
+import NosotrosPage            from "./pages/es/NosotrosPage";
+import ContactoPage            from "./pages/es/ContactoPage";
+import SilverSpringES          from "./pages/es/areas/SilverSpringES";
+import WheatonES               from "./pages/es/areas/WheatonES";
+import RockvilleES             from "./pages/es/areas/RockvilleES";
+import GaithersburgES          from "./pages/es/areas/GaithersburgES";
+import GermantownES            from "./pages/es/areas/GermantownES";
+import AspenHillES             from "./pages/es/areas/AspenHillES";
+import TakomaParkES            from "./pages/es/areas/TakomaParkES";
+import MontgomeryVillageES     from "./pages/es/areas/MontgomeryVillageES";
 
 const AppRoutes = () => (
   <Routes>
@@ -240,6 +258,25 @@ const AppRoutes = () => (
     <Route path="/locations/kensington-md/airbnb-cleaning"            element={<KensingtonAirbnbCleaningPage />} />
     <Route path="/locations/kensington-md/office-cleaning"            element={<KensingtonOfficeCleaningPage />} />
     <Route path="/locations/kensington-md/post-construction-cleaning" element={<KensingtonPostConstructionPage />} />
+    {/* Spanish pages — /es/ hierarchy */}
+    <Route path="/es" element={<Navigate to="/es/" replace />} />
+    <Route path="/es/" element={<HomeES />} />
+    <Route path="/es/limpieza-de-casas" element={<LimpiezaDeCasasPage />} />
+    <Route path="/es/limpieza-profunda" element={<LimpiezaProfundaPage />} />
+    <Route path="/es/limpieza-de-mudanza" element={<LimpiezaDeMudanzaPage />} />
+    <Route path="/es/limpieza-airbnb" element={<LimpiezaAirbnbPage />} />
+    <Route path="/es/limpieza-post-construccion" element={<LimpiezaPostConstruccionPage />} />
+    <Route path="/es/limpieza-recurrente" element={<LimpiezaRecurrentePage />} />
+    <Route path="/es/nosotros" element={<NosotrosPage />} />
+    <Route path="/es/contacto" element={<ContactoPage />} />
+    <Route path="/es/areas/silver-spring-md" element={<SilverSpringES />} />
+    <Route path="/es/areas/wheaton-md" element={<WheatonES />} />
+    <Route path="/es/areas/rockville-md" element={<RockvilleES />} />
+    <Route path="/es/areas/gaithersburg-md" element={<GaithersburgES />} />
+    <Route path="/es/areas/germantown-md" element={<GermantownES />} />
+    <Route path="/es/areas/aspen-hill-md" element={<AspenHillES />} />
+    <Route path="/es/areas/takoma-park-md" element={<TakomaParkES />} />
+    <Route path="/es/areas/montgomery-village-md" element={<MontgomeryVillageES />} />
     {/* State hub pages — catch-all for single-segment paths; LocationHub returns <NotFound /> for unknown slugs */}
     <Route path="/:stateSlug" element={<LocationHub />} />
     <Route path="/locations/:slug/:serviceSlug" element={<ServiceLocationPage />} />
