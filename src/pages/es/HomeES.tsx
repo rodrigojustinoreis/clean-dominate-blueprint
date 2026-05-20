@@ -7,7 +7,6 @@ import { trackPhoneClick, trackBookNowClick } from "@/lib/analytics";
 import ProcessSection from "@/components/sections/ProcessSection";
 import MeetTheTeamSection from "@/components/sections/MeetTheTeamSection";
 import FAQExpandedSection from "@/components/sections/FAQExpandedSection";
-import QuoteForm from "@/components/QuoteForm";
 
 const PHONE = "(240) 704-2551";
 const PHONE_TEL = "tel:+12407042551";
@@ -57,7 +56,7 @@ export default function HomeES() {
                 </a>
               </Button>
               <Button variant="outline" size="lg" asChild>
-                <a href="#cotizacion" onClick={() => trackBookNowClick("hero_es")}>
+                <a href="/contact" onClick={() => trackBookNowClick("hero_es")}>
                   Solicitar Cotización Gratis <ArrowRight className="ml-1 h-4 w-4" />
                 </a>
               </Button>
@@ -166,11 +165,6 @@ export default function HomeES() {
         </section>
 
         <MeetTheTeamSection />
-
-        <div id="cotizacion">
-          <QuoteForm />
-        </div>
-
         <FAQExpandedSection schemaId="faq-home-es" />
 
         {/* CTA Final */}
@@ -187,7 +181,7 @@ export default function HomeES() {
                 </a>
               </Button>
               <Button size="lg" variant="outline" className="border-white/50 text-white hover:bg-white/10" asChild>
-                <a href="#cotizacion" onClick={() => trackBookNowClick("cta_final_es")}>
+                <a href="/contact" onClick={() => trackBookNowClick("cta_final_es")}>
                   Cotización Gratis <ArrowRight className="ml-1 h-4 w-4" />
                 </a>
               </Button>

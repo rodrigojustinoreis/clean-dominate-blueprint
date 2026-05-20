@@ -6,7 +6,6 @@ import { trackPhoneClick, trackBookNowClick } from "@/lib/analytics";
 import ProcessSection from "@/components/sections/ProcessSection";
 import TransparencySection from "@/components/sections/TransparencySection";
 import FAQExpandedSection from "@/components/sections/FAQExpandedSection";
-import QuoteForm from "@/components/QuoteForm";
 
 const PHONE = "(240) 704-2551";
 const PHONE_TEL = "tel:+12407042551";
@@ -39,7 +38,7 @@ export default function LimpiezaAirbnbPage() {
                 <a href={PHONE_TEL} onClick={() => trackPhoneClick("airbnb_hero")}><Phone className="h-4 w-4 mr-2" /> Llamar: {PHONE}</a>
               </Button>
               <Button variant="outline" size="lg" asChild>
-                <a href="#cotizacion" onClick={() => trackBookNowClick("airbnb_hero")}>Cotización Gratis <ArrowRight className="ml-1 h-4 w-4" /></a>
+                <a href="/contact" onClick={() => trackBookNowClick("airbnb_hero")}>Cotización Gratis <ArrowRight className="ml-1 h-4 w-4" /></a>
               </Button>
             </div>
           </div>
@@ -115,11 +114,6 @@ export default function LimpiezaAirbnbPage() {
         <ProcessSection />
 
         <TransparencySection />
-
-        <div id="cotizacion">
-          <QuoteForm defaultService="airbnb" />
-        </div>
-
         <FAQExpandedSection schemaId="faq-limpieza-airbnb" />
 
         <section className="bg-accent text-accent-foreground py-14">
@@ -131,7 +125,7 @@ export default function LimpiezaAirbnbPage() {
                 <a href={PHONE_TEL} onClick={() => trackPhoneClick("airbnb_cta")}><Phone className="h-4 w-4 mr-2" /> {PHONE}</a>
               </Button>
               <Button size="lg" variant="outline" className="border-white/50 text-white hover:bg-white/10" asChild>
-                <a href="#cotizacion" onClick={() => trackBookNowClick("airbnb_cta")}>Cotización Gratis</a>
+                <a href="/contact" onClick={() => trackBookNowClick("airbnb_cta")}>Cotización Gratis</a>
               </Button>
             </div>
             <div className="mt-4 flex items-center justify-center gap-2 text-accent-foreground/70 text-sm">

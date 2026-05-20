@@ -5,7 +5,6 @@ import { LocalBusinessSchema } from "@/components/SchemaMarkup";
 import { trackPhoneClick, trackBookNowClick } from "@/lib/analytics";
 import MeetTheTeamSection from "@/components/sections/MeetTheTeamSection";
 import FAQExpandedSection from "@/components/sections/FAQExpandedSection";
-import QuoteForm from "@/components/QuoteForm";
 
 const PHONE = "(240) 704-2551";
 const PHONE_TEL = "tel:+12407042551";
@@ -38,7 +37,7 @@ export default function NosotrosPage() {
                 <a href={PHONE_TEL} onClick={() => trackPhoneClick("nosotros_hero")}><Phone className="h-4 w-4 mr-2" /> Llamar: {PHONE}</a>
               </Button>
               <Button variant="outline" size="lg" asChild>
-                <a href="#cotizacion" onClick={() => trackBookNowClick("nosotros_hero")}>Cotización Gratis <ArrowRight className="ml-1 h-4 w-4" /></a>
+                <a href="/contact" onClick={() => trackBookNowClick("nosotros_hero")}>Cotización Gratis <ArrowRight className="ml-1 h-4 w-4" /></a>
               </Button>
             </div>
           </div>
@@ -147,11 +146,6 @@ export default function NosotrosPage() {
         <MeetTheTeamSection />
 
         <FAQExpandedSection schemaId="faq-nosotros" />
-
-        <div id="cotizacion">
-          <QuoteForm />
-        </div>
-
         <section className="bg-accent text-accent-foreground py-14">
           <div className="container mx-auto px-4 max-w-2xl text-center">
             <h2 className="font-heading text-2xl font-bold mb-4">¿Listo para conocernos?</h2>
@@ -161,7 +155,7 @@ export default function NosotrosPage() {
                 <a href={PHONE_TEL} onClick={() => trackPhoneClick("nosotros_cta")}><Phone className="h-4 w-4 mr-2" /> {PHONE}</a>
               </Button>
               <Button size="lg" variant="outline" className="border-white/50 text-white hover:bg-white/10" asChild>
-                <a href="#cotizacion" onClick={() => trackBookNowClick("nosotros_cta")}>Cotización Gratis</a>
+                <a href="/contact" onClick={() => trackBookNowClick("nosotros_cta")}>Cotización Gratis</a>
               </Button>
             </div>
             <div className="mt-4 flex items-center justify-center gap-2 text-accent-foreground/70 text-sm">
