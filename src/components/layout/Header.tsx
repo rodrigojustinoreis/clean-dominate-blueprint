@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown, Phone, Leaf } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { services } from "@/data/services";
@@ -8,7 +8,29 @@ import logo from "@/assets/logo.webp";
 import { trackPhoneClick, trackBookNowClick } from "@/lib/analytics";
 import LanguageSwitcher from "@/components/layout/LanguageSwitcher";
 
+const ES_SERVICES = [
+  { path: "/es/limpieza-de-casas",        label: "Limpieza Regular" },
+  { path: "/es/limpieza-profunda",         label: "Limpieza Profunda" },
+  { path: "/es/limpieza-de-mudanza",       label: "Limpieza de Mudanza" },
+  { path: "/es/limpieza-airbnb",           label: "Limpieza Airbnb" },
+  { path: "/es/limpieza-post-construccion",label: "Post-Construcción" },
+  { path: "/es/limpieza-recurrente",       label: "Limpieza Recurrente" },
+];
+
+const ES_AREAS = [
+  { path: "/es/areas/silver-spring-md",      label: "Silver Spring" },
+  { path: "/es/areas/wheaton-md",            label: "Wheaton" },
+  { path: "/es/areas/rockville-md",          label: "Rockville" },
+  { path: "/es/areas/gaithersburg-md",       label: "Gaithersburg" },
+  { path: "/es/areas/germantown-md",         label: "Germantown" },
+  { path: "/es/areas/aspen-hill-md",         label: "Aspen Hill" },
+  { path: "/es/areas/takoma-park-md",        label: "Takoma Park" },
+  { path: "/es/areas/montgomery-village-md", label: "Montgomery Village" },
+];
+
 const Header = () => {
+  const { pathname } = useLocation();
+  const isSpanish = pathname.startsWith("/es/") || pathname === "/es";
   const [mobileOpen, setMobileOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [locationsOpen, setLocationsOpen] = useState(false);
@@ -39,44 +61,84 @@ const Header = () => {
 
           {/* Desktop nav */}
           <nav className="hidden lg:flex items-center gap-1">
-            <Link to="/" className="px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">Home</Link>
-            <Link to="/about" className="px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">About Us</Link>
+            {isSpanish ? (
+              <>
+                <Link to="/es/" className="px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">Inicio</Link>
 
-            <div className="relative group">
-              <button className="px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors flex items-center gap-1">
-                Services <ChevronDown className="h-3 w-3 transition-transform group-hover:rotate-180 duration-200" />
-              </button>
-              {/* pt-2 creates invisible buffer so menu doesn't close when mouse moves between button and list */}
-              <div className="absolute top-full left-0 pt-2 hidden group-hover:block">
-                <div className="bg-card border border-border rounded-lg shadow-lg py-2 min-w-[220px]">
-                  {services.map((s) => (
-                    <Link key={s.slug} to={`/services/${s.slug}`} className="block px-4 py-2 text-sm hover:bg-secondary transition-colors">
-                      {s.name}
-                    </Link>
-                  ))}
+                <div className="relative group">
+                  <button className="px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors flex items-center gap-1">
+                    Servicios <ChevronDown className="h-3 w-3 transition-transform group-hover:rotate-180 duration-200" />
+                  </button>
+                  <div className="absolute top-full left-0 pt-2 hidden group-hover:block">
+                    <div className="bg-card border border-border rounded-lg shadow-lg py-2 min-w-[220px]">
+                      {ES_SERVICES.map((s) => (
+                        <Link key={s.path} to={s.path} className="block px-4 py-2 text-sm hover:bg-secondary transition-colors">
+                          {s.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
 
-            <div className="relative group">
-              <button className="px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors flex items-center gap-1">
-                Locations <ChevronDown className="h-3 w-3 transition-transform group-hover:rotate-180 duration-200" />
-              </button>
-              <div className="absolute top-full left-0 pt-2 hidden group-hover:block">
-                <div className="bg-card border border-border rounded-lg shadow-lg py-2 min-w-[220px]">
-                  {hubs.map((h) => (
-                    <Link key={h.slug} to={`/${h.slug}`} className="block px-4 py-2 text-sm font-semibold hover:bg-secondary transition-colors">
-                      {h.name}
-                    </Link>
-                  ))}
+                <div className="relative group">
+                  <button className="px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors flex items-center gap-1">
+                    Áreas <ChevronDown className="h-3 w-3 transition-transform group-hover:rotate-180 duration-200" />
+                  </button>
+                  <div className="absolute top-full left-0 pt-2 hidden group-hover:block">
+                    <div className="bg-card border border-border rounded-lg shadow-lg py-2 min-w-[200px]">
+                      {ES_AREAS.map((a) => (
+                        <Link key={a.path} to={a.path} className="block px-4 py-2 text-sm hover:bg-secondary transition-colors">
+                          {a.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
 
-            <Link to="/reviews" className="px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">Reviews</Link>
-            <Link to="/blog" className="px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">Blog</Link>
-            <Link to="/contact" className="px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">Contact Us</Link>
-            <Link to="/careers" className="px-3 py-2 text-sm font-medium text-accent hover:text-accent/80 transition-colors">Join Our Team</Link>
+                <Link to="/es/nosotros" className="px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">Nosotros</Link>
+                <Link to="/es/contacto" className="px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">Contacto</Link>
+              </>
+            ) : (
+              <>
+                <Link to="/" className="px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">Home</Link>
+                <Link to="/about" className="px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">About Us</Link>
+
+                <div className="relative group">
+                  <button className="px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors flex items-center gap-1">
+                    Services <ChevronDown className="h-3 w-3 transition-transform group-hover:rotate-180 duration-200" />
+                  </button>
+                  <div className="absolute top-full left-0 pt-2 hidden group-hover:block">
+                    <div className="bg-card border border-border rounded-lg shadow-lg py-2 min-w-[220px]">
+                      {services.map((s) => (
+                        <Link key={s.slug} to={`/services/${s.slug}`} className="block px-4 py-2 text-sm hover:bg-secondary transition-colors">
+                          {s.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                <div className="relative group">
+                  <button className="px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors flex items-center gap-1">
+                    Locations <ChevronDown className="h-3 w-3 transition-transform group-hover:rotate-180 duration-200" />
+                  </button>
+                  <div className="absolute top-full left-0 pt-2 hidden group-hover:block">
+                    <div className="bg-card border border-border rounded-lg shadow-lg py-2 min-w-[220px]">
+                      {hubs.map((h) => (
+                        <Link key={h.slug} to={`/${h.slug}`} className="block px-4 py-2 text-sm font-semibold hover:bg-secondary transition-colors">
+                          {h.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                <Link to="/reviews" className="px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">Reviews</Link>
+                <Link to="/blog" className="px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">Blog</Link>
+                <Link to="/contact" className="px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">Contact Us</Link>
+                <Link to="/careers" className="px-3 py-2 text-sm font-medium text-accent hover:text-accent/80 transition-colors">Join Our Team</Link>
+              </>
+            )}
           </nav>
 
           <div className="hidden lg:flex items-center gap-3">
@@ -85,7 +147,10 @@ const Header = () => {
               <Phone className="h-4 w-4" /> (240) 704-2551
             </a>
             <Button variant="cta" asChild>
-              <a href="/#quote" onClick={() => trackBookNowClick("header_desktop_nav")}>Free Quote</a>
+              {isSpanish
+                ? <Link to="/es/contacto" onClick={() => trackBookNowClick("header_desktop_nav")}>Cotización Gratis</Link>
+                : <a href="/#quote" onClick={() => trackBookNowClick("header_desktop_nav")}>Free Quote</a>
+              }
             </Button>
           </div>
 
@@ -95,7 +160,10 @@ const Header = () => {
               <Phone className="h-4 w-4 text-accent" />
             </a>
             <Button variant="cta" size="sm" className="text-xs px-3 h-8 rounded-full" asChild>
-              <a href="/#quote" onClick={() => trackBookNowClick("header_mobile_cta")}>Free Quote</a>
+              {isSpanish
+                ? <Link to="/es/contacto" onClick={() => trackBookNowClick("header_mobile_cta")}>Cotización</Link>
+                : <a href="/#quote" onClick={() => trackBookNowClick("header_mobile_cta")}>Free Quote</a>
+              }
             </Button>
             <button className="p-2" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Toggle menu">
               {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -108,47 +176,93 @@ const Header = () => {
       {mobileOpen && (
         <div className="lg:hidden bg-card border-t border-border">
           <nav className="container mx-auto px-4 py-4 space-y-1">
-            <Link to="/" className="block px-3 py-2 rounded-md hover:bg-secondary" onClick={() => setMobileOpen(false)}>Home</Link>
-            <Link to="/about" className="block px-3 py-2 rounded-md hover:bg-secondary" onClick={() => setMobileOpen(false)}>About Us</Link>
+            {isSpanish ? (
+              <>
+                <Link to="/es/" className="block px-3 py-2 rounded-md hover:bg-secondary" onClick={() => setMobileOpen(false)}>Inicio</Link>
 
-            <button className="w-full flex items-center justify-between px-3 py-2 rounded-md hover:bg-secondary" onClick={() => setServicesOpen(!servicesOpen)}>
-              Services <ChevronDown className={`h-4 w-4 transition-transform ${servicesOpen ? "rotate-180" : ""}`} />
-            </button>
-            {servicesOpen && (
-              <div className="pl-6 space-y-1">
-                {services.map((s) => (
-                  <Link key={s.slug} to={`/services/${s.slug}`} className="block px-3 py-2 text-sm hover:bg-secondary rounded-md" onClick={() => setMobileOpen(false)}>
-                    {s.name}
-                  </Link>
-                ))}
-              </div>
+                <button className="w-full flex items-center justify-between px-3 py-2 rounded-md hover:bg-secondary" onClick={() => setServicesOpen(!servicesOpen)}>
+                  Servicios <ChevronDown className={`h-4 w-4 transition-transform ${servicesOpen ? "rotate-180" : ""}`} />
+                </button>
+                {servicesOpen && (
+                  <div className="pl-6 space-y-1">
+                    {ES_SERVICES.map((s) => (
+                      <Link key={s.path} to={s.path} className="block px-3 py-2 text-sm hover:bg-secondary rounded-md" onClick={() => setMobileOpen(false)}>
+                        {s.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+
+                <button className="w-full flex items-center justify-between px-3 py-2 rounded-md hover:bg-secondary" onClick={() => setLocationsOpen(!locationsOpen)}>
+                  Áreas <ChevronDown className={`h-4 w-4 transition-transform ${locationsOpen ? "rotate-180" : ""}`} />
+                </button>
+                {locationsOpen && (
+                  <div className="pl-6 space-y-1">
+                    {ES_AREAS.map((a) => (
+                      <Link key={a.path} to={a.path} className="block px-3 py-2 text-sm hover:bg-secondary rounded-md" onClick={() => setMobileOpen(false)}>
+                        {a.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+
+                <Link to="/es/nosotros" className="block px-3 py-2 rounded-md hover:bg-secondary" onClick={() => setMobileOpen(false)}>Nosotros</Link>
+                <Link to="/es/contacto" className="block px-3 py-2 rounded-md hover:bg-secondary" onClick={() => setMobileOpen(false)}>Contacto</Link>
+
+                <div className="pt-3 space-y-2">
+                  <a href="tel:+12407042551" className="block text-center font-semibold text-foreground" onClick={() => trackPhoneClick("header_mobile_menu")}>
+                    <Phone className="h-4 w-4 inline mr-1" /> (240) 704-2551
+                  </a>
+                  <Button variant="cta" className="w-full" asChild>
+                    <Link to="/es/contacto" onClick={() => { setMobileOpen(false); trackBookNowClick("header_mobile_menu"); }}>Cotización Gratis</Link>
+                  </Button>
+                </div>
+              </>
+            ) : (
+              <>
+                <Link to="/" className="block px-3 py-2 rounded-md hover:bg-secondary" onClick={() => setMobileOpen(false)}>Home</Link>
+                <Link to="/about" className="block px-3 py-2 rounded-md hover:bg-secondary" onClick={() => setMobileOpen(false)}>About Us</Link>
+
+                <button className="w-full flex items-center justify-between px-3 py-2 rounded-md hover:bg-secondary" onClick={() => setServicesOpen(!servicesOpen)}>
+                  Services <ChevronDown className={`h-4 w-4 transition-transform ${servicesOpen ? "rotate-180" : ""}`} />
+                </button>
+                {servicesOpen && (
+                  <div className="pl-6 space-y-1">
+                    {services.map((s) => (
+                      <Link key={s.slug} to={`/services/${s.slug}`} className="block px-3 py-2 text-sm hover:bg-secondary rounded-md" onClick={() => setMobileOpen(false)}>
+                        {s.name}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+
+                <button className="w-full flex items-center justify-between px-3 py-2 rounded-md hover:bg-secondary" onClick={() => setLocationsOpen(!locationsOpen)}>
+                  Locations <ChevronDown className={`h-4 w-4 transition-transform ${locationsOpen ? "rotate-180" : ""}`} />
+                </button>
+                {locationsOpen && (
+                  <div className="pl-6 space-y-1">
+                    {hubs.map((h) => (
+                      <Link key={h.slug} to={`/${h.slug}`} className="block px-3 py-2 text-sm font-semibold hover:bg-secondary rounded-md" onClick={() => setMobileOpen(false)}>
+                        {h.name}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+
+                <Link to="/reviews" className="block px-3 py-2 rounded-md hover:bg-secondary" onClick={() => setMobileOpen(false)}>Reviews</Link>
+                <Link to="/blog" className="block px-3 py-2 rounded-md hover:bg-secondary" onClick={() => setMobileOpen(false)}>Blog</Link>
+                <Link to="/contact" className="block px-3 py-2 rounded-md hover:bg-secondary" onClick={() => setMobileOpen(false)}>Contact Us</Link>
+
+                <div className="pt-3 space-y-2">
+                  <a href="tel:+12407042551" className="block text-center font-semibold text-foreground" onClick={() => trackPhoneClick("header_mobile_menu")}>
+                    <Phone className="h-4 w-4 inline mr-1" /> (240) 704-2551
+                  </a>
+                  <Button variant="cta" className="w-full" asChild>
+                    <a href="/#quote" onClick={() => { setMobileOpen(false); trackBookNowClick("header_mobile_menu"); }}>Get a Free Quote</a>
+                  </Button>
+                </div>
+              </>
             )}
-
-            <button className="w-full flex items-center justify-between px-3 py-2 rounded-md hover:bg-secondary" onClick={() => setLocationsOpen(!locationsOpen)}>
-              Locations <ChevronDown className={`h-4 w-4 transition-transform ${locationsOpen ? "rotate-180" : ""}`} />
-            </button>
-            {locationsOpen && (
-              <div className="pl-6 space-y-1">
-                {hubs.map((h) => (
-                  <Link key={h.slug} to={`/${h.slug}`} className="block px-3 py-2 text-sm font-semibold hover:bg-secondary rounded-md" onClick={() => setMobileOpen(false)}>
-                    {h.name}
-                  </Link>
-                ))}
-              </div>
-            )}
-
-            <Link to="/reviews" className="block px-3 py-2 rounded-md hover:bg-secondary" onClick={() => setMobileOpen(false)}>Reviews</Link>
-            <Link to="/blog" className="block px-3 py-2 rounded-md hover:bg-secondary" onClick={() => setMobileOpen(false)}>Blog</Link>
-            <Link to="/contact" className="block px-3 py-2 rounded-md hover:bg-secondary" onClick={() => setMobileOpen(false)}>Contact Us</Link>
-
-            <div className="pt-3 space-y-2">
-              <a href="tel:+12407042551" className="block text-center font-semibold text-foreground" onClick={() => trackPhoneClick("header_mobile_menu")}>
-                <Phone className="h-4 w-4 inline mr-1" /> (240) 704-2551
-              </a>
-              <Button variant="cta" className="w-full" asChild>
-                <a href="/#quote" onClick={() => { setMobileOpen(false); trackBookNowClick("header_mobile_menu"); }}>Get a Free Quote</a>
-              </Button>
-            </div>
           </nav>
         </div>
       )}
