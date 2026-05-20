@@ -136,6 +136,9 @@ const Footer = () => (
         </div>
         <p>Serving Maryland • Washington DC • Northern Virginia</p>
       </div>
+      <p className="text-center text-xs text-primary-foreground/30 pb-4">
+        Capital Clean Care LLC is not affiliated with any other cleaning company with a similar name operating in the Maryland area.
+      </p>
     </div>
   </footer>
 );

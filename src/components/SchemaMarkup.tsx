@@ -1,18 +1,20 @@
 import { Helmet } from "react-helmet-async";
+import { BUSINESS_INFO } from "@/data/business-info";
 
-// Shared business info constants
+// Shared business info constants — single source of truth in src/data/business-info.ts
 const BUSINESS = {
-  name: "Capital Clean Care",
-  phone: "(240) 704-2551",
-  email: "capitalcleancare@gmail.com",
-  url: "https://capitalcleancare.com",
-  street: "4111 Postgate Terrace",
-  city: "Silver Spring",
-  state: "MD",
-  zip: "20906",
-  priceRange: "$$",
-  lat: "39.08",
-  lng: "-77.02",
+  name: BUSINESS_INFO.name,
+  legalName: BUSINESS_INFO.legalName,
+  phone: BUSINESS_INFO.phone.display,
+  email: BUSINESS_INFO.email,
+  url: BUSINESS_INFO.url,
+  street: BUSINESS_INFO.address.streetAddress,
+  city: BUSINESS_INFO.address.addressLocality,
+  state: BUSINESS_INFO.address.addressRegion,
+  zip: BUSINESS_INFO.address.postalCode,
+  priceRange: BUSINESS_INFO.priceRange,
+  lat: BUSINESS_INFO.geo.latitude,
+  lng: BUSINESS_INFO.geo.longitude,
 };
 
 const businessAddress = {
@@ -72,6 +74,7 @@ export const LocalBusinessSchema = ({ areaServed, reviews }: LocalBusinessSchema
     "@type": "LocalBusiness",
     "@id": `${BUSINESS.url}/#business`,
     name: BUSINESS.name,
+    legalName: BUSINESS.legalName,
     description: "Premium eco-friendly residential cleaning services in Maryland, Washington DC, and Northern Virginia. Licensed, insured, background-checked teams using non-toxic plant-based products.",
     telephone: BUSINESS.phone,
     email: BUSINESS.email,
@@ -93,21 +96,21 @@ export const LocalBusinessSchema = ({ areaServed, reviews }: LocalBusinessSchema
     paymentAccepted: "Cash, Credit Card, Debit Card, Digital Payment",
     aggregateRating: {
       "@type": "AggregateRating",
-      ratingValue: "5.0",
-      reviewCount: "47",
+      ratingValue: BUSINESS_INFO.rating.value,
+      reviewCount: BUSINESS_INFO.rating.count,
       bestRating: "5",
       worstRating: "1",
     },
     openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-      opens: "08:00",
-      closes: "18:00",
+      dayOfWeek: BUSINESS_INFO.hours.days,
+      opens: BUSINESS_INFO.hours.opens,
+      closes: BUSINESS_INFO.hours.closes,
     },
     sameAs: [
-      "https://www.instagram.com/capital_cleancare",
-      "https://www.facebook.com/capitalcleancare",
-      "https://www.google.com/maps/place/Capital+Clean+Care/@39.0887503,-77.0783716,17z/data=!3m1!4b1!4m6!3m5!1s0xa2bc172727d57413:0x18a0025a4f044b49!8m2!3d39.0887503!4d-77.0783716!16s%2Fg%2F11wp5v7v9c",
+      BUSINESS_INFO.social.instagram,
+      BUSINESS_INFO.social.facebook,
+      BUSINESS_INFO.social.googleMaps,
     ],
     hasOfferCatalog: {
       "@type": "OfferCatalog",
@@ -395,7 +398,7 @@ export const AboutPageSchema = () => {
       "@type": "LocalBusiness",
       "@id": `${BUSINESS.url}/#business`,
       name: BUSINESS.name,
-      foundingDate: "2015",
+      foundingDate: BUSINESS_INFO.yearFounded,
       foundingLocation: {
         "@type": "Place",
         name: "Silver Spring, MD",

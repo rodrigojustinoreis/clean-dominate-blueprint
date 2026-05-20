@@ -295,7 +295,7 @@ const SpringCarpetCleaningBlog = () => {
               <Link to="/contact">Get a Free Quote</Link>
             </Button>
             <Button size="lg" variant="outline" className="text-accent bg-transparent border-white/50 hover:bg-white/10 px-8 py-6 rounded-full text-lg font-semibold transition-all backdrop-blur-sm" asChild>
-              <a href="tel:1234567890">Call Us Now</a>
+              <a href="tel:+12407042551">(240) 704-2551</a>
             </Button>
           </div>
         </div>

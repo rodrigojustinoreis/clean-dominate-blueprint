@@ -15,7 +15,7 @@ interface SEOProps {
  */
 export const useSEO = ({ title, description, canonical, ogType = "website", ogImage }: SEOProps) => {
   const children = [
-    createElement("title", { key: "title" }, title),
+    createElement("title", { key: "title" }, title.includes("Capital Clean Care") ? title : `${title} | Capital Clean Care`),
     createElement("meta", { key: "desc", name: "description", content: description }),
     createElement("meta", { key: "og-site", property: "og:site_name", content: "Capital Clean Care" }),
     createElement("meta", { key: "og-locale", property: "og:locale", content: "en_US" }),
