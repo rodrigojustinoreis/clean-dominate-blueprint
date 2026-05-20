@@ -168,7 +168,7 @@ export default function HomeES() {
         <MeetTheTeamSection />
 
         <div id="cotizacion">
-          <QuoteForm lang="es" submitLabel="Solicitar Cotización Gratis" />
+          <QuoteForm />
         </div>
 
         <FAQExpandedSection schemaId="faq-home-es" />

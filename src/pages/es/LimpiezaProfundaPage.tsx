@@ -116,7 +116,7 @@ export default function LimpiezaProfundaPage() {
         <TransparencySection />
 
         <div id="cotizacion">
-          <QuoteForm lang="es" defaultService="deep" submitLabel="Solicitar Cotización de Limpieza Profunda" />
+          <QuoteForm defaultService="deep" />
         </div>
 
         <FAQExpandedSection schemaId="faq-limpieza-profunda" />

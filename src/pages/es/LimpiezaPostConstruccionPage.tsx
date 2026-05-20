@@ -115,7 +115,7 @@ export default function LimpiezaPostConstruccionPage() {
         <TransparencySection />
 
         <div id="cotizacion">
-          <QuoteForm lang="es" defaultService="post-construction" submitLabel="Solicitar Cotización Post-Construcción" />
+          <QuoteForm defaultService="post-construction" />
         </div>
 
         <FAQExpandedSection schemaId="faq-limpieza-post-construccion" />

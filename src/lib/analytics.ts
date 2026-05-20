@@ -8,13 +8,12 @@ export function trackPhoneClick(location: string) {
   });
 }
 
-export function trackQuoteFormSubmit(service: string, extra?: Record<string, unknown>) {
+export function trackQuoteFormSubmit(service: string) {
   if (typeof gtag === "undefined") return;
   gtag("event", "generate_lead", {
     event_category: "Form",
     event_label: "quote_form",
     service_type: service,
-    ...extra,
   });
 }
 

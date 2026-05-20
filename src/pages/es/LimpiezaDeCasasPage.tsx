@@ -134,7 +134,7 @@ export default function LimpiezaDeCasasPage() {
         <TransparencySection />
 
         <div id="cotizacion">
-          <QuoteForm lang="es" defaultService="standard" submitLabel="Solicitar Cotización de Limpieza" />
+          <QuoteForm defaultService="standard" />
         </div>
 
         <FAQExpandedSection schemaId="faq-limpieza-casas" />

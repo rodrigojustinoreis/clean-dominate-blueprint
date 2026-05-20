@@ -135,7 +135,7 @@ export default function LimpiezaRecurrentePage() {
         <TransparencySection />
 
         <div id="cotizacion">
-          <QuoteForm lang="es" defaultService="standard" submitLabel="Solicitar Cotización de Limpieza Recurrente" />
+          <QuoteForm defaultService="standard" />
         </div>
 
         <FAQExpandedSection schemaId="faq-limpieza-recurrente" />

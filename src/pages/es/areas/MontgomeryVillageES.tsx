@@ -121,7 +121,7 @@ export default function MontgomeryVillageES() {
         <TransparencySection />
 
         <div id="cotizacion">
-          <QuoteForm lang="es" submitLabel="Solicitar Cotización en Montgomery Village" />
+          <QuoteForm />
         </div>
 
         <section className="bg-accent text-accent-foreground py-14">

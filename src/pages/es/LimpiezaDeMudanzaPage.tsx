@@ -106,7 +106,7 @@ export default function LimpiezaDeMudanzaPage() {
         <TransparencySection />
 
         <div id="cotizacion">
-          <QuoteForm lang="es" defaultService="move" submitLabel="Solicitar Cotización de Mudanza" />
+          <QuoteForm defaultService="move" />
         </div>
 
         <FAQExpandedSection schemaId="faq-limpieza-mudanza" />

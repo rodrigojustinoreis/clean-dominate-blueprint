@@ -88,7 +88,7 @@ export default function ContactoPage() {
               </div>
 
               <div id="cotizacion">
-                <QuoteForm lang="es" submitLabel="Solicitar Cotización Gratis" />
+                <QuoteForm />
               </div>
             </div>
           </div>

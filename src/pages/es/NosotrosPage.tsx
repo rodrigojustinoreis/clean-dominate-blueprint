@@ -149,7 +149,7 @@ export default function NosotrosPage() {
         <FAQExpandedSection schemaId="faq-nosotros" />
 
         <div id="cotizacion">
-          <QuoteForm lang="es" submitLabel="Solicitar Cotización Gratis" />
+          <QuoteForm />
         </div>
 
         <section className="bg-accent text-accent-foreground py-14">

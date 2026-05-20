@@ -123,7 +123,7 @@ export default function SilverSpringES() {
         <TransparencySection />
 
         <div id="cotizacion">
-          <QuoteForm lang="es" submitLabel="Solicitar Cotización en Silver Spring" />
+          <QuoteForm />
         </div>
 
         <section className="bg-accent text-accent-foreground py-14">

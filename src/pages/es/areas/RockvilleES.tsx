@@ -121,7 +121,7 @@ export default function RockvilleES() {
         <TransparencySection />
 
         <div id="cotizacion">
-          <QuoteForm lang="es" submitLabel="Solicitar Cotización en Rockville" />
+          <QuoteForm />
         </div>
 
         <section className="bg-accent text-accent-foreground py-14">

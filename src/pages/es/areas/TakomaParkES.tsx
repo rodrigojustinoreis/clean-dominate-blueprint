@@ -121,7 +121,7 @@ export default function TakomaParkES() {
         <TransparencySection />
 
         <div id="cotizacion">
-          <QuoteForm lang="es" submitLabel="Solicitar Cotización en Takoma Park" />
+          <QuoteForm />
         </div>
 
         <section className="bg-accent text-accent-foreground py-14">

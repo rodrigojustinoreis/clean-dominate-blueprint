@@ -117,7 +117,7 @@ export default function LimpiezaAirbnbPage() {
         <TransparencySection />
 
         <div id="cotizacion">
-          <QuoteForm lang="es" defaultService="airbnb" submitLabel="Solicitar Cotización para Airbnb" />
+          <QuoteForm defaultService="airbnb" />
         </div>
 
         <FAQExpandedSection schemaId="faq-limpieza-airbnb" />

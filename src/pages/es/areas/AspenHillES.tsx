@@ -121,7 +121,7 @@ export default function AspenHillES() {
         <TransparencySection />
 
         <div id="cotizacion">
-          <QuoteForm lang="es" submitLabel="Solicitar Cotización en Aspen Hill" />
+          <QuoteForm />
         </div>
 
         <section className="bg-accent text-accent-foreground py-14">

@@ -121,7 +121,7 @@ export default function GaithersburgES() {
         <TransparencySection />
 
         <div id="cotizacion">
-          <QuoteForm lang="es" submitLabel="Solicitar Cotización en Gaithersburg" />
+          <QuoteForm />
         </div>
 
         <section className="bg-accent text-accent-foreground py-14">
