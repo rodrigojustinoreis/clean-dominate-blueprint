@@ -2,14 +2,6 @@ interface MeetTheTeamSectionProps {
   city?: string;
 }
 
-const PHOTOS = [
-  { src: "/images/team/real-team-luxury-home.jpg", alt: "Equipo Capital Clean Care limpiando casa grande", cls: "col-span-2 row-span-2" },
-  { src: "/images/team/real-team-maria-fridge.jpg", alt: "Limpieza profunda de cocina", cls: "" },
-  { src: "/images/team/real-team-door.jpg", alt: "Profesional Capital Clean Care en uniforme", cls: "" },
-  { src: "/images/team/real-team-mopping.jpg", alt: "Trapeando pisos de madera", cls: "" },
-  { src: "/images/team/real-team-man-cleaning.jpg", alt: "Limpieza detallada de electrodomésticos", cls: "" },
-];
-
 const MeetTheTeamSection = ({ city }: MeetTheTeamSectionProps) => {
   const cityText = city ? ` de ${city}` : " de Montgomery County";
 
@@ -26,22 +18,6 @@ const MeetTheTeamSection = ({ city }: MeetTheTeamSectionProps) => {
           </p>
         </div>
 
-        {/* Photo grid */}
-        <div className="grid grid-cols-3 grid-rows-2 gap-2 md:gap-3 h-72 md:h-96 rounded-2xl overflow-hidden mb-10">
-          {PHOTOS.map(({ src, alt, cls }, i) => (
-            <div key={i} className={`relative overflow-hidden bg-secondary ${cls}`}>
-              <img
-                src={src}
-                alt={alt}
-                loading={i === 0 ? "eager" : "lazy"}
-                decoding="async"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          ))}
-        </div>
-
-        {/* Bio cards */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           <div className="bg-background border border-border rounded-xl p-5 text-center">
             <div className="w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-3">
@@ -55,13 +31,8 @@ const MeetTheTeamSection = ({ city }: MeetTheTeamSectionProps) => {
           </div>
 
           <div className="bg-background border border-border rounded-xl p-5 text-center">
-            <div className="w-14 h-14 rounded-full overflow-hidden mx-auto mb-3">
-              <img
-                src="/images/team/real-team-maria-fridge.jpg"
-                alt="María supervisora Capital Clean Care"
-                loading="lazy"
-                className="w-full h-full object-cover"
-              />
+            <div className="w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-3">
+              <span className="text-2xl font-bold text-accent">M</span>
             </div>
             <h3 className="font-heading font-semibold text-foreground mb-1">María — Supervisora</h3>
             <p className="text-sm text-muted-foreground leading-relaxed">
@@ -71,17 +42,12 @@ const MeetTheTeamSection = ({ city }: MeetTheTeamSectionProps) => {
           </div>
 
           <div className="bg-background border border-border rounded-xl p-5 text-center">
-            <div className="w-14 h-14 rounded-full overflow-hidden mx-auto mb-3">
-              <img
-                src="/images/team/real-team-luxury-home.jpg"
-                alt="Equipo completo Capital Clean Care"
-                loading="lazy"
-                className="w-full h-full object-cover"
-              />
+            <div className="w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-3">
+              <span className="text-2xl font-bold text-accent">8</span>
             </div>
             <h3 className="font-heading font-semibold text-foreground mb-1">El Equipo Completo</h3>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              8 profesionales en total. Cada uno con verificación de antecedentes y entrenamiento interno.
+              8 profesionales con verificación de antecedentes y entrenamiento interno.
               Mismas caras conocidas en cada visita — nunca extraños.
             </p>
           </div>

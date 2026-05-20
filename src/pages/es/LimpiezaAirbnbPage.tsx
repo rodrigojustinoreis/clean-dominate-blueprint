@@ -1,5 +1,6 @@
 import { Phone, ArrowRight, CheckCircle, Clock, Camera } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Layout from "@/components/layout/Layout";
 import { useSEO } from "@/hooks/useSEO";
 import { LocalBusinessSchema } from "@/components/SchemaMarkup";
 import { trackPhoneClick, trackBookNowClick } from "@/lib/analytics";
@@ -20,11 +21,21 @@ export default function LimpiezaAirbnbPage() {
   });
 
   return (
-    <>
+    <Layout>
       {seoHelmet}
       <LocalBusinessSchema inLanguage="es-US" areaServed={["Montgomery County, MD", "Silver Spring, MD", "Rockville, MD", "Gaithersburg, MD", "Bethesda, MD"]} />
 
-      <main lang="es">
+      <div lang="es">
+        <div className="w-full overflow-hidden" style={{maxHeight:"320px"}}>
+          <img
+            src="/images/team/real-team-two-members.png"
+            alt="Equipo Capital Clean Care trabajando"
+            loading="eager"
+            decoding="async"
+            className="w-full object-cover"
+            style={{height:"320px",objectPosition:"center 30%"}}
+          />
+        </div>
         <section className="bg-gradient-to-br from-primary/5 via-background to-accent/5 py-12 md:py-20">
           <div className="container mx-auto px-4 max-w-4xl">
             <p className="text-sm font-medium text-accent mb-3">🏨 Limpieza para Airbnb</p>
@@ -136,7 +147,7 @@ export default function LimpiezaAirbnbPage() {
             </div>
           </div>
         </section>
-      </main>
-    </>
+      </div>
+    </Layout>
   );
 }

@@ -1,6 +1,7 @@
 import { Phone, ArrowRight, Shield, Star, Home, Leaf, Users, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import Layout from "@/components/layout/Layout";
 import { useSEO } from "@/hooks/useSEO";
 import { LocalBusinessSchema } from "@/components/SchemaMarkup";
 import { trackPhoneClick, trackBookNowClick } from "@/lib/analytics";
@@ -27,11 +28,21 @@ export default function HomeES() {
   });
 
   return (
-    <>
+    <Layout>
       {seoHelmet}
       <LocalBusinessSchema inLanguage="es-US" areaServed={["Silver Spring, MD", "Rockville, MD", "Bethesda, MD", "Wheaton, MD", "Gaithersburg, MD", "Germantown, MD", "Aspen Hill, MD", "Takoma Park, MD", "Montgomery Village, MD"]} />
 
-      <main lang="es">
+      <div lang="es">
+        <div className="w-full overflow-hidden" style={{maxHeight:"320px"}}>
+          <img
+            src="/images/team/real-team-luxury-home.jpg"
+            alt="Equipo Capital Clean Care trabajando"
+            loading="eager"
+            decoding="async"
+            className="w-full object-cover"
+            style={{height:"320px",objectPosition:"center 30%"}}
+          />
+        </div>
         {/* Hero */}
         <section className="bg-gradient-to-br from-primary/5 via-background to-accent/5 py-12 md:py-20">
           <div className="container mx-auto px-4 max-w-5xl">
@@ -192,7 +203,7 @@ export default function HomeES() {
             </div>
           </div>
         </section>
-      </main>
-    </>
+      </div>
+    </Layout>
   );
 }

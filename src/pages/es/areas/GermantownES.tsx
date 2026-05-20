@@ -1,6 +1,7 @@
 import { Phone, ArrowRight, Star, Clock, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import Layout from "@/components/layout/Layout";
 import { useSEO } from "@/hooks/useSEO";
 import { LocalBusinessSchema } from "@/components/SchemaMarkup";
 import { trackPhoneClick, trackBookNowClick } from "@/lib/analytics";
@@ -28,11 +29,21 @@ export default function GermantownES() {
   });
 
   return (
-    <>
+    <Layout>
       {seoHelmet}
       <LocalBusinessSchema inLanguage="es-US" areaServed={["Germantown, MD", "Montgomery County, MD"]} />
 
-      <main lang="es">
+      <div lang="es">
+        <div className="w-full overflow-hidden" style={{maxHeight:"320px"}}>
+          <img
+            src="/images/team/real-team-luxury-home.jpg"
+            alt="Equipo Capital Clean Care trabajando"
+            loading="eager"
+            decoding="async"
+            className="w-full object-cover"
+            style={{height:"320px",objectPosition:"center 30%"}}
+          />
+        </div>
         <section className="bg-gradient-to-br from-primary/5 via-background to-accent/5 py-12 md:py-20">
           <div className="container mx-auto px-4 max-w-4xl">
             <p className="text-sm font-medium text-accent mb-3 flex items-center gap-1.5"><MapPin className="h-3.5 w-3.5" /> Germantown, MD</p>
@@ -135,7 +146,7 @@ export default function GermantownES() {
             </div>
           </div>
         </section>
-      </main>
-    </>
+      </div>
+    </Layout>
   );
 }
