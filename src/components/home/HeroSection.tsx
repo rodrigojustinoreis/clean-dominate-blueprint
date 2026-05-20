@@ -1,7 +1,15 @@
 import { ArrowRight, Phone, Check, Star, Shield, Leaf } from "lucide-react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import teamPhoto from "@/assets/team-photo.webp";
 import { trackPhoneClick, trackBookNowClick } from "@/lib/analytics";
+
+const miniTestimonials = [
+  { text: "Capital Clean Care transformed our home. Thorough and products safe for my kids and pets.", author: "Sarah M., Bethesda MD" },
+  { text: "My Airbnb rating went from 4.6 to 5.0 stars after switching to Capital Clean Care. Detail is incredible.", author: "Amanda F., Bethesda MD" },
+  { text: "Best investment we've made. Coming home to a clean house every week is amazing.", author: "James T., Arlington VA" },
+  { text: "After our renovation, they got every last bit of construction dust. Professional and incredibly thorough.", author: "Brian G., Fairfax VA" },
+];
 
 const avatars = [
   { src: "/images/team/team-scrubbing-door-detail.jpg", alt: "Capital Clean Care team member" },
@@ -10,7 +18,15 @@ const avatars = [
   { src: "/images/team/team-mopping-uniform.jpg",       alt: "Capital Clean Care team member" },
 ];
 
-const HeroSection = () => (
+const HeroSection = () => {
+  const [testimonialIdx, setTestimonialIdx] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => setTestimonialIdx((i) => (i + 1) % miniTestimonials.length), 5000);
+    return () => clearInterval(id);
+  }, []);
+
+  return (
   <section className="relative min-h-[580px] md:min-h-[700px] lg:min-h-[820px] flex items-center overflow-hidden">
     {/* Animated background blobs — desktop only (heavy filter on mobile hurts PageSpeed) */}
     <div className="hidden md:block absolute top-0 -left-1/4 w-96 h-96 bg-accent/30 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob" />
@@ -44,7 +60,7 @@ const HeroSection = () => (
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
           </span>
-          <span className="text-xs font-semibold text-foreground uppercase tracking-wider">Same-day availability in DMV Region</span>
+          <span className="text-xs font-semibold text-foreground uppercase tracking-wider">Same-day slots available · 15% OFF first clean</span>
         </div>
 
         <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] font-bold text-foreground leading-[1.1] mb-6 animate-fade-up drop-shadow-sm" style={{ animationDelay: "100ms" }}>
@@ -64,7 +80,7 @@ const HeroSection = () => (
             { icon: Shield, label: "Licensed & Insured" },
             { icon: Leaf, label: "Eco-Friendly" },
           ].map(({ icon: Icon, label }) => (
-            <span key={label} className="inline-flex items-center gap-2 glass-card rounded-full px-4 py-2 text-sm font-medium text-foreground">
+            <span key={label} className="inline-flex items-center gap-2 glass rounded-full px-4 py-2 text-sm font-medium text-foreground">
               <Icon className="h-4 w-4 text-accent" />
               {label}
             </span>
@@ -109,17 +125,18 @@ const HeroSection = () => (
               <p className="text-xs text-muted-foreground mt-0.5 font-medium">Trusted by homeowners in MD, DC & VA</p>
             </div>
           </div>
-          {/* Mini testimonial */}
-          <div className="glass-card rounded-xl px-4 py-3 max-w-sm">
+          {/* Mini testimonial — rotates every 5 s */}
+          <div className="glass-card rounded-xl px-4 py-3 max-w-sm transition-opacity duration-500">
             <p className="text-xs text-foreground italic leading-relaxed">
-              "Capital Clean Care transformed our home. The team was thorough and used products safe for my kids and pets."
+              "{miniTestimonials[testimonialIdx].text}"
             </p>
-            <p className="text-xs text-muted-foreground mt-1.5 font-semibold">— Sarah M., Bethesda MD</p>
+            <p className="text-xs text-muted-foreground mt-1.5 font-semibold">— {miniTestimonials[testimonialIdx].author}</p>
           </div>
         </div>
       </div>
     </div>
   </section>
-);
+  );
+};
 
 export default HeroSection;

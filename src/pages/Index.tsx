@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { CheckCircle, Shield, Leaf, Star, MapPin, Sparkles, ArrowRight, Phone, Users, Clock, Check } from "lucide-react";
+import { trackPhoneClick, trackBookNowClick } from "@/lib/analytics";
 import PricingTable from "@/components/PricingTable";
 import { LocalBusinessSchema, FAQSchema, WebSiteSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import { Button } from "@/components/ui/button";
@@ -108,7 +109,12 @@ const Index = () => {
       </ScrollReveal>
 
 
-      {/* ══════════════ 3. PROBLEMA / AGITAÇÃO ══════════════ */}
+      {/* ══════════════ 3. YOUR HOME. NON-TOXIC. ══════════════ */}
+      <ScrollReveal>
+        <WhyChooseUs />
+      </ScrollReveal>
+
+      {/* ══════════════ 4. PROBLEMA / AGITAÇÃO ══════════════ */}
       <ScrollReveal>
         <section className="relative py-20 md:py-28 bg-mesh overflow-hidden">
           <div className="container mx-auto px-4 max-w-4xl relative z-10">
@@ -158,9 +164,9 @@ const Index = () => {
         </section>
       </ScrollReveal>
 
-      {/* ══════════════ 4. VÍDEO TESTIMONIAL ══════════════ */}
+      {/* ══════════════ 5. VÍDEO TESTIMONIAL ══════════════ */}
       <ScrollReveal>
-        <section className="py-16 md:py-20">
+        <section className="py-20 md:py-28">
           <div className="container mx-auto px-4 max-w-3xl text-center">
             <span className="inline-block bg-accent/10 text-accent font-semibold text-sm uppercase tracking-wider px-3 py-1 rounded-full mb-3">Real Client</span>
             <h2 className="font-heading text-2xl md:text-3xl font-bold mt-2 mb-8">Hear It Directly From Our Client</h2>
@@ -178,19 +184,42 @@ const Index = () => {
         </section>
       </ScrollReveal>
 
-      {/* ══════════════ 5. DEPOIMENTOS (Google Reviews) ══════════════ */}
+      {/* ══════════════ 6. DEPOIMENTOS (Google Reviews) ══════════════ */}
       <ScrollReveal>
         <TestimonialsCarousel />
       </ScrollReveal>
 
-      {/* ══════════════ 6. SERVIÇOS ══════════════ */}
+      <ScrollReveal>
+        <EcoCallout />
+      </ScrollReveal>
+
+      {/* ══════════════ CTA INTERRUPT (mid-page) ══════════════ */}
+      <div className="bg-primary py-5 px-4">
+        <div className="container mx-auto max-w-4xl flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+          <div>
+            <p className="font-heading font-bold text-white text-lg leading-snug">Ready to book? New clients save 15% this week.</p>
+            <p className="text-primary-foreground/70 text-sm mt-0.5">Same-day availability · Eco-friendly · No commitment</p>
+          </div>
+          <div className="flex gap-3 shrink-0">
+            <Button variant="default" size="lg" className="bg-white text-primary hover:bg-white/90 font-bold rounded-full px-6" asChild>
+              <a href="#quote" onClick={() => trackBookNowClick("mid_page_interrupt")}>Free Quote →</a>
+            </Button>
+            <a href="tel:+12407042551" onClick={() => trackPhoneClick("mid_page_interrupt")}
+              className="flex items-center gap-2 h-11 px-5 rounded-full border-2 border-white/30 text-white font-semibold text-sm hover:bg-white/10 transition-colors">
+              <Phone className="h-4 w-4" /> Call
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* ══════════════ 7. SERVIÇOS ══════════════ */}
       <ScrollReveal>
         <ServicesSection />
       </ScrollReveal>
 
       {/* ══════════════ 5. COMO FUNCIONA ══════════════ */}
       <ScrollReveal>
-        <section className="py-24 md:py-32 relative">
+        <section className="py-20 md:py-28 relative">
           <div className="container mx-auto px-4 max-w-5xl">
             <div className="text-center mb-16">
               <span className="inline-block bg-accent/10 text-accent font-semibold text-sm uppercase tracking-wider px-3 py-1 rounded-full mb-3">The Process</span>
@@ -276,14 +305,6 @@ const Index = () => {
       </ScrollReveal>
 
       <ScrollReveal>
-        <EcoCallout />
-      </ScrollReveal>
-
-      <ScrollReveal>
-        <WhyChooseUs />
-      </ScrollReveal>
-
-      <ScrollReveal>
         <div className="bg-accent/5 border-y border-accent/20 py-5">
           <div className="container mx-auto px-4 text-center">
             <p className="text-sm md:text-base font-medium text-foreground">
@@ -324,9 +345,16 @@ const Index = () => {
         <section className="py-20 md:py-28 bg-mesh" id="quote">
           <div className="container mx-auto px-4 max-w-6xl">
             <div className="text-center mb-10">
-              <span className="text-accent font-semibold text-sm uppercase tracking-wider">Free Estimate</span>
+              <div className="inline-flex items-center gap-2 bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-700 text-amber-800 dark:text-amber-300 rounded-full px-4 py-1.5 text-xs font-bold mb-4 uppercase tracking-wide">
+                <span className="relative flex h-2 w-2 shrink-0">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-400"></span>
+                </span>
+                Limited availability this week — book now
+              </div>
+              <span className="text-accent font-semibold text-sm uppercase tracking-wider block">Free Estimate</span>
               <h2 className="font-heading text-3xl md:text-4xl font-bold mt-2 mb-4">
-                Get Your Free Quote + <span className="text-accent">15% OFF</span>
+                Claim Your <span className="text-accent">15% OFF</span> — Free Quote
               </h2>
               <p className="text-muted-foreground">No commitment required. We respond within a few hours with a personalized estimate.</p>
             </div>

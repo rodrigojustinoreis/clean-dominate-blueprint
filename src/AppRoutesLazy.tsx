@@ -28,6 +28,15 @@ const PremiumFanPage         = lazy(() => import("./pages/PremiumFanPage"));
 const WhyEcoFriendlyPage     = lazy(() => import("./pages/WhyEcoFriendlyPage"));
 const GiftCards              = lazy(() => import("./pages/GiftCards"));
 
+// Priority location pages — must come before generic /locations/:slug/:serviceSlug
+const RockvilleHouseCleaningPage        = lazy(() => import("./pages/locations/rockville-md/HouseCleaningPage"));
+const RockvilleRecurringCleaningPage    = lazy(() => import("./pages/locations/rockville-md/RecurringCleaningPage"));
+const RockvilleDeepCleaningPage         = lazy(() => import("./pages/locations/rockville-md/DeepCleaningPage"));
+const RockvilleMoveOutCleaningPage      = lazy(() => import("./pages/locations/rockville-md/MoveOutCleaningPage"));
+const RockvilleAirbnbCleaningPage       = lazy(() => import("./pages/locations/rockville-md/AirbnbCleaningPage"));
+const RockvilleOfficeCleaningPage       = lazy(() => import("./pages/locations/rockville-md/OfficeCleaningPage"));
+const RockvillePostConstructionPage     = lazy(() => import("./pages/locations/rockville-md/PostConstructionCleaningPage"));
+
 const AppRoutesLazy = () => (
   <Routes>
     <Route path="/" element={<Index />} />
@@ -83,6 +92,14 @@ const AppRoutesLazy = () => (
     <Route path="/house-cleaning-damascus-md" element={<VanityLandingPage />} />
     <Route path="/deep-cleaning-kensington-md" element={<VanityLandingPage />} />
     <Route path="/eco-cleaning-chevy-chase-md" element={<VanityLandingPage />} />
+    {/* Priority location pages — specific routes before generic catch-alls */}
+    <Route path="/locations/rockville-md/house-cleaning"          element={<RockvilleHouseCleaningPage />} />
+    <Route path="/locations/rockville-md/recurring-cleaning"      element={<RockvilleRecurringCleaningPage />} />
+    <Route path="/locations/rockville-md/deep-cleaning"           element={<RockvilleDeepCleaningPage />} />
+    <Route path="/locations/rockville-md/move-out-cleaning"       element={<RockvilleMoveOutCleaningPage />} />
+    <Route path="/locations/rockville-md/airbnb-cleaning"         element={<RockvilleAirbnbCleaningPage />} />
+    <Route path="/locations/rockville-md/office-cleaning"         element={<RockvilleOfficeCleaningPage />} />
+    <Route path="/locations/rockville-md/post-construction-cleaning" element={<RockvillePostConstructionPage />} />
     <Route path="/:stateSlug" element={<LocationHub />} />
     <Route path="/locations/:slug/:serviceSlug" element={<ServiceLocationPage />} />
     <Route path="/locations/:slug" element={<CityPage />} />

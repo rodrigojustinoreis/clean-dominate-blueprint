@@ -66,36 +66,30 @@ const Footer = () => (
         {/* MD Locations */}
         <div>
           <h4 className="font-heading font-semibold mb-4">Maryland</h4>
-          <ul className="space-y-1 text-sm text-primary-foreground/70">
-            <li><Link to="/maryland" className="hover:text-accent transition-colors font-medium">All Maryland →</Link></li>
+          <div className="grid grid-cols-2 md:grid-cols-1 gap-x-2 gap-y-1 text-sm text-primary-foreground/70">
+            <Link to="/maryland" className="hover:text-accent transition-colors font-medium col-span-2 md:col-span-1 mb-1">All Maryland →</Link>
             {mdCities.filter(c => !c.slug.includes("county")).slice(0, 8).map((c) => (
-              <li key={c.slug}>
-                <Link to={`/locations/${c.slug}`} className="hover:text-accent transition-colors">{c.name}, {c.state}</Link>
-              </li>
+              <Link key={c.slug} to={`/locations/${c.slug}`} className="hover:text-accent transition-colors truncate">{c.name}</Link>
             ))}
-          </ul>
+          </div>
           <h4 className="font-heading font-semibold mt-6 mb-4">DC</h4>
-          <ul className="space-y-1 text-sm text-primary-foreground/70">
-            <li><Link to="/washington-dc" className="hover:text-accent transition-colors font-medium">All DC →</Link></li>
+          <div className="grid grid-cols-2 md:grid-cols-1 gap-x-2 gap-y-1 text-sm text-primary-foreground/70">
+            <Link to="/washington-dc" className="hover:text-accent transition-colors font-medium col-span-2 md:col-span-1 mb-1">All DC →</Link>
             {dcCities.slice(0, 4).map((c) => (
-              <li key={c.slug}>
-                <Link to={`/locations/${c.slug}`} className="hover:text-accent transition-colors">{c.name}</Link>
-              </li>
+              <Link key={c.slug} to={`/locations/${c.slug}`} className="hover:text-accent transition-colors truncate">{c.name}</Link>
             ))}
-          </ul>
+          </div>
         </div>
 
         {/* VA Locations */}
         <div>
           <h4 className="font-heading font-semibold mb-4">Virginia</h4>
-          <ul className="space-y-1 text-sm text-primary-foreground/70">
-            <li><Link to="/virginia" className="hover:text-accent transition-colors font-medium">All Virginia →</Link></li>
+          <div className="grid grid-cols-2 md:grid-cols-1 gap-x-2 gap-y-1 text-sm text-primary-foreground/70">
+            <Link to="/virginia" className="hover:text-accent transition-colors font-medium col-span-2 md:col-span-1 mb-1">All Virginia →</Link>
             {vaCities.map((c) => (
-              <li key={c.slug}>
-                <Link to={`/locations/${c.slug}`} className="hover:text-accent transition-colors">{c.name}, {c.state}</Link>
-              </li>
+              <Link key={c.slug} to={`/locations/${c.slug}`} className="hover:text-accent transition-colors truncate">{c.name}</Link>
             ))}
-          </ul>
+          </div>
         </div>
       </div>
 

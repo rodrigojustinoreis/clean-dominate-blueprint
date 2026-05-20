@@ -16,8 +16,8 @@ const ServicesSection = () => (
         {services.map((s) => (
           <Card key={s.slug} className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
             <CardContent className="p-7">
-              <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-5">
-                <Sparkles className="h-6 w-6 text-accent" />
+              <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-5 group-hover:bg-accent/20 group-hover:scale-110 transition-all duration-300">
+                <Sparkles className="h-6 w-6 text-accent group-hover:rotate-12 transition-transform duration-300" />
               </div>
               <h3 className="font-heading text-xl font-semibold mb-3">{s.name}</h3>
               <p className="text-muted-foreground text-sm mb-5 leading-relaxed">{s.shortDescription}</p>
