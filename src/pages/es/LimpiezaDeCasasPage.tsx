@@ -1,8 +1,12 @@
-import { Phone, ArrowRight, CheckCircle, Star, Clock } from "lucide-react";
+import { Phone, ArrowRight, CheckCircle, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useSEO } from "@/hooks/useSEO";
 import { LocalBusinessSchema } from "@/components/SchemaMarkup";
 import { trackPhoneClick, trackBookNowClick } from "@/lib/analytics";
+import ProcessSection from "@/components/sections/ProcessSection";
+import TransparencySection from "@/components/sections/TransparencySection";
+import FAQExpandedSection from "@/components/sections/FAQExpandedSection";
+import QuoteFormES from "@/components/forms/QuoteFormES";
 
 const PHONE = "(240) 704-2551";
 const PHONE_TEL = "tel:+12407042551";
@@ -57,7 +61,7 @@ export default function LimpiezaDeCasasPage() {
                 </a>
               </Button>
               <Button variant="outline" size="lg" asChild>
-                <a href="/#quote" onClick={() => trackBookNowClick("limpieza_casas_hero")}>
+                <a href="#cotizacion" onClick={() => trackBookNowClick("limpieza_casas_hero")}>
                   Cotización Gratis <ArrowRight className="ml-1 h-4 w-4" />
                 </a>
               </Button>
@@ -125,25 +129,15 @@ export default function LimpiezaDeCasasPage() {
           </div>
         </section>
 
-        {/* FAQ */}
-        <section className="py-14 md:py-20">
-          <div className="container mx-auto px-4 max-w-3xl">
-            <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-10 text-center">Preguntas frecuentes</h2>
-            <div className="space-y-6">
-              {[
-                { q: "¿Cuántas personas vienen?", a: "2 a 4 personas según el tamaño de la casa. Siempre el mismo equipo." },
-                { q: "¿Cuánto tiempo se tardan?", a: "Casa de 3 habitaciones: 2-3 horas limpieza regular, 3-5 horas limpieza profunda." },
-                { q: "¿Ofrecen servicios extra?", a: "Sí — lavado de platos, ropa, organización de closets. Consultar al reservar." },
-                { q: "¿Cuál es la diferencia entre limpieza regular y profunda?", a: "La limpieza regular mantiene tu casa fresca: pisos, baños, cocina, polvo de superficies. La limpieza profunda incluye todo lo anterior MÁS dentro del horno, dentro del refrigerador, rodapiés, ventanas interiores, y rincones." },
-              ].map(({ q, a }) => (
-                <div key={q} className="border-b border-border pb-6">
-                  <h3 className="font-heading font-semibold text-foreground mb-2">{q}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{a}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <ProcessSection />
+
+        <TransparencySection />
+
+        <div id="cotizacion">
+          <QuoteFormES id="cotizacion" defaultService="standard" submitLabel="Solicitar Cotización de Limpieza" />
+        </div>
+
+        <FAQExpandedSection schemaId="faq-limpieza-casas" />
 
         {/* CTA */}
         <section className="bg-accent text-accent-foreground py-14">
@@ -157,7 +151,7 @@ export default function LimpiezaDeCasasPage() {
                 </a>
               </Button>
               <Button size="lg" variant="outline" className="border-white/50 text-white hover:bg-white/10" asChild>
-                <a href="/#quote" onClick={() => trackBookNowClick("limpieza_casas_cta")}>Cotización Gratis</a>
+                <a href="#cotizacion" onClick={() => trackBookNowClick("limpieza_casas_cta")}>Cotización Gratis</a>
               </Button>
             </div>
             <div className="mt-4 flex items-center justify-center gap-2 text-accent-foreground/70 text-sm">

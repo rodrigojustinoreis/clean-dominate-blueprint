@@ -1,9 +1,13 @@
-import { Phone, ArrowRight, Shield, Star, Home, Leaf, Users, CheckCircle, Clock } from "lucide-react";
+import { Phone, ArrowRight, Shield, Star, Home, Leaf, Users, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useSEO } from "@/hooks/useSEO";
 import { LocalBusinessSchema } from "@/components/SchemaMarkup";
 import { trackPhoneClick, trackBookNowClick } from "@/lib/analytics";
+import ProcessSection from "@/components/sections/ProcessSection";
+import MeetTheTeamSection from "@/components/sections/MeetTheTeamSection";
+import FAQExpandedSection from "@/components/sections/FAQExpandedSection";
+import QuoteFormES from "@/components/forms/QuoteFormES";
 
 const PHONE = "(240) 704-2551";
 const PHONE_TEL = "tel:+12407042551";
@@ -15,14 +19,6 @@ const reviews = [
   { name: "José R., Wheaton", text: "Lo que más me gustó es que hablan español y entienden lo que uno quiere. No es solo limpiar, es saber por qué uno limpia así. Excelente servicio." },
 ];
 
-const faqs = [
-  { q: "¿Cuánto cuesta limpiar mi casa?", a: "Depende del tamaño, cuántas habitaciones y baños, y si es la primera vez o una limpieza regular. La mayoría de nuestras casas cuestan entre $130 y $250 por visita. Llámanos al (240) 704-2551 y te damos una cotización exacta en menos de 5 minutos, sin compromiso." },
-  { q: "¿Tengo que estar en casa durante la limpieza?", a: "No, muchos de nuestros clientes nos dejan la llave o el código de la puerta. Somos asegurados y con fianza, y siempre llegan las mismas personas — no te vamos a sorprender con caras nuevas." },
-  { q: "¿Traen sus propios productos y equipo?", a: "Sí, traemos todo. Si prefieres que usemos productos específicos (eco-friendly, sin perfumes, marca particular), solo díganos al momento de reservar." },
-  { q: "¿Hablan español?", a: "Sí. Rodrigo (el dueño) habla español y la mayoría del equipo también. Puedes llamar, mandar texto o escribir email en español sin problema." },
-  { q: "¿Trabajan los fines de semana?", a: "Atendemos de lunes a sábado, 8:00 AM a 6:00 PM. Los domingos descansamos. Si necesitas algo urgente para domingo, escríbenos por texto y vemos cómo ayudar." },
-  { q: "¿Tienen seguro y fianza?", a: "Sí, Capital Clean Care LLC tiene seguro de responsabilidad civil y fianza para cada empleada. Si algo se daña durante la limpieza (lo cual casi nunca pasa), estás 100% cubierto." },
-];
 
 export default function HomeES() {
   const { seoHelmet } = useSEO({
@@ -61,7 +57,7 @@ export default function HomeES() {
                 </a>
               </Button>
               <Button variant="outline" size="lg" asChild>
-                <a href="/#quote" onClick={() => trackBookNowClick("hero_es")}>
+                <a href="#cotizacion" onClick={() => trackBookNowClick("hero_es")}>
                   Solicitar Cotización Gratis <ArrowRight className="ml-1 h-4 w-4" />
                 </a>
               </Button>
@@ -118,6 +114,8 @@ export default function HomeES() {
           </div>
         </section>
 
+        <ProcessSection />
+
         {/* Áreas de servicio */}
         <section className="py-14 md:py-20">
           <div className="container mx-auto px-4 max-w-5xl">
@@ -167,22 +165,13 @@ export default function HomeES() {
           </div>
         </section>
 
-        {/* FAQ */}
-        <section className="py-14 md:py-20">
-          <div className="container mx-auto px-4 max-w-3xl">
-            <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-10 text-center">
-              Preguntas frecuentes
-            </h2>
-            <div className="space-y-6">
-              {faqs.map(({ q, a }) => (
-                <div key={q} className="border-b border-border pb-6">
-                  <h3 className="font-heading font-semibold text-foreground mb-2">{q}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{a}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <MeetTheTeamSection />
+
+        <div id="cotizacion">
+          <QuoteFormES id="cotizacion" submitLabel="Solicitar Cotización Gratis" />
+        </div>
+
+        <FAQExpandedSection schemaId="faq-home-es" />
 
         {/* CTA Final */}
         <section className="bg-accent text-accent-foreground py-16">
@@ -198,7 +187,7 @@ export default function HomeES() {
                 </a>
               </Button>
               <Button size="lg" variant="outline" className="border-white/50 text-white hover:bg-white/10" asChild>
-                <a href="/#quote" onClick={() => trackBookNowClick("cta_final_es")}>
+                <a href="#cotizacion" onClick={() => trackBookNowClick("cta_final_es")}>
                   Cotización Gratis <ArrowRight className="ml-1 h-4 w-4" />
                 </a>
               </Button>

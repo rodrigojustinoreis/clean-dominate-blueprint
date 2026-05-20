@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#1a365d"/>
+  <circle cx="230" cy="240" r="65" fill="#2d5986"/>
+  <text x="230" y="265" font-family="system-ui,sans-serif" font-size="56" font-weight="700" fill="white" text-anchor="middle">R</text>
+  <circle cx="400" cy="220" r="65" fill="#2d5986"/>
+  <text x="400" y="245" font-family="system-ui,sans-serif" font-size="56" font-weight="700" fill="white" text-anchor="middle">M</text>
+  <circle cx="570" cy="240" r="65" fill="#2d5986"/>
+  <text x="570" y="265" font-family="system-ui,sans-serif" font-size="56" font-weight="700" fill="white" text-anchor="middle">J</text>
+  <rect x="100" y="380" width="600" height="3" fill="#f6ad55" opacity="0.4"/>
+  <text x="400" y="430" font-family="system-ui,sans-serif" font-size="18" font-weight="700" fill="#f6ad55" text-anchor="middle">Capital Clean Care · Equipo</text>
+  <text x="400" y="458" font-family="system-ui,sans-serif" font-size="13" fill="rgba(255,255,255,0.7)" text-anchor="middle">Bilingüe · Background-checked · Asegurado</text>
+  <text x="400" y="490" font-family="system-ui,sans-serif" font-size="11" fill="rgba(255,255,255,0.4)" text-anchor="middle">Photo Coming Soon — Rodrigo, María, José + equipo</text>
+</svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <rect width="400" height="400" fill="#1a365d"/>
+  <circle cx="200" cy="160" r="80" fill="#2d5986"/>
+  <text x="200" y="186" font-family="system-ui,sans-serif" font-size="72" font-weight="700" fill="white" text-anchor="middle">R</text>
+  <circle cx="200" cy="290" r="110" fill="#2d5986"/>
+  <text x="200" y="340" font-family="system-ui,sans-serif" font-size="13" fill="#f6ad55" text-anchor="middle" font-weight="600">Capital Clean Care · Rodrigo · Founder</text>
+  <text x="200" y="375" font-family="system-ui,sans-serif" font-size="11" fill="rgba(255,255,255,0.5)" text-anchor="middle">Photo Coming Soon</text>
+</svg>

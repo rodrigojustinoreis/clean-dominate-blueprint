@@ -1,8 +1,9 @@
-import { Phone, Mail, MapPin, Clock, ArrowRight, CheckCircle } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useSEO } from "@/hooks/useSEO";
 import { LocalBusinessSchema } from "@/components/SchemaMarkup";
-import { trackPhoneClick, trackBookNowClick } from "@/lib/analytics";
+import { trackPhoneClick } from "@/lib/analytics";
+import QuoteFormES from "@/components/forms/QuoteFormES";
 
 const PHONE = "(240) 704-2551";
 const PHONE_TEL = "tel:+12407042551";
@@ -86,31 +87,8 @@ export default function ContactoPage() {
                 </div>
               </div>
 
-              <div>
-                <h2 className="font-heading text-2xl font-bold text-foreground mb-8">Solicitar cotización</h2>
-                <div className="bg-background border border-border rounded-xl p-6 shadow-sm">
-                  <p className="text-muted-foreground mb-6 text-sm leading-relaxed">
-                    La forma más rápida de obtener un precio es llamarnos directamente. Tenemos tu cotización en menos de 5 minutos — sin compromiso.
-                  </p>
-                  <Button variant="cta" size="lg" className="w-full mb-4" asChild>
-                    <a href={PHONE_TEL} onClick={() => trackPhoneClick("contacto_quote")}>
-                      <Phone className="h-4 w-4 mr-2" /> Llamar: {PHONE}
-                    </a>
-                  </Button>
-                  <Button variant="outline" size="lg" className="w-full" asChild>
-                    <a href="/#quote" onClick={() => trackBookNowClick("contacto_quote")}>
-                      Formulario de cotización <ArrowRight className="ml-1 h-4 w-4" />
-                    </a>
-                  </Button>
-                  <div className="mt-6 space-y-2">
-                    {["Cotización gratis, sin compromiso", "Respondemos en el mismo día", "Atendemos completamente en español", "Precio fijo — sin sorpresas"].map((item) => (
-                      <div key={item} className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <CheckCircle className="h-4 w-4 text-accent flex-shrink-0" />
-                        <span>{item}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+              <div id="cotizacion">
+                <QuoteFormES id="cotizacion" submitLabel="Solicitar Cotización Gratis" />
               </div>
             </div>
           </div>

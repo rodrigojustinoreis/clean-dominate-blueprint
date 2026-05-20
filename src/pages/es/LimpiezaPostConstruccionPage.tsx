@@ -3,6 +3,10 @@ import { Button } from "@/components/ui/button";
 import { useSEO } from "@/hooks/useSEO";
 import { LocalBusinessSchema } from "@/components/SchemaMarkup";
 import { trackPhoneClick, trackBookNowClick } from "@/lib/analytics";
+import ProcessSection from "@/components/sections/ProcessSection";
+import TransparencySection from "@/components/sections/TransparencySection";
+import FAQExpandedSection from "@/components/sections/FAQExpandedSection";
+import QuoteFormES from "@/components/forms/QuoteFormES";
 
 const PHONE = "(240) 704-2551";
 const PHONE_TEL = "tel:+12407042551";
@@ -35,7 +39,7 @@ export default function LimpiezaPostConstruccionPage() {
                 <a href={PHONE_TEL} onClick={() => trackPhoneClick("post_construccion_hero")}><Phone className="h-4 w-4 mr-2" /> Llamar: {PHONE}</a>
               </Button>
               <Button variant="outline" size="lg" asChild>
-                <a href="/#quote" onClick={() => trackBookNowClick("post_construccion_hero")}>Cotización Gratis <ArrowRight className="ml-1 h-4 w-4" /></a>
+                <a href="#cotizacion" onClick={() => trackBookNowClick("post_construccion_hero")}>Cotización Gratis <ArrowRight className="ml-1 h-4 w-4" /></a>
               </Button>
             </div>
           </div>
@@ -106,6 +110,16 @@ export default function LimpiezaPostConstruccionPage() {
           </div>
         </section>
 
+        <ProcessSection />
+
+        <TransparencySection />
+
+        <div id="cotizacion">
+          <QuoteFormES id="cotizacion" defaultService="post-construction" submitLabel="Solicitar Cotización Post-Construcción" />
+        </div>
+
+        <FAQExpandedSection schemaId="faq-limpieza-post-construccion" />
+
         <section className="bg-accent text-accent-foreground py-14">
           <div className="container mx-auto px-4 max-w-2xl text-center">
             <h2 className="font-heading text-2xl font-bold mb-4">¿Terminó la remodelación? Llamanos hoy</h2>
@@ -115,7 +129,7 @@ export default function LimpiezaPostConstruccionPage() {
                 <a href={PHONE_TEL} onClick={() => trackPhoneClick("post_construccion_cta")}><Phone className="h-4 w-4 mr-2" /> {PHONE}</a>
               </Button>
               <Button size="lg" variant="outline" className="border-white/50 text-white hover:bg-white/10" asChild>
-                <a href="/#quote" onClick={() => trackBookNowClick("post_construccion_cta")}>Cotización Gratis</a>
+                <a href="#cotizacion" onClick={() => trackBookNowClick("post_construccion_cta")}>Cotización Gratis</a>
               </Button>
             </div>
             <div className="mt-4 flex items-center justify-center gap-2 text-accent-foreground/70 text-sm">

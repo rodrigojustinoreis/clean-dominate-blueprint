@@ -4,6 +4,9 @@ import { Link } from "react-router-dom";
 import { useSEO } from "@/hooks/useSEO";
 import { LocalBusinessSchema } from "@/components/SchemaMarkup";
 import { trackPhoneClick, trackBookNowClick } from "@/lib/analytics";
+import MeetTheTeamSection from "@/components/sections/MeetTheTeamSection";
+import TransparencySection from "@/components/sections/TransparencySection";
+import QuoteFormES from "@/components/forms/QuoteFormES";
 
 const PHONE = "(240) 704-2551";
 const PHONE_TEL = "tel:+12407042551";
@@ -50,7 +53,7 @@ export default function MontgomeryVillageES() {
                 <a href={PHONE_TEL} onClick={() => trackPhoneClick("montgomery_village_es_hero")}><Phone className="h-4 w-4 mr-2" /> Llamar: {PHONE}</a>
               </Button>
               <Button variant="outline" size="lg" asChild>
-                <a href="/#quote" onClick={() => trackBookNowClick("montgomery_village_es_hero")}>Cotización Gratis <ArrowRight className="ml-1 h-4 w-4" /></a>
+                <a href="#cotizacion" onClick={() => trackBookNowClick("montgomery_village_es_hero")}>Cotización Gratis <ArrowRight className="ml-1 h-4 w-4" /></a>
               </Button>
             </div>
           </div>
@@ -95,6 +98,32 @@ export default function MontgomeryVillageES() {
           </div>
         </section>
 
+        <section className="py-10 md:py-14">
+          <div className="container mx-auto px-4 max-w-5xl">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+              {[
+                { stat: "~36,000", label: "Residentes" },
+                { stat: "30%", label: "Comunidad Latina" },
+                { stat: "Com. Planeada", label: "Tipo de vivienda" },
+                { stat: "~17 mi", label: "Desde Silver Spring" },
+              ].map(({ stat, label }) => (
+                <div key={label} className="bg-background border border-border rounded-xl p-5 text-center shadow-sm">
+                  <p className="font-heading text-2xl font-bold text-accent">{stat}</p>
+                  <p className="text-xs text-muted-foreground mt-1">{label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <MeetTheTeamSection city="Montgomery Village" />
+
+        <TransparencySection />
+
+        <div id="cotizacion">
+          <QuoteFormES id="cotizacion" submitLabel="Solicitar Cotización en Montgomery Village" />
+        </div>
+
         <section className="bg-accent text-accent-foreground py-14">
           <div className="container mx-auto px-4 max-w-2xl text-center">
             <h2 className="font-heading text-2xl font-bold mb-4">¿Vives en Montgomery Village? Llámanos hoy</h2>
@@ -104,7 +133,7 @@ export default function MontgomeryVillageES() {
                 <a href={PHONE_TEL} onClick={() => trackPhoneClick("montgomery_village_es_cta")}><Phone className="h-4 w-4 mr-2" /> {PHONE}</a>
               </Button>
               <Button size="lg" variant="outline" className="border-white/50 text-white hover:bg-white/10" asChild>
-                <a href="/#quote" onClick={() => trackBookNowClick("montgomery_village_es_cta")}>Cotización Gratis</a>
+                <a href="#cotizacion" onClick={() => trackBookNowClick("montgomery_village_es_cta")}>Cotización Gratis</a>
               </Button>
             </div>
             <div className="mt-4 flex items-center justify-center gap-2 text-accent-foreground/70 text-sm">
