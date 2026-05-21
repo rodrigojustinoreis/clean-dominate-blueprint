@@ -25,6 +25,51 @@
   status = 301
   force = true
 
+# ── Trailing-slash canonicalisation: redirect → no trailing slash (301) ──────
+# Must appear before the 200-force rewrites so Netlify evaluates these first.
+# Fixes Issues 2, 4, 5 from Semrush cannibalization audit (May 2026).
+[[redirects]]
+  from = "/locations/:city/:service/"
+  to   = "/locations/:city/:service"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/locations/:city/"
+  to   = "/locations/:city"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/services/:slug/"
+  to   = "/services/:slug"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/maryland/"
+  to   = "/maryland"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/virginia/"
+  to   = "/virginia"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/washington-dc/"
+  to   = "/washington-dc"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/:slug/"
+  to   = "/blog/:slug"
+  status = 301
+  force = true
+
 # ── Spanish section: /es (no trailing slash) → /es/ ──────────────────────────
 [[redirects]]
   from = "/es"
