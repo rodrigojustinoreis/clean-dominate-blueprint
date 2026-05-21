@@ -7,7 +7,9 @@
 
 ## Summary
 
-3 atomic commits resolve the 6 Semrush-confirmed cannibalization issues. No pages were deleted, noindexed, or 301'd away from their canonical URL.
+5 atomic commits (net: 3 lasting changes + 1 revert + 1 fix). No pages were deleted, noindexed, or 301'd away from their canonical URL.
+
+**Preview verified:** `https://6a0e54e5b2bda574d130402b--vocal-paprenjak-561aa9.netlify.app`
 
 ---
 
@@ -24,10 +26,65 @@
 
 ---
 
-### Commit 2 — `fix(seo): add trailing-slash 301 redirects`
-**File:** `netlify.toml`
+### Commit 2 — REVERTED: trailing-slash 301 redirects (architecture incompatibility)
 
-**8 new 301 redirect rules added** (before the Spanish section, before all 200-rewrite blocks):
+**Attempted:** Add `force=true` 301 rules for `/locations/:city/:service/` → no-slash.
+
+**Result:** Infinite redirect loop. Root cause: Netlify evaluates redirect rules against the _destination_ of a `force=true` 200-rewrite. The existing Block 3 rules rewrite `/locations/bethesda-md/house-cleaning` → internal serve from `/locations/bethesda-md/house-cleaning/`. That destination path then matched the new `force=true` 301, creating a loop back to the canonical URL, which re-triggered the 200-rewrite, causing a self-referential 301 loop.
+
+**Architecture constraint:** This is a known Netlify limitation when prerendered static files live at trailing-slash directory paths and canonical no-slash URLs are served via `force=true` 200-rewrites. Trailing-slash → no-slash 301s are incompatible with this setup.
+
+**Mitigation:** The `<link rel="canonical">` tag (already present in all page HTML) signals the correct no-slash URL to Google. This is a hint, not a directive, but Google does respect it. Monitor GSC Coverage for trailing-slash URLs over 30–60 days.
+
+**Long-term fix (separate sprint):** Change the build output to write prerendered HTML at no-slash paths (e.g., `dist/locations/bethesda-md/house-cleaning.html` instead of `dist/locations/bethesda-md/house-cleaning/index.html`). This would eliminate the directory-based trailing-slash behavior entirely.
+
+---
+
+### Commit 3 — `fix(seo): reposition /maryland hub + add LastUpdated`
+**Files:** `src/data/locations.ts`, `src/components/LastUpdated.tsx`, `src/components/location/HeroLocation.tsx`
+
+#### Maryland Hub (`/maryland`) — repositioned as state-level hub
+
+| Field | Before | After |
+|---|---|---|
+| H1 (`name`) | "Maryland Cleaning Services" | "Eco-Friendly House Cleaning Across Maryland" |
+| metaTitle | "House Cleaning Services in Maryland \| Capital Clean Care" | "Eco-Friendly House Cleaning Maryland \| All Cities \| Capital Clean Care" |
+| metaDescription | "…across Maryland — Bethesda, Rockville, Silver Spring, Germantown…" | "…Montgomery, Frederick, Howard & Prince George's County. Background-checked teams…" |
+| Intro | Mentions "historic Bethesda colonial", "modern Rockville apartment" by name | County-level language only; no specific city names in body copy |
+
+**Why this matters:** The `/maryland` page was ranking for city-specific queries like "home cleaning bethesda" (Issue 1). Google was treating city names in the intro copy as topical signals, pulling the state hub into city-level SERPs and splitting ranking authority from the dedicated city pages. Removing specific city name references from body copy and narrowing the title/description to state-level scope repositions this page as a navigation hub, not a competing city page.
+
+#### LastUpdated Component
+
+New `src/components/LastUpdated.tsx` renders `<time dateTime="2026-05-20">Updated May 2026</time>` below every page H1 via `HeroLocation.tsx`. Applied to:
+- All 77 city+service pages (11 cities × 7 services)
+- All 11 city hub pages (via `HeroLocation`)
+
+This signals content freshness to Google Search without modifying the sitemap (which already has `lastmod: 2026-05-20`).
+
+---
+
+## Preview Test Results
+
+| Test | URL/Check | Result |
+|---|---|---|
+| T1 | `/locations/silver-spring-md/house-cleaning` returns 200 | ✅ HTTP/2 200 |
+| T1 | `/locations/bethesda-md/house-cleaning` returns 200 | ✅ HTTP/2 200 |
+| T1 | `/maryland` returns 200 | ✅ HTTP/2 200 |
+| T2 | `www.capitalcleancare.com/` → non-www | ✅ HTTP/2 301 |
+| T3 | Canonical = `https://capitalcleancare.com/locations/bethesda-md/house-cleaning` | ✅ Non-www, no slash |
+| T3 | Canonical = `https://capitalcleancare.com/locations/silver-spring-md/house-cleaning` | ✅ Non-www, no slash |
+| T4 | `/maryland` title | ✅ "Eco-Friendly House Cleaning Maryland \| All Cities…" |
+| T4 | `/maryland` H1 | ✅ "Eco-Friendly House Cleaning Across Maryland" |
+| T4 | "Bethesda colonial" / "Rockville apart" in /maryland body | ✅ Absent |
+| T5 | `<time dateTime="2026-05-20">Updated May 2026</time>` on service pages | ✅ Present |
+| T6 | hreflang `href` uses `https://capitalcleancare.com` (non-www) | ✅ Confirmed |
+| T6b | Sitemap: no `www.capitalcleancare.com` URLs | ✅ Pass |
+| T6b | Sitemap: no trailing-slash URLs | ✅ Pass |
+
+---
+
+## Changes Made
 
 | From pattern | To pattern | Status |
 |---|---|---|
