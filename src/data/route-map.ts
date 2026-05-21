@@ -35,5 +35,5 @@ export function getRoutePair(pathname: string): { en: string; es: string } | nul
 }
 
 export function getCanonicalUrl(pathname: string): string {
-  return `https://www.capitalcleancare.com${pathname}`;
+  return `https://capitalcleancare.com${pathname}`;
 }
