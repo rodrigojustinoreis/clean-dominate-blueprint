@@ -8,6 +8,7 @@ import { LocalBusinessSchema, ServiceSchema, FAQSchema, BreadcrumbSchema } from 
 import { getTestimonialsForServiceCity } from "@/data/testimonials";
 import { getCity, getService, getServiceLocationIntro, getWhyChooseUs, getServiceLocationFAQs, slCities, slServices } from "@/data/service-locations";
 import { getServiceLocationOverride } from "@/data/service-location-overrides";
+import { isAllowlistedServiceLocation } from "@/data/serviceLocationAllowlist";
 import { CheckCircle, MapPin, ArrowRight, Shield, Leaf, Clock, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -53,7 +54,17 @@ const ServiceLocationPage = () => {
   const metaDescription = `Top-rated ${serviceLabel} in ${city.name}, ${city.state}. Eco-friendly products, background-checked teams, satisfaction guaranteed. Serving ${city.county}. Free quotes.`;
   const pageUrl = `https://capitalcleancare.com/locations/${city.slug}/${service.slug}`;
 
-  const { seoHelmet } = useSEO({ title: metaTitle, description: metaDescription, canonical: pageUrl });
+  // PR #5 — zombie-page pruning: only allowlisted (city, service) pairs are indexable.
+  // All other dynamic permutations from this template render with <meta name="robots" content="noindex,nofollow">
+  // so Google can drop them from the index. See src/data/serviceLocationAllowlist.ts.
+  const isIndexable = isAllowlistedServiceLocation(city.slug, service.slug);
+
+  const { seoHelmet } = useSEO({
+    title: metaTitle,
+    description: metaDescription,
+    canonical: pageUrl,
+    noIndex: !isIndexable,
+  });
 
   const testimonials = getTestimonialsForServiceCity(city.slug, service.slug);
   const override = getServiceLocationOverride(city.slug, service.slug);
