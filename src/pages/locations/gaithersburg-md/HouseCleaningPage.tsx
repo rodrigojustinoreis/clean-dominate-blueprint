@@ -308,6 +308,94 @@ const GaithersburgHouseCleaningPage = () => {
       />
 
       <TrustBadges compact />
+
+      {/* ── Neighborhood Spotlight ──────────────────────── */}
+      <section className="py-12 md:py-16 bg-muted/20">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-3">
+            House Cleaning by Gaithersburg Neighborhood
+          </h2>
+          <p className="text-muted-foreground mb-8 leading-relaxed max-w-2xl">
+            Gaithersburg covers a lot of ground — from the walkable Kentlands village to the newer Crown Farm
+            developments. We adjust our crew size, products, and timing to match how each community lives.
+          </p>
+          <div className="grid md:grid-cols-3 gap-5">
+            {[
+              {
+                name: "Kentlands",
+                zip: "20878",
+                body:
+                  "Kentlands homes near Market Square blend traditional New Urbanism design with modern interiors — open kitchens, painted woodwork, and detailed trim. We use soft microfiber on millwork and gentle cleaners on the painted surfaces so finishes stay sharp visit after visit.",
+              },
+              {
+                name: "Lakelands",
+                zip: "20878",
+                body:
+                  "Lakelands single-family homes near the Lakelands Park trails often have hardwood entryways, larger primary bathrooms, and three-car garages. We bring HEPA-filter vacuums to keep allergens down, especially for families with kids using the nearby park year-round.",
+              },
+              {
+                name: "Crown Farm",
+                zip: "20878",
+                body:
+                  "Crown Farm townhomes and apartments around Crown Park have a younger, busier rhythm. Many of our Crown Farm clients book weekday evening or Saturday slots and use recurring bi-weekly service to keep on top of the high-traffic main-floor wear.",
+              },
+            ].map((n) => (
+              <div
+                key={n.name}
+                className="bg-card border border-border rounded-xl p-6 hover:shadow-md transition-shadow"
+              >
+                <div className="flex items-baseline gap-2 mb-3">
+                  <h3 className="font-heading font-bold text-foreground">{n.name}</h3>
+                  <span className="text-xs text-muted-foreground">ZIP {n.zip}</span>
+                </div>
+                <p className="text-sm text-muted-foreground leading-relaxed">{n.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Transparent Pricing ─────────────────────────── */}
+      <section className="py-12 md:py-16">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-3">
+            House Cleaning Pricing in Gaithersburg, MD
+          </h2>
+          <p className="text-muted-foreground mb-8 leading-relaxed max-w-2xl">
+            Pricing depends on home size, frequency, and condition. The ranges below reflect what most
+            Gaithersburg families actually pay for a standard house cleaning. Recurring clients save up to 25%.
+            Get your exact quote in 60 seconds — no commitment required.
+          </p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              { size: "1 BR / 1 BA", range: "$140 – $170", note: "Crown Farm apartments" },
+              { size: "2 BR / 2 BA", range: "$170 – $220", note: "Kentlands townhomes" },
+              { size: "3 BR / 2 BA", range: "$210 – $290", note: "Typical single-family" },
+              { size: "4 BR+ / 3 BA+", range: "$280 – $420", note: "Larger Lakelands homes" },
+            ].map((p) => (
+              <div
+                key={p.size}
+                className="bg-card border border-border rounded-xl p-5 text-center"
+              >
+                <p className="text-xs uppercase tracking-wider text-muted-foreground mb-1">{p.size}</p>
+                <p className="font-heading font-bold text-2xl text-foreground mb-1">{p.range}</p>
+                <p className="text-xs text-muted-foreground">{p.note}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8 p-5 bg-primary/5 border border-primary/20 rounded-xl">
+            <div className="flex items-start gap-3">
+              <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" aria-hidden="true" />
+              <div className="text-sm text-muted-foreground leading-relaxed">
+                <strong className="text-foreground">Recurring savings in Gaithersburg:</strong> weekly clients save up to 25%,
+                bi-weekly clients save 15%, monthly clients save 5%. Deep cleaning typically runs 1.5× the standard rate.
+                Move-in / move-out cleaning is quoted separately based on condition.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <ConversionCTA cityName="Gaithersburg" />
 
       <section id="quote" className="py-12 md:py-16 bg-muted/30">

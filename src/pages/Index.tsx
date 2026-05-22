@@ -108,6 +108,73 @@ const Index = () => {
         </section>
       </ScrollReveal>
 
+      {/* ══════════════ 2.5. CAPITAL AREA AUTHORITY ══════════════ */}
+      <ScrollReveal>
+        <section className="py-16 md:py-20 bg-gradient-to-br from-primary/5 via-background to-accent/5">
+          <div className="container mx-auto px-4 max-w-5xl">
+            <div className="text-center mb-10">
+              <span className="inline-block bg-primary/10 text-primary font-semibold text-sm uppercase tracking-wider px-3 py-1 rounded-full mb-3">
+                The Capital Area's Cleaning Service
+              </span>
+              <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">
+                Why Capital Clean Care Is the DMV's Trusted Cleaning Company
+              </h2>
+              <p className="text-muted-foreground text-lg leading-relaxed max-w-3xl mx-auto">
+                When families in the capital region search for cleaning they can rely on, they're looking
+                for more than a one-time scrub. They want a company that shows up on time, brings safe products,
+                and treats their home like it matters. That's the standard Capital Clean Care has held for
+                9+ years across Maryland, DC, and Northern Virginia.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-6 mb-10">
+              {[
+                {
+                  emoji: "🏛️",
+                  title: "Built for the Capital Region",
+                  body:
+                    "From Capitol Hill rowhouses to Bethesda colonials to Arlington high-rises, the capital area's homes are diverse — and so is our team. Our crews are familiar with the architecture, the parking realities, and the pace of life in the DMV. We're local, not a national franchise running a script.",
+                },
+                {
+                  emoji: "🌿",
+                  title: "Capital-Area Eco Standard",
+                  body:
+                    "Every product we use is EPA Safer Choice™ certified — non-toxic, plant-based, and safe for the kids and pets who actually live in capital region homes. No bleach, no ammonia, no synthetic fragrance lingering after we leave.",
+                },
+                {
+                  emoji: "🤝",
+                  title: "Latino-Owned, Locally Run",
+                  body:
+                    "Capital Clean Care is a family-owned, Latino-operated cleaning company. Our reputation in the capital area was built one referral at a time — from neighbors in Rockville, Silver Spring, Bethesda, Capitol Hill, Arlington, and Alexandria.",
+                },
+              ].map((card) => (
+                <div
+                  key={card.title}
+                  className="bg-card border border-border rounded-2xl p-6 hover:shadow-md transition-shadow"
+                >
+                  <span className="text-3xl block mb-3">{card.emoji}</span>
+                  <h3 className="font-heading font-bold text-foreground mb-2">{card.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{card.body}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="text-center">
+              <p className="text-sm text-muted-foreground leading-relaxed max-w-3xl mx-auto mb-6">
+                Whether you're booking a one-time deep clean before guests arrive or setting up bi-weekly
+                recurring service for your busy capital area household, our team brings the same standard
+                every visit: bonded and insured cleaners, eco-safe products, transparent pricing, and a
+                24-hour satisfaction guarantee. That's the Capital Clean Care promise.
+              </p>
+              <Button size="lg" variant="cta" asChild>
+                <a href="#quote">
+                  Get a Free Quote — 60 Seconds <ArrowRight className="ml-2 h-4 w-4" />
+                </a>
+              </Button>
+            </div>
+          </div>
+        </section>
+      </ScrollReveal>
 
       {/* ══════════════ 3. YOUR HOME. NON-TOXIC. ══════════════ */}
       <ScrollReveal>

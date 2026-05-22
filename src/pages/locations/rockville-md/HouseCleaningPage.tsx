@@ -370,6 +370,94 @@ const RockvilleHouseCleaningPage = () => {
         </div>
       </section>
 
+      {/* ── Neighborhood Spotlight ──────────────────────── */}
+      <section className="py-12 md:py-16 bg-muted/20">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-3">
+            House Cleaning by Rockville Neighborhood
+          </h2>
+          <p className="text-muted-foreground mb-8 leading-relaxed max-w-2xl">
+            Every Rockville neighborhood has its own rhythm — from the master-planned streets of King Farm
+            to the mid-century blocks of Twinbrook. Our crews know the difference, and we tailor our visit
+            to fit how each community actually lives.
+          </p>
+          <div className="grid md:grid-cols-3 gap-5">
+            {[
+              {
+                name: "King Farm",
+                zip: "20850",
+                body:
+                  "King Farm townhomes and single-family homes near Pleasant Drive have tight schedules and busy families. We run efficient weekday and Saturday morning slots, and we're used to working around stroller drop-offs, dog walkers, and the King Farm Village Center coffee runs. Most King Farm clients use bi-weekly recurring service.",
+              },
+              {
+                name: "Twinbrook",
+                zip: "20851",
+                body:
+                  "Twinbrook's mid-century brick ranches and split-levels deserve a cleaner who respects original hardwood, plaster walls, and tile bathrooms. We bring soft microfiber, pH-neutral floor cleaner, and zero abrasives so the character of these homes — many built in the 1950s — stays intact while still getting a thorough, deep refresh.",
+              },
+              {
+                name: "Fallsgrove",
+                zip: "20850",
+                body:
+                  "Fallsgrove homes near Shady Grove Road tend to be larger, with formal dining, multiple bathrooms, and finished basements. Our checklist scales — we send 2-cleaner teams for 3,000+ sq ft homes so the visit stays within a reasonable window and every surface gets the same attention as the master suite.",
+              },
+            ].map((n) => (
+              <div
+                key={n.name}
+                className="bg-card border border-border rounded-xl p-6 hover:shadow-md transition-shadow"
+              >
+                <div className="flex items-baseline gap-2 mb-3">
+                  <h3 className="font-heading font-bold text-foreground">{n.name}</h3>
+                  <span className="text-xs text-muted-foreground">ZIP {n.zip}</span>
+                </div>
+                <p className="text-sm text-muted-foreground leading-relaxed">{n.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Transparent Pricing ─────────────────────────── */}
+      <section className="py-12 md:py-16">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-3">
+            House Cleaning Pricing in Rockville, MD
+          </h2>
+          <p className="text-muted-foreground mb-8 leading-relaxed max-w-2xl">
+            Pricing depends on home size, frequency, and condition. The ranges below reflect what most
+            Rockville families actually pay for a standard house cleaning. Recurring clients save 10–25%
+            off these rates. Get your exact quote in 60 seconds — no commitment required.
+          </p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              { size: "1 BR / 1 BA", range: "$140 – $170", note: "Studios &amp; condos" },
+              { size: "2 BR / 2 BA", range: "$170 – $220", note: "Most townhomes" },
+              { size: "3 BR / 2 BA", range: "$210 – $290", note: "Typical single-family" },
+              { size: "4 BR+ / 3 BA+", range: "$280 – $420", note: "Larger Fallsgrove homes" },
+            ].map((p) => (
+              <div
+                key={p.size}
+                className="bg-card border border-border rounded-xl p-5 text-center"
+              >
+                <p className="text-xs uppercase tracking-wider text-muted-foreground mb-1">{p.size}</p>
+                <p className="font-heading font-bold text-2xl text-foreground mb-1">{p.range}</p>
+                <p className="text-xs text-muted-foreground" dangerouslySetInnerHTML={{ __html: p.note }} />
+              </div>
+            ))}
+          </div>
+          <div className="mt-8 p-5 bg-primary/5 border border-primary/20 rounded-xl">
+            <div className="flex items-start gap-3">
+              <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" aria-hidden="true" />
+              <div className="text-sm text-muted-foreground leading-relaxed">
+                <strong className="text-foreground">Recurring savings in Rockville:</strong> weekly clients save up to 25%,
+                bi-weekly clients save 15%, monthly clients save 5%. Deep cleaning (first visit or seasonal refresh)
+                typically runs 1.5× the standard rate. Move-in / move-out cleaning is quoted separately based on condition.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── FAQ ───────────────────────────────────────────── */}
       <section className="py-12 md:py-16 bg-muted/30">
         <div className="container mx-auto px-4 max-w-4xl">
