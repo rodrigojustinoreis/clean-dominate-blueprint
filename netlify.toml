@@ -2092,6 +2092,23 @@
   force = true
 
 
+# ── PR #6 — Trailing-slash canonicalization ──────────────────────────────────
+# Forces /path/ → /path (no trailing slash) for all location URLs so Google
+# doesn't index two versions of the same page.
+
+[[redirects]]
+  from = "/locations/*/"
+  to = "/locations/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/services/*/"
+  to = "/services/:splat"
+  status = 301
+  force = true
+
+
 # ── PR #5 — Zombie page pruning (38 non-static cities = 760 URLs) ────────────
 # Returns 410 Gone for all /locations/<non-static-city>/* paths so Google
 # drops them from the index. Camada 2 perms (within static cities) are handled

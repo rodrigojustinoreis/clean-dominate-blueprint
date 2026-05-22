@@ -185,6 +185,16 @@ const RockvilleDeepCleaningPage = () => {
         ctaPrimary="Schedule a Deep Clean in Rockville"
       />
 
+      {/* ── Cross-link Banner ──────────────────────────────── */}
+      <div className="bg-primary/5 border-b border-primary/10">
+        <div className="container mx-auto px-4 max-w-6xl py-3 text-center text-sm">
+          <span className="text-muted-foreground">Want ongoing maintenance after your deep clean?</span>{" "}
+          <Link to="/locations/rockville-md/recurring-cleaning" className="text-primary font-semibold underline">
+            See Recurring Cleaning in Rockville →
+          </Link>
+        </div>
+      </div>
+
       {/* Checklist */}
       <ServiceChecklistLocation
         title="What's Included in Our Rockville Deep Cleaning"

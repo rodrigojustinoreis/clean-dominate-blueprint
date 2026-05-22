@@ -182,6 +182,16 @@ const BethesdaDeepCleaningPage = () => {
         ctaPrimary="Schedule a Deep Clean in Bethesda"
       />
 
+      {/* ── Cross-link Banner ──────────────────────────────── */}
+      <div className="bg-primary/5 border-b border-primary/10">
+        <div className="container mx-auto px-4 max-w-6xl py-3 text-center text-sm">
+          <span className="text-muted-foreground">Want ongoing maintenance after your deep clean?</span>{" "}
+          <Link to="/locations/bethesda-md/recurring-cleaning" className="text-primary font-semibold underline">
+            See Recurring Cleaning in Bethesda →
+          </Link>
+        </div>
+      </div>
+
       {/* ── What's Included ───────────────────────────────── */}
       <ServiceChecklistLocation
         title="What's Included in Our Bethesda Deep Cleaning"
