@@ -55,7 +55,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://capitalcleancare.com/services/standard-cleaning</loc>
+    <loc>https://capitalcleancare.com/services/house-cleaning</loc>
     <lastmod>2026-05-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -67,7 +67,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://capitalcleancare.com/services/move-in-move-out-cleaning</loc>
+    <loc>https://capitalcleancare.com/services/move-out-cleaning</loc>
     <lastmod>2026-05-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -80,6 +80,24 @@
   </url>
   <url>
     <loc>https://capitalcleancare.com/services/recurring-cleaning</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://capitalcleancare.com/services/eco-friendly-cleaning</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://capitalcleancare.com/services/airbnb-cleaning</loc>
+    <lastmod>2026-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://capitalcleancare.com/services/office-cleaning</loc>
     <lastmod>2026-05-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

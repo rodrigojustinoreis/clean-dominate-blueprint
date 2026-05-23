@@ -38,9 +38,14 @@ const staticPages = [
 ];
 
 const servicePages = [
-  "/services/standard-cleaning", "/services/deep-cleaning",
-  "/services/move-in-move-out-cleaning", "/services/post-construction-cleaning",
+  "/services/house-cleaning",
+  "/services/deep-cleaning",
+  "/services/move-out-cleaning",
+  "/services/post-construction-cleaning",
   "/services/recurring-cleaning",
+  "/services/eco-friendly-cleaning",
+  "/services/airbnb-cleaning",
+  "/services/office-cleaning",
 ];
 
 let urls = "";
