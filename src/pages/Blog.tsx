@@ -37,7 +37,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-05-23",
     readTime: "8 min read",
     category: "Home Care Guides",
-    coverImage: "https://images.pexels.com/photos/4386143/pexels-photo-4386143.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
+    coverImage: "/images/blog/washing-machine-hero.jpg",
   },
   {
     slug: "how-to-remove-candle-wax-eco-friendly",
