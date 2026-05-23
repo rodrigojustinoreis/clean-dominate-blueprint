@@ -18,8 +18,7 @@ import FAQAccordion from "@/components/blog/FAQAccordion";
 import BlogInlineCTA from "@/components/blog/BlogInlineCTA";
 import StickyCTA from "@/components/blog/StickyCTA";
 
-const HERO_IMAGE =
-  "https://images.pexels.com/photos/3965527/pexels-photo-3965527.jpeg?auto=compress&cs=tinysrgb&w=1400";
+const HERO_IMAGE = "/images/blog/candle-wax-hero.jpg";
 
 const galleryImages: GalleryImage[] = [
   {
@@ -142,7 +141,7 @@ const HowToRemoveCandleWaxBlog = () => {
       </div>
 
       {/* HERO */}
-      <BlogHero src={HERO_IMAGE} alt="Lit pillar candles on a wooden surface with soft warm light">
+      <BlogHero src={HERO_IMAGE} alt="Professional with blue gloves removing wax from carpet with specialized tools">
         <span className="bg-accent/20 text-accent font-semibold px-4 py-1.5 rounded-full text-sm inline-block mb-6 uppercase tracking-wider border border-accent/30">
           Home Care Guide
         </span>

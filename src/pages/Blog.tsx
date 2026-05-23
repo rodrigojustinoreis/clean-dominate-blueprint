@@ -46,7 +46,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-05-23",
     readTime: "7 min read",
     category: "Home Care Guides",
-    coverImage: "https://images.pexels.com/photos/3965527/pexels-photo-3965527.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
+    coverImage: "/images/blog/candle-wax-hero.jpg",
   },
   {
     slug: "how-to-clean-carpet-home-apartment",
