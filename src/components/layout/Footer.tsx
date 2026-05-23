@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Phone, Mail, Clock, Instagram, Facebook, MapPin } from "lucide-react";
+import { Phone, Mail, Clock, Instagram, Facebook, MapPin, Shield, Search, Leaf, Users, Star, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { services } from "@/data/services";
 import { mdCities, dcCities, vaCities } from "@/data/locations";
@@ -28,6 +28,38 @@ const Footer = () => (
           <Button variant="outline" size="lg" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10" asChild>
             <a href="tel:+12407042551" onClick={() => trackPhoneClick("footer_cta_band")}><Phone className="h-4 w-4 mr-2" /> Call Now</a>
           </Button>
+        </div>
+      </div>
+    </div>
+
+    {/* ====== TRUST BAR ====== */}
+    <div className="border-y border-border bg-muted/30 py-6">
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 text-center">
+          <div className="flex flex-col items-center gap-1">
+            <Shield className="w-6 h-6 text-primary" />
+            <span className="text-xs font-medium">Licensed & Insured</span>
+          </div>
+          <div className="flex flex-col items-center gap-1">
+            <Search className="w-6 h-6 text-primary" />
+            <span className="text-xs font-medium">Background-Checked</span>
+          </div>
+          <div className="flex flex-col items-center gap-1">
+            <Leaf className="w-6 h-6 text-primary" />
+            <span className="text-xs font-medium">100% Eco-Friendly</span>
+          </div>
+          <div className="flex flex-col items-center gap-1">
+            <Users className="w-6 h-6 text-primary" />
+            <span className="text-xs font-medium">Family & Latino-Owned</span>
+          </div>
+          <div className="flex flex-col items-center gap-1">
+            <Star className="w-6 h-6 text-primary" />
+            <span className="text-xs font-medium">5.0★ Rated</span>
+          </div>
+          <div className="flex flex-col items-center gap-1">
+            <CheckCircle className="w-6 h-6 text-primary" />
+            <span className="text-xs font-medium">Satisfaction Guarantee</span>
+          </div>
         </div>
       </div>
     </div>
@@ -141,19 +173,6 @@ const Footer = () => (
       </p>
     </div>
 
-    {/* Trust Bar */}
-    <div className="bg-primary-foreground/5 border-t border-primary-foreground/10">
-      <div className="container mx-auto px-4 py-3">
-        <ul className="flex flex-wrap justify-center items-center gap-x-6 gap-y-1.5 text-xs text-primary-foreground/60">
-          {["Licensed & Insured", "Background-Checked Team", "Eco-Friendly Products", "Family & Latino-Owned", "5★ Google Rated", "100% Satisfaction Guarantee"].map((item) => (
-            <li key={item} className="flex items-center gap-1.5">
-              <span className="w-1 h-1 rounded-full bg-accent inline-block" aria-hidden="true" />
-              {item}
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
   </footer>
 );
 
