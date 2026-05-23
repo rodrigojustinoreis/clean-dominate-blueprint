@@ -47,11 +47,12 @@ const ImageGallery = ({ images }: { images: GalleryImage[] }) => {
           aria-label="Image lightbox"
         >
           <button
-            className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors"
+            className="absolute top-4 right-4 flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold px-4 py-2 rounded-full transition-all border border-white/20 backdrop-blur-sm"
             onClick={() => setLightbox(null)}
             aria-label="Close lightbox"
           >
-            <X className="h-8 w-8" />
+            <X className="h-4 w-4" />
+            Close
           </button>
           <div onClick={(e) => e.stopPropagation()} className="flex items-center justify-center max-w-4xl w-full">
             <img
