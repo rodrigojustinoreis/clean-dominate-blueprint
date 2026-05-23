@@ -18,8 +18,7 @@ import FAQAccordion from "@/components/blog/FAQAccordion";
 import BlogInlineCTA from "@/components/blog/BlogInlineCTA";
 import StickyCTA from "@/components/blog/StickyCTA";
 
-const HERO_IMAGE =
-  "https://images.pexels.com/photos/4386143/pexels-photo-4386143.jpeg?auto=compress&cs=tinysrgb&w=1200";
+const HERO_IMAGE = "/images/blog/washing-machine-hero.jpg";
 
 const galleryImages: GalleryImage[] = [
   {
@@ -146,7 +145,7 @@ const HowToCleanYourWashingMachineEcoFriendly = () => {
       </div>
 
       {/* HERO */}
-      <BlogHero src={HERO_IMAGE} alt="Modern washing machine in a clean Maryland laundry room">
+      <BlogHero src={HERO_IMAGE} alt="Washing machine being cleaned with eco-friendly products">
         <span className="bg-accent/20 text-accent font-semibold px-4 py-1.5 rounded-full text-sm inline-block mb-6 uppercase tracking-wider border border-accent/30">
           Home Care Guide
         </span>
