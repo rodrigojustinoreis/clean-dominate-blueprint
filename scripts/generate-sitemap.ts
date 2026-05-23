@@ -40,6 +40,7 @@ const staticPages = [
 const blogPosts = [
   "/blog/how-to-clean-carpet-home-apartment",
   "/blog/how-to-remove-candle-wax-eco-friendly",
+  "/blog/how-to-clean-your-washing-machine-eco-friendly",
   "/blog/spring-cleaning-checklist-maryland-2026",
   "/blog/eco-cleaning-tips-maryland-homes",
   "/blog/house-cleaning-prices-maryland-2026",
