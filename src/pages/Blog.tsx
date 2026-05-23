@@ -22,6 +22,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "how-to-get-rid-of-mildew-smell-naturally",
+    title: "How to Get Rid of Mildew Smell Naturally (Maryland Guide)",
+    excerpt: "Eliminate mildew and musty odor from basements, bathrooms, clothes, and furniture using vinegar, baking soda, and ventilation — no bleach, no toxic residue.",
+    date: "2026-05-23",
+    readTime: "9 min read",
+    category: "Home Care Guides",
+    coverImage: "https://images.pexels.com/photos/13444964/pexels-photo-13444964.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
+  },
+  {
     slug: "how-to-clean-your-washing-machine-eco-friendly",
     title: "How to Clean Your Washing Machine (Eco-Friendly, Easy)",
     excerpt: "Clean your washing machine drum, drawer & gasket with vinegar & baking soda. Eliminate musty smell — no bleach, no chemical residue on your clothes.",
