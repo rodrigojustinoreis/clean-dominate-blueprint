@@ -22,6 +22,24 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "how-to-clean-your-washing-machine-eco-friendly",
+    title: "How to Clean Your Washing Machine (Eco-Friendly, Easy)",
+    excerpt: "Clean your washing machine drum, drawer & gasket with vinegar & baking soda. Eliminate musty smell — no bleach, no chemical residue on your clothes.",
+    date: "2026-05-23",
+    readTime: "8 min read",
+    category: "Home Care Guides",
+    coverImage: "https://images.pexels.com/photos/4386143/pexels-photo-4386143.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
+  },
+  {
+    slug: "how-to-remove-candle-wax-eco-friendly",
+    title: "How to Remove Candle Wax from Any Surface (The Eco-Friendly Way)",
+    excerpt: "Remove candle wax from carpet, walls, glass & wood with eco-safe methods. Surface-by-surface guide for Maryland homeowners — no toxic solvents needed.",
+    date: "2026-05-23",
+    readTime: "7 min read",
+    category: "Home Care Guides",
+    coverImage: "https://images.pexels.com/photos/3965527/pexels-photo-3965527.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
+  },
+  {
     slug: "how-to-clean-carpet-home-apartment",
     title: "How to Clean the Carpet in Your Home or Apartment (And Why It Matters More Than You Think)",
     excerpt: "Step-by-step guide to deep cleaning your carpet — vacuuming, stain removal, steam cleaning, and drying. Plus apartment renter tips and when to call a pro.",
