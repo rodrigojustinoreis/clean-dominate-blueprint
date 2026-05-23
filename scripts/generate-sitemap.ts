@@ -37,6 +37,17 @@ const staticPages = [
   { url: "/washington-dc", priority: "0.8", freq: "weekly" },
 ];
 
+const blogPosts = [
+  "/blog/how-to-clean-carpet-home-apartment",
+  "/blog/how-to-remove-candle-wax-eco-friendly",
+  "/blog/spring-cleaning-checklist-maryland-2026",
+  "/blog/eco-cleaning-tips-maryland-homes",
+  "/blog/house-cleaning-prices-maryland-2026",
+  "/blog/deep-cleaning-checklist-dmv-homeowners",
+  "/blog/how-to-remove-tough-stains-from-mattresses-eco-friendly-april-2026",
+  "/blog/how-to-clean-bathroom-professionally-maryland-spring-2026",
+];
+
 const servicePages = [
   "/services/house-cleaning",
   "/services/deep-cleaning",
@@ -53,6 +64,11 @@ let urls = "";
 // Static pages
 for (const p of staticPages) {
   urls += `  <url>\n    <loc>${BASE_URL}${p.url}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>${p.freq}</changefreq>\n    <priority>${p.priority}</priority>\n  </url>\n`;
+}
+
+// Blog posts
+for (const b of blogPosts) {
+  urls += `  <url>\n    <loc>${BASE_URL}${b}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>\n`;
 }
 
 // Service pages
@@ -75,4 +91,4 @@ for (const city of cities) {
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}</urlset>`;
 
 fs.writeFileSync(path.resolve("public/sitemap.xml"), sitemap);
-console.log(`✅ Sitemap generated with ${staticPages.length + servicePages.length + cities.length + cities.length * services.length} URLs`);
+console.log(`✅ Sitemap generated with ${staticPages.length + blogPosts.length + servicePages.length + cities.length + cities.length * services.length} URLs`);
