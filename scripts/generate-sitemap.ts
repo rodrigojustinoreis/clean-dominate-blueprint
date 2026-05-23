@@ -28,7 +28,6 @@ const today = new Date().toISOString().split("T")[0];
 const staticPages = [
   { url: "/", priority: "1.0", freq: "weekly" },
   { url: "/services", priority: "0.9", freq: "weekly" },
-  { url: "/services/", priority: "0.9", freq: "monthly" },
   { url: "/about", priority: "0.8", freq: "monthly" },
   { url: "/reviews", priority: "0.7", freq: "monthly" },
   { url: "/contact", priority: "0.8", freq: "monthly" },
