@@ -1,318 +1,377 @@
-import { Link } from "react-router-dom";
-import { CheckCircle, ArrowRight, Leaf, Shield, Users, Star } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Helmet } from "react-helmet-async";
 import Layout from "@/components/layout/Layout";
-import Breadcrumbs from "@/components/Breadcrumbs";
-import FAQ from "@/components/FAQ";
+import ScrollReveal from "@/components/ScrollReveal";
+import { LocalBusinessSchema, FAQSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import ConversionCTA from "@/components/ConversionCTA";
-import { BreadcrumbSchema, LocalBusinessSchema, FAQSchema } from "@/components/SchemaMarkup";
-import { useSEO } from "@/hooks/useSEO";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { Sparkles, Home, Truck, Hammer, Repeat, Clock, Bed, Heart, PawPrint, Leaf, Building2, DollarSign } from "lucide-react";
 
-const PAGE_URL = "https://capitalcleancare.com/services";
-
-const services = [
+const masterServicesFaqs = [
   {
-    slug: "house-cleaning",
-    name: "House Cleaning",
-    description: "Thorough top-to-bottom home cleaning using non-toxic, EPA Safer Choice certified products. Perfect for regular maintenance of any home.",
-    icon: <Shield className="h-7 w-7 text-primary" />,
-    price: "From $120",
+    question: "What's the difference between standard cleaning and deep cleaning?",
+    answer: "Standard cleaning maintains an already-clean home with surface cleaning, vacuuming, dusting, and bathroom/kitchen wipe-downs. Deep cleaning is more intensive — we move appliances, scrub baseboards, clean inside ovens and refrigerators (on request), wash interior windows, and tackle buildup that accumulates over time. Most homes need deep cleaning every 3-6 months and standard cleaning weekly or biweekly in between."
   },
   {
-    slug: "deep-cleaning",
-    name: "Deep Cleaning",
-    description: "Intensive detail cleaning that covers areas standard cleaning misses — baseboards, inside appliances, grout lines, and more.",
-    icon: <Star className="h-7 w-7 text-primary" />,
-    price: "From $200",
+    question: "How much do your cleaning services cost in Maryland?",
+    answer: "Pricing depends on home size, condition, and service type. Standard recurring cleaning for a typical 3-bedroom Maryland home runs $170-$220 per visit. Deep cleaning ranges $280-$420. Move-in/move-out cleaning $300-$500. Post-construction cleaning is priced per square foot. We provide free, transparent quotes in under 2 minutes online or by phone."
   },
   {
-    slug: "recurring-cleaning",
-    name: "Recurring Cleaning",
-    description: "Weekly, bi-weekly, or monthly plans with consistent teams and up to 25% savings over one-time rates.",
-    icon: <CheckCircle className="h-7 w-7 text-primary" />,
-    price: "From $110/visit",
+    question: "Do you bring your own supplies and equipment?",
+    answer: "Yes. We bring all eco-friendly, non-toxic, plant-based cleaning products and professional-grade equipment (HEPA-filtered vacuums, microfiber, etc.) at no extra charge. If you prefer we use your own products (for allergy reasons, specific brands, etc.), just let us know — we accommodate."
   },
   {
-    slug: "move-out-cleaning",
-    name: "Move-Out Cleaning",
-    description: "Deposit-back ready deep cleans for renters and sellers. Covers every surface, appliance, and fixture before handover.",
-    icon: <ArrowRight className="h-7 w-7 text-primary" />,
-    price: "From $220",
+    question: "Are your cleaning products safe for kids, pets, and people with allergies?",
+    answer: "Absolutely. We use only EPA Safer Choice-certified products, plant-based ingredients, and fragrance-free options when requested. Our products are safe for newborns, pregnant women, asthma sufferers, chemical-sensitive individuals, and all household pets including birds and cats."
   },
   {
-    slug: "airbnb-cleaning",
-    name: "Airbnb Cleaning",
-    description: "Fast-turnaround cleans between guest stays. Linen refresh, restocking checklist, and photo-ready presentation.",
-    icon: <Users className="h-7 w-7 text-primary" />,
-    price: "From $100",
+    question: "Do I need to be home during the cleaning?",
+    answer: "No. Most of our clients aren't home during cleanings. We're fully bonded and insured, our team is background-checked, and we can accept a key or use a lockbox/garage code. We'll send a 'cleaning complete' notification when we leave."
   },
   {
-    slug: "post-construction-cleaning",
-    name: "Post-Construction Cleaning",
-    description: "Specialized dust and debris removal after remodels or new builds. Includes HEPA vacuuming, surface wipe-downs, and window detailing.",
-    icon: <Shield className="h-7 w-7 text-primary" />,
-    price: "Custom quote",
+    question: "Do you offer same-day or last-minute cleaning?",
+    answer: "Yes, when our schedule allows. Call us directly — we frequently have flexibility in Rockville, Bethesda, Gaithersburg, and Silver Spring service areas. For guaranteed scheduling, book at least 48 hours ahead."
   },
   {
-    slug: "office-cleaning",
-    name: "Office Cleaning",
-    description: "Professional small-business and commercial space cleaning. Recurring or one-time plans, after-hours available.",
-    icon: <Users className="h-7 w-7 text-primary" />,
-    price: "Custom quote",
+    question: "What if I'm not satisfied with the cleaning?",
+    answer: "We offer a 100% satisfaction guarantee. If anything isn't right, call us within 24 hours and we'll send a team back to re-clean the affected areas at no charge. No questions asked."
   },
   {
-    slug: "eco-friendly-cleaning",
-    name: "Eco-Friendly Cleaning",
-    description: "Every clean uses EPA Safer Choice and Green Seal certified products — safe for children, pets, and allergy sufferers.",
-    icon: <Leaf className="h-7 w-7 text-primary" />,
-    price: "Standard rates",
-  },
-];
-
-const pricingRows = [
-  { size: "1 BR / 1 BA", standard: "$120–$150", deep: "$180–$220", moveOut: "$200–$250" },
-  { size: "2 BR / 2 BA", standard: "$150–$200", deep: "$220–$290", moveOut: "$260–$330" },
-  { size: "3 BR / 2 BA", standard: "$200–$270", deep: "$280–$380", moveOut: "$320–$430" },
-  { size: "4 BR+",       standard: "$260–$370", deep: "$360–$520", moveOut: "$400–$580" },
-];
-
-const mdCities = ["Silver Spring", "Rockville", "Bethesda", "Gaithersburg", "Germantown", "Potomac", "Frederick", "Chevy Chase", "Kensington", "Wheaton", "Olney", "North Bethesda"];
-const dcAreas  = ["Washington DC", "Georgetown", "Capitol Hill", "Dupont Circle", "Adams Morgan", "Shaw"];
-const vaCities = ["Arlington", "Alexandria", "McLean", "Fairfax", "Falls Church", "Vienna", "Tysons", "Reston"];
-
-const faqs = [
-  {
-    q: "How do I choose between a standard clean and a deep clean?",
-    a: "A standard clean is ideal for homes cleaned regularly (every 1–4 weeks). A deep clean is recommended for first-time cleans, homes not cleaned in 2+ months, or before a major event. Deep cleans cover inside appliances, baseboards, grout, and other detail areas.",
+    question: "Do you do one-time cleanings or only recurring?",
+    answer: "Both. We offer single one-time cleanings (perfect for move-in/move-out, post-event, post-renovation, seasonal deep clean) and recurring service plans (weekly, biweekly, monthly) with priority booking and recurring-customer pricing."
   },
   {
-    q: "Do you use eco-friendly products on every service?",
-    a: "Yes. Every service uses EPA Safer Choice and Green Seal certified products by default. We never use bleach, ammonia, or synthetic fragrances unless you specifically request otherwise.",
+    question: "Which cities and neighborhoods do you serve?",
+    answer: "We serve all of Montgomery County, MD including Rockville, Bethesda, Gaithersburg, Silver Spring, Germantown, Potomac, Chevy Chase, North Bethesda, Kensington, Olney, Wheaton, plus Washington, DC. Check our locations page for a full list of neighborhoods."
   },
   {
-    q: "Can I book a recurring plan and change the frequency later?",
-    a: "Absolutely. You can switch between weekly, bi-weekly, and monthly at any time. Recurring clients also receive 15–25% discounts over one-time rates.",
+    question: "Can I tip the cleaners?",
+    answer: "Tipping is appreciated but never expected. Our team is paid fairly above industry standards. If you'd like to tip, $10-$20 per cleaner per visit is customary, and 100% of the tip goes directly to the cleaner."
   },
   {
-    q: "Are your cleaners background-checked?",
-    a: "Yes. Every team member undergoes a thorough background check before joining. We are also fully bonded and insured, so you are covered if anything is damaged.",
+    question: "Do you clean Airbnb and short-term rentals?",
+    answer: "Yes. We specialize in Airbnb turnover cleaning with 3-4 hour turnaround, inventory checks, linen handling, and photo reports after each clean. We work with calendars from Airbnb, VRBO, and Booking.com to schedule automatically."
   },
   {
-    q: "Do you serve all of Maryland, DC, and Virginia?",
-    a: "We serve Montgomery County MD, Washington DC, and Northern Virginia (Arlington, Fairfax, Alexandria, and surrounding areas). See our location pages for specific cities.",
-  },
-  {
-    q: "How far in advance do I need to book?",
-    a: "We typically have availability within 48–72 hours. Same-week bookings are usually possible, and we offer priority scheduling for recurring clients.",
-  },
-  {
-    q: "What is your cancellation policy?",
-    a: "We ask for 24 hours' notice to cancel or reschedule without charge. Late cancellations (under 24 hours) may incur a small fee to compensate the assigned team.",
-  },
+    question: "Do you offer cleaning for seniors aging in place?",
+    answer: "Yes. We have a senior-friendly cleaning service designed for older adults living independently. Our team uses fragrance-free products, accommodates mobility considerations, schedules around medical appointments, and can coordinate with adult children or caregivers remotely."
+  }
 ];
 
 const MasterServicesPage = () => {
-  useSEO({
-    title: "All Cleaning Services | Capital Clean Care — MD, DC & VA",
-    description: "Browse all cleaning services by Capital Clean Care: house cleaning, deep cleaning, move-out, recurring, Airbnb, post-construction, office, and eco-friendly. Serving Maryland, Washington DC, and Northern Virginia.",
-    canonical: PAGE_URL,
-    ogTitle: "All Cleaning Services | Capital Clean Care",
-    ogDescription: "House cleaning, deep cleaning, move-out, recurring, Airbnb, and more. Eco-friendly products. Serving MD, DC & VA.",
-    ogImage: "https://capitalcleancare.com/og-image.jpg",
-    ogUrl: PAGE_URL,
-  });
-
   return (
     <Layout>
-      <BreadcrumbSchema
-        items={[
-          { label: "Home", href: "/" },
-          { label: "Services", href: "/services" },
-        ]}
-      />
+      <Helmet>
+        <title>Cleaning Services in Maryland & DC | Capital Clean Care</title>
+        <meta name="description" content="Professional eco-friendly cleaning services in Montgomery County, MD and Washington, DC. House cleaning, deep cleaning, move-in/out, post-construction, Airbnb, senior, and recurring cleaning. Free quotes." />
+        <link rel="canonical" href="https://capitalcleancare.com/services/" />
+      </Helmet>
+
       <LocalBusinessSchema />
-      <FAQSchema faqs={faqs} />
+      <BreadcrumbSchema items={[
+        { label: "Home", href: "/" },
+        { label: "Services", href: "/services/" }
+      ]} />
+      <FAQSchema faqs={masterServicesFaqs.map(f => ({ q: f.question, a: f.answer }))} />
 
-      {/* Hero */}
-      <section className="bg-primary text-primary-foreground py-14 md:py-20">
-        <div className="container mx-auto px-4 max-w-4xl text-center">
-          <Breadcrumbs
-            items={[
-              { label: "Home", href: "/" },
-              { label: "Services", href: "/services" },
-            ]}
-            className="mb-6 justify-center text-primary-foreground/60"
-          />
-          <h1 className="font-heading text-3xl md:text-5xl font-bold mb-4">
-            All Cleaning Services
-          </h1>
-          <p className="text-lg md:text-xl text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
-            Eco-friendly residential and commercial cleaning across Maryland, Washington DC, and Northern Virginia. Licensed, insured, and background-checked teams.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Button size="lg" variant="secondary" asChild>
-              <a href="/#quote">Get a Free Quote</a>
-            </Button>
-            <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10" asChild>
-              <a href="tel:+12407042551">Call (240) 704-2551</a>
-            </Button>
-          </div>
+      <section className="relative bg-gradient-to-b from-primary/10 to-background py-16 md:py-24">
+        <div className="container mx-auto px-4 text-center">
+          <ScrollReveal>
+            <h1 className="text-4xl md:text-6xl font-bold mb-4">
+              Cleaning Services in Maryland & DC
+            </h1>
+            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+              Eco-friendly, family-owned, fully insured. Serving Rockville, Bethesda, Gaithersburg, Silver Spring, and the greater DMV with professional residential and commercial cleaning since 2017.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" asChild>
+                <Link to="/#quote">Get Free Quote</Link>
+              </Button>
+              <Button size="lg" variant="outline" asChild>
+                <a href="tel:+12407042551">Call Now</a>
+              </Button>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
-      {/* Services Grid */}
-      <section className="py-14 bg-background">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <h2 className="font-heading text-2xl md:text-3xl font-bold text-center mb-10">Choose Your Service</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {services.map((svc) => (
-              <Link
-                key={svc.slug}
-                to={`/services/${svc.slug}`}
-                className="group bg-card border border-border rounded-xl p-6 hover:shadow-md hover:border-primary/30 transition-all flex flex-col gap-3"
-              >
-                <div className="bg-primary/10 rounded-lg w-12 h-12 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                  {svc.icon}
-                </div>
-                <h3 className="font-heading font-semibold text-lg">{svc.name}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed flex-1">{svc.description}</p>
-                <div className="flex items-center justify-between mt-2">
-                  <span className="text-sm font-semibold text-primary">{svc.price}</span>
-                  <ArrowRight className="h-4 w-4 text-primary opacity-0 group-hover:opacity-100 transition-opacity" />
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Pricing Table */}
-      <section className="py-14 bg-secondary">
+      <section className="py-16">
         <div className="container mx-auto px-4 max-w-5xl">
-          <h2 className="font-heading text-2xl md:text-3xl font-bold text-center mb-3">Transparent Pricing</h2>
-          <p className="text-center text-muted-foreground mb-10">Flat-rate estimates — no hidden fees. Final quote confirmed after home walk-through or phone consultation.</p>
-          <div className="overflow-x-auto rounded-xl border border-border">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="bg-primary text-primary-foreground">
-                  <th className="text-left px-4 py-3 font-semibold">Home Size</th>
-                  <th className="text-center px-4 py-3 font-semibold">Standard</th>
-                  <th className="text-center px-4 py-3 font-semibold">Deep Clean</th>
-                  <th className="text-center px-4 py-3 font-semibold">Move-Out</th>
-                </tr>
-              </thead>
-              <tbody>
-                {pricingRows.map((row, i) => (
-                  <tr key={row.size} className={i % 2 === 0 ? "bg-background" : "bg-secondary"}>
-                    <td className="px-4 py-3 font-medium">{row.size}</td>
-                    <td className="px-4 py-3 text-center">{row.standard}</td>
-                    <td className="px-4 py-3 text-center">{row.deep}</td>
-                    <td className="px-4 py-3 text-center">{row.moveOut}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          <p className="text-xs text-muted-foreground mt-4 text-center">Recurring clients (weekly/bi-weekly) receive 15–25% off standard rates. Prices vary by home condition and add-ons.</p>
+
+          <ScrollReveal>
+            <article className="mb-12">
+              <h2 className="text-3xl font-bold mb-4 flex items-center gap-3">
+                <Home className="w-8 h-8 text-primary" />
+                Standard House Cleaning
+              </h2>
+              <p className="text-muted-foreground mb-3">
+                Our most popular service. Maintains an already-clean home with thorough surface cleaning, vacuuming, mopping, dusting, bathroom sanitization, kitchen wipe-down, and bedroom tidying. Perfect for busy professionals, families, and anyone who wants their home consistently spotless.
+              </p>
+              <p className="text-muted-foreground mb-3">
+                Standard cleaning typically includes: all rooms vacuumed and mopped, bathrooms scrubbed (toilets, sinks, tubs, mirrors), kitchen counters and exterior appliances cleaned, dusting of all accessible surfaces, trash removal, bed making (on request).
+              </p>
+              <p className="text-muted-foreground">
+                Available as one-time or recurring (weekly, biweekly, monthly). Most 2-3 bedroom Maryland homes complete in 2-3 hours with a team of 2 cleaners.
+              </p>
+            </article>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <article className="mb-12">
+              <h2 className="text-3xl font-bold mb-4 flex items-center gap-3">
+                <Sparkles className="w-8 h-8 text-primary" />
+                Deep Cleaning Services
+              </h2>
+              <p className="text-muted-foreground mb-3">
+                Intensive cleaning that goes beyond surface-level. We move furniture and appliances, scrub baseboards and door frames, hand-wash light switches and door handles, clean inside windows, detail bathroom grout, and address buildup that standard cleaning doesn't reach.
+              </p>
+              <p className="text-muted-foreground mb-3">
+                Recommended for: first-time cleanings, homes that haven't been professionally cleaned in 3+ months, spring/fall refresh, before listing a home for sale, after holidays.
+              </p>
+              <p className="text-muted-foreground">
+                Typical timeline: 4-7 hours depending on home size. Many clients schedule a deep cleaning every 3-6 months, then maintain with standard cleaning between.
+              </p>
+            </article>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <article className="mb-12">
+              <h2 className="text-3xl font-bold mb-4 flex items-center gap-3">
+                <Truck className="w-8 h-8 text-primary" />
+                Move-In and Move-Out Cleaning
+              </h2>
+              <p className="text-muted-foreground mb-3">
+                Specialized cleaning for empty homes — either to leave your old place spotless (and get your security deposit back) or to start fresh in a new home. Includes inside-cabinet cleaning, inside-oven and inside-refrigerator detail, baseboards, light fixtures, blinds, and full interior windows.
+              </p>
+              <p className="text-muted-foreground mb-3">
+                We work with renters, real estate agents, and homeowners. Many of our move-out clients use our checklist to confirm landlord deposit requirements are met.
+              </p>
+              <p className="text-muted-foreground">
+                Pricing typically $300-$500 for a 2-3 bedroom home, depending on condition. We provide before/after documentation on request.
+              </p>
+            </article>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <article className="mb-12">
+              <h2 className="text-3xl font-bold mb-4 flex items-center gap-3">
+                <Hammer className="w-8 h-8 text-primary" />
+                Post-Construction & Post-Renovation Cleaning
+              </h2>
+              <p className="text-muted-foreground mb-3">
+                Construction dust and debris are not the same as everyday dirt. Our post-construction service uses HEPA-filtered vacuums, dust-trapping microfiber, and a multi-pass cleaning protocol designed to capture fine particulate that ordinary cleaning leaves behind.
+              </p>
+              <p className="text-muted-foreground mb-3">
+                We offer three phases: rough clean (during construction), final clean (before homeowner walkthrough), and touch-up clean (after final walkthrough fixes). Common for kitchen remodels, bathroom renovations, additions, and full-home remodels.
+              </p>
+              <p className="text-muted-foreground">
+                Pricing per square foot. We work with general contractors, remodelers, and homeowners directly.
+              </p>
+            </article>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <article className="mb-12">
+              <h2 className="text-3xl font-bold mb-4 flex items-center gap-3">
+                <Repeat className="w-8 h-8 text-primary" />
+                Recurring Cleaning (Weekly, Biweekly, Monthly)
+              </h2>
+              <p className="text-muted-foreground mb-3">
+                A consistent cleaning team that knows your home, your preferences, and your schedule. Recurring clients get priority scheduling, locked-in pricing, and a dedicated team — meaning the same trusted faces every visit.
+              </p>
+              <p className="text-muted-foreground mb-3">
+                Most popular frequency in Maryland is biweekly (every other week). Weekly is ideal for larger homes, families with young children, or homes with pets. Monthly is a maintenance option between deep cleanings.
+              </p>
+              <p className="text-muted-foreground">
+                Recurring pricing is approximately 15-20% lower than one-time pricing per visit.
+              </p>
+            </article>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <article className="mb-12">
+              <h2 className="text-3xl font-bold mb-4 flex items-center gap-3">
+                <Clock className="w-8 h-8 text-primary" />
+                One-Time Cleaning Services
+              </h2>
+              <p className="text-muted-foreground mb-3">
+                Single cleaning visits for specific occasions: hosting guests, post-party cleanup, preparing for a showing, returning from vacation, seasonal refresh. No commitment, no contracts.
+              </p>
+              <p className="text-muted-foreground">
+                Available as standard or deep cleaning depending on need. Book online or by phone with as little as 48 hours notice.
+              </p>
+            </article>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <article className="mb-12">
+              <h2 className="text-3xl font-bold mb-4 flex items-center gap-3">
+                <Bed className="w-8 h-8 text-primary" />
+                Airbnb & Short-Term Rental Turnover Cleaning
+              </h2>
+              <p className="text-muted-foreground mb-3">
+                Specialized turnover cleaning for Airbnb, VRBO, and Booking.com hosts. We complete turnovers in 3-4 hours, handle linen changes (if you provide them), restock amenities, complete an inventory check, and send a photo report after every turn.
+              </p>
+              <p className="text-muted-foreground mb-3">
+                Integrates with your booking calendar so cleanings are scheduled automatically as guests check out. Available 7 days/week including same-day turnovers when our schedule allows.
+              </p>
+              <p className="text-muted-foreground">
+                Hosts can pay per turn or move to a monthly retainer for high-volume rentals.
+              </p>
+            </article>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <article className="mb-12">
+              <h2 className="text-3xl font-bold mb-4 flex items-center gap-3">
+                <Heart className="w-8 h-8 text-primary" />
+                Senior-Friendly Cleaning Service
+              </h2>
+              <p className="text-muted-foreground mb-3">
+                Designed for older adults living independently and families helping aging parents. Our team uses fragrance-free products (important for seniors with chemical sensitivities), accommodates mobility considerations, and works with consistent scheduling so seniors recognize their cleaning team.
+              </p>
+              <p className="text-muted-foreground mb-3">
+                We coordinate easily with adult children, caregivers, geriatric care managers, and home health agencies. Payment can be made by a third party (adult child paying for parent's cleaning is common).
+              </p>
+              <p className="text-muted-foreground">
+                Especially popular in Bethesda, Chevy Chase, Potomac, and Silver Spring senior communities.
+              </p>
+            </article>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <article className="mb-12">
+              <h2 className="text-3xl font-bold mb-4 flex items-center gap-3">
+                <PawPrint className="w-8 h-8 text-primary" />
+                Pet-Safe Cleaning Service
+              </h2>
+              <p className="text-muted-foreground mb-3">
+                Most household cleaners are toxic to pets — especially cats, birds, and reptiles. Our cleaning products are 100% pet-safe, plant-based, and free of ammonia, bleach, and synthetic fragrances that can harm or stress pets.
+              </p>
+              <p className="text-muted-foreground">
+                Includes additional pet-specific care: deeper vacuum cycles for pet hair, odor-neutralizing treatments for litter and crate areas, and extra attention to pet bedding and feeding zones. We're also pet-friendly during cleanings — happy to work around cats and dogs at home.
+              </p>
+            </article>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <article className="mb-12">
+              <h2 className="text-3xl font-bold mb-4 flex items-center gap-3">
+                <Leaf className="w-8 h-8 text-primary" />
+                Eco-Friendly Cleaning Products
+              </h2>
+              <p className="text-muted-foreground mb-3">
+                Every Capital Clean Care visit uses 100% eco-friendly, non-toxic, plant-based cleaning products. We do not use ammonia, chlorine bleach, phosphates, parabens, or synthetic fragrances. All products are EPA Safer Choice-certified or equivalent.
+              </p>
+              <p className="text-muted-foreground mb-3">
+                Why it matters: indoor air quality after a conventional cleaning often gets WORSE before it gets better, due to VOC residue from chemical cleaners. Our products leave indoor air measurably cleaner than when we arrived.
+              </p>
+              <p className="text-muted-foreground">
+                Safe for newborns, pregnant women, asthma and allergy sufferers, chemically sensitive individuals, and pets.
+              </p>
+            </article>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <article className="mb-12">
+              <h2 className="text-3xl font-bold mb-4 flex items-center gap-3">
+                <Building2 className="w-8 h-8 text-primary" />
+                Apartment & Condo Cleaning
+              </h2>
+              <p className="text-muted-foreground mb-3">
+                Smaller spaces, same standards. Apartment and condo cleaning in Rockville, Bethesda, Silver Spring, and DC apartment buildings. We're familiar with building requirements (elevator reservations, concierge check-ins, etc.).
+              </p>
+              <p className="text-muted-foreground">
+                Studio and 1-bedroom: typically 90 minutes. 2-bedroom: typically 2-2.5 hours. Pricing starts at $120 for studios.
+              </p>
+            </article>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <article className="mb-12">
+              <h2 className="text-3xl font-bold mb-4 flex items-center gap-3">
+                <Building2 className="w-8 h-8 text-primary" />
+                Office & Small Commercial Cleaning
+              </h2>
+              <p className="text-muted-foreground mb-3">
+                Light commercial cleaning for small offices, medical practices, dental offices, professional services, and retail spaces under 5,000 sq ft. After-hours or weekend scheduling available to minimize business disruption.
+              </p>
+              <p className="text-muted-foreground">
+                Our eco-friendly products are also better for office air quality — important for medical and dental practices where patients with allergies/sensitivities visit daily.
+              </p>
+            </article>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <article className="mb-12">
+              <h2 className="text-3xl font-bold mb-4 flex items-center gap-3">
+                <DollarSign className="w-8 h-8 text-primary" />
+                Transparent, Honest Pricing
+              </h2>
+              <p className="text-muted-foreground mb-3">
+                We believe in pricing you can see before you book. No hidden fees, no surprise add-ons, no high-pressure sales calls.
+              </p>
+              <p className="text-muted-foreground mb-3">
+                <strong>Approximate Maryland pricing (varies by home condition):</strong>
+              </p>
+              <ul className="list-disc pl-6 text-muted-foreground space-y-1 mb-3">
+                <li>Studio / 1BR standard cleaning: $140-$170</li>
+                <li>2BR standard cleaning: $170-$220</li>
+                <li>3BR standard cleaning: $210-$290</li>
+                <li>4BR+ standard cleaning: $280-$420</li>
+                <li>Deep cleaning: add 30-50% to standard pricing</li>
+                <li>Move-in/move-out: $300-$500 depending on size</li>
+                <li>Recurring discount: 15-20% off one-time pricing</li>
+              </ul>
+              <p className="text-muted-foreground">
+                Get an exact quote in under 2 minutes using our online form, or call for a same-day estimate over the phone.
+              </p>
+            </article>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <article className="mb-12">
+              <h2 className="text-3xl font-bold mb-4">Cities & Neighborhoods We Serve</h2>
+              <p className="text-muted-foreground mb-3">
+                We serve all of Montgomery County, Maryland and Washington, DC. Major cities served include:
+              </p>
+              <ul className="grid grid-cols-2 md:grid-cols-3 gap-2 text-muted-foreground mb-3">
+                <li><Link to="/locations/rockville-md" className="hover:text-primary">Rockville, MD</Link></li>
+                <li><Link to="/locations/bethesda-md" className="hover:text-primary">Bethesda, MD</Link></li>
+                <li><Link to="/locations/gaithersburg-md" className="hover:text-primary">Gaithersburg, MD</Link></li>
+                <li><Link to="/locations/silver-spring-md" className="hover:text-primary">Silver Spring, MD</Link></li>
+                <li><Link to="/locations/germantown-md" className="hover:text-primary">Germantown, MD</Link></li>
+                <li><Link to="/locations/potomac-md" className="hover:text-primary">Potomac, MD</Link></li>
+                <li><Link to="/locations/chevy-chase-md" className="hover:text-primary">Chevy Chase, MD</Link></li>
+                <li><Link to="/locations/north-bethesda-md" className="hover:text-primary">North Bethesda, MD</Link></li>
+                <li><Link to="/locations/kensington-md" className="hover:text-primary">Kensington, MD</Link></li>
+                <li><Link to="/locations/olney-md" className="hover:text-primary">Olney, MD</Link></li>
+                <li><Link to="/locations/wheaton-md" className="hover:text-primary">Wheaton, MD</Link></li>
+              </ul>
+            </article>
+          </ScrollReveal>
+
         </div>
       </section>
 
-      {/* Service Areas */}
-      <section className="py-14 bg-background">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <h2 className="font-heading text-2xl md:text-3xl font-bold text-center mb-10">Service Areas</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-              <h3 className="font-heading font-semibold text-lg mb-4 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-primary inline-block" /> Maryland
-              </h3>
-              <ul className="space-y-2">
-                {mdCities.map((city) => (
-                  <li key={city}>
-                    <Link
-                      to={`/locations/${city.toLowerCase().replace(/\s+/g, "-")}-md`}
-                      className="text-sm text-muted-foreground hover:text-primary transition-colors flex items-center gap-1.5"
-                    >
-                      <ArrowRight className="h-3 w-3" /> {city}, MD
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-              <Link to="/maryland" className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
-                All Maryland <ArrowRight className="h-3 w-3" />
-              </Link>
-            </div>
-            <div>
-              <h3 className="font-heading font-semibold text-lg mb-4 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-primary inline-block" /> Washington DC
-              </h3>
-              <ul className="space-y-2">
-                {dcAreas.map((area) => (
-                  <li key={area} className="text-sm text-muted-foreground flex items-center gap-1.5">
-                    <ArrowRight className="h-3 w-3" /> {area}
-                  </li>
-                ))}
-              </ul>
-              <Link to="/washington-dc" className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
-                All DC <ArrowRight className="h-3 w-3" />
-              </Link>
-            </div>
-            <div>
-              <h3 className="font-heading font-semibold text-lg mb-4 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-primary inline-block" /> Northern Virginia
-              </h3>
-              <ul className="space-y-2">
-                {vaCities.map((city) => (
-                  <li key={city}>
-                    <Link
-                      to={`/locations/${city.toLowerCase().replace(/\s+/g, "-")}-va`}
-                      className="text-sm text-muted-foreground hover:text-primary transition-colors flex items-center gap-1.5"
-                    >
-                      <ArrowRight className="h-3 w-3" /> {city}, VA
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-              <Link to="/virginia" className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline">
-                All Virginia <ArrowRight className="h-3 w-3" />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Why Us */}
-      <section className="py-14 bg-secondary">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <h2 className="font-heading text-2xl md:text-3xl font-bold text-center mb-10">Why Capital Clean Care</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { icon: <Leaf className="h-6 w-6" />, title: "100% Eco Products", body: "EPA Safer Choice certified. Safe for kids, pets, and allergy sufferers." },
-              { icon: <Shield className="h-6 w-6" />, title: "Licensed & Insured", body: "Fully bonded. Every cleaner passes a background check before their first job." },
-              { icon: <Star className="h-6 w-6" />, title: "5★ Rated", body: "47+ five-star Google reviews from homeowners across MD, DC & VA." },
-              { icon: <Users className="h-6 w-6" />, title: "Family-Owned", body: "Latino-owned business. You talk to the owner, not a call center." },
-            ].map((item) => (
-              <div key={item.title} className="bg-card border border-border rounded-xl p-5 flex flex-col gap-3">
-                <div className="bg-primary/10 rounded-lg w-10 h-10 flex items-center justify-center text-primary">
-                  {item.icon}
+      <section className="py-16 bg-muted/30">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <ScrollReveal>
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Frequently Asked Questions About Our Services</h2>
+            <div className="space-y-6">
+              {masterServicesFaqs.map((faq, idx) => (
+                <div key={idx} className="bg-card border border-border rounded-lg p-6">
+                  <h3 className="text-lg font-semibold mb-2">{faq.question}</h3>
+                  <p className="text-muted-foreground">{faq.answer}</p>
                 </div>
-                <h3 className="font-heading font-semibold">{item.title}</h3>
-                <p className="text-sm text-muted-foreground">{item.body}</p>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="py-14 bg-background">
-        <div className="container mx-auto px-4 max-w-3xl">
-          <h2 className="font-heading text-2xl md:text-3xl font-bold text-center mb-10">Frequently Asked Questions</h2>
-          <FAQ faqs={faqs} />
-        </div>
-      </section>
+      <ConversionCTA cityName="Montgomery County" />
 
-      <ConversionCTA cityName="Your Area" />
     </Layout>
   );
 };
