@@ -1,12 +1,10 @@
 import { useState } from "react";
 import { X, ZoomIn } from "lucide-react";
 import LazyImage from "./LazyImage";
-import PhotoAttribution from "./PhotoAttribution";
 
 export interface GalleryImage {
   src: string;
   alt: string;
-  attribution: { name: string; url: string };
   caption?: string;
 }
 
@@ -34,9 +32,8 @@ const ImageGallery = ({ images }: { images: GalleryImage[] }) => {
                 <ZoomIn className="h-8 w-8 text-white opacity-0 group-hover:opacity-100 transition-opacity" />
               </div>
             </div>
-            <PhotoAttribution name={img.attribution.name} url={img.attribution.url} />
             {img.caption && (
-              <p className="text-xs text-center text-muted-foreground px-3 pb-2">{img.caption}</p>
+              <p className="text-xs text-center text-muted-foreground px-3 py-2">{img.caption}</p>
             )}
           </div>
         ))}
@@ -56,25 +53,12 @@ const ImageGallery = ({ images }: { images: GalleryImage[] }) => {
           >
             <X className="h-8 w-8" />
           </button>
-          <div onClick={(e) => e.stopPropagation()} className="flex flex-col items-center gap-3 max-w-4xl w-full">
+          <div onClick={(e) => e.stopPropagation()} className="flex items-center justify-center max-w-4xl w-full">
             <img
               src={images[lightbox].src}
               alt={images[lightbox].alt}
               className="max-w-full max-h-[80vh] object-contain rounded-lg shadow-2xl"
             />
-            <p className="text-xs text-gray-400">
-              Photo by{" "}
-              <a
-                href={images[lightbox].attribution.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline text-gray-300"
-                onClick={(e) => e.stopPropagation()}
-              >
-                {images[lightbox].attribution.name}
-              </a>{" "}
-              / Pexels
-            </p>
           </div>
         </div>
       )}

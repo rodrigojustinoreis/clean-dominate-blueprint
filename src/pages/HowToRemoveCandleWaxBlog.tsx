@@ -25,25 +25,21 @@ const galleryImages: GalleryImage[] = [
   {
     src: "https://images.pexels.com/photos/6195125/pexels-photo-6195125.jpeg?auto=compress&cs=tinysrgb&w=800",
     alt: "Scraping dried wax residue from a light-colored carpet with a plastic scraper",
-    attribution: { name: "Karolina Grabowska", url: "https://www.pexels.com/@karolina-grabowska" },
     caption: "Carpet: freeze first, scrape second — always.",
   },
   {
     src: "https://images.pexels.com/photos/4108710/pexels-photo-4108710.jpeg?auto=compress&cs=tinysrgb&w=800",
     alt: "Wiping a painted wall with a damp eco-friendly cloth",
-    attribution: { name: "RODNAE Productions", url: "https://www.pexels.com/@rodnae-prod" },
     caption: "Walls: heat loosens wax without scratching the paint.",
   },
   {
     src: "https://images.pexels.com/photos/3270223/pexels-photo-3270223.jpeg?auto=compress&cs=tinysrgb&w=800",
     alt: "Transparent glass candle holders on a wooden shelf",
-    attribution: { name: "Alina Vilchenko", url: "https://www.pexels.com/@alina-vilchenko" },
     caption: "Glass: hot water soak dissolves wax in minutes.",
   },
   {
     src: "https://images.pexels.com/photos/4099354/pexels-photo-4099354.jpeg?auto=compress&cs=tinysrgb&w=800",
     alt: "Polished hardwood floor with natural light — protecting finish from candle wax",
-    attribution: { name: "Max Vakhtbovych", url: "https://www.pexels.com/@max-vakhtbovych" },
     caption: "Wood: go cold, never hot — heat can lift the finish.",
   },
 ];

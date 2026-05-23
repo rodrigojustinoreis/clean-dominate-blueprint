@@ -25,25 +25,21 @@ const galleryImages: GalleryImage[] = [
   {
     src: "https://images.pexels.com/photos/5591581/pexels-photo-5591581.jpeg?auto=compress&cs=tinysrgb&w=800",
     alt: "Pouring eco-friendly detergent into washer drawer",
-    attribution: { name: "RDNE Stock project", url: "https://www.pexels.com/@rdne" },
     caption: "Detergent drawer: a hidden breeding ground for mold.",
   },
   {
     src: "https://images.pexels.com/photos/4239099/pexels-photo-4239099.jpeg?auto=compress&cs=tinysrgb&w=800",
     alt: "Cleaning rubber gasket of front-load washing machine",
-    attribution: { name: "Karolina Grabowska", url: "https://www.pexels.com/@karolina-grabowska" },
     caption: "The gasket fold is where black mold hides.",
   },
   {
     src: "https://images.pexels.com/photos/8581380/pexels-photo-8581380.jpeg?auto=compress&cs=tinysrgb&w=800",
     alt: "Fresh fragrant laundry folded after clean washer",
-    attribution: { name: "RDNE Stock project", url: "https://www.pexels.com/@rdne" },
     caption: "Clean machine = clothes that actually smell clean.",
   },
   {
     src: "https://images.pexels.com/photos/7282426/pexels-photo-7282426.jpeg?auto=compress&cs=tinysrgb&w=800",
     alt: "Hands folding clean fresh-smelling laundry",
-    attribution: { name: "Sarah Chai", url: "https://www.pexels.com/@sarah-chai" },
     caption: "No perfume covers a musty machine — cleaning is the only fix.",
   },
 ];
@@ -332,9 +328,6 @@ const HowToCleanYourWashingMachineEcoFriendly = () => {
                 className="w-full max-h-[380px] object-cover"
                 loading="lazy"
               />
-              <p className="text-xs text-center text-muted-foreground bg-gray-50 py-2 px-4">
-                Photo by <a href="https://www.pexels.com/@karolina-grabowska" target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">Karolina Grabowska</a> / Pexels
-              </p>
             </div>
             <p className="text-muted-foreground leading-relaxed mb-6">
               The rubber gasket fold is the single dirtiest part of a front-loader — and the most overlooked. Black mold accumulates in the hidden fold that most people never peel back.
@@ -382,9 +375,6 @@ const HowToCleanYourWashingMachineEcoFriendly = () => {
                 className="w-full max-h-[380px] object-cover"
                 loading="lazy"
               />
-              <p className="text-xs text-center text-muted-foreground bg-gray-50 py-2 px-4">
-                Photo by <a href="https://www.pexels.com/@rdne" target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">RDNE Stock project</a> / Pexels
-              </p>
             </div>
             <div className="space-y-5 mb-10">
               {[
