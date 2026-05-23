@@ -15,6 +15,7 @@ import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import HowToCleanCarpetBlog from "./pages/HowToCleanCarpetBlog";
 import HowToRemoveCandleWaxBlog from "./pages/HowToRemoveCandleWaxBlog";
+import HowToCleanYourWashingMachineEcoFriendly from "./pages/HowToCleanYourWashingMachineEcoFriendly";
 import SpringCleaningMD from "./pages/SpringCleaningMD";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
@@ -141,6 +142,7 @@ const AppRoutes = () => (
     <Route path="/blog" element={<Blog />} />
     <Route path="/blog/how-to-clean-carpet-home-apartment" element={<HowToCleanCarpetBlog />} />
     <Route path="/blog/how-to-remove-candle-wax-eco-friendly" element={<HowToRemoveCandleWaxBlog />} />
+    <Route path="/blog/how-to-clean-your-washing-machine-eco-friendly" element={<HowToCleanYourWashingMachineEcoFriendly />} />
     <Route path="/blog/:slug" element={<BlogPost />} />
     <Route path="/spring-cleaning-md" element={<SpringCleaningMD />} />
     <Route path="/house-cleaning-near-me" element={<HouseCleaningNearMe />} />

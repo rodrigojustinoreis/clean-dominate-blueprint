@@ -19,6 +19,7 @@ const Blog                   = lazy(() => import("./pages/Blog"));
 const BlogPost               = lazy(() => import("./pages/BlogPost"));
 const HowToCleanCarpetBlog    = lazy(() => import("./pages/HowToCleanCarpetBlog"));
 const HowToRemoveCandleWaxBlog = lazy(() => import("./pages/HowToRemoveCandleWaxBlog"));
+const HowToCleanYourWashingMachineEcoFriendly = lazy(() => import("./pages/HowToCleanYourWashingMachineEcoFriendly"));
 const SpringCleaningMD       = lazy(() => import("./pages/SpringCleaningMD"));
 const PrivacyPolicy          = lazy(() => import("./pages/PrivacyPolicy"));
 const TermsOfService         = lazy(() => import("./pages/TermsOfService"));
@@ -56,6 +57,7 @@ const AppRoutesLazy = () => (
     <Route path="/blog" element={<Blog />} />
     <Route path="/blog/how-to-clean-carpet-home-apartment" element={<HowToCleanCarpetBlog />} />
     <Route path="/blog/how-to-remove-candle-wax-eco-friendly" element={<HowToRemoveCandleWaxBlog />} />
+    <Route path="/blog/how-to-clean-your-washing-machine-eco-friendly" element={<HowToCleanYourWashingMachineEcoFriendly />} />
     <Route path="/blog/:slug" element={<BlogPost />} />
     <Route path="/spring-cleaning-md" element={<SpringCleaningMD />} />
     <Route path="/house-cleaning-near-me" element={<HouseCleaningNearMe />} />
