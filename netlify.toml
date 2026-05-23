@@ -2091,6 +2091,468 @@
   status = 200
   force = true
 
+
+# ── PR #5 — Zombie page pruning (38 non-static cities = 760 URLs) ────────────
+# Returns 410 Gone for all /locations/<non-static-city>/* paths so Google
+# drops them from the index. Camada 2 perms (within static cities) are handled
+# by noindex meta in ServiceLocationPage.tsx via serviceLocationAllowlist.ts.
+
+[[redirects]]
+  from = "/locations/adams-morgan-dc/*"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/alexandria-va/*"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/annandale-va/*"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/arlington-va/*"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/bowie-md/*"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/boyds-md/*"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/brookeville-md/*"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/burtonsville-md/*"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/capitol-hill-dc/*"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/clarksburg-md/*"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/college-park-md/*"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/columbia-heights-dc/*"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/columbia-md/*"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/damascus-md/*"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/downtown-dc/*"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/dupont-circle-dc/*"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/ellicott-city-md/*"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/fairfax-va/*"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/falls-church-va/*"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/frederick-md/*"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/georgetown-dc/*"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/herndon-va/*"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/hyattsville-md/*"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/kentlands-md/*"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/laurel-md/*"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/mclean-va/*"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/monrovia-md/*"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/montgomery-village-md/*"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/mount-airy-md/*"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/navy-yard-dc/*"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/north-potomac-md/*"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/reston-va/*"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/shaw-dc/*"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/takoma-park-md/*"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/tysons-va/*"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/vienna-va/*"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/washington-dc/*"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/washington-dc-ne/*"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/adams-morgan-dc"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/alexandria-va"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/annandale-va"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/arlington-va"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/bowie-md"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/boyds-md"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/brookeville-md"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/burtonsville-md"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/capitol-hill-dc"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/clarksburg-md"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/college-park-md"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/columbia-heights-dc"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/columbia-md"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/damascus-md"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/downtown-dc"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/dupont-circle-dc"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/ellicott-city-md"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/fairfax-va"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/falls-church-va"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/frederick-md"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/georgetown-dc"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/herndon-va"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/hyattsville-md"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/kentlands-md"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/laurel-md"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/mclean-va"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/monrovia-md"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/montgomery-village-md"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/mount-airy-md"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/navy-yard-dc"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/north-potomac-md"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/reston-va"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/shaw-dc"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/takoma-park-md"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/tysons-va"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/vienna-va"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/washington-dc"
+  to = "/410.html"
+  status = 410
+  force = true
+
+[[redirects]]
+  from = "/locations/washington-dc-ne"
+  to = "/410.html"
+  status = 410
+  force = true
+
 # ── SPA fallback (must be last) ───────────────────────────────────────────────
 [[redirects]]
   from = "/*"
