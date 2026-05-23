@@ -23,8 +23,8 @@ const HERO_IMAGE =
 
 const galleryImages: GalleryImage[] = [
   {
-    src: "https://images.pexels.com/photos/6195125/pexels-photo-6195125.jpeg?auto=compress&cs=tinysrgb&w=800",
-    alt: "Scraping dried wax residue from a light-colored carpet with a plastic scraper",
+    src: "/images/blog/carpet-steam-vapor.jpg",
+    alt: "Steam cleaner removing candle wax residue from carpet fibers",
     caption: "Carpet: freeze first, scrape second — always.",
   },
   {
@@ -207,11 +207,19 @@ const HowToRemoveCandleWaxBlog = () => {
             <h2 className="font-heading text-3xl font-bold text-foreground mb-2">
               How to Remove Candle Wax from Carpet
             </h2>
-            <p className="text-muted-foreground leading-relaxed mb-6">
+            <p className="text-muted-foreground leading-relaxed mb-4">
               Carpet is the most common victim. The fibers trap wax fast, and dyed wax can leave a color stain even after the wax itself is gone. Follow these four steps in order.
             </p>
+            <div className="rounded-2xl overflow-hidden shadow-md mb-8">
+              <img
+                src="/images/blog/carpet-vacuum-living-room.jpg"
+                alt="Vacuuming carpet before removing candle wax — preparation step"
+                className="w-full max-h-[380px] object-cover"
+                loading="lazy"
+              />
+            </div>
 
-            <div className="space-y-8 mb-10">
+            <div className="space-y-8 mb-8">
               {howToSteps.map((step, i) => (
                 <div key={step.name} className="flex gap-5 items-start">
                   <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-accent text-white font-bold text-lg flex items-center justify-center shadow-md">
@@ -223,6 +231,15 @@ const HowToRemoveCandleWaxBlog = () => {
                   </div>
                 </div>
               ))}
+            </div>
+
+            <div className="rounded-2xl overflow-hidden shadow-md mb-6">
+              <img
+                src="/images/blog/carpet-steam-gloves.jpg"
+                alt="Professional with gloves using steam cleaner to treat candle wax stain on carpet"
+                className="w-full max-h-[380px] object-cover"
+                loading="lazy"
+              />
             </div>
 
             <div className="bg-amber-50 border border-amber-200 rounded-2xl p-5 mb-10 flex gap-4 items-start">
