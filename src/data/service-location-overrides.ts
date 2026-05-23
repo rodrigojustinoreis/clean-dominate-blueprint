@@ -93,6 +93,17 @@ Chevy Chase households often include children in competitive private schools, fo
     ],
   },
 
+  "chevy-chase-md/eco-friendly-cleaning": {
+    uniqueContent: `Chevy Chase households have long supported sustainable practices — you'll find composting programs, electric vehicles, and conservation-minded renovation choices throughout the neighborhood. It makes sense that the same standards apply to how homes are cleaned. Capital Clean Care's eco-friendly cleaning service in Chevy Chase uses only EPA Safer Choice™ certified, plant-based formulas — every product verified non-toxic for children, pets, and the watershed that runs through this part of Montgomery County. No synthetic fragrances, no ammonia, no bleach derivatives.
+
+The homes here — Georgian colonials, mid-century ranches, and premium condos on Wisconsin Avenue — often have sensitive surfaces: natural stone countertops, hardwood floors with oil or wax finishes, custom cabinetry with painted finishes, and textiles from high-end furnishings. Our eco-friendly formulas are designed for exactly these materials: pH-balanced, residue-free, and effective without the abrasive chemistry that standard cleaning products use. Residents in Chevy Chase tell us the difference is noticeable — no chemical smell after we leave, no sticky residue on surfaces, and no concern about what the kids or dogs are touching afterward.`,
+    photos: [
+      { src: "/images/team/cleaning-window-blinds.png", alt: "Capital Clean Care eco-friendly cleaning in Chevy Chase, MD — plant-based products, safe for family and pets" },
+      { src: "/images/team/team-mopping-uniform.jpg", alt: "Capital Clean Care team member in uniform providing eco-friendly house cleaning in Chevy Chase, MD" },
+      { src: "/images/team/two-team-members.jpg", alt: "Capital Clean Care eco-friendly cleaning crew serving Chevy Chase, MD homes" },
+    ],
+  },
+
   "gaithersburg-md/house-cleaning": {
     uniqueContent: `Gaithersburg's rapid growth through Kentlands, Lakelands, Crown Farm, and Rio has brought thousands of newer homes to the area — modern open floor plans with quartz countertops, luxury vinyl plank floors, and light-colored painted cabinetry that shows every fingerprint and water mark. These homes look stunning when clean and distinctly mediocre when they're not. Our Gaithersburg house cleaning teams specialize in exactly these surfaces: streak-free technique on quartz, gentle yet effective care for LVP flooring, and smudge-free results on semi-gloss painted surfaces.
 

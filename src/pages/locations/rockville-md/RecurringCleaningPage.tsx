@@ -193,6 +193,16 @@ const RockvilleRecurringCleaningPage = () => {
         ctaPrimary="Set Up Recurring Cleaning in Rockville"
       />
 
+      {/* ── Cross-link Banner ──────────────────────────────── */}
+      <div className="bg-primary/5 border-b border-primary/10">
+        <div className="container mx-auto px-4 max-w-6xl py-3 text-center text-sm">
+          <span className="text-muted-foreground">Need a thorough reset before starting your routine?</span>{" "}
+          <Link to="/locations/rockville-md/deep-cleaning" className="text-primary font-semibold underline">
+            See Deep Cleaning in Rockville →
+          </Link>
+        </div>
+      </div>
+
       {/* Checklist */}
       <ServiceChecklistLocation
         title="What's Included in Every Rockville Recurring Clean"
