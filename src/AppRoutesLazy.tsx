@@ -23,6 +23,7 @@ const HowToCleanYourWashingMachineEcoFriendly = lazy(() => import("./pages/HowTo
 const HowToGetRidOfMildewSmellNaturally = lazy(() => import("./pages/HowToGetRidOfMildewSmellNaturally"));
 const HowToGetCigaretteSmellOutOfYourHouse = lazy(() => import("./pages/HowToGetCigaretteSmellOutOfYourHouse"));
 const HowToRemoveSharpieSafely = lazy(() => import("./pages/HowToRemoveSharpieSafely"));
+const HowToRemoveHardWaterStainsNaturally = lazy(() => import("./pages/HowToRemoveHardWaterStainsNaturally"));
 const SpringCleaningMD       = lazy(() => import("./pages/SpringCleaningMD"));
 const PrivacyPolicy          = lazy(() => import("./pages/PrivacyPolicy"));
 const TermsOfService         = lazy(() => import("./pages/TermsOfService"));
@@ -64,6 +65,7 @@ const AppRoutesLazy = () => (
     <Route path="/blog/how-to-get-rid-of-mildew-smell-naturally" element={<HowToGetRidOfMildewSmellNaturally />} />
     <Route path="/blog/how-to-get-cigarette-smell-out-of-your-house" element={<HowToGetCigaretteSmellOutOfYourHouse />} />
     <Route path="/blog/how-to-remove-sharpie-safely" element={<HowToRemoveSharpieSafely />} />
+    <Route path="/blog/how-to-remove-hard-water-stains-naturally" element={<HowToRemoveHardWaterStainsNaturally />} />
     <Route path="/blog/:slug" element={<BlogPost />} />
     <Route path="/spring-cleaning-md" element={<SpringCleaningMD />} />
     <Route path="/house-cleaning-near-me" element={<HouseCleaningNearMe />} />

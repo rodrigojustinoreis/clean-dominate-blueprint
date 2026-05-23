@@ -22,6 +22,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "how-to-remove-hard-water-stains-naturally",
+    title: "How to Remove Hard Water Stains Naturally (No Harsh Chemicals)",
+    excerpt: "Remove hard water stains from shower glass, faucets, tile, and toilets using white vinegar and lemon juice — no CLR, safe for septic and the Chesapeake Bay.",
+    date: "2026-05-23",
+    readTime: "9 min read",
+    category: "Home Care Guides",
+    coverImage: "https://images.pexels.com/photos/7005268/pexels-photo-7005268.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
+  },
+  {
     slug: "how-to-remove-sharpie-safely",
     title: "How to Remove Sharpie From Any Surface (Kid-Safe Methods)",
     excerpt: "Remove permanent marker from walls, wood, fabric, carpet, and skin using kid-safe, pet-safe methods — no bleach, no harsh solvents.",
