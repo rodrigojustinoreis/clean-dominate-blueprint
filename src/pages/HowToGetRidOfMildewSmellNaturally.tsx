@@ -19,7 +19,7 @@ import BlogInlineCTA from "@/components/blog/BlogInlineCTA";
 import StickyCTA from "@/components/blog/StickyCTA";
 
 const HERO_IMAGE =
-  "https://images.pexels.com/photos/13444964/pexels-photo-13444964.jpeg?auto=compress&cs=tinysrgb&w=1200";
+  "https://images.pexels.com/photos/6957827/pexels-photo-6957827.jpeg?auto=compress&cs=tinysrgb&w=1200";
 
 const galleryImages: GalleryImage[] = [
   {
@@ -142,7 +142,7 @@ const HowToGetRidOfMildewSmellNaturally = () => {
       </div>
 
       {/* HERO */}
-      <BlogHero src={HERO_IMAGE} alt="Damp bathroom showing condensation and humidity">
+      <BlogHero src={HERO_IMAGE} alt="Baking soda and natural eco-friendly cleaning ingredients for mildew removal">
         <span className="bg-accent/20 text-accent font-semibold px-4 py-1.5 rounded-full text-sm inline-block mb-6 uppercase tracking-wider border border-accent/30">
           Home Care Guide
         </span>
