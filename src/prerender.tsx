@@ -12,6 +12,7 @@ function getAllRoutes(): string[] {
   const routes: string[] = [
     "/",
     "/services",
+    "/services/",
     "/about",
     "/reviews",
     "/contact",
