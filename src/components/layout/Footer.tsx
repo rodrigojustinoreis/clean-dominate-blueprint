@@ -140,6 +140,20 @@ const Footer = () => (
         Capital Clean Care LLC is not affiliated with any other cleaning company with a similar name operating in the Maryland area.
       </p>
     </div>
+
+    {/* Trust Bar */}
+    <div className="bg-primary-foreground/5 border-t border-primary-foreground/10">
+      <div className="container mx-auto px-4 py-3">
+        <ul className="flex flex-wrap justify-center items-center gap-x-6 gap-y-1.5 text-xs text-primary-foreground/60">
+          {["Licensed & Insured", "Background-Checked Team", "Eco-Friendly Products", "Family & Latino-Owned", "5★ Google Rated", "100% Satisfaction Guarantee"].map((item) => (
+            <li key={item} className="flex items-center gap-1.5">
+              <span className="w-1 h-1 rounded-full bg-accent inline-block" aria-hidden="true" />
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
   </footer>
 );
 

@@ -11,6 +11,7 @@ import { cities as locationCities } from "./data/locations";
 function getAllRoutes(): string[] {
   const routes: string[] = [
     "/",
+    "/services",
     "/about",
     "/reviews",
     "/contact",
