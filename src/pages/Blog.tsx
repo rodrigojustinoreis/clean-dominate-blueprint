@@ -28,7 +28,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-05-23",
     readTime: "9 min read",
     category: "Home Care Guides",
-    coverImage: "https://images.pexels.com/photos/13444964/pexels-photo-13444964.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
+    coverImage: "https://images.pexels.com/photos/6957827/pexels-photo-6957827.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
   },
   {
     slug: "how-to-clean-your-washing-machine-eco-friendly",
