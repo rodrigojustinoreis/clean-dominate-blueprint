@@ -27,6 +27,7 @@ const today = new Date().toISOString().split("T")[0];
 
 const staticPages = [
   { url: "/", priority: "1.0", freq: "weekly" },
+  { url: "/services", priority: "0.9", freq: "weekly" },
   { url: "/about", priority: "0.8", freq: "monthly" },
   { url: "/reviews", priority: "0.7", freq: "monthly" },
   { url: "/contact", priority: "0.8", freq: "monthly" },
@@ -37,9 +38,14 @@ const staticPages = [
 ];
 
 const servicePages = [
-  "/services/standard-cleaning", "/services/deep-cleaning",
-  "/services/move-in-move-out-cleaning", "/services/post-construction-cleaning",
+  "/services/house-cleaning",
+  "/services/deep-cleaning",
+  "/services/move-out-cleaning",
+  "/services/post-construction-cleaning",
   "/services/recurring-cleaning",
+  "/services/eco-friendly-cleaning",
+  "/services/airbnb-cleaning",
+  "/services/office-cleaning",
 ];
 
 let urls = "";

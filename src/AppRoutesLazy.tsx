@@ -27,6 +27,7 @@ const Careers                = lazy(() => import("./pages/Careers"));
 const PremiumFanPage         = lazy(() => import("./pages/PremiumFanPage"));
 const WhyEcoFriendlyPage     = lazy(() => import("./pages/WhyEcoFriendlyPage"));
 const GiftCards              = lazy(() => import("./pages/GiftCards"));
+const MasterServicesPage     = lazy(() => import("@/pages/MasterServicesPage"));
 
 // Priority location pages — must come before generic /locations/:slug/:serviceSlug
 const RockvilleHouseCleaningPage        = lazy(() => import("./pages/locations/rockville-md/HouseCleaningPage"));
@@ -44,6 +45,8 @@ const AppRoutesLazy = () => (
     <Route path="/about" element={<About />} />
     <Route path="/reviews" element={<Reviews />} />
     <Route path="/contact" element={<Contact />} />
+    <Route path="/services/" element={<Navigate to="/services" replace />} />
+    <Route path="/services" element={<MasterServicesPage />} />
     <Route path="/services/deep-cleaning" element={<DeepCleaningPage />} />
     <Route path="/services/eco-friendly-cleaning" element={<EcoFriendlyCleaningPage />} />
     <Route path="/services/:slug" element={<ServicePage />} />
@@ -76,7 +79,6 @@ const AppRoutesLazy = () => (
     <Route path="/contact-us" element={<Navigate to="/contact" replace />} />
     <Route path="/book-now" element={<Navigate to="/#quote" replace />} />
     <Route path="/pricing" element={<Navigate to="/" replace />} />
-    <Route path="/services" element={<Navigate to="/" replace />} />
     <Route path="/house-cleaning-wheaton-md" element={<VanityLandingPage />} />
     <Route path="/eco-cleaning-bethesda-md" element={<VanityLandingPage />} />
     <Route path="/deep-cleaning-germantown-md" element={<VanityLandingPage />} />

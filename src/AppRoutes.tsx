@@ -25,6 +25,7 @@ import WhyEcoFriendlyPage from "./pages/WhyEcoFriendlyPage";
 import EcoFriendlyCleaningPage from "./pages/EcoFriendlyCleaningPage";
 import GiftCards from "./pages/GiftCards";
 import NotFound from "./pages/NotFound";
+import MasterServicesPage from "@/pages/MasterServicesPage";
 // Priority location pages — must come before generic /locations/:slug/:serviceSlug
 import RockvilleHouseCleaningPage        from "./pages/locations/rockville-md/HouseCleaningPage";
 import RockvilleRecurringCleaningPage    from "./pages/locations/rockville-md/RecurringCleaningPage";
@@ -129,6 +130,8 @@ const AppRoutes = () => (
     <Route path="/about" element={<About />} />
     <Route path="/reviews" element={<Reviews />} />
     <Route path="/contact" element={<Contact />} />
+    <Route path="/services/" element={<Navigate to="/services" replace />} />
+    <Route path="/services" element={<MasterServicesPage />} />
     <Route path="/services/deep-cleaning" element={<DeepCleaningPage />} />
     <Route path="/services/eco-friendly-cleaning" element={<EcoFriendlyCleaningPage />} />
     <Route path="/services/:slug" element={<ServicePage />} />
@@ -163,7 +166,6 @@ const AppRoutes = () => (
     <Route path="/contact-us" element={<Navigate to="/contact" replace />} />
     <Route path="/book-now" element={<Navigate to="/#quote" replace />} />
     <Route path="/pricing" element={<Navigate to="/" replace />} />
-    <Route path="/services" element={<Navigate to="/" replace />} />
     {/* Vanity landing pages */}
     <Route path="/house-cleaning-wheaton-md" element={<VanityLandingPage />} />
     <Route path="/eco-cleaning-bethesda-md" element={<VanityLandingPage />} />

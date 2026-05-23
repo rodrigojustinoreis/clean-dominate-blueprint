@@ -109,11 +109,7 @@ export const LocalBusinessSchema = ({ areaServed, reviews, inLanguage = "en-US" 
       opens: BUSINESS_INFO.hours.opens,
       closes: BUSINESS_INFO.hours.closes,
     },
-    sameAs: [
-      BUSINESS_INFO.social.instagram,
-      BUSINESS_INFO.social.facebook,
-      BUSINESS_INFO.social.googleMaps,
-    ],
+    sameAs: BUSINESS_INFO.socialProfiles,
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "Cleaning Services",

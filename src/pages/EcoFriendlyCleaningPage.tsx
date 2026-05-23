@@ -123,8 +123,8 @@ const EcoFriendlyCleaningPage = () => {
           <Breadcrumbs
             items={[
               { label: "Home", href: "/" },
-              { label: "Services" },
-              { label: "Eco-Friendly Cleaning" },
+              { label: "Services", href: "/services" },
+              { label: "Eco-Friendly Cleaning", href: "/services/eco-friendly-cleaning" },
             ]}
             className="mb-6"
           />
