@@ -22,6 +22,7 @@ function getAllRoutes(): string[] {
     "/blog/how-to-remove-candle-wax-eco-friendly",
     "/blog/how-to-clean-your-washing-machine-eco-friendly",
     "/blog/how-to-get-rid-of-mildew-smell-naturally",
+    "/blog/how-to-get-cigarette-smell-out-of-your-house",
     "/blog/spring-cleaning-checklist-maryland-2026",
     "/blog/eco-cleaning-tips-maryland-homes",
     "/blog/house-cleaning-prices-maryland-2026",

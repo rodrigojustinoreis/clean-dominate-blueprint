@@ -22,6 +22,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "how-to-get-cigarette-smell-out-of-your-house",
+    title: "How to Get Cigarette Smell Out of Your House (Naturally)",
+    excerpt: "Remove cigarette smoke odor from walls, furniture, carpet, and air with eco-safe methods proven for Maryland's humid climate — no ozone, no harsh chemicals.",
+    date: "2026-05-23",
+    readTime: "10 min read",
+    category: "Home Care Guides",
+    coverImage: "https://images.pexels.com/photos/19026351/pexels-photo-19026351.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
+  },
+  {
     slug: "how-to-get-rid-of-mildew-smell-naturally",
     title: "How to Get Rid of Mildew Smell Naturally (Maryland Guide)",
     excerpt: "Eliminate mildew and musty odor from basements, bathrooms, clothes, and furniture using vinegar, baking soda, and ventilation — no bleach, no toxic residue.",
