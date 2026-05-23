@@ -22,6 +22,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "how-to-remove-sharpie-safely",
+    title: "How to Remove Sharpie From Any Surface (Kid-Safe Methods)",
+    excerpt: "Remove permanent marker from walls, wood, fabric, carpet, and skin using kid-safe, pet-safe methods — no bleach, no harsh solvents.",
+    date: "2026-05-23",
+    readTime: "8 min read",
+    category: "Home Care Guides",
+    coverImage: "https://images.pexels.com/photos/4219137/pexels-photo-4219137.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
+  },
+  {
     slug: "how-to-get-cigarette-smell-out-of-your-house",
     title: "How to Get Cigarette Smell Out of Your House (Naturally)",
     excerpt: "Remove cigarette smoke odor from walls, furniture, carpet, and air with eco-safe methods proven for Maryland's humid climate — no ozone, no harsh chemicals.",
