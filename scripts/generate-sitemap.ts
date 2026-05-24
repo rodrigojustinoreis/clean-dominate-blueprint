@@ -53,6 +53,7 @@ const blogPosts = [
   "/blog/deep-cleaning-checklist-dmv-homeowners",
   "/blog/how-to-remove-tough-stains-from-mattresses-eco-friendly-april-2026",
   "/blog/how-to-clean-bathroom-professionally-maryland-spring-2026",
+  "/blog/how-to-remove-sticker-residue-natural",
 ];
 
 const servicePages = [

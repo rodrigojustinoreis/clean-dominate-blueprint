@@ -22,6 +22,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "how-to-remove-sticker-residue-natural",
+    title: "How to Remove Sticker Residue Naturally (No Goo Gone Needed)",
+    excerpt: "Remove sticky label residue from glass, plastic, wood, and stainless steel using oil, vinegar, heat, or baking soda — safer than Goo Gone and better for your home.",
+    date: "2026-05-23",
+    readTime: "8 min read",
+    category: "Home Care Guides",
+    coverImage: "https://images.pexels.com/photos/7771976/pexels-photo-7771976.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
+  },
+  {
     slug: "how-to-get-rid-of-dog-smell-pet-safe",
     title: "How to Get Rid of Dog Smell in House (Pet-Safe Methods)",
     excerpt: "Remove dog odor from carpet, furniture, beds, and air using baking soda, enzyme cleaners, and vinegar — no essential oils, no harsh chemicals, safe for your pet.",

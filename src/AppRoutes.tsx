@@ -22,6 +22,7 @@ import HowToRemoveSharpieSafely from "./pages/HowToRemoveSharpieSafely";
 import HowToRemoveHardWaterStainsNaturally from "./pages/HowToRemoveHardWaterStainsNaturally";
 import HowToCleanGroutWithoutBleach from "./pages/HowToCleanGroutWithoutBleach";
 import HowToGetRidOfDogSmellPetSafe from "./pages/HowToGetRidOfDogSmellPetSafe";
+import HowToRemoveStickerResidueNatural from "./pages/HowToRemoveStickerResidueNatural";
 import SpringCleaningMD from "./pages/SpringCleaningMD";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
@@ -155,6 +156,7 @@ const AppRoutes = () => (
     <Route path="/blog/how-to-remove-hard-water-stains-naturally" element={<HowToRemoveHardWaterStainsNaturally />} />
     <Route path="/blog/how-to-clean-grout-without-bleach" element={<HowToCleanGroutWithoutBleach />} />
     <Route path="/blog/how-to-get-rid-of-dog-smell-pet-safe" element={<HowToGetRidOfDogSmellPetSafe />} />
+    <Route path="/blog/how-to-remove-sticker-residue-natural" element={<HowToRemoveStickerResidueNatural />} />
     <Route path="/blog/:slug" element={<BlogPost />} />
     <Route path="/spring-cleaning-md" element={<SpringCleaningMD />} />
     <Route path="/house-cleaning-near-me" element={<HouseCleaningNearMe />} />
