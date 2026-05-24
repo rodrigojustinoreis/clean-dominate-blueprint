@@ -45,6 +45,7 @@ const blogPosts = [
   "/blog/how-to-get-cigarette-smell-out-of-your-house",
   "/blog/how-to-remove-sharpie-safely",
   "/blog/how-to-remove-hard-water-stains-naturally",
+  "/blog/how-to-clean-grout-without-bleach",
   "/blog/spring-cleaning-checklist-maryland-2026",
   "/blog/eco-cleaning-tips-maryland-homes",
   "/blog/house-cleaning-prices-maryland-2026",

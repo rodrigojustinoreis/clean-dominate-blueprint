@@ -22,6 +22,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "how-to-clean-grout-without-bleach",
+    title: "How to Clean Grout Without Bleach (Natural Methods)",
+    excerpt: "Get sparkling white grout without bleach using baking soda, vinegar, and hydrogen peroxide — safe for kids, pets, septic systems, and colored grout.",
+    date: "2026-05-23",
+    readTime: "9 min read",
+    category: "Home Care Guides",
+    coverImage: "https://images.pexels.com/photos/9462766/pexels-photo-9462766.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
+  },
+  {
     slug: "how-to-remove-hard-water-stains-naturally",
     title: "How to Remove Hard Water Stains Naturally (No Harsh Chemicals)",
     excerpt: "Remove hard water stains from shower glass, faucets, tile, and toilets using white vinegar and lemon juice — no CLR, safe for septic and the Chesapeake Bay.",
