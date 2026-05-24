@@ -19,7 +19,7 @@ import BlogInlineCTA from "@/components/blog/BlogInlineCTA";
 import StickyCTA from "@/components/blog/StickyCTA";
 
 const HERO_IMAGE =
-  "https://images.pexels.com/photos/7771976/pexels-photo-7771976.jpeg?auto=compress&cs=tinysrgb&w=1200";
+  "https://images.pexels.com/photos/7512912/pexels-photo-7512912.jpeg?auto=compress&cs=tinysrgb&w=1200";
 
 const galleryImages: GalleryImage[] = [
   {

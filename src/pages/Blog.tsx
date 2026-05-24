@@ -28,7 +28,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-05-23",
     readTime: "8 min read",
     category: "Home Care Guides",
-    coverImage: "https://images.pexels.com/photos/7771976/pexels-photo-7771976.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
+    coverImage: "https://images.pexels.com/photos/7512912/pexels-photo-7512912.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
   },
   {
     slug: "how-to-get-rid-of-dog-smell-pet-safe",
