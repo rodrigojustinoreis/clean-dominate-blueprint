@@ -22,6 +22,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "how-to-get-rid-of-dog-smell-pet-safe",
+    title: "How to Get Rid of Dog Smell in House (Pet-Safe Methods)",
+    excerpt: "Remove dog odor from carpet, furniture, beds, and air using baking soda, enzyme cleaners, and vinegar — no essential oils, no harsh chemicals, safe for your pet.",
+    date: "2026-05-23",
+    readTime: "9 min read",
+    category: "Home Care Guides",
+    coverImage: "https://images.pexels.com/photos/2248516/pexels-photo-2248516.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
+  },
+  {
     slug: "how-to-clean-grout-without-bleach",
     title: "How to Clean Grout Without Bleach (Natural Methods)",
     excerpt: "Get sparkling white grout without bleach using baking soda, vinegar, and hydrogen peroxide — safe for kids, pets, septic systems, and colored grout.",

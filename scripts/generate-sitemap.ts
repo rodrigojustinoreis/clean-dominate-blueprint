@@ -46,6 +46,7 @@ const blogPosts = [
   "/blog/how-to-remove-sharpie-safely",
   "/blog/how-to-remove-hard-water-stains-naturally",
   "/blog/how-to-clean-grout-without-bleach",
+  "/blog/how-to-get-rid-of-dog-smell-pet-safe",
   "/blog/spring-cleaning-checklist-maryland-2026",
   "/blog/eco-cleaning-tips-maryland-homes",
   "/blog/house-cleaning-prices-maryland-2026",
