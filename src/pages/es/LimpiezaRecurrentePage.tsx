@@ -11,7 +11,7 @@ import MeetTheTeamSection from "@/components/sections/MeetTheTeamSection";
 
 const PHONE = "(240) 704-2551";
 const PHONE_TEL = "tel:+12407042551";
-const CANONICAL = "https://www.capitalcleancare.com/es/limpieza-recurrente";
+const CANONICAL = "https://capitalcleancare.com/es/limpieza-recurrente";
 
 export default function LimpiezaRecurrentePage() {
   const { seoHelmet } = useSEO({

@@ -11,7 +11,7 @@ import FAQExpandedSection from "@/components/sections/FAQExpandedSection";
 
 const PHONE = "(240) 704-2551";
 const PHONE_TEL = "tel:+12407042551";
-const CANONICAL = "https://www.capitalcleancare.com/es/";
+const CANONICAL = "https://capitalcleancare.com/es/";
 
 const reviews = [
   { name: "María G., Silver Spring", text: "El equipo de Rodrigo limpia mi casa hace 2 años. Siempre puntuales, siempre amables, y mi casa queda como nueva cada vez. Recomendado 100%." },

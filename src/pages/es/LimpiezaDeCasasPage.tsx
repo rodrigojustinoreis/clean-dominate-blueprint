@@ -11,7 +11,7 @@ import MeetTheTeamSection from "@/components/sections/MeetTheTeamSection";
 
 const PHONE = "(240) 704-2551";
 const PHONE_TEL = "tel:+12407042551";
-const CANONICAL = "https://www.capitalcleancare.com/es/limpieza-de-casas";
+const CANONICAL = "https://capitalcleancare.com/es/limpieza-de-casas";
 
 const includedItems = [
   { area: "Cocina", items: ["Desinfección de mesones y backsplash", "Limpieza exterior de electrodomésticos", "Lavado del fregadero hasta brillar", "Trapeado del piso, rincones incluidos", "Vaciado y limpieza del bote de basura"] },

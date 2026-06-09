@@ -53,6 +53,27 @@ for (const p of getAllowlistedPaths()) {
   added.push(p);
 }
 
+// Ensure Spanish (/es/) pages are listed. Source of truth = the CANONICAL constant
+// declared in each src/pages/es/**/*.tsx, so the sitemap <loc> always matches the
+// page's own canonical (these pages are prerendered and indexable).
+function walk(dir: string): string[] {
+  return fs.readdirSync(dir, { withFileTypes: true }).flatMap((d) => {
+    const full = path.join(dir, d.name);
+    return d.isDirectory() ? walk(full) : full.endsWith(".tsx") ? [full] : [];
+  });
+}
+const esCanonicals = new Set<string>();
+for (const file of walk(path.resolve("src/pages/es"))) {
+  const m = fs.readFileSync(file, "utf8").match(/const CANONICAL\s*=\s*"([^"]+)"/);
+  if (m && m[1].startsWith(`${BASE}/es`)) esCanonicals.add(m[1]);
+}
+const addedEs: string[] = [];
+for (const loc of [...esCanonicals].sort()) {
+  if (present.has(loc.replace(/\/$/, ""))) continue;
+  kept.push({ loc, lastmod: today });
+  addedEs.push(loc.replace(BASE, ""));
+}
+
 const body = kept
   .map((e) => `  <url>\n    <loc>${e.loc}</loc>\n    <lastmod>${e.lastmod}</lastmod>\n  </url>`)
   .join("\n");
@@ -62,9 +83,11 @@ const DRY = process.argv.includes("--dry");
 console.log(`Before: ${blocks.length} URLs`);
 console.log(`Dropped (noindex service-location): ${dropped.length}`);
 console.log(`Added (allowlisted, prerendered, was missing): ${added.length}`);
+console.log(`Added (Spanish /es/ pages): ${addedEs.length}`);
 console.log(`After: ${kept.length} URLs`);
 console.log(`Deprecated tags stripped: changefreq=${(xml.match(/<changefreq>/g) || []).length}, priority=${(xml.match(/<priority>/g) || []).length}`);
-if (added.length) console.log("Added:\n" + added.map((u) => "  + " + u).join("\n"));
+if (added.length) console.log("Added (allowlisted):\n" + added.map((u) => "  + " + u).join("\n"));
+if (addedEs.length) console.log("Added (es):\n" + addedEs.map((u) => "  + " + u).join("\n"));
 if (!DRY) {
   fs.writeFileSync(FILE, out);
   console.log(`\n✅ Wrote ${FILE}`);

@@ -10,7 +10,7 @@ import TransparencySection from "@/components/sections/TransparencySection";
 
 const PHONE = "(240) 704-2551";
 const PHONE_TEL = "tel:+12407042551";
-const CANONICAL = "https://www.capitalcleancare.com/es/areas/silver-spring-md";
+const CANONICAL = "https://capitalcleancare.com/es/areas/silver-spring-md";
 
 const services = [
   { slug: "/es/limpieza-de-casas", title: "Limpieza Regular", desc: "Mantenimiento semanal, quincenal o mensual para tu hogar en Silver Spring." },

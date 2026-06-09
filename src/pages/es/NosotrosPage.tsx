@@ -9,7 +9,7 @@ import FAQExpandedSection from "@/components/sections/FAQExpandedSection";
 
 const PHONE = "(240) 704-2551";
 const PHONE_TEL = "tel:+12407042551";
-const CANONICAL = "https://www.capitalcleancare.com/es/nosotros";
+const CANONICAL = "https://capitalcleancare.com/es/nosotros";
 
 export default function NosotrosPage() {
   const { seoHelmet } = useSEO({
