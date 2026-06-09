@@ -96,13 +96,6 @@ export const LocalBusinessSchema = ({ areaServed, reviews, inLanguage = "en-US" 
     priceRange: BUSINESS.priceRange,
     currenciesAccepted: "USD",
     paymentAccepted: "Cash, Credit Card, Debit Card, Digital Payment",
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: BUSINESS_INFO.rating.value,
-      reviewCount: BUSINESS_INFO.rating.count,
-      bestRating: "5",
-      worstRating: "1",
-    },
     openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",
       dayOfWeek: BUSINESS_INFO.hours.days,
@@ -123,8 +116,17 @@ export const LocalBusinessSchema = ({ areaServed, reviews, inLanguage = "en-US" 
     },
   };
 
-  // Reviews must live on LocalBusiness — Google does not accept Service as parent type
+  // Reviews must live on LocalBusiness — Google does not accept Service as parent type.
+  // aggregateRating is only emitted alongside the reviews that back it — never as a bare,
+  // self-serving rating on pages that show no reviews (Google review-snippet policy).
   if (reviews && reviews.length > 0) {
+    schema.aggregateRating = {
+      "@type": "AggregateRating",
+      ratingValue: BUSINESS_INFO.rating.value,
+      reviewCount: BUSINESS_INFO.rating.count,
+      bestRating: "5",
+      worstRating: "1",
+    };
     schema.review = reviews.map((r) => ({
       "@type": "Review",
       author: { "@type": "Person", name: r.name },
@@ -334,8 +336,8 @@ export const CityReviewSchema = ({ cityName, cityUrl, reviews }: CityReviewSchem
     address: businessAddress,
     aggregateRating: {
       "@type": "AggregateRating",
-      ratingValue: "5.0",
-      reviewCount: "47",
+      ratingValue: BUSINESS_INFO.rating.value,
+      reviewCount: BUSINESS_INFO.rating.count,
       bestRating: "5",
       worstRating: "1",
     },
