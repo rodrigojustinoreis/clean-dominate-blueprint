@@ -51,6 +51,7 @@ const Index = () => {
     title: "Eco-Friendly House Cleaning MD, DC & VA | Capital Clean Care",
     description: "Professional eco-friendly house cleaning in Maryland, DC & Virginia. EPA Safer Choice certified. 5.0 stars. 15% OFF first clean. Call (240) 704-2551.",
     canonical: "https://capitalcleancare.com/",
+    preloadImage: "/images/hero/team-hero.webp",
   });
 
   return (
