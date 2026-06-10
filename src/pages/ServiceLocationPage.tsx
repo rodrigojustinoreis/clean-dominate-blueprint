@@ -29,8 +29,8 @@ const teamPhotos = [
   "/images/team/team-two-large-room.jpg",
   "/images/team/team-tile-scrubber.jpg",
   "/images/team/team-making-bed.jpg",
-  "/images/team/team-supplies-basket.png",
-  "/images/team/team-window-blinds-pro.png",
+  "/images/team/team-supplies-basket.webp",
+  "/images/team/team-window-blinds-pro.webp",
 ];
 
 function cityPhotoIndex(slug: string): number {

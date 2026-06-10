@@ -23,7 +23,7 @@ const steps = [
   {
     number: "02",
     emoji: "🌬️",
-    photo: "/images/team/team-window-blinds-pro.png",
+    photo: "/images/team/team-window-blinds-pro.webp",
     photoAlt: "Cleaner dusting window blinds from top to bottom",
     title: "Dust-Free Air Start",
     description:
@@ -33,7 +33,7 @@ const steps = [
   {
     number: "03",
     emoji: "🌿",
-    photo: "/images/team/team-supplies-basket.png",
+    photo: "/images/team/team-supplies-basket.webp",
     photoAlt: "Capital Clean Care team with eco-friendly cleaning supplies basket",
     title: "GreenShield Sanitize",
     description:
