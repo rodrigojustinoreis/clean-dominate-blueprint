@@ -1,7 +1,9 @@
 import { ArrowRight, Phone, Check, Star, Shield, Leaf } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import teamPhoto from "@/assets/team-photo.webp";
+
+// Served from /public (stable URL) so it can be <link rel="preload">-ed for the fastest LCP.
+const teamPhoto = "/images/hero/team-hero.webp";
 import { trackPhoneClick, trackBookNowClick } from "@/lib/analytics";
 
 const miniTestimonials = [
