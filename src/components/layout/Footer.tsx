@@ -162,7 +162,7 @@ const Footer = () => (
           <a href="https://www.instagram.com/capital_cleancare" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors" aria-label="Follow Capital Clean Care on Instagram">
             <Instagram className="h-5 w-5" />
           </a>
-          <a href="https://www.facebook.com/capitalcleancare" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors" aria-label="Follow Capital Clean Care on Facebook">
+          <a href="https://www.facebook.com/capital.clean.care" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors" aria-label="Follow Capital Clean Care on Facebook">
             <Facebook className="h-5 w-5" />
           </a>
           <a href="https://www.tiktok.com/@capitalcleancare1" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors" aria-label="Follow Capital Clean Care on TikTok">
