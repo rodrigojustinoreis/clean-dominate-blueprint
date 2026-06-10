@@ -6,7 +6,8 @@
     <!-- title, description, og:title, og:description, og:url, twitter tags are set per-page via react-helmet-async -->
     <title>Eco-Friendly House Cleaning MD, DC &amp; VA | Capital Clean Care</title>
     <meta name="author" content="Capital Clean Care" />
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <!-- robots is set per-page via the useSEO hook (src/hooks/useSEO.ts) so that noindex
+         pages do not inherit a conflicting "index,follow" default. No static robots here. -->
 
     <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -33,9 +34,9 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@capitalcleancare" />
     <meta name="twitter:creator" content="@capitalcleancare" />
-    <meta name="p:domain_verify" content="REPLACE_WITH_PINTEREST_VERIFICATION_CODE" />
-    <meta name="google-site-verification" content="REPLACE_WITH_GOOGLE_SEARCH_CONSOLE_CODE" />
-    <meta name="msvalidate.01" content="REPLACE_WITH_BING_VERIFICATION_CODE" />
+    <!-- Site-verification meta tags removed: they shipped as literal REPLACE_WITH_* placeholders
+         (verifying nothing). Add real tokens here if/when meta-tag verification is needed; GSC is
+         already verified via another method. -->
 
     <!-- Geo targeting -->
     <meta name="geo.region" content="US-MD" />

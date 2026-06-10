@@ -2,6 +2,15 @@
  * Sitemap generator script.
  * Run: npx tsx scripts/generate-sitemap.ts
  * Automatically generates sitemap.xml from all service-location combinations.
+ *
+ * ⚠️ SUPERSEDED (SEO audit 2026-06) — DO NOT run as-is. This script emits EVERY
+ * service-location combination (including the noindexed, non-allowlisted "zombie"
+ * permutations) and the deprecated <changefreq>/<priority> tags, which would undo
+ * the sitemap repair. The served public/sitemap.xml is now maintained to list only
+ * indexable (allowlisted) pages. To repair/regenerate it correctly, run:
+ *     npx tsx scripts/fix-sitemap.ts
+ * If you revive this generator, filter combos through isAllowlistedServiceLocation()
+ * and drop the changefreq/priority tags first.
  */
 
 import fs from "fs";

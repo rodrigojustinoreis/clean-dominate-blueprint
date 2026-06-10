@@ -51,7 +51,16 @@ export const useSEO = ({ title, description, canonical, ogType = "website", ogIm
     createElement("meta", { key: "tw-desc", name: "twitter:description", content: description }),
     createElement("meta", { key: "tw-site", name: "twitter:site", content: "@CapitalCleanCare" }),
     ...hreflangLinks,
-    ...(noIndex ? [createElement("meta", { key: "robots", name: "robots", content: "noindex,nofollow" })] : []),
+    // Single source of truth for robots. Emitted on every page so there is never a
+    // conflict with a static index.html default (noindex pages previously carried BOTH
+    // an inherited "index,follow" and a Helmet "noindex,nofollow").
+    createElement("meta", {
+      key: "robots",
+      name: "robots",
+      content: noIndex
+        ? "noindex,nofollow"
+        : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    }),
     ...(ogImage
       ? [
           createElement("meta", { key: "og-img", property: "og:image", content: ogImage }),

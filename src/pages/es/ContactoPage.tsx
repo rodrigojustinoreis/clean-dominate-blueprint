@@ -10,7 +10,7 @@ import MeetTheTeamSection from "@/components/sections/MeetTheTeamSection";
 const PHONE = "(240) 704-2551";
 const PHONE_TEL = "tel:+12407042551";
 const EMAIL = "capitalcleancare@gmail.com";
-const CANONICAL = "https://www.capitalcleancare.com/es/contacto";
+const CANONICAL = "https://capitalcleancare.com/es/contacto";
 
 export default function ContactoPage() {
   const { seoHelmet } = useSEO({

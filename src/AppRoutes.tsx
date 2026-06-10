@@ -139,7 +139,9 @@ const AppRoutes = () => (
     <Route path="/about" element={<About />} />
     <Route path="/reviews" element={<Reviews />} />
     <Route path="/contact" element={<Contact />} />
-    <Route path="/services/" element={<Navigate to="/services" replace />} />
+    {/* Both / and /services render the page (canonical is /services/). The previous
+        Navigate made the prerendered trailing-slash variant render an empty shell. */}
+    <Route path="/services/" element={<MasterServicesPage />} />
     <Route path="/services" element={<MasterServicesPage />} />
     <Route path="/services/deep-cleaning" element={<DeepCleaningPage />} />
     <Route path="/services/eco-friendly-cleaning" element={<EcoFriendlyCleaningPage />} />

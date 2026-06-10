@@ -11,7 +11,7 @@ import MeetTheTeamSection from "@/components/sections/MeetTheTeamSection";
 
 const PHONE = "(240) 704-2551";
 const PHONE_TEL = "tel:+12407042551";
-const CANONICAL = "https://www.capitalcleancare.com/es/limpieza-airbnb";
+const CANONICAL = "https://capitalcleancare.com/es/limpieza-airbnb";
 
 export default function LimpiezaAirbnbPage() {
   const { seoHelmet } = useSEO({
