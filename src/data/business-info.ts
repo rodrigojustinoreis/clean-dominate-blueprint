@@ -27,6 +27,7 @@ export const BUSINESS_INFO = {
   social: {
     instagram: "https://www.instagram.com/capital_cleancare",
     facebook: "https://www.facebook.com/capitalcleancare",
+    tiktok: "https://www.tiktok.com/@capitalcleancare1",
     googleMaps:
       "https://www.google.com/maps/place/Capital+Clean+Care/@39.0887503,-77.0783716,17z/data=!3m1!4b1!4m6!3m5!1s0xa2bc172727d57413:0x18a0025a4f044b49!8m2!3d39.0887503!4d-77.0783716!16s%2Fg%2F11wp5v7v9c",
   },
@@ -43,7 +44,8 @@ export const BUSINESS_INFO = {
   ],
   socialProfiles: [
     "https://www.facebook.com/capitalcleancare",
-    "https://www.instagram.com/capitalcleancare",
+    "https://www.instagram.com/capital_cleancare",
+    "https://www.tiktok.com/@capitalcleancare1",
     "https://www.linkedin.com/company/capital-clean-care",
     "https://www.crunchbase.com/organization/capital-clean-care",
     "https://www.pinterest.com/capitalcleancare/",
