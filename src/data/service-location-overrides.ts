@@ -32,7 +32,7 @@ One thing Rockville clients consistently tell us: bathrooms and kitchens in home
 
 Rockville families with young children and pets are the core of our eco-friendly cleaning client base. Montgomery County's hard water (averaging 180–200 mg/L hardness) actually makes eco-friendly products a practical choice, not just an ethical one: our citric-acid-based descalers outperform bleach on bathroom fixtures and leave no chemical residue on surfaces where children play. We bring all supplies and use reusable, OEKO-TEX certified microfiber cloths laundered between visits — nothing disposable, nothing wasteful, nothing that ends up in the Chesapeake Bay watershed.`,
     photos: [
-      { src: "/images/team/eco-friendly-products.png", alt: "Capital Clean Care team member with eco-friendly cleaning products — Rockville, MD eco cleaning service" },
+      { src: "/images/team/eco-friendly-products.webp", alt: "Capital Clean Care team member with eco-friendly cleaning products — Rockville, MD eco cleaning service" },
       { src: "/images/team/wiping-door-microfiber.jpg", alt: "Capital Clean Care team member wiping surface with plant-based cleaner in Rockville, MD" },
       { src: "/images/team/team-mopping-uniform.jpg", alt: "Capital Clean Care team member in uniform — eco-friendly house cleaning in Rockville, MD" },
     ],
@@ -55,7 +55,7 @@ Rockville apartment renters consistently book us for two moments: move-out clean
 Bethesda clients tend to have high standards and low tolerance for inconsistency — which is exactly why we assign dedicated teams rather than rotating strangers. Your team learns your home's quirks: which fixtures stain from the area's hard water, which floor sections show footprints fastest, how you prefer your decorative items repositioned after cleaning. That continuity is the difference between a cleaning service and a cleaning relationship, and it's why our Bethesda client retention rate is among the highest of any market we serve.`,
     photos: [
       { src: "/images/team/team-post-construction.jpg", alt: "Capital Clean Care team cleaning spacious home in Bethesda, MD — professional house cleaning service" },
-      { src: "/images/team/cleaning-window-blinds.png", alt: "Capital Clean Care team member cleaning window blinds in Bethesda, MD home" },
+      { src: "/images/team/cleaning-window-blinds.webp", alt: "Capital Clean Care team member cleaning window blinds in Bethesda, MD home" },
       { src: "/images/team/team-mopping-uniform.jpg", alt: "Capital Clean Care professional in uniform — house cleaning service in Bethesda, MD" },
     ],
   },
@@ -87,7 +87,7 @@ One pattern we see consistently in Silver Spring deep cleaning visits: bathrooms
 
 Chevy Chase households often include children in competitive private schools, formal entertaining spaces used regularly, and outdoor areas — porches, stone terraces, sunrooms — that connect to interior spaces and track seasonal debris inside daily. Our house cleaning service in Chevy Chase includes particular attention to these high-traffic transition zones, entryway floors, and the baseboards and floor vents that collect everything that comes in from the manicured yards outside. We schedule with the same priority as a premium service — your time is limited, and we deliver without requiring supervision.`,
     photos: [
-      { src: "/images/team/cleaning-window-blinds.png", alt: "Capital Clean Care team member cleaning windows in Chevy Chase, MD home" },
+      { src: "/images/team/cleaning-window-blinds.webp", alt: "Capital Clean Care team member cleaning windows in Chevy Chase, MD home" },
       { src: "/images/team/team-mopping-uniform.jpg", alt: "Capital Clean Care team member in uniform — house cleaning in Chevy Chase, MD" },
       { src: "/images/team/two-team-members.jpg", alt: "Capital Clean Care team cleaning a Chevy Chase, MD home — professional house cleaning service" },
     ],
@@ -98,7 +98,7 @@ Chevy Chase households often include children in competitive private schools, fo
 
 The homes here — Georgian colonials, mid-century ranches, and premium condos on Wisconsin Avenue — often have sensitive surfaces: natural stone countertops, hardwood floors with oil or wax finishes, custom cabinetry with painted finishes, and textiles from high-end furnishings. Our eco-friendly formulas are designed for exactly these materials: pH-balanced, residue-free, and effective without the abrasive chemistry that standard cleaning products use. Residents in Chevy Chase tell us the difference is noticeable — no chemical smell after we leave, no sticky residue on surfaces, and no concern about what the kids or dogs are touching afterward.`,
     photos: [
-      { src: "/images/team/cleaning-window-blinds.png", alt: "Capital Clean Care eco-friendly cleaning in Chevy Chase, MD — plant-based products, safe for family and pets" },
+      { src: "/images/team/cleaning-window-blinds.webp", alt: "Capital Clean Care eco-friendly cleaning in Chevy Chase, MD — plant-based products, safe for family and pets" },
       { src: "/images/team/team-mopping-uniform.jpg", alt: "Capital Clean Care team member in uniform providing eco-friendly house cleaning in Chevy Chase, MD" },
       { src: "/images/team/two-team-members.jpg", alt: "Capital Clean Care eco-friendly cleaning crew serving Chevy Chase, MD homes" },
     ],
@@ -143,7 +143,7 @@ Germantown townhouses and condos have a characteristic floor plan that our teams
 Alongside the new Pike & Rose developments, the established neighborhoods of Randolph Hills, Garrett Park, and Luxmanor have 1950s–70s single-family homes with original hardwood floors, plaster walls, and older bathrooms that need a different approach entirely. Our North Bethesda teams are comfortable with both ends of the spectrum — the gleaming modern high-rise and the lovingly maintained Cape Cod — adjusting technique and products for each surface type while delivering the same thorough result.`,
     photos: [
       { src: "/images/team/two-team-members.jpg", alt: "Capital Clean Care team cleaning a North Bethesda, MD home — professional house cleaning service" },
-      { src: "/images/team/cleaning-window-blinds.png", alt: "Capital Clean Care team member cleaning windows and blinds in North Bethesda, MD" },
+      { src: "/images/team/cleaning-window-blinds.webp", alt: "Capital Clean Care team member cleaning windows and blinds in North Bethesda, MD" },
       { src: "/images/team/wiping-door-microfiber.jpg", alt: "Capital Clean Care team member cleaning surfaces in North Bethesda, MD home" },
     ],
   },
@@ -175,8 +175,8 @@ Wheaton apartment cleaning has a distinct practical consideration: building elev
 
 Kensington also sits within the Rock Creek watershed, and our plant-based products are formulated to be genuinely biodegradable — everything that goes down your drain eventually reaches the watershed, and we take that seriously. Our microfiber cloths are OEKO-TEX certified and laundered between every client visit, meaning we bring no cross-contamination between homes and nothing disposable that ends up in a landfill. For Kensington homeowners who've made conscious choices about what their family eats and how they live, our cleaning service is built to match those values completely.`,
     photos: [
-      { src: "/images/team/eco-friendly-products.png", alt: "Capital Clean Care team member with eco-friendly cleaning products — Kensington, MD eco cleaning service" },
-      { src: "/images/team/cleaning-window-blinds.png", alt: "Capital Clean Care team member cleaning windows with eco-friendly products in Kensington, MD" },
+      { src: "/images/team/eco-friendly-products.webp", alt: "Capital Clean Care team member with eco-friendly cleaning products — Kensington, MD eco cleaning service" },
+      { src: "/images/team/cleaning-window-blinds.webp", alt: "Capital Clean Care team member cleaning windows with eco-friendly products in Kensington, MD" },
       { src: "/images/team/wiping-door-microfiber.jpg", alt: "Capital Clean Care team member using plant-based cleaner in Kensington, MD home" },
     ],
   },
@@ -189,7 +189,7 @@ Kensington also sits within the Rock Creek watershed, and our plant-based produc
 DC residents have demanding schedules — legislative sessions, agency deadlines, diplomatic events — and they expect cleaning services that work around them, not the other way around. Our Capitol Hill, Georgetown, Adams Morgan, and Dupont Circle clients book recurring plans because consistency matters: the same team, the same standards, the same result every visit, whether there's a dinner party at 7pm or not. Building access requirements, parking restrictions, and elevator reservation windows are logistics we've navigated across dozens of DC buildings and rowhouses. We show up on time, work efficiently, and leave before your afternoon calls start.`,
     photos: [
       { src: "/images/team/team-post-construction.jpg", alt: "Capital Clean Care team cleaning spacious DC home — professional house cleaning in Washington DC" },
-      { src: "/images/team/cleaning-window-blinds.png", alt: "Capital Clean Care team member cleaning window blinds in Washington DC home" },
+      { src: "/images/team/cleaning-window-blinds.webp", alt: "Capital Clean Care team member cleaning window blinds in Washington DC home" },
       { src: "/images/team/team-mopping-uniform.jpg", alt: "Capital Clean Care team member in uniform — house cleaning service in Washington, DC" },
     ],
   },
@@ -232,8 +232,8 @@ Our Arlington recurring clients get the same team every visit, which matters mor
 
 Alexandria's dog-friendly culture — particularly in Del Ray and Old Town — means pet hair, paw prints, and pet-zone odors are part of almost every job. Our house cleaning service in Alexandria uses HEPA-filtered vacuums that capture pet allergens from hardwood, upholstery, and area rugs, and our plant-based deodorizing formulas neutralize pet odors at the source rather than masking them. We've cleaned for Old Town homes where the Labrador has been there for a decade, and the floors still look like they were refinished last week.`,
     photos: [
-      { src: "/images/team/eco-friendly-products.png", alt: "Capital Clean Care team member with eco-friendly products — house cleaning in Alexandria, VA" },
-      { src: "/images/team/cleaning-window-blinds.png", alt: "Capital Clean Care team member cleaning windows in Alexandria, VA home" },
+      { src: "/images/team/eco-friendly-products.webp", alt: "Capital Clean Care team member with eco-friendly products — house cleaning in Alexandria, VA" },
+      { src: "/images/team/cleaning-window-blinds.webp", alt: "Capital Clean Care team member cleaning windows in Alexandria, VA home" },
       { src: "/images/team/team-mopping-uniform.jpg", alt: "Capital Clean Care professional in uniform — house cleaning service in Alexandria, VA" },
     ],
   },
@@ -256,7 +256,7 @@ Our Columbia recurring clients span the spectrum — dual-income households in R
     photos: [
       { src: "/images/team/mopping-hardwood-floor.jpg", alt: "Capital Clean Care team member on recurring cleaning visit in Columbia, MD" },
       { src: "/images/team/vacuuming-living-room.jpg", alt: "Capital Clean Care team member vacuuming during recurring cleaning in Columbia, MD" },
-      { src: "/images/team/eco-friendly-products.png", alt: "Capital Clean Care eco-friendly recurring cleaning products — Columbia, MD" },
+      { src: "/images/team/eco-friendly-products.webp", alt: "Capital Clean Care eco-friendly recurring cleaning products — Columbia, MD" },
     ],
   },
 
@@ -266,8 +266,8 @@ Our Columbia recurring clients span the spectrum — dual-income households in R
 Many McLean properties are managed by household managers or estate managers who coordinate multiple service providers. We work within those management structures — following product specifications on file, coordinating schedules with other vendors, and reporting any surface concerns to the property manager rather than improvising. For McLean homeowners who manage their own cleaning arrangements, we provide the same level of documentation and communication. Every visit is logged, every product used is on file, and our satisfaction guarantee is backed by a free return visit within 24 hours.`,
     photos: [
       { src: "/images/team/team-post-construction.jpg", alt: "Capital Clean Care team cleaning a large McLean, VA home — professional house cleaning service" },
-      { src: "/images/team/cleaning-window-blinds.png", alt: "Capital Clean Care team member cleaning windows in McLean, VA home" },
-      { src: "/images/team/eco-friendly-products.png", alt: "Capital Clean Care eco-certified products for McLean, VA premium house cleaning" },
+      { src: "/images/team/cleaning-window-blinds.webp", alt: "Capital Clean Care team member cleaning windows in McLean, VA home" },
+      { src: "/images/team/eco-friendly-products.webp", alt: "Capital Clean Care eco-certified products for McLean, VA premium house cleaning" },
     ],
   },
 
@@ -298,7 +298,7 @@ Falls Church's housing mix creates interesting cleaning requirements. The 1950s 
 
 Historic downtown Herndon's Victorian and Craftsman homes require gentler technique than the newer townhouse communities along the Elden Street corridor and in Worldgate. Our teams know both environments — when to use soft microfiber on period-accurate trim and when to use professional degreasers on a 2022 kitchen. Herndon's Silver Line Metro connection has also increased rental activity near the Herndon station, and we work frequently with both long-term homeowners and tenants managing move-in and move-out cleaning on tight timelines.`,
     photos: [
-      { src: "/images/team/eco-friendly-products.png", alt: "Capital Clean Care eco-friendly cleaning products — house cleaning in Herndon, VA" },
+      { src: "/images/team/eco-friendly-products.webp", alt: "Capital Clean Care eco-friendly cleaning products — house cleaning in Herndon, VA" },
       { src: "/images/team/team-mopping-uniform.jpg", alt: "Capital Clean Care team member in uniform — house cleaning service in Herndon, VA" },
       { src: "/images/team/cleaning-appliances.jpg", alt: "Capital Clean Care team member cleaning kitchen appliances in Herndon, VA home" },
     ],
@@ -320,9 +320,9 @@ Annandale's housing stock is predominantly 1950s–1970s ranchers and split-leve
 
 Reston's housing varies dramatically — the original 1960s cluster homes around Lake Newport were designed to be architecturally distinctive, and many have unique materials and layouts that require customized cleaning approaches. The Silver Line corridor has brought modern luxury condominiums near Reston Town Center, with high-end finishes, floor-to-ceiling windows requiring streak-free technique, and building logistics including elevator reservations and parking permits. Our teams are experienced with both ends of the Reston spectrum — historic cluster homes and modern high-rises — and bring the right equipment and products for each.`,
     photos: [
-      { src: "/images/team/eco-friendly-products.png", alt: "Capital Clean Care eco-friendly cleaning products — house cleaning in Reston, VA" },
+      { src: "/images/team/eco-friendly-products.webp", alt: "Capital Clean Care eco-friendly cleaning products — house cleaning in Reston, VA" },
       { src: "/images/team/team-post-construction.jpg", alt: "Capital Clean Care team cleaning spacious Reston, VA home — professional cleaning service" },
-      { src: "/images/team/cleaning-window-blinds.png", alt: "Capital Clean Care team member cleaning windows in Reston, VA home" },
+      { src: "/images/team/cleaning-window-blinds.webp", alt: "Capital Clean Care team member cleaning windows in Reston, VA home" },
     ],
   },
 
@@ -332,8 +332,8 @@ Reston's housing varies dramatically — the original 1960s cluster homes around
 Our Potomac house cleaning teams are selected for experience with luxury surfaces: marble and quartzite countertops, exotic hardwood floors, custom lacquered cabinetry, specialty tile in primary suites, and outdoor entertaining spaces that connect to interior floors. We use exclusively EPA Safer Choice certified, pH-neutral formulas on sensitive surfaces — no ammonia near natural stone, no bleach near specialty finishes, and no synthetic fragrances in homes where occupants have sensitivities. Many Potomac clients have household managers who coordinate our visits; others manage directly. Either way, our communication is clear, our timing is reliable, and our results are documented.`,
     photos: [
       { src: "/images/team/team-post-construction.jpg", alt: "Capital Clean Care team cleaning large Potomac, MD estate — professional house cleaning service" },
-      { src: "/images/team/cleaning-window-blinds.png", alt: "Capital Clean Care team member cleaning windows in Potomac, MD home" },
-      { src: "/images/team/eco-friendly-products.png", alt: "Capital Clean Care eco-certified products for Potomac, MD premium house cleaning" },
+      { src: "/images/team/cleaning-window-blinds.webp", alt: "Capital Clean Care team member cleaning windows in Potomac, MD home" },
+      { src: "/images/team/eco-friendly-products.webp", alt: "Capital Clean Care eco-certified products for Potomac, MD premium house cleaning" },
     ],
   },
 
@@ -353,7 +353,7 @@ The Georgia Avenue and Colesville Road corridors bring significant urban particu
 
 The practical detail that matters most to Bethesda recurring clients: key access and security. We're bonded and insured, and every team member is background-checked and documented before their first visit. Many Bethesda clients provide a code or key that their team uses on a predictable schedule, and the communication protocol is simple — confirmation the day before, a note when the visit is complete, and immediate contact if anything needs attention. Bethesda homes with premium finishes also benefit from recurring maintenance rather than periodic deep cleans: it's far easier to maintain marble countertops and hardwood floors than to restore them after months of surface buildup.`,
     photos: [
-      { src: "/images/team/cleaning-window-blinds.png", alt: "Capital Clean Care team member on recurring cleaning visit in Bethesda, MD" },
+      { src: "/images/team/cleaning-window-blinds.webp", alt: "Capital Clean Care team member on recurring cleaning visit in Bethesda, MD" },
       { src: "/images/team/team-mopping-uniform.jpg", alt: "Capital Clean Care professional in uniform — recurring cleaning service in Bethesda, MD" },
       { src: "/images/team/vacuuming-living-room.jpg", alt: "Capital Clean Care team member vacuuming during recurring cleaning in Bethesda, MD" },
     ],

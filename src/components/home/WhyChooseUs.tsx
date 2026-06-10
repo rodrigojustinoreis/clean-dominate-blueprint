@@ -4,7 +4,7 @@ const pillars = [
   {
     icon: Leaf,
     emoji: "🌿",
-    photo: "/images/team/eco-friendly-products.png",
+    photo: "/images/team/eco-friendly-products.webp",
     photoAlt: "EPA Safer Choice certified non-toxic eco-friendly cleaning products",
     title: "100% Non-Toxic. EPA Certified.",
     desc: "Every product we use carries EPA Safer Choice™ certification — plant-based, biodegradable, free from bleach, ammonia, and synthetic fragrances. Safe for babies, toddlers, pets, and allergy sufferers from day one.",

@@ -26,7 +26,7 @@ export default function NosotrosPage() {
       <div lang="es">
         <div className="w-full overflow-hidden" style={{maxHeight:"320px"}}>
           <img
-            src="/images/team/real-team-two-members.png"
+            src="/images/team/real-team-two-members.webp"
             alt="Equipo Capital Clean Care trabajando"
             loading="eager"
             decoding="async"
