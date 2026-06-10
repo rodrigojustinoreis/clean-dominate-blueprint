@@ -310,10 +310,10 @@ const HouseCleaningPage = () => {
       {/* ══ 1. HERO ══════════════════════════════════════════════ */}
       <section className="relative overflow-hidden bg-white">
         <div className="container mx-auto px-4 max-w-6xl pt-6 pb-12 md:pt-8 md:pb-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-start">
 
-            {/* LEFT — text */}
-            <div className="order-1">
+            {/* LEFT — text (top-aligned with the quote card on the right) */}
+            <div className="order-1 lg:pt-2">
               {/* Eyebrow pill with green dot */}
               <div className="hero-anim inline-flex items-center gap-2 rounded-full px-4 py-2 mb-5" style={{ background: "#10B98112", animationDelay: "0ms" }}>
                 <span className="w-2 h-2 rounded-full animate-pulse" style={{ background: "#10B981" }} />
