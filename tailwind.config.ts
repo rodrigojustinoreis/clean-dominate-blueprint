@@ -111,6 +111,10 @@ export default {
         "fade-up": {
           "0%": { opacity: "0", transform: "translateY(20px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        "marquee": {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
         }
       },
       animation: {
@@ -121,6 +125,7 @@ export default {
         "gradient-x": "gradient-x 15s ease infinite",
         "float": "float 6s ease-in-out infinite",
         "fade-up": "fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        "marquee": "marquee 40s linear infinite",
       },
       backgroundImage: {
         'mesh-light': 'radial-gradient(at 40% 20%, hsla(197, 62%, 93%, 1) 0px, transparent 50%), radial-gradient(at 80% 0%, hsla(207, 70%, 95%, 1) 0px, transparent 50%), radial-gradient(at 0% 50%, hsla(210, 20%, 98%, 1) 0px, transparent 50%)',

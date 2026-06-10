@@ -115,7 +115,8 @@
   .animate-blob,
   .animate-float,
   .animate-gradient-x,
-  .animate-ping {
+  .animate-ping,
+  .animate-marquee {
     animation: none !important;
   }
   .text-gradient {
