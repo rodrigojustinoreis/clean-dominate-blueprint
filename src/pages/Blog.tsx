@@ -40,6 +40,15 @@ export const blogPosts: BlogPost[] = [
     coverImage: "https://images.pexels.com/photos/2248516/pexels-photo-2248516.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
   },
   {
+    slug: "why-pet-skin-allergies-start-in-carpet",
+    title: "Why Your Pet's Skin Allergies Might Start in Your Carpet",
+    excerpt: "Itchy paws and constant scratching? Your carpet may be the hidden allergen reservoir trapping dander, dust mites, and pollen — plus the cleaning routine that lowers the load.",
+    date: "2026-06-10",
+    readTime: "9 min read",
+    category: "Pet Health",
+    coverImage: "/images/blog/pet-carpet-allergies/hero.webp",
+  },
+  {
     slug: "how-to-clean-oled-tv-screen-safely",
     title: "How to Clean an OLED TV Screen Safely (Without Damaging It)",
     excerpt: "Clean your OLED, QLED, or LED TV screen the way LG and Samsung recommend — microfiber and distilled water, zero chemicals. The safe step-by-step method.",

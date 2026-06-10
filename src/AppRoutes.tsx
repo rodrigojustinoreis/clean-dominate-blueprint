@@ -23,6 +23,7 @@ import HowToRemoveSharpieSafely from "./pages/HowToRemoveSharpieSafely";
 import HowToRemoveHardWaterStainsNaturally from "./pages/HowToRemoveHardWaterStainsNaturally";
 import HowToCleanGroutWithoutBleach from "./pages/HowToCleanGroutWithoutBleach";
 import HowToCleanOledTvScreenSafely from "./pages/HowToCleanOledTvScreenSafely";
+import WhyPetSkinAllergiesStartInCarpet from "./pages/WhyPetSkinAllergiesStartInCarpet";
 import HowToRemoveRedWineStains from "./pages/HowToRemoveRedWineStains";
 import HowToGetRidOfDogSmellPetSafe from "./pages/HowToGetRidOfDogSmellPetSafe";
 import HowToRemoveStickerResidueNatural from "./pages/HowToRemoveStickerResidueNatural";
@@ -162,6 +163,7 @@ const AppRoutes = () => (
     <Route path="/blog/how-to-remove-hard-water-stains-naturally" element={<HowToRemoveHardWaterStainsNaturally />} />
     <Route path="/blog/how-to-clean-grout-without-bleach" element={<HowToCleanGroutWithoutBleach />} />
     <Route path="/blog/how-to-clean-oled-tv-screen-safely" element={<HowToCleanOledTvScreenSafely />} />
+    <Route path="/blog/why-pet-skin-allergies-start-in-carpet" element={<WhyPetSkinAllergiesStartInCarpet />} />
     <Route path="/blog/how-to-remove-red-wine-stains" element={<HowToRemoveRedWineStains />} />
     <Route path="/blog/how-to-get-rid-of-dog-smell-pet-safe" element={<HowToGetRidOfDogSmellPetSafe />} />
     <Route path="/blog/how-to-remove-sticker-residue-natural" element={<HowToRemoveStickerResidueNatural />} />

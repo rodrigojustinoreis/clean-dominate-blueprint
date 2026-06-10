@@ -27,6 +27,7 @@ const HowToRemoveSharpieSafely = lazy(() => import("./pages/HowToRemoveSharpieSa
 const HowToRemoveHardWaterStainsNaturally = lazy(() => import("./pages/HowToRemoveHardWaterStainsNaturally"));
 const HowToCleanGroutWithoutBleach = lazy(() => import("./pages/HowToCleanGroutWithoutBleach"));
 const HowToCleanOledTvScreenSafely = lazy(() => import("./pages/HowToCleanOledTvScreenSafely"));
+const WhyPetSkinAllergiesStartInCarpet = lazy(() => import("./pages/WhyPetSkinAllergiesStartInCarpet"));
 const HowToRemoveRedWineStains = lazy(() => import("./pages/HowToRemoveRedWineStains"));
 const HowToGetRidOfDogSmellPetSafe = lazy(() => import("./pages/HowToGetRidOfDogSmellPetSafe"));
 const HowToRemoveStickerResidueNatural = lazy(() => import("./pages/HowToRemoveStickerResidueNatural"));
@@ -75,6 +76,7 @@ const AppRoutesLazy = () => (
     <Route path="/blog/how-to-remove-hard-water-stains-naturally" element={<HowToRemoveHardWaterStainsNaturally />} />
     <Route path="/blog/how-to-clean-grout-without-bleach" element={<HowToCleanGroutWithoutBleach />} />
     <Route path="/blog/how-to-clean-oled-tv-screen-safely" element={<HowToCleanOledTvScreenSafely />} />
+    <Route path="/blog/why-pet-skin-allergies-start-in-carpet" element={<WhyPetSkinAllergiesStartInCarpet />} />
     <Route path="/blog/how-to-remove-red-wine-stains" element={<HowToRemoveRedWineStains />} />
     <Route path="/blog/how-to-get-rid-of-dog-smell-pet-safe" element={<HowToGetRidOfDogSmellPetSafe />} />
     <Route path="/blog/how-to-remove-sticker-residue-natural" element={<HowToRemoveStickerResidueNatural />} />
