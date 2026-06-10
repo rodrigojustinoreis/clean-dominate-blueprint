@@ -27,6 +27,7 @@ function getAllRoutes(): string[] {
     "/blog/how-to-remove-hard-water-stains-naturally",
     "/blog/how-to-clean-grout-without-bleach",
     "/blog/how-to-clean-oled-tv-screen-safely",
+    "/blog/why-pet-skin-allergies-start-in-carpet",
     "/blog/how-to-remove-red-wine-stains",
     "/blog/how-to-get-rid-of-dog-smell-pet-safe",
     "/blog/spring-cleaning-checklist-maryland-2026",
