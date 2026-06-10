@@ -16,6 +16,7 @@ function getAllRoutes(): string[] {
     "/reviews",
     "/contact",
     "/gift-cards",
+    "/pricing",
     "/faq",
     "/blog",
     "/blog/how-to-clean-carpet-home-apartment",

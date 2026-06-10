@@ -35,6 +35,7 @@ import EcoFriendlyCleaningPage from "./pages/EcoFriendlyCleaningPage";
 import GiftCards from "./pages/GiftCards";
 import NotFound from "./pages/NotFound";
 import MasterServicesPage from "@/pages/MasterServicesPage";
+import Pricing from "@/pages/Pricing";
 // Priority location pages — must come before generic /locations/:slug/:serviceSlug
 import RockvilleHouseCleaningPage        from "./pages/locations/rockville-md/HouseCleaningPage";
 import RockvilleRecurringCleaningPage    from "./pages/locations/rockville-md/RecurringCleaningPage";
@@ -185,7 +186,7 @@ const AppRoutes = () => (
     <Route path="/about-us" element={<Navigate to="/about" replace />} />
     <Route path="/contact-us" element={<Navigate to="/contact" replace />} />
     <Route path="/book-now" element={<Navigate to="/#quote" replace />} />
-    <Route path="/pricing" element={<Navigate to="/" replace />} />
+    <Route path="/pricing" element={<Pricing />} />
     {/* Vanity landing pages */}
     <Route path="/house-cleaning-wheaton-md" element={<VanityLandingPage />} />
     <Route path="/eco-cleaning-bethesda-md" element={<VanityLandingPage />} />
