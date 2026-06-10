@@ -2570,8 +2570,21 @@
   status = 410
   force = true
 
+# ── Valid client-rendered route WITHOUT a prerendered file — must serve 200 ──
+# /join-our-team renders the Careers page client-side and has no prerendered file,
+# so it must not fall through to the 404 below. (/premium-clean is already 301→/
+# earlier in this file; every other valid route is prerendered to a real file. All
+# 19 client <Navigate> routes also have explicit 301s above. Verified audit 2026-06.)
+[[redirects]]
+  from = "/join-our-team"
+  to = "/index.html"
+  status = 200
+
 # ── SPA fallback (must be last) ───────────────────────────────────────────────
+# Genuinely unmatched URLs now return a real HTTP 404 (was 200 = soft-404, the root
+# cause of "Crawled – not indexed"). The SPA shell still loads and React Router
+# renders the NotFound page, which also carries <meta name="robots" content="noindex">.
 [[redirects]]
   from = "/*"
   to = "/index.html"
-  status = 200
+  status = 404
