@@ -6,6 +6,7 @@ import About from "./pages/About";
 import Reviews from "./pages/Reviews";
 import Contact from "./pages/Contact";
 import ServicePage from "./pages/ServicePage";
+import HouseCleaningPage from "./pages/HouseCleaningPage";
 import DeepCleaningPage from "./pages/DeepCleaningPage";
 import LocationHub from "./pages/LocationHub";
 import CityPage from "./pages/CityPage";
@@ -145,6 +146,7 @@ const AppRoutes = () => (
     <Route path="/services" element={<MasterServicesPage />} />
     <Route path="/services/deep-cleaning" element={<DeepCleaningPage />} />
     <Route path="/services/eco-friendly-cleaning" element={<EcoFriendlyCleaningPage />} />
+    <Route path="/services/house-cleaning" element={<HouseCleaningPage />} />
     <Route path="/services/:slug" element={<ServicePage />} />
     <Route path="/why-eco-friendly-cleaning" element={<WhyEcoFriendlyPage />} />
     <Route path="/faq" element={<FAQPage />} />

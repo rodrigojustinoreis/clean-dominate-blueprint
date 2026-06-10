@@ -10,6 +10,7 @@ const Reviews                = lazy(() => import("./pages/Reviews"));
 const Contact                = lazy(() => import("./pages/Contact"));
 const ServicePage            = lazy(() => import("./pages/ServicePage"));
 const DeepCleaningPage       = lazy(() => import("./pages/DeepCleaningPage"));
+const HouseCleaningPage      = lazy(() => import("./pages/HouseCleaningPage"));
 const EcoFriendlyCleaningPage = lazy(() => import("./pages/EcoFriendlyCleaningPage"));
 const LocationHub            = lazy(() => import("./pages/LocationHub"));
 const CityPage               = lazy(() => import("./pages/CityPage"));
@@ -58,6 +59,7 @@ const AppRoutesLazy = () => (
     <Route path="/services" element={<MasterServicesPage />} />
     <Route path="/services/deep-cleaning" element={<DeepCleaningPage />} />
     <Route path="/services/eco-friendly-cleaning" element={<EcoFriendlyCleaningPage />} />
+    <Route path="/services/house-cleaning" element={<HouseCleaningPage />} />
     <Route path="/services/:slug" element={<ServicePage />} />
     <Route path="/why-eco-friendly-cleaning" element={<WhyEcoFriendlyPage />} />
     <Route path="/faq" element={<FAQPage />} />
