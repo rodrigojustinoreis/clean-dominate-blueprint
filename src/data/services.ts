@@ -546,7 +546,7 @@ export const services: ServiceData[] = [
       { name: "Amanda F.", location: "Bethesda, MD", text: "My Airbnb rating went from 4.6 to 5.0 stars after I switched to Capital Clean Care. Their attention to detail is incredible." },
       { name: "Carlos M.", location: "Arlington, VA", text: "Same-day turnovers used to stress me out. Now I just send them the checkout time and it's done. Professional, fast, and thorough every time." }
     ],
-    metaTitle: "Airbnb & Short-Term Rental Cleaning in MD, DC & VA | Capital Clean Care",
+    metaTitle: "Airbnb & Rental Cleaning in MD, DC & VA | Capital Clean Care",
     metaDescription: "Professional Airbnb & VRBO turnover cleaning in Maryland, DC & Northern Virginia. 5-star results, same-day turnovers, linen changes included. Get a free quote!"
   },
   {

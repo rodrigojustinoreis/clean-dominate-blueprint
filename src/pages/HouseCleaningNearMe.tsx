@@ -41,7 +41,7 @@ const testimonials = [
 
 const HouseCleaningNearMe = () => {
   const { seoHelmet } = useSEO({
-    title: "House Cleaning Near Me — Same-Week Availability | MD, DC & VA | Capital Clean Care",
+    title: "House Cleaning Near Me in MD, DC & VA | Capital Clean Care",
     description: "Need house cleaning near you today or this week? Capital Clean Care serves Maryland, DC & Northern Virginia with same-week availability. Licensed, eco-friendly, background-checked. Book online.",
     canonical: "https://capitalcleancare.com/house-cleaning-near-me",
     ogImage: "https://capitalcleancare.com/og-image.jpg",
