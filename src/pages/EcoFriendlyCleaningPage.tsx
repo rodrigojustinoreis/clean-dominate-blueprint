@@ -89,7 +89,7 @@ const whatWeUse = [
 
 const EcoFriendlyCleaningPage = () => {
   const { seoHelmet } = useSEO({
-    title: "Eco-Friendly House Cleaning Service | Book Online | MD, DC & VA | Capital Clean Care",
+    title: "Eco-Friendly House Cleaning in MD, DC & VA | Capital Clean Care",
     description:
       "Book eco-friendly house cleaning in Maryland, DC & Virginia. Plant-based, EPA Safer Choice certified products. Background-checked teams. Get 15% off your first clean.",
     canonical: "https://capitalcleancare.com/services/eco-friendly-cleaning",

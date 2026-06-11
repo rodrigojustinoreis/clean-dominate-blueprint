@@ -127,7 +127,7 @@ const whyDifferent = [
 
 const About = () => {
   const { seoHelmet } = useSEO({
-    title: "About Capital Clean Care — Founder Story, GreenShield Method & Our Team | MD, DC & VA",
+    title: "About Capital Clean Care — Eco-Friendly Cleaning in MD, DC & VA",
     description: "The story behind Capital Clean Care: a family-founded eco-friendly cleaning service serving MD, DC & VA for 9+ years. Learn about our GreenShield 5-Step Clean™ methodology, our licensed team, and our 100% satisfaction guarantee.",
     canonical: "https://capitalcleancare.com/about",
   });
