@@ -32,3 +32,5 @@ Disallow: /*?*fbclid=
 Disallow: /*?*gclid=
 
 Sitemap: https://capitalcleancare.com/sitemap.xml
+
+# llms.txt: https://capitalcleancare.com/llms.txt
