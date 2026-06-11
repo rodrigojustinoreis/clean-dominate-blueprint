@@ -15,7 +15,7 @@ const CANONICAL = "https://capitalcleancare.com/es/limpieza-de-mudanza";
 
 export default function LimpiezaDeMudanzaPage() {
   const { seoHelmet } = useSEO({
-    title: "Limpieza de Mudanza Montgomery County MD | Move-Out Cleaning | Capital Clean Care",
+    title: "Limpieza de Mudanza en Montgomery County, MD | Capital Clean Care",
     description: "Limpieza de mudanza profesional MoCo. Garantizamos depósito de fianza. Asegurados, bilingües, 5★ Google. (240) 704-2551",
     canonical: CANONICAL,
   });

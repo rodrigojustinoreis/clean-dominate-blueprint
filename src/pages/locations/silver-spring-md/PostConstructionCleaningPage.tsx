@@ -112,7 +112,7 @@ const nearbyCities = [
 
 const SilverSpringPostConstructionCleaningPage = () => {
   const { seoHelmet } = useSEO({
-    title: "Post-Construction Cleaning in Silver Spring, MD — Dust-Free, Move-In Ready",
+    title: "Post-Construction Cleaning in Silver Spring, MD",
     description:
       "Post-construction cleaning in Silver Spring, MD. HEPA vacuums, construction dust removal, paint splatters, residue. Move-in ready results. Licensed, insured, free quote.",
     canonical: PAGE_URL,

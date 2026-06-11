@@ -105,7 +105,7 @@ const nearbyCities = [
 
 const BethesdaPostConstructionCleaningPage = () => {
   const { seoHelmet } = useSEO({
-    title: "Post-Construction Cleaning in Bethesda, MD — Dust-Free, Move-In Ready",
+    title: "Post-Construction Cleaning in Bethesda, MD",
     description:
       "Post-construction cleaning in Bethesda, MD. HEPA vacuums, construction dust removal, paint splatters, residue. Move-in ready results. Licensed, insured, free quote.",
     canonical: PAGE_URL,

@@ -105,7 +105,7 @@ const nearbyCities = [
 
 const ChevyChaseAirbnbCleaningPage = () => {
   const { seoHelmet } = useSEO({
-    title: "Airbnb Cleaning in Chevy Chase, MD — Fast Turnovers, 5-Star Results",
+    title: "Airbnb Cleaning in Chevy Chase, MD",
     description:
       "Airbnb & short-term rental cleaning in Chevy Chase, MD. Fast turnovers, hotel-standard results, flexible scheduling. Latino-owned & locally trusted. Free quote.",
     canonical: PAGE_URL,

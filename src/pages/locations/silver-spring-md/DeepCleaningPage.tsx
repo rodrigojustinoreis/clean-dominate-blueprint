@@ -116,7 +116,7 @@ const nearbyCities = [
 
 const SilverSpringDeepCleaningPage = () => {
   const { seoHelmet } = useSEO({
-    title: "Deep Cleaning Service in Silver Spring, MD — Top-to-Bottom, Eco-Friendly",
+    title: "Deep Cleaning Service in Silver Spring, MD",
     description:
       "Professional deep cleaning in Silver Spring, MD. Inside appliances, grout, baseboards, ceiling fans — everywhere standard cleanings miss. EPA-certified products. Free quote.",
     canonical: PAGE_URL,

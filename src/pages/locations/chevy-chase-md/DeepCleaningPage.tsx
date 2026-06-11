@@ -111,7 +111,7 @@ const nearbyCities = [
 
 const ChevyChaseDeepCleaningPage = () => {
   const { seoHelmet } = useSEO({
-    title: "Deep Cleaning Service in Chevy Chase, MD — Top-to-Bottom, Eco-Friendly",
+    title: "Deep Cleaning Service in Chevy Chase, MD",
     description:
       "Professional deep cleaning in Chevy Chase, MD. Inside appliances, grout, baseboards, ceiling fans — everywhere standard cleanings miss. EPA-certified products. Free quote.",
     canonical: PAGE_URL,

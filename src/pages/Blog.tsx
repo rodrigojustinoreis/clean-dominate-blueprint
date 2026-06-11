@@ -194,7 +194,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "move-out-cleaning-checklist-maryland-tenants",
-    title: "Move-Out Cleaning Checklist for Maryland Tenants: Get Your Deposit Back",
+    title: "Move-Out Cleaning Checklist for Maryland Tenants",
     excerpt: "Moving out in Rockville, Bethesda or Silver Spring? Use this landlord-approved move-out cleaning checklist to ensure your full security deposit is returned.",
     date: "2026-01-25",
     readTime: "7 min read",
@@ -239,7 +239,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "recurring-cleaning-weekly-biweekly-monthly",
-    title: "Weekly vs. Bi-Weekly vs. Monthly Cleaning: Which Plan Is Right for You?",
+    title: "Weekly vs. Bi-Weekly vs. Monthly House Cleaning",
     excerpt: "Can't decide how often to schedule professional house cleaning in Maryland? This guide helps DMV homeowners choose the right recurring cleaning frequency for their lifestyle and budget.",
     date: "2025-12-01",
     readTime: "5 min read",
@@ -257,7 +257,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "cleaning-service-arlington-va",
-    title: "Finding the Best Cleaning Service in Arlington, VA: A Resident's Guide",
+    title: "Choosing a Cleaning Service in Arlington, VA",
     excerpt: "Arlington condos, townhomes, and apartments have unique cleaning needs. Here's how Northern Virginia residents find and evaluate the right professional cleaning service.",
     date: "2026-04-05",
     readTime: "6 min read",
@@ -284,7 +284,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "cleaning-service-fairfax-va",
-    title: "Professional House Cleaning in Fairfax, VA: A Homeowner's Overview",
+    title: "House Cleaning Services in Fairfax, VA",
     excerpt: "Fairfax families are busy — between commutes, schools, and activities. Discover how professional cleaning services in Fairfax, VA can help you reclaim your weekends.",
     date: "2026-03-27",
     readTime: "6 min read",
@@ -293,7 +293,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "cleaning-service-georgetown-dc",
-    title: "Cleaning Historic Georgetown Homes: What Makes DC's Oldest Neighborhood Different",
+    title: "Cleaning Historic Georgetown Homes in Washington DC",
     excerpt: "Georgetown's historic rowhouses and Federal-style homes require specialized cleaning care. Here's how professional cleaners approach DC's most architecturally rich neighborhood.",
     date: "2026-03-24",
     readTime: "6 min read",
@@ -329,7 +329,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "fall-cleaning-checklist-maryland",
-    title: "Fall Cleaning Checklist for Maryland Homes: Prepare for Winter the Right Way",
+    title: "Fall Cleaning Checklist for Maryland Homes",
     excerpt: "Before the cold sets in, Maryland homes need a thorough fall cleaning — from HVAC prep to weatherizing entryways. This seasonal checklist covers every room.",
     date: "2026-03-12",
     readTime: "7 min read",
@@ -392,7 +392,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "deep-cleaning-montgomery-county-md",
-    title: "Deep Cleaning in Montgomery County, MD: The Complete Homeowner's Guide",
+    title: "Deep Cleaning Guide for Montgomery County, MD",
     excerpt: "From Rockville and Bethesda to Silver Spring and Germantown — Montgomery County homeowners share common deep cleaning challenges. Here's the county-wide guide.",
     date: "2026-04-08",
     readTime: "7 min read",
@@ -401,7 +401,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "cleaning-service-reston-va",
-    title: "Professional Cleaning Services in Reston, VA: What Residents Need to Know",
+    title: "Professional Cleaning Services in Reston, VA",
     excerpt: "Reston's mix of townhomes, condos, and single-family homes all have distinct cleaning needs. Here's the local guide for Reston, VA homeowners and renters.",
     date: "2026-04-07",
     readTime: "6 min read",

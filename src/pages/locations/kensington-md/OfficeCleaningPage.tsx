@@ -109,7 +109,7 @@ const nearbyCities = [
 
 const KensingtonOfficeCleaningPage = () => {
   const { seoHelmet } = useSEO({
-    title: "Office Cleaning in Kensington, MD — Reliable Commercial Cleaning Service",
+    title: "Office Cleaning in Kensington, MD",
     description:
       "Professional office cleaning in Kensington, MD. Daily, weekly, or custom schedules. Background-checked, bonded, insured. Latino-owned. Free commercial quote.",
     canonical: PAGE_URL,

@@ -109,7 +109,7 @@ const nearbyCities = [
 
 const BethesdaDeepCleaningPage = () => {
   const { seoHelmet } = useSEO({
-    title: "Deep Cleaning Service in Bethesda, MD — Top-to-Bottom, Eco-Friendly",
+    title: "Deep Cleaning Service in Bethesda, MD",
     description:
       "Professional deep cleaning in Bethesda, MD. Inside appliances, grout, baseboards, ceiling fans — everywhere standard cleanings miss. EPA-certified products. Free quote.",
     canonical: PAGE_URL,

@@ -109,7 +109,7 @@ const nearbyCities = [
 
 const KensingtonHouseCleaningPage = () => {
   const { seoHelmet } = useSEO({
-    title: "House Cleaning in Kensington, MD — Eco-Friendly & Background-Checked",
+    title: "House Cleaning in Kensington, MD",
     description:
       "Professional house cleaning in Kensington, MD. Eco-friendly products safe for kids & pets. Background-checked, bonded & insured. Latino-owned. Free quote in 60 seconds.",
     canonical: PAGE_URL,

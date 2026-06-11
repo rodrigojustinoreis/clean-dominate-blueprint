@@ -117,7 +117,7 @@ const nearbyCities = [
 
 const GaithersburgDeepCleaningPage = () => {
   const { seoHelmet } = useSEO({
-    title: "Deep Cleaning Service in Gaithersburg, MD — Top-to-Bottom, Eco-Friendly",
+    title: "Deep Cleaning Service in Gaithersburg, MD",
     description:
       "Professional deep cleaning in Gaithersburg, MD. Inside appliances, grout, baseboards, ceiling fans — everywhere standard cleanings miss. EPA-certified products. Free quote.",
     canonical: PAGE_URL,

@@ -84,7 +84,7 @@ const faqs = [
 
 const HowToRemoveSharpieSafely = () => {
   const { seoHelmet } = useSEO({
-    title: "How to Remove Sharpie From Anything (Safe Methods) | Capital Clean Care",
+    title: "How to Remove Sharpie From Any Surface | Capital Clean Care",
     description:
       "Remove permanent marker from walls, wood, skin & fabric with kid-safe methods. Maryland cleaning experts. Free quote in Montgomery County.",
     canonical: "https://capitalcleancare.com/blog/how-to-remove-sharpie-safely",

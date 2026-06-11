@@ -122,7 +122,7 @@ const nearbyCities = [
 
 const NorthBethesdaHouseCleaningPage = () => {
   const { seoHelmet } = useSEO({
-    title: "House Cleaning in North Bethesda, MD — Eco-Friendly & Background-Checked",
+    title: "House Cleaning in North Bethesda, MD",
     description:
       "Professional house cleaning in North Bethesda, MD. Eco-friendly products safe for kids & pets. Background-checked, bonded & insured. Latino-owned. Free quote in 60 seconds.",
     canonical: PAGE_URL,

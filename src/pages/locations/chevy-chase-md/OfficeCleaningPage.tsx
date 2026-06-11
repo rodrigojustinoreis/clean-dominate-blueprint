@@ -113,7 +113,7 @@ const nearbyCities = [
 
 const ChevyChaseOfficeCleaningPage = () => {
   const { seoHelmet } = useSEO({
-    title: "Office Cleaning in Chevy Chase, MD — Reliable Commercial Cleaning Service",
+    title: "Office Cleaning in Chevy Chase, MD",
     description:
       "Professional office cleaning in Chevy Chase, MD. Daily, weekly, or custom schedules. Background-checked, bonded, insured. Latino-owned. Free commercial quote.",
     canonical: PAGE_URL,

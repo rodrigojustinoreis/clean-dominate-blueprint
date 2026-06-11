@@ -22,7 +22,7 @@ const reviews = [
 
 export default function HomeES() {
   const { seoHelmet } = useSEO({
-    title: "Servicio de Limpieza de Casas en Montgomery County, MD | Capital Clean Care",
+    title: "Limpieza de Casas en Montgomery County, MD | Capital Clean Care",
     description: "Servicio profesional de limpieza de casas en Montgomery County, MD. Negocio familiar, 5★ en Google, asegurados y con fianza. ¡Hablamos español! Llama (240) 704-2551",
     canonical: CANONICAL,
   });

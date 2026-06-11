@@ -105,7 +105,7 @@ const nearbyCities = [
 
 const BethesdaAirbnbCleaningPage = () => {
   const { seoHelmet } = useSEO({
-    title: "Airbnb Cleaning in Bethesda, MD — Fast Turnovers, 5-Star Results",
+    title: "Airbnb Cleaning in Bethesda, MD",
     description:
       "Airbnb & short-term rental cleaning in Bethesda, MD. Fast turnovers, hotel-standard results, flexible scheduling. Latino-owned & locally trusted. Free quote.",
     canonical: PAGE_URL,

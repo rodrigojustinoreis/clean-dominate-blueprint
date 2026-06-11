@@ -110,7 +110,7 @@ const nearbyCities = [
 
 const OlneyOfficeCleaningPage = () => {
   const { seoHelmet } = useSEO({
-    title: "Office Cleaning in Olney, MD — Reliable Commercial Cleaning Service",
+    title: "Office Cleaning in Olney, MD",
     description:
       "Professional office cleaning in Olney, MD. Daily, weekly, or custom schedules. Background-checked, bonded, insured. Latino-owned. Free commercial quote.",
     canonical: PAGE_URL,

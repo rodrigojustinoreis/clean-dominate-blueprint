@@ -112,7 +112,7 @@ const nearbyCities = [
 
 const GermantownPostConstructionCleaningPage = () => {
   const { seoHelmet } = useSEO({
-    title: "Post-Construction Cleaning in Germantown, MD — Dust-Free, Move-In Ready",
+    title: "Post-Construction Cleaning in Germantown, MD",
     description:
       "Post-construction cleaning in Germantown, MD. HEPA vacuums, construction dust removal, paint splatters, residue. Move-in ready results. Licensed, insured, free quote.",
     canonical: PAGE_URL,

@@ -101,7 +101,7 @@ const nearbyCities = [
 
 const KensingtonAirbnbCleaningPage = () => {
   const { seoHelmet } = useSEO({
-    title: "Airbnb Cleaning in Kensington, MD — Fast Turnovers, 5-Star Results",
+    title: "Airbnb Cleaning in Kensington, MD",
     description:
       "Airbnb & short-term rental cleaning in Kensington, MD. Fast turnovers, hotel-standard results, flexible scheduling. Latino-owned & locally trusted. Free quote.",
     canonical: PAGE_URL,

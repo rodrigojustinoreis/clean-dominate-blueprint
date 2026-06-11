@@ -107,7 +107,7 @@ const nearbyCities = [
 
 const WheatonDeepCleaningPage = () => {
   const { seoHelmet } = useSEO({
-    title: "Deep Cleaning Service in Wheaton, MD — Top-to-Bottom, Eco-Friendly",
+    title: "Deep Cleaning Service in Wheaton, MD",
     description:
       "Professional deep cleaning in Wheaton, MD. Inside appliances, grout, baseboards, ceiling fans — everywhere standard cleanings miss. EPA-certified products. Free quote.",
     canonical: PAGE_URL,

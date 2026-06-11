@@ -105,7 +105,7 @@ const nearbyCities = [
 
 const PotomacAirbnbCleaningPage = () => {
   const { seoHelmet } = useSEO({
-    title: "Airbnb Cleaning in Potomac, MD — Fast Turnovers, 5-Star Results",
+    title: "Airbnb Cleaning in Potomac, MD",
     description:
       "Airbnb & short-term rental cleaning in Potomac, MD. Fast turnovers, hotel-standard results, flexible scheduling. Latino-owned & locally trusted. Free quote.",
     canonical: PAGE_URL,

@@ -112,7 +112,7 @@ const nearbyCities = [
 
 const KensingtonPostConstructionCleaningPage = () => {
   const { seoHelmet } = useSEO({
-    title: "Post-Construction Cleaning in Kensington, MD — Dust-Free, Move-In Ready",
+    title: "Post-Construction Cleaning in Kensington, MD",
     description:
       "Post-construction cleaning in Kensington, MD. HEPA vacuums, construction dust removal, paint splatters, residue. Move-in ready results. Licensed, insured, free quote.",
     canonical: PAGE_URL,
