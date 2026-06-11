@@ -102,7 +102,7 @@ const nearbyCities = [
 
 const GermantownAirbnbCleaningPage = () => {
   const { seoHelmet } = useSEO({
-    title: "Airbnb Cleaning in Germantown, MD — Fast Turnovers, 5-Star Results",
+    title: "Airbnb Cleaning in Germantown, MD",
     description:
       "Airbnb & short-term rental cleaning in Germantown, MD. Fast turnovers, hotel-standard results, flexible scheduling. Latino-owned & locally trusted. Free quote.",
     canonical: PAGE_URL,

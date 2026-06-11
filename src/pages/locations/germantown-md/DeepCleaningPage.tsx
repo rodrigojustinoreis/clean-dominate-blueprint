@@ -117,7 +117,7 @@ const nearbyCities = [
 
 const GermantownDeepCleaningPage = () => {
   const { seoHelmet } = useSEO({
-    title: "Deep Cleaning Service in Germantown, MD — Top-to-Bottom, Eco-Friendly",
+    title: "Deep Cleaning Service in Germantown, MD",
     description:
       "Professional deep cleaning in Germantown, MD. Inside appliances, grout, baseboards, ceiling fans — everywhere standard cleanings miss. EPA-certified products. Free quote.",
     canonical: PAGE_URL,

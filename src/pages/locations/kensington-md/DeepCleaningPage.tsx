@@ -106,7 +106,7 @@ const nearbyCities = [
 
 const KensingtonDeepCleaningPage = () => {
   const { seoHelmet } = useSEO({
-    title: "Deep Cleaning Service in Kensington, MD — Top-to-Bottom, Eco-Friendly",
+    title: "Deep Cleaning Service in Kensington, MD",
     description:
       "Professional deep cleaning in Kensington, MD. Inside appliances, grout, baseboards, ceiling fans — everywhere standard cleanings miss. EPA-certified products. Free quote.",
     canonical: PAGE_URL,

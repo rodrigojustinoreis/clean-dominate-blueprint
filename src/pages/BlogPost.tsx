@@ -1559,9 +1559,10 @@ const BlogPost = () => {
   const postUrl = `https://capitalcleancare.com/blog/${post.slug}`;
   const howtoData = HOWTO_DATA[post.slug];
 
-  const postTitle = post.title.length > 50
-    ? `${post.title} | Capital Clean Care`
-    : `${post.title} | Capital Clean Care Blog`;
+  // Keep the <title> under 70 chars (Bing): append the brand only when it fits,
+  // otherwise use the post title alone so it isn't truncated in search results.
+  const withBrand = `${post.title} | Capital Clean Care`;
+  const postTitle = withBrand.length <= 70 ? withBrand : post.title;
   const postImage = post.coverImage || "https://capitalcleancare.com/og-image.jpg";
 
   const { seoHelmet } = useSEO({

@@ -23,7 +23,7 @@ const services = [
 
 export default function MontgomeryVillageES() {
   const { seoHelmet } = useSEO({
-    title: "Limpieza de Casas Montgomery Village MD en Español | Capital Clean Care",
+    title: "Limpieza de Casas en Montgomery Village, MD | Capital Clean Care",
     description: "Servicio de limpieza en Montgomery Village, MD. Equipo bilingüe, asegurado, 5★. Lake Forest, Goshen. Llama (240) 704-2551",
     canonical: CANONICAL,
   });

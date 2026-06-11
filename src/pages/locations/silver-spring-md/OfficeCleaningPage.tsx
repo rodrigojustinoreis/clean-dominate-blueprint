@@ -113,7 +113,7 @@ const nearbyCities = [
 
 const SilverSpringOfficeCleaningPage = () => {
   const { seoHelmet } = useSEO({
-    title: "Office Cleaning in Silver Spring, MD — Reliable Commercial Cleaning Service",
+    title: "Office Cleaning in Silver Spring, MD",
     description:
       "Professional office cleaning in Silver Spring, MD. Daily, weekly, or custom schedules. Background-checked, bonded, insured. Latino-owned. Free commercial quote.",
     canonical: PAGE_URL,

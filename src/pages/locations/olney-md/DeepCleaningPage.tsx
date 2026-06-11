@@ -116,7 +116,7 @@ const nearbyCities = [
 
 const OlneyDeepCleaningPage = () => {
   const { seoHelmet } = useSEO({
-    title: "Deep Cleaning Service in Olney, MD — Top-to-Bottom, Eco-Friendly",
+    title: "Deep Cleaning Service in Olney, MD",
     description:
       "Professional deep cleaning in Olney, MD. Inside appliances, grout, baseboards, ceiling fans — everywhere standard cleanings miss. EPA-certified products. Free quote.",
     canonical: PAGE_URL,

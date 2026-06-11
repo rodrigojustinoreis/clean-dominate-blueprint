@@ -22,7 +22,10 @@ export const useSEO = ({ title, description, canonical, ogType = "website", ogIm
   const lang = isSpanish ? "es" : "en";
   const locale = isSpanish ? "es_US" : "en_US";
 
-  const finalTitle = title.includes("Capital Clean Care") ? title : `${title} | Capital Clean Care`;
+  // Append the brand only when it keeps the title within Bing's 70-char limit;
+  // otherwise the descriptive title stands alone (avoids truncation in search results).
+  const withBrand = title.includes("Capital Clean Care") ? title : `${title} | Capital Clean Care`;
+  const finalTitle = withBrand.length <= 70 ? withBrand : title;
   const canonicalUrl = canonical || getCanonicalUrl(pathname);
   const pair = getRoutePair(pathname);
 

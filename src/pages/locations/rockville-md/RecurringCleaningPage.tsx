@@ -122,7 +122,7 @@ const nearbyCities = [
 
 const RockvilleRecurringCleaningPage = () => {
   const { seoHelmet } = useSEO({
-    title: "Recurring House Cleaning in Rockville, MD — Weekly & Bi-Weekly Service",
+    title: "Recurring House Cleaning in Rockville, MD",
     description:
       "Weekly and bi-weekly house cleaning in Rockville, MD. Consistent cleaners, eco-friendly products, satisfaction guaranteed. Build the routine — your home stays clean, always. Free quote.",
     canonical: PAGE_URL,

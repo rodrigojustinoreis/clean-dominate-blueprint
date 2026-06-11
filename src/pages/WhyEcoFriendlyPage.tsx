@@ -198,7 +198,7 @@ const howToSteps = [
 
 const WhyEcoFriendlyPage = () => {
   const { seoHelmet } = useSEO({
-    title: "Why Eco-Friendly Cleaning Is Safer for Your Family | Research & Science | Capital Clean Care",
+    title: "Eco-Friendly Cleaning: Safer for Your Family | Capital Clean Care",
     description:
       "Discover the science behind non-toxic cleaning. Learn how common household chemicals affect children, pets, and indoor air quality — and what plant-based alternatives actually work.",
     canonical: "https://capitalcleancare.com/why-eco-friendly-cleaning",

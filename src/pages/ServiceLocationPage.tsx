@@ -49,7 +49,7 @@ const ServiceLocationPage = () => {
   const faqs = getServiceLocationFAQs(city, service);
   const whyChoose = getWhyChooseUs(city, service);
   const intro = getServiceLocationIntro(city, service);
-  const metaTitle = `Professional ${service.name} in ${city.name}, ${city.state} | Capital Clean Care`;
+  const metaTitle = `${service.name} in ${city.name}, ${city.state} | Capital Clean Care`;
   const serviceLabel = service.shortName.toLowerCase().includes("maid") ? service.shortName : `${service.shortName} & maid service`;
   const metaDescription = `Top-rated ${serviceLabel} in ${city.name}, ${city.state}. Eco-friendly products, background-checked teams, satisfaction guaranteed. Serving ${city.county}. Free quotes.`;
   const pageUrl = `https://capitalcleancare.com/locations/${city.slug}/${service.slug}`;

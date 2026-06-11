@@ -112,7 +112,7 @@ const nearbyCities = [
 
 const WheatonHouseCleaningPage = () => {
   const { seoHelmet } = useSEO({
-    title: "House Cleaning in Wheaton, MD — Eco-Friendly & Background-Checked",
+    title: "House Cleaning in Wheaton, MD",
     description:
       "Professional house cleaning in Wheaton, MD. Eco-friendly products safe for kids & pets. Background-checked, bonded & insured. Latino-owned. Free quote in 60 seconds.",
     canonical: PAGE_URL,

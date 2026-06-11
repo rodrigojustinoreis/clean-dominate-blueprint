@@ -102,7 +102,7 @@ const nearbyCities = [
 
 const GaithersburgAirbnbCleaningPage = () => {
   const { seoHelmet } = useSEO({
-    title: "Airbnb Cleaning in Gaithersburg, MD — Fast Turnovers, 5-Star Results",
+    title: "Airbnb Cleaning in Gaithersburg, MD",
     description:
       "Airbnb & short-term rental cleaning in Gaithersburg, MD. Fast turnovers, hotel-standard results, flexible scheduling. Latino-owned & locally trusted. Free quote.",
     canonical: PAGE_URL,

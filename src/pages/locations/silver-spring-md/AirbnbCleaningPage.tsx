@@ -102,7 +102,7 @@ const nearbyCities = [
 
 const SilverSpringAirbnbCleaningPage = () => {
   const { seoHelmet } = useSEO({
-    title: "Airbnb Cleaning in Silver Spring, MD — Fast Turnovers, 5-Star Results",
+    title: "Airbnb Cleaning in Silver Spring, MD",
     description:
       "Airbnb & short-term rental cleaning in Silver Spring, MD. Fast turnovers, hotel-standard results, flexible scheduling. Latino-owned & locally trusted. Free quote.",
     canonical: PAGE_URL,

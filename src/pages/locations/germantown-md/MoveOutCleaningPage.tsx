@@ -110,7 +110,7 @@ const nearbyCities = [
 
 const GermantownMoveOutCleaningPage = () => {
   const { seoHelmet } = useSEO({
-    title: "Move Out Cleaning in Germantown, MD — Get Your Full Deposit Back",
+    title: "Move Out Cleaning in Germantown, MD",
     description:
       "Move out cleaning in Germantown, MD. We clean to landlord & inspection standards so you get your deposit back. Bonded, insured, eco-friendly. Book today — same-day available.",
     canonical: PAGE_URL,

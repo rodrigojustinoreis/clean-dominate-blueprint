@@ -122,7 +122,7 @@ const nearbyCities = [
 
 const BethesdaRecurringCleaningPage = () => {
   const { seoHelmet } = useSEO({
-    title: "Recurring House Cleaning in Bethesda, MD — Weekly & Bi-Weekly Service",
+    title: "Recurring House Cleaning in Bethesda, MD",
     description:
       "Weekly and bi-weekly house cleaning in Bethesda, MD. Same trusted team, eco-friendly products, 100% satisfaction guaranteed. Build the routine. Free quote in 60 seconds.",
     canonical: PAGE_URL,

@@ -109,7 +109,7 @@ const nearbyCities = [
 
 const GermantownOfficeCleaningPage = () => {
   const { seoHelmet } = useSEO({
-    title: "Office Cleaning in Germantown, MD — Reliable Commercial Cleaning Service",
+    title: "Office Cleaning in Germantown, MD",
     description:
       "Professional office cleaning in Germantown, MD. Daily, weekly, or custom schedules. Background-checked, bonded, insured. Latino-owned. Free commercial quote.",
     canonical: PAGE_URL,

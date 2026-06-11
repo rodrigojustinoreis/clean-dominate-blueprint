@@ -114,7 +114,7 @@ const nearbyCities = [
 
 const PotomacMoveOutCleaningPage = () => {
   const { seoHelmet } = useSEO({
-    title: "Move Out Cleaning in Potomac, MD — Get Your Full Deposit Back",
+    title: "Move Out Cleaning in Potomac, MD",
     description:
       "Move out cleaning in Potomac, MD. We clean to landlord & inspection standards so you get your deposit back. Bonded, insured, eco-friendly. Book today — same-day available.",
     canonical: PAGE_URL,

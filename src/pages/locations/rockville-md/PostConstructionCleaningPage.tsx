@@ -112,7 +112,7 @@ const nearbyCities = [
 
 const RockvillePostConstructionCleaningPage = () => {
   const { seoHelmet } = useSEO({
-    title: "Post-Construction Cleaning in Rockville, MD — Dust-Free, Move-In Ready",
+    title: "Post-Construction Cleaning in Rockville, MD",
     description:
       "Post-construction cleaning in Rockville, MD. HEPA vacuums, construction dust removal, paint splatters, residue. Move-in ready results. Licensed, insured, free quote.",
     canonical: PAGE_URL,
