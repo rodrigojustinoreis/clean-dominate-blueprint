@@ -29,7 +29,7 @@ const reviews = [
 
 const Reviews = () => {
   const { seoHelmet } = useSEO({
-    title: "Client Reviews — 5-Star House Cleaning in MD, DC & VA | Capital Clean Care",
+    title: "5-Star Cleaning Reviews — MD, DC & VA | Capital Clean Care",
     description: "Read 30+ five-star reviews from Maryland, DC & Virginia homeowners. See why families trust Capital Clean Care for eco-friendly, professional house cleaning.",
     canonical: "https://capitalcleancare.com/reviews",
   });
