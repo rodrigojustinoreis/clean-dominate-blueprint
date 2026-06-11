@@ -152,6 +152,8 @@ const Footer = () => (
         <div className="flex flex-col sm:flex-row items-center gap-2">
           <p>© {new Date().getFullYear()} Capital Clean Care. All rights reserved.</p>
           <span className="hidden sm:inline">·</span>
+          <Link to="/faq" className="hover:text-accent transition-colors">FAQ</Link>
+          <span className="hidden sm:inline">·</span>
           <Link to="/privacy-policy" className="hover:text-accent transition-colors">Privacy Policy</Link>
           <span className="hidden sm:inline">·</span>
           <Link to="/terms-of-service" className="hover:text-accent transition-colors">Terms of Service</Link>
