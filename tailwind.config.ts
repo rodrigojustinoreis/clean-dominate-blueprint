@@ -115,6 +115,10 @@ export default {
         "marquee": {
           "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(-50%)" },
+        },
+        "kenburns": {
+          "0%": { transform: "scale(1) translate(0, 0)" },
+          "100%": { transform: "scale(1.12) translate(-1.5%, -1.5%)" },
         }
       },
       animation: {
@@ -126,6 +130,7 @@ export default {
         "float": "float 6s ease-in-out infinite",
         "fade-up": "fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards",
         "marquee": "marquee 40s linear infinite",
+        "kenburns": "kenburns 18s ease-in-out infinite alternate",
       },
       backgroundImage: {
         'mesh-light': 'radial-gradient(at 40% 20%, hsla(197, 62%, 93%, 1) 0px, transparent 50%), radial-gradient(at 80% 0%, hsla(207, 70%, 95%, 1) 0px, transparent 50%), radial-gradient(at 0% 50%, hsla(210, 20%, 98%, 1) 0px, transparent 50%)',

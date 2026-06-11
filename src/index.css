@@ -116,7 +116,8 @@
   .animate-float,
   .animate-gradient-x,
   .animate-ping,
-  .animate-marquee {
+  .animate-marquee,
+  .animate-kenburns {
     animation: none !important;
   }
   .text-gradient {
