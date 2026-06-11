@@ -11,6 +11,7 @@ import NotFound from "./NotFound";
 import RelatedPosts from "@/components/blog/RelatedPosts";
 import BlogInlineCTA from "@/components/blog/BlogInlineCTA";
 import TrustBadges from "@/components/TrustBadges";
+import PricingTable from "@/components/PricingTable";
 
 const blogContent: Record<string, React.ReactNode> = {
   "spring-cleaning-checklist-maryland-2026": (
@@ -100,6 +101,12 @@ const blogContent: Record<string, React.ReactNode> = {
   "house-cleaning-prices-maryland-2026": (
     <article className="prose prose-lg max-w-none">
       <p>One of the most common questions from <Link to="/maryland" className="text-accent hover:underline">Maryland</Link> homeowners is simple: <em>How much does house cleaning cost?</em> The answer depends on your home's size, the type of service, how often you book, and your location. This guide breaks it all down with real pricing for the DMV market in 2026.</p>
+
+      <div className="not-prose my-10 rounded-2xl border border-border bg-card p-5 md:p-7 shadow-sm">
+        <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-1.5 tracking-tight">2026 Price Guide — by Home Size &amp; Service</h2>
+        <p className="text-sm text-muted-foreground mb-6">The same transparent pricing we show on our homepage. Tap a service tab to see typical ranges for the DMV.</p>
+        <PricingTable />
+      </div>
 
       <h2>Average House Cleaning Prices in Maryland (2026)</h2>
       <p>Here are typical price ranges for professional house cleaning in the Maryland, DC, and Northern Virginia area:</p>
