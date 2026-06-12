@@ -111,6 +111,12 @@ const blogContent: Record<string, React.ReactNode> = {
         <PricingTable />
       </div>
 
+      <details className="my-8 not-prose rounded-xl border border-border bg-secondary/30 overflow-hidden">
+        <summary className="cursor-pointer select-none px-5 py-4 font-heading font-semibold text-foreground flex items-center justify-between hover:bg-secondary/50 transition-colors [&::-webkit-details-marker]:hidden">
+          <span>See the full 2026 price breakdown, in writing</span>
+          <span className="text-accent text-sm shrink-0 ml-3">View ▾</span>
+        </summary>
+        <div className="prose prose-lg max-w-none px-5 pb-4 pt-1">
       <h2>Average House Cleaning Prices in Maryland (2026)</h2>
       <p>Here are typical price ranges for professional house cleaning in the Maryland, DC, and Northern Virginia area:</p>
       <ul>
@@ -157,6 +163,8 @@ const blogContent: Record<string, React.ReactNode> = {
 
       <h2>Get an Instant Quote</h2>
       <p>Pricing depends on your specific home. Use our free quote form to get an accurate estimate for your address in <Link to="/locations/silver-spring-md" className="text-accent hover:underline">Silver Spring</Link>, <Link to="/locations/bethesda-md" className="text-accent hover:underline">Bethesda</Link>, <Link to="/locations/fairfax-va" className="text-accent hover:underline">Fairfax</Link>, or anywhere in the DMV.</p>
+        </div>
+      </details>
 
       <BlogInlineCTA
         headline="Get Transparent Pricing for Your Home"
