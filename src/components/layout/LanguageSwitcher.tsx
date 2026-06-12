@@ -16,7 +16,7 @@ export default function LanguageSwitcher() {
         className={`px-2 py-1 rounded transition-colors ${
           !isSpanish ? "font-semibold text-foreground" : "text-muted-foreground hover:text-foreground"
         }`}
-        hrefLang="en-us"
+        hrefLang="en"
         aria-current={!isSpanish ? "page" : undefined}
       >
         🇺🇸 EN
@@ -27,7 +27,7 @@ export default function LanguageSwitcher() {
         className={`px-2 py-1 rounded transition-colors ${
           isSpanish ? "font-semibold text-foreground" : "text-muted-foreground hover:text-foreground"
         }`}
-        hrefLang="es-us"
+        hrefLang="es"
         aria-current={isSpanish ? "page" : undefined}
       >
         🇪🇸 ES
