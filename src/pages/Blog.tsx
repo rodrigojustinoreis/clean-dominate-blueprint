@@ -163,7 +163,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-02-22",
     readTime: "6 min read",
     category: "Tips & Advice",
-    coverImage: "https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
+    coverImage: "/images/blog/pricing-md-2026.webp",
   },
   {
     slug: "deep-cleaning-checklist-dmv-homeowners",

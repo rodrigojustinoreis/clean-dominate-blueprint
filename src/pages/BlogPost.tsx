@@ -100,6 +100,9 @@ const blogContent: Record<string, React.ReactNode> = {
   ),
   "house-cleaning-prices-maryland-2026": (
     <article className="prose prose-lg max-w-none">
+      <div className="not-prose mb-8">
+        <img src="/images/blog/pricing-md-2026.webp" alt="A professional Capital Clean Care cleaner tidying a bright, immaculate Maryland living room" className="w-full rounded-2xl shadow-md" width={1200} height={675} loading="eager" fetchPriority="high" decoding="async" />
+      </div>
       <p>One of the most common questions from <Link to="/maryland" className="text-accent hover:underline">Maryland</Link> homeowners is simple: <em>How much does house cleaning cost?</em> The answer depends on your home's size, the type of service, how often you book, and your location. This guide breaks it all down with real pricing for the DMV market in 2026.</p>
 
       <div className="not-prose my-10 rounded-2xl border border-border bg-card p-5 md:p-7 shadow-sm">
