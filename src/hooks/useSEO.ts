@@ -31,12 +31,12 @@ export const useSEO = ({ title, description, canonical, ogType = "website", ogIm
 
   const hreflangLinks = pair
     ? [
-        createElement("link", { key: "hreflang-en", rel: "alternate", hrefLang: "en-us", href: getCanonicalUrl(pair.en) }),
-        createElement("link", { key: "hreflang-es", rel: "alternate", hrefLang: "es-us", href: getCanonicalUrl(pair.es) }),
+        createElement("link", { key: "hreflang-en", rel: "alternate", hrefLang: "en", href: getCanonicalUrl(pair.en) }),
+        createElement("link", { key: "hreflang-es", rel: "alternate", hrefLang: "es", href: getCanonicalUrl(pair.es) }),
         createElement("link", { key: "hreflang-xd", rel: "alternate", hrefLang: "x-default", href: getCanonicalUrl(pair.en) }),
       ]
     : [
-        createElement("link", { key: "hreflang-self", rel: "alternate", hrefLang: isSpanish ? "es-us" : "en-us", href: canonicalUrl }),
+        createElement("link", { key: "hreflang-self", rel: "alternate", hrefLang: isSpanish ? "es" : "en", href: canonicalUrl }),
         createElement("link", { key: "hreflang-xd", rel: "alternate", hrefLang: "x-default", href: canonicalUrl }),
       ];
 
