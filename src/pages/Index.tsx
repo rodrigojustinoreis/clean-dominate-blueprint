@@ -222,7 +222,7 @@ const Index = () => {
                   <Button size="lg" className="bg-white text-primary hover:bg-white/90 font-bold px-8 h-12 rounded-full shadow-lg" asChild>
                     <a href="#quote">Get a Free Quote <ArrowRight className="ml-2 h-4 w-4" /></a>
                   </Button>
-                  <Button size="lg" variant="outline" className="border-white/40 text-white hover:bg-white/10 px-8 h-12 rounded-full" asChild>
+                  <Button size="lg" variant="outline" className="bg-transparent border-white/40 text-white hover:bg-white/10 hover:text-white px-8 h-12 rounded-full" asChild>
                     <Link to="/services/house-cleaning">See Our Services</Link>
                   </Button>
                 </div>
@@ -238,7 +238,10 @@ const Index = () => {
           <div className="container mx-auto px-4 max-w-3xl text-center">
             <span className="inline-block bg-accent/10 text-accent font-semibold text-sm uppercase tracking-wider px-3 py-1 rounded-full mb-3">Real Client</span>
             <h2 className="font-heading text-2xl md:text-3xl font-bold mt-2 mb-8">Hear It Directly From Our Client</h2>
-            <div className="rounded-2xl overflow-hidden shadow-xl border border-border aspect-video">
+            <div
+              className="rounded-2xl overflow-hidden shadow-xl border border-border aspect-video bg-secondary bg-cover bg-center"
+              style={{ backgroundImage: "url('https://img.youtube.com/vi/xI602FI_iOU/hqdefault.jpg')" }}
+            >
               <iframe
                 src="https://www.youtube.com/embed/xI602FI_iOU"
                 title="Capital Clean Care client video testimonial"

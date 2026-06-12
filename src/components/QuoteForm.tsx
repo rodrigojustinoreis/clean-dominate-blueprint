@@ -12,7 +12,6 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { toast } from "sonner";
-import { supabase } from "@/integrations/supabase/client";
 import { trackQuoteFormSubmit } from "@/lib/analytics";
 
 interface QuoteFormProps {
@@ -46,21 +45,24 @@ const QuoteForm = ({ submitLabel = "Get My Free Quote →", defaultService = "" 
     setSubmitting(true);
 
     try {
-      // Save to database (non-blocking)
-      supabase.from("quote_requests").insert({
-        name: formData.name,
-        phone: formData.phone,
-        email: formData.email,
-        zip: formData.zip,
-        service: formData.service,
-        bedrooms: formData.bedrooms || null,
-        bathrooms: formData.bathrooms || null,
-        frequency: formData.frequency || null,
-        preferred_date: formData.date || null,
-        message: formData.message || null,
-        sms_consent: formData.smsConsent,
-        email_consent: formData.emailConsent,
-      }).then(({ error }) => { if (error) console.error("DB error:", error); });
+      // Save to database (non-blocking; Supabase is loaded on demand so its 169KB
+      // bundle stays out of the initial page load and only loads on form submit).
+      import("@/integrations/supabase/client").then(({ supabase }) =>
+        supabase.from("quote_requests").insert({
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          zip: formData.zip,
+          service: formData.service,
+          bedrooms: formData.bedrooms || null,
+          bathrooms: formData.bathrooms || null,
+          frequency: formData.frequency || null,
+          preferred_date: formData.date || null,
+          message: formData.message || null,
+          sms_consent: formData.smsConsent,
+          email_consent: formData.emailConsent,
+        }).then(({ error }) => { if (error) console.error("DB error:", error); })
+      ).catch((err) => console.error("Supabase load error:", err));
 
       // Submit via Netlify Forms (backup record)
       const encode = (data: Record<string, string>) =>

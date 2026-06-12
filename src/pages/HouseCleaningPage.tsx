@@ -14,7 +14,6 @@ import { ServiceSchema, FAQSchema, BreadcrumbSchema } from "@/components/SchemaM
 import { useSEO } from "@/hooks/useSEO";
 import { getServiceBySlug } from "@/data/services";
 import { trackPhoneClick, trackBookNowClick, trackQuoteFormSubmit } from "@/lib/analytics";
-import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import teamPhoto from "@/assets/luana-cleaning.webp";
 import kitchenGraniteBefore from "@/assets/real-work/kitchen-granite-before.webp";
@@ -97,8 +96,10 @@ const QuoteFormInline = ({ variant = "hero" }: { variant?: "hero" | "footer" }) 
     if (!form.name || !form.phone || !form.zip || (!isFooter && !form.address)) { toast.error("Please fill in all required fields, including your full address."); return; }
     setSubmitting(true);
     try {
-      supabase.from("quote_requests").insert({ name: form.name, phone: form.phone, email: form.email, zip: form.zip, service: "House Cleaning", bedrooms: form.bedrooms, bathrooms: form.bathrooms, message: form.address ? `Address: ${form.address}` : null, sms_consent: false, email_consent: false })
-        .then(({ error }) => { if (error) console.error("DB:", error); });
+      import("@/integrations/supabase/client").then(({ supabase }) =>
+        supabase.from("quote_requests").insert({ name: form.name, phone: form.phone, email: form.email, zip: form.zip, service: "House Cleaning", bedrooms: form.bedrooms, bathrooms: form.bathrooms, message: form.address ? `Address: ${form.address}` : null, sms_consent: false, email_consent: false })
+          .then(({ error }) => { if (error) console.error("DB:", error); })
+      ).catch((err) => console.error("Supabase load:", err));
       const encode = (d: Record<string,string>) => Object.keys(d).map(k => `${encodeURIComponent(k)}=${encodeURIComponent(d[k])}`).join("&");
       fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: encode({ "form-name": "quote", ...form, service: "House Cleaning" }) }).catch(console.error);
       fetch("https://jzxhejqokcjyxxklnnza.supabase.co/functions/v1/receive-lead", { method: "POST", headers: { "Content-Type": "application/json", "x-webhook-secret": "ccc-lead-webhook-2026" }, body: JSON.stringify({ ...form, service: "House Cleaning" }) }).catch(() => {});
