@@ -55,8 +55,8 @@ const Header = () => {
         {/* Main nav */}
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center gap-2">
-            <img src={logo} alt="Capital Clean Care logo" className="h-8 w-8 object-contain" />
-            <span className="font-heading font-bold text-base sm:text-lg md:text-xl text-foreground whitespace-nowrap leading-tight">Capital Clean Care</span>
+            <img src={logo} alt="Capital Clean Care logo" className="h-7 w-7 md:h-8 md:w-8 object-contain shrink-0" />
+            <span className="font-heading font-bold text-sm sm:text-lg md:text-xl text-foreground whitespace-nowrap leading-tight">Capital Clean Care</span>
           </Link>
 
           {/* Desktop nav */}
@@ -155,12 +155,11 @@ const Header = () => {
             </Button>
           </div>
 
-          <div className="lg:hidden flex items-center gap-2">
-            <LanguageSwitcher />
-            <a href="tel:+12407042551" className="text-sm font-semibold text-foreground flex items-center gap-1" aria-label="Call us" onClick={() => trackPhoneClick("header_mobile_topbar")}>
-              <Phone className="h-4 w-4 text-accent" />
+          <div className="lg:hidden flex items-center gap-1.5 shrink-0 whitespace-nowrap">
+            <a href="tel:+12407042551" className="hidden min-[390px]:flex items-center shrink-0" aria-label="Call us" onClick={() => trackPhoneClick("header_mobile_topbar")}>
+              <Phone className="h-5 w-5 text-accent" />
             </a>
-            <Button variant="cta" size="sm" className="text-xs px-3 h-8 rounded-full" asChild>
+            <Button variant="cta" size="sm" className="text-xs px-2.5 h-8 rounded-full shrink-0 whitespace-nowrap" asChild>
               {isSpanish
                 ? <Link to="/es/contacto" onClick={() => trackBookNowClick("header_mobile_cta")}>Cotización</Link>
                 : <a href="/#quote" onClick={() => trackBookNowClick("header_mobile_cta")}>Free Quote</a>
@@ -177,6 +176,10 @@ const Header = () => {
       {mobileOpen && (
         <div className="lg:hidden bg-card border-t border-border">
           <nav className="container mx-auto px-4 py-4 space-y-1">
+            <div className="flex items-center justify-between px-3 pb-3 mb-1 border-b border-border">
+              <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Language / Idioma</span>
+              <LanguageSwitcher />
+            </div>
             {isSpanish ? (
               <>
                 <Link to="/es/" className="block px-3 py-2 rounded-md hover:bg-secondary" onClick={() => setMobileOpen(false)}>Inicio</Link>
