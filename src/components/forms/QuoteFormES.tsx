@@ -12,7 +12,6 @@ import {
   Select, SelectContent, SelectItem, SelectTrigger, SelectValue,
 } from "@/components/ui/select";
 import { CheckCircle, Phone, Clock, MessageCircle } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
 
 declare const gtag: (...args: unknown[]) => void;
 
@@ -96,14 +95,16 @@ const QuoteFormES = ({ id = "cotizacion", defaultService = "", submitLabel = "So
     setSubmitting(true);
 
     try {
-      // 1. Supabase (primary record)
-      supabase.from("quote_requests").insert({
-        name: formData.name, phone: formData.phone, email: formData.email || null,
-        zip: formData.zip, service: formData.service,
-        message: [formData.size && `Tamaño: ${formData.size}`, formData.timing && `Cuándo: ${formData.timing}`, formData.message].filter(Boolean).join(" | ") || null,
-        sms_consent: formData.smsConsent, email_consent: false,
-        source: "es_form",
-      }).then(({ error }) => { if (error) console.error("DB error:", error); });
+      // 1. Supabase (primary record; loaded on demand to keep it off the initial bundle)
+      import("@/integrations/supabase/client").then(({ supabase }) =>
+        supabase.from("quote_requests").insert({
+          name: formData.name, phone: formData.phone, email: formData.email || null,
+          zip: formData.zip, service: formData.service,
+          message: [formData.size && `Tamaño: ${formData.size}`, formData.timing && `Cuándo: ${formData.timing}`, formData.message].filter(Boolean).join(" | ") || null,
+          sms_consent: formData.smsConsent, email_consent: false,
+          source: "es_form",
+        }).then(({ error }) => { if (error) console.error("DB error:", error); })
+      ).catch((err) => console.error("Supabase load error:", err));
 
       // 2. Netlify Forms (backup)
       fetch("/", {

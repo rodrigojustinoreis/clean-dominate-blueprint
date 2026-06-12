@@ -3,7 +3,6 @@ import { X, Gift } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
-import { supabase } from "@/integrations/supabase/client";
 
 const EXIT_INTENT_KEY = "ccc_exit_popup_dismissed";
 
@@ -37,6 +36,8 @@ const ExitIntentPopup = () => {
     if (!name.trim() || !phone.trim()) return;
     setSubmitting(true);
     try {
+      // Supabase loaded on demand (keeps its 169KB bundle off the initial page load).
+      const { supabase } = await import("@/integrations/supabase/client");
       await supabase.from("quote_requests").insert({
         name,
         phone,

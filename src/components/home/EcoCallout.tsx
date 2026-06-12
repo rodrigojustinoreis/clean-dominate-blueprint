@@ -112,7 +112,7 @@ const EcoCallout = () => (
           asChild
           size="lg"
           variant="outline"
-          className="rounded-full border-white/30 text-white hover:bg-white/10"
+          className="bg-transparent rounded-full border-white/40 text-white hover:bg-white/10 hover:text-white"
         >
           <Link to="/contact">
             Book an Eco Clean <ArrowRight className="ml-2 h-4 w-4" />

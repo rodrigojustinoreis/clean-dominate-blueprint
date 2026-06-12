@@ -56,17 +56,17 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center gap-2">
             <img src={logo} alt="Capital Clean Care logo" className="h-8 w-8 object-contain" />
-            <span className="font-heading font-bold text-lg md:text-xl text-foreground">Capital Clean Care</span>
+            <span className="font-heading font-bold text-base sm:text-lg md:text-xl text-foreground whitespace-nowrap leading-tight">Capital Clean Care</span>
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden lg:flex items-center gap-1">
+          <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1">
             {isSpanish ? (
               <>
-                <Link to="/es/" className="px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">Inicio</Link>
+                <Link to="/es/" className="whitespace-nowrap px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">Inicio</Link>
 
                 <div className="relative group">
-                  <button className="px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors flex items-center gap-1">
+                  <button className="whitespace-nowrap px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors flex items-center gap-1">
                     Servicios <ChevronDown className="h-3 w-3 transition-transform group-hover:rotate-180 duration-200" />
                   </button>
                   <div className="absolute top-full left-0 pt-2 hidden group-hover:block">
@@ -81,7 +81,7 @@ const Header = () => {
                 </div>
 
                 <div className="relative group">
-                  <button className="px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors flex items-center gap-1">
+                  <button className="whitespace-nowrap px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors flex items-center gap-1">
                     Áreas <ChevronDown className="h-3 w-3 transition-transform group-hover:rotate-180 duration-200" />
                   </button>
                   <div className="absolute top-full left-0 pt-2 hidden group-hover:block">
@@ -95,16 +95,16 @@ const Header = () => {
                   </div>
                 </div>
 
-                <Link to="/es/nosotros" className="px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">Nosotros</Link>
-                <Link to="/es/contacto" className="px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">Contacto</Link>
+                <Link to="/es/nosotros" className="whitespace-nowrap px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">Nosotros</Link>
+                <Link to="/es/contacto" className="whitespace-nowrap px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">Contacto</Link>
               </>
             ) : (
               <>
-                <Link to="/" className="px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">Home</Link>
-                <Link to="/about" className="px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">About Us</Link>
+                <Link to="/" className="whitespace-nowrap px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">Home</Link>
+                <Link to="/about" className="whitespace-nowrap px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">About Us</Link>
 
                 <div className="relative group">
-                  <button className="px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors flex items-center gap-1">
+                  <button className="whitespace-nowrap px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors flex items-center gap-1">
                     Services <ChevronDown className="h-3 w-3 transition-transform group-hover:rotate-180 duration-200" />
                   </button>
                   <div className="absolute top-full left-0 pt-2 hidden group-hover:block">
@@ -119,7 +119,7 @@ const Header = () => {
                 </div>
 
                 <div className="relative group">
-                  <button className="px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors flex items-center gap-1">
+                  <button className="whitespace-nowrap px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors flex items-center gap-1">
                     Locations <ChevronDown className="h-3 w-3 transition-transform group-hover:rotate-180 duration-200" />
                   </button>
                   <div className="absolute top-full left-0 pt-2 hidden group-hover:block">
@@ -133,18 +133,18 @@ const Header = () => {
                   </div>
                 </div>
 
-                <Link to="/reviews" className="px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">Reviews</Link>
-                <Link to="/faq" className="px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">FAQ</Link>
-                <Link to="/blog" className="px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">Blog</Link>
-                <Link to="/contact" className="px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">Contact Us</Link>
-                <Link to="/careers" className="px-3 py-2 text-sm font-medium text-accent hover:text-accent/80 transition-colors">Join Our Team</Link>
+                <Link to="/reviews" className="whitespace-nowrap px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">Reviews</Link>
+                <Link to="/faq" className="whitespace-nowrap px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">FAQ</Link>
+                <Link to="/blog" className="whitespace-nowrap px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">Blog</Link>
+                <Link to="/contact" className="whitespace-nowrap px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">Contact Us</Link>
+                <Link to="/careers" className="whitespace-nowrap px-3 py-2 text-sm font-medium text-accent hover:text-accent/80 transition-colors">Join Our Team</Link>
               </>
             )}
           </nav>
 
           <div className="hidden lg:flex items-center gap-3">
             <LanguageSwitcher />
-            <a href="tel:+12407042551" className="text-sm font-semibold text-foreground flex items-center gap-1" onClick={() => trackPhoneClick("header_desktop_nav")}>
+            <a href="tel:+12407042551" className="text-sm font-semibold text-foreground flex items-center gap-1 whitespace-nowrap" onClick={() => trackPhoneClick("header_desktop_nav")}>
               <Phone className="h-4 w-4" /> (240) 704-2551
             </a>
             <Button variant="cta" asChild>

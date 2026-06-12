@@ -48,8 +48,8 @@ const HeroSection = () => {
         height={1080}
       />
       {/* Richer gradient overlays for depth */}
-      <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/20" />
-      <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
+      {/* Mobile: vertical backing for the full-width text. Desktop: left→right so the team photo stays visible on the right. */}
+      <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/70 to-background/30 md:bg-gradient-to-r md:from-background md:via-background/60 md:to-transparent" />
       <div className="absolute inset-0 bg-mesh opacity-20" />
     </div>
 
