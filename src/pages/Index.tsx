@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { CheckCircle, Shield, Leaf, Star, MapPin, Sparkles, ArrowRight, Phone, Users, Clock, Check } from "lucide-react";
 import { trackPhoneClick, trackBookNowClick } from "@/lib/analytics";
 import PricingTable from "@/components/PricingTable";
+import PriceCalculator from "@/components/PriceCalculator";
 import { LocalBusinessSchema, FAQSchema, WebSiteSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -411,7 +412,13 @@ const Index = () => {
                 New clients save 15% on their first clean — limited availability
               </div>
             </div>
-            <PricingTable />
+            {/* Interactive instant price estimator (restored — pick your home details, get a live estimate) */}
+            <PriceCalculator />
+            {/* Full reference price list below the estimator */}
+            <div className="mt-12">
+              <h3 className="font-heading text-xl md:text-2xl font-bold text-center mb-6">Full price list by service &amp; home size</h3>
+              <PricingTable />
+            </div>
           </div>
         </section>
       </ScrollReveal>
