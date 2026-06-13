@@ -156,6 +156,7 @@ const Header = () => {
           </div>
 
           <div className="lg:hidden flex items-center gap-1.5 shrink-0 whitespace-nowrap">
+            <LanguageSwitcher flagsOnly />
             <a href="tel:+12407042551" className="hidden min-[390px]:flex items-center shrink-0" aria-label="Call us" onClick={() => trackPhoneClick("header_mobile_topbar")}>
               <Phone className="h-5 w-5 text-accent" />
             </a>
