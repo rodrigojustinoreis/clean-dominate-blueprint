@@ -14,7 +14,6 @@ import {
 } from "@/components/ui/select";
 import { Slider } from "@/components/ui/slider";
 import { ArrowRight, Calculator, Home, Bath, BedDouble, Sparkles, User, Phone, Mail, MapPin } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 
 const basePrices: Record<string, number> = {
@@ -137,8 +136,10 @@ const PriceCalculator = () => {
 
     try {
       // 1. Save to Supabase (assuming a basic quote_requests table structure)
+      // Dynamic import keeps the supabase client out of the home page's initial bundle.
       // Since address isn't in the default quote_requests schema, we'll map it to zip or message
       // or if your schema supports it, add it. Here we add it to the message field for now
+      const { supabase } = await import("@/integrations/supabase/client");
       const { error: dbError } = await supabase.from("quote_requests").insert({
         name,
         phone,
