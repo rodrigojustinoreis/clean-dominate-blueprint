@@ -314,8 +314,9 @@ const HouseCleaningPage = () => {
         <div className="container mx-auto px-4 max-w-6xl pt-6 pb-12 md:pt-8 md:pb-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-start">
 
-            {/* LEFT — text (top-aligned with the quote card on the right) */}
-            <div className="order-1 lg:pt-2">
+            {/* LEFT — text (top-aligned with the quote card on the right). On mobile it
+                drops below the quote form so the form is the first thing above the fold. */}
+            <div className="order-2 lg:order-1 lg:pt-2">
               {/* Eyebrow pill with green dot */}
               <div className="hero-anim inline-flex items-center gap-2 rounded-full px-4 py-2 mb-5" style={{ background: "#10B98112", animationDelay: "0ms" }}>
                 <span className="w-2 h-2 rounded-full animate-pulse" style={{ background: "#10B981" }} />
@@ -427,7 +428,7 @@ const HouseCleaningPage = () => {
             </div>
 
             {/* RIGHT — clean photo + form card */}
-            <div id="quote" className="order-2 lg:sticky lg:top-24">
+            <div id="quote" className="order-1 lg:order-2 lg:sticky lg:top-24">
               {/* Photo of team, clean, no overlay */}
               <div className="hero-zoom relative rounded-2xl overflow-hidden shadow-lg mb-[-2.5rem]" style={{ animationDelay: "200ms" }}>
                 <img src={teamPhoto} alt="Capital Clean Care professional cleaning a window"
