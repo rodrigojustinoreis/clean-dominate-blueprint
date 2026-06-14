@@ -16,6 +16,28 @@ export interface ServiceLocationOverride {
 // Key format: "citySlug/serviceSlug"
 export const serviceLocationOverrides: Record<string, ServiceLocationOverride> = {
 
+  "arlington-va/deep-cleaning": {
+    uniqueContent: `Arlington is really two cleaning markets in one county. Along the Rosslyn–Ballston Metro corridor — Clarendon, Courthouse, Virginia Square, Ballston — most of our deep cleaning work is in high-rise and mid-rise condos, where forced-air HVAC systems and nearby garage and street traffic push a fine particulate into every horizontal surface, light fixture, and air return. In the older neighborhoods — Cherrydale, Maywood, Lyon Village, Arlington Forest — we're working in 1920s–1950s bungalows and brick colonials with original hex-tile bathrooms, plaster walls, and hardwood that needs a far gentler hand than a builder-grade rental. Our Arlington deep cleaning crews carry HEPA-filtered vacuums rated for fine dust and a power scrubber for grout and tile, and we switch technique by surface rather than running the same pad over marble, vintage tile, and laminate alike.
+
+Arlington also turns over fast. Between young federal and Pentagon-adjacent professionals, military families on orders, and a heavy rental market near the Metro, a large share of our deep cleans are move-in resets, end-of-lease cleans, and seasonal top-to-bottom refreshes. After hundreds of Arlington homes we know exactly where the grime hides in this housing stock: the glass between oven doors, the runners and weep holes of aluminum window tracks, the top edges of crown molding in older units, the baseboard tucked behind the bathroom door, and ceiling-fan blades in homes without central air. That spot-by-spot checklist — built specifically from Arlington properties — is what our team works through, room by room, on every deep clean.`,
+    photos: [
+      { src: "/images/team/scrubbing-door-frame.jpg", alt: "Capital Clean Care team member scrubbing door frame during a deep cleaning in Arlington, VA" },
+      { src: "/images/team/power-scrubber-tile.jpg", alt: "Capital Clean Care using a power scrubber on tile grout — deep cleaning service in Arlington, VA" },
+      { src: "/images/team/cleaning-under-cabinet.jpg", alt: "Capital Clean Care cleaner reaching under a cabinet during a thorough deep cleaning in Arlington, VA" },
+    ],
+  },
+
+  "takoma-park-md/eco-friendly-cleaning": {
+    uniqueContent: `Few communities are as naturally suited to eco-friendly cleaning as Takoma Park. This is a town that declared itself a Nuclear-Free Zone, runs one of the region's oldest farmers markets, and has a co-op culture and tree canopy that residents protect fiercely — people here already read labels and avoid synthetic chemicals at home. Our eco-friendly cleaning in Takoma Park fits that standard exactly: every visit uses only EPA Safer Choice certified, plant-based formulas — no bleach, no ammonia, no petroleum-based surfactants, and no synthetic fragrance — with reusable, OEKO-TEX certified microfiber laundered between homes instead of disposable wipes. Nothing we bring in ends up as waste in the Sligo Creek watershed.
+
+The housing stock makes the eco approach practical, not just principled. Takoma Park's historic Victorians, craftsman bungalows, and American Foursquares — many from the early 1900s — come with original wood floors, plaster walls, and vintage tile that harsh conventional products actively damage: ammonia dulls and dries old hardwood, and bleach erodes vintage grout and antique fixtures. Our pH-balanced, residue-free formulas are designed for exactly these surfaces, and for the families and pets living on them. Clients here tell us the same thing again and again — no chemical smell lingering in a closed-up older house after we leave, and nothing sticky left behind on the surfaces their kids actually touch.`,
+    photos: [
+      { src: "/images/team/eco-friendly-products.webp", alt: "Capital Clean Care team member with EPA Safer Choice eco-friendly products — Takoma Park, MD eco cleaning" },
+      { src: "/images/team/wiping-door-microfiber.jpg", alt: "Capital Clean Care wiping a surface with plant-based cleaner and reusable microfiber in Takoma Park, MD" },
+      { src: "/images/team/team-mopping-uniform.jpg", alt: "Capital Clean Care team member in uniform providing eco-friendly house cleaning in Takoma Park, MD" },
+    ],
+  },
+
   "rockville-md/deep-cleaning": {
     uniqueContent: `Rockville's I-270 corridor brings a unique mix of biotech professionals and growing families to neighborhoods like Fallsgrove and King Farm — communities with newer construction that, despite looking pristine on the surface, accumulate fine drywall dust, HVAC particulates, and grout grime faster than residents expect. Our deep cleaning teams in Rockville use HEPA-filtered vacuums rated for construction-grade dust and a power-scrubbing buffer on tile and grout that standard mops can't match. We've cleaned everything from the high-traffic entry tiles of Fallsgrove townhouses to the original hardwood floors of Twinbrook ramblers built in the 1950s — and we adjust our technique to each surface.
 

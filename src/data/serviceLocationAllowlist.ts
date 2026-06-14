@@ -33,11 +33,22 @@ export const STATIC_SERVICES = [
 export type StaticCity = (typeof STATIC_CITIES)[number];
 export type StaticService = (typeof STATIC_SERVICES)[number];
 
+// Specific high-value (city, service) pairs that fall OUTSIDE the STATIC_CITIES grid
+// but earn indexation individually: they have proven search demand / conversions and a
+// unique-content override in service-location-overrides.ts. Kept as explicit pairs (not
+// whole cities) so we never flip an entire off-grid city's 8 service permutations to
+// indexable and re-create thin-content zombie pages. Format: "citySlug/serviceSlug".
+export const EXTRA_INDEXABLE_PAIRS: ReadonlySet<string> = new Set([
+  "arlington-va/deep-cleaning",            // ranked for "deep cleaning arlington", converted, then noindex'd
+  "takoma-park-md/eco-friendly-cleaning",  // ranked ~pos 2.4 for eco cleaning Takoma Park, then noindex'd
+]);
+
 export function isAllowlistedServiceLocation(
   citySlug: string | undefined,
   serviceSlug: string | undefined
 ): boolean {
   if (!citySlug || !serviceSlug) return false;
+  if (EXTRA_INDEXABLE_PAIRS.has(`${citySlug}/${serviceSlug}`)) return true;
   return (
     (STATIC_CITIES as readonly string[]).includes(citySlug) &&
     (STATIC_SERVICES as readonly string[]).includes(serviceSlug)
@@ -50,6 +61,11 @@ export function getAllowlistedPaths(): string[] {
     for (const service of STATIC_SERVICES) {
       paths.push(`/locations/${city}/${service}`);
     }
+  }
+  // Include the off-grid individually-indexable pairs so any sitemap helper that relies
+  // on this list stays in sync with isAllowlistedServiceLocation().
+  for (const pair of EXTRA_INDEXABLE_PAIRS) {
+    paths.push(`/locations/${pair}`);
   }
   return paths;
 }
