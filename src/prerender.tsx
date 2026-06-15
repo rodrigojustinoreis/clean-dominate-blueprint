@@ -31,6 +31,8 @@ function getAllRoutes(): string[] {
     "/blog/pet-dander-air-quality",
     "/blog/pet-sneezing-household-dust",
     "/blog/allergen-free-home-dog-cat-owners",
+    "/blog/seasonal-vs-household-pet-allergies",
+    "/blog/hepa-filters-pets-asthma",
     "/blog/how-to-remove-red-wine-stains",
     "/blog/how-to-get-rid-of-dog-smell-pet-safe",
     "/blog/spring-cleaning-checklist-maryland-2026",
