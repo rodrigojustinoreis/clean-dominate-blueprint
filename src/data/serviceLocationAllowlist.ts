@@ -38,9 +38,39 @@ export type StaticService = (typeof STATIC_SERVICES)[number];
 // unique-content override in service-location-overrides.ts. Kept as explicit pairs (not
 // whole cities) so we never flip an entire off-grid city's 8 service permutations to
 // indexable and re-create thin-content zombie pages. Format: "citySlug/serviceSlug".
+// Impression figures are GSC 16-month historical data — these pages were getting real
+// search demand while stuck on noindex (the MD-only STATIC_CITIES grid excluded them).
 export const EXTRA_INDEXABLE_PAIRS: ReadonlySet<string> = new Set([
   "arlington-va/deep-cleaning",            // ranked for "deep cleaning arlington", converted, then noindex'd
   "takoma-park-md/eco-friendly-cleaning",  // ranked ~pos 2.4 for eco cleaning Takoma Park, then noindex'd
+  // Tier 1 — high demand
+  "fairfax-va/house-cleaning",             // 829 impr
+  "alexandria-va/house-cleaning",          // 705 impr
+  "arlington-va/house-cleaning",           // 705 impr
+  "mclean-va/house-cleaning",              // 234 impr
+  "washington-dc/airbnb-cleaning",         // 138 impr
+  "washington-dc/recurring-cleaning",      // 113 impr
+  "burtonsville-md/post-construction-cleaning", // pos 8.8
+  "damascus-md/office-cleaning",           // pos 5.3
+  "kentlands-md/house-cleaning",           // pos 6
+  // Tier 2 — moderate demand
+  "arlington-va/recurring-cleaning",       // 90 impr
+  "montgomery-village-md/house-cleaning",  // 70 impr
+  "georgetown-dc/house-cleaning",          // 54 impr
+  "capitol-hill-dc/house-cleaning",        // 37 impr
+  "columbia-md/recurring-cleaning",        // 30 impr
+  "burtonsville-md/deep-cleaning",         // 21 impr, pos 11
+  // Tier 3 — long tail
+  "ellicott-city-md/deep-cleaning",        // 17 impr
+  "damascus-md/move-out-cleaning",         // 15 impr
+  "downtown-dc/house-cleaning",            // 10 impr
+  "dupont-circle-dc/house-cleaning",       // 9 impr
+  "alexandria-va/office-cleaning",         // 7 impr
+  "ellicott-city-md/recurring-cleaning",   // 4 impr
+  "adams-morgan-dc/house-cleaning",        // 2 impr
+  "mount-airy-md/house-cleaning",          // 2 impr
+  "boyds-md/deep-cleaning",                // 1 impr
+  "navy-yard-dc/eco-friendly-cleaning",    // 1 impr
 ]);
 
 export function isAllowlistedServiceLocation(
