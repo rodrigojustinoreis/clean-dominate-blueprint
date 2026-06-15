@@ -40,6 +40,15 @@ export const blogPosts: BlogPost[] = [
     coverImage: "https://images.pexels.com/photos/2248516/pexels-photo-2248516.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
   },
   {
+    slug: "cleaning-product-poisoning-in-pets",
+    title: "Cleaning-Product Poisoning in Pets: Warning Signs to Know",
+    excerpt: "Bleach, ammonia, and disinfectants are top household toxins for pets. The warning signs of cleaning-product poisoning, what to do (don't induce vomiting), who to call, and how to prevent it. Includes a quick video.",
+    date: "2026-06-15",
+    readTime: "9 min read",
+    category: "Pet Health",
+    coverImage: "/images/blog/pet-poisoning/hero.webp",
+  },
+  {
     slug: "hepa-filters-pets-asthma",
     title: "HEPA Filters and Pets: Cleaning for Animals with Asthma",
     excerpt: "Feline asthma is triggered by airborne dust mites, dander, and mold. Why true-HEPA vacuuming and filtration — not a regular vacuum — is vital for asthmatic pets, and the technical cleaning routine that helps.",
