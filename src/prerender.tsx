@@ -34,6 +34,8 @@ function getAllRoutes(): string[] {
     "/blog/seasonal-vs-household-pet-allergies",
     "/blog/hepa-filters-pets-asthma",
     "/blog/cleaning-product-poisoning-in-pets",
+    "/blog/what-pet-safe-cleaning-really-means",
+    "/blog/choose-pet-safe-cleaning-company",
     "/blog/how-to-remove-red-wine-stains",
     "/blog/how-to-get-rid-of-dog-smell-pet-safe",
     "/blog/spring-cleaning-checklist-maryland-2026",
