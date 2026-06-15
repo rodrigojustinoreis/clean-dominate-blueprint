@@ -33,6 +33,7 @@ const PetSneezingHouseholdDust = lazy(() => import("./pages/PetSneezingHousehold
 const AllergenFreeHomeForPets = lazy(() => import("./pages/AllergenFreeHomeForPets"));
 const SeasonalVsHouseholdPetAllergies = lazy(() => import("./pages/SeasonalVsHouseholdPetAllergies"));
 const HepaFiltersPetsAsthma = lazy(() => import("./pages/HepaFiltersPetsAsthma"));
+const CleaningProductPoisoningPets = lazy(() => import("./pages/CleaningProductPoisoningPets"));
 const HowToRemoveRedWineStains = lazy(() => import("./pages/HowToRemoveRedWineStains"));
 const HowToGetRidOfDogSmellPetSafe = lazy(() => import("./pages/HowToGetRidOfDogSmellPetSafe"));
 const HowToRemoveStickerResidueNatural = lazy(() => import("./pages/HowToRemoveStickerResidueNatural"));
@@ -87,6 +88,7 @@ const AppRoutesLazy = () => (
     <Route path="/blog/allergen-free-home-dog-cat-owners" element={<AllergenFreeHomeForPets />} />
     <Route path="/blog/seasonal-vs-household-pet-allergies" element={<SeasonalVsHouseholdPetAllergies />} />
     <Route path="/blog/hepa-filters-pets-asthma" element={<HepaFiltersPetsAsthma />} />
+    <Route path="/blog/cleaning-product-poisoning-in-pets" element={<CleaningProductPoisoningPets />} />
     <Route path="/blog/how-to-remove-red-wine-stains" element={<HowToRemoveRedWineStains />} />
     <Route path="/blog/how-to-get-rid-of-dog-smell-pet-safe" element={<HowToGetRidOfDogSmellPetSafe />} />
     <Route path="/blog/how-to-remove-sticker-residue-natural" element={<HowToRemoveStickerResidueNatural />} />
