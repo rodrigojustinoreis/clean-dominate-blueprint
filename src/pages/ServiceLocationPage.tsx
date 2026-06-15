@@ -9,6 +9,7 @@ import { getTestimonialsForServiceCity } from "@/data/testimonials";
 import { getCity, getService, getServiceLocationIntro, getWhyChooseUs, getServiceLocationFAQs, slCities, slServices } from "@/data/service-locations";
 import { getServiceLocationOverride } from "@/data/service-location-overrides";
 import { isAllowlistedServiceLocation } from "@/data/serviceLocationAllowlist";
+import { cityImages } from "@/data/city-images";
 import { CheckCircle, MapPin, ArrowRight, Shield, Leaf, Clock, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -150,14 +151,20 @@ const ServiceLocationPage = () => {
             <div className="md:sticky md:top-28">
               <div className="rounded-2xl overflow-hidden shadow-lg border border-border">
                 <img
-                  src={teamPhotos[cityPhotoIndex(city.slug)]}
-                  alt={`Capital Clean Care team providing ${service.shortName} in ${city.name}, ${city.state}`}
+                  src={cityImages[city.slug] ?? teamPhotos[cityPhotoIndex(city.slug)]}
+                  alt={
+                    cityImages[city.slug]
+                      ? `${city.name}, ${city.state} — Capital Clean Care ${service.shortName} service area`
+                      : `Capital Clean Care team providing ${service.shortName} in ${city.name}, ${city.state}`
+                  }
                   className="w-full aspect-[4/3] object-cover"
                   loading="lazy"
                 />
               </div>
               <p className="text-xs text-muted-foreground text-center mt-2">
-                Our team serving {city.name} and the {city.county} area
+                {cityImages[city.slug]
+                  ? `${service.shortName} in ${city.name}, ${city.state} — serving ${city.county}`
+                  : `Our team serving ${city.name} and the ${city.county} area`}
               </p>
             </div>
           </div>
