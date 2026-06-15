@@ -16,6 +16,215 @@ export interface ServiceLocationOverride {
 // Key format: "citySlug/serviceSlug"
 export const serviceLocationOverrides: Record<string, ServiceLocationOverride> = {
 
+  "washington-dc/airbnb-cleaning": {
+    uniqueContent: `Washington, DC short-term rentals live and die by the turnover. Between Capitol Hill rowhouses, Shaw and U Street condos, and Navy Yard high-rises near the ballpark, DC hosts deal with back-to-back guests, tight same-day checkout-to-checkin windows, and reviews that punish any detail left undone. Our Airbnb cleaning teams work to a hotel-standard turnover checklist built for DC's pace: strip and remake beds with fresh linens, sanitize kitchens and bathrooms, restock essentials, and flag anything damaged or running low before the next guest arrives.
+
+DC's housing stock makes consistency the hard part — narrow historic rowhouses with multiple floors and stairs, compact studio condos downtown, and modern units with high-touch finishes all clean differently. We assign teams who learn each property and its access (lockboxes, building front desks, quiet hours), so every turnover looks the same to the guest no matter who is on shift. For hosts juggling multiple listings across the District, that reliability is the difference between a five-star streak and a scramble.`,
+    photos: [
+      { src: "/images/team/team-making-bed.jpg", alt: "Capital Clean Care team member making a bed during an Airbnb turnover in Washington, DC" },
+      { src: "/images/team/team-two-living-room.jpg", alt: "Capital Clean Care team resetting a short-term rental living room in Washington, DC" },
+      { src: "/images/team/cleaning-appliances.jpg", alt: "Capital Clean Care cleaning kitchen appliances for an Airbnb turnover in Washington, DC" },
+    ],
+  },
+
+  "washington-dc/recurring-cleaning": {
+    uniqueContent: `Recurring cleaning in Washington, DC is built for people whose schedules don't leave room for it — Hill staffers, attorneys, federal employees, and consultants across Capitol Hill, Dupont, Shaw, and the downtown condo corridors. On a weekly, bi-weekly, or monthly plan, the same team returns on a rhythm that keeps rowhouses and apartments consistently clean without you ever managing it: kitchens, bathrooms, floors, and high-touch surfaces every visit, with rotating deeper tasks so nothing builds up.
+
+DC homes have quirks a recurring team learns over time — three- and four-story rowhouses with a lot of stairs, compact galley kitchens, original hardwood that needs the right products, and street-and-garage grime the city tracks indoors. Having the same crew each visit means they already know your layout, your preferences, and the spots that need extra attention, so each clean is faster and more thorough than a one-off ever is. Recurring clients also lock in the best per-visit pricing.`,
+    photos: [
+      { src: "/images/team/team-mopping-uniform.jpg", alt: "Capital Clean Care team member in uniform on a recurring cleaning visit in Washington, DC" },
+      { src: "/images/team/vacuuming-living-room.jpg", alt: "Capital Clean Care vacuuming a DC rowhouse living room on a recurring plan" },
+      { src: "/images/team/mopping-hardwood-floor.jpg", alt: "Capital Clean Care mopping original hardwood in a Washington, DC home" },
+    ],
+  },
+
+  "burtonsville-md/post-construction-cleaning": {
+    uniqueContent: `Burtonsville sits at the busy eastern edge of Montgomery County along Route 29, and the area's steady stream of new builds, additions, and full renovations leaves a very specific mess: fine drywall dust that settles into every surface, vent, and window track, plus paint flecks, adhesive residue, and construction debris. Our post-construction cleaning crews handle exactly this — HEPA-filtered vacuums rated for fine dust, detail wiping of every surface and fixture, and a methodical room-by-room pass that turns a finished-but-filthy job site into a move-in-ready home.
+
+Post-construction work isn't regular cleaning — it's a different process. We clean from the top down (light fixtures, fan blades, cabinet tops, then walls, then floors) so settled dust isn't re-deposited, scrape and polish windows and glass, and clean inside cabinets, closets, and appliances where construction dust always hides. For Burtonsville homeowners and contractors finishing a project near Fairland or Calverton, that final detailed clean is what makes the work actually look done.`,
+    photos: [
+      { src: "/images/team/team-post-construction.jpg", alt: "Capital Clean Care post-construction cleaning crew in Burtonsville, MD" },
+      { src: "/images/team/power-scrubber-tile.jpg", alt: "Capital Clean Care removing construction grime from tile in Burtonsville, MD" },
+      { src: "/images/team/scrubbing-door-frame.jpg", alt: "Capital Clean Care detailing a door frame after renovation in Burtonsville, MD" },
+    ],
+  },
+
+  "damascus-md/office-cleaning": {
+    uniqueContent: `Damascus, in upper Montgomery County, runs on small businesses — the medical and dental offices, storefronts, and service businesses along Ridge Road and Main Street that keep the town going. Our office cleaning works around your hours, not against them: after-hours or early-morning service so your team walks into a spotless, sanitized space without ever seeing the cart. Trash and recycling, restrooms, break rooms, reception, and high-touch surfaces (door handles, switches, shared equipment) handled on a dependable schedule.
+
+A clean office is part of how clients judge a business, especially in a tight-knit community like Damascus where reputation travels. We use commercial-grade, eco-friendly products that disinfect without a harsh chemical smell, and we keep the same crew on your account so they learn your space and your standards. Whether it's a small medical suite that needs strict sanitization or a storefront that needs to shine for walk-ins, recurring office cleaning keeps it consistent.`,
+    photos: [
+      { src: "/images/team/team-mopping-uniform.jpg", alt: "Capital Clean Care team member cleaning an office after hours in Damascus, MD" },
+      { src: "/images/team/team-cleaning-glass-door.jpg", alt: "Capital Clean Care cleaning glass doors at a Damascus, MD office" },
+      { src: "/images/team/mopping-hardwood-floor.jpg", alt: "Capital Clean Care mopping a business floor in Damascus, MD" },
+    ],
+  },
+
+  "kentlands-md/house-cleaning": {
+    uniqueContent: `Kentlands is one of Maryland's signature neo-traditional communities — the Gaithersburg neighborhood of front porches, rear garages off alleys, tight walkable lots, and a mix of colonials, craftsman homes, and townhomes clustered around shared greens. That design makes for beautiful homes that also pack a lot of living into a compact footprint, where dust, floor traffic, and kitchen-and-bath use concentrate quickly. Our house cleaning teams keep Kentlands homes consistently fresh, room by room, with attention to the high-use spaces these layouts revolve around.
+
+Kentlands residents tend to value their community and their time in equal measure, which is exactly who recurring or one-time house cleaning serves best. We bring all supplies and eco-friendly products, work to a detailed checklist, and assign teams who get to know your home's layout — the open kitchens, the stairs, the finished basements common in these floor plans. Background-checked, insured, and local, so you can hand over the keys and get your weekend back.`,
+    photos: [
+      { src: "/images/team/real-team-mopping.jpg", alt: "Capital Clean Care team mopping a Kentlands, MD home" },
+      { src: "/images/team/team-two-living-room.jpg", alt: "Capital Clean Care cleaning a living room in Kentlands, Gaithersburg MD" },
+      { src: "/images/team/team-making-bed.jpg", alt: "Capital Clean Care making a bed during house cleaning in Kentlands, MD" },
+    ],
+  },
+
+  "montgomery-village-md/house-cleaning": {
+    uniqueContent: `Montgomery Village is one of Maryland's original master-planned communities, a Gaithersburg neighborhood of single-family homes, townhouses, and condos arranged around lakes, paths, and shared green space since the late 1960s. Its mix of established homes and long-time residents means a lot of well-loved houses that benefit from steady, careful cleaning — and HOA-conscious owners who want their place looking its best. Our house cleaning teams handle the full home on a schedule that fits, from kitchens and baths to floors and high-touch surfaces.
+
+The variety of housing in Montgomery Village — from compact condos to larger single-family homes — means cleaning has to flex to each layout, and that's where a consistent team pays off. They learn your home, your finishes, and your priorities, bringing eco-friendly supplies and a detailed checklist every visit. For the families and retirees who make up much of the Village, dependable house cleaning is one less thing to manage.`,
+    photos: [
+      { src: "/images/team/real-team-mopping.jpg", alt: "Capital Clean Care team cleaning a Montgomery Village, MD home" },
+      { src: "/images/team/vacuuming-living-room.jpg", alt: "Capital Clean Care vacuuming a living room in Montgomery Village, MD" },
+      { src: "/images/team/team-two-living-room.jpg", alt: "Capital Clean Care house cleaning crew in Montgomery Village, MD" },
+    ],
+  },
+
+  "georgetown-dc/house-cleaning": {
+    uniqueContent: `Georgetown is unlike anywhere else we clean — DC's oldest neighborhood, where federal-era and Victorian rowhouses line cobblestone streets and homes carry original heart-pine floors, antique millwork, plaster walls, and delicate period finishes behind their brick facades. These houses demand a softer, more knowledgeable hand than builder-grade interiors: the wrong product dulls old wood, scratches marble, or strips wax from historic floors. Our house cleaning teams are trained for exactly these premium, sensitive surfaces, with technique matched to each material rather than one-size-fits-all scrubbing.
+
+Georgetown homeowners hold a high standard and have little tolerance for inconsistency, which is why we assign dedicated teams who learn the home — which floors mark easily, which fixtures the city's hard water stains, how you like things left. We bring pH-balanced, low-residue, eco-friendly products safe for natural stone, hardwood, and antique surfaces. For the narrow multi-floor layouts typical near M Street and Wisconsin Avenue, that continuity and care is what keeps a historic home immaculate.`,
+    photos: [
+      { src: "/images/team/real-team-luxury-home.jpg", alt: "Capital Clean Care cleaning a historic luxury home in Georgetown, Washington DC" },
+      { src: "/images/team/team-two-living-room.jpg", alt: "Capital Clean Care house cleaning team in a Georgetown, DC rowhouse" },
+      { src: "/images/team/mopping-hardwood-floor.jpg", alt: "Capital Clean Care mopping antique hardwood in Georgetown, DC" },
+    ],
+  },
+
+  "capitol-hill-dc/house-cleaning": {
+    uniqueContent: `Capitol Hill's rows of Victorian and federal townhouses are some of the most distinctive homes in Washington — and some of the most demanding to keep clean. Original plaster, heart-pine floors, tall windows, and decorative molding give these houses their character, while the Hill's busy professionals, congressional staffers, and families give them constant use. Our house cleaning teams keep Capitol Hill homes consistently sharp, working floor by floor through the tall, narrow layouts these rowhouses are known for, with the right products for older, sensitive surfaces.
+
+Life on the Hill moves fast — long hours, packed calendars, and homes near Eastern Market and Lincoln Park that get a lot of foot traffic. Recurring or one-time house cleaning takes it off your plate entirely: the same background-checked team, eco-friendly supplies, and a detailed checklist covering kitchens, baths, floors, and the high-touch surfaces that matter in a busy household. They learn your home's quirks — the stairs, the original wood, the spots that need extra care — so every visit is thorough.`,
+    photos: [
+      { src: "/images/team/real-team-mopping.jpg", alt: "Capital Clean Care team cleaning a Capitol Hill, DC rowhouse" },
+      { src: "/images/team/team-making-bed.jpg", alt: "Capital Clean Care making a bed during house cleaning on Capitol Hill, DC" },
+      { src: "/images/team/mopping-hardwood-floor.jpg", alt: "Capital Clean Care mopping heart-pine floors on Capitol Hill, DC" },
+    ],
+  },
+
+  "burtonsville-md/deep-cleaning": {
+    uniqueContent: `A deep clean is what older, well-lived-in Burtonsville homes need when regular cleaning can't catch up — the built-up grime in grout, behind appliances, along baseboards, inside window tracks, and on the ceiling fans and vents that rarely get touched. Our deep cleaning crews work a detailed top-to-bottom checklist built for exactly these neglected zones, using HEPA-filtered vacuums and power-scrubbing on tile and grout to reset the home rather than just maintain it.
+
+Burtonsville families book deep cleans for the moments that matter — moving in or out, hosting, post-renovation, or a seasonal reset a normal clean never quite delivers. We clean from the top down so nothing settles back onto finished surfaces, detail the kitchen and bathrooms (the two rooms that hide the most), and hit the spots a quick weekly pass always skips. Eco-friendly, background-checked, and local to eastern Montgomery County.`,
+    photos: [
+      { src: "/images/team/scrubbing-door-frame.jpg", alt: "Capital Clean Care deep cleaning a door frame in Burtonsville, MD" },
+      { src: "/images/team/power-scrubber-tile.jpg", alt: "Capital Clean Care power-scrubbing tile grout during a deep clean in Burtonsville, MD" },
+      { src: "/images/team/cleaning-under-cabinet.jpg", alt: "Capital Clean Care reaching under a cabinet during a deep clean in Burtonsville, MD" },
+    ],
+  },
+
+  "ellicott-city-md/deep-cleaning": {
+    uniqueContent: `Ellicott City's historic granite homes and older Howard County houses carry a lot of character — and a lot of the deep-set grime that comes with age, humidity, and decades of use. The mill-town's older building stock, stone foundations, and flood-and-moisture history mean basements, bathrooms, and grout lines hold onto buildup and mildew that surface cleaning won't budge. Our deep cleaning teams attack exactly that: power-scrubbed tile and grout, HEPA vacuuming, detailed work on baseboards, vents, and fixtures, and a thorough top-to-bottom reset.
+
+Whether it's a historic home near old Main Street or a newer build up the hill, a deep clean is the difference between a house that looks tidy and one that's genuinely clean underneath. We detail the kitchen and bathrooms, clean inside appliances and cabinets on request, and address the humidity-prone corners Ellicott City homes are prone to. Eco-friendly products throughout — safe for older surfaces, families, and pets — and a background-checked local team.`,
+    photos: [
+      { src: "/images/team/power-scrubber-tile.jpg", alt: "Capital Clean Care power-scrubbing grout during a deep clean in Ellicott City, MD" },
+      { src: "/images/team/scrubbing-door-frame.jpg", alt: "Capital Clean Care detailing trim during a deep clean in Ellicott City, MD" },
+      { src: "/images/team/cleaning-under-cabinet.jpg", alt: "Capital Clean Care deep cleaning under cabinets in a historic Ellicott City, MD home" },
+    ],
+  },
+
+  "damascus-md/move-out-cleaning": {
+    uniqueContent: `A move-out clean in Damascus has one job: get every dollar of your security deposit back, or hand the next owner a genuinely spotless home. That means the areas landlords and buyers actually inspect — inside the oven and refrigerator, inside cabinets and drawers, baseboards, window tracks, closets, and the bathroom grout and caulk that show every bit of neglect. Our move-out teams work a lease-end checklist built around exactly those points, leaving the home empty-and-immaculate rather than just tidy.
+
+Moving is stressful enough in a town like Damascus where the next place might be a haul; the final clean shouldn't be on you. We bring all supplies, clean the home top to bottom once it's empty (or around what's left), and focus on the high-scrutiny spots that cost tenants their deposits. Eco-friendly, background-checked, and insured — and if you're moving in rather than out, we reset the home before your first night.`,
+    photos: [
+      { src: "/images/team/cleaning-appliances.jpg", alt: "Capital Clean Care cleaning inside appliances during a move-out clean in Damascus, MD" },
+      { src: "/images/team/real-team-maria-fridge.jpg", alt: "Capital Clean Care cleaning inside a refrigerator for a move-out in Damascus, MD" },
+      { src: "/images/team/cleaning-under-cabinet.jpg", alt: "Capital Clean Care cleaning inside cabinets during a move-out clean in Damascus, MD" },
+    ],
+  },
+
+  "downtown-dc/house-cleaning": {
+    uniqueContent: `Downtown DC living means high-rise condos and apartments around Penn Quarter, Mount Vernon Triangle, and the East End — compact, modern units where every square foot is used and building logistics shape the day. Our house cleaning teams work efficiently within that reality: coordinating with front desks and elevator or loading-dock access, respecting quiet hours, and delivering a thorough clean of kitchens, baths, floors, and high-touch surfaces in spaces where clutter and dust build fast.
+
+Downtown residents are typically busy professionals who want their limited time back, not a chore list. Recurring or one-time house cleaning handles it with the same background-checked team, eco-friendly supplies, and a detailed checklist suited to compact urban layouts — open kitchens, in-unit laundry, and the floor-to-ceiling windows that show every smudge. They learn your unit and your building's rules, so each visit is quick to set up and consistently done right.`,
+    photos: [
+      { src: "/images/team/team-two-living-room.jpg", alt: "Capital Clean Care cleaning a downtown Washington, DC condo living room" },
+      { src: "/images/team/mopping-hardwood-floor.jpg", alt: "Capital Clean Care mopping a downtown DC apartment floor" },
+      { src: "/images/team/vacuuming-living-room.jpg", alt: "Capital Clean Care vacuuming a high-rise unit in downtown Washington, DC" },
+    ],
+  },
+
+  "dupont-circle-dc/house-cleaning": {
+    uniqueContent: `Dupont Circle blends grand historic rowhouses, converted condos, and apartment buildings in one of DC's most walkable, vibrant neighborhoods — and those older buildings come with character and upkeep in equal measure. Original hardwood, tall windows, decorative plaster, and multi-floor layouts near the Circle and along the side streets all benefit from careful, knowledgeable cleaning. Our house cleaning teams keep Dupont homes consistently fresh with the right products for older, sensitive surfaces and a detailed room-by-room checklist.
+
+The neighborhood's mix of professionals, couples, and long-time residents share one thing: full schedules in a part of the city where life moves quickly. Recurring or one-time house cleaning takes it off your plate — the same trusted team, eco-friendly supplies, and attention to the stairs, the original floors, and the high-use kitchen and baths these homes revolve around. Background-checked, insured, and local, so handing over access is easy.`,
+    photos: [
+      { src: "/images/team/real-team-mopping.jpg", alt: "Capital Clean Care cleaning a Dupont Circle, DC rowhouse" },
+      { src: "/images/team/team-two-living-room.jpg", alt: "Capital Clean Care house cleaning team in a Dupont Circle, DC condo" },
+      { src: "/images/team/mopping-hardwood-floor.jpg", alt: "Capital Clean Care mopping original hardwood in Dupont Circle, DC" },
+    ],
+  },
+
+  "alexandria-va/office-cleaning": {
+    uniqueContent: `Alexandria's business life runs from the historic offices and boutiques of Old Town and King Street to the modern firms in Carlyle and along Eisenhower Avenue — and all of them are judged, in part, by how clean they look. Our office cleaning works around your hours with after-hours or early-morning service: restrooms, break rooms, reception, workstations, and high-touch surfaces (handles, switches, shared equipment) sanitized on a dependable schedule so your team and clients always walk into a spotless space.
+
+For Alexandria's many small firms, medical and dental practices, and professional offices, consistency and discretion matter as much as the clean itself. We use commercial-grade, eco-friendly products that disinfect without a harsh chemical smell, and keep the same crew on your account so they learn your layout and standards. A polished office protects your professional image — and in a connected business community like Alexandria, that reputation carries.`,
+    photos: [
+      { src: "/images/team/team-mopping-uniform.jpg", alt: "Capital Clean Care team cleaning an office after hours in Alexandria, VA" },
+      { src: "/images/team/team-cleaning-glass-door.jpg", alt: "Capital Clean Care cleaning glass at an Alexandria, VA office" },
+      { src: "/images/team/mopping-hardwood-floor.jpg", alt: "Capital Clean Care mopping an office floor in Old Town Alexandria, VA" },
+    ],
+  },
+
+  "ellicott-city-md/recurring-cleaning": {
+    uniqueContent: `Recurring cleaning keeps Ellicott City homes consistently clean without you ever having to think about it — weekly, bi-weekly, or monthly visits from the same team that learns your Howard County home and its rhythm. Between the historic houses near old Main Street and the newer developments up the hill, these homes share a need for steady upkeep against the area's humidity, foot traffic, and family use. Every visit covers kitchens, baths, floors, and high-touch surfaces, with rotating deeper tasks so nothing builds up.
+
+The advantage of a recurring plan is continuity: the same background-checked crew already knows your layout, your finishes, and the spots that need extra attention — the humidity-prone bathrooms, the high-traffic entryways, the surfaces older Ellicott City homes are particular about. We bring eco-friendly supplies and a detailed checklist every time, and recurring clients lock in the best per-visit pricing. It's the lowest-effort way to keep a home genuinely clean year-round.`,
+    photos: [
+      { src: "/images/team/team-mopping-uniform.jpg", alt: "Capital Clean Care team member on a recurring cleaning visit in Ellicott City, MD" },
+      { src: "/images/team/vacuuming-living-room.jpg", alt: "Capital Clean Care vacuuming a living room on a recurring plan in Ellicott City, MD" },
+      { src: "/images/team/mopping-hardwood-floor.jpg", alt: "Capital Clean Care mopping a floor on a recurring visit in Ellicott City, MD" },
+    ],
+  },
+
+  "adams-morgan-dc/house-cleaning": {
+    uniqueContent: `Adams Morgan is one of DC's most vibrant, diverse neighborhoods — a walkable mix of historic rowhouses, converted condos, and apartments above the cafes and music venues of 18th Street and Columbia Road. Those older buildings have real character and real upkeep needs: original hardwood, stairs, tall windows, and compact layouts that pack a lot of life into a small footprint. Our house cleaning teams keep Adams Morgan homes consistently fresh with the right products for older surfaces and a detailed, room-by-room checklist.
+
+The neighborhood's blend of renters, owners, professionals, and families all share busy, urban lives where cleaning is the easiest thing to put off. Recurring or one-time house cleaning takes it off your plate entirely — the same background-checked team, eco-friendly supplies, and attention to the kitchen, baths, and high-traffic floors these homes revolve around. They learn your unit and its quirks, so every visit is quick to start and thoroughly done.`,
+    photos: [
+      { src: "/images/team/real-team-mopping.jpg", alt: "Capital Clean Care cleaning an Adams Morgan, DC rowhouse" },
+      { src: "/images/team/team-two-living-room.jpg", alt: "Capital Clean Care house cleaning team in an Adams Morgan, DC condo" },
+      { src: "/images/team/vacuuming-living-room.jpg", alt: "Capital Clean Care vacuuming a living room in Adams Morgan, Washington DC" },
+    ],
+  },
+
+  "mount-airy-md/house-cleaning": {
+    uniqueContent: `Mount Airy straddles the Carroll-Frederick county line, a small town that's grown with newer developments and larger lots than you'll find closer to the Beltway — which means more home to keep clean and busy commuting families with less time to do it. From established homes near Main Street to the newer subdivisions on the edges of town, our house cleaning teams handle the full house on a schedule that fits: kitchens, baths, floors, bedrooms, and the high-touch surfaces family life runs through.
+
+With more square footage comes more to manage, and that's exactly where a consistent cleaning team earns its keep. The same background-checked crew learns your home's layout and priorities, brings eco-friendly supplies, and works a detailed checklist every visit so nothing gets missed. For Mount Airy's commuter families, handing the cleaning to a trusted local team is how you get your evenings and weekends back.`,
+    photos: [
+      { src: "/images/team/real-team-mopping.jpg", alt: "Capital Clean Care team cleaning a Mount Airy, MD home" },
+      { src: "/images/team/team-two-living-room.jpg", alt: "Capital Clean Care house cleaning crew in Mount Airy, MD" },
+      { src: "/images/team/team-making-bed.jpg", alt: "Capital Clean Care making a bed during house cleaning in Mount Airy, MD" },
+    ],
+  },
+
+  "boyds-md/deep-cleaning": {
+    uniqueContent: `Boyds sits in rural upper Montgomery County near Black Hill and the lake — a community of larger properties, farmhouses, and spacious homes on generous lots. More square footage and more lived-in space means deep cleaning here is a bigger job: built-up grime in grout and baseboards, dust on vents and ceiling fans in high-ceilinged rooms, and the kitchens and bathrooms that hold the most. Our deep cleaning crews work a detailed top-to-bottom checklist with HEPA vacuuming and power-scrubbing to reset the whole home.
+
+Boyds homeowners book deep cleans for the moments a normal clean can't cover — moving, hosting, post-renovation, or a seasonal reset across a larger house. We clean from the top down so dust doesn't resettle, detail the kitchen and bathrooms, and reach the spots routine cleaning always skips. Eco-friendly products safe for families and pets, a background-checked local team, and the manpower to handle the bigger square footage rural Boyds homes are known for.`,
+    photos: [
+      { src: "/images/team/scrubbing-door-frame.jpg", alt: "Capital Clean Care deep cleaning trim in a Boyds, MD home" },
+      { src: "/images/team/power-scrubber-tile.jpg", alt: "Capital Clean Care power-scrubbing tile during a deep clean in Boyds, MD" },
+      { src: "/images/team/cleaning-under-cabinet.jpg", alt: "Capital Clean Care reaching under cabinets during a deep clean in Boyds, MD" },
+    ],
+  },
+
+  "navy-yard-dc/eco-friendly-cleaning": {
+    uniqueContent: `Navy Yard is one of DC's newest neighborhoods — the riverfront district of modern glass high-rises, the ballpark, and a young, sustainability-minded community of professionals who chose new construction and walkable city living on purpose. Eco-friendly cleaning fits that mindset exactly: we use only EPA Safer Choice certified, plant-based products — no bleach, no ammonia, no synthetic fragrance — with reusable microfiber instead of disposable wipes. Clean modern finishes without the harsh chemistry, in homes designed to feel fresh.
+
+Navy Yard's contemporary condos come with the surfaces eco-friendly products are made for: quartz counters, engineered floors, glass, and stainless that streak and dull under conventional cleaners. Our pH-balanced, residue-free formulas are safe for those finishes — and for the pets and households living on them — with no chemical smell lingering in a sealed-up high-rise. For a neighborhood built around modern, health-conscious living, eco-friendly cleaning is the natural fit.`,
+    photos: [
+      { src: "/images/team/eco-friendly-products.webp", alt: "Capital Clean Care eco-friendly products for a Navy Yard, Washington DC condo" },
+      { src: "/images/team/wiping-door-microfiber.jpg", alt: "Capital Clean Care wiping surfaces with reusable microfiber in Navy Yard, DC" },
+      { src: "/images/team/team-mopping-uniform.jpg", alt: "Capital Clean Care team providing eco-friendly cleaning in Navy Yard, Washington DC" },
+    ],
+  },
+
   "arlington-va/deep-cleaning": {
     uniqueContent: `Arlington is really two cleaning markets in one county. Along the Rosslyn–Ballston Metro corridor — Clarendon, Courthouse, Virginia Square, Ballston — most of our deep cleaning work is in high-rise and mid-rise condos, where forced-air HVAC systems and nearby garage and street traffic push a fine particulate into every horizontal surface, light fixture, and air return. In the older neighborhoods — Cherrydale, Maywood, Lyon Village, Arlington Forest — we're working in 1920s–1950s bungalows and brick colonials with original hex-tile bathrooms, plaster walls, and hardwood that needs a far gentler hand than a builder-grade rental. Our Arlington deep cleaning crews carry HEPA-filtered vacuums rated for fine dust and a power scrubber for grout and tile, and we switch technique by surface rather than running the same pad over marble, vintage tile, and laminate alike.
 
