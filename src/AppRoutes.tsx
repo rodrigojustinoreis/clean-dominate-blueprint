@@ -27,6 +27,8 @@ import WhyPetSkinAllergiesStartInCarpet from "./pages/WhyPetSkinAllergiesStartIn
 import PetDanderAirQuality from "./pages/PetDanderAirQuality";
 import PetSneezingHouseholdDust from "./pages/PetSneezingHouseholdDust";
 import AllergenFreeHomeForPets from "./pages/AllergenFreeHomeForPets";
+import SeasonalVsHouseholdPetAllergies from "./pages/SeasonalVsHouseholdPetAllergies";
+import HepaFiltersPetsAsthma from "./pages/HepaFiltersPetsAsthma";
 import HowToRemoveRedWineStains from "./pages/HowToRemoveRedWineStains";
 import HowToGetRidOfDogSmellPetSafe from "./pages/HowToGetRidOfDogSmellPetSafe";
 import HowToRemoveStickerResidueNatural from "./pages/HowToRemoveStickerResidueNatural";
@@ -170,6 +172,8 @@ const AppRoutes = () => (
     <Route path="/blog/pet-dander-air-quality" element={<PetDanderAirQuality />} />
     <Route path="/blog/pet-sneezing-household-dust" element={<PetSneezingHouseholdDust />} />
     <Route path="/blog/allergen-free-home-dog-cat-owners" element={<AllergenFreeHomeForPets />} />
+    <Route path="/blog/seasonal-vs-household-pet-allergies" element={<SeasonalVsHouseholdPetAllergies />} />
+    <Route path="/blog/hepa-filters-pets-asthma" element={<HepaFiltersPetsAsthma />} />
     <Route path="/blog/how-to-remove-red-wine-stains" element={<HowToRemoveRedWineStains />} />
     <Route path="/blog/how-to-get-rid-of-dog-smell-pet-safe" element={<HowToGetRidOfDogSmellPetSafe />} />
     <Route path="/blog/how-to-remove-sticker-residue-natural" element={<HowToRemoveStickerResidueNatural />} />

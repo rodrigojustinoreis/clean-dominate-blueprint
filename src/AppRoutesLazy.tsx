@@ -31,6 +31,8 @@ const WhyPetSkinAllergiesStartInCarpet = lazy(() => import("./pages/WhyPetSkinAl
 const PetDanderAirQuality = lazy(() => import("./pages/PetDanderAirQuality"));
 const PetSneezingHouseholdDust = lazy(() => import("./pages/PetSneezingHouseholdDust"));
 const AllergenFreeHomeForPets = lazy(() => import("./pages/AllergenFreeHomeForPets"));
+const SeasonalVsHouseholdPetAllergies = lazy(() => import("./pages/SeasonalVsHouseholdPetAllergies"));
+const HepaFiltersPetsAsthma = lazy(() => import("./pages/HepaFiltersPetsAsthma"));
 const HowToRemoveRedWineStains = lazy(() => import("./pages/HowToRemoveRedWineStains"));
 const HowToGetRidOfDogSmellPetSafe = lazy(() => import("./pages/HowToGetRidOfDogSmellPetSafe"));
 const HowToRemoveStickerResidueNatural = lazy(() => import("./pages/HowToRemoveStickerResidueNatural"));
@@ -83,6 +85,8 @@ const AppRoutesLazy = () => (
     <Route path="/blog/pet-dander-air-quality" element={<PetDanderAirQuality />} />
     <Route path="/blog/pet-sneezing-household-dust" element={<PetSneezingHouseholdDust />} />
     <Route path="/blog/allergen-free-home-dog-cat-owners" element={<AllergenFreeHomeForPets />} />
+    <Route path="/blog/seasonal-vs-household-pet-allergies" element={<SeasonalVsHouseholdPetAllergies />} />
+    <Route path="/blog/hepa-filters-pets-asthma" element={<HepaFiltersPetsAsthma />} />
     <Route path="/blog/how-to-remove-red-wine-stains" element={<HowToRemoveRedWineStains />} />
     <Route path="/blog/how-to-get-rid-of-dog-smell-pet-safe" element={<HowToGetRidOfDogSmellPetSafe />} />
     <Route path="/blog/how-to-remove-sticker-residue-natural" element={<HowToRemoveStickerResidueNatural />} />
