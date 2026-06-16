@@ -1,13 +1,11 @@
-import { Link } from "react-router-dom";
-import { ArrowRight, Calendar, Clock } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { useSEO } from "@/hooks/useSEO";
 import { BreadcrumbSchema } from "@/components/SchemaMarkup";
 import { autoBlogPosts } from "@/data/auto-blog-posts";
 import TrustBadges from "@/components/TrustBadges";
+import BlogTopicNav from "@/components/blog/BlogTopicNav";
+import PostCard from "@/components/blog/PostCard";
 
 export interface BlogPost {
   slug: string;
@@ -492,7 +490,7 @@ export const blogPosts: BlogPost[] = [
 ];
 
 // Merge manual + auto-generated posts, sorted newest first
-const allPosts = [...blogPosts, ...autoBlogPosts].sort(
+export const allPosts = [...blogPosts, ...autoBlogPosts].sort(
   (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
 );
 
@@ -511,36 +509,13 @@ const Blog = () => {
         <div className="container mx-auto px-4 max-w-4xl">
           <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Blog" }]} className="mb-6" />
           <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4">Cleaning Tips & Insights</h1>
-          <p className="text-muted-foreground text-lg mb-12">Expert advice for keeping your Maryland, DC & Virginia home spotless with eco-friendly methods.</p>
+          <p className="text-muted-foreground text-lg mb-8">Expert advice for keeping your Maryland, DC & Virginia home spotless with eco-friendly methods.</p>
+
+          <BlogTopicNav />
 
           <div className="space-y-6">
             {allPosts.map((post) => (
-              <Card key={post.slug} className="group hover:shadow-lg transition-shadow overflow-hidden">
-                <Link to={`/blog/${post.slug}`} className="md:flex">
-                  <div className="md:w-64 md:flex-shrink-0 h-48 md:h-auto overflow-hidden">
-                    <img
-                      src={post.coverImage || "/images/team/team-mopping-bright-room.jpg"}
-                      alt={post.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                      loading="lazy"
-                    />
-                  </div>
-                  <CardContent className="p-6 md:p-8 flex flex-col justify-center">
-                    <div className="flex items-center gap-3 text-xs text-muted-foreground mb-3">
-                      <span className="bg-accent/10 text-accent px-2 py-0.5 rounded-full font-medium">{post.category}</span>
-                      <span className="flex items-center gap-1"><Calendar className="h-3 w-3" /> {new Date(post.date).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}</span>
-                      <span className="flex items-center gap-1"><Clock className="h-3 w-3" /> {post.readTime}</span>
-                    </div>
-                    <h2 className="font-heading text-xl md:text-2xl font-bold mb-3 group-hover:text-accent transition-colors">
-                      {post.title}
-                    </h2>
-                    <p className="text-muted-foreground mb-4">{post.excerpt}</p>
-                    <Button variant="link" className="p-0 h-auto text-accent w-fit">
-                      Read More <ArrowRight className="ml-1 h-3 w-3" />
-                    </Button>
-                  </CardContent>
-                </Link>
-              </Card>
+              <PostCard key={post.slug} post={post} />
             ))}
           </div>
         </div>

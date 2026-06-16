@@ -17,6 +17,7 @@ const CityPage               = lazy(() => import("./pages/CityPage"));
 const FAQPage                = lazy(() => import("./pages/FAQPage"));
 const ServiceLocationPage    = lazy(() => import("./pages/ServiceLocationPage"));
 const Blog                   = lazy(() => import("./pages/Blog"));
+const BlogTopic              = lazy(() => import("./pages/BlogTopic"));
 const BlogPost               = lazy(() => import("./pages/BlogPost"));
 const HowToCleanCarpetBlog    = lazy(() => import("./pages/HowToCleanCarpetBlog"));
 const HowToRemoveCandleWaxBlog = lazy(() => import("./pages/HowToRemoveCandleWaxBlog"));
@@ -75,6 +76,7 @@ const AppRoutesLazy = () => (
     <Route path="/why-eco-friendly-cleaning" element={<WhyEcoFriendlyPage />} />
     <Route path="/faq" element={<FAQPage />} />
     <Route path="/blog" element={<Blog />} />
+    <Route path="/blog/topic/:topicSlug" element={<BlogTopic />} />
     <Route path="/blog/how-to-clean-carpet-home-apartment" element={<HowToCleanCarpetBlog />} />
     <Route path="/blog/how-to-remove-candle-wax-eco-friendly" element={<HowToRemoveCandleWaxBlog />} />
     <Route path="/blog/how-to-clean-your-washing-machine-eco-friendly" element={<HowToCleanYourWashingMachineEcoFriendly />} />

@@ -13,6 +13,7 @@ import CityPage from "./pages/CityPage";
 import FAQPage from "./pages/FAQPage";
 import ServiceLocationPage from "./pages/ServiceLocationPage";
 import Blog from "./pages/Blog";
+import BlogTopic from "./pages/BlogTopic";
 import BlogPost from "./pages/BlogPost";
 import HowToCleanCarpetBlog from "./pages/HowToCleanCarpetBlog";
 import HowToRemoveCandleWaxBlog from "./pages/HowToRemoveCandleWaxBlog";
@@ -162,6 +163,7 @@ const AppRoutes = () => (
     <Route path="/why-eco-friendly-cleaning" element={<WhyEcoFriendlyPage />} />
     <Route path="/faq" element={<FAQPage />} />
     <Route path="/blog" element={<Blog />} />
+    <Route path="/blog/topic/:topicSlug" element={<BlogTopic />} />
     <Route path="/blog/how-to-clean-carpet-home-apartment" element={<HowToCleanCarpetBlog />} />
     <Route path="/blog/how-to-remove-candle-wax-eco-friendly" element={<HowToRemoveCandleWaxBlog />} />
     <Route path="/blog/how-to-clean-your-washing-machine-eco-friendly" element={<HowToCleanYourWashingMachineEcoFriendly />} />
