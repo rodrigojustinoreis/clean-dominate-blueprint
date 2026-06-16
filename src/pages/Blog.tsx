@@ -20,6 +20,42 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "how-much-does-deep-cleaning-cost",
+    title: "How Much Does a Deep Cleaning Cost? (2026 Prices)",
+    excerpt: "Real 2026 deep cleaning prices in the DMV by home size — a typical 3-bedroom deep clean runs $375–$445 — plus what drives the cost and how to keep it down over time.",
+    date: "2026-06-16",
+    readTime: "6 min read",
+    category: "Cleaning Guides",
+    coverImage: "/images/blog/deep-cleaning-cost/hero.webp",
+  },
+  {
+    slug: "move-out-cleaning-cost-maryland",
+    title: "How Much Does Move-Out Cleaning Cost in Maryland?",
+    excerpt: "Move-out cleaning prices in Maryland by home size — typically $220–$600+ — what's included, what drives the cost, and how it protects your security deposit.",
+    date: "2026-06-16",
+    readTime: "6 min read",
+    category: "Local Guides",
+    coverImage: "/images/blog/move-out-cost/hero.webp",
+  },
+  {
+    slug: "what-is-included-in-a-standard-cleaning",
+    title: "What Is Included in a Standard House Cleaning?",
+    excerpt: "The full room-by-room standard (regular) cleaning checklist, what's not included, and how it differs from a deep clean — so you know exactly what you're booking.",
+    date: "2026-06-16",
+    readTime: "5 min read",
+    category: "Cleaning Guides",
+    coverImage: "/images/blog/whats-included-standard/hero.webp",
+  },
+  {
+    slug: "is-professional-house-cleaning-worth-it",
+    title: "Is Professional House Cleaning Worth It?",
+    excerpt: "An honest look at the value of hiring a cleaning service — the time it buys back, a healthier home, when it's worth it, when it isn't, and the most cost-effective way to use one.",
+    date: "2026-06-16",
+    readTime: "6 min read",
+    category: "Cleaning Guides",
+    coverImage: "/images/blog/is-cleaning-worth-it/hero.webp",
+  },
+  {
     slug: "deep-cleaning-vs-regular-cleaning",
     title: "Deep Cleaning vs Regular Cleaning: What's the Difference?",
     excerpt: "What each service includes, when to book which, and how much more a deep clean costs — a clear side-by-side comparison so you choose the right one for your home.",

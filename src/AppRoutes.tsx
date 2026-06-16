@@ -38,6 +38,10 @@ import DeepVsRegularCleaning from "./pages/DeepVsRegularCleaning";
 import WhatsIncludedDeepCleaning from "./pages/WhatsIncludedDeepCleaning";
 import HowOftenHireCleaningService from "./pages/HowOftenHireCleaningService";
 import OneTimeVsRecurringCleaning from "./pages/OneTimeVsRecurringCleaning";
+import HowMuchDeepCleaningCosts from "./pages/HowMuchDeepCleaningCosts";
+import WhatsIncludedStandardCleaning from "./pages/WhatsIncludedStandardCleaning";
+import IsProfessionalCleaningWorthIt from "./pages/IsProfessionalCleaningWorthIt";
+import MoveOutCleaningCostMaryland from "./pages/MoveOutCleaningCostMaryland";
 import HowToRemoveRedWineStains from "./pages/HowToRemoveRedWineStains";
 import HowToGetRidOfDogSmellPetSafe from "./pages/HowToGetRidOfDogSmellPetSafe";
 import HowToRemoveStickerResidueNatural from "./pages/HowToRemoveStickerResidueNatural";
@@ -196,6 +200,10 @@ const AppRoutes = () => (
     <Route path="/blog/what-is-included-in-a-deep-cleaning" element={<WhatsIncludedDeepCleaning />} />
     <Route path="/blog/how-often-should-you-hire-a-cleaning-service" element={<HowOftenHireCleaningService />} />
     <Route path="/blog/one-time-vs-recurring-cleaning" element={<OneTimeVsRecurringCleaning />} />
+    <Route path="/blog/how-much-does-deep-cleaning-cost" element={<HowMuchDeepCleaningCosts />} />
+    <Route path="/blog/what-is-included-in-a-standard-cleaning" element={<WhatsIncludedStandardCleaning />} />
+    <Route path="/blog/is-professional-house-cleaning-worth-it" element={<IsProfessionalCleaningWorthIt />} />
+    <Route path="/blog/move-out-cleaning-cost-maryland" element={<MoveOutCleaningCostMaryland />} />
     <Route path="/blog/how-to-remove-red-wine-stains" element={<HowToRemoveRedWineStains />} />
     <Route path="/blog/how-to-get-rid-of-dog-smell-pet-safe" element={<HowToGetRidOfDogSmellPetSafe />} />
     <Route path="/blog/how-to-remove-sticker-residue-natural" element={<HowToRemoveStickerResidueNatural />} />
