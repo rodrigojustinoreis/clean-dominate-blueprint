@@ -20,6 +20,42 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "most-forgotten-areas-when-cleaning",
+    title: "The 8 Most Forgotten Areas When Cleaning Your House",
+    excerpt: "The cleaning spots almost everyone misses — baseboards, ceiling fans, light switches, under furniture, vents and more — why they matter and how often to clean them.",
+    date: "2026-06-16",
+    readTime: "5 min read",
+    category: "Tips & Advice",
+    coverImage: "/images/blog/forgotten-areas/hero.webp",
+  },
+  {
+    slug: "why-dust-builds-up-maryland-homes",
+    title: "Why Dust Builds Up So Fast in Maryland Homes",
+    excerpt: "The local reasons Maryland homes get dusty so quickly — tree canopy and pollen, year-round HVAC use, older housing, pets — what dust is made of, and how to reduce it.",
+    date: "2026-06-16",
+    readTime: "6 min read",
+    category: "Home Care Guides",
+    coverImage: "/images/blog/dust-buildup/hero.webp",
+  },
+  {
+    slug: "how-to-prepare-home-for-professional-cleaning",
+    title: "How to Prepare Your Home for a Professional Cleaning",
+    excerpt: "A simple 15-minute checklist to get a better, faster clean — tidy clutter, secure valuables, plan for pets, and sort out access and parking before the team arrives.",
+    date: "2026-06-16",
+    readTime: "5 min read",
+    category: "Tips & Advice",
+    coverImage: "/images/blog/prepare-cleaning/hero.webp",
+  },
+  {
+    slug: "how-to-keep-house-clean-between-cleanings",
+    title: "How to Keep Your House Clean Between Cleanings",
+    excerpt: "Small daily habits that keep your home tidy between professional cleanings — the 10-minute nightly reset, clean-as-you-go, shoes-off, and more.",
+    date: "2026-06-16",
+    readTime: "5 min read",
+    category: "Tips & Advice",
+    coverImage: "/images/blog/between-cleanings/hero.webp",
+  },
+  {
     slug: "house-cleaning-guide-germantown-md",
     title: "The Complete Guide to House Cleaning in Germantown, MD",
     excerpt: "A complete local guide to house cleaning in Germantown — home types (townhomes to single-family), the right cleaning frequency, caring for newer finishes, pricing, and how to choose a company.",
