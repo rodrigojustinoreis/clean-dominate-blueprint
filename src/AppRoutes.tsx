@@ -33,6 +33,7 @@ import HepaFiltersPetsAsthma from "./pages/HepaFiltersPetsAsthma";
 import CleaningProductPoisoningPets from "./pages/CleaningProductPoisoningPets";
 import WhatPetSafeCleaningMeans from "./pages/WhatPetSafeCleaningMeans";
 import ChoosePetSafeCleaningCompany from "./pages/ChoosePetSafeCleaningCompany";
+import HouseCleaningCostBethesda from "./pages/HouseCleaningCostBethesda";
 import HowToRemoveRedWineStains from "./pages/HowToRemoveRedWineStains";
 import HowToGetRidOfDogSmellPetSafe from "./pages/HowToGetRidOfDogSmellPetSafe";
 import HowToRemoveStickerResidueNatural from "./pages/HowToRemoveStickerResidueNatural";
@@ -182,6 +183,7 @@ const AppRoutes = () => (
     <Route path="/blog/cleaning-product-poisoning-in-pets" element={<CleaningProductPoisoningPets />} />
     <Route path="/blog/what-pet-safe-cleaning-really-means" element={<WhatPetSafeCleaningMeans />} />
     <Route path="/blog/choose-pet-safe-cleaning-company" element={<ChoosePetSafeCleaningCompany />} />
+    <Route path="/blog/house-cleaning-cost-bethesda-md" element={<HouseCleaningCostBethesda />} />
     <Route path="/blog/how-to-remove-red-wine-stains" element={<HowToRemoveRedWineStains />} />
     <Route path="/blog/how-to-get-rid-of-dog-smell-pet-safe" element={<HowToGetRidOfDogSmellPetSafe />} />
     <Route path="/blog/how-to-remove-sticker-residue-natural" element={<HowToRemoveStickerResidueNatural />} />

@@ -38,6 +38,15 @@ export const blogPosts: BlogPost[] = [
     coverImage: "https://images.pexels.com/photos/2248516/pexels-photo-2248516.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
   },
   {
+    slug: "house-cleaning-cost-bethesda-md",
+    title: "How Much Does House Cleaning Cost in Bethesda, MD?",
+    excerpt: "Real 2026 house cleaning prices in Bethesda by home size — recurring ~$180–$325, one-time ~$215–$400, deep ~$310–$570+ — plus what actually drives the cost and how to get a free quote.",
+    date: "2026-06-16",
+    readTime: "7 min read",
+    category: "Local Guides",
+    coverImage: "/images/blog/cost-bethesda/hero.webp",
+  },
+  {
     slug: "choose-pet-safe-cleaning-company",
     title: "How to Choose a Cleaning Company That Understands Pet Safety",
     excerpt: "Hiring a cleaner means trusting their chemicals and equipment around your pet. The exact questions to ask — products & certifications, HEPA equipment, pet protocols, background checks — and the red flags to avoid.",
