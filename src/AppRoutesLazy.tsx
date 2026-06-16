@@ -46,6 +46,8 @@ const HowMuchDeepCleaningCosts = lazy(() => import("./pages/HowMuchDeepCleaningC
 const WhatsIncludedStandardCleaning = lazy(() => import("./pages/WhatsIncludedStandardCleaning"));
 const IsProfessionalCleaningWorthIt = lazy(() => import("./pages/IsProfessionalCleaningWorthIt"));
 const MoveOutCleaningCostMaryland = lazy(() => import("./pages/MoveOutCleaningCostMaryland"));
+const BestHouseCleaningRockville = lazy(() => import("./pages/BestHouseCleaningRockville"));
+const BestHouseCleaningSilverSpring = lazy(() => import("./pages/BestHouseCleaningSilverSpring"));
 const HowToRemoveRedWineStains = lazy(() => import("./pages/HowToRemoveRedWineStains"));
 const HowToGetRidOfDogSmellPetSafe = lazy(() => import("./pages/HowToGetRidOfDogSmellPetSafe"));
 const HowToRemoveStickerResidueNatural = lazy(() => import("./pages/HowToRemoveStickerResidueNatural"));
@@ -117,6 +119,8 @@ const AppRoutesLazy = () => (
     <Route path="/blog/what-is-included-in-a-standard-cleaning" element={<WhatsIncludedStandardCleaning />} />
     <Route path="/blog/is-professional-house-cleaning-worth-it" element={<IsProfessionalCleaningWorthIt />} />
     <Route path="/blog/move-out-cleaning-cost-maryland" element={<MoveOutCleaningCostMaryland />} />
+    <Route path="/blog/best-house-cleaning-service-rockville-md" element={<BestHouseCleaningRockville />} />
+    <Route path="/blog/best-house-cleaning-service-silver-spring-md" element={<BestHouseCleaningSilverSpring />} />
     <Route path="/blog/how-to-remove-red-wine-stains" element={<HowToRemoveRedWineStains />} />
     <Route path="/blog/how-to-get-rid-of-dog-smell-pet-safe" element={<HowToGetRidOfDogSmellPetSafe />} />
     <Route path="/blog/how-to-remove-sticker-residue-natural" element={<HowToRemoveStickerResidueNatural />} />

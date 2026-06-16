@@ -53,6 +53,8 @@ function getAllRoutes(): string[] {
     "/blog/what-is-included-in-a-standard-cleaning",
     "/blog/is-professional-house-cleaning-worth-it",
     "/blog/move-out-cleaning-cost-maryland",
+    "/blog/best-house-cleaning-service-rockville-md",
+    "/blog/best-house-cleaning-service-silver-spring-md",
     "/blog/how-to-remove-red-wine-stains",
     "/blog/how-to-get-rid-of-dog-smell-pet-safe",
     "/blog/spring-cleaning-checklist-maryland-2026",

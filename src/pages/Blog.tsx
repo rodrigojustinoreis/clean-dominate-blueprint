@@ -20,6 +20,24 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "best-house-cleaning-service-rockville-md",
+    title: "How to Choose the Best House Cleaning Service in Rockville, MD",
+    excerpt: "A buyer's guide to choosing the best house cleaning service in Rockville — the criteria that matter, red flags to avoid, and Rockville-specific things to check (condo access, builder-grade finishes).",
+    date: "2026-06-16",
+    readTime: "6 min read",
+    category: "Local Guides",
+    coverImage: "/images/blog/best-rockville/hero.webp",
+  },
+  {
+    slug: "best-house-cleaning-service-silver-spring-md",
+    title: "How to Choose the Best House Cleaning Service in Silver Spring, MD",
+    excerpt: "A buyer's guide to choosing the best house cleaning service in Silver Spring — selection criteria, red flags, and local specifics: background checks, bilingual teams, and older homes.",
+    date: "2026-06-16",
+    readTime: "6 min read",
+    category: "Local Guides",
+    coverImage: "/images/blog/best-silver-spring/hero.webp",
+  },
+  {
     slug: "how-much-does-deep-cleaning-cost",
     title: "How Much Does a Deep Cleaning Cost? (2026 Prices)",
     excerpt: "Real 2026 deep cleaning prices in the DMV by home size — a typical 3-bedroom deep clean runs $375–$445 — plus what drives the cost and how to keep it down over time.",
@@ -435,8 +453,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "house-cleaning-bethesda-md",
-    title: "House Cleaning in Bethesda, MD: What Homeowners Should Expect",
-    excerpt: "A local guide to professional house cleaning in Bethesda — pricing, what's included, how to vet companies, and why eco-friendly matters in this health-conscious community.",
+    title: "House Cleaning in Bethesda, MD: How to Choose the Best Service (2026)",
+    excerpt: "A local guide to choosing the best house cleaning service in Bethesda — the criteria that separate the best companies, plus pricing, what's included, and why eco-friendly matters in this health-conscious community.",
     date: "2026-04-08",
     readTime: "6 min read",
     category: "Local Guides",
