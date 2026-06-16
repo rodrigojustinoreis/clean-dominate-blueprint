@@ -20,6 +20,42 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "deep-cleaning-vs-regular-cleaning",
+    title: "Deep Cleaning vs Regular Cleaning: What's the Difference?",
+    excerpt: "What each service includes, when to book which, and how much more a deep clean costs — a clear side-by-side comparison so you choose the right one for your home.",
+    date: "2026-06-16",
+    readTime: "7 min read",
+    category: "Cleaning Guides",
+    coverImage: "/images/blog/deep-vs-regular/hero.webp",
+  },
+  {
+    slug: "what-is-included-in-a-deep-cleaning",
+    title: "What Is Included in a Deep Cleaning? (Full Checklist)",
+    excerpt: "The complete room-by-room deep cleaning checklist — inside the oven and fridge, grout, baseboards, vents, window tracks — how it differs from a standard clean, and how long it takes.",
+    date: "2026-06-16",
+    readTime: "6 min read",
+    category: "Cleaning Guides",
+    coverImage: "/images/blog/whats-included-deep/hero.webp",
+  },
+  {
+    slug: "how-often-should-you-hire-a-cleaning-service",
+    title: "How Often Should You Hire a Cleaning Service?",
+    excerpt: "Weekly, biweekly, or monthly? The factors that decide your ideal cleaning frequency — pets, kids, schedule, home size — and what most DMV households actually choose.",
+    date: "2026-06-16",
+    readTime: "6 min read",
+    category: "Cleaning Guides",
+    coverImage: "/images/blog/how-often-hire/hero.webp",
+  },
+  {
+    slug: "one-time-vs-recurring-cleaning",
+    title: "One-Time vs Recurring Cleaning: Which Should You Choose?",
+    excerpt: "The difference, the cost per visit, and when to choose each — why recurring is cheaper per visit and when a single deep clean makes more sense.",
+    date: "2026-06-16",
+    readTime: "6 min read",
+    category: "Cleaning Guides",
+    coverImage: "/images/blog/one-time-vs-recurring/hero.webp",
+  },
+  {
     slug: "how-to-remove-sticker-residue-natural",
     title: "How to Remove Sticker Residue Naturally (No Goo Gone Needed)",
     excerpt: "Remove sticky label residue from glass, plastic, wood, and stainless steel using oil, vinegar, heat, or baking soda — safer than Goo Gone and better for your home.",

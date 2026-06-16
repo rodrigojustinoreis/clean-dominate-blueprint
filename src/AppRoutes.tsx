@@ -34,6 +34,10 @@ import CleaningProductPoisoningPets from "./pages/CleaningProductPoisoningPets";
 import WhatPetSafeCleaningMeans from "./pages/WhatPetSafeCleaningMeans";
 import ChoosePetSafeCleaningCompany from "./pages/ChoosePetSafeCleaningCompany";
 import HouseCleaningCostCity from "./pages/HouseCleaningCostCity";
+import DeepVsRegularCleaning from "./pages/DeepVsRegularCleaning";
+import WhatsIncludedDeepCleaning from "./pages/WhatsIncludedDeepCleaning";
+import HowOftenHireCleaningService from "./pages/HowOftenHireCleaningService";
+import OneTimeVsRecurringCleaning from "./pages/OneTimeVsRecurringCleaning";
 import HowToRemoveRedWineStains from "./pages/HowToRemoveRedWineStains";
 import HowToGetRidOfDogSmellPetSafe from "./pages/HowToGetRidOfDogSmellPetSafe";
 import HowToRemoveStickerResidueNatural from "./pages/HowToRemoveStickerResidueNatural";
@@ -188,6 +192,10 @@ const AppRoutes = () => (
     <Route path="/blog/house-cleaning-cost-silver-spring-md" element={<HouseCleaningCostCity citySlug="silver-spring-md" />} />
     <Route path="/blog/house-cleaning-cost-arlington-va" element={<HouseCleaningCostCity citySlug="arlington-va" />} />
     <Route path="/blog/house-cleaning-cost-alexandria-va" element={<HouseCleaningCostCity citySlug="alexandria-va" />} />
+    <Route path="/blog/deep-cleaning-vs-regular-cleaning" element={<DeepVsRegularCleaning />} />
+    <Route path="/blog/what-is-included-in-a-deep-cleaning" element={<WhatsIncludedDeepCleaning />} />
+    <Route path="/blog/how-often-should-you-hire-a-cleaning-service" element={<HowOftenHireCleaningService />} />
+    <Route path="/blog/one-time-vs-recurring-cleaning" element={<OneTimeVsRecurringCleaning />} />
     <Route path="/blog/how-to-remove-red-wine-stains" element={<HowToRemoveRedWineStains />} />
     <Route path="/blog/how-to-get-rid-of-dog-smell-pet-safe" element={<HowToGetRidOfDogSmellPetSafe />} />
     <Route path="/blog/how-to-remove-sticker-residue-natural" element={<HowToRemoveStickerResidueNatural />} />

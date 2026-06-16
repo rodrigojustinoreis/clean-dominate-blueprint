@@ -38,6 +38,10 @@ const CleaningProductPoisoningPets = lazy(() => import("./pages/CleaningProductP
 const WhatPetSafeCleaningMeans = lazy(() => import("./pages/WhatPetSafeCleaningMeans"));
 const ChoosePetSafeCleaningCompany = lazy(() => import("./pages/ChoosePetSafeCleaningCompany"));
 const HouseCleaningCostCity = lazy(() => import("./pages/HouseCleaningCostCity"));
+const DeepVsRegularCleaning = lazy(() => import("./pages/DeepVsRegularCleaning"));
+const WhatsIncludedDeepCleaning = lazy(() => import("./pages/WhatsIncludedDeepCleaning"));
+const HowOftenHireCleaningService = lazy(() => import("./pages/HowOftenHireCleaningService"));
+const OneTimeVsRecurringCleaning = lazy(() => import("./pages/OneTimeVsRecurringCleaning"));
 const HowToRemoveRedWineStains = lazy(() => import("./pages/HowToRemoveRedWineStains"));
 const HowToGetRidOfDogSmellPetSafe = lazy(() => import("./pages/HowToGetRidOfDogSmellPetSafe"));
 const HowToRemoveStickerResidueNatural = lazy(() => import("./pages/HowToRemoveStickerResidueNatural"));
@@ -101,6 +105,10 @@ const AppRoutesLazy = () => (
     <Route path="/blog/house-cleaning-cost-silver-spring-md" element={<HouseCleaningCostCity citySlug="silver-spring-md" />} />
     <Route path="/blog/house-cleaning-cost-arlington-va" element={<HouseCleaningCostCity citySlug="arlington-va" />} />
     <Route path="/blog/house-cleaning-cost-alexandria-va" element={<HouseCleaningCostCity citySlug="alexandria-va" />} />
+    <Route path="/blog/deep-cleaning-vs-regular-cleaning" element={<DeepVsRegularCleaning />} />
+    <Route path="/blog/what-is-included-in-a-deep-cleaning" element={<WhatsIncludedDeepCleaning />} />
+    <Route path="/blog/how-often-should-you-hire-a-cleaning-service" element={<HowOftenHireCleaningService />} />
+    <Route path="/blog/one-time-vs-recurring-cleaning" element={<OneTimeVsRecurringCleaning />} />
     <Route path="/blog/how-to-remove-red-wine-stains" element={<HowToRemoveRedWineStains />} />
     <Route path="/blog/how-to-get-rid-of-dog-smell-pet-safe" element={<HowToGetRidOfDogSmellPetSafe />} />
     <Route path="/blog/how-to-remove-sticker-residue-natural" element={<HowToRemoveStickerResidueNatural />} />
