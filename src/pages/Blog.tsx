@@ -489,8 +489,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "cleaning-service-fairfax-va",
-    title: "House Cleaning Services in Fairfax, VA",
-    excerpt: "Fairfax families are busy — between commutes, schools, and activities. Discover how professional cleaning services in Fairfax, VA can help you reclaim your weekends.",
+    title: "How to Find a Reliable Cleaning Service in Fairfax, VA",
+    excerpt: "Fairfax families are busy — between commutes, schools, and activities. How to find a reliable, eco-friendly house cleaning service in Fairfax, VA and reclaim your weekends.",
     date: "2026-03-27",
     readTime: "6 min read",
     category: "Local Guides",

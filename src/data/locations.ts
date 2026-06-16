@@ -508,7 +508,7 @@ export const cities: CityData[] = [
       { q: "What premium finishes can you clean?", a: "We're experienced with marble, granite, hardwood, crystal, designer fabrics, and other premium materials common in Georgetown homes." },
       { q: "How often should I schedule cleaning in Georgetown?", a: "Most Georgetown clients prefer weekly or bi-weekly service. Homes that host frequently may benefit from weekly cleaning." }
     ],
-    metaTitle: "House Cleaning in Georgetown, DC | Capital Clean Care",
+    metaTitle: "Cleaning Services in Georgetown, DC — All Services | Capital Clean Care",
     metaDescription: "Premium house cleaning in Georgetown, DC. Expert care for historic homes, fine finishes, and luxury properties. Eco-friendly, insured. Get a free quote."
   },
   {
@@ -525,7 +525,7 @@ export const cities: CityData[] = [
       { q: "Are weekday daytime cleanings available?", a: "Yes. Many Dupont Circle professionals prefer weekday cleanings while they're at work." },
       { q: "Do you provide key or code access cleaning?", a: "Yes. Many clients provide key, code, or smart lock access so we can clean while they're away." }
     ],
-    metaTitle: "House Cleaning in Dupont Circle, DC | Capital Clean Care",
+    metaTitle: "Cleaning Services in Dupont Circle, DC — All Services | Capital Clean Care",
     metaDescription: "Professional house cleaning in Dupont Circle, DC. Serving rowhouses, condos & apartments. Eco-friendly products, background-checked teams. Free quotes."
   },
   {
@@ -542,7 +542,7 @@ export const cities: CityData[] = [
       { q: "Are your products pet-friendly?", a: "Yes. Our eco-friendly, non-toxic products are safe for pets, which are popular in Adams Morgan's pet-friendly community." },
       { q: "Do you offer move-in cleaning in Adams Morgan?", a: "Yes. Our move-in and move-out cleaning is available throughout Adams Morgan." }
     ],
-    metaTitle: "House Cleaning in Adams Morgan, DC | Capital Clean Care",
+    metaTitle: "Cleaning Services in Adams Morgan, DC — All Services | Capital Clean Care",
     metaDescription: "Professional house cleaning in Adams Morgan, DC. Eco-friendly products, background-checked teams, flexible scheduling. Get your free quote today."
   },
   {
@@ -700,7 +700,7 @@ export const cities: CityData[] = [
       { q: "Are your products safe for pets?", a: "Absolutely. Our plant-based, non-toxic products are safe for dogs, cats, and all household pets." },
       { q: "How quickly can I book in Kensington?", a: "Kensington is centrally located in our Montgomery County service area. We typically schedule new clients within 3-5 business days." }
     ],
-    metaTitle: "House Cleaning in Kensington, MD | Capital Clean Care",
+    metaTitle: "Cleaning Services in Kensington, MD — All Services | Capital Clean Care",
     metaDescription: "Professional house cleaning in Kensington, MD. Eco-friendly products, background-checked teams serving Victorian & historic homes. Free quotes."
   },
   {
@@ -719,7 +719,7 @@ export const cities: CityData[] = [
       { q: "Are your Chevy Chase teams insured?", a: "Yes. We're fully licensed, insured, and every team member is background-checked. You're completely protected." },
       { q: "Do you use products safe for hardwood floors?", a: "Yes. Our pH-neutral, plant-based floor cleaners are specifically safe for hardwood and won't dull or damage finishes." }
     ],
-    metaTitle: "House Cleaning in Chevy Chase, MD | Capital Clean Care",
+    metaTitle: "Cleaning Services in Chevy Chase, MD — All Services | Capital Clean Care",
     metaDescription: "Premium house cleaning in Chevy Chase, MD. Eco-friendly products, background-checked teams for luxury homes. Serving Chevy Chase sections along Connecticut Ave. Free quotes."
   },
   {
@@ -982,7 +982,7 @@ export const cities: CityData[] = [
       { q: "Do you handle agricultural pollen seasonally?", a: "Yes. Mount Airy's agricultural surroundings mean heavy spring pollen and seasonal debris from the surrounding farmland. Our seasonal protocols include extra dusting and surface cleaning during peak pollen months." },
       { q: "Are your teams familiar with Mount Airy's elevation effects?", a: "Yes. Mount Airy's 900+ foot elevation creates earlier winter, later spring, and more pronounced humidity and cold cycles than lower-elevation Maryland communities. Our teams adjust technique accordingly." }
     ],
-    metaTitle: "House Cleaning in Mount Airy, MD | Capital Clean Care",
+    metaTitle: "Cleaning Services in Mount Airy, MD — All Services | Capital Clean Care",
     metaDescription: "Professional house cleaning in Mount Airy, MD. Serving both Carroll and Frederick County sides of Mount Airy. Eco-friendly products, background-checked teams. Free quotes."
   },
   {
@@ -1001,7 +1001,7 @@ export const cities: CityData[] = [
       { q: "How much does cleaning cost in Kentlands?", a: "Kentlands homes vary in size from townhomes to single-family. Pricing depends on bedrooms, bathrooms, and condition. Request a free quote for accurate pricing tailored to your specific Kentlands home." },
       { q: "Do you offer recurring cleaning in Kentlands?", a: "Yes. Bi-weekly recurring is the most popular frequency for Kentlands families. Weekly is common for higher-traffic households. Recurring clients receive preferred pricing and dedicated team assignments." }
     ],
-    metaTitle: "House Cleaning in Kentlands, MD | Capital Clean Care",
+    metaTitle: "Cleaning Services in Kentlands, MD — All Services | Capital Clean Care",
     metaDescription: "Professional house cleaning in Kentlands, MD. Specialized care for New Urbanist homes in Kentlands, Lakelands & Crown Farm. Eco-friendly products, background-checked teams. Free quotes."
   },
   {
