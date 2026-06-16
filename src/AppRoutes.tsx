@@ -44,6 +44,9 @@ import IsProfessionalCleaningWorthIt from "./pages/IsProfessionalCleaningWorthIt
 import MoveOutCleaningCostMaryland from "./pages/MoveOutCleaningCostMaryland";
 import BestHouseCleaningRockville from "./pages/BestHouseCleaningRockville";
 import BestHouseCleaningSilverSpring from "./pages/BestHouseCleaningSilverSpring";
+import HouseCleaningGuideGermantown from "./pages/HouseCleaningGuideGermantown";
+import HouseCleaningGuideClarksburg from "./pages/HouseCleaningGuideClarksburg";
+import PostConstructionCleaningMontgomeryCounty from "./pages/PostConstructionCleaningMontgomeryCounty";
 import HowToRemoveRedWineStains from "./pages/HowToRemoveRedWineStains";
 import HowToGetRidOfDogSmellPetSafe from "./pages/HowToGetRidOfDogSmellPetSafe";
 import HowToRemoveStickerResidueNatural from "./pages/HowToRemoveStickerResidueNatural";
@@ -208,6 +211,9 @@ const AppRoutes = () => (
     <Route path="/blog/move-out-cleaning-cost-maryland" element={<MoveOutCleaningCostMaryland />} />
     <Route path="/blog/best-house-cleaning-service-rockville-md" element={<BestHouseCleaningRockville />} />
     <Route path="/blog/best-house-cleaning-service-silver-spring-md" element={<BestHouseCleaningSilverSpring />} />
+    <Route path="/blog/house-cleaning-guide-germantown-md" element={<HouseCleaningGuideGermantown />} />
+    <Route path="/blog/house-cleaning-guide-clarksburg-md" element={<HouseCleaningGuideClarksburg />} />
+    <Route path="/blog/post-construction-cleaning-montgomery-county-md" element={<PostConstructionCleaningMontgomeryCounty />} />
     <Route path="/blog/how-to-remove-red-wine-stains" element={<HowToRemoveRedWineStains />} />
     <Route path="/blog/how-to-get-rid-of-dog-smell-pet-safe" element={<HowToGetRidOfDogSmellPetSafe />} />
     <Route path="/blog/how-to-remove-sticker-residue-natural" element={<HowToRemoveStickerResidueNatural />} />

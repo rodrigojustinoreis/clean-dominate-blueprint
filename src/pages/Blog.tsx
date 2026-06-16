@@ -20,6 +20,33 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "house-cleaning-guide-germantown-md",
+    title: "The Complete Guide to House Cleaning in Germantown, MD",
+    excerpt: "A complete local guide to house cleaning in Germantown — home types (townhomes to single-family), the right cleaning frequency, caring for newer finishes, pricing, and how to choose a company.",
+    date: "2026-06-16",
+    readTime: "6 min read",
+    category: "Local Guides",
+    coverImage: "/images/blog/guide-germantown/hero.webp",
+  },
+  {
+    slug: "house-cleaning-guide-clarksburg-md",
+    title: "The Complete Guide to House Cleaning in Clarksburg, MD",
+    excerpt: "A complete local guide to house cleaning in Clarksburg — new-construction homes, move-in and post-construction cleans, builder-grade finishes, pricing, and choosing a company.",
+    date: "2026-06-16",
+    readTime: "6 min read",
+    category: "Local Guides",
+    coverImage: "/images/blog/guide-clarksburg/hero.webp",
+  },
+  {
+    slug: "post-construction-cleaning-montgomery-county-md",
+    title: "Post-Construction Cleaning in Montgomery County, MD: A Guide",
+    excerpt: "What post-construction cleaning involves in Montgomery County — why fine construction dust is the real challenge, what's included, how it differs from a deep clean, when to schedule, and cost.",
+    date: "2026-06-16",
+    readTime: "6 min read",
+    category: "Local Guides",
+    coverImage: "/images/blog/post-construction-moco/hero.webp",
+  },
+  {
     slug: "best-house-cleaning-service-rockville-md",
     title: "How to Choose the Best House Cleaning Service in Rockville, MD",
     excerpt: "A buyer's guide to choosing the best house cleaning service in Rockville — the criteria that matter, red flags to avoid, and Rockville-specific things to check (condo access, builder-grade finishes).",

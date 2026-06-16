@@ -48,6 +48,9 @@ const IsProfessionalCleaningWorthIt = lazy(() => import("./pages/IsProfessionalC
 const MoveOutCleaningCostMaryland = lazy(() => import("./pages/MoveOutCleaningCostMaryland"));
 const BestHouseCleaningRockville = lazy(() => import("./pages/BestHouseCleaningRockville"));
 const BestHouseCleaningSilverSpring = lazy(() => import("./pages/BestHouseCleaningSilverSpring"));
+const HouseCleaningGuideGermantown = lazy(() => import("./pages/HouseCleaningGuideGermantown"));
+const HouseCleaningGuideClarksburg = lazy(() => import("./pages/HouseCleaningGuideClarksburg"));
+const PostConstructionCleaningMontgomeryCounty = lazy(() => import("./pages/PostConstructionCleaningMontgomeryCounty"));
 const HowToRemoveRedWineStains = lazy(() => import("./pages/HowToRemoveRedWineStains"));
 const HowToGetRidOfDogSmellPetSafe = lazy(() => import("./pages/HowToGetRidOfDogSmellPetSafe"));
 const HowToRemoveStickerResidueNatural = lazy(() => import("./pages/HowToRemoveStickerResidueNatural"));
@@ -121,6 +124,9 @@ const AppRoutesLazy = () => (
     <Route path="/blog/move-out-cleaning-cost-maryland" element={<MoveOutCleaningCostMaryland />} />
     <Route path="/blog/best-house-cleaning-service-rockville-md" element={<BestHouseCleaningRockville />} />
     <Route path="/blog/best-house-cleaning-service-silver-spring-md" element={<BestHouseCleaningSilverSpring />} />
+    <Route path="/blog/house-cleaning-guide-germantown-md" element={<HouseCleaningGuideGermantown />} />
+    <Route path="/blog/house-cleaning-guide-clarksburg-md" element={<HouseCleaningGuideClarksburg />} />
+    <Route path="/blog/post-construction-cleaning-montgomery-county-md" element={<PostConstructionCleaningMontgomeryCounty />} />
     <Route path="/blog/how-to-remove-red-wine-stains" element={<HowToRemoveRedWineStains />} />
     <Route path="/blog/how-to-get-rid-of-dog-smell-pet-safe" element={<HowToGetRidOfDogSmellPetSafe />} />
     <Route path="/blog/how-to-remove-sticker-residue-natural" element={<HowToRemoveStickerResidueNatural />} />
