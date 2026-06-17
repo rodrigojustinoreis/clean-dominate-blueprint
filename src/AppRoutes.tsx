@@ -51,6 +51,9 @@ import MostForgottenCleaningAreas from "./pages/MostForgottenCleaningAreas";
 import WhyDustBuildsUpMaryland from "./pages/WhyDustBuildsUpMaryland";
 import PrepareHomeForCleaning from "./pages/PrepareHomeForCleaning";
 import KeepHouseCleanBetween from "./pages/KeepHouseCleanBetween";
+import SummerCleaningChecklist from "./pages/SummerCleaningChecklist";
+import HolidayCleaningChecklist from "./pages/HolidayCleaningChecklist";
+import CleaningTipsWorkingProfessionals from "./pages/CleaningTipsWorkingProfessionals";
 import HowToRemoveRedWineStains from "./pages/HowToRemoveRedWineStains";
 import HowToGetRidOfDogSmellPetSafe from "./pages/HowToGetRidOfDogSmellPetSafe";
 import HowToRemoveStickerResidueNatural from "./pages/HowToRemoveStickerResidueNatural";
@@ -222,6 +225,9 @@ const AppRoutes = () => (
     <Route path="/blog/why-dust-builds-up-maryland-homes" element={<WhyDustBuildsUpMaryland />} />
     <Route path="/blog/how-to-prepare-home-for-professional-cleaning" element={<PrepareHomeForCleaning />} />
     <Route path="/blog/how-to-keep-house-clean-between-cleanings" element={<KeepHouseCleanBetween />} />
+    <Route path="/blog/summer-cleaning-checklist-maryland" element={<SummerCleaningChecklist />} />
+    <Route path="/blog/holiday-cleaning-checklist-dmv" element={<HolidayCleaningChecklist />} />
+    <Route path="/blog/cleaning-tips-for-working-professionals" element={<CleaningTipsWorkingProfessionals />} />
     <Route path="/blog/how-to-remove-red-wine-stains" element={<HowToRemoveRedWineStains />} />
     <Route path="/blog/how-to-get-rid-of-dog-smell-pet-safe" element={<HowToGetRidOfDogSmellPetSafe />} />
     <Route path="/blog/how-to-remove-sticker-residue-natural" element={<HowToRemoveStickerResidueNatural />} />

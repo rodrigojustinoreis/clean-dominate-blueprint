@@ -20,6 +20,33 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "summer-cleaning-checklist-maryland",
+    title: "Summer Cleaning Checklist for Maryland Homes (2026)",
+    excerpt: "A summer cleaning checklist built for Maryland's humidity — mildew control, HVAC and vent care, windows and screens, outdoor spaces, and kitchen prep for entertaining.",
+    date: "2026-06-16",
+    readTime: "5 min read",
+    category: "Seasonal Guides",
+    coverImage: "/images/blog/summer-checklist/hero.webp",
+  },
+  {
+    slug: "holiday-cleaning-checklist-dmv",
+    title: "Holiday Cleaning Checklist for DMV Hosts (2026)",
+    excerpt: "A stage-by-stage holiday cleaning checklist for hosting — the week-before deep clean, guest-ready touches, the day-of reset, and after-party cleanup.",
+    date: "2026-06-16",
+    readTime: "5 min read",
+    category: "Seasonal Guides",
+    coverImage: "/images/blog/holiday-checklist/hero.webp",
+  },
+  {
+    slug: "cleaning-tips-for-working-professionals",
+    title: "Cleaning Tips for Busy Working Professionals",
+    excerpt: "Low-effort cleaning systems for busy professionals in the DMV — the 10-minute reset, automating floors, focusing on the rooms you use, and cleaning while you're at work.",
+    date: "2026-06-16",
+    readTime: "5 min read",
+    category: "Tips & Advice",
+    coverImage: "/images/blog/working-professionals/hero.webp",
+  },
+  {
     slug: "most-forgotten-areas-when-cleaning",
     title: "The 8 Most Forgotten Areas When Cleaning Your House",
     excerpt: "The cleaning spots almost everyone misses — baseboards, ceiling fans, light switches, under furniture, vents and more — why they matter and how often to clean them.",
