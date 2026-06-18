@@ -37,7 +37,7 @@ const Reviews = () => {
   return (
     <Layout>
       {seoHelmet}
-      <LocalBusinessSchema />
+      <LocalBusinessSchema reviews={reviews.map((r) => ({ name: r.name, text: r.text, location: r.location }))} />
       <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Reviews", href: "/reviews" }]} />
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
