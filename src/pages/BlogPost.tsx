@@ -648,12 +648,12 @@ const blogContent: Record<string, React.ReactNode> = {
         ctaTo="/contact"
       />
 
-      <p>Capital Clean Care has served <Link to="/locations/bethesda-md" className="text-accent hover:underline">Bethesda</Link> and surrounding Montgomery County communities for 9+ years. <Link to="/contact" className="text-accent hover:underline font-semibold">Get your free quote today</Link> — 15% off for new clients.</p>
+      <p>Capital Clean Care has served <Link to="/locations/bethesda-md/house-cleaning" className="text-accent hover:underline">Bethesda</Link> and surrounding Montgomery County communities for 9+ years. <Link to="/contact" className="text-accent hover:underline font-semibold">Get your free quote today</Link> — 15% off for new clients.</p>
     </article>
   ),
   "cleaning-service-arlington-va": (
     <article className="prose prose-lg max-w-none">
-      <p><Link to="/locations/arlington-va" className="text-accent hover:underline">Arlington, VA</Link> is one of the most densely populated and professionally active communities in the DMV. With a mix of high-rise condos, townhomes, and detached houses, Arlington residents have diverse cleaning needs — and high standards. Here's what Northern Virginia homeowners should know when choosing a professional cleaning service.</p>
+      <p><Link to="/locations/arlington-va/house-cleaning" className="text-accent hover:underline">Arlington, VA</Link> is one of the most densely populated and professionally active communities in the DMV. With a mix of high-rise condos, townhomes, and detached houses, Arlington residents have diverse cleaning needs — and high standards. Here's what Northern Virginia homeowners should know when choosing a professional cleaning service.</p>
 
       <h2>Arlington's Unique Cleaning Challenges</h2>
       <p>Arlington's urban density and busy commuter culture create specific cleaning situations:</p>
@@ -697,7 +697,7 @@ const blogContent: Record<string, React.ReactNode> = {
   ),
   "deep-cleaning-rockville-md": (
     <article className="prose prose-lg max-w-none">
-      <p><Link to="/locations/rockville-md" className="text-accent hover:underline">Rockville, MD</Link> is one of Montgomery County's largest cities — and its suburban character means larger homes, more square footage, and more spaces that accumulate dust, allergens, and grime between visits. Whether you're scheduling your first professional deep clean or setting up a recurring plan, here's what Rockville homeowners need to know.</p>
+      <p><Link to="/locations/rockville-md/deep-cleaning" className="text-accent hover:underline">Rockville, MD</Link> is one of Montgomery County's largest cities — and its suburban character means larger homes, more square footage, and more spaces that accumulate dust, allergens, and grime between visits. Whether you're scheduling your first professional deep clean or setting up a recurring plan, here's what Rockville homeowners need to know.</p>
 
       <h2>Why Deep Cleaning Matters for Rockville Homes</h2>
       <p>Rockville's suburban sprawl means most homes are larger than the DMV average — three to five bedrooms, finished basements, two-car garages, and multiple bathrooms. Standard cleaning keeps surfaces tidy; deep cleaning addresses the accumulation underneath, inside, and behind:</p>
@@ -1110,7 +1110,7 @@ const blogContent: Record<string, React.ReactNode> = {
         ctaTo="/contact"
       />
 
-      <p>Capital Clean Care has served <Link to="/locations/gaithersburg-md" className="text-accent hover:underline">Gaithersburg</Link> for 9+ years. <Link to="/contact" className="text-accent hover:underline font-semibold">Get your free quote today</Link> — 15% off for new clients.</p>
+      <p>Capital Clean Care has served <Link to="/locations/gaithersburg-md/house-cleaning" className="text-accent hover:underline">Gaithersburg</Link> for 9+ years. <Link to="/contact" className="text-accent hover:underline font-semibold">Get your free quote today</Link> — 15% off for new clients.</p>
     </article>
   ),
   "cleaning-service-mclean-va": (
@@ -1191,7 +1191,7 @@ const blogContent: Record<string, React.ReactNode> = {
   ),
   "house-cleaning-potomac-md": (
     <article className="prose prose-lg max-w-none">
-      <p><Link to="/locations/potomac-md" className="text-accent hover:underline">Potomac, MD</Link> is one of the wealthiest communities in the mid-Atlantic — a zip code synonymous with estate homes, rolling horse country, and the discretion and quality that high-value properties demand. Professional house cleaning in Potomac isn't just a convenience; it's a standard of living.</p>
+      <p><Link to="/locations/potomac-md/house-cleaning" className="text-accent hover:underline">Potomac, MD</Link> is one of the wealthiest communities in the mid-Atlantic — a zip code synonymous with estate homes, rolling horse country, and the discretion and quality that high-value properties demand. Professional house cleaning in Potomac isn't just a convenience; it's a standard of living.</p>
 
       <h2>Potomac Homes: Unique Cleaning Challenges</h2>
       <ul>
