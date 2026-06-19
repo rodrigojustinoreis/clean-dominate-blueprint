@@ -12,7 +12,8 @@ import TrustBadges from "@/components/TrustBadges";
 const HAS_GOOGLE_API = !!(import.meta.env.VITE_GOOGLE_MAPS_API_KEY && import.meta.env.VITE_GOOGLE_PLACE_ID);
 
 const GOOGLE_REVIEW_URL = "https://share.google/4lygNFQSUZrkfaVh7";
-const GOOGLE_MAPS_URL = "https://www.google.com/maps/search/?api=1&query=Capital+Clean+Care";
+// Direct link to the Capital Clean Care Google Business listing (live rating & reviews).
+const GOOGLE_MAPS_URL = "https://www.google.com/maps?cid=1774420840079969097";
 
 // Real Google reviews for Capital Clean Care (5.0 average across 45 reviews).
 // Pulled from the Google Business Profile — keep verbatim; do not embellish.
