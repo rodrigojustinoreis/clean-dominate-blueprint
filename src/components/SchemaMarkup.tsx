@@ -54,11 +54,13 @@ function JsonLd({ id, schema }: { id: string; schema: Record<string, unknown> })
 // ── LocalBusiness Schema ──────────────────────────────────────
 interface LocalBusinessSchemaProps {
   areaServed?: string[];
-  reviews?: { name: string; text: string; location?: string }[];
+  reviews?: { name: string; text: string; location?: string; datePublished?: string }[];
+  /** Emit individual Review items — true ONLY on the /reviews page where the real text is shown. */
+  emitReviewItems?: boolean;
   inLanguage?: string;
 }
 
-export const LocalBusinessSchema = ({ areaServed, reviews, inLanguage = "en-US" }: LocalBusinessSchemaProps = {}) => {
+export const LocalBusinessSchema = ({ areaServed, reviews, emitReviewItems, inLanguage = "en-US" }: LocalBusinessSchemaProps = {}) => {
   const defaultCityAreas = [
     "Silver Spring, MD", "Rockville, MD", "Bethesda, MD", "Germantown, MD",
     "Gaithersburg, MD", "Potomac, MD", "Frederick, MD", "Columbia, MD",
@@ -116,9 +118,10 @@ export const LocalBusinessSchema = ({ areaServed, reviews, inLanguage = "en-US" 
     },
   };
 
-  // Reviews must live on LocalBusiness — Google does not accept Service as parent type.
-  // aggregateRating is only emitted alongside the reviews that back it — never as a bare,
-  // self-serving rating on pages that show no reviews (Google review-snippet policy).
+  // aggregateRating is the business's real Google rating (5.0 / 45) — factual on LocalBusiness,
+  // emitted wherever reviews are passed. Individual Review items are emitted ONLY on the /reviews
+  // page (emitReviewItems), where the genuine review text is displayed — never as placeholder
+  // review bodies on other pages (Google review-snippet policy: markup must be real & shown).
   if (reviews && reviews.length > 0) {
     schema.aggregateRating = {
       "@type": "AggregateRating",
@@ -127,12 +130,15 @@ export const LocalBusinessSchema = ({ areaServed, reviews, inLanguage = "en-US" 
       bestRating: "5",
       worstRating: "1",
     };
-    schema.review = reviews.map((r) => ({
-      "@type": "Review",
-      author: { "@type": "Person", name: r.name },
-      reviewBody: r.text,
-      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-    }));
+    if (emitReviewItems) {
+      schema.review = reviews.map((r) => ({
+        "@type": "Review",
+        author: { "@type": "Person", name: r.name },
+        reviewBody: r.text,
+        ...(r.datePublished ? { datePublished: r.datePublished } : {}),
+        reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+      }));
+    }
   }
 
   return <JsonLd id="local-business-schema" schema={schema} />;

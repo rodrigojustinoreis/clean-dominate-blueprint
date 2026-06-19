@@ -1,4 +1,5 @@
-import { Star, ExternalLink } from "lucide-react";
+import { Star, ExternalLink, Quote, BadgeCheck, ShieldCheck, Leaf, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
@@ -8,135 +9,230 @@ import { LocalBusinessSchema, BreadcrumbSchema } from "@/components/SchemaMarkup
 import Breadcrumbs from "@/components/Breadcrumbs";
 import GoogleReviewsLive from "@/components/GoogleReviewsLive";
 import TrustBadges from "@/components/TrustBadges";
+import FadeInSection from "@/components/blog/FadeInSection";
 
 const HAS_GOOGLE_API = !!(import.meta.env.VITE_GOOGLE_MAPS_API_KEY && import.meta.env.VITE_GOOGLE_PLACE_ID);
 
-const GOOGLE_REVIEW_URL = "https://share.google/4lygNFQSUZrkfaVh7";
 // Direct link to the Capital Clean Care Google Business listing (live rating & reviews).
-const GOOGLE_MAPS_URL = "https://www.google.com/maps?cid=1774420840079969097";
+const GOOGLE_LISTING_URL = "https://www.google.com/maps?cid=1774420840079969097";
+const GOOGLE_REVIEW_URL = "https://share.google/4lygNFQSUZrkfaVh7";
 
-// Real Google reviews for Capital Clean Care (5.0 average across 45 reviews).
-// Pulled from the Google Business Profile — keep verbatim; do not embellish.
+// Real Google reviews for Capital Clean Care (5.0 average across 45 reviews, all 5★).
+// Verbatim from the Google Business Profile — do not embellish. Dates are approximate.
 const reviews = [
-  { name: "Lisa Phillips", text: "Fantastic move out clean. I have a 4002 sq ft home that we've lived in for 15 years and I needed to get it in pristine shape for sale. My house was vacant but it was a HUGE job and Rodrigo and his team did a superb job of cleaning my entire house — floors, windows, walls, appliances, baseboards, carpets, counters, drawers, cabinets, banisters, doors, tubs, sinks, mirrors. Ceiling fans, light switches — every crook and cranny spotlessly clean. The house is totally immaculate and I know I will get top dollar thanks to capital clean! I highly recommend", rating: 5 },
-  { name: "Christina Damiani", text: "Excellent cleaning service! The home looked spotless and fresh when the job was completed. Very thorough, professional, and reliable.", rating: 5 },
-  { name: "Steph M", text: "Capital Clean Care were outstanding. The thoroughness and attention to detail was exceptional, home was spotless and looked beautiful. Couldn't be happier. Highly recommend.", rating: 5 },
-  { name: "Lisa Famulare", text: "Excellent job with tough stains!", rating: 5 },
-  { name: "David Reed", text: "Rodrigo and his team were incredible - worth every penny. They left it spotless!", rating: 5 },
-  { name: "Erika Wilson Wells", text: "Always helpful, kind and thorough cleaning by Capital Clean Care. I highly recommended this business.", rating: 5 },
-  { name: "Grace J", text: "I cannot recommend Capital Clean Care enough! From the very first contact, they responded promptly and offered a fair, competitive price for a large apartment. No surprises, just great service. The crew, Maria, Maria, and Marciane arrived right on time and jumped straight into action. They took the time to understand exactly what I needed and delivered outstanding results. The apartment was spotless. This team brought professionalism, efficiency, and genuine care to their work, and it showed in every detail. I will absolutely be using Capital Clean Care again and wholeheartedly recommend them to anyone looking for a trustworthy, top-quality cleaning service. Five stars, without hesitation!", rating: 5 },
-  { name: "Ranj Saadallah", text: "I have nothing but great things to say about CCC. They show up on time, and the house looks wonderful when they're done, every time. The pictures speak for itself. I recently had both our Air BnB's deep cleaned and the deep clean service is exceptional — the team spent hours thoroughly checking, cleaning, and disinfecting every single square foot of my homes. They cleaned the windows inside and out, appliances, and even got behind the appliances. My homes look and feel brighter. I highly recommend!", rating: 5 },
+  { name: "Lisa Phillips", date: "2026-06-18", text: "Fantastic move out clean. I have a 4002 sq ft home that we've lived in for 15 years and I needed to get it in pristine shape for sale. My house was vacant but it was a HUGE job and Rodrigo and his team did a superb job of cleaning my entire house — floors, windows, walls, appliances, baseboards, carpets, counters, drawers, cabinets, banisters, doors, tubs, sinks, mirrors. Ceiling fans, light switches — every crook and cranny spotlessly clean. The house is totally immaculate and I know I will get top dollar thanks to capital clean! I highly recommend" },
+  { name: "Christina Damiani", date: "2026-06-13", text: "Excellent cleaning service! The home looked spotless and fresh when the job was completed. Very thorough, professional, and reliable." },
+  { name: "Steph M", date: "2026-05-29", text: "Capital Clean Care were outstanding. The thoroughness and attention to detail was exceptional, home was spotless and looked beautiful. Couldn't be happier. Highly recommend." },
+  { name: "Lisa Famulare", date: "2026-05-29", text: "Excellent job with tough stains!" },
+  { name: "David Reed", date: "2026-05-29", text: "Rodrigo and his team were incredible - worth every penny. They left it spotless!" },
+  { name: "Erika Wilson Wells", date: "2026-05-29", text: "Always helpful, kind and thorough cleaning by Capital Clean Care. I highly recommended this business." },
+  { name: "Grace J", date: "2026-05-22", text: "I cannot recommend Capital Clean Care enough! From the very first contact, they responded promptly and offered a fair, competitive price for a large apartment. No surprises, just great service. The crew, Maria, Maria, and Marciane arrived right on time and jumped straight into action. They took the time to understand exactly what I needed and delivered outstanding results. The apartment was spotless. This team brought professionalism, efficiency, and genuine care to their work, and it showed in every detail. I will absolutely be using Capital Clean Care again and wholeheartedly recommend them to anyone looking for a trustworthy, top-quality cleaning service. Five stars, without hesitation!" },
+  { name: "Ranj Saadallah", date: "2026-05-19", text: "I have nothing but great things to say about CCC. They show up on time, and the house looks wonderful when they're done, every time. The pictures speak for itself. I recently had both our Air BnB's deep cleaned and the deep clean service is exceptional — the team spent hours thoroughly checking, cleaning, and disinfecting every single square foot of my homes. They cleaned the windows inside and out, appliances, and even got behind the appliances. My homes look and feel brighter. I highly recommend!" },
 ];
+
+const fmtDate = (iso: string) => new Date(iso).toLocaleDateString("en-US", { month: "long", year: "numeric" });
+
+const Stars = ({ n = 5 }: { n?: number }) => (
+  <div className="flex gap-0.5" aria-label={`${n} out of 5 stars`}>
+    {Array.from({ length: n }).map((_, i) => <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />)}
+  </div>
+);
 
 const Reviews = () => {
   const { seoHelmet } = useSEO({
-    title: "5-Star Cleaning Reviews — MD, DC & VA | Capital Clean Care",
-    description: "Read 45 five-star reviews from Maryland, DC & Virginia homeowners. See why families trust Capital Clean Care for eco-friendly, professional house cleaning.",
+    title: "Customer Reviews — 5.0★ on Google (45 Reviews) | Capital Clean Care",
+    description:
+      "Read 45 five-star Google reviews for Capital Clean Care, the DMV's eco-friendly, Latino-owned house cleaning company. See why families in MD, DC & VA have trusted us since 2015.",
     canonical: "https://capitalcleancare.com/reviews",
   });
 
   return (
     <Layout>
       {seoHelmet}
-      <LocalBusinessSchema reviews={reviews.map((r) => ({ name: r.name, text: r.text }))} />
+      <LocalBusinessSchema
+        reviews={reviews.map((r) => ({ name: r.name, text: r.text, datePublished: r.date }))}
+        emitReviewItems
+      />
       <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Reviews", href: "/reviews" }]} />
-      <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4">
-          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Reviews" }]} className="mb-6" />
-          <div className="text-center mb-12">
-            <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4">Client Reviews</h1>
-            <p className="text-muted-foreground max-w-2xl mx-auto text-lg">Hear from homeowners across Maryland, DC, and Virginia who trust Capital Clean Care with their homes.</p>
 
-            {/* Google Reviews Badge */}
-            <a
-              href={GOOGLE_MAPS_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block mt-6 hover:opacity-90 transition-opacity"
-            >
-              <Card className="border-accent/20 hover:shadow-lg transition-shadow cursor-pointer">
-                <CardContent className="px-6 py-4 flex items-center gap-4">
-                  <div className="flex flex-col items-center">
-                    <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
-                      alt="Google"
-                      className="h-5 mb-1"
-                    />
-                    <span className="text-3xl font-bold text-foreground">5.0</span>
-                    <div className="flex gap-0.5 mt-1">
-                      {Array.from({ length: 5 }).map((_, i) => (
-                        <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                      ))}
-                    </div>
-                  </div>
-                  <div className="text-left border-l border-border pl-4">
-                    <p className="font-semibold text-foreground">Google Reviews</p>
-                    <p className="text-sm text-muted-foreground">Based on 45 reviews</p>
-                    <span className="text-xs text-accent inline-flex items-center gap-1 mt-1">
-                      View on Google <ExternalLink className="h-3 w-3" />
-                    </span>
-                  </div>
-                </CardContent>
-              </Card>
-            </a>
+      {/* ── Header / social proof ─────────────────────────── */}
+      <section className="bg-gradient-to-b from-[#F1F8F1] to-white py-14 md:py-20 border-b border-border">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Reviews" }]} className="mb-8" />
+          <div className="text-center max-w-3xl mx-auto">
+            <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-5 leading-tight">
+              What Our Customers Say About Capital Clean Care
+            </h1>
+            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+              Don't take our word for it. Here's what homeowners across Maryland, DC, and Northern Virginia say after
+              we've cleaned their homes — straight from Google.
+            </p>
+
+            <div className="inline-flex flex-col sm:flex-row items-center gap-5 bg-white border border-border rounded-2xl shadow-sm px-7 py-5">
+              <div className="flex items-center gap-4">
+                <span className="text-5xl font-heading font-extrabold text-foreground leading-none">5.0</span>
+                <div className="text-left">
+                  <Stars />
+                  <p className="text-sm text-muted-foreground mt-1">from <strong>45</strong> Google reviews</p>
+                </div>
+              </div>
+              <div className="hidden sm:block w-px h-12 bg-border" />
+              <a href={GOOGLE_LISTING_URL} target="_blank" rel="noopener noreferrer"
+                 className="inline-flex items-center gap-2 text-accent font-semibold hover:underline">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" className="h-5" />
+                Read them on Google <ExternalLink className="h-4 w-4" />
+              </a>
+            </div>
+
+            <p className="mt-6 text-sm text-muted-foreground flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
+              <span className="inline-flex items-center gap-1.5"><BadgeCheck className="h-4 w-4 text-accent" /> Serving the DMV since 2015</span>
+              <span className="text-border">·</span>
+              <span>Latino-owned &amp; family-operated</span>
+              <span className="text-border">·</span>
+              <span>Licensed, bonded &amp; insured</span>
+            </p>
           </div>
+        </div>
+      </section>
+
+      {/* ── Reviews grid ──────────────────────────────────── */}
+      <section className="py-16 md:py-24">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <FadeInSection>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-center mb-3">45 Five-Star Reviews on Google</h2>
+            <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">Every one of our 45 Google reviews is a 5-star rating. Here are some of the most recent.</p>
+          </FadeInSection>
 
           {HAS_GOOGLE_API ? (
             <GoogleReviewsLive />
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {reviews.map((r, i) => (
-                <Card key={i}>
-                  <CardContent className="p-6">
-                    <div className="flex items-center justify-between mb-3">
-                      <div className="flex gap-0.5">
-                        {Array.from({ length: r.rating }).map((_, j) => <Star key={j} className="h-4 w-4 fill-yellow-400 text-yellow-400" />)}
+                <FadeInSection key={i}>
+                  <Card className="h-full border-border hover:shadow-md transition-shadow">
+                    <CardContent className="p-6 flex flex-col h-full">
+                      <div className="flex items-center justify-between mb-3">
+                        <Stars />
+                        <span className="text-xs text-accent inline-flex items-center gap-1 font-medium">
+                          <BadgeCheck className="h-3.5 w-3.5" /> Verified on Google
+                        </span>
                       </div>
-                      <span className="text-xs text-muted-foreground">via Google</span>
-                    </div>
-                    <p className="text-foreground mb-4 italic">"{r.text}"</p>
-                    <p className="text-sm font-semibold">{r.name}</p>
-                  </CardContent>
-                </Card>
+                      <Quote className="h-5 w-5 text-accent/30 mb-2" />
+                      <p className="text-foreground mb-5 leading-relaxed flex-1">{r.text}</p>
+                      <div className="flex items-center justify-between border-t border-border pt-3">
+                        <p className="text-sm font-semibold text-foreground">{r.name}</p>
+                        <p className="text-xs text-muted-foreground">{fmtDate(r.date)}</p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </FadeInSection>
               ))}
             </div>
           )}
 
-          {/* Google Reviews Embed */}
-          <div className="max-w-4xl mx-auto mt-12">
-            <h2 className="font-heading text-2xl font-bold text-center mb-6">Google Reviews</h2>
-            <div className="w-full rounded-lg overflow-hidden border border-border shadow-sm">
-              <iframe
-                src="https://maps.google.com/maps?q=Capital+Clean+Care&output=embed"
-                width="100%"
-                height="500"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Capital Clean Care on Google Maps"
-              />
-            </div>
-          </div>
-
-          <div className="text-center mt-12">
-            <h3 className="font-heading text-xl font-semibold mb-3">Had a Great Experience?</h3>
-            <p className="text-muted-foreground mb-4">We'd love to hear from you! Leave us a review on Google.</p>
-            <Button variant="cta" asChild>
-              <a href={GOOGLE_REVIEW_URL} target="_blank" rel="noopener noreferrer">
-                Leave a Google Review <ExternalLink className="ml-1 h-4 w-4" />
+          <div className="text-center mt-10">
+            <Button variant="outline" size="lg" className="rounded-full" asChild>
+              <a href={GOOGLE_LISTING_URL} target="_blank" rel="noopener noreferrer">
+                See all 45 reviews on Google <ExternalLink className="ml-2 h-4 w-4" />
               </a>
             </Button>
           </div>
         </div>
       </section>
 
-      <TrustBadges withBackground={false} />
+      {/* ── A note from the founder ───────────────────────── */}
+      <section className="py-16 md:py-20 bg-secondary/50 border-y border-border">
+        <div className="container mx-auto px-4 max-w-3xl text-center">
+          <FadeInSection>
+            <h2 className="font-heading text-3xl font-bold mb-6">A Note From Our Founder</h2>
+            <Quote className="h-8 w-8 text-accent/40 mx-auto mb-4" />
+            <p className="text-lg text-muted-foreground leading-relaxed italic mb-5">
+              "When I started Capital Clean Care in 2015, I had one rule: treat every home like it's my own. We're a
+              family-owned, Latino-owned team, and we built this business on trust — background-checked cleaners,
+              eco-friendly products that are safe for your kids and pets, and a simple promise that if you're not happy,
+              we make it right. Reviews like these mean everything to me and my team."
+            </p>
+            <p className="font-semibold text-foreground">— Rodrigo, Founder, Capital Clean Care</p>
+          </FadeInSection>
+        </div>
+      </section>
 
-      <section className="py-16 bg-secondary">
+      {/* ── Why DMV families choose us (synthesis + links) ── */}
+      <section className="py-16 md:py-24">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <FadeInSection>
+            <h2 className="font-heading text-3xl font-bold mb-5">Why DMV Families Choose Us</h2>
+            <p className="text-muted-foreground leading-relaxed mb-5">
+              Read through our reviews and the same themes come up again and again. Customers mention our team by name —
+              proof that the same trusted, background-checked cleaners come back to their homes. They notice our{" "}
+              <Link to="/services/eco-friendly-cleaning" className="text-accent hover:underline">eco-friendly, non-toxic products</Link>.
+              And they single out our thoroughness on the jobs that matter most: a{" "}
+              <Link to="/services/move-out-cleaning" className="text-accent hover:underline">move-out clean</Link> before a sale,
+              a <Link to="/services/deep-cleaning" className="text-accent hover:underline">deep clean</Link> for an Airbnb turnover,
+              and the detail work — baseboards, inside appliances, window tracks — that a quick clean always skips.
+            </p>
+            <h3 className="font-heading text-xl font-bold mb-3 mt-8">Serving Maryland, DC &amp; Northern Virginia</h3>
+            <p className="text-muted-foreground leading-relaxed">
+              We're based in Silver Spring and serve homeowners across the DMV — from{" "}
+              <Link to="/locations/silver-spring-md/house-cleaning" className="text-accent hover:underline">Silver Spring</Link>,{" "}
+              <Link to="/locations/bethesda-md/house-cleaning" className="text-accent hover:underline">Bethesda</Link>, and{" "}
+              <Link to="/locations/rockville-md/house-cleaning" className="text-accent hover:underline">Rockville</Link>{" "}
+              to DC and Northern Virginia. Whether it's a one-time deep clean or a{" "}
+              <Link to="/services/recurring-cleaning" className="text-accent hover:underline">recurring plan</Link>, the
+              same standard shows up at your door.
+            </p>
+          </FadeInSection>
+
+          <FadeInSection>
+            <div className="bg-secondary/40 border border-border rounded-2xl p-6 mt-10 flex flex-wrap items-start gap-4 text-sm text-muted-foreground">
+              <ShieldCheck className="h-6 w-6 text-accent shrink-0" />
+              <p className="leading-relaxed flex-1 min-w-[16rem]">
+                Our team is <strong>licensed, bonded, and insured</strong>, and every cleaner is background-checked before
+                entering a home. We use only <strong>EPA Safer Choice certified</strong>, plant-based products — safe for
+                children, pets, and allergy sufferers. Proudly serving the DMV since 2015.
+              </p>
+            </div>
+          </FadeInSection>
+        </div>
+      </section>
+
+      <TrustBadges withBackground />
+
+      {/* ── Google embed + leave a review ─────────────────── */}
+      <section className="py-16 md:py-20">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <FadeInSection>
+            <h2 className="font-heading text-2xl md:text-3xl font-bold text-center mb-3 flex items-center justify-center gap-2">
+              <MapPin className="h-6 w-6 text-accent" /> Find Us on Google
+            </h2>
+            <p className="text-center text-muted-foreground mb-8">See our reviews, hours, and service area on Google Maps.</p>
+            <div className="w-full rounded-2xl overflow-hidden border border-border shadow-sm">
+              <iframe
+                src="https://maps.google.com/maps?q=Capital+Clean+Care+Silver+Spring&output=embed"
+                width="100%" height="420" style={{ border: 0 }} allowFullScreen loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade" title="Capital Clean Care on Google Maps"
+              />
+            </div>
+            <div className="text-center mt-8">
+              <p className="text-muted-foreground mb-4">Had a great experience? We'd love to hear from you.</p>
+              <Button variant="cta" size="lg" className="rounded-full" asChild>
+                <a href={GOOGLE_REVIEW_URL} target="_blank" rel="noopener noreferrer">
+                  <Leaf className="mr-2 h-4 w-4" /> Leave a Google Review
+                </a>
+              </Button>
+            </div>
+          </FadeInSection>
+        </div>
+      </section>
+
+      {/* ── Final CTA + quote form ────────────────────────── */}
+      <section className="py-16 md:py-20 bg-secondary border-t border-border">
         <div className="container mx-auto px-4 max-w-2xl">
-          <h2 className="font-heading text-3xl font-bold text-center mb-6">Get Your Free Quote</h2>
-          <Card><CardContent className="p-6 md:p-8"><QuoteForm /></CardContent></Card>
+          <FadeInSection>
+            <h2 className="font-heading text-3xl font-bold text-center mb-3">Ready to Experience It Yourself?</h2>
+            <p className="text-center text-muted-foreground mb-8">Get a free quote in 60 seconds — and find out why 45 families left us 5 stars.</p>
+            <Card><CardContent className="p-6 md:p-8"><QuoteForm /></CardContent></Card>
+          </FadeInSection>
         </div>
       </section>
     </Layout>
