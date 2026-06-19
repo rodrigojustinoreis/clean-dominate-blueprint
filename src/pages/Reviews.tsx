@@ -14,30 +14,30 @@ const HAS_GOOGLE_API = !!(import.meta.env.VITE_GOOGLE_MAPS_API_KEY && import.met
 const GOOGLE_REVIEW_URL = "https://share.google/4lygNFQSUZrkfaVh7";
 const GOOGLE_MAPS_URL = "https://www.google.com/maps/search/?api=1&query=Capital+Clean+Care";
 
+// Real Google reviews for Capital Clean Care (5.0 average across 45 reviews).
+// Pulled from the Google Business Profile — keep verbatim; do not embellish.
 const reviews = [
-  { name: "Sarah M.", location: "Bethesda, MD", text: "Capital Clean Care transformed our home. The team was professional, thorough, and used products I feel safe having around my kids and pets.", rating: 5 },
-  { name: "James T.", location: "Arlington, VA", text: "We've used their bi-weekly service for six months and every visit exceeds expectations. Our dedicated team knows our home perfectly.", rating: 5 },
-  { name: "Lauren K.", location: "Capitol Hill, DC", text: "After our kitchen renovation, the post-construction cleaning was incredible. They removed every trace of dust from places I didn't even know existed.", rating: 5 },
-  { name: "David R.", location: "Rockville, MD", text: "Switching to Capital Clean Care was the best decision. Their eco-friendly approach and consistent quality make them stand out.", rating: 5 },
-  { name: "Michelle P.", location: "Silver Spring, MD", text: "As a busy working mom, having a reliable cleaning team is essential. Capital Clean Care never disappoints — our home always looks amazing.", rating: 5 },
-  { name: "Robert L.", location: "Georgetown, DC", text: "They handle our historic Georgetown home with such care. The attention to detail with our antique woodwork and marble is exceptional.", rating: 5 },
-  { name: "Amanda S.", location: "McLean, VA", text: "We've tried several cleaning services in McLean. Capital Clean Care is by far the most professional and thorough we've experienced.", rating: 5 },
-  { name: "Carlos G.", location: "Frederick, MD", text: "Great service at a fair price. The team is always on time, friendly, and leaves our Frederick home sparkling. Highly recommended.", rating: 5 },
-  { name: "Jennifer W.", location: "Columbia, MD", text: "The move-in cleaning they did for our new Columbia home was outstanding. Every cabinet, appliance, and surface was spotless.", rating: 5 },
-  { name: "Michael B.", location: "Dupont Circle, DC", text: "Living in a busy DC neighborhood, I appreciate how reliable and consistent they are. Same great results every single visit.", rating: 5 },
+  { name: "Lisa Phillips", text: "Fantastic move out clean. I have a 4002 sq ft home that we've lived in for 15 years and I needed to get it in pristine shape for sale. My house was vacant but it was a HUGE job and Rodrigo and his team did a superb job of cleaning my entire house — floors, windows, walls, appliances, baseboards, carpets, counters, drawers, cabinets, banisters, doors, tubs, sinks, mirrors. Ceiling fans, light switches — every crook and cranny spotlessly clean. The house is totally immaculate and I know I will get top dollar thanks to capital clean! I highly recommend", rating: 5 },
+  { name: "Christina Damiani", text: "Excellent cleaning service! The home looked spotless and fresh when the job was completed. Very thorough, professional, and reliable.", rating: 5 },
+  { name: "Steph M", text: "Capital Clean Care were outstanding. The thoroughness and attention to detail was exceptional, home was spotless and looked beautiful. Couldn't be happier. Highly recommend.", rating: 5 },
+  { name: "Lisa Famulare", text: "Excellent job with tough stains!", rating: 5 },
+  { name: "David Reed", text: "Rodrigo and his team were incredible - worth every penny. They left it spotless!", rating: 5 },
+  { name: "Erika Wilson Wells", text: "Always helpful, kind and thorough cleaning by Capital Clean Care. I highly recommended this business.", rating: 5 },
+  { name: "Grace J", text: "I cannot recommend Capital Clean Care enough! From the very first contact, they responded promptly and offered a fair, competitive price for a large apartment. No surprises, just great service. The crew, Maria, Maria, and Marciane arrived right on time and jumped straight into action. They took the time to understand exactly what I needed and delivered outstanding results. The apartment was spotless. This team brought professionalism, efficiency, and genuine care to their work, and it showed in every detail. I will absolutely be using Capital Clean Care again and wholeheartedly recommend them to anyone looking for a trustworthy, top-quality cleaning service. Five stars, without hesitation!", rating: 5 },
+  { name: "Ranj Saadallah", text: "I have nothing but great things to say about CCC. They show up on time, and the house looks wonderful when they're done, every time. The pictures speak for itself. I recently had both our Air BnB's deep cleaned and the deep clean service is exceptional — the team spent hours thoroughly checking, cleaning, and disinfecting every single square foot of my homes. They cleaned the windows inside and out, appliances, and even got behind the appliances. My homes look and feel brighter. I highly recommend!", rating: 5 },
 ];
 
 const Reviews = () => {
   const { seoHelmet } = useSEO({
     title: "5-Star Cleaning Reviews — MD, DC & VA | Capital Clean Care",
-    description: "Read 30+ five-star reviews from Maryland, DC & Virginia homeowners. See why families trust Capital Clean Care for eco-friendly, professional house cleaning.",
+    description: "Read 45 five-star reviews from Maryland, DC & Virginia homeowners. See why families trust Capital Clean Care for eco-friendly, professional house cleaning.",
     canonical: "https://capitalcleancare.com/reviews",
   });
 
   return (
     <Layout>
       {seoHelmet}
-      <LocalBusinessSchema reviews={reviews.map((r) => ({ name: r.name, text: r.text, location: r.location }))} />
+      <LocalBusinessSchema reviews={reviews.map((r) => ({ name: r.name, text: r.text }))} />
       <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Reviews", href: "/reviews" }]} />
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
@@ -70,7 +70,7 @@ const Reviews = () => {
                   </div>
                   <div className="text-left border-l border-border pl-4">
                     <p className="font-semibold text-foreground">Google Reviews</p>
-                    <p className="text-sm text-muted-foreground">Based on 30+ reviews</p>
+                    <p className="text-sm text-muted-foreground">Based on 45 reviews</p>
                     <span className="text-xs text-accent inline-flex items-center gap-1 mt-1">
                       View on Google <ExternalLink className="h-3 w-3" />
                     </span>
@@ -95,7 +95,6 @@ const Reviews = () => {
                     </div>
                     <p className="text-foreground mb-4 italic">"{r.text}"</p>
                     <p className="text-sm font-semibold">{r.name}</p>
-                    <p className="text-xs text-muted-foreground">{r.location}</p>
                   </CardContent>
                 </Card>
               ))}

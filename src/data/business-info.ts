@@ -33,7 +33,7 @@ export const BUSINESS_INFO = {
   },
   rating: {
     value: "5.0",
-    count: "47",
+    count: "45",
   },
   yearFounded: "2015",
   differentiators: [
