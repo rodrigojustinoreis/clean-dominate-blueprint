@@ -143,6 +143,19 @@ const Footer = () => (
         </div>
       </div>
 
+      {/* Company / utility links */}
+      <div className="mt-8 pt-6 border-t border-primary-foreground/10">
+        <h4 className="font-heading font-semibold mb-3 text-sm">Company</h4>
+        <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-primary-foreground/60">
+          <Link to="/about" className="hover:text-accent transition-colors">About Us</Link>
+          <Link to="/reviews" className="hover:text-accent transition-colors">Reviews</Link>
+          <Link to="/blog" className="hover:text-accent transition-colors">Blog</Link>
+          <Link to="/gift-cards" className="hover:text-accent transition-colors">Gift Cards</Link>
+          <Link to="/contact" className="hover:text-accent transition-colors">Contact</Link>
+          <Link to="/faq" className="hover:text-accent transition-colors">FAQ</Link>
+        </div>
+      </div>
+
       {/* Partners & GBP */}
       <div className="mt-6 pt-6 border-t border-primary-foreground/10">
         <PartnerLinks />
