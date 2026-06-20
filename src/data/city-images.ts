@@ -17,6 +17,10 @@ export const cityImages: Record<string, string> = {
   "adams-morgan-dc": "/images/locations/adams-morgan-dc.webp",
   "navy-yard-dc": "/images/locations/navy-yard-dc.webp",
   // Maryland
+  "bethesda-md": "/images/locations/bethesda-md.webp",
+  "rockville-md": "/images/locations/rockville-md.webp",
+  "silver-spring-md": "/images/locations/silver-spring-md.webp",
+  "gaithersburg-md": "/images/locations/gaithersburg-md.webp",
   "burtonsville-md": "/images/locations/burtonsville-md.webp",
   "damascus-md": "/images/locations/damascus-md.webp",
   "kentlands-md": "/images/locations/kentlands-md.webp",

@@ -47,6 +47,7 @@ import NotFound from "./NotFound";
 import regionMD from "@/assets/region-maryland.webp";
 import regionDC from "@/assets/region-dc.webp";
 import regionVA from "@/assets/region-virginia.webp";
+import { cityImages } from "@/data/city-images";
 
 const regionImages: Record<string, string> = {
   maryland: regionMD,
@@ -178,7 +179,7 @@ const CityPage = () => {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src={regionImages[city.stateSlug] || regionMD}
+            src={cityImages[city.slug] || regionImages[city.stateSlug] || regionMD}
             alt={`Eco-friendly house cleaning team serving ${city.name}, ${city.state} — Capital Clean Care`}
             className="w-full h-full object-cover"
             loading="eager"
