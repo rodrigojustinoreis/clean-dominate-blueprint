@@ -1640,6 +1640,22 @@ const BlogPost = () => {
 
           <RelatedPosts currentSlug={post.slug} />
 
+          {/* Internal links: blog → location hubs & services (helps Google discover/index these pages) */}
+          <div className="mt-12 pt-8 border-t border-border">
+            <h3 className="font-heading text-lg font-bold mb-2">Local House Cleaning Across the DMV</h3>
+            <p className="text-sm text-muted-foreground mb-3">Capital Clean Care serves homeowners across Maryland, DC, and Northern Virginia:</p>
+            <div className="flex flex-wrap gap-x-4 gap-y-1.5 text-sm mb-3">
+              {[["bethesda-md","Bethesda"],["rockville-md","Rockville"],["silver-spring-md","Silver Spring"],["gaithersburg-md","Gaithersburg"],["potomac-md","Potomac"],["chevy-chase-md","Chevy Chase"],["arlington-va","Arlington"],["alexandria-va","Alexandria"],["mclean-va","McLean"],["frederick-md","Frederick"],["columbia-md","Columbia"],["takoma-park-md","Takoma Park"]].map(([slug,name]) => (
+                <Link key={slug} to={`/locations/${slug}`} className="text-accent hover:underline">{name}</Link>
+              ))}
+            </div>
+            <div className="flex flex-wrap gap-x-4 gap-y-1.5 text-sm">
+              {[["deep-cleaning","Deep Cleaning"],["move-out-cleaning","Move-Out Cleaning"],["recurring-cleaning","Recurring Cleaning"],["eco-friendly-cleaning","Eco-Friendly Cleaning"],["post-construction-cleaning","Post-Construction Cleaning"]].map(([slug,name]) => (
+                <Link key={slug} to={`/services/${slug}`} className="text-accent hover:underline">{name}</Link>
+              ))}
+            </div>
+          </div>
+
           <div className="mt-12 pt-8 border-t border-border">
             <Button variant="outline" asChild>
               <Link to="/blog"><ArrowLeft className="mr-2 h-4 w-4" /> Back to Blog</Link>
