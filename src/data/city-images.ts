@@ -29,6 +29,8 @@ export const cityImages: Record<string, string> = {
   "wheaton-md": "/images/locations/wheaton-md.webp",
   "olney-md": "/images/locations/olney-md.webp",
   "takoma-park-md": "/images/locations/takoma-park-md.webp",
+  "frederick-md": "/images/locations/frederick-md.webp",
+  "clarksburg-md": "/images/locations/clarksburg-md.webp",
   "burtonsville-md": "/images/locations/burtonsville-md.webp",
   "damascus-md": "/images/locations/damascus-md.webp",
   "kentlands-md": "/images/locations/kentlands-md.webp",
