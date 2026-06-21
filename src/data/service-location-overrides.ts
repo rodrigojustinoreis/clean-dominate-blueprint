@@ -9,12 +9,20 @@ export interface TeamPhoto {
 }
 
 export interface ServiceLocationOverride {
-  uniqueContent: string;
-  photos: TeamPhoto[];
+  uniqueContent?: string;
+  photos?: TeamPhoto[];
+  /** SEO overrides for high-impression pages (tuned to real GSC search queries). */
+  metaTitle?: string;
+  metaDescription?: string;
 }
 
 // Key format: "citySlug/serviceSlug"
 export const serviceLocationOverrides: Record<string, ServiceLocationOverride> = {
+
+  "north-bethesda-md/deep-cleaning": {
+    metaTitle: "Deep Cleaning in North Bethesda, MD — Condos & Homes",
+    metaDescription: "Deep cleaning in North Bethesda, MD — Pike District condos, high-rises & homes. HEPA equipment, eco-friendly products, building-aware service. Free quote.",
+  },
 
   "washington-dc/airbnb-cleaning": {
     uniqueContent: `Washington, DC short-term rentals live and die by the turnover. Between Capitol Hill rowhouses, Shaw and U Street condos, and Navy Yard high-rises near the ballpark, DC hosts deal with back-to-back guests, tight same-day checkout-to-checkin windows, and reviews that punish any detail left undone. Our Airbnb cleaning teams work to a hotel-standard turnover checklist built for DC's pace: strip and remake beds with fresh linens, sanitize kitchens and bathrooms, restock essentials, and flag anything damaged or running low before the next guest arrives.
@@ -226,6 +234,8 @@ Navy Yard's contemporary condos come with the surfaces eco-friendly products are
   },
 
   "arlington-va/deep-cleaning": {
+    metaTitle: "Deep Cleaning in Arlington, VA — Top-Rated & Eco-Friendly",
+    metaDescription: "Professional deep cleaning in Arlington, VA — Clarendon, Ballston, Cherrydale & beyond. HEPA equipment, eco-friendly products, background-checked teams. Free quote.",
     uniqueContent: `Arlington is really two cleaning markets in one county. Along the Rosslyn–Ballston Metro corridor — Clarendon, Courthouse, Virginia Square, Ballston — most of our deep cleaning work is in high-rise and mid-rise condos, where forced-air HVAC systems and nearby garage and street traffic push a fine particulate into every horizontal surface, light fixture, and air return. In the older neighborhoods — Cherrydale, Maywood, Lyon Village, Arlington Forest — we're working in 1920s–1950s bungalows and brick colonials with original hex-tile bathrooms, plaster walls, and hardwood that needs a far gentler hand than a builder-grade rental. Our Arlington deep cleaning crews carry HEPA-filtered vacuums rated for fine dust and a power scrubber for grout and tile, and we switch technique by surface rather than running the same pad over marble, vintage tile, and laminate alike.
 
 Arlington also turns over fast. Between young federal and Pentagon-adjacent professionals, military families on orders, and a heavy rental market near the Metro, a large share of our deep cleans are move-in resets, end-of-lease cleans, and seasonal top-to-bottom refreshes. After hundreds of Arlington homes we know exactly where the grime hides in this housing stock: the glass between oven doors, the runners and weep holes of aluminum window tracks, the top edges of crown molding in older units, the baseboard tucked behind the bathroom door, and ceiling-fan blades in homes without central air. That spot-by-spot checklist — built specifically from Arlington properties — is what our team works through, room by room, on every deep clean.`,
@@ -237,6 +247,8 @@ Arlington also turns over fast. Between young federal and Pentagon-adjacent prof
   },
 
   "takoma-park-md/eco-friendly-cleaning": {
+    metaTitle: "Green & Eco-Friendly House Cleaning in Takoma Park, MD",
+    metaDescription: "Green, eco-friendly house cleaning in Takoma Park, MD — EPA Safer Choice, plant-based, non-toxic products. Background-checked, locally owned. Get a free quote.",
     uniqueContent: `Few communities are as naturally suited to eco-friendly cleaning as Takoma Park. This is a town that declared itself a Nuclear-Free Zone, runs one of the region's oldest farmers markets, and has a co-op culture and tree canopy that residents protect fiercely — people here already read labels and avoid synthetic chemicals at home. Our eco-friendly cleaning in Takoma Park fits that standard exactly: every visit uses only EPA Safer Choice certified, plant-based formulas — no bleach, no ammonia, no petroleum-based surfactants, and no synthetic fragrance — with reusable, OEKO-TEX certified microfiber laundered between homes instead of disposable wipes. Nothing we bring in ends up as waste in the Sligo Creek watershed.
 
 The housing stock makes the eco approach practical, not just principled. Takoma Park's historic Victorians, craftsman bungalows, and American Foursquares — many from the early 1900s — come with original wood floors, plaster walls, and vintage tile that harsh conventional products actively damage: ammonia dulls and dries old hardwood, and bleach erodes vintage grout and antique fixtures. Our pH-balanced, residue-free formulas are designed for exactly these surfaces, and for the families and pets living on them. Clients here tell us the same thing again and again — no chemical smell lingering in a closed-up older house after we leave, and nothing sticky left behind on the surfaces their kids actually touch.`,
@@ -325,6 +337,8 @@ Chevy Chase households often include children in competitive private schools, fo
   },
 
   "chevy-chase-md/eco-friendly-cleaning": {
+    metaTitle: "Green & Eco-Friendly House Cleaning in Chevy Chase, MD",
+    metaDescription: "Green, eco-friendly cleaning in Chevy Chase, MD — EPA Safer Choice, non-toxic products safe for historic homes, kids & pets. Background-checked. Free quote.",
     uniqueContent: `Chevy Chase households have long supported sustainable practices — you'll find composting programs, electric vehicles, and conservation-minded renovation choices throughout the neighborhood. It makes sense that the same standards apply to how homes are cleaned. Capital Clean Care's eco-friendly cleaning service in Chevy Chase uses only EPA Safer Choice™ certified, plant-based formulas — every product verified non-toxic for children, pets, and the watershed that runs through this part of Montgomery County. No synthetic fragrances, no ammonia, no bleach derivatives.
 
 The homes here — Georgian colonials, mid-century ranches, and premium condos on Wisconsin Avenue — often have sensitive surfaces: natural stone countertops, hardwood floors with oil or wax finishes, custom cabinetry with painted finishes, and textiles from high-end furnishings. Our eco-friendly formulas are designed for exactly these materials: pH-balanced, residue-free, and effective without the abrasive chemistry that standard cleaning products use. Residents in Chevy Chase tell us the difference is noticeable — no chemical smell after we leave, no sticky residue on surfaces, and no concern about what the kids or dogs are touching afterward.`,
@@ -580,6 +594,8 @@ The Georgia Avenue and Colesville Road corridors bring significant urban particu
   },
 
   "bethesda-md/recurring-cleaning": {
+    metaTitle: "Recurring House Cleaning in Bethesda, MD — Weekly & Biweekly",
+    metaDescription: "Recurring house cleaning in Bethesda, MD — weekly, biweekly & monthly plans with the same trusted team. Eco-friendly, background-checked. Free quote in 60 seconds.",
     uniqueContent: `Bethesda's professional households — the NIH researchers, the Chevy Chase physicians, the downtown lawyers who live in Wyngate and Burning Tree — don't want to manage a cleaning service. They want to set it up once, trust it completely, and never think about it again. Our Bethesda recurring clients have been on plans for an average of two-plus years, which tells you something about how this service works when it's built correctly: the same dedicated team, learning the home, building the relationship, and improving with every visit.
 
 The practical detail that matters most to Bethesda recurring clients: key access and security. We're bonded and insured, and every team member is background-checked and documented before their first visit. Many Bethesda clients provide a code or key that their team uses on a predictable schedule, and the communication protocol is simple — confirmation the day before, a note when the visit is complete, and immediate contact if anything needs attention. Bethesda homes with premium finishes also benefit from recurring maintenance rather than periodic deep cleans: it's far easier to maintain marble countertops and hardwood floors than to restore them after months of surface buildup.`,

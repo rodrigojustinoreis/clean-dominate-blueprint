@@ -50,9 +50,10 @@ const ServiceLocationPage = () => {
   const faqs = getServiceLocationFAQs(city, service);
   const whyChoose = getWhyChooseUs(city, service);
   const intro = getServiceLocationIntro(city, service);
-  const metaTitle = `${service.name} in ${city.name}, ${city.state} | Capital Clean Care`;
+  const override = getServiceLocationOverride(city.slug, service.slug);
   const serviceLabel = service.shortName.toLowerCase().includes("maid") ? service.shortName : `${service.shortName} & maid service`;
-  const metaDescription = `Top-rated ${serviceLabel} in ${city.name}, ${city.state}. Eco-friendly products, background-checked teams, satisfaction guaranteed. Serving ${city.county}. Free quotes.`;
+  const metaTitle = override?.metaTitle || `${service.name} in ${city.name}, ${city.state} | Capital Clean Care`;
+  const metaDescription = override?.metaDescription || `Top-rated ${serviceLabel} in ${city.name}, ${city.state}. Eco-friendly products, background-checked teams, satisfaction guaranteed. Serving ${city.county}. Free quotes.`;
   const pageUrl = `https://capitalcleancare.com/locations/${city.slug}/${service.slug}`;
 
   // PR #5 — zombie-page pruning: only allowlisted (city, service) pairs are indexable.
@@ -68,7 +69,6 @@ const ServiceLocationPage = () => {
   });
 
   const testimonials = getTestimonialsForServiceCity(city.slug, service.slug);
-  const override = getServiceLocationOverride(city.slug, service.slug);
 
   // Get related service pages for this city
   const relatedServices = slServices.filter(s => s.slug !== service.slug).slice(0, 4);
@@ -172,7 +172,7 @@ const ServiceLocationPage = () => {
       </section>
 
       {/* Unique local content (only on priority pages) */}
-      {override && (
+      {override?.uniqueContent && (
         <section className="py-12 md:py-16 bg-muted/10">
           <div className="container mx-auto px-4 max-w-4xl">
             <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-6">
