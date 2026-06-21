@@ -216,7 +216,10 @@ export const BreadcrumbSchema = ({ items }: BreadcrumbSchemaProps) => {
       "@type": "ListItem",
       position: i + 1,
       name: item.label,
-      item: `${BUSINESS.url}${item.href}`,
+      // Only emit `item` when an href exists. A breadcrumb item with an undefined
+      // href produced an invalid URL ("…comundefined"); for the last crumb (current
+      // page) Google treats `item` as optional, so omitting it is the valid fix.
+      ...(item.href ? { item: `${BUSINESS.url}${item.href}` } : {}),
     })),
   };
 
