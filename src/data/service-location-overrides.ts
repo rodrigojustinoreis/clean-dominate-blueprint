@@ -14,6 +14,9 @@ export interface ServiceLocationOverride {
   /** SEO overrides for high-impression pages (tuned to real GSC search queries). */
   metaTitle?: string;
   metaDescription?: string;
+  /** Keyword-first H1/opening line (exact GSC query up front). Defaults to the template's. */
+  h1?: string;
+  heroLead?: string;
 }
 
 // Key format: "citySlug/serviceSlug"
@@ -234,11 +237,13 @@ Navy Yard's contemporary condos come with the surfaces eco-friendly products are
   },
 
   "arlington-va/deep-cleaning": {
-    metaTitle: "Deep Cleaning in Arlington, VA — Top-Rated & Eco-Friendly",
-    metaDescription: "Professional deep cleaning in Arlington, VA — Clarendon, Ballston, Cherrydale & beyond. HEPA equipment, eco-friendly products, background-checked teams. Free quote.",
-    uniqueContent: `Arlington is really two cleaning markets in one county. Along the Rosslyn–Ballston Metro corridor — Clarendon, Courthouse, Virginia Square, Ballston — most of our deep cleaning work is in high-rise and mid-rise condos, where forced-air HVAC systems and nearby garage and street traffic push a fine particulate into every horizontal surface, light fixture, and air return. In the older neighborhoods — Cherrydale, Maywood, Lyon Village, Arlington Forest — we're working in 1920s–1950s bungalows and brick colonials with original hex-tile bathrooms, plaster walls, and hardwood that needs a far gentler hand than a builder-grade rental. Our Arlington deep cleaning crews carry HEPA-filtered vacuums rated for fine dust and a power scrubber for grout and tile, and we switch technique by surface rather than running the same pad over marble, vintage tile, and laminate alike.
+    h1: "Deep Cleaning Arlington VA: Top-Rated & Eco-Friendly",
+    heroLead: "Deep cleaning for Arlington VA homes, with HEPA-filtered equipment, eco-friendly products, and background-checked crews serving Clarendon, Ballston, Cherrydale, and every Arlington neighborhood.",
+    metaTitle: "Deep Cleaning Arlington VA | Top-Rated & Eco-Friendly",
+    metaDescription: "Deep cleaning in Arlington VA serving Clarendon, Ballston, Cherrydale and beyond. HEPA gear, eco-friendly products, background-checked crews. Free quote.",
+    uniqueContent: `Arlington is really two cleaning markets in one county. Along the Rosslyn–Ballston Metro corridor (Clarendon, Courthouse, Virginia Square, Ballston), most of our deep cleaning work is in high-rise and mid-rise condos, where forced-air HVAC systems and nearby garage and street traffic push a fine particulate into every horizontal surface, light fixture, and air return. In the older neighborhoods of Cherrydale, Maywood, Lyon Village, and Arlington Forest, we're working in 1920s–1950s bungalows and brick colonials with original hex-tile bathrooms, plaster walls, and hardwood that needs a far gentler hand than a builder-grade rental. Our Arlington VA deep cleaning crews carry HEPA-filtered vacuums rated for fine dust and a power scrubber for grout and tile, and we switch technique by surface rather than running the same pad over marble, vintage tile, and laminate alike.
 
-Arlington also turns over fast. Between young federal and Pentagon-adjacent professionals, military families on orders, and a heavy rental market near the Metro, a large share of our deep cleans are move-in resets, end-of-lease cleans, and seasonal top-to-bottom refreshes. After hundreds of Arlington homes we know exactly where the grime hides in this housing stock: the glass between oven doors, the runners and weep holes of aluminum window tracks, the top edges of crown molding in older units, the baseboard tucked behind the bathroom door, and ceiling-fan blades in homes without central air. That spot-by-spot checklist — built specifically from Arlington properties — is what our team works through, room by room, on every deep clean.`,
+Arlington also turns over fast. Between young federal and Pentagon-adjacent professionals, military families on orders, and a heavy rental market near the Metro, a large share of our deep cleans are move-in resets, end-of-lease cleans, and seasonal top-to-bottom refreshes. After hundreds of deep cleans across Arlington VA, we know exactly where the grime hides in this housing stock: the glass between oven doors, the runners and weep holes of aluminum window tracks, the top edges of crown molding in older units, the baseboard tucked behind the bathroom door, and ceiling-fan blades in homes without central air. That spot-by-spot checklist was built specifically from Arlington properties, and it is what our team works through, room by room, on every deep clean.`,
     photos: [
       { src: "/images/team/scrubbing-door-frame.jpg", alt: "Capital Clean Care team member scrubbing door frame during a deep cleaning in Arlington, VA" },
       { src: "/images/team/power-scrubber-tile.jpg", alt: "Capital Clean Care using a power scrubber on tile grout — deep cleaning service in Arlington, VA" },
@@ -337,8 +342,11 @@ Chevy Chase households often include children in competitive private schools, fo
   },
 
   "chevy-chase-md/eco-friendly-cleaning": {
-    metaTitle: "Green & Eco-Friendly House Cleaning in Chevy Chase, MD",
-    metaDescription: "Green, eco-friendly cleaning in Chevy Chase, MD — EPA Safer Choice, non-toxic products safe for historic homes, kids & pets. Background-checked. Free quote.",
+    // top query GSC: "green cleaning services chevy chase" (pos 14.6)
+    metaTitle: "Green Cleaning Services Chevy Chase MD | Eco-Friendly",
+    metaDescription: "Green cleaning services in Chevy Chase MD. EPA Safer Choice plant-based products, background-checked crews, kid & pet safe. Free quote in 60 seconds.",
+    h1: "Green Cleaning Services in Chevy Chase, MD",
+    heroLead: "Green cleaning services for Chevy Chase homes, using only EPA Safer Choice plant-based products. Background-checked crews, non-toxic results, and a satisfaction guarantee on every visit.",
     uniqueContent: `Chevy Chase households have long supported sustainable practices — you'll find composting programs, electric vehicles, and conservation-minded renovation choices throughout the neighborhood. It makes sense that the same standards apply to how homes are cleaned. Capital Clean Care's eco-friendly cleaning service in Chevy Chase uses only EPA Safer Choice™ certified, plant-based formulas — every product verified non-toxic for children, pets, and the watershed that runs through this part of Montgomery County. No synthetic fragrances, no ammonia, no bleach derivatives.
 
 The homes here — Georgian colonials, mid-century ranches, and premium condos on Wisconsin Avenue — often have sensitive surfaces: natural stone countertops, hardwood floors with oil or wax finishes, custom cabinetry with painted finishes, and textiles from high-end furnishings. Our eco-friendly formulas are designed for exactly these materials: pH-balanced, residue-free, and effective without the abrasive chemistry that standard cleaning products use. Residents in Chevy Chase tell us the difference is noticeable — no chemical smell after we leave, no sticky residue on surfaces, and no concern about what the kids or dogs are touching afterward.`,
@@ -451,6 +459,11 @@ Our DC deep cleaning protocol starts with a surface-type inventory: what floors 
   },
 
   "arlington-va/house-cleaning": {
+    // top queries GSC: "cleaning services arlington va" / "apartment cleaning arlington va"
+    metaTitle: "House Cleaning Arlington VA | Home & Apartment Cleaning",
+    metaDescription: "House cleaning services in Arlington VA for homes, apartments & condos. Eco-friendly, background-checked, 5.0-rated. Free quote in 60 seconds.",
+    h1: "House Cleaning Arlington VA: Home & Apartment Cleaning Services",
+    heroLead: "House and apartment cleaning services across Arlington VA, from Clarendon condos to Cherrydale homes. Eco-friendly products and background-checked crews on every visit.",
     uniqueContent: `Arlington's density — the highest in Virginia — means most clients live in condos, high-rises, or compact townhomes along the Rosslyn-Ballston corridor. Our Arlington house cleaning teams are built for urban logistics: arriving within your building's access window, using compact equipment sized for hallways and tight entryways, completing the work efficiently, and leaving without needing you to supervise. If your building has elevator reservations, parking permits, or HOA restrictions, we've navigated all of them across Arlington's major residential buildings.
 
 The Clarendon, Pentagon City, and Crystal City areas attract a high volume of military families and government contractors who relocate frequently — many of them on tight timelines needing move-in or move-out cleans coordinated around PCS moves. We've become a trusted resource for this community because we show up on time, complete the job to a standard that satisfies base housing inspectors and civilian property managers alike, and never require hand-holding. Lyon Village and Nauck homeowners get a different service scope — larger single-family homes with yards — and we staff accordingly.`,
@@ -473,6 +486,11 @@ Our Arlington recurring clients get the same team every visit, which matters mor
   },
 
   "alexandria-va/house-cleaning": {
+    // top queries GSC: "alexandria townhome cleaning" / "safe cleaning in alexandria va"
+    metaTitle: "House Cleaning Alexandria VA | Home & Townhome Cleaning",
+    metaDescription: "House cleaning in Alexandria VA for homes, townhomes & apartments. Safe, eco-friendly products, background-checked crews, satisfaction guaranteed.",
+    h1: "House Cleaning Alexandria VA: Homes, Townhomes & Apartments",
+    heroLead: "Safe, eco-friendly house cleaning for Alexandria VA homes and townhomes, from Old Town rowhouses to Del Ray bungalows. Background-checked crews and plant-based products on every visit.",
     uniqueContent: `Alexandria's Old Town is one of the most historically significant neighborhoods in the country — and one of the most demanding to clean properly. Federal-period brick rowhouses with original heart-pine floors, plaster walls, and antique tile require a different approach than standard residential cleaning. We don't use abrasive scrubbers on historic hardwood, we don't apply bleach-based products near original grout lines, and we train our teams on the specific care requirements for the materials found in pre-1900 Alexandria homes. Del Ray's craftsman bungalows and Potomac Yard's glass-and-steel condos each have their own requirements, and our teams adjust accordingly.
 
 Alexandria's dog-friendly culture — particularly in Del Ray and Old Town — means pet hair, paw prints, and pet-zone odors are part of almost every job. Our house cleaning service in Alexandria uses HEPA-filtered vacuums that capture pet allergens from hardwood, upholstery, and area rugs, and our plant-based deodorizing formulas neutralize pet odors at the source rather than masking them. We've cleaned for Old Town homes where the Labrador has been there for a decade, and the floors still look like they were refinished last week.`,
@@ -517,6 +535,11 @@ Many McLean properties are managed by household managers or estate managers who 
   },
 
   "fairfax-va/house-cleaning": {
+    // top queries GSC: "house cleaning fairfax va" / "cleaning services fairfax va"
+    metaTitle: "House Cleaning Fairfax VA | Top-Rated Cleaning Services",
+    metaDescription: "House cleaning in Fairfax VA by top-rated, background-checked crews. Eco-friendly products safe for kids & pets, satisfaction guaranteed. Free quote.",
+    h1: "House Cleaning Fairfax VA: Top-Rated & Eco-Friendly",
+    heroLead: "House cleaning services for Fairfax VA homes, with eco-friendly products, background-checked teams, and a 24-hour re-clean guarantee.",
     uniqueContent: `Fairfax City's residential neighborhoods — Old Town, Providence, Mosby Woods — have a distinctive mix of mid-century colonials and ranchers built in the 1950s–70s alongside newer construction near George Mason University. The older homes typically have original hardwood floors, tile bathrooms with vintage grout lines, and kitchens that have been updated multiple times over the decades. Each renovation generation leaves a different surface and finish that needs different care. Our Fairfax house cleaning teams are used to working through these layered histories.
 
 George Mason University's presence brings a significant rental population to Fairfax, and we work with both tenants and homeowners throughout the city. Tenants booking move-out cleans often have tight timelines — security deposit disputes are common in Fairfax's competitive rental market, and a documented professional cleaning goes a long way. We photograph the post-clean state of high-scrutiny areas on request, giving tenants documentation that's held up in Fairfax County housing disputes. Homeowners on recurring plans get a different service: a consistent team that knows their preferences and builds on the relationship over time.`,

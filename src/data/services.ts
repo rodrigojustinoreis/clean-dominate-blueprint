@@ -546,7 +546,7 @@ export const services: ServiceData[] = [
       { name: "Amanda F.", location: "Bethesda, MD", text: "My Airbnb rating went from 4.6 to 5.0 stars after I switched to Capital Clean Care. Their attention to detail is incredible." },
       { name: "Carlos M.", location: "Arlington, VA", text: "Same-day turnovers used to stress me out. Now I just send them the checkout time and it's done. Professional, fast, and thorough every time." }
     ],
-    metaTitle: "Airbnb & Rental Cleaning in MD, DC & VA | Capital Clean Care",
+    metaTitle: "Airbnb Cleaning Services | Turnover Cleaning MD, DC & VA",
     metaDescription: "Professional Airbnb & VRBO turnover cleaning in Maryland, DC & Northern Virginia. 5-star results, same-day turnovers, linen changes included. Get a free quote!"
   },
   {
@@ -602,7 +602,7 @@ export const services: ServiceData[] = [
       { name: "James R.", location: "Washington, DC", text: "Running a small law firm, presentation matters. Capital Clean Care keeps our office immaculate without any disruption to our schedule. They clean after hours and everything is perfect every morning." },
       { name: "Linda M.", location: "Arlington, VA", text: "I manage a co-working space and cleanliness is everything for our members. Capital Clean Care handles our daily cleaning and it's been flawless. Highly recommend for any commercial space." }
     ],
-    metaTitle: "Office & Commercial Cleaning in MD, DC & VA | Capital Clean Care",
+    metaTitle: "Office Cleaning Services | Washington DC, Maryland & VA",
     metaDescription: "Professional office and commercial cleaning in Maryland, DC & Northern Virginia. After-hours scheduling, eco-friendly products, background-checked teams. Get a free quote!"
   }
 ];

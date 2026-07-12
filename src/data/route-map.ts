@@ -3,7 +3,7 @@
 // IMPORTANT: add BOTH directions when adding a new page.
 
 export const ROUTE_MAP_EN_TO_ES: Record<string, string> = {
-  "/": "/es/",
+  "/": "/es",
   "/about": "/es/nosotros",
   "/contact": "/es/contacto",
   "/services/house-cleaning": "/es/limpieza-de-casas",
@@ -27,8 +27,8 @@ export const ROUTE_MAP_ES_TO_EN: Record<string, string> = Object.fromEntries(
 );
 
 export function getRoutePair(pathname: string): { en: string; es: string } | null {
-  // React Router v6 strips trailing slash from /es/ → /es in StaticRouter
-  const p = pathname === "/es" ? "/es/" : pathname;
+  // Canonical Spanish home is /es (no trailing slash); normalise /es/ → /es
+  const p = pathname === "/es/" ? "/es" : pathname;
   if (ROUTE_MAP_EN_TO_ES[p]) return { en: p, es: ROUTE_MAP_EN_TO_ES[p] };
   if (ROUTE_MAP_ES_TO_EN[p]) return { en: ROUTE_MAP_ES_TO_EN[p], es: p };
   return null;
