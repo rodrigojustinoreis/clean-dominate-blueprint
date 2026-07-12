@@ -11,6 +11,7 @@ import FadeInSection from "@/components/blog/FadeInSection";
 import FAQAccordion from "@/components/blog/FAQAccordion";
 import BlogInlineCTA from "@/components/blog/BlogInlineCTA";
 import StickyCTA from "@/components/blog/StickyCTA";
+import RelatedPosts from "@/components/blog/RelatedPosts";
 
 const HERO_IMAGE = "/images/blog/deep-vs-regular/hero.webp";
 
@@ -184,7 +185,7 @@ const DeepVsRegularCleaning = () => {
                 See exactly{" "}
                 <Link to="/blog/what-is-included-in-a-deep-cleaning" className="text-accent underline hover:no-underline">what's included in a deep cleaning</Link>, learn{" "}
                 <Link to="/blog/how-often-should-you-hire-a-cleaning-service" className="text-accent underline hover:no-underline">how often you should hire a cleaning service</Link>, or compare{" "}
-                <Link to="/blog/one-time-vs-recurring-cleaning" className="text-accent underline hover:no-underline">one-time vs recurring cleaning</Link>.
+                <Link to="/blog/one-time-vs-recurring-cleaning" className="text-accent underline hover:no-underline">one-time vs recurring cleaning</Link>, or see{" "}<Link to="/blog/how-long-does-deep-cleaning-take" className="text-accent underline hover:no-underline">how long a deep cleaning takes</Link>.
               </p>
             </div>
           </FadeInSection>
@@ -202,7 +203,8 @@ const DeepVsRegularCleaning = () => {
                 <Link to="/services/deep-cleaning" className="underline text-primary-foreground/90 hover:text-white">deep cleaning</Link>{" "}
                 and{" "}
                 <Link to="/services/recurring-cleaning" className="underline text-primary-foreground/90 hover:text-white">recurring cleaning</Link>{" "}
-                across Maryland, DC, and Northern Virginia — background-checked, locally owned.
+                across Maryland, DC, and Northern Virginia — including{" "}
+                <Link to="/locations/arlington-va/deep-cleaning" className="underline text-primary-foreground/90 hover:text-white">deep cleaning in Arlington, VA</Link> — background-checked, locally owned.
               </p>
               <Button size="lg" className="bg-accent hover:bg-accent/90 text-white px-8 py-6 rounded-full text-base font-semibold shadow-md" asChild>
                 <a href="/#quote">Get My Free Quote <ArrowRight className="ml-2 h-4 w-4" /></a>
@@ -213,6 +215,7 @@ const DeepVsRegularCleaning = () => {
         </div>
       </article>
 
+      <RelatedPosts currentSlug="deep-cleaning-vs-regular-cleaning" />
       <StickyCTA />
     </Layout>
   );

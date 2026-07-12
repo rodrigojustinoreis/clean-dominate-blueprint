@@ -17,6 +17,7 @@ import ImageGallery, { GalleryImage } from "@/components/blog/ImageGallery";
 import FAQAccordion from "@/components/blog/FAQAccordion";
 import BlogInlineCTA from "@/components/blog/BlogInlineCTA";
 import StickyCTA from "@/components/blog/StickyCTA";
+import RelatedPosts from "@/components/blog/RelatedPosts";
 
 const HERO_IMAGE = "/images/blog/washing-machine-hero.jpg";
 
@@ -519,7 +520,7 @@ const HowToCleanYourWashingMachineEcoFriendly = () => {
                 recurring cleaning plans
               </Link>
               . More on Maryland-specific eco tips in our{" "}
-              <Link to="/blog/eco-friendly-cleaning-tips-for-maryland-homes" className="text-accent underline hover:no-underline">
+              <Link to="/blog/eco-cleaning-tips-maryland-homes" className="text-accent underline hover:no-underline">
                 eco-friendly cleaning guide for Maryland homes
               </Link>.
             </p>
@@ -581,6 +582,7 @@ const HowToCleanYourWashingMachineEcoFriendly = () => {
         </div>
       </article>
 
+      <RelatedPosts currentSlug="how-to-clean-your-washing-machine-eco-friendly" />
       <StickyCTA />
     </Layout>
   );

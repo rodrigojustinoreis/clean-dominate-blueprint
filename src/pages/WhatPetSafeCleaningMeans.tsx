@@ -17,6 +17,7 @@ import ImageGallery, { GalleryImage } from "@/components/blog/ImageGallery";
 import FAQAccordion from "@/components/blog/FAQAccordion";
 import BlogInlineCTA from "@/components/blog/BlogInlineCTA";
 import StickyCTA from "@/components/blog/StickyCTA";
+import RelatedPosts from "@/components/blog/RelatedPosts";
 
 const HERO_IMAGE = "/images/blog/pet-safe-labels/hero.webp";
 
@@ -340,6 +341,7 @@ const WhatPetSafeCleaningMeans = () => {
         </div>
       </article>
 
+      <RelatedPosts currentSlug="what-pet-safe-cleaning-really-means" />
       <StickyCTA />
     </Layout>
   );

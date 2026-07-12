@@ -23,6 +23,8 @@ import TestimonialsCarousel from "@/components/home/TestimonialsCarousel";
 import EcoCallout from "@/components/home/EcoCallout";
 import ScrollReveal from "@/components/ScrollReveal";
 import GreenShield5Step from "@/components/GreenShield5Step";
+import TransformationsGallery from "@/components/TransformationsGallery";
+import Counter from "@/components/Counter";
 
 const homeFaqs = [
   { q: "What areas do you serve?", a: "We serve communities throughout Maryland (Montgomery, Frederick, Howard, and Prince George's Counties), Washington DC, and Northern Virginia (Arlington, Fairfax, McLean, Alexandria, and more)." },
@@ -77,11 +79,11 @@ const Index = () => {
                 { icon: Leaf, label: "EPA Safer Choice", sub: "100% non-toxic products" },
                 { icon: Star, label: "5-Star Rated", sub: "500+ happy clients" },
                 { icon: CheckCircle, label: "Satisfaction Guarantee", sub: "Re-clean free in 24h" },
-                { icon: Clock, label: "9+ Years in DMV", sub: "Family-owned & trusted" },
+                { icon: Clock, label: "10+ Years in DMV", sub: "Family-owned & trusted" },
               ].map((item) => (
-                <div key={item.label} className="flex items-center gap-2.5">
-                  <div className="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center shrink-0">
-                    <item.icon className="h-4 w-4 text-accent" />
+                <div key={item.label} className="group flex items-center gap-2.5 cursor-default">
+                  <div className="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center shrink-0 transition-all duration-300 group-hover:bg-accent/20 group-hover:scale-110">
+                    <item.icon className="h-4 w-4 text-accent transition-transform duration-300 group-hover:scale-110" />
                   </div>
                   <div>
                     <p className="font-semibold text-sm text-foreground leading-tight">{item.label}</p>
@@ -93,14 +95,21 @@ const Index = () => {
             <div className="border-t border-border pt-5">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto text-center">
                 {[
-                  { value: "500+", label: "Homes Cleaned", icon: "🏠" },
-                  { value: "9+",   label: "Years Serving DMV", icon: "📅" },
-                  { value: "5.0★", label: "Google Rating", icon: "⭐" },
-                  { value: "100%", label: "Satisfaction Promise", icon: "🛡️" },
+                  { to: 500, decimals: 0, suffix: "+", label: "Homes Cleaned", icon: "🏠" },
+                  { to: 10,  decimals: 0, suffix: "+", label: "Years Serving DMV", icon: "📅" },
+                  { to: 5,   decimals: 1, suffix: "★", label: "Google Rating", icon: "⭐" },
+                  { to: 100, decimals: 0, suffix: "%", label: "Satisfaction Promise", icon: "🛡️" },
                 ].map((s) => (
-                  <div key={s.label} className="flex flex-col items-center gap-1">
-                    <span className="text-2xl">{s.icon}</span>
-                    <p className="font-heading font-bold text-3xl md:text-4xl text-accent">{s.value}</p>
+                  <div
+                    key={s.label}
+                    className="group flex flex-col items-center gap-1 rounded-xl px-2 py-3 cursor-default transition-all duration-300 hover:-translate-y-1 hover:bg-accent/5"
+                  >
+                    <span className="text-2xl transition-transform duration-300 group-hover:scale-125 group-hover:-rotate-6">
+                      {s.icon}
+                    </span>
+                    <p className="font-heading font-bold text-3xl md:text-4xl text-accent tracking-tight transition-colors duration-300 group-hover:text-primary">
+                      <Counter to={s.to} decimals={s.decimals} suffix={s.suffix} />
+                    </p>
                     <p className="text-sm text-muted-foreground font-medium leading-tight">{s.label}</p>
                   </div>
                 ))}
@@ -110,22 +119,32 @@ const Index = () => {
         </section>
       </ScrollReveal>
 
+      {/* ══════════════ 3. YOUR HOME. NON-TOXIC. ══════════════ */}
+      <ScrollReveal>
+        <WhyChooseUs />
+      </ScrollReveal>
+
+      {/* ══════════════ 4. TRANSFORMAÇÕES REAIS (vídeo) ══════════════ */}
+      <ScrollReveal>
+        <TransformationsGallery />
+      </ScrollReveal>
+
       {/* ══════════════ 2.5. CAPITAL AREA AUTHORITY ══════════════ */}
       <ScrollReveal>
-        <section className="py-16 md:py-20 bg-gradient-to-br from-primary/5 via-background to-accent/5">
+        <section className="py-16 md:py-20 bg-stripe-mesh">
           <div className="container mx-auto px-4 max-w-5xl">
             <div className="text-center mb-10">
               <span className="inline-block bg-primary/10 text-primary font-semibold text-sm uppercase tracking-wider px-3 py-1 rounded-full mb-3">
                 The Capital Area's Cleaning Service
               </span>
-              <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">
+              <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4 tracking-tight">
                 Why Capital Clean Care Is the DMV's Trusted Cleaning Company
               </h2>
               <p className="text-muted-foreground text-lg leading-relaxed max-w-3xl mx-auto">
                 When families in the capital region search for cleaning they can rely on, they're looking
                 for more than a one-time scrub. They want a company that shows up on time, brings safe products,
                 and treats their home like it matters. That's the standard Capital Clean Care has held for
-                9+ years across Maryland, DC, and Northern Virginia.
+                10+ years across Maryland, DC, and Northern Virginia.
               </p>
             </div>
 
@@ -152,10 +171,12 @@ const Index = () => {
               ].map((card) => (
                 <div
                   key={card.title}
-                  className="bg-card border border-border rounded-2xl p-6 hover:shadow-md transition-shadow"
+                  className="group bg-card border border-border rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-accent/40"
                 >
-                  <span className="text-3xl block mb-3">{card.emoji}</span>
-                  <h3 className="font-heading font-bold text-foreground mb-2">{card.title}</h3>
+                  <span className="text-3xl block mb-3 transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-3">
+                    {card.emoji}
+                  </span>
+                  <h3 className="font-heading font-bold text-foreground mb-2 transition-colors group-hover:text-primary">{card.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{card.body}</p>
                 </div>
               ))}
@@ -176,11 +197,6 @@ const Index = () => {
             </div>
           </div>
         </section>
-      </ScrollReveal>
-
-      {/* ══════════════ 3. YOUR HOME. NON-TOXIC. ══════════════ */}
-      <ScrollReveal>
-        <WhyChooseUs />
       </ScrollReveal>
 
       {/* ══════════════ 4. PROBLEMA / AGITAÇÃO ══════════════ */}
@@ -288,7 +304,7 @@ const Index = () => {
       <ScrollReveal>
         <ServicesSection />
       </ScrollReveal>
-      <div className="text-center pb-10 -mt-4 bg-secondary">
+      <div className="text-center pt-1 pb-12 bg-secondary">
         <Link to="/services" className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:gap-3 transition-all">
           View All Services <ArrowRight className="h-4 w-4" />
         </Link>
@@ -360,7 +376,7 @@ const Index = () => {
                   <span className="text-gradient">Family-Owned</span> Cleaning Excellence
                 </h2>
                 <p className="text-muted-foreground mb-8 leading-relaxed text-base md:text-lg">
-                  At Capital Clean Care, we're more than a cleaning company — we're a team of dedicated professionals who genuinely care about your home. Over 150 homes cleaned with the care we'd give our own.
+                  At Capital Clean Care, we're more than a cleaning company — we're a team of dedicated professionals who genuinely care about your home. Over 500 homes cleaned with the care we'd give our own.
                 </p>
                 <div className="space-y-3 mb-8">
                   {["Licensed, bonded & fully insured", "EPA Safer Choice certified products", "Consistent dedicated cleaning teams", "24-hour satisfaction guarantee"].map((item) => (
@@ -385,7 +401,7 @@ const Index = () => {
         <div className="bg-accent/5 border-y border-accent/20 py-5">
           <div className="container mx-auto px-4 text-center">
             <p className="text-sm md:text-base font-medium text-foreground">
-              🛡️ Every Capital Clean Care visit follows the <strong>GreenShield 5-Step Clean™</strong> — our proprietary method developed over 9 years and 500+ homes.{" "}
+              🛡️ Every Capital Clean Care visit follows the <strong>GreenShield 5-Step Clean™</strong> — our proprietary method developed over a decade and 500+ homes.{" "}
               <a href="/about" className="text-accent font-semibold hover:underline">Learn the story behind it →</a>
             </p>
           </div>

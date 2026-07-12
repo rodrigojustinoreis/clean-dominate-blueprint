@@ -11,6 +11,7 @@ import FadeInSection from "@/components/blog/FadeInSection";
 import FAQAccordion from "@/components/blog/FAQAccordion";
 import BlogInlineCTA from "@/components/blog/BlogInlineCTA";
 import StickyCTA from "@/components/blog/StickyCTA";
+import RelatedPosts from "@/components/blog/RelatedPosts";
 
 const HERO_IMAGE = "/images/blog/how-often-hire/hero.webp";
 
@@ -142,6 +143,8 @@ const HowOftenHireCleaningService = () => {
           </FadeInSection>
         </div>
       </article>
+      <div className="container mx-auto px-4 max-w-3xl pb-10"><p className="text-sm text-muted-foreground">Related: wondering about etiquette? See{" "}<Link to="/blog/how-much-tip-house-cleaner" className="text-accent underline hover:no-underline">how much to tip your house cleaner</Link>.</p></div>
+      <RelatedPosts currentSlug="how-often-should-you-hire-a-cleaning-service" />
       <StickyCTA />
     </Layout>
   );

@@ -43,6 +43,21 @@ import WhatsIncludedStandardCleaning from "./pages/WhatsIncludedStandardCleaning
 import IsProfessionalCleaningWorthIt from "./pages/IsProfessionalCleaningWorthIt";
 import MoveOutCleaningCostMaryland from "./pages/MoveOutCleaningCostMaryland";
 import BestHouseCleaningRockville from "./pages/BestHouseCleaningRockville";
+import BestHouseCleaningBethesda from "./pages/BestHouseCleaningBethesda";
+import DeepCleaningCostMaryland from "./pages/DeepCleaningCostMaryland";
+import PostHolidayCleanup from "./pages/PostHolidayCleanup";
+import CleaningCompanyVsIndependentCleaner from "./pages/CleaningCompanyVsIndependentCleaner";
+import LocalCleaningCompanyVsFranchise from "./pages/LocalCleaningCompanyVsFranchise";
+import QuestionsToAskBeforeHiringHouseCleaner from "./pages/QuestionsToAskBeforeHiringHouseCleaner";
+import WhyFirstHouseCleaningCostsMore from "./pages/WhyFirstHouseCleaningCostsMore";
+import FlatRateVsHourlyHouseCleaning from "./pages/FlatRateVsHourlyHouseCleaning";
+import RedFlagsHouseCleaningService from "./pages/RedFlagsHouseCleaningService";
+import HiddenFeesHouseCleaning from "./pages/HiddenFeesHouseCleaning";
+import HouseTooMessyForCleaningService from "./pages/HouseTooMessyForCleaningService";
+import HowLongDeepCleaningTakes from "./pages/HowLongDeepCleaningTakes";
+import AirbnbCleaningChecklist from "./pages/AirbnbCleaningChecklist";
+import HowMuchTipHouseCleaner from "./pages/HowMuchTipHouseCleaner";
+import MoveInCleaningChecklist from "./pages/MoveInCleaningChecklist";
 import BestHouseCleaningSilverSpring from "./pages/BestHouseCleaningSilverSpring";
 import HouseCleaningGuideGermantown from "./pages/HouseCleaningGuideGermantown";
 import HouseCleaningGuideClarksburg from "./pages/HouseCleaningGuideClarksburg";
@@ -221,6 +236,21 @@ const AppRoutes = () => (
     <Route path="/blog/house-cleaning-guide-germantown-md" element={<HouseCleaningGuideGermantown />} />
     <Route path="/blog/house-cleaning-guide-clarksburg-md" element={<HouseCleaningGuideClarksburg />} />
     <Route path="/blog/post-construction-cleaning-montgomery-county-md" element={<PostConstructionCleaningMontgomeryCounty />} />
+    <Route path="/blog/best-house-cleaning-service-bethesda-md" element={<BestHouseCleaningBethesda />} />
+    <Route path="/blog/deep-cleaning-cost-maryland" element={<DeepCleaningCostMaryland />} />
+    <Route path="/blog/how-to-clean-up-after-a-party" element={<PostHolidayCleanup />} />
+    <Route path="/blog/cleaning-company-vs-independent-cleaner" element={<CleaningCompanyVsIndependentCleaner />} />
+    <Route path="/blog/local-cleaning-company-vs-franchise" element={<LocalCleaningCompanyVsFranchise />} />
+    <Route path="/blog/questions-to-ask-before-hiring-house-cleaner" element={<QuestionsToAskBeforeHiringHouseCleaner />} />
+    <Route path="/blog/why-first-house-cleaning-costs-more" element={<WhyFirstHouseCleaningCostsMore />} />
+    <Route path="/blog/flat-rate-vs-hourly-house-cleaning" element={<FlatRateVsHourlyHouseCleaning />} />
+    <Route path="/blog/red-flags-house-cleaning-service" element={<RedFlagsHouseCleaningService />} />
+    <Route path="/blog/hidden-fees-house-cleaning" element={<HiddenFeesHouseCleaning />} />
+    <Route path="/blog/house-too-messy-for-cleaning-service" element={<HouseTooMessyForCleaningService />} />
+    <Route path="/blog/how-long-does-deep-cleaning-take" element={<HowLongDeepCleaningTakes />} />
+    <Route path="/blog/airbnb-cleaning-checklist" element={<AirbnbCleaningChecklist />} />
+    <Route path="/blog/how-much-tip-house-cleaner" element={<HowMuchTipHouseCleaner />} />
+    <Route path="/blog/move-in-cleaning-checklist" element={<MoveInCleaningChecklist />} />
     <Route path="/blog/most-forgotten-areas-when-cleaning" element={<MostForgottenCleaningAreas />} />
     <Route path="/blog/why-dust-builds-up-maryland-homes" element={<WhyDustBuildsUpMaryland />} />
     <Route path="/blog/how-to-prepare-home-for-professional-cleaning" element={<PrepareHomeForCleaning />} />
@@ -353,7 +383,7 @@ const AppRoutes = () => (
     <Route path="/locations/kensington-md/office-cleaning"            element={<KensingtonOfficeCleaningPage />} />
     <Route path="/locations/kensington-md/post-construction-cleaning" element={<KensingtonPostConstructionPage />} />
     {/* Spanish pages — /es/ hierarchy */}
-    <Route path="/es" element={<Navigate to="/es/" replace />} />
+    <Route path="/es" element={<HomeES />} />
     <Route path="/es/" element={<HomeES />} />
     <Route path="/es/limpieza-de-casas" element={<LimpiezaDeCasasPage />} />
     <Route path="/es/limpieza-profunda" element={<LimpiezaProfundaPage />} />

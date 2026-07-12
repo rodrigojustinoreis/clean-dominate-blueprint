@@ -67,6 +67,7 @@ const BeforeAfterSlider = ({
       >
         {/* AFTER image (full, underneath) */}
         <img
+          loading="lazy"
           src={afterImage}
           alt="After cleaning"
           className="absolute inset-0 w-full h-full object-cover pointer-events-none"
@@ -79,6 +80,7 @@ const BeforeAfterSlider = ({
           style={{ width: `${position}%` }}
         >
           <img
+          loading="lazy"
             src={beforeImage}
             alt="Before cleaning"
             className="absolute inset-0 w-full h-full object-cover"

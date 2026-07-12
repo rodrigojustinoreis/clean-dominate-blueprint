@@ -6,11 +6,12 @@ import { Button } from "@/components/ui/button";
 const teamPhoto = "/images/hero/team-hero.webp";
 import { trackPhoneClick, trackBookNowClick } from "@/lib/analytics";
 
+// Real Google reviews (trimmed) — see src/data/realReviews.ts. Never invent testimonials.
 const miniTestimonials = [
-  { text: "Capital Clean Care transformed our home. Thorough and products safe for my kids and pets.", author: "Sarah M., Bethesda MD" },
-  { text: "My Airbnb rating went from 4.6 to 5.0 stars after switching to Capital Clean Care. Detail is incredible.", author: "Amanda F., Bethesda MD" },
-  { text: "Best investment we've made. Coming home to a clean house every week is amazing.", author: "James T., Arlington VA" },
-  { text: "After our renovation, they got every last bit of construction dust. Professional and incredibly thorough.", author: "Brian G., Fairfax VA" },
+  { text: "Rodrigo and his team were incredible — worth every penny. They left it spotless!", author: "David Reed, Google review" },
+  { text: "The thoroughness and attention to detail was exceptional — the home was spotless and looked beautiful.", author: "Steph M., Google review" },
+  { text: "The crew arrived right on time and the apartment was spotless. Five stars without hesitation!", author: "Grace J., Google review" },
+  { text: "Fantastic move-out clean — every crook and cranny spotlessly clean. The house is totally immaculate.", author: "Lisa Phillips, Google review" },
 ];
 
 const avatars = [
@@ -65,7 +66,7 @@ const HeroSection = () => {
           <span className="text-xs font-semibold text-foreground uppercase tracking-wider">Same-day slots available · 15% OFF first clean</span>
         </div>
 
-        <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] font-bold text-foreground leading-[1.1] mb-6 animate-fade-up drop-shadow-sm" style={{ animationDelay: "100ms" }}>
+        <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] font-bold text-foreground leading-[1.1] tracking-[-0.03em] mb-6 animate-fade-up drop-shadow-sm" style={{ animationDelay: "100ms" }}>
           Eco-Friendly House Cleaning
           <br />
           <span className="text-gradient">in Maryland, DC & Virginia</span>

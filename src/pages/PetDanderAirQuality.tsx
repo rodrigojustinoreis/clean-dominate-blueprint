@@ -17,6 +17,7 @@ import ImageGallery, { GalleryImage } from "@/components/blog/ImageGallery";
 import FAQAccordion from "@/components/blog/FAQAccordion";
 import BlogInlineCTA from "@/components/blog/BlogInlineCTA";
 import StickyCTA from "@/components/blog/StickyCTA";
+import RelatedPosts from "@/components/blog/RelatedPosts";
 
 const HERO_IMAGE = "/images/blog/pet-dander/hero.webp";
 
@@ -372,6 +373,7 @@ const PetDanderAirQuality = () => {
         </div>
       </article>
 
+      <RelatedPosts currentSlug="pet-dander-air-quality" />
       <StickyCTA />
     </Layout>
   );

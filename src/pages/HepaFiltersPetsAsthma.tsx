@@ -17,6 +17,7 @@ import ImageGallery, { GalleryImage } from "@/components/blog/ImageGallery";
 import FAQAccordion from "@/components/blog/FAQAccordion";
 import BlogInlineCTA from "@/components/blog/BlogInlineCTA";
 import StickyCTA from "@/components/blog/StickyCTA";
+import RelatedPosts from "@/components/blog/RelatedPosts";
 
 const HERO_IMAGE = "/images/blog/hepa-pets-asthma/hero.webp";
 
@@ -374,6 +375,7 @@ const HepaFiltersPetsAsthma = () => {
         </div>
       </article>
 
+      <RelatedPosts currentSlug="hepa-filters-pets-asthma" />
       <StickyCTA />
     </Layout>
   );

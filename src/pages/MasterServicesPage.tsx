@@ -82,7 +82,7 @@ const MasterServicesPage = () => {
               Cleaning Services in Maryland & DC
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-              Eco-friendly, family-owned, fully insured. Serving Rockville, Bethesda, Gaithersburg, Silver Spring, and the greater DMV with professional residential and commercial cleaning since 2017.
+              Eco-friendly, family-owned, fully insured. Serving Rockville, Bethesda, Gaithersburg, Silver Spring, and the greater DMV with professional residential and commercial cleaning since 2015.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild>

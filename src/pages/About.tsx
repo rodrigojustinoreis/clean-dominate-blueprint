@@ -16,13 +16,14 @@ import cleanerBlinds from "@/assets/cleaner-blinds.webp";
 import cleanerSupplies from "@/assets/cleaner-supplies.webp";
 import happyClient from "@/assets/happy-client.webp";
 
+// Real Google reviews (src/data/realReviews.ts) — never fabricated testimonials.
 const testimonials = [
-  { name: "Sarah M.", location: "Bethesda, MD", text: "Capital Clean Care transformed our home. The team is professional, thorough, and uses products safe for my kids and pets. I couldn't be happier with the service." },
-  { name: "David R.", location: "Rockville, MD", text: "Consistent quality every single visit. Our dedicated team knows our home perfectly and always leaves everything sparkling. Best cleaning service in Montgomery County." },
-  { name: "Lauren K.", location: "Capitol Hill, DC", text: "After our kitchen renovation, the post-construction cleaning was incredible. They removed every trace of dust from places I never would have thought to check." },
-  { name: "James T.", location: "Arlington, VA", text: "We've used their bi-weekly service for over a year. Every visit exceeds expectations. The team even remembers our dog's name!" },
-  { name: "Angela T.", location: "Silver Spring, MD", text: "I love that they use eco-friendly products. With two kids and a dog, knowing the products are safe gives me real peace of mind. Highly recommend." },
-  { name: "Michelle P.", location: "Georgetown, DC", text: "Finally a cleaning service I can trust completely. They arrive on time, follow a real checklist, and the results are consistently amazing. Worth every penny." },
+  { name: "David Reed", location: "Google review", text: "Rodrigo and his team were incredible — worth every penny. They left it spotless!" },
+  { name: "Steph M.", location: "Google review", text: "The thoroughness and attention to detail was exceptional — the home was spotless and looked beautiful. Couldn't be happier. Highly recommend." },
+  { name: "Christina Damiani", location: "Google review", text: "Excellent cleaning service! The home looked spotless and fresh when the job was completed. Very thorough, professional, and reliable." },
+  { name: "Grace J.", location: "Google review", text: "From the first contact they responded promptly and offered a fair price. The crew arrived right on time and the apartment was spotless. Five stars without hesitation!" },
+  { name: "Ranj Saadallah", location: "Google review", text: "They show up on time and the house looks wonderful when they're done, every time. They cleaned the windows inside and out, appliances, even behind them." },
+  { name: "Lisa Phillips", location: "Google review", text: "Fantastic move-out clean — floors, windows, walls, appliances, baseboards, every crook and cranny spotlessly clean. The house is totally immaculate. I highly recommend!" },
 ];
 
 const aboutFaqs = [
@@ -30,8 +31,8 @@ const aboutFaqs = [
   { q: "Are your cleaning teams background-checked?", a: "Yes. Every Capital Clean Care team member undergoes comprehensive background screening, professional training, and ongoing quality assessments before entering any client's home." },
   { q: "What eco-friendly products do you use?", a: "We use plant-based, non-toxic cleaning solutions that are free from harsh chemicals, artificial fragrances, and allergens. Our products are EPA Safer Choice certified and safe for families, pets, and the environment." },
   { q: "Do you offer a satisfaction guarantee?", a: "Yes. We offer a 100% satisfaction guarantee on every cleaning. If you're not completely happy with any aspect of our work, contact us within 24 hours and we'll return to re-clean the area at no additional charge." },
-  { q: "What is the GreenShield 5-Step Clean™?", a: "The GreenShield 5-Step Clean™ is our proprietary cleaning methodology developed over 9+ years of residential cleaning in the DMV. It covers: (1) Assess & Protect walkthrough, (2) Dust-Free Air Start top-to-bottom, (3) GreenShield Sanitize with EPA Safer Choice products, (4) Deep Scrub & Polish against our 50-point checklist, and (5) White-Glove Inspection before we leave. Every visit follows this exact sequence." },
-  { q: "How long has Capital Clean Care been in business?", a: "Capital Clean Care has been serving the DMV region since 2015 — over 9 years of premium, eco-friendly residential cleaning. Our experience spans hundreds of homes across Maryland, DC, and Virginia." },
+  { q: "What is the GreenShield 5-Step Clean™?", a: "The GreenShield 5-Step Clean™ is our proprietary cleaning methodology developed over a decade of residential cleaning in the DMV. It covers: (1) Assess & Protect walkthrough, (2) Dust-Free Air Start top-to-bottom, (3) GreenShield Sanitize with EPA Safer Choice products, (4) Deep Scrub & Polish against our 50-point checklist, and (5) White-Glove Inspection before we leave. Every visit follows this exact sequence." },
+  { q: "How long has Capital Clean Care been in business?", a: "Capital Clean Care has been serving the DMV region since 2015 — more than a decade of premium, eco-friendly residential cleaning. Our experience spans hundreds of homes across Maryland, DC, and Virginia." },
   { q: "What services do you offer?", a: "We offer standard house cleaning, deep cleaning, move-in/move-out cleaning, post-construction cleanup, recurring cleaning plans (weekly, bi-weekly, monthly), Airbnb/short-term rental cleaning, and specialized eco-friendly cleaning." },
   { q: "How do I get a free quote?", a: "Fill out our online quote form, call us at (240) 704-2551, or email capitalcleancare@gmail.com. We typically respond within a few hours with a personalized estimate." },
   { q: "Are you licensed and insured?", a: "Yes. Capital Clean Care is fully licensed, bonded, and insured with comprehensive liability coverage. We carry general liability insurance for your complete protection on every visit." },
@@ -46,7 +47,7 @@ const milestones = [
   { year: "2017", title: "100 Clients & Second Team", desc: "Demand outpaces capacity. The second dedicated cleaning team is hired and trained. The team composition: all background-checked, all trained on our evolving protocols." },
   { year: "2019", title: "GreenShield Method Born", desc: "After hundreds of homes and thousands of hours of hands-on cleaning, the patterns are undeniable. The 5-step proprietary GreenShield Clean™ is formalized and becomes the standard for every visit." },
   { year: "2021", title: "Expanding Into DC & Virginia", desc: "Growing demand from DC neighborhoods and Northern Virginia drives a deliberate expansion across the full DMV region — same standards, broader reach." },
-  { year: "2024", title: "9+ Years, 500+ Homes Served", desc: "Today we serve hundreds of families across Maryland, DC, and Virginia — with the same care, products, and standards as our very first client in 2015." },
+  { year: "Today", title: "A Decade In, 500+ Homes Served", desc: "Today we serve hundreds of families across Maryland, DC, and Virginia — with the same care, products, and standards as our very first client in 2015." },
 ];
 
 const greenShieldSteps = [
@@ -128,7 +129,7 @@ const whyDifferent = [
 const About = () => {
   const { seoHelmet } = useSEO({
     title: "About Capital Clean Care — Eco-Friendly Cleaning in MD, DC & VA",
-    description: "The story behind Capital Clean Care: a family-founded eco-friendly cleaning service serving MD, DC & VA for 9+ years. Learn about our GreenShield 5-Step Clean™ methodology, our licensed team, and our 100% satisfaction guarantee.",
+    description: "The story behind Capital Clean Care: a family-founded eco-friendly cleaning service serving MD, DC & VA for 10+ years. Learn about our GreenShield 5-Step Clean™ methodology, our licensed team, and our 100% satisfaction guarantee.",
     canonical: "https://capitalcleancare.com/about",
   });
 
@@ -157,7 +158,7 @@ const About = () => {
                 Capital Clean Care was built on a simple truth: your family deserves a clean, healthy home — without toxic chemicals, broken promises, or inconsistent results.
               </p>
               <p className="text-foreground leading-relaxed mb-8">
-                For over 9 years, we've served hundreds of families across Maryland, Washington DC, and Northern Virginia with a standard of care that goes far beyond what most cleaning companies offer. Every visit follows our proprietary <strong>GreenShield 5-Step Clean™</strong> — the method we developed in our own home, for homes just like yours.
+                For over a decade, we've served hundreds of families across Maryland, Washington DC, and Northern Virginia with a standard of care that goes far beyond what most cleaning companies offer. Every visit follows our proprietary <strong>GreenShield 5-Step Clean™</strong> — the method we developed in our own home, for homes just like yours.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Button variant="cta" size="lg" asChild>
@@ -234,7 +235,7 @@ const About = () => {
                     The first client was a neighbor who noticed the difference when she visited. Then came her sister. Then a referral from across the street. For the first two years, not a single dollar was spent on advertising. Growth was intentional and slow — because the point was never scale. The point was standards.
                   </p>
                   <p>
-                    By 2017, there were fifty recurring clients and a second team. By 2019, the patterns of hundreds of homes had revealed something important: most cleaning services — even professional ones — were doing it in the wrong order. That insight became the foundation for the GreenShield 5-Step Clean™.
+                    By 2017, there were a hundred clients and a second team. By 2019, the patterns of hundreds of homes had revealed something important: most cleaning services — even professional ones — were doing it in the wrong order. That insight became the foundation for the GreenShield 5-Step Clean™.
                   </p>
                 </div>
 
@@ -242,7 +243,7 @@ const About = () => {
                 <div className="mt-8 relative pl-6 border-l-4 border-accent">
                   <Quote className="absolute -left-2 -top-1 h-5 w-5 text-accent" />
                   <p className="text-foreground italic leading-relaxed">
-                    "I started this company because I couldn't find a cleaning service I would trust in my own home — not with my kids on the floor, not with my dog sleeping in the kitchen. Nine years later, I hold every client's home to that same standard. Because it <em>is</em> my standard."
+                    "I started this company because I couldn't find a cleaning service I would trust in my own home — not with my kids on the floor, not with my dog sleeping in the kitchen. A decade later, I hold every client's home to that same standard. Because it <em>is</em> my standard."
                   </p>
                   <p className="text-sm font-semibold text-accent mt-3">— Rodrigo Reis, Founder & Owner, Capital Clean Care</p>
                 </div>
@@ -302,7 +303,7 @@ const About = () => {
           <div className="container mx-auto px-4 max-w-4xl">
             <div className="text-center mb-12">
               <span className="inline-flex items-center gap-2 bg-accent/10 text-accent font-semibold text-sm uppercase tracking-wider px-4 py-1.5 rounded-full mb-4">
-                9 Years in the Making
+                A Decade in the Making
               </span>
               <h2 className="font-heading text-3xl md:text-4xl font-bold">Our Journey</h2>
             </div>
@@ -387,7 +388,7 @@ const About = () => {
             <div className="bg-accent/5 border border-accent/20 rounded-2xl py-5 px-6 text-center">
               <p className="text-sm text-foreground font-medium">
                 🛡️ The GreenShield 5-Step Clean™ is exclusive to Capital Clean Care — developed over{" "}
-                <strong>9+ years</strong> of real-home refinement and used on every single visit across Maryland, DC & Virginia.
+                <strong>10+ years</strong> of real-home refinement and used on every single visit across Maryland, DC & Virginia.
               </p>
             </div>
           </div>

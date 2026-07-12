@@ -28,7 +28,7 @@ const DEFAULT_FAQS: FAQItem[] = [
   },
   {
     q: "¿Tienen referencias de clientes de mi vecindario?",
-    a: "Sí. Tenemos 47+ reseñas verificadas en Google, muchas de clientes en Silver Spring, Wheaton, Rockville y Gaithersburg. Puedes verlas en Google Maps buscando 'Capital Clean Care'. También podemos conectarte con clientes actuales si lo prefieres.",
+    a: "Sí. Tenemos 45 reseñas verificadas en Google, muchas de clientes en Silver Spring, Wheaton, Rockville y Gaithersburg. Puedes verlas en Google Maps buscando 'Capital Clean Care'. También podemos conectarte con clientes actuales si lo prefieres.",
   },
   {
     q: "¿Cómo verifican antecedentes de los empleados?",

@@ -18,6 +18,9 @@ import { useSEO } from "@/hooks/useSEO";
 import HeroLocation from "@/components/location/HeroLocation";
 import ServiceChecklistLocation from "@/components/location/ServiceChecklistLocation";
 import InternalLinksGrid from "@/components/location/InternalLinksGrid";
+import LocationSocialProof from "@/components/location/LocationSocialProof";
+import LocationQuoteSection from "@/components/location/LocationQuoteSection";
+import TransformationsGallery from "@/components/TransformationsGallery";
 
 const PAGE_URL = "https://capitalcleancare.com/locations/silver-spring-md/house-cleaning";
 
@@ -49,6 +52,18 @@ const faqs = [
   {
     q: "Is Capital Clean Care locally owned?",
     a: "Yes — we are a Latino-owned and operated cleaning company serving Silver Spring and the greater Montgomery County area. We live and work in this community.",
+  },
+  {
+    q: "How long does a house cleaning take in Silver Spring?",
+    a: "Most standard cleans of a Silver Spring home take two to four hours depending on size and condition. First-time and deep cleans take longer. We send a team so the work is done efficiently without rushing the details.",
+  },
+  {
+    q: "Do I need to be home during the cleaning?",
+    a: "No. Many Silver Spring clients give us entry instructions and come home to a spotless house. Whether you stay or step out is entirely up to you — every cleaner is background-checked, bonded, and insured.",
+  },
+  {
+    q: "Can I book same-day or next-day house cleaning in Silver Spring?",
+    a: "Often, yes — we frequently have same-day and next-day slots open across the 20901–20910 ZIP codes. Call (240) 704-2551 and we'll find the soonest time that works for you.",
   },
 ];
 
@@ -114,9 +129,9 @@ const nearbyCities = [
 
 const SilverSpringHouseCleaningPage = () => {
   const { seoHelmet } = useSEO({
-    title: "House Cleaning in Silver Spring, MD",
+    title: "House Cleaning Silver Spring MD",
     description:
-      "Professional house cleaning in Silver Spring, MD. Eco-friendly products safe for kids & pets. Background-checked, bonded & insured. Latino-owned. Free quote in 60 seconds.",
+      "House cleaning in Silver Spring MD — eco-friendly products safe for kids & pets, background-checked, bonded & insured. Latino-owned. Free quote.",
     canonical: PAGE_URL,
     ogImage: "https://capitalcleancare.com/og-image.jpg",
   });
@@ -192,6 +207,15 @@ const SilverSpringHouseCleaningPage = () => {
         categories={checklistCategories}
       />
 
+      {/* ── Social Proof (3rd — trust video early) ── */}
+      <LocationSocialProof cityName="Silver Spring" citySlug="silver-spring-md" serviceSlug="house-cleaning" serviceLabel="House Cleaning" />
+
+      {/* ── Before & After video carousel — real footage from our team (breaks up the text) ── */}
+      <TransformationsGallery
+        heading="Before & After: Real Results from Our Silver Spring Team"
+        subtext="These aren't stock clips — every video is unedited footage from our own team across the DMV, using the same eco-friendly, family-safe products we bring to every Silver Spring home. Real homes, real results."
+      />
+
       {/* Why Capital Clean Care */}
       <section className="py-12 md:py-16">
         <div className="container mx-auto px-4 max-w-4xl">
@@ -251,56 +275,6 @@ const SilverSpringHouseCleaningPage = () => {
         </div>
       </section>
 
-      {/* Social Proof */}
-      <section className="py-12 md:py-16 bg-muted/30">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <div className="text-center mb-8">
-            <span className="inline-flex items-center gap-1.5 bg-accent/10 text-accent font-semibold text-sm uppercase tracking-wider px-3 py-1 rounded-full mb-3">
-              <Star className="h-3.5 w-3.5 fill-accent" aria-hidden="true" /> Client Reviews
-            </span>
-            <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground">
-              What Silver Spring Families Are Saying
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="bg-card border border-border rounded-xl p-5">
-              <div role="img" aria-label="5 out of 5 stars" className="flex items-center gap-0.5 mb-3">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" aria-hidden="true" />
-                ))}
-              </div>
-              <p className="text-sm text-foreground italic mb-3 leading-relaxed">
-                "Capital Clean Care transformed our home. Thorough, eco-friendly products safe for my kids and pets."
-              </p>
-              <p className="text-sm font-semibold text-foreground">Sarah M.</p>
-              <p className="text-xs text-muted-foreground">Bethesda, MD</p>
-            </div>
-            <div className="bg-card border border-border rounded-xl p-5 flex flex-col items-center justify-center text-center gap-3">
-              <div role="img" aria-label="5 out of 5 stars average" className="flex items-center gap-0.5">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <Star key={i} className="h-5 w-5 fill-amber-400 text-amber-400" aria-hidden="true" />
-                ))}
-              </div>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                Serving Silver Spring families from Downtown Silver Spring to the Silver Spring Town Center area.
-                Share your experience with your neighbors.
-              </p>
-              <a
-                href="https://g.page/r/capitalcleancare/review"
-                className="text-sm text-primary underline font-medium"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Leave a Google Review →
-              </a>
-            </div>
-          </div>
-          <p className="text-center text-sm text-muted-foreground mt-6">
-            <span className="font-semibold text-foreground">5.0 ★</span> average rating · 47 reviews on Google
-          </p>
-        </div>
-      </section>
-
       {/* Serving Silver Spring */}
       <section className="py-12 md:py-16">
         <div className="container mx-auto px-4 max-w-4xl">
@@ -314,6 +288,15 @@ const SilverSpringHouseCleaningPage = () => {
               to single-family homes in the Four Corners and Woodside neighborhoods, we clean them
               all. The Long Branch corridor, Fenton Village, and the Sligo Creek area each have
               their own character, and we've worked in homes throughout these communities.
+            </p>
+            <p>
+              Beyond the downtown core, we regularly clean homes across the wider Silver Spring MD
+              area — the mid-century ramblers of Forest Glen and Woodmoor, the established streets of
+              Northwood and Four Corners, and the larger properties out toward White Oak, Colesville,
+              and Cloverly. We also serve the Kemp Mill, Glenmont, and Aspen Hill communities along
+              the Georgia Avenue and Veirs Mill corridors, plus the historic homes near the Takoma
+              Park border. Each pocket of Silver Spring has its own housing stock — from 1950s brick
+              colonials to new-build condos near the Metro — and our team adjusts its approach to each.
             </p>
             <p>
               We serve all Silver Spring ZIP codes: 20901, 20902, 20903, 20906, and 20910.
@@ -341,6 +324,32 @@ const SilverSpringHouseCleaningPage = () => {
         </div>
       </section>
 
+      {/* Pricing */}
+      <section className="py-12 md:py-16 bg-muted/20">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-6">
+            How Much Does House Cleaning Cost in Silver Spring, MD?
+          </h2>
+          <div className="space-y-4 text-muted-foreground leading-relaxed">
+            <p>
+              House cleaning prices in Silver Spring, MD depend mainly on your home's size, the
+              number of bathrooms, and how often you book. As a general guide, a recurring clean for
+              a typical two- to three-bedroom Silver Spring home starts in the lower range, while
+              larger homes — or first-time and one-time cleans — cost more simply because they take
+              longer and tackle more built-up grime. Recurring weekly, bi-weekly, and monthly plans
+              carry a discounted rate compared with a single one-time visit.
+            </p>
+            <p>
+              Every quote is flat and transparent — no hourly surprises and no hidden fees. Tell us
+              your home size and how often you'd like service, and you'll get an exact price in about
+              60 seconds, online or by phone, with no obligation. Many Silver Spring homeowners start
+              with a one-time deep reset, then switch to a recurring plan to keep their home
+              effortlessly clean year-round.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="py-12 md:py-16 bg-muted/30">
         <div className="container mx-auto px-4 max-w-4xl">
@@ -363,31 +372,7 @@ const SilverSpringHouseCleaningPage = () => {
       <TrustBadges compact />
       <ConversionCTA cityName="Silver Spring" />
 
-      <section id="quote" className="py-12 md:py-16 bg-muted/30">
-        <div className="container mx-auto px-4 max-w-2xl text-center">
-          <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-3">
-            Ready for a Cleaner Home in Silver Spring?
-          </h2>
-          <p className="text-muted-foreground mb-6 leading-relaxed">
-            Whether you're near Silver Spring Town Center or in the 20902 ZIP code, we're ready
-            to help. Free quote in 60 seconds — no commitment required.
-            Call (240) 704-2551 or book online.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Button variant="cta" size="lg" asChild>
-              <Link to="/contact">
-                Get My Free House Cleaning Quote <ArrowRight className="ml-1 h-4 w-4" />
-              </Link>
-            </Button>
-            <Button variant="outline" size="lg" asChild>
-              <a href="tel:+12407042551">(240) 704-2551</a>
-            </Button>
-          </div>
-          <p className="text-xs text-muted-foreground mt-3">
-            No commitment · Same-day slots available · 100% satisfaction guaranteed
-          </p>
-        </div>
-      </section>
+      <LocationQuoteSection cityName="Silver Spring" serviceLabel="House Cleaning" defaultService="standard" zipLine="Serving Silver Spring and nearby communities." />
 
       <StickyMobileCTA />
     </Layout>

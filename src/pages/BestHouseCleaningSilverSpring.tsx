@@ -11,6 +11,7 @@ import FadeInSection from "@/components/blog/FadeInSection";
 import FAQAccordion from "@/components/blog/FAQAccordion";
 import BlogInlineCTA from "@/components/blog/BlogInlineCTA";
 import StickyCTA from "@/components/blog/StickyCTA";
+import RelatedPosts from "@/components/blog/RelatedPosts";
 
 const HERO_IMAGE = "/images/blog/best-silver-spring/hero.webp";
 
@@ -157,6 +158,7 @@ const BestHouseCleaningSilverSpring = () => {
           </FadeInSection>
         </div>
       </article>
+      <RelatedPosts currentSlug="best-house-cleaning-service-silver-spring-md" />
       <StickyCTA />
     </Layout>
   );

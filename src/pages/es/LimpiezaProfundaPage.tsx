@@ -16,7 +16,7 @@ const CANONICAL = "https://capitalcleancare.com/es/limpieza-profunda";
 export default function LimpiezaProfundaPage() {
   const { seoHelmet } = useSEO({
     title: "Limpieza Profunda de Casas Montgomery County MD | Capital Clean Care",
-    description: "Limpieza profunda profesional en MoCo. Atacamos rincones, electrodomésticos, baños a fondo. Asegurados, bilingües, 5★ Google.",
+    description: "Limpieza profunda profesional en Montgomery County. Atacamos rincones, electrodomésticos, baños a fondo. Asegurados, bilingües, 5★ Google.",
     canonical: CANONICAL,
   });
 
@@ -52,7 +52,7 @@ export default function LimpiezaProfundaPage() {
                 </a>
               </Button>
               <Button variant="outline" size="lg" asChild>
-                <a href="/contact" onClick={() => trackBookNowClick("limpieza_profunda_hero")}>
+                <a href="/es/contacto" onClick={() => trackBookNowClick("limpieza_profunda_hero")}>
                   Cotización Gratis <ArrowRight className="ml-1 h-4 w-4" />
                 </a>
               </Button>
@@ -131,14 +131,14 @@ export default function LimpiezaProfundaPage() {
 
         <section className="bg-accent text-accent-foreground py-14">
           <div className="container mx-auto px-4 max-w-2xl text-center">
-            <h2 className="font-heading text-2xl font-bold mb-4">¿Lista tu limpieza profunda?</h2>
+            <h2 className="font-heading text-2xl font-bold mb-4">¿Todo listo para tu limpieza profunda?</h2>
             <p className="text-accent-foreground/90 mb-6">Cotización personalizada en 5 minutos. Atendemos en español.</p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Button size="lg" className="bg-white text-accent hover:bg-gray-100 font-semibold" asChild>
                 <a href={PHONE_TEL} onClick={() => trackPhoneClick("limpieza_profunda_cta")}><Phone className="h-4 w-4 mr-2" /> {PHONE}</a>
               </Button>
               <Button size="lg" variant="outline" className="border-white/50 text-white hover:bg-white/10" asChild>
-                <a href="/contact" onClick={() => trackBookNowClick("limpieza_profunda_cta")}>Cotización Gratis</a>
+                <a href="/es/contacto" onClick={() => trackBookNowClick("limpieza_profunda_cta")}>Cotización Gratis</a>
               </Button>
             </div>
             <div className="mt-4 flex items-center justify-center gap-2 text-accent-foreground/70 text-sm">

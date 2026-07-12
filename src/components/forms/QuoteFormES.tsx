@@ -375,7 +375,7 @@ const QuoteFormES = ({ id = "cotizacion", defaultService = "", submitLabel = "So
           ))}
         </div>
         <p className="text-xs text-muted-foreground">
-          <span className="font-semibold text-foreground">5.0 estrellas</span> · 47+ familias en Montgomery County
+          <span className="font-semibold text-foreground">5.0 estrellas</span> · 45 reseñas en Google · Montgomery County
         </p>
       </div>
 

@@ -11,6 +11,7 @@ import FadeInSection from "@/components/blog/FadeInSection";
 import FAQAccordion from "@/components/blog/FAQAccordion";
 import BlogInlineCTA from "@/components/blog/BlogInlineCTA";
 import StickyCTA from "@/components/blog/StickyCTA";
+import RelatedPosts from "@/components/blog/RelatedPosts";
 
 const HERO_IMAGE = "/images/blog/holiday-checklist/hero.webp";
 
@@ -112,7 +113,7 @@ const HolidayCleaningChecklist = () => {
           <FadeInSection>
             <div className="bg-primary text-primary-foreground rounded-2xl p-8 text-center shadow-lg mt-14">
               <h2 className="font-heading text-2xl md:text-3xl font-bold mb-4">Book Your Holiday Clean Early</h2>
-              <p className="text-primary-foreground/80 mb-6 leading-relaxed">Eco-friendly{" "}<Link to="/services/deep-cleaning" className="underline text-primary-foreground/90 hover:text-white">deep cleaning</Link>{" "}before and after the party, across Maryland, DC, and Northern Virginia — background-checked, satisfaction guaranteed.</p>
+              <p className="text-primary-foreground/80 mb-6 leading-relaxed">Eco-friendly{" "}<Link to="/services/deep-cleaning" className="underline text-primary-foreground/90 hover:text-white">deep cleaning</Link>{" "}before and after the party, across Maryland, DC, and Northern Virginia, including{" "}<Link to="/locations/arlington-va/deep-cleaning" className="underline text-primary-foreground/90 hover:text-white">deep cleaning in Arlington, VA</Link> — background-checked, satisfaction guaranteed.</p>
               <Button size="lg" className="bg-accent hover:bg-accent/90 text-white px-8 py-6 rounded-full text-base font-semibold shadow-md" asChild>
                 <a href="/#quote">Get My Free Quote <ArrowRight className="ml-2 h-4 w-4" /></a>
               </Button>
@@ -120,6 +121,7 @@ const HolidayCleaningChecklist = () => {
           </FadeInSection>
         </div>
       </article>
+      <RelatedPosts currentSlug="holiday-cleaning-checklist-dmv" />
       <StickyCTA />
     </Layout>
   );

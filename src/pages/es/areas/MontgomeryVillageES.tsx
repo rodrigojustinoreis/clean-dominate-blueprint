@@ -23,7 +23,7 @@ const services = [
 
 export default function MontgomeryVillageES() {
   const { seoHelmet } = useSEO({
-    title: "Limpieza de Casas en Montgomery Village, MD | Capital Clean Care",
+    title: "Limpieza de Casas Montgomery Village MD en Español | Capital Clean Care",
     description: "Servicio de limpieza en Montgomery Village, MD. Equipo bilingüe, asegurado, 5★. Lake Forest, Goshen. Llama (240) 704-2551",
     canonical: CANONICAL,
   });
@@ -54,7 +54,7 @@ export default function MontgomeryVillageES() {
               Capital Clean Care atiende Montgomery Village con servicio completo de limpieza residencial. Comunidades de townhomes, condos y casas unifamiliares — todos son bienvenidos.
             </p>
             <div className="flex flex-wrap gap-2 mb-8">
-              {["⭐ 5.0 (47+ reseñas)", "🛡️ Asegurados", "🗣️ Español", "📍 Montgomery Village"].map((p) => (
+              {["⭐ 5.0 (45 reseñas)", "🛡️ Asegurados", "🗣️ Español", "📍 Montgomery Village"].map((p) => (
                 <span key={p} className="bg-background border border-border rounded-full px-3 py-1.5 text-sm font-medium shadow-sm">{p}</span>
               ))}
             </div>
@@ -63,7 +63,7 @@ export default function MontgomeryVillageES() {
                 <a href={PHONE_TEL} onClick={() => trackPhoneClick("montgomery_village_es_hero")}><Phone className="h-4 w-4 mr-2" /> Llamar: {PHONE}</a>
               </Button>
               <Button variant="outline" size="lg" asChild>
-                <a href="/contact" onClick={() => trackBookNowClick("montgomery_village_es_hero")}>Cotización Gratis <ArrowRight className="ml-1 h-4 w-4" /></a>
+                <a href="/es/contacto" onClick={() => trackBookNowClick("montgomery_village_es_hero")}>Cotización Gratis <ArrowRight className="ml-1 h-4 w-4" /></a>
               </Button>
             </div>
           </div>
@@ -94,14 +94,14 @@ export default function MontgomeryVillageES() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
-                { name: "Carmen B.", text: "Vivimos en un townhome en Lake Forest. Capital Clean Care es perfecta para espacios como el nuestro." },
-                { name: "Ramón G.", text: "Precio justo, trabajo impecable. Tres meses y ni un solo problema. Muy recomendados." },
-                { name: "Isabel T.", text: "La limpieza de mudanza nos salvó el depósito completo. Muy profesionales y rápidos." },
+                { name: "Ranj Saadallah", text: "Llegan puntuales y la casa queda maravillosa cada vez. Limpiaron las ventanas por dentro y por fuera, los electrodomésticos, incluso detrás de ellos." },
+                { name: "David Reed", text: "Rodrigo y su equipo fueron increíbles: vale cada centavo. ¡Dejaron todo impecable!" },
+                { name: "Steph M.", text: "La minuciosidad y atención al detalle fueron excepcionales: la casa quedó impecable y hermosa. No podría estar más feliz. Muy recomendados." },
               ].map(({ name, text }) => (
                 <div key={name} className="bg-background border border-border rounded-xl p-5 shadow-sm">
                   <div className="flex gap-0.5 mb-3">{[...Array(5)].map((_, i) => <Star key={i} className="h-4 w-4 fill-accent text-accent" />)}</div>
                   <p className="text-muted-foreground text-sm leading-relaxed mb-3">"{text}"</p>
-                  <p className="font-semibold text-foreground text-sm">— {name}, Montgomery Village</p>
+                  <p className="font-semibold text-foreground text-sm">— {name}, Reseña de Google</p>
                 </div>
               ))}
             </div>
@@ -138,7 +138,7 @@ export default function MontgomeryVillageES() {
                 <a href={PHONE_TEL} onClick={() => trackPhoneClick("montgomery_village_es_cta")}><Phone className="h-4 w-4 mr-2" /> {PHONE}</a>
               </Button>
               <Button size="lg" variant="outline" className="border-white/50 text-white hover:bg-white/10" asChild>
-                <a href="/contact" onClick={() => trackBookNowClick("montgomery_village_es_cta")}>Cotización Gratis</a>
+                <a href="/es/contacto" onClick={() => trackBookNowClick("montgomery_village_es_cta")}>Cotización Gratis</a>
               </Button>
             </div>
             <div className="mt-4 flex items-center justify-center gap-2 text-accent-foreground/70 text-sm">

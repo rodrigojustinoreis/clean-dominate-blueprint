@@ -18,6 +18,8 @@ import { useSEO } from "@/hooks/useSEO";
 import HeroLocation from "@/components/location/HeroLocation";
 import ServiceChecklistLocation from "@/components/location/ServiceChecklistLocation";
 import InternalLinksGrid from "@/components/location/InternalLinksGrid";
+import LocationSocialProof from "@/components/location/LocationSocialProof";
+import LocationQuoteSection from "@/components/location/LocationQuoteSection";
 
 const PAGE_URL = "https://capitalcleancare.com/locations/silver-spring-md/deep-cleaning";
 
@@ -116,7 +118,7 @@ const nearbyCities = [
 
 const SilverSpringDeepCleaningPage = () => {
   const { seoHelmet } = useSEO({
-    title: "Deep Cleaning Service in Silver Spring, MD",
+    title: "Deep Cleaning Silver Spring MD | Bathroom & Whole-Home",
     description:
       "Professional deep cleaning in Silver Spring, MD. Inside appliances, grout, baseboards, ceiling fans — everywhere standard cleanings miss. EPA-certified products. Free quote.",
     canonical: PAGE_URL,
@@ -177,7 +179,7 @@ const SilverSpringDeepCleaningPage = () => {
 
       {/* Hero */}
       <HeroLocation
-        h1="Deep Cleaning Services in Silver Spring, MD"
+        h1="Deep Cleaning Silver Spring MD: Bathroom & Whole-Home Deep Cleaning"
         lead="When a standard clean isn't enough, Capital Clean Care's deep cleaning goes top-to-bottom through every corner of your Silver Spring home — from Four Corners to Woodside. Baseboards, grout lines, inside appliances, ceiling fans — we cover everything a routine cleaning skips. EPA Safer Choice™ products only."
         cityName="Silver Spring"
         state="MD"
@@ -192,6 +194,9 @@ const SilverSpringDeepCleaningPage = () => {
         title="What's Included in Our Silver Spring Deep Cleaning"
         categories={checklistCategories}
       />
+
+      {/* ── Social Proof (3rd — trust video early) ── */}
+      <LocationSocialProof cityName="Silver Spring" citySlug="silver-spring-md" serviceSlug="deep-cleaning" serviceLabel="Deep Cleaning" />
 
       {/* Standard vs Deep */}
       <section className="py-12 md:py-16">
@@ -259,55 +264,6 @@ const SilverSpringDeepCleaningPage = () => {
         </div>
       </section>
 
-      {/* Social Proof */}
-      <section className="py-12 md:py-16 bg-muted/30">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <div className="text-center mb-8">
-            <span className="inline-flex items-center gap-1.5 bg-accent/10 text-accent font-semibold text-sm uppercase tracking-wider px-3 py-1 rounded-full mb-3">
-              <Star className="h-3.5 w-3.5 fill-accent" aria-hidden="true" /> Client Reviews
-            </span>
-            <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground">
-              Silver Spring Homeowners Love Our Deep Clean
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="bg-card border border-border rounded-xl p-5">
-              <div role="img" aria-label="5 out of 5 stars" className="flex items-center gap-0.5 mb-3">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" aria-hidden="true" />
-                ))}
-              </div>
-              <p className="text-sm text-foreground italic mb-3 leading-relaxed">
-                "After our renovation, they got every last bit of construction dust. Professional and incredibly thorough."
-              </p>
-              <p className="text-sm font-semibold text-foreground">Brian G.</p>
-              <p className="text-xs text-muted-foreground">Fairfax, VA</p>
-            </div>
-            <div className="bg-card border border-border rounded-xl p-5 flex flex-col items-center justify-center text-center gap-3">
-              <div role="img" aria-label="5 out of 5 stars average" className="flex items-center gap-0.5">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <Star key={i} className="h-5 w-5 fill-amber-400 text-amber-400" aria-hidden="true" />
-                ))}
-              </div>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                Serving Silver Spring deep cleans from Downtown Silver Spring across ZIPs 20901, 20902, and 20910.
-              </p>
-              <a
-                href="https://g.page/r/capitalcleancare/review"
-                className="text-sm text-primary underline font-medium"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Leave a Google Review →
-              </a>
-            </div>
-          </div>
-          <p className="text-center text-sm text-muted-foreground mt-6">
-            <span className="font-semibold text-foreground">5.0 ★</span> average rating · 47 reviews on Google
-          </p>
-        </div>
-      </section>
-
       {/* FAQ */}
       <section className="py-12 md:py-16">
         <div className="container mx-auto px-4 max-w-4xl">
@@ -330,30 +286,7 @@ const SilverSpringDeepCleaningPage = () => {
       <TrustBadges compact />
       <ConversionCTA cityName="Silver Spring" />
 
-      <section id="quote" className="py-12 md:py-16 bg-muted/30">
-        <div className="container mx-auto px-4 max-w-2xl text-center">
-          <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-3">
-            Book Your Silver Spring Deep Clean Today
-          </h2>
-          <p className="text-muted-foreground mb-6 leading-relaxed">
-            Serving Silver Spring homes near Silver Spring Town Center and across ZIPs 20901, 20902, 20910.
-            Start fresh — free quote in 60 seconds. Call (240) 704-2551.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Button variant="cta" size="lg" asChild>
-              <Link to="/contact">
-                Get My Free Deep Cleaning Quote <ArrowRight className="ml-1 h-4 w-4" />
-              </Link>
-            </Button>
-            <Button variant="outline" size="lg" asChild>
-              <a href="tel:+12407042551">(240) 704-2551</a>
-            </Button>
-          </div>
-          <p className="text-xs text-muted-foreground mt-3">
-            Same-day slots available · 100% satisfaction guaranteed · Bonded & Insured
-          </p>
-        </div>
-      </section>
+      <LocationQuoteSection cityName="Silver Spring" serviceLabel="Deep Cleaning" defaultService="deep" zipLine="Serving Silver Spring and nearby communities." />
 
       <StickyMobileCTA />
     </Layout>

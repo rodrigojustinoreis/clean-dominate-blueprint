@@ -100,7 +100,7 @@ const Header = () => {
               </>
             ) : (
               <>
-                <Link to="/" className="whitespace-nowrap px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">Home</Link>
+                <Link to="/" className="hidden 2xl:block whitespace-nowrap px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">Home</Link>
                 <Link to="/about" className="whitespace-nowrap px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">About Us</Link>
 
                 <div className="relative group">
@@ -137,12 +137,12 @@ const Header = () => {
                 <Link to="/faq" className="whitespace-nowrap px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">FAQ</Link>
                 <Link to="/blog" className="whitespace-nowrap px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">Blog</Link>
                 <Link to="/contact" className="whitespace-nowrap px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">Contact Us</Link>
-                <Link to="/careers" className="whitespace-nowrap px-3 py-2 text-sm font-medium text-accent hover:text-accent/80 transition-colors">Join Our Team</Link>
+                <Link to="/careers" className="hidden 2xl:block whitespace-nowrap px-3 py-2 text-sm font-medium text-accent hover:text-accent/80 transition-colors">Join Our Team</Link>
               </>
             )}
           </nav>
 
-          <div className="hidden lg:flex items-center gap-3">
+          <div className="hidden lg:flex items-center gap-2 xl:gap-3">
             <LanguageSwitcher />
             <a href="tel:+12407042551" className="text-sm font-semibold text-foreground flex items-center gap-1 whitespace-nowrap" onClick={() => trackPhoneClick("header_desktop_nav")}>
               <Phone className="h-4 w-4" /> (240) 704-2551

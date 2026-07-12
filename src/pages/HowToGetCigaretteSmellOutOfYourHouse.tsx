@@ -17,6 +17,7 @@ import ImageGallery, { GalleryImage } from "@/components/blog/ImageGallery";
 import FAQAccordion from "@/components/blog/FAQAccordion";
 import BlogInlineCTA from "@/components/blog/BlogInlineCTA";
 import StickyCTA from "@/components/blog/StickyCTA";
+import RelatedPosts from "@/components/blog/RelatedPosts";
 
 const HERO_IMAGE =
   "https://images.pexels.com/photos/19026351/pexels-photo-19026351.jpeg?auto=compress&cs=tinysrgb&w=1200";
@@ -171,7 +172,7 @@ const HowToGetCigaretteSmellOutOfYourHouse = () => {
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
               The good news: you can remove cigarette smell completely using natural, eco-safe methods — without ozone generators, toxic sprays, or a full gut renovation. This guide covers every surface, every room, and every HVAC component, with methods that work in Maryland's humid climate and won't compromise your family's air quality. For more{" "}
-              <Link to="/blog/eco-friendly-cleaning-tips-for-maryland-homes" className="text-accent underline hover:no-underline">
+              <Link to="/blog/eco-cleaning-tips-maryland-homes" className="text-accent underline hover:no-underline">
                 eco-friendly cleaning tips for Maryland homes
               </Link>
               , see our full guide.
@@ -308,7 +309,7 @@ const HowToGetCigaretteSmellOutOfYourHouse = () => {
                 {
                   step: "04",
                   title: "Steam clean or call a pro for embedded odor",
-                  text: "For carpet or upholstery with deep, years-long smoke penetration, hot-water extraction (professional steam cleaning) is the most effective next step. The high-temperature water and suction action flush nicotine from deep in the carpet pile and backing — something dry methods cannot reach. Capital Clean Care's{' '}<Link to='/services/move-in-move-out-cleaning' className='text-accent underline hover:no-underline'>move-in/move-out cleaning</Link>{' '}service includes carpet steam treatment across Montgomery County.",
+                  text: "For carpet or upholstery with deep, years-long smoke penetration, hot-water extraction (professional steam cleaning) is the most effective next step. The high-temperature water and suction action flush nicotine from deep in the carpet pile and backing — something dry methods cannot reach. Capital Clean Care's{' '}<Link to='/services/move-out-cleaning' className='text-accent underline hover:no-underline'>move-in/move-out cleaning</Link>{' '}service includes carpet steam treatment across Montgomery County.",
                 },
               ].map((item) => (
                 <div key={item.step} className="flex gap-5 items-start">
@@ -478,11 +479,11 @@ const HowToGetCigaretteSmellOutOfYourHouse = () => {
             </ul>
             <p className="text-sm text-muted-foreground leading-relaxed mb-10">
               Capital Clean Care's{" "}
-              <Link to="/services/move-in-move-out-cleaning" className="text-accent underline hover:no-underline">
+              <Link to="/services/move-out-cleaning" className="text-accent underline hover:no-underline">
                 move-in/move-out cleaning service
               </Link>{" "}
               is specifically designed for situations like this. Our teams work systematically through walls, ceilings, all hard surfaces, carpet, and appliances using vinegar-based protocols — no ozone, no chemical residue, and safe for Maryland's watershed. See more in our{" "}
-              <Link to="/blog/eco-friendly-cleaning-tips-for-maryland-homes" className="text-accent underline hover:no-underline">
+              <Link to="/blog/eco-cleaning-tips-maryland-homes" className="text-accent underline hover:no-underline">
                 eco-friendly cleaning tips for Maryland homes
               </Link>.
             </p>
@@ -508,7 +509,7 @@ const HowToGetCigaretteSmellOutOfYourHouse = () => {
                   eco-friendly cleaning
                 </Link>{" "}
                 and{" "}
-                <Link to="/services/move-in-move-out-cleaning" className="underline text-primary-foreground/90 hover:text-white">
+                <Link to="/services/move-out-cleaning" className="underline text-primary-foreground/90 hover:text-white">
                   move-in cleaning
                 </Link>{" "}
                 across{" "}
@@ -548,6 +549,7 @@ const HowToGetCigaretteSmellOutOfYourHouse = () => {
         </div>
       </article>
 
+      <RelatedPosts currentSlug="how-to-get-cigarette-smell-out-of-your-house" />
       <StickyCTA />
     </Layout>
   );

@@ -11,6 +11,7 @@ import FadeInSection from "@/components/blog/FadeInSection";
 import FAQAccordion from "@/components/blog/FAQAccordion";
 import BlogInlineCTA from "@/components/blog/BlogInlineCTA";
 import StickyCTA from "@/components/blog/StickyCTA";
+import RelatedPosts from "@/components/blog/RelatedPosts";
 
 const HERO_IMAGE = "/images/blog/guide-germantown/hero.webp";
 
@@ -130,6 +131,7 @@ const HouseCleaningGuideGermantown = () => {
           </FadeInSection>
         </div>
       </article>
+      <RelatedPosts currentSlug="house-cleaning-guide-germantown-md" />
       <StickyCTA />
     </Layout>
   );

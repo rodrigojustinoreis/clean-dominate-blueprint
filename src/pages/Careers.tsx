@@ -6,6 +6,7 @@ import Layout from "@/components/layout/Layout";
 import { useSEO } from "@/hooks/useSEO";
 import { LocalBusinessSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import TrustBadges from "@/components/TrustBadges";
+import CareerApplicationForm from "@/components/CareerApplicationForm";
 
 const Careers = () => {
   const { seoHelmet } = useSEO({
@@ -33,7 +34,7 @@ const Careers = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="cta" size="lg" asChild>
-              <a href="mailto:capitalcleancare@gmail.com?subject=Job Application - Cleaning Professional">
+              <a href="#apply">
                 Apply Now <ArrowRight className="ml-1 h-4 w-4" />
               </a>
             </Button>
@@ -117,12 +118,37 @@ const Careers = () => {
                     <p className="text-sm text-muted-foreground">{job.location} · {job.type}</p>
                   </div>
                   <Button variant="outline" size="sm" asChild>
-                    <a href="mailto:capitalcleancare@gmail.com?subject=Job Application - Cleaning Professional">Apply</a>
+                    <a href="#apply">Apply</a>
                   </Button>
                 </CardContent>
               </Card>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Application form */}
+      <section id="apply" className="py-16 md:py-20 scroll-mt-24">
+        <div className="container mx-auto px-4 max-w-2xl">
+          <div className="text-center mb-10">
+            <span className="text-accent font-semibold text-sm uppercase tracking-wider">Apply Online</span>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold mt-2 mb-3">Apply in Under 2 Minutes</h2>
+            <p className="text-muted-foreground">
+              Fill out the form below and our team will get back to you within 24 hours. No résumé required —
+              just your contact info and availability.
+            </p>
+          </div>
+          <Card>
+            <CardContent className="p-6 md:p-8">
+              <CareerApplicationForm />
+            </CardContent>
+          </Card>
+          <p className="text-center text-sm text-muted-foreground mt-6">
+            Prefer to talk? Call{" "}
+            <a href="tel:+12407042551" className="text-accent font-medium hover:underline">(240) 704-2551</a>{" "}
+            or email{" "}
+            <a href="mailto:capitalcleancare@gmail.com" className="text-accent font-medium hover:underline">capitalcleancare@gmail.com</a>.
+          </p>
         </div>
       </section>
 
@@ -135,11 +161,11 @@ const Careers = () => {
           <p className="mb-8 opacity-90">Send your name, contact info, and available hours to get started. We respond within 24 hours.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="default" size="lg" asChild>
-              <a href="mailto:capitalcleancare@gmail.com?subject=Job Application - Cleaning Professional">
-                Email Your Application
+              <a href="#apply">
+                Apply Online
               </a>
             </Button>
-            <Button variant="outline" size="lg" className="border-white/30 text-accent-foreground hover:bg-white/10" asChild>
+            <Button variant="outline" size="lg" className="bg-transparent border-2 border-white/70 text-accent-foreground hover:bg-white/10 hover:text-accent-foreground" asChild>
               <a href="tel:+12407042551"><Phone className="mr-2 h-4 w-4" /> Call to Apply</a>
             </Button>
           </div>

@@ -19,7 +19,7 @@ const defaultPills = [
   { Icon: Shield, label: "Bonded & Insured" },
   { Icon: Users, label: "Same Team Every Visit" },
   { Icon: Leaf, label: "Eco-Friendly Products" },
-  { Icon: Star, label: "5.0 Rated" },
+  { Icon: Star, label: "5.0 ★ · 45 reviews" },
 ];
 
 const HeroLocation = ({

@@ -54,7 +54,7 @@ export default function TakomaParkES() {
               Takoma Park es conocida por sus valores eco-conscientes — y nosotros también. Capital Clean Care usa productos certificados EPA Safer Choice, seguros para tu familia, tus mascotas y el medio ambiente.
             </p>
             <div className="flex flex-wrap gap-2 mb-8">
-              {["⭐ 5.0 (47+ reseñas)", "🌿 EPA Safer Choice", "🗣️ Español", "📍 Takoma Park"].map((p) => (
+              {["⭐ 5.0 (45 reseñas)", "🌿 EPA Safer Choice", "🗣️ Español", "📍 Takoma Park"].map((p) => (
                 <span key={p} className="bg-background border border-border rounded-full px-3 py-1.5 text-sm font-medium shadow-sm">{p}</span>
               ))}
             </div>
@@ -63,7 +63,7 @@ export default function TakomaParkES() {
                 <a href={PHONE_TEL} onClick={() => trackPhoneClick("takoma_park_es_hero")}><Phone className="h-4 w-4 mr-2" /> Llamar: {PHONE}</a>
               </Button>
               <Button variant="outline" size="lg" asChild>
-                <a href="/contact" onClick={() => trackBookNowClick("takoma_park_es_hero")}>Cotización Gratis <ArrowRight className="ml-1 h-4 w-4" /></a>
+                <a href="/es/contacto" onClick={() => trackBookNowClick("takoma_park_es_hero")}>Cotización Gratis <ArrowRight className="ml-1 h-4 w-4" /></a>
               </Button>
             </div>
           </div>
@@ -94,14 +94,14 @@ export default function TakomaParkES() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
-                { name: "Beatriz N.", text: "Me encanta que usan productos eco-friendly. Mis hijos tienen alergias y no ha habido ninguna reacción." },
-                { name: "Diego F.", text: "Vivimos en Sligo Creek y son nuestro equipo fijo. Confiables, atentos y hablan español." },
-                { name: "Valentina C.", text: "Precio justo para Takoma Park y calidad de primer nivel. Muy recomendados." },
+                { name: "Lisa Phillips", text: "Limpieza de mudanza fantástica: pisos, ventanas, paredes, electrodomésticos, zócalos, cada rincón impecable. La casa quedó totalmente inmaculada. ¡Muy recomendados!" },
+                { name: "Grace J.", text: "Desde el primer contacto respondieron rápido y ofrecieron un precio justo. El equipo llegó puntual y el apartamento quedó impecable. ¡Cinco estrellas sin dudarlo!" },
+                { name: "Christina Damiani", text: "¡Excelente servicio de limpieza! La casa quedó impecable y fresca al terminar el trabajo. Muy minuciosos, profesionales y confiables." },
               ].map(({ name, text }) => (
                 <div key={name} className="bg-background border border-border rounded-xl p-5 shadow-sm">
                   <div className="flex gap-0.5 mb-3">{[...Array(5)].map((_, i) => <Star key={i} className="h-4 w-4 fill-accent text-accent" />)}</div>
                   <p className="text-muted-foreground text-sm leading-relaxed mb-3">"{text}"</p>
-                  <p className="font-semibold text-foreground text-sm">— {name}, Takoma Park</p>
+                  <p className="font-semibold text-foreground text-sm">— {name}, Reseña de Google</p>
                 </div>
               ))}
             </div>
@@ -114,7 +114,7 @@ export default function TakomaParkES() {
               {[
                 { stat: "~18,000", label: "Residentes" },
                 { stat: "25%", label: "Comunidad Latina" },
-                { stat: "Victorians / Mix", label: "Tipo de vivienda" },
+                { stat: "Casas victorianas y más", label: "Tipo de vivienda" },
                 { stat: "~3 mi", label: "Desde Silver Spring" },
               ].map(({ stat, label }) => (
                 <div key={label} className="bg-background border border-border rounded-xl p-5 text-center shadow-sm">
@@ -138,7 +138,7 @@ export default function TakomaParkES() {
                 <a href={PHONE_TEL} onClick={() => trackPhoneClick("takoma_park_es_cta")}><Phone className="h-4 w-4 mr-2" /> {PHONE}</a>
               </Button>
               <Button size="lg" variant="outline" className="border-white/50 text-white hover:bg-white/10" asChild>
-                <a href="/contact" onClick={() => trackBookNowClick("takoma_park_es_cta")}>Cotización Gratis</a>
+                <a href="/es/contacto" onClick={() => trackBookNowClick("takoma_park_es_cta")}>Cotización Gratis</a>
               </Button>
             </div>
             <div className="mt-4 flex items-center justify-center gap-2 text-accent-foreground/70 text-sm">

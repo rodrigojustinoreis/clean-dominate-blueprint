@@ -17,6 +17,7 @@ import ImageGallery, { GalleryImage } from "@/components/blog/ImageGallery";
 import FAQAccordion from "@/components/blog/FAQAccordion";
 import BlogInlineCTA from "@/components/blog/BlogInlineCTA";
 import StickyCTA from "@/components/blog/StickyCTA";
+import RelatedPosts from "@/components/blog/RelatedPosts";
 
 const HERO_IMAGE =
   "https://images.pexels.com/photos/7005268/pexels-photo-7005268.jpeg?auto=compress&cs=tinysrgb&w=1200";
@@ -513,7 +514,7 @@ const HowToRemoveHardWaterStainsNaturally = () => {
                 deep cleaning service
               </Link>{" "}
               handles bathroom mineral buildup across the Montgomery County area using the same vinegar-based protocols in this guide — scaled to cover every fixture, tile, and grout line in the home systematically. More eco cleaning methods in our{" "}
-              <Link to="/blog/eco-friendly-cleaning-tips-for-maryland-homes" className="text-accent underline hover:no-underline">
+              <Link to="/blog/eco-cleaning-tips-maryland-homes" className="text-accent underline hover:no-underline">
                 eco-friendly cleaning tips for Maryland homes
               </Link>.
             </p>
@@ -579,6 +580,7 @@ const HowToRemoveHardWaterStainsNaturally = () => {
         </div>
       </article>
 
+      <RelatedPosts currentSlug="how-to-remove-hard-water-stains-naturally" />
       <StickyCTA />
     </Layout>
   );

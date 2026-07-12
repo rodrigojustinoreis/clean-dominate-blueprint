@@ -35,7 +35,7 @@ import TrustBar from "@/components/TrustBar";
 import TrustBadges from "@/components/TrustBadges";
 import ConversionCTA from "@/components/ConversionCTA";
 import { FAQSchema, ServiceSchema, BreadcrumbSchema, CityReviewSchema } from "@/components/SchemaMarkup";
-import { getTestimonialsForCity } from "@/data/testimonials";
+import { pickReviews } from "@/data/realReviews";
 import { useSEO } from "@/hooks/useSEO";
 import { getCityBySlug, getExpandedCityFaqs } from "@/data/locations";
 import { services } from "@/data/services";
@@ -156,7 +156,8 @@ const CityPage = () => {
   const cityLabel = city.state !== "DC" ? `${city.name}, ${city.state}` : city.name;
   const whyIntro = cityWhyIntros[city.slug] || `${city.name} homeowners choose Capital Clean Care for our reliable, eco-friendly cleaning services.`;
   const hasServiceLocationPages = slCities.some((c) => c.slug === city.slug);
-  const testimonials = getTestimonialsForCity(city.slug);
+  // Real Google reviews only (deterministic per city) — never fabricated testimonials.
+  const testimonials = pickReviews(city.slug, 3);
 
   return (
     <Layout>
@@ -167,7 +168,6 @@ const CityPage = () => {
         serviceName={`House Cleaning in ${city.name}`}
         description={`Professional eco-friendly house cleaning services in ${cityLabel}. Licensed, insured, background-checked teams.`}
         url={`https://capitalcleancare.com/locations/${city.slug}`}
-        reviews={testimonials.map(t => ({ name: t.name, text: t.text, location: t.location }))}
       />
       <CityReviewSchema
         cityName={city.name}
@@ -340,7 +340,7 @@ const CityPage = () => {
                   </div>
                   <p className="text-sm text-foreground italic mb-3 leading-relaxed">"{t.text}"</p>
                   <p className="text-sm font-semibold text-foreground">{t.name}</p>
-                  <p className="text-xs text-muted-foreground">{t.location}</p>
+                  <p className="text-xs text-muted-foreground">Google review</p>
                 </CardContent>
               </Card>
             ))}

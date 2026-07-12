@@ -11,6 +11,7 @@ import FadeInSection from "@/components/blog/FadeInSection";
 import FAQAccordion from "@/components/blog/FAQAccordion";
 import BlogInlineCTA from "@/components/blog/BlogInlineCTA";
 import StickyCTA from "@/components/blog/StickyCTA";
+import RelatedPosts from "@/components/blog/RelatedPosts";
 
 const HERO_IMAGE = "/images/blog/summer-checklist/hero.webp";
 
@@ -120,6 +121,7 @@ const SummerCleaningChecklist = () => {
           </FadeInSection>
         </div>
       </article>
+      <RelatedPosts currentSlug="summer-cleaning-checklist-maryland" />
       <StickyCTA />
     </Layout>
   );

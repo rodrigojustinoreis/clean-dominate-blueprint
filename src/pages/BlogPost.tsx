@@ -648,7 +648,7 @@ const blogContent: Record<string, React.ReactNode> = {
         ctaTo="/contact"
       />
 
-      <p>Capital Clean Care has served <Link to="/locations/bethesda-md/house-cleaning" className="text-accent hover:underline">Bethesda</Link> and surrounding Montgomery County communities for 9+ years. <Link to="/contact" className="text-accent hover:underline font-semibold">Get your free quote today</Link> — 15% off for new clients.</p>
+      <p>Capital Clean Care has served <Link to="/locations/bethesda-md/house-cleaning" className="text-accent hover:underline">Bethesda</Link> and surrounding Montgomery County communities for 10+ years. <Link to="/contact" className="text-accent hover:underline font-semibold">Get your free quote today</Link> — 15% off for new clients.</p>
     </article>
   ),
   "cleaning-service-arlington-va": (
@@ -780,7 +780,7 @@ const blogContent: Record<string, React.ReactNode> = {
         ctaTo="/contact"
       />
 
-      <p>Capital Clean Care has served the DC metro for 9+ years. <Link to="/contact" className="text-accent hover:underline font-semibold">Get your free quote today</Link> — 15% off your first visit.</p>
+      <p>Capital Clean Care has served the DC metro for 10+ years. <Link to="/contact" className="text-accent hover:underline font-semibold">Get your free quote today</Link> — 15% off your first visit.</p>
     </article>
   ),
   "cleaning-service-fairfax-va": (
@@ -1110,7 +1110,7 @@ const blogContent: Record<string, React.ReactNode> = {
         ctaTo="/contact"
       />
 
-      <p>Capital Clean Care has served <Link to="/locations/gaithersburg-md/house-cleaning" className="text-accent hover:underline">Gaithersburg</Link> for 9+ years. <Link to="/contact" className="text-accent hover:underline font-semibold">Get your free quote today</Link> — 15% off for new clients.</p>
+      <p>Capital Clean Care has served <Link to="/locations/gaithersburg-md/house-cleaning" className="text-accent hover:underline">Gaithersburg</Link> for 10+ years. <Link to="/contact" className="text-accent hover:underline font-semibold">Get your free quote today</Link> — 15% off for new clients.</p>
     </article>
   ),
   "cleaning-service-mclean-va": (
@@ -1253,7 +1253,7 @@ const blogContent: Record<string, React.ReactNode> = {
 
       <BlogInlineCTA
         headline="Chevy Chase's Trusted House Cleaning Service"
-        subtext="Historic homes, modern renovations — handled with care. Eco-friendly, background-checked, 9+ years in the DMV. 15% OFF your first visit."
+        subtext="Historic homes, modern renovations — handled with care. Eco-friendly, background-checked, 10+ years in the DMV. 15% OFF your first visit."
         ctaLabel="Get My Chevy Chase Quote →"
         ctaTo="/contact"
       />
@@ -1301,43 +1301,49 @@ const blogContent: Record<string, React.ReactNode> = {
   ),
   "deep-cleaning-montgomery-county-md": (
     <article className="prose prose-lg max-w-none">
-      <p>Montgomery County is home to 1 million+ residents across communities as different as downtown <Link to="/locations/silver-spring-md" className="text-accent hover:underline">Silver Spring</Link> and rural <Link to="/locations/damascus-md" className="text-accent hover:underline">Damascus</Link>. This guide covers deep cleaning across the county's most distinct communities and the seasonal challenges they share.</p>
+      <p>Montgomery County, Maryland is one of the greenest jurisdictions in the country — home to more than a million residents, an award-winning recycling program, ambitious county climate goals, and tens of thousands of acres of protected agricultural reserve. It's also, in its entirety, part of the <strong>Chesapeake Bay watershed</strong>. That combination changes what a "deep clean" should mean here: not just a spotless home, but one cleaned in a way that doesn't send harsh chemicals down the drain and into the Bay. This is our eco-first guide to deep cleaning a Montgomery County home.</p>
 
-      <h2>Why Montgomery County Homes Need Regular Deep Cleaning</h2>
+      <h2>Why "Eco-Friendly" Matters More in Montgomery County</h2>
+      <p>In a lot of places, choosing green cleaning products is a personal preference. In Montgomery County it's also a watershed issue. Every storm drain, sink, and septic field in the county eventually connects to a tributary that feeds the Potomac and, ultimately, the Chesapeake Bay. The phosphates, ammonia, chlorine bleach, and synthetic surfactants in conventional cleaners don't disappear when they go down the drain — they move through the system.</p>
+      <p>Three things make this especially relevant locally:</p>
       <ul>
-        <li><strong>Pollen season (March–June):</strong> Montgomery County sits in one of the highest pollen corridors on the East Coast. Fine pollen accumulates on every surface until a deep clean removes it</li>
-        <li><strong>Humidity and mold risk (June–September):</strong> Maryland summers create conditions for mold in bathrooms and around windows — annual deep cleaning addresses grout and caulk before problems develop</li>
-        <li><strong>Road salt season (November–March):</strong> Salt tracked onto hardwood and tile accelerates surface damage without regular removal</li>
+        <li><strong>Septic systems in the up-county.</strong> Homes in <Link to="/locations/damascus-md" className="text-accent hover:underline">Damascus</Link>, Poolesville, Boyds, and parts of the agricultural reserve run on septic. Harsh disinfectants and drain chemicals kill the bacteria a septic system needs to work and leach toward groundwater. Plant-based products are far gentler on these systems.</li>
+        <li><strong>A health-conscious, allergy-prone population.</strong> The county sits in one of the worst pollen corridors on the East Coast. Families already fighting seasonal allergies don't need volatile fumes from bleach and ammonia layered on top — low-VOC, fragrance-free products keep indoor air clean.</li>
+        <li><strong>Kids, pets, and older homes.</strong> From historic homes in <Link to="/locations/chevy-chase-md" className="text-accent hover:underline">Chevy Chase</Link> to family-filled subdivisions in <Link to="/locations/germantown-md" className="text-accent hover:underline">Germantown</Link>, residue-free, non-toxic surfaces matter for the people and animals who actually live on them.</li>
+      </ul>
+      <p>The good news: a properly executed eco deep clean is <em>not</em> a weaker clean. EPA Safer Choice–certified, plant-based products cut grease, lift soap scum, and sanitize at the same level as conventional chemicals — they just do it without the collateral damage. <Link to="/why-eco-friendly-cleaning" className="text-accent hover:underline">Here's how that works →</Link></p>
+
+      <h2>What a Deep Clean Actually Covers</h2>
+      <p>A deep clean goes well beyond a standard tidy — it resets the parts of the home that routine cleaning never reaches: inside the oven and refrigerator, scrubbed grout, baseboards, door frames, ceiling fans, vent covers, light fixtures, and window tracks. Rather than repeat the full list here, we keep one master reference: <Link to="/blog/what-is-included-in-a-deep-cleaning" className="text-accent hover:underline">what's included in a deep cleaning (full room-by-room checklist) →</Link>. Everything on that list, we do with green products — and our <Link to="/services/deep-cleaning" className="text-accent hover:underline">deep cleaning service</Link> page breaks down exactly what's covered.</p>
+
+      <h2>Deep Cleaning Across Montgomery County's Communities</h2>
+      <p>Montgomery County isn't one housing stock — it's dozens. The right deep-clean approach depends on where you live, so we've built a dedicated guide for each of the county's major communities:</p>
+      <ul>
+        <li><strong><Link to="/locations/bethesda-md" className="text-accent hover:underline">Bethesda</Link>:</strong> older homes with original hardwood and heavy tree canopy — dust and pollen control are the priorities.</li>
+        <li><strong><Link to="/locations/rockville-md" className="text-accent hover:underline">Rockville</Link> &amp; <Link to="/locations/gaithersburg-md" className="text-accent hover:underline">Gaithersburg</Link>:</strong> larger suburban homes with finished basements and busy families — more square footage, more buildup between cleans.</li>
+        <li><strong><Link to="/locations/silver-spring-md" className="text-accent hover:underline">Silver Spring</Link> &amp; <Link to="/locations/takoma-park-md" className="text-accent hover:underline">Takoma Park</Link>:</strong> a dense mix of older bungalows and newer condos where high foot traffic speeds up surface buildup.</li>
+        <li><strong><Link to="/locations/potomac-md" className="text-accent hover:underline">Potomac</Link>:</strong> estate-level homes with fine materials that need careful, low-residue products.</li>
+        <li><strong><Link to="/locations/kensington-md" className="text-accent hover:underline">Kensington</Link>, <Link to="/locations/olney-md" className="text-accent hover:underline">Olney</Link> &amp; <Link to="/locations/wheaton-md" className="text-accent hover:underline">Wheaton</Link>:</strong> a range of mid-century and newer homes across the county's center.</li>
       </ul>
 
-      <h2>Deep Cleaning by Area</h2>
+      <h2>Seasonal Timing: When Montgomery County Homes Need a Deep Clean</h2>
+      <ul>
+        <li><strong>Pollen season (March–June):</strong> fine pollen settles on every surface and recirculates through HVAC. A spring deep clean — including vents and window tracks — makes the biggest difference for allergy sufferers.</li>
+        <li><strong>Humidity &amp; mold risk (June–September):</strong> Maryland's humid summers breed mold in bathrooms and around windows. Deep cleaning grout and caulk before it takes hold is far easier than remediating it later.</li>
+        <li><strong>Road-salt season (November–March):</strong> salt tracked onto hardwood and tile is abrasive and dulls finishes; periodic deep cleaning protects floors through winter.</li>
+      </ul>
 
-      <h3>Bethesda and Chevy Chase</h3>
-      <p>Older homes with historic hardwood and heavy tree canopy. See: <Link to="/blog/house-cleaning-bethesda-md" className="text-accent hover:underline">house cleaning in Bethesda →</Link></p>
-
-      <h3>Rockville and Gaithersburg</h3>
-      <p>Larger suburban homes with finished basements and active families. See: <Link to="/blog/deep-cleaning-rockville-md" className="text-accent hover:underline">deep cleaning in Rockville →</Link> and <Link to="/blog/house-cleaning-gaithersburg-md" className="text-accent hover:underline">house cleaning in Gaithersburg →</Link></p>
-
-      <h3>Potomac</h3>
-      <p>Estate-level homes with fine materials. See: <Link to="/blog/house-cleaning-potomac-md" className="text-accent hover:underline">house cleaning in Potomac →</Link></p>
-
-      <h3>Silver Spring and Takoma Park</h3>
-      <p>Urban/suburban transition with older bungalows and newer condos. High foot traffic means faster surface buildup and more frequent professional cleaning needs.</p>
-
-      <h2>What's Included in a Deep Clean</h2>
-      <p>Our <Link to="/services/deep-cleaning" className="text-accent hover:underline">deep cleaning service</Link> covers 60+ items: inside appliances, grout scrubbing, baseboards, ceiling fans, vent covers, and window sills throughout. See the full list: <Link to="/blog/deep-cleaning-checklist-dmv-homeowners" className="text-accent hover:underline">deep cleaning checklist →</Link></p>
-
-      <h2>Eco-Friendly Across the Chesapeake Bay Watershed</h2>
-      <p>All of Montgomery County sits within the Chesapeake Bay watershed. Our EPA Safer Choice certified, plant-based products clean at the same level as conventional products without contributing to watershed pollution. <Link to="/why-eco-friendly-cleaning" className="text-accent hover:underline">Why this matters →</Link></p>
+      <h2>What Does It Cost in Montgomery County?</h2>
+      <p>Deep-clean pricing depends mostly on home size and how long it's been since the last reset — not on which part of the county you're in. We keep current DMV pricing in one place rather than restating it: <Link to="/blog/how-much-does-deep-cleaning-cost" className="text-accent hover:underline">how much a deep cleaning costs (2026 prices) →</Link>. New clients also get 15% off the first visit.</p>
 
       <BlogInlineCTA
-        headline="Montgomery County's Deep Cleaning Specialists"
-        subtext="Serving Rockville, Bethesda, Silver Spring, Gaithersburg, Germantown, Potomac, Chevy Chase, Kensington, and all of Montgomery County. 15% OFF your first visit."
+        headline="Montgomery County's Eco-Friendly Deep Cleaning Team"
+        subtext="Plant-based, EPA Safer Choice products. Serving Rockville, Bethesda, Silver Spring, Gaithersburg, Germantown, Potomac, Chevy Chase, Kensington and all of Montgomery County. 15% OFF your first visit."
         ctaLabel="Book My Montgomery County Deep Clean →"
         ctaTo="/contact"
       />
 
-      <p><Link to="/contact" className="text-accent hover:underline font-semibold">Schedule your deep cleaning today</Link> — serving all of Montgomery County and the broader DMV.</p>
+      <p><Link to="/contact" className="text-accent hover:underline font-semibold">Schedule your eco-friendly deep cleaning today</Link> — caring for Montgomery County homes and the Chesapeake Bay watershed they sit in.</p>
     </article>
   ),
   "cleaning-service-reston-va": (

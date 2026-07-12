@@ -5,6 +5,7 @@ import Layout from "@/components/layout/Layout";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FAQ from "@/components/FAQ";
 import ConversionCTA from "@/components/ConversionCTA";
+import QuoteForm from "@/components/QuoteForm";
 import TrustBadges from "@/components/TrustBadges";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { Button } from "@/components/ui/button";
@@ -18,6 +19,9 @@ import { useSEO } from "@/hooks/useSEO";
 import HeroLocation from "@/components/location/HeroLocation";
 import ServiceChecklistLocation from "@/components/location/ServiceChecklistLocation";
 import InternalLinksGrid from "@/components/location/InternalLinksGrid";
+import LocationSocialProof from "@/components/location/LocationSocialProof";
+import LocationQuoteSection from "@/components/location/LocationQuoteSection";
+import { pickReviews } from "@/data/realReviews";
 
 const PAGE_URL = "https://capitalcleancare.com/locations/rockville-md/deep-cleaning";
 
@@ -45,6 +49,10 @@ const faqs = [
   {
     q: "How often should I get a deep cleaning in Rockville?",
     a: "Once or twice a year is typical for most homes, combined with regular maintenance cleanings in between. We offer recurring service that keeps your Rockville home clean year-round.",
+  },
+  {
+    q: "Do you deep clean apartments and condos in Rockville?",
+    a: "Yes. We deep clean apartments and condos across the 20850 ZIP near the Rockville Metro, plus townhomes throughout 20851, 20852, and 20853. Apartment deep cleans typically take 2–4 hours depending on size — same top-to-bottom work (inside appliances, grout, ceiling fans, baseboards) with eco-friendly products. Get a free quote in 60 seconds.",
   },
   {
     q: "Is Capital Clean Care locally owned?",
@@ -114,9 +122,9 @@ const nearbyCities = [
 
 const RockvilleDeepCleaningPage = () => {
   const { seoHelmet } = useSEO({
-    title: "Deep Cleaning Service in Rockville, MD",
+    title: "Deep Cleaning Services in Rockville, MD",
     description:
-      "Professional deep cleaning in Rockville, MD. Inside appliances, grout, baseboards, ceiling fans — everywhere standard cleanings miss. EPA-certified products. Free quote.",
+      "Professional deep cleaning in Rockville, MD. Inside appliances, grout, baseboards, ceiling fans — everywhere standard cleanings miss. EPA Safer Choice certified — safe for kids and pets. Free quote.",
     canonical: PAGE_URL,
     ogImage: "https://capitalcleancare.com/og-image.jpg",
   });
@@ -144,13 +152,7 @@ const RockvilleDeepCleaningPage = () => {
           "Fallsgrove, Rockville MD",
           "Montgomery County, MD",
         ]}
-        reviews={[
-          {
-            name: "Brian G.",
-            text: "After our renovation, they got every last bit of construction dust. Professional and incredibly thorough.",
-            location: "Fairfax, VA",
-          },
-        ]}
+        reviews={pickReviews("rockville-md/deep-cleaning")}
       />
       <ServiceSchema
         serviceName="Deep Cleaning Service in Rockville, MD"
@@ -201,6 +203,9 @@ const RockvilleDeepCleaningPage = () => {
         categories={checklistCategories}
       />
 
+      {/* ── Social Proof (3rd — trust video early) ── */}
+      <LocationSocialProof cityName="Rockville" citySlug="rockville-md" serviceSlug="deep-cleaning" serviceLabel="Deep Cleaning" />
+
       {/* Standard vs Deep */}
       <section className="py-12 md:py-16">
         <div className="container mx-auto px-4 max-w-4xl">
@@ -238,16 +243,16 @@ const RockvilleDeepCleaningPage = () => {
       <section className="py-12 md:py-16 bg-muted/30">
         <div className="container mx-auto px-4 max-w-4xl">
           <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-6">
-            When Should You Book a Deep Clean in Rockville?
+            When Rockville Homeowners Schedule a Deep Clean
           </h2>
           <div className="grid sm:grid-cols-2 gap-4">
             {[
-              "Moving into or out of a home in 20850 or 20851",
-              "Spring seasonal reset in King Farm or Twinbrook",
-              "Before a special event or holiday gathering",
-              "After a long period between professional cleanings",
-              "Post-renovation or construction cleanup",
-              "Preparing a home for sale or rental listing",
+              "Your first thorough clean of the year, or a seasonal reset in King Farm or Twinbrook",
+              "Before a special event, holiday gathering, or houseguests arriving",
+              "After a long gap between professional cleanings",
+              "Resetting the home after heavy use — pets, kids, or illness",
+              "Preparing a home for sale or a rental listing",
+              "Whenever a standard clean just isn't reaching the buildup",
             ].map((item) => (
               <div key={item} className="flex items-start gap-3 p-4 bg-background rounded-xl border border-border/50">
                 <CheckCircle className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" aria-hidden="true" />
@@ -255,54 +260,16 @@ const RockvilleDeepCleaningPage = () => {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Social Proof */}
-      <section className="py-12 md:py-16">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <div className="text-center mb-8">
-            <span className="inline-flex items-center gap-1.5 bg-accent/10 text-accent font-semibold text-sm uppercase tracking-wider px-3 py-1 rounded-full mb-3">
-              <Star className="h-3.5 w-3.5 fill-accent" aria-hidden="true" /> Client Reviews
-            </span>
-            <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground">
-              Rockville Homeowners Love Our Deep Clean
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="bg-card border border-border rounded-xl p-5">
-              <div role="img" aria-label="5 out of 5 stars" className="flex items-center gap-0.5 mb-3">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" aria-hidden="true" />
-                ))}
-              </div>
-              <p className="text-sm text-foreground italic mb-3 leading-relaxed">
-                "After our renovation, they got every last bit of construction dust. Professional and incredibly thorough."
-              </p>
-              <p className="text-sm font-semibold text-foreground">Brian G.</p>
-              <p className="text-xs text-muted-foreground">Fairfax, VA</p>
-            </div>
-            <div className="bg-card border border-border rounded-xl p-5 flex flex-col items-center justify-center text-center gap-3">
-              <div role="img" aria-label="5 out of 5 stars average" className="flex items-center gap-0.5">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <Star key={i} className="h-5 w-5 fill-amber-400 text-amber-400" aria-hidden="true" />
-                ))}
-              </div>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                Serving Rockville homes from King Farm to Twinbrook. Share your experience.
-              </p>
-              <a
-                href="https://g.page/r/capitalcleancare/review"
-                className="text-sm text-primary underline font-medium"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Leave a Google Review →
-              </a>
-            </div>
-          </div>
-          <p className="text-center text-sm text-muted-foreground mt-6">
-            <span className="font-semibold text-foreground">5.0 ★</span> average rating · 47 reviews on Google
+          <p className="text-sm text-muted-foreground mt-5 leading-relaxed">
+            Moving soon? See our{" "}
+            <Link to="/locations/rockville-md/move-out-cleaning" className="text-primary font-medium underline">
+              move-out cleaning in Rockville
+            </Link>
+            . Just finished a renovation? See{" "}
+            <Link to="/locations/rockville-md/post-construction-cleaning" className="text-primary font-medium underline">
+              post-construction cleaning in Rockville
+            </Link>
+            .
           </p>
         </div>
       </section>
@@ -374,6 +341,33 @@ const RockvilleDeepCleaningPage = () => {
         </div>
       </section>
 
+      {/* Eco-friendly */}
+      <section className="py-12 md:py-16">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-4">
+            Eco-Friendly Deep Cleaning in Rockville — Why It Matters
+          </h2>
+          <div className="space-y-4 text-muted-foreground leading-relaxed">
+            <p>
+              Every deep clean we do in Rockville uses only{" "}
+              <strong className="text-foreground">EPA Safer Choice™ certified, plant-based products</strong> —
+              never bleach or ammonia. That means no harsh fumes lingering in your home, and a space that's
+              safe to walk back into right away, even with kids and pets underfoot. For families in King Farm,
+              Twinbrook, and Fallsgrove, it's the difference between a home that just looks clean and one that's
+              genuinely healthier to breathe in.
+            </p>
+            <p>
+              And green doesn't mean weaker. Our eco-friendly products cut grease, lift soap scum, and sanitize
+              every surface to the same standard as conventional chemicals — without the runoff that ends up in
+              the Chesapeake Bay watershed that all of Rockville drains into.{" "}
+              <Link to="/services/eco-friendly-cleaning" className="text-primary font-medium underline">
+                See how our eco-friendly cleaning works →
+              </Link>
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="py-12 md:py-16 bg-muted/30">
         <div className="container mx-auto px-4 max-w-4xl">
@@ -396,31 +390,7 @@ const RockvilleDeepCleaningPage = () => {
       <TrustBadges compact />
       <ConversionCTA cityName="Rockville" />
 
-      <section id="quote" className="py-12 md:py-16 bg-muted/30">
-        <div className="container mx-auto px-4 max-w-2xl text-center">
-          <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-3">
-            Book Your Rockville Deep Clean Today
-          </h2>
-          <p className="text-muted-foreground mb-6 leading-relaxed">
-            Serving Rockville homes near Rockville Pike across ZIPs 20850, 20851, 20852, and 20853.
-            Start fresh — get a free, no-obligation deep cleaning quote in 60 seconds, or call us
-            directly at (240) 704-2551. Same-day slots often available.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Button variant="cta" size="lg" asChild>
-              <Link to="/contact">
-                Get My Free Deep Cleaning Quote <ArrowRight className="ml-1 h-4 w-4" />
-              </Link>
-            </Button>
-            <Button variant="outline" size="lg" asChild>
-              <a href="tel:+12407042551">(240) 704-2551</a>
-            </Button>
-          </div>
-          <p className="text-xs text-muted-foreground mt-3">
-            Same-day slots available · 100% satisfaction guaranteed · Bonded & Insured
-          </p>
-        </div>
-      </section>
+      <LocationQuoteSection cityName="Rockville" serviceLabel="Deep Cleaning" defaultService="deep" zipLine="Serving Rockville across ZIPs 20850, 20851, 20852, and 20853." />
 
       <StickyMobileCTA />
     </Layout>

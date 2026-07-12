@@ -10,6 +10,17 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import GoogleReviewsLive from "@/components/GoogleReviewsLive";
 import TrustBadges from "@/components/TrustBadges";
 import FadeInSection from "@/components/blog/FadeInSection";
+import TransformationsGallery from "@/components/TransformationsGallery";
+import { useState, useEffect } from "react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+  type CarouselApi,
+} from "@/components/ui/carousel";
+import { cn } from "@/lib/utils";
 
 const HAS_GOOGLE_API = !!(import.meta.env.VITE_GOOGLE_MAPS_API_KEY && import.meta.env.VITE_GOOGLE_PLACE_ID);
 
@@ -32,6 +43,9 @@ const reviews = [
 
 const fmtDate = (iso: string) => new Date(iso).toLocaleDateString("en-US", { month: "long", year: "numeric" });
 
+const initials = (name: string) =>
+  name.split(" ").filter(Boolean).slice(0, 2).map((w) => w[0]).join("").toUpperCase();
+
 const Stars = ({ n = 5 }: { n?: number }) => (
   <div className="flex gap-0.5" aria-label={`${n} out of 5 stars`}>
     {Array.from({ length: n }).map((_, i) => <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />)}
@@ -45,6 +59,31 @@ const Reviews = () => {
       "Read 45 five-star Google reviews for Capital Clean Care, the DMV's eco-friendly, Latino-owned house cleaning company. See why families in MD, DC & VA have trusted us since 2015.",
     canonical: "https://capitalcleancare.com/reviews",
   });
+
+  // Reviews carousel (embla) — track active slide for dots + gentle autoplay.
+  const [api, setApi] = useState<CarouselApi>();
+  const [snaps, setSnaps] = useState<number[]>([]);
+  const [selected, setSelected] = useState(0);
+  const [paused, setPaused] = useState(false);
+
+  useEffect(() => {
+    if (!api) return;
+    const sync = () => {
+      setSnaps(api.scrollSnapList());
+      setSelected(api.selectedScrollSnap());
+    };
+    sync();
+    api.on("select", sync);
+    api.on("reInit", sync);
+    return () => { api.off("select", sync); api.off("reInit", sync); };
+  }, [api]);
+
+  useEffect(() => {
+    if (!api || paused) return;
+    if (typeof window !== "undefined" && window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) return;
+    const id = setInterval(() => api.scrollNext(), 6000);
+    return () => clearInterval(id);
+  }, [api, paused]);
 
   return (
     <Layout>
@@ -95,6 +134,53 @@ const Reviews = () => {
         </div>
       </section>
 
+      {/* ── Social-proof video ────────────────────────────── */}
+      <section className="relative overflow-hidden bg-[#0a1726] py-16 md:py-24">
+        {/* brand glows */}
+        <div className="pointer-events-none absolute -left-32 -top-32 h-96 w-96 rounded-full bg-accent/20 blur-3xl" />
+        <div className="pointer-events-none absolute -right-32 bottom-0 h-96 w-96 rounded-full bg-primary/30 blur-3xl" />
+        <div className="container relative mx-auto px-4 max-w-4xl">
+          <FadeInSection>
+            <div className="text-center mb-8">
+              <span className="text-accent font-semibold text-sm uppercase tracking-[0.2em]">45 Five-Star Reviews</span>
+              <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mt-3">
+                See Why the DMV Trusts Capital Clean Care
+              </h2>
+            </div>
+            <div className="rounded-2xl overflow-hidden border border-white/10 shadow-2xl ring-1 ring-accent/20 bg-black">
+              <video
+                className="w-full h-auto block"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="none"
+                poster="/videos/reviews-poster.jpg"
+                aria-label="Capital Clean Care — rated 5.0 stars across 45 Google reviews from homeowners in Maryland, DC and Northern Virginia"
+              >
+                <source src="/videos/reviews.webm" type="video/webm" />
+                <source src="/videos/reviews.mp4" type="video/mp4" />
+              </video>
+            </div>
+
+            {/* stats band */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mt-8">
+              {[
+                { v: "5.0", l: "Average rating" },
+                { v: "45", l: "Google reviews" },
+                { v: "100%", l: "Five-star" },
+                { v: "2015", l: "Serving the DMV" },
+              ].map((s) => (
+                <div key={s.l} className="rounded-xl border border-white/10 bg-white/[0.04] px-4 py-5 text-center backdrop-blur-sm">
+                  <p className="font-heading text-3xl md:text-4xl font-extrabold text-white leading-none">{s.v}</p>
+                  <p className="text-xs md:text-sm text-white/60 mt-2">{s.l}</p>
+                </div>
+              ))}
+            </div>
+          </FadeInSection>
+        </div>
+      </section>
+
       {/* ── Reviews grid ──────────────────────────────────── */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 max-w-5xl">
@@ -106,27 +192,62 @@ const Reviews = () => {
           {HAS_GOOGLE_API ? (
             <GoogleReviewsLive />
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {reviews.map((r, i) => (
-                <FadeInSection key={i}>
-                  <Card className="h-full border-border hover:shadow-md transition-shadow">
-                    <CardContent className="p-6 flex flex-col h-full">
-                      <div className="flex items-center justify-between mb-3">
-                        <Stars />
-                        <span className="text-xs text-accent inline-flex items-center gap-1 font-medium">
-                          <BadgeCheck className="h-3.5 w-3.5" /> Verified on Google
-                        </span>
-                      </div>
-                      <Quote className="h-5 w-5 text-accent/30 mb-2" />
-                      <p className="text-foreground mb-5 leading-relaxed flex-1">{r.text}</p>
-                      <div className="flex items-center justify-between border-t border-border pt-3">
-                        <p className="text-sm font-semibold text-foreground">{r.name}</p>
-                        <p className="text-xs text-muted-foreground">{fmtDate(r.date)}</p>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </FadeInSection>
-              ))}
+            <div
+              className="relative md:px-12"
+              onMouseEnter={() => setPaused(true)}
+              onMouseLeave={() => setPaused(false)}
+              onFocusCapture={() => setPaused(true)}
+              onBlurCapture={() => setPaused(false)}
+            >
+              <Carousel opts={{ loop: true, align: "start" }} setApi={setApi}>
+                <CarouselContent>
+                  {reviews.map((r, i) => (
+                    <CarouselItem key={i} className="md:basis-1/2">
+                      <Card className="group relative h-full overflow-hidden border-border/70 shadow-sm transition-shadow hover:shadow-lg">
+                        <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-accent to-primary" />
+                        <CardContent className="p-7 flex flex-col h-full">
+                          <div className="flex items-center justify-between mb-4">
+                            <Stars />
+                            <span className="text-xs text-accent inline-flex items-center gap-1 font-medium">
+                              <BadgeCheck className="h-3.5 w-3.5" /> Verified on Google
+                            </span>
+                          </div>
+                          <Quote className="h-6 w-6 text-accent/25 mb-2" />
+                          <p className="text-foreground mb-6 leading-relaxed flex-1">{r.text}</p>
+                          <div className="flex items-center gap-3 border-t border-border pt-4">
+                            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-accent to-primary text-sm font-bold text-white">
+                              {initials(r.name)}
+                            </div>
+                            <div className="min-w-0">
+                              <p className="text-sm font-semibold text-foreground truncate">{r.name}</p>
+                              <p className="text-xs text-muted-foreground">{fmtDate(r.date)} · Google</p>
+                            </div>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious className="hidden md:flex" />
+                <CarouselNext className="hidden md:flex" />
+              </Carousel>
+
+              {/* Dots */}
+              <div className="flex justify-center gap-2 mt-8">
+                {snaps.map((_, i) => (
+                  <button
+                    key={i}
+                    type="button"
+                    onClick={() => api?.scrollTo(i)}
+                    aria-label={`Go to review ${i + 1}`}
+                    aria-current={selected === i}
+                    className={cn(
+                      "h-2 rounded-full transition-all",
+                      selected === i ? "w-6 bg-accent" : "w-2 bg-border hover:bg-muted-foreground/40",
+                    )}
+                  />
+                ))}
+              </div>
             </div>
           )}
 
@@ -139,6 +260,9 @@ const Reviews = () => {
           </div>
         </div>
       </section>
+
+      {/* ── Real video transformations ────────────────────── */}
+      <TransformationsGallery />
 
       {/* ── A note from the founder ───────────────────────── */}
       <section className="py-16 md:py-20 bg-secondary/50 border-y border-border">

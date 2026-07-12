@@ -30,7 +30,7 @@ const pricing = [
 export default function LimpiezaDeCasasPage() {
   const { seoHelmet } = useSEO({
     title: "Limpieza de Casas en Montgomery County MD | Capital Clean Care",
-    description: "Servicio profesional de limpieza de casas en MoCo. Negocio familiar, asegurados, 5★ en Google. ¡Hablamos español! (240) 704-2551",
+    description: "Servicio profesional de limpieza de casas en Montgomery County. Negocio familiar, asegurados, 5★ en Google. ¡Hablamos español! (240) 704-2551",
     canonical: CANONICAL,
   });
 
@@ -58,10 +58,10 @@ export default function LimpiezaDeCasasPage() {
               Limpieza de Casas en Montgomery County, MD
             </h1>
             <p className="text-lg text-muted-foreground mb-6 max-w-2xl leading-relaxed">
-              El equipo que tus vecinos confían. Limpieza profesional, asegurada y con fianza, hecha por gente que entiende cómo te gusta tu casa.
+              El equipo en el que confían tus vecinos. Limpieza profesional, asegurada y con fianza, hecha por gente que entiende cómo te gusta tu casa.
             </p>
             <div className="flex flex-wrap gap-2 mb-8">
-              {["⭐ 5.0 (47+)", "🛡️ Asegurados", "🗣️ Español", "🏡 Familiar"].map((p) => (
+              {["⭐ 5.0 (45 reseñas)", "🛡️ Asegurados", "🗣️ Español", "🏡 Familiar"].map((p) => (
                 <span key={p} className="bg-background border border-border rounded-full px-3 py-1.5 text-sm font-medium shadow-sm">{p}</span>
               ))}
             </div>
@@ -72,7 +72,7 @@ export default function LimpiezaDeCasasPage() {
                 </a>
               </Button>
               <Button variant="outline" size="lg" asChild>
-                <a href="/contact" onClick={() => trackBookNowClick("limpieza_casas_hero")}>
+                <a href="/es/contacto" onClick={() => trackBookNowClick("limpieza_casas_hero")}>
                   Cotización Gratis <ArrowRight className="ml-1 h-4 w-4" />
                 </a>
               </Button>
@@ -159,7 +159,7 @@ export default function LimpiezaDeCasasPage() {
                 </a>
               </Button>
               <Button size="lg" variant="outline" className="border-white/50 text-white hover:bg-white/10" asChild>
-                <a href="/contact" onClick={() => trackBookNowClick("limpieza_casas_cta")}>Cotización Gratis</a>
+                <a href="/es/contacto" onClick={() => trackBookNowClick("limpieza_casas_cta")}>Cotización Gratis</a>
               </Button>
             </div>
             <div className="mt-4 flex items-center justify-center gap-2 text-accent-foreground/70 text-sm">

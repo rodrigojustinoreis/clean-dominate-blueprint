@@ -7,6 +7,7 @@ import Footer from "@/components/layout/Footer";
 import QuoteForm from "@/components/QuoteForm";
 import FAQ from "@/components/FAQ";
 import BeforeAfterGallery from "@/components/BeforeAfterGallery";
+import TransformationsGallery from "@/components/TransformationsGallery";
 import GreenShield5Step from "@/components/GreenShield5Step";
 import TrustBadges from "@/components/TrustBadges";
 import ExitIntentPopup from "@/components/ExitIntentPopup";
@@ -16,6 +17,8 @@ import { getServiceBySlug } from "@/data/services";
 import { cities } from "@/data/locations";
 import { slCities, slServices } from "@/data/service-locations";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import FadeInSection from "@/components/blog/FadeInSection";
+import LocationSocialProof from "@/components/location/LocationSocialProof";
 import logo from "@/assets/logo.webp";
 
 const PHONE = "(240) 704-2551";
@@ -66,7 +69,6 @@ const DeepCleaningPage = () => {
         serviceName={service.name}
         description={service.shortDescription}
         url="https://capitalcleancare.com/services/deep-cleaning"
-        reviews={service.testimonials?.map((t) => ({ name: t.name, text: t.text, location: t.location }))}
       />
       <FAQSchema faqs={service.faqs} />
 
@@ -117,48 +119,89 @@ const DeepCleaningPage = () => {
       )}
 
       {/* ── Hero ── */}
-      <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4 max-w-4xl">
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#EAF6EA] via-background to-accent/5 py-10 md:py-16">
+        <div className="container mx-auto px-4 max-w-6xl">
           <Breadcrumbs
             items={[{ label: "Home", href: "/" }, { label: "Services" }, { label: service.name }]}
             className="mb-6"
           />
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+            <FadeInSection>
+              <div className="inline-flex items-center gap-2 bg-white border border-[#2E7D32]/20 rounded-full px-3.5 py-1.5 shadow-sm mb-5">
+                <div className="flex gap-0.5">
+                  {Array.from({ length: 5 }).map((_, j) => (
+                    <Star key={j} className="h-4 w-4 fill-amber-400 text-amber-400" />
+                  ))}
+                </div>
+                <span className="text-sm font-bold text-foreground">5.0</span>
+                <span className="text-sm text-muted-foreground">· 45 Google reviews</span>
+              </div>
 
-          <h1 className="font-heading text-4xl md:text-5xl font-bold mb-6">
-            Professional Deep Cleaning in Montgomery County, MD
-          </h1>
+              <h1 className="font-heading text-4xl md:text-5xl font-bold mb-5 leading-[1.1]">
+                Professional Deep Cleaning in Montgomery County, MD
+              </h1>
 
-          {/* Dual CTA buttons */}
-          <div className="flex flex-col sm:flex-row gap-3 mb-5">
-            <button
-              onClick={scrollToForm}
-              className="inline-flex items-center justify-center bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-bold text-base px-8 py-3 rounded-md shadow-lg transition-colors"
-            >
-              Get My Free Quote →
-            </button>
-            <a
-              href={PHONE_HREF}
-              className="inline-flex items-center justify-center border-2 border-[#2E7D32] text-[#2E7D32] hover:bg-[#2E7D32]/5 font-bold text-base px-8 py-3 rounded-md transition-colors"
-            >
-              <Phone className="h-4 w-4 mr-2" /> Call {PHONE}
-            </a>
+              <p className="text-lg text-muted-foreground mb-7 leading-relaxed max-w-xl">
+                {service.shortDescription}
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-3 mb-6">
+                <button
+                  onClick={scrollToForm}
+                  className="inline-flex items-center justify-center bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-bold text-base px-8 py-3.5 rounded-lg shadow-lg shadow-[#2E7D32]/20 transition-colors"
+                >
+                  Get My Free Quote →
+                </button>
+                <a
+                  href={PHONE_HREF}
+                  className="inline-flex items-center justify-center border-2 border-[#2E7D32] text-[#2E7D32] hover:bg-[#2E7D32]/5 font-bold text-base px-8 py-3.5 rounded-lg transition-colors"
+                >
+                  <Phone className="h-4 w-4 mr-2" /> Call {PHONE}
+                </a>
+              </div>
+
+              <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted-foreground">
+                {["Licensed & Insured", "Eco-Friendly Products", "Satisfaction Guaranteed", "Background-Checked"].map((b) => (
+                  <span key={b} className="flex items-center gap-1.5">
+                    <CheckCircle className="h-4 w-4 text-[#2E7D32] shrink-0" /> {b}
+                  </span>
+                ))}
+              </div>
+            </FadeInSection>
+
+            <FadeInSection>
+              <div className="relative lg:pl-4">
+                <div className="rounded-3xl overflow-hidden shadow-2xl border border-border aspect-[4/3]">
+                  <img
+                    src="/images/team/team-tile-scrubber.jpg"
+                    alt="Capital Clean Care deep cleaning team scrubbing tile and grout in a Montgomery County home"
+                    className="w-full h-full object-cover"
+                    width={800}
+                    height={600}
+                    loading="eager"
+                    fetchPriority="high"
+                  />
+                </div>
+                <div className="absolute -bottom-5 left-2 sm:-left-4 bg-white rounded-2xl shadow-xl border border-border px-5 py-3.5 flex items-center gap-3">
+                  <span className="text-3xl font-heading font-extrabold text-[#2E7D32] leading-none">9+</span>
+                  <span className="text-xs text-muted-foreground leading-tight">years deep cleaning<br />the DMV</span>
+                </div>
+              </div>
+            </FadeInSection>
           </div>
+        </div>
+      </section>
 
-          {/* Trust badges inline */}
-          <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted-foreground mb-10">
-            {["Licensed & Insured", "Eco-Friendly Products", "Satisfaction Guaranteed", "Background-Checked"].map((b) => (
-              <span key={b} className="flex items-center gap-1.5">
-                <CheckCircle className="h-4 w-4 text-[#2E7D32] shrink-0" /> {b}
-              </span>
-            ))}
-          </div>
-
-          {/* Intro */}
-          <div className="space-y-4 text-foreground leading-relaxed mb-12">
-            {service.intro.split("\n\n").map((p, i) => (
-              <p key={i}>{p}</p>
-            ))}
-          </div>
+      {/* ── Intro / About ── */}
+      <section className="py-12 md:py-16">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <FadeInSection>
+            <div className="space-y-4 text-foreground leading-relaxed text-[17px]">
+              {service.intro.split("\n\n").map((p, i) => (
+                <p key={i}>{p}</p>
+              ))}
+            </div>
+          </FadeInSection>
         </div>
       </section>
 
@@ -170,17 +213,22 @@ const DeepCleaningPage = () => {
       </div>
 
 
-      {/* ── Trust Bar ── */}
+      {/* ── Stats band ── */}
       <section className="py-8">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-            {trustBadges.map(({ Icon, text }) => (
+            {[
+              { v: "5.0★", l: "Google rating" },
+              { v: "45", l: "Five-star reviews" },
+              { v: "9+ yrs", l: "Serving the DMV" },
+              { v: "100%", l: "Satisfaction guarantee" },
+            ].map((s) => (
               <div
-                key={text}
-                className="flex flex-col items-center gap-2 py-5 px-3 rounded-lg border border-border bg-card text-center"
+                key={s.l}
+                className="flex flex-col items-center gap-1 py-5 px-3 rounded-xl border border-border bg-card text-center shadow-sm"
               >
-                <Icon className="h-6 w-6 text-[#2E7D32]" />
-                <span className="text-xs font-semibold">{text}</span>
+                <span className="font-heading text-2xl md:text-3xl font-extrabold text-[#2E7D32] leading-none">{s.v}</span>
+                <span className="text-xs font-medium text-muted-foreground">{s.l}</span>
               </div>
             ))}
           </div>
@@ -188,61 +236,37 @@ const DeepCleaningPage = () => {
       </section>
 
       {/* ── Benefits ── */}
-      <section className="py-12">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="font-heading text-2xl font-bold mb-4">Benefits</h2>
-          <div className="space-y-3">
-            {service.benefits.map((b, i) => (
-              <div key={i} className="flex gap-2 items-start">
-                <CheckCircle className="h-5 w-5 text-accent shrink-0 mt-0.5" />
-                <span>{b}</span>
-              </div>
-            ))}
-          </div>
+      <section className="py-12 md:py-16 bg-secondary/40">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <FadeInSection>
+            <div className="text-center mb-10">
+              <span className="text-[#2E7D32] font-semibold text-sm uppercase tracking-wider">Why a deep clean</span>
+              <h2 className="font-heading text-2xl md:text-3xl font-bold mt-2">What You Get With Our Deep Cleaning</h2>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {service.benefits.map((b, i) => (
+                <div
+                  key={i}
+                  className="flex gap-3 items-start bg-card border border-border rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow"
+                >
+                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#2E7D32]/10">
+                    <CheckCircle className="h-5 w-5 text-[#2E7D32]" />
+                  </div>
+                  <span className="text-foreground leading-relaxed">{b}</span>
+                </div>
+              ))}
+            </div>
+          </FadeInSection>
         </div>
       </section>
 
-      {/* ── Testimonials ── */}
-      {service.testimonials && service.testimonials.length > 0 && (
-        <section className="py-12">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <p className="text-center text-xs font-semibold text-muted-foreground uppercase tracking-widest mb-2">
-              What Montgomery County Homeowners Say
-            </p>
-            <h2 className="font-heading text-2xl font-bold mb-8 text-center">
-              Real Results From Real Clients
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {service.testimonials.map((t, i) => (
-                <Card key={i}>
-                  <CardContent className="p-5">
-                    <div className="flex items-center gap-2 mb-3">
-                      <div className="flex gap-0.5">
-                        {Array.from({ length: 5 }).map((_, j) => (
-                          <Star key={j} className="h-4 w-4 fill-accent text-accent" />
-                        ))}
-                      </div>
-                      <GoogleLogo />
-                      <span className="text-xs text-muted-foreground">Google</span>
-                    </div>
-                    <p className="text-foreground italic mb-3 text-sm leading-relaxed">"{t.text}"</p>
-                    <p className="text-sm font-semibold">{t.name}</p>
-                    <p className="text-xs text-muted-foreground">{t.location}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-            <div className="text-center mt-8">
-              <button
-                onClick={scrollToForm}
-                className="inline-flex items-center justify-center bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-bold text-base px-8 py-3 rounded-md shadow-lg transition-colors"
-              >
-                Join Our Happy Clients — Get a Free Quote
-              </button>
-            </div>
-          </div>
-        </section>
-      )}
+      {/* ── Social Proof — real Google reviews + brand trust video ── */}
+      <LocationSocialProof
+        cityName="Montgomery County"
+        citySlug="services"
+        serviceSlug="deep-cleaning"
+        serviceLabel="Deep Cleaning"
+      />
 
       {/* ── Service Areas ── */}
       <section className="py-12">
@@ -285,6 +309,9 @@ const DeepCleaningPage = () => {
       {/* ── Before & After Gallery ── */}
       <BeforeAfterGallery />
 
+      {/* ── Real video transformations ── */}
+      <TransformationsGallery />
+
       {/* ── GreenShield 5-Step Clean ── */}
       <GreenShield5Step compact showCTA={false} />
 
@@ -300,6 +327,7 @@ const DeepCleaningPage = () => {
       </section>
 
       {/* ── Quote Form ── */}
+      <div id="quote" aria-hidden="true" />
       <section
         id="quote-form"
         className="py-16 bg-secondary"

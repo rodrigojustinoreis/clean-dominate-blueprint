@@ -51,6 +51,21 @@ const BestHouseCleaningSilverSpring = lazy(() => import("./pages/BestHouseCleani
 const HouseCleaningGuideGermantown = lazy(() => import("./pages/HouseCleaningGuideGermantown"));
 const HouseCleaningGuideClarksburg = lazy(() => import("./pages/HouseCleaningGuideClarksburg"));
 const PostConstructionCleaningMontgomeryCounty = lazy(() => import("./pages/PostConstructionCleaningMontgomeryCounty"));
+const BestHouseCleaningBethesda = lazy(() => import("./pages/BestHouseCleaningBethesda"));
+const DeepCleaningCostMaryland = lazy(() => import("./pages/DeepCleaningCostMaryland"));
+const PostHolidayCleanup = lazy(() => import("./pages/PostHolidayCleanup"));
+const CleaningCompanyVsIndependentCleaner = lazy(() => import("./pages/CleaningCompanyVsIndependentCleaner"));
+const LocalCleaningCompanyVsFranchise = lazy(() => import("./pages/LocalCleaningCompanyVsFranchise"));
+const QuestionsToAskBeforeHiringHouseCleaner = lazy(() => import("./pages/QuestionsToAskBeforeHiringHouseCleaner"));
+const WhyFirstHouseCleaningCostsMore = lazy(() => import("./pages/WhyFirstHouseCleaningCostsMore"));
+const FlatRateVsHourlyHouseCleaning = lazy(() => import("./pages/FlatRateVsHourlyHouseCleaning"));
+const RedFlagsHouseCleaningService = lazy(() => import("./pages/RedFlagsHouseCleaningService"));
+const HiddenFeesHouseCleaning = lazy(() => import("./pages/HiddenFeesHouseCleaning"));
+const HouseTooMessyForCleaningService = lazy(() => import("./pages/HouseTooMessyForCleaningService"));
+const HowLongDeepCleaningTakes = lazy(() => import("./pages/HowLongDeepCleaningTakes"));
+const AirbnbCleaningChecklist = lazy(() => import("./pages/AirbnbCleaningChecklist"));
+const HowMuchTipHouseCleaner = lazy(() => import("./pages/HowMuchTipHouseCleaner"));
+const MoveInCleaningChecklist = lazy(() => import("./pages/MoveInCleaningChecklist"));
 const MostForgottenCleaningAreas = lazy(() => import("./pages/MostForgottenCleaningAreas"));
 const WhyDustBuildsUpMaryland = lazy(() => import("./pages/WhyDustBuildsUpMaryland"));
 const PrepareHomeForCleaning = lazy(() => import("./pages/PrepareHomeForCleaning"));
@@ -134,6 +149,21 @@ const AppRoutesLazy = () => (
     <Route path="/blog/house-cleaning-guide-germantown-md" element={<HouseCleaningGuideGermantown />} />
     <Route path="/blog/house-cleaning-guide-clarksburg-md" element={<HouseCleaningGuideClarksburg />} />
     <Route path="/blog/post-construction-cleaning-montgomery-county-md" element={<PostConstructionCleaningMontgomeryCounty />} />
+    <Route path="/blog/best-house-cleaning-service-bethesda-md" element={<BestHouseCleaningBethesda />} />
+    <Route path="/blog/deep-cleaning-cost-maryland" element={<DeepCleaningCostMaryland />} />
+    <Route path="/blog/how-to-clean-up-after-a-party" element={<PostHolidayCleanup />} />
+    <Route path="/blog/cleaning-company-vs-independent-cleaner" element={<CleaningCompanyVsIndependentCleaner />} />
+    <Route path="/blog/local-cleaning-company-vs-franchise" element={<LocalCleaningCompanyVsFranchise />} />
+    <Route path="/blog/questions-to-ask-before-hiring-house-cleaner" element={<QuestionsToAskBeforeHiringHouseCleaner />} />
+    <Route path="/blog/why-first-house-cleaning-costs-more" element={<WhyFirstHouseCleaningCostsMore />} />
+    <Route path="/blog/flat-rate-vs-hourly-house-cleaning" element={<FlatRateVsHourlyHouseCleaning />} />
+    <Route path="/blog/red-flags-house-cleaning-service" element={<RedFlagsHouseCleaningService />} />
+    <Route path="/blog/hidden-fees-house-cleaning" element={<HiddenFeesHouseCleaning />} />
+    <Route path="/blog/house-too-messy-for-cleaning-service" element={<HouseTooMessyForCleaningService />} />
+    <Route path="/blog/how-long-does-deep-cleaning-take" element={<HowLongDeepCleaningTakes />} />
+    <Route path="/blog/airbnb-cleaning-checklist" element={<AirbnbCleaningChecklist />} />
+    <Route path="/blog/how-much-tip-house-cleaner" element={<HowMuchTipHouseCleaner />} />
+    <Route path="/blog/move-in-cleaning-checklist" element={<MoveInCleaningChecklist />} />
     <Route path="/blog/most-forgotten-areas-when-cleaning" element={<MostForgottenCleaningAreas />} />
     <Route path="/blog/why-dust-builds-up-maryland-homes" element={<WhyDustBuildsUpMaryland />} />
     <Route path="/blog/how-to-prepare-home-for-professional-cleaning" element={<PrepareHomeForCleaning />} />

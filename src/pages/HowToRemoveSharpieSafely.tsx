@@ -17,6 +17,7 @@ import ImageGallery, { GalleryImage } from "@/components/blog/ImageGallery";
 import FAQAccordion from "@/components/blog/FAQAccordion";
 import BlogInlineCTA from "@/components/blog/BlogInlineCTA";
 import StickyCTA from "@/components/blog/StickyCTA";
+import RelatedPosts from "@/components/blog/RelatedPosts";
 
 const HERO_IMAGE =
   "https://images.pexels.com/photos/4219137/pexels-photo-4219137.jpeg?auto=compress&cs=tinysrgb&w=1200";
@@ -171,7 +172,7 @@ const HowToRemoveSharpieSafely = () => {
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
               Permanent marker is designed to bond to surfaces, but it's not indestructible. The right solvent, the right technique, and the right surface knowledge gets it off cleanly in most cases — without bleach, without damage, and without exposing kids or pets to harsh chemicals. This guide covers every surface in the home, from painted drywall to hardwood, fabric to skin. For more{" "}
-              <Link to="/blog/eco-friendly-cleaning-tips-for-maryland-homes" className="text-accent underline hover:no-underline">
+              <Link to="/blog/eco-cleaning-tips-maryland-homes" className="text-accent underline hover:no-underline">
                 eco-friendly cleaning tips for Maryland homes
               </Link>
               , see our full guide.
@@ -464,7 +465,7 @@ const HowToRemoveSharpieSafely = () => {
                 eco-friendly cleaning service
               </Link>{" "}
               covers the Montgomery County area including Rockville, Bethesda, Silver Spring, and Gaithersburg. We use kid-safe, pet-safe protocols on every job. More cleaning tips in our{" "}
-              <Link to="/blog/eco-friendly-cleaning-tips-for-maryland-homes" className="text-accent underline hover:no-underline">
+              <Link to="/blog/eco-cleaning-tips-maryland-homes" className="text-accent underline hover:no-underline">
                 eco-friendly cleaning tips for Maryland homes
               </Link>.
             </p>
@@ -530,6 +531,7 @@ const HowToRemoveSharpieSafely = () => {
         </div>
       </article>
 
+      <RelatedPosts currentSlug="how-to-remove-sharpie-safely" />
       <StickyCTA />
     </Layout>
   );

@@ -330,7 +330,9 @@ export const HowToSchema = ({ name, description, url, steps, totalTime, image }:
 interface CityReviewSchemaProps {
   cityName: string;
   cityUrl: string;
-  reviews: { name: string; text: string; location: string; date: string }[];
+  // Only pass REAL Google reviews (src/data/realReviews.ts) — never fabricated
+  // testimonials: fake Review markup violates Google's review-snippet policy.
+  reviews: { name: string; text: string; location?: string; date?: string }[];
 }
 
 export const CityReviewSchema = ({ cityName, cityUrl, reviews }: CityReviewSchemaProps) => {
@@ -353,7 +355,7 @@ export const CityReviewSchema = ({ cityName, cityUrl, reviews }: CityReviewSchem
     review: reviews.map((r) => ({
       "@type": "Review",
       author: { "@type": "Person", name: r.name },
-      datePublished: r.date,
+      ...(r.date ? { datePublished: r.date } : {}),
       reviewBody: r.text,
       reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
     })),
@@ -401,7 +403,7 @@ export const AboutPageSchema = () => {
     "@context": "https://schema.org",
     "@type": "AboutPage",
     name: "About Capital Clean Care — Founder Story, GreenShield Method & Our Team",
-    description: "The story behind Capital Clean Care: a family-founded eco-friendly cleaning service serving MD, DC & VA for 9+ years. Learn about our GreenShield 5-Step Clean™ methodology and our dedicated team.",
+    description: "The story behind Capital Clean Care: a family-founded eco-friendly cleaning service serving MD, DC & VA for over a decade. Learn about our GreenShield 5-Step Clean™ methodology and our dedicated team.",
     url: `${BUSINESS.url}/about`,
     mainEntity: {
       "@type": "LocalBusiness",

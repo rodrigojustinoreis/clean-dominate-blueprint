@@ -17,6 +17,7 @@ import ImageGallery, { GalleryImage } from "@/components/blog/ImageGallery";
 import FAQAccordion from "@/components/blog/FAQAccordion";
 import BlogInlineCTA from "@/components/blog/BlogInlineCTA";
 import StickyCTA from "@/components/blog/StickyCTA";
+import RelatedPosts from "@/components/blog/RelatedPosts";
 import BeforeAfterSlider from "@/components/blog/BeforeAfterSlider";
 
 const HERO_IMAGE = "/images/blog/wine/wine-hero.webp";
@@ -409,6 +410,7 @@ const HowToRemoveRedWineStains = () => {
         </div>
       </article>
 
+      <RelatedPosts currentSlug="how-to-remove-red-wine-stains" />
       <StickyCTA />
     </Layout>
   );

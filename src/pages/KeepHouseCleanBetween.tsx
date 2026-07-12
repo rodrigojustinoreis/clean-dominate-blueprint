@@ -11,6 +11,7 @@ import FadeInSection from "@/components/blog/FadeInSection";
 import FAQAccordion from "@/components/blog/FAQAccordion";
 import BlogInlineCTA from "@/components/blog/BlogInlineCTA";
 import StickyCTA from "@/components/blog/StickyCTA";
+import RelatedPosts from "@/components/blog/RelatedPosts";
 
 const HERO_IMAGE = "/images/blog/between-cleanings/hero.webp";
 
@@ -120,6 +121,7 @@ const KeepHouseCleanBetween = () => {
           </FadeInSection>
         </div>
       </article>
+      <RelatedPosts currentSlug="how-to-keep-house-clean-between-cleanings" />
       <StickyCTA />
     </Layout>
   );

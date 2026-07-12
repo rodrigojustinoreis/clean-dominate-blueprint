@@ -11,6 +11,7 @@ import FadeInSection from "@/components/blog/FadeInSection";
 import FAQAccordion from "@/components/blog/FAQAccordion";
 import BlogInlineCTA from "@/components/blog/BlogInlineCTA";
 import StickyCTA from "@/components/blog/StickyCTA";
+import RelatedPosts from "@/components/blog/RelatedPosts";
 
 const HERO_IMAGE = "/images/blog/prepare-cleaning/hero.webp";
 
@@ -128,6 +129,7 @@ const PrepareHomeForCleaning = () => {
           </FadeInSection>
         </div>
       </article>
+      <RelatedPosts currentSlug="how-to-prepare-home-for-professional-cleaning" />
       <StickyCTA />
     </Layout>
   );

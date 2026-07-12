@@ -11,6 +11,7 @@ import FadeInSection from "@/components/blog/FadeInSection";
 import FAQAccordion from "@/components/blog/FAQAccordion";
 import BlogInlineCTA from "@/components/blog/BlogInlineCTA";
 import StickyCTA from "@/components/blog/StickyCTA";
+import RelatedPosts from "@/components/blog/RelatedPosts";
 
 const HERO_IMAGE = "/images/blog/is-cleaning-worth-it/hero.webp";
 
@@ -151,6 +152,7 @@ const IsProfessionalCleaningWorthIt = () => {
           </FadeInSection>
         </div>
       </article>
+      <RelatedPosts currentSlug="is-professional-house-cleaning-worth-it" />
       <StickyCTA />
     </Layout>
   );

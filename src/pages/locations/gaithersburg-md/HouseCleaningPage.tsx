@@ -18,6 +18,8 @@ import { useSEO } from "@/hooks/useSEO";
 import HeroLocation from "@/components/location/HeroLocation";
 import ServiceChecklistLocation from "@/components/location/ServiceChecklistLocation";
 import InternalLinksGrid from "@/components/location/InternalLinksGrid";
+import LocationSocialProof from "@/components/location/LocationSocialProof";
+import LocationQuoteSection from "@/components/location/LocationQuoteSection";
 
 const PAGE_URL = "https://capitalcleancare.com/locations/gaithersburg-md/house-cleaning";
 
@@ -114,7 +116,7 @@ const nearbyCities = [
 
 const GaithersburgHouseCleaningPage = () => {
   const { seoHelmet } = useSEO({
-    title: "House Cleaning in Gaithersburg, MD",
+    title: "House Cleaning Gaithersburg MD | Move-In & Residential",
     description:
       "Professional house cleaning in Gaithersburg, MD. Eco-friendly products safe for kids & pets. Background-checked, bonded & insured. Latino-owned. Free quote in 60 seconds.",
     canonical: PAGE_URL,
@@ -175,7 +177,7 @@ const GaithersburgHouseCleaningPage = () => {
 
       {/* Hero */}
       <HeroLocation
-        h1="Professional House Cleaning in Gaithersburg, MD"
+        h1="House Cleaning Gaithersburg MD: Residential & Move-In Cleaning"
         lead="Capital Clean Care brings professional, eco-friendly house cleaning to Gaithersburg homes — from Kentlands to Lakelands. Our background-checked, bonded team uses EPA Safer Choice™ certified products, safe for your kids and pets, and backs every visit with 100% satisfaction: we re-clean if you're not happy."
         cityName="Gaithersburg"
         state="MD"
@@ -190,6 +192,9 @@ const GaithersburgHouseCleaningPage = () => {
         title="What's Included in Every Gaithersburg House Cleaning"
         categories={checklistCategories}
       />
+
+      {/* ── Social Proof (3rd — trust video early) ── */}
+      <LocationSocialProof cityName="Gaithersburg" citySlug="gaithersburg-md" serviceSlug="house-cleaning" serviceLabel="House Cleaning" />
 
       {/* Why Capital Clean Care */}
       <section className="py-12 md:py-16">
@@ -236,55 +241,6 @@ const GaithersburgHouseCleaningPage = () => {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Social Proof */}
-      <section className="py-12 md:py-16 bg-muted/30">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <div className="text-center mb-8">
-            <span className="inline-flex items-center gap-1.5 bg-accent/10 text-accent font-semibold text-sm uppercase tracking-wider px-3 py-1 rounded-full mb-3">
-              <Star className="h-3.5 w-3.5 fill-accent" aria-hidden="true" /> Client Reviews
-            </span>
-            <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground">
-              What Gaithersburg Families Are Saying
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="bg-card border border-border rounded-xl p-5">
-              <div role="img" aria-label="5 out of 5 stars" className="flex items-center gap-0.5 mb-3">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" aria-hidden="true" />
-                ))}
-              </div>
-              <p className="text-sm text-foreground italic mb-3 leading-relaxed">
-                "Capital Clean Care transformed our home. Thorough, eco-friendly products safe for my kids and pets. We've been using them weekly for over a year."
-              </p>
-              <p className="text-sm font-semibold text-foreground">Sarah M.</p>
-              <p className="text-xs text-muted-foreground">Bethesda, MD</p>
-            </div>
-            <div className="bg-card border border-border rounded-xl p-5 flex flex-col items-center justify-center text-center gap-3">
-              <div role="img" aria-label="5 out of 5 stars average" className="flex items-center gap-0.5">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <Star key={i} className="h-5 w-5 fill-amber-400 text-amber-400" aria-hidden="true" />
-                ))}
-              </div>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                Serving Gaithersburg families from Kentlands to Lakelands and throughout the 20877–20879 ZIP codes.
-              </p>
-              <a
-                href="https://g.page/r/capitalcleancare/review"
-                className="text-sm text-primary underline font-medium"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Leave a Google Review →
-              </a>
-            </div>
-          </div>
-          <p className="text-center text-sm text-muted-foreground mt-6">
-            <span className="font-semibold text-foreground">5.0 ★</span> average rating · 47 reviews on Google
-          </p>
         </div>
       </section>
 
@@ -398,31 +354,7 @@ const GaithersburgHouseCleaningPage = () => {
 
       <ConversionCTA cityName="Gaithersburg" />
 
-      <section id="quote" className="py-12 md:py-16 bg-muted/30">
-        <div className="container mx-auto px-4 max-w-2xl text-center">
-          <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-3">
-            Ready for a Cleaner Home in Gaithersburg?
-          </h2>
-          <p className="text-muted-foreground mb-6 leading-relaxed">
-            Whether you're near Kentlands Market Square or anywhere across Gaithersburg's 20877,
-            20878, or 20879 ZIP codes, we're ready to help. Free quote in 60 seconds — or call
-            (240) 704-2551. No commitment required.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Button variant="cta" size="lg" asChild>
-              <Link to="/contact">
-                Get My Free House Cleaning Quote <ArrowRight className="ml-1 h-4 w-4" />
-              </Link>
-            </Button>
-            <Button variant="outline" size="lg" asChild>
-              <a href="tel:+12407042551">(240) 704-2551</a>
-            </Button>
-          </div>
-          <p className="text-xs text-muted-foreground mt-3">
-            No commitment · Same-day slots available · 100% satisfaction guaranteed
-          </p>
-        </div>
-      </section>
+      <LocationQuoteSection cityName="Gaithersburg" serviceLabel="House Cleaning" defaultService="standard" zipLine="Serving Gaithersburg and nearby communities." />
 
       <StickyMobileCTA />
     </Layout>

@@ -147,7 +147,7 @@ const GiftCards = () => {
               Skip the flowers. Skip the candles. Give someone the gift they actually want — a professionally cleaned home and a real day off.
             </p>
             <p className="text-foreground leading-relaxed mb-8">
-              Capital Clean Care gift cards are perfect for Mother's Day, birthdays, housewarmings, holidays, or any time you want to give something genuinely useful. Backed by our 9-year DMV reputation, EPA Safer Choice plant-based products, and 100% satisfaction guarantee.
+              Capital Clean Care gift cards are perfect for Mother's Day, birthdays, housewarmings, holidays, or any time you want to give something genuinely useful. Backed by our decade-long DMV reputation, EPA Safer Choice plant-based products, and 100% satisfaction guarantee.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Button variant="cta" size="lg" asChild>
@@ -288,7 +288,7 @@ const GiftCards = () => {
                 Why Capital Clean Care
               </span>
               <h2 className="font-heading text-3xl md:text-4xl font-bold mb-3">
-                A Gift Backed by 9+ Years of Trust
+                A Gift Backed by a Decade of Trust
               </h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">

@@ -54,7 +54,7 @@ export default function GermantownES() {
               Capital Clean Care atiende Germantown y sus alrededores — desde Churchill Village hasta Clarksburg. Equipo bilingüe, confiable, mismo personal cada vez.
             </p>
             <div className="flex flex-wrap gap-2 mb-8">
-              {["⭐ 5.0 (47+ reseñas)", "🛡️ Asegurados", "🗣️ Español", "📍 Germantown"].map((p) => (
+              {["⭐ 5.0 (45 reseñas)", "🛡️ Asegurados", "🗣️ Español", "📍 Germantown"].map((p) => (
                 <span key={p} className="bg-background border border-border rounded-full px-3 py-1.5 text-sm font-medium shadow-sm">{p}</span>
               ))}
             </div>
@@ -63,7 +63,7 @@ export default function GermantownES() {
                 <a href={PHONE_TEL} onClick={() => trackPhoneClick("germantown_es_hero")}><Phone className="h-4 w-4 mr-2" /> Llamar: {PHONE}</a>
               </Button>
               <Button variant="outline" size="lg" asChild>
-                <a href="/contact" onClick={() => trackBookNowClick("germantown_es_hero")}>Cotización Gratis <ArrowRight className="ml-1 h-4 w-4" /></a>
+                <a href="/es/contacto" onClick={() => trackBookNowClick("germantown_es_hero")}>Cotización Gratis <ArrowRight className="ml-1 h-4 w-4" /></a>
               </Button>
             </div>
           </div>
@@ -94,14 +94,14 @@ export default function GermantownES() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
-                { name: "Daniela R.", text: "Excelente servicio en Germantown. Puntuales, profesionales y hablan español perfecto." },
-                { name: "Luis E.", text: "Primera limpieza profunda y quedé impresionado. Hasta los rodapiés quedaron limpios." },
-                { name: "Claudia T.", text: "Los recomendé a todos mis vecinos en Churchill Village. Confiables al 100%." },
+                { name: "Grace J.", text: "Desde el primer contacto respondieron rápido y ofrecieron un precio justo. El equipo llegó puntual y el apartamento quedó impecable. ¡Cinco estrellas sin dudarlo!" },
+                { name: "David Reed", text: "Rodrigo y su equipo fueron increíbles: vale cada centavo. ¡Dejaron todo impecable!" },
+                { name: "Lisa Phillips", text: "Limpieza de mudanza fantástica: pisos, ventanas, paredes, electrodomésticos, zócalos, cada rincón impecable. La casa quedó totalmente inmaculada. ¡Muy recomendados!" },
               ].map(({ name, text }) => (
                 <div key={name} className="bg-background border border-border rounded-xl p-5 shadow-sm">
                   <div className="flex gap-0.5 mb-3">{[...Array(5)].map((_, i) => <Star key={i} className="h-4 w-4 fill-accent text-accent" />)}</div>
                   <p className="text-muted-foreground text-sm leading-relaxed mb-3">"{text}"</p>
-                  <p className="font-semibold text-foreground text-sm">— {name}, Germantown</p>
+                  <p className="font-semibold text-foreground text-sm">— {name}, Reseña de Google</p>
                 </div>
               ))}
             </div>
@@ -114,7 +114,7 @@ export default function GermantownES() {
               {[
                 { stat: "~90,000", label: "Residentes" },
                 { stat: "25%", label: "Comunidad Latina" },
-                { stat: "SF / Townhouses", label: "Tipo de vivienda" },
+                { stat: "Casas y townhouses", label: "Tipo de vivienda" },
                 { stat: "~18 mi", label: "Desde Silver Spring" },
               ].map(({ stat, label }) => (
                 <div key={label} className="bg-background border border-border rounded-xl p-5 text-center shadow-sm">
@@ -138,7 +138,7 @@ export default function GermantownES() {
                 <a href={PHONE_TEL} onClick={() => trackPhoneClick("germantown_es_cta")}><Phone className="h-4 w-4 mr-2" /> {PHONE}</a>
               </Button>
               <Button size="lg" variant="outline" className="border-white/50 text-white hover:bg-white/10" asChild>
-                <a href="/contact" onClick={() => trackBookNowClick("germantown_es_cta")}>Cotización Gratis</a>
+                <a href="/es/contacto" onClick={() => trackBookNowClick("germantown_es_cta")}>Cotización Gratis</a>
               </Button>
             </div>
             <div className="mt-4 flex items-center justify-center gap-2 text-accent-foreground/70 text-sm">

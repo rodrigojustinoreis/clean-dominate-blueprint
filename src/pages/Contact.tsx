@@ -52,7 +52,7 @@ const Contact = () => {
                   <div>
                     <p className="text-sm text-muted-foreground">{item.label}</p>
                     {item.href ? (
-                      <a href={item.href} className="font-semibold hover:text-accent transition-colors">{item.value}</a>
+                      <a href={item.href} className="font-semibold hover:text-accent transition-colors break-all">{item.value}</a>
                     ) : (
                       <p className="font-semibold">{item.value}</p>
                     )}

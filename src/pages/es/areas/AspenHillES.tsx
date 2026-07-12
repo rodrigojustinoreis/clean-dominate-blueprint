@@ -54,7 +54,7 @@ export default function AspenHillES() {
               Capital Clean Care atiende Aspen Hill con el mismo cuidado que si fuera nuestra propia casa. Equipo bilingüe, asegurado con fianza. Sin contratos, sin sorpresas.
             </p>
             <div className="flex flex-wrap gap-2 mb-8">
-              {["⭐ 5.0 (47+ reseñas)", "🛡️ Asegurados", "🗣️ Español", "📍 Aspen Hill"].map((p) => (
+              {["⭐ 5.0 (45 reseñas)", "🛡️ Asegurados", "🗣️ Español", "📍 Aspen Hill"].map((p) => (
                 <span key={p} className="bg-background border border-border rounded-full px-3 py-1.5 text-sm font-medium shadow-sm">{p}</span>
               ))}
             </div>
@@ -63,7 +63,7 @@ export default function AspenHillES() {
                 <a href={PHONE_TEL} onClick={() => trackPhoneClick("aspen_hill_es_hero")}><Phone className="h-4 w-4 mr-2" /> Llamar: {PHONE}</a>
               </Button>
               <Button variant="outline" size="lg" asChild>
-                <a href="/contact" onClick={() => trackBookNowClick("aspen_hill_es_hero")}>Cotización Gratis <ArrowRight className="ml-1 h-4 w-4" /></a>
+                <a href="/es/contacto" onClick={() => trackBookNowClick("aspen_hill_es_hero")}>Cotización Gratis <ArrowRight className="ml-1 h-4 w-4" /></a>
               </Button>
             </div>
           </div>
@@ -94,14 +94,14 @@ export default function AspenHillES() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
-                { name: "Graciela P.", text: "Vivo en Aspen Hill y son increíbles. Misma persona cada visita y siempre dejan todo perfecto." },
-                { name: "Héctor V.", text: "Primera limpieza profunda con ellos. El horno y el refrigerador quedaron como nuevos." },
-                { name: "Marisol C.", text: "Atención en español de verdad. Rodrigo mismo llamó para confirmar detalles. Excelente." },
+                { name: "Steph M.", text: "La minuciosidad y atención al detalle fueron excepcionales: la casa quedó impecable y hermosa. No podría estar más feliz. Muy recomendados." },
+                { name: "Christina Damiani", text: "¡Excelente servicio de limpieza! La casa quedó impecable y fresca al terminar el trabajo. Muy minuciosos, profesionales y confiables." },
+                { name: "Ranj Saadallah", text: "Llegan puntuales y la casa queda maravillosa cada vez. Limpiaron las ventanas por dentro y por fuera, los electrodomésticos, incluso detrás de ellos." },
               ].map(({ name, text }) => (
                 <div key={name} className="bg-background border border-border rounded-xl p-5 shadow-sm">
                   <div className="flex gap-0.5 mb-3">{[...Array(5)].map((_, i) => <Star key={i} className="h-4 w-4 fill-accent text-accent" />)}</div>
                   <p className="text-muted-foreground text-sm leading-relaxed mb-3">"{text}"</p>
-                  <p className="font-semibold text-foreground text-sm">— {name}, Aspen Hill</p>
+                  <p className="font-semibold text-foreground text-sm">— {name}, Reseña de Google</p>
                 </div>
               ))}
             </div>
@@ -114,7 +114,7 @@ export default function AspenHillES() {
               {[
                 { stat: "~50,000", label: "Residentes" },
                 { stat: "35%", label: "Comunidad Latina" },
-                { stat: "SF / Condos", label: "Tipo de vivienda" },
+                { stat: "Casas y condos", label: "Tipo de vivienda" },
                 { stat: "~6 mi", label: "Desde Silver Spring" },
               ].map(({ stat, label }) => (
                 <div key={label} className="bg-background border border-border rounded-xl p-5 text-center shadow-sm">
@@ -138,7 +138,7 @@ export default function AspenHillES() {
                 <a href={PHONE_TEL} onClick={() => trackPhoneClick("aspen_hill_es_cta")}><Phone className="h-4 w-4 mr-2" /> {PHONE}</a>
               </Button>
               <Button size="lg" variant="outline" className="border-white/50 text-white hover:bg-white/10" asChild>
-                <a href="/contact" onClick={() => trackBookNowClick("aspen_hill_es_cta")}>Cotización Gratis</a>
+                <a href="/es/contacto" onClick={() => trackBookNowClick("aspen_hill_es_cta")}>Cotización Gratis</a>
               </Button>
             </div>
             <div className="mt-4 flex items-center justify-center gap-2 text-accent-foreground/70 text-sm">

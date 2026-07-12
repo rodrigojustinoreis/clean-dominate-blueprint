@@ -54,7 +54,7 @@ export default function WheatonES() {
               Wheaton es uno de los vecindarios más latinos de Maryland — y somos parte de esa comunidad. Capital Clean Care atiende Wheaton con orgullo: equipo bilingüe, mismo personal cada visita, precios justos.
             </p>
             <div className="flex flex-wrap gap-2 mb-8">
-              {["⭐ 5.0 (47+ reseñas)", "🛡️ Asegurados", "🗣️ Español", "📍 Wheaton"].map((p) => (
+              {["⭐ 5.0 (45 reseñas)", "🛡️ Asegurados", "🗣️ Español", "📍 Wheaton"].map((p) => (
                 <span key={p} className="bg-background border border-border rounded-full px-3 py-1.5 text-sm font-medium shadow-sm">{p}</span>
               ))}
             </div>
@@ -63,7 +63,7 @@ export default function WheatonES() {
                 <a href={PHONE_TEL} onClick={() => trackPhoneClick("wheaton_es_hero")}><Phone className="h-4 w-4 mr-2" /> Llamar: {PHONE}</a>
               </Button>
               <Button variant="outline" size="lg" asChild>
-                <a href="/contact" onClick={() => trackBookNowClick("wheaton_es_hero")}>Cotización Gratis <ArrowRight className="ml-1 h-4 w-4" /></a>
+                <a href="/es/contacto" onClick={() => trackBookNowClick("wheaton_es_hero")}>Cotización Gratis <ArrowRight className="ml-1 h-4 w-4" /></a>
               </Button>
             </div>
           </div>
@@ -94,14 +94,14 @@ export default function WheatonES() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
-                { name: "José R.", text: "Lo que más me gustó es que hablan español y entienden lo que uno quiere. Excelente servicio." },
-                { name: "Esperanza V.", text: "Llevo 3 años con Capital Clean Care. Siempre puntuales, siempre el mismo equipo. No los cambio." },
-                { name: "Miguel A.", text: "Usé el servicio de mudanza y recuperé todo mi depósito. La garantía es real." },
+                { name: "Christina Damiani", text: "¡Excelente servicio de limpieza! La casa quedó impecable y fresca al terminar el trabajo. Muy minuciosos, profesionales y confiables." },
+                { name: "David Reed", text: "Rodrigo y su equipo fueron increíbles: vale cada centavo. ¡Dejaron todo impecable!" },
+                { name: "Grace J.", text: "Desde el primer contacto respondieron rápido y ofrecieron un precio justo. El equipo llegó puntual y el apartamento quedó impecable. ¡Cinco estrellas sin dudarlo!" },
               ].map(({ name, text }) => (
                 <div key={name} className="bg-background border border-border rounded-xl p-5 shadow-sm">
                   <div className="flex gap-0.5 mb-3">{[...Array(5)].map((_, i) => <Star key={i} className="h-4 w-4 fill-accent text-accent" />)}</div>
                   <p className="text-muted-foreground text-sm leading-relaxed mb-3">"{text}"</p>
-                  <p className="font-semibold text-foreground text-sm">— {name}, Wheaton</p>
+                  <p className="font-semibold text-foreground text-sm">— {name}, Reseña de Google</p>
                 </div>
               ))}
             </div>
@@ -138,7 +138,7 @@ export default function WheatonES() {
                 <a href={PHONE_TEL} onClick={() => trackPhoneClick("wheaton_es_cta")}><Phone className="h-4 w-4 mr-2" /> {PHONE}</a>
               </Button>
               <Button size="lg" variant="outline" className="border-white/50 text-white hover:bg-white/10" asChild>
-                <a href="/contact" onClick={() => trackBookNowClick("wheaton_es_cta")}>Cotización Gratis</a>
+                <a href="/es/contacto" onClick={() => trackBookNowClick("wheaton_es_cta")}>Cotización Gratis</a>
               </Button>
             </div>
             <div className="mt-4 flex items-center justify-center gap-2 text-accent-foreground/70 text-sm">

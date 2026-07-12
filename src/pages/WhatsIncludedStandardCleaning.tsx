@@ -11,6 +11,7 @@ import FadeInSection from "@/components/blog/FadeInSection";
 import FAQAccordion from "@/components/blog/FAQAccordion";
 import BlogInlineCTA from "@/components/blog/BlogInlineCTA";
 import StickyCTA from "@/components/blog/StickyCTA";
+import RelatedPosts from "@/components/blog/RelatedPosts";
 
 const HERO_IMAGE = "/images/blog/whats-included-standard/hero.webp";
 
@@ -86,6 +87,7 @@ const WhatsIncludedStandardCleaning = () => {
           </FadeInSection>
 
           <FadeInSection>
+            <img src="/images/blog/sparkling-kitchen.webp" alt="Spotless kitchen counter after a standard house cleaning" loading="lazy" width={1000} height={563} className="w-full rounded-2xl shadow-lg ring-1 ring-border transition-transform duration-500 hover:scale-[1.02] my-8" />
             <h2 className="font-heading text-3xl font-bold text-foreground mb-6">The Standard Cleaning Checklist</h2>
             <div className="space-y-5 mb-10">
               {checklist.map(([room, items]) => (
@@ -141,6 +143,7 @@ const WhatsIncludedStandardCleaning = () => {
           </FadeInSection>
         </div>
       </article>
+      <RelatedPosts currentSlug="what-is-included-in-a-standard-cleaning" />
       <StickyCTA />
     </Layout>
   );

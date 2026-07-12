@@ -11,8 +11,9 @@ import FadeInSection from "@/components/blog/FadeInSection";
 import FAQAccordion from "@/components/blog/FAQAccordion";
 import BlogInlineCTA from "@/components/blog/BlogInlineCTA";
 import StickyCTA from "@/components/blog/StickyCTA";
+import RelatedPosts from "@/components/blog/RelatedPosts";
 
-const HERO_IMAGE = "/images/blog/post-construction-moco/hero.webp";
+const HERO_IMAGE = "/images/blog/post-construction-clean.webp";
 
 const included: [string, string[]][] = [
   ["The fine-dust pass (the big one)", ["Drywall and sanding dust removed from every surface", "Inside cabinets, drawers, and closets", "Vents, registers, and light fixtures", "Window tracks, sills, and frames", "Tops of doors, trim, and ledges"]],
@@ -141,6 +142,7 @@ const PostConstructionCleaningMontgomeryCounty = () => {
           </FadeInSection>
         </div>
       </article>
+      <RelatedPosts currentSlug="post-construction-cleaning-montgomery-county-md" />
       <StickyCTA />
     </Layout>
   );

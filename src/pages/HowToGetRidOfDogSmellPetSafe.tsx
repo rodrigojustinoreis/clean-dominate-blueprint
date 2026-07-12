@@ -17,6 +17,7 @@ import ImageGallery, { GalleryImage } from "@/components/blog/ImageGallery";
 import FAQAccordion from "@/components/blog/FAQAccordion";
 import BlogInlineCTA from "@/components/blog/BlogInlineCTA";
 import StickyCTA from "@/components/blog/StickyCTA";
+import RelatedPosts from "@/components/blog/RelatedPosts";
 
 const HERO_IMAGE =
   "https://images.pexels.com/photos/2248516/pexels-photo-2248516.jpeg?auto=compress&cs=tinysrgb&w=1200";
@@ -175,7 +176,7 @@ const HowToGetRidOfDogSmellPetSafe = () => {
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
               The smell isn't going away because you haven't addressed its sources — and most of the common fixes (essential oil diffusers, masking sprays) either don't work or aren't safe around dogs. This guide covers every source of dog odor in the home with methods that eliminate it rather than cover it, all without chemicals that could harm your pet. For more{" "}
-              <Link to="/blog/eco-friendly-cleaning-tips-for-maryland-homes" className="text-accent underline hover:no-underline">
+              <Link to="/blog/eco-cleaning-tips-maryland-homes" className="text-accent underline hover:no-underline">
                 eco-friendly cleaning tips for Maryland homes
               </Link>
               , see our full guide.
@@ -465,7 +466,7 @@ const HowToGetRidOfDogSmellPetSafe = () => {
                 recurring cleaning service
               </Link>{" "}
               keeps pet homes in Montgomery County on a schedule that prevents odor from accumulating between deep treatments — Potomac, Bethesda, Rockville, Silver Spring, and Gaithersburg. Pet-safe protocols on every visit. See more in our{" "}
-              <Link to="/blog/eco-friendly-cleaning-tips-for-maryland-homes" className="text-accent underline hover:no-underline">
+              <Link to="/blog/eco-cleaning-tips-maryland-homes" className="text-accent underline hover:no-underline">
                 eco-friendly cleaning tips for Maryland homes
               </Link>.
             </p>
@@ -531,6 +532,7 @@ const HowToGetRidOfDogSmellPetSafe = () => {
         </div>
       </article>
 
+      <RelatedPosts currentSlug="how-to-get-rid-of-dog-smell-pet-safe" />
       <StickyCTA />
     </Layout>
   );

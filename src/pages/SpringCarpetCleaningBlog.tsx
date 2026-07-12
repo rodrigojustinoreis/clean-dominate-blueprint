@@ -33,7 +33,7 @@ const SpringCarpetCleaningBlog = () => {
       <section className="relative w-full overflow-hidden bg-gray-900 text-white py-20 lg:py-32">
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/blog/carpet-steam-cleaning-hero.jpg"
+            src="/images/blog/carpet-steam-vapor.jpg"
             alt="Professional cleaner steam-cleaning a carpet in a bright, clean home"
             className="w-full h-full object-cover opacity-40 mix-blend-overlay"
           />
@@ -64,7 +64,7 @@ const SpringCarpetCleaningBlog = () => {
           <h2 className="text-3xl font-bold font-heading mb-6 text-gray-900">Why Your Carpet Needs a Spring Deep Clean</h2>
           <div className="my-8 rounded-xl overflow-hidden shadow-md">
             <img 
-              src="/images/blog/dirty-carpet-fibers.jpg" 
+              src="/images/blog/carpet-vacuum-living-room.jpg" 
               alt="dirty carpet fibers after winter" 
               className="w-full max-h-[400px] object-cover m-0"
             />
@@ -90,7 +90,7 @@ const SpringCarpetCleaningBlog = () => {
           <h2 className="text-3xl font-bold font-heading mb-6 text-gray-900">The Health Impact of Dirty Carpets</h2>
           <div className="my-8 rounded-xl overflow-hidden shadow-md">
             <img 
-              src="/images/blog/family-clean-carpet.jpg" 
+              src="/images/team/vacuuming-living-room.jpg" 
               alt="Happy family sitting on a perfectly clean carpet" 
               className="w-full max-h-[400px] object-cover m-0"
             />
@@ -110,7 +110,7 @@ const SpringCarpetCleaningBlog = () => {
           <h2 className="text-3xl font-bold font-heading mb-6 text-gray-900">Professional vs. DIY Carpet Cleaning</h2>
           <div className="my-8 rounded-xl overflow-hidden shadow-md">
              <img 
-              src="/images/blog/professional-vs-diy-cleaning.jpg" 
+              src="/images/blog/carpet-steam-gloves.jpg" 
               alt="Professional steam cleaning equipment vs. rental machine comparison" 
               className="w-full max-h-[400px] object-cover m-0"
             />
@@ -169,7 +169,7 @@ const SpringCarpetCleaningBlog = () => {
           <h2 className="text-3xl font-bold font-heading mb-6 text-gray-900">The Capital Clean Care Carpet Process</h2>
           <div className="my-8 rounded-xl overflow-hidden shadow-md">
             <img 
-              src="/images/blog/carpet-cleaning-process.jpg" 
+              src="/images/team/team-vacuuming-furniture.jpg" 
               alt="Step by step carpet cleaning process" 
               className="w-full max-h-[400px] object-cover m-0"
             />
@@ -217,12 +217,12 @@ const SpringCarpetCleaningBlog = () => {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-8">
             <BeforeAfterTabs 
-              combinedImage="/images/blog/carpet-before-after-1.jpg" 
+              combinedImage="/images/blog/carpet-vacuum-living-room.jpg" 
               caption="High-Traffic Living Room Cleanup" 
               alt="Living Room Carpet Before and After" 
             />
             <BeforeAfterTabs 
-              combinedImage="/images/blog/carpet-before-after-2.jpg" 
+              combinedImage="/images/blog/carpet-steam-vapor.jpg" 
               caption="Tough Pet Stain Removal" 
               alt="Pet Stain Removal Before and After" 
             />
@@ -278,7 +278,7 @@ const SpringCarpetCleaningBlog = () => {
       <section className="relative py-20 bg-accent overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="/images/blog/carpet-clean-cta-bg.jpg" 
+            src="/images/team/vacuuming-living-room.jpg" 
             alt="Clean, bright carpet after professional cleaning" 
             className="w-full h-full object-cover opacity-20 mix-blend-multiply"
           />
@@ -288,7 +288,7 @@ const SpringCarpetCleaningBlog = () => {
             Ready for the Cleanest Carpets in Montgomery County?
           </h2>
           <p className="text-xl mb-10 text-blue-50">
-            Capital Clean Care has served Maryland homeowners since 2017. Book your spring carpet cleaning today and breathe easier.
+            Capital Clean Care has served Maryland homeowners since 2015. Book your spring carpet cleaning today and breathe easier.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Button size="lg" className="bg-white text-accent hover:bg-gray-100 px-8 py-6 rounded-full text-lg font-semibold transition-all shadow-lg" asChild>

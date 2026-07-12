@@ -9,16 +9,15 @@ const GOOGLE_REVIEWS_URL = "https://share.google/4lygNFQSUZrkfaVh7";
 const AUTO_SCROLL_MS = 4000;
 
 const STATIC_REVIEWS = [
-  { name: "Sarah M.", location: "Bethesda, MD", date: "2 months ago", color: "bg-emerald-500", text: "Capital Clean Care transformed our home. The team was professional, thorough, and used products that I feel safe having around my kids and pets.", rating: 5 },
-  { name: "James T.", location: "Arlington, VA", date: "3 months ago", color: "bg-sky-500", text: "We've used their bi-weekly service for six months and every visit exceeds expectations. Our dedicated team knows our home perfectly.", rating: 5 },
-  { name: "Lauren K.", location: "Capitol Hill, DC", date: "1 month ago", color: "bg-violet-500", text: "After our kitchen renovation, the post-construction cleaning was incredible. They removed every trace of dust from places I didn't even know existed.", rating: 5 },
-  { name: "David R.", location: "Rockville, MD", date: "4 months ago", color: "bg-amber-500", text: "Their eco-friendly approach and consistent quality make them stand out. Switching to Capital Clean Care was the best decision we've made.", rating: 5 },
-  { name: "Monica S.", location: "McLean, VA", date: "3 weeks ago", color: "bg-rose-500", text: "I was skeptical about letting anyone in my home, but their background-checked team put me at ease immediately. The deep clean was absolutely worth every penny.", rating: 5 },
-  { name: "Carlos F.", location: "Silver Spring, MD", date: "5 months ago", color: "bg-teal-500", text: "Booked a move-out clean and got my full security deposit back. They were incredibly detailed — even cleaned inside the oven and behind the fridge.", rating: 5 },
-  { name: "Priya N.", location: "Alexandria, VA", date: "6 weeks ago", color: "bg-indigo-500", text: "Best cleaning service in the DMV, hands down. They remember every preference we have and my house smells amazing without any harsh chemicals.", rating: 5 },
-  { name: "Tom W.", location: "Frederick, MD", date: "2 months ago", color: "bg-orange-500", text: "I run an Airbnb and Capital Clean Care handles all my turnovers. Guests consistently leave 5-star reviews mentioning how clean the space is.", rating: 5 },
-  { name: "Michelle P.", location: "Georgetown, DC", date: "1 month ago", color: "bg-pink-500", text: "Finally a cleaning service I can trust completely. They arrive on time, follow a real checklist, and the results are consistently amazing. Worth every penny.", rating: 5 },
-  { name: "Angela T.", location: "Silver Spring, MD", date: "2 weeks ago", color: "bg-lime-600", text: "With two kids and a dog, knowing the products are safe gives me real peace of mind. I love that they are eco-friendly. Highly recommend to any family.", rating: 5 },
+  // The 8 real Google reviews (see src/data/realReviews.ts) — no fabricated names or dates.
+  { name: "David Reed", location: "Google review", date: "", color: "bg-emerald-500", text: "Rodrigo and his team were incredible — worth every penny. They left it spotless!", rating: 5 },
+  { name: "Steph M.", location: "Google review", date: "", color: "bg-sky-500", text: "The thoroughness and attention to detail was exceptional — the home was spotless and looked beautiful. Couldn't be happier. Highly recommend.", rating: 5 },
+  { name: "Christina Damiani", location: "Google review", date: "", color: "bg-violet-500", text: "Excellent cleaning service! The home looked spotless and fresh when the job was completed. Very thorough, professional, and reliable.", rating: 5 },
+  { name: "Erika Wilson Wells", location: "Google review", date: "", color: "bg-amber-500", text: "Always helpful, kind and thorough cleaning by Capital Clean Care. I highly recommend this business.", rating: 5 },
+  { name: "Grace J.", location: "Google review", date: "", color: "bg-rose-500", text: "From the first contact they responded promptly and offered a fair price. The crew arrived right on time and the apartment was spotless. Five stars without hesitation!", rating: 5 },
+  { name: "Ranj Saadallah", location: "Google review", date: "", color: "bg-teal-500", text: "They show up on time and the house looks wonderful when they're done, every time. They cleaned the windows inside and out, appliances, even behind them.", rating: 5 },
+  { name: "Lisa Phillips", location: "Google review", date: "", color: "bg-indigo-500", text: "Fantastic move-out clean. Floors, windows, walls, appliances, baseboards — every crook and cranny spotlessly clean. The house is totally immaculate. I highly recommend!", rating: 5 },
+  { name: "Lisa Famulare", location: "Google review", date: "", color: "bg-orange-500", text: "Excellent job with tough stains! Professional, reliable, and the results speak for themselves.", rating: 5 },
 ];
 
 const AVATAR_COLORS = ["bg-emerald-500", "bg-sky-500", "bg-violet-500", "bg-amber-500", "bg-rose-500", "bg-teal-500"];
@@ -151,15 +150,15 @@ const TestimonialsCarousel = () => {
             ))}
           </div>
           <blockquote className="text-base md:text-lg font-medium text-foreground italic leading-relaxed mb-4">
-            "Best cleaning service in the DMV, hands down. They remember every preference we have and my house smells amazing without any harsh chemicals."
+            "From the first contact they responded promptly and offered a fair price. The crew arrived right on time and the apartment was spotless. Five stars without hesitation!"
           </blockquote>
           <div className="flex items-center justify-center gap-3">
             <div className="w-9 h-9 rounded-full bg-indigo-500 flex items-center justify-center shrink-0">
-              <span className="text-white text-xs font-bold">P</span>
+              <span className="text-white text-xs font-bold">G</span>
             </div>
             <div className="text-left">
-              <p className="text-sm font-semibold">Priya N.</p>
-              <p className="text-xs text-muted-foreground">Alexandria, VA · verified Google review</p>
+              <p className="text-sm font-semibold">Grace J.</p>
+              <p className="text-xs text-muted-foreground">Verified Google review</p>
             </div>
           </div>
         </div>

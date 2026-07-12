@@ -26,7 +26,7 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
   if (!c) return <NotFound />;
 
   const where = `${c.city}, ${c.state}`;
-  const title = `How Much Does House Cleaning Cost in ${where}?`;
+  const title = `House Cleaning Cost in ${where}: 2026 Prices & Rates`;
   const url = `https://capitalcleancare.com/blog/house-cleaning-cost-${c.slug}`;
 
   // City-specific FAQs + two shared ones (general enough to repeat).

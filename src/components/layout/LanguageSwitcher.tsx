@@ -1,9 +1,9 @@
 import { Link, useLocation } from "react-router-dom";
 import { ROUTE_MAP_EN_TO_ES, ROUTE_MAP_ES_TO_EN } from "@/data/route-map";
 
-// `compact` = mobile header: text-only "EN | ES" (no flag emojis), tighter padding,
-// so it never wraps or crowds the hamburger on narrow viewports. Desktop (default)
-// keeps the flags and is visually unchanged.
+// Text-only "EN | ES" labels (no flag emojis — US-Latino audience, Spain's flag is wrong).
+// `compact` = mobile header: tighter padding so it never wraps or crowds the hamburger
+// on narrow viewports.
 export default function LanguageSwitcher({ compact = false }: { compact?: boolean }) {
   const { pathname } = useLocation();
   const isSpanish = pathname.startsWith("/es/") || pathname === "/es";
@@ -23,7 +23,7 @@ export default function LanguageSwitcher({ compact = false }: { compact?: boolea
         hrefLang="en"
         aria-current={!isSpanish ? "page" : undefined}
       >
-        {compact ? "EN" : "🇺🇸 EN"}
+        EN
       </Link>
       <span className="text-border" aria-hidden="true">|</span>
       <Link
@@ -34,7 +34,7 @@ export default function LanguageSwitcher({ compact = false }: { compact?: boolea
         hrefLang="es"
         aria-current={isSpanish ? "page" : undefined}
       >
-        {compact ? "ES" : "🇪🇸 ES"}
+        ES
       </Link>
     </div>
   );

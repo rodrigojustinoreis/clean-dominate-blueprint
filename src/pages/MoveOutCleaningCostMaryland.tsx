@@ -11,6 +11,7 @@ import FadeInSection from "@/components/blog/FadeInSection";
 import FAQAccordion from "@/components/blog/FAQAccordion";
 import BlogInlineCTA from "@/components/blog/BlogInlineCTA";
 import StickyCTA from "@/components/blog/StickyCTA";
+import RelatedPosts from "@/components/blog/RelatedPosts";
 
 const HERO_IMAGE = "/images/blog/move-out-cost/hero.webp";
 
@@ -153,6 +154,7 @@ const MoveOutCleaningCostMaryland = () => {
           </FadeInSection>
         </div>
       </article>
+      <RelatedPosts currentSlug="move-out-cleaning-cost-maryland" />
       <StickyCTA />
     </Layout>
   );

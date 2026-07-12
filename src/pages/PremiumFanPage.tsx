@@ -194,7 +194,7 @@ const PremiumFanPage = () => {
               <div className="relative z-10">
                 <h2 className="text-4xl md:text-6xl font-bold text-white mb-8">Ready for a spotless space?</h2>
                 <p className="text-white/70 text-xl mb-12 max-w-2xl mx-auto font-light">
-                  Join over 1,000+ happy clients in the DC metro area who trust Capital Clean Care. 
+                  Join 500+ happy clients in the DC metro area who trust Capital Clean Care. 
                   Get your personalized quote in less than 60 seconds.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-6 justify-center">

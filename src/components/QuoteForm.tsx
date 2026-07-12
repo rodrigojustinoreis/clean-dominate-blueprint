@@ -290,7 +290,7 @@ const QuoteForm = ({ submitLabel = "Get My Free Quote →", defaultService = "" 
         className="flex items-center gap-2 text-sm text-accent font-medium hover:underline"
       >
         {showDetails ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
-        {showDetails ? "Hide" : "Add"} home details (optional — helps us give a more accurate quote)
+        {showDetails ? "Hide" : "Add"} home details (optional, helps us give a more accurate quote)
       </button>
 
       {showDetails && (

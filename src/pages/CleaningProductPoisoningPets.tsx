@@ -17,6 +17,7 @@ import ImageGallery, { GalleryImage } from "@/components/blog/ImageGallery";
 import FAQAccordion from "@/components/blog/FAQAccordion";
 import BlogInlineCTA from "@/components/blog/BlogInlineCTA";
 import StickyCTA from "@/components/blog/StickyCTA";
+import RelatedPosts from "@/components/blog/RelatedPosts";
 
 const HERO_IMAGE = "/images/blog/pet-poisoning/hero.webp";
 const VIDEO_SRC = "/videos/pet-poisoning-warning-signs.mp4";
@@ -90,7 +91,7 @@ const videoSchema = {
     "A quick guide to the warning signs of cleaning-product poisoning in dogs and cats, and the steps to take immediately — including not inducing vomiting and which pet poison helplines to call.",
   thumbnailUrl: "https://capitalcleancare.com" + VIDEO_POSTER,
   contentUrl: "https://capitalcleancare.com" + VIDEO_SRC,
-  uploadDate: "2026-06-15",
+  uploadDate: "2026-06-15T09:00:00-04:00",
   duration: "PT22S",
   publisher: {
     "@type": "Organization",
@@ -392,6 +393,7 @@ const CleaningProductPoisoningPets = () => {
         </div>
       </article>
 
+      <RelatedPosts currentSlug="cleaning-product-poisoning-in-pets" />
       <StickyCTA />
     </Layout>
   );

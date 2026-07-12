@@ -4,7 +4,7 @@ import Layout from "@/components/layout/Layout";
 import { useSEO } from "@/hooks/useSEO";
 import { LocalBusinessSchema } from "@/components/SchemaMarkup";
 import { trackPhoneClick } from "@/lib/analytics";
-import QuoteForm from "@/components/QuoteForm";
+import QuoteFormES from "@/components/forms/QuoteFormES";
 import MeetTheTeamSection from "@/components/sections/MeetTheTeamSection";
 
 const PHONE = "(240) 704-2551";
@@ -100,7 +100,7 @@ export default function ContactoPage() {
               </div>
 
               <div id="cotizacion">
-                <QuoteForm />
+                <QuoteFormES />
               </div>
             </div>
           </div>

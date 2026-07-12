@@ -11,6 +11,7 @@ import FadeInSection from "@/components/blog/FadeInSection";
 import FAQAccordion from "@/components/blog/FAQAccordion";
 import BlogInlineCTA from "@/components/blog/BlogInlineCTA";
 import StickyCTA from "@/components/blog/StickyCTA";
+import RelatedPosts from "@/components/blog/RelatedPosts";
 
 const HERO_IMAGE = "/images/blog/whats-included-deep/hero.webp";
 
@@ -122,6 +123,15 @@ const WhatsIncludedDeepCleaning = () => {
           <BlogInlineCTA headline="Ready for a top-to-bottom reset?" subtext="Capital Clean Care's eco-friendly deep cleaning gets your home to a true baseline — across Bethesda, Rockville, Silver Spring, and Gaithersburg. Background-checked, locally owned." ctaLabel="Get My Free Quote" ctaTo="/contact" />
 
           <FadeInSection>
+            <p className="text-muted-foreground leading-relaxed mb-8">
+              Want this done in your city? See our local guides for{" "}
+              <Link to="/locations/rockville-md/deep-cleaning" className="text-accent font-medium hover:underline">deep cleaning in Rockville</Link>{" "}
+              and{" "}
+              <Link to="/locations/bethesda-md/deep-cleaning" className="text-accent font-medium hover:underline">deep cleaning in Bethesda</Link>.
+            </p>
+          </FadeInSection>
+
+          <FadeInSection>
             <div className="bg-accent/10 border border-accent/30 rounded-2xl p-6 my-12">
               <p className="font-semibold text-foreground mb-1">Keep reading</p>
               <p className="text-sm text-muted-foreground leading-relaxed">
@@ -149,6 +159,7 @@ const WhatsIncludedDeepCleaning = () => {
           </FadeInSection>
         </div>
       </article>
+      <RelatedPosts currentSlug="what-is-included-in-a-deep-cleaning" />
       <StickyCTA />
     </Layout>
   );

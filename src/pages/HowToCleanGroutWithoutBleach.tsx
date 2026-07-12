@@ -17,6 +17,7 @@ import ImageGallery, { GalleryImage } from "@/components/blog/ImageGallery";
 import FAQAccordion from "@/components/blog/FAQAccordion";
 import BlogInlineCTA from "@/components/blog/BlogInlineCTA";
 import StickyCTA from "@/components/blog/StickyCTA";
+import RelatedPosts from "@/components/blog/RelatedPosts";
 import BeforeAfterSlider from "@/components/blog/BeforeAfterSlider";
 
 const HERO_IMAGE =
@@ -179,7 +180,7 @@ const HowToCleanGroutWithoutBleach = () => {
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
               The better news: you don't need it. Grout stains are primarily organic matter — soap scum, body oils, mildew, and mineral deposits — all of which respond to acid, mild abrasion, and oxidation. Three methods below cover every grout condition from routine maintenance to years of neglect, all without chlorine. For more{" "}
-              <Link to="/blog/eco-friendly-cleaning-tips-for-maryland-homes" className="text-accent underline hover:no-underline">
+              <Link to="/blog/eco-cleaning-tips-maryland-homes" className="text-accent underline hover:no-underline">
                 eco-friendly cleaning tips for Maryland homes
               </Link>
               , see our full guide.
@@ -555,6 +556,7 @@ const HowToCleanGroutWithoutBleach = () => {
         </div>
       </article>
 
+      <RelatedPosts currentSlug="how-to-clean-grout-without-bleach" />
       <StickyCTA />
     </Layout>
   );

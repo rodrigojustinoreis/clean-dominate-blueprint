@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, CheckCircle2, AlertCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
+import RelatedPosts from "@/components/blog/RelatedPosts";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { useSEO } from "@/hooks/useSEO";
 import { Helmet } from "react-helmet-async";
@@ -401,6 +402,7 @@ const HowToCleanCarpetBlog = () => {
 
         </div>
       </article>
+    <RelatedPosts currentSlug="how-to-clean-carpet-home-apartment" />
     </Layout>
   );
 };

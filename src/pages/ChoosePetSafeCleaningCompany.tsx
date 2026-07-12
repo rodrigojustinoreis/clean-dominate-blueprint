@@ -17,6 +17,7 @@ import ImageGallery, { GalleryImage } from "@/components/blog/ImageGallery";
 import FAQAccordion from "@/components/blog/FAQAccordion";
 import BlogInlineCTA from "@/components/blog/BlogInlineCTA";
 import StickyCTA from "@/components/blog/StickyCTA";
+import RelatedPosts from "@/components/blog/RelatedPosts";
 
 const HERO_IMAGE = "/images/blog/choose-pet-safe-company/hero.webp";
 
@@ -319,6 +320,7 @@ const ChoosePetSafeCleaningCompany = () => {
         </div>
       </article>
 
+      <RelatedPosts currentSlug="choose-pet-safe-cleaning-company" />
       <StickyCTA />
     </Layout>
   );

@@ -3,16 +3,16 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 
-import kitchenIslandBefore from "@/assets/real-work/kitchen-island-before.png";
-import kitchenIslandAfter from "@/assets/real-work/kitchen-island-after.png";
-import kitchenDarkBefore from "@/assets/real-work/kitchen-dark-before.png";
-import kitchenDarkAfter from "@/assets/real-work/kitchen-dark-after.png";
-import kitchenGraniteBefore from "@/assets/real-work/kitchen-granite-before.png";
-import kitchenGraniteAfter from "@/assets/real-work/kitchen-granite-after.png";
-import stoveBefore from "@/assets/real-work/stove-before.png";
-import stoveAfter from "@/assets/real-work/stove-after.png";
-import deepCleanBefore from "@/assets/real-work/deep-clean-before.png";
-import deepCleanAfter from "@/assets/real-work/deep-clean-after.png";
+import kitchenIslandBefore from "@/assets/real-work/kitchen-island-before.webp";
+import kitchenIslandAfter from "@/assets/real-work/kitchen-island-after.webp";
+import kitchenDarkBefore from "@/assets/real-work/kitchen-dark-before.webp";
+import kitchenDarkAfter from "@/assets/real-work/kitchen-dark-after.webp";
+import kitchenGraniteBefore from "@/assets/real-work/kitchen-granite-before.webp";
+import kitchenGraniteAfter from "@/assets/real-work/kitchen-granite-after.webp";
+import stoveBefore from "@/assets/real-work/stove-before.webp";
+import stoveAfter from "@/assets/real-work/stove-after.webp";
+import deepCleanBefore from "@/assets/real-work/deep-clean-before.webp";
+import deepCleanAfter from "@/assets/real-work/deep-clean-after.webp";
 
 const sliders = [
   {
