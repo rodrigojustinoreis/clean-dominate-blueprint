@@ -95,7 +95,21 @@
   }
 }
 
+@layer base {
+  /* Guard against decorative elements creating a horizontal scrollbar (clip keeps sticky working). */
+  html, body {
+    overflow-x: clip;
+  }
+}
+
 @layer utilities {
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
   .glass {
     @apply bg-white/70 dark:bg-black/40 backdrop-blur-xl border border-white/20 dark:border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.05)] dark:shadow-[0_8px_32px_0_rgba(0,0,0,0.3)];
   }
@@ -107,6 +121,10 @@
   }
   .bg-mesh {
     @apply bg-mesh-light dark:bg-mesh-dark bg-fixed;
+  }
+  /* Stripe-inspired atmospheric backdrop (brand blue/teal + warm cream). */
+  .bg-stripe-mesh {
+    @apply bg-stripe-mesh-light dark:bg-stripe-mesh-dark;
   }
 }
 

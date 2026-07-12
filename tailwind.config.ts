@@ -135,6 +135,11 @@ export default {
       backgroundImage: {
         'mesh-light': 'radial-gradient(at 40% 20%, hsla(197, 62%, 93%, 1) 0px, transparent 50%), radial-gradient(at 80% 0%, hsla(207, 70%, 95%, 1) 0px, transparent 50%), radial-gradient(at 0% 50%, hsla(210, 20%, 98%, 1) 0px, transparent 50%)',
         'mesh-dark': 'radial-gradient(at 40% 20%, hsla(207, 60%, 12%, 1) 0px, transparent 50%), radial-gradient(at 80% 0%, hsla(197, 55%, 15%, 1) 0px, transparent 50%), radial-gradient(at 0% 50%, hsla(207, 50%, 8%, 1) 0px, transparent 50%)',
+        // Stripe-inspired atmospheric mesh — horizontal wash across the top third
+        // (blue → teal → warm cream → blue), settling into a soft cool off-white.
+        // Recolored to our brand (cool blue/teal) instead of Stripe's indigo/ruby.
+        'stripe-mesh-light': 'radial-gradient(at 6% 8%, hsla(207, 75%, 90%, 0.9) 0px, transparent 45%), radial-gradient(at 34% 4%, hsla(195, 80%, 85%, 0.65) 0px, transparent 50%), radial-gradient(at 60% 6%, hsla(38, 85%, 90%, 0.5) 0px, transparent 45%), radial-gradient(at 86% 4%, hsla(214, 72%, 88%, 0.8) 0px, transparent 48%), radial-gradient(at 50% 100%, hsla(210, 30%, 97%, 1) 0px, transparent 60%)',
+        'stripe-mesh-dark': 'radial-gradient(at 6% 8%, hsla(207, 60%, 14%, 0.9) 0px, transparent 45%), radial-gradient(at 34% 4%, hsla(195, 55%, 16%, 0.6) 0px, transparent 50%), radial-gradient(at 60% 6%, hsla(38, 40%, 18%, 0.4) 0px, transparent 45%), radial-gradient(at 86% 4%, hsla(214, 55%, 13%, 0.8) 0px, transparent 48%), radial-gradient(at 50% 100%, hsla(210, 30%, 9%, 1) 0px, transparent 60%)',
       }
     },
   },

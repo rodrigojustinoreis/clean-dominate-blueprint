@@ -25,11 +25,8 @@
   status = 301
   force = true
 
-# ── Spanish section: /es (no trailing slash) → /es/ ──────────────────────────
-[[redirects]]
-  from = "/es"
-  to = "/es/"
-  status = 301
+# ── Spanish section: /es is served directly (canonical, no trailing slash) ───
+# Redirect /es → /es/ removed: it was shadowed/dead and would loop with the /es canonical.
 
 # ── State hub: trailing-slash normalisation removed (was causing infinite redirect loop)
 # The 200 force=true rewrites below serve /maryland, /virginia, /washington-dc directly.
@@ -40,6 +37,16 @@
 [[redirects]]
   from = "/services/move-in-cleaning"
   to = "/services/move-out-cleaning"
+  status = 301
+
+[[redirects]]
+  from = "/services/move-in-move-out-cleaning"
+  to = "/services/move-out-cleaning"
+  status = 301
+
+[[redirects]]
+  from = "/recurring-cleaning"
+  to = "/services/recurring-cleaning"
   status = 301
 
 [[redirects]]
@@ -1749,3 +1756,19 @@
   from = "/*"
   to = "/index.html"
   status = 404
+
+# ── Cache: content-hashed assets are safe to cache forever ──
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/videos/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
