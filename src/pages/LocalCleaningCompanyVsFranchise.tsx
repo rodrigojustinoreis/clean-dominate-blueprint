@@ -74,7 +74,7 @@ const LocalCleaningCompanyVsFranchise = () => {
         <span className="bg-accent/20 text-accent font-semibold px-4 py-1.5 rounded-full text-sm inline-block mb-6 uppercase tracking-wider border border-accent/30">Cleaning Guides</span>
         <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight drop-shadow-md">Local Cleaning Company vs. Franchise: Why Local Wins in Montgomery County</h1>
         <p className="text-xl md:text-2xl text-gray-200 mb-4 leading-relaxed font-medium">Pricing, crew consistency, and accountability compared, so MD homeowners know exactly what they are paying for</p>
-        <p className="text-gray-300 mb-8 text-sm uppercase tracking-widest">By Capital Clean Care · MD · DC · VA · July 2026</p>
+        <p className="text-gray-300 mb-8 text-sm uppercase tracking-widest">By Rodrigo Reis, Owner · MD · DC · VA · July 2026</p>
         <Button size="lg" className="bg-accent hover:bg-accent/90 text-white text-lg px-8 py-6 rounded-full shadow-lg" asChild>
           <a href="/#quote">Get My Free Quote</a>
         </Button>

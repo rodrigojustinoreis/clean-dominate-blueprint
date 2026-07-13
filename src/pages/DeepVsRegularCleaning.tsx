@@ -98,7 +98,7 @@ const DeepVsRegularCleaning = () => {
         <p className="text-xl md:text-2xl text-gray-200 mb-4 leading-relaxed font-medium">
           What each one includes, when to book which, and how the cost compares
         </p>
-        <p className="text-gray-300 mb-8 text-sm uppercase tracking-widest">By Capital Clean Care · MD · DC · VA · June 2026</p>
+        <p className="text-gray-300 mb-8 text-sm uppercase tracking-widest">By Rodrigo Reis, Owner · MD · DC · VA · June 2026</p>
         <Button size="lg" className="bg-accent hover:bg-accent/90 text-white text-lg px-8 py-6 rounded-full shadow-lg" asChild>
           <a href="/#quote">Get My Free Quote</a>
         </Button>

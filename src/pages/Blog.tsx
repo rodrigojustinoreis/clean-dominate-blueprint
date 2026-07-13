@@ -522,7 +522,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-05-23",
     readTime: "8 min read",
     category: "Home Care Guides",
-    coverImage: "/images/blog/washing-machine-hero.jpg",
+    coverImage: "/images/blog/washing-machine-hero.webp",
   },
   {
     slug: "how-to-remove-candle-wax-eco-friendly",
@@ -531,7 +531,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-05-23",
     readTime: "7 min read",
     category: "Home Care Guides",
-    coverImage: "/images/blog/candle-wax-hero.jpg",
+    coverImage: "/images/blog/candle-wax-hero.webp",
   },
   {
     slug: "how-to-clean-carpet-home-apartment",

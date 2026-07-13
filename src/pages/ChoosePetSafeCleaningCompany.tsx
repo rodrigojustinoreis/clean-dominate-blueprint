@@ -148,7 +148,7 @@ const ChoosePetSafeCleaningCompany = () => {
           You're trusting strangers with their chemicals and equipment around your pet — here's how to vet them
         </p>
         <p className="text-gray-300 mb-8 text-sm uppercase tracking-widest">
-          By Capital Clean Care · Montgomery County, MD · June 2026
+          By Rodrigo Reis, Owner · Montgomery County, MD · June 2026
         </p>
         <Button
           size="lg"

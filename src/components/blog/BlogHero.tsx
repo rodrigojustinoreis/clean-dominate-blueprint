@@ -6,11 +6,20 @@ interface BlogHeroProps {
   children: ReactNode;
 }
 
-const BlogHero = ({ src, alt, children }: BlogHeroProps) => (
+const BlogHero = ({ src, alt, children }: BlogHeroProps) => {
+  // Serve a 640w variant to phones and the full image to larger screens (LCP).
+  // Every hero ships a matching `-640.webp` next to the source.
+  const srcSet = src.endsWith(".webp")
+    ? `${src.replace(/\.webp$/, "-640.webp")} 640w, ${src} 1280w`
+    : undefined;
+
+  return (
   <section className="relative w-full overflow-hidden bg-gray-900 text-white py-20 lg:py-32">
     <div className="absolute inset-0 z-0">
       <img
         src={src}
+        srcSet={srcSet}
+        sizes="100vw"
         alt={alt}
         className="w-full h-full object-cover opacity-35"
         loading="eager"
@@ -23,6 +32,7 @@ const BlogHero = ({ src, alt, children }: BlogHeroProps) => (
       {children}
     </div>
   </section>
-);
+  );
+};
 
 export default BlogHero;

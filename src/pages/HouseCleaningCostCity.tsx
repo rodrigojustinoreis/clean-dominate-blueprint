@@ -99,7 +99,7 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
           Real 2026 price ranges by home size — plus what actually drives the cost
         </p>
         <p className="text-gray-300 mb-8 text-sm uppercase tracking-widest">
-          By Capital Clean Care · {where} · June 2026
+          By Rodrigo Reis, Owner · {where} · June 2026
         </p>
         <Button size="lg" className="bg-accent hover:bg-accent/90 text-white text-lg px-8 py-6 rounded-full shadow-lg" asChild>
           <a href="/#quote">Get My Free {c.city} Quote</a>

@@ -71,7 +71,7 @@ const HouseCleaningGuideClarksburg = () => {
         <span className="bg-accent/20 text-accent font-semibold px-4 py-1.5 rounded-full text-sm inline-block mb-6 uppercase tracking-wider border border-accent/30">Local Guides</span>
         <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight drop-shadow-md">The Complete Guide to House Cleaning in Clarksburg, MD</h1>
         <p className="text-xl md:text-2xl text-gray-200 mb-4 leading-relaxed font-medium">New construction, move-in cleans, and caring for modern finishes</p>
-        <p className="text-gray-300 mb-8 text-sm uppercase tracking-widest">By Capital Clean Care · Clarksburg, MD · June 2026</p>
+        <p className="text-gray-300 mb-8 text-sm uppercase tracking-widest">By Rodrigo Reis, Owner · Clarksburg, MD · June 2026</p>
         <Button size="lg" className="bg-accent hover:bg-accent/90 text-white text-lg px-8 py-6 rounded-full shadow-lg" asChild>
           <a href="/#quote">Get My Free Quote</a>
         </Button>

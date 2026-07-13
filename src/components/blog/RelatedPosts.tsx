@@ -1,3 +1,4 @@
+import AuthorBio from "@/components/blog/AuthorBio";
 import TransformationsGallery from "@/components/TransformationsGallery";
 import { Link } from "react-router-dom";
 import { ArrowRight, Calendar, Clock } from "lucide-react";
@@ -422,11 +423,12 @@ const RelatedPosts = ({ currentSlug }: RelatedPostsProps) => {
     .filter(Boolean) as typeof allPosts;
 
   // The video-proof carousel renders after the article (4th block) on every post.
-  if (related.length === 0) return <TransformationsGallery heading="See the Results: Real Before & After Videos" subtext="Every clip is unedited footage from our own DMV team, using the same eco-friendly products we bring to every home. This is the standard behind everything we write." />;
+  if (related.length === 0) return <><AuthorBio /><TransformationsGallery heading="See the Results: Real Before & After Videos" subtext="Every clip is unedited footage from our own DMV team, using the same eco-friendly products we bring to every home. This is the standard behind everything we write." /></>;
 
 
   return (
     <>
+    <AuthorBio />
     <TransformationsGallery heading="See the Results: Real Before & After Videos" subtext="Every clip is unedited footage from our own DMV team, using the same eco-friendly products we bring to every home. This is the standard behind everything we write." />
     <section className="mt-14 pt-10 border-t border-border">
       <h2 className="font-heading text-xl font-bold mb-6">Related Articles</h2>

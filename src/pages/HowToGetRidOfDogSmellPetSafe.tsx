@@ -154,7 +154,7 @@ const HowToGetRidOfDogSmellPetSafe = () => {
           Pet-Safe Methods That Actually Work
         </p>
         <p className="text-gray-300 mb-8 text-sm uppercase tracking-widest">
-          By Capital Clean Care · Montgomery County, MD · May 2026
+          By Rodrigo Reis, Owner · Montgomery County, MD · May 2026
         </p>
         <Button
           size="lg"
