@@ -147,7 +147,7 @@ const Careers = () => {
             Prefer to talk? Call{" "}
             <a href="tel:+12407042551" className="text-accent font-medium hover:underline">(240) 704-2551</a>{" "}
             or email{" "}
-            <a href="mailto:capitalcleancare@gmail.com" className="text-accent font-medium hover:underline">capitalcleancare@gmail.com</a>.
+            <a href="mailto:info@capitalcleancare.com" className="text-accent font-medium hover:underline">info@capitalcleancare.com</a>.
           </p>
         </div>
       </section>

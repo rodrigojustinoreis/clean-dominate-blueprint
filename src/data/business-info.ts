@@ -5,7 +5,7 @@ export const BUSINESS_INFO = {
     display: "(240) 704-2551",
     tel: "+12407042551",
   },
-  email: "capitalcleancare@gmail.com",
+  email: "info@capitalcleancare.com",
   url: "https://capitalcleancare.com",
   address: {
     streetAddress: "4111 Postgate Terrace",

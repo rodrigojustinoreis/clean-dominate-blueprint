@@ -369,8 +369,8 @@ const GiftCards = () => {
           </div>
           <p className="text-sm text-muted-foreground inline-flex items-center gap-2">
             <Mail className="h-4 w-4" /> Or email{" "}
-            <a href="mailto:capitalcleancare@gmail.com" className="text-accent font-semibold underline">
-              capitalcleancare@gmail.com
+            <a href="mailto:info@capitalcleancare.com" className="text-accent font-semibold underline">
+              info@capitalcleancare.com
             </a>
           </p>
         </div>

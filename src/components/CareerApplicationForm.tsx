@@ -81,7 +81,7 @@ const CareerApplicationForm = () => {
       setSubmitted(true);
     } catch (err) {
       console.error("Career application error:", err);
-      toast.error("Something went wrong. Please email capitalcleancare@gmail.com or call us directly.");
+      toast.error("Something went wrong. Please email info@capitalcleancare.com or call us directly.");
     } finally {
       setSubmitting(false);
     }
