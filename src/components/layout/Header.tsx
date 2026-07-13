@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown, Phone, Leaf } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { services } from "@/data/services";
+import { dirServiceCards as services } from "@/data/home-directory";
 import { hubs } from "@/data/locations";
 import logo from "@/assets/logo.webp";
 import { trackPhoneClick, trackBookNowClick } from "@/lib/analytics";

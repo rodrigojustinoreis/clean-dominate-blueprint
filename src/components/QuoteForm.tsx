@@ -24,7 +24,9 @@ const QuoteForm = ({ submitLabel = "Get My Free Quote →", defaultService = "" 
     name: "",
     phone: "",
     email: "",
+    address: "",
     zip: "",
+    sqft: "",
     service: defaultService,
     bedrooms: "",
     bathrooms: "",
@@ -52,13 +54,15 @@ const QuoteForm = ({ submitLabel = "Get My Free Quote →", defaultService = "" 
           name: formData.name,
           phone: formData.phone,
           email: formData.email,
+          address: formData.address,
           zip: formData.zip,
+          sqft: formData.sqft || null,
           service: formData.service,
           bedrooms: formData.bedrooms || null,
           bathrooms: formData.bathrooms || null,
           frequency: formData.frequency || null,
           preferred_date: formData.date || null,
-          message: formData.message || null,
+          message: [`Address: ${formData.address}`, formData.sqft ? `Home size: ${formData.sqft} sq ft` : "", formData.message || ""].filter(Boolean).join(" · ") || null,
           sms_consent: formData.smsConsent,
           email_consent: formData.emailConsent,
         }).then(({ error }) => { if (error) console.error("DB error:", error); })
@@ -77,6 +81,8 @@ const QuoteForm = ({ submitLabel = "Get My Free Quote →", defaultService = "" 
           phone: formData.phone,
           email: formData.email,
           zip: formData.zip,
+          address: formData.address,
+          sqft: formData.sqft,
           service: formData.service,
           bedrooms: formData.bedrooms || "",
           bathrooms: formData.bathrooms || "",
@@ -97,7 +103,9 @@ const QuoteForm = ({ submitLabel = "Get My Free Quote →", defaultService = "" 
           name: formData.name,
           phone: formData.phone,
           email: formData.email,
+          address: formData.address,
           zip: formData.zip,
+          sqft: formData.sqft,
           service: formData.service,
           bedrooms: formData.bedrooms,
           bathrooms: formData.bathrooms,
@@ -117,7 +125,9 @@ const QuoteForm = ({ submitLabel = "Get My Free Quote →", defaultService = "" 
           name: formData.name,
           phone: formData.phone,
           email: formData.email,
+          address: formData.address,
           zip: formData.zip,
+          sqft: formData.sqft || null,
           service: formData.service,
           bedrooms: formData.bedrooms || null,
           bathrooms: formData.bathrooms || null,
@@ -136,7 +146,7 @@ const QuoteForm = ({ submitLabel = "Get My Free Quote →", defaultService = "" 
         });
       }
       setSubmittedName(formData.name.split(" ")[0]);
-      setFormData({ name: "", phone: "", email: "", zip: "", service: "", bedrooms: "", bathrooms: "", frequency: "", date: "", message: "", smsConsent: false, emailConsent: false });
+      setFormData({ name: "", phone: "", email: "", address: "", zip: "", sqft: "", service: "", bedrooms: "", bathrooms: "", frequency: "", date: "", message: "", smsConsent: false, emailConsent: false });
       setShowDetails(false);
       setSubmitted(true);
     } catch (err) {
@@ -278,24 +288,31 @@ const QuoteForm = ({ submitLabel = "Get My Free Quote →", defaultService = "" 
           <Input id="email" type="email" required value={formData.email} onChange={(e) => update("email", e.target.value)} placeholder="jane@email.com" />
         </div>
         <div className="space-y-2">
+          <Label htmlFor="address">Street Address *</Label>
+          <Input id="address" required value={formData.address} onChange={(e) => update("address", e.target.value)} placeholder="4111 Postgate Terrace" />
+        </div>
+        <div className="space-y-2">
           <Label htmlFor="zip">Zip Code *</Label>
           <Input id="zip" required value={formData.zip} onChange={(e) => update("zip", e.target.value)} placeholder="20850" />
         </div>
       </div>
 
-      {/* ── Optional details (collapsible) ── */}
-      <button
-        type="button"
-        onClick={() => setShowDetails((v) => !v)}
-        className="flex items-center gap-2 text-sm text-accent font-medium hover:underline"
-      >
-        {showDetails ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
-        {showDetails ? "Hide" : "Add"} home details (optional, helps us give a more accurate quote)
-      </button>
-
-      {showDetails && (
+      {/* ── Home details (always visible — complete quote info) ── */}
+      <p className="text-sm font-medium text-foreground">Home details <span className="text-muted-foreground font-normal">(helps us give an exact flat quote)</span></p>
+      {(
         <div className="space-y-4 rounded-lg border border-border bg-secondary/40 p-4">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            <div className="space-y-2">
+              <Label>Home size</Label>
+              <Select value={formData.sqft} onValueChange={(v) => update("sqft", v)}>
+                <SelectTrigger><SelectValue placeholder="Sq ft" /></SelectTrigger>
+                <SelectContent>
+                  {["Under 1,000", "1,000–1,500", "1,500–2,000", "2,000–2,500", "2,500–3,000", "3,000+"].map((n) => (
+                    <SelectItem key={n} value={n}>{n} sq ft</SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
             <div className="space-y-2">
               <Label>Bedrooms</Label>
               <Select value={formData.bedrooms} onValueChange={(v) => update("bedrooms", v)}>

@@ -51,7 +51,19 @@
     <link rel="manifest" href="/manifest.json" />
 
     <!-- Google Analytics 4 + Google Ads — unified tag -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5NQK4RH08J"></script>
+    <!-- gtag.js (179KB) deferred until after load+idle: dataLayer queues everything
+         meanwhile, so no events are lost — keeps analytics/Ads intact while freeing
+         the critical path on mobile (LCP/TBT). -->
+    <script>
+      window.addEventListener('load', function () {
+        setTimeout(function () {
+          var s = document.createElement('script');
+          s.async = true;
+          s.src = 'https://www.googletagmanager.com/gtag/js?id=G-5NQK4RH08J';
+          document.head.appendChild(s);
+        }, 2000);
+      });
+    </script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}

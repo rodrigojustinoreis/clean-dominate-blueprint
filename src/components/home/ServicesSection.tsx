@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { services } from "@/data/services";
+import { dirServiceCards as services } from "@/data/home-directory";
 
 const ServicesSection = () => (
   <section className="py-20 md:py-28 bg-secondary">

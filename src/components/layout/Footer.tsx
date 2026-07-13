@@ -1,9 +1,9 @@
 import { Link, useLocation } from "react-router-dom";
 import { Phone, Mail, Clock, Instagram, Facebook, MapPin, Shield, Search, Leaf, Users, Star, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { services } from "@/data/services";
+import { dirServiceCards as services } from "@/data/home-directory";
 import { mdCities, dcCities, vaCities } from "@/data/locations";
-import { slCities, slServices } from "@/data/service-locations";
+import { dirCities as slCities, dirServices as slServices } from "@/data/sl-directory";
 import { trackPhoneClick, trackBookNowClick } from "@/lib/analytics";
 import PartnerLinks from "@/components/PartnerLinks";
 import GoogleBusinessLinks from "@/components/GoogleBusinessLinks";

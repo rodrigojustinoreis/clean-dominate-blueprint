@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { renderToString } from "react-dom/server";
 import { StaticRouter } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -189,7 +190,9 @@ export async function prerender(data: { url: string }) {
         <TooltipProvider>
           {/* Toaster and Sonner omitted — use browser APIs, no SEO value */}
           <StaticRouter location={data.url}>
-            <AppRoutes />
+            <Suspense fallback={null}>
+              <AppRoutes />
+            </Suspense>
           </StaticRouter>
         </TooltipProvider>
       </QueryClientProvider>
