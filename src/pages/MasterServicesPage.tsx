@@ -65,13 +65,13 @@ const MasterServicesPage = () => {
         <title>Cleaning Services in Maryland & DC | Capital Clean Care</title>
         <meta name="description" content="Professional eco-friendly cleaning services in Montgomery County, MD and Washington, DC. House cleaning, deep cleaning, move-in/out, post-construction, Airbnb, senior, and recurring cleaning. Free quotes." />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-        <link rel="canonical" href="https://capitalcleancare.com/services/" />
+        <link rel="canonical" href="https://capitalcleancare.com/services" />
       </Helmet>
 
       <LocalBusinessSchema />
       <BreadcrumbSchema items={[
         { label: "Home", href: "/" },
-        { label: "Services", href: "/services/" }
+        { label: "Services", href: "/services" }
       ]} />
       <FAQSchema faqs={masterServicesFaqs.map(f => ({ q: f.question, a: f.answer }))} />
 

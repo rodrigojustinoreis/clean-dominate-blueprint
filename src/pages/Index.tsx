@@ -4,6 +4,7 @@ import { trackPhoneClick, trackBookNowClick } from "@/lib/analytics";
 import PricingTable from "@/components/PricingTable";
 import PriceCalculator from "@/components/PriceCalculator";
 import { LocalBusinessSchema, FAQSchema, WebSiteSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
+import { pickReviews } from "@/data/realReviews";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Layout from "@/components/layout/Layout";
@@ -52,7 +53,7 @@ const Index = () => {
   return (
     <Layout>
       {seoHelmet}
-      <LocalBusinessSchema />
+      <LocalBusinessSchema reviews={pickReviews("home", 2)} />
       <WebSiteSchema />
       <BreadcrumbSchema items={[{ label: "Home", href: "/" }]} />
       <FAQSchema faqs={homeFaqs} />

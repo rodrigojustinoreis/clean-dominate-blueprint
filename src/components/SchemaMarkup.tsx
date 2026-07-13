@@ -27,7 +27,7 @@ const businessAddress = {
 };
 
 const businessRef = {
-  "@type": "LocalBusiness" as const,
+  "@type": ["HouseCleaner", "LocalBusiness"] as const,
   "@id": `${BUSINESS.url}/#business`,
   name: BUSINESS.name,
   telephone: BUSINESS.phone,
@@ -74,11 +74,14 @@ export const LocalBusinessSchema = ({ areaServed, reviews, emitReviewItems, inLa
 
   const schema: Record<string, unknown> = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": ["HouseCleaner", "LocalBusiness"],
     "@id": `${BUSINESS.url}/#business`,
     inLanguage,
     name: BUSINESS.name,
     legalName: BUSINESS.legalName,
+    slogan: "Eco-friendly house cleaning the DMV trusts",
+    foundingDate: "2015",
+    knowsLanguage: ["en", "es"],
     description: "Premium eco-friendly residential cleaning services in Maryland, Washington DC, and Northern Virginia. Licensed, insured, background-checked teams using non-toxic plant-based products.",
     telephone: BUSINESS.phone,
     email: BUSINESS.email,
@@ -150,6 +153,7 @@ interface ServiceSchemaProps {
   description: string;
   url: string;
   areaServed?: string[];
+  serviceType?: string;
 }
 
 export const ServiceSchema = ({
@@ -157,6 +161,7 @@ export const ServiceSchema = ({
   description,
   url,
   areaServed,
+  serviceType = "House Cleaning",
 }: ServiceSchemaProps) => {
   const schema = {
     "@context": "https://schema.org",
@@ -164,11 +169,11 @@ export const ServiceSchema = ({
     name: serviceName,
     description,
     url,
-    provider: businessRef,
+    provider: { "@id": `${BUSINESS.url}/#business` },
     areaServed: areaServed
       ? areaServed.map((a) => ({ "@type": "Place", name: a }))
       : defaultAreaServedRegions,
-    serviceType: "House Cleaning",
+    serviceType,
     offers: {
       "@type": "Offer",
       availability: "https://schema.org/InStock",
@@ -233,11 +238,6 @@ export const WebSiteSchema = () => {
     "@type": "WebSite",
     name: BUSINESS.name,
     url: BUSINESS.url,
-    potentialAction: {
-      "@type": "SearchAction",
-      target: `${BUSINESS.url}/faq?q={search_term_string}`,
-      "query-input": "required name=search_term_string",
-    },
   };
 
   return <JsonLd id="website-schema" schema={schema} />;
@@ -337,12 +337,14 @@ interface CityReviewSchemaProps {
 
 export const CityReviewSchema = ({ cityName, cityUrl, reviews }: CityReviewSchemaProps) => {
   if (!reviews || reviews.length === 0) return null;
+  // Single shared #business entity + aggregateRating only. Review items live solely on
+  // /reviews (policy): duplicating the same reviewers across 55 city pages is self-serving.
   const schema = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "@id": `${BUSINESS.url}/#business-${cityName.toLowerCase().replace(/\s/g, "-")}`,
+    "@type": ["HouseCleaner", "LocalBusiness"],
+    "@id": `${BUSINESS.url}/#business`,
     name: BUSINESS.name,
-    url: cityUrl,
+    url: BUSINESS.url,
     telephone: BUSINESS.phone,
     address: businessAddress,
     aggregateRating: {
@@ -352,13 +354,6 @@ export const CityReviewSchema = ({ cityName, cityUrl, reviews }: CityReviewSchem
       bestRating: "5",
       worstRating: "1",
     },
-    review: reviews.map((r) => ({
-      "@type": "Review",
-      author: { "@type": "Person", name: r.name },
-      ...(r.date ? { datePublished: r.date } : {}),
-      reviewBody: r.text,
-      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-    })),
   };
   return <JsonLd id={`city-review-schema-${cityName.toLowerCase().replace(/\s/g, "-")}`} schema={schema} />;
 };

@@ -43,19 +43,13 @@ export const BUSINESS_INFO = {
     "EPA Safer Choice certified products",
   ],
   socialProfiles: [
+    // Only profiles verified live (200) + the Google Business listing. LinkedIn/Nextdoor/
+    // Thumbtack were 404; Yelp/BBB/Angi/HomeAdvisor/Crunchbase/YellowPages/MapQuest are
+    // unverifiable/not-yet-claimed — re-add each here once the listing is live.
+    "https://www.google.com/maps?cid=1774420840079969097",
     "https://www.facebook.com/capital.clean.care",
     "https://www.instagram.com/capital_cleancare",
     "https://www.tiktok.com/@capitalcleancare1",
-    "https://www.linkedin.com/company/capital-clean-care",
-    "https://www.crunchbase.com/organization/capital-clean-care",
     "https://www.pinterest.com/capitalcleancare/",
-    "https://www.yellowpages.com/rockville-md/mip/capital-clean-care",
-    "https://www.yelp.com/biz/capital-clean-care-silver-spring",
-    "https://www.bbb.org/us/md/silver-spring/profile/house-cleaning/capital-clean-care",
-    "https://nextdoor.com/pages/capital-clean-care-silver-spring-md/",
-    "https://www.mapquest.com/us/maryland/capital-clean-care",
-    "https://www.angi.com/companylist/us/md/silver-spring/capital-clean-care.htm",
-    "https://www.thumbtack.com/md/silver-spring/house-cleaning/capital-clean-care/",
-    "https://www.homeadvisor.com/rated.CapitalCleanCare",
   ],
 };

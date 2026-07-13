@@ -20,7 +20,7 @@ const badges = [
   },
   {
     icon: Leaf,
-    title: "EPA Safer Choice Certified",
+    title: "EPA Safer Choice Products",
     description: "Only plant-based, non-toxic products — safe for children, pets, and allergy sufferers.",
   },
   {

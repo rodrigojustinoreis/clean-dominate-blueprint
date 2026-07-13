@@ -54,6 +54,7 @@ const ServicePage = () => {
         serviceName={service.name}
         description={service.shortDescription}
         url={`https://capitalcleancare.com/services/${service.slug}`}
+        serviceType={service.name}
       />
       <FAQSchema faqs={service.faqs} />
 

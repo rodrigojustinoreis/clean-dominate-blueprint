@@ -115,6 +115,7 @@ const EcoFriendlyCleaningPage = () => {
         serviceName="Eco-Friendly House Cleaning"
         description="Plant-based, non-toxic house cleaning using EPA Safer Choice certified products. Safe for children, pets, and allergy sufferers across Maryland, DC, and Northern Virginia."
         url="https://capitalcleancare.com/services/eco-friendly-cleaning"
+        serviceType="Eco-Friendly Cleaning"
       />
       <FAQSchema faqs={faqs} />
 
@@ -157,7 +158,7 @@ const EcoFriendlyCleaningPage = () => {
               </div>
 
               <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted-foreground">
-                {["EPA Safer Choice Certified", "No Chlorine or Ammonia", "Safe for Children & Pets", "15% Off First Clean"].map((b) => (
+                {["EPA Safer Choice Products", "No Chlorine or Ammonia", "Safe for Children & Pets", "15% Off First Clean"].map((b) => (
                   <span key={b} className="flex items-center gap-1.5">
                     <CheckCircle className="h-4 w-4 text-[#2E7D32] shrink-0" /> {b}
                   </span>

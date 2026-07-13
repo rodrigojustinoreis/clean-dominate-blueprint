@@ -69,6 +69,7 @@ const DeepCleaningPage = () => {
         serviceName={service.name}
         description={service.shortDescription}
         url="https://capitalcleancare.com/services/deep-cleaning"
+        serviceType="Deep Cleaning"
       />
       <FAQSchema faqs={service.faqs} />
 
