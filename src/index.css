@@ -126,6 +126,14 @@
   .bg-stripe-mesh {
     @apply bg-stripe-mesh-light dark:bg-stripe-mesh-dark;
   }
+  /* Gentle scale pulse for quote-form CTA / offer pill (reduced-motion guard below). */
+  @keyframes ccc-pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.015); }
+  }
+  .animate-pulse-soft {
+    animation: ccc-pulse 2.6s ease-in-out infinite;
+  }
 }
 
 /* Disable continuous animations for users who prefer reduced motion */
@@ -135,7 +143,8 @@
   .animate-gradient-x,
   .animate-ping,
   .animate-marquee,
-  .animate-kenburns {
+  .animate-kenburns,
+  .animate-pulse-soft {
     animation: none !important;
   }
   .text-gradient {
