@@ -3,6 +3,7 @@
 import { Helmet } from "react-helmet-async";
 import { createElement } from "react";
 import { useLocation } from "react-router-dom";
+import { isNoIndexPath } from "@/data/noindexPaths";
 import { getRoutePair, getCanonicalUrl } from "@/data/route-map";
 
 interface SEOProps {
@@ -18,6 +19,8 @@ interface SEOProps {
 
 export const useSEO = ({ title, description, canonical, ogType = "website", ogImage, noIndex, preloadImage }: SEOProps) => {
   const { pathname } = useLocation();
+  // Central doorway-pruning denylist overrides any page's own indexable decision.
+  const effectiveNoIndex = noIndex || isNoIndexPath(pathname);
   const isSpanish = pathname.startsWith("/es/") || pathname === "/es";
   const lang = isSpanish ? "es" : "en";
   const locale = isSpanish ? "es_US" : "en_US";
@@ -65,7 +68,7 @@ export const useSEO = ({ title, description, canonical, ogType = "website", ogIm
     createElement("meta", {
       key: "robots",
       name: "robots",
-      content: noIndex
+      content: effectiveNoIndex
         ? "noindex,nofollow"
         : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
     }),
