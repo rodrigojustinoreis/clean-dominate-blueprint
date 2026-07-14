@@ -640,6 +640,19 @@ Our Chevy Chase deep cleaning protocol includes a pre-visit walkthrough where we
     ],
   },
 
+  "olney-md/eco-friendly-cleaning": {
+    metaTitle: "Eco-Friendly Cleaning in Olney, MD — Kid & Pet-Safe",
+    metaDescription: "Eco-friendly house cleaning in Olney, MD — plant-based, EPA Safer Choice products safe for kids, pets & well water. Family-owned, background-checked teams. Free quote.",
+    uniqueContent: `Olney is a family-first, semi-rural corner of northern Montgomery County, and that shapes what eco-friendly cleaning means here. Along Georgia Avenue and the neighborhoods around Olney-Laytonsville Road, most homes are detached colonials and split-levels on real yards — houses full of kids, dogs, and the everyday traffic in from gardens and cul-de-sacs that tracks pollen, grass, and soil indoors. For households this close to the ground, the products a cleaning company uses actually matter: our teams clean exclusively with plant-based, EPA Safer Choice cleaners that leave no harsh chemical residue on the floors kids crawl on or the counters where pets nose around.
+
+There's a practical local reason to skip the heavy chemicals, too. Parts of Olney and the more rural stretches toward Brookeville sit on well and septic systems rather than municipal supply, and aggressive cleaners are both unnecessary and undesirable in homes where the household is deliberately mindful about what goes down the drain. Our approach is built for exactly this Olney profile — thorough, genuinely non-toxic cleaning that keeps a busy family home fresh without trading indoor air quality for a chemical "clean" smell. Recurring plans are popular here because they keep up with the year-round mud, pollen, and pet hair that come with Olney's green, spacious setting.`,
+    photos: [
+      { src: "/images/team/eco-friendly-products.webp", alt: "Plant-based, EPA Safer Choice products Capital Clean Care uses for eco-friendly cleaning in Olney, MD" },
+      { src: "/images/team/team-mopping-bright-room.jpg", alt: "Capital Clean Care team member eco-friendly mopping in an Olney, MD family home" },
+      { src: "/images/team/real-team-two-members.webp", alt: "Capital Clean Care background-checked team on an eco-friendly cleaning visit in Olney, MD" },
+    ],
+  },
+
 };
 
 export function getServiceLocationOverride(citySlug: string, serviceSlug: string): ServiceLocationOverride | null {
