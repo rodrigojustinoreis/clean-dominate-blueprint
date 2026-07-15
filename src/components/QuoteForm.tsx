@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { GOOGLE_LISTING_URL } from "@/data/realReviews";
+import { BUSINESS_INFO } from "@/data/business-info";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -344,7 +345,7 @@ const QuoteForm = ({ submitLabel = "GET MY FREE QUOTE →", defaultService = "",
             <span className="flex items-center gap-0.5">
               {[...Array(5)].map((_, i) => <Star key={i} className="h-2.5 w-2.5 fill-amber-400 text-amber-400" />)}
             </span>
-            <span className="block text-[10px] text-gray-500">5.0 · 45 reviews</span>
+            <span className="block text-[10px] text-gray-500">{BUSINESS_INFO.rating.value} · {BUSINESS_INFO.rating.count} reviews</span>
           </span>
         </a>
 

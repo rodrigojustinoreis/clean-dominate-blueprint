@@ -5,6 +5,8 @@ import { dirServiceCards as services } from "@/data/home-directory";
 import { mdCities, dcCities, vaCities } from "@/data/locations";
 import { dirCities as slCities, dirServices as slServices } from "@/data/sl-directory";
 import { trackPhoneClick, trackBookNowClick } from "@/lib/analytics";
+import { BUSINESS_INFO } from "@/data/business-info";
+import { GOOGLE_LISTING_URL } from "@/data/realReviews";
 import PartnerLinks from "@/components/PartnerLinks";
 import GoogleBusinessLinks from "@/components/GoogleBusinessLinks";
 import logo from "@/assets/logo.webp";
@@ -94,10 +96,22 @@ const Footer = () => {
             <Users className="w-6 h-6 text-primary" />
             <span className="text-xs font-medium">{t("Family & Latino-Owned", "Negocio Familiar Latino")}</span>
           </div>
-          <div className="flex flex-col items-center gap-1">
-            <Star className="w-6 h-6 text-primary" />
-            <span className="text-xs font-medium">{t("5.0★ Rated", "Calificación 5.0★")}</span>
-          </div>
+          {/* Real Google counter (single source: BUSINESS_INFO.rating) linked to the live listing */}
+          <a
+            href={GOOGLE_LISTING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-col items-center gap-1 hover:opacity-80 transition-opacity"
+            aria-label={t("Read our Google reviews", "Lee nuestras reseñas en Google")}
+          >
+            <Star className="w-6 h-6 text-primary fill-primary/20" />
+            <span className="text-xs font-medium">
+              {t(
+                `${BUSINESS_INFO.rating.value}★ · ${BUSINESS_INFO.rating.count} Google Reviews`,
+                `${BUSINESS_INFO.rating.value}★ · ${BUSINESS_INFO.rating.count} Reseñas en Google`,
+              )}
+            </span>
+          </a>
           <div className="flex flex-col items-center gap-1">
             <CheckCircle className="w-6 h-6 text-primary" />
             <span className="text-xs font-medium">{t("Satisfaction Guarantee", "Garantía de Satisfacción")}</span>

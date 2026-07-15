@@ -12,6 +12,7 @@ import {
   Select, SelectContent, SelectItem, SelectTrigger, SelectValue,
 } from "@/components/ui/select";
 import { CheckCircle, Phone, Clock, MessageCircle } from "lucide-react";
+import { BUSINESS_INFO } from "@/data/business-info";
 
 declare const gtag: (...args: unknown[]) => void;
 
@@ -375,7 +376,7 @@ const QuoteFormES = ({ id = "cotizacion", defaultService = "", submitLabel = "So
           ))}
         </div>
         <p className="text-xs text-muted-foreground">
-          <span className="font-semibold text-foreground">5.0 estrellas</span> · 45 reseñas en Google · Montgomery County
+          <span className="font-semibold text-foreground">{BUSINESS_INFO.rating.value} estrellas</span> · {BUSINESS_INFO.rating.count} reseñas en Google · Montgomery County
         </p>
       </div>
 

@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
 import { isJuly4Promo, OFFER_END } from "@/lib/july4Promo";
+import { BUSINESS_INFO } from "@/data/business-info";
 
 const EXIT_INTENT_KEY = "ccc_exit_popup_dismissed";
 
@@ -332,8 +333,8 @@ const ExitIntentPopup = () => {
                 <Star key={i} className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
               ))}
             </span>
-            <span className="font-semibold text-foreground">5.0</span>
-            <span>· 45 Google reviews</span>
+            <span className="font-semibold text-foreground">{BUSINESS_INFO.rating.value}</span>
+            <span>· {BUSINESS_INFO.rating.count} Google reviews</span>
           </div>
 
           <form onSubmit={handleSubmit} className="ccc-rise mt-5 space-y-2.5 text-left" style={{ animationDelay: "180ms" }}>
