@@ -65,11 +65,13 @@ export const useSEO = ({ title, description, canonical, ogType = "website", ogIm
     // Single source of truth for robots. Emitted on every page so there is never a
     // conflict with a static index.html default (noindex pages previously carried BOTH
     // an inherited "index,follow" and a Helmet "noindex,nofollow").
+    // noindex,FOLLOW (not nofollow): pruned doorway hubs still link to the 71 indexable
+    // service pages — we want Googlebot to keep following those internal links.
     createElement("meta", {
       key: "robots",
       name: "robots",
       content: effectiveNoIndex
-        ? "noindex,nofollow"
+        ? "noindex,follow"
         : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
     }),
     ...(ogImage

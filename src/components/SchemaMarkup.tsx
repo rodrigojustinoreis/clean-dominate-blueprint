@@ -224,7 +224,12 @@ export const BreadcrumbSchema = ({ items }: BreadcrumbSchemaProps) => {
       // Only emit `item` when an href exists. A breadcrumb item with an undefined
       // href produced an invalid URL ("…comundefined"); for the last crumb (current
       // page) Google treats `item` as optional, so omitting it is the valid fix.
-      ...(item.href ? { item: `${BUSINESS.url}${item.href}` } : {}),
+      // Accept both relative hrefs and callers that already pass an absolute URL —
+      // prepending BUSINESS.url to an absolute href doubled the domain
+      // ("…comhttps://…"), producing invalid structured data.
+      ...(item.href
+        ? { item: item.href.startsWith("http") ? item.href : `${BUSINESS.url}${item.href}` }
+        : {}),
     })),
   };
 
