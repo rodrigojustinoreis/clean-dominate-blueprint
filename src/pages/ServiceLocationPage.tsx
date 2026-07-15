@@ -50,10 +50,12 @@ const ServiceLocationPage = () => {
 
   if (!city || !service) return <NotFound />;
 
-  const faqs = getServiceLocationFAQs(city, service);
+  const override = getServiceLocationOverride(city.slug, service.slug);
+  // City-specific FAQs (Lote 1 uniqueness) take precedence over the templated set;
+  // feeds both the on-page FAQ and FAQPage schema. Falls back to template when absent.
+  const faqs = override?.faqs ?? getServiceLocationFAQs(city, service);
   const whyChoose = getWhyChooseUs(city, service);
   const intro = getServiceLocationIntro(city, service);
-  const override = getServiceLocationOverride(city.slug, service.slug);
   const serviceLabel = service.shortName.toLowerCase().includes("maid") ? service.shortName : `${service.shortName} & maid service`;
   const metaTitle = override?.metaTitle || `${service.name} in ${city.name}, ${city.state} | Capital Clean Care`;
   const metaDescription = override?.metaDescription || `Top-rated ${serviceLabel} in ${city.name}, ${city.state}. Eco-friendly products, background-checked teams, satisfaction guaranteed. Serving ${city.county}. Free quotes.`;

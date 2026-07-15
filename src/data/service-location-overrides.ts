@@ -2,6 +2,7 @@
 // service-location pages. These pages were crawled but not indexed by Google
 // due to thin/templated content. Adding unique paragraphs + original photos
 // gives each page distinct, indexable value.
+import { houseCleaningCityContent } from "./house-cleaning-city-content";
 
 export interface TeamPhoto {
   src: string;
@@ -10,6 +11,8 @@ export interface TeamPhoto {
 
 export interface ServiceLocationOverride {
   uniqueContent?: string;
+  /** City-specific FAQs — override the templated getServiceLocationFAQs and feed FAQPage schema. */
+  faqs?: { q: string; a: string }[];
   photos?: TeamPhoto[];
   /** SEO overrides for high-impression pages (tuned to real GSC search queries). */
   metaTitle?: string;
@@ -653,6 +656,10 @@ There's a practical local reason to skip the heavy chemicals, too. Parts of Olne
     ],
   },
 
+  // Lote 1 uniqueness — house-cleaning city×service pages. Spread last so these
+  // enriched entries (intro + city FAQs + estimated time) supersede any inline
+  // house-cleaning entry above for the same key.
+  ...houseCleaningCityContent,
 };
 
 export function getServiceLocationOverride(citySlug: string, serviceSlug: string): ServiceLocationOverride | null {
