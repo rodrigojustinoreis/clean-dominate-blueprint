@@ -17,8 +17,20 @@ import { getServiceBySlug } from "@/data/services";
 import { cities } from "@/data/locations";
 import { slCities, slServices } from "@/data/service-locations";
 import { GuideCards } from "@/components/RelatedContent";
-import { isIndexable, guidesForCategories } from "@/data/related-content";
+import { isIndexable, guidesBySlugs } from "@/data/related-content";
 import { COST_PRICE_ROWS } from "@/data/cost-cities";
+
+// The 8 spokes of the deep-cleaning cluster (Fase 2.2 + 2.3), in reading order.
+const DEEP_SPOKES = [
+  "what-is-included-in-a-deep-cleaning",
+  "how-much-does-deep-cleaning-cost",
+  "how-long-does-deep-cleaning-take",
+  "how-often-should-you-deep-clean",
+  "deep-cleaning-before-selling-house",
+  "post-renovation-cleaning-guide-maryland",
+  "deep-cleaning-for-apartments",
+  "eco-friendly-deep-cleaning",
+];
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FadeInSection from "@/components/blog/FadeInSection";
 import LocationSocialProof from "@/components/location/LocationSocialProof";
@@ -616,7 +628,7 @@ const DeepCleaningPage = () => {
       {/* ── Deep Cleaning Guides (cluster posts) ── */}
       <section className="py-12 md:py-16">
         <div className="container mx-auto px-4 max-w-4xl">
-          <GuideCards heading="Deep Cleaning Guides" guides={guidesForCategories(["deep-cleaning"], undefined, 6)} />
+          <GuideCards heading="Deep Cleaning Guides" guides={guidesBySlugs(DEEP_SPOKES)} />
         </div>
       </section>
 

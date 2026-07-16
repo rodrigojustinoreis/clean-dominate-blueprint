@@ -4,7 +4,9 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { useSEO } from "@/hooks/useSEO";
-import { ArticleSchema, BreadcrumbSchema, HowToSchema } from "@/components/SchemaMarkup";
+import { ArticleSchema, BreadcrumbSchema, HowToSchema, FAQSchema } from "@/components/SchemaMarkup";
+import FAQAccordion from "@/components/blog/FAQAccordion";
+import { isIndexable } from "@/data/related-content";
 import { blogPosts } from "./Blog";
 import { autoBlogPosts } from "@/data/auto-blog-posts";
 import NotFound from "./NotFound";
@@ -1436,7 +1438,7 @@ const blogContent: Record<string, React.ReactNode> = {
   ),
   "post-renovation-cleaning-guide-maryland": (
     <article className="prose prose-lg max-w-none">
-      <p>Renovating your <Link to="/locations/germantown-md" className="text-accent hover:underline">Germantown</Link> kitchen or finishing a <Link to="/locations/frederick-md" className="text-accent hover:underline">Frederick</Link> basement? Construction dust, debris, and adhesive residue don't disappear on their own. Post-renovation cleaning requires specialized techniques — here's your complete guide.</p>
+      <p>Renovating your <Link to="/locations/germantown-md/house-cleaning" className="text-accent hover:underline">Germantown</Link> kitchen or finishing a <Link to="/maryland" className="text-accent hover:underline">Frederick County</Link> basement? Construction dust, debris, and adhesive residue don't disappear on their own. Post-renovation cleaning requires specialized techniques — here's your complete guide.</p>
 
       <h2>Why Post-Construction Cleaning is Different</h2>
       <p>Standard cleaning products and methods can't handle construction dust. Fine particles from drywall, sawing, and sanding embed in HVAC systems, settle on every surface, and can irritate respiratory systems for weeks. A professional <Link to="/services/post-construction-cleaning" className="text-accent hover:underline">post-construction cleaning</Link> uses HEPA filtration and specialized techniques.</p>
@@ -1471,9 +1473,29 @@ const blogContent: Record<string, React.ReactNode> = {
 
       <h2>Timeline and Costs</h2>
       <p>A typical post-renovation clean for a Maryland home takes 4-8 hours depending on scope. Costs start at $350 for a single room and scale with square footage. Use our <Link to="/#price-calculator" className="text-accent hover:underline">price calculator</Link> for an instant estimate.</p>
+      <p>Post-renovation cleaning almost always runs longer than a standard <Link to="/services/deep-cleaning" className="text-accent hover:underline">deep cleaning</Link> of the same home, because construction dust doesn't come off in one pass — it settles back out of the air and needs multiple wipe-downs of the same surfaces. The single biggest variable is the amount of drywall and sanding work the remodel involved: a refinished basement or a gutted kitchen leaves far more fine dust than a single bathroom. For how condition and size affect a normal deep clean's timeline, see <Link to="/resources/how-long-does-deep-cleaning-take" className="text-accent hover:underline">how long a deep cleaning takes</Link>.</p>
 
       <h2>DIY vs. Professional: What Maryland Homeowners Should Know</h2>
-      <p>While you can handle surface-level cleanup, construction dust in HVAC systems and embedded in carpets requires professional equipment. Our teams serving <Link to="/locations/gaithersburg-md" className="text-accent hover:underline">Gaithersburg</Link>, <Link to="/locations/potomac-md" className="text-accent hover:underline">Potomac</Link>, <Link to="/locations/mclean-va" className="text-accent hover:underline">McLean</Link>, and <Link to="/locations/washington-dc" className="text-accent hover:underline">Washington DC</Link> use commercial HEPA vacuums and eco-friendly degreasers that won't damage new finishes. <Link to="/about" className="text-accent hover:underline">Meet our background-checked teams →</Link></p>
+      <p>While you can handle surface-level cleanup, construction dust in HVAC systems and embedded in carpets requires professional equipment. Our teams serving <Link to="/locations/gaithersburg-md/house-cleaning" className="text-accent hover:underline">Gaithersburg</Link>, <Link to="/locations/potomac-md/house-cleaning" className="text-accent hover:underline">Potomac</Link>, <Link to="/locations/mclean-va/house-cleaning" className="text-accent hover:underline">McLean</Link>, and <Link to="/washington-dc" className="text-accent hover:underline">Washington DC</Link> use commercial HEPA vacuums and eco-friendly degreasers that won't damage new finishes. <Link to="/about" className="text-accent hover:underline">Meet our background-checked teams →</Link></p>
+
+      <h2>What Your Contractor Handles vs. What the Cleaning Team Handles</h2>
+      <p>These are two different jobs, and knowing the split saves you money and confusion. In short: your contractor clears the construction, and the cleaning team clears the dust.</p>
+      <p><strong>Your contractor should handle:</strong></p>
+      <ul>
+        <li>Hauling away large debris, offcuts, and packaging</li>
+        <li>Removing their own tools, drop cloths, and leftover materials</li>
+        <li>Paint, caulk, and finish touch-ups</li>
+        <li>Protecting fixtures and un-renovated rooms during the work</li>
+      </ul>
+      <p><strong>The cleaning team handles:</strong></p>
+      <ul>
+        <li>Fine construction dust in HVAC vents, ducts, and on every surface, using commercial HEPA equipment</li>
+        <li>Inside cabinets, drawers, and closets where dust settles</li>
+        <li>Adhesive residue, grout haze, and paint specks on floors, glass, and fixtures</li>
+        <li>Interior and exterior windows, sills, and tracks</li>
+        <li>A final sanitize and an air-quality-focused HEPA pass</li>
+      </ul>
+      <p>If your remodel was extensive, this is really a <Link to="/services/post-construction-cleaning" className="text-accent hover:underline">post-construction cleaning</Link> rather than a standard <Link to="/services/deep-cleaning" className="text-accent hover:underline">deep cleaning</Link> — it goes a step further on dust removal. Not sure which you need? See exactly <Link to="/resources/what-is-included-in-a-deep-cleaning" className="text-accent hover:underline">what's included in a deep cleaning</Link> and <Link to="/resources/how-long-does-deep-cleaning-take" className="text-accent hover:underline">how long a deep cleaning takes</Link>.</p>
 
       <BlogInlineCTA
         headline="Post-Renovation Cleaning Done Right"
@@ -1570,6 +1592,17 @@ const HOWTO_DATA: Record<string, { steps: { name: string; text: string }[]; tota
   },
 };
 
+// Optional per-post FAQs — any blogContent/auto post listed here renders a visible FAQ section
+// and emits FAQPage schema. Keeps the content pipeline able to add FAQs without a dedicated page.
+const FAQ_DATA: Record<string, { q: string; a: string }[]> = {
+  "post-renovation-cleaning-guide-maryland": [
+    { q: "Is post-renovation cleaning the same as a deep clean?", a: "It's a deep clean plus construction-specific work. A regular deep cleaning resets an ordinary lived-in home; a post-renovation clean adds the removal of fine construction dust from HVAC systems, cabinet interiors, and every surface, plus adhesive and paint residue — the debris a remodel leaves behind. For heavier jobs we run it as a dedicated post-construction cleaning rather than a standard deep clean." },
+    { q: "Should my contractor handle the cleanup, or do I need a cleaning service?", a: "Both have a role. Your contractor should haul away their own large debris, leftover materials, and packaging, and handle any paint or finish touch-ups. But the fine dust that settles into vents, ductwork, cabinet interiors, window tracks, and carpet needs professional cleaning equipment — commercial HEPA vacuums and the right degreasers — which is a different job from construction cleanup. Most homeowners have the contractor clear the big stuff and bring in a cleaning team for the detail." },
+    { q: "How long after construction should I schedule the cleaning?", a: "Wait until all dust-generating work is finished — sanding, cutting, and drywall are done — and the contractor has removed their materials. Fine dust keeps settling for a day or two after the last work, so we often do a rough clean first, then a detailed clean once everything has settled, so it doesn't just resettle on freshly cleaned surfaces." },
+    { q: "Is construction dust actually harmful?", a: "Fine drywall and silica dust can irritate the airways and linger in the air and HVAC system for weeks if it isn't properly removed. That's why post-renovation cleaning uses HEPA filtration and wet methods rather than dry dusting that just kicks it back into the air — the goal is to capture the dust, not move it around." },
+  ],
+};
+
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
 
@@ -1586,6 +1619,7 @@ const BlogPost = () => {
 
   const postUrl = `https://capitalcleancare.com/resources/${post.slug}`;
   const howtoData = HOWTO_DATA[post.slug];
+  const faqData = FAQ_DATA[post.slug];
 
   // Keep the <title> under 70 chars (Bing): append the brand only when it fits,
   // otherwise use the post title alone so it isn't truncated in search results.
@@ -1621,6 +1655,7 @@ const BlogPost = () => {
           image={post.coverImage}
         />
       )}
+      {faqData && <FAQSchema faqs={faqData} />}
       <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: post.title, href: `/resources/${post.slug}` }]} />
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 max-w-3xl">
@@ -1637,6 +1672,13 @@ const BlogPost = () => {
 
           {content}
 
+          {faqData && (
+            <section className="mt-12">
+              <h2 className="font-heading text-2xl md:text-3xl font-bold mb-6">Frequently Asked Questions</h2>
+              <FAQAccordion faqs={faqData} />
+            </section>
+          )}
+
           <BlogInlineCTA
             headline="Ready to Have Your Home Professionally Cleaned?"
             subtext="Capital Clean Care serves Maryland, DC & Northern Virginia with eco-friendly, background-checked teams. New clients get 15% OFF their first visit — no commitment needed."
@@ -1651,9 +1693,11 @@ const BlogPost = () => {
             <h3 className="font-heading text-lg font-bold mb-2">Local House Cleaning Across the DMV</h3>
             <p className="text-sm text-muted-foreground mb-3">Capital Clean Care serves homeowners across Maryland, DC, and Northern Virginia:</p>
             <div className="flex flex-wrap gap-x-4 gap-y-1.5 text-sm mb-3">
-              {[["bethesda-md","Bethesda"],["rockville-md","Rockville"],["silver-spring-md","Silver Spring"],["gaithersburg-md","Gaithersburg"],["potomac-md","Potomac"],["chevy-chase-md","Chevy Chase"],["arlington-va","Arlington"],["alexandria-va","Alexandria"],["mclean-va","McLean"],["frederick-md","Frederick"],["columbia-md","Columbia"],["takoma-park-md","Takoma Park"]].map(([slug,name]) => (
-                <Link key={slug} to={`/locations/${slug}`} className="text-accent hover:underline">{name}</Link>
-              ))}
+              {[["bethesda-md","Bethesda"],["rockville-md","Rockville"],["silver-spring-md","Silver Spring"],["gaithersburg-md","Gaithersburg"],["potomac-md","Potomac"],["chevy-chase-md","Chevy Chase"],["arlington-va","Arlington"],["alexandria-va","Alexandria"],["mclean-va","McLean"],["frederick-md","Frederick"],["columbia-md","Columbia"],["takoma-park-md","Takoma Park"]]
+                .filter(([slug]) => isIndexable(`/locations/${slug}/house-cleaning`))
+                .map(([slug,name]) => (
+                  <Link key={slug} to={`/locations/${slug}/house-cleaning`} className="text-accent hover:underline">{name}</Link>
+                ))}
             </div>
             <div className="flex flex-wrap gap-x-4 gap-y-1.5 text-sm">
               {[["deep-cleaning","Deep Cleaning"],["move-out-cleaning","Move-Out Cleaning"],["recurring-cleaning","Recurring Cleaning"],["eco-friendly-cleaning","Eco-Friendly Cleaning"],["post-construction-cleaning","Post-Construction Cleaning"]].map(([slug,name]) => (

@@ -205,6 +205,15 @@ export function guidesForPost(slug: string, limit = 6): GuideLink[] {
   return dedupe([...category, ...manual]).slice(0, limit);
 }
 
+/** Guide links for an explicit, ordered list of post slugs — indexable/linkable only (drops
+ *  noindex or canonicalised-away posts and anything missing). Used for hand-curated spoke lists. */
+export function guidesBySlugs(slugs: string[]): GuideLink[] {
+  return slugs
+    .map((s) => LINKABLE_POSTS.find((p) => p.slug === s))
+    .filter((p): p is BlogPost => Boolean(p))
+    .map(toGuide);
+}
+
 /** Guides for a service page — drawn from the service's mapped category. */
 export function guidesForService(serviceSlug: string, limit = 6): GuideLink[] {
   const cat = CATEGORY_FOR_SERVICE[serviceSlug];
