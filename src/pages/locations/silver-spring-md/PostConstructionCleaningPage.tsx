@@ -20,10 +20,12 @@ import ServiceChecklistLocation from "@/components/location/ServiceChecklistLoca
 import InternalLinksGrid from "@/components/location/InternalLinksGrid";
 import LocationSocialProof from "@/components/location/LocationSocialProof";
 import LocationQuoteSection from "@/components/location/LocationQuoteSection";
+import { getServiceLocationOverride } from "@/data/service-location-overrides";
+import { ctaProseVariants, pickVariant } from "@/data/template-variants";
 
 const PAGE_URL = "https://capitalcleancare.com/locations/silver-spring-md/post-construction-cleaning";
 
-const faqs = [
+const localFaqs = [
   {
     q: "How much does post-construction cleaning cost in Silver Spring?",
     a: "Priced by square footage and scope of the project. Get your exact quote in 60 seconds — free, no commitment. We typically schedule within 24–48 hours of your request throughout Silver Spring.",
@@ -113,6 +115,7 @@ const nearbyCities = [
 ];
 
 const SilverSpringPostConstructionCleaningPage = () => {
+  const faqs = getServiceLocationOverride("silver-spring-md", "post-construction-cleaning")?.faqs ?? localFaqs;
   const { seoHelmet } = useSEO({
     title: "Construction Cleaning Silver Spring MD | Post-Construction",
     description:
@@ -301,7 +304,7 @@ const SilverSpringPostConstructionCleaningPage = () => {
       <TrustBadges compact />
       <ConversionCTA cityName="Silver Spring" />
 
-      <LocationQuoteSection cityName="Silver Spring" serviceLabel="Post-Construction Cleaning" defaultService="post-construction" zipLine="Serving Silver Spring and nearby communities." />
+      <LocationQuoteSection cityName="Silver Spring" serviceLabel="Post-Construction Cleaning" defaultService="post-construction" zipLine="Serving Silver Spring and nearby communities." ctaProse={ctaProseVariants[pickVariant("silver-spring-md", 2, 3)]("Silver Spring", "Post-Construction Cleaning")} />
 
       <StickyMobileCTA />
     </Layout>

@@ -20,12 +20,14 @@ import ServiceChecklistLocation from "@/components/location/ServiceChecklistLoca
 import InternalLinksGrid from "@/components/location/InternalLinksGrid";
 import LocationSocialProof from "@/components/location/LocationSocialProof";
 import LocationQuoteSection from "@/components/location/LocationQuoteSection";
+import { getServiceLocationOverride } from "@/data/service-location-overrides";
+import { ctaProseVariants, pickVariant } from "@/data/template-variants";
 
 // ── Page constants ────────────────────────────────────────────────────────────
 
 const PAGE_URL = "https://capitalcleancare.com/locations/potomac-md/move-out-cleaning";
 
-const faqs = [
+const localFaqs = [
   {
     q: "How much does move out cleaning cost in Potomac?",
     a: "Pricing depends on home size and condition. Get your exact quote in 60 seconds — use the form below or call (240) 704-2551. Same-day availability confirmed at booking.",
@@ -122,6 +124,8 @@ const PotomacMoveOutCleaningPage = () => {
     canonical: PAGE_URL,
     ogImage: "https://capitalcleancare.com/og-image.jpg",
   });
+
+  const faqs = getServiceLocationOverride("potomac-md", "move-out-cleaning")?.faqs ?? localFaqs;
 
   return (
     <Layout>
@@ -350,7 +354,7 @@ const PotomacMoveOutCleaningPage = () => {
       <ConversionCTA cityName="Potomac" />
 
       {/* ── Final CTA + #quote anchor ─────────────────────── */}
-      <LocationQuoteSection cityName="Potomac" serviceLabel="Move-Out Cleaning" defaultService="move" zipLine="Serving Potomac and nearby communities." />
+      <LocationQuoteSection cityName="Potomac" serviceLabel="Move-Out Cleaning" defaultService="move" zipLine="Serving Potomac and nearby communities." ctaProse={ctaProseVariants[pickVariant("potomac-md", 2, 3)]("Potomac", "Move-Out Cleaning")} />
 
       {/* ── Sticky mobile phone CTA ───────────────────────── */}
       <StickyMobileCTA />

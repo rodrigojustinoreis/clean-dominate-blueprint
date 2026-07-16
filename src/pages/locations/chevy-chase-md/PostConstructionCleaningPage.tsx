@@ -20,12 +20,14 @@ import ServiceChecklistLocation from "@/components/location/ServiceChecklistLoca
 import InternalLinksGrid from "@/components/location/InternalLinksGrid";
 import LocationSocialProof from "@/components/location/LocationSocialProof";
 import LocationQuoteSection from "@/components/location/LocationQuoteSection";
+import { getServiceLocationOverride } from "@/data/service-location-overrides";
+import { ctaProseVariants, pickVariant } from "@/data/template-variants";
 
 // ── Page constants ────────────────────────────────────────────────────────────
 
 const PAGE_URL = "https://capitalcleancare.com/locations/chevy-chase-md/post-construction-cleaning";
 
-const faqs = [
+const localFaqs = [
   {
     q: "How much does post-construction cleaning cost in Chevy Chase?",
     a: "Priced by square footage and scope. Get your exact quote in 60 seconds — use the form below or call (240) 704-2551. No commitment required.",
@@ -106,6 +108,7 @@ const nearbyCities = [
 // ── Page component ────────────────────────────────────────────────────────────
 
 const ChevyChasePostConstructionPage = () => {
+  const faqs = getServiceLocationOverride("chevy-chase-md", "post-construction-cleaning")?.faqs ?? localFaqs;
   const { seoHelmet } = useSEO({
     title: "Post-Construction Cleaning in Chevy Chase, MD",
     description:
@@ -333,7 +336,7 @@ const ChevyChasePostConstructionPage = () => {
       <ConversionCTA cityName="Chevy Chase" />
 
       {/* ── Final CTA + #quote anchor ─────────────────────── */}
-      <LocationQuoteSection cityName="Chevy Chase" serviceLabel="Post-Construction Cleaning" defaultService="post-construction" zipLine="Serving Chevy Chase and nearby communities." />
+      <LocationQuoteSection cityName="Chevy Chase" serviceLabel="Post-Construction Cleaning" defaultService="post-construction" zipLine="Serving Chevy Chase and nearby communities." ctaProse={ctaProseVariants[pickVariant("chevy-chase-md", 2, 3)]("Chevy Chase", "Post-Construction Cleaning")} />
 
       {/* ── Sticky mobile phone CTA ───────────────────────── */}
       <StickyMobileCTA />

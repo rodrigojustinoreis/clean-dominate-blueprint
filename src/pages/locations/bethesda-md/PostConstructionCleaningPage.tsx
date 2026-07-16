@@ -20,12 +20,14 @@ import ServiceChecklistLocation from "@/components/location/ServiceChecklistLoca
 import InternalLinksGrid from "@/components/location/InternalLinksGrid";
 import LocationSocialProof from "@/components/location/LocationSocialProof";
 import LocationQuoteSection from "@/components/location/LocationQuoteSection";
+import { getServiceLocationOverride } from "@/data/service-location-overrides";
+import { ctaProseVariants, pickVariant } from "@/data/template-variants";
 
 // ── Page constants ────────────────────────────────────────────────────────────
 
 const PAGE_URL = "https://capitalcleancare.com/locations/bethesda-md/post-construction-cleaning";
 
-const faqs = [
+const localFaqs = [
   {
     q: "How much does post-construction cleaning cost in Bethesda?",
     a: "Priced by square footage and scope of work. Get your exact quote in 60 seconds — use the form below or call (240) 704-2551. No commitment required.",
@@ -113,6 +115,8 @@ const BethesdaPostConstructionCleaningPage = () => {
     canonical: PAGE_URL,
     ogImage: "https://capitalcleancare.com/og-image.jpg",
   });
+
+  const faqs = getServiceLocationOverride("bethesda-md", "post-construction-cleaning")?.faqs ?? localFaqs;
 
   return (
     <Layout>
@@ -341,7 +345,7 @@ const BethesdaPostConstructionCleaningPage = () => {
       <ConversionCTA cityName="Bethesda" />
 
       {/* ── Final CTA + #quote anchor ─────────────────────── */}
-      <LocationQuoteSection cityName="Bethesda" serviceLabel="Post-Construction Cleaning" defaultService="post-construction" zipLine="Serving Bethesda and nearby communities." />
+      <LocationQuoteSection cityName="Bethesda" serviceLabel="Post-Construction Cleaning" defaultService="post-construction" zipLine="Serving Bethesda and nearby communities." ctaProse={ctaProseVariants[pickVariant("bethesda-md", 2, 3)]("Bethesda", "Post-Construction Cleaning")} />
 
       {/* ── Sticky mobile phone CTA ───────────────────────── */}
       <StickyMobileCTA />

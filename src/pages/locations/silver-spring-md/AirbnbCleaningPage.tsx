@@ -20,10 +20,12 @@ import ServiceChecklistLocation from "@/components/location/ServiceChecklistLoca
 import InternalLinksGrid from "@/components/location/InternalLinksGrid";
 import LocationSocialProof from "@/components/location/LocationSocialProof";
 import LocationQuoteSection from "@/components/location/LocationQuoteSection";
+import { getServiceLocationOverride } from "@/data/service-location-overrides";
+import { ctaProseVariants, pickVariant } from "@/data/template-variants";
 
 const PAGE_URL = "https://capitalcleancare.com/locations/silver-spring-md/airbnb-cleaning";
 
-const faqs = [
+const localFaqs = [
   {
     q: "How quickly can you turn over my Silver Spring Airbnb?",
     a: "Most 1–2 bedroom Silver Spring properties turn over in 2–3 hours. We work within same-day check-in windows with advance notice from Downtown Silver Spring to Four Corners.",
@@ -103,6 +105,7 @@ const nearbyCities = [
 ];
 
 const SilverSpringAirbnbCleaningPage = () => {
+  const faqs = getServiceLocationOverride("silver-spring-md", "airbnb-cleaning")?.faqs ?? localFaqs;
   const { seoHelmet } = useSEO({
     title: "Airbnb Cleaning in Silver Spring, MD",
     description:
@@ -277,7 +280,7 @@ const SilverSpringAirbnbCleaningPage = () => {
       <TrustBadges compact />
       <ConversionCTA cityName="Silver Spring" />
 
-      <LocationQuoteSection cityName="Silver Spring" serviceLabel="Airbnb Cleaning" defaultService="airbnb" zipLine="Serving Silver Spring and nearby communities." />
+      <LocationQuoteSection cityName="Silver Spring" serviceLabel="Airbnb Cleaning" defaultService="airbnb" zipLine="Serving Silver Spring and nearby communities." ctaProse={ctaProseVariants[pickVariant("silver-spring-md", 2, 3)]("Silver Spring", "Airbnb Cleaning")} />
 
       <StickyMobileCTA />
     </Layout>

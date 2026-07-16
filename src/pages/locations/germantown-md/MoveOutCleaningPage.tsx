@@ -20,10 +20,12 @@ import ServiceChecklistLocation from "@/components/location/ServiceChecklistLoca
 import InternalLinksGrid from "@/components/location/InternalLinksGrid";
 import LocationSocialProof from "@/components/location/LocationSocialProof";
 import LocationQuoteSection from "@/components/location/LocationQuoteSection";
+import { getServiceLocationOverride } from "@/data/service-location-overrides";
+import { ctaProseVariants, pickVariant } from "@/data/template-variants";
 
 const PAGE_URL = "https://capitalcleancare.com/locations/germantown-md/move-out-cleaning";
 
-const faqs = [
+const localFaqs = [
   {
     q: "How much does move out cleaning cost in Germantown?",
     a: "Pricing depends on home size and condition. Get your exact quote in 60 seconds — free, no commitment. Same-day availability confirmed at booking for ZIPs 20874, 20875, and 20876.",
@@ -118,6 +120,8 @@ const GermantownMoveOutCleaningPage = () => {
     canonical: PAGE_URL,
     ogImage: "https://capitalcleancare.com/og-image.jpg",
   });
+
+  const faqs = getServiceLocationOverride("germantown-md", "move-out-cleaning")?.faqs ?? localFaqs;
 
   return (
     <Layout>
@@ -278,7 +282,7 @@ const GermantownMoveOutCleaningPage = () => {
       <TrustBadges compact />
       <ConversionCTA cityName="Germantown" />
 
-      <LocationQuoteSection cityName="Germantown" serviceLabel="Move-Out Cleaning" defaultService="move" zipLine="Serving Germantown and nearby communities." />
+      <LocationQuoteSection cityName="Germantown" serviceLabel="Move-Out Cleaning" defaultService="move" zipLine="Serving Germantown and nearby communities." ctaProse={ctaProseVariants[pickVariant("germantown-md", 2, 3)]("Germantown", "Move-Out Cleaning")} />
 
       <StickyMobileCTA />
     </Layout>

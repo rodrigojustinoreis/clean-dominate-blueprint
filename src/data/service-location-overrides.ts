@@ -4,6 +4,7 @@
 // gives each page distinct, indexable value.
 import { houseCleaningCityContent } from "./house-cleaning-city-content";
 import { ecoRecurringCityContent } from "./eco-recurring-city-content";
+import { serviceCityFaqsL3 } from "./service-city-faqs-l3";
 
 export interface TeamPhoto {
   src: string;
@@ -663,6 +664,8 @@ There's a practical local reason to skip the heavy chemicals, too. Parts of Olne
   ...houseCleaningCityContent,
   // Lote 2 — eco-friendly-cleaning + recurring-cleaning city pages (intro + city FAQs).
   ...ecoRecurringCityContent,
+  // Lote 3A — airbnb / move-out / office / post-construction city FAQs.
+  ...serviceCityFaqsL3,
 };
 
 export function getServiceLocationOverride(citySlug: string, serviceSlug: string): ServiceLocationOverride | null {

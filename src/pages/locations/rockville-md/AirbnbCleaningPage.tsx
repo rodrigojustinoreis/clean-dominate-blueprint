@@ -20,10 +20,12 @@ import ServiceChecklistLocation from "@/components/location/ServiceChecklistLoca
 import InternalLinksGrid from "@/components/location/InternalLinksGrid";
 import LocationSocialProof from "@/components/location/LocationSocialProof";
 import LocationQuoteSection from "@/components/location/LocationQuoteSection";
+import { getServiceLocationOverride } from "@/data/service-location-overrides";
+import { ctaProseVariants, pickVariant } from "@/data/template-variants";
 
 const PAGE_URL = "https://capitalcleancare.com/locations/rockville-md/airbnb-cleaning";
 
-const faqs = [
+const localFaqs = [
   {
     q: "How quickly can you turn over my Rockville Airbnb between guests?",
     a: "Most 1–2 bedroom Rockville properties can be turned over in 2–3 hours. Larger homes or properties with extra bedrooms may take longer. We can work within tight same-day check-in windows with advance notice.",
@@ -111,6 +113,7 @@ const nearbyCities = [
 ];
 
 const RockvilleAirbnbCleaningPage = () => {
+  const faqs = getServiceLocationOverride("rockville-md", "airbnb-cleaning")?.faqs ?? localFaqs;
   const { seoHelmet } = useSEO({
     title: "Airbnb Cleaning in Rockville, MD",
     description:
@@ -328,7 +331,7 @@ const RockvilleAirbnbCleaningPage = () => {
       <TrustBadges compact />
       <ConversionCTA cityName="Rockville" />
 
-      <LocationQuoteSection cityName="Rockville" serviceLabel="Airbnb Cleaning" defaultService="airbnb" zipLine="Serving Rockville across ZIPs 20850, 20851, 20852, and 20853." />
+      <LocationQuoteSection cityName="Rockville" serviceLabel="Airbnb Cleaning" defaultService="airbnb" zipLine="Serving Rockville across ZIPs 20850, 20851, 20852, and 20853." ctaProse={ctaProseVariants[pickVariant("rockville-md", 2, 3)]("Rockville", "Airbnb Cleaning")} />
 
       <StickyMobileCTA />
     </Layout>

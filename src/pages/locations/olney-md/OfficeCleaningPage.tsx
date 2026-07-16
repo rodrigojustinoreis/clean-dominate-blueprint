@@ -20,10 +20,12 @@ import ServiceChecklistLocation from "@/components/location/ServiceChecklistLoca
 import InternalLinksGrid from "@/components/location/InternalLinksGrid";
 import LocationSocialProof from "@/components/location/LocationSocialProof";
 import LocationQuoteSection from "@/components/location/LocationQuoteSection";
+import { getServiceLocationOverride } from "@/data/service-location-overrides";
+import { ctaProseVariants, pickVariant } from "@/data/template-variants";
 
 const PAGE_URL = "https://capitalcleancare.com/locations/olney-md/office-cleaning";
 
-const faqs = [
+const localFaqs = [
   {
     q: "How much does office cleaning cost in Olney?",
     a: "Priced by square footage, frequency, and scope. Contact us for a custom quote tailored to your Olney office. Free, no commitment.",
@@ -118,6 +120,8 @@ const OlneyOfficeCleaningPage = () => {
     canonical: PAGE_URL,
     ogImage: "https://capitalcleancare.com/og-image.jpg",
   });
+
+  const faqs = getServiceLocationOverride("olney-md", "office-cleaning")?.faqs ?? localFaqs;
 
   return (
     <Layout>
@@ -304,7 +308,7 @@ const OlneyOfficeCleaningPage = () => {
       <TrustBadges compact />
       <ConversionCTA cityName="Olney" />
 
-      <LocationQuoteSection cityName="Olney" serviceLabel="Office Cleaning" defaultService="office" zipLine="Serving Olney and nearby communities." />
+      <LocationQuoteSection cityName="Olney" serviceLabel="Office Cleaning" defaultService="office" zipLine="Serving Olney and nearby communities." ctaProse={ctaProseVariants[pickVariant("olney-md", 2, 3)]("Olney", "Office Cleaning")} />
 
       <StickyMobileCTA />
     </Layout>

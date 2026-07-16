@@ -20,12 +20,14 @@ import ServiceChecklistLocation from "@/components/location/ServiceChecklistLoca
 import InternalLinksGrid from "@/components/location/InternalLinksGrid";
 import LocationSocialProof from "@/components/location/LocationSocialProof";
 import LocationQuoteSection from "@/components/location/LocationQuoteSection";
+import { getServiceLocationOverride } from "@/data/service-location-overrides";
+import { ctaProseVariants, pickVariant } from "@/data/template-variants";
 
 // ── Page constants ────────────────────────────────────────────────────────────
 
 const PAGE_URL = "https://capitalcleancare.com/locations/chevy-chase-md/move-out-cleaning";
 
-const faqs = [
+const localFaqs = [
   {
     q: "How much does move out cleaning cost in Chevy Chase?",
     a: "Pricing depends on home size and condition. Get your exact quote in 60 seconds — use the form below or call (240) 704-2551. Same-day availability confirmed at booking.",
@@ -115,6 +117,7 @@ const nearbyCities = [
 // ── Page component ────────────────────────────────────────────────────────────
 
 const ChevyChaseMoveOutCleaningPage = () => {
+  const faqs = getServiceLocationOverride("chevy-chase-md", "move-out-cleaning")?.faqs ?? localFaqs;
   const { seoHelmet } = useSEO({
     title: "Move Out Cleaning in Chevy Chase, MD",
     description:
@@ -352,7 +355,7 @@ const ChevyChaseMoveOutCleaningPage = () => {
       <ConversionCTA cityName="Chevy Chase" />
 
       {/* ── Final CTA + #quote anchor ─────────────────────── */}
-      <LocationQuoteSection cityName="Chevy Chase" serviceLabel="Move-Out Cleaning" defaultService="move" zipLine="Serving Chevy Chase and nearby communities." />
+      <LocationQuoteSection cityName="Chevy Chase" serviceLabel="Move-Out Cleaning" defaultService="move" zipLine="Serving Chevy Chase and nearby communities." ctaProse={ctaProseVariants[pickVariant("chevy-chase-md", 2, 3)]("Chevy Chase", "Move-Out Cleaning")} />
 
       {/* ── Sticky mobile phone CTA ───────────────────────── */}
       <StickyMobileCTA />

@@ -20,10 +20,12 @@ import ServiceChecklistLocation from "@/components/location/ServiceChecklistLoca
 import InternalLinksGrid from "@/components/location/InternalLinksGrid";
 import LocationSocialProof from "@/components/location/LocationSocialProof";
 import LocationQuoteSection from "@/components/location/LocationQuoteSection";
+import { getServiceLocationOverride } from "@/data/service-location-overrides";
+import { ctaProseVariants, pickVariant } from "@/data/template-variants";
 
 const PAGE_URL = "https://capitalcleancare.com/locations/gaithersburg-md/airbnb-cleaning";
 
-const faqs = [
+const localFaqs = [
   {
     q: "How quickly can you turn over my Gaithersburg Airbnb?",
     a: "Most 1–2 bedroom Gaithersburg properties turn over in 2–3 hours. We work within same-day check-in windows with advance notice across all ZIP codes.",
@@ -103,6 +105,7 @@ const nearbyCities = [
 ];
 
 const GaithersburgAirbnbCleaningPage = () => {
+  const faqs = getServiceLocationOverride("gaithersburg-md", "airbnb-cleaning")?.faqs ?? localFaqs;
   const { seoHelmet } = useSEO({
     title: "Airbnb Cleaning in Gaithersburg, MD",
     description:
@@ -258,7 +261,7 @@ const GaithersburgAirbnbCleaningPage = () => {
       <TrustBadges compact />
       <ConversionCTA cityName="Gaithersburg" />
 
-      <LocationQuoteSection cityName="Gaithersburg" serviceLabel="Airbnb Cleaning" defaultService="airbnb" zipLine="Serving Gaithersburg and nearby communities." />
+      <LocationQuoteSection cityName="Gaithersburg" serviceLabel="Airbnb Cleaning" defaultService="airbnb" zipLine="Serving Gaithersburg and nearby communities." ctaProse={ctaProseVariants[pickVariant("gaithersburg-md", 2, 3)]("Gaithersburg", "Airbnb Cleaning")} />
 
       <StickyMobileCTA />
     </Layout>
