@@ -15,10 +15,76 @@ import RelatedPosts from "@/components/blog/RelatedPosts";
 
 const HERO_IMAGE = "/images/blog/whats-included-deep/hero.webp";
 
+// The full room-by-room list our teams work from — the same ~50-point checklist behind the
+// GreenShield 5-Step Clean™ white-glove inspection. Real scope, nothing invented.
 const checklist: [string, string[]][] = [
-  ["Kitchen", ["Inside the oven, microwave & fridge", "Cabinet fronts and inside cabinets (on request)", "Backsplash, range hood & small appliances", "Sink, faucet & countertops descaled", "Floors hand-detailed along edges"]],
-  ["Bathrooms", ["Grout scrubbed; tile & glass de-scaled", "Toilet cleaned base to tank", "Shower, tub & fixtures polished", "Mirrors, vanity & cabinet fronts", "Baseboards & behind-the-door corners"]],
-  ["All living areas & bedrooms", ["Baseboards, door frames & trim wiped", "Ceiling fans, vents & light fixtures dusted", "Window sills, tracks & blinds", "Behind & under movable furniture", "Cobweb removal & high-to-low dusting"]],
+  ["Kitchen", [
+    "Inside the oven — racks and door glass",
+    "Inside the microwave, top and bottom",
+    "Refrigerator exterior, top, sides and accessible interior",
+    "Stovetop, grates, drip pans and control knobs",
+    "Range hood and filter degreased",
+    "Backsplash and wall splatter",
+    "Cabinet and drawer fronts wiped",
+    "Countertops and small-appliance exteriors",
+    "Sink, faucet and disposal flange descaled",
+    "Floors hand-detailed along edges and under accessible furniture",
+  ]],
+  ["Bathrooms", [
+    "Tile and grout scrubbed line by line",
+    "Shower, tub and glass doors de-scaled",
+    "Showerhead and fixtures polished",
+    "Toilet cleaned — base, hinges and behind the bowl",
+    "Vanity, countertop and sink",
+    "Mirrors and medicine-cabinet fronts",
+    "Exhaust fan cover dusted",
+    "Baseboards and behind-the-door corners",
+    "Floors detailed to the baseboard",
+  ]],
+  ["Bedrooms", [
+    "Baseboards, trim, doors and door frames wiped",
+    "Ceiling fans and light fixtures dusted",
+    "Blinds and window sills",
+    "Window tracks cleared",
+    "Behind and under accessible furniture",
+    "Headboards and upholstered surfaces vacuumed",
+    "Switch plates, handles and high-touch points sanitized",
+  ]],
+  ["Living & dining areas", [
+    "Baseboards and crown molding",
+    "Ceiling fans, vents and light fixtures",
+    "Blinds, sills and window tracks",
+    "Behind and under sofas and accessible furniture",
+    "Upholstery vacuumed; cushions lifted",
+    "Shelves and décor dusted individually",
+    "Glass tables and mirrors",
+    "Remotes, switches and door handles sanitized",
+  ]],
+  ["Whole-home detail & air", [
+    "Air vents, registers and return covers dusted",
+    "High dusting and cobweb removal, corners to ceiling",
+    "Interior window glass",
+    "Doors, door frames and trim throughout",
+    "Light switches and outlet plates",
+    "Stair rails, balusters and treads",
+    "Trash removed and liners replaced",
+    "EPA Safer Choice™ sanitize of every high-touch surface",
+  ]],
+  ["Floors & entryways", [
+    "All carpets HEPA-vacuumed, edges included",
+    "Hard floors swept and mopped with pH-neutral product",
+    "Entry mats, thresholds and door tracks",
+    "Spot treatment of visible marks (as needed)",
+    "Under accessible rugs and furniture",
+  ]],
+];
+
+// Done on request, not by default — because not everyone wants these emptied each visit.
+const onRequest = [
+  "Inside kitchen cabinets and drawers (emptied and wiped)",
+  "Full refrigerator interior with shelves removed",
+  "Interior of windows on upper floors",
+  "Inside closets and pantry shelving",
 ];
 
 const steps = [
@@ -33,6 +99,7 @@ const faqs = [
   { q: "How long does a deep cleaning take?", a: "Significantly longer than a standard clean — often 1.5 to 2.5 times as long — because of all the detail work. A small apartment might take a few hours; a larger home can take most of a day or a team of cleaners. The exact time depends on the home's size and how long it's been since the last thorough cleaning, since heavier build-up takes more work to remove." },
   { q: "Is inside the fridge and oven included?", a: "Yes — interior of the oven, microwave, and refrigerator are part of a deep clean (a standard clean only does the exteriors). Inside kitchen cabinets and drawers are usually included on request, since not everyone wants them emptied and cleaned each time. If there's a specific appliance or area you want prioritized, just mention it when you book." },
   { q: "Do I need a deep clean or just a regular clean?", a: "If your home is already maintained and you want it kept fresh, a regular clean is right. Choose a deep clean if it's been a while since a thorough cleaning, you're moving in or out, hosting, recovering from a renovation, or starting recurring service. Many people book one deep clean to reset the home, then switch to recurring standard cleans to keep it that way affordably." },
+  { q: "Can I customize the deep cleaning checklist?", a: "Yes. The room-by-room list above is our standard scope, but it's flexible. If you want the team to prioritize the kitchen and primary bathroom, skip a rarely used guest room, or add on-request items like inside cabinets or a full refrigerator interior, just say so during the pre-clean walkthrough. Flagging your priorities upfront is the best way to make sure the areas that matter most to you get the most attention." },
 ];
 
 const WhatsIncludedDeepCleaning = () => {
@@ -93,8 +160,14 @@ const WhatsIncludedDeepCleaning = () => {
           </FadeInSection>
 
           <FadeInSection>
-            <h2 className="font-heading text-3xl font-bold text-foreground mb-6">The Deep Cleaning Checklist</h2>
-            <div className="space-y-5 mb-10">
+            <h2 className="font-heading text-3xl font-bold text-foreground mb-4">The Full Deep Cleaning Checklist</h2>
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              This is the room-by-room list our teams actually work from — close to <strong>50 individual tasks</strong>,
+              and the same checklist behind the white-glove inspection that closes out every{" "}
+              <Link to="/services/deep-cleaning" className="text-accent font-medium hover:underline">GreenShield 5-Step Clean™</Link>.
+              Nothing here is upsold as an extra; it's simply what "deep" means.
+            </p>
+            <div className="space-y-5 mb-6">
               {checklist.map(([room, items]) => (
                 <div key={room} className="border border-border rounded-2xl p-5 bg-secondary/30">
                   <p className="font-heading font-bold text-foreground mb-3 flex items-center gap-2"><Sparkles className="h-5 w-5 text-accent" /> {room}</p>
@@ -105,6 +178,15 @@ const WhatsIncludedDeepCleaning = () => {
                   </ul>
                 </div>
               ))}
+            </div>
+            <div className="border border-accent/30 rounded-2xl p-5 bg-accent/5 mb-10">
+              <p className="font-heading font-bold text-foreground mb-3">Included on request</p>
+              <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-1.5">
+                {onRequest.map((it) => (
+                  <li key={it} className="flex items-start gap-2 text-sm text-muted-foreground"><CheckCircle2 className="h-4 w-4 text-accent shrink-0 mt-0.5" /> {it}</li>
+                ))}
+              </ul>
+              <p className="text-xs text-muted-foreground mt-3">Just mention any of these when you book and we'll fold them into the plan and the quote.</p>
             </div>
           </FadeInSection>
 

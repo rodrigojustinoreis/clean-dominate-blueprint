@@ -248,6 +248,15 @@ export const blogPosts: BlogPost[] = [
     coverImage: "/images/blog/best-silver-spring/hero.webp",
   },
   {
+    slug: "how-often-should-you-deep-clean",
+    title: "How Often Should You Deep Clean Your House?",
+    excerpt: "How often to deep clean by household — a baseline of twice a year, adjusted for pets, kids, allergies, and homes going up for sale. Recommended frequency by profile, plus how to stretch the time between cleans.",
+    date: "2026-07-16",
+    readTime: "7 min read",
+    category: "Cleaning Guides",
+    coverImage: "/images/blog/deep-scrub-detail.webp",
+  },
+  {
     slug: "how-much-does-deep-cleaning-cost",
     title: "How Much Does a Deep Cleaning Cost? (2026 Prices)",
     excerpt: "Real 2026 deep cleaning prices in the DMV by home size — a typical 3-bedroom deep clean runs $375–$445 — plus what drives the cost and how to keep it down over time.",

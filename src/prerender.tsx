@@ -68,6 +68,7 @@ function getAllRoutes(): string[] {
     "/resources/hidden-fees-house-cleaning",
     "/resources/house-too-messy-for-cleaning-service",
     "/resources/how-long-does-deep-cleaning-take",
+    "/resources/how-often-should-you-deep-clean",
     "/resources/airbnb-cleaning-checklist",
     "/resources/how-much-tip-house-cleaner",
     "/resources/move-in-cleaning-checklist",

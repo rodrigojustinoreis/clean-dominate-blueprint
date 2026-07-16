@@ -36,6 +36,8 @@ const faqs = [
   { q: "Why is a deep clean more expensive than a regular clean?", a: "A deep clean includes everything a standard clean does plus all the detailed work routine cleans skip: inside the oven and fridge, grout scrubbing, baseboards and trim, ceiling fans and vents, window tracks, and the build-up behind furniture. That extra detail takes significantly more time — usually 1.5 to 2.5 times longer than a standard clean — which is why a deep clean runs roughly 40–75% more for the same home." },
   { q: "How often do I need to pay for a deep clean?", a: "Only occasionally. Most homes need a deep clean a few times a year — or just once, before starting recurring service. After the first deep clean resets the home, lighter recurring maintenance cleans keep it that way at a lower per-visit cost, so you're not paying deep-clean prices every visit." },
   { q: "Can I get an exact deep cleaning price?", a: "Yes — the ranges above are typical, but an exact quote depends on your specific home and any add-ons. Tell us your home size, number of bathrooms, and roughly how long since the last deep clean, and we'll give you a clear, no-obligation price. There are no hidden fees." },
+  { q: "Is a deep clean worth the money?", a: "For most homes, yes — especially the first one. A single deep clean removes months or years of built-up grime, improves indoor air quality, and resets the home to a baseline that recurring standard cleans can then maintain cheaply. It's most worth it before starting recurring service, before selling or hosting, after a renovation, or for allergy relief. A well-maintained home that just needs upkeep is usually better served by a standard clean." },
+  { q: "Does a deep cleaning cost more than a standard cleaning?", a: "Yes. A deep clean typically costs more than a standard clean of the same home because it takes significantly longer — often 1.5 to 2.5 times as long — thanks to the detail work: inside appliances, grout, baseboards, vents, and behind furniture. The upside is that after one deep clean resets the home, ongoing standard cleans are quicker and cost less per visit." },
 ];
 
 const HowMuchDeepCleaningCosts = () => {
@@ -122,6 +124,61 @@ const HowMuchDeepCleaningCosts = () => {
                 </div>
               ))}
             </div>
+          </FadeInSection>
+
+          <FadeInSection>
+            <h2 className="font-heading text-3xl font-bold text-foreground mb-4">When a Deep Clean Is Worth the Investment</h2>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              A deep clean costs more than a routine visit, but it buys back more too: a full weekend of your own
+              scrubbing, a healthier home, and — before a move or a sale — real leverage. These are the moments the
+              spend pays off most clearly:
+            </p>
+            <ul className="space-y-2.5 mb-4">
+              {[
+                "Your first professional clean. This is where the return is highest — one visit removes buildup that has accumulated over months or years, and resets the whole home to a true baseline you can then maintain cheaply.",
+                "Before starting recurring service. A deep clean first means your ongoing standard cleans stay quick and affordable, instead of every visit fighting old grime.",
+                "Before selling, listing, or hosting. A spotless home photographs better and shows better, and there is no faster way to get guest-ready before the holidays than a single top-to-bottom reset.",
+                "After a renovation or an illness in the house. Construction dust and lingering germs settle into vents, fabric, and every surface — exactly the detail work a deep clean targets.",
+                "For allergy and asthma relief. Removing dander, dust mites, and settled pollen from baseboards, vents, and behind furniture measurably lowers the indoor allergen load.",
+              ].map((t) => (
+                <li key={t} className="flex items-start gap-2.5 text-muted-foreground leading-relaxed">
+                  <CheckCircle2 className="h-5 w-5 text-accent mt-0.5 shrink-0" /> {t}
+                </li>
+              ))}
+            </ul>
+            <p className="text-muted-foreground leading-relaxed mb-10">
+              Put in those terms, a $375–$445 deep clean for a typical 3-bedroom home is often the best-value visit a
+              household books all year — it's the one that makes every clean after it faster and cheaper.
+            </p>
+          </FadeInSection>
+
+          <FadeInSection>
+            <h2 className="font-heading text-3xl font-bold text-foreground mb-4">How to Keep Deep-Clean Costs Down</h2>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              You control several of the levers that move a deep-clean price. A few habits keep you near the bottom of
+              each range instead of the top:
+            </p>
+            <ul className="space-y-2.5 mb-4">
+              {[
+                "Deep clean once, then maintain. After the initial reset, switch to a recurring standard clean — it costs far less per visit and stops buildup before it ever needs another deep clean.",
+                "Don't wait years between deep cleans. The longer the gap, the more buildup, and buildup is the single biggest thing that pushes a quote to the top of its range.",
+                "Declutter surfaces before the team arrives. Cleaners can't scrub a counter buried under mail and chargers — ten minutes of clearing keeps the visit efficient and the quote tight.",
+                "Book recurring for preferred pricing. Weekly and bi-weekly clients get lower per-visit rates than one-off bookings.",
+              ].map((t) => (
+                <li key={t} className="flex items-start gap-2.5 text-muted-foreground leading-relaxed">
+                  <CheckCircle2 className="h-5 w-5 text-accent mt-0.5 shrink-0" /> {t}
+                </li>
+              ))}
+            </ul>
+            <p className="text-muted-foreground leading-relaxed mb-10">
+              The pattern most DMV households settle into is one deep clean a year (or a quarterly deep clean for busy,
+              high-traffic homes) plus a{" "}
+              <Link to="/services/recurring-cleaning" className="text-accent underline hover:no-underline">recurring standard clean</Link>{" "}
+              in between. See the full comparison in{" "}
+              <Link to="/resources/deep-cleaning-vs-regular-cleaning" className="text-accent underline hover:no-underline">deep cleaning vs regular cleaning</Link>, or
+              how the timeline affects labor in{" "}
+              <Link to="/resources/how-long-does-deep-cleaning-take" className="text-accent underline hover:no-underline">how long a deep cleaning takes</Link>.
+            </p>
           </FadeInSection>
 
           <BlogInlineCTA headline="Want an exact deep cleaning price?" subtext="Tell us your home size and we'll give you a clear, no-obligation quote — no hidden fees. Eco-friendly, background-checked cleaners across Bethesda, Rockville, Silver Spring & Gaithersburg." ctaLabel="Get My Free Quote" ctaTo="/contact" />

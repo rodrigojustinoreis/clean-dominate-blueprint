@@ -57,6 +57,7 @@ import RedFlagsHouseCleaningService from "./pages/RedFlagsHouseCleaningService";
 import HiddenFeesHouseCleaning from "./pages/HiddenFeesHouseCleaning";
 import HouseTooMessyForCleaningService from "./pages/HouseTooMessyForCleaningService";
 import HowLongDeepCleaningTakes from "./pages/HowLongDeepCleaningTakes";
+import HowOftenDeepClean from "./pages/HowOftenDeepClean";
 import AirbnbCleaningChecklist from "./pages/AirbnbCleaningChecklist";
 import HowMuchTipHouseCleaner from "./pages/HowMuchTipHouseCleaner";
 import MoveInCleaningChecklist from "./pages/MoveInCleaningChecklist";
@@ -254,6 +255,7 @@ const AppRoutes = () => (
     <Route path="/resources/hidden-fees-house-cleaning" element={<HiddenFeesHouseCleaning />} />
     <Route path="/resources/house-too-messy-for-cleaning-service" element={<HouseTooMessyForCleaningService />} />
     <Route path="/resources/how-long-does-deep-cleaning-take" element={<HowLongDeepCleaningTakes />} />
+    <Route path="/resources/how-often-should-you-deep-clean" element={<HowOftenDeepClean />} />
     <Route path="/resources/airbnb-cleaning-checklist" element={<AirbnbCleaningChecklist />} />
     <Route path="/resources/how-much-tip-house-cleaner" element={<HowMuchTipHouseCleaner />} />
     <Route path="/resources/move-in-cleaning-checklist" element={<MoveInCleaningChecklist />} />

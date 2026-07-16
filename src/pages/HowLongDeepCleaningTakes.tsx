@@ -42,6 +42,7 @@ const faqs = [
   { q: "Should I be home during the deep cleaning?", a: "It is entirely up to you. Many clients let the team in and leave for the day, while others work from home during the clean. Being home neither speeds it up nor slows it down, as long as the team can move freely from room to room. What helps most is being reachable by phone for questions and available, in person or by photos, for the final walkthrough." },
   { q: "Why does the first visit take longer than later cleanings?", a: "The first visit is a full deep clean of a home the team has never touched, so buildup that accumulated over months or years comes off in that single visit. Once that baseline is set, recurring standard cleanings maintain it in a fraction of the time, often half or less, which is also why they cost far less than the initial deep clean." },
   { q: "Does the cleaning team bring everything, or do I need to supply anything?", a: "Capital Clean Care teams bring everything: equipment, vacuums, and the full EPA Safer Choice product lineup. You do not need to supply a thing. If you prefer we use a specific product you own, for a particular countertop or floor finish for example, just leave it out and mention it during the walkthrough." },
+  { q: "Does a bigger home always take longer than a smaller one?", a: "Usually, but not always — bathrooms and condition matter more than square footage alone. A compact 3-bedroom home with three-and-a-half bathrooms and a year of buildup can take longer than a larger, well-kept 4-bedroom with two baths. That's why we quote from the specifics of your home rather than square footage on its own." },
 ];
 
 const HowLongDeepCleaningTakes = () => {
@@ -104,6 +105,7 @@ const HowLongDeepCleaningTakes = () => {
               <p className="font-heading font-bold text-foreground mb-3 text-sm uppercase tracking-wider">In this guide</p>
               <ul className="space-y-1.5 text-sm">
                 <li><a href="#timeline" className="text-accent underline hover:no-underline">Deep cleaning time by home size</a></li>
+                <li><a href="#condition" className="text-accent underline hover:no-underline">How condition changes the time</a></li>
                 <li><a href="#slowdowns" className="text-accent underline hover:no-underline">What slows a deep clean down</a></li>
                 <li><a href="#solo-vs-team" className="text-accent underline hover:no-underline">Solo cleaner vs. a team</a></li>
                 <li><a href="#prepare" className="text-accent underline hover:no-underline">How to prepare so it goes faster</a></li>
@@ -134,6 +136,37 @@ const HowLongDeepCleaningTakes = () => {
               by specialty: one takes the kitchen and bathrooms (the slow, wet work) while the other handles dusting and floors.
               Second, bathrooms drive the totals more than bedrooms do. A 3-bedroom home with three and a half baths will often
               take longer than a 4-bedroom home with two.
+            </p>
+          </FadeInSection>
+
+          <FadeInSection>
+            <h2 id="condition" className="font-heading text-2xl md:text-3xl font-bold text-foreground mt-10 mb-4 scroll-mt-24">How Condition Changes the Time</h2>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              Size sets the baseline; condition sets how far above it you land. Two identical 3-bedroom homes can be an
+              hour or two apart depending on how long it's been since the last thorough clean. Here's roughly how much
+              condition adds to the timelines above:
+            </p>
+            <div className="rounded-2xl border border-border overflow-hidden mb-6 text-sm">
+              <div className="grid grid-cols-2 bg-primary text-primary-foreground font-semibold">
+                <div className="p-3">Home condition</div>
+                <div className="p-3">Effect on time</div>
+              </div>
+              {[
+                ["Recently cleaned (light)", "Bottom of the range above"],
+                ["Average — a few months of normal use", "As shown in the table above"],
+                ["Heavy buildup — a year or more", "Add roughly 1–2 hours"],
+                ["Post-renovation or move-out", "Add roughly 1–3 hours (cabinet interiors + construction dust)"],
+              ].map((r, i) => (
+                <div key={r[0]} className={`grid grid-cols-2 border-t border-border ${i % 2 === 1 ? "bg-secondary/30" : "bg-white"}`}>
+                  <div className="p-3 font-medium text-foreground">{r[0]}</div>
+                  <div className="p-3 text-muted-foreground">{r[1]}</div>
+                </div>
+              ))}
+            </div>
+            <p className="text-muted-foreground leading-relaxed mb-8">
+              This is why the first visit almost always runs longest, and why we quote from your home's actual size and
+              condition rather than a flat hourly clock. For how that time translates to price, see{" "}
+              <Link to="/resources/how-much-does-deep-cleaning-cost" className="text-accent underline hover:no-underline">how much a deep cleaning costs</Link>.
             </p>
           </FadeInSection>
 
