@@ -12,11 +12,27 @@ import AppRoutesLazy from "./AppRoutesLazy";
 
 const queryClient = new QueryClient();
 
+// On route change, scroll to top — EXCEPT when the URL carries a hash (e.g. /#quote,
+// /#pricing). In that case scroll to the target element instead, retrying briefly because
+// the destination page is lazy-loaded and the anchor may not be mounted yet on first tick.
+// Without this, hash CTAs (header "Free Quote", blog CTAs) landed at the top of the homepage
+// instead of the quote form. In-page onClick scrollers and hash-less loads are unaffected.
 const ScrollToTop = () => {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
   useEffect(() => {
+    if (hash) {
+      const id = decodeURIComponent(hash.slice(1));
+      let tries = 0;
+      const go = () => {
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView();
+        else if (tries++ < 20) setTimeout(go, 50);
+      };
+      go();
+      return;
+    }
     window.scrollTo(0, 0);
-  }, [pathname]);
+  }, [pathname, hash]);
   return null;
 };
 
