@@ -225,4 +225,21 @@ export const ecoRecurringCityContent: Record<string, ServiceLocationOverride> = 
       { src: "/images/team/mopping-hardwood-floor.jpg", alt: "Capital Clean Care mopping original hardwood in a Washington, DC home" },
     ],
   },
+
+  // Priority add — Rockville is the core market and recurring the core service.
+  // The dedicated RecurringCleaningPage already carries the Rockville intro/neighborhoods;
+  // this adds the unique city FAQs (with estimated time) and the page is un-noindexed.
+  "rockville-md/recurring-cleaning": {
+    faqs: [
+      { q: "How long does a recurring cleaning take in a Rockville home?", a: "Once you're on a regular rhythm, maintenance visits are faster than a first clean. A typical 3-bedroom Rockville home — a Twinbrook rambler or a King Farm townhome — runs about 1.5–2.5 hours per visit; a larger Fallsgrove single-family home closer to 2.5–3.5. Weekly plans are quickest since less builds up between visits." },
+      { q: "How often should I schedule recurring cleaning in Rockville?", a: "It depends on your household. Busy professionals in King Farm and West End condos often do well bi-weekly, while families with kids or pets near Fallsgrove and Twinbrook usually prefer weekly to stay ahead of the mess. Monthly works for lighter, well-kept homes. We'll recommend a cadence during your free quote — no lock-in." },
+      { q: "Will I have the same cleaning team every visit in Rockville?", a: "Yes. The same background-checked, bonded crew returns to your Rockville home each visit, so they learn your layout, preferences, and the spots that need extra attention — whether it's a King Farm townhome's stairs or a Twinbrook rambler's hardwood. Consistency is the whole point of recurring service." },
+      { q: "Do recurring clients in Rockville get better pricing?", a: "They do. Recurring plans are priced per visit below one-time cleanings because the home stays maintained and each visit is more efficient. Rockville clients on a weekly or bi-weekly schedule get the best per-visit rate, plus priority access to preferred time slots. Pricing is flat and transparent — no surprises." },
+    ],
+    photos: [
+      { src: "/images/team/team-mopping-bright-room.jpg", alt: "Capital Clean Care team on a recurring cleaning visit in Rockville, MD" },
+      { src: "/images/team/vacuuming-living-room.jpg", alt: "Capital Clean Care vacuuming a Rockville, MD living room on a recurring plan" },
+      { src: "/images/team/real-team-two-members.webp", alt: "Capital Clean Care background-checked team on a recurring visit in Rockville, MD" },
+    ],
+  },
 };

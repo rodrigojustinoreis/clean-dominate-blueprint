@@ -83,7 +83,6 @@ export const NOINDEX_PATHS: ReadonlySet<string> = new Set([
   "/locations/rockville-md/move-out-cleaning",
   "/locations/rockville-md/office-cleaning",
   "/locations/rockville-md/post-construction-cleaning",
-  "/locations/rockville-md/recurring-cleaning",
   "/locations/shaw-dc",
   "/locations/silver-spring-md",
   "/locations/silver-spring-md/eco-friendly-cleaning",

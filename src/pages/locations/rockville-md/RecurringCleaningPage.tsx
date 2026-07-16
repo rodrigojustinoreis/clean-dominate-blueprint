@@ -20,10 +20,12 @@ import ServiceChecklistLocation from "@/components/location/ServiceChecklistLoca
 import InternalLinksGrid from "@/components/location/InternalLinksGrid";
 import LocationSocialProof from "@/components/location/LocationSocialProof";
 import LocationQuoteSection from "@/components/location/LocationQuoteSection";
+import { getServiceLocationOverride } from "@/data/service-location-overrides";
+import { ctaProseVariants, pickVariant } from "@/data/template-variants";
 
 const PAGE_URL = "https://capitalcleancare.com/locations/rockville-md/recurring-cleaning";
 
-const faqs = [
+const localFaqs = [
   {
     q: "What's the difference between weekly and bi-weekly cleaning in Rockville?",
     a: "Weekly is ideal for larger homes, families with kids or pets, or anyone who wants the home consistently guest-ready. Bi-weekly is our most popular plan — a clean, well-maintained home without maximum frequency or cost. Both include the same thorough checklist.",
@@ -123,6 +125,7 @@ const nearbyCities = [
 ];
 
 const RockvilleRecurringCleaningPage = () => {
+  const faqs = getServiceLocationOverride("rockville-md", "recurring-cleaning")?.faqs ?? localFaqs;
   const { seoHelmet } = useSEO({
     title: "Recurring House Cleaning in Rockville, MD",
     description:
@@ -383,7 +386,7 @@ const RockvilleRecurringCleaningPage = () => {
       <ConversionCTA cityName="Rockville" />
 
       {/* Final CTA */}
-      <LocationQuoteSection cityName="Rockville" serviceLabel="Recurring Cleaning" defaultService="recurring" zipLine="Serving Rockville across ZIPs 20850, 20851, 20852, and 20853." />
+      <LocationQuoteSection cityName="Rockville" serviceLabel="Recurring Cleaning" defaultService="recurring" zipLine="Serving Rockville across ZIPs 20850, 20851, 20852, and 20853." ctaProse={ctaProseVariants[pickVariant("rockville-md", 2, 3)]("Rockville", "Recurring Cleaning")} />
 
       <StickyMobileCTA />
     </Layout>
