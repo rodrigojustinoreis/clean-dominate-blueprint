@@ -20,10 +20,12 @@ import ServiceChecklistLocation from "@/components/location/ServiceChecklistLoca
 import InternalLinksGrid from "@/components/location/InternalLinksGrid";
 import LocationSocialProof from "@/components/location/LocationSocialProof";
 import LocationQuoteSection from "@/components/location/LocationQuoteSection";
+import { getServiceLocationOverride } from "@/data/service-location-overrides";
+import { ctaProseVariants, pickVariant } from "@/data/template-variants";
 
 const PAGE_URL = "https://capitalcleancare.com/locations/gaithersburg-md/recurring-cleaning";
 
-const faqs = [
+const localFaqs = [
   {
     q: "What's the difference between weekly and bi-weekly cleaning in Gaithersburg?",
     a: "Weekly is ideal for larger homes, families with kids or pets, or anyone who wants their home always guest-ready. Bi-weekly is our most popular option — a clean, well-maintained Gaithersburg home without the maximum cost.",
@@ -120,6 +122,8 @@ const GaithersburgRecurringCleaningPage = () => {
     canonical: PAGE_URL,
     ogImage: "https://capitalcleancare.com/og-image.jpg",
   });
+
+  const faqs = getServiceLocationOverride("gaithersburg-md", "recurring-cleaning")?.faqs ?? localFaqs;
 
   return (
     <Layout>
@@ -294,7 +298,7 @@ const GaithersburgRecurringCleaningPage = () => {
       <TrustBadges compact />
       <ConversionCTA cityName="Gaithersburg" />
 
-      <LocationQuoteSection cityName="Gaithersburg" serviceLabel="Recurring Cleaning" defaultService="recurring" zipLine="Serving Gaithersburg and nearby communities." />
+      <LocationQuoteSection cityName="Gaithersburg" serviceLabel="Recurring Cleaning" defaultService="recurring" zipLine="Serving Gaithersburg and nearby communities." ctaProse={ctaProseVariants[pickVariant("gaithersburg-md", 2, 3)]("Gaithersburg", "Recurring Cleaning")} />
 
       <StickyMobileCTA />
     </Layout>

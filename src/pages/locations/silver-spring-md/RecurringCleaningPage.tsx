@@ -20,10 +20,12 @@ import ServiceChecklistLocation from "@/components/location/ServiceChecklistLoca
 import InternalLinksGrid from "@/components/location/InternalLinksGrid";
 import LocationSocialProof from "@/components/location/LocationSocialProof";
 import LocationQuoteSection from "@/components/location/LocationQuoteSection";
+import { getServiceLocationOverride } from "@/data/service-location-overrides";
+import { ctaProseVariants, pickVariant } from "@/data/template-variants";
 
 const PAGE_URL = "https://capitalcleancare.com/locations/silver-spring-md/recurring-cleaning";
 
-const faqs = [
+const localFaqs = [
   {
     q: "What's the difference between weekly and bi-weekly cleaning in Silver Spring?",
     a: "Weekly is ideal for larger homes, families with kids or pets, or anyone who entertains frequently. Bi-weekly is our most popular option for Silver Spring households — a clean, well-maintained home without the maximum cost.",
@@ -114,6 +116,7 @@ const nearbyCities = [
 ];
 
 const SilverSpringRecurringCleaningPage = () => {
+  const faqs = getServiceLocationOverride("silver-spring-md", "recurring-cleaning")?.faqs ?? localFaqs;
   const { seoHelmet } = useSEO({
     title: "Recurring House Cleaning in Silver Spring, MD",
     description:
@@ -315,7 +318,7 @@ const SilverSpringRecurringCleaningPage = () => {
       <TrustBadges compact />
       <ConversionCTA cityName="Silver Spring" />
 
-      <LocationQuoteSection cityName="Silver Spring" serviceLabel="Recurring Cleaning" defaultService="recurring" zipLine="Serving Silver Spring and nearby communities." />
+      <LocationQuoteSection cityName="Silver Spring" serviceLabel="Recurring Cleaning" defaultService="recurring" zipLine="Serving Silver Spring and nearby communities." ctaProse={ctaProseVariants[pickVariant("silver-spring-md", 2, 3)]("Silver Spring", "Recurring Cleaning")} />
 
       <StickyMobileCTA />
     </Layout>

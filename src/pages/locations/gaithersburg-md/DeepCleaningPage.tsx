@@ -20,10 +20,12 @@ import ServiceChecklistLocation from "@/components/location/ServiceChecklistLoca
 import InternalLinksGrid from "@/components/location/InternalLinksGrid";
 import LocationSocialProof from "@/components/location/LocationSocialProof";
 import LocationQuoteSection from "@/components/location/LocationQuoteSection";
+import { getServiceLocationOverride } from "@/data/service-location-overrides";
+import { ctaProseVariants, pickVariant } from "@/data/template-variants";
 
 const PAGE_URL = "https://capitalcleancare.com/locations/gaithersburg-md/deep-cleaning";
 
-const faqs = [
+const localFaqs = [
   {
     q: "How long does a deep cleaning take in Gaithersburg?",
     a: "Most Gaithersburg homes take 4–6 hours. Larger homes or homes with heavy buildup may take longer. We'll confirm the estimate when you book.",
@@ -118,6 +120,7 @@ const nearbyCities = [
 ];
 
 const GaithersburgDeepCleaningPage = () => {
+  const faqs = getServiceLocationOverride("gaithersburg-md", "deep-cleaning")?.faqs ?? localFaqs;
   const { seoHelmet } = useSEO({
     title: "Deep Cleaning Service in Gaithersburg, MD",
     description:
@@ -273,7 +276,7 @@ const GaithersburgDeepCleaningPage = () => {
       <TrustBadges compact />
       <ConversionCTA cityName="Gaithersburg" />
 
-      <LocationQuoteSection cityName="Gaithersburg" serviceLabel="Deep Cleaning" defaultService="deep" zipLine="Serving Gaithersburg and nearby communities." />
+      <LocationQuoteSection cityName="Gaithersburg" serviceLabel="Deep Cleaning" defaultService="deep" zipLine="Serving Gaithersburg and nearby communities." ctaProse={ctaProseVariants[pickVariant("gaithersburg-md", 2, 3)]("Gaithersburg", "Deep Cleaning")} />
 
       <StickyMobileCTA />
     </Layout>
