@@ -16,8 +16,9 @@ import { useSEO } from "@/hooks/useSEO";
 import { getServiceBySlug } from "@/data/services";
 import { cities } from "@/data/locations";
 import { slCities, slServices } from "@/data/service-locations";
-import ServiceRelatedContent from "@/components/ServiceRelatedContent";
-import { isIndexable } from "@/data/related-content";
+import { GuideCards } from "@/components/RelatedContent";
+import { isIndexable, guidesForCategories } from "@/data/related-content";
+import { COST_PRICE_ROWS } from "@/data/cost-cities";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FadeInSection from "@/components/blog/FadeInSection";
 import LocationSocialProof from "@/components/location/LocationSocialProof";
@@ -37,6 +38,75 @@ const trustBadges = [
   { Icon: Leaf, text: "Eco-Friendly" },
   { Icon: UserCheck, text: "Background-Checked" },
   { Icon: Award, text: "Satisfaction Guaranteed" },
+];
+
+// Real deep-clean timelines with a 2-person team — aligned to the same home-size tiers as our
+// pricing. Source: the deep cleans our teams run weekly across Montgomery County (see
+// /resources/how-long-does-deep-cleaning-take). Order matches COST_PRICE_ROWS.
+const DEEP_TEAM_TIMES = ["2–3 hours", "3–4 hours", "4–6 hours", "5–7 hours", "6–8+ hours"];
+
+// What a deep clean covers, by room. Consistent with our service definition and the
+// GreenShield 5-Step Clean™ (inside appliances, grout, baseboards, vents, behind furniture).
+const BY_ROOM: { room: string; tasks: string[] }[] = [
+  {
+    room: "Kitchen",
+    tasks: [
+      "Inside the oven and inside the microwave",
+      "Stovetop, grates, backsplash and range hood",
+      "Refrigerator exterior + accessible top, sides and behind",
+      "Cabinet and drawer fronts degreased",
+      "Countertops, sink and fixtures descaled and polished",
+      "Floors hand-detailed along edges and under accessible furniture",
+    ],
+  },
+  {
+    room: "Bathrooms",
+    tasks: [
+      "Tile and grout scrubbed line by line",
+      "Shower, tub and glass doors descaled of soap scum and hard water",
+      "Toilet cleaned base, hinges and behind the bowl",
+      "Vanity, mirrors and chrome fixtures polished",
+      "Exhaust fan covers and switch plates wiped",
+      "Floors detailed to the baseboard",
+    ],
+  },
+  {
+    room: "Bedrooms & living areas",
+    tasks: [
+      "Baseboards, trim, doors and door frames wiped",
+      "Ceiling fans, light fixtures and blinds dusted top-to-bottom",
+      "Window sills and window tracks cleaned",
+      "Behind and under accessible furniture",
+      "Light switches, handles and other high-touch points sanitized",
+      "All floors HEPA-vacuumed and hard floors mopped",
+    ],
+  },
+  {
+    room: "Whole-home detail",
+    tasks: [
+      "Air vents, registers and return covers dusted",
+      "High dusting and cobweb removal in corners and ceilings",
+      "Interior glass and mirrors",
+      "Trash removed and liners replaced",
+      "EPA Safer Choice™ sanitize of every high-touch surface",
+      "Final white-glove inspection against our 50-point checklist",
+    ],
+  },
+];
+
+// Deep vs standard cleaning — what each service includes. Standard = routine upkeep;
+// deep = everything in standard plus the intensive, less-frequent detail work.
+const DEEP_VS_STANDARD: { task: string; standard: boolean; deep: boolean }[] = [
+  { task: "Dusting, vacuuming and mopping all rooms", standard: true, deep: true },
+  { task: "Kitchen and bathroom surfaces cleaned and sanitized", standard: true, deep: true },
+  { task: "Beds made, trash removed, mirrors and glass", standard: true, deep: true },
+  { task: "Inside the oven and inside the microwave", standard: false, deep: true },
+  { task: "Refrigerator: behind, beside and accessible interior", standard: false, deep: true },
+  { task: "Baseboards, trim, doors and door frames", standard: false, deep: true },
+  { task: "Ceiling fans, vents and air registers", standard: false, deep: true },
+  { task: "Tile and grout scrubbed line by line", standard: false, deep: true },
+  { task: "Behind and under accessible furniture", standard: false, deep: true },
+  { task: "Window sills, tracks and blinds", standard: false, deep: true },
 ];
 
 const GoogleLogo = () => (
@@ -143,7 +213,7 @@ const DeepCleaningPage = () => {
               </div>
 
               <h1 className="font-heading text-4xl md:text-5xl font-bold mb-5 leading-[1.1]">
-                Professional Deep Cleaning in Montgomery County, MD
+                Deep Cleaning Services in Montgomery County, MD
               </h1>
 
               <p className="text-lg text-muted-foreground mb-7 leading-relaxed max-w-xl">
@@ -205,6 +275,241 @@ const DeepCleaningPage = () => {
               {service.intro.split("\n\n").map((p, i) => (
                 <p key={i}>{p}</p>
               ))}
+            </div>
+          </FadeInSection>
+        </div>
+      </section>
+
+      {/* ═══════════ PILLAR CONTENT — informative reference ═══════════ */}
+
+      {/* ── What's included, by room ── */}
+      <section className="py-12 md:py-16 border-t border-border">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <FadeInSection>
+            <span className="text-[#2E7D32] font-semibold text-sm uppercase tracking-wider">What's included</span>
+            <h2 className="font-heading text-2xl md:text-3xl font-bold mt-2 mb-4">What a Deep Cleaning Includes, Room by Room</h2>
+            <div className="space-y-4 text-[17px] leading-relaxed text-foreground mb-8">
+              <p>
+                A deep cleaning is the reset a home gets when routine tidying is no longer enough. Instead of
+                maintaining already-clean surfaces, our team removes the built-up grime, hidden dust, and neglected
+                detail that accumulate over months — inside appliances, along baseboards, in grout lines, behind
+                furniture, and across every vent and fixture. It is the service most Montgomery County homes need
+                before starting a regular plan, after a season of heavy use, or any time the house needs to feel
+                genuinely new again.
+              </p>
+              <p>
+                Every deep clean follows the <strong>GreenShield 5-Step Clean™</strong>, our proprietary process:
+                we assess and protect the home, dry-dust top-to-bottom before any wet work so dust never resettles,
+                sanitize high-touch areas with EPA Safer Choice™ plant-based products, deep-scrub and polish every
+                surface, and finish with a white-glove inspection against a 50-point checklist. That methodology is
+                what keeps a deep clean consistent from the first visit to the fiftieth — you can see all five steps
+                in detail further down this page.
+              </p>
+            </div>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {BY_ROOM.map((r) => (
+                <div key={r.room} className="bg-card border border-border rounded-xl p-5 shadow-sm">
+                  <h3 className="font-heading text-lg font-bold mb-3">{r.room}</h3>
+                  <ul className="space-y-2">
+                    {r.tasks.map((t) => (
+                      <li key={t} className="flex gap-2 items-start text-[15px] text-muted-foreground">
+                        <CheckCircle className="h-4 w-4 text-[#2E7D32] shrink-0 mt-0.5" /> {t}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+            <p className="text-sm text-muted-foreground mt-6">
+              Want the full list? See our{" "}
+              <Link to="/resources/what-is-included-in-a-deep-cleaning" className="text-accent hover:underline font-medium">
+                complete deep cleaning checklist
+              </Link>{" "}
+              or read{" "}
+              <Link to="/resources/how-to-deep-clean-a-stove-maryland" className="text-accent hover:underline font-medium">
+                how we deep clean a stove
+              </Link>{" "}
+              step by step.
+            </p>
+          </FadeInSection>
+        </div>
+      </section>
+
+      {/* ── Deep vs standard ── */}
+      <section className="py-12 md:py-16 bg-secondary/40">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <FadeInSection>
+            <h2 className="font-heading text-2xl md:text-3xl font-bold mb-4">Deep Cleaning vs. Standard Cleaning</h2>
+            <p className="text-[17px] leading-relaxed text-foreground mb-6 max-w-3xl">
+              A standard cleaning keeps an already-clean home fresh — surfaces, floors, kitchen and bathrooms on a
+              regular cadence. A deep cleaning is more intensive and less frequent: it includes everything in a
+              standard clean <em>plus</em> the slow, detailed work that isn't practical every visit. Most homes start
+              with one deep clean to set a baseline, then maintain it with{" "}
+              <Link to="/services/recurring-cleaning" className="text-accent hover:underline font-medium">recurring standard cleanings</Link>{" "}
+              at a fraction of the time and cost. Here is exactly how the two compare:
+            </p>
+            <div className="overflow-x-auto rounded-xl border border-border">
+              <table className="w-full text-left text-[15px] bg-card">
+                <thead>
+                  <tr className="border-b border-border bg-secondary/60">
+                    <th className="p-3 font-heading font-bold">What's cleaned</th>
+                    <th className="p-3 font-heading font-bold text-center w-28">Standard</th>
+                    <th className="p-3 font-heading font-bold text-center w-28">Deep</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {DEEP_VS_STANDARD.map((row) => (
+                    <tr key={row.task} className="border-b border-border last:border-0">
+                      <td className="p-3 text-foreground">{row.task}</td>
+                      <td className="p-3 text-center">{row.standard ? <span className="text-[#2E7D32] font-bold">✓</span> : <span className="text-muted-foreground">—</span>}</td>
+                      <td className="p-3 text-center">{row.deep ? <span className="text-[#2E7D32] font-bold">✓</span> : <span className="text-muted-foreground">—</span>}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="text-sm text-muted-foreground mt-4">
+              Still deciding? Read the full breakdown of{" "}
+              <Link to="/resources/deep-cleaning-vs-regular-cleaning" className="text-accent hover:underline font-medium">deep cleaning vs regular cleaning</Link>{" "}
+              or{" "}
+              <Link to="/resources/what-is-included-in-a-standard-cleaning" className="text-accent hover:underline font-medium">what a standard cleaning includes</Link>.
+            </p>
+          </FadeInSection>
+        </div>
+      </section>
+
+      {/* ── Prices ── */}
+      <section className="py-12 md:py-16 border-t border-border">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <FadeInSection>
+            <h2 className="font-heading text-2xl md:text-3xl font-bold mb-4">Deep Cleaning Prices in Montgomery County</h2>
+            <p className="text-[17px] leading-relaxed text-foreground mb-6 max-w-3xl">
+              We quote deep cleaning as a <strong>flat price</strong> based on the size and condition of your home —
+              never an open-ended hourly rate that leaves you guessing. The ranges below reflect what Capital Clean
+              Care actually charges across Montgomery County and the wider DMV. Condition is the biggest variable: a
+              home that hasn't had a professional clean in a year sits at the top of its range, while a well-kept home
+              sits near the bottom. Your exact price is confirmed before we book — all products and equipment included,
+              no hidden fees.
+            </p>
+            <div className="overflow-x-auto rounded-xl border border-border">
+              <table className="w-full text-left text-[15px] bg-card">
+                <thead>
+                  <tr className="border-b border-border bg-secondary/60">
+                    <th className="p-3 font-heading font-bold">Home size</th>
+                    <th className="p-3 font-heading font-bold">Approx. size</th>
+                    <th className="p-3 font-heading font-bold">One-time deep clean</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {COST_PRICE_ROWS.map((row) => (
+                    <tr key={row[0]} className="border-b border-border last:border-0">
+                      <td className="p-3 font-medium text-foreground">{row[0]}</td>
+                      <td className="p-3 text-muted-foreground">{row[1]}</td>
+                      <td className="p-3 font-semibold text-[#2E7D32]">{row[4]}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="text-sm text-muted-foreground mt-4">
+              Want a deeper cost breakdown by home size and city? See{" "}
+              <Link to="/resources/how-much-does-deep-cleaning-cost" className="text-accent hover:underline font-medium">how much a deep cleaning costs</Link>{" "}
+              and{" "}
+              <Link to="/resources/deep-cleaning-cost-maryland" className="text-accent hover:underline font-medium">deep cleaning cost in Maryland</Link>.
+            </p>
+          </FadeInSection>
+        </div>
+      </section>
+
+      {/* ── How long ── */}
+      <section className="py-12 md:py-16 bg-secondary/40">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <FadeInSection>
+            <h2 className="font-heading text-2xl md:text-3xl font-bold mb-4">How Long Does a Deep Cleaning Take?</h2>
+            <p className="text-[17px] leading-relaxed text-foreground mb-6 max-w-3xl">
+              A deep cleaning takes longer than a standard visit because of the detail work involved. Capital Clean
+              Care sends a <strong>2-person team</strong> on most deep cleans, which is how a typical 3-bedroom home
+              finishes in about 4 to 6 hours instead of eating a whole day. Bathrooms drive the total more than
+              bedrooms do — a home with three-and-a-half baths often takes longer than a larger home with two.
+              Heavy buildup and inside-appliance work (the oven and refrigerator) add time, and both are always
+              included. Here are realistic timelines by home size:
+            </p>
+            <div className="overflow-x-auto rounded-xl border border-border">
+              <table className="w-full text-left text-[15px] bg-card">
+                <thead>
+                  <tr className="border-b border-border bg-secondary/60">
+                    <th className="p-3 font-heading font-bold">Home size</th>
+                    <th className="p-3 font-heading font-bold">Approx. size</th>
+                    <th className="p-3 font-heading font-bold">Time (2-person team)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {COST_PRICE_ROWS.map((row, i) => (
+                    <tr key={row[0]} className="border-b border-border last:border-0">
+                      <td className="p-3 font-medium text-foreground">{row[0]}</td>
+                      <td className="p-3 text-muted-foreground">{row[1]}</td>
+                      <td className="p-3 font-semibold text-[#2E7D32]">{DEEP_TEAM_TIMES[i]}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="text-sm text-muted-foreground mt-4">
+              Times assume a 2-person team and average condition. For what speeds a clean up or slows it down, read{" "}
+              <Link to="/resources/how-long-does-deep-cleaning-take" className="text-accent hover:underline font-medium">how long a deep cleaning takes</Link>.
+            </p>
+          </FadeInSection>
+        </div>
+      </section>
+
+      {/* ── When to schedule ── */}
+      <section className="py-12 md:py-16 border-t border-border">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <FadeInSection>
+            <h2 className="font-heading text-2xl md:text-3xl font-bold mb-4">When to Schedule a Deep Cleaning</h2>
+            <p className="text-[17px] leading-relaxed text-foreground mb-6 max-w-3xl">
+              A deep clean pays off most at a handful of specific moments. If any of these describe your situation,
+              it's the right time to book one.
+            </p>
+            <div className="grid sm:grid-cols-2 gap-5">
+              <div className="bg-card border border-border rounded-xl p-6 shadow-sm">
+                <h3 className="font-heading text-lg font-bold mb-2">Moving in or out</h3>
+                <p className="text-[15px] text-muted-foreground leading-relaxed">
+                  An empty home is the one time every surface is reachable. A deep clean before you unpack means you
+                  never move into someone else's grime; a deep clean on the way out protects your security deposit.
+                  Pair it with our{" "}
+                  <Link to="/services/move-out-cleaning" className="text-accent hover:underline font-medium">move-in / move-out cleaning</Link>{" "}
+                  and follow the{" "}
+                  <Link to="/resources/move-out-cleaning-checklist-maryland-tenants" className="text-accent hover:underline font-medium">Maryland tenant checklist</Link>.
+                </p>
+              </div>
+              <div className="bg-card border border-border rounded-xl p-6 shadow-sm">
+                <h3 className="font-heading text-lg font-bold mb-2">After a renovation or construction</h3>
+                <p className="text-[15px] text-muted-foreground leading-relaxed">
+                  Remodels leave behind fine drywall and construction dust that settles into every vent, track, and
+                  fabric for weeks. A deep clean — or our dedicated{" "}
+                  <Link to="/services/post-construction-cleaning" className="text-accent hover:underline font-medium">post-construction cleaning</Link>{" "}
+                  — clears it so the finished space is actually livable.
+                </p>
+              </div>
+              <div className="bg-card border border-border rounded-xl p-6 shadow-sm">
+                <h3 className="font-heading text-lg font-bold mb-2">A seasonal or spring refresh</h3>
+                <p className="text-[15px] text-muted-foreground leading-relaxed">
+                  The DMV's pollen and humidity load up a home over the year. Many Montgomery County families book a
+                  deep clean each spring, then maintain it with{" "}
+                  <Link to="/services/recurring-cleaning" className="text-accent hover:underline font-medium">recurring service</Link>.
+                  See our{" "}
+                  <Link to="/resources/deep-cleaning-tips-maryland-homes-spring-prep" className="text-accent hover:underline font-medium">spring-prep deep cleaning tips</Link>.
+                </p>
+              </div>
+              <div className="bg-card border border-border rounded-xl p-6 shadow-sm">
+                <h3 className="font-heading text-lg font-bold mb-2">Before selling or hosting</h3>
+                <p className="text-[15px] text-muted-foreground leading-relaxed">
+                  A spotless home shows better in listing photos and open houses, and there's no faster way to get a
+                  house guest-ready before the holidays. A single deep clean resets everything a standard tidy can't
+                  reach — inside appliances, grout, baseboards, and vents included.
+                </p>
+              </div>
             </div>
           </FadeInSection>
         </div>
@@ -308,8 +613,12 @@ const DeepCleaningPage = () => {
         </div>
       </section>
 
-      {/* ── Guides & Resources (internal linking) ── */}
-      <ServiceRelatedContent serviceSlug="deep-cleaning" showAreas={false} />
+      {/* ── Deep Cleaning Guides (cluster posts) ── */}
+      <section className="py-12 md:py-16">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <GuideCards heading="Deep Cleaning Guides" guides={guidesForCategories(["deep-cleaning"], undefined, 6)} />
+        </div>
+      </section>
 
       {/* ── Before & After Gallery ── */}
       <BeforeAfterGallery />
