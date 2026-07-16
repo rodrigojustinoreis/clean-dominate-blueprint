@@ -169,8 +169,17 @@ function getAllRoutes(): string[] {
     }
   }
 
-  // Vanity landing pages
+  // Vanity landing pages — except the 5 consolidated via 301 in netlify.toml
+  // (Lote 3B Group 1). Excluding them here drops them from prerender + sitemap.
+  const REDIRECTED_VANITY = new Set([
+    "house-cleaning-silver-spring-md",
+    "eco-cleaning-chevy-chase-md",
+    "eco-cleaning-potomac-md",
+    "eco-cleaning-bethesda-md",
+    "recurring-cleaning-columbia-md",
+  ]);
   for (const vp of vanityLandingPages) {
+    if (REDIRECTED_VANITY.has(vp.slug)) continue;
     routes.push(`/${vp.slug}`);
   }
 
