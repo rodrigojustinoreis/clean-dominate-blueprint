@@ -162,7 +162,7 @@
 
 [[redirects]]
   from = "/home/f/*"
-  to = "/resources/"
+  to = "/resources"
   status = 301
 
 [[redirects]]
@@ -172,22 +172,22 @@
 
 [[redirects]]
   from = "/f/streamlining-your-cleaning-routine"
-  to = "/resources/"
+  to = "/resources"
   status = 301
 
 [[redirects]]
   from = "/f/12-things-you-forget-to-clean"
-  to = "/resources/"
+  to = "/resources"
   status = 301
 
 [[redirects]]
   from = "/f/how-to-clean-glass"
-  to = "/resources/"
+  to = "/resources"
   status = 301
 
 [[redirects]]
   from = "/seasonal-cleaning/f/*"
-  to = "/resources/"
+  to = "/resources"
   status = 301
 
 [[redirects]]
@@ -197,17 +197,17 @@
 
 [[redirects]]
   from = "/blog/how-to-clean-air-vents-filters-improve-indoor-air-quality-maryland"
-  to = "/resources/"
+  to = "/resources"
   status = 301
 
 [[redirects]]
   from = "/clean-service-chevy-chase"
-  to = "/eco-cleaning-chevy-chase-md/"
+  to = "/locations/chevy-chase-md/eco-friendly-cleaning"
   status = 301
 
 [[redirects]]
   from = "/clean-service-chevy-chase/"
-  to = "/eco-cleaning-chevy-chase-md/"
+  to = "/locations/chevy-chase-md/eco-friendly-cleaning"
   status = 301
 
 [[redirects]]
@@ -350,7 +350,7 @@
 # ── Dead/old internal URLs ────────────────────────────────────────────────────
 [[redirects]]
   from = "/pricing"
-  to = "/#pricing"
+  to = "/"
   status = 301
 
 [[redirects]]
@@ -385,7 +385,7 @@
 
 [[redirects]]
   from = "/f/*"
-  to = "/resources/"
+  to = "/resources"
   status = 301
 
 # ── Removed/replaced blog posts ──────────────────────────────────────────────
@@ -404,28 +404,16 @@
 # ── Blog/legacy query-parameter cleanup ──────────────────────────────────────
 [[redirects]]
   from = "/"
-  to = "/resources/"
+  to = "/resources"
   status = 301
   force = true
   query = {blog = "y"}
 
 [[redirects]]
   from = "/"
-  to = "/resources/"
+  to = "/resources"
   status = 301
   force = true
-  query = {blogcategory = ":cat"}
-
-[[redirects]]
-  from = "/seasonal-cleaning"
-  to = "/spring-cleaning-md/"
-  status = 301
-  query = {blog = "y"}
-
-[[redirects]]
-  from = "/seasonal-cleaning"
-  to = "/spring-cleaning-md/"
-  status = 301
   query = {blogcategory = ":cat"}
 
 # ═══════════════════════════════════════════════════════════════════════════
@@ -1669,6 +1657,14 @@
 # ── Block 6: Non-priority city hub redirects → /maryland ────────────────────
 # ── Fase 1.1: Blog → Resources migration. All /blog/* 301 to /resources/*
 # (slugs preserved). Specific old-slug redirects above run first, then this catch-all.
+# Exact /blog MUST precede /blog/* — the splat matches /blog with an empty splat and
+# would send /blog → /resources/ (extra hop). This exact rule catches it first (1 hop).
+[[redirects]]
+  from = "/blog"
+  to = "/resources"
+  status = 301
+  force = true
+
 [[redirects]]
   from = "/blog/*"
   to = "/resources/:splat"
@@ -1753,12 +1749,6 @@
   from = "/gift-cards"
   to = "/gift-cards/"
   status = 200
-  force = true
-
-[[redirects]]
-  from = "/blog"
-  to = "/resources"
-  status = 301
   force = true
 
 [[redirects]]
