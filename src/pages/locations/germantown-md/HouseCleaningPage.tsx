@@ -20,10 +20,12 @@ import ServiceChecklistLocation from "@/components/location/ServiceChecklistLoca
 import InternalLinksGrid from "@/components/location/InternalLinksGrid";
 import LocationSocialProof from "@/components/location/LocationSocialProof";
 import LocationQuoteSection from "@/components/location/LocationQuoteSection";
+import { getServiceLocationOverride } from "@/data/service-location-overrides";
+import { trustBlurbVariants, ctaProseVariants, ecoSafeVariants, satisfactionVariants, arriveStepVariants, pickVariant } from "@/data/template-variants";
 
 const PAGE_URL = "https://capitalcleancare.com/locations/germantown-md/house-cleaning";
 
-const faqs = [
+const localFaqs = [
   {
     q: "Do you bring your own cleaning supplies to Germantown homes?",
     a: "Yes. We supply all equipment and EPA Safer Choice™ certified eco-friendly products. You don't need to provide anything — just let us in and we handle the rest.",
@@ -114,6 +116,7 @@ const nearbyCities = [
 ];
 
 const GermantownHouseCleaningPage = () => {
+  const faqs = getServiceLocationOverride("germantown-md", "house-cleaning")?.faqs ?? localFaqs;
   const { seoHelmet } = useSEO({
     title: "House Cleaning in Germantown, MD",
     description:
@@ -205,15 +208,15 @@ const GermantownHouseCleaningPage = () => {
             {[
               {
                 title: "Latino-Owned & Locally Operated",
-                body: "We serve Germantown's Kingsview neighborhood and surrounding areas because this is our community. We're not a franchise — we're your neighbors.",
+                body: trustBlurbVariants[pickVariant("germantown-md", 3)]("Germantown", "Montgomery County"),
               },
               {
                 title: "Eco-Safe for Families",
-                body: "Every product is EPA Safer Choice™ certified. No bleach, no ammonia, no synthetic fragrances. Safe from the first visit for children and pets.",
+                body: ecoSafeVariants[pickVariant("germantown-md", 3, 4)]("Germantown"),
               },
               {
                 title: "100% Satisfaction Guaranteed",
-                body: "Not happy with something? Call us and we re-clean — free, no fine print. We stand behind every visit in Germantown's 20874 and 20876 ZIP codes.",
+                body: satisfactionVariants[pickVariant("germantown-md", 3, 5)]("Germantown"),
               },
             ].map((card) => (
               <div key={card.title} className="p-5 bg-card border border-border/50 rounded-xl">
@@ -236,17 +239,15 @@ const GermantownHouseCleaningPage = () => {
               appointment fast.
             </p>
             <p>
-              <strong className="text-foreground">2. We arrive on time</strong> — Bonded, insured,
-              background-checked cleaners bring all supplies. You don't need to provide a thing.
+              <strong className="text-foreground">2. We arrive on time</strong> — {arriveStepVariants[pickVariant("germantown-md", 3, 6)]("Germantown")}
             </p>
             <p>
-              <strong className="text-foreground">3. Thorough top-to-bottom clean</strong> — Consistent
-              checklist, nothing missed. Every room treated with the same attention to detail.
+              <strong className="text-foreground">3. Thorough top-to-bottom clean</strong> — We work the
+              same detailed checklist through every Germantown home, so each room gets the same care from
+              the galley kitchen to the lower-level rec room.
             </p>
             <p>
-              <strong className="text-foreground">4. 100% satisfaction</strong> — If anything isn't
-              right, we return free. No arguing, no fine print. We want your Germantown home to look
-              exactly as it should.
+              <strong className="text-foreground">4. 100% satisfaction</strong> — {satisfactionVariants[pickVariant("germantown-md", 3, 7)]("Germantown")}
             </p>
           </div>
         </div>
@@ -316,7 +317,7 @@ const GermantownHouseCleaningPage = () => {
       <TrustBadges compact />
       <ConversionCTA cityName="Germantown" />
 
-      <LocationQuoteSection cityName="Germantown" serviceLabel="House Cleaning" defaultService="standard" zipLine="Serving Germantown and nearby communities." />
+      <LocationQuoteSection cityName="Germantown" serviceLabel="House Cleaning" defaultService="standard" zipLine="Serving Germantown and nearby communities." ctaProse={ctaProseVariants[pickVariant("germantown-md", 2, 3)]("Germantown", "House Cleaning")} />
 
       <StickyMobileCTA />
     </Layout>

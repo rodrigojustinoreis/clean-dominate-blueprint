@@ -22,7 +22,9 @@ interface LocationSocialProofProps {
  * preload="none" in Chromium, so we must gate the element itself to avoid a
  * ~736 KB download on every initial page load.)
  */
-const LocationSocialProof = ({ cityName, citySlug, serviceSlug, serviceLabel, count = 2 }: LocationSocialProofProps) => {
+const LocationSocialProof = ({ cityName, citySlug, serviceSlug, serviceLabel, count = 1 }: LocationSocialProofProps) => {
+  // One real review per page (hash-distributed across the 9 verified reviews) so
+  // neighbouring city pages rarely share the same review card.
   const reviews = pickReviews(`${citySlug}/${serviceSlug}`, count);
 
   const videoWrapRef = useRef<HTMLDivElement>(null);
@@ -88,7 +90,7 @@ const LocationSocialProof = ({ cityName, citySlug, serviceSlug, serviceLabel, co
         </div>
 
         {/* Real reviews */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className={`grid gap-4 ${reviews.length > 1 ? "grid-cols-1 md:grid-cols-2" : "grid-cols-1 max-w-xl mx-auto"}`}>
           {reviews.map((r) => (
             <div key={r.name} className="bg-card border border-border rounded-xl p-5">
               <div role="img" aria-label="5 out of 5 stars" className="flex items-center gap-0.5 mb-3">

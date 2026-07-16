@@ -20,12 +20,14 @@ import ServiceChecklistLocation from "@/components/location/ServiceChecklistLoca
 import InternalLinksGrid from "@/components/location/InternalLinksGrid";
 import LocationSocialProof from "@/components/location/LocationSocialProof";
 import LocationQuoteSection from "@/components/location/LocationQuoteSection";
+import { getServiceLocationOverride } from "@/data/service-location-overrides";
+import { trustBlurbVariants, ctaProseVariants, ecoSafeVariants, satisfactionVariants, arriveStepVariants, pickVariant } from "@/data/template-variants";
 
 // ── Page constants ────────────────────────────────────────────────────────────
 
 const PAGE_URL = "https://capitalcleancare.com/locations/chevy-chase-md/house-cleaning";
 
-const faqs = [
+const localFaqs = [
   {
     q: "Do you bring your own cleaning supplies to Chevy Chase homes?",
     a: "Yes. We supply all equipment and EPA Safer Choice™ certified eco-friendly products to every Chevy Chase home. You don't need to provide anything — just let us in.",
@@ -131,6 +133,8 @@ const ChevyChaseHouseCleaningPage = () => {
     ogImage: "https://capitalcleancare.com/og-image.jpg",
   });
 
+  const faqs = getServiceLocationOverride("chevy-chase-md", "house-cleaning")?.faqs ?? localFaqs;
+
   return (
     <Layout>
       {/* ── SEO ───────────────────────────────────────────── */}
@@ -216,15 +220,15 @@ const ChevyChaseHouseCleaningPage = () => {
             {[
               {
                 title: "Latino-Owned & Locally Operated",
-                body: "We serve Chevy Chase's Martin's Additions neighborhood and the Chevy Chase Village because this is our community. We're not a franchise — we're your neighbors, and our reputation in Montgomery County is built one clean at a time.",
+                body: trustBlurbVariants[pickVariant("chevy-chase-md", 3)]("Chevy Chase", "Montgomery County"),
               },
               {
                 title: "Eco-Safe for Your Family",
-                body: "Every product we use is EPA Safer Choice™ certified — no bleach, no ammonia, no synthetic fragrances. Safe from the very first visit for children, pets, and allergy sufferers in every room of your Chevy Chase home.",
+                body: ecoSafeVariants[pickVariant("chevy-chase-md", 3, 4)]("Chevy Chase"),
               },
               {
                 title: "100% Satisfaction Guaranteed",
-                body: "Not happy with something after your Chevy Chase house cleaning? Call us and we return to re-clean — free, no fine print, no excuses. That's our promise to every Chevy Chase family.",
+                body: satisfactionVariants[pickVariant("chevy-chase-md", 3, 5)]("Chevy Chase"),
               },
             ].map((card) => (
               <div
@@ -256,17 +260,17 @@ const ChevyChaseHouseCleaningPage = () => {
               {
                 step: "2",
                 title: "We arrive on time",
-                body: "Your bonded, insured, background-checked Capital Clean Care team arrives with all supplies and EPA Safer Choice™ certified products. Nothing for you to prepare.",
+                body: arriveStepVariants[pickVariant("chevy-chase-md", 3, 6)]("Chevy Chase"),
               },
               {
                 step: "3",
                 title: "Thorough top-to-bottom clean",
-                body: "We follow a consistent Chevy Chase house cleaning checklist — kitchen, bathrooms, bedrooms, living areas. Every surface, every time. No shortcuts.",
+                body: "We work through a consistent Chevy Chase house cleaning checklist — kitchen, bathrooms, bedrooms, living areas — so every room gets the same careful, corner-to-corner attention.",
               },
               {
                 step: "4",
                 title: "100% satisfaction guaranteed",
-                body: "If anything isn't right, call us within 24 hours and we return to re-clean at no charge — no fine print, no arguments. Your satisfaction is the standard.",
+                body: satisfactionVariants[pickVariant("chevy-chase-md", 3, 7)]("Chevy Chase"),
               },
             ].map(({ step, title, body }) => (
               <div
@@ -352,7 +356,7 @@ const ChevyChaseHouseCleaningPage = () => {
       <ConversionCTA cityName="Chevy Chase" />
 
       {/* ── Final CTA + #quote anchor ─────────────────────── */}
-      <LocationQuoteSection cityName="Chevy Chase" serviceLabel="House Cleaning" defaultService="standard" zipLine="Serving Chevy Chase and nearby communities." />
+      <LocationQuoteSection cityName="Chevy Chase" serviceLabel="House Cleaning" defaultService="standard" zipLine="Serving Chevy Chase and nearby communities." ctaProse={ctaProseVariants[pickVariant("chevy-chase-md", 2, 3)]("Chevy Chase", "House Cleaning")} />
 
       {/* ── Sticky mobile phone CTA ───────────────────────── */}
       <StickyMobileCTA />

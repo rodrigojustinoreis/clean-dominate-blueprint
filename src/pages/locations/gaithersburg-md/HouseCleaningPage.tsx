@@ -20,10 +20,12 @@ import ServiceChecklistLocation from "@/components/location/ServiceChecklistLoca
 import InternalLinksGrid from "@/components/location/InternalLinksGrid";
 import LocationSocialProof from "@/components/location/LocationSocialProof";
 import LocationQuoteSection from "@/components/location/LocationQuoteSection";
+import { getServiceLocationOverride } from "@/data/service-location-overrides";
+import { trustBlurbVariants, ctaProseVariants, pickVariant } from "@/data/template-variants";
 
 const PAGE_URL = "https://capitalcleancare.com/locations/gaithersburg-md/house-cleaning";
 
-const faqs = [
+const localFaqs = [
   {
     q: "Do you bring your own cleaning supplies to Gaithersburg homes?",
     a: "Yes. We supply all equipment and EPA Safer Choice™ certified eco-friendly products. You don't need to provide anything.",
@@ -115,6 +117,7 @@ const nearbyCities = [
 ];
 
 const GaithersburgHouseCleaningPage = () => {
+  const faqs = getServiceLocationOverride("gaithersburg-md", "house-cleaning")?.faqs ?? localFaqs;
   const { seoHelmet } = useSEO({
     title: "House Cleaning Gaithersburg MD | Move-In & Residential",
     description:
@@ -204,11 +207,7 @@ const GaithersburgHouseCleaningPage = () => {
           </h2>
           <div className="space-y-4 text-muted-foreground leading-relaxed">
             <p>
-              Gaithersburg families in Kentlands, Crown Farm, and the Lakelands neighborhood trust
-              Capital Clean Care because we're not a franchise — we're your neighbors. As a
-              Latino-owned and locally operated company, we built this business on referrals from
-              families right here in the 20877, 20878, and 20879 ZIP codes. We're accountable in ways
-              a national chain simply cannot be.
+              {trustBlurbVariants[pickVariant("gaithersburg-md", 3)]("Gaithersburg", "Montgomery County")}
             </p>
             <p>
               Every product we bring into your Gaithersburg home is EPA Safer Choice™ certified —
@@ -232,7 +231,7 @@ const GaithersburgHouseCleaningPage = () => {
             {[
               "Book online or call — free quote in 60 seconds, same-day slots often available in Gaithersburg (20877)",
               "We arrive on time — bonded, insured, background-checked cleaners bring all supplies",
-              "Thorough top-to-bottom clean — consistent checklist, every room, nothing missed",
+              "Room-by-room clean the Gaithersburg way — same checklist each visit, corners and baseboards included",
               "100% satisfaction guarantee — if anything isn't right, we return free, no fine print",
             ].map((item) => (
               <div key={item} className="flex items-start gap-3 p-4 bg-card rounded-xl border border-border/50">
@@ -354,7 +353,7 @@ const GaithersburgHouseCleaningPage = () => {
 
       <ConversionCTA cityName="Gaithersburg" />
 
-      <LocationQuoteSection cityName="Gaithersburg" serviceLabel="House Cleaning" defaultService="standard" zipLine="Serving Gaithersburg and nearby communities." />
+      <LocationQuoteSection cityName="Gaithersburg" serviceLabel="House Cleaning" defaultService="standard" zipLine="Serving Gaithersburg and nearby communities." ctaProse={ctaProseVariants[pickVariant("gaithersburg-md", 2, 3)]("Gaithersburg", "House Cleaning")} />
 
       <StickyMobileCTA />
     </Layout>

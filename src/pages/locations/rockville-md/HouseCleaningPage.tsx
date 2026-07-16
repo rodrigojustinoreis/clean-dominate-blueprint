@@ -20,12 +20,14 @@ import ServiceChecklistLocation from "@/components/location/ServiceChecklistLoca
 import InternalLinksGrid from "@/components/location/InternalLinksGrid";
 import LocationSocialProof from "@/components/location/LocationSocialProof";
 import LocationQuoteSection from "@/components/location/LocationQuoteSection";
+import { getServiceLocationOverride } from "@/data/service-location-overrides";
+import { trustBlurbVariants, ctaProseVariants, ecoSafeVariants, satisfactionVariants, arriveStepVariants, pickVariant } from "@/data/template-variants";
 
 // ── Page constants ────────────────────────────────────────────────────────────
 
 const PAGE_URL = "https://capitalcleancare.com/locations/rockville-md/house-cleaning";
 
-const faqs = [
+const localFaqs = [
   {
     q: "Do you bring your own cleaning supplies to Rockville homes?",
     a: "Yes. We supply all equipment and EPA Safer Choice™ certified eco-friendly products to every Rockville home. You don't need to provide anything — just let us in.",
@@ -123,6 +125,7 @@ const nearbyCities = [
 // ── Page component ────────────────────────────────────────────────────────────
 
 const RockvilleHouseCleaningPage = () => {
+  const faqs = getServiceLocationOverride("rockville-md", "house-cleaning")?.faqs ?? localFaqs;
   const { seoHelmet } = useSEO({
     title: "House Cleaning in Rockville, MD",
     description:
@@ -216,15 +219,15 @@ const RockvilleHouseCleaningPage = () => {
             {[
               {
                 title: "Latino-Owned & Locally Operated",
-                body: "We serve Rockville's Fallsgrove neighborhood and surrounding communities because this is our home. We're not a franchise — we're your neighbors, and our reputation in Montgomery County is built one clean at a time.",
+                body: trustBlurbVariants[pickVariant("rockville-md", 3)]("Rockville", "Montgomery County"),
               },
               {
                 title: "Eco-Safe for Your Family",
-                body: "Every product we use is EPA Safer Choice™ certified — no bleach, no ammonia, no synthetic fragrances. Safe from the very first visit for children, pets, and allergy sufferers in every room of your Rockville home.",
+                body: ecoSafeVariants[pickVariant("rockville-md", 3, 4)]("Rockville"),
               },
               {
                 title: "100% Satisfaction Guaranteed",
-                body: "Not happy with something after your Rockville house cleaning? Call us and we return to re-clean — free, no fine print, no excuses. That's our promise to every Rockville family.",
+                body: satisfactionVariants[pickVariant("rockville-md", 3, 5)]("Rockville"),
               },
             ].map((card) => (
               <div
@@ -256,17 +259,17 @@ const RockvilleHouseCleaningPage = () => {
               {
                 step: "2",
                 title: "We arrive on time",
-                body: "Your bonded, insured, background-checked Capital Clean Care team arrives with all supplies and EPA Safer Choice™ certified products. Nothing for you to prepare.",
+                body: arriveStepVariants[pickVariant("rockville-md", 3, 6)]("Rockville"),
               },
               {
                 step: "3",
                 title: "Thorough top-to-bottom clean",
-                body: "We follow a consistent Rockville house cleaning checklist — kitchen, bathrooms, bedrooms, living areas. Every surface, every time. No shortcuts.",
+                body: "We work through the same detailed Rockville checklist on every visit — kitchen, bathrooms, bedrooms, and living areas — so nothing gets skipped and your home looks consistent clean after clean.",
               },
               {
                 step: "4",
                 title: "100% satisfaction guaranteed",
-                body: "If anything isn't right, call us within 24 hours and we return to re-clean at no charge — no fine print, no arguments. Your satisfaction is the standard.",
+                body: satisfactionVariants[pickVariant("rockville-md", 3, 7)]("Rockville"),
               },
             ].map(({ step, title, body }) => (
               <div
@@ -437,7 +440,7 @@ const RockvilleHouseCleaningPage = () => {
       <ConversionCTA cityName="Rockville" />
 
       {/* ── Final CTA + #quote anchor ─────────────────────── */}
-      <LocationQuoteSection cityName="Rockville" serviceLabel="House Cleaning" defaultService="standard" zipLine="Serving Rockville across ZIPs 20850, 20851, 20852, and 20853." />
+      <LocationQuoteSection cityName="Rockville" serviceLabel="House Cleaning" defaultService="standard" zipLine="Serving Rockville across ZIPs 20850, 20851, 20852, and 20853." ctaProse={ctaProseVariants[pickVariant("rockville-md", 2, 3)]("Rockville", "House Cleaning")} />
 
       {/* ── Sticky mobile phone CTA ───────────────────────── */}
       <StickyMobileCTA />

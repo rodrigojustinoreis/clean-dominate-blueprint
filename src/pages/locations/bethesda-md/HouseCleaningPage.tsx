@@ -20,12 +20,14 @@ import ServiceChecklistLocation from "@/components/location/ServiceChecklistLoca
 import InternalLinksGrid from "@/components/location/InternalLinksGrid";
 import LocationSocialProof from "@/components/location/LocationSocialProof";
 import LocationQuoteSection from "@/components/location/LocationQuoteSection";
+import { getServiceLocationOverride } from "@/data/service-location-overrides";
+import { trustBlurbVariants, ctaProseVariants, pickVariant, ecoSafeVariants, satisfactionVariants, arriveStepVariants } from "@/data/template-variants";
 
 // ── Page constants ────────────────────────────────────────────────────────────
 
 const PAGE_URL = "https://capitalcleancare.com/locations/bethesda-md/house-cleaning";
 
-const faqs = [
+const localFaqs = [
   {
     q: "Do you bring your own cleaning supplies to Bethesda homes?",
     a: "Yes. We supply all equipment and EPA Safer Choice™ certified eco-friendly products. You don't need to provide anything — just let us in.",
@@ -123,6 +125,7 @@ const nearbyCities = [
 // ── Page component ────────────────────────────────────────────────────────────
 
 const BethesdaHouseCleaningPage = () => {
+  const faqs = getServiceLocationOverride("bethesda-md", "house-cleaning")?.faqs ?? localFaqs;
   const { seoHelmet } = useSEO({
     title: "Home Cleaning Bethesda MD | Top-Rated House Cleaning",
     description:
@@ -216,15 +219,15 @@ const BethesdaHouseCleaningPage = () => {
             {[
               {
                 title: "Latino-Owned & Locally Operated",
-                body: "We serve Bethesda's Bradley Hills neighborhood and surrounding communities because this is our home. We're not a franchise — we're your neighbors, and our reputation in Montgomery County is built one clean at a time.",
+                body: trustBlurbVariants[pickVariant("bethesda-md", 3)]("Bethesda", "Montgomery County"),
               },
               {
                 title: "Eco-Safe for Your Family",
-                body: "Every product we use is EPA Safer Choice™ certified — no bleach, no ammonia, no synthetic fragrances. Safe from the very first visit for children, pets, and allergy sufferers in every room of your Bethesda home.",
+                body: ecoSafeVariants[pickVariant("bethesda-md", 3, 4)]("Bethesda"),
               },
               {
                 title: "100% Satisfaction Guaranteed",
-                body: "Not happy with something after your Bethesda house cleaning? Call us and we return to re-clean — free, no fine print, no excuses. That's our promise to every Bethesda family.",
+                body: satisfactionVariants[pickVariant("bethesda-md", 3, 5)]("Bethesda"),
               },
             ].map((card) => (
               <div
@@ -256,17 +259,17 @@ const BethesdaHouseCleaningPage = () => {
               {
                 step: "2",
                 title: "We arrive on time",
-                body: "Your bonded, insured, background-checked Capital Clean Care team arrives with all supplies and EPA Safer Choice™ certified products. Nothing for you to prepare.",
+                body: arriveStepVariants[pickVariant("bethesda-md", 3, 6)]("Bethesda"),
               },
               {
                 step: "3",
                 title: "Thorough top-to-bottom clean",
-                body: "We follow a consistent Bethesda house cleaning checklist — kitchen, bathrooms, bedrooms, living areas. Every surface, every time. No shortcuts.",
+                body: "We follow a consistent Bethesda house cleaning checklist — kitchen, bathrooms, bedrooms, living areas. Every room gets the same careful attention, with nothing skipped.",
               },
               {
                 step: "4",
                 title: "100% satisfaction guaranteed",
-                body: "If anything isn't right, call us within 24 hours and we return to re-clean at no charge — no fine print, no arguments. Your satisfaction is the standard.",
+                body: satisfactionVariants[pickVariant("bethesda-md", 3, 7)]("Bethesda"),
               },
             ].map(({ step, title, body }) => (
               <div
@@ -353,7 +356,7 @@ const BethesdaHouseCleaningPage = () => {
       <ConversionCTA cityName="Bethesda" />
 
       {/* ── Final CTA + #quote anchor ─────────────────────── */}
-      <LocationQuoteSection cityName="Bethesda" serviceLabel="House Cleaning" defaultService="standard" zipLine="Serving Bethesda and nearby communities." />
+      <LocationQuoteSection cityName="Bethesda" serviceLabel="House Cleaning" defaultService="standard" zipLine="Serving Bethesda and nearby communities." ctaProse={ctaProseVariants[pickVariant("bethesda-md", 2, 3)]("Bethesda", "House Cleaning")} />
 
       {/* ── Sticky mobile phone CTA ───────────────────────── */}
       <StickyMobileCTA />

@@ -21,10 +21,12 @@ import InternalLinksGrid from "@/components/location/InternalLinksGrid";
 import LocationSocialProof from "@/components/location/LocationSocialProof";
 import LocationQuoteSection from "@/components/location/LocationQuoteSection";
 import TransformationsGallery from "@/components/TransformationsGallery";
+import { getServiceLocationOverride } from "@/data/service-location-overrides";
+import { trustBlurbVariants, ctaProseVariants, pickVariant } from "@/data/template-variants";
 
 const PAGE_URL = "https://capitalcleancare.com/locations/silver-spring-md/house-cleaning";
 
-const faqs = [
+const localFaqs = [
   {
     q: "Do you bring your own cleaning supplies to Silver Spring homes?",
     a: "Yes. We supply all equipment and EPA Safer Choice™ certified eco-friendly products. You don't need to provide anything — just let us in.",
@@ -128,6 +130,8 @@ const nearbyCities = [
 ];
 
 const SilverSpringHouseCleaningPage = () => {
+  const faqs = getServiceLocationOverride("silver-spring-md", "house-cleaning")?.faqs ?? localFaqs;
+
   const { seoHelmet } = useSEO({
     title: "House Cleaning Silver Spring MD",
     description:
@@ -224,11 +228,7 @@ const SilverSpringHouseCleaningPage = () => {
           </h2>
           <div className="space-y-4 text-muted-foreground leading-relaxed">
             <p>
-              Silver Spring is one of Montgomery County's most vibrant and diverse communities —
-              and it deserves a cleaning company that's part of it. Capital Clean Care is
-              Latino-owned and locally operated. We serve the Woodside neighborhood, Long Branch,
-              Sligo Creek area, and all Silver Spring ZIP codes because this is our community,
-              not just a service area on a map. We're not a franchise; we're your neighbors.
+              {trustBlurbVariants[pickVariant("silver-spring-md", 3)]("Silver Spring", "Montgomery County")}
             </p>
             <p>
               Every product we use is EPA Safer Choice™ certified. That means no bleach, no
@@ -248,7 +248,7 @@ const SilverSpringHouseCleaningPage = () => {
             {[
               "Book online or call (240) 704-2551 — free quote in 60 seconds, same-day slots often available in 20901",
               "We arrive on time — bonded, insured, background-checked cleaners bring all supplies",
-              "Thorough top-to-bottom clean using our consistent checklist — nothing skipped",
+              "Room-by-room clean your Silver Spring home the same way every visit — no corners cut",
               "100% satisfaction guarantee — if anything isn't right, we return free, no fine print",
             ].map((item) => (
               <div key={item} className="flex items-start gap-3 p-4 bg-card rounded-xl border border-border/50">
@@ -372,7 +372,7 @@ const SilverSpringHouseCleaningPage = () => {
       <TrustBadges compact />
       <ConversionCTA cityName="Silver Spring" />
 
-      <LocationQuoteSection cityName="Silver Spring" serviceLabel="House Cleaning" defaultService="standard" zipLine="Serving Silver Spring and nearby communities." />
+      <LocationQuoteSection cityName="Silver Spring" serviceLabel="House Cleaning" defaultService="standard" zipLine="Serving Silver Spring and nearby communities." ctaProse={ctaProseVariants[pickVariant("silver-spring-md", 2, 3)]("Silver Spring", "House Cleaning")} />
 
       <StickyMobileCTA />
     </Layout>

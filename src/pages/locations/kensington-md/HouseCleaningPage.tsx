@@ -20,10 +20,12 @@ import ServiceChecklistLocation from "@/components/location/ServiceChecklistLoca
 import InternalLinksGrid from "@/components/location/InternalLinksGrid";
 import LocationSocialProof from "@/components/location/LocationSocialProof";
 import LocationQuoteSection from "@/components/location/LocationQuoteSection";
+import { getServiceLocationOverride } from "@/data/service-location-overrides";
+import { trustBlurbVariants, ctaProseVariants, pickVariant, ecoSafeVariants, satisfactionVariants, arriveStepVariants } from "@/data/template-variants";
 
 const PAGE_URL = "https://capitalcleancare.com/locations/kensington-md/house-cleaning";
 
-const faqs = [
+const localFaqs = [
   {
     q: "Do you bring your own cleaning supplies to Kensington homes?",
     a: "Yes. We supply all equipment and EPA Safer Choice™ certified eco-friendly products. You don't need to provide anything — we arrive prepared and leave nothing behind.",
@@ -110,6 +112,7 @@ const nearbyCities = [
 ];
 
 const KensingtonHouseCleaningPage = () => {
+  const faqs = getServiceLocationOverride("kensington-md", "house-cleaning")?.faqs ?? localFaqs;
   const { seoHelmet } = useSEO({
     title: "House Cleaning in Kensington, MD",
     description:
@@ -201,15 +204,15 @@ const KensingtonHouseCleaningPage = () => {
             {[
               {
                 title: "Latino-Owned & Locally Operated",
-                body: "We serve Kensington's Rock Creek Knolls neighborhood and surrounding areas because this is our community. We're not a franchise — we're your neighbors.",
+                body: trustBlurbVariants[pickVariant("kensington-md", 3)]("Kensington", "Montgomery County"),
               },
               {
                 title: "Eco-Safe for Families",
-                body: "Every product is EPA Safer Choice™ certified. No bleach, no ammonia, no synthetic fragrances. Safe from the very first visit for your children and pets.",
+                body: ecoSafeVariants[pickVariant("kensington-md", 3, 4)]("Kensington"),
               },
               {
                 title: "100% Satisfaction Guaranteed",
-                body: "Not happy with something? Call us and we re-clean — free, no fine print. Your satisfaction is our only acceptable outcome.",
+                body: satisfactionVariants[pickVariant("kensington-md", 3, 5)]("Kensington"),
               },
             ].map((item) => (
               <div key={item.title} className="p-5 bg-card rounded-xl border border-border/50">
@@ -232,17 +235,17 @@ const KensingtonHouseCleaningPage = () => {
               {
                 step: "2",
                 title: "We arrive on time",
-                body: "Bonded, insured, background-checked cleaners bring all supplies. No need to provide a thing.",
+                body: arriveStepVariants[pickVariant("kensington-md", 3, 6)]("Kensington"),
               },
               {
                 step: "3",
                 title: "Thorough top-to-bottom clean",
-                body: "Consistent checklist applied to every Kensington home — nothing missed, nothing rushed.",
+                body: "The same detailed checklist covers every Kensington home, from Antique Row Victorians to Rock Creek Hills — steady, unhurried, and complete.",
               },
               {
                 step: "4",
                 title: "100% satisfaction",
-                body: "If anything isn't right, we return free. Your feedback shapes every future visit.",
+                body: satisfactionVariants[pickVariant("kensington-md", 3, 7)]("Kensington"),
               },
             ].map((item) => (
               <div key={item.step} className="flex items-start gap-4 p-4 bg-card rounded-xl border border-border/50">
@@ -318,7 +321,7 @@ const KensingtonHouseCleaningPage = () => {
       <TrustBadges compact />
       <ConversionCTA cityName="Kensington" />
 
-      <LocationQuoteSection cityName="Kensington" serviceLabel="House Cleaning" defaultService="standard" zipLine="Serving Kensington and nearby communities." />
+      <LocationQuoteSection cityName="Kensington" serviceLabel="House Cleaning" defaultService="standard" zipLine="Serving Kensington and nearby communities." ctaProse={ctaProseVariants[pickVariant("kensington-md", 2, 3)]("Kensington", "House Cleaning")} />
 
       <StickyMobileCTA />
     </Layout>

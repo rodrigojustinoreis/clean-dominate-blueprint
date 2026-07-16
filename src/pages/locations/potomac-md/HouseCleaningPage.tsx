@@ -20,12 +20,14 @@ import ServiceChecklistLocation from "@/components/location/ServiceChecklistLoca
 import InternalLinksGrid from "@/components/location/InternalLinksGrid";
 import LocationSocialProof from "@/components/location/LocationSocialProof";
 import LocationQuoteSection from "@/components/location/LocationQuoteSection";
+import { getServiceLocationOverride } from "@/data/service-location-overrides";
+import { trustBlurbVariants, ctaProseVariants, pickVariant, ecoSafeVariants, satisfactionVariants, arriveStepVariants } from "@/data/template-variants";
 
 // ── Page constants ────────────────────────────────────────────────────────────
 
 const PAGE_URL = "https://capitalcleancare.com/locations/potomac-md/house-cleaning";
 
-const faqs = [
+const localFaqs = [
   {
     q: "Do you bring your own cleaning supplies to Potomac homes?",
     a: "Yes. We supply all equipment and EPA Safer Choice™ certified eco-friendly products to every Potomac home. You don't need to provide anything — just let us in.",
@@ -123,6 +125,7 @@ const nearbyCities = [
 // ── Page component ────────────────────────────────────────────────────────────
 
 const PotomacHouseCleaningPage = () => {
+  const faqs = getServiceLocationOverride("potomac-md", "house-cleaning")?.faqs ?? localFaqs;
   const { seoHelmet } = useSEO({
     title: "House Cleaning in Potomac, MD",
     description:
@@ -216,15 +219,15 @@ const PotomacHouseCleaningPage = () => {
             {[
               {
                 title: "Latino-Owned & Locally Operated",
-                body: "We serve Potomac's Avenel neighborhood and the Cabin John community because this is our home. We're not a franchise — we're your neighbors, and our reputation in Montgomery County is built one clean at a time.",
+                body: trustBlurbVariants[pickVariant("potomac-md", 3)]("Potomac", "Montgomery County"),
               },
               {
                 title: "Eco-Safe for Your Family",
-                body: "Every product we use is EPA Safer Choice™ certified — no bleach, no ammonia, no synthetic fragrances. Safe from the very first visit for children, pets, and allergy sufferers throughout your Potomac home.",
+                body: ecoSafeVariants[pickVariant("potomac-md", 3, 4)]("Potomac"),
               },
               {
                 title: "100% Satisfaction Guaranteed",
-                body: "Not happy with something after your Potomac house cleaning? Call us within 24 hours and we return to re-clean — free, no fine print, no excuses. That's our promise to every Potomac family.",
+                body: satisfactionVariants[pickVariant("potomac-md", 3, 5)]("Potomac"),
               },
             ].map((card) => (
               <div
@@ -256,17 +259,17 @@ const PotomacHouseCleaningPage = () => {
               {
                 step: "2",
                 title: "We arrive on time",
-                body: "Your bonded, insured, background-checked Capital Clean Care team arrives with all supplies and EPA Safer Choice™ certified products. Nothing for you to prepare.",
+                body: arriveStepVariants[pickVariant("potomac-md", 3, 6)]("Potomac"),
               },
               {
                 step: "3",
                 title: "Thorough top-to-bottom clean",
-                body: "We follow a consistent Potomac house cleaning checklist — kitchen, bathrooms, bedrooms, living areas. Every surface, every time. No shortcuts.",
+                body: "We work through the same detailed Potomac checklist each visit — kitchen, bathrooms, bedrooms, and living areas — so every room gets the same careful attention, start to finish.",
               },
               {
                 step: "4",
                 title: "100% satisfaction guaranteed",
-                body: "If anything isn't right, call us within 24 hours and we return to re-clean at no charge — no fine print, no arguments. Your satisfaction is our standard.",
+                body: satisfactionVariants[pickVariant("potomac-md", 3, 7)]("Potomac"),
               },
             ].map(({ step, title, body }) => (
               <div
@@ -349,7 +352,7 @@ const PotomacHouseCleaningPage = () => {
       <ConversionCTA cityName="Potomac" />
 
       {/* ── Final CTA + #quote anchor ─────────────────────── */}
-      <LocationQuoteSection cityName="Potomac" serviceLabel="House Cleaning" defaultService="standard" zipLine="Serving Potomac and nearby communities." />
+      <LocationQuoteSection cityName="Potomac" serviceLabel="House Cleaning" defaultService="standard" zipLine="Serving Potomac and nearby communities." ctaProse={ctaProseVariants[pickVariant("potomac-md", 2, 3)]("Potomac", "House Cleaning")} />
 
       {/* ── Sticky mobile phone CTA ───────────────────────── */}
       <StickyMobileCTA />

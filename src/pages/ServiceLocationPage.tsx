@@ -11,6 +11,7 @@ import TransformationsGallery from "@/components/TransformationsGallery";
 import { pickReviews } from "@/data/realReviews";
 import { getCity, getService, getServiceLocationIntro, getWhyChooseUs, getServiceLocationFAQs, slCities, slServices } from "@/data/service-locations";
 import { getServiceLocationOverride } from "@/data/service-location-overrides";
+import { pickVariant, whyChooseVariants, checklistHeadingVariants, checklistOrder, ctaProseVariants } from "@/data/template-variants";
 import { isAllowlistedServiceLocation } from "@/data/serviceLocationAllowlist";
 import { cityImages } from "@/data/city-images";
 import { CheckCircle, MapPin, ArrowRight, Shield, Leaf, Clock, Star } from "lucide-react";
@@ -54,7 +55,16 @@ const ServiceLocationPage = () => {
   // City-specific FAQs (Lote 1 uniqueness) take precedence over the templated set;
   // feeds both the on-page FAQ and FAQPage schema. Falls back to template when absent.
   const faqs = override?.faqs ?? getServiceLocationFAQs(city, service);
-  const whyChoose = getWhyChooseUs(city, service);
+  // Lote 1b — per-city variation of the shared blocks (why-choose, checklist, CTA)
+  // so template pages stop reading as near-duplicates. Facts unchanged; wording/order rotate.
+  const whyChoose = whyChooseVariants[pickVariant(city.slug, whyChooseVariants.length, 1)]({
+    city: city.name, state: city.state, county: city.county,
+    shortName: service.shortName, housingTypes: city.housingTypes, lifestyle: city.lifestyle,
+    neighborhoods: city.neighborhoods,
+  });
+  const checklistV = pickVariant(city.slug, checklistHeadingVariants.length, 2);
+  const checklistItems = checklistOrder(service.checklist, checklistV);
+  const ctaProse = ctaProseVariants[pickVariant(city.slug, ctaProseVariants.length, 3)](city.name, service.name);
   const intro = getServiceLocationIntro(city, service);
   const serviceLabel = service.shortName.toLowerCase().includes("maid") ? service.shortName : `${service.shortName} & maid service`;
   const metaTitle = override?.metaTitle || `${service.name} in ${city.name}, ${city.state} | Capital Clean Care`;
@@ -215,10 +225,10 @@ const ServiceLocationPage = () => {
       <section className="py-12 md:py-16 bg-muted/30">
         <div className="container mx-auto px-4 max-w-4xl">
           <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-8">
-            What's Included in Our {service.name} in {city.name}
+            {checklistHeadingVariants[checklistV](service.name, city.name)}
           </h2>
           <div className="grid md:grid-cols-2 gap-3">
-            {service.checklist.map((item, i) => (
+            {checklistItems.map((item, i) => (
               <div key={i} className="flex items-start gap-3 bg-background p-4 rounded-lg border border-border/50">
                 <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                 <span className="text-foreground text-sm">{item}</span>
@@ -377,6 +387,7 @@ const ServiceLocationPage = () => {
         serviceLabel={service.name}
         defaultService={defaultFormService}
         zipLine={`Serving ${city.name}, ${city.state} and nearby communities.`}
+        ctaProse={ctaProse}
       />
     </Layout>
   );
