@@ -134,6 +134,32 @@
   to = "/contact/"
   status = 301
 
+# Fase 1.2 — legacy /resources/topic/* hubs consolidated into the 10-category Resource Center.
+# Reversible: delete these 4 rules + restore the topic routes in prerender.tsx to bring them back.
+[[redirects]]
+  from = "/resources/topic/pet-health"
+  to = "/resources/eco-friendly-cleaning"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/resources/topic/home-cleaning"
+  to = "/resources/cleaning-tips"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/resources/topic/local-guides"
+  to = "/resources/local-guides"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/resources/topic/tips-seasonal"
+  to = "/resources/cleaning-tips"
+  status = 301
+  force = true
+
 [[redirects]]
   from = "/home/f/*"
   to = "/resources/"

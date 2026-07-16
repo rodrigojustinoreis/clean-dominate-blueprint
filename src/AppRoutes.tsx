@@ -15,6 +15,8 @@ import ServiceLocationPage from "./pages/ServiceLocationPage";
 import Blog from "./pages/Blog";
 import BlogTopic from "./pages/BlogTopic";
 import BlogPost from "./pages/BlogPost";
+import ResourceCategory from "./pages/ResourceCategory";
+import { RESOURCE_CATEGORIES } from "./data/resource-categories";
 import HowToCleanCarpetBlog from "./pages/HowToCleanCarpetBlog";
 import HowToRemoveCandleWaxBlog from "./pages/HowToRemoveCandleWaxBlog";
 import HowToCleanYourWashingMachineEcoFriendly from "./pages/HowToCleanYourWashingMachineEcoFriendly";
@@ -199,6 +201,10 @@ const AppRoutes = () => (
     <Route path="/why-eco-friendly-cleaning" element={<WhyEcoFriendlyPage />} />
     <Route path="/faq" element={<FAQPage />} />
     <Route path="/resources" element={<Blog />} />
+    {/* Resource Center category indexes — static paths, so they rank above /resources/:slug */}
+    {RESOURCE_CATEGORIES.map((c) => (
+      <Route key={c.slug} path={`/resources/${c.slug}`} element={<ResourceCategory slug={c.slug} />} />
+    ))}
     <Route path="/resources/topic/:topicSlug" element={<BlogTopic />} />
     <Route path="/resources/how-to-clean-carpet-home-apartment" element={<HowToCleanCarpetBlog />} />
     <Route path="/resources/how-to-remove-candle-wax-eco-friendly" element={<HowToRemoveCandleWaxBlog />} />

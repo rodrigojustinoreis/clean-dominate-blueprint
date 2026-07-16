@@ -4,6 +4,7 @@
 // boundary so hydration markers match. Regenerate with the same transform if routes change.
 import { lazy } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
+import { RESOURCE_CATEGORIES } from "./data/resource-categories";
 
 // Regular imports (no lazy) — required for synchronous renderToString in SSR
 import Index from "./pages/Index";
@@ -20,6 +21,7 @@ const ServiceLocationPage = lazy(() => import("./pages/ServiceLocationPage"));
 const Blog = lazy(() => import("./pages/Blog"));
 const BlogTopic = lazy(() => import("./pages/BlogTopic"));
 const BlogPost = lazy(() => import("./pages/BlogPost"));
+const ResourceCategory = lazy(() => import("./pages/ResourceCategory"));
 const HowToCleanCarpetBlog = lazy(() => import("./pages/HowToCleanCarpetBlog"));
 const HowToRemoveCandleWaxBlog = lazy(() => import("./pages/HowToRemoveCandleWaxBlog"));
 const HowToCleanYourWashingMachineEcoFriendly = lazy(() => import("./pages/HowToCleanYourWashingMachineEcoFriendly"));
@@ -204,6 +206,10 @@ const AppRoutesLazy = () => (
     <Route path="/why-eco-friendly-cleaning" element={<WhyEcoFriendlyPage />} />
     <Route path="/faq" element={<FAQPage />} />
     <Route path="/resources" element={<Blog />} />
+    {/* Resource Center category indexes — static paths, so they rank above /resources/:slug */}
+    {RESOURCE_CATEGORIES.map((c) => (
+      <Route key={c.slug} path={`/resources/${c.slug}`} element={<ResourceCategory slug={c.slug} />} />
+    ))}
     <Route path="/resources/topic/:topicSlug" element={<BlogTopic />} />
     <Route path="/resources/how-to-clean-carpet-home-apartment" element={<HowToCleanCarpetBlog />} />
     <Route path="/resources/how-to-remove-candle-wax-eco-friendly" element={<HowToRemoveCandleWaxBlog />} />

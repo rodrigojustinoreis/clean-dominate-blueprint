@@ -1,11 +1,13 @@
 import Layout from "@/components/layout/Layout";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { useSEO } from "@/hooks/useSEO";
-import { BreadcrumbSchema } from "@/components/SchemaMarkup";
+import { BreadcrumbSchema, CollectionPageSchema } from "@/components/SchemaMarkup";
 import { autoBlogPosts } from "@/data/auto-blog-posts";
 import TrustBadges from "@/components/TrustBadges";
-import BlogTopicNav from "@/components/blog/BlogTopicNav";
+import ResourceCategoryNav from "@/components/blog/ResourceCategoryNav";
+import CategoryCard from "@/components/blog/CategoryCard";
 import PostCard from "@/components/blog/PostCard";
+import { RESOURCE_CATEGORIES, postsInCategory } from "@/data/resource-categories";
 
 export interface BlogPost {
   slug: string;
@@ -834,25 +836,53 @@ export const allPosts = [...blogPosts, ...autoBlogPosts].sort(
 
 const Blog = () => {
   const { seoHelmet } = useSEO({
-    title: "House Cleaning Tips & Blog for MD, DC & VA | Capital Clean Care",
-    description: "Expert eco-friendly cleaning tips, deep-cleaning guides & advice for Maryland, DC & Virginia homeowners. Stay spotless with Capital Clean Care's blog!",
+    title: "Cleaning Resource Center — Guides, Checklists & Tips | Capital Clean Care",
+    description: "The Capital Clean Care Resource Center: eco-friendly cleaning guides, checklists, pricing, and how-tos for Maryland, DC & Virginia homes — organized by category.",
     canonical: "https://capitalcleancare.com/resources",
   });
+
+  // Category tiles carry a live guide count (from the same rule-based classifier the category
+  // pages use) so the hub stays in sync automatically as posts are added.
+  const categoryCards = RESOURCE_CATEGORIES.map((c) => ({
+    category: c,
+    count: postsInCategory(c.slug, allPosts).length,
+  }));
+  const recentPosts = allPosts.slice(0, 12);
 
   return (
     <Layout>
       {seoHelmet}
       <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }]} />
+      <CollectionPageSchema
+        name="Cleaning Resource Center"
+        description="Eco-friendly cleaning guides, checklists, pricing, and how-tos for Maryland, DC & Virginia homes."
+        url="https://capitalcleancare.com/resources"
+        items={recentPosts.map((p) => ({ title: p.title, slug: p.slug }))}
+      />
       <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4 max-w-4xl">
+        <div className="container mx-auto px-4 max-w-5xl">
           <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Resources" }]} className="mb-6" />
-          <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4">Cleaning Tips & Insights</h1>
-          <p className="text-muted-foreground text-lg mb-8">Expert advice for keeping your Maryland, DC & Virginia home spotless with eco-friendly methods.</p>
+          <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4">Cleaning Resource Center</h1>
+          <p className="text-muted-foreground text-lg mb-8 max-w-3xl">
+            Practical, eco-friendly guides for keeping your Maryland, DC &amp; Virginia home spotless —
+            checklists, real pricing, deep-cleaning and move-out guides, pet-safe methods, and everyday
+            how-tos. Browse by category, or scroll down for the latest.
+          </p>
 
-          <BlogTopicNav />
+          <ResourceCategoryNav />
 
+          {/* Browse by category — the library's table of contents */}
+          <h2 className="font-heading text-2xl font-bold mb-5">Browse by category</h2>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 mb-16">
+            {categoryCards.map(({ category, count }) => (
+              <CategoryCard key={category.slug} category={category} count={count} />
+            ))}
+          </div>
+
+          {/* Latest guides */}
+          <h2 className="font-heading text-2xl font-bold mb-5">Latest guides</h2>
           <div className="space-y-6">
-            {allPosts.map((post) => (
+            {recentPosts.map((post) => (
               <PostCard key={post.slug} post={post} />
             ))}
           </div>

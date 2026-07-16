@@ -8,6 +8,7 @@ import AppRoutes from "./AppRoutes";
 import { slCities, slServices } from "./data/service-locations";
 import { vanityLandingPages } from "./data/vanity-landings";
 import { cities as locationCities } from "./data/locations";
+import { RESOURCE_CATEGORIES } from "./data/resource-categories";
 
 function getAllRoutes(): string[] {
   const routes: string[] = [
@@ -19,10 +20,6 @@ function getAllRoutes(): string[] {
     "/gift-cards",
     "/faq",
     "/resources",
-    "/resources/topic/pet-health",
-    "/resources/topic/home-cleaning",
-    "/resources/topic/local-guides",
-    "/resources/topic/tips-seasonal",
     "/resources/how-to-clean-carpet-home-apartment",
     "/resources/how-to-remove-candle-wax-eco-friendly",
     "/resources/how-to-clean-your-washing-machine-eco-friendly",
@@ -155,6 +152,13 @@ function getAllRoutes(): string[] {
     "/es/areas/takoma-park-md",
     "/es/areas/montgomery-village-md",
   ];
+
+  // Resource Center category indexes — auto-derived from resource-categories.ts so the
+  // 10 category pages are always prerendered + in the sitemap. (Replaces the 4 legacy
+  // /resources/topic/* hubs, which are now 301'd to their category in netlify.toml.)
+  for (const category of RESOURCE_CATEGORIES) {
+    routes.push(`/resources/${category.slug}`);
+  }
 
   // City pages — auto-derived from locations.ts so adding a city there
   // automatically prerenders its hub page. No manual list to maintain.

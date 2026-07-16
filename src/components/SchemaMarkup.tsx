@@ -236,6 +236,39 @@ export const BreadcrumbSchema = ({ items }: BreadcrumbSchemaProps) => {
   return <JsonLd id="breadcrumb-schema" schema={schema} />;
 };
 
+// ── CollectionPage Schema (category / hub index pages) ────────
+interface CollectionPageSchemaProps {
+  name: string;
+  description: string;
+  url: string;
+  // The posts listed on the page — emitted as an ItemList so the collection is machine-readable.
+  items: { title: string; slug: string }[];
+}
+
+export const CollectionPageSchema = ({ name, description, url, items }: CollectionPageSchemaProps) => {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name,
+    description,
+    url,
+    isPartOf: { "@type": "WebSite", name: BUSINESS.name, url: BUSINESS.url },
+    mainEntity: {
+      "@type": "ItemList",
+      numberOfItems: items.length,
+      itemListElement: items.map((item, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        url: `${BUSINESS.url}/resources/${item.slug}`,
+        name: item.title,
+      })),
+    },
+  };
+
+  const id = `collection-page-schema-${url.split("/").pop() || "resources"}`;
+  return <JsonLd id={id} schema={schema} />;
+};
+
 // ── WebSite Schema (for sitelinks search) ─────────────────────
 export const WebSiteSchema = () => {
   const schema = {
