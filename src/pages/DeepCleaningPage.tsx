@@ -16,6 +16,8 @@ import { useSEO } from "@/hooks/useSEO";
 import { getServiceBySlug } from "@/data/services";
 import { cities } from "@/data/locations";
 import { slCities, slServices } from "@/data/service-locations";
+import ServiceRelatedContent from "@/components/ServiceRelatedContent";
+import { isIndexable } from "@/data/related-content";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FadeInSection from "@/components/blog/FadeInSection";
 import LocationSocialProof from "@/components/location/LocationSocialProof";
@@ -25,7 +27,9 @@ const PHONE = "(240) 704-2551";
 const PHONE_HREF = "tel:+12407042551";
 
 const service = getServiceBySlug("deep-cleaning")!;
-const topCities = cities.filter((c) => !c.slug.includes("county")).slice(0, 8);
+const topCities = cities
+  .filter((c) => !c.slug.includes("county") && isIndexable(`/locations/${c.slug}`))
+  .slice(0, 8);
 
 
 const trustBadges = [
@@ -286,26 +290,26 @@ const DeepCleaningPage = () => {
             <div className="mt-4">
               <p className="text-sm text-muted-foreground mb-2">Detailed Deep Cleaning pages by city:</p>
               <div className="flex flex-wrap gap-2">
-                {slCities.slice(0, 6).map((c) => {
-                  const matched = slServices.find(
-                    (sl) => sl.slug === "deep-cleaning" || sl.name.toLowerCase().includes("deep")
-                  );
-                  if (!matched) return null;
-                  return (
+                {slCities
+                  .filter((c) => isIndexable(`/locations/${c.slug}/deep-cleaning`))
+                  .slice(0, 6)
+                  .map((c) => (
                     <Link
                       key={c.slug}
-                      to={`/locations/${c.slug}/${matched.slug}`}
+                      to={`/locations/${c.slug}/deep-cleaning`}
                       className="text-sm text-accent hover:underline"
                     >
                       Deep Cleaning in {c.name} →
                     </Link>
-                  );
-                })}
+                  ))}
               </div>
             </div>
           )}
         </div>
       </section>
+
+      {/* ── Guides & Resources (internal linking) ── */}
+      <ServiceRelatedContent serviceSlug="deep-cleaning" showAreas={false} />
 
       {/* ── Before & After Gallery ── */}
       <BeforeAfterGallery />

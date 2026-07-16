@@ -7,6 +7,7 @@ import TrustBadges from "@/components/TrustBadges";
 import { LocalBusinessSchema, ServiceSchema, FAQSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import LocationSocialProof from "@/components/location/LocationSocialProof";
 import LocationQuoteSection from "@/components/location/LocationQuoteSection";
+import InternalLinksGrid from "@/components/location/InternalLinksGrid";
 import TransformationsGallery from "@/components/TransformationsGallery";
 import { pickReviews } from "@/data/realReviews";
 import { getCity, getService, getServiceLocationIntro, getWhyChooseUs, getServiceLocationFAQs, slCities, slServices } from "@/data/service-locations";
@@ -90,14 +91,6 @@ const ServiceLocationPage = () => {
     "airbnb-cleaning": "airbnb", "office-cleaning": "office", "commercial-cleaning": "office",
   };
   const defaultFormService = serviceToForm[service.slug] || "standard";
-
-  // Get related service pages for this city
-  const relatedServices = slServices.filter(s => s.slug !== service.slug).slice(0, 4);
-  // Get nearby cities — same county first, then fallback to same state
-  const nearbyCities = slCities
-    .filter(c => c.slug !== city.slug)
-    .sort((a, b) => (a.county === city.county ? -1 : 1))
-    .slice(0, 5);
 
   return (
     <Layout>
@@ -328,52 +321,21 @@ const ServiceLocationPage = () => {
         </div>
       </section>
 
-      {/* Internal Links */}
-      <section className="py-12 md:py-16">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Other services in this city */}
-            <div>
-              <h3 className="font-heading text-lg font-bold text-foreground mb-4">
-                Other Services in {city.name}
-              </h3>
-              <ul className="space-y-2">
-                {relatedServices.map(s => (
-                  <li key={s.slug}>
-                    <Link
-                      to={`/locations/${city.slug}/${s.slug}`}
-                      className="text-primary hover:underline flex items-center gap-2"
-                    >
-                      <ArrowRight className="h-3 w-3" /> {s.name} in {city.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* This service in nearby cities */}
-            {nearbyCities.length > 0 && (
-              <div>
-                <h3 className="font-heading text-lg font-bold text-foreground mb-4">
-                  {service.name} in Nearby Cities
-                </h3>
-                <ul className="space-y-2">
-                  {nearbyCities.map(c => (
-                    <li key={c.slug}>
-                      <Link
-                        to={`/locations/${c.slug}/${service.slug}`}
-                        className="text-primary hover:underline flex items-center gap-2"
-                      >
-                        <ArrowRight className="h-3 w-3" /> {service.name} in {c.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-          </div>
-        </div>
-      </section>
+      {/* Internal Links — indexable-only, plus local guides + city hub (Fase 1.3) */}
+      <InternalLinksGrid
+        cityName={city.name}
+        citySlug={city.slug}
+        serviceLabel={service.name}
+        serviceSlug={service.slug}
+        services={slServices.map((s) => ({ name: s.name, slug: s.slug }))}
+        nearbyCities={slCities
+          .filter((c) => c.slug !== city.slug)
+          .map((c) => ({
+            name: c.name,
+            slug: c.slug,
+            state: c.slug.endsWith("-va") ? "VA" : c.slug.endsWith("-dc") ? "DC" : "MD",
+          }))}
+      />
 
       {/* Trust Badges */}
       <TrustBadges compact />

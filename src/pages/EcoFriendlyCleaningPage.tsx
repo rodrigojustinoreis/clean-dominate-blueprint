@@ -13,11 +13,15 @@ import { useSEO } from "@/hooks/useSEO";
 import { ServiceSchema, FAQSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { cities } from "@/data/locations";
+import ServiceRelatedContent from "@/components/ServiceRelatedContent";
+import { isIndexable } from "@/data/related-content";
 
 const PHONE = "(240) 704-2551";
 const PHONE_HREF = "tel:+12407042551";
 
-const topCities = cities.filter((c) => !c.slug.includes("county")).slice(0, 8);
+const topCities = cities
+  .filter((c) => !c.slug.includes("county") && isIndexable(`/locations/${c.slug}`))
+  .slice(0, 8);
 
 const faqs = [
   {
@@ -379,6 +383,9 @@ const EcoFriendlyCleaningPage = () => {
           </p>
         </div>
       </section>
+
+      {/* ── Eco-Friendly Cleaning by City (indexable city×service links) ── */}
+      <ServiceRelatedContent serviceSlug="eco-friendly-cleaning" showGuides={false} />
 
       {/* ── Related Reading ── */}
       <section className="py-12 bg-secondary/40">

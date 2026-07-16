@@ -16,8 +16,13 @@ import GreenShield5Step from "@/components/GreenShield5Step";
 import TrustBadges from "@/components/TrustBadges";
 import FadeInSection from "@/components/blog/FadeInSection";
 import LocationSocialProof from "@/components/location/LocationSocialProof";
+import ServiceRelatedContent from "@/components/ServiceRelatedContent";
+import { isIndexable } from "@/data/related-content";
 
-const topCities = cities.filter((c) => !c.slug.includes("county")).slice(0, 8);
+// Only link to indexable city hubs (7 STATIC_CITIES hubs + many others are noindex).
+const topCities = cities
+  .filter((c) => !c.slug.includes("county") && isIndexable(`/locations/${c.slug}`))
+  .slice(0, 8);
 
 // Representative real team photo per service (real photos build more trust than stock/AI).
 const SERVICE_IMAGES: Record<string, string> = {
@@ -228,16 +233,19 @@ const ServicePage = () => {
               <div className="mt-4">
                 <p className="text-sm text-muted-foreground mb-2">Detailed {service.name} pages by city:</p>
                 <div className="flex flex-wrap gap-x-4 gap-y-2">
-                  {slCities.slice(0, 6).map((c) => (
-                    <Link
-                      key={c.slug}
-                      to={`/locations/${c.slug}/${matchedSlService.slug}`}
-                      className="text-sm text-accent hover:underline"
-                      aria-label={`${service.name} in ${c.name}`}
-                    >
-                      {service.name} in {c.name} →
-                    </Link>
-                  ))}
+                  {slCities
+                    .filter((c) => isIndexable(`/locations/${c.slug}/${matchedSlService.slug}`))
+                    .slice(0, 6)
+                    .map((c) => (
+                      <Link
+                        key={c.slug}
+                        to={`/locations/${c.slug}/${matchedSlService.slug}`}
+                        className="text-sm text-accent hover:underline"
+                        aria-label={`${service.name} in ${c.name}`}
+                      >
+                        {service.name} in {c.name} →
+                      </Link>
+                    ))}
                 </div>
               </div>
             )}
@@ -246,6 +254,9 @@ const ServicePage = () => {
       </section>
 
       <GreenShield5Step compact showCTA={false} />
+
+      {/* Guides & Resources (Service Areas already listed above) */}
+      <ServiceRelatedContent serviceSlug={service.slug} showAreas={false} />
 
       <TrustBadges compact withBackground={false} />
 
