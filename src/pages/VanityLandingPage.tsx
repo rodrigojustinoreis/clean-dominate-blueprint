@@ -14,6 +14,8 @@ import { useSEO } from "@/hooks/useSEO";
 import { getVanityPageBySlug } from "@/data/vanity-landings";
 import { getCity, getService, getServiceLocationIntro, getWhyChooseUs, getServiceLocationFAQs } from "@/data/service-locations";
 import { slServices } from "@/data/service-locations";
+import { vanityFaqs } from "@/data/vanity-faqs";
+import { checklistOrder } from "@/data/template-variants";
 import NotFound from "./NotFound";
 
 const VanityLandingPage = () => {
@@ -28,9 +30,12 @@ const VanityLandingPage = () => {
 
   if (!city || !service) return <NotFound />;
 
-  const faqs = getServiceLocationFAQs(city, service);
+  // Lote 3B Group 2 — unique per-city FAQs + per-city checklist order break the
+  // 42–45% duplication between same-service vanity pages. Falls back to templated.
+  const faqs = vanityFaqs[config.slug] ?? getServiceLocationFAQs(city, service);
   const whyChoose = getWhyChooseUs(city, service);
   const generatedIntro = getServiceLocationIntro(city, service);
+  const checklistItems = checklistOrder(service.checklist, config.slug);
   const pageUrl = `https://capitalcleancare.com/${config.slug}`;
 
   const { seoHelmet } = useSEO({
@@ -122,7 +127,7 @@ const VanityLandingPage = () => {
             What's Included in Our {service.name} in {city.name}
           </h2>
           <div className="grid md:grid-cols-2 gap-3">
-            {service.checklist.slice(0, 30).map((item, i) => (
+            {checklistItems.slice(0, 30).map((item, i) => (
               <div key={i} className="flex items-start gap-3 bg-background p-4 rounded-lg border border-border/50">
                 <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" aria-hidden="true" />
                 <span className="text-foreground text-sm">{item}</span>
