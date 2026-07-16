@@ -54,18 +54,23 @@ export const checklistHeadingVariants = [
   (service: string, city: string) => `Everything Our ${service} Covers in ${city}`,
 ];
 
-/** Reorder the same items (never drops any) so the checklist reads differently. */
-export function checklistOrder<T>(items: T[], variant: number): T[] {
+/** Deterministic per-city permutation of the same items (never drops any), so
+ *  the checklist reads in a genuinely different order on every city page —
+ *  breaking the long contiguous shared run without changing any item text. */
+export function checklistOrder<T>(items: T[], slug: string): T[] {
+  // mulberry32 seeded by the slug → stable shuffle per city.
+  let seed = 0;
+  for (const c of slug) seed = (seed * 31 + c.charCodeAt(0)) & 0xffffffff;
+  const rand = () => {
+    seed |= 0; seed = (seed + 0x6d2b79f5) | 0;
+    let t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
   const a = [...items];
-  if (variant === 1) return a.reverse();
-  if (variant === 2) {
-    const mid = Math.ceil(a.length / 2); // interleave halves
-    const out: T[] = [];
-    for (let i = 0; i < mid; i++) {
-      out.push(a[i]);
-      if (a[mid + i] !== undefined) out.push(a[mid + i]);
-    }
-    return out;
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(rand() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
   }
   return a;
 }

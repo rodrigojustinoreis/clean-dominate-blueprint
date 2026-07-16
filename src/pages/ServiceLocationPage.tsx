@@ -63,7 +63,7 @@ const ServiceLocationPage = () => {
     neighborhoods: city.neighborhoods,
   });
   const checklistV = pickVariant(city.slug, checklistHeadingVariants.length, 2);
-  const checklistItems = checklistOrder(service.checklist, checklistV);
+  const checklistItems = checklistOrder(service.checklist, city.slug);
   const ctaProse = ctaProseVariants[pickVariant(city.slug, ctaProseVariants.length, 3)](city.name, service.name);
   const intro = getServiceLocationIntro(city, service);
   const serviceLabel = service.shortName.toLowerCase().includes("maid") ? service.shortName : `${service.shortName} & maid service`;

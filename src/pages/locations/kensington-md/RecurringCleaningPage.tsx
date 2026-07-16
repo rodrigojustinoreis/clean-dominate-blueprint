@@ -20,10 +20,12 @@ import ServiceChecklistLocation from "@/components/location/ServiceChecklistLoca
 import InternalLinksGrid from "@/components/location/InternalLinksGrid";
 import LocationSocialProof from "@/components/location/LocationSocialProof";
 import LocationQuoteSection from "@/components/location/LocationQuoteSection";
+import { getServiceLocationOverride } from "@/data/service-location-overrides";
+import { ctaProseVariants, pickVariant } from "@/data/template-variants";
 
 const PAGE_URL = "https://capitalcleancare.com/locations/kensington-md/recurring-cleaning";
 
-const faqs = [
+const localFaqs = [
   {
     q: "What's the difference between weekly and bi-weekly cleaning in Kensington?",
     a: "Weekly is ideal for larger homes, families with kids or pets — or anyone who simply wants to come home to a spotless space every single week. Bi-weekly is our most popular option: a well-maintained home at a more manageable cost.",
@@ -122,6 +124,8 @@ const KensingtonRecurringCleaningPage = () => {
     canonical: PAGE_URL,
     ogImage: "https://capitalcleancare.com/og-image.jpg",
   });
+
+  const faqs = getServiceLocationOverride("kensington-md", "recurring-cleaning")?.faqs ?? localFaqs;
 
   return (
     <Layout>
@@ -369,7 +373,7 @@ const KensingtonRecurringCleaningPage = () => {
       <TrustBadges compact />
       <ConversionCTA cityName="Kensington" />
 
-      <LocationQuoteSection cityName="Kensington" serviceLabel="Recurring Cleaning" defaultService="recurring" zipLine="Serving Kensington and nearby communities." />
+      <LocationQuoteSection cityName="Kensington" serviceLabel="Recurring Cleaning" defaultService="recurring" zipLine="Serving Kensington and nearby communities." ctaProse={ctaProseVariants[pickVariant("kensington-md", 2, 3)]("Kensington", "Recurring Cleaning")} />
 
       <StickyMobileCTA />
     </Layout>

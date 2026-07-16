@@ -20,12 +20,14 @@ import ServiceChecklistLocation from "@/components/location/ServiceChecklistLoca
 import InternalLinksGrid from "@/components/location/InternalLinksGrid";
 import LocationSocialProof from "@/components/location/LocationSocialProof";
 import LocationQuoteSection from "@/components/location/LocationQuoteSection";
+import { getServiceLocationOverride } from "@/data/service-location-overrides";
+import { ctaProseVariants, pickVariant } from "@/data/template-variants";
 
 // ── Page constants ────────────────────────────────────────────────────────────
 
 const PAGE_URL = "https://capitalcleancare.com/locations/north-bethesda-md/recurring-cleaning";
 
-const faqs = [
+const localFaqs = [
   {
     q: "What's the difference between weekly and bi-weekly cleaning in North Bethesda?",
     a: "Weekly is ideal for larger homes, families with kids or pets in North Bethesda. Bi-weekly is our most popular option — a well-maintained home without maximum cost.",
@@ -128,6 +130,7 @@ const nearbyCities = [
 // ── Page component ────────────────────────────────────────────────────────────
 
 const NorthBethesdaRecurringCleaningPage = () => {
+  const faqs = getServiceLocationOverride("north-bethesda-md", "recurring-cleaning")?.faqs ?? localFaqs;
   const { seoHelmet } = useSEO({
     title: "Recurring House Cleaning in North Bethesda, MD",
     description:
@@ -389,7 +392,7 @@ const NorthBethesdaRecurringCleaningPage = () => {
       <ConversionCTA cityName="North Bethesda" />
 
       {/* ── Final CTA + #quote anchor ─────────────────────── */}
-      <LocationQuoteSection cityName="North Bethesda" serviceLabel="Recurring Cleaning" defaultService="recurring" zipLine="Serving North Bethesda and nearby communities." />
+      <LocationQuoteSection cityName="North Bethesda" serviceLabel="Recurring Cleaning" defaultService="recurring" zipLine="Serving North Bethesda and nearby communities." ctaProse={ctaProseVariants[pickVariant("north-bethesda-md", 2, 3)]("North Bethesda", "Recurring Cleaning")} />
 
       {/* ── Sticky mobile phone CTA ───────────────────────── */}
       <StickyMobileCTA />

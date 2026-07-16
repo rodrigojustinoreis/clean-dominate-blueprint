@@ -3,6 +3,7 @@
 // due to thin/templated content. Adding unique paragraphs + original photos
 // gives each page distinct, indexable value.
 import { houseCleaningCityContent } from "./house-cleaning-city-content";
+import { ecoRecurringCityContent } from "./eco-recurring-city-content";
 
 export interface TeamPhoto {
   src: string;
@@ -660,6 +661,8 @@ There's a practical local reason to skip the heavy chemicals, too. Parts of Olne
   // enriched entries (intro + city FAQs + estimated time) supersede any inline
   // house-cleaning entry above for the same key.
   ...houseCleaningCityContent,
+  // Lote 2 — eco-friendly-cleaning + recurring-cleaning city pages (intro + city FAQs).
+  ...ecoRecurringCityContent,
 };
 
 export function getServiceLocationOverride(citySlug: string, serviceSlug: string): ServiceLocationOverride | null {
