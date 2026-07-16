@@ -13,7 +13,7 @@ import StickyCTA from "@/components/blog/StickyCTA";
 import RelatedPosts from "@/components/blog/RelatedPosts";
 
 const HERO_IMAGE = "/images/blog/post-party-patio.webp";
-const URL = "https://capitalcleancare.com/blog/how-to-clean-up-after-a-party";
+const URL = "https://capitalcleancare.com/resources/how-to-clean-up-after-a-party";
 
 const triage: string[] = [
   "Open windows and air the house out while you work",
@@ -153,9 +153,9 @@ const PostHolidayCleanup = () => {
               heavy cases (grease through the kitchen, several set-in stains, a packed guest weekend), a{" "}
               <Link to="/services/deep-cleaning" className="text-accent underline hover:no-underline">deep cleaning</Link>{" "}
               covers everything a routine clean skips. Here is{" "}
-              <Link to="/blog/deep-cleaning-cost-maryland" className="text-accent underline hover:no-underline">what deep cleaning costs in Maryland</Link>{" "}
+              <Link to="/resources/deep-cleaning-cost-maryland" className="text-accent underline hover:no-underline">what deep cleaning costs in Maryland</Link>{" "}
               and{" "}
-              <Link to="/blog/how-long-does-deep-cleaning-take" className="text-accent underline hover:no-underline">how long it takes</Link>.
+              <Link to="/resources/how-long-does-deep-cleaning-take" className="text-accent underline hover:no-underline">how long it takes</Link>.
             </p>
             <div className="bg-primary text-primary-foreground rounded-2xl p-6 md:p-8 text-center mt-8">
               <h3 className="font-heading text-xl md:text-2xl font-bold mb-3">Post-holiday reset, handled</h3>

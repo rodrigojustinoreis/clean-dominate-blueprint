@@ -100,8 +100,7 @@ const Header = () => {
               </>
             ) : (
               <>
-                <Link to="/" className="hidden 2xl:block whitespace-nowrap px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">Home</Link>
-                <Link to="/about" className="whitespace-nowrap px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">About Us</Link>
+                <Link to="/" className="whitespace-nowrap px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">Home</Link>
 
                 <div className="relative group">
                   <button className="whitespace-nowrap px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors flex items-center gap-1">
@@ -133,11 +132,10 @@ const Header = () => {
                   </div>
                 </div>
 
-                <Link to="/reviews" className="whitespace-nowrap px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">Reviews</Link>
-                <Link to="/faq" className="whitespace-nowrap px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">FAQ</Link>
-                <Link to="/blog" className="whitespace-nowrap px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">Blog</Link>
-                <Link to="/contact" className="whitespace-nowrap px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">Contact Us</Link>
-                <Link to="/careers" className="hidden 2xl:block whitespace-nowrap px-3 py-2 text-sm font-medium text-accent hover:text-accent/80 transition-colors">Join Our Team</Link>
+                <a href="/#pricing" className="whitespace-nowrap px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">Pricing</a>
+                <Link to="/resources" className="whitespace-nowrap px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">Resources</Link>
+                <Link to="/about" className="whitespace-nowrap px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">About</Link>
+                <Link to="/contact" className="whitespace-nowrap px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">Contact</Link>
               </>
             )}
           </nav>
@@ -225,7 +223,6 @@ const Header = () => {
             ) : (
               <>
                 <Link to="/" className="block px-3 py-2 rounded-md hover:bg-secondary" onClick={() => setMobileOpen(false)}>Home</Link>
-                <Link to="/about" className="block px-3 py-2 rounded-md hover:bg-secondary" onClick={() => setMobileOpen(false)}>About Us</Link>
 
                 <button className="w-full flex items-center justify-between px-3 py-2 rounded-md hover:bg-secondary" onClick={() => setServicesOpen(!servicesOpen)}>
                   Services <ChevronDown className={`h-4 w-4 transition-transform ${servicesOpen ? "rotate-180" : ""}`} />
@@ -253,10 +250,10 @@ const Header = () => {
                   </div>
                 )}
 
-                <Link to="/reviews" className="block px-3 py-2 rounded-md hover:bg-secondary" onClick={() => setMobileOpen(false)}>Reviews</Link>
-                <Link to="/faq" className="block px-3 py-2 rounded-md hover:bg-secondary" onClick={() => setMobileOpen(false)}>FAQ</Link>
-                <Link to="/blog" className="block px-3 py-2 rounded-md hover:bg-secondary" onClick={() => setMobileOpen(false)}>Blog</Link>
-                <Link to="/contact" className="block px-3 py-2 rounded-md hover:bg-secondary" onClick={() => setMobileOpen(false)}>Contact Us</Link>
+                <a href="/#pricing" className="block px-3 py-2 rounded-md hover:bg-secondary" onClick={() => setMobileOpen(false)}>Pricing</a>
+                <Link to="/resources" className="block px-3 py-2 rounded-md hover:bg-secondary" onClick={() => setMobileOpen(false)}>Resources</Link>
+                <Link to="/about" className="block px-3 py-2 rounded-md hover:bg-secondary" onClick={() => setMobileOpen(false)}>About</Link>
+                <Link to="/contact" className="block px-3 py-2 rounded-md hover:bg-secondary" onClick={() => setMobileOpen(false)}>Contact</Link>
 
                 <div className="pt-3 space-y-2">
                   <a href="tel:+12407042551" className="block text-center font-semibold text-foreground" onClick={() => trackPhoneClick("header_mobile_menu")}>

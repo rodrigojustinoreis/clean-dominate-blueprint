@@ -13,7 +13,7 @@ import StickyCTA from "@/components/blog/StickyCTA";
 import RelatedPosts from "@/components/blog/RelatedPosts";
 
 const HERO_IMAGE = "/images/blog/cleaner-thank-you-tip.webp";
-const URL = "https://capitalcleancare.com/blog/how-much-tip-house-cleaner";
+const URL = "https://capitalcleancare.com/resources/how-much-tip-house-cleaner";
 
 const toc: { href: string; label: string }[] = [
   { href: "#how-much", label: "How much to tip: the quick reference table" },
@@ -220,7 +220,7 @@ const HowMuchTipHouseCleaner = () => {
               If you love your cleaner, the best long-term thank-you is keeping them on the calendar. Our{" "}
               <Link to="/services/recurring-cleaning" className="text-accent underline hover:no-underline">recurring cleaning plans</Link>{" "}
               keep the same team coming back at a lower per-visit rate, and if you are unsure of the rhythm, here is{" "}
-              <Link to="/blog/how-often-should-you-hire-a-cleaning-service" className="text-accent underline hover:no-underline">how often to schedule a cleaning service</Link>.
+              <Link to="/resources/how-often-should-you-hire-a-cleaning-service" className="text-accent underline hover:no-underline">how often to schedule a cleaning service</Link>.
             </p>
           </FadeInSection>
 

@@ -41,7 +41,7 @@ const HowOftenHireCleaningService = () => {
     title: "How Often Should You Hire a Cleaning Service?",
     description:
       "How often to hire a house cleaning service — weekly, biweekly, or monthly. The factors that decide your ideal frequency (pets, kids, schedule, home size) and what most households choose.",
-    canonical: "https://capitalcleancare.com/blog/how-often-should-you-hire-a-cleaning-service",
+    canonical: "https://capitalcleancare.com/resources/how-often-should-you-hire-a-cleaning-service",
   });
 
   return (
@@ -54,16 +54,16 @@ const HowOftenHireCleaningService = () => {
       <ArticleSchema
         title="How Often Should You Hire a Cleaning Service?"
         description="A guide to choosing how often to hire a house cleaner — weekly, biweekly, monthly, or one-time — based on pets, kids, schedule, and home size."
-        url="https://capitalcleancare.com/blog/how-often-should-you-hire-a-cleaning-service"
+        url="https://capitalcleancare.com/resources/how-often-should-you-hire-a-cleaning-service"
         datePublished="2026-06-16"
         image={HERO_IMAGE}
       />
       <FAQSchema faqs={faqs} />
-      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }, { label: "How Often Should You Hire a Cleaning Service", href: "/blog/how-often-should-you-hire-a-cleaning-service" }]} />
+      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "How Often Should You Hire a Cleaning Service", href: "/resources/how-often-should-you-hire-a-cleaning-service" }]} />
 
       <div className="bg-gray-50 py-4 border-b">
         <div className="container mx-auto px-4 max-w-5xl">
-          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }, { label: "How Often Should You Hire a Cleaning Service?" }]} />
+          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "How Often Should You Hire a Cleaning Service?" }]} />
         </div>
       </div>
 
@@ -120,9 +120,9 @@ const HowOftenHireCleaningService = () => {
               <p className="font-semibold text-foreground mb-1">Keep reading</p>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 Deciding between schedules? See{" "}
-                <Link to="/blog/one-time-vs-recurring-cleaning" className="text-accent underline hover:no-underline">one-time vs recurring cleaning</Link>{" "}
+                <Link to="/resources/one-time-vs-recurring-cleaning" className="text-accent underline hover:no-underline">one-time vs recurring cleaning</Link>{" "}
                 and{" "}
-                <Link to="/blog/recurring-cleaning-weekly-biweekly-monthly" className="text-accent underline hover:no-underline">weekly vs biweekly vs monthly</Link>.
+                <Link to="/resources/recurring-cleaning-weekly-biweekly-monthly" className="text-accent underline hover:no-underline">weekly vs biweekly vs monthly</Link>.
               </p>
             </div>
           </FadeInSection>
@@ -143,7 +143,7 @@ const HowOftenHireCleaningService = () => {
           </FadeInSection>
         </div>
       </article>
-      <div className="container mx-auto px-4 max-w-3xl pb-10"><p className="text-sm text-muted-foreground">Related: wondering about etiquette? See{" "}<Link to="/blog/how-much-tip-house-cleaner" className="text-accent underline hover:no-underline">how much to tip your house cleaner</Link>.</p></div>
+      <div className="container mx-auto px-4 max-w-3xl pb-10"><p className="text-sm text-muted-foreground">Related: wondering about etiquette? See{" "}<Link to="/resources/how-much-tip-house-cleaner" className="text-accent underline hover:no-underline">how much to tip your house cleaner</Link>.</p></div>
       <RelatedPosts currentSlug="how-often-should-you-hire-a-cleaning-service" />
       <StickyCTA />
     </Layout>

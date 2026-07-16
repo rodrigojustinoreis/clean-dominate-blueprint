@@ -34,7 +34,7 @@ const CleaningTipsWorkingProfessionals = () => {
     title: "Cleaning Tips for Busy Working Professionals",
     description:
       "Low-effort cleaning systems for busy working professionals in the DMV — the 10-minute reset, automating floors, focusing on rooms you use, and cleaning while you're at work.",
-    canonical: "https://capitalcleancare.com/blog/cleaning-tips-for-working-professionals",
+    canonical: "https://capitalcleancare.com/resources/cleaning-tips-for-working-professionals",
   });
 
   return (
@@ -47,16 +47,16 @@ const CleaningTipsWorkingProfessionals = () => {
       <ArticleSchema
         title="Cleaning Tips for Busy Working Professionals"
         description="Low-effort cleaning systems for busy working professionals — the 10-minute reset, automating floors, focusing effort, and cleaning while at work."
-        url="https://capitalcleancare.com/blog/cleaning-tips-for-working-professionals"
+        url="https://capitalcleancare.com/resources/cleaning-tips-for-working-professionals"
         datePublished="2026-06-16"
         image={HERO_IMAGE}
       />
       <FAQSchema faqs={faqs} />
-      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }, { label: "Cleaning Tips for Working Professionals", href: "/blog/cleaning-tips-for-working-professionals" }]} />
+      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "Cleaning Tips for Working Professionals", href: "/resources/cleaning-tips-for-working-professionals" }]} />
 
       <div className="bg-gray-50 py-4 border-b">
         <div className="container mx-auto px-4 max-w-5xl">
-          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }, { label: "Cleaning Tips for Working Professionals" }]} />
+          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "Cleaning Tips for Working Professionals" }]} />
         </div>
       </div>
 
@@ -97,9 +97,9 @@ const CleaningTipsWorkingProfessionals = () => {
               <p className="font-semibold text-foreground mb-1">Keep reading</p>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 See{" "}
-                <Link to="/blog/is-professional-house-cleaning-worth-it" className="text-accent underline hover:no-underline">whether professional cleaning is worth it</Link>{" "}
+                <Link to="/resources/is-professional-house-cleaning-worth-it" className="text-accent underline hover:no-underline">whether professional cleaning is worth it</Link>{" "}
                 or{" "}
-                <Link to="/blog/how-to-keep-house-clean-between-cleanings" className="text-accent underline hover:no-underline">how to keep your house clean between cleanings</Link>.
+                <Link to="/resources/how-to-keep-house-clean-between-cleanings" className="text-accent underline hover:no-underline">how to keep your house clean between cleanings</Link>.
               </p>
             </div>
           </FadeInSection>

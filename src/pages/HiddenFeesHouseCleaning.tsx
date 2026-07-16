@@ -13,7 +13,7 @@ import StickyCTA from "@/components/blog/StickyCTA";
 import RelatedPosts from "@/components/blog/RelatedPosts";
 
 const HERO_IMAGE = "/images/blog/hidden-fees-hero.webp";
-const URL = "https://capitalcleancare.com/blog/hidden-fees-house-cleaning";
+const URL = "https://capitalcleancare.com/resources/hidden-fees-house-cleaning";
 
 const faqs = [
   { q: "Are hidden fees in house cleaning illegal?", a: "Usually not, which is the frustrating part. Deceptive pricing can cross into consumer protection violations, but most hidden fees live in fine print you technically agreed to. Your practical defense is prevention: a flat written quote, disclosed policies, and refusing any company that will not put its price in writing." },
@@ -81,7 +81,7 @@ const HiddenFeesHouseCleaning = () => {
             <p className="text-muted-foreground leading-relaxed mb-4">
               A higher first visit is normal and honest when it is explained up front, because the first clean is really a deep
               clean. We break down the math in{" "}
-              <Link to="/blog/why-first-house-cleaning-costs-more" className="text-accent underline hover:no-underline">why your first house cleaning costs more</Link>.
+              <Link to="/resources/why-first-house-cleaning-costs-more" className="text-accent underline hover:no-underline">why your first house cleaning costs more</Link>.
               The hidden version is different: you book at the standard rate, and the surcharge appears only after the team walks
               through your door.
             </p>
@@ -137,7 +137,7 @@ const HiddenFeesHouseCleaning = () => {
               Here is the problem with that number. In Maryland, a typical 3 bedroom deep clean runs <strong>$375 to $445</strong>,
               and even a standard clean of a small 1 to 2 bedroom home runs <strong>$150 to $180</strong>. You can check every
               range in our guide to{" "}
-              <Link to="/blog/house-cleaning-prices-maryland-2026" className="text-accent underline hover:no-underline">house cleaning prices in Maryland</Link>.
+              <Link to="/resources/house-cleaning-prices-maryland-2026" className="text-accent underline hover:no-underline">house cleaning prices in Maryland</Link>.
               A $130 quote for a 3 bedroom home is not a deal. It is below the cost of doing the job properly.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-4">
@@ -148,7 +148,7 @@ const HiddenFeesHouseCleaning = () => {
             <p className="text-muted-foreground leading-relaxed mb-4">
               The defense is simple: treat any quote dramatically below market as a red flag, and insist on a flat, written price
               before booking. Our comparison of{" "}
-              <Link to="/blog/flat-rate-vs-hourly-house-cleaning" className="text-accent underline hover:no-underline">flat rate vs hourly house cleaning</Link>{" "}
+              <Link to="/resources/flat-rate-vs-hourly-house-cleaning" className="text-accent underline hover:no-underline">flat rate vs hourly house cleaning</Link>{" "}
               explains why a locked flat number is your best protection against a growing bill.
             </p>
           </FadeInSection>
@@ -200,7 +200,7 @@ const HiddenFeesHouseCleaning = () => {
               <li className="flex items-start gap-2.5 text-muted-foreground leading-relaxed">
                 <CheckCircle2 className="h-5 w-5 text-accent mt-0.5 shrink-0" />
                 <span>Exactly which tasks are included? Compare the answer against{" "}
-                  <Link to="/blog/what-is-included-in-a-standard-cleaning" className="text-accent underline hover:no-underline">what is included in a standard cleaning</Link>.</span>
+                  <Link to="/resources/what-is-included-in-a-standard-cleaning" className="text-accent underline hover:no-underline">what is included in a standard cleaning</Link>.</span>
               </li>
               <li className="flex items-start gap-2.5 text-muted-foreground leading-relaxed">
                 <CheckCircle2 className="h-5 w-5 text-accent mt-0.5 shrink-0" />

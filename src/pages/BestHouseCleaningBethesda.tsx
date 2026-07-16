@@ -13,7 +13,7 @@ import StickyCTA from "@/components/blog/StickyCTA";
 import RelatedPosts from "@/components/blog/RelatedPosts";
 
 const HERO_IMAGE = "/images/blog/bethesda-street.webp";
-const URL = "https://capitalcleancare.com/blog/best-house-cleaning-service-bethesda-md";
+const URL = "https://capitalcleancare.com/resources/best-house-cleaning-service-bethesda-md";
 
 const criteria: { icon: typeof Star; title: string; text: string }[] = [
   { icon: ShieldCheck, title: "Bonded, insured & background-checked", text: "Bethesda homes are high-value homes. Any company you let inside should carry liability insurance, bond its employees, and background-check every cleaner — and be able to prove all three in writing before the first visit." },
@@ -97,7 +97,7 @@ const BestHouseCleaningBethesda = () => {
               Bethesda's housing stock skews large — colonials in Bradley Hills, split-levels near Walter Johnson, condos downtown —
               so prices vary more than in neighboring towns. As a working range: standard cleanings run about $180–$400+, deep
               cleanings and first visits more. We published a full breakdown in our{" "}
-              <Link to="/blog/house-cleaning-cost-bethesda-md" className="text-accent underline hover:no-underline">Bethesda house cleaning cost guide</Link>.
+              <Link to="/resources/house-cleaning-cost-bethesda-md" className="text-accent underline hover:no-underline">Bethesda house cleaning cost guide</Link>.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-6">
               When you're ready to compare companies side by side, start with our{" "}

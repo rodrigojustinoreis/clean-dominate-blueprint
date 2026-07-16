@@ -41,7 +41,7 @@ const HouseCleaningGuideGermantown = () => {
     title: "The Complete Guide to House Cleaning in Germantown, MD",
     description:
       "A complete local guide to house cleaning in Germantown, MD — home types, the right cleaning frequency, builder-grade finishes, pricing, and how to choose a company.",
-    canonical: "https://capitalcleancare.com/blog/house-cleaning-guide-germantown-md",
+    canonical: "https://capitalcleancare.com/resources/house-cleaning-guide-germantown-md",
   });
 
   return (
@@ -54,16 +54,16 @@ const HouseCleaningGuideGermantown = () => {
       <ArticleSchema
         title="The Complete Guide to House Cleaning in Germantown, MD"
         description="A complete local guide to house cleaning in Germantown — home types, cleaning frequency, builder-grade finishes, pricing, and choosing a company."
-        url="https://capitalcleancare.com/blog/house-cleaning-guide-germantown-md"
+        url="https://capitalcleancare.com/resources/house-cleaning-guide-germantown-md"
         datePublished="2026-06-16"
         image={HERO_IMAGE}
       />
       <FAQSchema faqs={faqs} />
-      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }, { label: "House Cleaning Guide: Germantown, MD", href: "/blog/house-cleaning-guide-germantown-md" }]} />
+      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "House Cleaning Guide: Germantown, MD", href: "/resources/house-cleaning-guide-germantown-md" }]} />
 
       <div className="bg-gray-50 py-4 border-b">
         <div className="container mx-auto px-4 max-w-5xl">
-          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }, { label: "House Cleaning Guide: Germantown, MD" }]} />
+          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "House Cleaning Guide: Germantown, MD" }]} />
         </div>
       </div>
 
@@ -108,8 +108,8 @@ const HouseCleaningGuideGermantown = () => {
               <p className="font-semibold text-foreground mb-1 flex items-center gap-2"><MapPin className="h-4 w-4 text-accent" /> Keep reading</p>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 See{" "}
-                <Link to="/blog/house-cleaning-prices-maryland-2026" className="text-accent underline hover:no-underline">house cleaning prices in Maryland</Link>,{" "}
-                <Link to="/blog/how-often-should-you-hire-a-cleaning-service" className="text-accent underline hover:no-underline">how often to hire a cleaning service</Link>, or book directly on our{" "}
+                <Link to="/resources/house-cleaning-prices-maryland-2026" className="text-accent underline hover:no-underline">house cleaning prices in Maryland</Link>,{" "}
+                <Link to="/resources/how-often-should-you-hire-a-cleaning-service" className="text-accent underline hover:no-underline">how often to hire a cleaning service</Link>, or book directly on our{" "}
                 <Link to="/locations/germantown-md/house-cleaning" className="text-accent underline hover:no-underline">Germantown house cleaning</Link>{" "}page.
               </p>
             </div>

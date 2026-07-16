@@ -92,7 +92,7 @@ const HowToGetRidOfMildewSmellNaturally = () => {
     title: "How to Get Rid of Mildew Smell Naturally (Maryland Guide)",
     description:
       "Eliminate mildew & musty odor from basements, bathrooms & clothes naturally. Humid-climate Maryland guide. Free quote in Montgomery County.",
-    canonical: "https://capitalcleancare.com/blog/how-to-get-rid-of-mildew-smell-naturally",
+    canonical: "https://capitalcleancare.com/resources/how-to-get-rid-of-mildew-smell-naturally",
   });
 
   return (
@@ -108,14 +108,14 @@ const HowToGetRidOfMildewSmellNaturally = () => {
       <ArticleSchema
         title="How to Get Rid of Mildew Smell Naturally (The Maryland Humidity Survival Guide)"
         description="Eliminate mildew and musty odor from basements, bathrooms, clothes, and furniture using vinegar, baking soda, and ventilation — no bleach needed."
-        url="https://capitalcleancare.com/blog/how-to-get-rid-of-mildew-smell-naturally"
+        url="https://capitalcleancare.com/resources/how-to-get-rid-of-mildew-smell-naturally"
         datePublished="2026-05-23"
         image={HERO_IMAGE}
       />
       <HowToSchema
         name="How to Remove Mildew Smell from a Bathroom Naturally"
         description="Step-by-step guide to eliminating bathroom mildew smell with white vinegar and baking soda — safe for kids, pets, and septic systems."
-        url="https://capitalcleancare.com/blog/how-to-get-rid-of-mildew-smell-naturally"
+        url="https://capitalcleancare.com/resources/how-to-get-rid-of-mildew-smell-naturally"
         steps={howToSteps}
         totalTime="PT45M"
         image={HERO_IMAGE}
@@ -124,8 +124,8 @@ const HowToGetRidOfMildewSmellNaturally = () => {
       <BreadcrumbSchema
         items={[
           { label: "Home", href: "/" },
-          { label: "Blog", href: "/blog" },
-          { label: "How to Get Rid of Mildew Smell Naturally", href: "/blog/how-to-get-rid-of-mildew-smell-naturally" },
+          { label: "Resources", href: "/resources" },
+          { label: "How to Get Rid of Mildew Smell Naturally", href: "/resources/how-to-get-rid-of-mildew-smell-naturally" },
         ]}
       />
 
@@ -135,7 +135,7 @@ const HowToGetRidOfMildewSmellNaturally = () => {
           <Breadcrumbs
             items={[
               { label: "Home", href: "/" },
-              { label: "Blog", href: "/blog" },
+              { label: "Resources", href: "/resources" },
               { label: "How to Get Rid of Mildew Smell" },
             ]}
           />
@@ -478,7 +478,7 @@ const HowToGetRidOfMildewSmellNaturally = () => {
                 professional deep clean
               </Link>{" "}
               combined with the maintenance habits above handles it completely. More eco-cleaning methods in our{" "}
-              <Link to="/blog/eco-cleaning-tips-maryland-homes" className="text-accent underline hover:no-underline">
+              <Link to="/resources/eco-cleaning-tips-maryland-homes" className="text-accent underline hover:no-underline">
                 eco-friendly cleaning tips guide for Maryland homes
               </Link>.
             </p>

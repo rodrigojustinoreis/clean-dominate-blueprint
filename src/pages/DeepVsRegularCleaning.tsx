@@ -56,7 +56,7 @@ const DeepVsRegularCleaning = () => {
     title: "Deep Cleaning vs Regular Cleaning: What's the Difference?",
     description:
       "Deep cleaning vs regular cleaning — what each includes, when to book which, and how much more a deep clean costs. A clear comparison to help you choose the right service.",
-    canonical: "https://capitalcleancare.com/blog/deep-cleaning-vs-regular-cleaning",
+    canonical: "https://capitalcleancare.com/resources/deep-cleaning-vs-regular-cleaning",
   });
 
   return (
@@ -69,7 +69,7 @@ const DeepVsRegularCleaning = () => {
       <ArticleSchema
         title="Deep Cleaning vs Regular Cleaning: What's the Difference?"
         description="A clear comparison of deep cleaning vs regular (standard) cleaning — what each includes, when to choose which, the cost difference, and how often to deep clean."
-        url="https://capitalcleancare.com/blog/deep-cleaning-vs-regular-cleaning"
+        url="https://capitalcleancare.com/resources/deep-cleaning-vs-regular-cleaning"
         datePublished="2026-06-16"
         image={HERO_IMAGE}
       />
@@ -77,14 +77,14 @@ const DeepVsRegularCleaning = () => {
       <BreadcrumbSchema
         items={[
           { label: "Home", href: "/" },
-          { label: "Blog", href: "/blog" },
-          { label: "Deep Cleaning vs Regular Cleaning", href: "/blog/deep-cleaning-vs-regular-cleaning" },
+          { label: "Resources", href: "/resources" },
+          { label: "Deep Cleaning vs Regular Cleaning", href: "/resources/deep-cleaning-vs-regular-cleaning" },
         ]}
       />
 
       <div className="bg-gray-50 py-4 border-b">
         <div className="container mx-auto px-4 max-w-5xl">
-          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }, { label: "Deep Cleaning vs Regular Cleaning" }]} />
+          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "Deep Cleaning vs Regular Cleaning" }]} />
         </div>
       </div>
 
@@ -183,9 +183,9 @@ const DeepVsRegularCleaning = () => {
               <p className="font-semibold text-foreground mb-1">Keep reading</p>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 See exactly{" "}
-                <Link to="/blog/what-is-included-in-a-deep-cleaning" className="text-accent underline hover:no-underline">what's included in a deep cleaning</Link>, learn{" "}
-                <Link to="/blog/how-often-should-you-hire-a-cleaning-service" className="text-accent underline hover:no-underline">how often you should hire a cleaning service</Link>, or compare{" "}
-                <Link to="/blog/one-time-vs-recurring-cleaning" className="text-accent underline hover:no-underline">one-time vs recurring cleaning</Link>, or see{" "}<Link to="/blog/how-long-does-deep-cleaning-take" className="text-accent underline hover:no-underline">how long a deep cleaning takes</Link>.
+                <Link to="/resources/what-is-included-in-a-deep-cleaning" className="text-accent underline hover:no-underline">what's included in a deep cleaning</Link>, learn{" "}
+                <Link to="/resources/how-often-should-you-hire-a-cleaning-service" className="text-accent underline hover:no-underline">how often you should hire a cleaning service</Link>, or compare{" "}
+                <Link to="/resources/one-time-vs-recurring-cleaning" className="text-accent underline hover:no-underline">one-time vs recurring cleaning</Link>, or see{" "}<Link to="/resources/how-long-does-deep-cleaning-take" className="text-accent underline hover:no-underline">how long a deep cleaning takes</Link>.
               </p>
             </div>
           </FadeInSection>

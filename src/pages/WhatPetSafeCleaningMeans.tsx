@@ -86,7 +86,7 @@ const WhatPetSafeCleaningMeans = () => {
     title: "What 'Pet-Safe' Cleaning Really Means: How to Read the Labels",
     description:
       "'Pet-safe,' 'natural,' and 'non-toxic' are unregulated marketing terms. How to decode cleaning-product labels — the certifications that matter (EPA Safer Choice), the greenwashing buzzwords to ignore, and the ingredients to avoid for pets.",
-    canonical: "https://capitalcleancare.com/blog/what-pet-safe-cleaning-really-means",
+    canonical: "https://capitalcleancare.com/resources/what-pet-safe-cleaning-really-means",
   });
 
   return (
@@ -102,14 +102,14 @@ const WhatPetSafeCleaningMeans = () => {
       <ArticleSchema
         title="What 'Pet-Safe' Cleaning Really Means: How to Read the Labels"
         description="Why 'pet-safe,' 'natural,' and 'non-toxic' are unregulated marketing terms, how to decode cleaning-product labels using third-party certifications like EPA Safer Choice, which greenwashing buzzwords to ignore, and which ingredients to avoid for dogs and cats."
-        url="https://capitalcleancare.com/blog/what-pet-safe-cleaning-really-means"
+        url="https://capitalcleancare.com/resources/what-pet-safe-cleaning-really-means"
         datePublished="2026-06-15"
         image={HERO_IMAGE}
       />
       <HowToSchema
         name="How to Read a Cleaning-Product Label for Pet Safety"
         description="A four-step method to judge whether a cleaning product is genuinely safe for pets: check for third-party certification, ignore unregulated buzzwords, demand ingredient disclosure, and avoid the chemicals known to harm pets."
-        url="https://capitalcleancare.com/blog/what-pet-safe-cleaning-really-means"
+        url="https://capitalcleancare.com/resources/what-pet-safe-cleaning-really-means"
         steps={howToSteps}
         totalTime="PT10M"
         image={HERO_IMAGE}
@@ -118,8 +118,8 @@ const WhatPetSafeCleaningMeans = () => {
       <BreadcrumbSchema
         items={[
           { label: "Home", href: "/" },
-          { label: "Blog", href: "/blog" },
-          { label: "What 'Pet-Safe' Cleaning Really Means", href: "/blog/what-pet-safe-cleaning-really-means" },
+          { label: "Resources", href: "/resources" },
+          { label: "What 'Pet-Safe' Cleaning Really Means", href: "/resources/what-pet-safe-cleaning-really-means" },
         ]}
       />
 
@@ -129,7 +129,7 @@ const WhatPetSafeCleaningMeans = () => {
           <Breadcrumbs
             items={[
               { label: "Home", href: "/" },
-              { label: "Blog", href: "/blog" },
+              { label: "Resources", href: "/resources" },
               { label: "What 'Pet-Safe' Cleaning Really Means: How to Read the Labels" },
             ]}
           />
@@ -284,9 +284,9 @@ const WhatPetSafeCleaningMeans = () => {
                   "Pet-safe" only matters if it's real. Our{" "}
                   <Link to="/services/eco-friendly-cleaning" className="text-accent underline hover:no-underline">eco-friendly cleaning</Link>{" "}
                   uses only plant-based, fragrance-free, low-residue products that clear the same bar we describe here. Related reading:{" "}
-                  <Link to="/blog/cleaning-product-poisoning-in-pets" className="text-accent underline hover:no-underline">cleaning-product poisoning in pets</Link>{" "}
+                  <Link to="/resources/cleaning-product-poisoning-in-pets" className="text-accent underline hover:no-underline">cleaning-product poisoning in pets</Link>{" "}
                   and{" "}
-                  <Link to="/blog/allergen-free-home-dog-cat-owners" className="text-accent underline hover:no-underline">building an allergen-free home</Link>.
+                  <Link to="/resources/allergen-free-home-dog-cat-owners" className="text-accent underline hover:no-underline">building an allergen-free home</Link>.
                 </p>
               </div>
             </div>

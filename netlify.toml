@@ -66,6 +66,20 @@
   status = 301
   force = true
 
+# ── Pre-existing dangling internal links (surfaced by the Fase 1.1 crawl) ────
+# /locations/aspen-hill-md: referenced by the ES aspen-hill page's EN switcher but
+# never built in EN. /services/apartment-cleaning: linked from the apartment-cleaning
+# vanity but not one of the 8 core service pages. Point both at their closest real page.
+[[redirects]]
+  from = "/locations/aspen-hill-md"
+  to = "/maryland"
+  status = 301
+
+[[redirects]]
+  from = "/services/apartment-cleaning"
+  to = "/services/house-cleaning"
+  status = 301
+
 # ── 404 fixes: missing pages that Google has indexed ─────────────────────────
 # These paths match a 200-rewrite pattern but have no prerendered file,
 # so they return 404 instead of falling through to the SPA. Fix with explicit 301s.
@@ -122,7 +136,7 @@
 
 [[redirects]]
   from = "/home/f/*"
-  to = "/blog/"
+  to = "/resources/"
   status = 301
 
 [[redirects]]
@@ -132,22 +146,22 @@
 
 [[redirects]]
   from = "/f/streamlining-your-cleaning-routine"
-  to = "/blog/"
+  to = "/resources/"
   status = 301
 
 [[redirects]]
   from = "/f/12-things-you-forget-to-clean"
-  to = "/blog/"
+  to = "/resources/"
   status = 301
 
 [[redirects]]
   from = "/f/how-to-clean-glass"
-  to = "/blog/"
+  to = "/resources/"
   status = 301
 
 [[redirects]]
   from = "/seasonal-cleaning/f/*"
-  to = "/blog/"
+  to = "/resources/"
   status = 301
 
 [[redirects]]
@@ -157,7 +171,7 @@
 
 [[redirects]]
   from = "/blog/how-to-clean-air-vents-filters-improve-indoor-air-quality-maryland"
-  to = "/blog/"
+  to = "/resources/"
   status = 301
 
 [[redirects]]
@@ -310,7 +324,7 @@
 # ── Dead/old internal URLs ────────────────────────────────────────────────────
 [[redirects]]
   from = "/pricing"
-  to = "/"
+  to = "/#pricing"
   status = 301
 
 [[redirects]]
@@ -345,33 +359,33 @@
 
 [[redirects]]
   from = "/f/*"
-  to = "/blog/"
+  to = "/resources/"
   status = 301
 
 # ── Removed/replaced blog posts ──────────────────────────────────────────────
 [[redirects]]
   from = "/blog/spring-carpet-cleaning"
-  to = "/blog/how-to-clean-carpet-home-apartment"
+  to = "/resources/how-to-clean-carpet-home-apartment"
   status = 301
 
 # ── Blog slugs with date → evergreen slugs ───────────────────────────────────
 [[redirects]]
   from = "/blog/deep-cleaning-tips-maryland-homes-spring-prep-march-2026"
-  to = "/blog/deep-cleaning-tips-maryland-homes-spring-prep"
+  to = "/resources/deep-cleaning-tips-maryland-homes-spring-prep"
   status = 301
 
 
 # ── Blog/legacy query-parameter cleanup ──────────────────────────────────────
 [[redirects]]
   from = "/"
-  to = "/blog/"
+  to = "/resources/"
   status = 301
   force = true
   query = {blog = "y"}
 
 [[redirects]]
   from = "/"
-  to = "/blog/"
+  to = "/resources/"
   status = 301
   force = true
   query = {blogcategory = ":cat"}
@@ -1627,10 +1641,12 @@
 
 
 # ── Block 6: Non-priority city hub redirects → /maryland ────────────────────
+# ── Fase 1.1: Blog → Resources migration. All /blog/* 301 to /resources/*
+# (slugs preserved). Specific old-slug redirects above run first, then this catch-all.
 [[redirects]]
-  from = "/blog/:slug"
-  to = "/blog/:slug/"
-  status = 200
+  from = "/blog/*"
+  to = "/resources/:splat"
+  status = 301
   force = true
 
 [[redirects]]
@@ -1715,8 +1731,8 @@
 
 [[redirects]]
   from = "/blog"
-  to = "/blog/"
-  status = 200
+  to = "/resources"
+  status = 301
   force = true
 
 [[redirects]]

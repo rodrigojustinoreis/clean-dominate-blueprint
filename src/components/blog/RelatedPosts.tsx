@@ -435,7 +435,7 @@ const RelatedPosts = ({ currentSlug }: RelatedPostsProps) => {
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         {related.map((post) => (
           <Card key={post.slug} className="group hover:shadow-md transition-all duration-200 hover:-translate-y-0.5">
-            <Link to={`/blog/${post.slug}`}>
+            <Link to={`/resources/${post.slug}`}>
               {post.coverImage && (
                 <div className="h-36 overflow-hidden rounded-t-lg">
                   <img

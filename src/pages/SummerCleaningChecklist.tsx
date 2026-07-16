@@ -34,7 +34,7 @@ const SummerCleaningChecklist = () => {
     title: "Summer Cleaning Checklist for Maryland Homes (2026)",
     description:
       "A summer cleaning checklist built for Maryland's humidity — mildew control, HVAC and vent care, windows and screens, outdoor spaces, and kitchen prep for summer entertaining.",
-    canonical: "https://capitalcleancare.com/blog/summer-cleaning-checklist-maryland",
+    canonical: "https://capitalcleancare.com/resources/summer-cleaning-checklist-maryland",
   });
 
   return (
@@ -47,16 +47,16 @@ const SummerCleaningChecklist = () => {
       <ArticleSchema
         title="Summer Cleaning Checklist for Maryland Homes (2026)"
         description="A summer cleaning checklist built for Maryland's humidity — mildew control, HVAC care, windows, outdoor spaces, and kitchen prep."
-        url="https://capitalcleancare.com/blog/summer-cleaning-checklist-maryland"
+        url="https://capitalcleancare.com/resources/summer-cleaning-checklist-maryland"
         datePublished="2026-06-16"
         image={HERO_IMAGE}
       />
       <FAQSchema faqs={faqs} />
-      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }, { label: "Summer Cleaning Checklist for Maryland", href: "/blog/summer-cleaning-checklist-maryland" }]} />
+      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "Summer Cleaning Checklist for Maryland", href: "/resources/summer-cleaning-checklist-maryland" }]} />
 
       <div className="bg-gray-50 py-4 border-b">
         <div className="container mx-auto px-4 max-w-5xl">
-          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }, { label: "Summer Cleaning Checklist for Maryland" }]} />
+          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "Summer Cleaning Checklist for Maryland" }]} />
         </div>
       </div>
 
@@ -98,9 +98,9 @@ const SummerCleaningChecklist = () => {
               <p className="font-semibold text-foreground mb-1">Keep reading</p>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 See{" "}
-                <Link to="/blog/why-dust-builds-up-maryland-homes" className="text-accent underline hover:no-underline">why dust builds up in Maryland homes</Link>{" "}
+                <Link to="/resources/why-dust-builds-up-maryland-homes" className="text-accent underline hover:no-underline">why dust builds up in Maryland homes</Link>{" "}
                 or{" "}
-                <Link to="/blog/how-to-get-rid-of-mildew-smell-naturally" className="text-accent underline hover:no-underline">how to get rid of mildew smell naturally</Link>.
+                <Link to="/resources/how-to-get-rid-of-mildew-smell-naturally" className="text-accent underline hover:no-underline">how to get rid of mildew smell naturally</Link>.
               </p>
             </div>
           </FadeInSection>

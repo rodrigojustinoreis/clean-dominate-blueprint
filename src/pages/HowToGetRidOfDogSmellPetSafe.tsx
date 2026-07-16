@@ -92,7 +92,7 @@ const HowToGetRidOfDogSmellPetSafe = () => {
     title: "How to Get Rid of Dog Smell in House (Pet-Safe Methods)",
     description:
       "Remove dog odor from carpet, furniture, beds & air without harsh chemicals. Pet-safe Maryland guide. Free quote in Montgomery County.",
-    canonical: "https://capitalcleancare.com/blog/how-to-get-rid-of-dog-smell-pet-safe",
+    canonical: "https://capitalcleancare.com/resources/how-to-get-rid-of-dog-smell-pet-safe",
   });
 
   return (
@@ -108,14 +108,14 @@ const HowToGetRidOfDogSmellPetSafe = () => {
       <ArticleSchema
         title="How to Get Rid of Dog Smell in Your House (Pet-Safe Methods That Work)"
         description="Remove dog odor from carpet, furniture, beds, and air using baking soda, enzyme cleaners, and vinegar — no essential oils (toxic to dogs), no harsh chemicals, safe for the Chesapeake Bay watershed."
-        url="https://capitalcleancare.com/blog/how-to-get-rid-of-dog-smell-pet-safe"
+        url="https://capitalcleancare.com/resources/how-to-get-rid-of-dog-smell-pet-safe"
         datePublished="2026-05-23"
         image={HERO_IMAGE}
       />
       <HowToSchema
         name="How to Deep Clean Dog Smell From Carpet"
         description="Four-step method to remove dog odor from carpet using baking soda, a HEPA vacuum, enzyme cleaner, and steam extraction — no harsh chemicals, pet-safe."
-        url="https://capitalcleancare.com/blog/how-to-get-rid-of-dog-smell-pet-safe"
+        url="https://capitalcleancare.com/resources/how-to-get-rid-of-dog-smell-pet-safe"
         steps={howToSteps}
         totalTime="PT60M"
         image={HERO_IMAGE}
@@ -124,8 +124,8 @@ const HowToGetRidOfDogSmellPetSafe = () => {
       <BreadcrumbSchema
         items={[
           { label: "Home", href: "/" },
-          { label: "Blog", href: "/blog" },
-          { label: "How to Get Rid of Dog Smell (Pet-Safe)", href: "/blog/how-to-get-rid-of-dog-smell-pet-safe" },
+          { label: "Resources", href: "/resources" },
+          { label: "How to Get Rid of Dog Smell (Pet-Safe)", href: "/resources/how-to-get-rid-of-dog-smell-pet-safe" },
         ]}
       />
 
@@ -135,7 +135,7 @@ const HowToGetRidOfDogSmellPetSafe = () => {
           <Breadcrumbs
             items={[
               { label: "Home", href: "/" },
-              { label: "Blog", href: "/blog" },
+              { label: "Resources", href: "/resources" },
               { label: "How to Get Rid of Dog Smell (Pet-Safe)" },
             ]}
           />
@@ -176,7 +176,7 @@ const HowToGetRidOfDogSmellPetSafe = () => {
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
               The smell isn't going away because you haven't addressed its sources — and most of the common fixes (essential oil diffusers, masking sprays) either don't work or aren't safe around dogs. This guide covers every source of dog odor in the home with methods that eliminate it rather than cover it, all without chemicals that could harm your pet. For more{" "}
-              <Link to="/blog/eco-cleaning-tips-maryland-homes" className="text-accent underline hover:no-underline">
+              <Link to="/resources/eco-cleaning-tips-maryland-homes" className="text-accent underline hover:no-underline">
                 eco-friendly cleaning tips for Maryland homes
               </Link>
               , see our full guide.
@@ -466,7 +466,7 @@ const HowToGetRidOfDogSmellPetSafe = () => {
                 recurring cleaning service
               </Link>{" "}
               keeps pet homes in Montgomery County on a schedule that prevents odor from accumulating between deep treatments — Potomac, Bethesda, Rockville, Silver Spring, and Gaithersburg. Pet-safe protocols on every visit. See more in our{" "}
-              <Link to="/blog/eco-cleaning-tips-maryland-homes" className="text-accent underline hover:no-underline">
+              <Link to="/resources/eco-cleaning-tips-maryland-homes" className="text-accent underline hover:no-underline">
                 eco-friendly cleaning tips for Maryland homes
               </Link>.
             </p>

@@ -13,7 +13,7 @@ import StickyCTA from "@/components/blog/StickyCTA";
 import RelatedPosts from "@/components/blog/RelatedPosts";
 
 const HERO_IMAGE = "/images/blog/move-in-empty-home.webp";
-const URL = "https://capitalcleancare.com/blog/move-in-cleaning-checklist";
+const URL = "https://capitalcleancare.com/resources/move-in-cleaning-checklist";
 
 const rooms: { room: string; items: string[] }[] = [
   { room: "Kitchen (do this first)", items: ["Inside all cabinets and drawers before anything goes in", "Inside the refrigerator, oven, and dishwasher", "Countertops, backsplash, and sink sanitized", "Range hood and filter degreased", "Floors scrubbed, including under appliances if accessible"] },
@@ -104,9 +104,9 @@ const MoveInCleaningChecklist = () => {
             <p className="text-muted-foreground leading-relaxed mb-4">
               The ideal slot is after you get the keys and before the moving truck arrives — usually the morning of move-in day or
               the day before. If you are also leaving a rental, pair it with a{" "}
-              <Link to="/blog/move-out-cleaning-checklist-maryland-tenants" className="text-accent underline hover:no-underline">move-out clean of the old place</Link>{" "}
+              <Link to="/resources/move-out-cleaning-checklist-maryland-tenants" className="text-accent underline hover:no-underline">move-out clean of the old place</Link>{" "}
               to protect your deposit (here is{" "}
-              <Link to="/blog/move-out-cleaning-cost-maryland" className="text-accent underline hover:no-underline">what move-out cleaning costs in Maryland</Link>).
+              <Link to="/resources/move-out-cleaning-cost-maryland" className="text-accent underline hover:no-underline">what move-out cleaning costs in Maryland</Link>).
             </p>
             <p className="text-muted-foreground leading-relaxed mb-6">
               A professional{" "}

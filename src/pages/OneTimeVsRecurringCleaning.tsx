@@ -43,7 +43,7 @@ const OneTimeVsRecurringCleaning = () => {
     title: "One-Time vs Recurring Cleaning: Which Should You Choose?",
     description:
       "One-time vs recurring house cleaning — the difference, the cost, and when to choose each. Why recurring is cheaper per visit and when a single deep clean makes more sense.",
-    canonical: "https://capitalcleancare.com/blog/one-time-vs-recurring-cleaning",
+    canonical: "https://capitalcleancare.com/resources/one-time-vs-recurring-cleaning",
   });
 
   return (
@@ -56,16 +56,16 @@ const OneTimeVsRecurringCleaning = () => {
       <ArticleSchema
         title="One-Time vs Recurring Cleaning: Which Should You Choose?"
         description="A comparison of one-time and recurring house cleaning — the difference, cost per visit, and when each makes the most sense."
-        url="https://capitalcleancare.com/blog/one-time-vs-recurring-cleaning"
+        url="https://capitalcleancare.com/resources/one-time-vs-recurring-cleaning"
         datePublished="2026-06-16"
         image={HERO_IMAGE}
       />
       <FAQSchema faqs={faqs} />
-      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }, { label: "One-Time vs Recurring Cleaning", href: "/blog/one-time-vs-recurring-cleaning" }]} />
+      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "One-Time vs Recurring Cleaning", href: "/resources/one-time-vs-recurring-cleaning" }]} />
 
       <div className="bg-gray-50 py-4 border-b">
         <div className="container mx-auto px-4 max-w-5xl">
-          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }, { label: "One-Time vs Recurring Cleaning" }]} />
+          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "One-Time vs Recurring Cleaning" }]} />
         </div>
       </div>
 
@@ -124,9 +124,9 @@ const OneTimeVsRecurringCleaning = () => {
               <p className="font-semibold text-foreground mb-1">Keep reading</p>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 See{" "}
-                <Link to="/blog/how-often-should-you-hire-a-cleaning-service" className="text-accent underline hover:no-underline">how often you should hire a cleaning service</Link>{" "}
+                <Link to="/resources/how-often-should-you-hire-a-cleaning-service" className="text-accent underline hover:no-underline">how often you should hire a cleaning service</Link>{" "}
                 or compare{" "}
-                <Link to="/blog/deep-cleaning-vs-regular-cleaning" className="text-accent underline hover:no-underline">deep cleaning vs regular cleaning</Link>.
+                <Link to="/resources/deep-cleaning-vs-regular-cleaning" className="text-accent underline hover:no-underline">deep cleaning vs regular cleaning</Link>.
               </p>
             </div>
           </FadeInSection>

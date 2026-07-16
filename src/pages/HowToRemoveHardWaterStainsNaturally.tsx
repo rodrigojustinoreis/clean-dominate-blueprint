@@ -88,7 +88,7 @@ const HowToRemoveHardWaterStainsNaturally = () => {
     title: "How to Remove Hard Water Stains Naturally (No Harsh Chemicals)",
     description:
       "Remove hard water stains from shower glass, faucets & tiles naturally. Maryland-tested. Free quote in Montgomery County.",
-    canonical: "https://capitalcleancare.com/blog/how-to-remove-hard-water-stains-naturally",
+    canonical: "https://capitalcleancare.com/resources/how-to-remove-hard-water-stains-naturally",
   });
 
   return (
@@ -104,14 +104,14 @@ const HowToRemoveHardWaterStainsNaturally = () => {
       <ArticleSchema
         title="How to Remove Hard Water Stains Naturally (The Maryland Homeowner's Guide)"
         description="Remove hard water stains from shower glass, faucets, tile, toilets, and appliances using white vinegar and lemon juice — no CLR, no harsh chemicals, safe for septic and Chesapeake Bay watershed."
-        url="https://capitalcleancare.com/blog/how-to-remove-hard-water-stains-naturally"
+        url="https://capitalcleancare.com/resources/how-to-remove-hard-water-stains-naturally"
         datePublished="2026-05-23"
         image={HERO_IMAGE}
       />
       <HowToSchema
         name="How to Remove Hard Water Stains From Shower Glass Naturally"
         description="Three-step method to remove calcium and mineral deposits from shower glass using white vinegar and a non-scratch pad — no CLR required."
-        url="https://capitalcleancare.com/blog/how-to-remove-hard-water-stains-naturally"
+        url="https://capitalcleancare.com/resources/how-to-remove-hard-water-stains-naturally"
         steps={howToSteps}
         totalTime="PT30M"
         image={HERO_IMAGE}
@@ -120,8 +120,8 @@ const HowToRemoveHardWaterStainsNaturally = () => {
       <BreadcrumbSchema
         items={[
           { label: "Home", href: "/" },
-          { label: "Blog", href: "/blog" },
-          { label: "How to Remove Hard Water Stains Naturally", href: "/blog/how-to-remove-hard-water-stains-naturally" },
+          { label: "Resources", href: "/resources" },
+          { label: "How to Remove Hard Water Stains Naturally", href: "/resources/how-to-remove-hard-water-stains-naturally" },
         ]}
       />
 
@@ -131,7 +131,7 @@ const HowToRemoveHardWaterStainsNaturally = () => {
           <Breadcrumbs
             items={[
               { label: "Home", href: "/" },
-              { label: "Blog", href: "/blog" },
+              { label: "Resources", href: "/resources" },
               { label: "How to Remove Hard Water Stains Naturally" },
             ]}
           />
@@ -514,7 +514,7 @@ const HowToRemoveHardWaterStainsNaturally = () => {
                 deep cleaning service
               </Link>{" "}
               handles bathroom mineral buildup across the Montgomery County area using the same vinegar-based protocols in this guide — scaled to cover every fixture, tile, and grout line in the home systematically. More eco cleaning methods in our{" "}
-              <Link to="/blog/eco-cleaning-tips-maryland-homes" className="text-accent underline hover:no-underline">
+              <Link to="/resources/eco-cleaning-tips-maryland-homes" className="text-accent underline hover:no-underline">
                 eco-friendly cleaning tips for Maryland homes
               </Link>.
             </p>

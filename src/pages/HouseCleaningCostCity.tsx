@@ -27,7 +27,7 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
 
   const where = `${c.city}, ${c.state}`;
   const title = `House Cleaning Cost in ${where}: 2026 Prices & Rates`;
-  const url = `https://capitalcleancare.com/blog/house-cleaning-cost-${c.slug}`;
+  const url = `https://capitalcleancare.com/resources/house-cleaning-cost-${c.slug}`;
 
   // City-specific FAQs + two shared ones (general enough to repeat).
   const sharedFaqs: CostFAQ[] = [
@@ -69,8 +69,8 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
       <BreadcrumbSchema
         items={[
           { label: "Home", href: "/" },
-          { label: "Blog", href: "/blog" },
-          { label: `House Cleaning Cost in ${where}`, href: `/blog/house-cleaning-cost-${c.slug}` },
+          { label: "Resources", href: "/resources" },
+          { label: `House Cleaning Cost in ${where}`, href: `/resources/house-cleaning-cost-${c.slug}` },
         ]}
       />
 
@@ -80,7 +80,7 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
           <Breadcrumbs
             items={[
               { label: "Home", href: "/" },
-              { label: "Blog", href: "/blog" },
+              { label: "Resources", href: "/resources" },
               { label: title },
             ]}
           />
@@ -210,7 +210,7 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   For what's included, our process, and how we work in {c.city} homes, see our{" "}
                   <Link to={c.locationPath} className="text-accent underline hover:no-underline">{c.city} house cleaning page</Link>. Not sure how often to book? Read{" "}
-                  <Link to="/blog/choose-pet-safe-cleaning-company" className="text-accent underline hover:no-underline">how to choose a cleaning company</Link>.
+                  <Link to="/resources/choose-pet-safe-cleaning-company" className="text-accent underline hover:no-underline">how to choose a cleaning company</Link>.
                 </p>
               </div>
             </div>

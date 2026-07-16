@@ -13,7 +13,7 @@ import StickyCTA from "@/components/blog/StickyCTA";
 import RelatedPosts from "@/components/blog/RelatedPosts";
 
 const HERO_IMAGE = "/images/blog/company-vs-independent-hero.webp";
-const URL = "https://capitalcleancare.com/blog/cleaning-company-vs-independent-cleaner";
+const URL = "https://capitalcleancare.com/resources/cleaning-company-vs-independent-cleaner";
 
 const comparisonRows: [string, string, string][] = [
   ["Price per visit", "Usually lower", "About $150 to $400+ for a standard clean in MD"],
@@ -87,7 +87,7 @@ const CleaningCompanyVsIndependentCleaner = () => {
               Start with the number everyone asks about first: the cost of house cleaning service visits. In the Maryland
               suburbs of DC, a standard clean typically runs $150 to $400+ depending on square footage and condition, and a deep
               clean typically runs $230 to $540+. You can see the full local breakdown in our guide to{" "}
-              <Link to="/blog/house-cleaning-prices-maryland-2026" className="text-accent underline hover:no-underline">house cleaning prices in Maryland</Link>.
+              <Link to="/resources/house-cleaning-prices-maryland-2026" className="text-accent underline hover:no-underline">house cleaning prices in Maryland</Link>.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-4">
               An individual housekeeper usually quotes below that range, and it makes sense. A solo cleaner has no payroll, no
@@ -107,7 +107,7 @@ const CleaningCompanyVsIndependentCleaner = () => {
             <p className="text-muted-foreground leading-relaxed mb-4">
               Also compare what each quote actually includes. Companies usually publish a task list, while solo cleaners vary
               widely from one to the next. Our post on{" "}
-              <Link to="/blog/what-is-included-in-a-standard-cleaning" className="text-accent underline hover:no-underline">what is included in a standard cleaning</Link>{" "}
+              <Link to="/resources/what-is-included-in-a-standard-cleaning" className="text-accent underline hover:no-underline">what is included in a standard cleaning</Link>{" "}
               shows the baseline you should expect from any professional.
             </p>
           </FadeInSection>
@@ -139,7 +139,7 @@ const CleaningCompanyVsIndependentCleaner = () => {
                 <CheckCircle2 className="h-5 w-5 text-accent mt-0.5 shrink-0" />{" "}
                 <span>
                   Be wary of anyone who dodges the question. Our guide to{" "}
-                  <Link to="/blog/red-flags-house-cleaning-service" className="text-accent underline hover:no-underline">red flags when hiring a house cleaning service</Link>{" "}
+                  <Link to="/resources/red-flags-house-cleaning-service" className="text-accent underline hover:no-underline">red flags when hiring a house cleaning service</Link>{" "}
                   covers the classic dodges word for word.
                 </span>
               </li>
@@ -168,7 +168,7 @@ const CleaningCompanyVsIndependentCleaner = () => {
           <FadeInSection>
             <p className="text-muted-foreground leading-relaxed mb-4">
               Reliability also matters more the more often you clean. If you are still settling on a rhythm, read{" "}
-              <Link to="/blog/how-often-should-you-hire-a-cleaning-service" className="text-accent underline hover:no-underline">how often you should hire a cleaning service</Link>{" "}
+              <Link to="/resources/how-often-should-you-hire-a-cleaning-service" className="text-accent underline hover:no-underline">how often you should hire a cleaning service</Link>{" "}
               before you lock in a schedule.
             </p>
           </FadeInSection>
@@ -188,7 +188,7 @@ const CleaningCompanyVsIndependentCleaner = () => {
             </p>
             <p className="text-muted-foreground leading-relaxed mb-4">
               Not sure what to verify? We put the full script in{" "}
-              <Link to="/blog/questions-to-ask-before-hiring-house-cleaner" className="text-accent underline hover:no-underline">20 questions to ask before hiring a house cleaner</Link>,
+              <Link to="/resources/questions-to-ask-before-hiring-house-cleaner" className="text-accent underline hover:no-underline">20 questions to ask before hiring a house cleaner</Link>,
               and it works for companies and independents alike.
             </p>
           </FadeInSection>
@@ -247,7 +247,7 @@ const CleaningCompanyVsIndependentCleaner = () => {
             <p className="text-muted-foreground leading-relaxed mb-4">
               One more layer to the decision: not all companies are equal, and national brands behave very differently from
               local ones. Our{" "}
-              <Link to="/blog/local-cleaning-company-vs-franchise" className="text-accent underline hover:no-underline">local cleaning company vs franchise</Link>{" "}
+              <Link to="/resources/local-cleaning-company-vs-franchise" className="text-accent underline hover:no-underline">local cleaning company vs franchise</Link>{" "}
               comparison explains why that next choice matters just as much as this one.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-4">

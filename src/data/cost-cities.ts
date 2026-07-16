@@ -1,12 +1,12 @@
 // Data-driven "House Cleaning Cost in <City>" lead-gen articles. Each entry renders
-// through src/pages/HouseCleaningCostCity.tsx at /blog/house-cleaning-cost-<slug>.
+// through src/pages/HouseCleaningCostCity.tsx at /resources/house-cleaning-cost-<slug>.
 // Cost/price intent (NOT service intent) so these don't cannibalize the
 // /locations/<city>/house-cleaning service pages — and each links back to them.
 
 export interface CostFAQ { q: string; a: string }
 
 export interface CostCity {
-  slug: string;          // e.g. "bethesda-md" → /blog/house-cleaning-cost-bethesda-md
+  slug: string;          // e.g. "bethesda-md" → /resources/house-cleaning-cost-bethesda-md
   city: string;          // "Bethesda"
   state: string;         // "MD"
   county: string;        // "Montgomery County"

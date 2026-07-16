@@ -43,7 +43,7 @@ const HowMuchDeepCleaningCosts = () => {
     title: "How Much Does a Deep Cleaning Cost? (2026 Prices)",
     description:
       "How much a deep cleaning costs in the DMV — real 2026 prices by home size, what drives the cost, and how it compares to a standard clean. Typical 3-bed deep clean runs $375–$445.",
-    canonical: "https://capitalcleancare.com/blog/how-much-does-deep-cleaning-cost",
+    canonical: "https://capitalcleancare.com/resources/how-much-does-deep-cleaning-cost",
   });
 
   return (
@@ -56,16 +56,16 @@ const HowMuchDeepCleaningCosts = () => {
       <ArticleSchema
         title="How Much Does a Deep Cleaning Cost? (2026 Prices)"
         description="Real 2026 deep cleaning prices in the DMV by home size, what drives the cost, and how a deep clean compares to a standard clean."
-        url="https://capitalcleancare.com/blog/how-much-does-deep-cleaning-cost"
+        url="https://capitalcleancare.com/resources/how-much-does-deep-cleaning-cost"
         datePublished="2026-06-16"
         image={HERO_IMAGE}
       />
       <FAQSchema faqs={faqs} />
-      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }, { label: "How Much Does a Deep Cleaning Cost", href: "/blog/how-much-does-deep-cleaning-cost" }]} />
+      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "How Much Does a Deep Cleaning Cost", href: "/resources/how-much-does-deep-cleaning-cost" }]} />
 
       <div className="bg-gray-50 py-4 border-b">
         <div className="container mx-auto px-4 max-w-5xl">
-          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }, { label: "How Much Does a Deep Cleaning Cost?" }]} />
+          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "How Much Does a Deep Cleaning Cost?" }]} />
         </div>
       </div>
 
@@ -131,11 +131,11 @@ const HowMuchDeepCleaningCosts = () => {
               <p className="font-semibold text-foreground mb-1">Keep reading</p>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 See{" "}
-                <Link to="/blog/deep-cleaning-vs-regular-cleaning" className="text-accent underline hover:no-underline">deep cleaning vs regular cleaning</Link>,{" "}
-                <Link to="/blog/what-is-included-in-a-deep-cleaning" className="text-accent underline hover:no-underline">what's included in a deep cleaning</Link>, or your city's prices:{" "}
-                <Link to="/blog/house-cleaning-cost-bethesda-md" className="text-accent underline hover:no-underline">Bethesda</Link>,{" "}
-                <Link to="/blog/house-cleaning-cost-rockville-md" className="text-accent underline hover:no-underline">Rockville</Link>,{" "}
-                <Link to="/blog/house-cleaning-cost-silver-spring-md" className="text-accent underline hover:no-underline">Silver Spring</Link>.
+                <Link to="/resources/deep-cleaning-vs-regular-cleaning" className="text-accent underline hover:no-underline">deep cleaning vs regular cleaning</Link>,{" "}
+                <Link to="/resources/what-is-included-in-a-deep-cleaning" className="text-accent underline hover:no-underline">what's included in a deep cleaning</Link>, or your city's prices:{" "}
+                <Link to="/resources/house-cleaning-cost-bethesda-md" className="text-accent underline hover:no-underline">Bethesda</Link>,{" "}
+                <Link to="/resources/house-cleaning-cost-rockville-md" className="text-accent underline hover:no-underline">Rockville</Link>,{" "}
+                <Link to="/resources/house-cleaning-cost-silver-spring-md" className="text-accent underline hover:no-underline">Silver Spring</Link>.
               </p>
             </div>
           </FadeInSection>
@@ -148,7 +148,7 @@ const HowMuchDeepCleaningCosts = () => {
           <FadeInSection>
             <div className="bg-primary text-primary-foreground rounded-2xl p-8 text-center shadow-lg mt-14">
               <h2 className="font-heading text-2xl md:text-3xl font-bold mb-4">Get Your Deep Cleaning Quote</h2>
-              <p className="text-primary-foreground/80 mb-6 leading-relaxed">Maryland homeowners can also see{" "}<Link to="/blog/deep-cleaning-cost-maryland" className="underline text-primary-foreground/90 hover:text-white">2026 deep cleaning prices in Maryland</Link>. Eco-friendly{" "}<Link to="/services/deep-cleaning" className="underline text-primary-foreground/90 hover:text-white">deep cleaning</Link>{" "}across Maryland, DC, and Northern Virginia, including{" "}<Link to="/locations/arlington-va/deep-cleaning" className="underline text-primary-foreground/90 hover:text-white">deep cleaning in Arlington, VA</Link> — background-checked, locally owned, satisfaction guaranteed.</p>
+              <p className="text-primary-foreground/80 mb-6 leading-relaxed">Maryland homeowners can also see{" "}<Link to="/resources/deep-cleaning-cost-maryland" className="underline text-primary-foreground/90 hover:text-white">2026 deep cleaning prices in Maryland</Link>. Eco-friendly{" "}<Link to="/services/deep-cleaning" className="underline text-primary-foreground/90 hover:text-white">deep cleaning</Link>{" "}across Maryland, DC, and Northern Virginia, including{" "}<Link to="/locations/arlington-va/deep-cleaning" className="underline text-primary-foreground/90 hover:text-white">deep cleaning in Arlington, VA</Link> — background-checked, locally owned, satisfaction guaranteed.</p>
               <Button size="lg" className="bg-accent hover:bg-accent/90 text-white px-8 py-6 rounded-full text-base font-semibold shadow-md" asChild>
                 <a href="/#quote">Get My Free Quote <ArrowRight className="ml-2 h-4 w-4" /></a>
               </Button>

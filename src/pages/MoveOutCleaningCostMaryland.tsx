@@ -43,7 +43,7 @@ const MoveOutCleaningCostMaryland = () => {
     title: "How Much Does Move-Out Cleaning Cost in Maryland?",
     description:
       "Move-out cleaning prices in Maryland by home size — typically $220–$600+. What's included, what drives the cost, and whether it's worth it to protect your security deposit.",
-    canonical: "https://capitalcleancare.com/blog/move-out-cleaning-cost-maryland",
+    canonical: "https://capitalcleancare.com/resources/move-out-cleaning-cost-maryland",
   });
 
   return (
@@ -56,16 +56,16 @@ const MoveOutCleaningCostMaryland = () => {
       <ArticleSchema
         title="How Much Does Move-Out Cleaning Cost in Maryland?"
         description="Move-out cleaning prices in Maryland by home size, what's included, what drives the cost, and whether it's worth it to protect your deposit."
-        url="https://capitalcleancare.com/blog/move-out-cleaning-cost-maryland"
+        url="https://capitalcleancare.com/resources/move-out-cleaning-cost-maryland"
         datePublished="2026-06-16"
         image={HERO_IMAGE}
       />
       <FAQSchema faqs={faqs} />
-      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }, { label: "Move-Out Cleaning Cost in Maryland", href: "/blog/move-out-cleaning-cost-maryland" }]} />
+      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "Move-Out Cleaning Cost in Maryland", href: "/resources/move-out-cleaning-cost-maryland" }]} />
 
       <div className="bg-gray-50 py-4 border-b">
         <div className="container mx-auto px-4 max-w-5xl">
-          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }, { label: "Move-Out Cleaning Cost in Maryland" }]} />
+          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "Move-Out Cleaning Cost in Maryland" }]} />
         </div>
       </div>
 
@@ -131,9 +131,9 @@ const MoveOutCleaningCostMaryland = () => {
               <p className="font-semibold text-foreground mb-1">Keep reading</p>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 Use our{" "}
-                <Link to="/blog/move-out-cleaning-checklist-maryland-tenants" className="text-accent underline hover:no-underline">move-out cleaning checklist for Maryland tenants</Link>{" "}
+                <Link to="/resources/move-out-cleaning-checklist-maryland-tenants" className="text-accent underline hover:no-underline">move-out cleaning checklist for Maryland tenants</Link>{" "}
                 or see{" "}
-                <Link to="/blog/how-much-does-deep-cleaning-cost" className="text-accent underline hover:no-underline">how much a deep cleaning costs</Link>.
+                <Link to="/resources/how-much-does-deep-cleaning-cost" className="text-accent underline hover:no-underline">how much a deep cleaning costs</Link>.
               </p>
             </div>
           </FadeInSection>

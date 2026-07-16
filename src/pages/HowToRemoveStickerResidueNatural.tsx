@@ -88,7 +88,7 @@ const HowToRemoveStickerResidueNatural = () => {
     title: "How to Remove Sticker Residue Naturally (No Goo Gone Needed)",
     description:
       "Remove sticker residue & label glue from glass, plastic, wood & metal naturally. Maryland eco guide. Free quote in Montgomery County.",
-    canonical: "https://capitalcleancare.com/blog/how-to-remove-sticker-residue-natural",
+    canonical: "https://capitalcleancare.com/resources/how-to-remove-sticker-residue-natural",
   });
 
   return (
@@ -104,14 +104,14 @@ const HowToRemoveStickerResidueNatural = () => {
       <ArticleSchema
         title="How to Remove Sticker Residue Naturally (5 Methods That Beat Goo Gone)"
         description="Remove sticker residue and label glue from glass, plastic, wood, metal, and fabric using oil, vinegar, heat, baking soda, and rubbing alcohol — no VOC solvents needed."
-        url="https://capitalcleancare.com/blog/how-to-remove-sticker-residue-natural"
+        url="https://capitalcleancare.com/resources/how-to-remove-sticker-residue-natural"
         datePublished="2026-05-23"
         image={HERO_IMAGE}
       />
       <HowToSchema
         name="How to Remove Sticker Residue With Oil (Natural Method)"
         description="Three-step oil soak method to remove sticker residue and label glue from glass, plastic, and metal — no Goo Gone, no VOC solvents."
-        url="https://capitalcleancare.com/blog/how-to-remove-sticker-residue-natural"
+        url="https://capitalcleancare.com/resources/how-to-remove-sticker-residue-natural"
         steps={howToSteps}
         totalTime="PT20M"
         image={HERO_IMAGE}
@@ -120,8 +120,8 @@ const HowToRemoveStickerResidueNatural = () => {
       <BreadcrumbSchema
         items={[
           { label: "Home", href: "/" },
-          { label: "Blog", href: "/blog" },
-          { label: "How to Remove Sticker Residue Naturally", href: "/blog/how-to-remove-sticker-residue-natural" },
+          { label: "Resources", href: "/resources" },
+          { label: "How to Remove Sticker Residue Naturally", href: "/resources/how-to-remove-sticker-residue-natural" },
         ]}
       />
 
@@ -131,7 +131,7 @@ const HowToRemoveStickerResidueNatural = () => {
           <Breadcrumbs
             items={[
               { label: "Home", href: "/" },
-              { label: "Blog", href: "/blog" },
+              { label: "Resources", href: "/resources" },
               { label: "How to Remove Sticker Residue Naturally" },
             ]}
           />
@@ -176,7 +176,7 @@ const HowToRemoveStickerResidueNatural = () => {
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
               Five natural methods below cover every surface and adhesive type found in a home. The right method depends on what you're cleaning — oil for most jobs, heat for delicate surfaces, vinegar for glass, alcohol only as a last resort. Takoma Park and Bethesda households reusing glass jars for zero-waste storage will find Method 1 handles 90% of label residue in under 10 minutes. For more{" "}
-              <Link to="/blog/eco-cleaning-tips-maryland-homes" className="text-accent underline hover:no-underline">
+              <Link to="/resources/eco-cleaning-tips-maryland-homes" className="text-accent underline hover:no-underline">
                 eco-friendly cleaning tips for Maryland homes
               </Link>
               , see our full guide.

@@ -36,7 +36,7 @@ const KeepHouseCleanBetween = () => {
     title: "How to Keep Your House Clean Between Cleanings",
     description:
       "Simple daily habits to keep your house clean between professional cleanings — the 10-minute nightly reset, clean-as-you-go, shoes-off, and more so your home stays tidy.",
-    canonical: "https://capitalcleancare.com/blog/how-to-keep-house-clean-between-cleanings",
+    canonical: "https://capitalcleancare.com/resources/how-to-keep-house-clean-between-cleanings",
   });
 
   return (
@@ -49,16 +49,16 @@ const KeepHouseCleanBetween = () => {
       <ArticleSchema
         title="How to Keep Your House Clean Between Cleanings"
         description="Simple daily habits to keep your house tidy between professional cleanings."
-        url="https://capitalcleancare.com/blog/how-to-keep-house-clean-between-cleanings"
+        url="https://capitalcleancare.com/resources/how-to-keep-house-clean-between-cleanings"
         datePublished="2026-06-16"
         image={HERO_IMAGE}
       />
       <FAQSchema faqs={faqs} />
-      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }, { label: "How to Keep Your House Clean Between Cleanings", href: "/blog/how-to-keep-house-clean-between-cleanings" }]} />
+      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "How to Keep Your House Clean Between Cleanings", href: "/resources/how-to-keep-house-clean-between-cleanings" }]} />
 
       <div className="bg-gray-50 py-4 border-b">
         <div className="container mx-auto px-4 max-w-5xl">
-          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }, { label: "How to Keep Your House Clean Between Cleanings" }]} />
+          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "How to Keep Your House Clean Between Cleanings" }]} />
         </div>
       </div>
 
@@ -98,9 +98,9 @@ const KeepHouseCleanBetween = () => {
               <p className="font-semibold text-foreground mb-1">Keep reading</p>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 See{" "}
-                <Link to="/blog/how-often-should-you-hire-a-cleaning-service" className="text-accent underline hover:no-underline">how often you should hire a cleaning service</Link>{" "}
+                <Link to="/resources/how-often-should-you-hire-a-cleaning-service" className="text-accent underline hover:no-underline">how often you should hire a cleaning service</Link>{" "}
                 or the{" "}
-                <Link to="/blog/most-forgotten-areas-when-cleaning" className="text-accent underline hover:no-underline">most forgotten areas when cleaning</Link>.
+                <Link to="/resources/most-forgotten-areas-when-cleaning" className="text-accent underline hover:no-underline">most forgotten areas when cleaning</Link>.
               </p>
             </div>
           </FadeInSection>

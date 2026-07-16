@@ -41,7 +41,7 @@ const HouseCleaningGuideClarksburg = () => {
     title: "The Complete Guide to House Cleaning in Clarksburg, MD",
     description:
       "A complete local guide to house cleaning in Clarksburg, MD — new-construction homes, move-in and post-construction cleans, builder-grade finishes, pricing, and choosing a company.",
-    canonical: "https://capitalcleancare.com/blog/house-cleaning-guide-clarksburg-md",
+    canonical: "https://capitalcleancare.com/resources/house-cleaning-guide-clarksburg-md",
   });
 
   return (
@@ -54,16 +54,16 @@ const HouseCleaningGuideClarksburg = () => {
       <ArticleSchema
         title="The Complete Guide to House Cleaning in Clarksburg, MD"
         description="A complete local guide to house cleaning in Clarksburg — new-construction homes, move-in and post-construction cleans, finishes, pricing, and choosing a company."
-        url="https://capitalcleancare.com/blog/house-cleaning-guide-clarksburg-md"
+        url="https://capitalcleancare.com/resources/house-cleaning-guide-clarksburg-md"
         datePublished="2026-06-16"
         image={HERO_IMAGE}
       />
       <FAQSchema faqs={faqs} />
-      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }, { label: "House Cleaning Guide: Clarksburg, MD", href: "/blog/house-cleaning-guide-clarksburg-md" }]} />
+      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "House Cleaning Guide: Clarksburg, MD", href: "/resources/house-cleaning-guide-clarksburg-md" }]} />
 
       <div className="bg-gray-50 py-4 border-b">
         <div className="container mx-auto px-4 max-w-5xl">
-          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }, { label: "House Cleaning Guide: Clarksburg, MD" }]} />
+          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "House Cleaning Guide: Clarksburg, MD" }]} />
         </div>
       </div>
 
@@ -108,8 +108,8 @@ const HouseCleaningGuideClarksburg = () => {
               <p className="font-semibold text-foreground mb-1 flex items-center gap-2"><MapPin className="h-4 w-4 text-accent" /> Keep reading</p>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 See{" "}
-                <Link to="/blog/post-construction-cleaning-montgomery-county-md" className="text-accent underline hover:no-underline">post-construction cleaning in Montgomery County</Link>,{" "}
-                <Link to="/blog/what-is-included-in-a-deep-cleaning" className="text-accent underline hover:no-underline">what's included in a deep cleaning</Link>, or book on our{" "}
+                <Link to="/resources/post-construction-cleaning-montgomery-county-md" className="text-accent underline hover:no-underline">post-construction cleaning in Montgomery County</Link>,{" "}
+                <Link to="/resources/what-is-included-in-a-deep-cleaning" className="text-accent underline hover:no-underline">what's included in a deep cleaning</Link>, or book on our{" "}
                 <Link to="/locations/clarksburg-md/house-cleaning" className="text-accent underline hover:no-underline">Clarksburg house cleaning</Link>{" "}page.
               </p>
             </div>

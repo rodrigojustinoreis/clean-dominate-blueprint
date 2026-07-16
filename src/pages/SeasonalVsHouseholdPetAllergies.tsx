@@ -86,7 +86,7 @@ const SeasonalVsHouseholdPetAllergies = () => {
     title: "Seasonal vs. Household Allergies in Pets: How to Tell Them Apart",
     description:
       "Is your pet's itching from pollen or from year-round indoor triggers? How to tell seasonal vs. household (dust mite, mold, dander) allergies apart — and the cleaning that controls the half you can.",
-    canonical: "https://capitalcleancare.com/blog/seasonal-vs-household-pet-allergies",
+    canonical: "https://capitalcleancare.com/resources/seasonal-vs-household-pet-allergies",
   });
 
   return (
@@ -102,14 +102,14 @@ const SeasonalVsHouseholdPetAllergies = () => {
       <ArticleSchema
         title="Seasonal vs. Household Allergies in Pets: How to Tell Them Apart"
         description="How to distinguish seasonal (pollen-driven) allergies from year-round household allergies (dust mites, mold, dander) in dogs and cats — the timing clues, why both often overlap, and the cleaning routine that controls the indoor half you can actually manage."
-        url="https://capitalcleancare.com/blog/seasonal-vs-household-pet-allergies"
+        url="https://capitalcleancare.com/resources/seasonal-vs-household-pet-allergies"
         datePublished="2026-06-15"
         image={HERO_IMAGE}
       />
       <HowToSchema
         name="How to Reduce the Household Allergens Behind Your Pet's Year-Round Itching"
         description="A four-step routine to control the indoor (perennial) allergens — dust mites, mold, dander, and tracked-in pollen — that drive a pet's environmental allergies."
-        url="https://capitalcleancare.com/blog/seasonal-vs-household-pet-allergies"
+        url="https://capitalcleancare.com/resources/seasonal-vs-household-pet-allergies"
         steps={howToSteps}
         totalTime="PT45M"
         image={HERO_IMAGE}
@@ -118,8 +118,8 @@ const SeasonalVsHouseholdPetAllergies = () => {
       <BreadcrumbSchema
         items={[
           { label: "Home", href: "/" },
-          { label: "Blog", href: "/blog" },
-          { label: "Seasonal vs. Household Allergies in Pets", href: "/blog/seasonal-vs-household-pet-allergies" },
+          { label: "Resources", href: "/resources" },
+          { label: "Seasonal vs. Household Allergies in Pets", href: "/resources/seasonal-vs-household-pet-allergies" },
         ]}
       />
 
@@ -129,7 +129,7 @@ const SeasonalVsHouseholdPetAllergies = () => {
           <Breadcrumbs
             items={[
               { label: "Home", href: "/" },
-              { label: "Blog", href: "/blog" },
+              { label: "Resources", href: "/resources" },
               { label: "Seasonal vs. Household Allergies in Pets: How to Tell Them Apart" },
             ]}
           />
@@ -292,7 +292,7 @@ const SeasonalVsHouseholdPetAllergies = () => {
                   Adding scented cleaners to a pet already reacting to pollen and dust just stacks on another irritant. That's why our{" "}
                   <Link to="/services/eco-friendly-cleaning" className="text-accent underline hover:no-underline">eco-friendly cleaning</Link>{" "}
                   uses only plant-based, fragrance-free, low-residue products. For the full room-by-room plan, see our guide to an{" "}
-                  <Link to="/blog/allergen-free-home-dog-cat-owners" className="text-accent underline hover:no-underline">allergen-free home for dog &amp; cat owners</Link>.
+                  <Link to="/resources/allergen-free-home-dog-cat-owners" className="text-accent underline hover:no-underline">allergen-free home for dog &amp; cat owners</Link>.
                 </p>
               </div>
             </div>

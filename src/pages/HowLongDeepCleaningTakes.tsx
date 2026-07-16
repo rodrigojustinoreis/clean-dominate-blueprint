@@ -13,7 +13,7 @@ import StickyCTA from "@/components/blog/StickyCTA";
 import RelatedPosts from "@/components/blog/RelatedPosts";
 
 const HERO_IMAGE = "/images/blog/deep-scrub-detail.webp";
-const URL = "https://capitalcleancare.com/blog/how-long-does-deep-cleaning-take";
+const URL = "https://capitalcleancare.com/resources/how-long-does-deep-cleaning-take";
 
 const timeline: { size: string; solo: string; team: string }[] = [
   { size: "Studio / 1 bedroom", solo: "4–5 hours", team: "2–3 hours" },
@@ -200,14 +200,14 @@ const HowLongDeepCleaningTakes = () => {
               Empty homes clean faster per square foot, since there is no furniture to work around. But move-out cleans usually
               add extras like the inside of every cabinet and closet, so the totals end up close to the table above. If you are on
               either side of a move, our{" "}
-              <Link to="/blog/move-in-cleaning-checklist" className="text-accent underline hover:no-underline">move-in cleaning checklist</Link>{" "}
+              <Link to="/resources/move-in-cleaning-checklist" className="text-accent underline hover:no-underline">move-in cleaning checklist</Link>{" "}
               covers what to clean before you unpack, room by room.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-8">
               Also worth reading before you book:{" "}
-              <Link to="/blog/deep-cleaning-cost-maryland" className="text-accent underline hover:no-underline">what deep cleaning costs in Maryland</Link>{" "}
+              <Link to="/resources/deep-cleaning-cost-maryland" className="text-accent underline hover:no-underline">what deep cleaning costs in Maryland</Link>{" "}
               and exactly{" "}
-              <Link to="/blog/what-is-included-in-a-deep-cleaning" className="text-accent underline hover:no-underline">what's included in a deep cleaning</Link>.
+              <Link to="/resources/what-is-included-in-a-deep-cleaning" className="text-accent underline hover:no-underline">what's included in a deep cleaning</Link>.
             </p>
           </FadeInSection>
 

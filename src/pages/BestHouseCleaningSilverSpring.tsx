@@ -43,7 +43,7 @@ const BestHouseCleaningSilverSpring = () => {
     title: "How to Choose the Best House Cleaning Service in Silver Spring, MD (2026)",
     description:
       "A buyer's guide to choosing the best house cleaning service in Silver Spring, MD — the criteria that matter, red flags, and Silver Spring specifics (background checks, bilingual teams, older homes).",
-    canonical: "https://capitalcleancare.com/blog/best-house-cleaning-service-silver-spring-md",
+    canonical: "https://capitalcleancare.com/resources/best-house-cleaning-service-silver-spring-md",
   });
 
   return (
@@ -56,16 +56,16 @@ const BestHouseCleaningSilverSpring = () => {
       <ArticleSchema
         title="How to Choose the Best House Cleaning Service in Silver Spring, MD (2026)"
         description="A buyer's guide to choosing the best house cleaning service in Silver Spring — selection criteria, red flags, and Silver Spring-specific considerations."
-        url="https://capitalcleancare.com/blog/best-house-cleaning-service-silver-spring-md"
+        url="https://capitalcleancare.com/resources/best-house-cleaning-service-silver-spring-md"
         datePublished="2026-06-16"
         image={HERO_IMAGE}
       />
       <FAQSchema faqs={faqs} />
-      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }, { label: "Best House Cleaning Service in Silver Spring", href: "/blog/best-house-cleaning-service-silver-spring-md" }]} />
+      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "Best House Cleaning Service in Silver Spring", href: "/resources/best-house-cleaning-service-silver-spring-md" }]} />
 
       <div className="bg-gray-50 py-4 border-b">
         <div className="container mx-auto px-4 max-w-5xl">
-          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }, { label: "Best House Cleaning Service in Silver Spring" }]} />
+          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "Best House Cleaning Service in Silver Spring" }]} />
         </div>
       </div>
 
@@ -113,7 +113,7 @@ const BestHouseCleaningSilverSpring = () => {
               </div>
               <div className="border-l-4 border-accent pl-4">
                 <p className="font-semibold text-foreground mb-1">Older housing stock in Downtown, Fenton Village & Woodside</p>
-                <p className="text-sm text-muted-foreground leading-relaxed">Much of Silver Spring's charm is its older homes and pre-war buildings — hardwood floors, vintage tile and grout, plaster walls, and original window treatments that call for a gentler, material-appropriate approach (steam or pH-balanced products over harsh chemicals). The best companies recognize older materials and adjust their methods. An older home that hasn't been thoroughly cleaned in a while often benefits from a <Link to="/blog/what-is-included-in-a-deep-cleaning" className="text-accent underline hover:no-underline">deep clean</Link> to reset before starting recurring service.</p>
+                <p className="text-sm text-muted-foreground leading-relaxed">Much of Silver Spring's charm is its older homes and pre-war buildings — hardwood floors, vintage tile and grout, plaster walls, and original window treatments that call for a gentler, material-appropriate approach (steam or pH-balanced products over harsh chemicals). The best companies recognize older materials and adjust their methods. An older home that hasn't been thoroughly cleaned in a while often benefits from a <Link to="/resources/what-is-included-in-a-deep-cleaning" className="text-accent underline hover:no-underline">deep clean</Link> to reset before starting recurring service.</p>
               </div>
             </div>
           </FadeInSection>
@@ -134,9 +134,9 @@ const BestHouseCleaningSilverSpring = () => {
               <p className="font-semibold text-foreground mb-1">Keep reading</p>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 See{" "}
-                <Link to="/blog/house-cleaning-cost-silver-spring-md" className="text-accent underline hover:no-underline">how much house cleaning costs in Silver Spring</Link>{" "}
+                <Link to="/resources/house-cleaning-cost-silver-spring-md" className="text-accent underline hover:no-underline">how much house cleaning costs in Silver Spring</Link>{" "}
                 or{" "}
-                <Link to="/blog/is-professional-house-cleaning-worth-it" className="text-accent underline hover:no-underline">whether professional cleaning is worth it</Link>. Ready to book? Visit our{" "}
+                <Link to="/resources/is-professional-house-cleaning-worth-it" className="text-accent underline hover:no-underline">whether professional cleaning is worth it</Link>. Ready to book? Visit our{" "}
                 <Link to="/locations/silver-spring-md/house-cleaning" className="text-accent underline hover:no-underline">Silver Spring house cleaning</Link>{" "}page.
               </p>
             </div>

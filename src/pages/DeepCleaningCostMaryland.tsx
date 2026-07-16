@@ -13,7 +13,7 @@ import StickyCTA from "@/components/blog/StickyCTA";
 import RelatedPosts from "@/components/blog/RelatedPosts";
 
 const HERO_IMAGE = "/images/blog/maryland-home-exterior.webp";
-const URL = "https://capitalcleancare.com/blog/deep-cleaning-cost-maryland";
+const URL = "https://capitalcleancare.com/resources/deep-cleaning-cost-maryland";
 
 const prices: { size: string; price: string; time: string }[] = [
   { size: "Studio / 1 bedroom", price: "$230 – $290", time: "2–3 hours" },
@@ -139,7 +139,7 @@ const DeepCleaningCostMaryland = () => {
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed mb-6">
               *Times assume a 2-person team. Curious how the hours break down?{" "}
-              <Link to="/blog/how-long-does-deep-cleaning-take" className="text-accent underline hover:no-underline">See how long a deep cleaning takes</Link>{" "}
+              <Link to="/resources/how-long-does-deep-cleaning-take" className="text-accent underline hover:no-underline">See how long a deep cleaning takes</Link>{" "}
               by home size.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-8">
@@ -183,7 +183,7 @@ const DeepCleaningCostMaryland = () => {
             </p>
             <p className="text-muted-foreground leading-relaxed mb-8">
               Not sure which side you fall on? We wrote a full comparison:{" "}
-              <Link to="/blog/deep-cleaning-vs-regular-cleaning" className="text-accent underline hover:no-underline">deep cleaning vs. regular cleaning</Link>.
+              <Link to="/resources/deep-cleaning-vs-regular-cleaning" className="text-accent underline hover:no-underline">deep cleaning vs. regular cleaning</Link>.
             </p>
           </FadeInSection>
 

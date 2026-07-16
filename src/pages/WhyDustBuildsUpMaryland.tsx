@@ -43,7 +43,7 @@ const WhyDustBuildsUpMaryland = () => {
     title: "Why Dust Builds Up So Fast in Maryland Homes",
     description:
       "Why Maryland homes get dusty so quickly — tree canopy and pollen, year-round HVAC use, older housing, pets — what dust is made of, and the most effective ways to reduce it.",
-    canonical: "https://capitalcleancare.com/blog/why-dust-builds-up-maryland-homes",
+    canonical: "https://capitalcleancare.com/resources/why-dust-builds-up-maryland-homes",
   });
 
   return (
@@ -56,16 +56,16 @@ const WhyDustBuildsUpMaryland = () => {
       <ArticleSchema
         title="Why Dust Builds Up So Fast in Maryland Homes"
         description="The local reasons Maryland homes get dusty quickly, what dust is made of, and the most effective ways to reduce it."
-        url="https://capitalcleancare.com/blog/why-dust-builds-up-maryland-homes"
+        url="https://capitalcleancare.com/resources/why-dust-builds-up-maryland-homes"
         datePublished="2026-06-16"
         image={HERO_IMAGE}
       />
       <FAQSchema faqs={faqs} />
-      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }, { label: "Why Dust Builds Up in Maryland Homes", href: "/blog/why-dust-builds-up-maryland-homes" }]} />
+      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "Why Dust Builds Up in Maryland Homes", href: "/resources/why-dust-builds-up-maryland-homes" }]} />
 
       <div className="bg-gray-50 py-4 border-b">
         <div className="container mx-auto px-4 max-w-5xl">
-          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }, { label: "Why Dust Builds Up in Maryland Homes" }]} />
+          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "Why Dust Builds Up in Maryland Homes" }]} />
         </div>
       </div>
 
@@ -115,9 +115,9 @@ const WhyDustBuildsUpMaryland = () => {
               <p className="font-semibold text-foreground mb-1">Keep reading</p>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 See the{" "}
-                <Link to="/blog/most-forgotten-areas-when-cleaning" className="text-accent underline hover:no-underline">most forgotten areas when cleaning</Link>{" "}
+                <Link to="/resources/most-forgotten-areas-when-cleaning" className="text-accent underline hover:no-underline">most forgotten areas when cleaning</Link>{" "}
                 or{" "}
-                <Link to="/blog/hepa-filters-pets-asthma" className="text-accent underline hover:no-underline">how HEPA filtration helps with airborne dust and dander</Link>.
+                <Link to="/resources/hepa-filters-pets-asthma" className="text-accent underline hover:no-underline">how HEPA filtration helps with airborne dust and dander</Link>.
               </p>
             </div>
           </FadeInSection>

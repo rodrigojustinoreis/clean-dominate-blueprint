@@ -13,7 +13,7 @@ import StickyCTA from "@/components/blog/StickyCTA";
 import RelatedPosts from "@/components/blog/RelatedPosts";
 
 const HERO_IMAGE = "/images/blog/hiring-questions-hero.webp";
-const URL = "https://capitalcleancare.com/blog/questions-to-ask-before-hiring-house-cleaner";
+const URL = "https://capitalcleancare.com/resources/questions-to-ask-before-hiring-house-cleaner";
 
 const checklist: string[] = [
   "Are you licensed, bonded, and insured, with certificates available?",
@@ -105,12 +105,12 @@ const QuestionsToAskBeforeHiringHouseCleaner = () => {
             <p className="text-muted-foreground leading-relaxed mb-4">
               The money side is not trivial either. In Maryland, a standard clean typically runs $150 to $400+ and a deep clean
               $230 to $540+, as we detail in our guide to{" "}
-              <Link to="/blog/house-cleaning-prices-maryland-2026" className="text-accent underline hover:no-underline">house cleaning prices in Maryland</Link>.
+              <Link to="/resources/house-cleaning-prices-maryland-2026" className="text-accent underline hover:no-underline">house cleaning prices in Maryland</Link>.
               A bad hire at those prices is a costly do-over.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-4">
               Good questions do two jobs at once. They tell you how to choose a cleaning company, and they surface the{" "}
-              <Link to="/blog/red-flags-house-cleaning-service" className="text-accent underline hover:no-underline">warning signs of a bad house cleaning service</Link>{" "}
+              <Link to="/resources/red-flags-house-cleaning-service" className="text-accent underline hover:no-underline">warning signs of a bad house cleaning service</Link>{" "}
               before anything is booked. Vague answers, dodged questions, and nothing in writing are answers too.
             </p>
           </FadeInSection>
@@ -137,7 +137,7 @@ const QuestionsToAskBeforeHiringHouseCleaner = () => {
             <p className="text-muted-foreground leading-relaxed mb-4">
               <strong>4. Are your cleaners employees or subcontractors?</strong> Employees are trained, supervised, and covered
               by the company's insurance. Subcontractors may not be. This is the same accountability gap we cover in our{" "}
-              <Link to="/blog/cleaning-company-vs-independent-cleaner" className="text-accent underline hover:no-underline">cleaning company vs independent cleaner</Link>{" "}
+              <Link to="/resources/cleaning-company-vs-independent-cleaner" className="text-accent underline hover:no-underline">cleaning company vs independent cleaner</Link>{" "}
               comparison.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-4">
@@ -169,7 +169,7 @@ const QuestionsToAskBeforeHiringHouseCleaner = () => {
             <p className="text-muted-foreground leading-relaxed mb-4">
               <strong>10. Is tipping expected on top of the price?</strong> Policies vary, and it is fine to ask directly. Our
               guide on{" "}
-              <Link to="/blog/how-much-tip-house-cleaner" className="text-accent underline hover:no-underline">how much to tip a house cleaner</Link>{" "}
+              <Link to="/resources/how-much-tip-house-cleaner" className="text-accent underline hover:no-underline">how much to tip a house cleaner</Link>{" "}
               covers the norms so nobody is guessing at the door.
             </p>
           </FadeInSection>
@@ -183,13 +183,13 @@ const QuestionsToAskBeforeHiringHouseCleaner = () => {
             <p className="text-muted-foreground leading-relaxed mb-4">
               <strong>11. What exactly is included, and what costs extra?</strong> Any professional cleaning company should
               hand you a task list. Compare it against our breakdown of{" "}
-              <Link to="/blog/what-is-included-in-a-standard-cleaning" className="text-accent underline hover:no-underline">what is included in a standard cleaning</Link>{" "}
+              <Link to="/resources/what-is-included-in-a-standard-cleaning" className="text-accent underline hover:no-underline">what is included in a standard cleaning</Link>{" "}
               so you know the baseline.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-4">
               <strong>12. Do I need a deep clean for the first visit?</strong> Usually yes, and an honest company will explain
               why: recurring visits maintain a level of clean that a first visit has to establish. See how the two differ in{" "}
-              <Link to="/blog/deep-cleaning-vs-regular-cleaning" className="text-accent underline hover:no-underline">deep cleaning vs regular cleaning</Link>,
+              <Link to="/resources/deep-cleaning-vs-regular-cleaning" className="text-accent underline hover:no-underline">deep cleaning vs regular cleaning</Link>,
               or review what a full{" "}
               <Link to="/services/deep-cleaning" className="text-accent underline hover:no-underline">deep cleaning service</Link>{" "}
               covers.
@@ -197,7 +197,7 @@ const QuestionsToAskBeforeHiringHouseCleaner = () => {
             <p className="text-muted-foreground leading-relaxed mb-4">
               <strong>13. How often should I schedule service?</strong> A good company asks about your household before
               answering: kids, pets, square footage, allergies. Our guide on{" "}
-              <Link to="/blog/how-often-should-you-hire-a-cleaning-service" className="text-accent underline hover:no-underline">how often you should hire a cleaning service</Link>{" "}
+              <Link to="/resources/how-often-should-you-hire-a-cleaning-service" className="text-accent underline hover:no-underline">how often you should hire a cleaning service</Link>{" "}
               gives you a starting point.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-4">
@@ -236,7 +236,7 @@ const QuestionsToAskBeforeHiringHouseCleaner = () => {
             <p className="text-muted-foreground leading-relaxed mb-4">
               <strong>20. Are you locally owned or a franchise?</strong> The answer determines who sets your price and who
               picks up the phone when something goes wrong. Our{" "}
-              <Link to="/blog/local-cleaning-company-vs-franchise" className="text-accent underline hover:no-underline">local cleaning company vs franchise</Link>{" "}
+              <Link to="/resources/local-cleaning-company-vs-franchise" className="text-accent underline hover:no-underline">local cleaning company vs franchise</Link>{" "}
               comparison explains why that matters more than most maid service ads admit.
             </p>
           </FadeInSection>

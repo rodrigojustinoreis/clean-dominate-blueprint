@@ -13,7 +13,7 @@ import StickyCTA from "@/components/blog/StickyCTA";
 import RelatedPosts from "@/components/blog/RelatedPosts";
 
 const HERO_IMAGE = "/images/blog/red-flags-hero.webp";
-const URL = "https://capitalcleancare.com/blog/red-flags-house-cleaning-service";
+const URL = "https://capitalcleancare.com/resources/red-flags-house-cleaning-service";
 
 const reviewPatterns: string[] = [
   "No-shows and last-minute cancellations with no apology or refund",
@@ -139,9 +139,9 @@ const RedFlagsHouseCleaningService = () => {
             </p>
             <p className="text-muted-foreground leading-relaxed mb-4">
               Insist on a written, itemized quote before booking. Our breakdown of{" "}
-              <Link to="/blog/house-cleaning-prices-maryland-2026" className="text-accent underline hover:no-underline">house cleaning prices in Maryland</Link>{" "}
+              <Link to="/resources/house-cleaning-prices-maryland-2026" className="text-accent underline hover:no-underline">house cleaning prices in Maryland</Link>{" "}
               shows what fair local pricing looks like, and our guide to{" "}
-              <Link to="/blog/what-is-included-in-a-standard-cleaning" className="text-accent underline hover:no-underline">what is included in a standard cleaning</Link>{" "}
+              <Link to="/resources/what-is-included-in-a-standard-cleaning" className="text-accent underline hover:no-underline">what is included in a standard cleaning</Link>{" "}
               lists the tasks any quote should cover. Companies with transparent flat-rate pricing remove the guesswork entirely.
             </p>
 
@@ -165,7 +165,7 @@ const RedFlagsHouseCleaningService = () => {
               You are handing strangers a key to your house. Ask directly: are your cleaners background-checked employees, or
               subcontractors you found last week? Vague answers matter more here than anywhere else. This question is also the
               fastest way to spot the gap we cover in our{" "}
-              <Link to="/blog/cleaning-company-vs-independent-cleaner" className="text-accent underline hover:no-underline">cleaning company vs independent cleaner</Link>{" "}
+              <Link to="/resources/cleaning-company-vs-independent-cleaner" className="text-accent underline hover:no-underline">cleaning company vs independent cleaner</Link>{" "}
               comparison: a real company vets its team so you do not have to.
             </p>
 
@@ -195,7 +195,7 @@ const RedFlagsHouseCleaningService = () => {
             <p className="text-muted-foreground leading-relaxed mb-4">
               If a company has no guarantee and no clear complaint process, your only leverage after payment is a bad review,
               and that is a weak position to negotiate from. Our list of{" "}
-              <Link to="/blog/questions-to-ask-before-hiring-house-cleaner" className="text-accent underline hover:no-underline">questions to ask before hiring a house cleaner</Link>{" "}
+              <Link to="/resources/questions-to-ask-before-hiring-house-cleaner" className="text-accent underline hover:no-underline">questions to ask before hiring a house cleaner</Link>{" "}
               includes the exact wording to use on that first call.
             </p>
           </FadeInSection>
@@ -260,7 +260,7 @@ const RedFlagsHouseCleaningService = () => {
             <p className="text-muted-foreground leading-relaxed mb-4">
               Local ownership is one more green flag worth weighing. A family-owned company's reputation lives and dies in a
               single community, which changes how it treats complaints. We break down why in our{" "}
-              <Link to="/blog/local-cleaning-company-vs-franchise" className="text-accent underline hover:no-underline">local cleaning company vs franchise</Link>{" "}
+              <Link to="/resources/local-cleaning-company-vs-franchise" className="text-accent underline hover:no-underline">local cleaning company vs franchise</Link>{" "}
               comparison.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-4">

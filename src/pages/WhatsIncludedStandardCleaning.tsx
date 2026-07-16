@@ -42,7 +42,7 @@ const WhatsIncludedStandardCleaning = () => {
     title: "What Is Included in a Standard House Cleaning?",
     description:
       "Exactly what's included in a standard (regular) house cleaning — the room-by-room checklist, what's not included, and how it differs from a deep clean.",
-    canonical: "https://capitalcleancare.com/blog/what-is-included-in-a-standard-cleaning",
+    canonical: "https://capitalcleancare.com/resources/what-is-included-in-a-standard-cleaning",
   });
 
   return (
@@ -55,16 +55,16 @@ const WhatsIncludedStandardCleaning = () => {
       <ArticleSchema
         title="What Is Included in a Standard House Cleaning?"
         description="The room-by-room standard cleaning checklist, what's not included, and how a standard clean differs from a deep clean."
-        url="https://capitalcleancare.com/blog/what-is-included-in-a-standard-cleaning"
+        url="https://capitalcleancare.com/resources/what-is-included-in-a-standard-cleaning"
         datePublished="2026-06-16"
         image={HERO_IMAGE}
       />
       <FAQSchema faqs={faqs} />
-      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }, { label: "What Is Included in a Standard Cleaning", href: "/blog/what-is-included-in-a-standard-cleaning" }]} />
+      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "What Is Included in a Standard Cleaning", href: "/resources/what-is-included-in-a-standard-cleaning" }]} />
 
       <div className="bg-gray-50 py-4 border-b">
         <div className="container mx-auto px-4 max-w-5xl">
-          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }, { label: "What Is Included in a Standard Cleaning?" }]} />
+          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "What Is Included in a Standard Cleaning?" }]} />
         </div>
       </div>
 
@@ -106,7 +106,7 @@ const WhatsIncludedStandardCleaning = () => {
           <FadeInSection>
             <div className="bg-secondary/40 border border-border rounded-2xl p-6 mb-10">
               <h2 className="font-heading text-2xl font-bold text-foreground mb-3">What's <em>not</em> in a standard clean</h2>
-              <p className="text-sm text-muted-foreground mb-4 leading-relaxed">These are part of a <Link to="/blog/what-is-included-in-a-deep-cleaning" className="text-accent underline hover:no-underline">deep clean</Link> — you can add them on or book a deep clean when needed:</p>
+              <p className="text-sm text-muted-foreground mb-4 leading-relaxed">These are part of a <Link to="/resources/what-is-included-in-a-deep-cleaning" className="text-accent underline hover:no-underline">deep clean</Link> — you can add them on or book a deep clean when needed:</p>
               <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-1.5">
                 {notIncluded.map((it) => (<li key={it} className="text-sm text-muted-foreground">• {it}</li>))}
               </ul>
@@ -120,9 +120,9 @@ const WhatsIncludedStandardCleaning = () => {
               <p className="font-semibold text-foreground mb-1">Keep reading</p>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 Compare{" "}
-                <Link to="/blog/deep-cleaning-vs-regular-cleaning" className="text-accent underline hover:no-underline">deep vs regular cleaning</Link>{" "}
+                <Link to="/resources/deep-cleaning-vs-regular-cleaning" className="text-accent underline hover:no-underline">deep vs regular cleaning</Link>{" "}
                 or see{" "}
-                <Link to="/blog/how-often-should-you-hire-a-cleaning-service" className="text-accent underline hover:no-underline">how often you should hire a cleaning service</Link>.
+                <Link to="/resources/how-often-should-you-hire-a-cleaning-service" className="text-accent underline hover:no-underline">how often you should hire a cleaning service</Link>.
               </p>
             </div>
           </FadeInSection>

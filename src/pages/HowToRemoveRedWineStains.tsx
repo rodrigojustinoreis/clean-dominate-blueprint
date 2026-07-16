@@ -92,7 +92,7 @@ const HowToRemoveRedWineStains = () => {
     title: "How to Remove Red Wine Stains (Carpet, Upholstery & Fabric)",
     description:
       "Remove red wine stains the proven, eco-friendly way — dish soap + hydrogen peroxide, no bleach. Step-by-step for carpet, upholstery & clothing from a Maryland cleaning team.",
-    canonical: "https://capitalcleancare.com/blog/how-to-remove-red-wine-stains",
+    canonical: "https://capitalcleancare.com/resources/how-to-remove-red-wine-stains",
   });
 
   return (
@@ -108,14 +108,14 @@ const HowToRemoveRedWineStains = () => {
       <ArticleSchema
         title="How to Remove Red Wine Stains From Carpet, Upholstery & Fabric"
         description="A proven, eco-friendly method to remove fresh and set-in red wine stains using blotting, cold water, dish soap, and hydrogen peroxide — no bleach, safe for kids and pets."
-        url="https://capitalcleancare.com/blog/how-to-remove-red-wine-stains"
+        url="https://capitalcleancare.com/resources/how-to-remove-red-wine-stains"
         datePublished="2026-06-10"
         image={HERO_IMAGE}
       />
       <HowToSchema
         name="How to Remove a Red Wine Stain — Dish Soap & Hydrogen Peroxide Method"
         description="Five-step method to remove red wine stains from carpet and fabric by blotting, flushing with cold water, and treating with a dish soap and hydrogen peroxide solution."
-        url="https://capitalcleancare.com/blog/how-to-remove-red-wine-stains"
+        url="https://capitalcleancare.com/resources/how-to-remove-red-wine-stains"
         steps={howToSteps}
         totalTime="PT30M"
         image={HERO_IMAGE}
@@ -124,8 +124,8 @@ const HowToRemoveRedWineStains = () => {
       <BreadcrumbSchema
         items={[
           { label: "Home", href: "/" },
-          { label: "Blog", href: "/blog" },
-          { label: "How to Remove Red Wine Stains", href: "/blog/how-to-remove-red-wine-stains" },
+          { label: "Resources", href: "/resources" },
+          { label: "How to Remove Red Wine Stains", href: "/resources/how-to-remove-red-wine-stains" },
         ]}
       />
 
@@ -135,7 +135,7 @@ const HowToRemoveRedWineStains = () => {
           <Breadcrumbs
             items={[
               { label: "Home", href: "/" },
-              { label: "Blog", href: "/blog" },
+              { label: "Resources", href: "/resources" },
               { label: "How to Remove Red Wine Stains" },
             ]}
           />

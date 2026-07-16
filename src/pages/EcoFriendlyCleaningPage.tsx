@@ -387,11 +387,11 @@ const EcoFriendlyCleaningPage = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {[
               { label: "Why Eco-Friendly Cleaning Matters (Deep Dive)", href: "/why-eco-friendly-cleaning" },
-              { label: "Eco Cleaning Tips for Maryland Homes", href: "/blog/eco-cleaning-tips-maryland-homes" },
-              { label: "Eco Cleaning for Maryland Winters", href: "/blog/eco-cleaning-tips-winters-maryland" },
-              { label: "Allergy-Proofing Your DMV Home", href: "/blog/allergy-proofing-home-dmv" },
-              { label: "Remove Pet Hair & Odors from DMV Homes", href: "/blog/remove-pet-hair-odors-dmv-homes" },
-              { label: "Best Cleaning Schedule for Busy Families", href: "/blog/best-cleaning-schedule-busy-families-dmv" },
+              { label: "Eco Cleaning Tips for Maryland Homes", href: "/resources/eco-cleaning-tips-maryland-homes" },
+              { label: "Eco Cleaning for Maryland Winters", href: "/resources/eco-cleaning-tips-winters-maryland" },
+              { label: "Allergy-Proofing Your DMV Home", href: "/resources/allergy-proofing-home-dmv" },
+              { label: "Remove Pet Hair & Odors from DMV Homes", href: "/resources/remove-pet-hair-odors-dmv-homes" },
+              { label: "Best Cleaning Schedule for Busy Families", href: "/resources/best-cleaning-schedule-busy-families-dmv" },
             ].map((link) => (
               <Link
                 key={link.href}

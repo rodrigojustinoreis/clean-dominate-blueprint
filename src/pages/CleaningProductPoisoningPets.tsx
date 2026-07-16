@@ -105,7 +105,7 @@ const CleaningProductPoisoningPets = () => {
     title: "Cleaning-Product Poisoning in Pets: Warning Signs to Know",
     description:
       "Bleach, ammonia & disinfectants are top household toxins for pets. The warning signs of cleaning-product poisoning in dogs & cats, what to do (don't induce vomiting), who to call, and how to prevent it.",
-    canonical: "https://capitalcleancare.com/blog/cleaning-product-poisoning-in-pets",
+    canonical: "https://capitalcleancare.com/resources/cleaning-product-poisoning-in-pets",
   });
 
   return (
@@ -122,14 +122,14 @@ const CleaningProductPoisoningPets = () => {
       <ArticleSchema
         title="Cleaning-Product Poisoning in Pets: Warning Signs to Know"
         description="Which household cleaning products poison dogs and cats, the warning signs of poisoning, the immediate steps to take (and why not to induce vomiting), the pet poison helplines to call, and how to prevent it with pet-safe products."
-        url="https://capitalcleancare.com/blog/cleaning-product-poisoning-in-pets"
+        url="https://capitalcleancare.com/resources/cleaning-product-poisoning-in-pets"
         datePublished="2026-06-15"
         image={HERO_IMAGE}
       />
       <HowToSchema
         name="How to Prevent Cleaning-Product Poisoning in Pets"
         description="A four-step routine to keep dogs and cats safe from household cleaning-product poisoning: secure storage, keeping pets away while cleaning, rinsing contact surfaces, and switching to pet-safe products."
-        url="https://capitalcleancare.com/blog/cleaning-product-poisoning-in-pets"
+        url="https://capitalcleancare.com/resources/cleaning-product-poisoning-in-pets"
         steps={howToSteps}
         totalTime="PT15M"
         image={HERO_IMAGE}
@@ -138,8 +138,8 @@ const CleaningProductPoisoningPets = () => {
       <BreadcrumbSchema
         items={[
           { label: "Home", href: "/" },
-          { label: "Blog", href: "/blog" },
-          { label: "Cleaning-Product Poisoning in Pets", href: "/blog/cleaning-product-poisoning-in-pets" },
+          { label: "Resources", href: "/resources" },
+          { label: "Cleaning-Product Poisoning in Pets", href: "/resources/cleaning-product-poisoning-in-pets" },
         ]}
       />
 
@@ -149,7 +149,7 @@ const CleaningProductPoisoningPets = () => {
           <Breadcrumbs
             items={[
               { label: "Home", href: "/" },
-              { label: "Blog", href: "/blog" },
+              { label: "Resources", href: "/resources" },
               { label: "Cleaning-Product Poisoning in Pets: Warning Signs to Know" },
             ]}
           />
@@ -336,9 +336,9 @@ const CleaningProductPoisoningPets = () => {
                   You can lock cabinets and ventilate rooms, but the most reliable prevention is not having caustic chemicals in the house at all. That's the whole reason our{" "}
                   <Link to="/services/eco-friendly-cleaning" className="text-accent underline hover:no-underline">eco-friendly cleaning</Link>{" "}
                   uses only plant-based, fragrance-free, low-residue products. For more on what's actually in conventional cleaners, see our guides on{" "}
-                  <Link to="/blog/why-pet-skin-allergies-start-in-carpet" className="text-accent underline hover:no-underline">pet skin allergies</Link>{" "}
+                  <Link to="/resources/why-pet-skin-allergies-start-in-carpet" className="text-accent underline hover:no-underline">pet skin allergies</Link>{" "}
                   and an{" "}
-                  <Link to="/blog/allergen-free-home-dog-cat-owners" className="text-accent underline hover:no-underline">allergen-free home</Link>.
+                  <Link to="/resources/allergen-free-home-dog-cat-owners" className="text-accent underline hover:no-underline">allergen-free home</Link>.
                 </p>
               </div>
             </div>

@@ -13,7 +13,7 @@ import StickyCTA from "@/components/blog/StickyCTA";
 import RelatedPosts from "@/components/blog/RelatedPosts";
 
 const HERO_IMAGE = "/images/blog/flat-vs-hourly-hero.webp";
-const URL = "https://capitalcleancare.com/blog/flat-rate-vs-hourly-house-cleaning";
+const URL = "https://capitalcleancare.com/resources/flat-rate-vs-hourly-house-cleaning";
 
 const hourlyWins: string[] = [
   "Your home is small, tidy, and professionally cleaned recently",
@@ -133,7 +133,7 @@ const FlatRateVsHourlyHouseCleaning = () => {
               <li className="flex items-start gap-2.5 text-muted-foreground leading-relaxed">
                 <CheckCircle2 className="h-5 w-5 text-accent mt-0.5 shrink-0" />
                 <span>First visits and deep cleans, where hidden buildup blows up estimates. The same catch-up work that explains{" "}
-                  <Link to="/blog/why-first-house-cleaning-costs-more" className="text-accent underline hover:no-underline">why your first house cleaning costs more</Link>{" "}
+                  <Link to="/resources/why-first-house-cleaning-costs-more" className="text-accent underline hover:no-underline">why your first house cleaning costs more</Link>{" "}
                   is what turns a three-hour estimate into a five-hour invoice.</span>
               </li>
               <li className="flex items-start gap-2.5 text-muted-foreground leading-relaxed">
@@ -162,7 +162,7 @@ const FlatRateVsHourlyHouseCleaning = () => {
             <p className="text-muted-foreground leading-relaxed mb-4">
               The honest concern with flat rates is the opposite incentive: does a fixed price tempt a team to rush? The
               protection is a written task list and a guarantee. Compare any flat cleaning service quote against the checklist in{" "}
-              <Link to="/blog/what-is-included-in-a-standard-cleaning" className="text-accent underline hover:no-underline">what is included in a standard cleaning</Link>, and confirm the company will return and fix anything missed.
+              <Link to="/resources/what-is-included-in-a-standard-cleaning" className="text-accent underline hover:no-underline">what is included in a standard cleaning</Link>, and confirm the company will return and fix anything missed.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-4">
               That combination, a flat number plus a written scope plus a satisfaction guarantee, is exactly how we price at
@@ -180,7 +180,7 @@ const FlatRateVsHourlyHouseCleaning = () => {
             <p className="text-muted-foreground leading-relaxed mb-4">
               Here is how flat rate vs hourly house cleaning plays out on real Montgomery County homes. Flat-rate figures reflect
               typical Maryland ranges from our guide to{" "}
-              <Link to="/blog/house-cleaning-prices-maryland-2026" className="text-accent underline hover:no-underline">house cleaning prices in Maryland</Link>.
+              <Link to="/resources/house-cleaning-prices-maryland-2026" className="text-accent underline hover:no-underline">house cleaning prices in Maryland</Link>.
               The hourly column is illustrative, assuming a two-person team billing $80 per hour, so you can see how the math
               behaves.
             </p>
@@ -257,7 +257,7 @@ const FlatRateVsHourlyHouseCleaning = () => {
               <li className="flex items-start gap-2.5 text-muted-foreground leading-relaxed">
                 <CheckCircle2 className="h-5 w-5 text-accent mt-0.5 shrink-0" />
                 <span><strong className="text-foreground">A cleaning service quote far below local ranges.</strong> A $130 quote for a 3 bedroom home is bait, not a bargain. Our guide to{" "}
-                  <Link to="/blog/hidden-fees-house-cleaning" className="text-accent underline hover:no-underline">hidden fees in house cleaning</Link>{" "}
+                  <Link to="/resources/hidden-fees-house-cleaning" className="text-accent underline hover:no-underline">hidden fees in house cleaning</Link>{" "}
                   shows how those quotes grow after you book.</span>
               </li>
               <li className="flex items-start gap-2.5 text-muted-foreground leading-relaxed">

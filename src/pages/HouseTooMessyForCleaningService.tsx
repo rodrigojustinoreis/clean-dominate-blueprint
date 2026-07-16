@@ -13,7 +13,7 @@ import StickyCTA from "@/components/blog/StickyCTA";
 import RelatedPosts from "@/components/blog/RelatedPosts";
 
 const HERO_IMAGE = "/images/blog/messy-house-hero.webp";
-const URL = "https://capitalcleancare.com/blog/house-too-messy-for-cleaning-service";
+const URL = "https://capitalcleancare.com/resources/house-too-messy-for-cleaning-service";
 
 const seenItAll: string[] = [
   "Kitchens after months of two full-time jobs and zero spare hours",
@@ -177,7 +177,7 @@ const HouseTooMessyForCleaningService = () => {
             <p className="text-muted-foreground leading-relaxed mb-4">
               If even that short list feels like too much right now, say so when you book. A thoughtful cleaning service for a
               cluttered home will simply plan extra time. Our guide to{" "}
-              <Link to="/blog/questions-to-ask-before-hiring-house-cleaner" className="text-accent underline hover:no-underline">questions to ask before hiring a house cleaner</Link>{" "}
+              <Link to="/resources/questions-to-ask-before-hiring-house-cleaner" className="text-accent underline hover:no-underline">questions to ask before hiring a house cleaner</Link>{" "}
               shows how to describe your home's condition honestly so the quote is accurate the first time.
             </p>
           </FadeInSection>
@@ -190,7 +190,7 @@ const HouseTooMessyForCleaningService = () => {
               <Link to="/services/deep-cleaning" className="text-accent underline hover:no-underline">deep cleaning</Link>{" "}
               rather than a standard clean. That means baseboards, vents, buildup in the bathroom and kitchen, and all the
               neglected corners, not just a surface pass. The differences are spelled out in our{" "}
-              <Link to="/blog/deep-cleaning-vs-regular-cleaning" className="text-accent underline hover:no-underline">deep cleaning vs regular cleaning</Link>{" "}
+              <Link to="/resources/deep-cleaning-vs-regular-cleaning" className="text-accent underline hover:no-underline">deep cleaning vs regular cleaning</Link>{" "}
               guide.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-4">
@@ -201,9 +201,9 @@ const HouseTooMessyForCleaningService = () => {
             <p className="text-muted-foreground leading-relaxed mb-4">
               On cost, a Maryland deep clean typically runs $230 to $540+, compared with $150 to $400+ for a standard clean.
               Yes, the first visit costs more, and there are honest reasons for it, which we explain in{" "}
-              <Link to="/blog/why-first-house-cleaning-costs-more" className="text-accent underline hover:no-underline">why the first house cleaning costs more</Link>.
+              <Link to="/resources/why-first-house-cleaning-costs-more" className="text-accent underline hover:no-underline">why the first house cleaning costs more</Link>.
               Full local numbers live in our{" "}
-              <Link to="/blog/house-cleaning-prices-maryland-2026" className="text-accent underline hover:no-underline">Maryland house cleaning price guide</Link>.
+              <Link to="/resources/house-cleaning-prices-maryland-2026" className="text-accent underline hover:no-underline">Maryland house cleaning price guide</Link>.
             </p>
           </FadeInSection>
 
@@ -235,7 +235,7 @@ const HouseTooMessyForCleaningService = () => {
             </ol>
             <p className="text-muted-foreground leading-relaxed mb-4">
               Most homes in Silver Spring, Gaithersburg, and Germantown do beautifully on a biweekly rhythm, and our guide on{" "}
-              <Link to="/blog/how-often-should-you-hire-a-cleaning-service" className="text-accent underline hover:no-underline">how often you should hire a cleaning service</Link>{" "}
+              <Link to="/resources/how-often-should-you-hire-a-cleaning-service" className="text-accent underline hover:no-underline">how often you should hire a cleaning service</Link>{" "}
               helps you choose. The point is that you never face "catching up" alone again. The schedule holds the line even
               during your hardest weeks, which is exactly when you need it most. The homeowners who once searched "house too
               messy for a cleaning service" tend to become the happiest recurring clients we know.

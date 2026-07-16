@@ -40,7 +40,7 @@ const WhatsIncludedDeepCleaning = () => {
     title: "What Is Included in a Deep Cleaning? (Full Checklist)",
     description:
       "Exactly what's included in a deep cleaning — the room-by-room checklist, how it differs from a standard clean, how long it takes, and whether inside the oven and fridge are included.",
-    canonical: "https://capitalcleancare.com/blog/what-is-included-in-a-deep-cleaning",
+    canonical: "https://capitalcleancare.com/resources/what-is-included-in-a-deep-cleaning",
   });
 
   return (
@@ -53,24 +53,24 @@ const WhatsIncludedDeepCleaning = () => {
       <ArticleSchema
         title="What Is Included in a Deep Cleaning? (Full Checklist)"
         description="The complete room-by-room deep cleaning checklist — kitchen, bathrooms, and living areas — how it differs from a standard clean, how long it takes, and what's done on request."
-        url="https://capitalcleancare.com/blog/what-is-included-in-a-deep-cleaning"
+        url="https://capitalcleancare.com/resources/what-is-included-in-a-deep-cleaning"
         datePublished="2026-06-16"
         image={HERO_IMAGE}
       />
       <HowToSchema
         name="What a Professional Deep Cleaning Covers"
         description="The method and scope of a professional deep cleaning, from high-to-low dusting to detail zones and inside appliances."
-        url="https://capitalcleancare.com/blog/what-is-included-in-a-deep-cleaning"
+        url="https://capitalcleancare.com/resources/what-is-included-in-a-deep-cleaning"
         steps={steps}
         totalTime="PT4H"
         image={HERO_IMAGE}
       />
       <FAQSchema faqs={faqs} />
-      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }, { label: "What Is Included in a Deep Cleaning", href: "/blog/what-is-included-in-a-deep-cleaning" }]} />
+      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "What Is Included in a Deep Cleaning", href: "/resources/what-is-included-in-a-deep-cleaning" }]} />
 
       <div className="bg-gray-50 py-4 border-b">
         <div className="container mx-auto px-4 max-w-5xl">
-          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }, { label: "What Is Included in a Deep Cleaning?" }]} />
+          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "What Is Included in a Deep Cleaning?" }]} />
         </div>
       </div>
 
@@ -136,9 +136,9 @@ const WhatsIncludedDeepCleaning = () => {
               <p className="font-semibold text-foreground mb-1">Keep reading</p>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 Compare{" "}
-                <Link to="/blog/deep-cleaning-vs-regular-cleaning" className="text-accent underline hover:no-underline">deep cleaning vs regular cleaning</Link>{" "}
+                <Link to="/resources/deep-cleaning-vs-regular-cleaning" className="text-accent underline hover:no-underline">deep cleaning vs regular cleaning</Link>{" "}
                 or see{" "}
-                <Link to="/blog/how-often-should-you-hire-a-cleaning-service" className="text-accent underline hover:no-underline">how often you should hire a cleaning service</Link>.
+                <Link to="/resources/how-often-should-you-hire-a-cleaning-service" className="text-accent underline hover:no-underline">how often you should hire a cleaning service</Link>.
               </p>
             </div>
           </FadeInSection>

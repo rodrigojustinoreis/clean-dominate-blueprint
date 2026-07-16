@@ -91,7 +91,7 @@ const HowToRemoveCandleWaxBlog = () => {
     title: "How to Remove Candle Wax (Eco-Friendly) | Capital Clean Care MD",
     description:
       "Remove candle wax from carpet, walls, glass & wood with eco-safe methods. Maryland homeowners' guide. Free quote in Montgomery County.",
-    canonical: "https://capitalcleancare.com/blog/how-to-remove-candle-wax-eco-friendly",
+    canonical: "https://capitalcleancare.com/resources/how-to-remove-candle-wax-eco-friendly",
   });
 
   return (
@@ -107,14 +107,14 @@ const HowToRemoveCandleWaxBlog = () => {
       <ArticleSchema
         title="How to Remove Candle Wax from Any Surface (The Eco-Friendly Way)"
         description="Remove candle wax from carpet, walls, glass & wood with eco-safe methods. Maryland homeowners' guide."
-        url="https://capitalcleancare.com/blog/how-to-remove-candle-wax-eco-friendly"
+        url="https://capitalcleancare.com/resources/how-to-remove-candle-wax-eco-friendly"
         datePublished="2026-05-23"
         image={HERO_IMAGE}
       />
       <HowToSchema
         name="How to Remove Candle Wax from Carpet (Eco-Friendly)"
         description="Step-by-step guide to removing candle wax from carpet using ice, a clothes iron, and plant-based dish soap — no toxic solvents needed."
-        url="https://capitalcleancare.com/blog/how-to-remove-candle-wax-eco-friendly"
+        url="https://capitalcleancare.com/resources/how-to-remove-candle-wax-eco-friendly"
         steps={howToSteps}
         totalTime="PT30M"
         image={HERO_IMAGE}
@@ -123,8 +123,8 @@ const HowToRemoveCandleWaxBlog = () => {
       <BreadcrumbSchema
         items={[
           { label: "Home", href: "/" },
-          { label: "Blog", href: "/blog" },
-          { label: "How to Remove Candle Wax (Eco-Friendly)", href: "/blog/how-to-remove-candle-wax-eco-friendly" },
+          { label: "Resources", href: "/resources" },
+          { label: "How to Remove Candle Wax (Eco-Friendly)", href: "/resources/how-to-remove-candle-wax-eco-friendly" },
         ]}
       />
 
@@ -134,7 +134,7 @@ const HowToRemoveCandleWaxBlog = () => {
           <Breadcrumbs
             items={[
               { label: "Home", href: "/" },
-              { label: "Blog", href: "/blog" },
+              { label: "Resources", href: "/resources" },
               { label: "How to Remove Candle Wax" },
             ]}
           />

@@ -12,7 +12,7 @@ const SpringCarpetCleaningBlog = () => {
   const { seoHelmet } = useSEO({
     title: "Spring Carpet Cleaning: Why It Matters & How to Do It Right | Capital Clean Care",
     description: "Discover why spring carpet cleaning is essential for Montgomery County homes. Learn what hides in your carpet after winter and how Capital Clean Care removes it all.",
-    canonical: "https://capitalcleancare.com/blog/spring-carpet-cleaning",
+    canonical: "https://capitalcleancare.com/resources/spring-carpet-cleaning",
   });
 
   return (
@@ -25,7 +25,7 @@ const SpringCarpetCleaningBlog = () => {
       {/* Breadcrumbs */}
       <div className="bg-gray-50 py-4 border-b">
         <div className="container mx-auto px-4 max-w-5xl">
-          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }, { label: "Spring Carpet Cleaning" }]} />
+          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "Spring Carpet Cleaning" }]} />
         </div>
       </div>
 

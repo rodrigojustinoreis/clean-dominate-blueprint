@@ -4,13 +4,13 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import type { BlogPost } from "@/pages/Blog";
 
-// Shared blog post card — used by the /blog index and every /blog/topic/<slug> hub so the
+// Shared blog post card — used by the /resources index and every /resources/topic/<slug> hub so the
 // listing markup stays in one place. The whole card is a single link to the post (no nested
 // anchors); topic navigation lives in the BlogTopicNav pill bar above the list.
 export default function PostCard({ post }: { post: BlogPost }) {
   return (
     <Card className="group hover:shadow-lg transition-shadow overflow-hidden">
-      <Link to={`/blog/${post.slug}`} className="md:flex">
+      <Link to={`/resources/${post.slug}`} className="md:flex">
         <div className="md:w-64 md:flex-shrink-0 h-48 md:h-auto overflow-hidden">
           <img
             src={post.coverImage || "/images/team/team-mopping-bright-room.jpg"}

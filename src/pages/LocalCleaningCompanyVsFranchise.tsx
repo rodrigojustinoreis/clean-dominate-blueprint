@@ -13,7 +13,7 @@ import StickyCTA from "@/components/blog/StickyCTA";
 import RelatedPosts from "@/components/blog/RelatedPosts";
 
 const HERO_IMAGE = "/images/blog/local-vs-franchise-hero.webp";
-const URL = "https://capitalcleancare.com/blog/local-cleaning-company-vs-franchise";
+const URL = "https://capitalcleancare.com/resources/local-cleaning-company-vs-franchise";
 
 const reviewPatterns: string[] = [
   "A different crew almost every visit, so quality swings from thorough to rushed",
@@ -139,7 +139,7 @@ const LocalCleaningCompanyVsFranchise = () => {
             </p>
             <p className="text-muted-foreground leading-relaxed mb-4">
               The smart move is to check reviews for every company you consider, local ones included. Our guide to the{" "}
-              <Link to="/blog/red-flags-house-cleaning-service" className="text-accent underline hover:no-underline">red flags of a house cleaning service</Link>{" "}
+              <Link to="/resources/red-flags-house-cleaning-service" className="text-accent underline hover:no-underline">red flags of a house cleaning service</Link>{" "}
               shows you exactly what to look for, because a bad local operator is still a bad hire.
             </p>
           </FadeInSection>
@@ -181,7 +181,7 @@ const LocalCleaningCompanyVsFranchise = () => {
               Sticker prices for house cleaning in Montgomery County, MD land in the same range no matter who you hire: a
               standard clean typically runs $150 to $400+, and a deep clean runs $230 to $540+ depending on size and condition.
               We break down every variable in our{" "}
-              <Link to="/blog/house-cleaning-prices-maryland-2026" className="text-accent underline hover:no-underline">Maryland house cleaning price guide</Link>.
+              <Link to="/resources/house-cleaning-prices-maryland-2026" className="text-accent underline hover:no-underline">Maryland house cleaning price guide</Link>.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-4">The local cleaning company vs franchise difference is what sits inside that price:</p>
             <div className="overflow-x-auto mb-6">
@@ -254,9 +254,9 @@ const LocalCleaningCompanyVsFranchise = () => {
             </ul>
             <p className="text-muted-foreground leading-relaxed mb-4">
               For the complete vetting script, use our{" "}
-              <Link to="/blog/questions-to-ask-before-hiring-house-cleaner" className="text-accent underline hover:no-underline">20 questions to ask before hiring a house cleaner</Link>.
+              <Link to="/resources/questions-to-ask-before-hiring-house-cleaner" className="text-accent underline hover:no-underline">20 questions to ask before hiring a house cleaner</Link>.
               And if you are also weighing a solo cleaner against a company, our{" "}
-              <Link to="/blog/cleaning-company-vs-independent-cleaner" className="text-accent underline hover:no-underline">cleaning company vs independent cleaner</Link>{" "}
+              <Link to="/resources/cleaning-company-vs-independent-cleaner" className="text-accent underline hover:no-underline">cleaning company vs independent cleaner</Link>{" "}
               comparison covers that fork of the decision.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-4">

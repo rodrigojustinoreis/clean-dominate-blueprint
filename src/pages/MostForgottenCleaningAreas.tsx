@@ -37,7 +37,7 @@ const MostForgottenCleaningAreas = () => {
     title: "The 8 Most Forgotten Areas When Cleaning Your House",
     description:
       "The cleaning spots almost everyone misses — baseboards, ceiling fans, light switches, under furniture, vents and more — why they matter and how often to clean them.",
-    canonical: "https://capitalcleancare.com/blog/most-forgotten-areas-when-cleaning",
+    canonical: "https://capitalcleancare.com/resources/most-forgotten-areas-when-cleaning",
   });
 
   return (
@@ -50,16 +50,16 @@ const MostForgottenCleaningAreas = () => {
       <ArticleSchema
         title="The 8 Most Forgotten Areas When Cleaning Your House"
         description="The cleaning spots almost everyone misses, why they matter, and how often to clean them."
-        url="https://capitalcleancare.com/blog/most-forgotten-areas-when-cleaning"
+        url="https://capitalcleancare.com/resources/most-forgotten-areas-when-cleaning"
         datePublished="2026-06-16"
         image={HERO_IMAGE}
       />
       <FAQSchema faqs={faqs} />
-      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }, { label: "Most Forgotten Areas When Cleaning", href: "/blog/most-forgotten-areas-when-cleaning" }]} />
+      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "Most Forgotten Areas When Cleaning", href: "/resources/most-forgotten-areas-when-cleaning" }]} />
 
       <div className="bg-gray-50 py-4 border-b">
         <div className="container mx-auto px-4 max-w-5xl">
-          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }, { label: "Most Forgotten Areas When Cleaning" }]} />
+          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "Most Forgotten Areas When Cleaning" }]} />
         </div>
       </div>
 
@@ -99,9 +99,9 @@ const MostForgottenCleaningAreas = () => {
               <p className="font-semibold text-foreground mb-1">Keep reading</p>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 See{" "}
-                <Link to="/blog/what-is-included-in-a-deep-cleaning" className="text-accent underline hover:no-underline">what's included in a deep cleaning</Link>{" "}
+                <Link to="/resources/what-is-included-in-a-deep-cleaning" className="text-accent underline hover:no-underline">what's included in a deep cleaning</Link>{" "}
                 or{" "}
-                <Link to="/blog/why-dust-builds-up-maryland-homes" className="text-accent underline hover:no-underline">why dust builds up so fast in Maryland homes</Link>.
+                <Link to="/resources/why-dust-builds-up-maryland-homes" className="text-accent underline hover:no-underline">why dust builds up so fast in Maryland homes</Link>.
               </p>
             </div>
           </FadeInSection>

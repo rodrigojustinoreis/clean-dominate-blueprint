@@ -204,9 +204,9 @@ const blogContent: Record<string, React.ReactNode> = {
       </ul>
 
       <h2>How Often to Schedule Professional Airbnb Cleaning</h2>
-      <p>For properties with frequent bookings (4+ nights per week), professional <Link to="/services/airbnb-cleaning" className="text-accent hover:underline">Airbnb cleaning</Link> after every checkout is essential. For longer-stay properties, a deep clean every 2–3 weeks supplements your between-guest turnovers. See our full guide on <Link to="/blog/recurring-cleaning-weekly-biweekly-monthly" className="text-accent hover:underline">choosing the right cleaning frequency →</Link></p>
+      <p>For properties with frequent bookings (4+ nights per week), professional <Link to="/services/airbnb-cleaning" className="text-accent hover:underline">Airbnb cleaning</Link> after every checkout is essential. For longer-stay properties, a deep clean every 2–3 weeks supplements your between-guest turnovers. See our full guide on <Link to="/resources/recurring-cleaning-weekly-biweekly-monthly" className="text-accent hover:underline">choosing the right cleaning frequency →</Link></p>
 
-      <p>Managing tenant transitions between longer stays? Our <Link to="/blog/move-out-cleaning-checklist-maryland-tenants" className="text-accent hover:underline">move-out cleaning checklist</Link> covers exactly what landlords and property managers inspect.</p>
+      <p>Managing tenant transitions between longer stays? Our <Link to="/resources/move-out-cleaning-checklist-maryland-tenants" className="text-accent hover:underline">move-out cleaning checklist</Link> covers exactly what landlords and property managers inspect.</p>
 
       <h2>Eco-Friendly Products for Guest-Friendly Spaces</h2>
       <p>Many guests — especially families with children — are sensitive to harsh chemical cleaners. Using non-toxic, plant-based products eliminates the chemical smell that can greet guests at check-in and demonstrates your commitment to a healthy environment. This is a differentiator worth mentioning in your listing description.</p>
@@ -403,7 +403,7 @@ const blogContent: Record<string, React.ReactNode> = {
         <li><strong>Choose EPA Safer Choice products:</strong> Look for the EPA Safer Choice label, which certifies that every ingredient meets strict safety standards.</li>
         <li><strong>Use microfiber cloths:</strong> They capture more dust and bacteria than cotton rags, reducing the need for chemical sprays.</li>
         <li><strong>Ventilate while cleaning:</strong> Maryland's humid climate means good airflow prevents mold growth — open windows when possible.</li>
-        <li><strong>Tackle pollen seasonally:</strong> The DMV region experiences heavy pollen. Regular <Link to="/services/deep-cleaning" className="text-accent hover:underline">deep cleaning</Link> in spring reduces allergen buildup. See our full guide: <Link to="/blog/allergy-proofing-home-dmv" className="text-accent hover:underline">allergy-proofing your DMV home →</Link></li>
+        <li><strong>Tackle pollen seasonally:</strong> The DMV region experiences heavy pollen. Regular <Link to="/services/deep-cleaning" className="text-accent hover:underline">deep cleaning</Link> in spring reduces allergen buildup. See our full guide: <Link to="/resources/allergy-proofing-home-dmv" className="text-accent hover:underline">allergy-proofing your DMV home →</Link></li>
         <li><strong>Switch to plant-based disinfectants:</strong> Thymol-based cleaners disinfect effectively without harsh fumes.</li>
       </ol>
 
@@ -412,7 +412,7 @@ const blogContent: Record<string, React.ReactNode> = {
 
       <p>Want to understand exactly which chemicals we avoid and why it matters for your family? Read our in-depth guide: <Link to="/why-eco-friendly-cleaning" className="text-accent hover:underline font-semibold">Why Eco-Friendly Cleaning Matters →</Link></p>
 
-      <p>For Maryland's unique winter challenges, see our companion guide: <Link to="/blog/eco-cleaning-tips-winters-maryland" className="text-accent hover:underline">Eco-Friendly Cleaning Tips for Maryland Winters →</Link></p>
+      <p>For Maryland's unique winter challenges, see our companion guide: <Link to="/resources/eco-cleaning-tips-winters-maryland" className="text-accent hover:underline">Eco-Friendly Cleaning Tips for Maryland Winters →</Link></p>
 
       <BlogInlineCTA
         headline="Switch to Non-Toxic Cleaning Today"
@@ -485,7 +485,7 @@ const blogContent: Record<string, React.ReactNode> = {
       <p>Look for reviews from other <Link to="/locations/silver-spring-md" className="text-accent hover:underline">Silver Spring</Link> homeowners. Local experience matters — a company familiar with your neighborhood understands the specific cleaning challenges of the area. Check our <Link to="/reviews" className="text-accent hover:underline">Google reviews</Link> for real feedback from DMV clients.</p>
 
       <h2>5. Compare Pricing Transparently</h2>
-      <p>Beware of companies that won't give a clear estimate. We provide transparent pricing based on home size and service type — no hidden fees. See our <Link to="/blog/house-cleaning-prices-maryland-2026" className="text-accent hover:underline">2026 Maryland house cleaning pricing guide</Link> or use our <Link to="/#quote" className="text-accent hover:underline">free quote form</Link> for an instant estimate.</p>
+      <p>Beware of companies that won't give a clear estimate. We provide transparent pricing based on home size and service type — no hidden fees. See our <Link to="/resources/house-cleaning-prices-maryland-2026" className="text-accent hover:underline">2026 Maryland house cleaning pricing guide</Link> or use our <Link to="/#quote" className="text-accent hover:underline">free quote form</Link> for an instant estimate.</p>
 
       <h2>6. Look for a Satisfaction Guarantee</h2>
       <p>A company that stands behind its work will offer a guarantee. Capital Clean Care provides a 100% satisfaction guarantee — if you're not happy, we'll return within 24 hours to re-clean at no charge.</p>
@@ -570,7 +570,7 @@ const blogContent: Record<string, React.ReactNode> = {
         <li>Carpet deep-cleaning</li>
         <li>Grout scrubbing in kitchens and baths</li>
       </ul>
-      <p>Our <Link to="/services/deep-cleaning" className="text-accent hover:underline">quarterly deep cleaning</Link> handles all of this in a single visit. See our <Link to="/blog/deep-cleaning-checklist-dmv-homeowners" className="text-accent hover:underline">deep cleaning checklist for DMV homeowners</Link> to see exactly what's covered.</p>
+      <p>Our <Link to="/services/deep-cleaning" className="text-accent hover:underline">quarterly deep cleaning</Link> handles all of this in a single visit. See our <Link to="/resources/deep-cleaning-checklist-dmv-homeowners" className="text-accent hover:underline">deep cleaning checklist for DMV homeowners</Link> to see exactly what's covered.</p>
 
       <h2>How Recurring Service Saves Time and Money</h2>
       <p>Families on our weekly plan save 25% per visit. That's hundreds of dollars annually — plus the hours you reclaim each week. Most <Link to="/locations/rockville-md" className="text-accent hover:underline">Rockville</Link> and <Link to="/locations/bethesda-md" className="text-accent hover:underline">Bethesda</Link> clients tell us recurring service is their best household investment.</p>
@@ -617,7 +617,7 @@ const blogContent: Record<string, React.ReactNode> = {
         <li><strong>4-bedroom home:</strong> $250 – $340 per standard visit</li>
         <li><strong>First-time / deep clean:</strong> 25–40% higher than recurring rates</li>
       </ul>
-      <p>Recurring clients save significantly — weekly plans can reduce per-visit cost by 20–25%. For a detailed DMV-wide pricing breakdown, see our <Link to="/blog/house-cleaning-prices-maryland-2026" className="text-accent hover:underline">2026 house cleaning price guide →</Link></p>
+      <p>Recurring clients save significantly — weekly plans can reduce per-visit cost by 20–25%. For a detailed DMV-wide pricing breakdown, see our <Link to="/resources/house-cleaning-prices-maryland-2026" className="text-accent hover:underline">2026 house cleaning price guide →</Link></p>
 
       <h2>Why Bethesda Families Choose Eco-Friendly Cleaning</h2>
       <p>Given Bethesda's proximity to Rock Creek Park and the broader Chesapeake Bay watershed, many residents are thoughtful about the chemicals entering their homes and drains. Our <Link to="/services/eco-friendly-cleaning" className="text-accent hover:underline">eco-friendly cleaning service</Link> uses only EPA Safer Choice certified, plant-based products — no chlorine, ammonia, phthalates, or VOCs. Read more about <Link to="/why-eco-friendly-cleaning" className="text-accent hover:underline">why eco-friendly cleaning matters</Link> for your family's health.</p>
@@ -639,7 +639,7 @@ const blogContent: Record<string, React.ReactNode> = {
         <li><strong>A real satisfaction guarantee:</strong> Look for a re-clean guarantee in writing, not a slogan. It signals a company that stands behind its work.</li>
         <li><strong>Genuine Montgomery County roots:</strong> A locally owned company that knows Bethesda's housing stock — pre-war Cape Cods to Bethesda Row condos — cleans them more appropriately than a national franchise running a single checklist.</li>
       </ul>
-      <p>For a step-by-step framework you can apply to any company, see our guide on <Link to="/blog/is-professional-house-cleaning-worth-it" className="text-accent hover:underline">whether professional cleaning is worth it</Link> and <Link to="/blog/how-often-should-you-hire-a-cleaning-service" className="text-accent hover:underline">how often to hire a cleaning service</Link>.</p>
+      <p>For a step-by-step framework you can apply to any company, see our guide on <Link to="/resources/is-professional-house-cleaning-worth-it" className="text-accent hover:underline">whether professional cleaning is worth it</Link> and <Link to="/resources/how-often-should-you-hire-a-cleaning-service" className="text-accent hover:underline">how often to hire a cleaning service</Link>.</p>
 
       <BlogInlineCTA
         headline="Bethesda's Trusted Eco-Friendly Cleaning Service"
@@ -659,8 +659,8 @@ const blogContent: Record<string, React.ReactNode> = {
       <p>Arlington's urban density and busy commuter culture create specific cleaning situations:</p>
       <ul>
         <li><strong>Condo buildings:</strong> High-touch surfaces, limited natural ventilation, and small square footage that still needs thorough coverage</li>
-        <li><strong>Pets in smaller spaces:</strong> Dogs and cats in Arlington apartments and condos create concentrated odor and hair buildup — see our guide on <Link to="/blog/remove-pet-hair-odors-dmv-homes" className="text-accent hover:underline">removing pet hair and odors from DMV homes →</Link></li>
-        <li><strong>High turnover:</strong> Residents often relocate every 2–3 years, creating consistent demand for <Link to="/blog/move-in-cleaning-guide-dmv" className="text-accent hover:underline">move-in</Link> and <Link to="/blog/move-out-cleaning-checklist-maryland-tenants" className="text-accent hover:underline">move-out cleaning</Link></li>
+        <li><strong>Pets in smaller spaces:</strong> Dogs and cats in Arlington apartments and condos create concentrated odor and hair buildup — see our guide on <Link to="/resources/remove-pet-hair-odors-dmv-homes" className="text-accent hover:underline">removing pet hair and odors from DMV homes →</Link></li>
+        <li><strong>High turnover:</strong> Residents often relocate every 2–3 years, creating consistent demand for <Link to="/resources/move-in-cleaning-guide-dmv" className="text-accent hover:underline">move-in</Link> and <Link to="/resources/move-out-cleaning-checklist-maryland-tenants" className="text-accent hover:underline">move-out cleaning</Link></li>
         <li><strong>Urban pollen:</strong> Arlington's tree canopy is one of the county's greatest assets — but it also deposits heavy pollen in spring</li>
       </ul>
 
@@ -715,7 +715,7 @@ const blogContent: Record<string, React.ReactNode> = {
       <ul>
         <li><strong>Spring:</strong> After a long winter, to address dust buildup, pollen infiltration, and post-heating-season grime</li>
         <li><strong>Before a major event:</strong> Holidays, family visits, or home listing preparation</li>
-        <li><strong>After renovation:</strong> Construction dust embeds in HVAC systems — see our <Link to="/blog/post-renovation-cleaning-guide-maryland" className="text-accent hover:underline">post-renovation cleaning guide</Link></li>
+        <li><strong>After renovation:</strong> Construction dust embeds in HVAC systems — see our <Link to="/resources/post-renovation-cleaning-guide-maryland" className="text-accent hover:underline">post-renovation cleaning guide</Link></li>
         <li><strong>New recurring clients:</strong> A deep clean establishes the baseline before maintenance visits</li>
         <li><strong>Quarterly maintenance:</strong> Even well-maintained homes benefit from a quarterly reset</li>
       </ul>
@@ -752,7 +752,7 @@ const blogContent: Record<string, React.ReactNode> = {
       <p>Urban condos benefit from frequent maintenance cleaning — weekly or bi-weekly. Limited square footage doesn't mean limited complexity: kitchen surfaces, bathrooms, hardwood floors, and shared air quality all need consistent attention.</p>
 
       <h3>Larger Homes (Georgetown, Chevy Chase DC, Spring Valley)</h3>
-      <p>Larger DC homes in established neighborhoods often have multiple floors, formal dining rooms, home offices, and finished basements. These benefit most from quarterly <Link to="/services/deep-cleaning" className="text-accent hover:underline">deep cleaning</Link> alongside regular maintenance service. Use our <Link to="/blog/deep-cleaning-checklist-dmv-homeowners" className="text-accent hover:underline">deep cleaning checklist for DMV homeowners</Link> to prepare.</p>
+      <p>Larger DC homes in established neighborhoods often have multiple floors, formal dining rooms, home offices, and finished basements. These benefit most from quarterly <Link to="/services/deep-cleaning" className="text-accent hover:underline">deep cleaning</Link> alongside regular maintenance service. Use our <Link to="/resources/deep-cleaning-checklist-dmv-homeowners" className="text-accent hover:underline">deep cleaning checklist for DMV homeowners</Link> to prepare.</p>
 
       <h2>What DC Residents Value in a Cleaning Service</h2>
       <ul>
@@ -797,7 +797,7 @@ const blogContent: Record<string, React.ReactNode> = {
       </ul>
 
       <h2>Recommended Cleaning Frequency for Fairfax Families</h2>
-      <p>For most Fairfax households with children and pets, bi-weekly professional cleaning is the sweet spot — frequent enough to maintain a clean home, affordable enough to sustain long-term. See our full breakdown: <Link to="/blog/recurring-cleaning-weekly-biweekly-monthly" className="text-accent hover:underline">weekly vs. bi-weekly vs. monthly cleaning</Link>.</p>
+      <p>For most Fairfax households with children and pets, bi-weekly professional cleaning is the sweet spot — frequent enough to maintain a clean home, affordable enough to sustain long-term. See our full breakdown: <Link to="/resources/recurring-cleaning-weekly-biweekly-monthly" className="text-accent hover:underline">weekly vs. bi-weekly vs. monthly cleaning</Link>.</p>
 
       <h2>Fairfax Neighborhoods We Serve</h2>
       <p>We cover all of Fairfax City and surrounding communities including Fair Oaks, Burke, Annandale, Springfield, Reston, Herndon, Centreville, Chantilly, and areas near <Link to="/locations/mclean-va" className="text-accent hover:underline">McLean</Link> and <Link to="/locations/falls-church-va" className="text-accent hover:underline">Falls Church</Link>.</p>
@@ -875,7 +875,7 @@ const blogContent: Record<string, React.ReactNode> = {
       <p>Alexandria borders the Potomac River and is a community that values environmental stewardship. Our plant-based, <Link to="/services/eco-friendly-cleaning" className="text-accent hover:underline">eco-friendly cleaning service</Link> uses EPA Safer Choice certified products that don't harm Potomac watershed ecosystems when they enter the water system. Read our detailed guide: <Link to="/why-eco-friendly-cleaning" className="text-accent hover:underline">why eco-friendly cleaning matters</Link>.</p>
 
       <h2>Move-In and Move-Out Cleaning in Alexandria</h2>
-      <p>Alexandria's vibrant rental market — especially near Metro corridors — creates constant demand for move-in and move-out cleaning. See our guides: <Link to="/blog/move-out-cleaning-checklist-maryland-tenants" className="text-accent hover:underline">move-out cleaning checklist</Link> and our <Link to="/blog/move-in-cleaning-guide-dmv" className="text-accent hover:underline">move-in cleaning guide for DMV renters</Link>.</p>
+      <p>Alexandria's vibrant rental market — especially near Metro corridors — creates constant demand for move-in and move-out cleaning. See our guides: <Link to="/resources/move-out-cleaning-checklist-maryland-tenants" className="text-accent hover:underline">move-out cleaning checklist</Link> and our <Link to="/resources/move-in-cleaning-guide-dmv" className="text-accent hover:underline">move-in cleaning guide for DMV renters</Link>.</p>
 
       <h2>Alexandria Pricing</h2>
       <ul>
@@ -951,7 +951,7 @@ const blogContent: Record<string, React.ReactNode> = {
       <p>Most people spend 90% of their time indoors — but indoor air can be 2 to 5 times more polluted than outdoor air. The main indoor allergen sources:</p>
       <ul>
         <li><strong>Dust mites:</strong> Live in bedding, upholstery, and carpets. Thrive in Maryland's humid climate.</li>
-        <li><strong>Pet dander:</strong> Tiny proteins from pet skin cells that become airborne and settle on surfaces. Nearly impossible to eliminate completely without consistent deep cleaning. See our practical guide: <Link to="/blog/remove-pet-hair-odors-dmv-homes" className="text-accent hover:underline">how to remove pet hair and odors from DMV homes →</Link></li>
+        <li><strong>Pet dander:</strong> Tiny proteins from pet skin cells that become airborne and settle on surfaces. Nearly impossible to eliminate completely without consistent deep cleaning. See our practical guide: <Link to="/resources/remove-pet-hair-odors-dmv-homes" className="text-accent hover:underline">how to remove pet hair and odors from DMV homes →</Link></li>
         <li><strong>Mold spores:</strong> Bathrooms, basements, and kitchens in humid climates like Maryland are prime mold environments.</li>
         <li><strong>Pollen infiltration:</strong> Tracked in on shoes, clothing, pets, and through open windows and HVAC systems during peak season.</li>
         <li><strong>VOCs from cleaning products:</strong> Ironically, conventional cleaning products release volatile organic compounds that worsen indoor air quality.</li>
@@ -987,7 +987,7 @@ const blogContent: Record<string, React.ReactNode> = {
       <p>Conventional cleaning products — bleach, ammonia, synthetic fragrances — release airborne irritants that trigger allergy and asthma symptoms even hours after cleaning. Our <Link to="/services/eco-friendly-cleaning" className="text-accent hover:underline">eco-friendly cleaning service</Link> uses only EPA Safer Choice certified products with no VOC-releasing ingredients. Read the full breakdown: <Link to="/why-eco-friendly-cleaning" className="text-accent hover:underline">why eco-friendly cleaning matters for sensitive households</Link>.</p>
 
       <h2>Professional Allergy-Reduction Cleaning in the DMV</h2>
-      <p>Our HEPA-equipped teams serve allergy-conscious families throughout <Link to="/locations/bethesda-md" className="text-accent hover:underline">Bethesda</Link>, <Link to="/locations/rockville-md" className="text-accent hover:underline">Rockville</Link>, <Link to="/locations/silver-spring-md" className="text-accent hover:underline">Silver Spring</Link>, <Link to="/locations/arlington-va" className="text-accent hover:underline">Arlington</Link>, <Link to="/locations/fairfax-va" className="text-accent hover:underline">Fairfax</Link>, and across the DMV. Our <Link to="/blog/spring-cleaning-checklist-maryland-2026" className="text-accent hover:underline">spring cleaning checklist</Link> and <Link to="/services/deep-cleaning" className="text-accent hover:underline">deep cleaning service</Link> before peak pollen season are two of the highest-impact steps for your home's air quality.</p>
+      <p>Our HEPA-equipped teams serve allergy-conscious families throughout <Link to="/locations/bethesda-md" className="text-accent hover:underline">Bethesda</Link>, <Link to="/locations/rockville-md" className="text-accent hover:underline">Rockville</Link>, <Link to="/locations/silver-spring-md" className="text-accent hover:underline">Silver Spring</Link>, <Link to="/locations/arlington-va" className="text-accent hover:underline">Arlington</Link>, <Link to="/locations/fairfax-va" className="text-accent hover:underline">Fairfax</Link>, and across the DMV. Our <Link to="/resources/spring-cleaning-checklist-maryland-2026" className="text-accent hover:underline">spring cleaning checklist</Link> and <Link to="/services/deep-cleaning" className="text-accent hover:underline">deep cleaning service</Link> before peak pollen season are two of the highest-impact steps for your home's air quality.</p>
 
       <BlogInlineCTA
         headline="Breathe Easier in Your DMV Home"
@@ -1060,7 +1060,7 @@ const blogContent: Record<string, React.ReactNode> = {
       </ul>
 
       <h2>Why Fall Is the Best Time for a Professional Deep Clean</h2>
-      <p>Fall cleaning is the mirror of <Link to="/blog/spring-cleaning-checklist-maryland-2026" className="text-accent hover:underline">spring cleaning</Link> — while spring addresses post-winter buildup, fall resets the home after summer and prepares for the months ahead. Once winter arrives, follow up with our <Link to="/blog/eco-cleaning-tips-winters-maryland" className="text-accent hover:underline">eco-friendly winter cleaning guide →</Link> Our <Link to="/services/deep-cleaning" className="text-accent hover:underline">fall deep cleaning service</Link> covers 60+ checklist items and uses only <Link to="/services/eco-friendly-cleaning" className="text-accent hover:underline">eco-friendly, non-toxic products</Link> — no harsh fumes in your sealed winter home. Learn more: <Link to="/why-eco-friendly-cleaning" className="text-accent hover:underline">why eco-friendly cleaning matters when homes are sealed tight</Link>.</p>
+      <p>Fall cleaning is the mirror of <Link to="/resources/spring-cleaning-checklist-maryland-2026" className="text-accent hover:underline">spring cleaning</Link> — while spring addresses post-winter buildup, fall resets the home after summer and prepares for the months ahead. Once winter arrives, follow up with our <Link to="/resources/eco-cleaning-tips-winters-maryland" className="text-accent hover:underline">eco-friendly winter cleaning guide →</Link> Our <Link to="/services/deep-cleaning" className="text-accent hover:underline">fall deep cleaning service</Link> covers 60+ checklist items and uses only <Link to="/services/eco-friendly-cleaning" className="text-accent hover:underline">eco-friendly, non-toxic products</Link> — no harsh fumes in your sealed winter home. Learn more: <Link to="/why-eco-friendly-cleaning" className="text-accent hover:underline">why eco-friendly cleaning matters when homes are sealed tight</Link>.</p>
 
       <BlogInlineCTA
         headline="Get Your Maryland Home Fall-Ready"
@@ -1088,7 +1088,7 @@ const blogContent: Record<string, React.ReactNode> = {
       <p>Established subdivisions with larger colonial and split-level homes from the 1980s–2000s. More square footage means more to clean — basements, multiple bathrooms, and home offices. Quarterly <Link to="/services/deep-cleaning" className="text-accent hover:underline">deep cleaning</Link> alongside monthly maintenance is common here.</p>
 
       <h2>What to Expect from a Professional Clean in Gaithersburg</h2>
-      <p>A standard recurring clean covers all bathrooms, kitchen surfaces, appliance exteriors, HEPA vacuuming, mopping, dusting, and trash. New clients and seasonal resets start with a <Link to="/services/deep-cleaning" className="text-accent hover:underline">deep cleaning</Link> that adds inside appliances, grout scrubbing, and detailed baseboards. For pricing: <Link to="/blog/house-cleaning-prices-maryland-2026" className="text-accent hover:underline">2026 Maryland pricing guide →</Link></p>
+      <p>A standard recurring clean covers all bathrooms, kitchen surfaces, appliance exteriors, HEPA vacuuming, mopping, dusting, and trash. New clients and seasonal resets start with a <Link to="/services/deep-cleaning" className="text-accent hover:underline">deep cleaning</Link> that adds inside appliances, grout scrubbing, and detailed baseboards. For pricing: <Link to="/resources/house-cleaning-prices-maryland-2026" className="text-accent hover:underline">2026 Maryland pricing guide →</Link></p>
 
       <h2>Gaithersburg Cleaning Prices</h2>
       <ul>
@@ -1101,7 +1101,7 @@ const blogContent: Record<string, React.ReactNode> = {
       <p>Every Capital Clean Care visit uses EPA Safer Choice certified, plant-based products with no chlorine, ammonia, or artificial fragrances. Gaithersburg sits within the Chesapeake Bay watershed — our product choices reflect that responsibility. <Link to="/why-eco-friendly-cleaning" className="text-accent hover:underline">Why eco-friendly matters for your family →</Link></p>
 
       <h2>Choosing a Cleaning Service in Gaithersburg</h2>
-      <p>Look for full liability insurance, background-checked teams, local reviews, and transparent pricing. Our guide on <Link to="/blog/how-to-choose-cleaning-service-silver-spring" className="text-accent hover:underline">how to choose a cleaning service</Link> covers the exact questions to ask. For the full Montgomery County picture, see our <Link to="/blog/deep-cleaning-montgomery-county-md" className="text-accent hover:underline">Montgomery County deep cleaning guide →</Link></p>
+      <p>Look for full liability insurance, background-checked teams, local reviews, and transparent pricing. Our guide on <Link to="/resources/how-to-choose-cleaning-service-silver-spring" className="text-accent hover:underline">how to choose a cleaning service</Link> covers the exact questions to ask. For the full Montgomery County picture, see our <Link to="/resources/deep-cleaning-montgomery-county-md" className="text-accent hover:underline">Montgomery County deep cleaning guide →</Link></p>
 
       <BlogInlineCTA
         headline="Gaithersburg's Eco-Friendly Cleaning Specialists"
@@ -1138,7 +1138,7 @@ const blogContent: Record<string, React.ReactNode> = {
       <p>Our plant-based, EPA Safer Choice certified products won't damage marble countertops, hardwood floors, or specialty finishes. No ammonia, no chlorine, no abrasives on delicate surfaces. <Link to="/why-eco-friendly-cleaning" className="text-accent hover:underline">Why this matters for high-end homes →</Link></p>
 
       <h2>Serving McLean and Northern Virginia</h2>
-      <p>In addition to McLean, we serve <Link to="/locations/falls-church-va" className="text-accent hover:underline">Falls Church</Link>, <Link to="/locations/arlington-va" className="text-accent hover:underline">Arlington</Link>, <Link to="/locations/fairfax-va" className="text-accent hover:underline">Fairfax</Link>, and <Link to="/locations/reston-va" className="text-accent hover:underline">Reston</Link>. See our <Link to="/blog/cleaning-service-fairfax-va" className="text-accent hover:underline">Fairfax cleaning guide</Link> and <Link to="/blog/cleaning-service-reston-va" className="text-accent hover:underline">Reston cleaning guide →</Link></p>
+      <p>In addition to McLean, we serve <Link to="/locations/falls-church-va" className="text-accent hover:underline">Falls Church</Link>, <Link to="/locations/arlington-va" className="text-accent hover:underline">Arlington</Link>, <Link to="/locations/fairfax-va" className="text-accent hover:underline">Fairfax</Link>, and <Link to="/locations/reston-va" className="text-accent hover:underline">Reston</Link>. See our <Link to="/resources/cleaning-service-fairfax-va" className="text-accent hover:underline">Fairfax cleaning guide</Link> and <Link to="/resources/cleaning-service-reston-va" className="text-accent hover:underline">Reston cleaning guide →</Link></p>
 
       <BlogInlineCTA
         headline="McLean's Trusted Professional Cleaning Service"
@@ -1166,7 +1166,7 @@ const blogContent: Record<string, React.ReactNode> = {
       <p>Newer, larger homes with contemporary finishes — open kitchens, formal dining rooms, and primary suites. These homes reward consistent <Link to="/services/recurring-cleaning" className="text-accent hover:underline">maintenance cleaning</Link> to keep surfaces looking new.</p>
 
       <h2>Deep Cleaning in Columbia</h2>
-      <p>A <Link to="/services/deep-cleaning" className="text-accent hover:underline">deep cleaning</Link> is the ideal starting point for new recurring clients. Our <Link to="/blog/deep-cleaning-checklist-dmv-homeowners" className="text-accent hover:underline">deep cleaning checklist</Link> covers every room with 60+ items.</p>
+      <p>A <Link to="/services/deep-cleaning" className="text-accent hover:underline">deep cleaning</Link> is the ideal starting point for new recurring clients. Our <Link to="/resources/deep-cleaning-checklist-dmv-homeowners" className="text-accent hover:underline">deep cleaning checklist</Link> covers every room with 60+ items.</p>
 
       <h2>Columbia Cleaning Prices</h2>
       <ul>
@@ -1174,7 +1174,7 @@ const blogContent: Record<string, React.ReactNode> = {
         <li><strong>3-bedroom home:</strong> $200 – $270 per standard clean</li>
         <li><strong>4-bedroom home:</strong> $250 – $320 per standard clean</li>
       </ul>
-      <p>For detailed pricing: <Link to="/blog/house-cleaning-prices-maryland-2026" className="text-accent hover:underline">Maryland pricing guide →</Link></p>
+      <p>For detailed pricing: <Link to="/resources/house-cleaning-prices-maryland-2026" className="text-accent hover:underline">Maryland pricing guide →</Link></p>
 
       <h2>Eco-Friendly for Howard County's Sustainability-Minded Community</h2>
       <p>Columbia's residents are among the most environmentally aware in Maryland. Our plant-based, EPA Safer Choice certified products align with the values of this community. <Link to="/why-eco-friendly-cleaning" className="text-accent hover:underline">Why eco-friendly cleaning matters →</Link></p>
@@ -1211,7 +1211,7 @@ const blogContent: Record<string, React.ReactNode> = {
       </ul>
 
       <h2>Serving Potomac and Surrounding Montgomery County</h2>
-      <p>We also serve <Link to="/locations/bethesda-md" className="text-accent hover:underline">Bethesda</Link>, <Link to="/locations/chevy-chase-md" className="text-accent hover:underline">Chevy Chase</Link>, <Link to="/locations/rockville-md" className="text-accent hover:underline">Rockville</Link>, and <Link to="/locations/kensington-md" className="text-accent hover:underline">Kensington</Link>. For the county-wide picture: <Link to="/blog/deep-cleaning-montgomery-county-md" className="text-accent hover:underline">Montgomery County deep cleaning guide →</Link></p>
+      <p>We also serve <Link to="/locations/bethesda-md" className="text-accent hover:underline">Bethesda</Link>, <Link to="/locations/chevy-chase-md" className="text-accent hover:underline">Chevy Chase</Link>, <Link to="/locations/rockville-md" className="text-accent hover:underline">Rockville</Link>, and <Link to="/locations/kensington-md" className="text-accent hover:underline">Kensington</Link>. For the county-wide picture: <Link to="/resources/deep-cleaning-montgomery-county-md" className="text-accent hover:underline">Montgomery County deep cleaning guide →</Link></p>
 
       <BlogInlineCTA
         headline="Estate-Level Cleaning for Potomac Homeowners"
@@ -1235,7 +1235,7 @@ const blogContent: Record<string, React.ReactNode> = {
       </ul>
 
       <h2>Spring Allergy Season in Chevy Chase</h2>
-      <p>Chevy Chase's proximity to Rock Creek Park makes pollen season intense. A professional <Link to="/services/deep-cleaning" className="text-accent hover:underline">deep clean</Link> before peak season is essential for allergy households. See: <Link to="/blog/allergy-proofing-home-dmv" className="text-accent hover:underline">how to allergy-proof your DMV home →</Link></p>
+      <p>Chevy Chase's proximity to Rock Creek Park makes pollen season intense. A professional <Link to="/services/deep-cleaning" className="text-accent hover:underline">deep clean</Link> before peak season is essential for allergy households. See: <Link to="/resources/allergy-proofing-home-dmv" className="text-accent hover:underline">how to allergy-proof your DMV home →</Link></p>
 
       <h2>Chevy Chase Cleaning Prices</h2>
       <ul>
@@ -1243,13 +1243,13 @@ const blogContent: Record<string, React.ReactNode> = {
         <li><strong>3-bedroom home:</strong> $210 – $280 per standard clean</li>
         <li><strong>4-bedroom home:</strong> $270 – $360 per standard clean</li>
       </ul>
-      <p>Detailed pricing: <Link to="/blog/house-cleaning-prices-maryland-2026" className="text-accent hover:underline">Maryland pricing guide →</Link></p>
+      <p>Detailed pricing: <Link to="/resources/house-cleaning-prices-maryland-2026" className="text-accent hover:underline">Maryland pricing guide →</Link></p>
 
       <h2>Non-Toxic Products for Historic Homes</h2>
       <p>Chevy Chase's older homes have less airtight construction — chemical products linger longer and can react with period finishes. Our EPA Safer Choice certified approach protects both your family and your home's original materials. <Link to="/why-eco-friendly-cleaning" className="text-accent hover:underline">Our eco commitment →</Link></p>
 
       <h2>Serving Chevy Chase and Nearby Neighborhoods</h2>
-      <p>We serve both the Maryland and DC sides of Chevy Chase, as well as <Link to="/locations/kensington-md" className="text-accent hover:underline">Kensington</Link>, <Link to="/locations/bethesda-md" className="text-accent hover:underline">Bethesda</Link>, and DC neighborhoods like <Link to="/locations/georgetown-dc" className="text-accent hover:underline">Georgetown</Link>. See our <Link to="/blog/house-cleaning-bethesda-md" className="text-accent hover:underline">Bethesda cleaning guide →</Link></p>
+      <p>We serve both the Maryland and DC sides of Chevy Chase, as well as <Link to="/locations/kensington-md" className="text-accent hover:underline">Kensington</Link>, <Link to="/locations/bethesda-md" className="text-accent hover:underline">Bethesda</Link>, and DC neighborhoods like <Link to="/locations/georgetown-dc" className="text-accent hover:underline">Georgetown</Link>. See our <Link to="/resources/house-cleaning-bethesda-md" className="text-accent hover:underline">Bethesda cleaning guide →</Link></p>
 
       <BlogInlineCTA
         headline="Chevy Chase's Trusted House Cleaning Service"
@@ -1274,10 +1274,10 @@ const blogContent: Record<string, React.ReactNode> = {
       <p>Large colonials and craftsman-style homes with modern open-plan kitchens and multiple bathrooms. Families with children need reliable <Link to="/services/recurring-cleaning" className="text-accent hover:underline">recurring cleaning</Link> to stay ahead of daily use.</p>
 
       <h2>Frederick's Seasonal Cleaning Needs</h2>
-      <p>Frederick's location in western Maryland's foothills means distinct seasons. Our <Link to="/blog/spring-cleaning-checklist-maryland-2026" className="text-accent hover:underline">spring cleaning checklist</Link> and <Link to="/blog/fall-cleaning-checklist-maryland" className="text-accent hover:underline">fall cleaning guide</Link> are both tailored to Maryland's climate.</p>
+      <p>Frederick's location in western Maryland's foothills means distinct seasons. Our <Link to="/resources/spring-cleaning-checklist-maryland-2026" className="text-accent hover:underline">spring cleaning checklist</Link> and <Link to="/resources/fall-cleaning-checklist-maryland" className="text-accent hover:underline">fall cleaning guide</Link> are both tailored to Maryland's climate.</p>
 
       <h2>Post-Renovation Cleaning in Frederick</h2>
-      <p>Frederick's active real estate market drives constant renovation. After any construction project, professional <Link to="/blog/post-renovation-cleaning-guide-maryland" className="text-accent hover:underline">post-renovation cleaning</Link> is essential to remove fine construction dust from HVAC systems before occupancy.</p>
+      <p>Frederick's active real estate market drives constant renovation. After any construction project, professional <Link to="/resources/post-renovation-cleaning-guide-maryland" className="text-accent hover:underline">post-renovation cleaning</Link> is essential to remove fine construction dust from HVAC systems before occupancy.</p>
 
       <h2>Frederick Cleaning Prices</h2>
       <ul>
@@ -1314,7 +1314,7 @@ const blogContent: Record<string, React.ReactNode> = {
       <p>The good news: a properly executed eco deep clean is <em>not</em> a weaker clean. EPA Safer Choice–certified, plant-based products cut grease, lift soap scum, and sanitize at the same level as conventional chemicals — they just do it without the collateral damage. <Link to="/why-eco-friendly-cleaning" className="text-accent hover:underline">Here's how that works →</Link></p>
 
       <h2>What a Deep Clean Actually Covers</h2>
-      <p>A deep clean goes well beyond a standard tidy — it resets the parts of the home that routine cleaning never reaches: inside the oven and refrigerator, scrubbed grout, baseboards, door frames, ceiling fans, vent covers, light fixtures, and window tracks. Rather than repeat the full list here, we keep one master reference: <Link to="/blog/what-is-included-in-a-deep-cleaning" className="text-accent hover:underline">what's included in a deep cleaning (full room-by-room checklist) →</Link>. Everything on that list, we do with green products — and our <Link to="/services/deep-cleaning" className="text-accent hover:underline">deep cleaning service</Link> page breaks down exactly what's covered.</p>
+      <p>A deep clean goes well beyond a standard tidy — it resets the parts of the home that routine cleaning never reaches: inside the oven and refrigerator, scrubbed grout, baseboards, door frames, ceiling fans, vent covers, light fixtures, and window tracks. Rather than repeat the full list here, we keep one master reference: <Link to="/resources/what-is-included-in-a-deep-cleaning" className="text-accent hover:underline">what's included in a deep cleaning (full room-by-room checklist) →</Link>. Everything on that list, we do with green products — and our <Link to="/services/deep-cleaning" className="text-accent hover:underline">deep cleaning service</Link> page breaks down exactly what's covered.</p>
 
       <h2>Deep Cleaning Across Montgomery County's Communities</h2>
       <p>Montgomery County isn't one housing stock — it's dozens. The right deep-clean approach depends on where you live, so we've built a dedicated guide for each of the county's major communities:</p>
@@ -1334,7 +1334,7 @@ const blogContent: Record<string, React.ReactNode> = {
       </ul>
 
       <h2>What Does It Cost in Montgomery County?</h2>
-      <p>Deep-clean pricing depends mostly on home size and how long it's been since the last reset — not on which part of the county you're in. We keep current DMV pricing in one place rather than restating it: <Link to="/blog/how-much-does-deep-cleaning-cost" className="text-accent hover:underline">how much a deep cleaning costs (2026 prices) →</Link>. New clients also get 15% off the first visit.</p>
+      <p>Deep-clean pricing depends mostly on home size and how long it's been since the last reset — not on which part of the county you're in. We keep current DMV pricing in one place rather than restating it: <Link to="/resources/how-much-does-deep-cleaning-cost" className="text-accent hover:underline">how much a deep cleaning costs (2026 prices) →</Link>. New clients also get 15% off the first visit.</p>
 
       <BlogInlineCTA
         headline="Montgomery County's Eco-Friendly Deep Cleaning Team"
@@ -1362,7 +1362,7 @@ const blogContent: Record<string, React.ReactNode> = {
       <p>Reston Town Center's high-rise buildings attract tech workers who want efficiency and reliability. Flexible scheduling around busy work schedules is essential.</p>
 
       <h2>Allergy Control in Reston</h2>
-      <p>Reston's tree canopy and natural areas make pollen season impactful. For allergy households, HEPA deep cleaning before peak season is valuable. See: <Link to="/blog/allergy-proofing-home-dmv" className="text-accent hover:underline">allergy-proofing your DMV home →</Link></p>
+      <p>Reston's tree canopy and natural areas make pollen season impactful. For allergy households, HEPA deep cleaning before peak season is valuable. See: <Link to="/resources/allergy-proofing-home-dmv" className="text-accent hover:underline">allergy-proofing your DMV home →</Link></p>
 
       <h2>Reston Cleaning Prices</h2>
       <ul>
@@ -1370,13 +1370,13 @@ const blogContent: Record<string, React.ReactNode> = {
         <li><strong>2-3BR townhome:</strong> $190 – $250 per standard clean</li>
         <li><strong>3-4BR single family:</strong> $250 – $330 per standard clean</li>
       </ul>
-      <p>Full pricing breakdown: <Link to="/blog/house-cleaning-prices-maryland-2026" className="text-accent hover:underline">DMV pricing guide →</Link></p>
+      <p>Full pricing breakdown: <Link to="/resources/house-cleaning-prices-maryland-2026" className="text-accent hover:underline">DMV pricing guide →</Link></p>
 
       <h2>Eco-Friendly for Reston's Tech Community</h2>
       <p>Reston's tech-forward community is one of the most environmentally conscious in Northern Virginia. Our EPA Safer Choice certified, plant-based products resonate with Reston's values. <Link to="/why-eco-friendly-cleaning" className="text-accent hover:underline">Our eco commitment →</Link></p>
 
       <h2>Serving Reston and Northern Virginia</h2>
-      <p>We also serve <Link to="/locations/herndon-va" className="text-accent hover:underline">Herndon</Link>, <Link to="/locations/fairfax-va" className="text-accent hover:underline">Fairfax</Link>, <Link to="/locations/mclean-va" className="text-accent hover:underline">McLean</Link>, and <Link to="/locations/arlington-va" className="text-accent hover:underline">Arlington</Link>. See our <Link to="/blog/cleaning-service-mclean-va" className="text-accent hover:underline">McLean guide</Link> and <Link to="/blog/cleaning-service-fairfax-va" className="text-accent hover:underline">Fairfax guide →</Link></p>
+      <p>We also serve <Link to="/locations/herndon-va" className="text-accent hover:underline">Herndon</Link>, <Link to="/locations/fairfax-va" className="text-accent hover:underline">Fairfax</Link>, <Link to="/locations/mclean-va" className="text-accent hover:underline">McLean</Link>, and <Link to="/locations/arlington-va" className="text-accent hover:underline">Arlington</Link>. See our <Link to="/resources/cleaning-service-mclean-va" className="text-accent hover:underline">McLean guide</Link> and <Link to="/resources/cleaning-service-fairfax-va" className="text-accent hover:underline">Fairfax guide →</Link></p>
 
       <BlogInlineCTA
         headline="Reston's Professional Eco-Friendly Cleaning Service"
@@ -1408,7 +1408,7 @@ const blogContent: Record<string, React.ReactNode> = {
         <li><strong>3x per week:</strong> Small offices (5–15 people)</li>
         <li><strong>Weekly:</strong> Solo practices and boutique offices — keeps the space guest-ready at all times</li>
       </ul>
-      <p>Our <Link to="/blog/recurring-cleaning-weekly-biweekly-monthly" className="text-accent hover:underline">frequency guide</Link> applies to both residential and commercial spaces.</p>
+      <p>Our <Link to="/resources/recurring-cleaning-weekly-biweekly-monthly" className="text-accent hover:underline">frequency guide</Link> applies to both residential and commercial spaces.</p>
 
       <h2>Why Eco-Friendly Products Matter for Your Office</h2>
       <p>Conventional products release VOCs that linger in office air for hours — reducing the air quality of the space you just cleaned. This particularly affects smaller offices without industrial ventilation. Our EPA Safer Choice certified products deliver professional results without chemical fumes. <Link to="/why-eco-friendly-cleaning" className="text-accent hover:underline">Why this matters →</Link></p>
@@ -1584,7 +1584,7 @@ const BlogPost = () => {
     ? <article className="prose prose-lg max-w-none" dangerouslySetInnerHTML={{ __html: autoPost.content }} />
     : blogContent[post.slug];
 
-  const postUrl = `https://capitalcleancare.com/blog/${post.slug}`;
+  const postUrl = `https://capitalcleancare.com/resources/${post.slug}`;
   const howtoData = HOWTO_DATA[post.slug];
 
   // Keep the <title> under 70 chars (Bing): append the brand only when it fits,
@@ -1621,10 +1621,10 @@ const BlogPost = () => {
           image={post.coverImage}
         />
       )}
-      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }, { label: post.title, href: `/blog/${post.slug}` }]} />
+      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: post.title, href: `/resources/${post.slug}` }]} />
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 max-w-3xl">
-          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }, { label: post.title }]} className="mb-6" />
+          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: post.title }]} className="mb-6" />
           
           <div className="flex items-center gap-3 text-xs text-muted-foreground mb-4">
             <span className="bg-accent/10 text-accent px-2 py-0.5 rounded-full font-medium">{post.category}</span>
@@ -1664,7 +1664,7 @@ const BlogPost = () => {
 
           <div className="mt-12 pt-8 border-t border-border">
             <Button variant="outline" asChild>
-              <Link to="/blog"><ArrowLeft className="mr-2 h-4 w-4" /> Back to Blog</Link>
+              <Link to="/resources"><ArrowLeft className="mr-2 h-4 w-4" /> Back to Blog</Link>
             </Button>
           </div>
         </div>

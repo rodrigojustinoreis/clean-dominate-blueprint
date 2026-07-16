@@ -34,7 +34,7 @@ const HolidayCleaningChecklist = () => {
     title: "Holiday Cleaning Checklist for DMV Hosts (2026)",
     description:
       "A stage-by-stage holiday cleaning checklist for hosting in the DMV — the week-before deep clean, guest-ready touches, the day-of reset, and after-party cleanup.",
-    canonical: "https://capitalcleancare.com/blog/holiday-cleaning-checklist-dmv",
+    canonical: "https://capitalcleancare.com/resources/holiday-cleaning-checklist-dmv",
   });
 
   return (
@@ -47,16 +47,16 @@ const HolidayCleaningChecklist = () => {
       <ArticleSchema
         title="Holiday Cleaning Checklist for DMV Hosts (2026)"
         description="A stage-by-stage holiday cleaning checklist for hosting — the week-before deep clean, guest-ready touches, the day-of reset, and after-party cleanup."
-        url="https://capitalcleancare.com/blog/holiday-cleaning-checklist-dmv"
+        url="https://capitalcleancare.com/resources/holiday-cleaning-checklist-dmv"
         datePublished="2026-06-16"
         image={HERO_IMAGE}
       />
       <FAQSchema faqs={faqs} />
-      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }, { label: "Holiday Cleaning Checklist for DMV Hosts", href: "/blog/holiday-cleaning-checklist-dmv" }]} />
+      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "Holiday Cleaning Checklist for DMV Hosts", href: "/resources/holiday-cleaning-checklist-dmv" }]} />
 
       <div className="bg-gray-50 py-4 border-b">
         <div className="container mx-auto px-4 max-w-5xl">
-          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }, { label: "Holiday Cleaning Checklist for DMV Hosts" }]} />
+          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "Holiday Cleaning Checklist for DMV Hosts" }]} />
         </div>
       </div>
 
@@ -98,9 +98,9 @@ const HolidayCleaningChecklist = () => {
               <p className="font-semibold text-foreground mb-1">Keep reading</p>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 See{" "}
-                <Link to="/blog/what-is-included-in-a-deep-cleaning" className="text-accent underline hover:no-underline">what's included in a deep cleaning</Link>{" "}
+                <Link to="/resources/what-is-included-in-a-deep-cleaning" className="text-accent underline hover:no-underline">what's included in a deep cleaning</Link>{" "}
                 or{" "}
-                <Link to="/blog/how-to-prepare-home-for-professional-cleaning" className="text-accent underline hover:no-underline">how to prepare your home for a professional cleaning</Link>.
+                <Link to="/resources/how-to-prepare-home-for-professional-cleaning" className="text-accent underline hover:no-underline">how to prepare your home for a professional cleaning</Link>.
               </p>
             </div>
           </FadeInSection>

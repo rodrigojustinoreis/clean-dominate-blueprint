@@ -86,7 +86,7 @@ const PetSneezingHouseholdDust = () => {
     title: "Is Your Pet Sneezing? How Household Dust Affects Their Lungs",
     description:
       "Dust mites, dander & pollen are inhalant allergens for pets — and can trigger feline asthma. Why your dog or cat sneezes and coughs, and the cleaning routine that helps them breathe.",
-    canonical: "https://capitalcleancare.com/blog/pet-sneezing-household-dust",
+    canonical: "https://capitalcleancare.com/resources/pet-sneezing-household-dust",
   });
 
   return (
@@ -102,14 +102,14 @@ const PetSneezingHouseholdDust = () => {
       <ArticleSchema
         title="Is Your Pet Sneezing? How Household Dust Affects Their Lungs"
         description="How house dust, dust mites, dander, and pollen act as inhalant allergens for dogs and cats — the difference between sneezing, reverse sneezing, and a cough, feline asthma warning signs, and the cleaning routine that lowers the load."
-        url="https://capitalcleancare.com/blog/pet-sneezing-household-dust"
+        url="https://capitalcleancare.com/resources/pet-sneezing-household-dust"
         datePublished="2026-06-14"
         image={HERO_IMAGE}
       />
       <HowToSchema
         name="How to Reduce Household Dust That Affects Your Pet's Breathing"
         description="A four-step routine to lower the house dust, dust mites, and dander that irritate a pet's respiratory system, using HEPA vacuuming, hot-water laundering, humidity control, and air filtration."
-        url="https://capitalcleancare.com/blog/pet-sneezing-household-dust"
+        url="https://capitalcleancare.com/resources/pet-sneezing-household-dust"
         steps={howToSteps}
         totalTime="PT45M"
         image={HERO_IMAGE}
@@ -118,8 +118,8 @@ const PetSneezingHouseholdDust = () => {
       <BreadcrumbSchema
         items={[
           { label: "Home", href: "/" },
-          { label: "Blog", href: "/blog" },
-          { label: "Is Your Pet Sneezing? Household Dust & Their Lungs", href: "/blog/pet-sneezing-household-dust" },
+          { label: "Resources", href: "/resources" },
+          { label: "Is Your Pet Sneezing? Household Dust & Their Lungs", href: "/resources/pet-sneezing-household-dust" },
         ]}
       />
 
@@ -129,7 +129,7 @@ const PetSneezingHouseholdDust = () => {
           <Breadcrumbs
             items={[
               { label: "Home", href: "/" },
-              { label: "Blog", href: "/blog" },
+              { label: "Resources", href: "/resources" },
               { label: "Is Your Pet Sneezing? How Household Dust Affects Their Lungs" },
             ]}
           />
@@ -291,7 +291,7 @@ const PetSneezingHouseholdDust = () => {
                   For a pet with airway sensitivity, the wrong cleaner adds irritation instead of removing it. That's why our{" "}
                   <Link to="/services/eco-friendly-cleaning" className="text-accent underline hover:no-underline">eco-friendly cleaning</Link>{" "}
                   uses only plant-based, fragrance-free, low-residue products. Related reading:{" "}
-                  <Link to="/blog/pet-dander-air-quality" className="text-accent underline hover:no-underline">how pet dander wrecks your air quality</Link>.
+                  <Link to="/resources/pet-dander-air-quality" className="text-accent underline hover:no-underline">how pet dander wrecks your air quality</Link>.
                 </p>
               </div>
             </div>

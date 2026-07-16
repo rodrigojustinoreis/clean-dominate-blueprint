@@ -13,7 +13,7 @@ import StickyCTA from "@/components/blog/StickyCTA";
 import RelatedPosts from "@/components/blog/RelatedPosts";
 
 const HERO_IMAGE = "/images/blog/airbnb-bedroom-turnover.webp";
-const URL = "https://capitalcleancare.com/blog/airbnb-cleaning-checklist";
+const URL = "https://capitalcleancare.com/resources/airbnb-cleaning-checklist";
 
 const toc: { href: string; label: string }[] = [
   { href: "#room-by-room", label: "The room-by-room turnover checklist" },

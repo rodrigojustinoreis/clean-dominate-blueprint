@@ -203,70 +203,70 @@ const AppRoutesLazy = () => (
     <Route path="/services/:slug" element={<ServicePage />} />
     <Route path="/why-eco-friendly-cleaning" element={<WhyEcoFriendlyPage />} />
     <Route path="/faq" element={<FAQPage />} />
-    <Route path="/blog" element={<Blog />} />
-    <Route path="/blog/topic/:topicSlug" element={<BlogTopic />} />
-    <Route path="/blog/how-to-clean-carpet-home-apartment" element={<HowToCleanCarpetBlog />} />
-    <Route path="/blog/how-to-remove-candle-wax-eco-friendly" element={<HowToRemoveCandleWaxBlog />} />
-    <Route path="/blog/how-to-clean-your-washing-machine-eco-friendly" element={<HowToCleanYourWashingMachineEcoFriendly />} />
-    <Route path="/blog/how-to-get-rid-of-mildew-smell-naturally" element={<HowToGetRidOfMildewSmellNaturally />} />
-    <Route path="/blog/how-to-get-cigarette-smell-out-of-your-house" element={<HowToGetCigaretteSmellOutOfYourHouse />} />
-    <Route path="/blog/how-to-remove-sharpie-safely" element={<HowToRemoveSharpieSafely />} />
-    <Route path="/blog/how-to-remove-hard-water-stains-naturally" element={<HowToRemoveHardWaterStainsNaturally />} />
-    <Route path="/blog/how-to-clean-grout-without-bleach" element={<HowToCleanGroutWithoutBleach />} />
-    <Route path="/blog/how-to-clean-oled-tv-screen-safely" element={<HowToCleanOledTvScreenSafely />} />
-    <Route path="/blog/why-pet-skin-allergies-start-in-carpet" element={<WhyPetSkinAllergiesStartInCarpet />} />
-    <Route path="/blog/pet-dander-air-quality" element={<PetDanderAirQuality />} />
-    <Route path="/blog/pet-sneezing-household-dust" element={<PetSneezingHouseholdDust />} />
-    <Route path="/blog/allergen-free-home-dog-cat-owners" element={<AllergenFreeHomeForPets />} />
-    <Route path="/blog/seasonal-vs-household-pet-allergies" element={<SeasonalVsHouseholdPetAllergies />} />
-    <Route path="/blog/hepa-filters-pets-asthma" element={<HepaFiltersPetsAsthma />} />
-    <Route path="/blog/cleaning-product-poisoning-in-pets" element={<CleaningProductPoisoningPets />} />
-    <Route path="/blog/what-pet-safe-cleaning-really-means" element={<WhatPetSafeCleaningMeans />} />
-    <Route path="/blog/choose-pet-safe-cleaning-company" element={<ChoosePetSafeCleaningCompany />} />
-    <Route path="/blog/house-cleaning-cost-bethesda-md" element={<HouseCleaningCostCity citySlug="bethesda-md" />} />
-    <Route path="/blog/house-cleaning-cost-rockville-md" element={<HouseCleaningCostCity citySlug="rockville-md" />} />
-    <Route path="/blog/house-cleaning-cost-silver-spring-md" element={<HouseCleaningCostCity citySlug="silver-spring-md" />} />
-    <Route path="/blog/house-cleaning-cost-arlington-va" element={<HouseCleaningCostCity citySlug="arlington-va" />} />
-    <Route path="/blog/house-cleaning-cost-alexandria-va" element={<HouseCleaningCostCity citySlug="alexandria-va" />} />
-    <Route path="/blog/deep-cleaning-vs-regular-cleaning" element={<DeepVsRegularCleaning />} />
-    <Route path="/blog/what-is-included-in-a-deep-cleaning" element={<WhatsIncludedDeepCleaning />} />
-    <Route path="/blog/how-often-should-you-hire-a-cleaning-service" element={<HowOftenHireCleaningService />} />
-    <Route path="/blog/one-time-vs-recurring-cleaning" element={<OneTimeVsRecurringCleaning />} />
-    <Route path="/blog/how-much-does-deep-cleaning-cost" element={<HowMuchDeepCleaningCosts />} />
-    <Route path="/blog/what-is-included-in-a-standard-cleaning" element={<WhatsIncludedStandardCleaning />} />
-    <Route path="/blog/is-professional-house-cleaning-worth-it" element={<IsProfessionalCleaningWorthIt />} />
-    <Route path="/blog/move-out-cleaning-cost-maryland" element={<MoveOutCleaningCostMaryland />} />
-    <Route path="/blog/best-house-cleaning-service-rockville-md" element={<BestHouseCleaningRockville />} />
-    <Route path="/blog/best-house-cleaning-service-silver-spring-md" element={<BestHouseCleaningSilverSpring />} />
-    <Route path="/blog/house-cleaning-guide-germantown-md" element={<HouseCleaningGuideGermantown />} />
-    <Route path="/blog/house-cleaning-guide-clarksburg-md" element={<HouseCleaningGuideClarksburg />} />
-    <Route path="/blog/post-construction-cleaning-montgomery-county-md" element={<PostConstructionCleaningMontgomeryCounty />} />
-    <Route path="/blog/best-house-cleaning-service-bethesda-md" element={<BestHouseCleaningBethesda />} />
-    <Route path="/blog/deep-cleaning-cost-maryland" element={<DeepCleaningCostMaryland />} />
-    <Route path="/blog/how-to-clean-up-after-a-party" element={<PostHolidayCleanup />} />
-    <Route path="/blog/cleaning-company-vs-independent-cleaner" element={<CleaningCompanyVsIndependentCleaner />} />
-    <Route path="/blog/local-cleaning-company-vs-franchise" element={<LocalCleaningCompanyVsFranchise />} />
-    <Route path="/blog/questions-to-ask-before-hiring-house-cleaner" element={<QuestionsToAskBeforeHiringHouseCleaner />} />
-    <Route path="/blog/why-first-house-cleaning-costs-more" element={<WhyFirstHouseCleaningCostsMore />} />
-    <Route path="/blog/flat-rate-vs-hourly-house-cleaning" element={<FlatRateVsHourlyHouseCleaning />} />
-    <Route path="/blog/red-flags-house-cleaning-service" element={<RedFlagsHouseCleaningService />} />
-    <Route path="/blog/hidden-fees-house-cleaning" element={<HiddenFeesHouseCleaning />} />
-    <Route path="/blog/house-too-messy-for-cleaning-service" element={<HouseTooMessyForCleaningService />} />
-    <Route path="/blog/how-long-does-deep-cleaning-take" element={<HowLongDeepCleaningTakes />} />
-    <Route path="/blog/airbnb-cleaning-checklist" element={<AirbnbCleaningChecklist />} />
-    <Route path="/blog/how-much-tip-house-cleaner" element={<HowMuchTipHouseCleaner />} />
-    <Route path="/blog/move-in-cleaning-checklist" element={<MoveInCleaningChecklist />} />
-    <Route path="/blog/most-forgotten-areas-when-cleaning" element={<MostForgottenCleaningAreas />} />
-    <Route path="/blog/why-dust-builds-up-maryland-homes" element={<WhyDustBuildsUpMaryland />} />
-    <Route path="/blog/how-to-prepare-home-for-professional-cleaning" element={<PrepareHomeForCleaning />} />
-    <Route path="/blog/how-to-keep-house-clean-between-cleanings" element={<KeepHouseCleanBetween />} />
-    <Route path="/blog/summer-cleaning-checklist-maryland" element={<SummerCleaningChecklist />} />
-    <Route path="/blog/holiday-cleaning-checklist-dmv" element={<HolidayCleaningChecklist />} />
-    <Route path="/blog/cleaning-tips-for-working-professionals" element={<CleaningTipsWorkingProfessionals />} />
-    <Route path="/blog/how-to-remove-red-wine-stains" element={<HowToRemoveRedWineStains />} />
-    <Route path="/blog/how-to-get-rid-of-dog-smell-pet-safe" element={<HowToGetRidOfDogSmellPetSafe />} />
-    <Route path="/blog/how-to-remove-sticker-residue-natural" element={<HowToRemoveStickerResidueNatural />} />
-    <Route path="/blog/:slug" element={<BlogPost />} />
+    <Route path="/resources" element={<Blog />} />
+    <Route path="/resources/topic/:topicSlug" element={<BlogTopic />} />
+    <Route path="/resources/how-to-clean-carpet-home-apartment" element={<HowToCleanCarpetBlog />} />
+    <Route path="/resources/how-to-remove-candle-wax-eco-friendly" element={<HowToRemoveCandleWaxBlog />} />
+    <Route path="/resources/how-to-clean-your-washing-machine-eco-friendly" element={<HowToCleanYourWashingMachineEcoFriendly />} />
+    <Route path="/resources/how-to-get-rid-of-mildew-smell-naturally" element={<HowToGetRidOfMildewSmellNaturally />} />
+    <Route path="/resources/how-to-get-cigarette-smell-out-of-your-house" element={<HowToGetCigaretteSmellOutOfYourHouse />} />
+    <Route path="/resources/how-to-remove-sharpie-safely" element={<HowToRemoveSharpieSafely />} />
+    <Route path="/resources/how-to-remove-hard-water-stains-naturally" element={<HowToRemoveHardWaterStainsNaturally />} />
+    <Route path="/resources/how-to-clean-grout-without-bleach" element={<HowToCleanGroutWithoutBleach />} />
+    <Route path="/resources/how-to-clean-oled-tv-screen-safely" element={<HowToCleanOledTvScreenSafely />} />
+    <Route path="/resources/why-pet-skin-allergies-start-in-carpet" element={<WhyPetSkinAllergiesStartInCarpet />} />
+    <Route path="/resources/pet-dander-air-quality" element={<PetDanderAirQuality />} />
+    <Route path="/resources/pet-sneezing-household-dust" element={<PetSneezingHouseholdDust />} />
+    <Route path="/resources/allergen-free-home-dog-cat-owners" element={<AllergenFreeHomeForPets />} />
+    <Route path="/resources/seasonal-vs-household-pet-allergies" element={<SeasonalVsHouseholdPetAllergies />} />
+    <Route path="/resources/hepa-filters-pets-asthma" element={<HepaFiltersPetsAsthma />} />
+    <Route path="/resources/cleaning-product-poisoning-in-pets" element={<CleaningProductPoisoningPets />} />
+    <Route path="/resources/what-pet-safe-cleaning-really-means" element={<WhatPetSafeCleaningMeans />} />
+    <Route path="/resources/choose-pet-safe-cleaning-company" element={<ChoosePetSafeCleaningCompany />} />
+    <Route path="/resources/house-cleaning-cost-bethesda-md" element={<HouseCleaningCostCity citySlug="bethesda-md" />} />
+    <Route path="/resources/house-cleaning-cost-rockville-md" element={<HouseCleaningCostCity citySlug="rockville-md" />} />
+    <Route path="/resources/house-cleaning-cost-silver-spring-md" element={<HouseCleaningCostCity citySlug="silver-spring-md" />} />
+    <Route path="/resources/house-cleaning-cost-arlington-va" element={<HouseCleaningCostCity citySlug="arlington-va" />} />
+    <Route path="/resources/house-cleaning-cost-alexandria-va" element={<HouseCleaningCostCity citySlug="alexandria-va" />} />
+    <Route path="/resources/deep-cleaning-vs-regular-cleaning" element={<DeepVsRegularCleaning />} />
+    <Route path="/resources/what-is-included-in-a-deep-cleaning" element={<WhatsIncludedDeepCleaning />} />
+    <Route path="/resources/how-often-should-you-hire-a-cleaning-service" element={<HowOftenHireCleaningService />} />
+    <Route path="/resources/one-time-vs-recurring-cleaning" element={<OneTimeVsRecurringCleaning />} />
+    <Route path="/resources/how-much-does-deep-cleaning-cost" element={<HowMuchDeepCleaningCosts />} />
+    <Route path="/resources/what-is-included-in-a-standard-cleaning" element={<WhatsIncludedStandardCleaning />} />
+    <Route path="/resources/is-professional-house-cleaning-worth-it" element={<IsProfessionalCleaningWorthIt />} />
+    <Route path="/resources/move-out-cleaning-cost-maryland" element={<MoveOutCleaningCostMaryland />} />
+    <Route path="/resources/best-house-cleaning-service-rockville-md" element={<BestHouseCleaningRockville />} />
+    <Route path="/resources/best-house-cleaning-service-silver-spring-md" element={<BestHouseCleaningSilverSpring />} />
+    <Route path="/resources/house-cleaning-guide-germantown-md" element={<HouseCleaningGuideGermantown />} />
+    <Route path="/resources/house-cleaning-guide-clarksburg-md" element={<HouseCleaningGuideClarksburg />} />
+    <Route path="/resources/post-construction-cleaning-montgomery-county-md" element={<PostConstructionCleaningMontgomeryCounty />} />
+    <Route path="/resources/best-house-cleaning-service-bethesda-md" element={<BestHouseCleaningBethesda />} />
+    <Route path="/resources/deep-cleaning-cost-maryland" element={<DeepCleaningCostMaryland />} />
+    <Route path="/resources/how-to-clean-up-after-a-party" element={<PostHolidayCleanup />} />
+    <Route path="/resources/cleaning-company-vs-independent-cleaner" element={<CleaningCompanyVsIndependentCleaner />} />
+    <Route path="/resources/local-cleaning-company-vs-franchise" element={<LocalCleaningCompanyVsFranchise />} />
+    <Route path="/resources/questions-to-ask-before-hiring-house-cleaner" element={<QuestionsToAskBeforeHiringHouseCleaner />} />
+    <Route path="/resources/why-first-house-cleaning-costs-more" element={<WhyFirstHouseCleaningCostsMore />} />
+    <Route path="/resources/flat-rate-vs-hourly-house-cleaning" element={<FlatRateVsHourlyHouseCleaning />} />
+    <Route path="/resources/red-flags-house-cleaning-service" element={<RedFlagsHouseCleaningService />} />
+    <Route path="/resources/hidden-fees-house-cleaning" element={<HiddenFeesHouseCleaning />} />
+    <Route path="/resources/house-too-messy-for-cleaning-service" element={<HouseTooMessyForCleaningService />} />
+    <Route path="/resources/how-long-does-deep-cleaning-take" element={<HowLongDeepCleaningTakes />} />
+    <Route path="/resources/airbnb-cleaning-checklist" element={<AirbnbCleaningChecklist />} />
+    <Route path="/resources/how-much-tip-house-cleaner" element={<HowMuchTipHouseCleaner />} />
+    <Route path="/resources/move-in-cleaning-checklist" element={<MoveInCleaningChecklist />} />
+    <Route path="/resources/most-forgotten-areas-when-cleaning" element={<MostForgottenCleaningAreas />} />
+    <Route path="/resources/why-dust-builds-up-maryland-homes" element={<WhyDustBuildsUpMaryland />} />
+    <Route path="/resources/how-to-prepare-home-for-professional-cleaning" element={<PrepareHomeForCleaning />} />
+    <Route path="/resources/how-to-keep-house-clean-between-cleanings" element={<KeepHouseCleanBetween />} />
+    <Route path="/resources/summer-cleaning-checklist-maryland" element={<SummerCleaningChecklist />} />
+    <Route path="/resources/holiday-cleaning-checklist-dmv" element={<HolidayCleaningChecklist />} />
+    <Route path="/resources/cleaning-tips-for-working-professionals" element={<CleaningTipsWorkingProfessionals />} />
+    <Route path="/resources/how-to-remove-red-wine-stains" element={<HowToRemoveRedWineStains />} />
+    <Route path="/resources/how-to-get-rid-of-dog-smell-pet-safe" element={<HowToGetRidOfDogSmellPetSafe />} />
+    <Route path="/resources/how-to-remove-sticker-residue-natural" element={<HowToRemoveStickerResidueNatural />} />
+    <Route path="/resources/:slug" element={<BlogPost />} />
     <Route path="/spring-cleaning-md" element={<SpringCleaningMD />} />
     <Route path="/house-cleaning-near-me" element={<HouseCleaningNearMe />} />
     <Route path="/careers" element={<Careers />} />

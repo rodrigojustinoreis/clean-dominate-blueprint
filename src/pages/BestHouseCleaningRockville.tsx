@@ -43,7 +43,7 @@ const BestHouseCleaningRockville = () => {
     title: "How to Choose the Best House Cleaning Service in Rockville, MD (2026)",
     description:
       "A buyer's guide to choosing the best house cleaning service in Rockville, MD — the criteria that matter, red flags to avoid, and Rockville-specific things to check (condo access, local pricing).",
-    canonical: "https://capitalcleancare.com/blog/best-house-cleaning-service-rockville-md",
+    canonical: "https://capitalcleancare.com/resources/best-house-cleaning-service-rockville-md",
   });
 
   return (
@@ -56,16 +56,16 @@ const BestHouseCleaningRockville = () => {
       <ArticleSchema
         title="How to Choose the Best House Cleaning Service in Rockville, MD (2026)"
         description="A buyer's guide to choosing the best house cleaning service in Rockville — selection criteria, red flags, and Rockville-specific considerations."
-        url="https://capitalcleancare.com/blog/best-house-cleaning-service-rockville-md"
+        url="https://capitalcleancare.com/resources/best-house-cleaning-service-rockville-md"
         datePublished="2026-06-16"
         image={HERO_IMAGE}
       />
       <FAQSchema faqs={faqs} />
-      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }, { label: "Best House Cleaning Service in Rockville", href: "/blog/best-house-cleaning-service-rockville-md" }]} />
+      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "Best House Cleaning Service in Rockville", href: "/resources/best-house-cleaning-service-rockville-md" }]} />
 
       <div className="bg-gray-50 py-4 border-b">
         <div className="container mx-auto px-4 max-w-5xl">
-          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }, { label: "Best House Cleaning Service in Rockville" }]} />
+          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "Best House Cleaning Service in Rockville" }]} />
         </div>
       </div>
 
@@ -134,9 +134,9 @@ const BestHouseCleaningRockville = () => {
               <p className="font-semibold text-foreground mb-1">Keep reading</p>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 See{" "}
-                <Link to="/blog/house-cleaning-cost-rockville-md" className="text-accent underline hover:no-underline">how much house cleaning costs in Rockville</Link>{" "}
+                <Link to="/resources/house-cleaning-cost-rockville-md" className="text-accent underline hover:no-underline">how much house cleaning costs in Rockville</Link>{" "}
                 or{" "}
-                <Link to="/blog/how-often-should-you-hire-a-cleaning-service" className="text-accent underline hover:no-underline">how often you should hire a cleaning service</Link>. Ready to book? Visit our{" "}
+                <Link to="/resources/how-often-should-you-hire-a-cleaning-service" className="text-accent underline hover:no-underline">how often you should hire a cleaning service</Link>. Ready to book? Visit our{" "}
                 <Link to="/locations/rockville-md/house-cleaning" className="text-accent underline hover:no-underline">Rockville house cleaning</Link>{" "}page.
               </p>
             </div>

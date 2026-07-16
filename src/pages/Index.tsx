@@ -320,7 +320,7 @@ const Index = () => {
 
       {/* ══════════════ 10. PREÇOS ══════════════ */}
       <ScrollReveal>
-        <section className="py-20 md:py-28">
+        <section id="pricing" className="scroll-mt-24 py-20 md:py-28">
           <div className="container mx-auto px-4 max-w-3xl">
             <div className="text-center mb-10">
               <span className="text-accent font-semibold text-sm uppercase tracking-wider">Pricing</span>

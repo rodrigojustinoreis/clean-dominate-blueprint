@@ -48,7 +48,7 @@ const IsProfessionalCleaningWorthIt = () => {
     title: "Is Professional House Cleaning Worth It?",
     description:
       "Is hiring a house cleaning service worth the money? The real benefits (time, consistency, a healthier home), when it's worth it, when it's not, and the most cost-effective way to use one.",
-    canonical: "https://capitalcleancare.com/blog/is-professional-house-cleaning-worth-it",
+    canonical: "https://capitalcleancare.com/resources/is-professional-house-cleaning-worth-it",
   });
 
   return (
@@ -61,16 +61,16 @@ const IsProfessionalCleaningWorthIt = () => {
       <ArticleSchema
         title="Is Professional House Cleaning Worth It?"
         description="The real benefits of a professional house cleaning service, when it's worth the money, when it isn't, and the most cost-effective way to use one."
-        url="https://capitalcleancare.com/blog/is-professional-house-cleaning-worth-it"
+        url="https://capitalcleancare.com/resources/is-professional-house-cleaning-worth-it"
         datePublished="2026-06-16"
         image={HERO_IMAGE}
       />
       <FAQSchema faqs={faqs} />
-      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }, { label: "Is Professional House Cleaning Worth It", href: "/blog/is-professional-house-cleaning-worth-it" }]} />
+      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "Is Professional House Cleaning Worth It", href: "/resources/is-professional-house-cleaning-worth-it" }]} />
 
       <div className="bg-gray-50 py-4 border-b">
         <div className="container mx-auto px-4 max-w-5xl">
-          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }, { label: "Is Professional House Cleaning Worth It?" }]} />
+          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "Is Professional House Cleaning Worth It?" }]} />
         </div>
       </div>
 
@@ -129,9 +129,9 @@ const IsProfessionalCleaningWorthIt = () => {
               <p className="font-semibold text-foreground mb-1">Keep reading</p>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 See{" "}
-                <Link to="/blog/how-often-should-you-hire-a-cleaning-service" className="text-accent underline hover:no-underline">how often you should hire a cleaning service</Link>{" "}
+                <Link to="/resources/how-often-should-you-hire-a-cleaning-service" className="text-accent underline hover:no-underline">how often you should hire a cleaning service</Link>{" "}
                 or{" "}
-                <Link to="/blog/house-cleaning-prices-maryland-2026" className="text-accent underline hover:no-underline">what house cleaning costs in Maryland</Link>.
+                <Link to="/resources/house-cleaning-prices-maryland-2026" className="text-accent underline hover:no-underline">what house cleaning costs in Maryland</Link>.
               </p>
             </div>
           </FadeInSection>

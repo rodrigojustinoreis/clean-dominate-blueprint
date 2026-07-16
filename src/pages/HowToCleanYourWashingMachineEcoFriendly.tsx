@@ -95,7 +95,7 @@ const HowToCleanYourWashingMachineEcoFriendly = () => {
     title: "How to Clean Your Washing Machine (Eco-Friendly, Easy)",
     description:
       "Clean your washing machine drum, drawer & gasket with vinegar & baking soda. Eliminate musty smell. Free quote in Montgomery County, MD.",
-    canonical: "https://capitalcleancare.com/blog/how-to-clean-your-washing-machine-eco-friendly",
+    canonical: "https://capitalcleancare.com/resources/how-to-clean-your-washing-machine-eco-friendly",
   });
 
   return (
@@ -111,14 +111,14 @@ const HowToCleanYourWashingMachineEcoFriendly = () => {
       <ArticleSchema
         title="How to Clean Your Washing Machine (Eco-Friendly Method That Removes Smell)"
         description="Clean your washing machine drum, drawer & gasket with vinegar & baking soda. Eliminate musty smell with no harsh chemicals."
-        url="https://capitalcleancare.com/blog/how-to-clean-your-washing-machine-eco-friendly"
+        url="https://capitalcleancare.com/resources/how-to-clean-your-washing-machine-eco-friendly"
         datePublished="2026-05-23"
         image={HERO_IMAGE}
       />
       <HowToSchema
         name="How to Clean a Front-Load Washing Machine (Eco-Friendly)"
         description="Step-by-step guide to deep cleaning a front-load washer with white vinegar and baking soda — no bleach, no chemicals."
-        url="https://capitalcleancare.com/blog/how-to-clean-your-washing-machine-eco-friendly"
+        url="https://capitalcleancare.com/resources/how-to-clean-your-washing-machine-eco-friendly"
         steps={howToSteps}
         totalTime="PT1H30M"
         image={HERO_IMAGE}
@@ -127,8 +127,8 @@ const HowToCleanYourWashingMachineEcoFriendly = () => {
       <BreadcrumbSchema
         items={[
           { label: "Home", href: "/" },
-          { label: "Blog", href: "/blog" },
-          { label: "How to Clean Your Washing Machine (Eco-Friendly)", href: "/blog/how-to-clean-your-washing-machine-eco-friendly" },
+          { label: "Resources", href: "/resources" },
+          { label: "How to Clean Your Washing Machine (Eco-Friendly)", href: "/resources/how-to-clean-your-washing-machine-eco-friendly" },
         ]}
       />
 
@@ -138,7 +138,7 @@ const HowToCleanYourWashingMachineEcoFriendly = () => {
           <Breadcrumbs
             items={[
               { label: "Home", href: "/" },
-              { label: "Blog", href: "/blog" },
+              { label: "Resources", href: "/resources" },
               { label: "How to Clean Your Washing Machine" },
             ]}
           />
@@ -520,7 +520,7 @@ const HowToCleanYourWashingMachineEcoFriendly = () => {
                 recurring cleaning plans
               </Link>
               . More on Maryland-specific eco tips in our{" "}
-              <Link to="/blog/eco-cleaning-tips-maryland-homes" className="text-accent underline hover:no-underline">
+              <Link to="/resources/eco-cleaning-tips-maryland-homes" className="text-accent underline hover:no-underline">
                 eco-friendly cleaning guide for Maryland homes
               </Link>.
             </p>

@@ -36,7 +36,7 @@ const PrepareHomeForCleaning = () => {
     title: "How to Prepare Your Home for a Professional Cleaning",
     description:
       "How to prepare for a house cleaning service — a simple checklist to get a better, faster clean: tidy clutter, secure valuables, plan for pets, sort access and parking.",
-    canonical: "https://capitalcleancare.com/blog/how-to-prepare-home-for-professional-cleaning",
+    canonical: "https://capitalcleancare.com/resources/how-to-prepare-home-for-professional-cleaning",
   });
 
   return (
@@ -49,24 +49,24 @@ const PrepareHomeForCleaning = () => {
       <ArticleSchema
         title="How to Prepare Your Home for a Professional Cleaning"
         description="A simple checklist to prepare for a house cleaning service and get a better, faster clean."
-        url="https://capitalcleancare.com/blog/how-to-prepare-home-for-professional-cleaning"
+        url="https://capitalcleancare.com/resources/how-to-prepare-home-for-professional-cleaning"
         datePublished="2026-06-16"
         image={HERO_IMAGE}
       />
       <HowToSchema
         name="How to Prepare Your Home for a Professional Cleaning"
         description="Simple steps to get your home ready for a cleaning service so the clean is faster and more thorough."
-        url="https://capitalcleancare.com/blog/how-to-prepare-home-for-professional-cleaning"
+        url="https://capitalcleancare.com/resources/how-to-prepare-home-for-professional-cleaning"
         steps={steps}
         totalTime="PT15M"
         image={HERO_IMAGE}
       />
       <FAQSchema faqs={faqs} />
-      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }, { label: "How to Prepare Your Home for a Professional Cleaning", href: "/blog/how-to-prepare-home-for-professional-cleaning" }]} />
+      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "How to Prepare Your Home for a Professional Cleaning", href: "/resources/how-to-prepare-home-for-professional-cleaning" }]} />
 
       <div className="bg-gray-50 py-4 border-b">
         <div className="container mx-auto px-4 max-w-5xl">
-          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }, { label: "How to Prepare Your Home for a Professional Cleaning" }]} />
+          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "How to Prepare Your Home for a Professional Cleaning" }]} />
         </div>
       </div>
 
@@ -106,9 +106,9 @@ const PrepareHomeForCleaning = () => {
               <p className="font-semibold text-foreground mb-1">Keep reading</p>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 See{" "}
-                <Link to="/blog/what-is-included-in-a-standard-cleaning" className="text-accent underline hover:no-underline">what's included in a standard cleaning</Link>{" "}
+                <Link to="/resources/what-is-included-in-a-standard-cleaning" className="text-accent underline hover:no-underline">what's included in a standard cleaning</Link>{" "}
                 or{" "}
-                <Link to="/blog/how-often-should-you-hire-a-cleaning-service" className="text-accent underline hover:no-underline">how often you should hire a cleaning service</Link>.
+                <Link to="/resources/how-often-should-you-hire-a-cleaning-service" className="text-accent underline hover:no-underline">how often you should hire a cleaning service</Link>.
               </p>
             </div>
           </FadeInSection>

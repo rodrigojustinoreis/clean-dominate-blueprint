@@ -86,7 +86,7 @@ const HepaFiltersPetsAsthma = () => {
     title: "HEPA Filters and Pets: Cleaning for Animals with Asthma",
     description:
       "Feline asthma is triggered by airborne dust mites, dander & mold. Why true-HEPA vacuuming and filtration (not a regular vacuum) is vital for asthmatic pets — and the technical cleaning routine that helps.",
-    canonical: "https://capitalcleancare.com/blog/hepa-filters-pets-asthma",
+    canonical: "https://capitalcleancare.com/resources/hepa-filters-pets-asthma",
   });
 
   return (
@@ -102,14 +102,14 @@ const HepaFiltersPetsAsthma = () => {
       <ArticleSchema
         title="HEPA Filters and Pets: Cleaning for Animals with Asthma"
         description="Why true-HEPA filtration and vacuuming matter for pets with feline asthma or chronic bronchitis, how HEPA (and medical-grade H13) capture the airborne dust-mite, dander, and mold triggers, and the technical cleaning routine that lowers a sensitive pet's exposure."
-        url="https://capitalcleancare.com/blog/hepa-filters-pets-asthma"
+        url="https://capitalcleancare.com/resources/hepa-filters-pets-asthma"
         datePublished="2026-06-15"
         image={HERO_IMAGE}
       />
       <HowToSchema
         name="How to Use HEPA Cleaning and Filtration to Help an Asthmatic Pet"
         description="A four-step technical-cleaning routine — sealed HEPA vacuuming, true-HEPA air filtration, hot-water bedding hygiene with humidity control, and deep cleaning with fragrance-free products — to lower airborne triggers for a pet with asthma."
-        url="https://capitalcleancare.com/blog/hepa-filters-pets-asthma"
+        url="https://capitalcleancare.com/resources/hepa-filters-pets-asthma"
         steps={howToSteps}
         totalTime="PT45M"
         image={HERO_IMAGE}
@@ -118,8 +118,8 @@ const HepaFiltersPetsAsthma = () => {
       <BreadcrumbSchema
         items={[
           { label: "Home", href: "/" },
-          { label: "Blog", href: "/blog" },
-          { label: "HEPA Filters and Pets with Asthma", href: "/blog/hepa-filters-pets-asthma" },
+          { label: "Resources", href: "/resources" },
+          { label: "HEPA Filters and Pets with Asthma", href: "/resources/hepa-filters-pets-asthma" },
         ]}
       />
 
@@ -129,7 +129,7 @@ const HepaFiltersPetsAsthma = () => {
           <Breadcrumbs
             items={[
               { label: "Home", href: "/" },
-              { label: "Blog", href: "/blog" },
+              { label: "Resources", href: "/resources" },
               { label: "HEPA Filters and Pets: Cleaning for Animals with Asthma" },
             ]}
           />
@@ -290,9 +290,9 @@ const HepaFiltersPetsAsthma = () => {
                   For a pet prone to asthma flares, the wrong cleaner adds irritation instead of removing it. That's why our{" "}
                   <Link to="/services/eco-friendly-cleaning" className="text-accent underline hover:no-underline">eco-friendly cleaning</Link>{" "}
                   uses only plant-based, fragrance-free, low-residue products. Related reading:{" "}
-                  <Link to="/blog/pet-sneezing-household-dust" className="text-accent underline hover:no-underline">how household dust affects your pet's lungs</Link>{" "}
+                  <Link to="/resources/pet-sneezing-household-dust" className="text-accent underline hover:no-underline">how household dust affects your pet's lungs</Link>{" "}
                   and{" "}
-                  <Link to="/blog/pet-dander-air-quality" className="text-accent underline hover:no-underline">how pet dander wrecks your air quality</Link>.
+                  <Link to="/resources/pet-dander-air-quality" className="text-accent underline hover:no-underline">how pet dander wrecks your air quality</Link>.
                 </p>
               </div>
             </div>

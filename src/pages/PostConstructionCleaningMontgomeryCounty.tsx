@@ -40,7 +40,7 @@ const PostConstructionCleaningMontgomeryCounty = () => {
     title: "Post-Construction Cleaning in Montgomery County, MD: A Guide",
     description:
       "What post-construction cleaning involves in Montgomery County, MD — why fine construction dust is the challenge, what's included, how it differs from a deep clean, when to schedule, and cost.",
-    canonical: "https://capitalcleancare.com/blog/post-construction-cleaning-montgomery-county-md",
+    canonical: "https://capitalcleancare.com/resources/post-construction-cleaning-montgomery-county-md",
   });
 
   return (
@@ -53,16 +53,16 @@ const PostConstructionCleaningMontgomeryCounty = () => {
       <ArticleSchema
         title="Post-Construction Cleaning in Montgomery County, MD: A Guide"
         description="What post-construction cleaning involves in Montgomery County — the fine-dust challenge, what's included, how it differs from a deep clean, timing, and cost."
-        url="https://capitalcleancare.com/blog/post-construction-cleaning-montgomery-county-md"
+        url="https://capitalcleancare.com/resources/post-construction-cleaning-montgomery-county-md"
         datePublished="2026-06-16"
         image={HERO_IMAGE}
       />
       <FAQSchema faqs={faqs} />
-      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }, { label: "Post-Construction Cleaning in Montgomery County", href: "/blog/post-construction-cleaning-montgomery-county-md" }]} />
+      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "Post-Construction Cleaning in Montgomery County", href: "/resources/post-construction-cleaning-montgomery-county-md" }]} />
 
       <div className="bg-gray-50 py-4 border-b">
         <div className="container mx-auto px-4 max-w-5xl">
-          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }, { label: "Post-Construction Cleaning in Montgomery County" }]} />
+          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "Post-Construction Cleaning in Montgomery County" }]} />
         </div>
       </div>
 
@@ -120,8 +120,8 @@ const PostConstructionCleaningMontgomeryCounty = () => {
               <p className="text-sm text-muted-foreground leading-relaxed">
                 See our{" "}
                 <Link to="/services/post-construction-cleaning" className="text-accent underline hover:no-underline">post-construction cleaning service</Link>, the{" "}
-                <Link to="/blog/house-cleaning-guide-clarksburg-md" className="text-accent underline hover:no-underline">Clarksburg new-construction guide</Link>, or{" "}
-                <Link to="/blog/what-is-included-in-a-deep-cleaning" className="text-accent underline hover:no-underline">what's included in a deep cleaning</Link>.
+                <Link to="/resources/house-cleaning-guide-clarksburg-md" className="text-accent underline hover:no-underline">Clarksburg new-construction guide</Link>, or{" "}
+                <Link to="/resources/what-is-included-in-a-deep-cleaning" className="text-accent underline hover:no-underline">what's included in a deep cleaning</Link>.
               </p>
             </div>
           </FadeInSection>

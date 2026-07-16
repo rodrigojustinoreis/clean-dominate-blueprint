@@ -13,7 +13,7 @@ import StickyCTA from "@/components/blog/StickyCTA";
 import RelatedPosts from "@/components/blog/RelatedPosts";
 
 const HERO_IMAGE = "/images/blog/first-clean-cost-hero.webp";
-const URL = "https://capitalcleancare.com/blog/why-first-house-cleaning-costs-more";
+const URL = "https://capitalcleancare.com/resources/why-first-house-cleaning-costs-more";
 
 const kitchenTasks: string[] = [
   "Degreasing the range hood, stovetop, and backsplash",
@@ -112,7 +112,7 @@ const WhyFirstHouseCleaningCostsMore = () => {
               So if you have been wondering why is the first house cleaning more expensive, the answer is hours, not markup. When
               you compare a deep clean vs standard clean price and see a gap of $100 or more, you are not looking at a
               new-customer penalty. You are looking at a completely different job wearing the same uniform. Our breakdown of{" "}
-              <Link to="/blog/deep-cleaning-vs-regular-cleaning" className="text-accent underline hover:no-underline">deep cleaning vs regular cleaning</Link>{" "}
+              <Link to="/resources/deep-cleaning-vs-regular-cleaning" className="text-accent underline hover:no-underline">deep cleaning vs regular cleaning</Link>{" "}
               shows the task-by-task difference.
             </p>
             <h3 className="font-heading text-xl md:text-2xl font-bold text-foreground mt-8 mb-3">It is a one-time reset, not your new rate</h3>
@@ -121,7 +121,7 @@ const WhyFirstHouseCleaningCostsMore = () => {
               service, and every visit after it drops back to the standard rate. If a maid service quotes the same low price for
               visit one as for visit ten, be careful. Either the first clean will be rushed, or the price will grow once the team
               sees your home. We cover that second scenario in our guide to{" "}
-              <Link to="/blog/hidden-fees-house-cleaning" className="text-accent underline hover:no-underline">hidden fees in house cleaning</Link>.
+              <Link to="/resources/hidden-fees-house-cleaning" className="text-accent underline hover:no-underline">hidden fees in house cleaning</Link>.
             </p>
           </FadeInSection>
 
@@ -129,7 +129,7 @@ const WhyFirstHouseCleaningCostsMore = () => {
             <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mt-10 mb-4">What an Initial Deep Clean Actually Includes (Room by Room)</h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
               Here is what your first time house cleaning price actually pays for. Set it next to the recurring task list in{" "}
-              <Link to="/blog/what-is-included-in-a-standard-cleaning" className="text-accent underline hover:no-underline">what is included in a standard cleaning</Link>{" "}
+              <Link to="/resources/what-is-included-in-a-standard-cleaning" className="text-accent underline hover:no-underline">what is included in a standard cleaning</Link>{" "}
               and the price difference starts to make sense fast.
             </p>
             <h3 className="font-heading text-xl md:text-2xl font-bold text-foreground mt-8 mb-3">Kitchen</h3>
@@ -194,13 +194,13 @@ const WhyFirstHouseCleaningCostsMore = () => {
               Those ranges hold across Rockville, Gaithersburg, and Germantown, with the higher end showing up in larger Potomac
               homes. Your exact initial deep cleaning cost depends on square footage, condition, and add-ons like inside the oven
               or fridge. For the full local picture, see our guide to{" "}
-              <Link to="/blog/house-cleaning-prices-maryland-2026" className="text-accent underline hover:no-underline">house cleaning prices in Maryland</Link>.
+              <Link to="/resources/house-cleaning-prices-maryland-2026" className="text-accent underline hover:no-underline">house cleaning prices in Maryland</Link>.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-4">
               One more thing explains why is the first house cleaning more expensive on some quotes than others: how the price is
               structured. An hourly quote on a first visit can grow while the team works, while a flat quote cannot. Our
               comparison of{" "}
-              <Link to="/blog/flat-rate-vs-hourly-house-cleaning" className="text-accent underline hover:no-underline">flat rate vs hourly house cleaning</Link>{" "}
+              <Link to="/resources/flat-rate-vs-hourly-house-cleaning" className="text-accent underline hover:no-underline">flat rate vs hourly house cleaning</Link>{" "}
               explains why the first visit is exactly when a flat number protects you most.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-4">
@@ -230,7 +230,7 @@ const WhyFirstHouseCleaningCostsMore = () => {
               to $153 per visit. See how{" "}
               <Link to="/services/recurring-cleaning" className="text-accent underline hover:no-underline">recurring cleaning service</Link>{" "}
               pricing works, and if you are not sure which schedule fits your household, our guide on{" "}
-              <Link to="/blog/how-often-should-you-hire-a-cleaning-service" className="text-accent underline hover:no-underline">how often you should hire a cleaning service</Link>{" "}
+              <Link to="/resources/how-often-should-you-hire-a-cleaning-service" className="text-accent underline hover:no-underline">how often you should hire a cleaning service</Link>{" "}
               walks through it.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-4">

@@ -10,7 +10,7 @@ import { getTopicBySlug } from "@/data/blog-topics";
 import { allPosts } from "@/pages/Blog";
 import NotFound from "./NotFound";
 
-// Indexable topic hub at /blog/topic/<slug> — lists every post whose category maps to the
+// Indexable topic hub at /resources/topic/<slug> — lists every post whose category maps to the
 // topic, with a unique H1 + intro (so it's never thin) and the shared pill nav. Part of the
 // blog hub-and-spoke: builds topical authority and gives each cluster a crawlable home.
 const BlogTopic = () => {
@@ -19,7 +19,7 @@ const BlogTopic = () => {
   if (!topic) return <NotFound />;
 
   const posts = allPosts.filter((p) => topic.categories.includes(p.category));
-  const url = `https://capitalcleancare.com/blog/topic/${topic.slug}`;
+  const url = `https://capitalcleancare.com/resources/topic/${topic.slug}`;
 
   const { seoHelmet } = useSEO({
     title: topic.seoTitle,
@@ -33,8 +33,8 @@ const BlogTopic = () => {
       <BreadcrumbSchema
         items={[
           { label: "Home", href: "/" },
-          { label: "Blog", href: "/blog" },
-          { label: topic.label, href: `/blog/topic/${topic.slug}` },
+          { label: "Resources", href: "/resources" },
+          { label: topic.label, href: `/resources/topic/${topic.slug}` },
         ]}
       />
       <section className="py-16 md:py-24">
@@ -42,7 +42,7 @@ const BlogTopic = () => {
           <Breadcrumbs
             items={[
               { label: "Home", href: "/" },
-              { label: "Blog", href: "/blog" },
+              { label: "Resources", href: "/resources" },
               { label: topic.label },
             ]}
             className="mb-6"

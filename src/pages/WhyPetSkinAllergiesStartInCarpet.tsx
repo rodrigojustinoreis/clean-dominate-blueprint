@@ -86,7 +86,7 @@ const WhyPetSkinAllergiesStartInCarpet = () => {
     title: "Why Your Pet's Skin Allergies Might Start in Your Carpet",
     description:
       "Itchy paws and constant scratching? Your carpet may be the hidden allergen reservoir. How dander, dust mites & pollen trigger pet skin allergies — and the cleaning that helps.",
-    canonical: "https://capitalcleancare.com/blog/why-pet-skin-allergies-start-in-carpet",
+    canonical: "https://capitalcleancare.com/resources/why-pet-skin-allergies-start-in-carpet",
   });
 
   return (
@@ -102,14 +102,14 @@ const WhyPetSkinAllergiesStartInCarpet = () => {
       <ArticleSchema
         title="Why Your Pet's Skin Allergies Might Start in Your Carpet"
         description="How carpet traps pet dander, dust-mite debris, pollen, and mold that trigger itchy skin and atopic dermatitis in dogs and cats — and the HEPA + deep-cleaning routine that lowers the allergen load."
-        url="https://capitalcleancare.com/blog/why-pet-skin-allergies-start-in-carpet"
+        url="https://capitalcleancare.com/resources/why-pet-skin-allergies-start-in-carpet"
         datePublished="2026-06-10"
         image={HERO_IMAGE}
       />
       <HowToSchema
         name="How to Lower Carpet Allergens That Trigger Pet Skin Allergies"
         description="A four-step home routine to reduce the dander, dust mites, and pollen in carpet that trigger itchy skin in dogs and cats."
-        url="https://capitalcleancare.com/blog/why-pet-skin-allergies-start-in-carpet"
+        url="https://capitalcleancare.com/resources/why-pet-skin-allergies-start-in-carpet"
         steps={howToSteps}
         totalTime="PT45M"
         image={HERO_IMAGE}
@@ -118,8 +118,8 @@ const WhyPetSkinAllergiesStartInCarpet = () => {
       <BreadcrumbSchema
         items={[
           { label: "Home", href: "/" },
-          { label: "Blog", href: "/blog" },
-          { label: "Why Pet Skin Allergies Start in Your Carpet", href: "/blog/why-pet-skin-allergies-start-in-carpet" },
+          { label: "Resources", href: "/resources" },
+          { label: "Why Pet Skin Allergies Start in Your Carpet", href: "/resources/why-pet-skin-allergies-start-in-carpet" },
         ]}
       />
 
@@ -129,7 +129,7 @@ const WhyPetSkinAllergiesStartInCarpet = () => {
           <Breadcrumbs
             items={[
               { label: "Home", href: "/" },
-              { label: "Blog", href: "/blog" },
+              { label: "Resources", href: "/resources" },
               { label: "Why Pet Skin Allergies Start in Your Carpet" },
             ]}
           />
@@ -291,7 +291,7 @@ const WhyPetSkinAllergiesStartInCarpet = () => {
                   Your pet is the family member who lies directly on the floor and licks their paws — so cleaning residue goes straight onto already-sensitive skin and into their mouth. That's the whole reason our{" "}
                   <Link to="/services/eco-friendly-cleaning" className="text-accent underline hover:no-underline">eco-friendly cleaning</Link>{" "}
                   uses only plant-based, fragrance-free, low-residue products. For more on pet hair and odor control, see our guide to{" "}
-                  <Link to="/blog/remove-pet-hair-odors-dmv-homes" className="text-accent underline hover:no-underline">removing pet hair and odors in DMV homes</Link>.
+                  <Link to="/resources/remove-pet-hair-odors-dmv-homes" className="text-accent underline hover:no-underline">removing pet hair and odors in DMV homes</Link>.
                 </p>
               </div>
             </div>

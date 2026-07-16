@@ -14,6 +14,16 @@ import logo from "@/assets/logo.webp";
 const TOP_SERVICE_CITIES = ["rockville-md", "bethesda-md", "silver-spring-md", "arlington-va", "alexandria-va", "washington-dc", "fairfax-va", "gaithersburg-md"];
 const TOP_SERVICES = ["house-cleaning", "deep-cleaning", "move-out-cleaning", "recurring-cleaning"];
 
+// Popular Guides — real, prerendered /resources posts (static links in the footer).
+const POPULAR_GUIDES: { to: string; label: string }[] = [
+  { to: "/resources/house-cleaning-prices-maryland-2026", label: "House Cleaning Prices in Maryland (2026)" },
+  { to: "/resources/how-much-does-deep-cleaning-cost", label: "How Much Does a Deep Cleaning Cost?" },
+  { to: "/resources/deep-cleaning-vs-regular-cleaning", label: "Deep Cleaning vs Regular Cleaning" },
+  { to: "/resources/what-is-included-in-a-deep-cleaning", label: "What's Included in a Deep Cleaning" },
+  { to: "/resources/move-in-cleaning-checklist", label: "Move-In / Move-Out Cleaning Checklist" },
+  { to: "/resources/how-often-should-you-hire-a-cleaning-service", label: "How Often Should You Hire a Cleaner?" },
+];
+
 // Spanish labels for the data-driven "Popular Services by Area" links (links stay on EN pages).
 const ES_SERVICE_LABELS: Record<string, string> = {
   "house cleaning": "limpieza de casas",
@@ -42,7 +52,7 @@ const Footer = () => {
         { to: "/es", label: "Inicio" },
         { to: "/es/nosotros", label: "Nosotros" },
         { to: "/reviews", label: "Reseñas" },
-        { to: "/blog", label: "Blog" },
+        { to: "/resources", label: "Recursos" },
         { to: "/gift-cards", label: "Tarjetas de Regalo" },
         { to: "/es/contacto", label: "Contacto" },
         { to: "/faq", label: "Preguntas Frecuentes" },
@@ -50,7 +60,7 @@ const Footer = () => {
     : [
         { to: "/about", label: "About Us" },
         { to: "/reviews", label: "Reviews" },
-        { to: "/blog", label: "Blog" },
+        { to: "/resources", label: "Resources" },
         { to: "/gift-cards", label: "Gift Cards" },
         { to: "/contact", label: "Contact" },
         { to: "/faq", label: "FAQ" },
@@ -178,6 +188,31 @@ const Footer = () => {
           <div className="grid grid-cols-2 md:grid-cols-1 gap-x-2 gap-y-1 text-sm text-primary-foreground/70">
             <Link to="/virginia" className="hover:text-accent transition-colors font-medium col-span-2 md:col-span-1 mb-1">{t("All Virginia →", "Toda Virginia →")}</Link>
             {vaCities.map((c) => (
+              <Link key={c.slug} to={`/locations/${c.slug}`} className="hover:text-accent transition-colors truncate">{c.name}</Link>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Popular Guides + Service Areas (core cities) — real static links */}
+      <div className="mt-10 pt-8 border-t border-primary-foreground/10 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <h4 className="font-heading font-semibold mb-4 text-sm">{t("Popular Guides", "Guías Populares")}</h4>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1.5 text-sm text-primary-foreground/70">
+            {POPULAR_GUIDES.map((g) => (
+              <li key={g.to}>
+                <Link to={g.to} className="hover:text-accent transition-colors">{g.label}</Link>
+              </li>
+            ))}
+            <li className="sm:col-span-2">
+              <Link to="/resources" className="hover:text-accent transition-colors font-medium">{t("All guides & resources →", "Todas las guías y recursos →")}</Link>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4 className="font-heading font-semibold mb-4 text-sm">{t("Service Areas", "Áreas de Servicio")}</h4>
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-1.5 text-sm text-primary-foreground/70">
+            {slCities.filter((c) => TOP_SERVICE_CITIES.includes(c.slug)).map((c) => (
               <Link key={c.slug} to={`/locations/${c.slug}`} className="hover:text-accent transition-colors truncate">{c.name}</Link>
             ))}
           </div>

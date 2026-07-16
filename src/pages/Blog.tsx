@@ -578,7 +578,7 @@ export const blogPosts: BlogPost[] = [
     category: "Cleaning Guides",
     coverImage: "https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
     // SEO: thin near-duplicate of the fuller checklist post — canonicalised so Google indexes that one instead (reversible).
-    canonical: "https://capitalcleancare.com/blog/what-is-included-in-a-deep-cleaning",
+    canonical: "https://capitalcleancare.com/resources/what-is-included-in-a-deep-cleaning",
   },
   {
     slug: "airbnb-cleaning-tips-dmv-hosts",
@@ -836,16 +836,16 @@ const Blog = () => {
   const { seoHelmet } = useSEO({
     title: "House Cleaning Tips & Blog for MD, DC & VA | Capital Clean Care",
     description: "Expert eco-friendly cleaning tips, deep-cleaning guides & advice for Maryland, DC & Virginia homeowners. Stay spotless with Capital Clean Care's blog!",
-    canonical: "https://capitalcleancare.com/blog",
+    canonical: "https://capitalcleancare.com/resources",
   });
 
   return (
     <Layout>
       {seoHelmet}
-      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }]} />
+      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }]} />
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 max-w-4xl">
-          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Blog" }]} className="mb-6" />
+          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Resources" }]} className="mb-6" />
           <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4">Cleaning Tips & Insights</h1>
           <p className="text-muted-foreground text-lg mb-8">Expert advice for keeping your Maryland, DC & Virginia home spotless with eco-friendly methods.</p>
 
