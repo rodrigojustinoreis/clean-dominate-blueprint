@@ -102,7 +102,7 @@ const EcoFriendlyCleaningPage = () => {
 
   const scrollToForm = (e: React.MouseEvent) => {
     e.preventDefault();
-    document.getElementById("quote-form")?.scrollIntoView({ behavior: "smooth" });
+    document.getElementById("quote")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -352,7 +352,6 @@ const EcoFriendlyCleaningPage = () => {
       <BeforeAfterGallery />
 
       {/* ── Social Proof — real Google reviews + brand trust video ── */}
-      <div id="quote" aria-hidden="true" />
       <LocationSocialProof
         cityName="DMV"
         citySlug="services"
@@ -422,7 +421,7 @@ const EcoFriendlyCleaningPage = () => {
       </section>
 
       {/* ── Quote Form ── */}
-      <section id="quote-form" className="py-16 bg-secondary" style={{ scrollMarginTop: 80 }}>
+      <section id="quote" className="py-16 bg-secondary" style={{ scrollMarginTop: 80 }}>
         <div className="container mx-auto px-4 max-w-2xl">
           <h2 className="font-heading text-2xl md:text-3xl font-bold text-center mb-2">
             Get Your Free Eco-Friendly Cleaning Quote
@@ -435,7 +434,7 @@ const EcoFriendlyCleaningPage = () => {
           </div>
           <Card>
             <CardContent className="p-6 md:p-8">
-              <QuoteForm submitLabel="Get My Free Eco-Clean Quote →" />
+              <QuoteForm submitLabel="Get My Free Eco-Clean Quote →" compact />
             </CardContent>
           </Card>
           <p className="text-center text-xs text-muted-foreground mt-4">

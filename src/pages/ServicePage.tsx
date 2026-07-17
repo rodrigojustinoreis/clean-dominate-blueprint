@@ -89,7 +89,7 @@ const ServicePage = () => {
 
               <div className="flex flex-col sm:flex-row gap-3 mb-6">
                 <Button variant="cta" size="lg" asChild>
-                  <a href="#quote-form">Get My Free Quote →</a>
+                  <a href="#quote">Get My Free Quote →</a>
                 </Button>
                 <Button variant="outline" size="lg" asChild>
                   <a href="tel:+12407042551"><Phone className="h-4 w-4 mr-2" /> (240) 704-2551</a>
@@ -207,7 +207,6 @@ const ServicePage = () => {
       </section>
 
       {/* ── Social Proof — real reviews + brand trust video ── */}
-      <div id="quote" aria-hidden="true" />
       <LocationSocialProof
         cityName="DMV"
         citySlug="services"
@@ -271,7 +270,7 @@ const ServicePage = () => {
       </section>
 
       {/* ── Quote Form ── */}
-      <section id="quote-form" className="py-16 bg-secondary scroll-mt-24">
+      <section id="quote" className="py-16 bg-secondary scroll-mt-24">
         <div className="container mx-auto px-4 max-w-4xl">
           <h2 className="font-heading text-2xl md:text-3xl font-bold text-center mb-2">
             Get a Free {service.name} Quote
@@ -280,7 +279,7 @@ const ServicePage = () => {
             Serving Maryland, DC &amp; Northern Virginia · We respond within 2 hours
           </p>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-            <div className="rounded-xl overflow-hidden border border-border shadow-sm bg-card">
+            <div className="order-2 lg:order-1 rounded-xl overflow-hidden border border-border shadow-sm bg-card">
               <div className="bg-background px-4 py-2.5 border-b border-border flex items-center gap-2">
                 <div className="flex gap-0.5">
                   {[...Array(5)].map((_, i) => (
@@ -300,9 +299,9 @@ const ServicePage = () => {
                 />
               </div>
             </div>
-            <Card>
+            <Card className="order-1 lg:order-2">
               <CardContent className="p-6 md:p-8">
-                <QuoteForm defaultService={service.slug.replace("-cleaning", "").replace("move-out", "move").replace("post-construction", "post-construction")} />
+                <QuoteForm defaultService={service.slug.replace("-cleaning", "").replace("move-out", "move").replace("post-construction", "post-construction")} compact />
               </CardContent>
             </Card>
           </div>

@@ -143,7 +143,7 @@ const DeepCleaningPage = () => {
 
   const scrollToForm = (e: React.MouseEvent) => {
     e.preventDefault();
-    document.getElementById("quote-form")?.scrollIntoView({ behavior: "smooth" });
+    document.getElementById("quote")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -654,9 +654,8 @@ const DeepCleaningPage = () => {
       </section>
 
       {/* ── Quote Form ── */}
-      <div id="quote" aria-hidden="true" />
       <section
-        id="quote-form"
+        id="quote"
         className="py-16 bg-secondary"
         style={{ scrollMarginTop: 120 }}
       >
@@ -678,6 +677,7 @@ const DeepCleaningPage = () => {
               <QuoteForm
                 submitLabel="Send My Free Quote Request →"
                 defaultService="deep"
+                compact
               />
             </CardContent>
           </Card>
