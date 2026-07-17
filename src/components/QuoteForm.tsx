@@ -22,6 +22,10 @@ interface QuoteFormProps {
   submitLabel?: string;
   defaultService?: string;
   showPhoto?: boolean;
+  /** Mobile conversion: hide the photo, heading, and trust-badge row on mobile so the
+   *  fields land in view when a CTA scrolls to the form. Desktop is unchanged. Opt-in —
+   *  NOT passed on the /services/house-cleaning ads landing, which stays as-is. */
+  compact?: boolean;
 }
 
 /* Brand CTA gradient (blue → teal) + accent-tinted glow */
@@ -39,7 +43,7 @@ const glossOverlay = (
   <span className="pointer-events-none absolute inset-x-0 top-0 h-1/2 rounded-t-2xl" style={{ background: "linear-gradient(to bottom,rgba(255,255,255,0.55),transparent)" }} />
 );
 
-const QuoteForm = ({ submitLabel = "GET MY FREE QUOTE →", defaultService = "", showPhoto = true }: QuoteFormProps) => {
+const QuoteForm = ({ submitLabel = "GET MY FREE QUOTE →", defaultService = "", showPhoto = true, compact = false }: QuoteFormProps) => {
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -281,7 +285,7 @@ const QuoteForm = ({ submitLabel = "GET MY FREE QUOTE →", defaultService = "",
     <div className="space-y-4">
       {/* ── Photo header: real team + offer chips (landing-card structure) ── */}
       {showPhoto && (
-        <div className="relative overflow-hidden rounded-t-2xl rounded-b-lg">
+        <div className={`relative overflow-hidden rounded-t-2xl rounded-b-lg${compact ? " hidden lg:block" : ""}`}>
           <img
             src={quotePhoto}
             alt="Capital Clean Care professional cleaning a window"
@@ -303,13 +307,13 @@ const QuoteForm = ({ submitLabel = "GET MY FREE QUOTE →", defaultService = "",
       )}
 
       {/* ── Heading ── */}
-      <div>
+      <div className={compact ? "hidden lg:block" : undefined}>
         <h3 className="font-heading font-bold text-2xl text-foreground">Get Your Free Quote</h3>
         <p className="text-sm text-muted-foreground mt-0.5">Fast. Easy. No Obligation.</p>
       </div>
 
       {/* ── 3D trust badge cards (landing style) ── */}
-      <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3" style={{ perspective: "800px" }}>
+      <div className={`flex flex-wrap items-center justify-center gap-2 sm:gap-3${compact ? " hidden lg:flex" : ""}`} style={{ perspective: "800px" }}>
         {/* Crest — Licensed & Insured */}
         <div className={card3dClass} style={card3dStyle("hsl(195 85% 45% / 0.16)")}>
           {glossOverlay}

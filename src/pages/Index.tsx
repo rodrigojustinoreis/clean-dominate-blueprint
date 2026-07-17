@@ -347,9 +347,9 @@ const Index = () => {
 
       {/* ══════════════ 11. FORMULÁRIO DE ORÇAMENTO ══════════════ */}
       <ScrollReveal>
-        <section className="py-20 md:py-28 bg-mesh" id="quote">
+        <section className="pt-8 pb-20 md:py-28 bg-mesh scroll-mt-20" id="quote">
           <div className="container mx-auto px-4 max-w-6xl">
-            <div className="text-center mb-10">
+            <div className="text-center mb-6 md:mb-10">
               <div className="inline-flex items-center gap-2 bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-700 text-amber-800 dark:text-amber-300 rounded-full px-4 py-1.5 text-xs font-bold mb-4 uppercase tracking-wide">
                 <span className="relative flex h-2 w-2 shrink-0">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
@@ -364,7 +364,7 @@ const Index = () => {
               <p className="text-muted-foreground">No commitment required. We respond within a few hours with a personalized estimate.</p>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-16 items-start">
-              <div className="lg:col-span-2 space-y-6">
+              <div className="order-2 lg:order-1 lg:col-span-2 space-y-6">
                 <div className="space-y-4">
                   {[
                     { icon: Shield, title: "Licensed & Insured", desc: "Fully bonded and covered — your home is protected." },
@@ -392,10 +392,10 @@ const Index = () => {
                   <p className="text-xs text-muted-foreground">Mon–Sat 8am–6pm. We also respond to texts!</p>
                 </div>
               </div>
-              <div className="lg:col-span-3">
+              <div className="order-1 lg:order-2 lg:col-span-3">
                 <Card className="shadow-xl">
                   <CardContent className="p-6 md:p-10">
-                    <QuoteForm />
+                    <QuoteForm compact />
                   </CardContent>
                 </Card>
               </div>

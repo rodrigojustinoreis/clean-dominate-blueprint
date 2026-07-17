@@ -452,13 +452,13 @@ const CityPage = () => {
       <TrustBadges compact />
 
       {/* Quote Form */}
-      <section className="py-16 md:py-20 bg-secondary" id="quote">
+      <section className="py-16 md:py-20 bg-secondary scroll-mt-20" id="quote">
         <div className="container mx-auto px-4 max-w-2xl">
           <div className="text-center mb-8">
             <h2 className="font-heading text-3xl font-bold mb-3">Get a Free Quote in {city.name}</h2>
             <p className="text-muted-foreground">Tell us about your {city.name} home and we'll respond with a personalized estimate.</p>
           </div>
-          <Card><CardContent className="p-6 md:p-8"><QuoteForm /></CardContent></Card>
+          <Card><CardContent className="p-6 md:p-8"><QuoteForm compact /></CardContent></Card>
         </div>
       </section>
     </Layout>

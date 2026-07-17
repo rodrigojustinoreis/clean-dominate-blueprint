@@ -262,7 +262,7 @@ const VanityLandingPage = () => {
       <ConversionCTA cityName={city.name} />
 
       {/* Quote Form */}
-      <section id="quote" className="py-12 md:py-16 bg-muted/30">
+      <section id="quote" className="py-12 md:py-16 bg-muted/30 scroll-mt-20">
         <div className="container mx-auto px-4 max-w-2xl text-center">
           <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-4">
             Book Your {service.name} in {city.name} Today
@@ -270,7 +270,7 @@ const VanityLandingPage = () => {
           <p className="text-muted-foreground mb-6">
             Ready for a spotless home? Contact Capital Clean Care for professional {service.shortName} in {city.name}, {city.state} {config.zip}.
           </p>
-          <Card><CardContent className="p-6 md:p-8"><QuoteForm /></CardContent></Card>
+          <Card><CardContent className="p-6 md:p-8"><QuoteForm compact /></CardContent></Card>
         </div>
       </section>
     </Layout>

@@ -18,7 +18,7 @@ interface LocationQuoteSectionProps {
  * dead-end that contradicted the "free quote in 60 seconds" copy.
  */
 const LocationQuoteSection = ({ cityName, serviceLabel, defaultService, zipLine, ctaProse }: LocationQuoteSectionProps) => (
-  <section id="quote" className="py-12 md:py-16 bg-muted/30">
+  <section id="quote" className="py-12 md:py-16 bg-muted/30 scroll-mt-20">
     <div className="container mx-auto px-4 max-w-2xl">
       <div className="text-center mb-6">
         <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-3">
@@ -36,7 +36,7 @@ const LocationQuoteSection = ({ cityName, serviceLabel, defaultService, zipLine,
         </p>
       </div>
       <div className="bg-card border border-border rounded-2xl shadow-sm p-5 md:p-7">
-        <QuoteForm defaultService={defaultService} submitLabel={`Get My Free ${serviceLabel} Quote →`} />
+        <QuoteForm defaultService={defaultService} submitLabel={`Get My Free ${serviceLabel} Quote →`} compact />
       </div>
       <p className="text-center text-xs text-muted-foreground mt-3">
         Same-day slots available · 100% satisfaction guaranteed · Bonded &amp; Insured

@@ -247,14 +247,14 @@ const HouseCleaningNearMe = () => {
       <TrustBadges compact />
 
       {/* Quote Form */}
-      <section className="py-16 bg-secondary" id="quote">
+      <section className="py-16 bg-secondary scroll-mt-20" id="quote">
         <div className="container mx-auto px-4 max-w-2xl">
           <h2 className="font-heading text-3xl font-bold text-center mb-6">
             Get a Free Quote for Cleaning Near You
           </h2>
           <Card className="shadow-xl">
             <CardContent className="p-6 md:p-10">
-              <QuoteForm />
+              <QuoteForm compact />
             </CardContent>
           </Card>
         </div>

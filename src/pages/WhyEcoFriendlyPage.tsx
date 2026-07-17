@@ -804,7 +804,7 @@ const WhyEcoFriendlyPage = () => {
       </section>
 
       {/* ── Quote Form ── */}
-      <section className="py-16 bg-secondary" id="quote">
+      <section className="py-16 bg-secondary scroll-mt-20" id="quote">
         <div className="container mx-auto px-4 max-w-2xl">
           <div className="text-center mb-8">
             <h2 className="font-heading text-3xl font-bold mb-3">
@@ -819,7 +819,7 @@ const WhyEcoFriendlyPage = () => {
           </div>
           <Card>
             <CardContent className="p-6 md:p-8">
-              <QuoteForm submitLabel="Get My Free Eco-Clean Quote →" />
+              <QuoteForm submitLabel="Get My Free Eco-Clean Quote →" compact />
             </CardContent>
           </Card>
           <p className="text-center text-xs text-muted-foreground mt-4">
