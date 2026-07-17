@@ -1,17 +1,18 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, CheckCircle2, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { useSEO } from "@/hooks/useSEO";
 import { Helmet } from "react-helmet-async";
-import { ArticleSchema, BreadcrumbSchema, HowToSchema, FAQSchema } from "@/components/SchemaMarkup";
+import { ArticleSchema, BreadcrumbSchema, FAQSchema } from "@/components/SchemaMarkup";
 import BlogHero from "@/components/blog/BlogHero";
 import FadeInSection from "@/components/blog/FadeInSection";
 import FAQAccordion from "@/components/blog/FAQAccordion";
 import BlogInlineCTA from "@/components/blog/BlogInlineCTA";
 import StickyCTA from "@/components/blog/StickyCTA";
 import RelatedPosts from "@/components/blog/RelatedPosts";
+import DeepCleaningChecklistTool from "@/components/blog/DeepCleaningChecklistTool";
 
 const HERO_IMAGE = "/images/cluster/included.webp";
 const OG_IMAGE = "/images/cluster/included-og.jpg";
@@ -126,14 +127,6 @@ const WhatsIncludedDeepCleaning = () => {
         datePublished="2026-06-16"
         image={HERO_IMAGE}
       />
-      <HowToSchema
-        name="What a Professional Deep Cleaning Covers"
-        description="The method and scope of a professional deep cleaning, from high-to-low dusting to detail zones and inside appliances."
-        url="https://capitalcleancare.com/resources/what-is-included-in-a-deep-cleaning"
-        steps={steps}
-        totalTime="PT4H"
-        image={HERO_IMAGE}
-      />
       <FAQSchema faqs={faqs} />
       <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "What Is Included in a Deep Cleaning", href: "/resources/what-is-included-in-a-deep-cleaning" }]} />
 
@@ -167,29 +160,11 @@ const WhatsIncludedDeepCleaning = () => {
               This is the room-by-room list our teams actually work from — close to <strong>50 individual tasks</strong>,
               and the same checklist behind the white-glove inspection that closes out every{" "}
               <Link to="/services/deep-cleaning" className="text-accent font-medium hover:underline">GreenShield 5-Step Clean™</Link>.
-              Nothing here is upsold as an extra; it's simply what "deep" means.
+              Nothing here is upsold as an extra; it's simply what "deep" means. Tick each task off as you work through
+              your home, then <strong>download a personalized PDF</strong> to take with you or hand to your cleaner —
+              the optional add-ons at the end are done on request, so just mention any you want when you book.
             </p>
-            <div className="space-y-5 mb-6">
-              {checklist.map(([room, items]) => (
-                <div key={room} className="border border-border rounded-2xl p-5 bg-secondary/30">
-                  <p className="font-heading font-bold text-foreground mb-3 flex items-center gap-2"><Sparkles className="h-5 w-5 text-accent" /> {room}</p>
-                  <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-1.5">
-                    {items.map((it) => (
-                      <li key={it} className="flex items-start gap-2 text-sm text-muted-foreground"><CheckCircle2 className="h-4 w-4 text-accent shrink-0 mt-0.5" /> {it}</li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-            <div className="border border-accent/30 rounded-2xl p-5 bg-accent/5 mb-10">
-              <p className="font-heading font-bold text-foreground mb-3">Included on request</p>
-              <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-1.5">
-                {onRequest.map((it) => (
-                  <li key={it} className="flex items-start gap-2 text-sm text-muted-foreground"><CheckCircle2 className="h-4 w-4 text-accent shrink-0 mt-0.5" /> {it}</li>
-                ))}
-              </ul>
-              <p className="text-xs text-muted-foreground mt-3">Just mention any of these when you book and we'll fold them into the plan and the quote.</p>
-            </div>
+            <DeepCleaningChecklistTool checklist={checklist} onRequest={onRequest} />
           </FadeInSection>
 
           <FadeInSection>
