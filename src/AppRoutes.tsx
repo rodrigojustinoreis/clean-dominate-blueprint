@@ -18,7 +18,6 @@ import BlogPost from "./pages/BlogPost";
 import ResourceCategory from "./pages/ResourceCategory";
 import FaqHub from "./pages/FaqHub";
 import PricingPage from "./pages/PricingPage";
-import CleaningFrequencyCalculatorPage from "./pages/CleaningFrequencyCalculator";
 import { RESOURCE_CATEGORIES } from "./data/resource-categories";
 import HowToCleanCarpetBlog from "./pages/HowToCleanCarpetBlog";
 import HowToRemoveCandleWaxBlog from "./pages/HowToRemoveCandleWaxBlog";
@@ -211,8 +210,6 @@ const AppRoutes = () => (
     <Route path="/resources" element={<Blog />} />
     {/* /resources/faq is the central FAQ hub (not the category listing). */}
     <Route path="/resources/faq" element={<FaqHub />} />
-    {/* Interactive tools under /resources/tools/ — static two-segment paths, never caught by /resources/:slug */}
-    <Route path="/resources/tools/cleaning-frequency-calculator" element={<CleaningFrequencyCalculatorPage />} />
     {/* Resource Center category indexes — static paths, so they rank above /resources/:slug */}
     {RESOURCE_CATEGORIES.filter((c) => c.slug !== "faq").map((c) => (
       <Route key={c.slug} path={`/resources/${c.slug}`} element={<ResourceCategory slug={c.slug} />} />

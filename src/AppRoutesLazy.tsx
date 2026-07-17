@@ -24,7 +24,6 @@ const BlogPost = lazy(() => import("./pages/BlogPost"));
 const ResourceCategory = lazy(() => import("./pages/ResourceCategory"));
 const FaqHub = lazy(() => import("./pages/FaqHub"));
 const PricingPage = lazy(() => import("./pages/PricingPage"));
-const CleaningFrequencyCalculatorPage = lazy(() => import("./pages/CleaningFrequencyCalculator"));
 const HowToCleanCarpetBlog = lazy(() => import("./pages/HowToCleanCarpetBlog"));
 const HowToRemoveCandleWaxBlog = lazy(() => import("./pages/HowToRemoveCandleWaxBlog"));
 const HowToCleanYourWashingMachineEcoFriendly = lazy(() => import("./pages/HowToCleanYourWashingMachineEcoFriendly"));
@@ -216,8 +215,6 @@ const AppRoutesLazy = () => (
     <Route path="/resources" element={<Blog />} />
     {/* /resources/faq is the central FAQ hub (not the category listing). */}
     <Route path="/resources/faq" element={<FaqHub />} />
-    {/* Interactive tools under /resources/tools/ — static two-segment paths, never caught by /resources/:slug */}
-    <Route path="/resources/tools/cleaning-frequency-calculator" element={<CleaningFrequencyCalculatorPage />} />
     {/* Resource Center category indexes — static paths, so they rank above /resources/:slug */}
     {RESOURCE_CATEGORIES.filter((c) => c.slug !== "faq").map((c) => (
       <Route key={c.slug} path={`/resources/${c.slug}`} element={<ResourceCategory slug={c.slug} />} />

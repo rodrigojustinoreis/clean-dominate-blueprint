@@ -160,6 +160,15 @@
   status = 301
   force = true
 
+# Fase 3.2 tool pulled offline (quality bar) — 301 to the closest content until a better
+# version ships. Reversible: delete this rule + re-add the route in AppRoutes/AppRoutesLazy
+# + prerender.tsx. Component files kept in src/ (pages/ + components/tools/) for reuse.
+[[redirects]]
+  from = "/resources/tools/cleaning-frequency-calculator"
+  to = "/resources/how-often-should-you-deep-clean"
+  status = 301
+  force = true
+
 [[redirects]]
   from = "/home/f/*"
   to = "/resources"

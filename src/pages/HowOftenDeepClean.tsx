@@ -122,9 +122,7 @@ const HowOftenDeepClean = () => {
             </div>
             <p className="text-muted-foreground leading-relaxed mb-8">
               Think of these as starting points, not rules. The honest test is simple: if the detail areas — grout, baseboards,
-              vents, inside the oven — have visibly built up since the last deep clean, it's time for another one. Want a
-              recommendation tailored to your household? Try our{" "}
-              <Link to="/resources/tools/cleaning-frequency-calculator" className="text-accent underline hover:no-underline">cleaning frequency calculator</Link>.
+              vents, inside the oven — have visibly built up since the last deep clean, it's time for another one.
             </p>
           </FadeInSection>
 
