@@ -21,6 +21,7 @@ function getAllRoutes(): string[] {
     "/faq",
     "/pricing",
     "/resources",
+    "/resources/tools/cleaning-frequency-calculator",
     "/resources/how-to-clean-carpet-home-apartment",
     "/resources/how-to-remove-candle-wax-eco-friendly",
     "/resources/how-to-clean-your-washing-machine-eco-friendly",
