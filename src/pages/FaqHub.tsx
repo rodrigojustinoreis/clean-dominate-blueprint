@@ -122,6 +122,7 @@ const FaqHub = () => {
     description:
       "Answers to 45 common questions about house cleaning in Maryland, DC & Virginia — booking, pricing, what's included, products, trust & safety, and scheduling. Search or browse by topic.",
     canonical: "https://capitalcleancare.com/resources/faq",
+    ogImage: "/images/cluster/faq-og.jpg",
   });
 
   // Client-only filter. SSR renders with an empty query, so all Q&As are in the static HTML.
@@ -151,6 +152,21 @@ const FaqHub = () => {
             use, trust and safety, and scheduling. Search below, or jump to a topic. Still stuck?{" "}
             <Link to="/contact" className="text-accent hover:underline font-medium">Ask us directly</Link>.
           </p>
+
+          {/* Light illustrative banner — fixed height reserves space (no CLS), kept modest so the
+              search box and first questions stay above the fold. */}
+          <div className="rounded-2xl overflow-hidden border border-border mb-8 h-36 md:h-48">
+            <img
+              src="/images/cluster/faq.webp"
+              srcSet="/images/cluster/faq-640.webp 640w, /images/cluster/faq.webp 1280w"
+              sizes="(max-width: 896px) 100vw, 896px"
+              alt="A warm, tidy entryway of a clean home with a plant and folded blanket"
+              className="w-full h-full object-cover"
+              width={1280}
+              height={720}
+              loading="eager"
+            />
+          </div>
 
           {/* Search filter */}
           <div className="relative mb-8">

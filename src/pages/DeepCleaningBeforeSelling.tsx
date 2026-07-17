@@ -13,7 +13,8 @@ import BlogInlineCTA from "@/components/blog/BlogInlineCTA";
 import StickyCTA from "@/components/blog/StickyCTA";
 import RelatedPosts from "@/components/blog/RelatedPosts";
 
-const HERO_IMAGE = "/images/blog/sparkling-kitchen.webp";
+const HERO_IMAGE = "/images/cluster/selling.webp";
+const OG_IMAGE = "/images/cluster/selling-og.jpg";
 const URL = "https://capitalcleancare.com/resources/deep-cleaning-before-selling-house";
 
 const priorities: { room: string; why: string }[] = [
@@ -37,6 +38,7 @@ const DeepCleaningBeforeSelling = () => {
     description:
       "Why agents recommend a deep clean before listing, what to prioritize for photos and showings, and the ideal timing. A room-by-room guide to getting your home market-ready.",
     canonical: URL,
+    ogImage: OG_IMAGE,
   });
 
   return (
@@ -61,7 +63,7 @@ const DeepCleaningBeforeSelling = () => {
         </div>
       </div>
 
-      <BlogHero src={HERO_IMAGE} alt="deep cleaning before selling — a spotless, listing-ready kitchen">
+      <BlogHero src={HERO_IMAGE} alt="A staged, listing-ready living room, deep cleaned and bright for real-estate showings">
         <span className="bg-accent/20 text-accent font-semibold px-4 py-1.5 rounded-full text-sm inline-block mb-6 uppercase tracking-wider border border-accent/30">Cleaning Guides</span>
         <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight drop-shadow-md">Deep Cleaning Before Selling Your House</h1>
         <p className="text-xl md:text-2xl text-gray-200 mb-4 leading-relaxed font-medium">Why agents recommend it, what to prioritize for photos and showings, and when to book it</p>

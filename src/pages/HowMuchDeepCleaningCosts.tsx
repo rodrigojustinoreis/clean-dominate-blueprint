@@ -13,7 +13,8 @@ import BlogInlineCTA from "@/components/blog/BlogInlineCTA";
 import StickyCTA from "@/components/blog/StickyCTA";
 import RelatedPosts from "@/components/blog/RelatedPosts";
 
-const HERO_IMAGE = "/images/blog/deep-cleaning-cost/hero.webp";
+const HERO_IMAGE = "/images/cluster/cost.webp";
+const OG_IMAGE = "/images/cluster/cost-og.jpg";
 
 // Deep-clean prices by home size — consistent with the city cost pages.
 const priceRows: [string, string, string][] = [
@@ -46,6 +47,7 @@ const HowMuchDeepCleaningCosts = () => {
     description:
       "How much a deep cleaning costs in the DMV — real 2026 prices by home size, what drives the cost, and how it compares to a standard clean. Typical 3-bed deep clean runs $375–$445.",
     canonical: "https://capitalcleancare.com/resources/how-much-does-deep-cleaning-cost",
+    ogImage: OG_IMAGE,
   });
 
   return (
@@ -71,7 +73,7 @@ const HowMuchDeepCleaningCosts = () => {
         </div>
       </div>
 
-      <BlogHero src={HERO_IMAGE} alt="A professional deep-cleaning a tiled bathroom in a Maryland home">
+      <BlogHero src={HERO_IMAGE} alt="A pristine, freshly deep-cleaned living room in soft daylight">
         <span className="bg-accent/20 text-accent font-semibold px-4 py-1.5 rounded-full text-sm inline-block mb-6 uppercase tracking-wider border border-accent/30">Cleaning Guides</span>
         <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight drop-shadow-md">How Much Does a Deep Cleaning Cost?</h1>
         <p className="text-xl md:text-2xl text-gray-200 mb-4 leading-relaxed font-medium">Real 2026 deep cleaning prices by home size in Maryland, DC & Virginia</p>

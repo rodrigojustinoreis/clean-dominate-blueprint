@@ -13,7 +13,8 @@ import BlogInlineCTA from "@/components/blog/BlogInlineCTA";
 import StickyCTA from "@/components/blog/StickyCTA";
 import RelatedPosts from "@/components/blog/RelatedPosts";
 
-const HERO_IMAGE = "/images/blog/sparkling-kitchen.webp";
+const HERO_IMAGE = "/images/cluster/apartments.webp";
+const OG_IMAGE = "/images/cluster/apartments-og.jpg";
 const URL = "https://capitalcleancare.com/resources/deep-cleaning-for-apartments";
 
 // Team timelines for apartments — the smaller end of our standard deep-clean timings.
@@ -43,6 +44,7 @@ const DeepCleaningForApartments = () => {
     description:
       "How deep cleaning an apartment or condo differs from a house — building access, shorter timelines, and what's covered. Real team timelines for studios to large condos across the DMV.",
     canonical: URL,
+    ogImage: OG_IMAGE,
   });
 
   return (
@@ -67,7 +69,7 @@ const DeepCleaningForApartments = () => {
         </div>
       </div>
 
-      <BlogHero src={HERO_IMAGE} alt="deep cleaning for apartments — a spotless condo kitchen in the DMV">
+      <BlogHero src={HERO_IMAGE} alt="A gloved hand wiping the floor-to-ceiling windows of a modern high-rise condo during a deep clean">
         <span className="bg-accent/20 text-accent font-semibold px-4 py-1.5 rounded-full text-sm inline-block mb-6 uppercase tracking-wider border border-accent/30">Cleaning Guides</span>
         <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight drop-shadow-md">Deep Cleaning for Apartments &amp; Condos</h1>
         <p className="text-xl md:text-2xl text-gray-200 mb-4 leading-relaxed font-medium">How it differs from a house — logistics, timelines, and what's covered</p>

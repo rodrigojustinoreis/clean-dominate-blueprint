@@ -13,7 +13,8 @@ import BlogInlineCTA from "@/components/blog/BlogInlineCTA";
 import StickyCTA from "@/components/blog/StickyCTA";
 import RelatedPosts from "@/components/blog/RelatedPosts";
 
-const HERO_IMAGE = "/images/blog/whats-included-deep/hero.webp";
+const HERO_IMAGE = "/images/cluster/included.webp";
+const OG_IMAGE = "/images/cluster/included-og.jpg";
 
 // The full room-by-room list our teams work from — the same ~50-point checklist behind the
 // GreenShield 5-Step Clean™ white-glove inspection. Real scope, nothing invented.
@@ -108,6 +109,7 @@ const WhatsIncludedDeepCleaning = () => {
     description:
       "Exactly what's included in a deep cleaning — the room-by-room checklist, how it differs from a standard clean, how long it takes, and whether inside the oven and fridge are included.",
     canonical: "https://capitalcleancare.com/resources/what-is-included-in-a-deep-cleaning",
+    ogImage: OG_IMAGE,
   });
 
   return (
@@ -141,7 +143,7 @@ const WhatsIncludedDeepCleaning = () => {
         </div>
       </div>
 
-      <BlogHero src={HERO_IMAGE} alt="A professional cleaner deep-cleaning a kitchen in a Maryland home">
+      <BlogHero src={HERO_IMAGE} alt="Freshly scrubbed tile and grout in a spotless bathroom after a deep cleaning, with an eco-friendly brush and spray on the tub ledge">
         <span className="bg-accent/20 text-accent font-semibold px-4 py-1.5 rounded-full text-sm inline-block mb-6 uppercase tracking-wider border border-accent/30">Cleaning Guides</span>
         <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight drop-shadow-md">What Is Included in a Deep Cleaning?</h1>
         <p className="text-xl md:text-2xl text-gray-200 mb-4 leading-relaxed font-medium">The full room-by-room checklist — and what makes it different from a standard clean</p>

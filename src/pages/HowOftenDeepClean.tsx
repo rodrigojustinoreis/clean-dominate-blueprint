@@ -13,7 +13,8 @@ import BlogInlineCTA from "@/components/blog/BlogInlineCTA";
 import StickyCTA from "@/components/blog/StickyCTA";
 import RelatedPosts from "@/components/blog/RelatedPosts";
 
-const HERO_IMAGE = "/images/blog/deep-scrub-detail.webp";
+const HERO_IMAGE = "/images/cluster/howoften.webp";
+const OG_IMAGE = "/images/cluster/howoften-og.jpg";
 const URL = "https://capitalcleancare.com/resources/how-often-should-you-deep-clean";
 
 // Recommended deep-clean cadence by household profile. Baseline (twice a year / quarterly) is our
@@ -41,6 +42,7 @@ const HowOftenDeepClean = () => {
     description:
       "How often should you deep clean? A baseline of twice a year, adjusted by household — pets, kids, allergies, and selling. Recommended frequency by profile, plus how to stretch the time between cleans.",
     canonical: URL,
+    ogImage: OG_IMAGE,
   });
 
   return (
@@ -65,7 +67,7 @@ const HowOftenDeepClean = () => {
         </div>
       </div>
 
-      <BlogHero src={HERO_IMAGE} alt="how often should you deep clean — DMV team deep scrubbing a bathroom">
+      <BlogHero src={HERO_IMAGE} alt="A consistently tidy, well-kept living room kept fresh with a regular cleaning routine">
         <span className="bg-accent/20 text-accent font-semibold px-4 py-1.5 rounded-full text-sm inline-block mb-6 uppercase tracking-wider border border-accent/30">Cleaning Guides</span>
         <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight drop-shadow-md">How Often Should You Deep Clean Your House?</h1>
         <p className="text-xl md:text-2xl text-gray-200 mb-4 leading-relaxed font-medium">A baseline of twice a year — adjusted for pets, kids, allergies, and selling</p>

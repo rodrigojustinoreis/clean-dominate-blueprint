@@ -177,7 +177,7 @@ export const blogPosts: BlogPost[] = [
     title: "How Long Does a Deep Cleaning Take? Real Timelines",
     excerpt: "Real deep cleaning timelines by home size, solo cleaner vs team, what slows the job down, and how to prepare so it goes faster.",
     date: "2026-07-08", readTime: "6 min read", category: "Cleaning Guides",
-    coverImage: "/images/blog/deep-scrub-detail.webp",
+    coverImage: "/images/cluster/howlong.webp",
   },
   {
     slug: "airbnb-cleaning-checklist",
@@ -254,7 +254,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-07-16",
     readTime: "7 min read",
     category: "Cleaning Guides",
-    coverImage: "/images/blog/deep-scrub-detail.webp",
+    coverImage: "/images/cluster/howoften.webp",
   },
   {
     slug: "deep-cleaning-before-selling-house",
@@ -263,7 +263,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-07-16",
     readTime: "7 min read",
     category: "Cleaning Guides",
-    coverImage: "/images/blog/sparkling-kitchen.webp",
+    coverImage: "/images/cluster/selling.webp",
   },
   {
     slug: "deep-cleaning-for-apartments",
@@ -272,7 +272,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-07-16",
     readTime: "6 min read",
     category: "Cleaning Guides",
-    coverImage: "/images/blog/sparkling-kitchen.webp",
+    coverImage: "/images/cluster/apartments.webp",
   },
   {
     slug: "eco-friendly-deep-cleaning",
@@ -281,7 +281,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-07-16",
     readTime: "7 min read",
     category: "Cleaning Guides",
-    coverImage: "/images/team/team-supplies-basket.webp",
+    coverImage: "/images/cluster/eco.webp",
   },
   {
     slug: "how-much-does-deep-cleaning-cost",
@@ -290,7 +290,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-06-16",
     readTime: "6 min read",
     category: "Cleaning Guides",
-    coverImage: "/images/blog/deep-cleaning-cost/hero.webp",
+    coverImage: "/images/cluster/cost.webp",
   },
   {
     slug: "move-out-cleaning-cost-maryland",
@@ -326,7 +326,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-06-16",
     readTime: "6 min read",
     category: "Cleaning Guides",
-    coverImage: "/images/blog/whats-included-deep/hero.webp",
+    coverImage: "/images/cluster/included.webp",
   },
   {
     slug: "how-often-should-you-hire-a-cleaning-service",
@@ -679,7 +679,7 @@ export const blogPosts: BlogPost[] = [
     date: "2025-12-15",
     readTime: "8 min read",
     category: "Cleaning Guides",
-    coverImage: "https://images.pexels.com/photos/2635038/pexels-photo-2635038.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
+    coverImage: "/images/cluster/postreno.webp",
   },
   {
     slug: "recurring-cleaning-weekly-biweekly-monthly",

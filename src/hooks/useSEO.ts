@@ -32,6 +32,14 @@ export const useSEO = ({ title, description, canonical, ogType = "website", ogIm
   const canonicalUrl = canonical || getCanonicalUrl(pathname);
   const pair = getRoutePair(pathname);
 
+  // og:image must be an ABSOLUTE URL for social crawlers. Absolutize a per-page image, or fall
+  // back to the site default. Emitted on every page (single source of truth) so it never
+  // conflicts with a static index.html og:image.
+  const ORIGIN = "https://capitalcleancare.com";
+  const ogImageUrl = ogImage
+    ? (ogImage.startsWith("http") ? ogImage : `${ORIGIN}${ogImage.startsWith("/") ? "" : "/"}${ogImage}`)
+    : `${ORIGIN}/og-image.jpg`;
+
   const hreflangLinks = pair
     ? [
         createElement("link", { key: "hreflang-en", rel: "alternate", hrefLang: "en", href: getCanonicalUrl(pair.en) }),
@@ -74,15 +82,12 @@ export const useSEO = ({ title, description, canonical, ogType = "website", ogIm
         ? "noindex,follow"
         : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
     }),
-    ...(ogImage
-      ? [
-          createElement("meta", { key: "og-img", property: "og:image", content: ogImage }),
-          createElement("meta", { key: "og-img-w", property: "og:image:width", content: "1200" }),
-          createElement("meta", { key: "og-img-h", property: "og:image:height", content: "630" }),
-          createElement("meta", { key: "og-img-alt", property: "og:image:alt", content: finalTitle }),
-          createElement("meta", { key: "tw-img", name: "twitter:image", content: ogImage }),
-        ]
-      : []),
+    createElement("meta", { key: "og-img", property: "og:image", content: ogImageUrl }),
+    createElement("meta", { key: "og-img-secure", property: "og:image:secure_url", content: ogImageUrl }),
+    createElement("meta", { key: "og-img-w", property: "og:image:width", content: "1200" }),
+    createElement("meta", { key: "og-img-h", property: "og:image:height", content: "630" }),
+    createElement("meta", { key: "og-img-alt", property: "og:image:alt", content: finalTitle }),
+    createElement("meta", { key: "tw-img", name: "twitter:image", content: ogImageUrl }),
   ];
 
   const seoHelmet = createElement(Helmet, null, ...children);

@@ -138,6 +138,7 @@ const DeepCleaningPage = () => {
     title: service.metaTitle,
     description: service.metaDescription,
     canonical: "https://capitalcleancare.com/services/deep-cleaning",
+    ogImage: "/images/cluster/pillar-og.jpg",
   });
 
   const scrollToForm = (e: React.MouseEvent) => {
@@ -260,8 +261,8 @@ const DeepCleaningPage = () => {
               <div className="relative lg:pl-4">
                 <div className="rounded-3xl overflow-hidden shadow-2xl border border-border aspect-[4/3]">
                   <img
-                    src="/images/team/team-tile-scrubber.jpg"
-                    alt="Capital Clean Care deep cleaning team scrubbing tile and grout in a Montgomery County home"
+                    src="/images/cluster/pillar.webp"
+                    alt="Gloved hands wiping a stainless steel oven to a shine during a deep cleaning in a bright Montgomery County kitchen"
                     className="w-full h-full object-cover"
                     width={800}
                     height={600}

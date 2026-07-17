@@ -13,7 +13,8 @@ import BlogInlineCTA from "@/components/blog/BlogInlineCTA";
 import StickyCTA from "@/components/blog/StickyCTA";
 import RelatedPosts from "@/components/blog/RelatedPosts";
 
-const HERO_IMAGE = "/images/team/team-supplies-basket.webp";
+const HERO_IMAGE = "/images/cluster/eco.webp";
+const OG_IMAGE = "/images/cluster/eco-og.jpg";
 const URL = "https://capitalcleancare.com/resources/eco-friendly-deep-cleaning";
 
 // The GreenShield 5-Step Clean™ — matches src/components/GreenShield5Step.tsx (single source of truth).
@@ -38,6 +39,7 @@ const EcoFriendlyDeepCleaning = () => {
     description:
       "Why a deep clean doesn't need harsh chemicals. How the GreenShield 5-Step Clean™ and EPA Safer Choice products deliver a top-to-bottom deep clean that's safe for kids, pets, and allergies.",
     canonical: URL,
+    ogImage: OG_IMAGE,
   });
 
   return (
@@ -62,7 +64,7 @@ const EcoFriendlyDeepCleaning = () => {
         </div>
       </div>
 
-      <BlogHero src={HERO_IMAGE} alt="eco-friendly deep cleaning — EPA Safer Choice plant-based supplies">
+      <BlogHero src={HERO_IMAGE} alt="Plant-based, eco-friendly cleaning supplies and a potted plant on a clean kitchen counter">
         <span className="bg-accent/20 text-accent font-semibold px-4 py-1.5 rounded-full text-sm inline-block mb-6 uppercase tracking-wider border border-accent/30">Cleaning Guides</span>
         <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight drop-shadow-md">Eco-Friendly Deep Cleaning</h1>
         <p className="text-xl md:text-2xl text-gray-200 mb-4 leading-relaxed font-medium">Why a deep clean doesn't need harsh chemicals — the GreenShield method</p>

@@ -12,7 +12,8 @@ import BlogInlineCTA from "@/components/blog/BlogInlineCTA";
 import StickyCTA from "@/components/blog/StickyCTA";
 import RelatedPosts from "@/components/blog/RelatedPosts";
 
-const HERO_IMAGE = "/images/blog/deep-scrub-detail.webp";
+const HERO_IMAGE = "/images/cluster/howlong.webp";
+const OG_IMAGE = "/images/cluster/howlong-og.jpg";
 const URL = "https://capitalcleancare.com/resources/how-long-does-deep-cleaning-take";
 
 const timeline: { size: string; solo: string; team: string }[] = [
@@ -51,6 +52,7 @@ const HowLongDeepCleaningTakes = () => {
     description:
       "How long does a deep cleaning take? A typical 3BR home takes 4-6 hours with a 2-person team. Timelines by home size, what slows it down, and how to prep.",
     canonical: URL,
+    ogImage: OG_IMAGE,
   });
 
   return (
@@ -68,7 +70,7 @@ const HowLongDeepCleaningTakes = () => {
       />
       <FAQSchema faqs={faqs} />
 
-      <BlogHero src={HERO_IMAGE} alt="how long does a deep cleaning take — DMV team deep scrubbing tile">
+      <BlogHero src={HERO_IMAGE} alt="A housekeeper vacuuming a bright open-plan living room with a professional vacuum during a deep clean">
         <span className="bg-accent/20 text-accent font-semibold px-4 py-1.5 rounded-full text-sm inline-block mb-6 uppercase tracking-wider border border-accent/30">Cleaning Guides</span>
         <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight drop-shadow-md">How Long Does a Deep Cleaning Take?</h1>
         <p className="text-xl md:text-2xl text-gray-200 mb-4 leading-relaxed font-medium">Real timelines by home size, from studios to 5-bedroom houses</p>
