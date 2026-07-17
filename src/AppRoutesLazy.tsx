@@ -314,7 +314,6 @@ const AppRoutesLazy = () => (
     <Route path="/about-us" element={<Navigate to="/about" replace />} />
     <Route path="/contact-us" element={<Navigate to="/contact" replace />} />
     <Route path="/book-now" element={<Navigate to="/#quote" replace />} />
-    <Route path="/pricing" element={<Navigate to="/" replace />} />
     {/* Vanity landing pages */}
     <Route path="/house-cleaning-wheaton-md" element={<VanityLandingPage />} />
     <Route path="/eco-cleaning-bethesda-md" element={<VanityLandingPage />} />
