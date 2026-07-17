@@ -37,7 +37,7 @@ const StickyMobileCTA = () => {
         {isSpanish ? "Llamar" : "Call"}
       </a>
       <Button variant="cta" className="flex-1 h-12 rounded-full text-sm font-bold shadow-lg shadow-accent/25" asChild>
-        <a href={isSpanish ? "/es/contacto#cotizacion" : "#quote"} onClick={() => trackBookNowClick("sticky_mobile_cta")}>
+        <a href={isSpanish ? "/es/contacto#cotizacion" : "/#quote"} onClick={() => trackBookNowClick("sticky_mobile_cta")}>
           {isSpanish ? "Cotización Gratis" : "Free Quote"} <ArrowRight className="ml-1 h-4 w-4" />
         </a>
       </Button>
