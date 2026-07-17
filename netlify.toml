@@ -348,10 +348,6 @@
   status = 301
 
 # ── Dead/old internal URLs ────────────────────────────────────────────────────
-[[redirects]]
-  from = "/pricing"
-  to = "/"
-  status = 301
 
 [[redirects]]
   from = "/premium-clean"

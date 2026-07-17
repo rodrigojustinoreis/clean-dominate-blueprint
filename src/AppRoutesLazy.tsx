@@ -23,6 +23,7 @@ const BlogTopic = lazy(() => import("./pages/BlogTopic"));
 const BlogPost = lazy(() => import("./pages/BlogPost"));
 const ResourceCategory = lazy(() => import("./pages/ResourceCategory"));
 const FaqHub = lazy(() => import("./pages/FaqHub"));
+const PricingPage = lazy(() => import("./pages/PricingPage"));
 const HowToCleanCarpetBlog = lazy(() => import("./pages/HowToCleanCarpetBlog"));
 const HowToRemoveCandleWaxBlog = lazy(() => import("./pages/HowToRemoveCandleWaxBlog"));
 const HowToCleanYourWashingMachineEcoFriendly = lazy(() => import("./pages/HowToCleanYourWashingMachineEcoFriendly"));
@@ -210,6 +211,7 @@ const AppRoutesLazy = () => (
     <Route path="/services/:slug" element={<ServicePage />} />
     <Route path="/why-eco-friendly-cleaning" element={<WhyEcoFriendlyPage />} />
     <Route path="/faq" element={<FAQPage />} />
+    <Route path="/pricing" element={<PricingPage />} />
     <Route path="/resources" element={<Blog />} />
     {/* /resources/faq is the central FAQ hub (not the category listing). */}
     <Route path="/resources/faq" element={<FaqHub />} />

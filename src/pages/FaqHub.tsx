@@ -43,7 +43,7 @@ const THEMES: Theme[] = [
     id: "pricing",
     title: "Pricing & Payment",
     faqs: [
-      { q: "How much does house cleaning cost?", a: "Cost depends on your home's size, condition, and the type of clean. As a guide, a standard cleaning for a 2-bedroom home typically starts around $150–$200, and a deep clean runs higher. Request a free quote for an exact flat price.", href: "/resources/house-cleaning-prices-maryland-2026", linkText: "2026 pricing breakdown" },
+      { q: "How much does house cleaning cost?", a: "Cost depends on your home's size, condition, and the type of clean. As a guide, a standard cleaning for a 2-bedroom home typically starts around $150–$200, and a deep clean runs higher. Our full price list breaks it down by home size and service type.", href: "/pricing", linkText: "See full pricing" },
       { q: "Do you charge by the hour or a flat rate?", a: "We charge a flat rate per job, not by the hour. You know the full price upfront before we start, so there are no surprises if a clean takes longer than expected." },
       { q: "What makes a cleaning cost more or less?", a: "Home size, number of bathrooms, and condition are the biggest factors. Bathrooms drive the price more than bedrooms, and a home that hasn't had a professional clean in a while sits at the top of its range because there's more built-up grime to remove." },
       { q: "Are there any hidden fees?", a: "No — our flat-rate quote is the price you pay, with all products and equipment included. We're transparent about anything that would change a quote, like add-on tasks you request.", href: "/resources/hidden-fees-house-cleaning", linkText: "Hidden fees to watch for" },

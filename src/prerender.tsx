@@ -19,6 +19,7 @@ function getAllRoutes(): string[] {
     "/contact",
     "/gift-cards",
     "/faq",
+    "/pricing",
     "/resources",
     "/resources/how-to-clean-carpet-home-apartment",
     "/resources/how-to-remove-candle-wax-eco-friendly",

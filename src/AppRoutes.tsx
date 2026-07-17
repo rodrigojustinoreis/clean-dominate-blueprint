@@ -17,6 +17,7 @@ import BlogTopic from "./pages/BlogTopic";
 import BlogPost from "./pages/BlogPost";
 import ResourceCategory from "./pages/ResourceCategory";
 import FaqHub from "./pages/FaqHub";
+import PricingPage from "./pages/PricingPage";
 import { RESOURCE_CATEGORIES } from "./data/resource-categories";
 import HowToCleanCarpetBlog from "./pages/HowToCleanCarpetBlog";
 import HowToRemoveCandleWaxBlog from "./pages/HowToRemoveCandleWaxBlog";
@@ -205,6 +206,7 @@ const AppRoutes = () => (
     <Route path="/services/:slug" element={<ServicePage />} />
     <Route path="/why-eco-friendly-cleaning" element={<WhyEcoFriendlyPage />} />
     <Route path="/faq" element={<FAQPage />} />
+    <Route path="/pricing" element={<PricingPage />} />
     <Route path="/resources" element={<Blog />} />
     {/* /resources/faq is the central FAQ hub (not the category listing). */}
     <Route path="/resources/faq" element={<FaqHub />} />

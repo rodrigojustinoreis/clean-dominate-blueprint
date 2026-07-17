@@ -132,7 +132,7 @@ const Header = () => {
                   </div>
                 </div>
 
-                <a href="/#pricing" className="whitespace-nowrap px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">Pricing</a>
+                <Link to="/pricing" className="whitespace-nowrap px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">Pricing</Link>
                 <Link to="/resources" className="whitespace-nowrap px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">Resources</Link>
                 <Link to="/about" className="whitespace-nowrap px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">About</Link>
                 <Link to="/contact" className="whitespace-nowrap px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">Contact</Link>
@@ -250,7 +250,7 @@ const Header = () => {
                   </div>
                 )}
 
-                <a href="/#pricing" className="block px-3 py-2 rounded-md hover:bg-secondary" onClick={() => setMobileOpen(false)}>Pricing</a>
+                <Link to="/pricing" className="block px-3 py-2 rounded-md hover:bg-secondary" onClick={() => setMobileOpen(false)}>Pricing</Link>
                 <Link to="/resources" className="block px-3 py-2 rounded-md hover:bg-secondary" onClick={() => setMobileOpen(false)}>Resources</Link>
                 <Link to="/about" className="block px-3 py-2 rounded-md hover:bg-secondary" onClick={() => setMobileOpen(false)}>About</Link>
                 <Link to="/contact" className="block px-3 py-2 rounded-md hover:bg-secondary" onClick={() => setMobileOpen(false)}>Contact</Link>
