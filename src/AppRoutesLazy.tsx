@@ -1,13 +1,16 @@
 // AUTO-GENERATED from AppRoutes.tsx — route-level code splitting for the browser bundle.
-// Every page except Index (LCP-critical) and NotFound is a lazy chunk. The prerender
-// keeps using the eager AppRoutes; both trees are wrapped in the same <Suspense>
-// boundary so hydration markers match. Regenerate with the same transform if routes change.
+// Every page is a lazy chunk. The prerender keeps using the eager AppRoutes; both trees
+// are wrapped in the same <Suspense> boundary so hydration markers match (React 18
+// selective hydration keeps the prerendered HTML visible while a lazy chunk loads).
+// Regenerate with the same transform if routes change.
+// NOTE: Index is lazy too — it used to be an eager static import ("LCP-critical"), but the
+// home LCP is the preloaded hero image (not JS), and eager Index forced its 438KB chunk into
+// EVERY page's modulepreload graph. Lazy keeps it on the "/" route only.
 import { lazy } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { RESOURCE_CATEGORIES } from "./data/resource-categories";
 
-// Regular imports (no lazy) — required for synchronous renderToString in SSR
-import Index from "./pages/Index";
+const Index = lazy(() => import("./pages/Index"));
 const About = lazy(() => import("./pages/About"));
 const Reviews = lazy(() => import("./pages/Reviews"));
 const Contact = lazy(() => import("./pages/Contact"));

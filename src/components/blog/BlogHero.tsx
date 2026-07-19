@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { Helmet } from "react-helmet-async";
 
 interface BlogHeroProps {
   src: string;
@@ -15,6 +16,11 @@ const BlogHero = ({ src, alt, children }: BlogHeroProps) => {
 
   return (
   <section className="relative w-full overflow-hidden bg-gray-900 text-white py-20 lg:py-32">
+    {/* Preload the hero as this page's LCP image. imageSrcSet/imageSizes mirror the <img>
+        below so the browser preloads the exact variant it will render (no double download). */}
+    <Helmet>
+      <link rel="preload" as="image" href={src} imageSrcSet={srcSet} imageSizes="100vw" fetchPriority="high" />
+    </Helmet>
     <div className="absolute inset-0 z-0">
       <img
         src={src}
