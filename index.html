@@ -9,16 +9,10 @@
     <!-- robots is set per-page via the useSEO hook (src/hooks/useSEO.ts) so that noindex
          pages do not inherit a conflicting "index,follow" default. No static robots here. -->
 
-    <!-- Preconnect for performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
-
-    <!-- Non-blocking font loading -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" media="print" onload="this.media='all'" />
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" /></noscript>
+    <!-- Self-hosted fonts (was Google Fonts CDN — removes 2 third-party connections).
+         @font-face lives in the app CSS; here we preload the H1 weight (Outfit) so the
+         LCP heading renders in-brand fast. Inter (body) loads via @font-face font-display:swap. -->
+    <link rel="preload" href="/fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin />
 
     <!-- og:image + twitter:image are emitted per-page via react-helmet-async (useSEO), so the
          effective (prerendered) image is always the page's own — with a site-wide default fallback.
