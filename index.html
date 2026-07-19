@@ -10,9 +10,10 @@
          pages do not inherit a conflicting "index,follow" default. No static robots here. -->
 
     <!-- Self-hosted fonts (was Google Fonts CDN — removes 2 third-party connections).
-         @font-face lives in the app CSS; here we preload the H1 weight (Outfit) so the
-         LCP heading renders in-brand fast. Inter (body) loads via @font-face font-display:swap. -->
-    <link rel="preload" href="/fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin />
+         @font-face lives in the app CSS with font-display:swap. Intentionally NO font
+         preload: the home LCP is the hero IMAGE, and a high-priority font preload competed
+         with it (see perf memory). Fonts load via @font-face swap — text shows in fallback
+         then swaps; the H1 is not the home LCP. -->
 
     <!-- og:image + twitter:image are emitted per-page via react-helmet-async (useSEO), so the
          effective (prerendered) image is always the page's own — with a site-wide default fallback.
