@@ -5,35 +5,17 @@ import Layout from "@/components/layout/Layout";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { useSEO } from "@/hooks/useSEO";
 import { ServiceSchema, FAQSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
-import { COST_PRICE_ROWS } from "@/data/cost-cities";
+import PricingTable from "@/components/PricingTable";
 
 const URL = "https://capitalcleancare.com/pricing";
 const PHONE = "(240) 704-2551";
-
-// Specialty services — real ranges from the pricing matrix (move-out & post-construction tiers).
-const SPECIALTY: { name: string; range: string; note: string; href: string }[] = [
-  { name: "Move-In / Move-Out Cleaning", range: "$260 – $625+", note: "Inside cabinets, all appliances, and closets — built to deposit-return standards.", href: "/services/move-out-cleaning" },
-  { name: "Post-Construction Cleaning", range: "$280 – $900+", note: "Priced by square footage. HEPA construction-dust removal, debris, and paint residue.", href: "/services/post-construction-cleaning" },
-];
-
-// Optional add-ons — real per-item pricing.
-const ADDONS: [string, string][] = [
-  ["Inside refrigerator", "$30"],
-  ["Inside oven", "$35"],
-  ["Inside cabinets", "$45"],
-  ["Laundry (wash & fold)", "$25"],
-  ["Interior windows", "$40"],
-  ["Garage sweep & mop", "$35"],
-  ["Blinds / shutters", "$25"],
-  ["Baseboards detail clean", "$20"],
-];
 
 const FACTORS: { title: string; text: string }[] = [
   { title: "Home size & bathrooms", text: "The biggest driver. Bathrooms move the price more than bedrooms do — a 3-bedroom home with three-and-a-half baths can cost more than a larger home with two." },
   { title: "Condition", text: "How long since the last professional clean. A home with a year of buildup sits at the top of its range; a well-kept home sits near the bottom." },
   { title: "Pets", text: "Shedding dogs and cats leave hair and dander on baseboards, vents, and upholstery — extra detail work that adds a little time." },
   { title: "Frequency", text: "Recurring cleanings cost less per visit than one-time bookings, because a maintained home is faster to clean." },
-  { title: "Add-ons", text: "Optional extras like inside the oven or interior windows are quoted per item (see the list below), so you only pay for what you choose." },
+  { title: "Add-ons", text: "Optional extras like inside the oven or interior windows are quoted per item (shown in the pricing table above), so you only pay for what you choose." },
 ];
 
 // Frequency comparison — real modifiers from our pricing (recurring prices are shown at bi-weekly).
@@ -92,74 +74,25 @@ const PricingPage = () => {
             ))}
           </div>
 
-          {/* ── Main price matrix ── */}
-          <h2 className="font-heading text-2xl md:text-3xl font-bold mb-4">Prices by Home Size &amp; Service</h2>
-          <div className="overflow-x-auto rounded-xl border border-border mb-3">
-            <table className="w-full text-left text-[15px] bg-card">
-              <thead>
-                <tr className="border-b border-border bg-secondary/60">
-                  <th className="p-3 font-heading font-bold">Home size</th>
-                  <th className="p-3 font-heading font-bold">Approx. area</th>
-                  <th className="p-3 font-heading font-bold">Recurring<span className="block text-xs font-normal text-muted-foreground">per visit</span></th>
-                  <th className="p-3 font-heading font-bold">One-time</th>
-                  <th className="p-3 font-heading font-bold text-accent">Deep clean</th>
-                </tr>
-              </thead>
-              <tbody>
-                {COST_PRICE_ROWS.map((r) => (
-                  <tr key={r[0]} className="border-b border-border last:border-0">
-                    <td className="p-3 font-medium text-foreground">{r[0]}</td>
-                    <td className="p-3 text-muted-foreground">{r[1]}</td>
-                    <td className="p-3 text-foreground">{r[2]}</td>
-                    <td className="p-3 text-foreground">{r[3]}</td>
-                    <td className="p-3 font-semibold text-accent">{r[4]}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          <p className="text-xs text-muted-foreground mb-10">
-            Recurring prices are shown per visit at <strong>bi-weekly</strong> frequency — weekly saves up to 25%,
-            monthly adds about 5%. Ranges are typical 2026 DMV rates; your exact flat price depends on bathrooms,
-            condition, and any add-ons. See a fuller breakdown in our{" "}
-            <Link to="/resources/how-much-does-deep-cleaning-cost" className="text-accent underline hover:no-underline">deep cleaning cost guide</Link>{" "}
-            and{" "}
-            <Link to="/resources/house-cleaning-prices-maryland-2026" className="text-accent underline hover:no-underline">2026 Maryland pricing guide</Link>.
+          {/* ── Interactive price matrix (same component + data as the homepage — zero number
+                 duplication). forceMount makes every tab's prices render in the static HTML,
+                 so recurring/one-time/deep/move/post-construction are all crawlable via curl. ── */}
+          <h2 className="font-heading text-2xl md:text-3xl font-bold mb-4">Prices by Home Size, Service &amp; Frequency</h2>
+          <p className="text-muted-foreground leading-relaxed mb-6 max-w-3xl">
+            Real 2026 flat-rate ranges by home size for every service — switch tabs to compare <strong>recurring</strong>,
+            <strong> one-time</strong>, <strong>deep</strong>, <strong>move-in/out</strong>, and <strong>post-construction</strong>{" "}
+            cleaning. Recurring is shown per visit at bi-weekly frequency; all prices include products and equipment.
           </p>
-
-          {/* ── Specialty services ── */}
-          <h2 className="font-heading text-2xl md:text-3xl font-bold mb-4">Move-Out &amp; Post-Construction Pricing</h2>
-          <div className="grid sm:grid-cols-2 gap-4 mb-10">
-            {SPECIALTY.map((s) => (
-              <div key={s.name} className="border border-border rounded-xl p-5 bg-card">
-                <div className="flex items-baseline justify-between gap-2 mb-1.5">
-                  <h3 className="font-heading text-lg font-bold">{s.name}</h3>
-                  <span className="font-semibold text-accent whitespace-nowrap">{s.range}</span>
-                </div>
-                <p className="text-sm text-muted-foreground leading-relaxed mb-2">{s.note}</p>
-                <Link to={s.href} className="text-sm font-medium text-accent hover:underline inline-flex items-center gap-1">
-                  Learn more <ArrowRight className="h-3.5 w-3.5" />
-                </Link>
-              </div>
-            ))}
-          </div>
-
-          {/* ── Add-ons ── */}
-          <h2 className="font-heading text-2xl md:text-3xl font-bold mb-4">Optional Add-Ons</h2>
-          <p className="text-muted-foreground leading-relaxed mb-4 max-w-3xl">
-            Everything essential is already in your flat price. These extras are quoted per item, so you only pay for the
-            ones you want — just mention them when you book.
+          <PricingTable />
+          <p className="text-xs text-muted-foreground mt-4 mb-10 max-w-3xl">
+            Ranges are typical 2026 DMV rates; your exact flat price depends on bathrooms, condition, and any add-ons.
+            Deeper dives: our{" "}
+            <Link to="/resources/how-much-does-deep-cleaning-cost" className="text-accent underline hover:no-underline">deep cleaning cost guide</Link>,
+            the{" "}
+            <Link to="/resources/house-cleaning-prices-maryland-2026" className="text-accent underline hover:no-underline">2026 Maryland pricing guide</Link>, and our dedicated{" "}
+            <Link to="/services/move-out-cleaning" className="text-accent underline hover:no-underline">move-out</Link>{" "}and{" "}
+            <Link to="/services/post-construction-cleaning" className="text-accent underline hover:no-underline">post-construction</Link>{" "}cleaning pages.
           </p>
-          <div className="rounded-xl border border-border overflow-hidden mb-10">
-            <ul className="grid sm:grid-cols-2">
-              {ADDONS.map(([label, price], i) => (
-                <li key={label} className={`flex items-center justify-between gap-3 p-3 text-[15px] border-border ${i % 2 ? "sm:border-l" : ""} ${i < ADDONS.length - (ADDONS.length % 2 === 0 ? 2 : 1) ? "border-b" : ""}`}>
-                  <span className="text-foreground">{label}</span>
-                  <span className="font-semibold text-accent">{price}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
 
           {/* ── What affects the price ── */}
           <h2 className="font-heading text-2xl md:text-3xl font-bold mb-4">What Affects Your Price</h2>
