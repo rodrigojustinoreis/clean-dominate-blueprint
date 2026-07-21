@@ -161,6 +161,9 @@ const Footer = () => {
                 <Link to={s.to} className="hover:text-accent transition-colors">{s.label}</Link>
               </li>
             ))}
+            <li>
+              <Link to="/senior-home-cleaning-montgomery-county-md" className="hover:text-accent transition-colors">{t("Senior Home Cleaning", "Limpieza para Personas Mayores")}</Link>
+            </li>
           </ul>
         </div>
 

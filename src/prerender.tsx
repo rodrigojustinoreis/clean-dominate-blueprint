@@ -133,6 +133,7 @@ function getAllRoutes(): string[] {
     "/services/office-cleaning",
     "/services/post-construction-cleaning",
     "/house-cleaning-near-me",
+    "/senior-home-cleaning-montgomery-county-md",
     "/why-eco-friendly-cleaning",
     "/careers",
     "/spring-cleaning-md",

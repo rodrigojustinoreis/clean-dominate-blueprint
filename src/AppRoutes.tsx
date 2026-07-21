@@ -85,6 +85,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import VanityLandingPage from "./pages/VanityLandingPage";
 import HouseCleaningNearMe from "./pages/HouseCleaningNearMe";
+import SeniorHomeCleaning from "./pages/SeniorHomeCleaning";
 import Careers from "./pages/Careers";
 import PremiumFanPage from "./pages/PremiumFanPage";
 import WhyEcoFriendlyPage from "./pages/WhyEcoFriendlyPage";
@@ -283,6 +284,7 @@ const AppRoutes = () => (
     <Route path="/resources/:slug" element={<BlogPost />} />
     <Route path="/spring-cleaning-md" element={<SpringCleaningMD />} />
     <Route path="/house-cleaning-near-me" element={<HouseCleaningNearMe />} />
+    <Route path="/senior-home-cleaning-montgomery-county-md" element={<SeniorHomeCleaning />} />
     <Route path="/careers" element={<Careers />} />
     <Route path="/join-our-team" element={<Careers />} />
     <Route path="/gift-cards" element={<GiftCards />} />
