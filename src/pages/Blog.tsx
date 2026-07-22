@@ -22,6 +22,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "house-cleaning-seniors-silver-spring-leisure-world",
+    title: "House Cleaning Help for Seniors in Silver Spring & Leisure World: What to Expect",
+    excerpt: "Thinking about house cleaning help? A warm, plain-language guide for older adults in Silver Spring and Leisure World — what a visit looks like, what to expect, and how to start. No pressure.",
+    date: "2026-07-21",
+    readTime: "5 min read",
+    category: "Home Care Guides",
+    coverImage: "/images/team/real-team-maria-fridge.webp",
+  },
+  {
     slug: "how-to-hire-cleaning-service-elderly-parents",
     title: "How to Hire a Trustworthy Cleaning Service for Your Elderly Parents (Checklist)",
     excerpt: "A practical, protective checklist for vetting a house cleaning service for your aging parent — insurance, background checks, the 10 questions to ask, red flags to walk away from, and how to run a trial.",

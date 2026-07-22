@@ -50,6 +50,7 @@ function getAllRoutes(): string[] {
     "/resources/clean-home-fall-prevention-seniors",
     "/resources/cleaning-service-vs-caregiver-elderly",
     "/resources/how-to-hire-cleaning-service-elderly-parents",
+    "/resources/house-cleaning-seniors-silver-spring-leisure-world",
     "/resources/how-often-should-you-hire-a-cleaning-service",
     "/resources/one-time-vs-recurring-cleaning",
     "/resources/how-much-does-deep-cleaning-cost",
