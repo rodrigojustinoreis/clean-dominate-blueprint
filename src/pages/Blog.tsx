@@ -22,6 +22,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "clean-home-fall-prevention-seniors",
+    title: "How a Clean Home Prevents Falls: A Safety Guide for Seniors in Maryland",
+    excerpt: "Falls are the #1 cause of injury for adults 65+, and most happen at home. A room-by-room look at how regular cleaning removes fall hazards — plus a practical fall-prevention checklist for Montgomery County families.",
+    date: "2026-07-21",
+    readTime: "6 min read",
+    category: "Home Care Guides",
+    coverImage: "/images/team/team-window-blinds-pro.webp",
+  },
+  {
     slug: "signs-aging-parent-needs-help-housekeeping",
     title: "7 Signs Your Aging Parent Needs Help With Housekeeping",
     excerpt: "Noticing changes in your parent's home? The seven warning signs that an aging parent needs housekeeping help — from clutter and expired food to tripping hazards — plus how to start the conversation and find gentle support.",

@@ -157,7 +157,8 @@ const SignsAgingParentNeedsHelp = () => {
             <p className="mb-8">
               Clear floors are one of the simplest, highest-impact ways to keep a parent safe at home. Part of good
               senior housekeeping is keeping pathways open — tidying clutter, securing cords, and flattening rugs — so the
-              home stays not just clean, but safe to move through.
+              home stays not just clean, but safe to move through. For a deeper look, see our guide on{" "}
+              <Link to="/resources/clean-home-fall-prevention-seniors" className="text-accent font-medium hover:underline">how a clean home prevents falls</Link>.
             </p>
           </FadeInSection>
 
