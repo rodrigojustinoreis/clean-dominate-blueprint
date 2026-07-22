@@ -49,6 +49,7 @@ function getAllRoutes(): string[] {
     "/resources/signs-aging-parent-needs-help-housekeeping",
     "/resources/clean-home-fall-prevention-seniors",
     "/resources/cleaning-service-vs-caregiver-elderly",
+    "/resources/how-to-hire-cleaning-service-elderly-parents",
     "/resources/how-often-should-you-hire-a-cleaning-service",
     "/resources/one-time-vs-recurring-cleaning",
     "/resources/how-much-does-deep-cleaning-cost",

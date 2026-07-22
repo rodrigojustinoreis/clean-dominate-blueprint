@@ -43,6 +43,7 @@ import WhatsIncludedDeepCleaning from "./pages/WhatsIncludedDeepCleaning";
 import SignsAgingParentNeedsHelp from "./pages/SignsAgingParentNeedsHelp";
 import CleanHomeFallPrevention from "./pages/CleanHomeFallPrevention";
 import CleaningServiceVsCaregiver from "./pages/CleaningServiceVsCaregiver";
+import HowToHireCleaningServiceElderly from "./pages/HowToHireCleaningServiceElderly";
 import HowOftenHireCleaningService from "./pages/HowOftenHireCleaningService";
 import OneTimeVsRecurringCleaning from "./pages/OneTimeVsRecurringCleaning";
 import HowMuchDeepCleaningCosts from "./pages/HowMuchDeepCleaningCosts";
@@ -247,6 +248,7 @@ const AppRoutes = () => (
     <Route path="/resources/signs-aging-parent-needs-help-housekeeping" element={<SignsAgingParentNeedsHelp />} />
     <Route path="/resources/clean-home-fall-prevention-seniors" element={<CleanHomeFallPrevention />} />
     <Route path="/resources/cleaning-service-vs-caregiver-elderly" element={<CleaningServiceVsCaregiver />} />
+    <Route path="/resources/how-to-hire-cleaning-service-elderly-parents" element={<HowToHireCleaningServiceElderly />} />
     <Route path="/resources/how-often-should-you-hire-a-cleaning-service" element={<HowOftenHireCleaningService />} />
     <Route path="/resources/one-time-vs-recurring-cleaning" element={<OneTimeVsRecurringCleaning />} />
     <Route path="/resources/how-much-does-deep-cleaning-cost" element={<HowMuchDeepCleaningCosts />} />

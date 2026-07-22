@@ -22,6 +22,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "how-to-hire-cleaning-service-elderly-parents",
+    title: "How to Hire a Trustworthy Cleaning Service for Your Elderly Parents (Checklist)",
+    excerpt: "A practical, protective checklist for vetting a house cleaning service for your aging parent — insurance, background checks, the 10 questions to ask, red flags to walk away from, and how to run a trial.",
+    date: "2026-07-21",
+    readTime: "6 min read",
+    category: "Home Care Guides",
+    coverImage: "/images/team/real-team-door.webp",
+  },
+  {
     slug: "cleaning-service-vs-caregiver-elderly",
     title: "Cleaning Service vs. Caregiver: Which Does Your Parent Actually Need?",
     excerpt: "Not sure if your aging parent needs a caregiver or just help around the house? An honest comparison of scope and cost — and when a cleaning service, a caregiver, or both makes sense in Montgomery County, MD.",
