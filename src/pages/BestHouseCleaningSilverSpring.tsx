@@ -136,7 +136,8 @@ const BestHouseCleaningSilverSpring = () => {
                 See{" "}
                 <Link to="/resources/house-cleaning-cost-silver-spring-md" className="text-accent underline hover:no-underline">how much house cleaning costs in Silver Spring</Link>{" "}
                 or{" "}
-                <Link to="/resources/is-professional-house-cleaning-worth-it" className="text-accent underline hover:no-underline">whether professional cleaning is worth it</Link>. Ready to book? Visit our{" "}
+                <Link to="/resources/is-professional-house-cleaning-worth-it" className="text-accent underline hover:no-underline">whether professional cleaning is worth it</Link>. Helping an older relative in the area? See{" "}
+                <Link to="/resources/house-cleaning-seniors-silver-spring-leisure-world" className="text-accent underline hover:no-underline">house cleaning for Silver Spring seniors</Link>. Ready to book? Visit our{" "}
                 <Link to="/locations/silver-spring-md/house-cleaning" className="text-accent underline hover:no-underline">Silver Spring house cleaning</Link>{" "}page.
               </p>
             </div>

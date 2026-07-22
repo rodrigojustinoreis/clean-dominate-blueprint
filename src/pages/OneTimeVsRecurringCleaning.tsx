@@ -112,7 +112,8 @@ const OneTimeVsRecurringCleaning = () => {
               <h2 className="font-heading text-2xl font-bold text-foreground mb-3">The cost difference</h2>
               <p className="text-muted-foreground leading-relaxed text-sm">
                 Per visit, recurring cleaning is almost always <strong>cheaper</strong> than a one-time clean. Two reasons: there's a discount for the ongoing commitment, and a maintained home takes less time to clean each visit because dirt never builds up. A one-time clean — especially a first-time deep clean — is priced higher because it's more labor-intensive. That's why the smartest, most cost-effective approach is often to{" "}
-                <strong>book one deep clean to reset the home, then switch to recurring maintenance</strong> to keep it that way.
+                <strong>book one deep clean to reset the home, then switch to recurring maintenance</strong> to keep it that way. It's the same logic behind{" "}
+                <Link to="/senior-home-cleaning-montgomery-county-md" className="text-accent underline hover:no-underline">a regular cleaning routine for older adults</Link> — steady upkeep that keeps a home safe and manageable without the strain.
               </p>
             </div>
           </FadeInSection>

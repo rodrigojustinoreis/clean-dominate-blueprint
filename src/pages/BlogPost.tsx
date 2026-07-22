@@ -478,7 +478,7 @@ const blogContent: Record<string, React.ReactNode> = {
       <p>Always confirm that your cleaning service is licensed and carries liability insurance. This protects you if anything is damaged during a cleaning. At Capital Clean Care, we're fully licensed and insured with comprehensive coverage.</p>
 
       <h2>2. Ask About Background Checks</h2>
-      <p>You're inviting people into your home — make sure they've been vetted. Our entire team undergoes thorough background checks before their first day. <Link to="/about" className="text-accent hover:underline">Meet the Capital Clean Care team →</Link></p>
+      <p>You're inviting people into your home — make sure they've been vetted. Our entire team undergoes thorough background checks before their first day. If you're choosing on behalf of an older relative, our guide to <Link to="/resources/how-to-hire-cleaning-service-elderly-parents" className="text-accent hover:underline">vetting a cleaner for an aging parent</Link> covers the extra questions to ask. <Link to="/about" className="text-accent hover:underline">Meet the Capital Clean Care team →</Link></p>
 
       <h2>3. Check for Eco-Friendly Options</h2>
       <p>If you have children, pets, or allergies, non-toxic products are essential. Our <Link to="/services/eco-friendly-cleaning" className="text-accent hover:underline">eco-friendly cleaning</Link> uses only plant-based, EPA Safer Choice certified products. Learn <Link to="/why-eco-friendly-cleaning" className="text-accent hover:underline">why eco-friendly cleaning matters</Link> for your family's health.</p>
@@ -947,7 +947,7 @@ const blogContent: Record<string, React.ReactNode> = {
   ),
   "allergy-proofing-home-dmv": (
     <article className="prose prose-lg max-w-none">
-      <p>The DMV region is consistently ranked among the worst in the country for allergy sufferers. Maryland, DC, and Northern Virginia sit in the mid-Atlantic pollen corridor — with tree pollen starting in February, grass pollen peaking through summer, and ragweed closing out the season in fall. If anyone in your household suffers from allergies or asthma, your indoor environment is as important as the outdoor one.</p>
+      <p>The DMV region is consistently ranked among the worst in the country for allergy sufferers. Maryland, DC, and Northern Virginia sit in the mid-Atlantic pollen corridor — with tree pollen starting in February, grass pollen peaking through summer, and ragweed closing out the season in fall. If anyone in your household suffers from allergies or asthma, your indoor environment is as important as the outdoor one. It matters even more for older adults, for whom <Link to="/resources/aging-in-place-montgomery-county-cleaning" className="text-accent hover:underline">a cleaner, healthier home as you age</Link> is part of staying independent.</p>
 
       <h2>The Indoor Allergen Problem</h2>
       <p>Most people spend 90% of their time indoors — but indoor air can be 2 to 5 times more polluted than outdoor air. The main indoor allergen sources:</p>

@@ -136,7 +136,8 @@ const BestHouseCleaningRockville = () => {
                 See{" "}
                 <Link to="/resources/house-cleaning-cost-rockville-md" className="text-accent underline hover:no-underline">how much house cleaning costs in Rockville</Link>{" "}
                 or{" "}
-                <Link to="/resources/how-often-should-you-hire-a-cleaning-service" className="text-accent underline hover:no-underline">how often you should hire a cleaning service</Link>. Ready to book? Visit our{" "}
+                <Link to="/resources/how-often-should-you-hire-a-cleaning-service" className="text-accent underline hover:no-underline">how often you should hire a cleaning service</Link>. Caring for an aging parent nearby? We also offer{" "}
+                <Link to="/senior-home-cleaning-montgomery-county-md" className="text-accent underline hover:no-underline">senior cleaning for Rockville-area families</Link>. Ready to book? Visit our{" "}
                 <Link to="/locations/rockville-md/house-cleaning" className="text-accent underline hover:no-underline">Rockville house cleaning</Link>{" "}page.
               </p>
             </div>

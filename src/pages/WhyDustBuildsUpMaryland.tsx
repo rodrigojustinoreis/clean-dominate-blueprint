@@ -117,7 +117,8 @@ const WhyDustBuildsUpMaryland = () => {
                 See the{" "}
                 <Link to="/resources/most-forgotten-areas-when-cleaning" className="text-accent underline hover:no-underline">most forgotten areas when cleaning</Link>{" "}
                 or{" "}
-                <Link to="/resources/hepa-filters-pets-asthma" className="text-accent underline hover:no-underline">how HEPA filtration helps with airborne dust and dander</Link>.
+                <Link to="/resources/hepa-filters-pets-asthma" className="text-accent underline hover:no-underline">how HEPA filtration helps with airborne dust and dander</Link>. Dust matters even more for older adults — see{" "}
+                <Link to="/resources/aging-in-place-montgomery-county-cleaning" className="text-accent underline hover:no-underline">keeping a senior's home healthy and low-dust</Link>.
               </p>
             </div>
           </FadeInSection>

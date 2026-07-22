@@ -100,7 +100,8 @@ const KeepHouseCleanBetween = () => {
                 See{" "}
                 <Link to="/resources/how-often-should-you-hire-a-cleaning-service" className="text-accent underline hover:no-underline">how often you should hire a cleaning service</Link>{" "}
                 or the{" "}
-                <Link to="/resources/most-forgotten-areas-when-cleaning" className="text-accent underline hover:no-underline">most forgotten areas when cleaning</Link>.
+                <Link to="/resources/most-forgotten-areas-when-cleaning" className="text-accent underline hover:no-underline">most forgotten areas when cleaning</Link>. Caring for an older parent? We also offer{" "}
+                <Link to="/senior-home-cleaning-montgomery-county-md" className="text-accent underline hover:no-underline">senior housekeeping support in Montgomery County</Link>.
               </p>
             </div>
           </FadeInSection>

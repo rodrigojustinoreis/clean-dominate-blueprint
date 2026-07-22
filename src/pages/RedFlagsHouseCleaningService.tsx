@@ -158,6 +158,8 @@ const RedFlagsHouseCleaningService = () => {
             <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mt-10 mb-4">Red Flags #5-6: No Background Checks and a Different Crew Every Single Time</h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
               The next two warning signs are about the people in your home, which matters more than any checklist of chores.
+              That's doubly true when the home is a vulnerable relative's — here's{" "}
+              <Link to="/resources/how-to-hire-cleaning-service-elderly-parents" className="text-accent underline hover:no-underline">what to check before hiring for a parent</Link>.
             </p>
 
             <h3 className="font-heading text-xl md:text-2xl font-bold text-foreground mt-8 mb-3">Red Flag #5: No Background Checks</h3>

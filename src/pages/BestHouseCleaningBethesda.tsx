@@ -103,7 +103,8 @@ const BestHouseCleaningBethesda = () => {
               When you're ready to compare companies side by side, start with our{" "}
               <Link to="/locations/bethesda-md/house-cleaning" className="text-accent underline hover:no-underline">home cleaning in Bethesda, MD</Link>{" "}
               page — services, checklist, and a flat quote in 60 seconds — or, if the home needs a reset first, our{" "}
-              <Link to="/locations/bethesda-md/deep-cleaning" className="text-accent underline hover:no-underline">deep cleaning in Bethesda</Link>.
+              <Link to="/locations/bethesda-md/deep-cleaning" className="text-accent underline hover:no-underline">deep cleaning in Bethesda</Link>. And if you're arranging help for an older parent, we offer{" "}
+              <Link to="/senior-home-cleaning-montgomery-county-md" className="text-accent underline hover:no-underline">senior cleaning in Bethesda and beyond</Link>.
             </p>
           </FadeInSection>
 

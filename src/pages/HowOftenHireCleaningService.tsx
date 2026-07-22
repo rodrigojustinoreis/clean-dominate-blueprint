@@ -122,7 +122,8 @@ const HowOftenHireCleaningService = () => {
                 Deciding between schedules? See{" "}
                 <Link to="/resources/one-time-vs-recurring-cleaning" className="text-accent underline hover:no-underline">one-time vs recurring cleaning</Link>{" "}
                 and{" "}
-                <Link to="/resources/recurring-cleaning-weekly-biweekly-monthly" className="text-accent underline hover:no-underline">weekly vs biweekly vs monthly</Link>.
+                <Link to="/resources/recurring-cleaning-weekly-biweekly-monthly" className="text-accent underline hover:no-underline">weekly vs biweekly vs monthly</Link>. Arranging help for an older parent? See our{" "}
+                <Link to="/senior-home-cleaning-montgomery-county-md" className="text-accent underline hover:no-underline">recurring cleaning help for seniors</Link>.
               </p>
             </div>
           </FadeInSection>

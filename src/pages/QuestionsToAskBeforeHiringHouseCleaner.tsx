@@ -208,7 +208,10 @@ const QuestionsToAskBeforeHiringHouseCleaner = () => {
             </p>
             <p className="text-muted-foreground leading-relaxed mb-4">
               <strong>15. What happens if I am not satisfied?</strong> The phrase you want is satisfaction guarantee, with
-              specifics: how quickly they return, what the re-clean covers, and who approves it.
+              specifics: how quickly they return, what the re-clean covers, and who approves it. Hiring for a specific
+              situation — like{" "}
+              <Link to="/resources/how-to-hire-cleaning-service-elderly-parents" className="text-accent underline hover:no-underline">hiring a cleaner for an elderly parent</Link>{" "}
+              — adds a few extra questions worth asking, too.
             </p>
           </FadeInSection>
 

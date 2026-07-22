@@ -212,7 +212,7 @@ const CleanHomeFallPrevention = () => {
             <div className="bg-primary text-primary-foreground rounded-2xl p-8 text-center shadow-lg mt-4">
               <h2 className="font-heading text-2xl md:text-3xl font-bold mb-3">Make Their Home Safer — Starting Today</h2>
               <p className="text-primary-foreground/85 mb-6 leading-relaxed max-w-xl mx-auto text-lg">
-                Trusted <Link to={SENIOR} className="underline text-white hover:text-white/90">senior home cleaning in Montgomery County</Link> —
+                Trusted <Link to={SENIOR} className="underline text-white hover:text-white/90">senior-focused cleaning across Montgomery County</Link> —
                 the same cleaner every visit, background-checked, with fall-prevention cleaning and text updates for the
                 family. Get a free, no-obligation quote today.
               </p>

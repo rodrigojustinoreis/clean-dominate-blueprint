@@ -218,6 +218,31 @@ const SeniorHomeCleaning = () => {
         </div>
       </section>
 
+      {/* ── Senior Cleaning Guides (hub → spokes) ── */}
+      <section className="py-14 md:py-20 bg-secondary/40">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4 text-foreground">Senior Cleaning Guides</h2>
+          <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-8">
+            Helping a parent — or planning your own next chapter? These guides cover the questions families ask us most.
+          </p>
+          <div className="grid md:grid-cols-2 gap-4">
+            {[
+              { to: "/resources/signs-aging-parent-needs-help-housekeeping", label: "Is it time to get Mom or Dad some help at home?" },
+              { to: "/resources/clean-home-fall-prevention-seniors", label: "Fall prevention starts with a clean floor" },
+              { to: "/resources/cleaning-service-vs-caregiver-elderly", label: "Cleaning service or caregiver: which does your parent need?" },
+              { to: "/resources/how-to-hire-cleaning-service-elderly-parents", label: "10 questions to ask before hiring for a senior's home" },
+              { to: "/resources/house-cleaning-seniors-silver-spring-leisure-world", label: "Serving Leisure World and Silver Spring's 55+ communities" },
+              { to: "/resources/aging-in-place-montgomery-county-cleaning", label: "A practical guide to aging in place in Montgomery County" },
+            ].map((g) => (
+              <Link key={g.to} to={g.to} className="group flex items-start gap-3 bg-white rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow border border-border">
+                <ArrowRight className="h-5 w-5 text-accent flex-shrink-0 mt-1 transition-transform group-hover:translate-x-1" />
+                <span className="text-lg font-medium text-foreground">{g.label}</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── Final CTA + short form ── */}
       <section id="quote" className="py-14 md:py-20 bg-primary scroll-mt-20">
         <div className="container mx-auto px-4 max-w-5xl">

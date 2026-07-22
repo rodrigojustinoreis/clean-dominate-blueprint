@@ -131,7 +131,8 @@ const IsProfessionalCleaningWorthIt = () => {
                 See{" "}
                 <Link to="/resources/how-often-should-you-hire-a-cleaning-service" className="text-accent underline hover:no-underline">how often you should hire a cleaning service</Link>{" "}
                 or{" "}
-                <Link to="/resources/house-cleaning-prices-maryland-2026" className="text-accent underline hover:no-underline">what house cleaning costs in Maryland</Link>.
+                <Link to="/resources/house-cleaning-prices-maryland-2026" className="text-accent underline hover:no-underline">what house cleaning costs in Maryland</Link>. For an older parent, it's often about more than value — see{" "}
+                <Link to="/resources/aging-in-place-montgomery-county-cleaning" className="text-accent underline hover:no-underline">cleaning help that supports aging in place</Link>.
               </p>
             </div>
           </FadeInSection>

@@ -222,7 +222,7 @@ const SignsAgingParentNeedsHelp = () => {
             <div className="bg-primary text-primary-foreground rounded-2xl p-8 text-center shadow-lg mt-4">
               <h2 className="font-heading text-2xl md:text-3xl font-bold mb-3">Give Mom or Dad a Safer, Cleaner Home</h2>
               <p className="text-primary-foreground/85 mb-6 leading-relaxed max-w-xl mx-auto text-lg">
-                Trusted, gentle <Link to={SENIOR} className="underline text-white hover:text-white/90">senior home cleaning in Montgomery County</Link> —
+                Trusted, gentle <Link to={SENIOR} className="underline text-white hover:text-white/90">professional housekeeping for aging parents</Link> —
                 the same cleaner every visit, background-checked, with text updates for the family. Get a free,
                 no-obligation quote today.
               </p>
