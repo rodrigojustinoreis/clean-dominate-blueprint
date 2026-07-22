@@ -50,6 +50,7 @@ const DeepVsRegularCleaning = lazy(() => import("./pages/DeepVsRegularCleaning")
 const WhatsIncludedDeepCleaning = lazy(() => import("./pages/WhatsIncludedDeepCleaning"));
 const SignsAgingParentNeedsHelp = lazy(() => import("./pages/SignsAgingParentNeedsHelp"));
 const CleanHomeFallPrevention = lazy(() => import("./pages/CleanHomeFallPrevention"));
+const CleaningServiceVsCaregiver = lazy(() => import("./pages/CleaningServiceVsCaregiver"));
 const HowOftenHireCleaningService = lazy(() => import("./pages/HowOftenHireCleaningService"));
 const OneTimeVsRecurringCleaning = lazy(() => import("./pages/OneTimeVsRecurringCleaning"));
 const HowMuchDeepCleaningCosts = lazy(() => import("./pages/HowMuchDeepCleaningCosts"));
@@ -253,6 +254,7 @@ const AppRoutesLazy = () => (
     <Route path="/resources/what-is-included-in-a-deep-cleaning" element={<WhatsIncludedDeepCleaning />} />
     <Route path="/resources/signs-aging-parent-needs-help-housekeeping" element={<SignsAgingParentNeedsHelp />} />
     <Route path="/resources/clean-home-fall-prevention-seniors" element={<CleanHomeFallPrevention />} />
+    <Route path="/resources/cleaning-service-vs-caregiver-elderly" element={<CleaningServiceVsCaregiver />} />
     <Route path="/resources/how-often-should-you-hire-a-cleaning-service" element={<HowOftenHireCleaningService />} />
     <Route path="/resources/one-time-vs-recurring-cleaning" element={<OneTimeVsRecurringCleaning />} />
     <Route path="/resources/how-much-does-deep-cleaning-cost" element={<HowMuchDeepCleaningCosts />} />

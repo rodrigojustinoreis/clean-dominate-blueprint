@@ -48,6 +48,7 @@ function getAllRoutes(): string[] {
     "/resources/what-is-included-in-a-deep-cleaning",
     "/resources/signs-aging-parent-needs-help-housekeeping",
     "/resources/clean-home-fall-prevention-seniors",
+    "/resources/cleaning-service-vs-caregiver-elderly",
     "/resources/how-often-should-you-hire-a-cleaning-service",
     "/resources/one-time-vs-recurring-cleaning",
     "/resources/how-much-does-deep-cleaning-cost",

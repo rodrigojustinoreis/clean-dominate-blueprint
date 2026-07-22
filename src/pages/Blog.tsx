@@ -22,6 +22,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "cleaning-service-vs-caregiver-elderly",
+    title: "Cleaning Service vs. Caregiver: Which Does Your Parent Actually Need?",
+    excerpt: "Not sure if your aging parent needs a caregiver or just help around the house? An honest comparison of scope and cost — and when a cleaning service, a caregiver, or both makes sense in Montgomery County, MD.",
+    date: "2026-07-21",
+    readTime: "6 min read",
+    category: "Home Care Guides",
+    coverImage: "/images/services/recurring-cleaning.webp",
+  },
+  {
     slug: "clean-home-fall-prevention-seniors",
     title: "How a Clean Home Prevents Falls: A Safety Guide for Seniors in Maryland",
     excerpt: "Falls are the #1 cause of injury for adults 65+, and most happen at home. A room-by-room look at how regular cleaning removes fall hazards — plus a practical fall-prevention checklist for Montgomery County families.",
