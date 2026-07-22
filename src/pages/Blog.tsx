@@ -1,3 +1,5 @@
+import { useMemo, useState } from "react";
+import { Search, X } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { useSEO } from "@/hooks/useSEO";
@@ -939,6 +941,18 @@ const Blog = () => {
   }));
   const recentPosts = allPosts.slice(0, 12);
 
+  // Client-side search over every guide (progressive enhancement: with query empty — including
+  // during prerender — the page renders exactly the static hub, so SSR/SEO content is untouched).
+  const [query, setQuery] = useState("");
+  const q = query.trim().toLowerCase();
+  const results = useMemo(
+    () =>
+      q.length >= 2
+        ? allPosts.filter((p) => `${p.title} ${p.category} ${p.excerpt}`.toLowerCase().includes(q))
+        : null,
+    [q]
+  );
+
   return (
     <Layout>
       {seoHelmet}
@@ -959,23 +973,69 @@ const Blog = () => {
             how-tos. Browse by category, or scroll down for the latest.
           </p>
 
+          {/* Search — client-side filter over all guides (big touch target for mobile) */}
+          <div className="relative mb-6 max-w-xl">
+            <Search className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground" aria-hidden="true" />
+            <input
+              type="search"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder={`Search ${allPosts.length}+ cleaning guides…`}
+              aria-label="Search cleaning guides"
+              className="h-12 w-full rounded-full border border-border bg-secondary/30 pl-12 pr-12 text-base text-foreground placeholder:text-muted-foreground focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30 [&::-webkit-search-cancel-button]:hidden [&::-webkit-search-decoration]:hidden"
+            />
+            {query && (
+              <button
+                type="button"
+                onClick={() => setQuery("")}
+                aria-label="Clear search"
+                className="absolute right-2 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full text-muted-foreground hover:bg-secondary hover:text-foreground"
+              >
+                <X className="h-4 w-4" />
+              </button>
+            )}
+          </div>
+
           <ResourceCategoryNav />
 
-          {/* Browse by category — the library's table of contents */}
-          <h2 className="font-heading text-2xl font-bold mb-5">Browse by category</h2>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 mb-16">
-            {categoryCards.map(({ category, count }) => (
-              <CategoryCard key={category.slug} category={category} count={count} />
-            ))}
-          </div>
+          {results ? (
+            /* Search results replace the hub sections while a query is active */
+            <>
+              <h2 className="font-heading text-2xl font-bold mb-5" aria-live="polite">
+                {results.length} {results.length === 1 ? "guide matches" : "guides match"} “{query.trim()}”
+              </h2>
+              {results.length === 0 ? (
+                <p className="text-muted-foreground mb-16">
+                  No guides found. Try a shorter word — e.g. “cost”, “pet”, “deep”, “senior” — or browse a
+                  category above.
+                </p>
+              ) : (
+                <div className="space-y-4 md:space-y-6 mb-16">
+                  {results.slice(0, 30).map((post) => (
+                    <PostCard key={post.slug} post={post} />
+                  ))}
+                </div>
+              )}
+            </>
+          ) : (
+            <>
+              {/* Browse by category — the library's table of contents */}
+              <h2 className="font-heading text-2xl font-bold mb-5">Browse by category</h2>
+              <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-3 mb-12 md:mb-16">
+                {categoryCards.map(({ category, count }) => (
+                  <CategoryCard key={category.slug} category={category} count={count} />
+                ))}
+              </div>
 
-          {/* Latest guides */}
-          <h2 className="font-heading text-2xl font-bold mb-5">Latest guides</h2>
-          <div className="space-y-6">
-            {recentPosts.map((post) => (
-              <PostCard key={post.slug} post={post} />
-            ))}
-          </div>
+              {/* Latest guides */}
+              <h2 className="font-heading text-2xl font-bold mb-5">Latest guides</h2>
+              <div className="space-y-4 md:space-y-6">
+                {recentPosts.map((post) => (
+                  <PostCard key={post.slug} post={post} />
+                ))}
+              </div>
+            </>
+          )}
         </div>
       </section>
 
