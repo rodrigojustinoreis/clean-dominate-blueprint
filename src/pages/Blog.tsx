@@ -22,6 +22,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "signs-aging-parent-needs-help-housekeeping",
+    title: "7 Signs Your Aging Parent Needs Help With Housekeeping",
+    excerpt: "Noticing changes in your parent's home? The seven warning signs that an aging parent needs housekeeping help — from clutter and expired food to tripping hazards — plus how to start the conversation and find gentle support.",
+    date: "2026-07-21",
+    readTime: "6 min read",
+    category: "Home Care Guides",
+    coverImage: "/images/team/real-team-two-members.webp",
+  },
+  {
     slug: "summer-cleaning-checklist-maryland",
     title: "Summer Cleaning Checklist for Maryland Homes (2026)",
     excerpt: "A summer cleaning checklist built for Maryland's humidity — mildew control, HVAC and vent care, windows and screens, outdoor spaces, and kitchen prep for entertaining.",

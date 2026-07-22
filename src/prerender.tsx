@@ -46,6 +46,7 @@ function getAllRoutes(): string[] {
     "/resources/house-cleaning-cost-alexandria-va",
     "/resources/deep-cleaning-vs-regular-cleaning",
     "/resources/what-is-included-in-a-deep-cleaning",
+    "/resources/signs-aging-parent-needs-help-housekeeping",
     "/resources/how-often-should-you-hire-a-cleaning-service",
     "/resources/one-time-vs-recurring-cleaning",
     "/resources/how-much-does-deep-cleaning-cost",
