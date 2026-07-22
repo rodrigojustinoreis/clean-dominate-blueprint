@@ -16,6 +16,7 @@ const URL = "https://capitalcleancare.com/resources/aging-in-place-montgomery-co
 const SENIOR = "/senior-home-cleaning-montgomery-county-md";
 const FALL_POST = "/resources/clean-home-fall-prevention-seniors";
 const CAREGIVER_POST = "/resources/cleaning-service-vs-caregiver-elderly";
+const SIGNS_POST = "/resources/signs-aging-parent-needs-help-housekeeping";
 const LEISURE_POST = "/resources/house-cleaning-seniors-silver-spring-leisure-world";
 const HIRE_POST = "/resources/how-to-hire-cleaning-service-elderly-parents";
 const AARP = "https://www.aarp.org/livable-communities/housing/info-2020/homefit-guide.html";
@@ -227,7 +228,9 @@ const AgingInPlaceMontgomeryCounty = () => {
           <FadeInSection>
             <p className="mt-10 text-lg text-gray-600 border-t border-border pt-6">
               <strong className="text-foreground">If you're helping a parent age in place:</strong> thank you for looking
-              out for them. When it's time to line up cleaning help, here's{" "}
+              out for them. If you're not yet sure they need help around the house,{" "}
+              <Link to={SIGNS_POST} className="text-accent font-medium hover:underline">start with these early signs it's time to step in</Link>.
+              And when it's time to line up cleaning help, here's{" "}
               <Link to={HIRE_POST} className="text-accent font-medium hover:underline">how to check out a cleaning company before you hire</Link>,
               with the questions to ask and the warning signs to watch for.
             </p>
