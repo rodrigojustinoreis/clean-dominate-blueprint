@@ -22,6 +22,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "aging-in-place-montgomery-county-cleaning",
+    title: "Aging in Place in Montgomery County: How Regular Cleaning Keeps You Independent",
+    excerpt: "Want to stay in the home you love as you age? See how a regularly cleaned home supports safe, independent living in Montgomery County, MD — and how it fits into your aging-in-place plan.",
+    date: "2026-07-21",
+    readTime: "6 min read",
+    category: "Home Care Guides",
+    coverImage: "/images/team/real-team-luxury-home.webp",
+  },
+  {
     slug: "house-cleaning-seniors-silver-spring-leisure-world",
     title: "House Cleaning Help for Seniors in Silver Spring & Leisure World: What to Expect",
     excerpt: "Thinking about house cleaning help? A warm, plain-language guide for older adults in Silver Spring and Leisure World — what a visit looks like, what to expect, and how to start. No pressure.",
