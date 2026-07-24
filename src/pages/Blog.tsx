@@ -24,6 +24,14 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "real-deep-cleaning-project-bethesda-home",
+    title: "Inside a Real Deep Cleaning Project in a Bethesda Home",
+    excerpt: "A walkthrough of a real deep cleaning project in a Bethesda home — vent-first dusting, hand-scrubbed shower grout, and the GreenShield 5-Step process in action.",
+    date: "2026-07-23",
+    readTime: "5 min read",
+    category: "Cleaning Guides",
+  },
+  {
     slug: "aging-in-place-montgomery-county-cleaning",
     title: "Aging in Place in Montgomery County: How Regular Cleaning Keeps You Independent",
     excerpt: "Want to stay in the home you love as you age? See how a regularly cleaned home supports safe, independent living in Montgomery County, MD — and how it fits into your aging-in-place plan.",

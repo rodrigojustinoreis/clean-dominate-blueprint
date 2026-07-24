@@ -52,6 +52,7 @@ function getAllRoutes(): string[] {
     "/resources/how-to-hire-cleaning-service-elderly-parents",
     "/resources/house-cleaning-seniors-silver-spring-leisure-world",
     "/resources/aging-in-place-montgomery-county-cleaning",
+    "/resources/real-deep-cleaning-project-bethesda-home",
     "/resources/how-often-should-you-hire-a-cleaning-service",
     "/resources/one-time-vs-recurring-cleaning",
     "/resources/how-much-does-deep-cleaning-cost",
