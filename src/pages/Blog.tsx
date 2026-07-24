@@ -30,6 +30,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-07-23",
     readTime: "5 min read",
     category: "Cleaning Guides",
+    coverImage: "/images/blog/real-deep-cleaning-bethesda/bethesda-bathroom-walkthrough-crew.webp",
   },
   {
     slug: "aging-in-place-montgomery-county-cleaning",

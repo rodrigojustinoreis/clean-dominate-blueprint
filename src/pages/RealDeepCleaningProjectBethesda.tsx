@@ -4,6 +4,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { useSEO } from "@/hooks/useSEO";
 import { Helmet } from "react-helmet-async";
 import { ArticleSchema, BreadcrumbSchema, FAQSchema } from "@/components/SchemaMarkup";
+import BlogHero from "@/components/blog/BlogHero";
 import FadeInSection from "@/components/blog/FadeInSection";
 import FAQAccordion from "@/components/blog/FAQAccordion";
 import BlogInlineCTA from "@/components/blog/BlogInlineCTA";
@@ -11,6 +12,10 @@ import StickyCTA from "@/components/blog/StickyCTA";
 import RelatedPosts from "@/components/blog/RelatedPosts";
 import { Button } from "@/components/ui/button";
 
+const HERO_IMAGE = "/images/blog/real-deep-cleaning-bethesda/bethesda-bathroom-walkthrough-crew.webp";
+const IMG_DUSTING = "/images/blog/real-deep-cleaning-bethesda/chrome-fixture-hand-dusting.webp";
+const IMG_VANITY = "/images/blog/real-deep-cleaning-bethesda/vanity-detail-clean-respirator.webp";
+const IMG_FINAL_PASS = "/images/blog/real-deep-cleaning-bethesda/final-pass-toilet-detail-wipe.webp";
 const URL = "https://capitalcleancare.com/resources/real-deep-cleaning-project-bethesda-home";
 const BETHESDA_SERVICE = "/locations/bethesda-md/deep-cleaning";
 const PILLAR = "/services/deep-cleaning";
@@ -86,6 +91,7 @@ const RealDeepCleaningProjectBethesda = () => {
       "A walkthrough of a real deep cleaning project in a Bethesda home — vent-first dusting, hand-scrubbed shower grout, and the 5-step method behind it.",
     canonical: URL,
     ogType: "article",
+    preloadImage: HERO_IMAGE,
   });
 
   return (
@@ -103,6 +109,8 @@ const RealDeepCleaningProjectBethesda = () => {
         description="A walkthrough of a real deep cleaning project in a Bethesda, Maryland home — dry dusting at the exhaust vent, hand-scrubbed shower grout, and how the GreenShield 5-Step Clean sequence applied on site."
         url={URL}
         datePublished="2026-07-23"
+        dateModified="2026-07-24"
+        image={HERO_IMAGE}
       />
       <FAQSchema faqs={faqs} />
       <BreadcrumbSchema
@@ -125,32 +133,29 @@ const RealDeepCleaningProjectBethesda = () => {
         </div>
       </div>
 
-      <section className="relative w-full overflow-hidden bg-gray-900 text-white py-20 lg:py-28">
-        <div className="absolute inset-0 z-[1] bg-gradient-to-b from-black/20 via-transparent to-black/40" />
-        <div className="container mx-auto px-4 relative z-10 text-center max-w-4xl">
-          <span className="bg-accent/20 text-accent font-semibold px-4 py-1.5 rounded-full text-sm inline-block mb-6 uppercase tracking-wider border border-accent/30">
-            Cleaning Guides
-          </span>
-          <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight drop-shadow-md">
-            Inside a Real Deep Cleaning Project in a Bethesda Home
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-200 mb-4 leading-relaxed font-medium">
-            Where the labor went, in what order, and the reasoning behind both
-          </p>
-          <p className="text-gray-300 mb-8 text-sm uppercase tracking-widest">By Capital Clean Care · Bethesda, MD · July 2026</p>
-          <Button size="lg" className="bg-accent hover:bg-accent/90 text-white text-lg px-8 py-6 rounded-full shadow-lg" asChild>
-            <a href="/#quote">Get My Free Quote</a>
-          </Button>
-        </div>
-      </section>
+      <BlogHero src={HERO_IMAGE} alt="Capital Clean Care crew during the pre-clean walkthrough of a Bethesda master bathroom">
+        <span className="bg-accent/20 text-accent font-semibold px-4 py-1.5 rounded-full text-sm inline-block mb-6 uppercase tracking-wider border border-accent/30">
+          Cleaning Guides
+        </span>
+        <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight drop-shadow-md">
+          Inside a Real Deep Cleaning Project in a Bethesda Home
+        </h1>
+        <p className="text-xl md:text-2xl text-gray-200 mb-4 leading-relaxed font-medium">
+          Where the labor went, in what order, and the reasoning behind both
+        </p>
+        <p className="text-gray-300 mb-8 text-sm uppercase tracking-widest">By Capital Clean Care · Bethesda, MD · July 2026</p>
+        <Button size="lg" className="bg-accent hover:bg-accent/90 text-white text-lg px-8 py-6 rounded-full shadow-lg" asChild>
+          <a href="/#quote">Get My Free Quote</a>
+        </Button>
+      </BlogHero>
 
       <article className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4 max-w-3xl">
           <FadeInSection>
             <p className={pClass}>
               Our team at Capital Clean Care recently finished a full deep cleaning in a Bethesda, Maryland home. Most
-              cleaning articles describe services in the abstract. This one doesn't. This is a walkthrough of a real
-              deep cleaning project in Bethesda — where the labor actually went, in what order, and why.
+              cleaning articles describe services in the abstract. This one doesn't. These are working photos from a
+              real deep cleaning project in Bethesda — where the labor actually went, in what order, and why.
             </p>
           </FadeInSection>
 
@@ -182,8 +187,10 @@ const RealDeepCleaningProjectBethesda = () => {
             <h2 id="where-the-work-went" className={h2Class}>Where the Work Went</h2>
             <p className={pClass}>
               Every project starts with a walkthrough before anyone touches a surface, because the walkthrough decides
-              where the labor goes. In this home, it pointed to the bathroom: tiled floor to ceiling, white squares
-              with dark grout lines on every plane, a glass-block window, and a lighted exhaust vent overhead.
+              where the labor goes — that's the crew in the photo above, reading the master bath before the first
+              cloth comes out. In this home, the walkthrough pointed to the bathrooms, and above all to a shower tiled
+              floor to ceiling: white squares with dark grout lines on every plane, a glass-block window, and a
+              lighted exhaust vent overhead.
             </p>
             <p className={pClass}>
               A room like that concentrates everything a deep clean exists for. Grout runs across the floor, up the
@@ -220,6 +227,20 @@ const RealDeepCleaningProjectBethesda = () => {
               water touched the tile. Bathroom vent cleaning starts dry, or the dust that comes down just turns into
               grime.
             </p>
+            <figure className="my-8">
+              <img
+                src={IMG_DUSTING}
+                alt="Team member hand-dusting a chrome towel bar with a duster"
+                width={1000}
+                height={1000}
+                loading="lazy"
+                className="rounded-2xl w-full h-auto"
+              />
+              <figcaption className="mt-3 text-sm text-muted-foreground text-center">
+                The dry pass covers hardware too — towel bars, frames, and trim hold a film of dust that a wet wipe
+                would only smear.
+              </figcaption>
+            </figure>
           </FadeInSection>
 
           <FadeInSection>
@@ -292,6 +313,20 @@ const RealDeepCleaningProjectBethesda = () => {
                 </li>
               ))}
             </ol>
+            <figure className="my-8">
+              <img
+                src={IMG_VANITY}
+                alt="Technician in a respirator detail-cleaning the vanity while a teammate works on the soaking tub"
+                width={1080}
+                height={1350}
+                loading="lazy"
+                className="rounded-2xl w-full h-auto"
+              />
+              <figcaption className="mt-3 text-sm text-muted-foreground text-center">
+                Steps 3 and 4 in progress: detail work at the vanity while the soaking tub gets its own pass — each
+                zone is worked separately.
+              </figcaption>
+            </figure>
           </FadeInSection>
 
           <FadeInSection>
@@ -306,6 +341,19 @@ const RealDeepCleaningProjectBethesda = () => {
               Bethesda home deep cleaning results are built in the order of operations and the contact time — not in
               the adjectives.
             </p>
+            <figure className="my-8">
+              <img
+                src={IMG_FINAL_PASS}
+                alt="Technician wiping a toilet seat with a yellow microfiber cloth during the final pass"
+                width={1000}
+                height={1000}
+                loading="lazy"
+                className="rounded-2xl w-full h-auto"
+              />
+              <figcaption className="mt-3 text-sm text-muted-foreground text-center">
+                The last pass is close-up work — seats, hinges, and the spots a quick wipe never reaches.
+              </figcaption>
+            </figure>
           </FadeInSection>
 
           <FadeInSection>
