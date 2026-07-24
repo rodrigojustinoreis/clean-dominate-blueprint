@@ -85,6 +85,7 @@ const RealDeepCleaningProjectBethesda = () => {
     description:
       "A walkthrough of a real deep cleaning project in a Bethesda home — vent-first dusting, hand-scrubbed shower grout, and the 5-step method behind it.",
     canonical: URL,
+    ogType: "article",
   });
 
   return (
@@ -243,7 +244,9 @@ const RealDeepCleaningProjectBethesda = () => {
               The floor itself was worked in sections toward the drain, with supplies staged on the bench — the small
               habits that keep a wet room orderly while the detail work happens.
             </p>
-            <div className="overflow-x-auto rounded-2xl border border-border my-8">
+            <div className="my-8">
+            <p className="sm:hidden text-xs text-muted-foreground mb-2 text-right" aria-hidden="true">Swipe to see the full table →</p>
+            <div className="overflow-x-auto rounded-2xl border border-border">
               <table className="w-full min-w-[540px] text-sm">
                 <thead>
                   <tr className="bg-secondary text-left">
@@ -263,6 +266,7 @@ const RealDeepCleaningProjectBethesda = () => {
                 </tbody>
               </table>
             </div>
+            </div>
           </FadeInSection>
 
           <FadeInSection>
@@ -271,12 +275,16 @@ const RealDeepCleaningProjectBethesda = () => {
               Every visit follows the GreenShield 5-Step Clean™, Capital Clean Care's in-house methodology. The full
               version lives on{" "}
               <Link to={PILLAR} className="text-accent font-medium hover:underline">our deep cleaning services page</Link>;
-              what matters here is the order, which exists to prevent recontamination.
+              what matters here is the order, which exists to prevent recontamination. The products we sanitize with
+              come from the{" "}
+              <a href="https://www.epa.gov/saferchoice" target="_blank" rel="noopener noreferrer" className="text-accent font-medium hover:underline">EPA's Safer Choice program</a>,
+              certified for both safety and performance.
             </p>
-            <ol className="my-8 relative border-l-2 border-accent/30 pl-8 space-y-6 list-none">
+            <ol className="my-8 relative space-y-6 list-none">
+              <span aria-hidden="true" className="absolute left-4 top-1 bottom-1 w-px bg-accent/30" />
               {steps.map(([n, title, desc]) => (
-                <li key={n} className="relative">
-                  <span className="absolute -left-[46px] flex h-8 w-8 items-center justify-center rounded-full bg-accent text-xs font-bold text-white">
+                <li key={n} className="relative pl-12">
+                  <span className="absolute left-0 top-0 flex h-8 w-8 items-center justify-center rounded-full bg-accent text-xs font-bold text-white shadow-sm">
                     {n}
                   </span>
                   <p className="font-heading font-bold text-foreground">{title}</p>
