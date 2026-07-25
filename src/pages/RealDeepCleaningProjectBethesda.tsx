@@ -10,6 +10,7 @@ import FAQAccordion from "@/components/blog/FAQAccordion";
 import BlogInlineCTA from "@/components/blog/BlogInlineCTA";
 import StickyCTA from "@/components/blog/StickyCTA";
 import RelatedPosts from "@/components/blog/RelatedPosts";
+import TransformationsGallery from "@/components/TransformationsGallery";
 import { Button } from "@/components/ui/button";
 
 const HERO_IMAGE = "/images/blog/real-deep-cleaning-bethesda/bethesda-bathroom-walkthrough-crew.webp";
@@ -151,6 +152,11 @@ const RealDeepCleaningProjectBethesda = () => {
           <span aria-hidden="true">★</span> 5.0 · 45 Google reviews · Bonded &amp; insured
         </p>
       </BlogHero>
+
+      <TransformationsGallery
+        heading="See the Results: Real Before & After Videos"
+        subtext="Before the walkthrough below, here's what a Capital Clean Care deep clean actually looks like — unedited footage from our own DMV team, using the same eco-friendly products and process behind this project."
+      />
 
       <article className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4 max-w-3xl">
@@ -393,7 +399,7 @@ const RealDeepCleaningProjectBethesda = () => {
         </div>
       </article>
 
-      <RelatedPosts currentSlug="real-deep-cleaning-project-bethesda-home" />
+      <RelatedPosts currentSlug="real-deep-cleaning-project-bethesda-home" showVideos={false} />
       <StickyCTA />
     </Layout>
   );
