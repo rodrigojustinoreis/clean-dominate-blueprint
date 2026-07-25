@@ -112,14 +112,14 @@ const Index = () => {
         </section>
       </ScrollReveal>
 
-      {/* ══════════════ 3. YOUR HOME. NON-TOXIC. ══════════════ */}
-      <ScrollReveal>
-        <WhyChooseUs />
-      </ScrollReveal>
-
-      {/* ══════════════ 4. TRANSFORMAÇÕES REAIS (vídeo) ══════════════ */}
+      {/* ══════════════ 3. TRANSFORMAÇÕES REAIS (vídeo) ══════════════ */}
       <ScrollReveal>
         <TransformationsGallery />
+      </ScrollReveal>
+
+      {/* ══════════════ 4. YOUR HOME. NON-TOXIC. ══════════════ */}
+      <ScrollReveal>
+        <WhyChooseUs />
       </ScrollReveal>
 
       {/* ══════════════ 2.5. CAPITAL AREA AUTHORITY ══════════════ */}
