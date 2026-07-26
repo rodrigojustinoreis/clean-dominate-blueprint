@@ -140,7 +140,7 @@ const TransformationsGallery = ({
         </div>
 
         <Carousel
-          opts={{ align: "start", loop: true, duration: 30 }}
+          opts={{ align: "start", loop: true, duration: 18 }}
           setApi={setApi}
           className="px-1"
           onMouseEnter={() => setPaused(true)}
