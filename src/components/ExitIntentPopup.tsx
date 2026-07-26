@@ -76,7 +76,7 @@ const ExitIntentPopup = () => {
       };
       window.addEventListener("scroll", onScroll, { passive: true });
     } else {
-      showTimer = window.setTimeout(trigger, 6000);
+      showTimer = window.setTimeout(trigger, 30000);
       leaveTimer = window.setTimeout(() => {
         document.addEventListener("mouseleave", handleMouseLeave);
       }, 4000);
