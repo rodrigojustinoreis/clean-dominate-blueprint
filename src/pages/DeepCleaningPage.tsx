@@ -10,7 +10,6 @@ import BeforeAfterGallery from "@/components/BeforeAfterGallery";
 import TransformationsGallery from "@/components/TransformationsGallery";
 import GreenShield5Step from "@/components/GreenShield5Step";
 import TrustBadges from "@/components/TrustBadges";
-import ExitIntentPopup from "@/components/ExitIntentPopup";
 import { ServiceSchema, FAQSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import { useSEO } from "@/hooks/useSEO";
 import { getServiceBySlug } from "@/data/services";
@@ -732,8 +731,6 @@ const DeepCleaningPage = () => {
 
       {/* Bottom padding for mobile CTA */}
       <div className="h-14 md:hidden" />
-
-      <ExitIntentPopup />
     </div>
   );
 };

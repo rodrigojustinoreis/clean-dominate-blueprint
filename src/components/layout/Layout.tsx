@@ -3,7 +3,6 @@ import Header from "./Header";
 import Footer from "./Footer";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
 import QuoteChatbot from "@/components/QuoteChatbot";
-import ExitIntentPopup from "@/components/ExitIntentPopup";
 import AnnouncementBar from "@/components/AnnouncementBar";
 
 const Layout = ({ children }: { children: ReactNode }) => (
@@ -14,7 +13,6 @@ const Layout = ({ children }: { children: ReactNode }) => (
     <Footer />
     <StickyMobileCTA />
     <QuoteChatbot />
-    <ExitIntentPopup />
     {/* bottom padding for mobile sticky CTA */}
     <div className="h-14 md:hidden" />
   </div>
