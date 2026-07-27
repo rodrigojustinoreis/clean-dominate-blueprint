@@ -493,6 +493,15 @@ export const blogPosts: BlogPost[] = [
     coverImage: "/images/blog/pet-safe-labels/hero.webp",
   },
   {
+    slug: "how-often-to-clean-pet-bowls-and-toys",
+    title: "How Often Should You Clean Your Pet's Bowls and Toys?",
+    excerpt: "Your pet's food bowl is one of the germiest items in the home — the NSF ranks it 4th. What the FDA and CDC actually recommend for cleaning bowls, water dishes, and toys, and how often.",
+    date: "2026-07-26",
+    readTime: "7 min read",
+    category: "Pet Health",
+    coverImage: "/images/blog/pet-bowl-hygiene/hero.webp",
+  },
+  {
     slug: "cleaning-product-poisoning-in-pets",
     title: "Cleaning-Product Poisoning in Pets: Warning Signs to Know",
     excerpt: "Bleach, ammonia, and disinfectants are top household toxins for pets. The warning signs of cleaning-product poisoning, what to do (don't induce vomiting), who to call, and how to prevent it. Includes a quick video.",

@@ -36,6 +36,7 @@ import SeasonalVsHouseholdPetAllergies from "./pages/SeasonalVsHouseholdPetAller
 import HepaFiltersPetsAsthma from "./pages/HepaFiltersPetsAsthma";
 import CleaningProductPoisoningPets from "./pages/CleaningProductPoisoningPets";
 import WhatPetSafeCleaningMeans from "./pages/WhatPetSafeCleaningMeans";
+import HowOftenCleanPetBowls from "./pages/HowOftenCleanPetBowls";
 import ChoosePetSafeCleaningCompany from "./pages/ChoosePetSafeCleaningCompany";
 import HouseCleaningCostCity from "./pages/HouseCleaningCostCity";
 import DeepVsRegularCleaning from "./pages/DeepVsRegularCleaning";
@@ -240,6 +241,7 @@ const AppRoutes = () => (
     <Route path="/resources/hepa-filters-pets-asthma" element={<HepaFiltersPetsAsthma />} />
     <Route path="/resources/cleaning-product-poisoning-in-pets" element={<CleaningProductPoisoningPets />} />
     <Route path="/resources/what-pet-safe-cleaning-really-means" element={<WhatPetSafeCleaningMeans />} />
+    <Route path="/resources/how-often-to-clean-pet-bowls-and-toys" element={<HowOftenCleanPetBowls />} />
     <Route path="/resources/choose-pet-safe-cleaning-company" element={<ChoosePetSafeCleaningCompany />} />
     <Route path="/resources/house-cleaning-cost-bethesda-md" element={<HouseCleaningCostCity citySlug="bethesda-md" />} />
     <Route path="/resources/house-cleaning-cost-rockville-md" element={<HouseCleaningCostCity citySlug="rockville-md" />} />

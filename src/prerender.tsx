@@ -38,6 +38,7 @@ function getAllRoutes(): string[] {
     "/resources/hepa-filters-pets-asthma",
     "/resources/cleaning-product-poisoning-in-pets",
     "/resources/what-pet-safe-cleaning-really-means",
+    "/resources/how-often-to-clean-pet-bowls-and-toys",
     "/resources/choose-pet-safe-cleaning-company",
     "/resources/house-cleaning-cost-bethesda-md",
     "/resources/house-cleaning-cost-rockville-md",

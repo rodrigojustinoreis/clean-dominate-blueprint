@@ -44,6 +44,7 @@ const SeasonalVsHouseholdPetAllergies = lazy(() => import("./pages/SeasonalVsHou
 const HepaFiltersPetsAsthma = lazy(() => import("./pages/HepaFiltersPetsAsthma"));
 const CleaningProductPoisoningPets = lazy(() => import("./pages/CleaningProductPoisoningPets"));
 const WhatPetSafeCleaningMeans = lazy(() => import("./pages/WhatPetSafeCleaningMeans"));
+const HowOftenCleanPetBowls = lazy(() => import("./pages/HowOftenCleanPetBowls"));
 const ChoosePetSafeCleaningCompany = lazy(() => import("./pages/ChoosePetSafeCleaningCompany"));
 const HouseCleaningCostCity = lazy(() => import("./pages/HouseCleaningCostCity"));
 const DeepVsRegularCleaning = lazy(() => import("./pages/DeepVsRegularCleaning"));
@@ -248,6 +249,7 @@ const AppRoutesLazy = () => (
     <Route path="/resources/hepa-filters-pets-asthma" element={<HepaFiltersPetsAsthma />} />
     <Route path="/resources/cleaning-product-poisoning-in-pets" element={<CleaningProductPoisoningPets />} />
     <Route path="/resources/what-pet-safe-cleaning-really-means" element={<WhatPetSafeCleaningMeans />} />
+    <Route path="/resources/how-often-to-clean-pet-bowls-and-toys" element={<HowOftenCleanPetBowls />} />
     <Route path="/resources/choose-pet-safe-cleaning-company" element={<ChoosePetSafeCleaningCompany />} />
     <Route path="/resources/house-cleaning-cost-bethesda-md" element={<HouseCleaningCostCity citySlug="bethesda-md" />} />
     <Route path="/resources/house-cleaning-cost-rockville-md" element={<HouseCleaningCostCity citySlug="rockville-md" />} />
