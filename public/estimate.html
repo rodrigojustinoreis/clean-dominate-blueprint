@@ -32,6 +32,10 @@
     display:inline-block;background:var(--orange);color:#3a2600;font-weight:800;
     font-size:11px;letter-spacing:2px;padding:5px 12px;border-radius:6px;margin-top:14px;text-transform:uppercase;
   }
+  /* ── Meta strip (estimate #, valid, coverage) ── */
+  .meta{background:#0a2350;color:#fff;padding:14px 20px;display:flex;flex-wrap:wrap;gap:14px 26px;border-top:1px solid #16386b}
+  .meta .mk{font-size:9.5px;letter-spacing:1.5px;text-transform:uppercase;color:#8fb2da;font-weight:700}
+  .meta .mv{font-size:13.5px;font-weight:700;color:#fff;margin-top:3px}
   /* ── Client block ── */
   .client{background:var(--white);padding:22px 20px;border-bottom:1px solid #dbe7f4}
   .client .to{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray);font-weight:700}
@@ -41,29 +45,40 @@
     margin-top:14px;display:inline-block;background:var(--bg);color:var(--blue);
     font-weight:700;font-size:14px;padding:8px 14px;border-radius:8px;border:1px solid #cfe2f4;
   }
+  .client .desc{color:#42566e;font-size:14px;line-height:1.6;margin-top:14px}
   /* ── Total box ── */
   .total{background:var(--navy);color:#fff;margin:0;padding:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px}
   .total .lbl{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:#a9c4e4;font-weight:700}
   .total .val{font-size:34px;font-weight:800;color:var(--orange);line-height:1}
   /* ── Sections / accordion ── */
   .sections{padding:8px 14px 4px}
-  .sechead{padding:16px 6px 8px;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray);font-weight:700}
+  .sechead{padding:16px 6px 4px;font-size:12px;letter-spacing:1.2px;color:var(--gray);font-weight:700;text-align:center}
   .acc{border:1px solid #d6e4f3;border-radius:12px;background:#fff;margin:10px 0;overflow:hidden;box-shadow:0 1px 2px rgba(13,43,94,.05)}
   .acc-btn{
     width:100%;text-align:left;background:none;border:0;cursor:pointer;
-    padding:16px 18px;font-size:16px;font-weight:700;color:var(--navy);
-    display:flex;align-items:center;justify-content:space-between;gap:12px;font-family:inherit;
+    padding:15px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;font-family:inherit;
   }
   .acc-btn:hover{background:#f7fbff}
-  .acc-btn .chev{flex:0 0 auto;width:22px;height:22px;border-radius:50%;background:var(--bg);color:var(--blue);display:flex;align-items:center;justify-content:center;transition:transform .25s ease;font-size:13px;font-weight:800}
-  .acc.open .acc-btn .chev{transform:rotate(180deg);background:var(--orange);color:#fff}
-  .acc-body{max-height:0;overflow:hidden;transition:max-height .3s ease}
-  .acc.open .acc-body{max-height:1200px}
-  .acc-inner{padding:4px 18px 18px}
+  .titlewrap{display:flex;flex-direction:column;gap:2px;min-width:0}
+  .sectitle{font-size:16px;font-weight:700;color:var(--navy);display:flex;align-items:center;gap:8px}
+  .secsub{font-size:12.5px;font-weight:500;color:var(--gray)}
+  .chev{flex:0 0 auto;width:22px;height:22px;border-radius:50%;background:var(--bg);color:var(--blue);display:flex;align-items:center;justify-content:center;transition:transform .25s ease;font-size:13px;font-weight:800}
+  .acc.open .chev{transform:rotate(180deg);background:var(--orange);color:#fff}
+  .acc-body{max-height:0;overflow:hidden;transition:max-height .35s ease}
+  .acc.open .acc-body{max-height:1600px}
+  .acc-inner{padding:2px 18px 16px}
   .item{display:flex;align-items:flex-start;gap:11px;padding:7px 0;font-size:15px;color:#26364a}
   .check{flex:0 0 auto;width:20px;height:20px;border-radius:5px;background:var(--orange);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;margin-top:1px}
+  /* ── Equipment block ── */
+  .equip{margin:14px;background:#fff;border:1px solid #d6e4f3;border-radius:12px;padding:16px 18px}
+  .equip h3{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray);font-weight:700;margin-bottom:10px}
+  .equip .item .check{background:var(--blue);border-radius:5px}
+  /* ── Notes ── */
+  .notes{margin:6px 20px 0;background:#f4f8fd;border:1px solid #dbe7f4;border-radius:12px;padding:14px 16px}
+  .notes .nk{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray);font-weight:700;margin-bottom:6px}
+  .notes p{font-size:13px;color:#42566e;line-height:1.6}
   /* ── Trust chips ── */
-  .chips{display:flex;flex-wrap:wrap;gap:8px;padding:6px 20px 4px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;padding:16px 20px 4px}
   .chip{background:#fff;border:1px solid #cfe2f4;color:var(--blue);font-size:12.5px;font-weight:600;padding:8px 12px;border-radius:20px;display:flex;align-items:center;gap:6px}
   .chip .dot{width:8px;height:8px;border-radius:50%;background:var(--lightblue)}
   /* ── Buttons ── */
@@ -95,7 +110,6 @@
     var PHONE_TEL = "+12407042551";
     var app = document.getElementById("app");
 
-    // ── tiny DOM helpers (textContent only — safe with hand-edited data) ──
     function el(tag, cls, text) {
       var n = document.createElement(tag);
       if (cls) n.className = cls;
@@ -103,7 +117,6 @@
       return n;
     }
 
-    // Brand logo — inline SVG (petal mark), works on navy.
     function logoSVG() {
       return '<svg class="logo" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">'
         + '<circle cx="24" cy="24" r="23" fill="#123566"/>'
@@ -127,8 +140,23 @@
       return h;
     }
 
+    function metaStrip(c) {
+      var pairs = [];
+      if (c.estimateNo) pairs.push(["Estimate #", c.estimateNo]);
+      if (c.validUntil) pairs.push(["Valid Until", c.validUntil]);
+      if (c.coverage)  pairs.push(["Coverage", c.coverage]);
+      if (!pairs.length) return null;
+      var m = el("div", "meta");
+      pairs.forEach(function (p) {
+        var box = el("div", "m");
+        box.appendChild(el("div", "mk", p[0]));
+        box.appendChild(el("div", "mv", p[1]));
+        m.appendChild(box);
+      });
+      return m;
+    }
+
     function money(v) {
-      // Accepts "$2,500.00", "2500", 2500, etc. Returns a display string.
       if (typeof v === "number") {
         return "$" + v.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
       }
@@ -139,6 +167,8 @@
     function render(c) {
       app.appendChild(el("div", "topstripe"));
       app.appendChild(header());
+      var m = metaStrip(c);
+      if (m) app.appendChild(m);
 
       // Client block
       var cb = el("div", "client");
@@ -146,6 +176,7 @@
       cb.appendChild(el("div", "name", c.name || ""));
       if (c.address) cb.appendChild(el("div", "addr", c.address));
       if (c.service) cb.appendChild(el("div", "service", c.service));
+      if (c.description) cb.appendChild(el("div", "desc", c.description));
       app.appendChild(cb);
 
       // Total
@@ -158,15 +189,22 @@
       var sections = Array.isArray(c.sections) ? c.sections : [];
       if (sections.length) {
         var wrap = el("div", "sections");
-        wrap.appendChild(el("div", "sechead", "What's Included — tap each area"));
+        wrap.appendChild(el("div", "sechead", "👆 Tap each area to see everything included"));
         sections.forEach(function (sec, i) {
           var acc = el("div", "acc");
           var btn = el("button", "acc-btn");
           btn.type = "button";
           btn.setAttribute("aria-expanded", "false");
-          btn.appendChild(el("span", null, sec.title || ("Section " + (i + 1))));
-          var chev = el("span", "chev", "⌄"); // ⌄
-          btn.appendChild(chev);
+
+          var tw = el("div", "titlewrap");
+          var title = el("div", "sectitle");
+          if (sec.emoji) { var em = el("span", "emoji", sec.emoji); title.appendChild(em); }
+          title.appendChild(el("span", null, sec.title || ("Section " + (i + 1))));
+          tw.appendChild(title);
+          if (sec.subtitle) tw.appendChild(el("div", "secsub", sec.subtitle));
+          btn.appendChild(tw);
+          btn.appendChild(el("span", "chev", "⌄")); // ⌄
+
           var body = el("div", "acc-body");
           var inner = el("div", "acc-inner");
           (sec.items || []).forEach(function (it) {
@@ -182,7 +220,6 @@
 
           btn.addEventListener("click", function () {
             var isOpen = acc.classList.contains("open");
-            // close all — one open at a time
             wrap.querySelectorAll(".acc.open").forEach(function (o) {
               o.classList.remove("open");
               o.querySelector(".acc-btn").setAttribute("aria-expanded", "false");
@@ -194,6 +231,28 @@
           });
         });
         app.appendChild(wrap);
+      }
+
+      // Professional equipment
+      var equip = Array.isArray(c.equipment) ? c.equipment : [];
+      if (equip.length) {
+        var eq = el("div", "equip");
+        eq.appendChild(el("h3", null, "Professional Equipment"));
+        equip.forEach(function (it) {
+          var row = el("div", "item");
+          row.appendChild(el("span", "check", "✓"));
+          row.appendChild(el("span", null, it));
+          eq.appendChild(row);
+        });
+        app.appendChild(eq);
+      }
+
+      // Notes
+      if (c.notes) {
+        var nt = el("div", "notes");
+        nt.appendChild(el("div", "nk", "Notes"));
+        nt.appendChild(el("p", null, c.notes));
+        app.appendChild(nt);
       }
 
       // Trust chips
@@ -210,7 +269,7 @@
       var acts = el("div", "actions");
       var smsBody = "Hi Capital Clean & Care — I'd like to accept my estimate and book."
         + (c.name ? " (" + c.name + (c.address ? ", " + c.address : "") + ")" : "");
-      var accept = el("a", "btn btn-primary", "Accept & Book");
+      var accept = el("a", "btn btn-primary", "Accept & Book This Service");
       accept.href = "sms:" + PHONE_TEL + "?&body=" + encodeURIComponent(smsBody);
       var call = el("a", "btn btn-secondary", "Call / Text " + PHONE_DISPLAY);
       call.href = "tel:" + PHONE_TEL;
@@ -244,7 +303,6 @@
       footerEl();
     }
 
-    // ── Boot ──
     var id = new URLSearchParams(window.location.search).get("c");
     var db = window.CLIENTS || {};
     var client = id ? db[id.toLowerCase().trim()] : null;
