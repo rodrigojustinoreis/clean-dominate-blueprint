@@ -1820,14 +1820,6 @@
   to = "/index.html"
   status = 200
 
-# ── Interactive client estimates (static, outside the React app) ──────────────
-# /estimate?c=<id> serves the standalone estimate.html (query string preserved).
-# Must come BEFORE the SPA catch-all below, or /estimate would 404 into the app.
-[[redirects]]
-  from = "/estimate"
-  to = "/estimate.html"
-  status = 200
-
 # ── SPA fallback (must be last) ───────────────────────────────────────────────
 # Genuinely unmatched URLs now return a real HTTP 404 (was 200 = soft-404, the root
 # cause of "Crawled – not indexed"). The SPA shell still loads and React Router
@@ -1836,19 +1828,6 @@
   from = "/*"
   to = "/index.html"
   status = 404
-
-# ── Estimates: always serve fresh so edits to clients.js go live immediately ──
-[[headers]]
-  for = "/estimate.html"
-  [headers.values]
-    Cache-Control = "public, max-age=0, must-revalidate"
-    X-Robots-Tag = "noindex, nofollow"
-
-[[headers]]
-  for = "/clients.js"
-  [headers.values]
-    Cache-Control = "public, max-age=0, must-revalidate"
-    X-Robots-Tag = "noindex, nofollow"
 
 # ── Cache: content-hashed assets are safe to cache forever ──
 [[headers]]
