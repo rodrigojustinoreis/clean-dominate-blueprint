@@ -3,9 +3,9 @@ import { ArrowRight } from "lucide-react";
 import type { BlogPost } from "@/pages/Blog";
 
 // The single image-backed card for the whole Resource Center — hub features & rows, category
-// grids, Latest, search results, and related guides. Cover image + navy brand scrim keeps the
-// white text legible. `featured` = the larger hero treatment (bigger title + a white CTA button);
-// default = the compact grid treatment (whole card is one crawlable tap target).
+// grids, Latest, search results, and related guides. One uniform size everywhere: cover image +
+// navy brand scrim + category eyebrow + title + a white "Read the guide" button. The whole card
+// is one crawlable tap target.
 interface FeaturedResourceCardProps {
   /** Either pass a full post… */
   post?: BlogPost;
@@ -14,7 +14,6 @@ interface FeaturedResourceCardProps {
   title?: string;
   category?: string;
   coverImage?: string;
-  featured?: boolean;
   ctaLabel?: string;
 }
 
@@ -26,7 +25,6 @@ export default function FeaturedResourceCard({
   title,
   category,
   coverImage,
-  featured = false,
   ctaLabel = "Read the guide",
 }: FeaturedResourceCardProps) {
   const to = post ? `/resources/${post.slug}` : href || "#";
@@ -34,13 +32,10 @@ export default function FeaturedResourceCard({
   const cardCategory = post?.category ?? category ?? "";
   const cover = post?.coverImage ?? coverImage ?? FALLBACK_COVER;
 
-  const minH = featured ? "min-h-[260px] md:min-h-[300px]" : "min-h-[200px]";
-  const titleSize = featured ? "text-xl md:text-2xl" : "text-base md:text-lg";
-
   return (
     <Link
       to={to}
-      className={`group relative flex ${minH} flex-col justify-end overflow-hidden rounded-2xl p-5 md:p-6 shadow-md ring-1 ring-black/5 outline-none transition-shadow hover:shadow-xl focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2`}
+      className="group relative flex min-h-[260px] flex-col justify-end overflow-hidden rounded-2xl p-5 md:min-h-[300px] md:p-6 shadow-md ring-1 ring-black/5 outline-none transition-shadow hover:shadow-xl focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
     >
       <img
         src={cover}
@@ -58,20 +53,13 @@ export default function FeaturedResourceCard({
         <span className="mb-2 inline-block text-[11px] font-bold uppercase tracking-[0.15em] text-[#9CC8EE]">
           {cardCategory}
         </span>
-        <h3 className={`font-heading ${titleSize} font-bold leading-snug text-white drop-shadow-sm line-clamp-3`}>
+        <h3 className="font-heading text-xl md:text-2xl font-bold leading-snug text-white drop-shadow-sm line-clamp-3">
           {cardTitle}
         </h3>
-        {featured ? (
-          <span className="mt-4 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold text-[#0D2B5E] shadow-sm transition-transform motion-safe:group-hover:translate-y-[-1px]">
-            {ctaLabel}
-            <ArrowRight className="h-4 w-4 transition-transform motion-safe:group-hover:translate-x-0.5" />
-          </span>
-        ) : (
-          <span className="mt-3 inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wide text-white/90">
-            {ctaLabel}
-            <ArrowRight className="h-3.5 w-3.5 transition-transform motion-safe:group-hover:translate-x-0.5" />
-          </span>
-        )}
+        <span className="mt-4 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold text-[#0D2B5E] shadow-sm transition-transform motion-safe:group-hover:translate-y-[-1px]">
+          {ctaLabel}
+          <ArrowRight className="h-4 w-4 transition-transform motion-safe:group-hover:translate-x-0.5" />
+        </span>
       </div>
     </Link>
   );

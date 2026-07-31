@@ -1066,7 +1066,7 @@ const Blog = () => {
               <h2 className="font-heading text-2xl font-bold mb-5">Featured guides</h2>
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 mb-14">
                 {featured.map((post) => (
-                  <FeaturedResourceCard key={post.slug} post={post} featured />
+                  <FeaturedResourceCard key={post.slug} post={post} />
                 ))}
               </div>
 
@@ -1092,19 +1092,19 @@ const Blog = () => {
                 </section>
               ))}
 
-              {/* Browse every category — keeps all 10 category pages crawlable & described */}
-              <h2 className="font-heading text-2xl font-bold mb-5">Browse every category</h2>
-              <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-3 mb-14">
-                {categoryCards.map(({ category, count }) => (
-                  <CategoryCard key={category.slug} category={category} count={count} />
+              {/* Latest guides — raised above the category grid */}
+              <h2 className="font-heading text-2xl font-bold mb-5">Latest guides</h2>
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 mb-14">
+                {recentPosts.slice(0, 6).map((post) => (
+                  <FeaturedResourceCard key={post.slug} post={post} />
                 ))}
               </div>
 
-              {/* Latest guides — same unified image-card system */}
-              <h2 className="font-heading text-2xl font-bold mb-5">Latest guides</h2>
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                {recentPosts.slice(0, 6).map((post) => (
-                  <FeaturedResourceCard key={post.slug} post={post} />
+              {/* Browse every category — keeps all 10 category pages crawlable & described */}
+              <h2 className="font-heading text-2xl font-bold mb-5">Browse every category</h2>
+              <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-3">
+                {categoryCards.map(({ category, count }) => (
+                  <CategoryCard key={category.slug} category={category} count={count} />
                 ))}
               </div>
             </>
