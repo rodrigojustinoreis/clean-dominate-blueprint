@@ -52,7 +52,7 @@ const ResourceCategory = ({ slug }: { slug: string }) => {
             ]}
             className="mb-6"
           />
-          <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4">
+          <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4 tracking-[-0.03em] leading-[1.1]">
             <span aria-hidden="true">{category.emoji}</span> {category.h1}
           </h1>
           <p className="text-muted-foreground text-lg mb-8 max-w-3xl leading-relaxed">{category.intro}</p>

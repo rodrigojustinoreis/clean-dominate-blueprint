@@ -1008,7 +1008,9 @@ const Blog = () => {
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 max-w-5xl">
           <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Resources" }]} className="mb-6" />
-          <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4">Cleaning Resource Center</h1>
+          <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4 tracking-[-0.03em] leading-[1.1]">
+            Cleaning <span className="text-gradient">Resource Center</span>
+          </h1>
           <p className="text-muted-foreground text-lg mb-8 max-w-3xl">
             Practical, eco-friendly guides for keeping your Maryland, DC &amp; Virginia home spotless —
             checklists, real pricing, deep-cleaning and move-out guides, pet-safe methods, and everyday
