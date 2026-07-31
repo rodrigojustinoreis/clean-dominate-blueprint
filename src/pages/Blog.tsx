@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
-import { Search, X } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Search, X, ArrowRight } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { useSEO } from "@/hooks/useSEO";
@@ -9,7 +10,9 @@ import TrustBadges from "@/components/TrustBadges";
 import ResourceCategoryNav from "@/components/blog/ResourceCategoryNav";
 import CategoryCard from "@/components/blog/CategoryCard";
 import PostCard from "@/components/blog/PostCard";
-import { RESOURCE_CATEGORIES, postsInCategory } from "@/data/resource-categories";
+import FeaturedResourceCard from "@/components/blog/FeaturedResourceCard";
+import ResourceColorCard from "@/components/blog/ResourceColorCard";
+import { RESOURCE_CATEGORIES, postsInCategory, getResourceCategoryBySlug } from "@/data/resource-categories";
 
 export interface BlogPost {
   slug: string;
@@ -959,6 +962,28 @@ const Blog = () => {
   }));
   const recentPosts = allPosts.slice(0, 12);
 
+  // ── Ionic-style hub data ──────────────────────────────────────────────────
+  const bySlug = (s: string) => allPosts.find((p) => p.slug === s);
+  // Three hand-picked, image-backed features (all have real cover images).
+  const featured = [
+    "how-often-to-clean-pet-bowls-and-toys",
+    "deep-cleaning-vs-regular-cleaning",
+    "aging-in-place-montgomery-county-cleaning",
+  ]
+    .map(bySlug)
+    .filter(Boolean) as BlogPost[];
+  // Curated category rows (colored 4-card grids + "See all"); each links its category page.
+  const featuredSlugSet = new Set(featured.map((p) => p.slug));
+  const categoryRows = ["deep-cleaning", "pricing-guides", "eco-friendly-cleaning", "checklists"]
+    .map((slug) => {
+      const category = getResourceCategoryBySlug(slug);
+      const posts = postsInCategory(slug, allPosts)
+        .filter((p) => !featuredSlugSet.has(p.slug))
+        .slice(0, 4);
+      return category ? { category, posts } : null;
+    })
+    .filter((r): r is { category: (typeof RESOURCE_CATEGORIES)[number]; posts: BlogPost[] } => !!r && r.posts.length >= 4);
+
   // Client-side search over every guide (progressive enhancement: with query empty — including
   // during prerender — the page renders exactly the static hub, so SSR/SEO content is untouched).
   const [query, setQuery] = useState("");
@@ -1037,9 +1062,39 @@ const Blog = () => {
             </>
           ) : (
             <>
-              {/* Browse by category — the library's table of contents */}
-              <h2 className="font-heading text-2xl font-bold mb-5">Browse by category</h2>
-              <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-3 mb-12 md:mb-16">
+              {/* Featured — image-backed hero cards (Ionic-style) */}
+              <h2 className="font-heading text-2xl font-bold mb-5">Featured guides</h2>
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 mb-14">
+                {featured.map((post) => (
+                  <FeaturedResourceCard key={post.slug} post={post} />
+                ))}
+              </div>
+
+              {/* Category rows — colored cards + "See all" (hub-and-spoke to each category page) */}
+              {categoryRows.map(({ category, posts }) => (
+                <section key={category.slug} className="mb-14">
+                  <div className="mb-5 flex items-end justify-between gap-4">
+                    <h2 className="font-heading text-2xl font-bold flex items-center gap-2">
+                      <span aria-hidden="true">{category.emoji}</span> {category.label}
+                    </h2>
+                    <Link
+                      to={`/resources/${category.slug}`}
+                      className="shrink-0 inline-flex items-center gap-1 text-sm font-semibold text-accent transition-all hover:gap-2"
+                    >
+                      See all <ArrowRight className="h-4 w-4" />
+                    </Link>
+                  </div>
+                  <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
+                    {posts.map((post, i) => (
+                      <ResourceColorCard key={post.slug} post={post} index={i} watermark={category.emoji} />
+                    ))}
+                  </div>
+                </section>
+              ))}
+
+              {/* Browse every category — keeps all 10 category pages crawlable & described */}
+              <h2 className="font-heading text-2xl font-bold mb-5">Browse every category</h2>
+              <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-3 mb-14">
                 {categoryCards.map(({ category, count }) => (
                   <CategoryCard key={category.slug} category={category} count={count} />
                 ))}
@@ -1048,7 +1103,7 @@ const Blog = () => {
               {/* Latest guides */}
               <h2 className="font-heading text-2xl font-bold mb-5">Latest guides</h2>
               <div className="space-y-4 md:space-y-6">
-                {recentPosts.map((post) => (
+                {recentPosts.slice(0, 6).map((post) => (
                   <PostCard key={post.slug} post={post} />
                 ))}
               </div>
