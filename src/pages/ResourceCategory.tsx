@@ -4,7 +4,7 @@ import { useSEO } from "@/hooks/useSEO";
 import { BreadcrumbSchema, CollectionPageSchema } from "@/components/SchemaMarkup";
 import TrustBadges from "@/components/TrustBadges";
 import ResourceCategoryNav from "@/components/blog/ResourceCategoryNav";
-import PostCard from "@/components/blog/PostCard";
+import ResourceColorCard from "@/components/blog/ResourceColorCard";
 import { getResourceCategoryBySlug, postsInCategory } from "@/data/resource-categories";
 import { allPosts } from "@/pages/Blog";
 import NotFound from "./NotFound";
@@ -43,7 +43,7 @@ const ResourceCategory = ({ slug }: { slug: string }) => {
         items={posts.map((p) => ({ title: p.title, slug: p.slug }))}
       />
       <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4 max-w-4xl">
+        <div className="container mx-auto px-4 max-w-5xl">
           <Breadcrumbs
             items={[
               { label: "Home", href: "/" },
@@ -63,9 +63,9 @@ const ResourceCategory = ({ slug }: { slug: string }) => {
             {posts.length} {posts.length === 1 ? "guide" : "guides"}
           </p>
 
-          <div className="space-y-6">
-            {posts.map((post) => (
-              <PostCard key={post.slug} post={post} />
+          <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-3">
+            {posts.map((post, i) => (
+              <ResourceColorCard key={post.slug} post={post} index={i} watermark={category.emoji} />
             ))}
           </div>
         </div>
