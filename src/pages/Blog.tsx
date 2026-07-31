@@ -10,7 +10,6 @@ import TrustBadges from "@/components/TrustBadges";
 import ResourceCategoryNav from "@/components/blog/ResourceCategoryNav";
 import CategoryCard from "@/components/blog/CategoryCard";
 import FeaturedResourceCard from "@/components/blog/FeaturedResourceCard";
-import ResourceColorCard from "@/components/blog/ResourceColorCard";
 import { RESOURCE_CATEGORIES, postsInCategory, getResourceCategoryBySlug } from "@/data/resource-categories";
 
 export interface BlogPost {
@@ -978,10 +977,10 @@ const Blog = () => {
       const category = getResourceCategoryBySlug(slug);
       const posts = postsInCategory(slug, allPosts)
         .filter((p) => !featuredSlugSet.has(p.slug))
-        .slice(0, 4);
+        .slice(0, 3);
       return category ? { category, posts } : null;
     })
-    .filter((r): r is { category: (typeof RESOURCE_CATEGORIES)[number]; posts: BlogPost[] } => !!r && r.posts.length >= 4);
+    .filter((r): r is { category: (typeof RESOURCE_CATEGORIES)[number]; posts: BlogPost[] } => !!r && r.posts.length >= 3);
 
   // Client-side search over every guide (progressive enhancement: with query empty — including
   // during prerender — the page renders exactly the static hub, so SSR/SEO content is untouched).
@@ -1054,20 +1053,20 @@ const Blog = () => {
                   category above.
                 </p>
               ) : (
-                <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4 mb-16">
-                  {results.slice(0, 32).map((post, i) => (
-                    <ResourceColorCard key={post.slug} post={post} index={i} />
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 mb-16">
+                  {results.slice(0, 30).map((post) => (
+                    <FeaturedResourceCard key={post.slug} post={post} />
                   ))}
                 </div>
               )}
             </>
           ) : (
             <>
-              {/* Featured — image-backed hero cards (Ionic-style) */}
+              {/* Featured — large image-backed hero cards */}
               <h2 className="font-heading text-2xl font-bold mb-5">Featured guides</h2>
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 mb-14">
                 {featured.map((post) => (
-                  <FeaturedResourceCard key={post.slug} post={post} />
+                  <FeaturedResourceCard key={post.slug} post={post} featured />
                 ))}
               </div>
 
@@ -1085,9 +1084,9 @@ const Blog = () => {
                       See all <ArrowRight className="h-4 w-4" />
                     </Link>
                   </div>
-                  <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
-                    {posts.map((post, i) => (
-                      <ResourceColorCard key={post.slug} post={post} index={i} watermark={category.emoji} />
+                  <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                    {posts.map((post) => (
+                      <FeaturedResourceCard key={post.slug} post={post} />
                     ))}
                   </div>
                 </section>
@@ -1101,11 +1100,11 @@ const Blog = () => {
                 ))}
               </div>
 
-              {/* Latest guides — same unified card system */}
+              {/* Latest guides — same unified image-card system */}
               <h2 className="font-heading text-2xl font-bold mb-5">Latest guides</h2>
-              <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
-                {recentPosts.slice(0, 8).map((post, i) => (
-                  <ResourceColorCard key={post.slug} post={post} index={i} />
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {recentPosts.slice(0, 6).map((post) => (
+                  <FeaturedResourceCard key={post.slug} post={post} />
                 ))}
               </div>
             </>

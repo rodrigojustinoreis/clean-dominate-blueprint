@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import type { GuideLink, RelatedLink } from "@/data/related-content";
-import ResourceColorCard from "@/components/blog/ResourceColorCard";
+import FeaturedResourceCard from "@/components/blog/FeaturedResourceCard";
 
 // Presentational blocks for the automatic internal-linking system (Fase 1.3).
-//  • GuideCards — the RelatedPosts grid, rendered with the shared ResourceColorCard so post,
+//  • GuideCards — the RelatedPosts grid, rendered with the shared image-backed card so post,
 //    category, and related grids are one identical card system across the Resource Center.
 //  • LinkList   — the InternalLinksGrid text-link list (heading + arrow links).
 // Callers pre-filter to indexable targets and exclude the current page, so these components
@@ -15,9 +15,15 @@ export function GuideCards({ heading, guides }: { heading: string; guides: Guide
   return (
     <section className="mt-14 pt-10 border-t border-border">
       <h2 className="font-heading text-2xl font-bold mb-6">{heading}</h2>
-      <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-3">
-        {guides.map((g, i) => (
-          <ResourceColorCard key={g.href} href={g.href} title={g.title} category={g.category} index={i} />
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {guides.map((g) => (
+          <FeaturedResourceCard
+            key={g.href}
+            href={g.href}
+            title={g.title}
+            category={g.category}
+            coverImage={g.coverImage}
+          />
         ))}
       </div>
     </section>

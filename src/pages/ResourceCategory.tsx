@@ -4,7 +4,7 @@ import { useSEO } from "@/hooks/useSEO";
 import { BreadcrumbSchema, CollectionPageSchema } from "@/components/SchemaMarkup";
 import TrustBadges from "@/components/TrustBadges";
 import ResourceCategoryNav from "@/components/blog/ResourceCategoryNav";
-import ResourceColorCard from "@/components/blog/ResourceColorCard";
+import FeaturedResourceCard from "@/components/blog/FeaturedResourceCard";
 import { getResourceCategoryBySlug, postsInCategory } from "@/data/resource-categories";
 import { allPosts } from "@/pages/Blog";
 import NotFound from "./NotFound";
@@ -63,9 +63,9 @@ const ResourceCategory = ({ slug }: { slug: string }) => {
             {posts.length} {posts.length === 1 ? "guide" : "guides"}
           </p>
 
-          <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-3">
-            {posts.map((post, i) => (
-              <ResourceColorCard key={post.slug} post={post} index={i} watermark={category.emoji} />
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {posts.map((post) => (
+              <FeaturedResourceCard key={post.slug} post={post} />
             ))}
           </div>
         </div>
