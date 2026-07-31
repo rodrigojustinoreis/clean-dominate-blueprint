@@ -9,7 +9,6 @@ import { autoBlogPosts } from "@/data/auto-blog-posts";
 import TrustBadges from "@/components/TrustBadges";
 import ResourceCategoryNav from "@/components/blog/ResourceCategoryNav";
 import CategoryCard from "@/components/blog/CategoryCard";
-import PostCard from "@/components/blog/PostCard";
 import FeaturedResourceCard from "@/components/blog/FeaturedResourceCard";
 import ResourceColorCard from "@/components/blog/ResourceColorCard";
 import { RESOURCE_CATEGORIES, postsInCategory, getResourceCategoryBySlug } from "@/data/resource-categories";
@@ -1053,9 +1052,9 @@ const Blog = () => {
                   category above.
                 </p>
               ) : (
-                <div className="space-y-4 md:space-y-6 mb-16">
-                  {results.slice(0, 30).map((post) => (
-                    <PostCard key={post.slug} post={post} />
+                <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4 mb-16">
+                  {results.slice(0, 32).map((post, i) => (
+                    <ResourceColorCard key={post.slug} post={post} index={i} />
                   ))}
                 </div>
               )}
@@ -1100,11 +1099,11 @@ const Blog = () => {
                 ))}
               </div>
 
-              {/* Latest guides */}
+              {/* Latest guides — same unified card system */}
               <h2 className="font-heading text-2xl font-bold mb-5">Latest guides</h2>
-              <div className="space-y-4 md:space-y-6">
-                {recentPosts.slice(0, 6).map((post) => (
-                  <PostCard key={post.slug} post={post} />
+              <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
+                {recentPosts.slice(0, 8).map((post, i) => (
+                  <ResourceColorCard key={post.slug} post={post} index={i} />
                 ))}
               </div>
             </>

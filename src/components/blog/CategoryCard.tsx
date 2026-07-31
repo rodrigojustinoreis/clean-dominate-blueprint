@@ -10,8 +10,11 @@ import type { ResourceCategory } from "@/data/resource-categories";
 // and "Browse" affordance appear from sm up where there's room.
 export default function CategoryCard({ category, count }: { category: ResourceCategory; count: number }) {
   return (
-    <Card className="group h-full hover:shadow-lg hover:border-accent/50 transition-all">
-      <Link to={`/resources/${category.slug}`} className="flex h-full flex-col p-4 sm:p-5 md:p-6">
+    <Card className="group h-full rounded-2xl border-border shadow-sm outline-none transition-all duration-200 hover:border-accent/50 hover:shadow-xl focus-within:ring-2 focus-within:ring-accent focus-within:ring-offset-2 motion-safe:hover:-translate-y-1">
+      <Link
+        to={`/resources/${category.slug}`}
+        className="flex h-full flex-col p-4 sm:p-5 md:p-6 outline-none"
+      >
         <div className="mb-0 sm:mb-3 flex items-center gap-3">
           <span
             className="flex h-9 w-9 sm:h-11 sm:w-11 shrink-0 items-center justify-center rounded-xl bg-accent/10 text-lg sm:text-xl"
@@ -30,7 +33,7 @@ export default function CategoryCard({ category, count }: { category: ResourceCa
         </div>
         <p className="hidden sm:block text-sm text-muted-foreground line-clamp-2">{category.seoDescription}</p>
         <span className="mt-4 hidden sm:inline-flex items-center text-sm font-semibold text-accent">
-          Browse <ArrowRight className="ml-1 h-3.5 w-3.5 group-hover:translate-x-0.5 transition-transform" />
+          Browse <ArrowRight className="ml-1 h-3.5 w-3.5 transition-transform motion-safe:group-hover:translate-x-0.5" />
         </span>
       </Link>
     </Card>

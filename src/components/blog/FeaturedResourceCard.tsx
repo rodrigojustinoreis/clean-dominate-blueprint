@@ -16,14 +16,14 @@ export default function FeaturedResourceCard({
   return (
     <Link
       to={`/resources/${post.slug}`}
-      className="group relative flex min-h-[240px] flex-col justify-end overflow-hidden rounded-2xl p-6 shadow-md ring-1 ring-black/5 transition-shadow hover:shadow-xl md:min-h-[300px]"
+      className="group relative flex min-h-[240px] flex-col justify-end overflow-hidden rounded-2xl p-6 shadow-md ring-1 ring-black/5 outline-none transition-shadow hover:shadow-xl focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 md:min-h-[300px]"
     >
       <img
         src={cover}
         alt=""
         aria-hidden="true"
         loading="lazy"
-        className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+        className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 motion-safe:group-hover:scale-105"
       />
       {/* Navy brand scrim */}
       <div

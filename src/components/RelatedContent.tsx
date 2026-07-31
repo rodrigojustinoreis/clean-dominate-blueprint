@@ -1,45 +1,23 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import type { GuideLink, RelatedLink } from "@/data/related-content";
+import ResourceColorCard from "@/components/blog/ResourceColorCard";
 
 // Presentational blocks for the automatic internal-linking system (Fase 1.3).
-//  • GuideCards — the RelatedPosts grid, now on-brand colored cards (navy→blue→teal→light-blue)
-//    matching the redesigned Resource Center. Anchor text is the real post title.
+//  • GuideCards — the RelatedPosts grid, rendered with the shared ResourceColorCard so post,
+//    category, and related grids are one identical card system across the Resource Center.
 //  • LinkList   — the InternalLinksGrid text-link list (heading + arrow links).
 // Callers pre-filter to indexable targets and exclude the current page, so these components
 // just render what they're given.
-
-const GUIDE_PALETTE = [
-  "linear-gradient(150deg, #0D2B5E 0%, #163a73 100%)", // navy
-  "linear-gradient(150deg, #1A6BAD 0%, #2079c0 100%)", // brand blue
-  "linear-gradient(150deg, #0E7CA8 0%, #1591C4 100%)", // teal
-  "linear-gradient(150deg, #2E90D0 0%, #4AACE8 100%)", // light blue
-];
 
 export function GuideCards({ heading, guides }: { heading: string; guides: GuideLink[] }) {
   if (guides.length === 0) return null;
   return (
     <section className="mt-14 pt-10 border-t border-border">
-      <h2 className="font-heading text-xl font-bold mb-6">{heading}</h2>
+      <h2 className="font-heading text-2xl font-bold mb-6">{heading}</h2>
       <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-3">
         {guides.map((g, i) => (
-          <Link
-            key={g.href}
-            to={g.href}
-            className="group relative flex min-h-[170px] flex-col justify-between overflow-hidden rounded-2xl p-5 text-white shadow-md transition-all hover:-translate-y-1 hover:shadow-xl"
-            style={{ background: GUIDE_PALETTE[i % GUIDE_PALETTE.length] }}
-          >
-            <span className="text-[10.5px] font-bold uppercase tracking-[0.15em] text-white/70">
-              {g.category}
-            </span>
-            <div className="mt-3">
-              <h3 className="font-heading text-base font-bold leading-snug line-clamp-3">{g.title}</h3>
-              <span className="mt-3 inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wide text-white/90">
-                Read more
-                <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
-              </span>
-            </div>
-          </Link>
+          <ResourceColorCard key={g.href} href={g.href} title={g.title} category={g.category} index={i} />
         ))}
       </div>
     </section>
