@@ -279,6 +279,9 @@ const DeepCleaningPage = () => {
         </div>
       </section>
 
+      {/* ── Real video transformations (raised to 2nd position) ── */}
+      <TransformationsGallery />
+
       {/* ── Intro / About ── */}
       <section className="py-12 md:py-16">
         <div className="container mx-auto px-4 max-w-3xl">
@@ -634,9 +637,6 @@ const DeepCleaningPage = () => {
 
       {/* ── Before & After Gallery ── */}
       <BeforeAfterGallery />
-
-      {/* ── Real video transformations ── */}
-      <TransformationsGallery />
 
       {/* ── GreenShield 5-Step Clean ── */}
       <GreenShield5Step compact showCTA={false} />
