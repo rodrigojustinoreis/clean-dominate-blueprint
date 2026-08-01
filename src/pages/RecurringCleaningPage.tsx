@@ -572,12 +572,17 @@ const RecurringCleaningPage = () => {
         </div>
       </section>
 
-      {/* ── Social Proof — real Google reviews + brand trust video ── */}
+      {/* ── Social Proof — real Google reviews + a real client video testimonial ── */}
       <LocationSocialProof
         cityName="Montgomery County"
         citySlug="services"
         serviceSlug="recurring-cleaning"
         serviceLabel="Recurring Cleaning"
+        testimonialVideo={{
+          src: "/videos/client-testimonial.mp4",
+          poster: "/videos/client-testimonial-poster.jpg",
+          label: "Capital Clean Care client testimonial — a Montgomery County homeowner on their recurring cleaning experience",
+        }}
       />
 
       {/* ── Service Areas ── */}

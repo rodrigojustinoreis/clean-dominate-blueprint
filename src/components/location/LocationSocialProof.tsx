@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from "react";
-import { Star } from "lucide-react";
+import { Star, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { pickReviews, GOOGLE_LISTING_URL } from "@/data/realReviews";
 
@@ -10,6 +10,12 @@ interface LocationSocialProofProps {
   serviceLabel: string;
   /** Override the auto-rotated real reviews if a page wants specific ones. */
   count?: number;
+  /**
+   * When set, the video slot shows a real spoken client testimonial as a
+   * click-to-play player (poster first, then <video controls> with audio —
+   * no autoplay, since it has sound) instead of the muted brand-trust montage.
+   */
+  testimonialVideo?: { src: string; poster: string; label: string };
 }
 
 /**
@@ -22,13 +28,14 @@ interface LocationSocialProofProps {
  * preload="none" in Chromium, so we must gate the element itself to avoid a
  * ~736 KB download on every initial page load.)
  */
-const LocationSocialProof = ({ cityName, citySlug, serviceSlug, serviceLabel, count = 1 }: LocationSocialProofProps) => {
+const LocationSocialProof = ({ cityName, citySlug, serviceSlug, serviceLabel, count = 1, testimonialVideo }: LocationSocialProofProps) => {
   // One real review per page (hash-distributed across the 9 verified reviews) so
   // neighbouring city pages rarely share the same review card.
   const reviews = pickReviews(`${citySlug}/${serviceSlug}`, count);
 
   const videoWrapRef = useRef<HTMLDivElement>(null);
   const [showVideo, setShowVideo] = useState(false);
+  const [playTestimonial, setPlayTestimonial] = useState(false);
 
   useEffect(() => {
     if (showVideo) return;
@@ -59,35 +66,77 @@ const LocationSocialProof = ({ cityName, citySlug, serviceSlug, serviceLabel, co
           </h2>
         </div>
 
-        {/* Brand trust video — lazy: poster first, <video> mounts on scroll-near */}
-        <div
-          ref={videoWrapRef}
-          className="mb-8 max-w-3xl mx-auto rounded-2xl overflow-hidden border border-white/10 shadow-xl ring-1 ring-accent/20 bg-[#0a1726]"
-        >
-          {showVideo ? (
-            <video
-              className="w-full aspect-video object-cover block"
-              autoPlay
-              muted
-              loop
-              playsInline
-              poster="/videos/reviews-poster.jpg"
-              aria-label="Capital Clean Care — rated 5.0 stars across 45 Google reviews from homeowners in Maryland, DC and Northern Virginia"
-            >
-              <source src="/videos/reviews.webm" type="video/webm" />
-              <source src="/videos/reviews.mp4" type="video/mp4" />
-            </video>
-          ) : (
-            <img
-              src="/videos/reviews-poster.jpg"
-              alt="Capital Clean Care — 5.0 stars across 45 Google reviews"
-              className="w-full aspect-video object-cover block"
-              loading="lazy"
-              width={1280}
-              height={720}
-            />
-          )}
-        </div>
+        {testimonialVideo ? (
+          /* Real spoken client testimonial — click-to-play with controls + audio (no autoplay). */
+          <div className="mb-8 max-w-3xl mx-auto rounded-2xl overflow-hidden border border-white/10 shadow-xl ring-1 ring-accent/20 bg-[#0a1726]">
+            {playTestimonial ? (
+              <video
+                className="w-full aspect-video object-cover block"
+                controls
+                autoPlay
+                playsInline
+                poster={testimonialVideo.poster}
+                aria-label={testimonialVideo.label}
+              >
+                <source src={testimonialVideo.src} type="video/mp4" />
+              </video>
+            ) : (
+              <button
+                type="button"
+                onClick={() => setPlayTestimonial(true)}
+                className="group relative block w-full"
+                aria-label={`Play video testimonial: ${testimonialVideo.label}`}
+              >
+                <img
+                  src={testimonialVideo.poster}
+                  alt={testimonialVideo.label}
+                  className="w-full aspect-video object-cover block"
+                  loading="lazy"
+                  width={1280}
+                  height={720}
+                />
+                <span className="absolute inset-0 flex items-center justify-center bg-black/25 transition-colors group-hover:bg-black/15">
+                  <span className="flex h-16 w-16 items-center justify-center rounded-full bg-white/90 shadow-xl ring-1 ring-white/60 transition-transform group-hover:scale-110">
+                    <Play className="h-7 w-7 translate-x-0.5 fill-[#0D2B5E] text-[#0D2B5E]" />
+                  </span>
+                </span>
+                <span className="absolute bottom-3 left-3 right-3 text-left text-sm font-semibold text-white drop-shadow">
+                  ▶ Watch a real client testimonial
+                </span>
+              </button>
+            )}
+          </div>
+        ) : (
+          /* Brand trust video — lazy: poster first, <video> mounts on scroll-near */
+          <div
+            ref={videoWrapRef}
+            className="mb-8 max-w-3xl mx-auto rounded-2xl overflow-hidden border border-white/10 shadow-xl ring-1 ring-accent/20 bg-[#0a1726]"
+          >
+            {showVideo ? (
+              <video
+                className="w-full aspect-video object-cover block"
+                autoPlay
+                muted
+                loop
+                playsInline
+                poster="/videos/reviews-poster.jpg"
+                aria-label="Capital Clean Care — rated 5.0 stars across 45 Google reviews from homeowners in Maryland, DC and Northern Virginia"
+              >
+                <source src="/videos/reviews.webm" type="video/webm" />
+                <source src="/videos/reviews.mp4" type="video/mp4" />
+              </video>
+            ) : (
+              <img
+                src="/videos/reviews-poster.jpg"
+                alt="Capital Clean Care — 5.0 stars across 45 Google reviews"
+                className="w-full aspect-video object-cover block"
+                loading="lazy"
+                width={1280}
+                height={720}
+              />
+            )}
+          </div>
+        )}
 
         {/* Real reviews */}
         <div className={`grid gap-4 ${reviews.length > 1 ? "grid-cols-1 md:grid-cols-2" : "grid-cols-1 max-w-xl mx-auto"}`}>
