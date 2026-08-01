@@ -6,6 +6,8 @@ interface BeforeAfterSliderProps {
   beforeLabel?: string;
   afterLabel?: string;
   height?: number;
+  /** Responsive Tailwind sizing (e.g. "aspect-[3/4] sm:aspect-[16/10]"); overrides `height` when set. */
+  aspectClassName?: string;
   caption?: string;
 }
 
@@ -15,6 +17,7 @@ const BeforeAfterSlider = ({
   beforeLabel = "BEFORE",
   afterLabel = "AFTER",
   height = 300,
+  aspectClassName,
   caption,
 }: BeforeAfterSliderProps) => {
   const [position, setPosition] = useState(50);
@@ -58,8 +61,8 @@ const BeforeAfterSlider = ({
     <div>
       <div
         ref={containerRef}
-        className="relative overflow-hidden select-none cursor-col-resize"
-        style={{ height, borderRadius: 12 }}
+        className={`relative overflow-hidden select-none cursor-col-resize ${aspectClassName ?? ""}`}
+        style={aspectClassName ? { borderRadius: 12 } : { height, borderRadius: 12 }}
         onPointerDown={onPointerDown}
         onPointerMove={onPointerMove}
         onPointerUp={onPointerUp}
