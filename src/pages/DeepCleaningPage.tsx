@@ -294,6 +294,9 @@ const DeepCleaningPage = () => {
 
       {/* ═══════════ PILLAR CONTENT — informative reference ═══════════ */}
 
+      {/* ── Real video transformations (3rd position) ── */}
+      <TransformationsGallery />
+
       {/* ── What's included, by room ── */}
       <section className="py-12 md:py-16 border-t border-border">
         <div className="container mx-auto px-4 max-w-4xl">
@@ -347,8 +350,8 @@ const DeepCleaningPage = () => {
         </div>
       </section>
 
-      {/* ── Real video transformations (4th position) ── */}
-      <TransformationsGallery />
+      {/* ── Before & After photo carousel (5th position) ── */}
+      <BeforeAfterGallery />
 
       {/* ── Deep vs standard ── */}
       <section className="py-12 md:py-16 bg-secondary/40">
@@ -634,9 +637,6 @@ const DeepCleaningPage = () => {
           <GuideCards heading="Deep Cleaning Guides" guides={guidesBySlugs(DEEP_SPOKES)} />
         </div>
       </section>
-
-      {/* ── Before & After Gallery ── */}
-      <BeforeAfterGallery />
 
       {/* ── GreenShield 5-Step Clean ── */}
       <GreenShield5Step compact showCTA={false} />
