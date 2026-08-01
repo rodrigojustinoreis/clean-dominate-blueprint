@@ -154,6 +154,7 @@ const RecurringCleaningPage = () => {
     description: service.metaDescription,
     canonical: "https://capitalcleancare.com/services/recurring-cleaning",
     ogImage: "/images/cluster/pillar-og.jpg",
+    preloadImage: "/images/cluster/pillar.webp",
   });
 
   const scrollToForm = (e: React.MouseEvent) => {
@@ -476,8 +477,8 @@ const RecurringCleaningPage = () => {
           <FadeInSection>
             <h2 className="font-heading text-2xl md:text-3xl font-bold mb-4">Is Recurring Cleaning Right for You?</h2>
             <p className="text-[17px] leading-relaxed text-foreground mb-6 max-w-3xl">
-              Regular cleaning service pays off most when a clean home matters every week, not just once in a
-              while. If any of these sound like you, a recurring plan is likely the best fit.
+              A recurring residential cleaning service pays off most when a clean home matters every week, not
+              just once in a while. If any of these sound like you, a recurring plan is likely the best fit.
             </p>
             <div className="grid sm:grid-cols-2 gap-5">
               <div className="bg-card border border-border rounded-xl p-6 shadow-sm">

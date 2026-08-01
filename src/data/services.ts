@@ -450,7 +450,7 @@ export const services: ServiceData[] = [
       { name: "Linda P.", location: "Potomac, MD", text: "Love the rotating deep-clean focus. Each visit tackles a different area in depth, so over the month every part of the house gets extra attention." }
     ],
     metaTitle: "Recurring House Cleaning Plans in MD, DC & VA | Capital Clean Care",
-    metaDescription: "Weekly, bi-weekly & monthly cleaning plans across Maryland, DC & Virginia. Save up to 25%, dedicated teams, eco-friendly products. No contracts — get a free quote!"
+    metaDescription: "Weekly, bi-weekly & monthly house cleaning plans across MD, DC & Virginia. Save up to 25%, dedicated team, no contracts. Get your free quote today."
   },
   {
     name: "Eco-Friendly Cleaning",
