@@ -279,6 +279,9 @@ const DeepCleaningPage = () => {
         </div>
       </section>
 
+      {/* ── Real video transformations (2nd position) ── */}
+      <TransformationsGallery />
+
       {/* ── Intro / About ── */}
       <section className="py-12 md:py-16">
         <div className="container mx-auto px-4 max-w-3xl">
@@ -294,8 +297,8 @@ const DeepCleaningPage = () => {
 
       {/* ═══════════ PILLAR CONTENT — informative reference ═══════════ */}
 
-      {/* ── Real video transformations (3rd position) ── */}
-      <TransformationsGallery />
+      {/* ── Before & After photo carousel (4th position) ── */}
+      <BeforeAfterGallery />
 
       {/* ── What's included, by room ── */}
       <section className="py-12 md:py-16 border-t border-border">
@@ -349,9 +352,6 @@ const DeepCleaningPage = () => {
           </FadeInSection>
         </div>
       </section>
-
-      {/* ── Before & After photo carousel (5th position) ── */}
-      <BeforeAfterGallery />
 
       {/* ── Deep vs standard ── */}
       <section className="py-12 md:py-16 bg-secondary/40">
