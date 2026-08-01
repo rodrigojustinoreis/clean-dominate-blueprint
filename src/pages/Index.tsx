@@ -24,6 +24,7 @@ import TestimonialsCarousel from "@/components/home/TestimonialsCarousel";
 import ScrollReveal from "@/components/ScrollReveal";
 import GreenShield5Step from "@/components/GreenShield5Step";
 import TransformationsGallery from "@/components/TransformationsGallery";
+import TestimonialVideo from "@/components/TestimonialVideo";
 import Counter from "@/components/Counter";
 
 const homeFaqs = [
@@ -115,6 +116,15 @@ const Index = () => {
       {/* ══════════════ 3. TRANSFORMAÇÕES REAIS (vídeo) ══════════════ */}
       <ScrollReveal>
         <TransformationsGallery />
+      </ScrollReveal>
+
+      {/* ══════════════ 3.5. DEPOIMENTO DO CLIENTE (autoplay-on-scroll) ══════════════ */}
+      <ScrollReveal>
+        <TestimonialVideo
+          src="/videos/client-testimonial.mp4"
+          poster="/videos/client-testimonial-poster.jpg"
+          label="Capital Clean Care client testimonial — a Montgomery County homeowner shares their experience"
+        />
       </ScrollReveal>
 
       {/* ══════════════ 4. YOUR HOME. NON-TOXIC. ══════════════ */}
