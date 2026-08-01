@@ -2,6 +2,13 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import BeforeAfterSlider from "@/components/BeforeAfterSlider";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+} from "@/components/ui/carousel";
 
 import kitchenIslandBefore from "@/assets/real-work/kitchen-island-before.webp";
 import kitchenIslandAfter from "@/assets/real-work/kitchen-island-after.webp";
@@ -57,17 +64,24 @@ const BeforeAfterGallery = () => (
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto mb-10">
-        {sliders.map((s) => (
-          <BeforeAfterSlider
-            key={s.caption}
-            beforeImage={s.beforeImage}
-            afterImage={s.afterImage}
-            caption={s.caption}
-            height={300}
-          />
-        ))}
-      </div>
+      {/* Carousel — arrows navigate; carousel drag is OFF so the before/after
+          "drag to reveal" slider works without hijacking the swipe. */}
+      <Carousel opts={{ align: "start", loop: true, watchDrag: false }} className="max-w-6xl mx-auto mb-10">
+        <CarouselContent className="-ml-3 md:-ml-4">
+          {sliders.map((s) => (
+            <CarouselItem key={s.caption} className="pl-3 md:pl-4 basis-full md:basis-1/2 lg:basis-1/3">
+              <BeforeAfterSlider
+                beforeImage={s.beforeImage}
+                afterImage={s.afterImage}
+                caption={s.caption}
+                height={300}
+              />
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious className="left-1 md:-left-5 h-10 w-10 bg-white/95 hover:bg-white border-border text-foreground shadow-lg" />
+        <CarouselNext className="right-1 md:-right-5 h-10 w-10 bg-white/95 hover:bg-white border-border text-foreground shadow-lg" />
+      </Carousel>
 
       <div className="text-center">
         <Button variant="cta" size="lg" asChild>
