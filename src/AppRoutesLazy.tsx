@@ -81,6 +81,7 @@ const DeepCleaningBeforeSelling = lazy(() => import("./pages/DeepCleaningBeforeS
 const DeepCleaningForApartments = lazy(() => import("./pages/DeepCleaningForApartments"));
 const EcoFriendlyDeepCleaning = lazy(() => import("./pages/EcoFriendlyDeepCleaning"));
 const AirbnbCleaningChecklist = lazy(() => import("./pages/AirbnbCleaningChecklist"));
+const AirbnbCleaningFee = lazy(() => import("./pages/AirbnbCleaningFee"));
 const HowMuchTipHouseCleaner = lazy(() => import("./pages/HowMuchTipHouseCleaner"));
 const MoveInCleaningChecklist = lazy(() => import("./pages/MoveInCleaningChecklist"));
 const BestHouseCleaningSilverSpring = lazy(() => import("./pages/BestHouseCleaningSilverSpring"));
@@ -295,6 +296,7 @@ const AppRoutesLazy = () => (
     <Route path="/resources/deep-cleaning-for-apartments" element={<DeepCleaningForApartments />} />
     <Route path="/resources/eco-friendly-deep-cleaning" element={<EcoFriendlyDeepCleaning />} />
     <Route path="/resources/airbnb-cleaning-checklist" element={<AirbnbCleaningChecklist />} />
+    <Route path="/resources/airbnb-cleaning-fee" element={<AirbnbCleaningFee />} />
     <Route path="/resources/how-much-tip-house-cleaner" element={<HowMuchTipHouseCleaner />} />
     <Route path="/resources/move-in-cleaning-checklist" element={<MoveInCleaningChecklist />} />
     <Route path="/resources/most-forgotten-areas-when-cleaning" element={<MostForgottenCleaningAreas />} />

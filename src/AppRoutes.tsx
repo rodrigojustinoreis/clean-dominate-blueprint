@@ -73,6 +73,7 @@ import DeepCleaningBeforeSelling from "./pages/DeepCleaningBeforeSelling";
 import DeepCleaningForApartments from "./pages/DeepCleaningForApartments";
 import EcoFriendlyDeepCleaning from "./pages/EcoFriendlyDeepCleaning";
 import AirbnbCleaningChecklist from "./pages/AirbnbCleaningChecklist";
+import AirbnbCleaningFee from "./pages/AirbnbCleaningFee";
 import HowMuchTipHouseCleaner from "./pages/HowMuchTipHouseCleaner";
 import MoveInCleaningChecklist from "./pages/MoveInCleaningChecklist";
 import BestHouseCleaningSilverSpring from "./pages/BestHouseCleaningSilverSpring";
@@ -287,6 +288,7 @@ const AppRoutes = () => (
     <Route path="/resources/deep-cleaning-for-apartments" element={<DeepCleaningForApartments />} />
     <Route path="/resources/eco-friendly-deep-cleaning" element={<EcoFriendlyDeepCleaning />} />
     <Route path="/resources/airbnb-cleaning-checklist" element={<AirbnbCleaningChecklist />} />
+    <Route path="/resources/airbnb-cleaning-fee" element={<AirbnbCleaningFee />} />
     <Route path="/resources/how-much-tip-house-cleaner" element={<HowMuchTipHouseCleaner />} />
     <Route path="/resources/move-in-cleaning-checklist" element={<MoveInCleaningChecklist />} />
     <Route path="/resources/most-forgotten-areas-when-cleaning" element={<MostForgottenCleaningAreas />} />

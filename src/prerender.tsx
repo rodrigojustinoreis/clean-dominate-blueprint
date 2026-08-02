@@ -82,6 +82,7 @@ function getAllRoutes(): string[] {
     "/resources/deep-cleaning-for-apartments",
     "/resources/eco-friendly-deep-cleaning",
     "/resources/airbnb-cleaning-checklist",
+    "/resources/airbnb-cleaning-fee",
     "/resources/how-much-tip-house-cleaner",
     "/resources/move-in-cleaning-checklist",
     "/resources/most-forgotten-areas-when-cleaning",

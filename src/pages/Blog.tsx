@@ -253,6 +253,13 @@ export const blogPosts: BlogPost[] = [
     coverImage: "/images/blog/airbnb-bedroom-turnover.webp",
   },
   {
+    slug: "airbnb-cleaning-fee",
+    title: "How to Add a Cleaning Fee to Your Airbnb Listing",
+    excerpt: "Where to set the cleaning fee on Airbnb, how much to charge by home size in the DMV, and how to price it without losing bookings.",
+    date: "2026-08-01", readTime: "6 min read", category: "Cleaning Guides",
+    coverImage: "/images/blog/airbnb-cleaning-fee.webp",
+  },
+  {
     slug: "how-much-tip-house-cleaner",
     title: "How Much Should You Tip Your House Cleaner? (2026)",
     excerpt: "Typical tip amounts (15-20% or $10-$20 per visit), when tipping is and isn't expected, holiday bonuses, and etiquette with recurring teams.",
