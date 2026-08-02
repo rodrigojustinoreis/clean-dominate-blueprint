@@ -101,7 +101,7 @@ const BeforeAfterGallery = () => {
                   beforeImage={s.beforeImage}
                   afterImage={s.afterImage}
                   caption={s.caption}
-                  aspectClassName="aspect-[3/4] sm:aspect-[16/10]"
+                  aspectClassName="aspect-[9/16]"
                 />
               </CarouselItem>
             ))}
