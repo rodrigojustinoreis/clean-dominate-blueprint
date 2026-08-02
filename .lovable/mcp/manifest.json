@@ -1,0 +1,165 @@
+{
+  "version": 1,
+  "sdk_version": "0.26.1",
+  "path": "/mcp",
+  "auth": {
+    "type": "none"
+  },
+  "mcp": {
+    "server": {
+      "name": "capital-clean-launch",
+      "version": "0.1.0",
+      "title": "Capital Clean Launch"
+    },
+    "tools": [
+      {
+        "name": "list_services",
+        "title": "List cleaning services",
+        "description": "List every cleaning service Capital Clean Care offers, with slug and a short description.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "get_service",
+        "title": "Get service details",
+        "description": "Get full details for one cleaning service: intro, what's included, benefits and FAQs. Use list_services for valid slugs.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "slug": {
+              "type": "string",
+              "description": "Service slug, e.g. 'deep-cleaning'."
+            }
+          },
+          "required": [
+            "slug"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "list_service_areas",
+        "title": "List service areas",
+        "description": "List the cities and counties Capital Clean Care serves across Maryland, Washington DC and Northern Virginia. Optionally filter by state abbreviation or a name search.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "state": {
+              "type": "string",
+              "description": "Filter by state abbreviation, e.g. MD, DC, VA."
+            },
+            "search": {
+              "type": "string",
+              "description": "Case-insensitive substring match on the city name."
+            }
+          },
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "get_business_info",
+        "title": "Get business info",
+        "description": "Get Capital Clean Care's public contact details, address, business hours, rating and differentiators.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "request_quote",
+        "title": "Request a free cleaning quote",
+        "description": "Submit a free cleaning quote request to Capital Clean Care. Only submit with the customer's explicit confirmation of their real contact details.",
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "description": "Customer full name."
+            },
+            "phone": {
+              "type": "string",
+              "description": "Customer phone number."
+            },
+            "email": {
+              "type": "string",
+              "description": "Customer email address."
+            },
+            "zip": {
+              "type": "string",
+              "description": "Service address zip code."
+            },
+            "service": {
+              "type": "string",
+              "description": "Requested service, e.g. 'deep-cleaning'."
+            },
+            "bedrooms": {
+              "type": "string",
+              "description": "Number of bedrooms."
+            },
+            "bathrooms": {
+              "type": "string",
+              "description": "Number of bathrooms."
+            },
+            "frequency": {
+              "type": "string",
+              "description": "one-time, weekly, bi-weekly or monthly."
+            },
+            "preferredDate": {
+              "type": "string",
+              "description": "Preferred date, YYYY-MM-DD."
+            },
+            "message": {
+              "type": "string",
+              "description": "Any extra notes from the customer."
+            }
+          },
+          "required": [
+            "name",
+            "phone",
+            "email",
+            "zip",
+            "service"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "outputSchema": null
+      }
+    ]
+  }
+}
