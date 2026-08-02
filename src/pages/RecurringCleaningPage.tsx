@@ -21,6 +21,7 @@ import { COST_PRICE_ROWS } from "@/data/cost-cities";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FadeInSection from "@/components/blog/FadeInSection";
 import LocationSocialProof from "@/components/location/LocationSocialProof";
+import TestimonialVideo from "@/components/TestimonialVideo";
 import logo from "@/assets/logo.webp";
 
 const PHONE = "(240) 704-2551";
@@ -364,6 +365,15 @@ const RecurringCleaningPage = () => {
         </div>
       </section>
 
+      {/* ── Client video testimonial (autoplay-on-scroll), above the frequency section ── */}
+      <TestimonialVideo
+        src="/videos/client-testimonial.mp4"
+        poster="/videos/client-testimonial-poster.jpg"
+        label="Capital Clean Care client testimonial — a Montgomery County homeowner on their recurring cleaning experience"
+        heading="Hear It From a Recurring Client"
+        subtext="A Montgomery County homeowner on what a recurring plan with Capital Clean Care is really like."
+      />
+
       {/* ── Weekly vs bi-weekly vs monthly (brief, anti-cannibalization) ── */}
       <section className="py-12 md:py-16 bg-secondary/40">
         <div className="container mx-auto px-4 max-w-4xl">
@@ -572,17 +582,12 @@ const RecurringCleaningPage = () => {
         </div>
       </section>
 
-      {/* ── Social Proof — real Google reviews + a real client video testimonial ── */}
+      {/* ── Social Proof — real Google reviews + brand trust video ── */}
       <LocationSocialProof
         cityName="Montgomery County"
         citySlug="services"
         serviceSlug="recurring-cleaning"
         serviceLabel="Recurring Cleaning"
-        testimonialVideo={{
-          src: "/videos/client-testimonial.mp4",
-          poster: "/videos/client-testimonial-poster.jpg",
-          label: "Capital Clean Care client testimonial — a Montgomery County homeowner on their recurring cleaning experience",
-        }}
       />
 
       {/* ── Service Areas ── */}
