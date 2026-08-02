@@ -300,10 +300,10 @@ const HouseCleaningPage = () => {
       {seoHelmet}
       <Helmet>
         {/* Preload the LCP hero image so the browser fetches it at HTML parse */}
-        <link rel="preload" as="image" href={teamPhoto} fetchpriority="high" />
+        <link rel="preload" as="image" href={teamPhoto} fetchPriority="high" />
         <link rel="preconnect" href="https://i.ytimg.com" crossOrigin="" />
       </Helmet>
-      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Services", href: "/services" }, { label: "House Cleaning" }]} />
+      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Services", href: "/services" }, { label: "House Cleaning", href: "/services/house-cleaning" }]} />
       <ServiceSchema serviceName={service.name} description={service.shortDescription}
         url="https://capitalcleancare.com/services/house-cleaning"
         reviews={service.testimonials?.map(t => ({ name: t.name, text: t.text, location: t.location }))} />

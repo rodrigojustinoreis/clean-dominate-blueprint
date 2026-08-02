@@ -41,6 +41,8 @@ const ExitIntentPopup = () => {
       await supabase.from("quote_requests").insert({
         name,
         phone,
+        email: "",
+        zip: "",
         service: "deep",
         message: "Exit intent popup — 15% discount claimed",
       });
