@@ -1,6 +1,6 @@
 import { defineTool, ToolError } from "@lovable.dev/mcp-js";
 import { z } from "zod";
-import { services } from "@/data/services";
+import { services } from "../../../data/services";
 
 export default defineTool({
   name: "get_service",

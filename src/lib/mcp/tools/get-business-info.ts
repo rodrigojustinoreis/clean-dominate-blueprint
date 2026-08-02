@@ -1,5 +1,5 @@
 import { defineTool } from "@lovable.dev/mcp-js";
-import { BUSINESS_INFO } from "@/data/business-info";
+import { BUSINESS_INFO } from "../../../data/business-info";
 
 export default defineTool({
   name: "get_business_info",

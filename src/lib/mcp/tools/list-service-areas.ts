@@ -1,6 +1,6 @@
 import { defineTool } from "@lovable.dev/mcp-js";
 import { z } from "zod";
-import { cities } from "@/data/locations";
+import { cities } from "../../../data/locations";
 
 export default defineTool({
   name: "list_service_areas",
