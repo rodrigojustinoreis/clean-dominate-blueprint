@@ -35,6 +35,50 @@
 # The 200 force=true rewrites below serve /maryland, /virginia, /washington-dc directly.
 
 # ── 404 fixes: missing pages that Google has indexed ─────────────────────────
+# SEO Fase 1 (2026-07) — consolidação de canibalização.
+# 10 vanity URLs "flat" duplicavam a página /locations/{cidade}/{serviço} (80–91%
+# de texto igual). 301 permanente para a versão aninhada, que é o padrão escolhido.
+[[redirects]]
+  from = "/house-cleaning-wheaton-md"
+  to = "/locations/wheaton-md/house-cleaning"
+  status = 301
+[[redirects]]
+  from = "/eco-cleaning-bethesda-md"
+  to = "/locations/bethesda-md/eco-friendly-cleaning"
+  status = 301
+[[redirects]]
+  from = "/deep-cleaning-germantown-md"
+  to = "/locations/germantown-md/deep-cleaning"
+  status = 301
+[[redirects]]
+  from = "/move-out-cleaning-rockville-md"
+  to = "/locations/rockville-md/move-out-cleaning"
+  status = 301
+[[redirects]]
+  from = "/house-cleaning-silver-spring-md"
+  to = "/locations/silver-spring-md/house-cleaning"
+  status = 301
+[[redirects]]
+  from = "/eco-cleaning-potomac-md"
+  to = "/locations/potomac-md/eco-friendly-cleaning"
+  status = 301
+[[redirects]]
+  from = "/deep-cleaning-gaithersburg-md"
+  to = "/locations/gaithersburg-md/deep-cleaning"
+  status = 301
+[[redirects]]
+  from = "/recurring-cleaning-columbia-md"
+  to = "/locations/columbia-md/recurring-cleaning"
+  status = 301
+[[redirects]]
+  from = "/deep-cleaning-kensington-md"
+  to = "/locations/kensington-md/deep-cleaning"
+  status = 301
+[[redirects]]
+  from = "/eco-cleaning-chevy-chase-md"
+  to = "/locations/chevy-chase-md/eco-friendly-cleaning"
+  status = 301
+
 # These paths match a 200-rewrite pattern but have no prerendered file,
 # so they return 404 instead of falling through to the SPA. Fix with explicit 301s.
 [[redirects]]

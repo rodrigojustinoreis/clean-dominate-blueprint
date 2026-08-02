@@ -5,7 +5,7 @@ import { HelmetProvider } from "react-helmet-async";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import AppRoutes from "./AppRoutes";
 import { slCities, slServices } from "./data/service-locations";
-import { vanityLandingPages } from "./data/vanity-landings";
+import { vanityLandingPages, redirectedVanitySlugs } from "./data/vanity-landings";
 import { cities as locationCities } from "./data/locations";
 
 function getAllRoutes(): string[] {
@@ -139,8 +139,10 @@ function getAllRoutes(): string[] {
     }
   }
 
-  // Vanity landing pages
+  // Vanity landing pages — pula as que foram consolidadas via 301 (Fase 1 SEO),
+  // para saírem do prerender e do sitemap.
   for (const vp of vanityLandingPages) {
+    if (redirectedVanitySlugs.has(vp.slug)) continue;
     routes.push(`/${vp.slug}`);
   }
 

@@ -199,3 +199,23 @@ export const vanityLandingPages: VanityLandingConfig[] = [
 
 export const getVanityPageBySlug = (slug: string): VanityLandingConfig | undefined =>
   vanityLandingPages.find((p) => p.slug === slug);
+
+// SEO — consolidação de canibalização (Fase 1, 2026-07):
+// Estas 10 vanity URLs duplicam uma página /locations/{cidade}/{serviço} existente
+// (80–91% de texto idêntico). Recebem 301 no netlify.toml e são EXCLUÍDAS do
+// prerender/sitemap. Os dados acima ficam preservados de propósito: o conteúdo
+// local único (uniqueIntro/nearbyNote) será portado para as páginas /locations/
+// na Fase 2. As outras 5 vanity (Frederick, Ellicott City, Takoma Park apartment,
+// Clarksburg, Damascus) NÃO têm equivalente /locations/ — são únicas e permanecem.
+export const redirectedVanitySlugs = new Set<string>([
+  "house-cleaning-wheaton-md",
+  "eco-cleaning-bethesda-md",
+  "deep-cleaning-germantown-md",
+  "move-out-cleaning-rockville-md",
+  "house-cleaning-silver-spring-md",
+  "eco-cleaning-potomac-md",
+  "deep-cleaning-gaithersburg-md",
+  "recurring-cleaning-columbia-md",
+  "deep-cleaning-kensington-md",
+  "eco-cleaning-chevy-chase-md",
+]);
