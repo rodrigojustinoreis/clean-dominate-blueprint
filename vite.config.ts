@@ -4,6 +4,7 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 import { vitePrerenderPlugin } from "vite-prerender-plugin";
 import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
+import { mcpPlugin } from "@lovable.dev/mcp-js/stacks/supabase/vite";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
@@ -28,6 +29,7 @@ export default defineConfig(({ mode }) => ({
       webp: { lossless: false, quality: 80 },
       svg: { multipass: true },
     }),
+    mcpPlugin(),
   ].filter(Boolean),
   resolve: {
     alias: {

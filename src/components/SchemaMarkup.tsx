@@ -144,6 +144,7 @@ interface ServiceSchemaProps {
   description: string;
   url: string;
   areaServed?: string[];
+  reviews?: { name: string; text: string; location?: string }[];
 }
 
 export const ServiceSchema = ({
