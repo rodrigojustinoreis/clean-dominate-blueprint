@@ -607,23 +607,6 @@ const AirbnbCleaningPage = () => {
             </a>{" "}
             — Mon–Sat 8AM–6PM
           </p>
-
-          {/* Real clean transformation Short */}
-          <div className="mt-10">
-            <p className="text-center text-sm font-semibold text-muted-foreground mb-3">
-              See the results our clients count on 👇
-            </p>
-            <div className="mx-auto w-full max-w-[320px] rounded-2xl overflow-hidden shadow-lg border border-border" style={{ aspectRatio: "9/16" }}>
-              <iframe
-                src="https://www.youtube.com/embed/zaj8T4r_3MY"
-                title="Real cleaning transformation — Capital Clean Care"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="w-full h-full"
-                loading="lazy"
-              />
-            </div>
-          </div>
         </div>
       </section>
 
