@@ -331,6 +331,19 @@ const AirbnbCleaningPage = () => {
                 </div>
               ))}
             </div>
+            <details className="group mt-6 rounded-xl border border-border bg-card">
+              <summary className="cursor-pointer list-none px-5 py-4 font-heading font-bold text-foreground flex items-center justify-between gap-3">
+                <span>See the full turnover checklist — every task, every visit ({service.whatsIncluded.length} points)</span>
+                <span className="text-[#2E7D32] transition-transform group-open:rotate-180 shrink-0" aria-hidden="true">▾</span>
+              </summary>
+              <ul className="px-5 pb-5 grid sm:grid-cols-2 gap-x-6 gap-y-2">
+                {service.whatsIncluded.map((item) => (
+                  <li key={item} className="flex gap-2 items-start text-[15px] text-muted-foreground">
+                    <CheckCircle className="h-4 w-4 text-[#2E7D32] shrink-0 mt-0.5" /> {item}
+                  </li>
+                ))}
+              </ul>
+            </details>
             <p className="text-sm text-muted-foreground mt-6">
               Want the full room-by-room routine? See our{" "}
               <Link to="/resources/airbnb-cleaning-checklist" className="text-accent hover:underline font-medium">
