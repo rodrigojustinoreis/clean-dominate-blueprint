@@ -50,7 +50,7 @@ export default function LimpiezaAirbnbPage() {
                 <a href={PHONE_TEL} onClick={() => trackPhoneClick("airbnb_hero")}><Phone className="h-4 w-4 mr-2" /> Llamar: {PHONE}</a>
               </Button>
               <Button variant="outline" size="lg" asChild>
-                <a href="/contact" onClick={() => trackBookNowClick("airbnb_hero")}>Cotización Gratis <ArrowRight className="ml-1 h-4 w-4" /></a>
+                <a href="/es/contacto" onClick={() => trackBookNowClick("airbnb_hero")}>Cotización Gratis <ArrowRight className="ml-1 h-4 w-4" /></a>
               </Button>
             </div>
           </div>
@@ -139,7 +139,7 @@ export default function LimpiezaAirbnbPage() {
                 <a href={PHONE_TEL} onClick={() => trackPhoneClick("airbnb_cta")}><Phone className="h-4 w-4 mr-2" /> {PHONE}</a>
               </Button>
               <Button size="lg" variant="outline" className="border-white/50 text-white hover:bg-white/10" asChild>
-                <a href="/contact" onClick={() => trackBookNowClick("airbnb_cta")}>Cotización Gratis</a>
+                <a href="/es/contacto" onClick={() => trackBookNowClick("airbnb_cta")}>Cotización Gratis</a>
               </Button>
             </div>
             <div className="mt-4 flex items-center justify-center gap-2 text-accent-foreground/70 text-sm">

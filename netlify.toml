@@ -25,14 +25,60 @@
   status = 301
   force = true
 
-# ── Spanish section: /es (no trailing slash) → /es/ ──────────────────────────
-[[redirects]]
-  from = "/es"
-  to = "/es/"
-  status = 301
+# ── Spanish section: /es is served directly (canonical, no trailing slash) ───
+# Redirect /es → /es/ removed: it was shadowed/dead and would loop with the /es canonical.
 
 # ── State hub: trailing-slash normalisation removed (was causing infinite redirect loop)
 # The 200 force=true rewrites below serve /maryland, /virginia, /washington-dc directly.
+
+# ── Lote 3B Group 1: vanity → /locations consolidation (permanent 301) ───────
+# These 5 vanity landings had 0 GSC impressions while their /locations/ equivalent
+# ranks (up to 4,143 impr). Redirect permanently to consolidate signals; the
+# vanity slugs are also removed from prerender + sitemap. force=true so the
+# redirect wins even if a stale static file is cached on the CDN.
+[[redirects]]
+  from = "/house-cleaning-silver-spring-md"
+  to = "/locations/silver-spring-md/house-cleaning"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/eco-cleaning-chevy-chase-md"
+  to = "/locations/chevy-chase-md/eco-friendly-cleaning"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/eco-cleaning-potomac-md"
+  to = "/locations/potomac-md/eco-friendly-cleaning"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/eco-cleaning-bethesda-md"
+  to = "/locations/bethesda-md/eco-friendly-cleaning"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/recurring-cleaning-columbia-md"
+  to = "/locations/columbia-md/recurring-cleaning"
+  status = 301
+  force = true
+
+# ── Pre-existing dangling internal links (surfaced by the Fase 1.1 crawl) ────
+# /locations/aspen-hill-md: referenced by the ES aspen-hill page's EN switcher but
+# never built in EN. /services/apartment-cleaning: linked from the apartment-cleaning
+# vanity but not one of the 8 core service pages. Point both at their closest real page.
+[[redirects]]
+  from = "/locations/aspen-hill-md"
+  to = "/maryland"
+  status = 301
+
+[[redirects]]
+  from = "/services/apartment-cleaning"
+  to = "/services/house-cleaning"
+  status = 301
 
 # ── 404 fixes: missing pages that Google has indexed ─────────────────────────
 # SEO Fase 1 (2026-07) — consolidação de canibalização.
@@ -87,6 +133,16 @@
   status = 301
 
 [[redirects]]
+  from = "/services/move-in-move-out-cleaning"
+  to = "/services/move-out-cleaning"
+  status = 301
+
+[[redirects]]
+  from = "/recurring-cleaning"
+  to = "/services/recurring-cleaning"
+  status = 301
+
+[[redirects]]
   from = "/locations/washington-dc-nw"
   to = "/locations/washington-dc"
   status = 301
@@ -122,9 +178,44 @@
   to = "/contact/"
   status = 301
 
+# Fase 1.2 — legacy /resources/topic/* hubs consolidated into the 10-category Resource Center.
+# Reversible: delete these 4 rules + restore the topic routes in prerender.tsx to bring them back.
+[[redirects]]
+  from = "/resources/topic/pet-health"
+  to = "/resources/eco-friendly-cleaning"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/resources/topic/home-cleaning"
+  to = "/resources/cleaning-tips"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/resources/topic/local-guides"
+  to = "/resources/local-guides"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/resources/topic/tips-seasonal"
+  to = "/resources/cleaning-tips"
+  status = 301
+  force = true
+
+# Fase 3.2 tool pulled offline (quality bar) — 301 to the closest content until a better
+# version ships. Reversible: delete this rule + re-add the route in AppRoutes/AppRoutesLazy
+# + prerender.tsx. Component files kept in src/ (pages/ + components/tools/) for reuse.
+[[redirects]]
+  from = "/resources/tools/cleaning-frequency-calculator"
+  to = "/resources/how-often-should-you-deep-clean"
+  status = 301
+  force = true
+
 [[redirects]]
   from = "/home/f/*"
-  to = "/blog/"
+  to = "/resources"
   status = 301
 
 [[redirects]]
@@ -134,22 +225,22 @@
 
 [[redirects]]
   from = "/f/streamlining-your-cleaning-routine"
-  to = "/blog/"
+  to = "/resources"
   status = 301
 
 [[redirects]]
   from = "/f/12-things-you-forget-to-clean"
-  to = "/blog/"
+  to = "/resources"
   status = 301
 
 [[redirects]]
   from = "/f/how-to-clean-glass"
-  to = "/blog/"
+  to = "/resources"
   status = 301
 
 [[redirects]]
   from = "/seasonal-cleaning/f/*"
-  to = "/blog/"
+  to = "/resources"
   status = 301
 
 [[redirects]]
@@ -159,17 +250,17 @@
 
 [[redirects]]
   from = "/blog/how-to-clean-air-vents-filters-improve-indoor-air-quality-maryland"
-  to = "/blog/"
+  to = "/resources"
   status = 301
 
 [[redirects]]
   from = "/clean-service-chevy-chase"
-  to = "/eco-cleaning-chevy-chase-md/"
+  to = "/locations/chevy-chase-md/eco-friendly-cleaning"
   status = 301
 
 [[redirects]]
   from = "/clean-service-chevy-chase/"
-  to = "/eco-cleaning-chevy-chase-md/"
+  to = "/locations/chevy-chase-md/eco-friendly-cleaning"
   status = 301
 
 [[redirects]]
@@ -310,10 +401,6 @@
   status = 301
 
 # ── Dead/old internal URLs ────────────────────────────────────────────────────
-[[redirects]]
-  from = "/pricing"
-  to = "/"
-  status = 301
 
 [[redirects]]
   from = "/premium-clean"
@@ -347,47 +434,35 @@
 
 [[redirects]]
   from = "/f/*"
-  to = "/blog/"
+  to = "/resources"
   status = 301
 
 # ── Removed/replaced blog posts ──────────────────────────────────────────────
 [[redirects]]
   from = "/blog/spring-carpet-cleaning"
-  to = "/blog/how-to-clean-carpet-home-apartment"
+  to = "/resources/how-to-clean-carpet-home-apartment"
   status = 301
 
 # ── Blog slugs with date → evergreen slugs ───────────────────────────────────
 [[redirects]]
   from = "/blog/deep-cleaning-tips-maryland-homes-spring-prep-march-2026"
-  to = "/blog/deep-cleaning-tips-maryland-homes-spring-prep"
+  to = "/resources/deep-cleaning-tips-maryland-homes-spring-prep"
   status = 301
 
 
 # ── Blog/legacy query-parameter cleanup ──────────────────────────────────────
 [[redirects]]
   from = "/"
-  to = "/blog/"
+  to = "/resources"
   status = 301
   force = true
   query = {blog = "y"}
 
 [[redirects]]
   from = "/"
-  to = "/blog/"
+  to = "/resources"
   status = 301
   force = true
-  query = {blogcategory = ":cat"}
-
-[[redirects]]
-  from = "/seasonal-cleaning"
-  to = "/spring-cleaning-md/"
-  status = 301
-  query = {blog = "y"}
-
-[[redirects]]
-  from = "/seasonal-cleaning"
-  to = "/spring-cleaning-md/"
-  status = 301
   query = {blogcategory = ":cat"}
 
 # ═══════════════════════════════════════════════════════════════════════════
@@ -1629,10 +1704,20 @@
 
 
 # ── Block 6: Non-priority city hub redirects → /maryland ────────────────────
+# ── Fase 1.1: Blog → Resources migration. All /blog/* 301 to /resources/*
+# (slugs preserved). Specific old-slug redirects above run first, then this catch-all.
+# Exact /blog MUST precede /blog/* — the splat matches /blog with an empty splat and
+# would send /blog → /resources/ (extra hop). This exact rule catches it first (1 hop).
 [[redirects]]
-  from = "/blog/:slug"
-  to = "/blog/:slug/"
-  status = 200
+  from = "/blog"
+  to = "/resources"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/*"
+  to = "/resources/:splat"
+  status = 301
   force = true
 
 [[redirects]]
@@ -1716,12 +1801,6 @@
   force = true
 
 [[redirects]]
-  from = "/blog"
-  to = "/blog/"
-  status = 200
-  force = true
-
-[[redirects]]
   from = "/house-cleaning-near-me"
   to = "/house-cleaning-near-me/"
   status = 200
@@ -1793,3 +1872,19 @@
   from = "/*"
   to = "/index.html"
   status = 404
+
+# ── Cache: content-hashed assets are safe to cache forever ──
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/videos/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"

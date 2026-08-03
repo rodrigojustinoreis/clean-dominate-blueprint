@@ -17,6 +17,7 @@ import ImageGallery, { GalleryImage } from "@/components/blog/ImageGallery";
 import FAQAccordion from "@/components/blog/FAQAccordion";
 import BlogInlineCTA from "@/components/blog/BlogInlineCTA";
 import StickyCTA from "@/components/blog/StickyCTA";
+import RelatedPosts from "@/components/blog/RelatedPosts";
 
 const HERO_IMAGE =
   "https://images.pexels.com/photos/7512912/pexels-photo-7512912.jpeg?auto=compress&cs=tinysrgb&w=1200";
@@ -87,7 +88,7 @@ const HowToRemoveStickerResidueNatural = () => {
     title: "How to Remove Sticker Residue Naturally (No Goo Gone Needed)",
     description:
       "Remove sticker residue & label glue from glass, plastic, wood & metal naturally. Maryland eco guide. Free quote in Montgomery County.",
-    canonical: "https://capitalcleancare.com/blog/how-to-remove-sticker-residue-natural",
+    canonical: "https://capitalcleancare.com/resources/how-to-remove-sticker-residue-natural",
   });
 
   return (
@@ -103,14 +104,14 @@ const HowToRemoveStickerResidueNatural = () => {
       <ArticleSchema
         title="How to Remove Sticker Residue Naturally (5 Methods That Beat Goo Gone)"
         description="Remove sticker residue and label glue from glass, plastic, wood, metal, and fabric using oil, vinegar, heat, baking soda, and rubbing alcohol — no VOC solvents needed."
-        url="https://capitalcleancare.com/blog/how-to-remove-sticker-residue-natural"
+        url="https://capitalcleancare.com/resources/how-to-remove-sticker-residue-natural"
         datePublished="2026-05-23"
         image={HERO_IMAGE}
       />
       <HowToSchema
         name="How to Remove Sticker Residue With Oil (Natural Method)"
         description="Three-step oil soak method to remove sticker residue and label glue from glass, plastic, and metal — no Goo Gone, no VOC solvents."
-        url="https://capitalcleancare.com/blog/how-to-remove-sticker-residue-natural"
+        url="https://capitalcleancare.com/resources/how-to-remove-sticker-residue-natural"
         steps={howToSteps}
         totalTime="PT20M"
         image={HERO_IMAGE}
@@ -119,8 +120,8 @@ const HowToRemoveStickerResidueNatural = () => {
       <BreadcrumbSchema
         items={[
           { label: "Home", href: "/" },
-          { label: "Blog", href: "/blog" },
-          { label: "How to Remove Sticker Residue Naturally", href: "/blog/how-to-remove-sticker-residue-natural" },
+          { label: "Resources", href: "/resources" },
+          { label: "How to Remove Sticker Residue Naturally", href: "/resources/how-to-remove-sticker-residue-natural" },
         ]}
       />
 
@@ -130,7 +131,7 @@ const HowToRemoveStickerResidueNatural = () => {
           <Breadcrumbs
             items={[
               { label: "Home", href: "/" },
-              { label: "Blog", href: "/blog" },
+              { label: "Resources", href: "/resources" },
               { label: "How to Remove Sticker Residue Naturally" },
             ]}
           />
@@ -149,7 +150,7 @@ const HowToRemoveStickerResidueNatural = () => {
           5 Methods That Beat Goo Gone
         </p>
         <p className="text-gray-300 mb-8 text-sm uppercase tracking-widest">
-          By Capital Clean Care · Montgomery County, MD · May 2026
+          By Rodrigo Reis, Owner · Montgomery County, MD · May 2026
         </p>
         <Button
           size="lg"
@@ -168,14 +169,14 @@ const HowToRemoveStickerResidueNatural = () => {
           <FadeInSection>
             <p className="text-lg text-muted-foreground leading-relaxed mb-4">
               You've got a mason jar collection from last season's jam, a new laptop covered in a previous owner's stickers, and a stack of Amazon boxes with shipping labels that don't budge. Or you're doing a{" "}
-              <Link to="/services/move-in-move-out-cleaning" className="text-accent underline hover:no-underline">
+              <Link to="/services/move-out-cleaning" className="text-accent underline hover:no-underline">
                 move-in clean
               </Link>{" "}
               in <strong>Silver Spring</strong> and the previous tenant left a galaxy of kids' decals on every bedroom door. Whatever brought you here, the answer is the same: you don't need a VOC-heavy solvent sitting in the cabinet under the sink.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
               Five natural methods below cover every surface and adhesive type found in a home. The right method depends on what you're cleaning — oil for most jobs, heat for delicate surfaces, vinegar for glass, alcohol only as a last resort. Takoma Park and Bethesda households reusing glass jars for zero-waste storage will find Method 1 handles 90% of label residue in under 10 minutes. For more{" "}
-              <Link to="/blog/eco-friendly-cleaning-tips-for-maryland-homes" className="text-accent underline hover:no-underline">
+              <Link to="/resources/eco-cleaning-tips-maryland-homes" className="text-accent underline hover:no-underline">
                 eco-friendly cleaning tips for Maryland homes
               </Link>
               , see our full guide.
@@ -463,7 +464,7 @@ const HowToRemoveStickerResidueNatural = () => {
               <Lightbulb className="h-5 w-5 text-accent shrink-0 mt-0.5" />
               <p className="text-sm text-foreground leading-relaxed">
                 Move-in and move-out situations in <strong>Bethesda</strong> and <strong>Silver Spring</strong> commonly involve sticker and adhesive cleanup at a scale beyond a single afternoon's work — kids' decals on multiple doors, floor cable management tape residue, wall-mounted frame strips, and commercial packaging adhesive on counters. Capital Clean Care's{" "}
-                <Link to="/services/move-in-move-out-cleaning" className="text-accent underline hover:no-underline">
+                <Link to="/services/move-out-cleaning" className="text-accent underline hover:no-underline">
                   move-in/move-out cleaning service
                 </Link>{" "}
                 covers adhesive and residue removal as part of a systematic whole-home clean using{" "}
@@ -491,7 +492,7 @@ const HowToRemoveStickerResidueNatural = () => {
               </h2>
               <p className="text-primary-foreground/80 mb-4 leading-relaxed">
                 Capital Clean Care provides{" "}
-                <Link to="/services/move-in-move-out-cleaning" className="underline text-primary-foreground/90 hover:text-white">
+                <Link to="/services/move-out-cleaning" className="underline text-primary-foreground/90 hover:text-white">
                   move-in/move-out cleaning
                 </Link>{" "}
                 and{" "}
@@ -535,6 +536,7 @@ const HowToRemoveStickerResidueNatural = () => {
         </div>
       </article>
 
+      <RelatedPosts currentSlug="how-to-remove-sticker-residue-natural" />
       <StickyCTA />
     </Layout>
   );

@@ -48,7 +48,7 @@ export default function NosotrosPage() {
                 <a href={PHONE_TEL} onClick={() => trackPhoneClick("nosotros_hero")}><Phone className="h-4 w-4 mr-2" /> Llamar: {PHONE}</a>
               </Button>
               <Button variant="outline" size="lg" asChild>
-                <a href="/contact" onClick={() => trackBookNowClick("nosotros_hero")}>Cotización Gratis <ArrowRight className="ml-1 h-4 w-4" /></a>
+                <a href="/es/contacto" onClick={() => trackBookNowClick("nosotros_hero")}>Cotización Gratis <ArrowRight className="ml-1 h-4 w-4" /></a>
               </Button>
             </div>
           </div>
@@ -61,7 +61,7 @@ export default function NosotrosPage() {
                 <h2 className="font-heading text-2xl font-bold text-foreground mb-5">La historia de Rodrigo</h2>
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                   <p>
-                    Rodrigo Reis fundó Capital Clean Care en 2015 con una idea simple: darle a las familias de Montgomery County un servicio de limpieza que se sintiera personal, confiable y en su idioma.
+                    Rodrigo Reis fundó Capital Clean Care en 2015 con una idea simple: darles a las familias de Montgomery County un servicio de limpieza que se sintiera personal, confiable y en su idioma.
                   </p>
                   <p>
                     Como negocio de inmigrante, entendemos lo que significa trabajar duro para tener un hogar limpio y ordenado. Y entendemos lo que significa confiar en alguien para entrar a tu casa.
@@ -75,7 +75,7 @@ export default function NosotrosPage() {
                 <div className="grid grid-cols-2 gap-6">
                   {[
                     { number: "10+", label: "Años de experiencia" },
-                    { number: "47+", label: "Reseñas 5★ en Google" },
+                    { number: "45", label: "Reseñas 5★ en Google" },
                     { number: "500+", label: "Casas limpiadas" },
                     { number: "100%", label: "Bilingüe: EN/ES" },
                   ].map(({ number, label }) => (
@@ -112,12 +112,12 @@ export default function NosotrosPage() {
 
         <section className="py-14 md:py-20">
           <div className="container mx-auto px-4 max-w-4xl">
-            <h2 className="font-heading text-2xl font-bold text-foreground mb-8 text-center">Lo que dicen nuestros vecinos</h2>
+            <h2 className="font-heading text-2xl font-bold text-foreground mb-8 text-center">Lo que dicen nuestros clientes en Google</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
-                { name: "María G., Silver Spring", text: "El equipo de Rodrigo limpia mi casa hace 2 años. Siempre puntuales, siempre amables, y mi casa queda como nueva." },
-                { name: "Carolina M., Rockville", text: "Capital Clean Care me salvó antes de la visita de los suegros. Llegaron a tiempo, trabajaron con cuidado, y todo quedó impecable." },
-                { name: "José R., Wheaton", text: "Lo que más me gustó es que hablan español y entienden lo que uno quiere. No es solo limpiar, es saber por qué uno limpia así." },
+                { name: "Christina Damiani", text: "¡Excelente servicio de limpieza! La casa quedó impecable y fresca al terminar el trabajo. Muy minuciosos, profesionales y confiables." },
+                { name: "Ranj Saadallah", text: "Llegan puntuales y la casa queda maravillosa cada vez. Limpiaron las ventanas por dentro y por fuera, los electrodomésticos, incluso detrás de ellos." },
+                { name: "Lisa Phillips", text: "Limpieza de mudanza fantástica: pisos, ventanas, paredes, electrodomésticos, zócalos, cada rincón impecable. La casa quedó totalmente inmaculada. ¡Muy recomendados!" },
               ].map(({ name, text }) => (
                 <div key={name} className="bg-background border border-border rounded-xl p-6 shadow-sm">
                   <div className="flex gap-0.5 mb-3">
@@ -142,7 +142,7 @@ export default function NosotrosPage() {
                 "Verificación de antecedentes — todo el equipo",
                 "Productos EPA Safer Choice certificados",
                 "Bilingüe: inglés y español",
-                "5★ en Google Maps (47+ reseñas verificadas)",
+                "5★ en Google Maps (45 reseñas verificadas)",
                 "Negocio familiar operando desde 2015",
               ].map((item) => (
                 <div key={item} className="flex items-center gap-3 bg-background border border-border rounded-lg px-4 py-3">
@@ -166,7 +166,7 @@ export default function NosotrosPage() {
                 <a href={PHONE_TEL} onClick={() => trackPhoneClick("nosotros_cta")}><Phone className="h-4 w-4 mr-2" /> {PHONE}</a>
               </Button>
               <Button size="lg" variant="outline" className="border-white/50 text-white hover:bg-white/10" asChild>
-                <a href="/contact" onClick={() => trackBookNowClick("nosotros_cta")}>Cotización Gratis</a>
+                <a href="/es/contacto" onClick={() => trackBookNowClick("nosotros_cta")}>Cotización Gratis</a>
               </Button>
             </div>
             <div className="mt-4 flex items-center justify-center gap-2 text-accent-foreground/70 text-sm">

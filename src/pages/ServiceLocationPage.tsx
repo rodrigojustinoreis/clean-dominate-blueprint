@@ -5,9 +5,14 @@ import FAQ from "@/components/FAQ";
 import ConversionCTA from "@/components/ConversionCTA";
 import TrustBadges from "@/components/TrustBadges";
 import { LocalBusinessSchema, ServiceSchema, FAQSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
-import { getTestimonialsForServiceCity } from "@/data/testimonials";
+import LocationSocialProof from "@/components/location/LocationSocialProof";
+import LocationQuoteSection from "@/components/location/LocationQuoteSection";
+import InternalLinksGrid from "@/components/location/InternalLinksGrid";
+import TransformationsGallery from "@/components/TransformationsGallery";
+import { pickReviews } from "@/data/realReviews";
 import { getCity, getService, getServiceLocationIntro, getWhyChooseUs, getServiceLocationFAQs, slCities, slServices } from "@/data/service-locations";
 import { getServiceLocationOverride } from "@/data/service-location-overrides";
+import { pickVariant, whyChooseVariants, checklistHeadingVariants, checklistOrder, ctaProseVariants } from "@/data/template-variants";
 import { isAllowlistedServiceLocation } from "@/data/serviceLocationAllowlist";
 import { cityImages } from "@/data/city-images";
 import { CheckCircle, MapPin, ArrowRight, Shield, Leaf, Clock, Star } from "lucide-react";
@@ -47,12 +52,24 @@ const ServiceLocationPage = () => {
 
   if (!city || !service) return <NotFound />;
 
-  const faqs = getServiceLocationFAQs(city, service);
-  const whyChoose = getWhyChooseUs(city, service);
+  const override = getServiceLocationOverride(city.slug, service.slug);
+  // City-specific FAQs (Lote 1 uniqueness) take precedence over the templated set;
+  // feeds both the on-page FAQ and FAQPage schema. Falls back to template when absent.
+  const faqs = override?.faqs ?? getServiceLocationFAQs(city, service);
+  // Lote 1b — per-city variation of the shared blocks (why-choose, checklist, CTA)
+  // so template pages stop reading as near-duplicates. Facts unchanged; wording/order rotate.
+  const whyChoose = whyChooseVariants[pickVariant(city.slug, whyChooseVariants.length, 1)]({
+    city: city.name, state: city.state, county: city.county,
+    shortName: service.shortName, housingTypes: city.housingTypes, lifestyle: city.lifestyle,
+    neighborhoods: city.neighborhoods,
+  });
+  const checklistV = pickVariant(city.slug, checklistHeadingVariants.length, 2);
+  const checklistItems = checklistOrder(service.checklist, city.slug);
+  const ctaProse = ctaProseVariants[pickVariant(city.slug, ctaProseVariants.length, 3)](city.name, service.name);
   const intro = getServiceLocationIntro(city, service);
-  const metaTitle = `${service.name} in ${city.name}, ${city.state} | Capital Clean Care`;
   const serviceLabel = service.shortName.toLowerCase().includes("maid") ? service.shortName : `${service.shortName} & maid service`;
-  const metaDescription = `Top-rated ${serviceLabel} in ${city.name}, ${city.state}. Eco-friendly products, background-checked teams, satisfaction guaranteed. Serving ${city.county}. Free quotes.`;
+  const metaTitle = override?.metaTitle || `${service.name} in ${city.name}, ${city.state} | Capital Clean Care`;
+  const metaDescription = override?.metaDescription || `Top-rated ${serviceLabel} in ${city.name}, ${city.state}. Eco-friendly products, background-checked teams, satisfaction guaranteed. Serving ${city.county}. Free quotes.`;
   const pageUrl = `https://capitalcleancare.com/locations/${city.slug}/${service.slug}`;
 
   // PR #5 — zombie-page pruning: only allowlisted (city, service) pairs are indexable.
@@ -67,16 +84,13 @@ const ServiceLocationPage = () => {
     noIndex: !isIndexable,
   });
 
-  const testimonials = getTestimonialsForServiceCity(city.slug, service.slug);
-  const override = getServiceLocationOverride(city.slug, service.slug);
-
-  // Get related service pages for this city
-  const relatedServices = slServices.filter(s => s.slug !== service.slug).slice(0, 4);
-  // Get nearby cities — same county first, then fallback to same state
-  const nearbyCities = slCities
-    .filter(c => c.slug !== city.slug)
-    .sort((a, b) => (a.county === city.county ? -1 : 1))
-    .slice(0, 5);
+  const realReviews = pickReviews(`${city.slug}/${service.slug}`, 2);
+  const serviceToForm: Record<string, string> = {
+    "house-cleaning": "standard", "deep-cleaning": "deep", "recurring-cleaning": "recurring",
+    "move-out-cleaning": "move", "move-in-cleaning": "move", "post-construction-cleaning": "post-construction",
+    "airbnb-cleaning": "airbnb", "office-cleaning": "office", "commercial-cleaning": "office",
+  };
+  const defaultFormService = serviceToForm[service.slug] || "standard";
 
   return (
     <Layout>
@@ -84,7 +98,7 @@ const ServiceLocationPage = () => {
       <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: city.name, href: `/locations/${city.slug}` }, { label: service.name, href: `/locations/${city.slug}/${service.slug}` }]} />
       <LocalBusinessSchema
         areaServed={[city.name, city.county]}
-        reviews={testimonials.map(t => ({ name: t.name, text: t.text, location: t.location }))}
+        reviews={realReviews}
       />
       <ServiceSchema
         serviceName={`${service.name} in ${city.name}`}
@@ -105,10 +119,10 @@ const ServiceLocationPage = () => {
             className="mb-4"
           />
           <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Professional {service.name} in {city.name}, {city.state}
+            {override?.h1 || <>Professional {service.name} in {city.name}, {city.state}</>}
           </h1>
           <p className="text-lg text-muted-foreground mb-6 max-w-2xl">
-            Trusted {service.shortName} for {city.name} homes. Eco-friendly products, experienced teams, satisfaction guaranteed.
+            {override?.heroLead || <>Trusted {service.shortName} for {city.name} homes. Eco-friendly products, experienced teams, satisfaction guaranteed.</>}
           </p>
           <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-8">
             <span className="flex items-center gap-1.5"><MapPin className="h-4 w-4 text-primary" /> {city.name}, {city.state}</span>
@@ -171,8 +185,21 @@ const ServiceLocationPage = () => {
         </div>
       </section>
 
+      {/* ── Social Proof (3rd — trust video early) ── */}
+      <LocationSocialProof
+        cityName={city.name}
+        citySlug={city.slug}
+        serviceSlug={service.slug}
+        serviceLabel={service.name}
+      />
+
+      {/* Before & After video carousel (4th position) — deep-cleaning pages only (relevant transformation footage, breaks up the text) */}
+      {service.slug === "deep-cleaning" && (
+        <TransformationsGallery heading={`Before & After: Real Deep Cleaning in ${city.name}`} />
+      )}
+
       {/* Unique local content (only on priority pages) */}
-      {override && (
+      {override?.uniqueContent && (
         <section className="py-12 md:py-16 bg-muted/10">
           <div className="container mx-auto px-4 max-w-4xl">
             <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-6">
@@ -191,10 +218,10 @@ const ServiceLocationPage = () => {
       <section className="py-12 md:py-16 bg-muted/30">
         <div className="container mx-auto px-4 max-w-4xl">
           <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-8">
-            What's Included in Our {service.name} in {city.name}
+            {checklistHeadingVariants[checklistV](service.name, city.name)}
           </h2>
           <div className="grid md:grid-cols-2 gap-3">
-            {service.checklist.map((item, i) => (
+            {checklistItems.map((item, i) => (
               <div key={i} className="flex items-start gap-3 bg-background p-4 rounded-lg border border-border/50">
                 <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                 <span className="text-foreground text-sm">{item}</span>
@@ -241,39 +268,6 @@ const ServiceLocationPage = () => {
           </div>
         </div>
       </section>
-
-      {/* Testimonials */}
-      {testimonials.length > 0 && (
-        <section className="py-12 md:py-16">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <div className="text-center mb-8">
-              <span className="inline-flex items-center gap-1.5 bg-accent/10 text-accent font-semibold text-sm uppercase tracking-wider px-3 py-1 rounded-full mb-3">
-                <Star className="h-3.5 w-3.5 fill-accent" /> Client Reviews
-              </span>
-              <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground">
-                What {city.name} Clients Say About Our {service.name}
-              </h2>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {testimonials.map((t) => (
-                <div key={t.name} className="bg-card border border-border rounded-xl p-5 hover:shadow-md transition-shadow">
-                  <div className="flex items-center gap-0.5 mb-3">
-                    {[1,2,3,4,5].map((i) => (
-                      <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" />
-                    ))}
-                  </div>
-                  <p className="text-sm text-foreground italic mb-3 leading-relaxed">"{t.text}"</p>
-                  <p className="text-sm font-semibold text-foreground">{t.name}</p>
-                  <p className="text-xs text-muted-foreground">{t.location}</p>
-                </div>
-              ))}
-            </div>
-            <p className="text-center text-sm text-muted-foreground mt-6">
-              <span className="font-semibold text-foreground">5.0 ★</span> average rating across all {city.name} {service.shortName} reviews
-            </p>
-          </div>
-        </section>
-      )}
 
       {/* City Map */}
       {city.lat && city.lng && (
@@ -327,52 +321,21 @@ const ServiceLocationPage = () => {
         </div>
       </section>
 
-      {/* Internal Links */}
-      <section className="py-12 md:py-16">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Other services in this city */}
-            <div>
-              <h3 className="font-heading text-lg font-bold text-foreground mb-4">
-                Other Services in {city.name}
-              </h3>
-              <ul className="space-y-2">
-                {relatedServices.map(s => (
-                  <li key={s.slug}>
-                    <Link
-                      to={`/locations/${city.slug}/${s.slug}`}
-                      className="text-primary hover:underline flex items-center gap-2"
-                    >
-                      <ArrowRight className="h-3 w-3" /> {s.name} in {city.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* This service in nearby cities */}
-            {nearbyCities.length > 0 && (
-              <div>
-                <h3 className="font-heading text-lg font-bold text-foreground mb-4">
-                  {service.name} in Nearby Cities
-                </h3>
-                <ul className="space-y-2">
-                  {nearbyCities.map(c => (
-                    <li key={c.slug}>
-                      <Link
-                        to={`/locations/${c.slug}/${service.slug}`}
-                        className="text-primary hover:underline flex items-center gap-2"
-                      >
-                        <ArrowRight className="h-3 w-3" /> {service.name} in {c.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-          </div>
-        </div>
-      </section>
+      {/* Internal Links — indexable-only, plus local guides + city hub (Fase 1.3) */}
+      <InternalLinksGrid
+        cityName={city.name}
+        citySlug={city.slug}
+        serviceLabel={service.name}
+        serviceSlug={service.slug}
+        services={slServices.map((s) => ({ name: s.name, slug: s.slug }))}
+        nearbyCities={slCities
+          .filter((c) => c.slug !== city.slug)
+          .map((c) => ({
+            name: c.name,
+            slug: c.slug,
+            state: c.slug.endsWith("-va") ? "VA" : c.slug.endsWith("-dc") ? "DC" : "MD",
+          }))}
+      />
 
       {/* Trust Badges */}
       <TrustBadges compact />
@@ -381,25 +344,13 @@ const ServiceLocationPage = () => {
       <ConversionCTA cityName={city.name} />
 
       {/* Quote Form Anchor */}
-      <section id="quote" className="py-12 md:py-16 bg-muted/30">
-        <div className="container mx-auto px-4 max-w-2xl text-center">
-          <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-4">
-            Book Your {service.name} in {city.name} Today
-          </h2>
-          <p className="text-muted-foreground mb-6">
-            Ready for a spotless home? Contact Capital Clean Care for professional {service.shortName} in {city.name}, {city.state}. 
-            Use our online booking system or request a free, no-obligation quote.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Button variant="cta" size="lg" asChild>
-              <Link to="/contact">Request a Free Quote <ArrowRight className="ml-1 h-4 w-4" /></Link>
-            </Button>
-            <Button variant="outline" size="lg" asChild>
-              <a href="tel:+12407042551">(240) 704-2551</a>
-            </Button>
-          </div>
-        </div>
-      </section>
+      <LocationQuoteSection
+        cityName={city.name}
+        serviceLabel={service.name}
+        defaultService={defaultFormService}
+        zipLine={`Serving ${city.name}, ${city.state} and nearby communities.`}
+        ctaProse={ctaProse}
+      />
     </Layout>
   );
 };

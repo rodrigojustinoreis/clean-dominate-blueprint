@@ -26,8 +26,8 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
   if (!c) return <NotFound />;
 
   const where = `${c.city}, ${c.state}`;
-  const title = `How Much Does House Cleaning Cost in ${where}?`;
-  const url = `https://capitalcleancare.com/blog/house-cleaning-cost-${c.slug}`;
+  const title = `House Cleaning Cost in ${where}: 2026 Prices & Rates`;
+  const url = `https://capitalcleancare.com/resources/house-cleaning-cost-${c.slug}`;
 
   // City-specific FAQs + two shared ones (general enough to repeat).
   const sharedFaqs: CostFAQ[] = [
@@ -69,8 +69,8 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
       <BreadcrumbSchema
         items={[
           { label: "Home", href: "/" },
-          { label: "Blog", href: "/blog" },
-          { label: `House Cleaning Cost in ${where}`, href: `/blog/house-cleaning-cost-${c.slug}` },
+          { label: "Resources", href: "/resources" },
+          { label: `House Cleaning Cost in ${where}`, href: `/resources/house-cleaning-cost-${c.slug}` },
         ]}
       />
 
@@ -80,7 +80,7 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
           <Breadcrumbs
             items={[
               { label: "Home", href: "/" },
-              { label: "Blog", href: "/blog" },
+              { label: "Resources", href: "/resources" },
               { label: title },
             ]}
           />
@@ -99,7 +99,7 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
           Real 2026 price ranges by home size — plus what actually drives the cost
         </p>
         <p className="text-gray-300 mb-8 text-sm uppercase tracking-widest">
-          By Capital Clean Care · {where} · June 2026
+          By Rodrigo Reis, Owner · {where} · June 2026
         </p>
         <Button size="lg" className="bg-accent hover:bg-accent/90 text-white text-lg px-8 py-6 rounded-full shadow-lg" asChild>
           <a href="/#quote">Get My Free {c.city} Quote</a>
@@ -210,7 +210,7 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   For what's included, our process, and how we work in {c.city} homes, see our{" "}
                   <Link to={c.locationPath} className="text-accent underline hover:no-underline">{c.city} house cleaning page</Link>. Not sure how often to book? Read{" "}
-                  <Link to="/blog/choose-pet-safe-cleaning-company" className="text-accent underline hover:no-underline">how to choose a cleaning company</Link>.
+                  <Link to="/resources/choose-pet-safe-cleaning-company" className="text-accent underline hover:no-underline">how to choose a cleaning company</Link>.
                 </p>
               </div>
             </div>

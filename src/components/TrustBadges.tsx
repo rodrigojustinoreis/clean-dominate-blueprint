@@ -20,7 +20,7 @@ const badges = [
   },
   {
     icon: Leaf,
-    title: "EPA Safer Choice Certified",
+    title: "EPA Safer Choice Products",
     description: "Only plant-based, non-toxic products — safe for children, pets, and allergy sufferers.",
   },
   {
@@ -35,7 +35,7 @@ const badges = [
   },
   {
     icon: Home,
-    title: "9+ Years Serving the DMV",
+    title: "10+ Years Serving the DMV",
     description: "Trusted by hundreds of homeowners across Maryland, DC, and Northern Virginia.",
   },
 ];

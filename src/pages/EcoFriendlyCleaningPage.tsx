@@ -8,15 +8,20 @@ import FAQ from "@/components/FAQ";
 import GreenShield5Step from "@/components/GreenShield5Step";
 import TrustBadges from "@/components/TrustBadges";
 import BeforeAfterGallery from "@/components/BeforeAfterGallery";
+import LocationSocialProof from "@/components/location/LocationSocialProof";
 import { useSEO } from "@/hooks/useSEO";
 import { ServiceSchema, FAQSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { cities } from "@/data/locations";
+import ServiceRelatedContent from "@/components/ServiceRelatedContent";
+import { isIndexable } from "@/data/related-content";
 
 const PHONE = "(240) 704-2551";
 const PHONE_HREF = "tel:+12407042551";
 
-const topCities = cities.filter((c) => !c.slug.includes("county")).slice(0, 8);
+const topCities = cities
+  .filter((c) => !c.slug.includes("county") && isIndexable(`/locations/${c.slug}`))
+  .slice(0, 8);
 
 const faqs = [
   {
@@ -97,7 +102,7 @@ const EcoFriendlyCleaningPage = () => {
 
   const scrollToForm = (e: React.MouseEvent) => {
     e.preventDefault();
-    document.getElementById("quote-form")?.scrollIntoView({ behavior: "smooth" });
+    document.getElementById("quote")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -114,12 +119,13 @@ const EcoFriendlyCleaningPage = () => {
         serviceName="Eco-Friendly House Cleaning"
         description="Plant-based, non-toxic house cleaning using EPA Safer Choice certified products. Safe for children, pets, and allergy sufferers across Maryland, DC, and Northern Virginia."
         url="https://capitalcleancare.com/services/eco-friendly-cleaning"
+        serviceType="Eco-Friendly Cleaning"
       />
       <FAQSchema faqs={faqs} />
 
       {/* ── Hero ── */}
-      <section className="py-16 md:py-24 bg-gradient-to-b from-[#F1F8F1] to-white">
-        <div className="container mx-auto px-4 max-w-4xl">
+      <section className="py-12 md:py-16 bg-gradient-to-b from-[#F1F8F1] to-white">
+        <div className="container mx-auto px-4 max-w-6xl">
           <Breadcrumbs
             items={[
               { label: "Home", href: "/" },
@@ -128,37 +134,59 @@ const EcoFriendlyCleaningPage = () => {
             ]}
             className="mb-6"
           />
-          <span className="inline-flex items-center gap-2 bg-accent/10 text-accent font-semibold text-sm uppercase tracking-wider px-4 py-1.5 rounded-full mb-4">
-            <Leaf className="h-3.5 w-3.5" /> Plant-Based · EPA Certified · Non-Toxic
-          </span>
-          <h1 className="font-heading text-4xl md:text-5xl font-bold mb-6 leading-tight">
-            Eco-Friendly House Cleaning in Maryland, DC & Virginia
-          </h1>
-          <p className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-3xl">
-            A genuinely clean home shouldn't come with chemical residues, toxic fumes, or health risks. Capital Clean Care uses exclusively EPA Safer Choice certified, plant-based products — safer for your children, your pets, your family, and the environment. At no extra charge.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-3 mb-8">
-            <button
-              onClick={scrollToForm}
-              className="inline-flex items-center justify-center bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-bold text-base px-8 py-3 rounded-md shadow-lg transition-colors"
-            >
-              Get My Free Quote →
-            </button>
-            <a
-              href={PHONE_HREF}
-              className="inline-flex items-center justify-center border-2 border-[#2E7D32] text-[#2E7D32] hover:bg-[#2E7D32]/5 font-bold text-base px-8 py-3 rounded-md transition-colors"
-            >
-              <Phone className="h-4 w-4 mr-2" /> {PHONE}
-            </a>
-          </div>
-
-          <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted-foreground">
-            {["EPA Safer Choice Certified", "No Chlorine or Ammonia", "Safe for Children & Pets", "15% Off First Clean"].map((b) => (
-              <span key={b} className="flex items-center gap-1.5">
-                <CheckCircle className="h-4 w-4 text-[#2E7D32] shrink-0" /> {b}
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+            <div>
+              <span className="inline-flex items-center gap-2 bg-accent/10 text-accent font-semibold text-sm uppercase tracking-wider px-4 py-1.5 rounded-full mb-4">
+                <Leaf className="h-3.5 w-3.5" /> Plant-Based · EPA Certified · Non-Toxic
               </span>
-            ))}
+              <h1 className="font-heading text-4xl md:text-5xl font-bold mb-5 leading-[1.1]">
+                Eco-Friendly House Cleaning in Maryland, DC & Virginia
+              </h1>
+              <p className="text-lg text-muted-foreground leading-relaxed mb-7 max-w-xl">
+                A genuinely clean home shouldn't come with chemical residues, toxic fumes, or health risks. Capital Clean Care uses exclusively EPA Safer Choice certified, plant-based products — safer for your children, your pets, your family, and the environment. At no extra charge.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-3 mb-6">
+                <button
+                  onClick={scrollToForm}
+                  className="inline-flex items-center justify-center bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-bold text-base px-8 py-3.5 rounded-lg shadow-lg shadow-[#2E7D32]/20 transition-colors"
+                >
+                  Get My Free Quote →
+                </button>
+                <a
+                  href={PHONE_HREF}
+                  className="inline-flex items-center justify-center border-2 border-[#2E7D32] text-[#2E7D32] hover:bg-[#2E7D32]/5 font-bold text-base px-8 py-3.5 rounded-lg transition-colors"
+                >
+                  <Phone className="h-4 w-4 mr-2" /> {PHONE}
+                </a>
+              </div>
+
+              <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted-foreground">
+                {["EPA Safer Choice Products", "No Chlorine or Ammonia", "Safe for Children & Pets", "15% Off First Clean"].map((b) => (
+                  <span key={b} className="flex items-center gap-1.5">
+                    <CheckCircle className="h-4 w-4 text-[#2E7D32] shrink-0" /> {b}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div className="relative lg:pl-4">
+              <div className="rounded-3xl overflow-hidden shadow-2xl border border-border aspect-[4/3]">
+                <img
+                  src="/images/services/eco-friendly-cleaning.webp"
+                  alt="Eco-friendly, plant-based cleaning products used by Capital Clean Care — safe for kids and pets"
+                  className="w-full h-full object-cover"
+                  width={800}
+                  height={600}
+                  loading="eager"
+                  fetchPriority="high"
+                />
+              </div>
+              <div className="absolute -bottom-5 left-2 sm:-left-4 bg-white rounded-2xl shadow-xl border border-border px-5 py-3.5 flex items-center gap-2.5">
+                <Leaf className="h-7 w-7 text-[#2E7D32] shrink-0" />
+                <span className="text-xs text-muted-foreground leading-tight">EPA Safer Choice<br />certified products</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -323,33 +351,13 @@ const EcoFriendlyCleaningPage = () => {
       {/* ── Before & After ── */}
       <BeforeAfterGallery />
 
-      {/* ── Testimonials ── */}
-      <section className="py-16">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="font-heading text-2xl font-bold mb-8 text-center">
-            What DMV Homeowners Say About Our Eco-Clean
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {[
-              { name: "Angela T.", location: "Silver Spring, MD", text: "I love that they use eco-friendly products. With two kids and a dog, knowing the products are safe gives me real peace of mind." },
-              { name: "Kevin R.", location: "Rockville, MD", text: "My wife has severe allergies. Since switching to Capital Clean Care we've had zero allergy attacks post-cleaning. The difference is real." },
-              { name: "Sarah M.", location: "Bethesda, MD", text: "I was skeptical green products would clean as well. I was completely wrong. My bathroom has never looked better without that bleach smell." },
-              { name: "Maria G.", location: "Arlington, VA", text: "We have cats and were always worried about chemical exposure. Now I don't have to think about it. The clean lasts longer too somehow." },
-            ].map((t) => (
-              <Card key={t.name}>
-                <CardContent className="p-5">
-                  <div className="flex items-center gap-1 mb-3">
-                    {[1,2,3,4,5].map((i) => <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" />)}
-                  </div>
-                  <p className="text-sm italic text-foreground mb-3 leading-relaxed">"{t.text}"</p>
-                  <p className="text-sm font-semibold">{t.name}</p>
-                  <p className="text-xs text-muted-foreground">{t.location}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* ── Social Proof — real Google reviews + brand trust video ── */}
+      <LocationSocialProof
+        cityName="DMV"
+        citySlug="services"
+        serviceSlug="eco-friendly-cleaning"
+        serviceLabel="Eco-Friendly Cleaning"
+      />
 
       {/* ── Service Areas ── */}
       <section className="py-12 bg-secondary/40">
@@ -375,6 +383,9 @@ const EcoFriendlyCleaningPage = () => {
         </div>
       </section>
 
+      {/* ── Eco-Friendly Cleaning by City (indexable city×service links) ── */}
+      <ServiceRelatedContent serviceSlug="eco-friendly-cleaning" showGuides={false} />
+
       {/* ── Related Reading ── */}
       <section className="py-12 bg-secondary/40">
         <div className="container mx-auto px-4 max-w-4xl">
@@ -382,11 +393,11 @@ const EcoFriendlyCleaningPage = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {[
               { label: "Why Eco-Friendly Cleaning Matters (Deep Dive)", href: "/why-eco-friendly-cleaning" },
-              { label: "Eco Cleaning Tips for Maryland Homes", href: "/blog/eco-cleaning-tips-maryland-homes" },
-              { label: "Eco Cleaning for Maryland Winters", href: "/blog/eco-cleaning-tips-winters-maryland" },
-              { label: "Allergy-Proofing Your DMV Home", href: "/blog/allergy-proofing-home-dmv" },
-              { label: "Remove Pet Hair & Odors from DMV Homes", href: "/blog/remove-pet-hair-odors-dmv-homes" },
-              { label: "Best Cleaning Schedule for Busy Families", href: "/blog/best-cleaning-schedule-busy-families-dmv" },
+              { label: "Eco Cleaning Tips for Maryland Homes", href: "/resources/eco-cleaning-tips-maryland-homes" },
+              { label: "Eco Cleaning for Maryland Winters", href: "/resources/eco-cleaning-tips-winters-maryland" },
+              { label: "Allergy-Proofing Your DMV Home", href: "/resources/allergy-proofing-home-dmv" },
+              { label: "Remove Pet Hair & Odors from DMV Homes", href: "/resources/remove-pet-hair-odors-dmv-homes" },
+              { label: "Best Cleaning Schedule for Busy Families", href: "/resources/best-cleaning-schedule-busy-families-dmv" },
             ].map((link) => (
               <Link
                 key={link.href}
@@ -410,7 +421,7 @@ const EcoFriendlyCleaningPage = () => {
       </section>
 
       {/* ── Quote Form ── */}
-      <section id="quote-form" className="py-16 bg-secondary" style={{ scrollMarginTop: 80 }}>
+      <section id="quote" className="py-16 bg-secondary" style={{ scrollMarginTop: 80 }}>
         <div className="container mx-auto px-4 max-w-2xl">
           <h2 className="font-heading text-2xl md:text-3xl font-bold text-center mb-2">
             Get Your Free Eco-Friendly Cleaning Quote
@@ -423,7 +434,7 @@ const EcoFriendlyCleaningPage = () => {
           </div>
           <Card>
             <CardContent className="p-6 md:p-8">
-              <QuoteForm submitLabel="Get My Free Eco-Clean Quote →" />
+              <QuoteForm submitLabel="Get My Free Eco-Clean Quote →" compact />
             </CardContent>
           </Card>
           <p className="text-center text-xs text-muted-foreground mt-4">

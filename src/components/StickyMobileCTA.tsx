@@ -1,9 +1,11 @@
+import { useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Phone, ArrowRight, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { trackPhoneClick, trackBookNowClick } from "@/lib/analytics";
 
 const StickyMobileCTA = () => {
+  const isSpanish = useLocation().pathname.startsWith("/es");
   const [visible, setVisible] = useState(false);
   const [dismissed, setDismissed] = useState(false);
 
@@ -32,11 +34,11 @@ const StickyMobileCTA = () => {
         aria-label="Call us"
       >
         <Phone className="h-4 w-4 text-accent" />
-        Call
+        {isSpanish ? "Llamar" : "Call"}
       </a>
       <Button variant="cta" className="flex-1 h-12 rounded-full text-sm font-bold shadow-lg shadow-accent/25" asChild>
-        <a href="#quote" onClick={() => trackBookNowClick("sticky_mobile_cta")}>
-          Free Quote <ArrowRight className="ml-1 h-4 w-4" />
+        <a href={isSpanish ? "/es/contacto#cotizacion" : "/#quote"} onClick={() => trackBookNowClick("sticky_mobile_cta")}>
+          {isSpanish ? "Cotización Gratis" : "Free Quote"} <ArrowRight className="ml-1 h-4 w-4" />
         </a>
       </Button>
       <button

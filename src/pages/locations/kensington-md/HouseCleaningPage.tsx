@@ -18,10 +18,14 @@ import { useSEO } from "@/hooks/useSEO";
 import HeroLocation from "@/components/location/HeroLocation";
 import ServiceChecklistLocation from "@/components/location/ServiceChecklistLocation";
 import InternalLinksGrid from "@/components/location/InternalLinksGrid";
+import LocationSocialProof from "@/components/location/LocationSocialProof";
+import LocationQuoteSection from "@/components/location/LocationQuoteSection";
+import { getServiceLocationOverride } from "@/data/service-location-overrides";
+import { trustBlurbVariants, ctaProseVariants, pickVariant, ecoSafeVariants, satisfactionVariants, arriveStepVariants } from "@/data/template-variants";
 
 const PAGE_URL = "https://capitalcleancare.com/locations/kensington-md/house-cleaning";
 
-const faqs = [
+const localFaqs = [
   {
     q: "Do you bring your own cleaning supplies to Kensington homes?",
     a: "Yes. We supply all equipment and EPA Safer Choice™ certified eco-friendly products. You don't need to provide anything — we arrive prepared and leave nothing behind.",
@@ -108,6 +112,7 @@ const nearbyCities = [
 ];
 
 const KensingtonHouseCleaningPage = () => {
+  const faqs = getServiceLocationOverride("kensington-md", "house-cleaning")?.faqs ?? localFaqs;
   const { seoHelmet } = useSEO({
     title: "House Cleaning in Kensington, MD",
     description:
@@ -186,6 +191,9 @@ const KensingtonHouseCleaningPage = () => {
         categories={checklistCategories}
       />
 
+      {/* ── Social Proof (3rd — trust video early) ── */}
+      <LocationSocialProof cityName="Kensington" citySlug="kensington-md" serviceSlug="house-cleaning" serviceLabel="House Cleaning" />
+
       {/* Why Capital Clean Care */}
       <section className="py-12 md:py-16">
         <div className="container mx-auto px-4 max-w-4xl">
@@ -196,15 +204,15 @@ const KensingtonHouseCleaningPage = () => {
             {[
               {
                 title: "Latino-Owned & Locally Operated",
-                body: "We serve Kensington's Rock Creek Knolls neighborhood and surrounding areas because this is our community. We're not a franchise — we're your neighbors.",
+                body: trustBlurbVariants[pickVariant("kensington-md", 3)]("Kensington", "Montgomery County"),
               },
               {
                 title: "Eco-Safe for Families",
-                body: "Every product is EPA Safer Choice™ certified. No bleach, no ammonia, no synthetic fragrances. Safe from the very first visit for your children and pets.",
+                body: ecoSafeVariants[pickVariant("kensington-md", 3, 4)]("Kensington"),
               },
               {
                 title: "100% Satisfaction Guaranteed",
-                body: "Not happy with something? Call us and we re-clean — free, no fine print. Your satisfaction is our only acceptable outcome.",
+                body: satisfactionVariants[pickVariant("kensington-md", 3, 5)]("Kensington"),
               },
             ].map((item) => (
               <div key={item.title} className="p-5 bg-card rounded-xl border border-border/50">
@@ -227,17 +235,17 @@ const KensingtonHouseCleaningPage = () => {
               {
                 step: "2",
                 title: "We arrive on time",
-                body: "Bonded, insured, background-checked cleaners bring all supplies. No need to provide a thing.",
+                body: arriveStepVariants[pickVariant("kensington-md", 3, 6)]("Kensington"),
               },
               {
                 step: "3",
                 title: "Thorough top-to-bottom clean",
-                body: "Consistent checklist applied to every Kensington home — nothing missed, nothing rushed.",
+                body: "The same detailed checklist covers every Kensington home, from Antique Row Victorians to Rock Creek Hills — steady, unhurried, and complete.",
               },
               {
                 step: "4",
                 title: "100% satisfaction",
-                body: "If anything isn't right, we return free. Your feedback shapes every future visit.",
+                body: satisfactionVariants[pickVariant("kensington-md", 3, 7)]("Kensington"),
               },
             ].map((item) => (
               <div key={item.step} className="flex items-start gap-4 p-4 bg-card rounded-xl border border-border/50">
@@ -251,55 +259,6 @@ const KensingtonHouseCleaningPage = () => {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Social Proof */}
-      <section className="py-12 md:py-16 bg-muted/30">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <div className="text-center mb-8">
-            <span className="inline-flex items-center gap-1.5 bg-accent/10 text-accent font-semibold text-sm uppercase tracking-wider px-3 py-1 rounded-full mb-3">
-              <Star className="h-3.5 w-3.5 fill-accent" aria-hidden="true" /> Client Reviews
-            </span>
-            <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground">
-              What Kensington Families Are Saying
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="bg-card border border-border rounded-xl p-5">
-              <div role="img" aria-label="5 out of 5 stars" className="flex items-center gap-0.5 mb-3">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" aria-hidden="true" />
-                ))}
-              </div>
-              <p className="text-sm text-foreground italic mb-3 leading-relaxed">
-                "Capital Clean Care transformed our home. Thorough, eco-friendly products safe for my kids and pets."
-              </p>
-              <p className="text-sm font-semibold text-foreground">Sarah M.</p>
-              <p className="text-xs text-muted-foreground">Bethesda, MD</p>
-            </div>
-            <div className="bg-card border border-border rounded-xl p-5 flex flex-col items-center justify-center text-center gap-3">
-              <div role="img" aria-label="5 out of 5 stars average" className="flex items-center gap-0.5">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <Star key={i} className="h-5 w-5 fill-amber-400 text-amber-400" aria-hidden="true" />
-                ))}
-              </div>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                Serving Kensington homes from Kensington Historic District to Rock Creek Knolls. Share your experience.
-              </p>
-              <a
-                href="https://g.page/r/capitalcleancare/review"
-                className="text-sm text-primary underline font-medium"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Leave a Google Review →
-              </a>
-            </div>
-          </div>
-          <p className="text-center text-sm text-muted-foreground mt-6">
-            <span className="font-semibold text-foreground">5.0 ★</span> average rating · 47 reviews on Google
-          </p>
         </div>
       </section>
 
@@ -362,30 +321,7 @@ const KensingtonHouseCleaningPage = () => {
       <TrustBadges compact />
       <ConversionCTA cityName="Kensington" />
 
-      <section id="quote" className="py-12 md:py-16 bg-muted/30">
-        <div className="container mx-auto px-4 max-w-2xl text-center">
-          <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-3">
-            Ready for a Cleaner Home in Kensington?
-          </h2>
-          <p className="text-muted-foreground mb-6 leading-relaxed">
-            Whether you're near Kensington Antique Row or in the 20895 ZIP code, we're ready to help.
-            Free quote in 60 seconds — or call (240) 704-2551.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Button variant="cta" size="lg" asChild>
-              <Link to="/contact">
-                Get My Free House Cleaning Quote <ArrowRight className="ml-1 h-4 w-4" />
-              </Link>
-            </Button>
-            <Button variant="outline" size="lg" asChild>
-              <a href="tel:+12407042551">(240) 704-2551</a>
-            </Button>
-          </div>
-          <p className="text-xs text-muted-foreground mt-3">
-            No commitment · Same-day slots available · 100% satisfaction guaranteed
-          </p>
-        </div>
-      </section>
+      <LocationQuoteSection cityName="Kensington" serviceLabel="House Cleaning" defaultService="standard" zipLine="Serving Kensington and nearby communities." ctaProse={ctaProseVariants[pickVariant("kensington-md", 2, 3)]("Kensington", "House Cleaning")} />
 
       <StickyMobileCTA />
     </Layout>

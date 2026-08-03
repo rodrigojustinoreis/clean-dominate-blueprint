@@ -17,6 +17,7 @@ import ImageGallery, { GalleryImage } from "@/components/blog/ImageGallery";
 import FAQAccordion from "@/components/blog/FAQAccordion";
 import BlogInlineCTA from "@/components/blog/BlogInlineCTA";
 import StickyCTA from "@/components/blog/StickyCTA";
+import RelatedPosts from "@/components/blog/RelatedPosts";
 
 const HERO_IMAGE =
   "https://images.pexels.com/photos/19026351/pexels-photo-19026351.jpeg?auto=compress&cs=tinysrgb&w=1200";
@@ -87,7 +88,7 @@ const HowToGetCigaretteSmellOutOfYourHouse = () => {
     title: "How to Get Cigarette Smell Out of Your House (Naturally)",
     description:
       "Remove cigarette smoke odor from walls, furniture, carpet & air with eco-safe methods. Maryland guide. Free quote in Montgomery County.",
-    canonical: "https://capitalcleancare.com/blog/how-to-get-cigarette-smell-out-of-your-house",
+    canonical: "https://capitalcleancare.com/resources/how-to-get-cigarette-smell-out-of-your-house",
   });
 
   return (
@@ -103,14 +104,14 @@ const HowToGetCigaretteSmellOutOfYourHouse = () => {
       <ArticleSchema
         title="How to Get Cigarette Smell Out of Your House (Natural, Long-Lasting Methods)"
         description="Remove cigarette smoke odor from walls, furniture, carpet, and air with eco-safe methods proven for Maryland's humid climate — no ozone, no harsh chemicals."
-        url="https://capitalcleancare.com/blog/how-to-get-cigarette-smell-out-of-your-house"
+        url="https://capitalcleancare.com/resources/how-to-get-cigarette-smell-out-of-your-house"
         datePublished="2026-05-23"
         image={HERO_IMAGE}
       />
       <HowToSchema
         name="How to Air Out a House of Cigarette Smell"
         description="Three-step ventilation method to begin removing cigarette smoke odor from a home using cross-ventilation and HVAC fan mode."
-        url="https://capitalcleancare.com/blog/how-to-get-cigarette-smell-out-of-your-house"
+        url="https://capitalcleancare.com/resources/how-to-get-cigarette-smell-out-of-your-house"
         steps={howToSteps}
         totalTime="PT30M"
         image={HERO_IMAGE}
@@ -119,8 +120,8 @@ const HowToGetCigaretteSmellOutOfYourHouse = () => {
       <BreadcrumbSchema
         items={[
           { label: "Home", href: "/" },
-          { label: "Blog", href: "/blog" },
-          { label: "How to Get Cigarette Smell Out of Your House", href: "/blog/how-to-get-cigarette-smell-out-of-your-house" },
+          { label: "Resources", href: "/resources" },
+          { label: "How to Get Cigarette Smell Out of Your House", href: "/resources/how-to-get-cigarette-smell-out-of-your-house" },
         ]}
       />
 
@@ -130,7 +131,7 @@ const HowToGetCigaretteSmellOutOfYourHouse = () => {
           <Breadcrumbs
             items={[
               { label: "Home", href: "/" },
-              { label: "Blog", href: "/blog" },
+              { label: "Resources", href: "/resources" },
               { label: "How to Get Cigarette Smell Out of Your House" },
             ]}
           />
@@ -149,7 +150,7 @@ const HowToGetCigaretteSmellOutOfYourHouse = () => {
           Natural, Long-Lasting Methods for Maryland Homes
         </p>
         <p className="text-gray-300 mb-8 text-sm uppercase tracking-widest">
-          By Capital Clean Care · Montgomery County, MD · May 2026
+          By Rodrigo Reis, Owner · Montgomery County, MD · May 2026
         </p>
         <Button
           size="lg"
@@ -171,7 +172,7 @@ const HowToGetCigaretteSmellOutOfYourHouse = () => {
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
               The good news: you can remove cigarette smell completely using natural, eco-safe methods — without ozone generators, toxic sprays, or a full gut renovation. This guide covers every surface, every room, and every HVAC component, with methods that work in Maryland's humid climate and won't compromise your family's air quality. For more{" "}
-              <Link to="/blog/eco-friendly-cleaning-tips-for-maryland-homes" className="text-accent underline hover:no-underline">
+              <Link to="/resources/eco-cleaning-tips-maryland-homes" className="text-accent underline hover:no-underline">
                 eco-friendly cleaning tips for Maryland homes
               </Link>
               , see our full guide.
@@ -308,7 +309,7 @@ const HowToGetCigaretteSmellOutOfYourHouse = () => {
                 {
                   step: "04",
                   title: "Steam clean or call a pro for embedded odor",
-                  text: "For carpet or upholstery with deep, years-long smoke penetration, hot-water extraction (professional steam cleaning) is the most effective next step. The high-temperature water and suction action flush nicotine from deep in the carpet pile and backing — something dry methods cannot reach. Capital Clean Care's{' '}<Link to='/services/move-in-move-out-cleaning' className='text-accent underline hover:no-underline'>move-in/move-out cleaning</Link>{' '}service includes carpet steam treatment across Montgomery County.",
+                  text: "For carpet or upholstery with deep, years-long smoke penetration, hot-water extraction (professional steam cleaning) is the most effective next step. The high-temperature water and suction action flush nicotine from deep in the carpet pile and backing — something dry methods cannot reach. Capital Clean Care's{' '}<Link to='/services/move-out-cleaning' className='text-accent underline hover:no-underline'>move-in/move-out cleaning</Link>{' '}service includes carpet steam treatment across Montgomery County.",
                 },
               ].map((item) => (
                 <div key={item.step} className="flex gap-5 items-start">
@@ -478,11 +479,11 @@ const HowToGetCigaretteSmellOutOfYourHouse = () => {
             </ul>
             <p className="text-sm text-muted-foreground leading-relaxed mb-10">
               Capital Clean Care's{" "}
-              <Link to="/services/move-in-move-out-cleaning" className="text-accent underline hover:no-underline">
+              <Link to="/services/move-out-cleaning" className="text-accent underline hover:no-underline">
                 move-in/move-out cleaning service
               </Link>{" "}
               is specifically designed for situations like this. Our teams work systematically through walls, ceilings, all hard surfaces, carpet, and appliances using vinegar-based protocols — no ozone, no chemical residue, and safe for Maryland's watershed. See more in our{" "}
-              <Link to="/blog/eco-friendly-cleaning-tips-for-maryland-homes" className="text-accent underline hover:no-underline">
+              <Link to="/resources/eco-cleaning-tips-maryland-homes" className="text-accent underline hover:no-underline">
                 eco-friendly cleaning tips for Maryland homes
               </Link>.
             </p>
@@ -508,7 +509,7 @@ const HowToGetCigaretteSmellOutOfYourHouse = () => {
                   eco-friendly cleaning
                 </Link>{" "}
                 and{" "}
-                <Link to="/services/move-in-move-out-cleaning" className="underline text-primary-foreground/90 hover:text-white">
+                <Link to="/services/move-out-cleaning" className="underline text-primary-foreground/90 hover:text-white">
                   move-in cleaning
                 </Link>{" "}
                 across{" "}
@@ -548,6 +549,7 @@ const HowToGetCigaretteSmellOutOfYourHouse = () => {
         </div>
       </article>
 
+      <RelatedPosts currentSlug="how-to-get-cigarette-smell-out-of-your-house" />
       <StickyCTA />
     </Layout>
   );

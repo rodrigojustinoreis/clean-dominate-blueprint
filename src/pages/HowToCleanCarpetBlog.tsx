@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, CheckCircle2, AlertCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
+import RelatedPosts from "@/components/blog/RelatedPosts";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { useSEO } from "@/hooks/useSEO";
 import { Helmet } from "react-helmet-async";
@@ -12,7 +13,7 @@ const HowToCleanCarpetBlog = () => {
   const { seoHelmet } = useSEO({
     title: "How to Clean the Carpet in Your Home or Apartment | Capital Clean Care",
     description: "Step-by-step guide to deep cleaning your carpet — vacuuming, stain removal, steam cleaning, and drying. Plus apartment renter tips and when to call a pro.",
-    canonical: "https://capitalcleancare.com/blog/how-to-clean-carpet-home-apartment",
+    canonical: "https://capitalcleancare.com/resources/how-to-clean-carpet-home-apartment",
   });
 
   return (
@@ -24,16 +25,16 @@ const HowToCleanCarpetBlog = () => {
       <ArticleSchema
         title="How to Clean the Carpet in Your Home or Apartment (And Why It Matters More Than You Think)"
         description="Step-by-step guide to deep cleaning your carpet — vacuuming, stain removal, steam cleaning, and drying. Plus apartment renter tips and when to call a pro."
-        url="https://capitalcleancare.com/blog/how-to-clean-carpet-home-apartment"
+        url="https://capitalcleancare.com/resources/how-to-clean-carpet-home-apartment"
         datePublished="2026-05-18"
         image="https://capitalcleancare.com/images/blog/carpet-steam-vapor.jpg"
       />
-      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }, { label: "How to Clean the Carpet in Your Home or Apartment", href: "/blog/how-to-clean-carpet-home-apartment" }]} />
+      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "How to Clean the Carpet in Your Home or Apartment", href: "/resources/how-to-clean-carpet-home-apartment" }]} />
 
       {/* Breadcrumbs */}
       <div className="bg-gray-50 py-4 border-b">
         <div className="container mx-auto px-4 max-w-5xl">
-          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }, { label: "How to Clean Your Carpet" }]} />
+          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "How to Clean Your Carpet" }]} />
         </div>
       </div>
 
@@ -401,6 +402,7 @@ const HowToCleanCarpetBlog = () => {
 
         </div>
       </article>
+    <RelatedPosts currentSlug="how-to-clean-carpet-home-apartment" />
     </Layout>
   );
 };

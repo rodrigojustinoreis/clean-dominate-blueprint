@@ -17,6 +17,7 @@ import ImageGallery, { GalleryImage } from "@/components/blog/ImageGallery";
 import FAQAccordion from "@/components/blog/FAQAccordion";
 import BlogInlineCTA from "@/components/blog/BlogInlineCTA";
 import StickyCTA from "@/components/blog/StickyCTA";
+import RelatedPosts from "@/components/blog/RelatedPosts";
 
 const HERO_IMAGE = "/images/blog/oled/oled-hero.webp";
 
@@ -89,7 +90,7 @@ const HowToCleanOledTvScreenSafely = () => {
     title: "How to Clean an OLED TV Screen Safely (Without Damaging It)",
     description:
       "Clean your OLED TV screen safely the way LG & Samsung recommend — microfiber + distilled water, no chemicals. Step-by-step guide from a Maryland cleaning team.",
-    canonical: "https://capitalcleancare.com/blog/how-to-clean-oled-tv-screen-safely",
+    canonical: "https://capitalcleancare.com/resources/how-to-clean-oled-tv-screen-safely",
   });
 
   return (
@@ -105,14 +106,14 @@ const HowToCleanOledTvScreenSafely = () => {
       <ArticleSchema
         title="How to Clean an OLED TV Screen Safely (Without Damaging the Panel)"
         description="Step-by-step, manufacturer-aligned method to clean an OLED, QLED, or LED TV screen using a microfiber cloth and distilled water — no alcohol, no ammonia, no chemical sprays."
-        url="https://capitalcleancare.com/blog/how-to-clean-oled-tv-screen-safely"
+        url="https://capitalcleancare.com/resources/how-to-clean-oled-tv-screen-safely"
         datePublished="2026-06-10"
         image={HERO_IMAGE}
       />
       <HowToSchema
         name="How to Clean an OLED TV Screen Safely — Microfiber & Distilled Water Method"
         description="Five-step method to safely clean an OLED TV screen with a microfiber cloth and distilled water, with no chemicals, following LG and Samsung guidance."
-        url="https://capitalcleancare.com/blog/how-to-clean-oled-tv-screen-safely"
+        url="https://capitalcleancare.com/resources/how-to-clean-oled-tv-screen-safely"
         steps={howToSteps}
         totalTime="PT10M"
         image={HERO_IMAGE}
@@ -121,8 +122,8 @@ const HowToCleanOledTvScreenSafely = () => {
       <BreadcrumbSchema
         items={[
           { label: "Home", href: "/" },
-          { label: "Blog", href: "/blog" },
-          { label: "How to Clean an OLED TV Screen Safely", href: "/blog/how-to-clean-oled-tv-screen-safely" },
+          { label: "Resources", href: "/resources" },
+          { label: "How to Clean an OLED TV Screen Safely", href: "/resources/how-to-clean-oled-tv-screen-safely" },
         ]}
       />
 
@@ -132,7 +133,7 @@ const HowToCleanOledTvScreenSafely = () => {
           <Breadcrumbs
             items={[
               { label: "Home", href: "/" },
-              { label: "Blog", href: "/blog" },
+              { label: "Resources", href: "/resources" },
               { label: "How to Clean an OLED TV Screen Safely" },
             ]}
           />
@@ -151,7 +152,7 @@ const HowToCleanOledTvScreenSafely = () => {
           The microfiber-and-water method LG &amp; Samsung actually recommend
         </p>
         <p className="text-gray-300 mb-8 text-sm uppercase tracking-widest">
-          By Capital Clean Care · Montgomery County, MD · June 2026
+          By Rodrigo Reis, Owner · Montgomery County, MD · June 2026
         </p>
         <Button
           size="lg"
@@ -384,6 +385,7 @@ const HowToCleanOledTvScreenSafely = () => {
         </div>
       </article>
 
+      <RelatedPosts currentSlug="how-to-clean-oled-tv-screen-safely" />
       <StickyCTA />
     </Layout>
   );

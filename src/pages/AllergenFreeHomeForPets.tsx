@@ -17,6 +17,7 @@ import ImageGallery, { GalleryImage } from "@/components/blog/ImageGallery";
 import FAQAccordion from "@/components/blog/FAQAccordion";
 import BlogInlineCTA from "@/components/blog/BlogInlineCTA";
 import StickyCTA from "@/components/blog/StickyCTA";
+import RelatedPosts from "@/components/blog/RelatedPosts";
 
 const HERO_IMAGE = "/images/blog/allergen-free-home/hero.webp";
 
@@ -92,7 +93,7 @@ const AllergenFreeHomeForPets = () => {
     title: "The Allergen-Free Home: A Complete Guide for Dog & Cat Owners",
     description:
       "A vet-informed, room-by-room routine to control dander, dust mites, pollen & mold in a pet home — humidity, bedding, floors, air filtration, and a clear weekly-to-quarterly cleaning cadence.",
-    canonical: "https://capitalcleancare.com/blog/allergen-free-home-dog-cat-owners",
+    canonical: "https://capitalcleancare.com/resources/allergen-free-home-dog-cat-owners",
   });
 
   return (
@@ -108,14 +109,14 @@ const AllergenFreeHomeForPets = () => {
       <ArticleSchema
         title="The Allergen-Free Home: A Complete Guide for Dog & Cat Owners"
         description="A complete, vet-informed guide to controlling the four main household allergens for pet owners — dander, dust mites, pollen, and mold — with humidity control, bedding hygiene, flooring choices, air filtration, fragrance-free products, and a weekly-to-quarterly cleaning cadence."
-        url="https://capitalcleancare.com/blog/allergen-free-home-dog-cat-owners"
+        url="https://capitalcleancare.com/resources/allergen-free-home-dog-cat-owners"
         datePublished="2026-06-14"
         image={HERO_IMAGE}
       />
       <HowToSchema
         name="How to Create an Allergen-Controlled Home for Dogs and Cats"
         description="A four-step system to lower dander, dust mites, pollen, and mold in a pet home using humidity control, hot-water bedding hygiene, smart flooring and deep cleaning, and HEPA air filtration with fragrance-free products."
-        url="https://capitalcleancare.com/blog/allergen-free-home-dog-cat-owners"
+        url="https://capitalcleancare.com/resources/allergen-free-home-dog-cat-owners"
         steps={howToSteps}
         totalTime="PT60M"
         image={HERO_IMAGE}
@@ -124,8 +125,8 @@ const AllergenFreeHomeForPets = () => {
       <BreadcrumbSchema
         items={[
           { label: "Home", href: "/" },
-          { label: "Blog", href: "/blog" },
-          { label: "The Allergen-Free Home for Dog & Cat Owners", href: "/blog/allergen-free-home-dog-cat-owners" },
+          { label: "Resources", href: "/resources" },
+          { label: "The Allergen-Free Home for Dog & Cat Owners", href: "/resources/allergen-free-home-dog-cat-owners" },
         ]}
       />
 
@@ -135,7 +136,7 @@ const AllergenFreeHomeForPets = () => {
           <Breadcrumbs
             items={[
               { label: "Home", href: "/" },
-              { label: "Blog", href: "/blog" },
+              { label: "Resources", href: "/resources" },
               { label: "The Allergen-Free Home: A Complete Guide for Dog & Cat Owners" },
             ]}
           />
@@ -154,7 +155,7 @@ const AllergenFreeHomeForPets = () => {
           You don't have to choose between your pet and a low-allergen home
         </p>
         <p className="text-gray-300 mb-8 text-sm uppercase tracking-widest">
-          By Capital Clean Care · Montgomery County, MD · June 2026
+          By Rodrigo Reis, Owner · Montgomery County, MD · June 2026
         </p>
         <Button
           size="lg"
@@ -176,9 +177,9 @@ const AllergenFreeHomeForPets = () => {
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
               This is the complete guide: the four allergens and where they hide, the four habits that lower them the most, a clear cleaning cadence you can actually follow, and when to bring in a deep clean. It pulls together the details from our companion guides on{" "}
-              <Link to="/blog/pet-dander-air-quality" className="text-accent underline hover:no-underline">pet dander and air quality</Link>,{" "}
-              <Link to="/blog/pet-sneezing-household-dust" className="text-accent underline hover:no-underline">household dust and your pet's lungs</Link>, and{" "}
-              <Link to="/blog/why-pet-skin-allergies-start-in-carpet" className="text-accent underline hover:no-underline">pet skin allergies and carpet</Link>.
+              <Link to="/resources/pet-dander-air-quality" className="text-accent underline hover:no-underline">pet dander and air quality</Link>,{" "}
+              <Link to="/resources/pet-sneezing-household-dust" className="text-accent underline hover:no-underline">household dust and your pet's lungs</Link>, and{" "}
+              <Link to="/resources/why-pet-skin-allergies-start-in-carpet" className="text-accent underline hover:no-underline">pet skin allergies and carpet</Link>.
             </p>
           </FadeInSection>
 
@@ -389,6 +390,7 @@ const AllergenFreeHomeForPets = () => {
         </div>
       </article>
 
+      <RelatedPosts currentSlug="allergen-free-home-dog-cat-owners" />
       <StickyCTA />
     </Layout>
   );

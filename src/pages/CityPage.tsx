@@ -35,7 +35,7 @@ import TrustBar from "@/components/TrustBar";
 import TrustBadges from "@/components/TrustBadges";
 import ConversionCTA from "@/components/ConversionCTA";
 import { FAQSchema, ServiceSchema, BreadcrumbSchema, CityReviewSchema } from "@/components/SchemaMarkup";
-import { getTestimonialsForCity } from "@/data/testimonials";
+import { pickReviews } from "@/data/realReviews";
 import { useSEO } from "@/hooks/useSEO";
 import { getCityBySlug, getExpandedCityFaqs } from "@/data/locations";
 import { services } from "@/data/services";
@@ -47,6 +47,7 @@ import NotFound from "./NotFound";
 import regionMD from "@/assets/region-maryland.webp";
 import regionDC from "@/assets/region-dc.webp";
 import regionVA from "@/assets/region-virginia.webp";
+import { cityImages } from "@/data/city-images";
 
 const regionImages: Record<string, string> = {
   maryland: regionMD,
@@ -155,7 +156,8 @@ const CityPage = () => {
   const cityLabel = city.state !== "DC" ? `${city.name}, ${city.state}` : city.name;
   const whyIntro = cityWhyIntros[city.slug] || `${city.name} homeowners choose Capital Clean Care for our reliable, eco-friendly cleaning services.`;
   const hasServiceLocationPages = slCities.some((c) => c.slug === city.slug);
-  const testimonials = getTestimonialsForCity(city.slug);
+  // Real Google reviews only (deterministic per city) — never fabricated testimonials.
+  const testimonials = pickReviews(city.slug, 3);
 
   return (
     <Layout>
@@ -166,7 +168,6 @@ const CityPage = () => {
         serviceName={`House Cleaning in ${city.name}`}
         description={`Professional eco-friendly house cleaning services in ${cityLabel}. Licensed, insured, background-checked teams.`}
         url={`https://capitalcleancare.com/locations/${city.slug}`}
-        reviews={testimonials.map(t => ({ name: t.name, text: t.text, location: t.location }))}
       />
       <CityReviewSchema
         cityName={city.name}
@@ -178,7 +179,7 @@ const CityPage = () => {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src={regionImages[city.stateSlug] || regionMD}
+            src={cityImages[city.slug] || regionImages[city.stateSlug] || regionMD}
             alt={`Eco-friendly house cleaning team serving ${city.name}, ${city.state} — Capital Clean Care`}
             className="w-full h-full object-cover"
             loading="eager"
@@ -291,6 +292,20 @@ const CityPage = () => {
               </Card>
             ))}
           </div>
+
+          {/* Senior Home Cleaning — Montgomery County cities only */}
+          {city.county === "Montgomery County" && (
+            <Link to="/senior-home-cleaning-montgomery-county-md" className="group mt-4 flex items-center gap-3 rounded-xl border border-accent/30 bg-accent/5 p-5 hover:bg-accent/10 transition-colors">
+              <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center shrink-0">
+                <Sparkles className="h-5 w-5 text-accent" />
+              </div>
+              <div className="flex-1">
+                <h3 className="font-medium text-foreground group-hover:text-accent transition-colors">Senior Home Cleaning in {city.name}</h3>
+                <p className="text-xs text-muted-foreground mt-0.5">Gentle, trusted cleaning for older adults across Montgomery County</p>
+              </div>
+              <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-accent transition-colors shrink-0" />
+            </Link>
+          )}
         </div>
       </section>
 
@@ -339,7 +354,7 @@ const CityPage = () => {
                   </div>
                   <p className="text-sm text-foreground italic mb-3 leading-relaxed">"{t.text}"</p>
                   <p className="text-sm font-semibold text-foreground">{t.name}</p>
-                  <p className="text-xs text-muted-foreground">{t.location}</p>
+                  <p className="text-xs text-muted-foreground">Google review</p>
                 </CardContent>
               </Card>
             ))}
@@ -451,13 +466,13 @@ const CityPage = () => {
       <TrustBadges compact />
 
       {/* Quote Form */}
-      <section className="py-16 md:py-20 bg-secondary" id="quote">
+      <section className="py-16 md:py-20 bg-secondary scroll-mt-20" id="quote">
         <div className="container mx-auto px-4 max-w-2xl">
           <div className="text-center mb-8">
             <h2 className="font-heading text-3xl font-bold mb-3">Get a Free Quote in {city.name}</h2>
             <p className="text-muted-foreground">Tell us about your {city.name} home and we'll respond with a personalized estimate.</p>
           </div>
-          <Card><CardContent className="p-6 md:p-8"><QuoteForm /></CardContent></Card>
+          <Card><CardContent className="p-6 md:p-8"><QuoteForm compact /></CardContent></Card>
         </div>
       </section>
     </Layout>

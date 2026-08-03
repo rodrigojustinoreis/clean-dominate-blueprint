@@ -3,6 +3,7 @@
 import { Helmet } from "react-helmet-async";
 import { createElement } from "react";
 import { useLocation } from "react-router-dom";
+import { isNoIndexPath } from "@/data/noindexPaths";
 import { getRoutePair, getCanonicalUrl } from "@/data/route-map";
 
 interface SEOProps {
@@ -18,6 +19,8 @@ interface SEOProps {
 
 export const useSEO = ({ title, description, canonical, ogType = "website", ogImage, noIndex, preloadImage }: SEOProps) => {
   const { pathname } = useLocation();
+  // Central doorway-pruning denylist overrides any page's own indexable decision.
+  const effectiveNoIndex = noIndex || isNoIndexPath(pathname);
   const isSpanish = pathname.startsWith("/es/") || pathname === "/es";
   const lang = isSpanish ? "es" : "en";
   const locale = isSpanish ? "es_US" : "en_US";
@@ -28,6 +31,14 @@ export const useSEO = ({ title, description, canonical, ogType = "website", ogIm
   const finalTitle = withBrand.length <= 70 ? withBrand : title;
   const canonicalUrl = canonical || getCanonicalUrl(pathname);
   const pair = getRoutePair(pathname);
+
+  // og:image must be an ABSOLUTE URL for social crawlers. Absolutize a per-page image, or fall
+  // back to the site default. Emitted on every page (single source of truth) so it never
+  // conflicts with a static index.html og:image.
+  const ORIGIN = "https://capitalcleancare.com";
+  const ogImageUrl = ogImage
+    ? (ogImage.startsWith("http") ? ogImage : `${ORIGIN}${ogImage.startsWith("/") ? "" : "/"}${ogImage}`)
+    : `${ORIGIN}/og-image.jpg`;
 
   const hreflangLinks = pair
     ? [
@@ -62,22 +73,21 @@ export const useSEO = ({ title, description, canonical, ogType = "website", ogIm
     // Single source of truth for robots. Emitted on every page so there is never a
     // conflict with a static index.html default (noindex pages previously carried BOTH
     // an inherited "index,follow" and a Helmet "noindex,nofollow").
+    // noindex,FOLLOW (not nofollow): pruned doorway hubs still link to the 71 indexable
+    // service pages — we want Googlebot to keep following those internal links.
     createElement("meta", {
       key: "robots",
       name: "robots",
-      content: noIndex
-        ? "noindex,nofollow"
+      content: effectiveNoIndex
+        ? "noindex,follow"
         : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
     }),
-    ...(ogImage
-      ? [
-          createElement("meta", { key: "og-img", property: "og:image", content: ogImage }),
-          createElement("meta", { key: "og-img-w", property: "og:image:width", content: "1200" }),
-          createElement("meta", { key: "og-img-h", property: "og:image:height", content: "630" }),
-          createElement("meta", { key: "og-img-alt", property: "og:image:alt", content: finalTitle }),
-          createElement("meta", { key: "tw-img", name: "twitter:image", content: ogImage }),
-        ]
-      : []),
+    createElement("meta", { key: "og-img", property: "og:image", content: ogImageUrl }),
+    createElement("meta", { key: "og-img-secure", property: "og:image:secure_url", content: ogImageUrl }),
+    createElement("meta", { key: "og-img-w", property: "og:image:width", content: "1200" }),
+    createElement("meta", { key: "og-img-h", property: "og:image:height", content: "630" }),
+    createElement("meta", { key: "og-img-alt", property: "og:image:alt", content: finalTitle }),
+    createElement("meta", { key: "tw-img", name: "twitter:image", content: ogImageUrl }),
   ];
 
   const seoHelmet = createElement(Helmet, null, ...children);

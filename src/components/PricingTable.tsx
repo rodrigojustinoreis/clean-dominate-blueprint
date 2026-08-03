@@ -153,7 +153,11 @@ const PricingTable = () => {
         </TabsList>
 
         {services.map((s) => (
-          <TabsContent key={s.id} value={s.id} className="mt-4 space-y-3">
+          // forceMount + data-[state=inactive]:hidden → every tab's prices are in the SSR/static
+          // HTML (crawlable), while only the active tab shows. Interactivity is progressive
+          // enhancement. Without this, Radix renders only the active tab client-side (prices
+          // absent from curl / not indexable).
+          <TabsContent key={s.id} value={s.id} forceMount className="mt-4 space-y-3 data-[state=inactive]:hidden">
 
             {/* Description + badge */}
             <div className={`rounded-xl border p-4 flex items-start justify-between gap-3 ${s.color}`}>

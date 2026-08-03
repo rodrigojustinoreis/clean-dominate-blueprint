@@ -146,7 +146,7 @@ const GreenShield5Step = ({ showCTA = true, compact = false }: GreenShield5StepP
         <div className="mt-10 text-center bg-accent/5 border border-accent/20 rounded-2xl py-5 px-6">
           <p className="text-sm text-foreground font-medium">
             🛡️ The GreenShield 5-Step Clean™ is exclusive to Capital Clean Care — developed over{" "}
-            <strong>9+ years</strong> and used in every single visit across Maryland, DC & Virginia.
+            <strong>10+ years</strong> and used in every single visit across Maryland, DC & Virginia.
           </p>
         </div>
 

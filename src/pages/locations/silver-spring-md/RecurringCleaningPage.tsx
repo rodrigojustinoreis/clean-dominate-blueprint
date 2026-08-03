@@ -18,10 +18,14 @@ import { useSEO } from "@/hooks/useSEO";
 import HeroLocation from "@/components/location/HeroLocation";
 import ServiceChecklistLocation from "@/components/location/ServiceChecklistLocation";
 import InternalLinksGrid from "@/components/location/InternalLinksGrid";
+import LocationSocialProof from "@/components/location/LocationSocialProof";
+import LocationQuoteSection from "@/components/location/LocationQuoteSection";
+import { getServiceLocationOverride } from "@/data/service-location-overrides";
+import { ctaProseVariants, pickVariant } from "@/data/template-variants";
 
 const PAGE_URL = "https://capitalcleancare.com/locations/silver-spring-md/recurring-cleaning";
 
-const faqs = [
+const localFaqs = [
   {
     q: "What's the difference between weekly and bi-weekly cleaning in Silver Spring?",
     a: "Weekly is ideal for larger homes, families with kids or pets, or anyone who entertains frequently. Bi-weekly is our most popular option for Silver Spring households — a clean, well-maintained home without the maximum cost.",
@@ -112,6 +116,7 @@ const nearbyCities = [
 ];
 
 const SilverSpringRecurringCleaningPage = () => {
+  const faqs = getServiceLocationOverride("silver-spring-md", "recurring-cleaning")?.faqs ?? localFaqs;
   const { seoHelmet } = useSEO({
     title: "Recurring House Cleaning in Silver Spring, MD",
     description:
@@ -191,6 +196,9 @@ const SilverSpringRecurringCleaningPage = () => {
         categories={checklistCategories}
       />
 
+      {/* ── Social Proof (3rd — trust video early) ── */}
+      <LocationSocialProof cityName="Silver Spring" citySlug="silver-spring-md" serviceSlug="recurring-cleaning" serviceLabel="Recurring Cleaning" />
+
       {/* Plans */}
       <section className="py-12 md:py-16">
         <div className="container mx-auto px-4 max-w-4xl">
@@ -247,56 +255,6 @@ const SilverSpringRecurringCleaningPage = () => {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Social Proof */}
-      <section className="py-12 md:py-16 bg-muted/30">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <div className="text-center mb-8">
-            <span className="inline-flex items-center gap-1.5 bg-accent/10 text-accent font-semibold text-sm uppercase tracking-wider px-3 py-1 rounded-full mb-3">
-              <Star className="h-3.5 w-3.5 fill-accent" aria-hidden="true" /> Client Reviews
-            </span>
-            <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground">
-              What Silver Spring Families Say About Recurring Cleaning
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="bg-card border border-border rounded-xl p-5">
-              <div role="img" aria-label="5 out of 5 stars" className="flex items-center gap-0.5 mb-3">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" aria-hidden="true" />
-                ))}
-              </div>
-              <p className="text-sm text-foreground italic mb-3 leading-relaxed">
-                "Best investment we've made. Coming home to a clean house every week is amazing."
-              </p>
-              <p className="text-sm font-semibold text-foreground">James T.</p>
-              <p className="text-xs text-muted-foreground">Silver Spring, MD</p>
-            </div>
-            <div className="bg-card border border-border rounded-xl p-5 flex flex-col items-center justify-center text-center gap-3">
-              <div role="img" aria-label="5 out of 5 stars average" className="flex items-center gap-0.5">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <Star key={i} className="h-5 w-5 fill-amber-400 text-amber-400" aria-hidden="true" />
-                ))}
-              </div>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                Serving recurring clients across Downtown Silver Spring, Four Corners, and Woodside.
-                Let your neighbors know about your experience.
-              </p>
-              <a
-                href="https://g.page/r/capitalcleancare/review"
-                className="text-sm text-primary underline font-medium"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Leave a Google Review →
-              </a>
-            </div>
-          </div>
-          <p className="text-center text-sm text-muted-foreground mt-6">
-            <span className="font-semibold text-foreground">5.0 ★</span> average rating · 47 reviews on Google
-          </p>
         </div>
       </section>
 
@@ -360,31 +318,7 @@ const SilverSpringRecurringCleaningPage = () => {
       <TrustBadges compact />
       <ConversionCTA cityName="Silver Spring" />
 
-      <section id="quote" className="py-12 md:py-16 bg-muted/30">
-        <div className="container mx-auto px-4 max-w-2xl text-center">
-          <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-3">
-            Start Your Recurring Clean in Silver Spring Today
-          </h2>
-          <p className="text-muted-foreground mb-6 leading-relaxed">
-            Whether you're near AFI Silver Theatre or anywhere across Silver Spring's 20901–20910
-            ZIP codes, we're ready to build your routine. Free quote in 60 seconds — no commitment.
-            Call (240) 704-2551.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Button variant="cta" size="lg" asChild>
-              <Link to="/contact">
-                Get My Free Recurring Cleaning Quote <ArrowRight className="ml-1 h-4 w-4" />
-              </Link>
-            </Button>
-            <Button variant="outline" size="lg" asChild>
-              <a href="tel:+12407042551">(240) 704-2551</a>
-            </Button>
-          </div>
-          <p className="text-xs text-muted-foreground mt-3">
-            No long-term contracts · Easy to reschedule · 100% satisfaction guaranteed
-          </p>
-        </div>
-      </section>
+      <LocationQuoteSection cityName="Silver Spring" serviceLabel="Recurring Cleaning" defaultService="recurring" zipLine="Serving Silver Spring and nearby communities." ctaProse={ctaProseVariants[pickVariant("silver-spring-md", 2, 3)]("Silver Spring", "Recurring Cleaning")} />
 
       <StickyMobileCTA />
     </Layout>

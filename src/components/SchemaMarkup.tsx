@@ -27,7 +27,7 @@ const businessAddress = {
 };
 
 const businessRef = {
-  "@type": "LocalBusiness" as const,
+  "@type": ["HouseCleaner", "LocalBusiness"] as const,
   "@id": `${BUSINESS.url}/#business`,
   name: BUSINESS.name,
   telephone: BUSINESS.phone,
@@ -54,11 +54,13 @@ function JsonLd({ id, schema }: { id: string; schema: Record<string, unknown> })
 // ── LocalBusiness Schema ──────────────────────────────────────
 interface LocalBusinessSchemaProps {
   areaServed?: string[];
-  reviews?: { name: string; text: string; location?: string }[];
+  reviews?: { name: string; text: string; location?: string; datePublished?: string }[];
+  /** Emit individual Review items — true ONLY on the /reviews page where the real text is shown. */
+  emitReviewItems?: boolean;
   inLanguage?: string;
 }
 
-export const LocalBusinessSchema = ({ areaServed, reviews, inLanguage = "en-US" }: LocalBusinessSchemaProps = {}) => {
+export const LocalBusinessSchema = ({ areaServed, reviews, emitReviewItems, inLanguage = "en-US" }: LocalBusinessSchemaProps = {}) => {
   const defaultCityAreas = [
     "Silver Spring, MD", "Rockville, MD", "Bethesda, MD", "Germantown, MD",
     "Gaithersburg, MD", "Potomac, MD", "Frederick, MD", "Columbia, MD",
@@ -72,11 +74,14 @@ export const LocalBusinessSchema = ({ areaServed, reviews, inLanguage = "en-US" 
 
   const schema: Record<string, unknown> = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": ["HouseCleaner", "LocalBusiness"],
     "@id": `${BUSINESS.url}/#business`,
     inLanguage,
     name: BUSINESS.name,
     legalName: BUSINESS.legalName,
+    slogan: "Eco-friendly house cleaning the DMV trusts",
+    foundingDate: "2015",
+    knowsLanguage: ["en", "es"],
     description: "Premium eco-friendly residential cleaning services in Maryland, Washington DC, and Northern Virginia. Licensed, insured, background-checked teams using non-toxic plant-based products.",
     telephone: BUSINESS.phone,
     email: BUSINESS.email,
@@ -116,9 +121,10 @@ export const LocalBusinessSchema = ({ areaServed, reviews, inLanguage = "en-US" 
     },
   };
 
-  // Reviews must live on LocalBusiness — Google does not accept Service as parent type.
-  // aggregateRating is only emitted alongside the reviews that back it — never as a bare,
-  // self-serving rating on pages that show no reviews (Google review-snippet policy).
+  // aggregateRating is the business's real Google rating (5.0 / 45) — factual on LocalBusiness,
+  // emitted wherever reviews are passed. Individual Review items are emitted ONLY on the /reviews
+  // page (emitReviewItems), where the genuine review text is displayed — never as placeholder
+  // review bodies on other pages (Google review-snippet policy: markup must be real & shown).
   if (reviews && reviews.length > 0) {
     schema.aggregateRating = {
       "@type": "AggregateRating",
@@ -127,12 +133,15 @@ export const LocalBusinessSchema = ({ areaServed, reviews, inLanguage = "en-US" 
       bestRating: "5",
       worstRating: "1",
     };
-    schema.review = reviews.map((r) => ({
-      "@type": "Review",
-      author: { "@type": "Person", name: r.name },
-      reviewBody: r.text,
-      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-    }));
+    if (emitReviewItems) {
+      schema.review = reviews.map((r) => ({
+        "@type": "Review",
+        author: { "@type": "Person", name: r.name },
+        reviewBody: r.text,
+        ...(r.datePublished ? { datePublished: r.datePublished } : {}),
+        reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+      }));
+    }
   }
 
   return <JsonLd id="local-business-schema" schema={schema} />;
@@ -144,6 +153,7 @@ interface ServiceSchemaProps {
   description: string;
   url: string;
   areaServed?: string[];
+  serviceType?: string;
 }
 
 export const ServiceSchema = ({
@@ -151,6 +161,7 @@ export const ServiceSchema = ({
   description,
   url,
   areaServed,
+  serviceType = "House Cleaning",
 }: ServiceSchemaProps) => {
   const schema = {
     "@context": "https://schema.org",
@@ -158,11 +169,11 @@ export const ServiceSchema = ({
     name: serviceName,
     description,
     url,
-    provider: businessRef,
+    provider: { "@id": `${BUSINESS.url}/#business` },
     areaServed: areaServed
       ? areaServed.map((a) => ({ "@type": "Place", name: a }))
       : defaultAreaServedRegions,
-    serviceType: "House Cleaning",
+    serviceType,
     offers: {
       "@type": "Offer",
       availability: "https://schema.org/InStock",
@@ -210,11 +221,52 @@ export const BreadcrumbSchema = ({ items }: BreadcrumbSchemaProps) => {
       "@type": "ListItem",
       position: i + 1,
       name: item.label,
-      item: `${BUSINESS.url}${item.href}`,
+      // Only emit `item` when an href exists. A breadcrumb item with an undefined
+      // href produced an invalid URL ("…comundefined"); for the last crumb (current
+      // page) Google treats `item` as optional, so omitting it is the valid fix.
+      // Accept both relative hrefs and callers that already pass an absolute URL —
+      // prepending BUSINESS.url to an absolute href doubled the domain
+      // ("…comhttps://…"), producing invalid structured data.
+      ...(item.href
+        ? { item: item.href.startsWith("http") ? item.href : `${BUSINESS.url}${item.href}` }
+        : {}),
     })),
   };
 
   return <JsonLd id="breadcrumb-schema" schema={schema} />;
+};
+
+// ── CollectionPage Schema (category / hub index pages) ────────
+interface CollectionPageSchemaProps {
+  name: string;
+  description: string;
+  url: string;
+  // The posts listed on the page — emitted as an ItemList so the collection is machine-readable.
+  items: { title: string; slug: string }[];
+}
+
+export const CollectionPageSchema = ({ name, description, url, items }: CollectionPageSchemaProps) => {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name,
+    description,
+    url,
+    isPartOf: { "@type": "WebSite", name: BUSINESS.name, url: BUSINESS.url },
+    mainEntity: {
+      "@type": "ItemList",
+      numberOfItems: items.length,
+      itemListElement: items.map((item, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        url: `${BUSINESS.url}/resources/${item.slug}`,
+        name: item.title,
+      })),
+    },
+  };
+
+  const id = `collection-page-schema-${url.split("/").pop() || "resources"}`;
+  return <JsonLd id={id} schema={schema} />;
 };
 
 // ── WebSite Schema (for sitelinks search) ─────────────────────
@@ -224,11 +276,6 @@ export const WebSiteSchema = () => {
     "@type": "WebSite",
     name: BUSINESS.name,
     url: BUSINESS.url,
-    potentialAction: {
-      "@type": "SearchAction",
-      target: `${BUSINESS.url}/faq?q={search_term_string}`,
-      "query-input": "required name=search_term_string",
-    },
   };
 
   return <JsonLd id="website-schema" schema={schema} />;
@@ -321,17 +368,21 @@ export const HowToSchema = ({ name, description, url, steps, totalTime, image }:
 interface CityReviewSchemaProps {
   cityName: string;
   cityUrl: string;
-  reviews: { name: string; text: string; location: string; date: string }[];
+  // Only pass REAL Google reviews (src/data/realReviews.ts) — never fabricated
+  // testimonials: fake Review markup violates Google's review-snippet policy.
+  reviews: { name: string; text: string; location?: string; date?: string }[];
 }
 
 export const CityReviewSchema = ({ cityName, cityUrl, reviews }: CityReviewSchemaProps) => {
   if (!reviews || reviews.length === 0) return null;
+  // Single shared #business entity + aggregateRating only. Review items live solely on
+  // /reviews (policy): duplicating the same reviewers across 55 city pages is self-serving.
   const schema = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "@id": `${BUSINESS.url}/#business-${cityName.toLowerCase().replace(/\s/g, "-")}`,
+    "@type": ["HouseCleaner", "LocalBusiness"],
+    "@id": `${BUSINESS.url}/#business`,
     name: BUSINESS.name,
-    url: cityUrl,
+    url: BUSINESS.url,
     telephone: BUSINESS.phone,
     address: businessAddress,
     aggregateRating: {
@@ -341,13 +392,6 @@ export const CityReviewSchema = ({ cityName, cityUrl, reviews }: CityReviewSchem
       bestRating: "5",
       worstRating: "1",
     },
-    review: reviews.map((r) => ({
-      "@type": "Review",
-      author: { "@type": "Person", name: r.name },
-      datePublished: r.date,
-      reviewBody: r.text,
-      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-    })),
   };
   return <JsonLd id={`city-review-schema-${cityName.toLowerCase().replace(/\s/g, "-")}`} schema={schema} />;
 };
@@ -392,7 +436,7 @@ export const AboutPageSchema = () => {
     "@context": "https://schema.org",
     "@type": "AboutPage",
     name: "About Capital Clean Care — Founder Story, GreenShield Method & Our Team",
-    description: "The story behind Capital Clean Care: a family-founded eco-friendly cleaning service serving MD, DC & VA for 9+ years. Learn about our GreenShield 5-Step Clean™ methodology and our dedicated team.",
+    description: "The story behind Capital Clean Care: a family-founded eco-friendly cleaning service serving MD, DC & VA for over a decade. Learn about our GreenShield 5-Step Clean™ methodology and our dedicated team.",
     url: `${BUSINESS.url}/about`,
     mainEntity: {
       "@type": "LocalBusiness",

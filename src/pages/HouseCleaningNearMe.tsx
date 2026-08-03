@@ -102,7 +102,7 @@ const HouseCleaningNearMe = () => {
               { label: "Licensed & Insured", sub: "Full coverage" },
               { label: "Background-Checked", sub: "Every team member" },
               { label: "Eco-Friendly", sub: "Non-toxic products" },
-              { label: "5-Star Rated", sub: "150+ happy clients" },
+              { label: "5-Star Rated", sub: "500+ happy clients" },
             ].map((item) => (
               <div key={item.label}>
                 <p className="font-semibold text-sm text-foreground">{item.label}</p>
@@ -128,7 +128,7 @@ const HouseCleaningNearMe = () => {
               "Flexible scheduling — weekdays, weekends & same-week",
               "100% satisfaction guarantee — we re-clean if needed",
               "Transparent pricing — no hidden fees or surprises",
-              "Serving MD, DC & VA for 9+ years",
+              "Serving MD, DC & VA for 10+ years",
             ].map((item) => (
               <div key={item} className="flex items-start gap-3">
                 <CheckCircle className="h-5 w-5 text-accent shrink-0 mt-0.5" />
@@ -247,14 +247,14 @@ const HouseCleaningNearMe = () => {
       <TrustBadges compact />
 
       {/* Quote Form */}
-      <section className="py-16 bg-secondary" id="quote">
+      <section className="py-16 bg-secondary scroll-mt-20" id="quote">
         <div className="container mx-auto px-4 max-w-2xl">
           <h2 className="font-heading text-3xl font-bold text-center mb-6">
             Get a Free Quote for Cleaning Near You
           </h2>
           <Card className="shadow-xl">
             <CardContent className="p-6 md:p-10">
-              <QuoteForm />
+              <QuoteForm compact />
             </CardContent>
           </Card>
         </div>

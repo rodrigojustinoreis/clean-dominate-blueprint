@@ -18,10 +18,14 @@ import { useSEO } from "@/hooks/useSEO";
 import HeroLocation from "@/components/location/HeroLocation";
 import ServiceChecklistLocation from "@/components/location/ServiceChecklistLocation";
 import InternalLinksGrid from "@/components/location/InternalLinksGrid";
+import LocationSocialProof from "@/components/location/LocationSocialProof";
+import LocationQuoteSection from "@/components/location/LocationQuoteSection";
+import { getServiceLocationOverride } from "@/data/service-location-overrides";
+import { ctaProseVariants, pickVariant } from "@/data/template-variants";
 
 const PAGE_URL = "https://capitalcleancare.com/locations/rockville-md/airbnb-cleaning";
 
-const faqs = [
+const localFaqs = [
   {
     q: "How quickly can you turn over my Rockville Airbnb between guests?",
     a: "Most 1–2 bedroom Rockville properties can be turned over in 2–3 hours. Larger homes or properties with extra bedrooms may take longer. We can work within tight same-day check-in windows with advance notice.",
@@ -109,6 +113,7 @@ const nearbyCities = [
 ];
 
 const RockvilleAirbnbCleaningPage = () => {
+  const faqs = getServiceLocationOverride("rockville-md", "airbnb-cleaning")?.faqs ?? localFaqs;
   const { seoHelmet } = useSEO({
     title: "Airbnb Cleaning in Rockville, MD",
     description:
@@ -187,6 +192,9 @@ const RockvilleAirbnbCleaningPage = () => {
         categories={checklistCategories}
       />
 
+      {/* ── Social Proof (3rd — trust video early) ── */}
+      <LocationSocialProof cityName="Rockville" citySlug="rockville-md" serviceSlug="airbnb-cleaning" serviceLabel="Airbnb Cleaning" />
+
       {/* Why Choose */}
       <section className="py-12 md:py-16">
         <div className="container mx-auto px-4 max-w-4xl">
@@ -261,55 +269,6 @@ const RockvilleAirbnbCleaningPage = () => {
         </div>
       </section>
 
-      {/* Social Proof */}
-      <section className="py-12 md:py-16">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <div className="text-center mb-8">
-            <span className="inline-flex items-center gap-1.5 bg-accent/10 text-accent font-semibold text-sm uppercase tracking-wider px-3 py-1 rounded-full mb-3">
-              <Star className="h-3.5 w-3.5 fill-accent" aria-hidden="true" /> Host Reviews
-            </span>
-            <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground">
-              Rockville Hosts Trust Capital Clean Care
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="bg-card border border-border rounded-xl p-5">
-              <div role="img" aria-label="5 out of 5 stars" className="flex items-center gap-0.5 mb-3">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" aria-hidden="true" />
-                ))}
-              </div>
-              <p className="text-sm text-foreground italic mb-3 leading-relaxed">
-                "My Airbnb rating went from 4.6 to 5.0 stars after switching to Capital Clean Care. Detail is incredible."
-              </p>
-              <p className="text-sm font-semibold text-foreground">Amanda F.</p>
-              <p className="text-xs text-muted-foreground">Bethesda, MD</p>
-            </div>
-            <div className="bg-card border border-border rounded-xl p-5 flex flex-col items-center justify-center text-center gap-3">
-              <div role="img" aria-label="5 out of 5 stars average" className="flex items-center gap-0.5">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <Star key={i} className="h-5 w-5 fill-amber-400 text-amber-400" aria-hidden="true" />
-                ))}
-              </div>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                Serving Rockville short-term rentals near Montgomery College, RedGate Park, and Rockville Pike. Share your hosting experience.
-              </p>
-              <a
-                href="https://g.page/r/capitalcleancare/review"
-                className="text-sm text-primary underline font-medium"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Leave a Google Review →
-              </a>
-            </div>
-          </div>
-          <p className="text-center text-sm text-muted-foreground mt-6">
-            <span className="font-semibold text-foreground">5.0 ★</span> average rating · 47 reviews on Google
-          </p>
-        </div>
-      </section>
-
       {/* Rockville Airbnb Market */}
       <section className="py-12 md:py-16">
         <div className="container mx-auto px-4 max-w-4xl">
@@ -372,31 +331,7 @@ const RockvilleAirbnbCleaningPage = () => {
       <TrustBadges compact />
       <ConversionCTA cityName="Rockville" />
 
-      <section id="quote" className="py-12 md:py-16 bg-muted/30">
-        <div className="container mx-auto px-4 max-w-2xl text-center">
-          <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-3">
-            Set Up Automatic Airbnb Turnovers in Rockville
-          </h2>
-          <p className="text-muted-foreground mb-6 leading-relaxed">
-            Serving all Rockville short-term rentals — near Montgomery College, RedGate Park,
-            Rockville Pike, and across ZIPs 20850, 20851, 20852, and 20853. Get your free
-            quote in 60 seconds and stop worrying about turnovers.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Button variant="cta" size="lg" asChild>
-              <Link to="/contact">
-                Get My Airbnb Cleaning Quote <ArrowRight className="ml-1 h-4 w-4" />
-              </Link>
-            </Button>
-            <Button variant="outline" size="lg" asChild>
-              <a href="tel:+12407042551">(240) 704-2551</a>
-            </Button>
-          </div>
-          <p className="text-xs text-muted-foreground mt-3">
-            Flexible scheduling · Same-day turnovers · 100% satisfaction guaranteed
-          </p>
-        </div>
-      </section>
+      <LocationQuoteSection cityName="Rockville" serviceLabel="Airbnb Cleaning" defaultService="airbnb" zipLine="Serving Rockville across ZIPs 20850, 20851, 20852, and 20853." ctaProse={ctaProseVariants[pickVariant("rockville-md", 2, 3)]("Rockville", "Airbnb Cleaning")} />
 
       <StickyMobileCTA />
     </Layout>

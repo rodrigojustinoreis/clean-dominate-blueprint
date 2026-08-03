@@ -1,5 +1,5 @@
 // Blog topic hubs — the 8 post categories consolidated into 4 substantial, indexable
-// topic hubs (hub-and-spoke). Each hub is a real prerendered page at /blog/topic/<slug>
+// topic hubs (hub-and-spoke). Each hub is a real prerendered page at /resources/topic/<slug>
 // with its own H1, unique intro, and the posts whose `category` maps to it. One-post
 // categories are absorbed so no hub is thin.
 

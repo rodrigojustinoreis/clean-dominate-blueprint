@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { renderToString } from "react-dom/server";
 import { StaticRouter } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -7,6 +8,7 @@ import AppRoutes from "./AppRoutes";
 import { slCities, slServices } from "./data/service-locations";
 import { vanityLandingPages, redirectedVanitySlugs } from "./data/vanity-landings";
 import { cities as locationCities } from "./data/locations";
+import { RESOURCE_CATEGORIES } from "./data/resource-categories";
 
 function getAllRoutes(): string[] {
   const routes: string[] = [
@@ -17,78 +19,117 @@ function getAllRoutes(): string[] {
     "/contact",
     "/gift-cards",
     "/faq",
-    "/blog",
-    "/blog/topic/pet-health",
-    "/blog/topic/home-cleaning",
-    "/blog/topic/local-guides",
-    "/blog/topic/tips-seasonal",
-    "/blog/how-to-clean-carpet-home-apartment",
-    "/blog/how-to-remove-candle-wax-eco-friendly",
-    "/blog/how-to-clean-your-washing-machine-eco-friendly",
-    "/blog/how-to-get-rid-of-mildew-smell-naturally",
-    "/blog/how-to-get-cigarette-smell-out-of-your-house",
-    "/blog/how-to-remove-sharpie-safely",
-    "/blog/how-to-remove-hard-water-stains-naturally",
-    "/blog/how-to-clean-grout-without-bleach",
-    "/blog/how-to-clean-oled-tv-screen-safely",
-    "/blog/why-pet-skin-allergies-start-in-carpet",
-    "/blog/pet-dander-air-quality",
-    "/blog/pet-sneezing-household-dust",
-    "/blog/allergen-free-home-dog-cat-owners",
-    "/blog/seasonal-vs-household-pet-allergies",
-    "/blog/hepa-filters-pets-asthma",
-    "/blog/cleaning-product-poisoning-in-pets",
-    "/blog/what-pet-safe-cleaning-really-means",
-    "/blog/choose-pet-safe-cleaning-company",
-    "/blog/house-cleaning-cost-bethesda-md",
-    "/blog/house-cleaning-cost-rockville-md",
-    "/blog/house-cleaning-cost-silver-spring-md",
-    "/blog/house-cleaning-cost-arlington-va",
-    "/blog/house-cleaning-cost-alexandria-va",
-    "/blog/how-to-remove-red-wine-stains",
-    "/blog/how-to-get-rid-of-dog-smell-pet-safe",
-    "/blog/spring-cleaning-checklist-maryland-2026",
-    "/blog/eco-cleaning-tips-maryland-homes",
-    "/blog/house-cleaning-prices-maryland-2026",
-    "/blog/deep-cleaning-checklist-dmv-homeowners",
-    "/blog/airbnb-cleaning-tips-dmv-hosts",
-    "/blog/how-to-choose-cleaning-service-silver-spring",
-    "/blog/move-out-cleaning-checklist-maryland-tenants",
-    "/blog/eco-cleaning-tips-winters-maryland",
-    "/blog/best-cleaning-schedule-busy-families-dmv",
-    "/blog/remove-pet-hair-odors-dmv-homes",
-    "/blog/post-renovation-cleaning-guide-maryland",
-    "/blog/recurring-cleaning-weekly-biweekly-monthly",
-    "/blog/how-to-clean-windows-streak-free-maryland-homes",
-    "/blog/how-to-clean-windows-streak-free-maryland",
-    "/blog/how-to-clean-windows-streak-free-maryland-spring",
-    "/blog/how-to-clean-windows-streak-free-maryland",
-    "/blog/how-to-remove-tough-stains-from-mattresses-eco-friendly-april-2026",
-    "/blog/how-to-clean-bathroom-professionally-maryland-spring-2026",
-    "/blog/how-to-remove-sticker-residue-natural",
-    "/blog/deep-cleaning-tips-maryland-homes-spring-prep",
-    "/blog/how-to-deep-clean-a-stove-maryland",
-    "/blog/how-to-clean-a-bathroom-step-by-step",
-    "/blog/mrs-meyers-clean-day-review-how-to-use",
-    "/blog/house-cleaning-bethesda-md",
-    "/blog/cleaning-service-arlington-va",
-    "/blog/deep-cleaning-rockville-md",
-    "/blog/house-cleaning-washington-dc",
-    "/blog/cleaning-service-fairfax-va",
-    "/blog/cleaning-service-georgetown-dc",
-    "/blog/cleaning-service-alexandria-va",
-    "/blog/move-in-cleaning-guide-dmv",
-    "/blog/allergy-proofing-home-dmv",
-    "/blog/fall-cleaning-checklist-maryland",
-    "/blog/house-cleaning-gaithersburg-md",
-    "/blog/cleaning-service-mclean-va",
-    "/blog/cleaning-service-columbia-md",
-    "/blog/house-cleaning-potomac-md",
-    "/blog/cleaning-service-chevy-chase-md",
-    "/blog/house-cleaning-frederick-md",
-    "/blog/deep-cleaning-montgomery-county-md",
-    "/blog/cleaning-service-reston-va",
-    "/blog/office-cleaning-small-business-dmv",
+    "/pricing",
+    "/resources",
+    "/resources/how-to-clean-carpet-home-apartment",
+    "/resources/how-to-remove-candle-wax-eco-friendly",
+    "/resources/how-to-clean-your-washing-machine-eco-friendly",
+    "/resources/how-to-get-rid-of-mildew-smell-naturally",
+    "/resources/how-to-get-cigarette-smell-out-of-your-house",
+    "/resources/how-to-remove-sharpie-safely",
+    "/resources/how-to-remove-hard-water-stains-naturally",
+    "/resources/how-to-clean-grout-without-bleach",
+    "/resources/how-to-clean-oled-tv-screen-safely",
+    "/resources/why-pet-skin-allergies-start-in-carpet",
+    "/resources/pet-dander-air-quality",
+    "/resources/pet-sneezing-household-dust",
+    "/resources/allergen-free-home-dog-cat-owners",
+    "/resources/seasonal-vs-household-pet-allergies",
+    "/resources/hepa-filters-pets-asthma",
+    "/resources/cleaning-product-poisoning-in-pets",
+    "/resources/what-pet-safe-cleaning-really-means",
+    "/resources/how-often-to-clean-pet-bowls-and-toys",
+    "/resources/choose-pet-safe-cleaning-company",
+    "/resources/house-cleaning-cost-bethesda-md",
+    "/resources/house-cleaning-cost-rockville-md",
+    "/resources/house-cleaning-cost-silver-spring-md",
+    "/resources/house-cleaning-cost-arlington-va",
+    "/resources/house-cleaning-cost-alexandria-va",
+    "/resources/deep-cleaning-vs-regular-cleaning",
+    "/resources/what-is-included-in-a-deep-cleaning",
+    "/resources/signs-aging-parent-needs-help-housekeeping",
+    "/resources/clean-home-fall-prevention-seniors",
+    "/resources/cleaning-service-vs-caregiver-elderly",
+    "/resources/how-to-hire-cleaning-service-elderly-parents",
+    "/resources/house-cleaning-seniors-silver-spring-leisure-world",
+    "/resources/aging-in-place-montgomery-county-cleaning",
+    "/resources/real-deep-cleaning-project-bethesda-home",
+    "/resources/how-often-should-you-hire-a-cleaning-service",
+    "/resources/one-time-vs-recurring-cleaning",
+    "/resources/how-much-does-deep-cleaning-cost",
+    "/resources/what-is-included-in-a-standard-cleaning",
+    "/resources/is-professional-house-cleaning-worth-it",
+    "/resources/move-out-cleaning-cost-maryland",
+    "/resources/best-house-cleaning-service-rockville-md",
+    "/resources/best-house-cleaning-service-silver-spring-md",
+    "/resources/house-cleaning-guide-germantown-md",
+    "/resources/house-cleaning-guide-clarksburg-md",
+    "/resources/post-construction-cleaning-montgomery-county-md",
+    "/resources/best-house-cleaning-service-bethesda-md",
+    "/resources/deep-cleaning-cost-maryland",
+    "/resources/how-to-clean-up-after-a-party",
+    "/resources/cleaning-company-vs-independent-cleaner",
+    "/resources/local-cleaning-company-vs-franchise",
+    "/resources/questions-to-ask-before-hiring-house-cleaner",
+    "/resources/why-first-house-cleaning-costs-more",
+    "/resources/flat-rate-vs-hourly-house-cleaning",
+    "/resources/red-flags-house-cleaning-service",
+    "/resources/hidden-fees-house-cleaning",
+    "/resources/house-too-messy-for-cleaning-service",
+    "/resources/how-long-does-deep-cleaning-take",
+    "/resources/how-often-should-you-deep-clean",
+    "/resources/deep-cleaning-before-selling-house",
+    "/resources/deep-cleaning-for-apartments",
+    "/resources/eco-friendly-deep-cleaning",
+    "/resources/airbnb-cleaning-checklist",
+    "/resources/airbnb-cleaning-fee",
+    "/resources/how-much-tip-house-cleaner",
+    "/resources/move-in-cleaning-checklist",
+    "/resources/most-forgotten-areas-when-cleaning",
+    "/resources/why-dust-builds-up-maryland-homes",
+    "/resources/how-to-prepare-home-for-professional-cleaning",
+    "/resources/how-to-keep-house-clean-between-cleanings",
+    "/resources/summer-cleaning-checklist-maryland",
+    "/resources/holiday-cleaning-checklist-dmv",
+    "/resources/cleaning-tips-for-working-professionals",
+    "/resources/how-to-remove-red-wine-stains",
+    "/resources/how-to-get-rid-of-dog-smell-pet-safe",
+    "/resources/spring-cleaning-checklist-maryland-2026",
+    "/resources/eco-cleaning-tips-maryland-homes",
+    "/resources/house-cleaning-prices-maryland-2026",
+    "/resources/deep-cleaning-checklist-dmv-homeowners",
+    "/resources/airbnb-cleaning-tips-dmv-hosts",
+    "/resources/how-to-choose-cleaning-service-silver-spring",
+    "/resources/move-out-cleaning-checklist-maryland-tenants",
+    "/resources/eco-cleaning-tips-winters-maryland",
+    "/resources/best-cleaning-schedule-busy-families-dmv",
+    "/resources/remove-pet-hair-odors-dmv-homes",
+    "/resources/post-renovation-cleaning-guide-maryland",
+    "/resources/recurring-cleaning-weekly-biweekly-monthly",
+    "/resources/how-to-remove-sticker-residue-natural",
+    "/resources/deep-cleaning-tips-maryland-homes-spring-prep",
+    "/resources/how-to-deep-clean-a-stove-maryland",
+    "/resources/how-to-clean-a-bathroom-step-by-step",
+    "/resources/mrs-meyers-clean-day-review-how-to-use",
+    "/resources/house-cleaning-bethesda-md",
+    "/resources/cleaning-service-arlington-va",
+    "/resources/deep-cleaning-rockville-md",
+    "/resources/house-cleaning-washington-dc",
+    "/resources/cleaning-service-fairfax-va",
+    "/resources/cleaning-service-georgetown-dc",
+    "/resources/cleaning-service-alexandria-va",
+    "/resources/move-in-cleaning-guide-dmv",
+    "/resources/allergy-proofing-home-dmv",
+    "/resources/fall-cleaning-checklist-maryland",
+    "/resources/house-cleaning-gaithersburg-md",
+    "/resources/cleaning-service-mclean-va",
+    "/resources/cleaning-service-columbia-md",
+    "/resources/house-cleaning-potomac-md",
+    "/resources/cleaning-service-chevy-chase-md",
+    "/resources/house-cleaning-frederick-md",
+    "/resources/deep-cleaning-montgomery-county-md",
+    "/resources/cleaning-service-reston-va",
+    "/resources/office-cleaning-small-business-dmv",
     "/maryland",
     "/virginia",
     "/washington-dc",
@@ -101,6 +142,7 @@ function getAllRoutes(): string[] {
     "/services/office-cleaning",
     "/services/post-construction-cleaning",
     "/house-cleaning-near-me",
+    "/senior-home-cleaning-montgomery-county-md",
     "/why-eco-friendly-cleaning",
     "/careers",
     "/spring-cleaning-md",
@@ -126,6 +168,13 @@ function getAllRoutes(): string[] {
     "/es/areas/montgomery-village-md",
   ];
 
+  // Resource Center category indexes — auto-derived from resource-categories.ts so the
+  // 10 category pages are always prerendered + in the sitemap. (Replaces the 4 legacy
+  // /resources/topic/* hubs, which are now 301'd to their category in netlify.toml.)
+  for (const category of RESOURCE_CATEGORIES) {
+    routes.push(`/resources/${category.slug}`);
+  }
+
   // City pages — auto-derived from locations.ts so adding a city there
   // automatically prerenders its hub page. No manual list to maintain.
   for (const city of locationCities) {
@@ -139,8 +188,9 @@ function getAllRoutes(): string[] {
     }
   }
 
-  // Vanity landing pages — pula as que foram consolidadas via 301 (Fase 1 SEO),
-  // para saírem do prerender e do sitemap.
+  // Vanity landing pages — pula as consolidadas via 301 (10 slugs; superset do
+  // "Lote 3B Group 1" do branch restore-house-cleaning). Fonte única:
+  // redirectedVanitySlugs em vanity-landings.ts.
   for (const vp of vanityLandingPages) {
     if (redirectedVanitySlugs.has(vp.slug)) continue;
     routes.push(`/${vp.slug}`);
@@ -162,7 +212,9 @@ export async function prerender(data: { url: string }) {
         <TooltipProvider>
           {/* Toaster and Sonner omitted — use browser APIs, no SEO value */}
           <StaticRouter location={data.url}>
-            <AppRoutes />
+            <Suspense fallback={null}>
+              <AppRoutes />
+            </Suspense>
           </StaticRouter>
         </TooltipProvider>
       </QueryClientProvider>

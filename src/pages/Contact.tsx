@@ -6,6 +6,8 @@ import { useSEO } from "@/hooks/useSEO";
 import { LocalBusinessSchema, ContactPageSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import TrustBadges from "@/components/TrustBadges";
+import PriceCalculator from "@/components/PriceCalculator";
+import PricingTable from "@/components/PricingTable";
 
 const Contact = () => {
   const { seoHelmet } = useSEO({
@@ -39,8 +41,8 @@ const Contact = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
             {[
               { icon: Phone, label: "Phone", value: "(240) 704-2551", href: "tel:+12407042551" },
-              // TODO: update to hello@capitalcleancare.com when domain email is configured
-              { icon: Mail, label: "Email", value: "capitalcleancare@gmail.com", href: "mailto:capitalcleancare@gmail.com" },
+              // Domain email configured: info@capitalcleancare.com
+              { icon: Mail, label: "Email", value: "info@capitalcleancare.com", href: "mailto:info@capitalcleancare.com" },
               { icon: Clock, label: "Hours", value: "Mon–Sat: 8 AM – 6 PM" },
               { icon: MapPin, label: "Address", value: "4111 Postgate Terrace, Silver Spring, MD 20906" },
             ].map((item) => (
@@ -52,7 +54,7 @@ const Contact = () => {
                   <div>
                     <p className="text-sm text-muted-foreground">{item.label}</p>
                     {item.href ? (
-                      <a href={item.href} className="font-semibold hover:text-accent transition-colors">{item.value}</a>
+                      <a href={item.href} className="font-semibold hover:text-accent transition-colors break-all">{item.value}</a>
                     ) : (
                       <p className="font-semibold">{item.value}</p>
                     )}
@@ -78,6 +80,29 @@ const Contact = () => {
               />
             </CardContent>
           </Card>
+        </div>
+      </section>
+
+      {/* ── Transparent Pricing (same format as the home page) ── */}
+      <section className="py-16 md:py-20 bg-secondary/40">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <div className="text-center mb-10">
+            <span className="text-accent font-semibold text-sm uppercase tracking-wider">Pricing</span>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold mt-2 mb-4">Transparent Pricing</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">Honest pricing based on home size and frequency. No hidden fees, ever.</p>
+            <div className="inline-flex items-center gap-2 mt-4 bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800 text-amber-800 dark:text-amber-300 rounded-full px-4 py-1.5 text-xs font-semibold">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-400"></span>
+              </span>
+              New clients save 15% on their first clean — limited availability
+            </div>
+          </div>
+          <PriceCalculator />
+          <div className="mt-12">
+            <h3 className="font-heading text-xl md:text-2xl font-bold text-center mb-6">Full price list by service &amp; home size</h3>
+            <PricingTable />
+          </div>
         </div>
       </section>
 

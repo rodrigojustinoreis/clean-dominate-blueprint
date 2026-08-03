@@ -18,6 +18,8 @@ import { useSEO } from "@/hooks/useSEO";
 import HeroLocation from "@/components/location/HeroLocation";
 import ServiceChecklistLocation from "@/components/location/ServiceChecklistLocation";
 import InternalLinksGrid from "@/components/location/InternalLinksGrid";
+import LocationSocialProof from "@/components/location/LocationSocialProof";
+import LocationQuoteSection from "@/components/location/LocationQuoteSection";
 
 const PAGE_URL = "https://capitalcleancare.com/locations/wheaton-md/office-cleaning";
 
@@ -186,6 +188,9 @@ const WheatonOfficeCleaningPage = () => {
         categories={checklistCategories}
       />
 
+      {/* ── Social Proof (3rd — trust video early) ── */}
+      <LocationSocialProof cityName="Wheaton" citySlug="wheaton-md" serviceSlug="office-cleaning" serviceLabel="Office Cleaning" />
+
       {/* Commercial Spaces */}
       <section className="py-12 md:py-16">
         <div className="container mx-auto px-4 max-w-4xl">
@@ -258,55 +263,6 @@ const WheatonOfficeCleaningPage = () => {
         </div>
       </section>
 
-      {/* Social Proof */}
-      <section className="py-12 md:py-16 bg-muted/30">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <div className="text-center mb-8">
-            <span className="inline-flex items-center gap-1.5 bg-accent/10 text-accent font-semibold text-sm uppercase tracking-wider px-3 py-1 rounded-full mb-3">
-              <Star className="h-3.5 w-3.5 fill-accent" aria-hidden="true" /> Client Reviews
-            </span>
-            <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground">
-              Wheaton Businesses Trust Capital Clean Care
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="bg-card border border-border rounded-xl p-5">
-              <div role="img" aria-label="5 out of 5 stars" className="flex items-center gap-0.5 mb-3">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" aria-hidden="true" />
-                ))}
-              </div>
-              <p className="text-sm text-foreground italic mb-3 leading-relaxed">
-                "Consistent, professional, and always on time. Our office has never been cleaner since switching to Capital Clean Care."
-              </p>
-              <p className="text-sm font-semibold text-foreground">Wheaton Business Owner</p>
-              <p className="text-xs text-muted-foreground">Wheaton, MD</p>
-            </div>
-            <div className="bg-card border border-border rounded-xl p-5 flex flex-col items-center justify-center text-center gap-3">
-              <div role="img" aria-label="5 out of 5 stars average" className="flex items-center gap-0.5">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <Star key={i} className="h-5 w-5 fill-amber-400 text-amber-400" aria-hidden="true" />
-                ))}
-              </div>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                Serving Wheaton offices and commercial spaces near Glenmont, Kemp Mill, and the Georgia Avenue corridor.
-              </p>
-              <a
-                href="https://g.page/r/capitalcleancare/review"
-                className="text-sm text-primary underline font-medium"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Leave a Google Review →
-              </a>
-            </div>
-          </div>
-          <p className="text-center text-sm text-muted-foreground mt-6">
-            <span className="font-semibold text-foreground">5.0 ★</span> average rating · 47 reviews on Google
-          </p>
-        </div>
-      </section>
-
       {/* FAQ */}
       <section className="py-12 md:py-16">
         <div className="container mx-auto px-4 max-w-4xl">
@@ -329,30 +285,7 @@ const WheatonOfficeCleaningPage = () => {
       <TrustBadges compact />
       <ConversionCTA cityName="Wheaton" />
 
-      <section id="quote" className="py-12 md:py-16 bg-muted/30">
-        <div className="container mx-auto px-4 max-w-2xl text-center">
-          <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-3">
-            Keep Your Wheaton Office Spotless
-          </h2>
-          <p className="text-muted-foreground mb-6 leading-relaxed">
-            Serving Wheaton businesses near Westfield Wheaton Mall, ZIPs 20902 and 20906, including
-            Kemp Mill and Forest Glen. Free commercial quote in 60 seconds — or call (240) 704-2551.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Button variant="cta" size="lg" asChild>
-              <Link to="/contact">
-                Get My Commercial Cleaning Quote <ArrowRight className="ml-1 h-4 w-4" />
-              </Link>
-            </Button>
-            <Button variant="outline" size="lg" asChild>
-              <a href="tel:+12407042551">(240) 704-2551</a>
-            </Button>
-          </div>
-          <p className="text-xs text-muted-foreground mt-3">
-            Custom schedule · After-hours available · Bonded & Insured
-          </p>
-        </div>
-      </section>
+      <LocationQuoteSection cityName="Wheaton" serviceLabel="Office Cleaning" defaultService="office" zipLine="Serving Wheaton and nearby communities." />
 
       <StickyMobileCTA />
     </Layout>

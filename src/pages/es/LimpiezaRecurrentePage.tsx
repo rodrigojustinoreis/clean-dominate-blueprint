@@ -15,8 +15,8 @@ const CANONICAL = "https://capitalcleancare.com/es/limpieza-recurrente";
 
 export default function LimpiezaRecurrentePage() {
   const { seoHelmet } = useSEO({
-    title: "Limpieza Recurrente de Casas Montgomery County MD | Capital Clean Care",
-    description: "Servicio de limpieza semanal, quincenal o mensual en MoCo. Mismo equipo, precio fijo, sin contratos. Asegurados, bilingües, 5★ Google. (240) 704-2551",
+    title: "Limpieza Recurrente en Montgomery County MD | Capital Clean Care",
+    description: "Servicio de limpieza semanal, quincenal o mensual en Montgomery County. Mismo equipo, precio fijo, sin contratos. Asegurados, bilingües, 5★ Google. (240) 704-2551",
     canonical: CANONICAL,
   });
 
@@ -50,7 +50,7 @@ export default function LimpiezaRecurrentePage() {
                 <a href={PHONE_TEL} onClick={() => trackPhoneClick("recurrente_hero")}><Phone className="h-4 w-4 mr-2" /> Llamar: {PHONE}</a>
               </Button>
               <Button variant="outline" size="lg" asChild>
-                <a href="/contact" onClick={() => trackBookNowClick("recurrente_hero")}>Cotización Gratis <ArrowRight className="ml-1 h-4 w-4" /></a>
+                <a href="/es/contacto" onClick={() => trackBookNowClick("recurrente_hero")}>Cotización Gratis <ArrowRight className="ml-1 h-4 w-4" /></a>
               </Button>
             </div>
           </div>
@@ -157,7 +157,7 @@ export default function LimpiezaRecurrentePage() {
                 <a href={PHONE_TEL} onClick={() => trackPhoneClick("recurrente_cta")}><Phone className="h-4 w-4 mr-2" /> {PHONE}</a>
               </Button>
               <Button size="lg" variant="outline" className="border-white/50 text-white hover:bg-white/10" asChild>
-                <a href="/contact" onClick={() => trackBookNowClick("recurrente_cta")}>Cotización Gratis</a>
+                <a href="/es/contacto" onClick={() => trackBookNowClick("recurrente_cta")}>Cotización Gratis</a>
               </Button>
             </div>
             <div className="mt-4 flex items-center justify-center gap-2 text-accent-foreground/70 text-sm">

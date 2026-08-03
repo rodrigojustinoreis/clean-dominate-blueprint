@@ -18,6 +18,8 @@ import { useSEO } from "@/hooks/useSEO";
 import HeroLocation from "@/components/location/HeroLocation";
 import ServiceChecklistLocation from "@/components/location/ServiceChecklistLocation";
 import InternalLinksGrid from "@/components/location/InternalLinksGrid";
+import LocationSocialProof from "@/components/location/LocationSocialProof";
+import LocationQuoteSection from "@/components/location/LocationQuoteSection";
 
 const PAGE_URL = "https://capitalcleancare.com/locations/germantown-md/post-construction-cleaning";
 
@@ -189,6 +191,9 @@ const GermantownPostConstructionCleaningPage = () => {
         categories={checklistCategories}
       />
 
+      {/* ── Social Proof (3rd — trust video early) ── */}
+      <LocationSocialProof cityName="Germantown" citySlug="germantown-md" serviceSlug="post-construction-cleaning" serviceLabel="Post-Construction Cleaning" />
+
       {/* Why Specialist */}
       <section className="py-12 md:py-16">
         <div className="container mx-auto px-4 max-w-4xl">
@@ -231,57 +236,6 @@ const GermantownPostConstructionCleaningPage = () => {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Social Proof */}
-      <section className="py-12 md:py-16 bg-muted/30">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <div className="text-center mb-8">
-            <span className="inline-flex items-center gap-1.5 bg-accent/10 text-accent font-semibold text-sm uppercase tracking-wider px-3 py-1 rounded-full mb-3">
-              <Star className="h-3.5 w-3.5 fill-accent" aria-hidden="true" /> Client Reviews
-            </span>
-            <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground">
-              Germantown Homeowners After Their Renovations
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="bg-card border border-border rounded-xl p-5">
-              <div role="img" aria-label="5 out of 5 stars" className="flex items-center gap-0.5 mb-3">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" aria-hidden="true" />
-                ))}
-              </div>
-              <p className="text-sm text-foreground italic mb-3 leading-relaxed">
-                "After our renovation, they got every last bit of construction dust. Professional and
-                incredibly thorough. Move-in ready on the first visit."
-              </p>
-              <p className="text-sm font-semibold text-foreground">Brian G.</p>
-              <p className="text-xs text-muted-foreground">Fairfax, VA</p>
-            </div>
-            <div className="bg-card border border-border rounded-xl p-5 flex flex-col items-center justify-center text-center gap-3">
-              <div role="img" aria-label="5 out of 5 stars average" className="flex items-center gap-0.5">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <Star key={i} className="h-5 w-5 fill-amber-400 text-amber-400" aria-hidden="true" />
-                ))}
-              </div>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                Serving Germantown renovations from Kingsview to Churchill Village. Share your
-                post-renovation experience.
-              </p>
-              <a
-                href="https://g.page/r/capitalcleancare/review"
-                className="text-sm text-primary underline font-medium"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Leave a Google Review →
-              </a>
-            </div>
-          </div>
-          <p className="text-center text-sm text-muted-foreground mt-6">
-            <span className="font-semibold text-foreground">5.0 ★</span> average rating · 47 reviews on Google
-          </p>
         </div>
       </section>
 
@@ -346,31 +300,7 @@ const GermantownPostConstructionCleaningPage = () => {
       <TrustBadges compact />
       <ConversionCTA cityName="Germantown" />
 
-      <section id="quote" className="py-12 md:py-16 bg-muted/30">
-        <div className="container mx-auto px-4 max-w-2xl text-center">
-          <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-3">
-            Ready for a Dust-Free Home in Germantown?
-          </h2>
-          <p className="text-muted-foreground mb-6 leading-relaxed">
-            Serving Germantown renovations near Seneca Creek State Park, across ZIPs 20874, 20875,
-            and 20876. Get a free post-construction cleaning quote in 60 seconds — or call
-            (240) 704-2551 to discuss your project. Scheduling within 24–48 hours.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Button variant="cta" size="lg" asChild>
-              <Link to="/contact">
-                Get My Post-Construction Quote <ArrowRight className="ml-1 h-4 w-4" />
-              </Link>
-            </Button>
-            <Button variant="outline" size="lg" asChild>
-              <a href="tel:+12407042551">(240) 704-2551</a>
-            </Button>
-          </div>
-          <p className="text-xs text-muted-foreground mt-3">
-            Fast scheduling · HEPA-equipped team · Licensed, Bonded & Insured
-          </p>
-        </div>
-      </section>
+      <LocationQuoteSection cityName="Germantown" serviceLabel="Post-Construction Cleaning" defaultService="post-construction" zipLine="Serving Germantown and nearby communities." />
 
       <StickyMobileCTA />
     </Layout>

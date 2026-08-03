@@ -6,17 +6,18 @@ import { useSEO } from "@/hooks/useSEO";
 import { LocalBusinessSchema } from "@/components/SchemaMarkup";
 import { trackPhoneClick, trackBookNowClick } from "@/lib/analytics";
 import ProcessSection from "@/components/sections/ProcessSection";
+import TransformationsGallery from "@/components/TransformationsGallery";
 import MeetTheTeamSection from "@/components/sections/MeetTheTeamSection";
 import FAQExpandedSection from "@/components/sections/FAQExpandedSection";
 
 const PHONE = "(240) 704-2551";
 const PHONE_TEL = "tel:+12407042551";
-const CANONICAL = "https://capitalcleancare.com/es/";
+const CANONICAL = "https://capitalcleancare.com/es";
 
 const reviews = [
-  { name: "María G., Silver Spring", text: "El equipo de Rodrigo limpia mi casa hace 2 años. Siempre puntuales, siempre amables, y mi casa queda como nueva cada vez. Recomendado 100%." },
-  { name: "Carolina M., Rockville", text: "Necesitaba una limpieza profunda antes de que llegaran los suegros y Capital Clean Care me salvó. Llegaron a tiempo, trabajaron con cuidado, y todo quedó impecable. Volveré a llamar." },
-  { name: "José R., Wheaton", text: "Lo que más me gustó es que hablan español y entienden lo que uno quiere. No es solo limpiar, es saber por qué uno limpia así. Excelente servicio." },
+  { name: "David Reed", text: "Rodrigo y su equipo fueron increíbles: vale cada centavo. ¡Dejaron todo impecable!" },
+  { name: "Steph M.", text: "La minuciosidad y atención al detalle fueron excepcionales: la casa quedó impecable y hermosa. No podría estar más feliz. Muy recomendados." },
+  { name: "Grace J.", text: "Desde el primer contacto respondieron rápido y ofrecieron un precio justo. El equipo llegó puntual y el apartamento quedó impecable. ¡Cinco estrellas sin dudarlo!" },
 ];
 
 
@@ -35,8 +36,8 @@ export default function HomeES() {
       <div lang="es">
         <div className="w-full overflow-hidden" style={{maxHeight:"320px"}}>
           <img
-            src="/images/team/real-team-luxury-home.jpg"
-            alt="Equipo Capital Clean Care trabajando"
+            src="/images/es/comunidad-hero.webp"
+            alt="Familia latina feliz en su casa impecable — Capital Clean Care sirve a la comunidad hispana del área DMV"
             loading="eager"
             decoding="async"
             className="w-full object-cover"
@@ -55,7 +56,7 @@ export default function HomeES() {
             </p>
 
             <div className="flex flex-wrap gap-2 mb-8">
-              {["⭐ 5.0 en Google (47+ reseñas)", "🛡️ Asegurados y con Fianza", "🏡 Negocio Familiar", "🗣️ Hablamos Español"].map((pill) => (
+              {["⭐ 5.0 en Google (45 reseñas)", "🛡️ Asegurados y con Fianza", "🏡 Negocio Familiar", "🗣️ Hablamos Español"].map((pill) => (
                 <span key={pill} className="inline-flex items-center bg-background border border-border rounded-full px-3 py-1.5 text-sm font-medium text-foreground shadow-sm">{pill}</span>
               ))}
             </div>
@@ -67,7 +68,7 @@ export default function HomeES() {
                 </a>
               </Button>
               <Button variant="outline" size="lg" asChild>
-                <a href="/contact" onClick={() => trackBookNowClick("hero_es")}>
+                <a href="/es/contacto" onClick={() => trackBookNowClick("hero_es")}>
                   Solicitar Cotización Gratis <ArrowRight className="ml-1 h-4 w-4" />
                 </a>
               </Button>
@@ -98,6 +99,71 @@ export default function HomeES() {
           </div>
         </section>
 
+        {/* Antes y Después — videos reales del equipo */}
+        <TransformationsGallery
+          heading="Antes y Después: Resultados Reales de Nuestro Equipo"
+          subtext="No son videos de stock. Cada clip es material sin editar de nuestro propio equipo en el área DMV: tinas con sarro, estufas engrasadas y azulejos opacos recuperados con productos ecológicos y seguros para tu familia. Así se ve una limpieza profunda de verdad."
+        />
+
+        {/* Nuestra comunidad */}
+        <section className="py-14 md:py-20">
+          <div className="container mx-auto px-4 max-w-5xl">
+            <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-4 text-center">
+              Servimos a nuestra comunidad con orgullo
+            </h2>
+            <p className="text-muted-foreground text-lg leading-relaxed mb-10 text-center max-w-2xl mx-auto">
+              Somos una empresa familiar latina. Hablamos tu idioma, entendemos tu hogar y tratamos a cada familia como a la nuestra.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              {[
+                { src: "/images/es/familia-cocina.webp", alt: "Madre e hija latinas cocinando en una cocina impecable" },
+                { src: "/images/team/team-two-living-room.jpg", alt: "Equipo de Capital Clean Care limpiando una sala en el área DMV" },
+                { src: "/images/team/team-mopping-bright-room.jpg", alt: "Profesional de Capital Clean Care trapeando una sala luminosa" },
+              ].map(({ src, alt }) => (
+                <img
+                  key={src}
+                  src={src}
+                  alt={alt}
+                  loading="lazy"
+                  decoding="async"
+                  width={800}
+                  height={450}
+                  className="w-full h-56 object-cover rounded-2xl shadow-lg ring-1 ring-border transition-transform duration-500 hover:scale-[1.03]"
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Nuestros clientes hablan */}
+        <section className="py-14 md:py-20">
+          <div className="container mx-auto px-4 max-w-5xl">
+            <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-10 text-center">
+              Nuestros clientes hablan
+            </h2>
+            <video
+              src="/videos/reviews.mp4"
+              poster="/videos/reviews-poster.jpg"
+              preload="none"
+              controls
+              playsInline
+              className="w-full max-w-3xl mx-auto rounded-2xl shadow-xl ring-1 ring-border"
+            >
+              Tu navegador no soporta la reproducción de video.
+            </video>
+            <p className="text-muted-foreground text-sm mt-6 text-center">
+              Reseñas reales de clientes en Google — 5.0 estrellas, 45 reseñas.
+            </p>
+            <div className="mt-4 text-center">
+              <Button variant="outline" size="lg" asChild>
+                <a href="/es/contacto" onClick={() => trackBookNowClick("video_reviews_es")}>
+                  Cotización Gratis <ArrowRight className="ml-1 h-4 w-4" />
+                </a>
+              </Button>
+            </div>
+          </div>
+        </section>
+
         {/* Servicios */}
         <section className="py-14 md:py-20 bg-secondary/30">
           <div className="container mx-auto px-4 max-w-5xl">
@@ -108,7 +174,7 @@ export default function HomeES() {
               {[
                 { slug: "/es/limpieza-recurrente", icon: "🔁", title: "Limpieza Regular", desc: "Mantén tu casa fresca cada semana, cada dos semanas, o cada mes. Plan flexible, mismo equipo, precio fijo." },
                 { slug: "/es/limpieza-profunda", icon: "✨", title: "Limpieza Profunda", desc: "Para cuando tu casa necesita más que mantenimiento. Atacamos rincones, electrodomésticos y áreas olvidadas." },
-                { slug: "/es/limpieza-de-mudanza", icon: "📦", title: "Limpieza de Mudanza", desc: "Mudándote? Dejamos tu casa lista para el inspector (move-out) o lista para vivir (move-in)." },
+                { slug: "/es/limpieza-de-mudanza", icon: "📦", title: "Limpieza de Mudanza", desc: "¿Te mudas? Dejamos tu casa lista para el inspector (move-out) o lista para vivir (move-in)." },
                 { slug: "/es/limpieza-airbnb", icon: "🏨", title: "Limpieza Airbnb", desc: "Recambio entre huéspedes en 4 horas o menos. Reportes con fotos. Trabajamos con anfitriones de toda MoCo." },
                 { slug: "/es/limpieza-post-construccion", icon: "🔨", title: "Post-Construcción", desc: "Después de remodelación, dejamos tu casa libre de polvo de drywall, residuos de pintura y escombros." },
                 { slug: "/es/limpieza-de-casas", icon: "🏠", title: "Limpieza Estándar", desc: "¿Solo necesitas una limpieza esta semana? También lo hacemos, sin compromiso." },
@@ -159,7 +225,7 @@ export default function HomeES() {
         <section className="py-14 md:py-20 bg-secondary/30">
           <div className="container mx-auto px-4 max-w-4xl">
             <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-10 text-center">
-              Lo que dicen nuestros vecinos
+              Lo que dicen nuestros clientes en Google
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {reviews.map(({ name, text }) => (
@@ -181,7 +247,7 @@ export default function HomeES() {
         {/* CTA Final */}
         <section className="bg-accent text-accent-foreground py-16">
           <div className="container mx-auto px-4 max-w-3xl text-center">
-            <h2 className="font-heading text-2xl md:text-3xl font-bold mb-4">¿Listos para una casa más limpia?</h2>
+            <h2 className="font-heading text-2xl md:text-3xl font-bold mb-4">¿Listo para una casa más limpia?</h2>
             <p className="text-accent-foreground/90 mb-8 text-lg">
               Llámanos al {PHONE} y te damos cotización en 5 minutos. Atendemos en español.
             </p>
@@ -192,7 +258,7 @@ export default function HomeES() {
                 </a>
               </Button>
               <Button size="lg" variant="outline" className="border-white/50 text-white hover:bg-white/10" asChild>
-                <a href="/contact" onClick={() => trackBookNowClick("cta_final_es")}>
+                <a href="/es/contacto" onClick={() => trackBookNowClick("cta_final_es")}>
                   Cotización Gratis <ArrowRight className="ml-1 h-4 w-4" />
                 </a>
               </Button>

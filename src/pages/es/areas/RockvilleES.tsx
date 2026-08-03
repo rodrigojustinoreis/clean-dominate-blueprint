@@ -54,7 +54,7 @@ export default function RockvilleES() {
               Desde Twinbrook hasta King Farm, Capital Clean Care limpia casas en toda Rockville. Equipo bilingüe, asegurado y con fianza. Mismo personal cada visita.
             </p>
             <div className="flex flex-wrap gap-2 mb-8">
-              {["⭐ 5.0 (47+ reseñas)", "🛡️ Asegurados", "🗣️ Español", "📍 Rockville"].map((p) => (
+              {["⭐ 5.0 (45 reseñas)", "🛡️ Asegurados", "🗣️ Español", "📍 Rockville"].map((p) => (
                 <span key={p} className="bg-background border border-border rounded-full px-3 py-1.5 text-sm font-medium shadow-sm">{p}</span>
               ))}
             </div>
@@ -63,7 +63,7 @@ export default function RockvilleES() {
                 <a href={PHONE_TEL} onClick={() => trackPhoneClick("rockville_es_hero")}><Phone className="h-4 w-4 mr-2" /> Llamar: {PHONE}</a>
               </Button>
               <Button variant="outline" size="lg" asChild>
-                <a href="/contact" onClick={() => trackBookNowClick("rockville_es_hero")}>Cotización Gratis <ArrowRight className="ml-1 h-4 w-4" /></a>
+                <a href="/es/contacto" onClick={() => trackBookNowClick("rockville_es_hero")}>Cotización Gratis <ArrowRight className="ml-1 h-4 w-4" /></a>
               </Button>
             </div>
           </div>
@@ -94,14 +94,14 @@ export default function RockvilleES() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
-                { name: "Carolina M.", text: "Capital Clean Care me salvó antes de que llegaran los suegros. Llegaron a tiempo y todo quedó impecable." },
-                { name: "Roberto H.", text: "Llevo 18 meses con ellos en Twinbrook. Precio fijo, mismo equipo, cero problemas. Recomendado." },
-                { name: "Patricia G.", text: "Necesitaba limpieza de mudanza y recuperé el depósito completo. La garantía es real." },
+                { name: "Steph M.", text: "La minuciosidad y atención al detalle fueron excepcionales: la casa quedó impecable y hermosa. No podría estar más feliz. Muy recomendados." },
+                { name: "Grace J.", text: "Desde el primer contacto respondieron rápido y ofrecieron un precio justo. El equipo llegó puntual y el apartamento quedó impecable. ¡Cinco estrellas sin dudarlo!" },
+                { name: "Lisa Phillips", text: "Limpieza de mudanza fantástica: pisos, ventanas, paredes, electrodomésticos, zócalos, cada rincón impecable. La casa quedó totalmente inmaculada. ¡Muy recomendados!" },
               ].map(({ name, text }) => (
                 <div key={name} className="bg-background border border-border rounded-xl p-5 shadow-sm">
                   <div className="flex gap-0.5 mb-3">{[...Array(5)].map((_, i) => <Star key={i} className="h-4 w-4 fill-accent text-accent" />)}</div>
                   <p className="text-muted-foreground text-sm leading-relaxed mb-3">"{text}"</p>
-                  <p className="font-semibold text-foreground text-sm">— {name}, Rockville</p>
+                  <p className="font-semibold text-foreground text-sm">— {name}, Reseña de Google</p>
                 </div>
               ))}
             </div>
@@ -114,7 +114,7 @@ export default function RockvilleES() {
               {[
                 { stat: "~70,000", label: "Residentes" },
                 { stat: "20%", label: "Comunidad Latina" },
-                { stat: "SF / Townhouses", label: "Tipo de vivienda" },
+                { stat: "Casas y townhouses", label: "Tipo de vivienda" },
                 { stat: "~12 mi", label: "Desde Silver Spring" },
               ].map(({ stat, label }) => (
                 <div key={label} className="bg-background border border-border rounded-xl p-5 text-center shadow-sm">
@@ -138,7 +138,7 @@ export default function RockvilleES() {
                 <a href={PHONE_TEL} onClick={() => trackPhoneClick("rockville_es_cta")}><Phone className="h-4 w-4 mr-2" /> {PHONE}</a>
               </Button>
               <Button size="lg" variant="outline" className="border-white/50 text-white hover:bg-white/10" asChild>
-                <a href="/contact" onClick={() => trackBookNowClick("rockville_es_cta")}>Cotización Gratis</a>
+                <a href="/es/contacto" onClick={() => trackBookNowClick("rockville_es_cta")}>Cotización Gratis</a>
               </Button>
             </div>
             <div className="mt-4 flex items-center justify-center gap-2 text-accent-foreground/70 text-sm">

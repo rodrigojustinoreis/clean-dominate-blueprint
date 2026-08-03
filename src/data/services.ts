@@ -222,7 +222,7 @@ export const services: ServiceData[] = [
       { name: "Jessica W.", location: "Bethesda, MD", text: "Quarterly deep cleans have become our routine. The team is meticulous and always finds things to address that we'd never think of." }
     ],
     metaTitle: "Deep House Cleaning in MD, DC & VA | Capital Clean Care",
-    metaDescription: "Top-to-bottom deep cleaning for Maryland, DC & Virginia homes. Inside appliances, baseboards, vents & more. Eco-friendly & insured. Book your free quote today!"
+    metaDescription: "Top-to-bottom deep cleaning for Maryland, DC & Virginia homes — inside appliances, baseboards, vents & grout. Eco-friendly & insured. Book a free quote."
   },
   {
     name: "Move In / Move Out Cleaning",
@@ -436,7 +436,7 @@ export const services: ServiceData[] = [
       { q: "Can I add deep cleaning to my recurring plan?", a: "Yes. Many recurring clients schedule a deep cleaning quarterly as a complement to their regular service. We can build this into your plan automatically." },
       { q: "What happens on the first visit?", a: "Your first recurring visit includes a more thorough initial cleaning to establish a baseline. Subsequent visits maintain that standard efficiently." },
       { q: "Do you clean during holidays?", a: "We offer adjusted scheduling during major holidays. Many clients add a pre-holiday cleaning session to prepare for gatherings." },
-      { q: "How much do recurring plans cost?", a: "Pricing depends on home size and frequency. Weekly plans offer the deepest discounts (up to 20% off one-time rates), followed by bi-weekly (15%) and monthly (10%). Request a free quote for your specific home." },
+      { q: "How much do recurring plans cost?", a: "Pricing depends on home size and frequency. Weekly plans offer the deepest discounts (up to 25% off one-time rates), followed by bi-weekly (about 15%) and monthly (about 10%). Request a free quote for your specific home." },
       { q: "What's included in each recurring visit?", a: "Every visit includes our full standard cleaning checklist: kitchen and bathroom sanitization, dusting, vacuuming, mopping, bed making, trash removal, and more. We also rotate focus areas for deeper attention each visit." },
       { q: "Can I request extra tasks on specific visits?", a: "Yes. You can add tasks like interior window cleaning, refrigerator cleanout, or oven cleaning to any scheduled visit. Just let us know in advance and we'll adjust accordingly." },
       { q: "What if my regular team is unavailable?", a: "In rare cases where your regular team is unavailable, we send a fully trained backup team with detailed notes about your home and preferences to ensure consistent quality." },
@@ -450,7 +450,7 @@ export const services: ServiceData[] = [
       { name: "Linda P.", location: "Potomac, MD", text: "Love the rotating deep-clean focus. Each visit tackles a different area in depth, so over the month every part of the house gets extra attention." }
     ],
     metaTitle: "Recurring House Cleaning Plans in MD, DC & VA | Capital Clean Care",
-    metaDescription: "Weekly, bi-weekly & monthly cleaning plans across Maryland, DC & Virginia. Save up to 25%, dedicated teams, eco-friendly products. No contracts — get a free quote!"
+    metaDescription: "Weekly, bi-weekly & monthly house cleaning plans across MD, DC & Virginia. Save up to 25%, dedicated team, no contracts. Get your free quote today."
   },
   {
     name: "Eco-Friendly Cleaning",
@@ -546,7 +546,7 @@ export const services: ServiceData[] = [
       { name: "Amanda F.", location: "Bethesda, MD", text: "My Airbnb rating went from 4.6 to 5.0 stars after I switched to Capital Clean Care. Their attention to detail is incredible." },
       { name: "Carlos M.", location: "Arlington, VA", text: "Same-day turnovers used to stress me out. Now I just send them the checkout time and it's done. Professional, fast, and thorough every time." }
     ],
-    metaTitle: "Airbnb & Rental Cleaning in MD, DC & VA | Capital Clean Care",
+    metaTitle: "Airbnb Cleaning Services | Turnover Cleaning MD, DC & VA",
     metaDescription: "Professional Airbnb & VRBO turnover cleaning in Maryland, DC & Northern Virginia. 5-star results, same-day turnovers, linen changes included. Get a free quote!"
   },
   {
@@ -602,7 +602,7 @@ export const services: ServiceData[] = [
       { name: "James R.", location: "Washington, DC", text: "Running a small law firm, presentation matters. Capital Clean Care keeps our office immaculate without any disruption to our schedule. They clean after hours and everything is perfect every morning." },
       { name: "Linda M.", location: "Arlington, VA", text: "I manage a co-working space and cleanliness is everything for our members. Capital Clean Care handles our daily cleaning and it's been flawless. Highly recommend for any commercial space." }
     ],
-    metaTitle: "Office & Commercial Cleaning in MD, DC & VA | Capital Clean Care",
+    metaTitle: "Office Cleaning Services | Washington DC, Maryland & VA",
     metaDescription: "Professional office and commercial cleaning in Maryland, DC & Northern Virginia. After-hours scheduling, eco-friendly products, background-checked teams. Get a free quote!"
   }
 ];

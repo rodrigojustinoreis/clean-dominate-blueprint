@@ -18,12 +18,16 @@ import { useSEO } from "@/hooks/useSEO";
 import HeroLocation from "@/components/location/HeroLocation";
 import ServiceChecklistLocation from "@/components/location/ServiceChecklistLocation";
 import InternalLinksGrid from "@/components/location/InternalLinksGrid";
+import LocationSocialProof from "@/components/location/LocationSocialProof";
+import LocationQuoteSection from "@/components/location/LocationQuoteSection";
+import { getServiceLocationOverride } from "@/data/service-location-overrides";
+import { trustBlurbVariants, ctaProseVariants, ecoSafeVariants, satisfactionVariants, arriveStepVariants, pickVariant } from "@/data/template-variants";
 
 // ── Page constants ────────────────────────────────────────────────────────────
 
 const PAGE_URL = "https://capitalcleancare.com/locations/chevy-chase-md/house-cleaning";
 
-const faqs = [
+const localFaqs = [
   {
     q: "Do you bring your own cleaning supplies to Chevy Chase homes?",
     a: "Yes. We supply all equipment and EPA Safer Choice™ certified eco-friendly products to every Chevy Chase home. You don't need to provide anything — just let us in.",
@@ -129,6 +133,8 @@ const ChevyChaseHouseCleaningPage = () => {
     ogImage: "https://capitalcleancare.com/og-image.jpg",
   });
 
+  const faqs = getServiceLocationOverride("chevy-chase-md", "house-cleaning")?.faqs ?? localFaqs;
+
   return (
     <Layout>
       {/* ── SEO ───────────────────────────────────────────── */}
@@ -201,6 +207,9 @@ const ChevyChaseHouseCleaningPage = () => {
         categories={checklistCategories}
       />
 
+      {/* ── Social Proof (3rd — trust video early) ── */}
+      <LocationSocialProof cityName="Chevy Chase" citySlug="chevy-chase-md" serviceSlug="house-cleaning" serviceLabel="House Cleaning" />
+
       {/* ── Why Choose Us ─────────────────────────────────── */}
       <section className="py-12 md:py-16">
         <div className="container mx-auto px-4 max-w-4xl">
@@ -211,15 +220,15 @@ const ChevyChaseHouseCleaningPage = () => {
             {[
               {
                 title: "Latino-Owned & Locally Operated",
-                body: "We serve Chevy Chase's Martin's Additions neighborhood and the Chevy Chase Village because this is our community. We're not a franchise — we're your neighbors, and our reputation in Montgomery County is built one clean at a time.",
+                body: trustBlurbVariants[pickVariant("chevy-chase-md", 3)]("Chevy Chase", "Montgomery County"),
               },
               {
                 title: "Eco-Safe for Your Family",
-                body: "Every product we use is EPA Safer Choice™ certified — no bleach, no ammonia, no synthetic fragrances. Safe from the very first visit for children, pets, and allergy sufferers in every room of your Chevy Chase home.",
+                body: ecoSafeVariants[pickVariant("chevy-chase-md", 3, 4)]("Chevy Chase"),
               },
               {
                 title: "100% Satisfaction Guaranteed",
-                body: "Not happy with something after your Chevy Chase house cleaning? Call us and we return to re-clean — free, no fine print, no excuses. That's our promise to every Chevy Chase family.",
+                body: satisfactionVariants[pickVariant("chevy-chase-md", 3, 5)]("Chevy Chase"),
               },
             ].map((card) => (
               <div
@@ -251,17 +260,17 @@ const ChevyChaseHouseCleaningPage = () => {
               {
                 step: "2",
                 title: "We arrive on time",
-                body: "Your bonded, insured, background-checked Capital Clean Care team arrives with all supplies and EPA Safer Choice™ certified products. Nothing for you to prepare.",
+                body: arriveStepVariants[pickVariant("chevy-chase-md", 3, 6)]("Chevy Chase"),
               },
               {
                 step: "3",
                 title: "Thorough top-to-bottom clean",
-                body: "We follow a consistent Chevy Chase house cleaning checklist — kitchen, bathrooms, bedrooms, living areas. Every surface, every time. No shortcuts.",
+                body: "We work through a consistent Chevy Chase house cleaning checklist — kitchen, bathrooms, bedrooms, living areas — so every room gets the same careful, corner-to-corner attention.",
               },
               {
                 step: "4",
                 title: "100% satisfaction guaranteed",
-                body: "If anything isn't right, call us within 24 hours and we return to re-clean at no charge — no fine print, no arguments. Your satisfaction is the standard.",
+                body: satisfactionVariants[pickVariant("chevy-chase-md", 3, 7)]("Chevy Chase"),
               },
             ].map(({ step, title, body }) => (
               <div
@@ -281,57 +290,6 @@ const ChevyChaseHouseCleaningPage = () => {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* ── Social Proof ──────────────────────────────────── */}
-      <section className="py-12 md:py-16">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <div className="text-center mb-8">
-            <span className="inline-flex items-center gap-1.5 bg-accent/10 text-accent font-semibold text-sm uppercase tracking-wider px-3 py-1 rounded-full mb-3">
-              <Star className="h-3.5 w-3.5 fill-accent" aria-hidden="true" /> Client Reviews
-            </span>
-            <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground">
-              What Chevy Chase Families Are Saying
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="bg-card border border-border rounded-xl p-5">
-              <div role="img" aria-label="5 out of 5 stars" className="flex items-center gap-0.5 mb-3">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" aria-hidden="true" />
-                ))}
-              </div>
-              <p className="text-sm text-foreground italic mb-3 leading-relaxed">
-                "Capital Clean Care transformed our home. Thorough, eco-friendly products safe for my kids and pets."
-              </p>
-              <p className="text-sm font-semibold text-foreground">Sarah M.</p>
-              <p className="text-xs text-muted-foreground">Bethesda, MD</p>
-            </div>
-
-            <div className="bg-card border border-border rounded-xl p-5 flex flex-col items-center justify-center text-center gap-3">
-              <div role="img" aria-label="5 out of 5 stars average" className="flex items-center gap-0.5">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <Star key={i} className="h-5 w-5 fill-amber-400 text-amber-400" aria-hidden="true" />
-                ))}
-              </div>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                Serving Chevy Chase families near Connecticut Avenue, Chevy Chase Village, and Martin's Additions.
-                If you're a client, share your experience.
-              </p>
-              <a
-                href="https://g.page/r/capitalcleancare/review"
-                className="text-sm text-primary underline font-medium"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Leave a Google Review →
-              </a>
-            </div>
-          </div>
-          <p className="text-center text-sm text-muted-foreground mt-6">
-            <span className="font-semibold text-foreground">5.0 ★</span> average rating · 47 reviews on Google
-          </p>
         </div>
       </section>
 
@@ -398,32 +356,7 @@ const ChevyChaseHouseCleaningPage = () => {
       <ConversionCTA cityName="Chevy Chase" />
 
       {/* ── Final CTA + #quote anchor ─────────────────────── */}
-      <section id="quote" className="py-12 md:py-16 bg-muted/30">
-        <div className="container mx-auto px-4 max-w-2xl text-center">
-          <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-3">
-            Ready for a Cleaner Home in Chevy Chase?
-          </h2>
-          <p className="text-muted-foreground mb-6 leading-relaxed">
-            Whether you're near Friendship Heights or in the 20815 ZIP code, Capital Clean Care is ready
-            to help. Get a free, no-obligation quote for professional house cleaning in Chevy Chase, MD
-            in under 60 seconds — or call us directly at (240) 704-2551 to speak with our team today.
-            Same-day slots available. 100% satisfaction guaranteed on every visit.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Button variant="cta" size="lg" asChild>
-              <Link to="/contact">
-                Get My Free House Cleaning Quote <ArrowRight className="ml-1 h-4 w-4" />
-              </Link>
-            </Button>
-            <Button variant="outline" size="lg" asChild>
-              <a href="tel:+12407042551">(240) 704-2551</a>
-            </Button>
-          </div>
-          <p className="text-xs text-muted-foreground mt-3">
-            No commitment · Same-day slots available · 100% satisfaction guaranteed
-          </p>
-        </div>
-      </section>
+      <LocationQuoteSection cityName="Chevy Chase" serviceLabel="House Cleaning" defaultService="standard" zipLine="Serving Chevy Chase and nearby communities." ctaProse={ctaProseVariants[pickVariant("chevy-chase-md", 2, 3)]("Chevy Chase", "House Cleaning")} />
 
       {/* ── Sticky mobile phone CTA ───────────────────────── */}
       <StickyMobileCTA />

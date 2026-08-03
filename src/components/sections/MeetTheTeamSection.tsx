@@ -26,7 +26,7 @@ const MeetTheTeamSection = ({ city }: MeetTheTeamSectionProps) => {
             <h3 className="font-heading font-semibold text-foreground mb-1">Rodrigo Reis — Dueño</h3>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Empezó Capital Clean Care en 2015 con una sola clienta en Silver Spring.
-              Hoy atendemos a 200+ familias en Montgomery County. Habla español, portugués e inglés.
+              Hoy hemos limpiado 500+ hogares en Montgomery County. Habla español, portugués e inglés.
             </p>
           </div>
 

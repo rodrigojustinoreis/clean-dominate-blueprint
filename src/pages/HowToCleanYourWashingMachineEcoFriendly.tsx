@@ -17,8 +17,9 @@ import ImageGallery, { GalleryImage } from "@/components/blog/ImageGallery";
 import FAQAccordion from "@/components/blog/FAQAccordion";
 import BlogInlineCTA from "@/components/blog/BlogInlineCTA";
 import StickyCTA from "@/components/blog/StickyCTA";
+import RelatedPosts from "@/components/blog/RelatedPosts";
 
-const HERO_IMAGE = "/images/blog/washing-machine-hero.jpg";
+const HERO_IMAGE = "/images/blog/washing-machine-hero.webp";
 
 const galleryImages: GalleryImage[] = [
   {
@@ -94,7 +95,7 @@ const HowToCleanYourWashingMachineEcoFriendly = () => {
     title: "How to Clean Your Washing Machine (Eco-Friendly, Easy)",
     description:
       "Clean your washing machine drum, drawer & gasket with vinegar & baking soda. Eliminate musty smell. Free quote in Montgomery County, MD.",
-    canonical: "https://capitalcleancare.com/blog/how-to-clean-your-washing-machine-eco-friendly",
+    canonical: "https://capitalcleancare.com/resources/how-to-clean-your-washing-machine-eco-friendly",
   });
 
   return (
@@ -110,14 +111,14 @@ const HowToCleanYourWashingMachineEcoFriendly = () => {
       <ArticleSchema
         title="How to Clean Your Washing Machine (Eco-Friendly Method That Removes Smell)"
         description="Clean your washing machine drum, drawer & gasket with vinegar & baking soda. Eliminate musty smell with no harsh chemicals."
-        url="https://capitalcleancare.com/blog/how-to-clean-your-washing-machine-eco-friendly"
+        url="https://capitalcleancare.com/resources/how-to-clean-your-washing-machine-eco-friendly"
         datePublished="2026-05-23"
         image={HERO_IMAGE}
       />
       <HowToSchema
         name="How to Clean a Front-Load Washing Machine (Eco-Friendly)"
         description="Step-by-step guide to deep cleaning a front-load washer with white vinegar and baking soda — no bleach, no chemicals."
-        url="https://capitalcleancare.com/blog/how-to-clean-your-washing-machine-eco-friendly"
+        url="https://capitalcleancare.com/resources/how-to-clean-your-washing-machine-eco-friendly"
         steps={howToSteps}
         totalTime="PT1H30M"
         image={HERO_IMAGE}
@@ -126,8 +127,8 @@ const HowToCleanYourWashingMachineEcoFriendly = () => {
       <BreadcrumbSchema
         items={[
           { label: "Home", href: "/" },
-          { label: "Blog", href: "/blog" },
-          { label: "How to Clean Your Washing Machine (Eco-Friendly)", href: "/blog/how-to-clean-your-washing-machine-eco-friendly" },
+          { label: "Resources", href: "/resources" },
+          { label: "How to Clean Your Washing Machine (Eco-Friendly)", href: "/resources/how-to-clean-your-washing-machine-eco-friendly" },
         ]}
       />
 
@@ -137,7 +138,7 @@ const HowToCleanYourWashingMachineEcoFriendly = () => {
           <Breadcrumbs
             items={[
               { label: "Home", href: "/" },
-              { label: "Blog", href: "/blog" },
+              { label: "Resources", href: "/resources" },
               { label: "How to Clean Your Washing Machine" },
             ]}
           />
@@ -156,7 +157,7 @@ const HowToCleanYourWashingMachineEcoFriendly = () => {
           Eco-Friendly Method That Removes Smell
         </p>
         <p className="text-gray-300 mb-8 text-sm uppercase tracking-widest">
-          By Capital Clean Care · Montgomery County, MD · May 2026
+          By Rodrigo Reis, Owner · Montgomery County, MD · May 2026
         </p>
         <Button
           size="lg"
@@ -519,7 +520,7 @@ const HowToCleanYourWashingMachineEcoFriendly = () => {
                 recurring cleaning plans
               </Link>
               . More on Maryland-specific eco tips in our{" "}
-              <Link to="/blog/eco-friendly-cleaning-tips-for-maryland-homes" className="text-accent underline hover:no-underline">
+              <Link to="/resources/eco-cleaning-tips-maryland-homes" className="text-accent underline hover:no-underline">
                 eco-friendly cleaning guide for Maryland homes
               </Link>.
             </p>
@@ -581,6 +582,7 @@ const HowToCleanYourWashingMachineEcoFriendly = () => {
         </div>
       </article>
 
+      <RelatedPosts currentSlug="how-to-clean-your-washing-machine-eco-friendly" />
       <StickyCTA />
     </Layout>
   );

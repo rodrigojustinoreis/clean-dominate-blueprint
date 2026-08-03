@@ -18,10 +18,14 @@ import { useSEO } from "@/hooks/useSEO";
 import HeroLocation from "@/components/location/HeroLocation";
 import ServiceChecklistLocation from "@/components/location/ServiceChecklistLocation";
 import InternalLinksGrid from "@/components/location/InternalLinksGrid";
+import LocationSocialProof from "@/components/location/LocationSocialProof";
+import LocationQuoteSection from "@/components/location/LocationQuoteSection";
+import { getServiceLocationOverride } from "@/data/service-location-overrides";
+import { ctaProseVariants, pickVariant } from "@/data/template-variants";
 
 const PAGE_URL = "https://capitalcleancare.com/locations/gaithersburg-md/deep-cleaning";
 
-const faqs = [
+const localFaqs = [
   {
     q: "How long does a deep cleaning take in Gaithersburg?",
     a: "Most Gaithersburg homes take 4–6 hours. Larger homes or homes with heavy buildup may take longer. We'll confirm the estimate when you book.",
@@ -116,6 +120,7 @@ const nearbyCities = [
 ];
 
 const GaithersburgDeepCleaningPage = () => {
+  const faqs = getServiceLocationOverride("gaithersburg-md", "deep-cleaning")?.faqs ?? localFaqs;
   const { seoHelmet } = useSEO({
     title: "Deep Cleaning Service in Gaithersburg, MD",
     description:
@@ -194,6 +199,9 @@ const GaithersburgDeepCleaningPage = () => {
         categories={checklistCategories}
       />
 
+      {/* ── Social Proof (3rd — trust video early) ── */}
+      <LocationSocialProof cityName="Gaithersburg" citySlug="gaithersburg-md" serviceSlug="deep-cleaning" serviceLabel="Deep Cleaning" />
+
       {/* Standard vs Deep */}
       <section className="py-12 md:py-16">
         <div className="container mx-auto px-4 max-w-4xl">
@@ -246,55 +254,6 @@ const GaithersburgDeepCleaningPage = () => {
         </div>
       </section>
 
-      {/* Social Proof */}
-      <section className="py-12 md:py-16 bg-muted/30">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <div className="text-center mb-8">
-            <span className="inline-flex items-center gap-1.5 bg-accent/10 text-accent font-semibold text-sm uppercase tracking-wider px-3 py-1 rounded-full mb-3">
-              <Star className="h-3.5 w-3.5 fill-accent" aria-hidden="true" /> Client Reviews
-            </span>
-            <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground">
-              Gaithersburg Homeowners Love Our Deep Clean
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="bg-card border border-border rounded-xl p-5">
-              <div role="img" aria-label="5 out of 5 stars" className="flex items-center gap-0.5 mb-3">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" aria-hidden="true" />
-                ))}
-              </div>
-              <p className="text-sm text-foreground italic mb-3 leading-relaxed">
-                "After our renovation, they got every last bit of construction dust. Professional and incredibly thorough. The grout lines were spotless."
-              </p>
-              <p className="text-sm font-semibold text-foreground">Brian G.</p>
-              <p className="text-xs text-muted-foreground">Fairfax, VA</p>
-            </div>
-            <div className="bg-card border border-border rounded-xl p-5 flex flex-col items-center justify-center text-center gap-3">
-              <div role="img" aria-label="5 out of 5 stars average" className="flex items-center gap-0.5">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <Star key={i} className="h-5 w-5 fill-amber-400 text-amber-400" aria-hidden="true" />
-                ))}
-              </div>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                Serving Gaithersburg deep cleaning clients near Kentlands Market Square and throughout the 20877–20879 area.
-              </p>
-              <a
-                href="https://g.page/r/capitalcleancare/review"
-                className="text-sm text-primary underline font-medium"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Leave a Google Review →
-              </a>
-            </div>
-          </div>
-          <p className="text-center text-sm text-muted-foreground mt-6">
-            <span className="font-semibold text-foreground">5.0 ★</span> average rating · 47 reviews on Google
-          </p>
-        </div>
-      </section>
-
       {/* FAQ */}
       <section className="py-12 md:py-16">
         <div className="container mx-auto px-4 max-w-4xl">
@@ -317,30 +276,7 @@ const GaithersburgDeepCleaningPage = () => {
       <TrustBadges compact />
       <ConversionCTA cityName="Gaithersburg" />
 
-      <section id="quote" className="py-12 md:py-16 bg-muted/30">
-        <div className="container mx-auto px-4 max-w-2xl text-center">
-          <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-3">
-            Book Your Gaithersburg Deep Clean Today
-          </h2>
-          <p className="text-muted-foreground mb-6 leading-relaxed">
-            Serving Gaithersburg homes near Kentlands Market Square and across ZIPs 20877, 20878,
-            20879. Start fresh — free quote in 60 seconds. Or call (240) 704-2551.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Button variant="cta" size="lg" asChild>
-              <Link to="/contact">
-                Get My Free Deep Cleaning Quote <ArrowRight className="ml-1 h-4 w-4" />
-              </Link>
-            </Button>
-            <Button variant="outline" size="lg" asChild>
-              <a href="tel:+12407042551">(240) 704-2551</a>
-            </Button>
-          </div>
-          <p className="text-xs text-muted-foreground mt-3">
-            Same-day slots available · 100% satisfaction guaranteed · Bonded & Insured
-          </p>
-        </div>
-      </section>
+      <LocationQuoteSection cityName="Gaithersburg" serviceLabel="Deep Cleaning" defaultService="deep" zipLine="Serving Gaithersburg and nearby communities." ctaProse={ctaProseVariants[pickVariant("gaithersburg-md", 2, 3)]("Gaithersburg", "Deep Cleaning")} />
 
       <StickyMobileCTA />
     </Layout>

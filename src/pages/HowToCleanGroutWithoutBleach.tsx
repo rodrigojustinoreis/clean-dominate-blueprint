@@ -17,6 +17,7 @@ import ImageGallery, { GalleryImage } from "@/components/blog/ImageGallery";
 import FAQAccordion from "@/components/blog/FAQAccordion";
 import BlogInlineCTA from "@/components/blog/BlogInlineCTA";
 import StickyCTA from "@/components/blog/StickyCTA";
+import RelatedPosts from "@/components/blog/RelatedPosts";
 import BeforeAfterSlider from "@/components/blog/BeforeAfterSlider";
 
 const HERO_IMAGE =
@@ -95,7 +96,7 @@ const HowToCleanGroutWithoutBleach = () => {
     title: "How to Clean Grout Without Bleach (Natural Methods)",
     description:
       "Get sparkling white grout without bleach. Eco-safe paste & spray methods for Maryland homes. Free quote in Montgomery County.",
-    canonical: "https://capitalcleancare.com/blog/how-to-clean-grout-without-bleach",
+    canonical: "https://capitalcleancare.com/resources/how-to-clean-grout-without-bleach",
   });
 
   return (
@@ -111,14 +112,14 @@ const HowToCleanGroutWithoutBleach = () => {
       <ArticleSchema
         title="How to Clean Grout Without Bleach (Eco-Friendly Methods That Actually Work)"
         description="Clean grout lines on tile, shower, and bathroom floors using baking soda, vinegar, hydrogen peroxide, and castile soap — no bleach, no fumes, safe for kids, pets, and the Chesapeake Bay watershed."
-        url="https://capitalcleancare.com/blog/how-to-clean-grout-without-bleach"
+        url="https://capitalcleancare.com/resources/how-to-clean-grout-without-bleach"
         datePublished="2026-05-23"
         image={HERO_IMAGE}
       />
       <HowToSchema
         name="How to Clean Grout Without Bleach — Baking Soda & Vinegar Method"
         description="Four-step method to clean white and light grout using a baking soda paste and white vinegar spray — no bleach, no fumes, safe for septic systems."
-        url="https://capitalcleancare.com/blog/how-to-clean-grout-without-bleach"
+        url="https://capitalcleancare.com/resources/how-to-clean-grout-without-bleach"
         steps={howToSteps}
         totalTime="PT30M"
         image={HERO_IMAGE}
@@ -127,8 +128,8 @@ const HowToCleanGroutWithoutBleach = () => {
       <BreadcrumbSchema
         items={[
           { label: "Home", href: "/" },
-          { label: "Blog", href: "/blog" },
-          { label: "How to Clean Grout Without Bleach", href: "/blog/how-to-clean-grout-without-bleach" },
+          { label: "Resources", href: "/resources" },
+          { label: "How to Clean Grout Without Bleach", href: "/resources/how-to-clean-grout-without-bleach" },
         ]}
       />
 
@@ -138,7 +139,7 @@ const HowToCleanGroutWithoutBleach = () => {
           <Breadcrumbs
             items={[
               { label: "Home", href: "/" },
-              { label: "Blog", href: "/blog" },
+              { label: "Resources", href: "/resources" },
               { label: "How to Clean Grout Without Bleach" },
             ]}
           />
@@ -157,7 +158,7 @@ const HowToCleanGroutWithoutBleach = () => {
           Eco-Friendly Methods That Actually Work
         </p>
         <p className="text-gray-300 mb-8 text-sm uppercase tracking-widest">
-          By Capital Clean Care · Montgomery County, MD · May 2026
+          By Rodrigo Reis, Owner · Montgomery County, MD · May 2026
         </p>
         <Button
           size="lg"
@@ -179,7 +180,7 @@ const HowToCleanGroutWithoutBleach = () => {
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
               The better news: you don't need it. Grout stains are primarily organic matter — soap scum, body oils, mildew, and mineral deposits — all of which respond to acid, mild abrasion, and oxidation. Three methods below cover every grout condition from routine maintenance to years of neglect, all without chlorine. For more{" "}
-              <Link to="/blog/eco-friendly-cleaning-tips-for-maryland-homes" className="text-accent underline hover:no-underline">
+              <Link to="/resources/eco-cleaning-tips-maryland-homes" className="text-accent underline hover:no-underline">
                 eco-friendly cleaning tips for Maryland homes
               </Link>
               , see our full guide.
@@ -555,6 +556,7 @@ const HowToCleanGroutWithoutBleach = () => {
         </div>
       </article>
 
+      <RelatedPosts currentSlug="how-to-clean-grout-without-bleach" />
       <StickyCTA />
     </Layout>
   );

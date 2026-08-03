@@ -4,6 +4,7 @@ import { trackPhoneClick, trackBookNowClick } from "@/lib/analytics";
 import PricingTable from "@/components/PricingTable";
 import PriceCalculator from "@/components/PriceCalculator";
 import { LocalBusinessSchema, FAQSchema, WebSiteSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
+import { pickReviews } from "@/data/realReviews";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Layout from "@/components/layout/Layout";
@@ -11,7 +12,7 @@ import QuoteForm from "@/components/QuoteForm";
 import FAQ from "@/components/FAQ";
 import { useSEO } from "@/hooks/useSEO";
 import { mdCities, dcCities, vaCities } from "@/data/locations";
-import { vanityLandingPages } from "@/data/vanity-landings";
+import { dirVanity as vanityLandingPages } from "@/data/home-directory";
 import regionMD from "@/assets/region-maryland.webp";
 import regionDC from "@/assets/region-dc.webp";
 import regionVA from "@/assets/region-virginia.webp";
@@ -20,25 +21,19 @@ import HeroSection from "@/components/home/HeroSection";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
 import ServicesSection from "@/components/home/ServicesSection";
 import TestimonialsCarousel from "@/components/home/TestimonialsCarousel";
-import VideoShowcase from "@/components/VideoShowcase";
-import EcoCallout from "@/components/home/EcoCallout";
 import ScrollReveal from "@/components/ScrollReveal";
 import GreenShield5Step from "@/components/GreenShield5Step";
+import TransformationsGallery from "@/components/TransformationsGallery";
+import TestimonialVideo from "@/components/TestimonialVideo";
+import Counter from "@/components/Counter";
 
 const homeFaqs = [
   { q: "What areas do you serve?", a: "We serve communities throughout Maryland (Montgomery, Frederick, Howard, and Prince George's Counties), Washington DC, and Northern Virginia (Arlington, Fairfax, McLean, Alexandria, and more)." },
   { q: "Are your cleaning products safe for children and pets?", a: "Absolutely. We exclusively use plant-based, non-toxic cleaning products that are safe for your entire family, including children and pets, while delivering professional-grade results." },
-  { q: "How do I get a quote?", a: "Fill out our free quote form on this page or any page on our website, or call us at (240) 704-2551. We typically respond with a personalized estimate within a few hours." },
-  { q: "Do I need to be home during cleaning?", a: "No. Many clients provide key, code, or smart lock access so we can clean while they're at work or running errands. All team members are background-checked and insured." },
-  { q: "What's your cancellation policy?", a: "We ask for 24-48 hours notice for cancellations or rescheduling. There are no penalties for occasional schedule changes." },
   { q: "Are your cleaners insured and background-checked?", a: "Yes. Capital Clean Care is fully licensed and insured. Every team member undergoes thorough background checks before joining our team." },
   { q: "How much does a standard cleaning cost?", a: "A standard cleaning for a 1-2 bedroom home starts at $150–$180, while larger homes range from $200–$400+. Recurring clients save up to 25% with weekly plans. Request a free quote for your exact price." },
-  { q: "What's included in a deep cleaning?", a: "Deep cleaning covers everything in a standard clean plus detailed work inside cabinets, appliance interiors, baseboard scrubbing, light fixtures, window sills, and more. It's ideal for first-time clients or seasonal refreshes." },
   { q: "Do you offer a satisfaction guarantee?", a: "Yes! We offer a 100% satisfaction guarantee. If you're not completely happy with any aspect of our cleaning, contact us within 24 hours and we'll return to re-clean the area at no extra charge." },
-  { q: "What makes your eco-friendly products different?", a: "Our products are EPA Safer Choice certified, plant-based, and free from chlorine, ammonia, and artificial fragrances. They deliver the same cleaning power as conventional products without the harmful chemicals or residues." },
   { q: "How do recurring cleaning discounts work?", a: "Weekly clients save up to 25%, bi-weekly clients save 15%, and monthly clients save 5% compared to one-time pricing. The more frequently we clean, the less time each visit takes — savings we pass on to you." },
-  { q: "Can I change or skip a scheduled cleaning?", a: "Of course. Life happens! Simply let us know 24–48 hours in advance and we'll reschedule at no charge. You can also pause recurring service anytime without penalty." },
-  { q: "Do you bring your own supplies and equipment?", a: "Yes, we bring all cleaning supplies, equipment, and products. If you have preferred products or specific sensitivities, let us know and we'll gladly accommodate." },
   { q: "Is there a new client discount?", a: "Yes! New clients get 15% off their first cleaning service. This applies to all service types and is automatically applied when you mention it during booking." },
 ];
 
@@ -59,7 +54,7 @@ const Index = () => {
   return (
     <Layout>
       {seoHelmet}
-      <LocalBusinessSchema />
+      <LocalBusinessSchema reviews={pickReviews("home", 2)} />
       <WebSiteSchema />
       <BreadcrumbSchema items={[{ label: "Home", href: "/" }]} />
       <FAQSchema faqs={homeFaqs} />
@@ -78,11 +73,11 @@ const Index = () => {
                 { icon: Leaf, label: "EPA Safer Choice", sub: "100% non-toxic products" },
                 { icon: Star, label: "5-Star Rated", sub: "500+ happy clients" },
                 { icon: CheckCircle, label: "Satisfaction Guarantee", sub: "Re-clean free in 24h" },
-                { icon: Clock, label: "9+ Years in DMV", sub: "Family-owned & trusted" },
+                { icon: Clock, label: "10+ Years in DMV", sub: "Family-owned & trusted" },
               ].map((item) => (
-                <div key={item.label} className="flex items-center gap-2.5">
-                  <div className="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center shrink-0">
-                    <item.icon className="h-4 w-4 text-accent" />
+                <div key={item.label} className="group flex items-center gap-2.5 cursor-default">
+                  <div className="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center shrink-0 transition-all duration-300 group-hover:bg-accent/20 group-hover:scale-110">
+                    <item.icon className="h-4 w-4 text-accent transition-transform duration-300 group-hover:scale-110" />
                   </div>
                   <div>
                     <p className="font-semibold text-sm text-foreground leading-tight">{item.label}</p>
@@ -94,14 +89,21 @@ const Index = () => {
             <div className="border-t border-border pt-5">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto text-center">
                 {[
-                  { value: "500+", label: "Homes Cleaned", icon: "🏠" },
-                  { value: "9+",   label: "Years Serving DMV", icon: "📅" },
-                  { value: "5.0★", label: "Google Rating", icon: "⭐" },
-                  { value: "100%", label: "Satisfaction Promise", icon: "🛡️" },
+                  { to: 500, decimals: 0, suffix: "+", label: "Homes Cleaned", icon: "🏠" },
+                  { to: 10,  decimals: 0, suffix: "+", label: "Years Serving DMV", icon: "📅" },
+                  { to: 5,   decimals: 1, suffix: "★", label: "Google Rating", icon: "⭐" },
+                  { to: 100, decimals: 0, suffix: "%", label: "Satisfaction Promise", icon: "🛡️" },
                 ].map((s) => (
-                  <div key={s.label} className="flex flex-col items-center gap-1">
-                    <span className="text-2xl">{s.icon}</span>
-                    <p className="font-heading font-bold text-3xl md:text-4xl text-accent">{s.value}</p>
+                  <div
+                    key={s.label}
+                    className="group flex flex-col items-center gap-1 rounded-xl px-2 py-3 cursor-default transition-all duration-300 hover:-translate-y-1 hover:bg-accent/5"
+                  >
+                    <span className="text-2xl transition-transform duration-300 group-hover:scale-125 group-hover:-rotate-6">
+                      {s.icon}
+                    </span>
+                    <p className="font-heading font-bold text-3xl md:text-4xl text-accent tracking-tight transition-colors duration-300 group-hover:text-primary">
+                      <Counter to={s.to} decimals={s.decimals} suffix={s.suffix} />
+                    </p>
                     <p className="text-sm text-muted-foreground font-medium leading-tight">{s.label}</p>
                   </div>
                 ))}
@@ -111,22 +113,41 @@ const Index = () => {
         </section>
       </ScrollReveal>
 
+      {/* ══════════════ 3. TRANSFORMAÇÕES REAIS (vídeo) ══════════════ */}
+      <ScrollReveal>
+        <TransformationsGallery />
+      </ScrollReveal>
+
+      {/* ══════════════ 3.5. DEPOIMENTO DO CLIENTE (autoplay-on-scroll) ══════════════ */}
+      <ScrollReveal>
+        <TestimonialVideo
+          src="/videos/client-testimonial.mp4"
+          poster="/videos/client-testimonial-poster.jpg"
+          label="Capital Clean Care client testimonial — a Montgomery County homeowner shares their experience"
+        />
+      </ScrollReveal>
+
+      {/* ══════════════ 4. YOUR HOME. NON-TOXIC. ══════════════ */}
+      <ScrollReveal>
+        <WhyChooseUs />
+      </ScrollReveal>
+
       {/* ══════════════ 2.5. CAPITAL AREA AUTHORITY ══════════════ */}
       <ScrollReveal>
-        <section className="py-16 md:py-20 bg-gradient-to-br from-primary/5 via-background to-accent/5">
+        <section className="py-16 md:py-20 bg-stripe-mesh">
           <div className="container mx-auto px-4 max-w-5xl">
             <div className="text-center mb-10">
               <span className="inline-block bg-primary/10 text-primary font-semibold text-sm uppercase tracking-wider px-3 py-1 rounded-full mb-3">
                 The Capital Area's Cleaning Service
               </span>
-              <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">
+              <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4 tracking-tight">
                 Why Capital Clean Care Is the DMV's Trusted Cleaning Company
               </h2>
               <p className="text-muted-foreground text-lg leading-relaxed max-w-3xl mx-auto">
                 When families in the capital region search for cleaning they can rely on, they're looking
                 for more than a one-time scrub. They want a company that shows up on time, brings safe products,
                 and treats their home like it matters. That's the standard Capital Clean Care has held for
-                9+ years across Maryland, DC, and Northern Virginia.
+                10+ years across Maryland, DC, and Northern Virginia.
               </p>
             </div>
 
@@ -153,10 +174,12 @@ const Index = () => {
               ].map((card) => (
                 <div
                   key={card.title}
-                  className="bg-card border border-border rounded-2xl p-6 hover:shadow-md transition-shadow"
+                  className="group bg-card border border-border rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-accent/40"
                 >
-                  <span className="text-3xl block mb-3">{card.emoji}</span>
-                  <h3 className="font-heading font-bold text-foreground mb-2">{card.title}</h3>
+                  <span className="text-3xl block mb-3 transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-3">
+                    {card.emoji}
+                  </span>
+                  <h3 className="font-heading font-bold text-foreground mb-2 transition-colors group-hover:text-primary">{card.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{card.body}</p>
                 </div>
               ))}
@@ -179,96 +202,9 @@ const Index = () => {
         </section>
       </ScrollReveal>
 
-      {/* ══════════════ 3. YOUR HOME. NON-TOXIC. ══════════════ */}
-      <ScrollReveal>
-        <WhyChooseUs />
-      </ScrollReveal>
-
-      {/* ══════════════ 4. PROBLEMA / AGITAÇÃO ══════════════ */}
-      <ScrollReveal>
-        <section className="relative py-20 md:py-28 bg-mesh overflow-hidden">
-          <div className="container mx-auto px-4 max-w-4xl relative z-10">
-            <div className="text-center mb-12">
-              <span className="inline-block bg-accent/10 text-accent font-semibold text-sm uppercase tracking-wider px-3 py-1 rounded-full mb-3">Sound Familiar?</span>
-              <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mt-2 mb-4">
-                You shouldn't have to spend your weekend cleaning.
-              </h2>
-              <p className="text-muted-foreground max-w-xl mx-auto text-lg">You work hard all week. The last thing you need is to spend your free time scrubbing bathrooms.</p>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
-              {[
-                { emoji: "😩", text: "You come home exhausted and the house is still a mess" },
-                { emoji: "🧪", text: "Worried about harsh chemicals around your kids or pets" },
-                { emoji: "😤", text: "Previous cleaners didn't meet your expectations" },
-                { emoji: "⏰", text: "Never enough time to keep up with deep cleaning" },
-              ].map((item) => (
-                <div key={item.text} className="flex items-start gap-4 glass-card rounded-2xl p-6">
-                  <span className="text-3xl shrink-0 md:animate-float">{item.emoji}</span>
-                  <p className="text-base text-foreground font-medium leading-relaxed">{item.text}</p>
-                </div>
-              ))}
-            </div>
-
-            {/* Resolution */}
-            <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-primary to-accent/80 p-8 md:p-10 text-white text-center shadow-xl">
-              <div className="absolute inset-0 bg-mesh opacity-10" />
-              <div className="relative z-10">
-                <p className="text-sm font-semibold uppercase tracking-widest text-white/70 mb-3">The solution</p>
-                <h3 className="font-heading text-2xl md:text-3xl font-bold mb-3 leading-snug">
-                  We handle every detail — so you can enjoy your home, not clean it.
-                </h3>
-                <p className="text-white/80 mb-8 max-w-xl mx-auto leading-relaxed">
-                  Eco-friendly products. Background-checked team. 24-hour satisfaction guarantee. Capital Clean Care shows up so you don't have to think about it.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                  <Button size="lg" className="bg-white text-primary hover:bg-white/90 font-bold px-8 h-12 rounded-full shadow-lg" asChild>
-                    <a href="#quote">Get a Free Quote <ArrowRight className="ml-2 h-4 w-4" /></a>
-                  </Button>
-                  <Button size="lg" variant="outline" className="bg-transparent border-white/40 text-white hover:bg-white/10 hover:text-white px-8 h-12 rounded-full" asChild>
-                    <Link to="/services/house-cleaning">See Our Services</Link>
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </ScrollReveal>
-
-      {/* ══════════════ 5. VÍDEO TESTIMONIAL ══════════════ */}
-      <ScrollReveal>
-        <section className="py-20 md:py-28">
-          <div className="container mx-auto px-4 max-w-3xl text-center">
-            <span className="inline-block bg-accent/10 text-accent font-semibold text-sm uppercase tracking-wider px-3 py-1 rounded-full mb-3">Real Client</span>
-            <h2 className="font-heading text-2xl md:text-3xl font-bold mt-2 mb-8">Hear It Directly From Our Client</h2>
-            <div
-              className="rounded-2xl overflow-hidden shadow-xl border border-border aspect-video bg-secondary bg-cover bg-center"
-              style={{ backgroundImage: "url('https://img.youtube.com/vi/xI602FI_iOU/hqdefault.jpg')" }}
-            >
-              <iframe
-                src="https://www.youtube.com/embed/xI602FI_iOU"
-                title="Capital Clean Care client video testimonial"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="w-full h-full"
-                loading="lazy"
-              />
-            </div>
-          </div>
-        </section>
-      </ScrollReveal>
-
-      {/* ══════════════ Carrossel de vídeos — antes da cotação ══════════════ */}
-      <ScrollReveal>
-        <VideoShowcase />
-      </ScrollReveal>
-
       {/* ══════════════ 6. DEPOIMENTOS (Google Reviews) ══════════════ */}
       <ScrollReveal>
         <TestimonialsCarousel />
-      </ScrollReveal>
-
-      <ScrollReveal>
-        <EcoCallout />
       </ScrollReveal>
 
       {/* ══════════════ CTA INTERRUPT (mid-page) ══════════════ */}
@@ -294,7 +230,7 @@ const Index = () => {
       <ScrollReveal>
         <ServicesSection />
       </ScrollReveal>
-      <div className="text-center pb-10 -mt-4 bg-secondary">
+      <div className="text-center pt-1 pb-12 bg-secondary">
         <Link to="/services" className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:gap-3 transition-all">
           View All Services <ArrowRight className="h-4 w-4" />
         </Link>
@@ -366,7 +302,7 @@ const Index = () => {
                   <span className="text-gradient">Family-Owned</span> Cleaning Excellence
                 </h2>
                 <p className="text-muted-foreground mb-8 leading-relaxed text-base md:text-lg">
-                  At Capital Clean Care, we're more than a cleaning company — we're a team of dedicated professionals who genuinely care about your home. Over 150 homes cleaned with the care we'd give our own.
+                  At Capital Clean Care, we're more than a cleaning company — we're a team of dedicated professionals who genuinely care about your home. Over 500 homes cleaned with the care we'd give our own.
                 </p>
                 <div className="space-y-3 mb-8">
                   {["Licensed, bonded & fully insured", "EPA Safer Choice certified products", "Consistent dedicated cleaning teams", "24-hour satisfaction guarantee"].map((item) => (
@@ -387,24 +323,14 @@ const Index = () => {
         </section>
       </ScrollReveal>
 
-      <ScrollReveal>
-        <div className="bg-accent/5 border-y border-accent/20 py-5">
-          <div className="container mx-auto px-4 text-center">
-            <p className="text-sm md:text-base font-medium text-foreground">
-              🛡️ Every Capital Clean Care visit follows the <strong>GreenShield 5-Step Clean™</strong> — our proprietary method developed over 9 years and 500+ homes.{" "}
-              <a href="/about" className="text-accent font-semibold hover:underline">Learn the story behind it →</a>
-            </p>
-          </div>
-        </div>
-      </ScrollReveal>
 
       <ScrollReveal>
-        <GreenShield5Step />
+        <GreenShield5Step compact showCTA={false} />
       </ScrollReveal>
 
       {/* ══════════════ 10. PREÇOS ══════════════ */}
       <ScrollReveal>
-        <section className="py-20 md:py-28">
+        <section id="pricing" className="scroll-mt-24 py-20 md:py-28">
           <div className="container mx-auto px-4 max-w-3xl">
             <div className="text-center mb-10">
               <span className="text-accent font-semibold text-sm uppercase tracking-wider">Pricing</span>
@@ -431,9 +357,9 @@ const Index = () => {
 
       {/* ══════════════ 11. FORMULÁRIO DE ORÇAMENTO ══════════════ */}
       <ScrollReveal>
-        <section className="py-20 md:py-28 bg-mesh" id="quote">
+        <section className="pt-8 pb-20 md:py-28 bg-mesh scroll-mt-20" id="quote">
           <div className="container mx-auto px-4 max-w-6xl">
-            <div className="text-center mb-10">
+            <div className="text-center mb-6 md:mb-10">
               <div className="inline-flex items-center gap-2 bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-700 text-amber-800 dark:text-amber-300 rounded-full px-4 py-1.5 text-xs font-bold mb-4 uppercase tracking-wide">
                 <span className="relative flex h-2 w-2 shrink-0">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
@@ -448,7 +374,7 @@ const Index = () => {
               <p className="text-muted-foreground">No commitment required. We respond within a few hours with a personalized estimate.</p>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-16 items-start">
-              <div className="lg:col-span-2 space-y-6">
+              <div className="order-2 lg:order-1 lg:col-span-2 space-y-6">
                 <div className="space-y-4">
                   {[
                     { icon: Shield, title: "Licensed & Insured", desc: "Fully bonded and covered — your home is protected." },
@@ -476,10 +402,10 @@ const Index = () => {
                   <p className="text-xs text-muted-foreground">Mon–Sat 8am–6pm. We also respond to texts!</p>
                 </div>
               </div>
-              <div className="lg:col-span-3">
+              <div className="order-1 lg:order-2 lg:col-span-3">
                 <Card className="shadow-xl">
                   <CardContent className="p-6 md:p-10">
-                    <QuoteForm />
+                    <QuoteForm compact />
                   </CardContent>
                 </Card>
               </div>
@@ -497,30 +423,6 @@ const Index = () => {
               <h2 className="font-heading text-3xl md:text-4xl font-bold mt-2">Frequently Asked Questions</h2>
             </div>
             <FAQ faqs={homeFaqs} />
-          </div>
-        </section>
-      </ScrollReveal>
-
-      {/* ══════════════ POST-FAQ CTA ══════════════ */}
-      <ScrollReveal>
-        <section className="py-12 md:py-16 bg-accent">
-          <div className="container mx-auto px-4 text-center">
-            <h3 className="font-heading text-2xl md:text-3xl font-bold text-accent-foreground mb-3">
-              Still have questions? We're here to help.
-            </h3>
-            <p className="text-accent-foreground/80 mb-6 max-w-xl mx-auto">
-              Call us at <a href="tel:+12407042551" className="font-semibold underline underline-offset-2">(240) 704-2551</a> or get a free, no-obligation quote in minutes.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Button variant="secondary" size="lg" asChild>
-                <a href="#quote">Get My Free Quote →</a>
-              </Button>
-              <Button variant="outline" size="lg" className="border-accent-foreground/40 text-accent-foreground hover:bg-accent-foreground/10" asChild>
-                <a href="tel:+12407042551">
-                  <Phone className="mr-2 h-4 w-4" /> Call Now
-                </a>
-              </Button>
-            </div>
           </div>
         </section>
       </ScrollReveal>
@@ -572,21 +474,15 @@ const Index = () => {
               <h3 className="font-heading text-3xl md:text-4xl font-bold mt-2 mb-4">Cleaning Services Near You</h3>
               <p className="text-muted-foreground text-lg max-w-2xl mx-auto">Explore our city-specific cleaning pages with tailored services and local pricing.</p>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="flex flex-wrap justify-center gap-2.5">
               {vanityLandingPages.slice(0, 9).map((vp) => (
-                <Link key={vp.slug} to={`/${vp.slug}`} className="group block">
-                  <Card className="hover:shadow-md transition-all duration-200 hover:-translate-y-0.5 h-full">
-                    <CardContent className="p-5">
-                      <div className="flex items-center gap-2 mb-2">
-                        <MapPin className="h-4 w-4 text-accent shrink-0" aria-hidden="true" />
-                        <h3 className="font-heading font-semibold text-sm text-foreground group-hover:text-accent transition-colors">{vp.h1}</h3>
-                      </div>
-                      <p className="text-xs text-muted-foreground line-clamp-2">{vp.metaDescription}</p>
-                      <span className="text-accent font-medium text-xs mt-2 inline-flex items-center gap-1">
-                        View Details <ArrowRight className="h-3 w-3" />
-                      </span>
-                    </CardContent>
-                  </Card>
+                <Link
+                  key={vp.slug}
+                  to={`/${vp.slug}`}
+                  className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-4 py-2 text-sm font-medium text-foreground shadow-sm transition-all hover:border-accent/50 hover:text-accent hover:-translate-y-0.5"
+                >
+                  <MapPin className="h-3.5 w-3.5 text-accent" aria-hidden="true" />
+                  {vp.h1}
                 </Link>
               ))}
             </div>

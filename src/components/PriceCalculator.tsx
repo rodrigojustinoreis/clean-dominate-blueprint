@@ -329,7 +329,7 @@ const PriceCalculator = () => {
               </div>
               <div className="space-y-2">
                 <Label htmlFor="calc-phone" className="flex items-center gap-1"><Phone className="h-3.5 w-3.5" /> Phone</Label>
-                <Input id="calc-phone" type="tel" value={phone} onChange={e => setPhone(e.target.value)} placeholder="(555) 123-4567" required />
+                <Input id="calc-phone" type="tel" value={phone} onChange={e => setPhone(e.target.value)} placeholder="(301) 555-0123" required />
               </div>
               <div className="space-y-2">
                 <Label htmlFor="calc-email" className="flex items-center gap-1"><Mail className="h-3.5 w-3.5" /> Email</Label>

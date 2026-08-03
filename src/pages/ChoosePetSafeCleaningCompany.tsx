@@ -17,6 +17,7 @@ import ImageGallery, { GalleryImage } from "@/components/blog/ImageGallery";
 import FAQAccordion from "@/components/blog/FAQAccordion";
 import BlogInlineCTA from "@/components/blog/BlogInlineCTA";
 import StickyCTA from "@/components/blog/StickyCTA";
+import RelatedPosts from "@/components/blog/RelatedPosts";
 
 const HERO_IMAGE = "/images/blog/choose-pet-safe-company/hero.webp";
 
@@ -85,7 +86,7 @@ const ChoosePetSafeCleaningCompany = () => {
     title: "How to Choose a Cleaning Company That Understands Pet Safety",
     description:
       "Hiring a cleaner means trusting their chemicals and equipment around your pet. The exact questions to ask — products & certifications, HEPA equipment, pet protocols, background checks — and the red flags to avoid.",
-    canonical: "https://capitalcleancare.com/blog/choose-pet-safe-cleaning-company",
+    canonical: "https://capitalcleancare.com/resources/choose-pet-safe-cleaning-company",
   });
 
   return (
@@ -101,14 +102,14 @@ const ChoosePetSafeCleaningCompany = () => {
       <ArticleSchema
         title="How to Choose a Cleaning Company That Understands Pet Safety"
         description="A practical guide to vetting a house-cleaning company for pet safety: the questions to ask about products and certifications, HEPA equipment, pet-specific protocols, and trust signals like background checks and insurance — plus the red flags that reveal greenwashing."
-        url="https://capitalcleancare.com/blog/choose-pet-safe-cleaning-company"
+        url="https://capitalcleancare.com/resources/choose-pet-safe-cleaning-company"
         datePublished="2026-06-15"
         image={HERO_IMAGE}
       />
       <HowToSchema
         name="How to Vet a Cleaning Company for Pet Safety"
         description="A four-step checklist for choosing a pet-safe cleaning company: confirm the products and certifications, verify HEPA equipment, ask about pet-specific protocols, and check background screening and insurance."
-        url="https://capitalcleancare.com/blog/choose-pet-safe-cleaning-company"
+        url="https://capitalcleancare.com/resources/choose-pet-safe-cleaning-company"
         steps={howToSteps}
         totalTime="PT15M"
         image={HERO_IMAGE}
@@ -117,8 +118,8 @@ const ChoosePetSafeCleaningCompany = () => {
       <BreadcrumbSchema
         items={[
           { label: "Home", href: "/" },
-          { label: "Blog", href: "/blog" },
-          { label: "Choosing a Pet-Safe Cleaning Company", href: "/blog/choose-pet-safe-cleaning-company" },
+          { label: "Resources", href: "/resources" },
+          { label: "Choosing a Pet-Safe Cleaning Company", href: "/resources/choose-pet-safe-cleaning-company" },
         ]}
       />
 
@@ -128,7 +129,7 @@ const ChoosePetSafeCleaningCompany = () => {
           <Breadcrumbs
             items={[
               { label: "Home", href: "/" },
-              { label: "Blog", href: "/blog" },
+              { label: "Resources", href: "/resources" },
               { label: "How to Choose a Cleaning Company That Understands Pet Safety" },
             ]}
           />
@@ -147,7 +148,7 @@ const ChoosePetSafeCleaningCompany = () => {
           You're trusting strangers with their chemicals and equipment around your pet — here's how to vet them
         </p>
         <p className="text-gray-300 mb-8 text-sm uppercase tracking-widest">
-          By Capital Clean Care · Montgomery County, MD · June 2026
+          By Rodrigo Reis, Owner · Montgomery County, MD · June 2026
         </p>
         <Button
           size="lg"
@@ -262,9 +263,9 @@ const ChoosePetSafeCleaningCompany = () => {
                   The family member closest to every surface we clean is usually the pet — so our{" "}
                   <Link to="/services/eco-friendly-cleaning" className="text-accent underline hover:no-underline">eco-friendly cleaning</Link>{" "}
                   uses only plant-based, fragrance-free products and HEPA-grade equipment by default, not as an upsell. For more, see{" "}
-                  <Link to="/blog/what-pet-safe-cleaning-really-means" className="text-accent underline hover:no-underline">what "pet-safe" really means</Link>{" "}
+                  <Link to="/resources/what-pet-safe-cleaning-really-means" className="text-accent underline hover:no-underline">what "pet-safe" really means</Link>{" "}
                   and{" "}
-                  <Link to="/blog/cleaning-product-poisoning-in-pets" className="text-accent underline hover:no-underline">cleaning-product poisoning in pets</Link>.
+                  <Link to="/resources/cleaning-product-poisoning-in-pets" className="text-accent underline hover:no-underline">cleaning-product poisoning in pets</Link>.
                 </p>
               </div>
             </div>
@@ -319,6 +320,7 @@ const ChoosePetSafeCleaningCompany = () => {
         </div>
       </article>
 
+      <RelatedPosts currentSlug="choose-pet-safe-cleaning-company" />
       <StickyCTA />
     </Layout>
   );

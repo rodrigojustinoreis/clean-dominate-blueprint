@@ -429,12 +429,12 @@ export const slCities: ServiceLocationCity[] = [
     county: "Arlington County",
     population: "238,000",
     neighborhoods: ["Clarendon", "Ballston", "Rosslyn", "Crystal City", "Pentagon City", "Lyon Village", "Nauck", "Shirlington"],
-    localDetails: "Arlington is Northern Virginia's most urban county — a dense, walkable community directly across the Potomac from DC. The Rosslyn-Ballston corridor is lined with high-rise condos and tech offices, while quieter neighborhoods like Lyon Village offer tree-lined streets and Colonial-era homes.",
+    localDetails: "Arlington is Northern Virginia's most urban county: a dense, walkable community directly across the Potomac from DC. The Rosslyn-Ballston corridor is lined with high-rise condos and tech offices, while quieter neighborhoods like Lyon Village offer tree-lined streets and Colonial-era homes.",
     housingTypes: "high-rise condominiums, contemporary townhomes, Colonial-style single-family homes, garden apartments, and mixed-use residential buildings",
     challenges: "construction dust from constant development along the Orange/Silver Line corridor, managing pet dander in pet-friendly buildings, and maintaining cleanliness in compact urban units",
     lifestyle: "Arlington residents are predominantly young professionals, government contractors, and tech workers with high incomes and little time. Recurring cleaning services that can be booked online are heavily preferred",
     seasonalNote: "Proximity to the Potomac and Rock Creek Park means elevated spring pollen counts and fall allergens that accumulate quickly in high-traffic condos",
-    localIntro: "Arlington is one of the DMV's densest urban communities, with a high concentration of apartment buildings, condos, and older townhomes clustered around Metro corridors in Clarendon, Rosslyn, Ballston, and Pentagon City. The high turnover rate — driven by young professionals, military families, and government contractors — makes [SERVICE_NAME] one of our most requested services in Arlington. Many buildings here have elevators, parking restrictions, and HOA rules that our crews are experienced navigating. We serve all Arlington ZIP codes from 22201 to 22206 and can often accommodate same-week or next-day booking."
+    localIntro: "Arlington is one of the DMV's densest urban communities, with a high concentration of apartment buildings, condos, and older townhomes clustered around Metro corridors in Clarendon, Rosslyn, Ballston, and Pentagon City. The high turnover rate, driven by young professionals, military families, and government contractors, makes [SERVICE_NAME] one of our most requested services in Arlington. Many buildings here have elevators, parking restrictions, and HOA rules that our crews are experienced navigating. We serve all Arlington ZIP codes from 22201 to 22206 and can often accommodate same-week or next-day booking."
   },
   {
     name: "Fairfax",
@@ -795,8 +795,8 @@ export const slServices: ServiceLocationService[] = [
     checklist: [
       // KITCHEN (15)
       "Deep clean and degrease stovetop, burners, and drip pans",
-      "Clean inside oven — racks, walls, and door glass",
-      "Clean inside microwave — turntable, walls, and door seal",
+      "Clean inside oven: racks, walls, and door glass",
+      "Clean inside microwave: turntable, walls, and door seal",
       "Degrease and clean range hood and exhaust filter",
       "Wipe down refrigerator interior shelves and drawers",
       "Clean refrigerator exterior, top, and coils area",
@@ -1981,7 +1981,7 @@ export const slServices: ServiceLocationService[] = [
       // WHY WE WIN (15)
       "Documented 50-point checklist completed every visit",
       "EPA Safer Choice plant-based products — superior to standard chemicals",
-      "GreenShield 5-Step methodology refined over 9 years",
+      "GreenShield 5-Step methodology refined over a decade",
       "HEPA-filtered equipment captures particles competitors miss",
       "Color-coded microfiber prevents cross-contamination",
       "Same dedicated team for recurring clients — they know your home",
@@ -2075,7 +2075,7 @@ export const slServices: ServiceLocationService[] = [
       "Same dedicated team for consistency review-after-review",
       "Pictures included in our quotes so you see actual results",
       "Reference customers available who match your home type",
-      "Local reputation built over 9+ years of consistent quality",
+      "Local reputation built over a decade of consistent quality",
       "Verified background-checked teams — listed in reviews",
       "Tracked completion of every checklist item per visit"
     ],
@@ -2195,10 +2195,10 @@ export function getServiceLocationIntro(city: ServiceLocationCity, service: Serv
       `${city.seasonalNote}. Our ${service.shortName} professionals are well-versed in addressing these local challenges, ensuring your ${city.name} home stays fresh and healthy year-round. We use plant-based solutions that tackle ${city.challenges} without introducing harsh chemicals into your living environment.`
     ],
     "deep-cleaning": [
-      `${city.name} neighborhoods like ${topNeighborhoods} each bring their own home-care challenges — ${city.challenges}. Capital Clean Care's ${service.shortName} is built to handle all of them in a single intensive visit.`,
-      `${city.localDetails} Over time, even well-maintained homes accumulate hidden grime in overlooked areas. Our ${service.shortName} goes beyond surface-level tidying to eliminate built-up dust, allergens, and residue from every corner — inside appliances, behind furniture, along baseboards, and deep into grout lines.`,
+      `${city.name} neighborhoods like ${topNeighborhoods} each bring their own home-care challenges: ${city.challenges}. Capital Clean Care's ${service.shortName} is built to handle all of them in a single intensive visit.`,
+      `${city.localDetails} Over time, even well-maintained homes accumulate hidden grime in overlooked areas. Our ${service.shortName} goes beyond surface-level tidying to eliminate built-up dust, allergens, and residue from every corner: inside appliances, behind furniture, along baseboards, and deep into grout lines.`,
       `${city.seasonalNote}. A professional ${service.shortName} from Capital Clean Care helps ${city.name} residents reset their homes and measurably improve indoor air quality. We use HEPA-filtered equipment and plant-based products combined with professional-grade technique to deliver results that routine cleaning cannot match.`,
-      `${city.lifestyle}. A thorough ${service.shortName} restores your ${city.name} home to like-new condition, creating a healthier and more comfortable environment for your entire household — without the effort of doing it yourself.`
+      `${city.lifestyle}. A thorough ${service.shortName} restores your ${city.name} home to like-new condition, creating a healthier and more comfortable environment for your entire household, without the effort of doing it yourself.`
     ],
     "move-out-cleaning": [
       `Moving out of a property in ${topNeighborhoods} or elsewhere in ${city.name}? Capital Clean Care's ${service.shortName} ensures you leave every room in inspection-ready condition — maximizing your security deposit return and eliminating last-minute stress.`,
@@ -2291,13 +2291,13 @@ export function getServiceLocationIntro(city: ServiceLocationCity, service: Serv
       `${city.seasonalNote}. Professional process means the seasonal challenges of ${city.name} homes are addressed systematically rather than caught as afterthoughts. Documented training records mean every cleaner knows the right product for hardwood vs. tile vs. stone, the right technique for grout vs. glass, and the right sequence for top-down deep cleaning that doesn't recontaminate already-clean surfaces.`
     ],
     "best-cleaning-company": [
-      `Why is Capital Clean Care the ${service.shortName} ${city.name} homeowners choose when comparing options? Because we don't ask you to take our word for it — we put our 50-point GreenShield methodology, our 9 years of refinement, and our hundreds of 5-star reviews up against every competitor in ${topNeighborhoods} and across ${city.county}.`,
+      `Why is Capital Clean Care the ${service.shortName} ${city.name} homeowners choose when comparing options? Because we don't ask you to take our word for it — we put our 50-point GreenShield methodology, our decade of refinement, and our perfect 5.0 Google rating up against every competitor in ${topNeighborhoods} and across ${city.county}.`,
       `${city.localDetails} Side-by-side, the differences in ${service.shortName} quality are concrete. Other ${city.name} services use harsh chemicals; we use EPA Safer Choice plant-based products. Others rotate cleaners; we assign dedicated teams. Others have no documented checklist; we have a 50-point list verified every visit. Others promise satisfaction; we guarantee a free re-clean within 24 hours.`,
       `${city.lifestyle}. ${city.name} homeowners comparing ${service.shortName} options usually have three priorities: trust, consistency, and value. Trust comes from licensing, bonding, insurance, and background checks — all documented and verifiable. Consistency comes from dedicated teams and our documented methodology. Value comes from pricing that doesn't surprise you and quality that doesn't decline over time.`,
       `${city.seasonalNote}. The ${city.name} homes that switch to us from other services tell us the same thing every time: the difference shows up most clearly across seasons. While other services do the same thing every visit regardless of conditions, our ${service.shortName} adjusts protocol seasonally — and that's the difference between cleaning and actually keeping a home clean.`
     ],
     "top-rated-cleaners": [
-      `${city.name} clients searching for ${service.shortName} usually start with one question: "Who has the best Google reviews?" Capital Clean Care's reputation across ${topNeighborhoods} and ${city.county} is built on hundreds of 5-star reviews — and we read every single one to keep improving.`,
+      `${city.name} clients searching for ${service.shortName} usually start with one question: "Who has the best Google reviews?" Capital Clean Care's reputation across ${topNeighborhoods} and ${city.county} is built on a perfect 5.0 Google rating — and we read every single review to keep improving.`,
       `${city.localDetails} 5-star ${service.shortName} reviews in ${city.name} aren't accidents — they come from the small details most cleaning services skip. Behind the toilet base. Under the bathroom faucet. Inside the microwave turntable groove. Top edge of door frames. The window track corners. We train our crews to focus on these "review-earning" details because that's exactly what shows up in Google reviews when clients describe what surprised them.`,
       `${city.lifestyle}. Review-driven ${city.name} clients tell us what they appreciate most: consistency across visits, the same team showing up each time, communication when something needs attention, and the satisfaction guarantee that means we return free if anything is missed. These are the structural reasons our reviews stay 5-star.`,
       `${city.seasonalNote}. Read our reviews and you'll see what ${city.name} clients actually say about how we handle seasonal challenges — pollen on baseboards, salt on entryways, humidity in basements. That specific local knowledge is why we earn reviews from clients who have tried other services and finally found one worth keeping.`
@@ -2318,11 +2318,11 @@ export function getServiceLocationIntro(city: ServiceLocationCity, service: Serv
 export function getWhyChooseUs(city: ServiceLocationCity, service: ServiceLocationService): string[] {
   return [
     `Fully licensed, bonded, and insured ${service.shortName} professionals serving ${city.name}, ${city.state}`,
-    `100% eco-friendly, plant-based products — safe for ${city.name} families, children, and pets`,
+    `100% eco-friendly, plant-based products, safe for ${city.name} families, children, and pets`,
     `Background-checked teams experienced with ${city.housingTypes} throughout ${city.county}`,
     `Scheduling built around ${city.lifestyle.toLowerCase().split(".")[0]}`,
     `${service.shortName.charAt(0).toUpperCase() + service.shortName.slice(1)} checklist covering every area of your ${city.name} home`,
-    `Satisfaction guaranteed — we re-clean free if you are not 100% happy`,
+    `Satisfaction guaranteed: we re-clean free if you are not 100% happy`,
     `Transparent, no-surprise pricing for ${city.name} homeowners`,
     `Local knowledge of ${city.neighborhoods.slice(0, 3).join(", ")} and surrounding ${city.name} neighborhoods`
   ];
@@ -2423,12 +2423,12 @@ export function getServiceLocationFAQs(city: ServiceLocationCity, service: Servi
       { q: `How is ${service.shortName} pricing structured in ${city.name}?`, a: `Premium ${service.shortName} pricing in ${city.name} reflects the documented process, certified products, trained teams, and quality assurance. It's typically 10-20% above standard cleaning, and clients tell us the documented accountability is worth the premium.` }
     ],
     "best-cleaning-company": [
-      { q: `What makes Capital Clean Care the best ${service.shortName} in ${city.name}?`, a: `Documented differences: 50-point GreenShield checklist, EPA Safer Choice plant-based products, HEPA-filtered equipment, dedicated teams for recurring clients, satisfaction guarantee with 24-hour re-clean, hundreds of 5-star ${city.name} reviews, and 9 years of refinement. We don't ask you to take our word — we put the comparison in writing.` },
+      { q: `What makes Capital Clean Care the best ${service.shortName} in ${city.name}?`, a: `Documented differences: 50-point GreenShield checklist, EPA Safer Choice plant-based products, HEPA-filtered equipment, dedicated teams for recurring clients, satisfaction guarantee with 24-hour re-clean, a perfect 5.0 Google rating, and a decade of refinement. We don't ask you to take our word — we put the comparison in writing.` },
       { q: `How does Capital Clean Care compare to ${city.name} competitors?`, a: `Side-by-side, we win on cleaning sequence (top-down, no recontamination), products (plant-based vs. harsh chemicals), accountability (documented checklist vs. random), team consistency (dedicated vs. rotating), background checks (every employee vs. varies), and guarantees (24-hour re-clean vs. "we'll try"). The structural differences are concrete.` },
       { q: `Why do ${city.name} clients switch to Capital Clean Care?`, a: `The most common reasons: bad experiences with rotating staff, harsh chemicals affecting kids and pets, inconsistent results between visits, and no accountability when things were missed. Our model addresses all four directly with documented systems.` },
       { q: `Are your ${city.name} reviews actually verified?`, a: `Yes. Our Google reviews, Yelp reviews, and HomeAdvisor reviews are all from verified ${city.name} clients. Each review is tied to a real cleaning visit. Read them — they describe specific details that can only come from actual service experiences.` },
       { q: `Do you offer a guarantee for ${service.shortName} in ${city.name}?`, a: `Yes — a 100% satisfaction guarantee. If anything is missed or below standard, contact us within 24 hours and we return free to re-clean. No questions, no pressure, no exceptions. ${city.name} clients have used this guarantee and we honor it.` },
-      { q: `How long has Capital Clean Care served ${city.name}?`, a: `Capital Clean Care has provided ${service.shortName} in the DMV since 2015, with active ${city.name} crews serving the area for many years. Our 9-year track record is the foundation of our reputation.` },
+      { q: `How long has Capital Clean Care served ${city.name}?`, a: `Capital Clean Care has provided ${service.shortName} in the DMV since 2015, with active ${city.name} crews serving the area for many years. Our decade-long track record is the foundation of our reputation.` },
       { q: `Are your ${city.name} prices the lowest?`, a: `No — and we tell you that upfront. We're competitively priced for the quality we deliver, but we're not the cheapest option. The cheapest options usually compromise on training, products, insurance, or consistency. ${city.name} clients consistently tell us the value is worth it.` },
       { q: `How do I see proof of your ${city.name} quality before booking?`, a: `Three options: read our Google reviews (filter for ${city.name}), request before-and-after photos from recent visits, or schedule a brief in-home consultation where we walk you through our process. Most ${city.name} clients use one or all three.` }
     ],

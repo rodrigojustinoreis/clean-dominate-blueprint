@@ -49,7 +49,7 @@ const TermsOfService = () => {
             <h2 className="font-heading">10. Contact</h2>
             <p>For questions about these terms:</p>
             <ul>
-              <li>Email: capitalcleancare@gmail.com</li>
+              <li>Email: info@capitalcleancare.com</li>
               <li>Phone: (240) 704-2551</li>
               <li>Address: 4111 Postgate Terrace, Silver Spring, MD 20906</li>
             </ul>

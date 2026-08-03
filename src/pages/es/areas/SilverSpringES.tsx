@@ -54,7 +54,7 @@ export default function SilverSpringES() {
               Tu vecindario, nuestro hogar. Capital Clean Care nació en Silver Spring en 2015 y conocemos bien cada barrio — desde Wheaton Hills hasta White Oak. Equipo bilingüe, asegurado, mismo personal cada visita.
             </p>
             <div className="flex flex-wrap gap-2 mb-8">
-              {["⭐ 5.0 (47+ reseñas)", "🛡️ Asegurados", "🗣️ Español", "📍 Silver Spring"].map((p) => (
+              {["⭐ 5.0 (45 reseñas)", "🛡️ Asegurados", "🗣️ Español", "📍 Silver Spring"].map((p) => (
                 <span key={p} className="bg-background border border-border rounded-full px-3 py-1.5 text-sm font-medium shadow-sm">{p}</span>
               ))}
             </div>
@@ -63,7 +63,7 @@ export default function SilverSpringES() {
                 <a href={PHONE_TEL} onClick={() => trackPhoneClick("silver_spring_es_hero")}><Phone className="h-4 w-4 mr-2" /> Llamar: {PHONE}</a>
               </Button>
               <Button variant="outline" size="lg" asChild>
-                <a href="/contact" onClick={() => trackBookNowClick("silver_spring_es_hero")}>Cotización Gratis <ArrowRight className="ml-1 h-4 w-4" /></a>
+                <a href="/es/contacto" onClick={() => trackBookNowClick("silver_spring_es_hero")}>Cotización Gratis <ArrowRight className="ml-1 h-4 w-4" /></a>
               </Button>
             </div>
           </div>
@@ -95,14 +95,14 @@ export default function SilverSpringES() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
-                { name: "María G.", text: "El equipo de Rodrigo limpia mi casa hace 2 años. Siempre puntuales y mi casa queda como nueva." },
-                { name: "Carlos B.", text: "Bilingüe de verdad — Rodrigo habla español perfecto. El precio es justo y el trabajo, excelente." },
-                { name: "Sandra L.", text: "Vivo en White Oak y son los mejores. Usan productos seguros para mis hijos y se nota la diferencia." },
+                { name: "David Reed", text: "Rodrigo y su equipo fueron increíbles: vale cada centavo. ¡Dejaron todo impecable!" },
+                { name: "Christina Damiani", text: "¡Excelente servicio de limpieza! La casa quedó impecable y fresca al terminar el trabajo. Muy minuciosos, profesionales y confiables." },
+                { name: "Ranj Saadallah", text: "Llegan puntuales y la casa queda maravillosa cada vez. Limpiaron las ventanas por dentro y por fuera, los electrodomésticos, incluso detrás de ellos." },
               ].map(({ name, text }) => (
                 <div key={name} className="bg-background border border-border rounded-xl p-5 shadow-sm">
                   <div className="flex gap-0.5 mb-3">{[...Array(5)].map((_, i) => <Star key={i} className="h-4 w-4 fill-accent text-accent" />)}</div>
                   <p className="text-muted-foreground text-sm leading-relaxed mb-3">"{text}"</p>
-                  <p className="font-semibold text-foreground text-sm">— {name}, Silver Spring</p>
+                  <p className="font-semibold text-foreground text-sm">— {name}, Reseña de Google</p>
                 </div>
               ))}
             </div>
@@ -116,7 +116,7 @@ export default function SilverSpringES() {
               {[
                 { stat: "~81,000", label: "Residentes" },
                 { stat: "25%", label: "Comunidad Latina" },
-                { stat: "Apts / SF", label: "Tipo de vivienda" },
+                { stat: "Aptos y casas", label: "Tipo de vivienda" },
                 { stat: "Desde 2015", label: "Servimos Silver Spring" },
               ].map(({ stat, label }) => (
                 <div key={label} className="bg-background border border-border rounded-xl p-5 text-center shadow-sm">
@@ -140,7 +140,7 @@ export default function SilverSpringES() {
                 <a href={PHONE_TEL} onClick={() => trackPhoneClick("silver_spring_es_cta")}><Phone className="h-4 w-4 mr-2" /> {PHONE}</a>
               </Button>
               <Button size="lg" variant="outline" className="border-white/50 text-white hover:bg-white/10" asChild>
-                <a href="/contact" onClick={() => trackBookNowClick("silver_spring_es_cta")}>Cotización Gratis</a>
+                <a href="/es/contacto" onClick={() => trackBookNowClick("silver_spring_es_cta")}>Cotización Gratis</a>
               </Button>
             </div>
             <div className="mt-4 flex items-center justify-center gap-2 text-accent-foreground/70 text-sm">

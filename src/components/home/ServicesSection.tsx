@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { services } from "@/data/services";
+import { dirServiceCards as services } from "@/data/home-directory";
 
 const ServicesSection = () => (
   <section className="py-20 md:py-28 bg-secondary">
@@ -23,7 +23,7 @@ const ServicesSection = () => (
               <p className="text-muted-foreground text-sm mb-5 leading-relaxed">{s.shortDescription}</p>
               <div className="flex items-center justify-between">
                 <Link to={`/services/${s.slug}`} className="text-accent font-medium text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">
-                  Learn More <ArrowRight className="h-3 w-3" />
+                  Learn more about {s.name} <ArrowRight className="h-3 w-3 shrink-0" />
                 </Link>
                 <a href="/#quote" className="text-xs font-semibold bg-accent/10 text-accent hover:bg-accent hover:text-accent-foreground transition-colors rounded-full px-3 py-1.5">
                   Get Quote →

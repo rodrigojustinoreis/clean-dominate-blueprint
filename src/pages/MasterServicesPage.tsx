@@ -65,13 +65,13 @@ const MasterServicesPage = () => {
         <title>Cleaning Services in Maryland & DC | Capital Clean Care</title>
         <meta name="description" content="Professional eco-friendly cleaning services in Montgomery County, MD and Washington, DC. House cleaning, deep cleaning, move-in/out, post-construction, Airbnb, senior, and recurring cleaning. Free quotes." />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-        <link rel="canonical" href="https://capitalcleancare.com/services/" />
+        <link rel="canonical" href="https://capitalcleancare.com/services" />
       </Helmet>
 
       <LocalBusinessSchema />
       <BreadcrumbSchema items={[
         { label: "Home", href: "/" },
-        { label: "Services", href: "/services/" }
+        { label: "Services", href: "/services" }
       ]} />
       <FAQSchema faqs={masterServicesFaqs.map(f => ({ q: f.question, a: f.answer }))} />
 
@@ -82,7 +82,7 @@ const MasterServicesPage = () => {
               Cleaning Services in Maryland & DC
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-              Eco-friendly, family-owned, fully insured. Serving Rockville, Bethesda, Gaithersburg, Silver Spring, and the greater DMV with professional residential and commercial cleaning since 2017.
+              Eco-friendly, family-owned, fully insured. Serving Rockville, Bethesda, Gaithersburg, Silver Spring, and the greater DMV with professional residential and commercial cleaning since 2015.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" asChild>

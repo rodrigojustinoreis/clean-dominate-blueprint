@@ -1,11 +1,16 @@
+import { useMemo, useState } from "react";
+import { Link } from "react-router-dom";
+import { Search, X, ArrowRight } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { useSEO } from "@/hooks/useSEO";
-import { BreadcrumbSchema } from "@/components/SchemaMarkup";
+import { BreadcrumbSchema, CollectionPageSchema } from "@/components/SchemaMarkup";
 import { autoBlogPosts } from "@/data/auto-blog-posts";
 import TrustBadges from "@/components/TrustBadges";
-import BlogTopicNav from "@/components/blog/BlogTopicNav";
-import PostCard from "@/components/blog/PostCard";
+import ResourceCategoryNav from "@/components/blog/ResourceCategoryNav";
+import CategoryCard from "@/components/blog/CategoryCard";
+import FeaturedResourceCard from "@/components/blog/FeaturedResourceCard";
+import { RESOURCE_CATEGORIES, postsInCategory, getResourceCategoryBySlug } from "@/data/resource-categories";
 
 export interface BlogPost {
   slug: string;
@@ -19,6 +24,401 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+  {
+    slug: "real-deep-cleaning-project-bethesda-home",
+    title: "Inside a Real Deep Cleaning Project in a Bethesda Home",
+    excerpt: "A walkthrough of a real deep cleaning project in a Bethesda home — vent-first dusting, hand-scrubbed shower grout, and the GreenShield 5-Step process in action.",
+    date: "2026-07-23",
+    readTime: "5 min read",
+    category: "Cleaning Guides",
+    coverImage: "/images/blog/real-deep-cleaning-bethesda/bethesda-bathroom-walkthrough-crew.webp",
+  },
+  {
+    slug: "aging-in-place-montgomery-county-cleaning",
+    title: "Aging in Place in Montgomery County: How Regular Cleaning Keeps You Independent",
+    excerpt: "Want to stay in the home you love as you age? See how a regularly cleaned home supports safe, independent living in Montgomery County, MD — and how it fits into your aging-in-place plan.",
+    date: "2026-07-21",
+    readTime: "6 min read",
+    category: "Home Care Guides",
+    coverImage: "/images/team/real-team-luxury-home.webp",
+  },
+  {
+    slug: "house-cleaning-seniors-silver-spring-leisure-world",
+    title: "House Cleaning Help for Seniors in Silver Spring & Leisure World: What to Expect",
+    excerpt: "Thinking about house cleaning help? A warm, plain-language guide for older adults in Silver Spring and Leisure World — what a visit looks like, what to expect, and how to start. No pressure.",
+    date: "2026-07-21",
+    readTime: "5 min read",
+    category: "Home Care Guides",
+    coverImage: "/images/team/real-team-maria-fridge.webp",
+  },
+  {
+    slug: "how-to-hire-cleaning-service-elderly-parents",
+    title: "How to Hire a Trustworthy Cleaning Service for Your Elderly Parents (Checklist)",
+    excerpt: "A practical, protective checklist for vetting a house cleaning service for your aging parent — insurance, background checks, the 10 questions to ask, red flags to walk away from, and how to run a trial.",
+    date: "2026-07-21",
+    readTime: "6 min read",
+    category: "Home Care Guides",
+    coverImage: "/images/team/real-team-door.webp",
+  },
+  {
+    slug: "cleaning-service-vs-caregiver-elderly",
+    title: "Cleaning Service vs. Caregiver: Which Does Your Parent Actually Need?",
+    excerpt: "Not sure if your aging parent needs a caregiver or just help around the house? An honest comparison of scope and cost — and when a cleaning service, a caregiver, or both makes sense in Montgomery County, MD.",
+    date: "2026-07-21",
+    readTime: "6 min read",
+    category: "Home Care Guides",
+    coverImage: "/images/services/recurring-cleaning.webp",
+  },
+  {
+    slug: "clean-home-fall-prevention-seniors",
+    title: "How a Clean Home Prevents Falls: A Safety Guide for Seniors in Maryland",
+    excerpt: "Falls are the #1 cause of injury for adults 65+, and most happen at home. A room-by-room look at how regular cleaning removes fall hazards — plus a practical fall-prevention checklist for Montgomery County families.",
+    date: "2026-07-21",
+    readTime: "6 min read",
+    category: "Home Care Guides",
+    coverImage: "/images/team/team-window-blinds-pro.webp",
+  },
+  {
+    slug: "signs-aging-parent-needs-help-housekeeping",
+    title: "7 Signs Your Aging Parent Needs Help With Housekeeping",
+    excerpt: "Noticing changes in your parent's home? The seven warning signs that an aging parent needs housekeeping help — from clutter and expired food to tripping hazards — plus how to start the conversation and find gentle support.",
+    date: "2026-07-21",
+    readTime: "6 min read",
+    category: "Home Care Guides",
+    coverImage: "/images/team/real-team-two-members.webp",
+  },
+  {
+    slug: "summer-cleaning-checklist-maryland",
+    title: "Summer Cleaning Checklist for Maryland Homes (2026)",
+    excerpt: "A summer cleaning checklist built for Maryland's humidity — mildew control, HVAC and vent care, windows and screens, outdoor spaces, and kitchen prep for entertaining.",
+    date: "2026-06-16",
+    readTime: "5 min read",
+    category: "Seasonal Guides",
+    coverImage: "/images/blog/summer-checklist/hero.webp",
+  },
+  {
+    slug: "holiday-cleaning-checklist-dmv",
+    title: "Holiday Cleaning Checklist for DMV Hosts (2026)",
+    excerpt: "A stage-by-stage holiday cleaning checklist for hosting — the week-before deep clean, guest-ready touches, the day-of reset, and after-party cleanup.",
+    date: "2026-06-16",
+    readTime: "5 min read",
+    category: "Seasonal Guides",
+    coverImage: "/images/blog/holiday-checklist/hero.webp",
+  },
+  {
+    slug: "cleaning-tips-for-working-professionals",
+    title: "Cleaning Tips for Busy Working Professionals",
+    excerpt: "Low-effort cleaning systems for busy professionals in the DMV — the 10-minute reset, automating floors, focusing on the rooms you use, and cleaning while you're at work.",
+    date: "2026-06-16",
+    readTime: "5 min read",
+    category: "Tips & Advice",
+    coverImage: "/images/blog/working-professionals/hero.webp",
+  },
+  {
+    slug: "most-forgotten-areas-when-cleaning",
+    title: "The 8 Most Forgotten Areas When Cleaning Your House",
+    excerpt: "The cleaning spots almost everyone misses — baseboards, ceiling fans, light switches, under furniture, vents and more — why they matter and how often to clean them.",
+    date: "2026-06-16",
+    readTime: "5 min read",
+    category: "Tips & Advice",
+    coverImage: "/images/blog/forgotten-areas/hero.webp",
+  },
+  {
+    slug: "why-dust-builds-up-maryland-homes",
+    title: "Why Dust Builds Up So Fast in Maryland Homes",
+    excerpt: "The local reasons Maryland homes get dusty so quickly — tree canopy and pollen, year-round HVAC use, older housing, pets — what dust is made of, and how to reduce it.",
+    date: "2026-06-16",
+    readTime: "6 min read",
+    category: "Home Care Guides",
+    coverImage: "/images/blog/dust-buildup/hero.webp",
+  },
+  {
+    slug: "how-to-prepare-home-for-professional-cleaning",
+    title: "How to Prepare Your Home for a Professional Cleaning",
+    excerpt: "A simple 15-minute checklist to get a better, faster clean — tidy clutter, secure valuables, plan for pets, and sort out access and parking before the team arrives.",
+    date: "2026-06-16",
+    readTime: "5 min read",
+    category: "Tips & Advice",
+    coverImage: "/images/blog/prepare-cleaning/hero.webp",
+  },
+  {
+    slug: "how-to-keep-house-clean-between-cleanings",
+    title: "How to Keep Your House Clean Between Cleanings",
+    excerpt: "Small daily habits that keep your home tidy between professional cleanings — the 10-minute nightly reset, clean-as-you-go, shoes-off, and more.",
+    date: "2026-06-16",
+    readTime: "5 min read",
+    category: "Tips & Advice",
+    coverImage: "/images/blog/between-cleanings/hero.webp",
+  },
+  {
+    slug: "house-cleaning-guide-germantown-md",
+    title: "The Complete Guide to House Cleaning in Germantown, MD",
+    excerpt: "A complete local guide to house cleaning in Germantown — home types (townhomes to single-family), the right cleaning frequency, caring for newer finishes, pricing, and how to choose a company.",
+    date: "2026-06-16",
+    readTime: "6 min read",
+    category: "Local Guides",
+    coverImage: "/images/blog/guide-germantown/hero.webp",
+  },
+  {
+    slug: "house-cleaning-guide-clarksburg-md",
+    title: "The Complete Guide to House Cleaning in Clarksburg, MD",
+    excerpt: "A complete local guide to house cleaning in Clarksburg — new-construction homes, move-in and post-construction cleans, builder-grade finishes, pricing, and choosing a company.",
+    date: "2026-06-16",
+    readTime: "6 min read",
+    category: "Local Guides",
+    coverImage: "/images/blog/guide-clarksburg/hero.webp",
+  },
+  {
+    slug: "cleaning-company-vs-independent-cleaner",
+    title: "Cleaning Company vs. Independent Cleaner: Which Should You Hire in 2026?",
+    excerpt: "Compare cost, insurance, background checks and reliability before you hire: the honest breakdown for Montgomery County homeowners.",
+    date: "2026-07-10", readTime: "8 min read", category: "Cleaning Guides",
+    coverImage: "/images/blog/company-vs-independent-hero.webp",
+  },
+  {
+    slug: "local-cleaning-company-vs-franchise",
+    title: "Local Cleaning Company vs. Franchise: Why Local Wins in Montgomery County",
+    excerpt: "Pricing, crew consistency and accountability compared: what MD homeowners should know before choosing a franchise.",
+    date: "2026-07-10", readTime: "8 min read", category: "Cleaning Guides",
+    coverImage: "/images/blog/local-vs-franchise-hero.webp",
+  },
+  {
+    slug: "questions-to-ask-before-hiring-house-cleaner",
+    title: "20 Questions to Ask Before Hiring a House Cleaner (2026 Checklist)",
+    excerpt: "Insurance, background checks, pricing and guarantees: the complete vetting checklist to copy and save.",
+    date: "2026-07-10", readTime: "8 min read", category: "Cleaning Guides",
+    coverImage: "/images/blog/hiring-questions-hero.webp",
+  },
+  {
+    slug: "why-first-house-cleaning-costs-more",
+    title: "Why Your First House Cleaning Costs More (And What You Get)",
+    excerpt: "What an initial deep clean includes, real prices in Maryland, and how the first visit makes every future cleaning cheaper.",
+    date: "2026-07-10", readTime: "8 min read", category: "Cleaning Guides",
+    coverImage: "/images/blog/first-clean-cost-hero.webp",
+  },
+  {
+    slug: "flat-rate-vs-hourly-house-cleaning",
+    title: "Flat Rate vs. Hourly House Cleaning: Which Saves You More?",
+    excerpt: "Real costs, pros and cons, and which pricing model protects your budget: scenarios for Maryland homes.",
+    date: "2026-07-10", readTime: "8 min read", category: "Cleaning Guides",
+    coverImage: "/images/blog/flat-vs-hourly-hero.webp",
+  },
+  {
+    slug: "red-flags-house-cleaning-service",
+    title: "7 Red Flags When Hiring a House Cleaning Service",
+    excerpt: "No insurance, vague quotes, no background checks and more: spot a bad cleaning company before you pay.",
+    date: "2026-07-10", readTime: "8 min read", category: "Cleaning Guides",
+    coverImage: "/images/blog/red-flags-hero.webp",
+  },
+  {
+    slug: "hidden-fees-house-cleaning",
+    title: "Hidden Fees in House Cleaning: 8 Charges to Watch For",
+    excerpt: "Cancellation penalties, supply charges, bait-and-switch quotes, and how to get a truly transparent price.",
+    date: "2026-07-10", readTime: "8 min read", category: "Cleaning Guides",
+    coverImage: "/images/blog/hidden-fees-hero.webp",
+  },
+  {
+    slug: "house-too-messy-for-cleaning-service",
+    title: "“My House Is Too Messy for a Cleaner”: Why Pros Never Judge",
+    excerpt: "Professional cleaners have seen it all. Why there is no judgment, and exactly where to start.",
+    date: "2026-07-10", readTime: "8 min read", category: "Tips & Advice",
+    coverImage: "/images/blog/messy-house-hero.webp",
+  },
+  {
+    slug: "how-to-clean-up-after-a-party",
+    title: "How to Clean Up After a Party: The Post-Holiday Reset",
+    excerpt: "The fastest room-by-room plan to reset your home after a July 4th cookout or any holiday weekend: triage order, stain rescue, grill and patio cleanup.",
+    date: "2026-07-08", readTime: "6 min read", category: "Tips & Advice",
+    coverImage: "/images/blog/post-party-patio.webp",
+  },
+  {
+    slug: "deep-cleaning-cost-maryland",
+    title: "How Much Does Deep Cleaning Cost in Maryland? (2026)",
+    excerpt: "Real 2026 deep cleaning prices by home size in Maryland, what drives the price up or down, and what the GreenShield 5-Step Clean includes.",
+    date: "2026-07-08", readTime: "7 min read", category: "Cleaning Guides",
+    coverImage: "/images/blog/maryland-home-exterior.webp",
+  },
+  {
+    slug: "how-long-does-deep-cleaning-take",
+    title: "How Long Does a Deep Cleaning Take? Real Timelines",
+    excerpt: "Real deep cleaning timelines by home size, solo cleaner vs team, what slows the job down, and how to prepare so it goes faster.",
+    date: "2026-07-08", readTime: "6 min read", category: "Cleaning Guides",
+    coverImage: "/images/cluster/howlong.webp",
+  },
+  {
+    slug: "airbnb-cleaning-checklist",
+    title: "Airbnb Cleaning Checklist: The 5-Star Turnover Guide",
+    excerpt: "The room-by-room turnover checklist hosts use to earn 5-star reviews: linens, restocking, the 60-90 minute timeline, and when to hire a pro.",
+    date: "2026-07-08", readTime: "6 min read", category: "Cleaning Guides",
+    coverImage: "/images/blog/airbnb-bedroom-turnover.webp",
+  },
+  {
+    slug: "airbnb-cleaning-fee",
+    title: "How to Add a Cleaning Fee to Your Airbnb Listing",
+    excerpt: "Where to set the cleaning fee on Airbnb, how much to charge by home size in the DMV, and how to price it without losing bookings.",
+    date: "2026-08-01", readTime: "6 min read", category: "Cleaning Guides",
+    coverImage: "/images/blog/airbnb-cleaning-fee.webp",
+  },
+  {
+    slug: "how-much-tip-house-cleaner",
+    title: "How Much Should You Tip Your House Cleaner? (2026)",
+    excerpt: "Typical tip amounts (15-20% or $10-$20 per visit), when tipping is and isn't expected, holiday bonuses, and etiquette with recurring teams.",
+    date: "2026-07-08", readTime: "6 min read", category: "Tips & Advice",
+    coverImage: "/images/blog/cleaner-thank-you-tip.webp",
+  },
+  {
+    slug: "best-house-cleaning-service-bethesda-md",
+    title: "Best House Cleaning in Bethesda, MD: How to Choose (2026)",
+    excerpt: "The four criteria that separate a great Bethesda cleaning company from a headache — insurance, real reviews, safe products, flat pricing — plus what cleaning costs here.",
+    date: "2026-07-08",
+    readTime: "6 min read",
+    category: "Local Guides",
+    coverImage: "/images/team/team-two-living-room.jpg",
+  },
+  {
+    slug: "move-in-cleaning-checklist",
+    title: "Move-In Cleaning Checklist: What to Clean Before You Unpack",
+    excerpt: "The one window when every surface is reachable. Room-by-room move-in cleaning checklist for DMV homes — cabinets, appliances, bathrooms — plus cost and timing.",
+    date: "2026-07-08",
+    readTime: "6 min read",
+    category: "Cleaning Guides",
+    coverImage: "/images/team/team-making-bed.jpg",
+  },
+  {
+    slug: "what-is-included-in-a-standard-cleaning",
+    title: "What Is Included in a Standard House Cleaning?",
+    excerpt: "The full room-by-room checklist of a standard cleaning, what's excluded, and how it compares to a deep clean — with real DMV pricing.",
+    date: "2026-07-08",
+    readTime: "5 min read",
+    category: "Cleaning Guides",
+    coverImage: "/images/team/team-mopping-bright-room.jpg",
+  },
+  {
+    slug: "post-construction-cleaning-montgomery-county-md",
+    title: "Post-Construction Cleaning in Montgomery County, MD: A Guide",
+    excerpt: "What post-construction cleaning involves in Montgomery County — why fine construction dust is the real challenge, what's included, how it differs from a deep clean, when to schedule, and cost.",
+    date: "2026-06-16",
+    readTime: "6 min read",
+    category: "Local Guides",
+    coverImage: "/images/blog/post-construction-moco/hero.webp",
+  },
+  {
+    slug: "best-house-cleaning-service-rockville-md",
+    title: "How to Choose the Best House Cleaning Service in Rockville, MD",
+    excerpt: "A buyer's guide to choosing the best house cleaning service in Rockville — the criteria that matter, red flags to avoid, and Rockville-specific things to check (condo access, builder-grade finishes).",
+    date: "2026-06-16",
+    readTime: "6 min read",
+    category: "Local Guides",
+    coverImage: "/images/blog/best-rockville/hero.webp",
+  },
+  {
+    slug: "best-house-cleaning-service-silver-spring-md",
+    title: "How to Choose the Best House Cleaning Service in Silver Spring, MD",
+    excerpt: "A buyer's guide to choosing the best house cleaning service in Silver Spring — selection criteria, red flags, and local specifics: background checks, bilingual teams, and older homes.",
+    date: "2026-06-16",
+    readTime: "6 min read",
+    category: "Local Guides",
+    coverImage: "/images/blog/best-silver-spring/hero.webp",
+  },
+  {
+    slug: "how-often-should-you-deep-clean",
+    title: "How Often Should You Deep Clean Your House?",
+    excerpt: "How often to deep clean by household — a baseline of twice a year, adjusted for pets, kids, allergies, and homes going up for sale. Recommended frequency by profile, plus how to stretch the time between cleans.",
+    date: "2026-07-16",
+    readTime: "7 min read",
+    category: "Cleaning Guides",
+    coverImage: "/images/cluster/howoften.webp",
+  },
+  {
+    slug: "deep-cleaning-before-selling-house",
+    title: "Deep Cleaning Before Selling Your House: A Seller's Guide",
+    excerpt: "Why agents recommend a deep clean before listing, what to prioritize for photos and showings, and the ideal timing to get your home market-ready.",
+    date: "2026-07-16",
+    readTime: "7 min read",
+    category: "Cleaning Guides",
+    coverImage: "/images/cluster/selling.webp",
+  },
+  {
+    slug: "deep-cleaning-for-apartments",
+    title: "Deep Cleaning for Apartments & Condos: What to Expect",
+    excerpt: "How deep cleaning an apartment or condo differs from a house — building access, shorter timelines, and what's covered — with real team timelines for the DMV.",
+    date: "2026-07-16",
+    readTime: "6 min read",
+    category: "Cleaning Guides",
+    coverImage: "/images/cluster/apartments.webp",
+  },
+  {
+    slug: "eco-friendly-deep-cleaning",
+    title: "Eco-Friendly Deep Cleaning: The GreenShield Method",
+    excerpt: "Why a deep clean doesn't need harsh chemicals — how the GreenShield 5-Step Clean and EPA Safer Choice products deliver a top-to-bottom clean that's safe for kids, pets, and allergies.",
+    date: "2026-07-16",
+    readTime: "7 min read",
+    category: "Cleaning Guides",
+    coverImage: "/images/cluster/eco.webp",
+  },
+  {
+    slug: "how-much-does-deep-cleaning-cost",
+    title: "How Much Does a Deep Cleaning Cost? (2026 Prices)",
+    excerpt: "Real 2026 deep cleaning prices in the DMV by home size — a typical 3-bedroom deep clean runs $375–$445 — plus what drives the cost and how to keep it down over time.",
+    date: "2026-06-16",
+    readTime: "6 min read",
+    category: "Cleaning Guides",
+    coverImage: "/images/cluster/cost.webp",
+  },
+  {
+    slug: "move-out-cleaning-cost-maryland",
+    title: "How Much Does Move-Out Cleaning Cost in Maryland?",
+    excerpt: "Move-out cleaning prices in Maryland by home size — typically $220–$600+ — what's included, what drives the cost, and how it protects your security deposit.",
+    date: "2026-06-16",
+    readTime: "6 min read",
+    category: "Local Guides",
+    coverImage: "/images/blog/move-out-cost/hero.webp",
+  },
+  {
+    slug: "is-professional-house-cleaning-worth-it",
+    title: "Is Professional House Cleaning Worth It?",
+    excerpt: "An honest look at the value of hiring a cleaning service — the time it buys back, a healthier home, when it's worth it, when it isn't, and the most cost-effective way to use one.",
+    date: "2026-06-16",
+    readTime: "6 min read",
+    category: "Cleaning Guides",
+    coverImage: "/images/blog/is-cleaning-worth-it/hero.webp",
+  },
+  {
+    slug: "deep-cleaning-vs-regular-cleaning",
+    title: "Deep Cleaning vs Regular Cleaning: What's the Difference?",
+    excerpt: "What each service includes, when to book which, and how much more a deep clean costs — a clear side-by-side comparison so you choose the right one for your home.",
+    date: "2026-06-16",
+    readTime: "7 min read",
+    category: "Cleaning Guides",
+    coverImage: "/images/blog/deep-vs-regular/hero.webp",
+  },
+  {
+    slug: "what-is-included-in-a-deep-cleaning",
+    title: "What Is Included in a Deep Cleaning? (Full Checklist)",
+    excerpt: "The complete room-by-room deep cleaning checklist — inside the oven and fridge, grout, baseboards, vents, window tracks — how it differs from a standard clean, and how long it takes.",
+    date: "2026-06-16",
+    readTime: "6 min read",
+    category: "Cleaning Guides",
+    coverImage: "/images/cluster/included.webp",
+  },
+  {
+    slug: "how-often-should-you-hire-a-cleaning-service",
+    title: "How Often Should You Hire a Cleaning Service?",
+    excerpt: "Weekly, biweekly, or monthly? The factors that decide your ideal cleaning frequency — pets, kids, schedule, home size — and what most DMV households actually choose.",
+    date: "2026-06-16",
+    readTime: "6 min read",
+    category: "Cleaning Guides",
+    coverImage: "/images/blog/how-often-hire/hero.webp",
+  },
+  {
+    slug: "one-time-vs-recurring-cleaning",
+    title: "One-Time vs Recurring Cleaning: Which Should You Choose?",
+    excerpt: "The difference, the cost per visit, and when to choose each — why recurring is cheaper per visit and when a single deep clean makes more sense.",
+    date: "2026-06-16",
+    readTime: "6 min read",
+    category: "Cleaning Guides",
+    coverImage: "/images/blog/one-time-vs-recurring/hero.webp",
+  },
   {
     slug: "how-to-remove-sticker-residue-natural",
     title: "How to Remove Sticker Residue Naturally (No Goo Gone Needed)",
@@ -99,6 +499,15 @@ export const blogPosts: BlogPost[] = [
     readTime: "8 min read",
     category: "Pet Health",
     coverImage: "/images/blog/pet-safe-labels/hero.webp",
+  },
+  {
+    slug: "how-often-to-clean-pet-bowls-and-toys",
+    title: "How Often Should You Clean Your Pet's Bowls and Toys?",
+    excerpt: "Your pet's food bowl is one of the germiest items in the home — the NSF ranks it 4th. What the FDA and CDC actually recommend for cleaning bowls, water dishes, and toys, and how often.",
+    date: "2026-07-26",
+    readTime: "7 min read",
+    category: "Pet Health",
+    coverImage: "/images/blog/pet-bowl-hygiene/hero.webp",
   },
   {
     slug: "cleaning-product-poisoning-in-pets",
@@ -233,7 +642,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-05-23",
     readTime: "8 min read",
     category: "Home Care Guides",
-    coverImage: "/images/blog/washing-machine-hero.jpg",
+    coverImage: "/images/blog/washing-machine-hero.webp",
   },
   {
     slug: "how-to-remove-candle-wax-eco-friendly",
@@ -242,7 +651,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-05-23",
     readTime: "7 min read",
     category: "Home Care Guides",
-    coverImage: "/images/blog/candle-wax-hero.jpg",
+    coverImage: "/images/blog/candle-wax-hero.webp",
   },
   {
     slug: "how-to-clean-carpet-home-apartment",
@@ -288,6 +697,8 @@ export const blogPosts: BlogPost[] = [
     readTime: "8 min read",
     category: "Cleaning Guides",
     coverImage: "https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
+    // SEO: thin near-duplicate of the fuller checklist post — canonicalised so Google indexes that one instead (reversible).
+    canonical: "https://capitalcleancare.com/resources/what-is-included-in-a-deep-cleaning",
   },
   {
     slug: "airbnb-cleaning-tips-dmv-hosts",
@@ -350,7 +761,7 @@ export const blogPosts: BlogPost[] = [
     date: "2025-12-15",
     readTime: "8 min read",
     category: "Cleaning Guides",
-    coverImage: "https://images.pexels.com/photos/2635038/pexels-photo-2635038.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
+    coverImage: "/images/cluster/postreno.webp",
   },
   {
     slug: "recurring-cleaning-weekly-biweekly-monthly",
@@ -363,12 +774,14 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "house-cleaning-bethesda-md",
-    title: "House Cleaning in Bethesda, MD: What Homeowners Should Expect",
-    excerpt: "A local guide to professional house cleaning in Bethesda — pricing, what's included, how to vet companies, and why eco-friendly matters in this health-conscious community.",
+    title: "House Cleaning in Bethesda, MD: How to Choose the Best Service (2026)",
+    excerpt: "A local guide to choosing the best house cleaning service in Bethesda — the criteria that separate the best companies, plus pricing, what's included, and why eco-friendly matters in this health-conscious community.",
     date: "2026-04-08",
     readTime: "6 min read",
     category: "Local Guides",
     coverImage: "https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
+    // SEO: same commercial-local intent as the Bethesda location page — canonicalised to the strategic hub so it wins (reversible).
+    canonical: "https://capitalcleancare.com/locations/bethesda-md/house-cleaning",
   },
   {
     slug: "cleaning-service-arlington-va",
@@ -399,8 +812,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "cleaning-service-fairfax-va",
-    title: "House Cleaning Services in Fairfax, VA",
-    excerpt: "Fairfax families are busy — between commutes, schools, and activities. Discover how professional cleaning services in Fairfax, VA can help you reclaim your weekends.",
+    title: "How to Find a Reliable Cleaning Service in Fairfax, VA",
+    excerpt: "Fairfax families are busy — between commutes, schools, and activities. How to find a reliable, eco-friendly house cleaning service in Fairfax, VA and reclaim your weekends.",
     date: "2026-03-27",
     readTime: "6 min read",
     category: "Local Guides",
@@ -507,11 +920,11 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "deep-cleaning-montgomery-county-md",
-    title: "Deep Cleaning Guide for Montgomery County, MD",
-    excerpt: "From Rockville and Bethesda to Silver Spring and Germantown — Montgomery County homeowners share common deep cleaning challenges. Here's the county-wide guide.",
+    title: "Eco-Friendly Deep Cleaning in Montgomery County, MD (2026)",
+    excerpt: "Montgomery County sits entirely in the Chesapeake Bay watershed — here's how to deep clean your home thoroughly with plant-based products that don't send harsh chemicals down the drain, community by community.",
     date: "2026-04-08",
     readTime: "7 min read",
-    category: "Cleaning Guides",
+    category: "Eco Living",
     coverImage: "https://images.pexels.com/photos/2724749/pexels-photo-2724749.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
   },
   {
@@ -541,28 +954,168 @@ export const allPosts = [...blogPosts, ...autoBlogPosts].sort(
 
 const Blog = () => {
   const { seoHelmet } = useSEO({
-    title: "House Cleaning Tips & Blog for MD, DC & VA | Capital Clean Care",
-    description: "Expert eco-friendly cleaning tips, deep-cleaning guides & advice for Maryland, DC & Virginia homeowners. Stay spotless with Capital Clean Care's blog!",
-    canonical: "https://capitalcleancare.com/blog",
+    title: "Cleaning Resource Center — Guides, Checklists & Tips | Capital Clean Care",
+    description: "The Capital Clean Care Resource Center: eco-friendly cleaning guides, checklists, pricing, and how-tos for Maryland, DC & Virginia homes — organized by category.",
+    canonical: "https://capitalcleancare.com/resources",
   });
+
+  // Category tiles carry a live guide count (from the same rule-based classifier the category
+  // pages use) so the hub stays in sync automatically as posts are added.
+  const categoryCards = RESOURCE_CATEGORIES.map((c) => ({
+    category: c,
+    count: postsInCategory(c.slug, allPosts).length,
+  }));
+  const recentPosts = allPosts.slice(0, 12);
+
+  // ── Ionic-style hub data ──────────────────────────────────────────────────
+  const bySlug = (s: string) => allPosts.find((p) => p.slug === s);
+  // Three hand-picked, image-backed features (all have real cover images).
+  const featured = [
+    "how-often-to-clean-pet-bowls-and-toys",
+    "deep-cleaning-vs-regular-cleaning",
+    "aging-in-place-montgomery-county-cleaning",
+  ]
+    .map(bySlug)
+    .filter(Boolean) as BlogPost[];
+  // Curated category rows (colored 4-card grids + "See all"); each links its category page.
+  const featuredSlugSet = new Set(featured.map((p) => p.slug));
+  const categoryRows = ["deep-cleaning", "pricing-guides", "eco-friendly-cleaning", "checklists"]
+    .map((slug) => {
+      const category = getResourceCategoryBySlug(slug);
+      const posts = postsInCategory(slug, allPosts)
+        .filter((p) => !featuredSlugSet.has(p.slug))
+        .slice(0, 3);
+      return category ? { category, posts } : null;
+    })
+    .filter((r): r is { category: (typeof RESOURCE_CATEGORIES)[number]; posts: BlogPost[] } => !!r && r.posts.length >= 3);
+
+  // Client-side search over every guide (progressive enhancement: with query empty — including
+  // during prerender — the page renders exactly the static hub, so SSR/SEO content is untouched).
+  const [query, setQuery] = useState("");
+  const q = query.trim().toLowerCase();
+  const results = useMemo(
+    () =>
+      q.length >= 2
+        ? allPosts.filter((p) => `${p.title} ${p.category} ${p.excerpt}`.toLowerCase().includes(q))
+        : null,
+    [q]
+  );
 
   return (
     <Layout>
       {seoHelmet}
-      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog" }]} />
+      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }]} />
+      <CollectionPageSchema
+        name="Cleaning Resource Center"
+        description="Eco-friendly cleaning guides, checklists, pricing, and how-tos for Maryland, DC & Virginia homes."
+        url="https://capitalcleancare.com/resources"
+        items={recentPosts.map((p) => ({ title: p.title, slug: p.slug }))}
+      />
       <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Blog" }]} className="mb-6" />
-          <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4">Cleaning Tips & Insights</h1>
-          <p className="text-muted-foreground text-lg mb-8">Expert advice for keeping your Maryland, DC & Virginia home spotless with eco-friendly methods.</p>
+        <div className="container mx-auto px-4 max-w-5xl">
+          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Resources" }]} className="mb-6" />
+          <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4 tracking-[-0.03em] leading-[1.1]">
+            Cleaning <span className="text-gradient">Resource Center</span>
+          </h1>
+          <p className="text-muted-foreground text-lg mb-8 max-w-3xl">
+            Practical, eco-friendly guides for keeping your Maryland, DC &amp; Virginia home spotless —
+            checklists, real pricing, deep-cleaning and move-out guides, pet-safe methods, and everyday
+            how-tos. Browse by category, or scroll down for the latest.
+          </p>
 
-          <BlogTopicNav />
-
-          <div className="space-y-6">
-            {allPosts.map((post) => (
-              <PostCard key={post.slug} post={post} />
-            ))}
+          {/* Search — client-side filter over all guides (big touch target for mobile) */}
+          <div className="relative mb-6 max-w-xl">
+            <Search className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground" aria-hidden="true" />
+            <input
+              type="search"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder={`Search ${allPosts.length}+ cleaning guides…`}
+              aria-label="Search cleaning guides"
+              className="h-12 w-full rounded-full border border-border bg-secondary/30 pl-12 pr-12 text-base text-foreground placeholder:text-muted-foreground focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30 [&::-webkit-search-cancel-button]:hidden [&::-webkit-search-decoration]:hidden"
+            />
+            {query && (
+              <button
+                type="button"
+                onClick={() => setQuery("")}
+                aria-label="Clear search"
+                className="absolute right-2 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full text-muted-foreground hover:bg-secondary hover:text-foreground"
+              >
+                <X className="h-4 w-4" />
+              </button>
+            )}
           </div>
+
+          <ResourceCategoryNav />
+
+          {results ? (
+            /* Search results replace the hub sections while a query is active */
+            <>
+              <h2 className="font-heading text-2xl font-bold mb-5" aria-live="polite">
+                {results.length} {results.length === 1 ? "guide matches" : "guides match"} “{query.trim()}”
+              </h2>
+              {results.length === 0 ? (
+                <p className="text-muted-foreground mb-16">
+                  No guides found. Try a shorter word — e.g. “cost”, “pet”, “deep”, “senior” — or browse a
+                  category above.
+                </p>
+              ) : (
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 mb-16">
+                  {results.slice(0, 30).map((post) => (
+                    <FeaturedResourceCard key={post.slug} post={post} />
+                  ))}
+                </div>
+              )}
+            </>
+          ) : (
+            <>
+              {/* Featured — large image-backed hero cards */}
+              <h2 className="font-heading text-2xl font-bold mb-5">Featured guides</h2>
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 mb-14">
+                {featured.map((post) => (
+                  <FeaturedResourceCard key={post.slug} post={post} />
+                ))}
+              </div>
+
+              {/* Category rows — colored cards + "See all" (hub-and-spoke to each category page) */}
+              {categoryRows.map(({ category, posts }) => (
+                <section key={category.slug} className="mb-14">
+                  <div className="mb-5 flex items-end justify-between gap-4">
+                    <h2 className="font-heading text-2xl font-bold flex items-center gap-2">
+                      <span aria-hidden="true">{category.emoji}</span> {category.label}
+                    </h2>
+                    <Link
+                      to={`/resources/${category.slug}`}
+                      className="shrink-0 inline-flex items-center gap-1 text-sm font-semibold text-accent transition-all hover:gap-2"
+                    >
+                      See all <ArrowRight className="h-4 w-4" />
+                    </Link>
+                  </div>
+                  <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                    {posts.map((post) => (
+                      <FeaturedResourceCard key={post.slug} post={post} />
+                    ))}
+                  </div>
+                </section>
+              ))}
+
+              {/* Latest guides — raised above the category grid */}
+              <h2 className="font-heading text-2xl font-bold mb-5">Latest guides</h2>
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 mb-14">
+                {recentPosts.slice(0, 6).map((post) => (
+                  <FeaturedResourceCard key={post.slug} post={post} />
+                ))}
+              </div>
+
+              {/* Browse every category — keeps all 10 category pages crawlable & described */}
+              <h2 className="font-heading text-2xl font-bold mb-5">Browse every category</h2>
+              <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-3">
+                {categoryCards.map(({ category, count }) => (
+                  <CategoryCard key={category.slug} category={category} count={count} />
+                ))}
+              </div>
+            </>
+          )}
         </div>
       </section>
 

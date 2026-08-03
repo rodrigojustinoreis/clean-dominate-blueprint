@@ -17,6 +17,7 @@ import ImageGallery, { GalleryImage } from "@/components/blog/ImageGallery";
 import FAQAccordion from "@/components/blog/FAQAccordion";
 import BlogInlineCTA from "@/components/blog/BlogInlineCTA";
 import StickyCTA from "@/components/blog/StickyCTA";
+import RelatedPosts from "@/components/blog/RelatedPosts";
 
 const HERO_IMAGE = "/images/blog/pet-dander/hero.webp";
 
@@ -85,7 +86,7 @@ const PetDanderAirQuality = () => {
     title: "Pet Dander: The Invisible Enemy of Your Home's Air Quality",
     description:
       "Pet dander is 2.5–10 microns and floats for hours. How it wrecks your indoor air quality — and the HEPA, microfiber & deep-cleaning routine that actually eliminates it.",
-    canonical: "https://capitalcleancare.com/blog/pet-dander-air-quality",
+    canonical: "https://capitalcleancare.com/resources/pet-dander-air-quality",
   });
 
   return (
@@ -101,14 +102,14 @@ const PetDanderAirQuality = () => {
       <ArticleSchema
         title="Pet Dander: The Invisible Enemy of Your Home's Air Quality"
         description="What pet dander really is, why its microscopic size lets it dominate your indoor air, and the HEPA vacuuming, microfiber, air-filtration, and deep-cleaning routine that lowers the load for both people and pets."
-        url="https://capitalcleancare.com/blog/pet-dander-air-quality"
+        url="https://capitalcleancare.com/resources/pet-dander-air-quality"
         datePublished="2026-06-14"
         image={HERO_IMAGE}
       />
       <HowToSchema
         name="How to Eliminate Pet Dander and Improve Indoor Air Quality"
         description="A four-step home routine to remove airborne and settled pet dander using HEPA vacuuming, damp microfiber wiping, air filtration, and humidity control."
-        url="https://capitalcleancare.com/blog/pet-dander-air-quality"
+        url="https://capitalcleancare.com/resources/pet-dander-air-quality"
         steps={howToSteps}
         totalTime="PT40M"
         image={HERO_IMAGE}
@@ -117,8 +118,8 @@ const PetDanderAirQuality = () => {
       <BreadcrumbSchema
         items={[
           { label: "Home", href: "/" },
-          { label: "Blog", href: "/blog" },
-          { label: "Pet Dander & Your Air Quality", href: "/blog/pet-dander-air-quality" },
+          { label: "Resources", href: "/resources" },
+          { label: "Pet Dander & Your Air Quality", href: "/resources/pet-dander-air-quality" },
         ]}
       />
 
@@ -128,7 +129,7 @@ const PetDanderAirQuality = () => {
           <Breadcrumbs
             items={[
               { label: "Home", href: "/" },
-              { label: "Blog", href: "/blog" },
+              { label: "Resources", href: "/resources" },
               { label: "Pet Dander: The Invisible Enemy of Your Air Quality" },
             ]}
           />
@@ -147,7 +148,7 @@ const PetDanderAirQuality = () => {
           You can't see it, you can't sweep it — but you and your pet breathe it all day
         </p>
         <p className="text-gray-300 mb-8 text-sm uppercase tracking-widest">
-          By Capital Clean Care · Montgomery County, MD · June 2026
+          By Rodrigo Reis, Owner · Montgomery County, MD · June 2026
         </p>
         <Button
           size="lg"
@@ -289,7 +290,7 @@ const PetDanderAirQuality = () => {
                   Scented sprays and harsh cleaners add irritants to air that's already carrying dander — the opposite of what a sensitive person or pet needs. That's why our{" "}
                   <Link to="/services/eco-friendly-cleaning" className="text-accent underline hover:no-underline">eco-friendly cleaning</Link>{" "}
                   uses only plant-based, fragrance-free, low-residue products. Dealing with allergies too? See how{" "}
-                  <Link to="/blog/why-pet-skin-allergies-start-in-carpet" className="text-accent underline hover:no-underline">your pet's skin allergies can start in the carpet</Link>.
+                  <Link to="/resources/why-pet-skin-allergies-start-in-carpet" className="text-accent underline hover:no-underline">your pet's skin allergies can start in the carpet</Link>.
                 </p>
               </div>
             </div>
@@ -372,6 +373,7 @@ const PetDanderAirQuality = () => {
         </div>
       </article>
 
+      <RelatedPosts currentSlug="pet-dander-air-quality" />
       <StickyCTA />
     </Layout>
   );

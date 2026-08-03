@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import { CheckCircle, ArrowRight, Star } from "lucide-react";
+import { CheckCircle, Star, Phone } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
@@ -15,8 +15,24 @@ import { slCities, slServices } from "@/data/service-locations";
 import NotFound from "./NotFound";
 import GreenShield5Step from "@/components/GreenShield5Step";
 import TrustBadges from "@/components/TrustBadges";
+import FadeInSection from "@/components/blog/FadeInSection";
+import LocationSocialProof from "@/components/location/LocationSocialProof";
+import ServiceRelatedContent from "@/components/ServiceRelatedContent";
+import { isIndexable } from "@/data/related-content";
 
-const topCities = cities.filter(c => !c.slug.includes("county")).slice(0, 8);
+// Only link to indexable city hubs (7 STATIC_CITIES hubs + many others are noindex).
+const topCities = cities
+  .filter((c) => !c.slug.includes("county") && isIndexable(`/locations/${c.slug}`))
+  .slice(0, 8);
+
+// Representative real team photo per service (real photos build more trust than stock/AI).
+const SERVICE_IMAGES: Record<string, string> = {
+  "move-out-cleaning": "/images/services/move-out-cleaning.webp",
+  "post-construction-cleaning": "/images/team/team-post-construction.jpg",
+  "recurring-cleaning": "/images/services/recurring-cleaning.webp",
+  "airbnb-cleaning": "/images/services/airbnb-cleaning.webp",
+  "office-cleaning": "/images/services/office-cleaning.webp",
+};
 
 const ServicePage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -24,7 +40,17 @@ const ServicePage = () => {
 
   if (!service) return <NotFound />;
 
-  const { seoHelmet } = useSEO({ title: service.metaTitle, description: service.metaDescription, canonical: `https://capitalcleancare.com/services/${service.slug}` });
+  const { seoHelmet } = useSEO({
+    title: service.metaTitle,
+    description: service.metaDescription,
+    canonical: `https://capitalcleancare.com/services/${service.slug}`,
+  });
+
+  const heroImg = SERVICE_IMAGES[service.slug] || "/images/team/real-team-two-members.webp";
+
+  const matchedSlService = slServices.find(
+    (sl) => sl.slug === service.slug || sl.name.toLowerCase().includes(service.name.toLowerCase().split(" ")[0]),
+  );
 
   return (
     <Layout>
@@ -34,70 +60,166 @@ const ServicePage = () => {
         serviceName={service.name}
         description={service.shortDescription}
         url={`https://capitalcleancare.com/services/${service.slug}`}
-        reviews={service.testimonials?.map(t => ({ name: t.name, text: t.text, location: t.location }))}
+        serviceType={service.name}
       />
       <FAQSchema faqs={service.faqs} />
-      <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4 max-w-4xl">
+
+      {/* ── Hero ── */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#F1F8F1] via-background to-accent/5 py-10 md:py-16">
+        <div className="container mx-auto px-4 max-w-6xl">
           <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Services" }, { label: service.name }]} className="mb-6" />
-          <h1 className="font-heading text-4xl md:text-5xl font-bold mb-6">{service.h1 || service.name}</h1>
-          
-          <div className="space-y-4 text-foreground leading-relaxed mb-12">
-            {service.intro.split("\n\n").map((p, i) => (
-              <p key={i}>{p}</p>
-            ))}
-          </div>
-
-          <div className="mb-12">
-            <h2 className="font-heading text-2xl font-bold mb-4">What's Included — {service.whatsIncluded.length}-Point Checklist</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {service.whatsIncluded.map((item, i) => (
-                <div key={i} className="flex gap-2 items-start">
-                  <CheckCircle className="h-5 w-5 text-accent shrink-0 mt-0.5" />
-                  <span className="text-sm">{item}</span>
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+            <FadeInSection>
+              <div className="inline-flex items-center gap-2 bg-white border border-accent/20 rounded-full px-3.5 py-1.5 shadow-sm mb-5">
+                <div className="flex gap-0.5">
+                  {Array.from({ length: 5 }).map((_, j) => (
+                    <Star key={j} className="h-4 w-4 fill-amber-400 text-amber-400" />
+                  ))}
                 </div>
-              ))}
-            </div>
-          </div>
+                <span className="text-sm font-bold text-foreground">5.0</span>
+                <span className="text-sm text-muted-foreground">· 45 Google reviews</span>
+              </div>
 
-          <div className="mb-12">
-            <h2 className="font-heading text-2xl font-bold mb-4">Benefits</h2>
-            <div className="space-y-3">
-              {service.benefits.map((b, i) => (
-                <div key={i} className="flex gap-2 items-start">
-                  <CheckCircle className="h-5 w-5 text-accent shrink-0 mt-0.5" />
-                  <span>{b}</span>
-                </div>
-              ))}
-            </div>
-          </div>
+              <h1 className="font-heading text-4xl md:text-5xl font-bold mb-5 leading-[1.1]">
+                {service.h1 || service.name}
+              </h1>
 
-          {/* Testimonials */}
-          {service.testimonials && service.testimonials.length > 0 && (
-            <div className="mb-12">
-              <h2 className="font-heading text-2xl font-bold mb-6">What Our Clients Say About {service.name}</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {service.testimonials.map((t, i) => (
-                  <Card key={i}>
-                    <CardContent className="p-5">
-                      <div className="flex gap-0.5 mb-3">
-                        {Array.from({ length: 5 }).map((_, j) => (
-                          <Star key={j} className="h-4 w-4 fill-accent text-accent" />
-                        ))}
-                      </div>
-                      <p className="text-foreground italic mb-3 text-sm leading-relaxed">"{t.text}"</p>
-                      <p className="text-sm font-semibold">{t.name}</p>
-                      <p className="text-xs text-muted-foreground">{t.location}</p>
-                    </CardContent>
-                  </Card>
+              <p className="text-lg text-muted-foreground mb-7 leading-relaxed max-w-xl">
+                {service.shortDescription}
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-3 mb-6">
+                <Button variant="cta" size="lg" asChild>
+                  <a href="#quote">Get My Free Quote →</a>
+                </Button>
+                <Button variant="outline" size="lg" asChild>
+                  <a href="tel:+12407042551"><Phone className="h-4 w-4 mr-2" /> (240) 704-2551</a>
+                </Button>
+              </div>
+
+              <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted-foreground">
+                {["Licensed & Insured", "Eco-Friendly Products", "Satisfaction Guaranteed", "Background-Checked"].map((b) => (
+                  <span key={b} className="flex items-center gap-1.5">
+                    <CheckCircle className="h-4 w-4 text-accent shrink-0" /> {b}
+                  </span>
                 ))}
               </div>
-            </div>
-          )}
+            </FadeInSection>
 
-          {/* Service Areas with keyword-rich anchor text */}
-          <div className="mb-12">
-            <h2 className="font-heading text-2xl font-bold mb-4">{service.name} Available In These Areas</h2>
+            <FadeInSection>
+              <div className="relative lg:pl-4">
+                <div className="rounded-3xl overflow-hidden shadow-2xl border border-border aspect-[4/3]">
+                  <img
+                    src={heroImg}
+                    alt={`Capital Clean Care team providing ${service.name.toLowerCase()} in the DMV`}
+                    className="w-full h-full object-cover"
+                    width={800}
+                    height={600}
+                    loading="eager"
+                    fetchPriority="high"
+                  />
+                </div>
+                <div className="absolute -bottom-5 left-2 sm:-left-4 bg-white rounded-2xl shadow-xl border border-border px-5 py-3.5 flex items-center gap-3">
+                  <span className="text-3xl font-heading font-extrabold text-accent leading-none">9+</span>
+                  <span className="text-xs text-muted-foreground leading-tight">years serving<br />the DMV</span>
+                </div>
+              </div>
+            </FadeInSection>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Intro ── */}
+      <section className="py-12 md:py-16">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <FadeInSection>
+            <div className="space-y-4 text-foreground leading-relaxed text-[17px]">
+              {service.intro.split("\n\n").map((p, i) => (
+                <p key={i}>{p}</p>
+              ))}
+            </div>
+          </FadeInSection>
+        </div>
+      </section>
+
+      {/* ── Stats band ── */}
+      <section className="pb-4">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+            {[
+              { v: "5.0★", l: "Google rating" },
+              { v: "45", l: "Five-star reviews" },
+              { v: "9+ yrs", l: "Serving the DMV" },
+              { v: "100%", l: "Satisfaction guarantee" },
+            ].map((s) => (
+              <div key={s.l} className="flex flex-col items-center gap-1 py-5 px-3 rounded-xl border border-border bg-card text-center shadow-sm">
+                <span className="font-heading text-2xl md:text-3xl font-extrabold text-accent leading-none">{s.v}</span>
+                <span className="text-xs font-medium text-muted-foreground">{s.l}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── What's Included ── */}
+      <section className="py-12 md:py-16 bg-secondary/40">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <FadeInSection>
+            <div className="text-center mb-10">
+              <span className="text-accent font-semibold text-sm uppercase tracking-wider">The checklist</span>
+              <h2 className="font-heading text-2xl md:text-3xl font-bold mt-2">
+                What's Included — {service.whatsIncluded.length}-Point Checklist
+              </h2>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {service.whatsIncluded.map((item, i) => (
+                <div key={i} className="flex gap-3 items-start bg-card border border-border rounded-xl p-4 shadow-sm">
+                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-accent/10">
+                    <CheckCircle className="h-4.5 w-4.5 text-accent" />
+                  </div>
+                  <span className="text-sm text-foreground leading-relaxed pt-1">{item}</span>
+                </div>
+              ))}
+            </div>
+          </FadeInSection>
+        </div>
+      </section>
+
+      {/* ── Benefits ── */}
+      <section className="py-12 md:py-16">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <FadeInSection>
+            <div className="text-center mb-10">
+              <span className="text-accent font-semibold text-sm uppercase tracking-wider">Why choose us</span>
+              <h2 className="font-heading text-2xl md:text-3xl font-bold mt-2">The Benefits of Our {service.name}</h2>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {service.benefits.map((b, i) => (
+                <div key={i} className="flex gap-3 items-start bg-card border border-border rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow">
+                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-accent/10">
+                    <CheckCircle className="h-5 w-5 text-accent" />
+                  </div>
+                  <span className="text-foreground leading-relaxed">{b}</span>
+                </div>
+              ))}
+            </div>
+          </FadeInSection>
+        </div>
+      </section>
+
+      {/* ── Social Proof — real reviews + brand trust video ── */}
+      <LocationSocialProof
+        cityName="DMV"
+        citySlug="services"
+        serviceSlug={service.slug}
+        serviceLabel={service.name}
+      />
+
+      {/* ── Service Areas ── */}
+      <section className="py-12 md:py-16 bg-secondary/40">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <FadeInSection>
+            <h2 className="font-heading text-2xl md:text-3xl font-bold mb-5">{service.name} Available Across the DMV</h2>
             <div className="flex flex-wrap gap-2 mb-4">
               {topCities.map((c) => (
                 <Button key={c.slug} variant="outline" size="sm" asChild>
@@ -107,53 +229,65 @@ const ServicePage = () => {
                 </Button>
               ))}
             </div>
-            {/* Deep links to service-location pages */}
-            {slServices.some(sl => sl.slug === service.slug || sl.name.toLowerCase().includes(service.name.toLowerCase().split(" ")[0])) && (
+            {matchedSlService && (
               <div className="mt-4">
                 <p className="text-sm text-muted-foreground mb-2">Detailed {service.name} pages by city:</p>
-                <div className="flex flex-wrap gap-2">
-                  {slCities.slice(0, 6).map((c) => {
-                    const matchedService = slServices.find(sl => sl.slug === service.slug || sl.name.toLowerCase().includes(service.name.toLowerCase().split(" ")[0]));
-                    if (!matchedService) return null;
-                    return (
+                <div className="flex flex-wrap gap-x-4 gap-y-2">
+                  {slCities
+                    .filter((c) => isIndexable(`/locations/${c.slug}/${matchedSlService.slug}`))
+                    .slice(0, 6)
+                    .map((c) => (
                       <Link
                         key={c.slug}
-                        to={`/locations/${c.slug}/${matchedService.slug}`}
+                        to={`/locations/${c.slug}/${matchedSlService.slug}`}
                         className="text-sm text-accent hover:underline"
                         aria-label={`${service.name} in ${c.name}`}
                       >
                         {service.name} in {c.name} →
                       </Link>
-                    );
-                  })}
+                    ))}
                 </div>
               </div>
             )}
-          </div>
-
-          <div className="mb-12">
-            <h2 className="font-heading text-2xl font-bold mb-6">{service.name} FAQ</h2>
-            <FAQ faqs={service.faqs} />
-          </div>
+          </FadeInSection>
         </div>
       </section>
 
       <GreenShield5Step compact showCTA={false} />
 
+      {/* Guides & Resources (Service Areas already listed above) */}
+      <ServiceRelatedContent serviceSlug={service.slug} showAreas={false} />
+
       <TrustBadges compact withBackground={false} />
+
+      {/* ── FAQ ── */}
+      <section className="py-12 md:py-16">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <FadeInSection>
+            <h2 className="font-heading text-2xl md:text-3xl font-bold mb-6 text-center">{service.name} FAQ</h2>
+            <FAQ faqs={service.faqs} />
+          </FadeInSection>
+        </div>
+      </section>
 
       {/* Carrossel de vídeos — antes da cotação */}
       <VideoShowcase heading={`See our ${service.name.toLowerCase()} team in action 👇`} />
 
-      <section className="py-16 bg-secondary">
+      {/* ── Quote Form ── */}
+      <section id="quote" className="py-16 bg-secondary scroll-mt-24">
         <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="font-heading text-3xl font-bold text-center mb-8">Get a Free {service.name} Quote</h2>
+          <h2 className="font-heading text-2xl md:text-3xl font-bold text-center mb-2">
+            Get a Free {service.name} Quote
+          </h2>
+          <p className="text-center text-muted-foreground text-sm mb-8">
+            Serving Maryland, DC &amp; Northern Virginia · We respond within 2 hours
+          </p>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-            <div className="rounded-xl overflow-hidden border border-border shadow-sm bg-card">
+            <div className="order-2 lg:order-1 rounded-xl overflow-hidden border border-border shadow-sm bg-card">
               <div className="bg-background px-4 py-2.5 border-b border-border flex items-center gap-2">
                 <div className="flex gap-0.5">
                   {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="h-3 w-3 text-yellow-400 fill-yellow-400" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                    <Star key={i} className="h-3 w-3 text-yellow-400 fill-yellow-400" />
                   ))}
                 </div>
                 <p className="text-xs font-semibold text-foreground">Real Client Review</p>
@@ -169,27 +303,12 @@ const ServicePage = () => {
                 />
               </div>
             </div>
-            <Card><CardContent className="p-6 md:p-8"><QuoteForm /></CardContent></Card>
+            <Card className="order-1 lg:order-2">
+              <CardContent className="p-6 md:p-8">
+                <QuoteForm defaultService={service.slug.replace("-cleaning", "").replace("move-out", "move").replace("post-construction", "post-construction")} compact />
+              </CardContent>
+            </Card>
           </div>
-
-          {/* Bathroom cleaning Short — shown only on house-cleaning page */}
-          {slug === "house-cleaning" && (
-            <div className="mt-10">
-              <p className="text-center text-sm font-semibold text-muted-foreground mb-3">
-                See how we clean a bathroom, step by step 👇
-              </p>
-              <div className="mx-auto w-full max-w-[320px] rounded-2xl overflow-hidden shadow-lg border border-border" style={{ aspectRatio: "9/16" }}>
-                <iframe
-                  src="https://www.youtube.com/embed/Lg9BasRK5FQ"
-                  title="Step by step bathroom cleaning — Capital Clean Care"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="w-full h-full"
-                  loading="lazy"
-                />
-              </div>
-            </div>
-          )}
         </div>
       </section>
     </Layout>

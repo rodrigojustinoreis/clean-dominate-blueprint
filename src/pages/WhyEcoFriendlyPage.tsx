@@ -773,12 +773,12 @@ const WhyEcoFriendlyPage = () => {
           <h3 className="font-heading text-lg font-bold mb-3 text-center">Related Blog Articles</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
             {[
-              { label: "Eco Cleaning Tips for Maryland Homes", href: "/blog/eco-cleaning-tips-maryland-homes" },
-              { label: "Eco Cleaning Tips for Winter — Maryland", href: "/blog/eco-cleaning-tips-winters-maryland" },
-              { label: "Allergy-Proofing Your DMV Home", href: "/blog/allergy-proofing-home-dmv" },
-              { label: "Remove Pet Hair & Odors — DMV Homes", href: "/blog/remove-pet-hair-odors-dmv-homes" },
-              { label: "Deep Cleaning Checklist — DMV Homeowners", href: "/blog/deep-cleaning-checklist-dmv-homeowners" },
-              { label: "Best Cleaning Schedule for Busy Families", href: "/blog/best-cleaning-schedule-busy-families-dmv" },
+              { label: "Eco Cleaning Tips for Maryland Homes", href: "/resources/eco-cleaning-tips-maryland-homes" },
+              { label: "Eco Cleaning Tips for Winter — Maryland", href: "/resources/eco-cleaning-tips-winters-maryland" },
+              { label: "Allergy-Proofing Your DMV Home", href: "/resources/allergy-proofing-home-dmv" },
+              { label: "Remove Pet Hair & Odors — DMV Homes", href: "/resources/remove-pet-hair-odors-dmv-homes" },
+              { label: "Deep Cleaning Checklist — DMV Homeowners", href: "/resources/deep-cleaning-checklist-dmv-homeowners" },
+              { label: "Best Cleaning Schedule for Busy Families", href: "/resources/best-cleaning-schedule-busy-families-dmv" },
             ].map((link) => (
               <Link
                 key={link.href}
@@ -804,7 +804,7 @@ const WhyEcoFriendlyPage = () => {
       </section>
 
       {/* ── Quote Form ── */}
-      <section className="py-16 bg-secondary" id="quote">
+      <section className="py-16 bg-secondary scroll-mt-20" id="quote">
         <div className="container mx-auto px-4 max-w-2xl">
           <div className="text-center mb-8">
             <h2 className="font-heading text-3xl font-bold mb-3">
@@ -819,7 +819,7 @@ const WhyEcoFriendlyPage = () => {
           </div>
           <Card>
             <CardContent className="p-6 md:p-8">
-              <QuoteForm submitLabel="Get My Free Eco-Clean Quote →" />
+              <QuoteForm submitLabel="Get My Free Eco-Clean Quote →" compact />
             </CardContent>
           </Card>
           <p className="text-center text-xs text-muted-foreground mt-4">
