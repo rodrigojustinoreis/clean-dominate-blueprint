@@ -277,7 +277,16 @@ const AirbnbCleaningPage = () => {
         </div>
       </section>
 
-      {/* ── Real video transformations (2nd position) ── */}
+      {/* ── Client video testimonial (2nd position, autoplay-on-scroll) ── */}
+      <TestimonialVideo
+        src="/videos/client-testimonial.mp4"
+        poster="/videos/client-testimonial-poster.jpg"
+        label="Capital Clean Care client testimonial — a Montgomery County client on working with our cleaning team"
+        heading="Hear It From a Capital Clean Care Client"
+        subtext="A Montgomery County client on what it's like to have our team handle the cleaning."
+      />
+
+      {/* ── Real video transformations (3rd position) ── */}
       <TransformationsGallery />
 
       {/* ── Intro / About ── */}
@@ -354,15 +363,6 @@ const AirbnbCleaningPage = () => {
           </FadeInSection>
         </div>
       </section>
-
-      {/* ── Client video testimonial (autoplay-on-scroll) ── */}
-      <TestimonialVideo
-        src="/videos/client-testimonial.mp4"
-        poster="/videos/client-testimonial-poster.jpg"
-        label="Capital Clean Care client testimonial — a Montgomery County client on working with our cleaning team"
-        heading="Hear It From a Capital Clean Care Client"
-        subtext="A Montgomery County client on what it's like to have our team handle the cleaning."
-      />
 
       {/* ── How a turnover works (timeline) ── */}
       <section className="py-12 md:py-16 bg-secondary/40">
