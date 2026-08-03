@@ -10,7 +10,8 @@ import BeforeAfterGallery from "@/components/BeforeAfterGallery";
 import TransformationsGallery from "@/components/TransformationsGallery";
 import GreenShield5Step from "@/components/GreenShield5Step";
 import TrustBadges from "@/components/TrustBadges";
-import { ServiceSchema, FAQSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
+import { ServiceSchema, FAQSchema, BreadcrumbSchema, LocalBusinessSchema } from "@/components/SchemaMarkup";
+import { pickReviews } from "@/data/realReviews";
 import { useSEO } from "@/hooks/useSEO";
 import { getServiceBySlug } from "@/data/services";
 import { cities } from "@/data/locations";
@@ -148,6 +149,10 @@ const AirbnbCleaningPage = () => {
       <BreadcrumbSchema
         items={[{ label: "Home", href: "/" }, { label: "Airbnb Cleaning", href: "/services/airbnb-cleaning" }]}
       />
+      {/* Defines the #business LocalBusiness entity that ServiceSchema's provider references —
+          same shared entity (+ real 5.0/45 aggregateRating) the home & city pages already emit.
+          Without this the provider @id dangled. */}
+      <LocalBusinessSchema reviews={pickReviews("services/airbnb-cleaning", 2)} />
       <ServiceSchema
         serviceName={service.name}
         description={service.shortDescription}
@@ -445,6 +450,53 @@ const AirbnbCleaningPage = () => {
                   <p className="text-[15px] text-muted-foreground leading-relaxed">{h.text}</p>
                 </div>
               ))}
+            </div>
+          </FadeInSection>
+        </div>
+      </section>
+
+      {/* ── Compare our services (helps mis-matched visitors find the right page) ── */}
+      <section className="py-12 md:py-16 border-t border-border">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <FadeInSection>
+            <h2 className="font-heading text-2xl md:text-3xl font-bold mb-4">Compare Our Cleaning Services</h2>
+            <p className="text-[17px] leading-relaxed text-foreground mb-6 max-w-3xl">
+              Not sure Airbnb &amp; Short-Term Rental Cleaning is the right fit? Here's how it compares to our
+              other services, so you can book the one that actually matches your property and schedule.
+            </p>
+            <div className="grid sm:grid-cols-2 gap-5">
+              <div className="bg-card border-2 border-accent rounded-xl p-6 shadow-sm">
+                <h3 className="font-heading text-lg font-bold mb-2">Airbnb &amp; Short-Term Rental Cleaning</h3>
+                <p className="text-[15px] text-muted-foreground leading-relaxed">
+                  You're on this page. Fast turnover cleanings between guests, coordinated around your booking
+                  calendar — built for hosts who need speed and consistency, every checkout.
+                </p>
+              </div>
+              <div className="bg-card border border-border rounded-xl p-6 shadow-sm">
+                <h3 className="font-heading text-lg font-bold mb-2">Recurring Cleaning</h3>
+                <p className="text-[15px] text-muted-foreground leading-relaxed">
+                  Weekly, biweekly, or monthly cleanings for a home you live in full-time. Best if you own the
+                  property and want ongoing upkeep instead of per-checkout turnovers.
+                </p>
+                <Link to="/services/recurring-cleaning" className="text-accent hover:underline font-medium inline-block mt-3">See Recurring Cleaning →</Link>
+              </div>
+              <div className="bg-card border border-border rounded-xl p-6 shadow-sm">
+                <h3 className="font-heading text-lg font-bold mb-2">Deep Cleaning</h3>
+                <p className="text-[15px] text-muted-foreground leading-relaxed">
+                  A one-time, top-to-bottom reset — baseboards, inside appliances, grout, and every detail a
+                  standard clean skips. Great before your rental's first listing photos or after a hard season
+                  of bookings.
+                </p>
+                <Link to="/services/deep-cleaning" className="text-accent hover:underline font-medium inline-block mt-3">See Deep Cleaning →</Link>
+              </div>
+              <div className="bg-card border border-border rounded-xl p-6 shadow-sm">
+                <h3 className="font-heading text-lg font-bold mb-2">Move In / Move Out Cleaning</h3>
+                <p className="text-[15px] text-muted-foreground leading-relaxed">
+                  For an empty property, not an active listing — ideal if you're converting a home into a rental
+                  for the first time, or handing it back to an owner between long-term tenants.
+                </p>
+                <Link to="/services/move-out-cleaning" className="text-accent hover:underline font-medium inline-block mt-3">See Move In / Move Out Cleaning →</Link>
+              </div>
             </div>
           </FadeInSection>
         </div>
