@@ -10,7 +10,8 @@ import TrustBadges from "@/components/TrustBadges";
 import BeforeAfterGallery from "@/components/BeforeAfterGallery";
 import LocationSocialProof from "@/components/location/LocationSocialProof";
 import { useSEO } from "@/hooks/useSEO";
-import { ServiceSchema, FAQSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
+import { ServiceSchema, FAQSchema, BreadcrumbSchema, LocalBusinessSchema } from "@/components/SchemaMarkup";
+import { pickReviews } from "@/data/realReviews";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { cities } from "@/data/locations";
 import ServiceRelatedContent from "@/components/ServiceRelatedContent";
@@ -115,6 +116,7 @@ const EcoFriendlyCleaningPage = () => {
           { label: "Eco-Friendly Cleaning", href: "/services/eco-friendly-cleaning" },
         ]}
       />
+      <LocalBusinessSchema reviews={pickReviews("services/eco-friendly-cleaning", 2)} />
       <ServiceSchema
         serviceName="Eco-Friendly House Cleaning"
         description="Plant-based, non-toxic house cleaning using EPA Safer Choice certified products. Safe for children, pets, and allergy sufferers across Maryland, DC, and Northern Virginia."

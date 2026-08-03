@@ -10,7 +10,8 @@ import BeforeAfterGallery from "@/components/BeforeAfterGallery";
 import TransformationsGallery from "@/components/TransformationsGallery";
 import GreenShield5Step from "@/components/GreenShield5Step";
 import TrustBadges from "@/components/TrustBadges";
-import { ServiceSchema, FAQSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
+import { ServiceSchema, FAQSchema, BreadcrumbSchema, LocalBusinessSchema } from "@/components/SchemaMarkup";
+import { pickReviews } from "@/data/realReviews";
 import { useSEO } from "@/hooks/useSEO";
 import { getServiceBySlug } from "@/data/services";
 import { cities } from "@/data/locations";
@@ -169,6 +170,7 @@ const RecurringCleaningPage = () => {
       <BreadcrumbSchema
         items={[{ label: "Home", href: "/" }, { label: "Recurring Cleaning", href: "/services/recurring-cleaning" }]}
       />
+      <LocalBusinessSchema reviews={pickReviews("services/recurring-cleaning", 2)} />
       <ServiceSchema
         serviceName={service.name}
         description={service.shortDescription}
