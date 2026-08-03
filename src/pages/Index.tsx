@@ -20,6 +20,7 @@ import HeroSection from "@/components/home/HeroSection";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
 import ServicesSection from "@/components/home/ServicesSection";
 import TestimonialsCarousel from "@/components/home/TestimonialsCarousel";
+import VideoShowcase from "@/components/VideoShowcase";
 import EcoCallout from "@/components/home/EcoCallout";
 import ScrollReveal from "@/components/ScrollReveal";
 import GreenShield5Step from "@/components/GreenShield5Step";
@@ -254,6 +255,11 @@ const Index = () => {
             </div>
           </div>
         </section>
+      </ScrollReveal>
+
+      {/* ══════════════ Carrossel de vídeos — antes da cotação ══════════════ */}
+      <ScrollReveal>
+        <VideoShowcase />
       </ScrollReveal>
 
       {/* ══════════════ 6. DEPOIMENTOS (Google Reviews) ══════════════ */}
