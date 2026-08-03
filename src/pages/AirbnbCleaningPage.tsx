@@ -133,8 +133,8 @@ const AirbnbCleaningPage = () => {
     title: service.metaTitle,
     description: service.metaDescription,
     canonical: "https://capitalcleancare.com/services/airbnb-cleaning",
-    ogImage: "/images/blog/airbnb-bedroom-turnover.webp",
-    preloadImage: "/images/blog/airbnb-bedroom-turnover.webp",
+    ogImage: "/images/blog/airbnb-service-og.jpg",
+    preloadImage: "/images/blog/airbnb-service-hero.webp",
   });
 
   const scrollToForm = (e: React.MouseEvent) => {
@@ -258,8 +258,8 @@ const AirbnbCleaningPage = () => {
               <div className="relative lg:pl-4">
                 <div className="rounded-3xl overflow-hidden shadow-2xl border border-border aspect-[4/3]">
                   <img
-                    src="/images/blog/airbnb-bedroom-turnover.webp"
-                    alt="A freshly made bed and staged short-term rental after a Capital Clean Care Airbnb turnover cleaning in the DMV"
+                    src="/images/blog/airbnb-service-hero.webp"
+                    alt="A bright, spotless open-plan short-term rental living and dining area, staged guest-ready after a Capital Clean Care Airbnb turnover in the DMV"
                     className="w-full h-full object-cover"
                     width={800}
                     height={600}
