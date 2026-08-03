@@ -31,12 +31,13 @@
 *.css
   Cache-Control: public, max-age=31536000, immutable
 
-# HTML pages — stale-while-revalidate so cold-cache hits are served instantly
-# from edge while Netlify refreshes in background. Covers all prerendered
-# directory-style routes (/about/, /locations/bethesda-md, etc.) not just .html files.
-# More-specific rules above (/assets/*, *.js, *.css) still win for static assets.
+# HTML pages — must-revalidate: o navegador/CDN sempre confirma com a origem
+# antes de mostrar, então NUNCA aparece página desatualizada depois de um deploy.
+# (Era stale-while-revalidate=86400, que servia a versão velha por até 24h e
+# fazia o site parecer "antigo" após cada atualização — 02/08/2026.)
+# Assets estáticos (/assets/*, *.js, *.css acima) continuam com cache imutável.
 /*
-  Cache-Control: public, max-age=0, stale-while-revalidate=86400
+  Cache-Control: public, max-age=0, must-revalidate
 
 # Service worker and manifest
 /manifest.json
