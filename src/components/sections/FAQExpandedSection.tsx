@@ -8,7 +8,7 @@ export interface FAQItem {
 }
 
 interface FAQExpandedSectionProps {
-  faqs?: FAQItem[];
+  faqs: FAQItem[];
   title?: string;
   schemaId?: string;
 }
