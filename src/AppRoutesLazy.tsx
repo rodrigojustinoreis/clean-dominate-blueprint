@@ -20,6 +20,7 @@ const DeepCleaningPage = lazy(() => import("./pages/DeepCleaningPage"));
 const RecurringCleaningPage = lazy(() => import("./pages/RecurringCleaningPage"));
 const AirbnbCleaningPage = lazy(() => import("./pages/AirbnbCleaningPage"));
 const CondoCleaningPage = lazy(() => import("./pages/CondoCleaningPage"));
+const CleaningChecklistPage = lazy(() => import("./pages/CleaningChecklistPage"));
 const LocationHub = lazy(() => import("./pages/LocationHub"));
 const CityPage = lazy(() => import("./pages/CityPage"));
 const FAQPage = lazy(() => import("./pages/FAQPage"));
@@ -454,6 +455,7 @@ const AppRoutesLazy = () => (
     <Route path="/es/areas/takoma-park-md" element={<TakomaParkES />} />
     <Route path="/es/areas/montgomery-village-md" element={<MontgomeryVillageES />} />
     {/* State hub pages — catch-all for single-segment paths; LocationHub returns <NotFound /> for unknown slugs */}
+    <Route path="/checklist" element={<CleaningChecklistPage />} />
     <Route path="/:stateSlug" element={<LocationHub />} />
     <Route path="/locations/:slug/:serviceSlug" element={<ServiceLocationPage />} />
     <Route path="/locations/:slug" element={<CityPage />} />

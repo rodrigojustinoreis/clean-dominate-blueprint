@@ -11,6 +11,7 @@ import DeepCleaningPage from "./pages/DeepCleaningPage";
 import RecurringCleaningPage from "./pages/RecurringCleaningPage";
 import AirbnbCleaningPage from "./pages/AirbnbCleaningPage";
 import CondoCleaningPage from "./pages/CondoCleaningPage";
+import CleaningChecklistPage from "./pages/CleaningChecklistPage";
 import LocationHub from "./pages/LocationHub";
 import CityPage from "./pages/CityPage";
 import FAQPage from "./pages/FAQPage";
@@ -445,6 +446,7 @@ const AppRoutes = () => (
     <Route path="/es/areas/aspen-hill-md" element={<AspenHillES />} />
     <Route path="/es/areas/takoma-park-md" element={<TakomaParkES />} />
     <Route path="/es/areas/montgomery-village-md" element={<MontgomeryVillageES />} />
+    <Route path="/checklist" element={<CleaningChecklistPage />} />
     {/* State hub pages — catch-all for single-segment paths; LocationHub returns <NotFound /> for unknown slugs */}
     <Route path="/:stateSlug" element={<LocationHub />} />
     <Route path="/locations/:slug/:serviceSlug" element={<ServiceLocationPage />} />
