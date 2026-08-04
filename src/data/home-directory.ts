@@ -111,6 +111,11 @@ export const dirServiceCards: { slug: string; name: string; shortDescription: st
     "shortDescription": "Non-toxic, plant-based cleaning that's safe for your family, pets, and the planet."
   },
   {
+    "slug": "condo-cleaning",
+    "name": "Condo Cleaning",
+    "shortDescription": "HOA-friendly condo & high-rise cleaning — fully insured, with elevator, fob, and front-desk access handled."
+  },
+  {
     "slug": "airbnb-cleaning",
     "name": "Airbnb & Short-Term Rental Cleaning",
     "shortDescription": "Fast, reliable turnover cleaning for Airbnb, VRBO, and short-term rental properties in MD, DC & VA."
