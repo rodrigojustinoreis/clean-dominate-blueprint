@@ -364,21 +364,33 @@ const CondoCleaningPage = () => {
         </div>
       </section>
 
-      {/* ── No Contracts. No Hassle. (value panel) ── */}
+      {/* ── No Contracts. No Hassle. (navy panel + photo, reference scheme) ── */}
       <section className="py-12 md:py-16">
-        <div className="container mx-auto px-4 max-w-5xl">
+        <div className="container mx-auto px-4 max-w-6xl">
           <FadeInSection>
-            <div className="rounded-3xl bg-[#0D2B5E] text-white p-8 md:p-12">
-              <div className="max-w-2xl">
+            <div className="grid lg:grid-cols-2 rounded-3xl overflow-hidden shadow-xl border border-border">
+              <div className="bg-[#0D2B5E] text-white p-8 md:p-12 flex flex-col justify-center">
                 <p className="text-accent font-semibold text-sm uppercase tracking-wider mb-1">No Contracts.</p>
                 <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">No Hassle.</h2>
                 <p className="text-white/85 text-lg leading-relaxed mb-6">
                   You get the condo cleaning frequency you want without signing a contract. Get your unit cleaned as often —
                   or as little — as you like. Reschedule, add a visit, or pause when you travel. No problem, no penalties.
                 </p>
-                <Button variant="cta" size="lg" asChild>
-                  <a href="#quote" onClick={scrollToForm}>Start With a Free Quote →</a>
-                </Button>
+                <div>
+                  <Button variant="cta" size="lg" asChild>
+                    <a href="#quote" onClick={scrollToForm}>Start With a Free Quote →</a>
+                  </Button>
+                </div>
+              </div>
+              <div className="min-h-[280px] lg:min-h-full">
+                <img
+                  src="/images/blog/condo-living.webp"
+                  alt="A cozy, freshly cleaned condo living room corner with a styled sofa, plant and rug"
+                  className="w-full h-full object-cover"
+                  width={1000}
+                  height={750}
+                  loading="lazy"
+                />
               </div>
             </div>
           </FadeInSection>
@@ -509,6 +521,21 @@ const CondoCleaningPage = () => {
         <div className="container mx-auto px-4 max-w-4xl">
           <h2 className="font-heading text-2xl font-bold mb-6">Condo Cleaning FAQ</h2>
           <FAQ faqs={service.faqs} />
+        </div>
+      </section>
+
+      {/* ── Get started CTA (photo + navy overlay, reference scheme) ── */}
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0">
+          <img src="/images/blog/condo-hero.webp" alt="" aria-hidden="true" className="w-full h-full object-cover" loading="lazy" />
+          <div className="absolute inset-0 bg-[#0D2B5E]/85" />
+        </div>
+        <div className="relative container mx-auto px-4 max-w-4xl py-14 md:py-20 text-center text-white">
+          <h2 className="font-heading text-3xl md:text-4xl font-bold mb-3">Get Started — See Why the DMV Trusts Us With Their Condos</h2>
+          <p className="text-white/85 text-lg mb-7">Book your condo clean today. Free quote, no contracts, HOA-friendly.</p>
+          <Button variant="cta" size="lg" asChild>
+            <a href="#quote" onClick={scrollToForm}>Get My Free Quote →</a>
+          </Button>
         </div>
       </section>
 
