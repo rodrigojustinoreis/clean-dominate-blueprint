@@ -586,6 +586,7 @@ export const services: ServiceData[] = [
       { q: "How often should I have my condo cleaned?", a: "It depends on how much life your unit sees. Weekly suits busy professionals and pet owners; bi-weekly is our most popular, balanced option; monthly works for tidy or single-person units that just need a reset. Every plan is flexible with no contracts — shift, add, or skip a visit whenever you need." },
       { q: "How much does condo cleaning cost?", a: "Condo cleaning is quoted as a flat per-visit price based on the size of your unit, never an open-ended hourly rate. Because most condos are smaller than single-family homes, they often fall at the lower end of our pricing. Request a free quote for an exact number for your unit." },
       { q: "Do you clean condos I rent out, not just live in?", a: "Yes. We clean owner-occupied condos, investment units, and turnovers between tenants or guests. If you rent short-term, ask about our Airbnb and short-term rental turnover service, which coordinates around your booking calendar." },
+      { q: "Do you offer condo cleaning services near me?", a: "We provide condo cleaning services across Montgomery County and the wider DMV — Rockville, Bethesda, Silver Spring, Gaithersburg, Germantown, and throughout Maryland, Washington DC, and Northern Virginia. Request a free quote with your address and we'll confirm coverage and a flat per-visit price for your building." },
     ],
     testimonials: [],
     metaTitle: "Condo Cleaning Services in MD, DC & VA | Capital Clean Care",

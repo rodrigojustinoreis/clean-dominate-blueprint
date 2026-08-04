@@ -491,7 +491,11 @@ const CondoCleaningPage = () => {
       {/* ── Service Areas ── */}
       <section className="py-12">
         <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="font-heading text-2xl font-bold mb-4">Condo Cleaning Available In These Areas</h2>
+          <h2 className="font-heading text-2xl font-bold mb-2">Condo Cleaning Services Near You</h2>
+          <p className="text-muted-foreground mb-4 max-w-2xl">
+            Looking for a condo cleaning service near you? We cover Montgomery County and the wider DMV — pick your city
+            or get a free quote for your building.
+          </p>
           <div className="flex flex-wrap gap-2 mb-4">
             {topCities.map((c) => (
               <Button key={c.slug} variant="outline" size="sm" asChild>
