@@ -415,8 +415,9 @@ const MaidServicePage = () => {
         <div className="container mx-auto px-4 max-w-4xl">
           <h2 className="font-heading text-2xl font-bold mb-2">Maid Service Near You</h2>
           <p className="text-muted-foreground mb-4 max-w-2xl">
-            Looking for a maid service near you? We cover Montgomery County and the wider DMV — pick your city or get a
-            free quote for your home.
+            Looking for a maid service or a maid cleaning service near you? We provide maid services across Montgomery
+            County and the wider DMV — Bethesda, Rockville, Silver Spring, Arlington, and Washington DC — so pick your city
+            or get a free quote for your home.
           </p>
           <div className="flex flex-wrap gap-2 mb-4">
             {topCities.map((c) => (
