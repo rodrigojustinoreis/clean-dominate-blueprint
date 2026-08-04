@@ -99,9 +99,19 @@ const CleaningChecklistPage = () => {
     <Layout>
       {seoHelmet}
 
-      {/* ── Navy intro ── */}
-      <section className="bg-[#0D2B5E] text-white py-14 md:py-20">
-        <div className="container mx-auto px-4 max-w-3xl text-center">
+      {/* ── Navy intro (team photo background) ── */}
+      <section className="relative overflow-hidden text-white py-14 md:py-20">
+        <div className="absolute inset-0">
+          <img
+            src="/images/team/real-team-luxury-home.webp"
+            alt=""
+            aria-hidden="true"
+            className="w-full h-full object-cover object-center"
+            loading="eager"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0D2B5E]/90 via-[#0D2B5E]/82 to-[#0D2B5E]/92" />
+        </div>
+        <div className="relative container mx-auto px-4 max-w-3xl text-center">
           <span className="inline-block bg-accent/20 text-white font-semibold text-sm uppercase tracking-wider px-3 py-1 rounded-full mb-4 border border-accent/30">
             GreenShield {TOTAL}-Point Checklist
           </span>
