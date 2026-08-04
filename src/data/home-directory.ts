@@ -86,6 +86,11 @@ export const dirServiceCards: { slug: string; name: string; shortDescription: st
     "shortDescription": "Routine cleaning that keeps your home consistently fresh and tidy between deeper sessions."
   },
   {
+    "slug": "maid-service",
+    "name": "Maid Service",
+    "shortDescription": "Vetted, insured, background-checked maids — the same trusted team, one-time or on a regular schedule."
+  },
+  {
     "slug": "deep-cleaning",
     "name": "Deep Cleaning",
     "shortDescription": "An intensive, top-to-bottom clean that reaches every hidden corner and neglected surface."
