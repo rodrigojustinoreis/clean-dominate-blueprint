@@ -132,6 +132,7 @@ const CondoCleaningPage = () => {
         description={service.shortDescription}
         url="https://capitalcleancare.com/services/condo-cleaning"
         serviceType="Condo Cleaning"
+        priceRange={{ low: 160, high: 385 }}
       />
       <FAQSchema faqs={service.faqs} />
 

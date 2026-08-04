@@ -18,12 +18,9 @@
     <!-- og:image + twitter:image are emitted per-page via react-helmet-async (useSEO), so the
          effective (prerendered) image is always the page's own — with a site-wide default fallback.
          Kept here: only tags whose value is identical on every page. -->
-    <meta property="og:site_name" content="Capital Clean Care" />
-    <meta property="og:type" content="website" />
-    <meta property="og:locale" content="en_US" />
+    <!-- og:site_name, og:type, og:locale, twitter:card and twitter:site are emitted per-page by
+         useSEO (react-helmet-async); kept here only the tags helmet does NOT emit, to avoid duplicates. -->
     <meta property="og:locale:alternate" content="es_US" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@capitalcleancare" />
     <meta name="twitter:creator" content="@capitalcleancare" />
     <!-- Site-verification meta tags removed: they shipped as literal REPLACE_WITH_* placeholders
          (verifying nothing). Add real tokens here if/when meta-tag verification is needed; GSC is

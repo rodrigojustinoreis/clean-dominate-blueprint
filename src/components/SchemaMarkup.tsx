@@ -154,6 +154,8 @@ interface ServiceSchemaProps {
   url: string;
   areaServed?: string[];
   serviceType?: string;
+  /** Visible price range for this service — emits a valid AggregateOffer (low/high). */
+  priceRange?: { low: number; high: number };
 }
 
 export const ServiceSchema = ({
@@ -162,6 +164,7 @@ export const ServiceSchema = ({
   url,
   areaServed,
   serviceType = "House Cleaning",
+  priceRange,
 }: ServiceSchemaProps) => {
   const schema = {
     "@context": "https://schema.org",
@@ -174,12 +177,22 @@ export const ServiceSchema = ({
       ? areaServed.map((a) => ({ "@type": "Place", name: a }))
       : defaultAreaServedRegions,
     serviceType,
-    offers: {
-      "@type": "Offer",
-      availability: "https://schema.org/InStock",
-      priceCurrency: "USD",
-      eligibleRegion: defaultAreaServedRegions,
-    },
+    offers: priceRange
+      ? {
+          "@type": "AggregateOffer",
+          lowPrice: priceRange.low,
+          highPrice: priceRange.high,
+          priceCurrency: "USD",
+          availability: "https://schema.org/InStock",
+          eligibleRegion: defaultAreaServedRegions,
+        }
+      : {
+          // No price to show for this service → omit priceCurrency to avoid the
+          // "Offer missing price" Rich-Results warning (Service isn't a rich-result type anyway).
+          "@type": "Offer",
+          availability: "https://schema.org/InStock",
+          eligibleRegion: defaultAreaServedRegions,
+        },
   };
 
   const id = `service-schema-${serviceName.replace(/\s/g, "-").toLowerCase()}`;

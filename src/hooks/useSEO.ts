@@ -65,7 +65,7 @@ export const useSEO = ({ title, description, canonical, ogType = "website", ogIm
     createElement("meta", { key: "tw-card", name: "twitter:card", content: "summary_large_image" }),
     createElement("meta", { key: "tw-title", name: "twitter:title", content: finalTitle }),
     createElement("meta", { key: "tw-desc", name: "twitter:description", content: description }),
-    createElement("meta", { key: "tw-site", name: "twitter:site", content: "@CapitalCleanCare" }),
+    createElement("meta", { key: "tw-site", name: "twitter:site", content: "@capitalcleancare" }),
     ...hreflangLinks,
     ...(preloadImage
       ? [createElement("link", { key: "preload-lcp", rel: "preload", as: "image", href: preloadImage, fetchPriority: "high" })]
