@@ -1,6 +1,5 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
-import { CheckCircle2, ArrowRight, Utensils, Bath, BedDouble, Sofa, Home } from "lucide-react";
+import { CheckCircle2, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import { useSEO } from "@/hooks/useSEO";
@@ -87,12 +86,7 @@ const SECTIONS: { room: string; items: string[] }[] = [
 
 const TOTAL = SECTIONS.reduce((n, s) => n + s.items.length, 0); // 50
 
-// Room icons, parallel to SECTIONS, for the interactive floor-plan explorer.
-const ICONS = [Utensils, Bath, BedDouble, Sofa, Home];
-
 const CleaningChecklistPage = () => {
-  const [active, setActive] = useState(0);
-
   const { seoHelmet } = useSEO({
     title: `The GreenShield ${TOTAL}-Point Cleaning Checklist | Capital Clean Care`,
     description:
@@ -137,59 +131,26 @@ const CleaningChecklistPage = () => {
         </div>
       </section>
 
-      {/* ── Interactive room explorer (our own "maquete") ── */}
+      {/* ── Checklist by room ── */}
       <section className="py-12 md:py-16 bg-secondary/30">
         <div className="container mx-auto px-4 max-w-5xl">
-          <div className="text-center max-w-2xl mx-auto mb-8">
-            <h2 className="font-heading text-2xl md:text-3xl font-bold mb-2">Explore Your Home, Room by Room</h2>
-            <p className="text-muted-foreground">
-              Tap a room to see exactly what our {TOTAL}-point checklist covers there. Have a special request that isn't
-              listed? Just ask — we offer customizable cleans.
-            </p>
-          </div>
-          <div className="grid lg:grid-cols-2 gap-8 items-start">
-            {/* Floor-plan tiles */}
-            <div className="rounded-2xl border-2 border-border bg-secondary/50 p-3 md:p-4">
-              <div className="grid grid-cols-2 gap-2 md:gap-3">
-                {SECTIONS.map((s, i) => {
-                  const Icon = ICONS[i];
-                  const isActive = i === active;
-                  const wide = s.room.startsWith("Living");
-                  return (
-                    <button
-                      key={s.room}
-                      type="button"
-                      onClick={() => setActive(i)}
-                      aria-pressed={isActive}
-                      className={`${wide ? "col-span-2" : ""} flex flex-col items-center justify-center gap-1.5 rounded-xl border-2 px-3 py-5 text-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
-                        isActive
-                          ? "bg-[#0D2B5E] text-white border-[#0D2B5E]"
-                          : "bg-card text-foreground border-border hover:border-accent"
-                      }`}
-                    >
-                      <Icon className={`h-6 w-6 ${isActive ? "text-white" : "text-accent"}`} aria-hidden="true" />
-                      <span className="font-heading font-bold text-sm leading-tight">{s.room}</span>
-                      <span className={`text-xs ${isActive ? "text-white/70" : "text-muted-foreground"}`}>{s.items.length} points</span>
-                    </button>
-                  );
-                })}
+          <div className="grid md:grid-cols-2 gap-6">
+            {SECTIONS.map((s) => (
+              <div key={s.room} className="relative bg-card border border-border rounded-2xl p-6 pt-7 shadow-sm">
+                <span className="absolute -top-2 -left-2 h-9 w-9 border-t-4 border-l-4 border-accent rounded-tl-xl" aria-hidden="true" />
+                <div className="flex items-baseline justify-between mb-4">
+                  <h2 className="font-heading text-2xl font-bold text-foreground">{s.room}</h2>
+                  <span className="text-sm font-semibold text-muted-foreground">{s.items.length} points</span>
+                </div>
+                <ul className="space-y-2.5">
+                  {s.items.map((i) => (
+                    <li key={i} className="flex gap-2.5 items-start text-[15px] text-muted-foreground leading-relaxed">
+                      <CheckCircle2 className="h-4.5 w-4.5 text-[#2E7D32] shrink-0 mt-0.5" /> {i}
+                    </li>
+                  ))}
+                </ul>
               </div>
-            </div>
-            {/* Detail panel */}
-            <div className="relative bg-card border border-border rounded-2xl p-6 pt-7 shadow-sm">
-              <span className="absolute -top-2 -left-2 h-9 w-9 border-t-4 border-l-4 border-accent rounded-tl-xl" aria-hidden="true" />
-              <div className="flex items-baseline justify-between mb-4">
-                <h3 className="font-heading text-2xl font-bold text-foreground">{SECTIONS[active].room}</h3>
-                <span className="text-sm font-semibold text-muted-foreground">{SECTIONS[active].items.length} points</span>
-              </div>
-              <ul className="space-y-2.5">
-                {SECTIONS[active].items.map((i) => (
-                  <li key={i} className="flex gap-2.5 items-start text-[15px] text-muted-foreground leading-relaxed">
-                    <CheckCircle2 className="h-4.5 w-4.5 text-[#2E7D32] shrink-0 mt-0.5" /> {i}
-                  </li>
-                ))}
-              </ul>
-            </div>
+            ))}
           </div>
         </div>
       </section>
