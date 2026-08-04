@@ -124,7 +124,7 @@ const CondoCleaningPage = () => {
     <div className="min-h-screen flex flex-col">
       {seoHelmet}
       <BreadcrumbSchema
-        items={[{ label: "Home", href: "/" }, { label: "Condo Cleaning", href: "/services/condo-cleaning" }]}
+        items={[{ label: "Home", href: "/" }, { label: "Services", href: "/services" }, { label: "Condo Cleaning", href: "/services/condo-cleaning" }]}
       />
       <LocalBusinessSchema reviews={pickReviews("services/condo-cleaning", 2)} />
       <ServiceSchema
