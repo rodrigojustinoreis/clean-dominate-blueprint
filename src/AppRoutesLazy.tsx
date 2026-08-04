@@ -19,6 +19,7 @@ const HouseCleaningPage = lazy(() => import("./pages/HouseCleaningPage"));
 const DeepCleaningPage = lazy(() => import("./pages/DeepCleaningPage"));
 const RecurringCleaningPage = lazy(() => import("./pages/RecurringCleaningPage"));
 const AirbnbCleaningPage = lazy(() => import("./pages/AirbnbCleaningPage"));
+const CondoCleaningPage = lazy(() => import("./pages/CondoCleaningPage"));
 const LocationHub = lazy(() => import("./pages/LocationHub"));
 const CityPage = lazy(() => import("./pages/CityPage"));
 const FAQPage = lazy(() => import("./pages/FAQPage"));
@@ -225,6 +226,7 @@ const AppRoutesLazy = () => (
     <Route path="/services/eco-friendly-cleaning" element={<EcoFriendlyCleaningPage />} />
     <Route path="/services/house-cleaning" element={<HouseCleaningPage />} />
     <Route path="/services/airbnb-cleaning" element={<AirbnbCleaningPage />} />
+    <Route path="/services/condo-cleaning" element={<CondoCleaningPage />} />
     <Route path="/services/:slug" element={<ServicePage />} />
     <Route path="/why-eco-friendly-cleaning" element={<WhyEcoFriendlyPage />} />
     <Route path="/faq" element={<FAQPage />} />

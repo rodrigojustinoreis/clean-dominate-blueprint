@@ -139,6 +139,7 @@ function getAllRoutes(): string[] {
     "/services/recurring-cleaning",
     "/services/eco-friendly-cleaning",
     "/services/airbnb-cleaning",
+    "/services/condo-cleaning",
     "/services/office-cleaning",
     "/services/post-construction-cleaning",
     "/house-cleaning-near-me",
