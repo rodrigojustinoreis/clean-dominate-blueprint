@@ -71,6 +71,13 @@ const SERVICE_MENU: { heading: string; items: { to: string; label: string }[] }[
   },
 ];
 
+// Short, clean labels for the Locations dropdown (the hub `name` fields are long, SEO-y titles).
+const HUB_LABELS: Record<string, string> = {
+  "maryland": "Maryland",
+  "washington-dc": "Washington, DC",
+  "virginia": "Northern Virginia",
+};
+
 const Header = () => {
   const { pathname } = useLocation();
   const isSpanish = pathname.startsWith("/es/") || pathname === "/es";
@@ -184,13 +191,18 @@ const Header = () => {
                   <button className="whitespace-nowrap px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors flex items-center gap-1">
                     Locations <ChevronDown className="h-3 w-3 transition-transform group-hover:rotate-180 duration-200" />
                   </button>
-                  <div className="absolute top-full left-0 pt-2 hidden group-hover:block">
-                    <div className="bg-card border border-border rounded-lg shadow-lg py-2 min-w-[220px]">
-                      {hubs.map((h) => (
-                        <Link key={h.slug} to={`/${h.slug}`} className="block px-4 py-2 text-sm font-semibold hover:bg-secondary transition-colors">
-                          {h.name}
-                        </Link>
-                      ))}
+                  <div className="absolute top-full left-0 pt-2 hidden group-hover:block z-50">
+                    <div className="bg-card border border-border rounded-xl shadow-xl p-6 min-w-[240px]">
+                      <p className="font-heading font-bold text-[14px] uppercase tracking-wider text-[#0D2B5E] mb-3">Areas We Serve</p>
+                      <ul className="space-y-0.5">
+                        {hubs.map((h) => (
+                          <li key={h.slug}>
+                            <Link to={`/${h.slug}`} className="block py-1.5 font-heading font-medium text-[16px] text-[#1A6BAD] hover:text-[#0D2B5E] transition-colors">
+                              {HUB_LABELS[h.slug] ?? h.name}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   </div>
                 </div>
