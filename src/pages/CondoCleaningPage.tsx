@@ -243,17 +243,18 @@ const CondoCleaningPage = () => {
               <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-5">Your Condo, Cleaned Your Way</h2>
               <div className="space-y-4 text-[17px] leading-relaxed text-foreground">
                 <p>
-                  You start the week strong — floors vacuumed, dishes done, bathrooms sparkling. But by mid-week it's hard
-                  to tell you ever spent your weekend on it. Wouldn't it be better to get that freshly-cleaned feeling
-                  whenever you want it, even on a Wednesday?
+                  You start the week strong, with your floors vacuumed, dishes washed, and toilets cleaned. But by
+                  mid-week, it's hard to tell you ever spent your weekend cleaning your condo.
                 </p>
+                <p>Wouldn't it be great to get that freshly-cleaned feeling whenever you want it, even on a Wednesday?</p>
                 <p>
-                  When you partner with Capital Clean Care, your condo gets cleaned your way — while you're at work, on your
-                  schedule, by the same dedicated team that learns your unit and your building. Our{" "}
+                  When you partner with Capital Clean Care, your condo gets cleaned your way — while you're at work, by the
+                  same dedicated team that learns your unit and your building. Our{" "}
                   <Link to="/checklist" className="text-accent font-semibold hover:underline">50-Point Cleaning Checklist</Link>{" "}
-                  guides every visit, and we visit as often as you'd like.
+                  guides everything we do, and we work to make sure your expectations are met on every clean. We can visit as
+                  often as you'd like, giving you that &ldquo;ahh&rdquo; feeling after work whenever you want it.
                 </p>
-                <p>All our regular condo cleanings cover the living spaces you use most, including:</p>
+                <p>All our regular condo cleanings cover the main areas of your home, including:</p>
               </div>
               <ul className="mt-4 space-y-2.5">
                 {AREA_LINKS.map((a) => (
