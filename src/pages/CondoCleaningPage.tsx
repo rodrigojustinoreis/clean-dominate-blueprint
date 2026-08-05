@@ -6,8 +6,6 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import QuoteForm from "@/components/QuoteForm";
 import FAQ from "@/components/FAQ";
-import TransformationsGallery from "@/components/TransformationsGallery";
-import GreenShield5Step from "@/components/GreenShield5Step";
 import TrustBadges from "@/components/TrustBadges";
 import { ServiceSchema, FAQSchema, BreadcrumbSchema, LocalBusinessSchema } from "@/components/SchemaMarkup";
 import { pickReviews } from "@/data/realReviews";
@@ -404,9 +402,6 @@ const CondoCleaningPage = () => {
         </div>
       </section>
 
-      {/* ── Real video transformations ── */}
-      <TransformationsGallery />
-
       {/* ── Prices ── */}
       <section className="py-12 md:py-16 border-t border-border">
         <div className="container mx-auto px-4 max-w-4xl">
@@ -445,47 +440,6 @@ const CondoCleaningPage = () => {
         </div>
       </section>
 
-      {/* ── Stats band ── */}
-      <section className="py-8">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-            {[
-              { v: "5.0★", l: "Google rating" },
-              { v: "45", l: "Five-star reviews" },
-              { v: "9+ yrs", l: "Serving the DMV" },
-              { v: "100%", l: "Satisfaction guarantee" },
-            ].map((s) => (
-              <div key={s.l} className="flex flex-col items-center gap-1 py-5 px-3 rounded-xl border border-border bg-card text-center shadow-sm">
-                <span className="font-heading text-2xl md:text-3xl font-extrabold text-[#2E7D32] leading-none">{s.v}</span>
-                <span className="text-xs font-medium text-muted-foreground">{s.l}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Benefits ── */}
-      <section className="py-12 md:py-16 bg-secondary/40">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <FadeInSection>
-            <div className="text-center mb-10">
-              <span className="text-[#2E7D32] font-semibold text-sm uppercase tracking-wider">Built for condo living</span>
-              <h2 className="font-heading text-2xl md:text-3xl font-bold mt-2">What You Get With Our Condo Cleaning</h2>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {service.benefits.map((b, i) => (
-                <div key={i} className="flex gap-3 items-start bg-card border border-border rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow">
-                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#2E7D32]/10">
-                    <CheckCircle className="h-5 w-5 text-[#2E7D32]" />
-                  </div>
-                  <span className="text-foreground leading-relaxed">{b}</span>
-                </div>
-              ))}
-            </div>
-          </FadeInSection>
-        </div>
-      </section>
-
       {/* ── Social Proof — real Google reviews ── */}
       <LocationSocialProof
         cityName="Montgomery County"
@@ -520,9 +474,6 @@ const CondoCleaningPage = () => {
           <GuideCards heading="Condo & Apartment Cleaning Guides" guides={guidesBySlugs(CONDO_SPOKES)} />
         </div>
       </section>
-
-      {/* ── GreenShield 5-Step ── */}
-      <GreenShield5Step compact showCTA={false} />
 
       {/* ── Trust Badges ── */}
       <TrustBadges compact withBackground={false} />
