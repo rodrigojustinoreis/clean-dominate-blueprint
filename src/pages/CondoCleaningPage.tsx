@@ -249,7 +249,9 @@ const CondoCleaningPage = () => {
                 <p>Wouldn't it be great to get that freshly-cleaned feeling whenever you want it, even on a Wednesday?</p>
                 <p>
                   When you partner with Capital Clean Care, your condo gets cleaned your way — while you're at work, by the
-                  same dedicated team that learns your unit and your building. Our{" "}
+                  same dedicated{" "}
+                  <Link to="/services/maid-service" className="text-accent font-semibold hover:underline">maid service</Link>{" "}
+                  team that learns your unit and your building. Our{" "}
                   <Link to="/checklist" className="text-accent font-semibold hover:underline">50-Point Cleaning Checklist</Link>{" "}
                   guides everything we do, and we work to make sure your expectations are met on every clean. We can visit as
                   often as you'd like, giving you that &ldquo;ahh&rdquo; feeling after work whenever you want it.
