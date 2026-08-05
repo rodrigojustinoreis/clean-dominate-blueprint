@@ -74,12 +74,12 @@ const QuoteForm = ({ submitLabel = "GET MY FREE QUOTE →", defaultService = "",
       // bundle stays out of the initial page load and only loads on form submit).
       import("@/integrations/supabase/client").then(({ supabase }) =>
         supabase.from("quote_requests").insert({
+          // NOTE: the quote_requests table has no `address`/`sqft` columns — both are folded
+          // into `message` below. Adding them here fails the whole insert with PGRST204.
           name: formData.name,
           phone: formData.phone,
           email: formData.email,
-          address: formData.address,
           zip: formData.zip,
-          sqft: formData.sqft || null,
           service: formData.service,
           bedrooms: formData.bedrooms || null,
           bathrooms: formData.bathrooms || null,
