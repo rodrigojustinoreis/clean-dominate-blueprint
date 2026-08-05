@@ -28,6 +28,39 @@ const ES_AREAS = [
   { path: "/es/areas/montgomery-village-md", label: "Montgomery Village" },
 ];
 
+// Desktop "Services" mega-menu — grouped columns, real pages only (no 404s).
+const SERVICE_MENU: { heading: string; items: { to: string; label: string }[] }[] = [
+  {
+    heading: "Cleaning Types",
+    items: [
+      { to: "/services/house-cleaning", label: "House Cleaning" },
+      { to: "/services/maid-service", label: "Maid Service" },
+      { to: "/services/deep-cleaning", label: "Deep Cleaning" },
+      { to: "/services/condo-cleaning", label: "Condo Cleaning" },
+      { to: "/services/eco-friendly-cleaning", label: "Eco-Friendly Cleaning" },
+    ],
+  },
+  {
+    heading: "Plans & Occasions",
+    items: [
+      { to: "/services/recurring-cleaning", label: "Recurring Cleaning" },
+      { to: "/services/move-out-cleaning", label: "Move In / Move Out" },
+      { to: "/services/airbnb-cleaning", label: "Airbnb & Short-Term Rental" },
+      { to: "/services/post-construction-cleaning", label: "Post-Construction" },
+      { to: "/services/office-cleaning", label: "Office & Commercial" },
+    ],
+  },
+  {
+    heading: "Tools & Info",
+    items: [
+      { to: "/checklist", label: "50-Point Checklist" },
+      { to: "/pricing", label: "Pricing" },
+      { to: "/reviews", label: "Reviews" },
+      { to: "/resources", label: "Resource Center" },
+    ],
+  },
+];
+
 const Header = () => {
   const { pathname } = useLocation();
   const isSpanish = pathname.startsWith("/es/") || pathname === "/es";
@@ -106,13 +139,33 @@ const Header = () => {
                   <button className="whitespace-nowrap px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors flex items-center gap-1">
                     Services <ChevronDown className="h-3 w-3 transition-transform group-hover:rotate-180 duration-200" />
                   </button>
-                  <div className="absolute top-full left-0 pt-2 hidden group-hover:block">
-                    <div className="bg-card border border-border rounded-lg shadow-lg py-2 min-w-[220px]">
-                      {services.map((s) => (
-                        <Link key={s.slug} to={`/services/${s.slug}`} className="block px-4 py-2 text-sm hover:bg-secondary transition-colors">
-                          {s.name}
-                        </Link>
-                      ))}
+                  <div className="absolute top-full left-0 pt-2 hidden group-hover:block z-50">
+                    <div className="bg-card border border-border rounded-xl shadow-xl p-5 w-[min(92vw,720px)]">
+                      <div className="grid grid-cols-3 gap-x-8">
+                        {SERVICE_MENU.map((col) => (
+                          <div key={col.heading}>
+                            <p className="font-heading font-bold text-[11px] uppercase tracking-wider text-accent mb-2.5">{col.heading}</p>
+                            <ul>
+                              {col.items.map((it) => (
+                                <li key={it.to}>
+                                  <Link to={it.to} className="block py-1.5 text-sm text-foreground hover:text-accent transition-colors">
+                                    {it.label}
+                                  </Link>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        ))}
+                      </div>
+                      <div className="mt-4 flex items-center justify-between gap-4 bg-[#0D2B5E] text-white rounded-lg px-5 py-3.5">
+                        <div>
+                          <p className="font-heading font-bold text-sm">🎁 15% OFF Your First Clean</p>
+                          <p className="text-white/80 text-xs">New clients in MD, DC &amp; VA — mention it when you book.</p>
+                        </div>
+                        <Button variant="cta" size="sm" asChild>
+                          <a href="/#quote">Get a Free Quote →</a>
+                        </Button>
+                      </div>
                     </div>
                   </div>
                 </div>
