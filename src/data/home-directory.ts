@@ -91,6 +91,11 @@ export const dirServiceCards: { slug: string; name: string; shortDescription: st
     "shortDescription": "An intensive, top-to-bottom clean that reaches every hidden corner and neglected surface."
   },
   {
+    "slug": "kitchen-cleaning",
+    "name": "Kitchen Cleaning",
+    "shortDescription": "Degreased stovetop and range hood, shined appliances, sanitized sink and counters — one-time or recurring."
+  },
+  {
     "slug": "move-out-cleaning",
     "name": "Move In / Move Out Cleaning",
     "shortDescription": "Comprehensive cleaning for property transitions — leave or arrive to a spotless space."

@@ -9,6 +9,7 @@ import { dirServiceCards as services } from "@/data/home-directory";
 const SERVICE_CARD_IMAGES: Record<string, string> = {
   "house-cleaning": "/images/team/real-team-two-members.webp",
   "deep-cleaning": "/images/team/real-team-maria-fridge.webp",
+  "kitchen-cleaning": "/images/services/kitchen-hero.webp",
   "move-out-cleaning": "/images/services/move-out-cleaning.webp",
   "post-construction-cleaning": "/images/team/team-post-construction.webp",
   "recurring-cleaning": "/images/services/recurring-cleaning.webp",

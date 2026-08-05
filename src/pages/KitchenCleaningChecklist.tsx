@@ -91,8 +91,9 @@ const KitchenCleaningChecklist = () => {
           <FadeInSection>
             <div className="border-l-4 border-accent bg-accent/5 p-4 mb-10">
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Rather have it done for you? <a href="/#quote" className="text-accent font-semibold underline hover:no-underline">Get a free quote</a>{" "}
-                from a 5.0-star, bonded and insured team across Maryland, DC &amp; Northern Virginia.
+                Rather have it done for you? Book our{" "}
+                <Link to="/services/kitchen-cleaning" className="text-accent font-semibold underline hover:no-underline">kitchen cleaning service</Link>{" "}
+                — a 5.0-star, bonded and insured team across Maryland, DC &amp; Northern Virginia.
               </p>
             </div>
           </FadeInSection>
@@ -144,9 +145,13 @@ const KitchenCleaningChecklist = () => {
             <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mt-10 mb-4">When to Hand the Kitchen to a Pro</h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
               If the kitchen has months of built-up grease, or you just want it off your plate for good, a professional
-              clean is the fast track. We fit the kitchen into a whole-home clean:
+              clean is the fast track. Book it on its own or fold it into a whole-home clean:
             </p>
             <ul className="space-y-2.5 mb-6">
+              <li className="flex items-start gap-2.5 text-muted-foreground leading-relaxed">
+                <CheckCircle2 className="h-5 w-5 text-accent mt-0.5 shrink-0" /> Just the kitchen? Book our{" "}
+                <Link to="/services/kitchen-cleaning" className="text-accent underline hover:no-underline">kitchen cleaning service</Link>{" "}— degreased stovetop and hood, shined appliances, sanitized counters.
+              </li>
               <li className="flex items-start gap-2.5 text-muted-foreground leading-relaxed">
                 <CheckCircle2 className="h-5 w-5 text-accent mt-0.5 shrink-0" /> A neglected kitchen? Start with a{" "}
                 <Link to="/services/deep-cleaning" className="text-accent underline hover:no-underline">deep cleaning</Link>{" "}to reset it — inside the oven, fridge, and every greasy corner.

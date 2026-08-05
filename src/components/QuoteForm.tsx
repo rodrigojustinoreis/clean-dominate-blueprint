@@ -394,6 +394,7 @@ const QuoteForm = ({ submitLabel = "GET MY FREE QUOTE →", defaultService = "",
             <SelectContent>
               <SelectItem value="standard">Standard Cleaning</SelectItem>
               <SelectItem value="deep">Deep Cleaning</SelectItem>
+              <SelectItem value="kitchen">Kitchen Cleaning</SelectItem>
               <SelectItem value="recurring">Recurring Cleaning (Weekly / Bi-Weekly)</SelectItem>
               <SelectItem value="move">Move In / Move Out Cleaning</SelectItem>
               <SelectItem value="post-construction">Post-Construction Cleaning</SelectItem>
