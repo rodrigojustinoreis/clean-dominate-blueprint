@@ -123,7 +123,8 @@ const Index = () => {
         <TestimonialVideo
           src="/videos/client-testimonial.mp4"
           poster="/videos/client-testimonial-poster.jpg"
-          label="Capital Clean Care client testimonial — a Montgomery County homeowner shares their experience"
+          label="Capital Clean Care client testimonial — a DMV client shares their experience"
+          subtext="A real Capital Clean Care client on what it's like to work with our team."
         />
       </ScrollReveal>
 

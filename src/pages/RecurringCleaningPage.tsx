@@ -371,9 +371,9 @@ const RecurringCleaningPage = () => {
       <TestimonialVideo
         src="/videos/client-testimonial.mp4"
         poster="/videos/client-testimonial-poster.jpg"
-        label="Capital Clean Care client testimonial — a Montgomery County homeowner on their recurring cleaning experience"
-        heading="Hear It From a Recurring Client"
-        subtext="A Montgomery County homeowner on what a recurring plan with Capital Clean Care is really like."
+        label="Capital Clean Care client testimonial — a DMV client on working with our cleaning team"
+        heading="Hear It From a Capital Clean Care Client"
+        subtext="A DMV client on what it's like to have Capital Clean Care handle the cleaning."
       />
 
       {/* ── Weekly vs bi-weekly vs monthly (brief, anti-cannibalization) ── */}

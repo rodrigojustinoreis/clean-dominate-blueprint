@@ -286,9 +286,9 @@ const AirbnbCleaningPage = () => {
       <TestimonialVideo
         src="/videos/client-testimonial.mp4"
         poster="/videos/client-testimonial-poster.jpg"
-        label="Capital Clean Care client testimonial — a Montgomery County client on working with our cleaning team"
-        heading="Hear It From a Capital Clean Care Client"
-        subtext="A Montgomery County client on what it's like to have our team handle the cleaning."
+        label="Capital Clean Care client testimonial — a DMV Airbnb host on turnovers with our team"
+        heading="Hear It From an Airbnb Host"
+        subtext="A DMV Airbnb host on what it's like to have Capital Clean Care handle turnovers."
       />
 
       {/* ── Real video transformations (3rd position) ── */}
