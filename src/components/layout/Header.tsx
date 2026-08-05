@@ -35,28 +35,38 @@ const SERVICE_MENU: { heading: string; items: { to: string; label: string }[] }[
     items: [
       { to: "/services/house-cleaning", label: "House Cleaning" },
       { to: "/services/maid-service", label: "Maid Service" },
-      { to: "/services/deep-cleaning", label: "Deep Cleaning" },
       { to: "/services/condo-cleaning", label: "Condo Cleaning" },
+      { to: "/services/deep-cleaning", label: "Deep Clean" },
       { to: "/services/eco-friendly-cleaning", label: "Eco-Friendly Cleaning" },
+      { to: "/services/office-cleaning", label: "Commercial Cleaning" },
     ],
   },
   {
-    heading: "Plans & Occasions",
+    heading: "Areas We Clean",
+    items: [
+      { to: "/checklist", label: "Kitchens" },
+      { to: "/checklist", label: "Bathrooms" },
+      { to: "/checklist", label: "Living Areas" },
+      { to: "/checklist", label: "Sleeping Areas" },
+    ],
+  },
+  {
+    heading: "Cleaning Schedules",
     items: [
       { to: "/services/recurring-cleaning", label: "Recurring Cleaning" },
       { to: "/services/move-out-cleaning", label: "Move In / Move Out" },
-      { to: "/services/airbnb-cleaning", label: "Airbnb & Short-Term Rental" },
-      { to: "/services/post-construction-cleaning", label: "Post-Construction" },
-      { to: "/services/office-cleaning", label: "Office & Commercial" },
+      { to: "/services/house-cleaning", label: "One-Time Cleaning" },
+      { to: "/#quote", label: "Customized Cleaning" },
     ],
   },
   {
-    heading: "Tools & Info",
+    heading: "Specialty Cleaning",
     items: [
-      { to: "/checklist", label: "50-Point Checklist" },
-      { to: "/pricing", label: "Pricing" },
-      { to: "/reviews", label: "Reviews" },
-      { to: "/resources", label: "Resource Center" },
+      { to: "/services/post-construction-cleaning", label: "Post-Construction" },
+      { to: "/services/airbnb-cleaning", label: "Airbnb Turnover" },
+      { to: "/senior-home-cleaning-montgomery-county-md", label: "Senior Home Cleaning" },
+      { to: "/resources/holiday-cleaning-checklist-dmv", label: "Holiday Cleaning" },
+      { to: "/resources/how-to-clean-up-after-a-party", label: "Post-Party Cleanup" },
     ],
   },
 ];
@@ -140,14 +150,14 @@ const Header = () => {
                     Services <ChevronDown className="h-3 w-3 transition-transform group-hover:rotate-180 duration-200" />
                   </button>
                   <div className="absolute top-full left-0 pt-2 hidden group-hover:block z-50">
-                    <div className="bg-card border border-border rounded-xl shadow-xl p-6 w-[min(94vw,760px)]">
-                      <div className="grid grid-cols-3 gap-x-10">
+                    <div className="bg-card border border-border rounded-xl shadow-xl p-6 w-[min(95vw,900px)]">
+                      <div className="grid grid-cols-4 gap-x-6">
                         {SERVICE_MENU.map((col) => (
                           <div key={col.heading}>
                             <p className="font-heading font-bold text-[14px] uppercase tracking-wider text-[#0D2B5E] mb-3">{col.heading}</p>
                             <ul className="space-y-0.5">
                               {col.items.map((it) => (
-                                <li key={it.to}>
+                                <li key={it.label}>
                                   <Link to={it.to} className="block py-1.5 font-heading font-medium text-[16px] text-[#1A6BAD] hover:text-[#0D2B5E] transition-colors">
                                     {it.label}
                                   </Link>
