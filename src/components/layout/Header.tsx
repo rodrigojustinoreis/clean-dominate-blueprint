@@ -144,11 +144,11 @@ const Header = () => {
                       <div className="grid grid-cols-3 gap-x-10">
                         {SERVICE_MENU.map((col) => (
                           <div key={col.heading}>
-                            <p className="font-heading font-bold text-[13px] uppercase tracking-wider text-[#0D2B5E] mb-3">{col.heading}</p>
+                            <p className="font-heading font-bold text-[14px] uppercase tracking-wider text-[#0D2B5E] mb-3">{col.heading}</p>
                             <ul className="space-y-0.5">
                               {col.items.map((it) => (
                                 <li key={it.to}>
-                                  <Link to={it.to} className="block py-1.5 text-[15px] text-[#1A6BAD] hover:text-[#0D2B5E] transition-colors">
+                                  <Link to={it.to} className="block py-1.5 font-heading font-medium text-[16px] text-[#1A6BAD] hover:text-[#0D2B5E] transition-colors">
                                     {it.label}
                                   </Link>
                                 </li>
