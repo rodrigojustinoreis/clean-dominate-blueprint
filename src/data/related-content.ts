@@ -132,6 +132,7 @@ export const MANUAL_RELATED_POSTS: Record<string, string[]> = {
   "how-long-does-deep-cleaning-take": ["deep-cleaning-cost-maryland", "what-is-included-in-a-deep-cleaning", "deep-cleaning-vs-regular-cleaning"],
   "airbnb-cleaning-checklist": ["airbnb-cleaning-fee", "airbnb-cleaning-tips-dmv-hosts", "how-often-should-you-hire-a-cleaning-service"],
   "airbnb-cleaning-fee": ["airbnb-cleaning-checklist", "airbnb-cleaning-tips-dmv-hosts", "how-much-tip-house-cleaner"],
+  "kitchen-cleaning-checklist": ["what-is-included-in-a-deep-cleaning", "how-often-should-you-deep-clean", "what-is-included-in-a-standard-cleaning"],
   "how-much-tip-house-cleaner": ["how-often-should-you-hire-a-cleaning-service", "hidden-fees-house-cleaning", "is-professional-house-cleaning-worth-it"],
   "how-to-clean-up-after-a-party": ["deep-cleaning-cost-maryland", "how-long-does-deep-cleaning-take"],
   "cleaning-company-vs-independent-cleaner": ["local-cleaning-company-vs-franchise", "questions-to-ask-before-hiring-house-cleaner", "red-flags-house-cleaning-service"],

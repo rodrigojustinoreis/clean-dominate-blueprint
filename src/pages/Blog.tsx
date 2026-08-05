@@ -260,6 +260,13 @@ export const blogPosts: BlogPost[] = [
     coverImage: "/images/blog/airbnb-cleaning-fee.webp",
   },
   {
+    slug: "kitchen-cleaning-checklist",
+    title: "The Complete Kitchen Cleaning Checklist",
+    excerpt: "A step-by-step kitchen cleaning checklist and how to deep clean a kitchen — appliances, cabinets, backsplash, sink and floor — plus when to book a pro.",
+    date: "2026-08-05", readTime: "5 min read", category: "Cleaning Guides",
+    coverImage: "/images/team/real-team-maria-fridge.webp",
+  },
+  {
     slug: "how-much-tip-house-cleaner",
     title: "How Much Should You Tip Your House Cleaner? (2026)",
     excerpt: "Typical tip amounts (15-20% or $10-$20 per visit), when tipping is and isn't expected, holiday bonuses, and etiquette with recurring teams.",
