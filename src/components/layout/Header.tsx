@@ -140,15 +140,15 @@ const Header = () => {
                     Services <ChevronDown className="h-3 w-3 transition-transform group-hover:rotate-180 duration-200" />
                   </button>
                   <div className="absolute top-full left-0 pt-2 hidden group-hover:block z-50">
-                    <div className="bg-card border border-border rounded-xl shadow-xl p-5 w-[min(92vw,720px)]">
-                      <div className="grid grid-cols-3 gap-x-8">
+                    <div className="bg-card border border-border rounded-xl shadow-xl p-6 w-[min(94vw,760px)]">
+                      <div className="grid grid-cols-3 gap-x-10">
                         {SERVICE_MENU.map((col) => (
                           <div key={col.heading}>
-                            <p className="font-heading font-bold text-[11px] uppercase tracking-wider text-accent mb-2.5">{col.heading}</p>
-                            <ul>
+                            <p className="font-heading font-bold text-[13px] uppercase tracking-wider text-[#0D2B5E] mb-3">{col.heading}</p>
+                            <ul className="space-y-0.5">
                               {col.items.map((it) => (
                                 <li key={it.to}>
-                                  <Link to={it.to} className="block py-1.5 text-sm text-foreground hover:text-accent transition-colors">
+                                  <Link to={it.to} className="block py-1.5 text-[15px] text-[#1A6BAD] hover:text-[#0D2B5E] transition-colors">
                                     {it.label}
                                   </Link>
                                 </li>
@@ -157,10 +157,10 @@ const Header = () => {
                           </div>
                         ))}
                       </div>
-                      <div className="mt-4 flex items-center justify-between gap-4 bg-[#0D2B5E] text-white rounded-lg px-5 py-3.5">
+                      <div className="mt-5 flex items-center justify-between gap-4 bg-[#1A6BAD] text-white rounded-lg px-5 py-4">
                         <div>
-                          <p className="font-heading font-bold text-sm">🎁 15% OFF Your First Clean</p>
-                          <p className="text-white/80 text-xs">New clients in MD, DC &amp; VA — mention it when you book.</p>
+                          <p className="font-heading font-bold text-base">🎁 15% OFF Your First Clean</p>
+                          <p className="text-white/85 text-xs">New clients in MD, DC &amp; VA — mention it when you book.</p>
                         </div>
                         <Button variant="cta" size="sm" asChild>
                           <a href="/#quote">Get a Free Quote →</a>
