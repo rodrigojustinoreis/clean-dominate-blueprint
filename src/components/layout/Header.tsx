@@ -229,10 +229,10 @@ const Header = () => {
           </div>
 
           <div className="lg:hidden flex items-center gap-1.5 shrink-0 whitespace-nowrap">
-            <a href="tel:+12407042551" className="hidden min-[390px]:flex items-center shrink-0" aria-label="Call us" onClick={() => trackPhoneClick("header_mobile_topbar")}>
+            <a href="tel:+12407042551" className="hidden min-[390px]:flex items-center shrink-0 p-1.5 -m-1.5" aria-label="Call us" onClick={() => trackPhoneClick("header_mobile_topbar")}>
               <Phone className="h-5 w-5 text-accent" />
             </a>
-            <Button variant="cta" size="sm" className="text-xs px-2.5 h-8 rounded-full shrink-0 whitespace-nowrap" asChild>
+            <Button variant="cta" size="sm" className="text-xs px-3 h-9 rounded-full shrink-0 whitespace-nowrap" asChild>
               {isSpanish
                 ? <Link to="/es/contacto" onClick={() => trackBookNowClick("header_mobile_cta")}>Cotización</Link>
                 : <a href="/#quote" onClick={() => trackBookNowClick("header_mobile_cta")}>Free Quote</a>

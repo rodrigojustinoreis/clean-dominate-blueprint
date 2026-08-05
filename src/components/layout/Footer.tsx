@@ -131,7 +131,7 @@ const Footer = () => {
               <li><Link to="/maryland" className="hover:text-accent transition-colors font-medium">{t("Maryland", "Maryland")}</Link></li>
               <li><Link to="/washington-dc" className="hover:text-accent transition-colors font-medium">{t("Washington, DC", "Washington, DC")}</Link></li>
               <li><Link to="/virginia" className="hover:text-accent transition-colors font-medium">{t("Northern Virginia", "Norte de Virginia")}</Link></li>
-              <li className="pt-1.5 grid grid-cols-2 gap-x-3 gap-y-1 text-[13px] text-primary-foreground/55">
+              <li className="pt-1.5 grid grid-cols-2 gap-x-3 gap-y-1 text-[13px] text-primary-foreground/75">
                 {topCities.map((c) => (
                   <Link key={c.slug} to={`/locations/${c.slug}`} className="hover:text-accent transition-colors truncate">{c.name}</Link>
                 ))}
@@ -157,12 +157,12 @@ const Footer = () => {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-6 pt-6 border-t border-primary-foreground/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-primary-foreground/55">
+        <div className="mt-6 pt-6 border-t border-primary-foreground/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-primary-foreground/75">
           <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1">
             <p>© {new Date().getFullYear()} Capital Clean Care</p>
             <Link to="/privacy-policy" className="hover:text-accent transition-colors">{t("Privacy Policy", "Privacidad")}</Link>
             <Link to="/terms-of-service" className="hover:text-accent transition-colors">{t("Terms of Service", "Términos")}</Link>
-            <span className="hidden sm:inline text-primary-foreground/30">·</span>
+            <span className="hidden sm:inline text-primary-foreground/50" aria-hidden="true">·</span>
             <span>{t("Serving MD • DC • Northern Virginia", "Sirviendo MD • DC • Norte de Virginia")}</span>
           </div>
           <div className="flex items-center gap-4">
@@ -176,7 +176,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <p className="text-center text-[11px] text-primary-foreground/30 mt-5">
+        <p className="text-center text-[11px] text-primary-foreground/60 mt-5">
           {t(
             "Capital Clean Care LLC is not affiliated with any other cleaning company with a similar name operating in the Maryland area.",
             "Capital Clean Care LLC no está afiliada a ninguna otra empresa de limpieza con nombre similar que opere en el área de Maryland."

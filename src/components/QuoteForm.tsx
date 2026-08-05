@@ -390,7 +390,7 @@ const QuoteForm = ({ submitLabel = "GET MY FREE QUOTE →", defaultService = "",
         <div>
           <Label className="text-xs font-semibold mb-1 block">Service Type *</Label>
           <Select required value={formData.service} onValueChange={(v) => update("service", v)}>
-            <SelectTrigger className="h-11"><SelectValue placeholder="What type of cleaning do you need?" /></SelectTrigger>
+            <SelectTrigger className="h-11" aria-label="Service Type"><SelectValue placeholder="What type of cleaning do you need?" /></SelectTrigger>
             <SelectContent>
               <SelectItem value="standard">Standard Cleaning</SelectItem>
               <SelectItem value="deep">Deep Cleaning</SelectItem>
@@ -462,7 +462,7 @@ const QuoteForm = ({ submitLabel = "GET MY FREE QUOTE →", defaultService = "",
             <div>
               <Label className="text-xs font-semibold mb-1 block">Home size</Label>
               <Select value={formData.sqft} onValueChange={(v) => update("sqft", v)}>
-                <SelectTrigger className="h-11"><SelectValue placeholder="Sq ft" /></SelectTrigger>
+                <SelectTrigger className="h-11" aria-label="Home size"><SelectValue placeholder="Sq ft" /></SelectTrigger>
                 <SelectContent>
                   {["Under 1,000", "1,000–1,500", "1,500–2,000", "2,000–2,500", "2,500–3,000", "3,000+"].map((n) => (
                     <SelectItem key={n} value={n}>{n} sq ft</SelectItem>
@@ -473,7 +473,7 @@ const QuoteForm = ({ submitLabel = "GET MY FREE QUOTE →", defaultService = "",
             <div>
               <Label className="text-xs font-semibold mb-1 block">Frequency</Label>
               <Select value={formData.frequency} onValueChange={(v) => update("frequency", v)}>
-                <SelectTrigger className="h-11"><SelectValue placeholder="How often?" /></SelectTrigger>
+                <SelectTrigger className="h-11" aria-label="Frequency"><SelectValue placeholder="How often?" /></SelectTrigger>
                 <SelectContent>
                   <SelectItem value="once">One-Time</SelectItem>
                   <SelectItem value="weekly">Weekly</SelectItem>
