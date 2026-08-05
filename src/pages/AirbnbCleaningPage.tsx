@@ -284,8 +284,8 @@ const AirbnbCleaningPage = () => {
 
       {/* ── Client video testimonial (2nd position, autoplay-on-scroll) ── */}
       <TestimonialVideo
-        src="/videos/client-testimonial.mp4"
-        poster="/videos/client-testimonial-poster.jpg"
+        src="/videos/client-testimonial-0805.mp4"
+        poster="/videos/client-testimonial-0805-poster.jpg"
         label="Capital Clean Care client testimonial — a DMV Airbnb host on turnovers with our team"
         heading="Hear It From an Airbnb Host"
         subtext="A DMV Airbnb host on what it's like to have Capital Clean Care handle turnovers."
