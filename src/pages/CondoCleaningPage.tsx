@@ -344,8 +344,10 @@ const CondoCleaningPage = () => {
             <div className="text-center max-w-3xl mx-auto mb-10">
               <h2 className="font-heading text-2xl md:text-3xl font-bold mb-3">Choose Your Condo Cleaning Frequency</h2>
               <p className="text-[17px] leading-relaxed text-foreground">
-                We won't lock you into a strict schedule. Pick the rhythm that fits your unit and your life — and change it
-                whenever you need. These are our most popular condo cleaning frequencies:
+                We won't lock you into a contract or a strict schedule. Instead, we offer customizable, flexible plans that
+                fit your life. Prefer a set cadence? Our{" "}
+                <Link to="/services/recurring-cleaning" className="text-accent hover:underline font-medium">recurring plans</Link>{" "}
+                have you covered — choose from our most popular condo cleaning frequencies:
               </p>
             </div>
             <div className="grid md:grid-cols-3 gap-5">
