@@ -85,7 +85,7 @@ const QuoteForm = ({ submitLabel = "GET MY FREE QUOTE →", defaultService = "",
           bathrooms: formData.bathrooms || null,
           frequency: formData.frequency || null,
           preferred_date: formData.date || null,
-          message: [`Address: ${formData.address}`, formData.sqft ? `Home size: ${formData.sqft} sq ft` : "", formData.message || ""].filter(Boolean).join(" · ") || null,
+          message: [formData.address ? `Address: ${formData.address}` : "", formData.sqft ? `Home size: ${formData.sqft} sq ft` : "", formData.message || ""].filter(Boolean).join(" · ") || null,
           sms_consent: formData.smsConsent,
           email_consent: formData.emailConsent,
         }).then(({ error }) => { if (error) console.error("DB error:", error); })
@@ -115,12 +115,12 @@ const QuoteForm = ({ submitLabel = "GET MY FREE QUOTE →", defaultService = "",
         }),
       }).catch(console.error);
 
-      // Forward lead to Capital Clean Care scheduling app
-      fetch('https://jzxhejqokcjyxxklnnza.supabase.co/functions/v1/receive-lead', {
+      // Forward lead to Capital Clean Care scheduling app via a server-side Netlify
+      // function (the webhook secret lives in an env var there, never in this bundle).
+      fetch('/api/forward-lead', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'x-webhook-secret': 'ccc-lead-webhook-2026',
         },
         body: JSON.stringify({
           name: formData.name,
@@ -422,9 +422,10 @@ const QuoteForm = ({ submitLabel = "GET MY FREE QUOTE →", defaultService = "",
         </div>
         <div>
           <Label htmlFor="address" className="text-xs font-semibold mb-1 block">
-            Full Address <span className="text-accent">*</span>
+            Full Address <span className="text-muted-foreground font-normal">(optional)</span>
           </Label>
-          <Input id="address" required className="h-11" autoComplete="street-address" value={formData.address} onChange={(e) => update("address", e.target.value)} placeholder="123 Main St, Rockville, MD 20850" />
+          <Input id="address" className="h-11" autoComplete="street-address" value={formData.address} onChange={(e) => update("address", e.target.value)} placeholder="123 Main St, Rockville, MD 20850" />
+          <p className="text-[11px] text-muted-foreground mt-1">Your ZIP is enough for a quote — add the full address only if you'd like.</p>
         </div>
 
         {/* ── "Tell us about your home" box with drag sliders ── */}

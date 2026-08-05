@@ -102,7 +102,7 @@ const QuoteFormInline = ({ variant = "hero" }: { variant?: "hero" | "footer" }) 
       ).catch((err) => console.error("Supabase load:", err));
       const encode = (d: Record<string,string>) => Object.keys(d).map(k => `${encodeURIComponent(k)}=${encodeURIComponent(d[k])}`).join("&");
       fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: encode({ "form-name": "quote", ...form, service: "House Cleaning" }) }).catch(console.error);
-      fetch("https://jzxhejqokcjyxxklnnza.supabase.co/functions/v1/receive-lead", { method: "POST", headers: { "Content-Type": "application/json", "x-webhook-secret": "ccc-lead-webhook-2026" }, body: JSON.stringify({ ...form, service: "House Cleaning" }) }).catch(() => {});
+      fetch("/api/forward-lead", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ ...form, service: "House Cleaning" }) }).catch(() => {});
       fetch("/api/send-quote-email", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ ...form, service: "House Cleaning" }) }).catch(() => {});
       trackQuoteFormSubmit("house-cleaning");
       if (typeof gtag !== "undefined") gtag("event", "conversion", { send_to: "AW-16450100951/9MghCM3k2bIcENe9gqQ9", value: 50.0, currency: "USD" });

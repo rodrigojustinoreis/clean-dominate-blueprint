@@ -49,10 +49,10 @@ const SeniorQuoteForm = () => {
         body: encode({ "form-name": "quote", name: data.name, phone: data.phone, address: data.city, service, message }),
       }).catch(console.error);
 
-      // 3) Forward to the scheduling app
-      fetch("https://jzxhejqokcjyxxklnnza.supabase.co/functions/v1/receive-lead", {
+      // 3) Forward to the scheduling app (server-side function holds the secret)
+      fetch("/api/forward-lead", {
         method: "POST",
-        headers: { "Content-Type": "application/json", "x-webhook-secret": "ccc-lead-webhook-2026" },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name: data.name, phone: data.phone, address: data.city, service, message }),
       }).catch(() => { /* non-blocking */ });
 
