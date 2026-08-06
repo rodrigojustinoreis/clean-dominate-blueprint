@@ -158,6 +158,7 @@ const DeepCleaningPage = () => {
         description={service.shortDescription}
         url="https://capitalcleancare.com/services/deep-cleaning"
         serviceType="Deep Cleaning"
+        priceRange={{ low: 230, high: 570 }}
       />
       <FAQSchema faqs={service.faqs} />
 
@@ -302,6 +303,23 @@ const DeepCleaningPage = () => {
       {/* ── Before & After photo carousel (4th position) ── */}
       <BeforeAfterGallery />
 
+      {/* ── Quotable definition (featured snippet / AI Overview) ── */}
+      <section className="py-10 md:py-12 border-t border-border">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <FadeInSection>
+            <div className="rounded-2xl border-l-4 border-[#2E7D32] bg-secondary/40 p-6 md:p-7">
+              <h2 className="font-heading text-xl md:text-2xl font-bold mb-2">What Is a Deep Cleaning Service?</h2>
+              <p className="text-[17px] leading-relaxed text-foreground">
+                A deep cleaning service is a thorough, top-to-bottom clean that goes far beyond routine tidying — scrubbing
+                built-up grime from inside appliances, grout, baseboards, vents, and behind furniture. Capital Clean Care's
+                deep cleaning is flat-rate (not hourly), eco-friendly, and backed by a 24-hour re-clean guarantee across
+                Maryland, DC &amp; Northern Virginia.
+              </p>
+            </div>
+          </FadeInSection>
+        </div>
+      </section>
+
       {/* ── What's included, by room ── */}
       <section className="py-12 md:py-16 border-t border-border">
         <div className="container mx-auto px-4 max-w-4xl">
@@ -418,14 +436,16 @@ const DeepCleaningPage = () => {
                     <th className="p-3 font-heading font-bold">Home size</th>
                     <th className="p-3 font-heading font-bold">Approx. size</th>
                     <th className="p-3 font-heading font-bold">One-time deep clean</th>
+                    <th className="p-3 font-heading font-bold whitespace-nowrap">Time (2-person team)</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {COST_PRICE_ROWS.map((row) => (
+                  {COST_PRICE_ROWS.map((row, i) => (
                     <tr key={row[0]} className="border-b border-border last:border-0">
                       <td className="p-3 font-medium text-foreground">{row[0]}</td>
                       <td className="p-3 text-muted-foreground">{row[1]}</td>
                       <td className="p-3 font-semibold text-[#2E7D32]">{row[4]}</td>
+                      <td className="p-3 font-semibold text-foreground whitespace-nowrap">{DEEP_TEAM_TIMES[i]}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -452,28 +472,9 @@ const DeepCleaningPage = () => {
               finishes in about 4 to 6 hours instead of eating a whole day. Bathrooms drive the total more than
               bedrooms do — a home with three-and-a-half baths often takes longer than a larger home with two.
               Heavy buildup and inside-appliance work (the oven and refrigerator) add time, and both are always
-              included. Here are realistic timelines by home size:
+              included. The <strong>Time (2-person team)</strong> column in the pricing table above shows realistic
+              timelines by home size.
             </p>
-            <div className="overflow-x-auto rounded-xl border border-border">
-              <table className="w-full text-left text-[15px] bg-card">
-                <thead>
-                  <tr className="border-b border-border bg-secondary/60">
-                    <th className="p-3 font-heading font-bold">Home size</th>
-                    <th className="p-3 font-heading font-bold">Approx. size</th>
-                    <th className="p-3 font-heading font-bold">Time (2-person team)</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {COST_PRICE_ROWS.map((row, i) => (
-                    <tr key={row[0]} className="border-b border-border last:border-0">
-                      <td className="p-3 font-medium text-foreground">{row[0]}</td>
-                      <td className="p-3 text-muted-foreground">{row[1]}</td>
-                      <td className="p-3 font-semibold text-[#2E7D32]">{DEEP_TEAM_TIMES[i]}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
             <p className="text-sm text-muted-foreground mt-4">
               Times assume a 2-person team and average condition. For what speeds a clean up or slows it down, read{" "}
               <Link to="/resources/how-long-does-deep-cleaning-take" className="text-accent hover:underline font-medium">how long a deep cleaning takes</Link>.
@@ -634,7 +635,7 @@ const DeepCleaningPage = () => {
       </section>
 
       {/* ── Prefer just one room? (room service cross-links) ── */}
-      <section className="py-10 border-t border-border">
+      <section className="py-8 border-t border-border">
         <div className="container mx-auto px-4 max-w-4xl">
           <h2 className="font-heading text-2xl font-bold mb-2">Prefer to Deep Clean Just One Room?</h2>
           <p className="text-muted-foreground mb-4 max-w-2xl">
@@ -652,6 +653,27 @@ const DeepCleaningPage = () => {
       <section className="py-12 md:py-16">
         <div className="container mx-auto px-4 max-w-4xl">
           <GuideCards heading="Deep Cleaning Guides" guides={guidesBySlugs(DEEP_SPOKES)} />
+        </div>
+      </section>
+
+      {/* ── Deep Cleaning Guarantee (trust) ── */}
+      <section className="py-10">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <FadeInSection>
+            <div className="rounded-2xl bg-[#0D2B5E] text-white p-6 md:p-8 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+              <div className="shrink-0 h-12 w-12 rounded-full bg-[#2E7D32] flex items-center justify-center">
+                <Shield className="h-6 w-6 text-white" />
+              </div>
+              <div>
+                <h2 className="font-heading text-xl md:text-2xl font-bold mb-1">Our 24-Hour Deep Cleaning Guarantee</h2>
+                <p className="text-white/85 text-[16px] leading-relaxed">
+                  If any area of your deep cleaning doesn't meet your expectations, tell us within 24 hours and we'll
+                  return to re-clean it — free. No re-do fees, no fine print. That's the Capital Clean Care standard on
+                  every visit.
+                </p>
+              </div>
+            </div>
+          </FadeInSection>
         </div>
       </section>
 

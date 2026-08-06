@@ -222,7 +222,7 @@ export const services: ServiceData[] = [
       { name: "Jessica W.", location: "Bethesda, MD", text: "Quarterly deep cleans have become our routine. The team is meticulous and always finds things to address that we'd never think of." }
     ],
     metaTitle: "Deep House Cleaning in MD, DC & VA | Capital Clean Care",
-    metaDescription: "Top-to-bottom deep cleaning for Maryland, DC & Virginia homes — inside appliances, baseboards, vents & grout. Eco-friendly & insured. Book a free quote."
+    metaDescription: "Professional deep cleaning service in Montgomery County & the DMV — inside appliances, baseboards, vents & grout, top to bottom. Eco-friendly & insured. Free quote."
   },
   {
     name: "Move In / Move Out Cleaning",
