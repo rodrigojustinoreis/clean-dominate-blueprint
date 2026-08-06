@@ -276,11 +276,11 @@ const KitchenCleaningPage = () => {
                 <span className="absolute -bottom-3 -right-3 h-12 w-12 border-b-4 border-r-4 border-accent rounded-br-xl hidden sm:block" aria-hidden="true" />
                 <div className="rounded-3xl overflow-hidden shadow-xl border border-border aspect-[4/3]">
                   <img
-                    src="/images/team/real-team-maria-fridge.webp"
-                    alt="A Capital Clean Care team member in navy uniform detailing a refrigerator during a professional kitchen cleaning"
+                    src="/images/services/kitchen-team.webp"
+                    alt="A Capital Clean Care team member in a branded navy uniform with a caddy of eco-friendly cleaning supplies in a bright home"
                     className="w-full h-full object-cover"
-                    width={1000}
-                    height={750}
+                    width={900}
+                    height={900}
                     loading="lazy"
                   />
                 </div>
