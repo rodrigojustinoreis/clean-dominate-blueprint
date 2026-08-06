@@ -116,8 +116,8 @@ const LivingAreaCleaningPage = () => {
     title: service.metaTitle,
     description: service.metaDescription,
     canonical: "https://capitalcleancare.com/services/living-area-cleaning",
-    ogImage: "/images/team/real-team-luxury-home.webp",
-    preloadImage: "/images/team/real-team-luxury-home.webp",
+    ogImage: "/images/services/living-area-og.jpg",
+    preloadImage: "/images/services/living-area-hero.webp",
   });
 
   const scrollToForm = (e: React.MouseEvent) => {
@@ -176,7 +176,7 @@ const LivingAreaCleaningPage = () => {
         </div>
       )}
 
-      {/* ── Hero (the one image) ── */}
+      {/* ── Hero ── */}
       <section className="relative overflow-hidden bg-gradient-to-br from-[#EAF6EA] via-background to-accent/5 py-10 md:py-16">
         <div className="container mx-auto px-4 max-w-6xl">
           <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Services" }, { label: service.name }]} className="mb-6" />
@@ -218,13 +218,13 @@ const LivingAreaCleaningPage = () => {
 
             <FadeInSection>
               <div className="relative lg:pl-4">
-                <div className="rounded-3xl overflow-hidden shadow-2xl border border-border aspect-[3/4] max-w-md mx-auto lg:mx-0">
+                <div className="rounded-3xl overflow-hidden shadow-2xl border border-border aspect-[4/3]">
                   <img
-                    src="/images/team/real-team-luxury-home.webp"
+                    src="/images/services/living-area-hero.webp"
                     alt="A Capital Clean Care team in navy uniforms cleaning the floors and windows of a bright, spacious living area in a DMV home"
                     className="w-full h-full object-cover"
                     width={800}
-                    height={1066}
+                    height={600}
                     loading="eager"
                     fetchPriority="high"
                   />
@@ -239,37 +239,56 @@ const LivingAreaCleaningPage = () => {
         </div>
       </section>
 
-      {/* ── Intro (single column, no image) ── */}
+      {/* ── Clean Less. Live More. (2-col intro) ── */}
       <section className="py-12 md:py-16">
-        <div className="container mx-auto px-4 max-w-3xl">
-          <FadeInSection>
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-5">Clean Less. Live More.</h2>
-            <div className="space-y-4 text-[17px] leading-relaxed text-foreground">
-              <p>
-                The living spaces of your home — the living room, dining room, home office, playroom, and more — are meant
-                to be <em>used</em> by the people who live there, not kept as showrooms. That doesn't mean they can't look
-                and feel clean on a regular basis.
-              </p>
-              <p>
-                Capital Clean Care gets all your home's living areas into tip-top shape while you're at work — the same
-                dedicated, uniformed team every visit, using our{" "}
-                <Link to="/services/eco-friendly-cleaning" className="text-accent font-semibold hover:underline">EPA Safer Choice™ plant-based products</Link>{" "}
-                that are non-toxic and safe for kids and pets. Prefer to do it yourself? Our{" "}
-                <Link to="/resources/living-room-cleaning-checklist" className="text-accent font-semibold hover:underline">living areas cleaning checklist</Link>{" "}
-                walks through every step.
-              </p>
-              <p>Every living area cleaning covers:</p>
-            </div>
-            <ul className="mt-4 grid sm:grid-cols-2 gap-x-6 gap-y-2.5">
-              {ZONE_LINKS.map((a) => (
-                <li key={a}>
-                  <a href="#whats-included" className="inline-flex items-center gap-2 text-accent font-semibold hover:underline">
-                    <ChevronRight className="h-4 w-4 shrink-0" /> {a}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </FadeInSection>
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+            <FadeInSection>
+              <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-5">Clean Less. Live More.</h2>
+              <div className="space-y-4 text-[17px] leading-relaxed text-foreground">
+                <p>
+                  The living spaces of your home — the living room, dining room, home office, playroom, and more — are meant
+                  to be <em>used</em> by the people who live there, not kept as showrooms. That doesn't mean they can't look
+                  and feel clean on a regular basis.
+                </p>
+                <p>
+                  Capital Clean Care gets all your home's living areas into tip-top shape while you're at work — the same
+                  dedicated, uniformed team every visit, using our{" "}
+                  <Link to="/services/eco-friendly-cleaning" className="text-accent font-semibold hover:underline">EPA Safer Choice™ plant-based products</Link>{" "}
+                  that are non-toxic and safe for kids and pets. Prefer to do it yourself? Our{" "}
+                  <Link to="/resources/living-room-cleaning-checklist" className="text-accent font-semibold hover:underline">living areas cleaning checklist</Link>{" "}
+                  walks through every step.
+                </p>
+                <p>Every living area cleaning covers:</p>
+              </div>
+              <ul className="mt-4 space-y-2.5">
+                {ZONE_LINKS.map((a) => (
+                  <li key={a}>
+                    <a href="#whats-included" className="inline-flex items-center gap-2 text-accent font-semibold hover:underline">
+                      <ChevronRight className="h-4 w-4 shrink-0" /> {a}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </FadeInSection>
+
+            <FadeInSection>
+              <div className="relative lg:pl-4">
+                <span className="absolute -top-3 -left-3 h-12 w-12 border-t-4 border-l-4 border-accent rounded-tl-xl hidden sm:block" aria-hidden="true" />
+                <span className="absolute -bottom-3 -right-3 h-12 w-12 border-b-4 border-r-4 border-accent rounded-br-xl hidden sm:block" aria-hidden="true" />
+                <div className="rounded-3xl overflow-hidden shadow-xl border border-border aspect-[4/3]">
+                  <img
+                    src="/images/services/living-area-detail.webp"
+                    alt="A Capital Clean Care team dusting and cleaning a living room, dining and stair area during a professional living area cleaning"
+                    className="w-full h-full object-cover"
+                    width={900}
+                    height={675}
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </FadeInSection>
+          </div>
         </div>
       </section>
 
@@ -336,21 +355,35 @@ const LivingAreaCleaningPage = () => {
         </div>
       </section>
 
-      {/* ── No Contracts. No Hassle. (navy panel, no image) ── */}
+      {/* ── No Contracts. No Hassle. (navy panel + photo) ── */}
       <section className="py-12 md:py-16">
-        <div className="container mx-auto px-4 max-w-5xl">
+        <div className="container mx-auto px-4 max-w-6xl">
           <FadeInSection>
-            <div className="rounded-3xl overflow-hidden shadow-xl border border-border bg-[#0D2B5E] text-white p-8 md:p-14 text-center">
-              <p className="text-accent font-semibold text-sm uppercase tracking-wider mb-1">Flat price.</p>
-              <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">No Contracts. No Hassle.</h2>
-              <p className="text-white/85 text-lg leading-relaxed mb-6 max-w-2xl mx-auto">
-                Living area cleaning is quoted as a flat per-visit price based on the size of your home and the rooms you
-                want covered — never an open-ended hourly rate. Book once or on a schedule, and reschedule, add, or skip a
-                visit whenever you like. No penalties.
-              </p>
-              <Button variant="cta" size="lg" asChild>
-                <a href="#quote" onClick={scrollToForm}>Start With a Free Quote →</a>
-              </Button>
+            <div className="grid lg:grid-cols-2 rounded-3xl overflow-hidden shadow-xl border border-border">
+              <div className="bg-[#0D2B5E] text-white p-8 md:p-12 flex flex-col justify-center">
+                <p className="text-accent font-semibold text-sm uppercase tracking-wider mb-1">Flat price.</p>
+                <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">No Contracts. No Hassle.</h2>
+                <p className="text-white/85 text-lg leading-relaxed mb-6">
+                  Living area cleaning is quoted as a flat per-visit price based on the size of your home and the rooms you
+                  want covered — never an open-ended hourly rate. Book once or on a schedule, and reschedule, add, or skip a
+                  visit whenever you like. No penalties.
+                </p>
+                <div>
+                  <Button variant="cta" size="lg" asChild>
+                    <a href="#quote" onClick={scrollToForm}>Start With a Free Quote →</a>
+                  </Button>
+                </div>
+              </div>
+              <div className="min-h-[280px] lg:min-h-full">
+                <img
+                  src="/images/services/living-area-hero.webp"
+                  alt="A Capital Clean Care team cleaning the floors of a bright, spacious living area"
+                  className="w-full h-full object-cover"
+                  width={1000}
+                  height={750}
+                  loading="lazy"
+                />
+              </div>
             </div>
           </FadeInSection>
         </div>
@@ -402,9 +435,13 @@ const LivingAreaCleaningPage = () => {
         </div>
       </section>
 
-      {/* ── Get started CTA (solid navy, no image) ── */}
-      <section className="bg-[#0D2B5E]">
-        <div className="container mx-auto px-4 max-w-4xl py-14 md:py-20 text-center text-white">
+      {/* ── Get started CTA (photo + navy overlay) ── */}
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0">
+          <img src="/images/services/living-area-hero.webp" alt="" aria-hidden="true" className="w-full h-full object-cover" loading="lazy" />
+          <div className="absolute inset-0 bg-[#0D2B5E]/85" />
+        </div>
+        <div className="relative container mx-auto px-4 max-w-4xl py-14 md:py-20 text-center text-white">
           <h2 className="font-heading text-3xl md:text-4xl font-bold mb-3">Get Started — Spend Less Time Cleaning</h2>
           <p className="text-white/85 text-lg mb-7">Book your living area cleaning today. Free quote, no contracts, eco-friendly.</p>
           <Button variant="cta" size="lg" asChild>

@@ -11,7 +11,7 @@ const SERVICE_CARD_IMAGES: Record<string, string> = {
   "deep-cleaning": "/images/services/card-deep-cleaning.webp",
   "kitchen-cleaning": "/images/services/kitchen-hero.webp",
   "bathroom-cleaning": "/images/services/bathroom-hero.webp",
-  "living-area-cleaning": "/images/team/real-team-luxury-home.webp",
+  "living-area-cleaning": "/images/services/living-area-hero.webp",
   "move-out-cleaning": "/images/services/move-out-cleaning.webp",
   "post-construction-cleaning": "/images/team/team-post-construction.webp",
   "recurring-cleaning": "/images/services/recurring-cleaning.webp",
