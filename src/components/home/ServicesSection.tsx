@@ -7,8 +7,8 @@ import { dirServiceCards as services } from "@/data/home-directory";
 // Real team photos / service imagery keyed by slug — an image-led card reads faster
 // and more trustworthy than a generic icon. Prefer authentic team photos where we have them.
 const SERVICE_CARD_IMAGES: Record<string, string> = {
-  "house-cleaning": "/images/team/real-team-two-members.webp",
-  "deep-cleaning": "/images/team/real-team-maria-fridge.webp",
+  "house-cleaning": "/images/services/card-house-cleaning.webp",
+  "deep-cleaning": "/images/services/card-deep-cleaning.webp",
   "kitchen-cleaning": "/images/services/kitchen-hero.webp",
   "move-out-cleaning": "/images/services/move-out-cleaning.webp",
   "post-construction-cleaning": "/images/team/team-post-construction.webp",
