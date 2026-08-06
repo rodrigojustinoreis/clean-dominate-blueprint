@@ -48,8 +48,8 @@ const SERVICE_MENU: { heading: string; items: { to: string; label: string }[] }[
     items: [
       { to: "/services/kitchen-cleaning", label: "Kitchens" },
       { to: "/services/bathroom-cleaning", label: "Bathrooms" },
-      { to: "/checklist", label: "Living Areas" },
-      { to: "/checklist", label: "Sleeping Areas" },
+      { to: "/resources/living-room-cleaning-checklist", label: "Living Areas" },
+      { to: "/services/deep-cleaning", label: "Sleeping Areas" },
     ],
   },
   {

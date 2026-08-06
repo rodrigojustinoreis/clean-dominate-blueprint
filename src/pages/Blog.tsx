@@ -267,6 +267,13 @@ export const blogPosts: BlogPost[] = [
     coverImage: "/images/team/real-team-maria-fridge.webp",
   },
   {
+    slug: "living-room-cleaning-checklist",
+    title: "The Living Areas Cleaning Checklist",
+    excerpt: "A room-by-room living areas cleaning checklist — dusting, upholstery, floors and touchpoints for your living room, dining room and home office — plus when to book a pro.",
+    date: "2026-08-06", readTime: "5 min read", category: "Cleaning Guides",
+    coverImage: "/images/team/real-team-luxury-home.webp",
+  },
+  {
     slug: "how-much-tip-house-cleaner",
     title: "How Much Should You Tip Your House Cleaner? (2026)",
     excerpt: "Typical tip amounts (15-20% or $10-$20 per visit), when tipping is and isn't expected, holiday bonuses, and etiquette with recurring teams.",
