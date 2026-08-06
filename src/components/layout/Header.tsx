@@ -38,6 +38,7 @@ const SERVICE_MENU: { heading: string; items: { to: string; label: string }[] }[
       { to: "/services/condo-cleaning", label: "Condo Cleaning" },
       { to: "/services/deep-cleaning", label: "Deep Clean" },
       { to: "/services/kitchen-cleaning", label: "Kitchen Cleaning" },
+      { to: "/services/bathroom-cleaning", label: "Bathroom Cleaning" },
       { to: "/services/eco-friendly-cleaning", label: "Eco-Friendly Cleaning" },
       { to: "/services/office-cleaning", label: "Commercial Cleaning" },
     ],
@@ -46,7 +47,7 @@ const SERVICE_MENU: { heading: string; items: { to: string; label: string }[] }[
     heading: "Areas We Clean",
     items: [
       { to: "/services/kitchen-cleaning", label: "Kitchens" },
-      { to: "/checklist", label: "Bathrooms" },
+      { to: "/services/bathroom-cleaning", label: "Bathrooms" },
       { to: "/checklist", label: "Living Areas" },
       { to: "/checklist", label: "Sleeping Areas" },
     ],

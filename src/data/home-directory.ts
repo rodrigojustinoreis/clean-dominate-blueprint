@@ -96,6 +96,11 @@ export const dirServiceCards: { slug: string; name: string; shortDescription: st
     "shortDescription": "Degreased stovetop and range hood, shined appliances, sanitized sink and counters — one-time or recurring."
   },
   {
+    "slug": "bathroom-cleaning",
+    "name": "Bathroom Cleaning",
+    "shortDescription": "Sanitized toilet, scrubbed shower and tub, detailed tile and grout, polished vanity and mirror — one-time or recurring."
+  },
+  {
     "slug": "move-out-cleaning",
     "name": "Move In / Move Out Cleaning",
     "shortDescription": "Comprehensive cleaning for property transitions — leave or arrive to a spotless space."
