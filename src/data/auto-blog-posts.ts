@@ -44,6 +44,8 @@ export const autoBlogPosts: AutoBlogPost[] = [
     coverImage: "https://images.pexels.com/photos/4107120/pexels-photo-4107120.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
     content: `<p>Of all the surfaces in your kitchen, the stove takes the most abuse. Grease splatters, burnt-on food, and weeks of everyday cooking can turn a perfectly good appliance into something that looks beyond saving. We hear it all the time from clients in <a href="/locations/silver-spring-md">Silver Spring</a>, <a href="/locations/bethesda-md">Bethesda</a>, and <a href="/locations/rockville-md">Rockville</a>: <em>"I didn't think anyone could get this clean."</em></p>
 
+<p>Prefer to skip the scrubbing? Book our <a href="/services/kitchen-cleaning">professional kitchen cleaning service</a> — we degrease the stovetop, range hood, and appliances across Maryland, DC &amp; Northern Virginia.</p>
+
 <p>Watch what happened when our team tackled one of the worst stove transformations we've seen:</p>
 
 <div style="display:flex;justify-content:center;margin:2rem 0;">
@@ -112,6 +114,8 @@ export const autoBlogPosts: AutoBlogPost[] = [
     ></iframe>
   </div>
 </div>
+
+<p>Rather have it handled for you? Book our <a href="/services/bathroom-cleaning">professional bathroom cleaning service</a> — a 5.0-star, insured team across Maryland, DC &amp; Northern Virginia.</p>
 
 <h2>The Golden Rule: Top to Bottom, Dry to Wet</h2>
 <p>Professional cleaners never start at the floor. Dust and product drips fall downward — if you mop first, you'll mop again. Always start at the highest point in the room and work down. Similarly, handle dry tasks (dusting, dry wiping) before wet tasks (scrubbing, mopping) to avoid spreading moisture where it doesn't belong.</p>
