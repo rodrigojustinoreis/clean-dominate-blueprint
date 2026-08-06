@@ -171,7 +171,7 @@ const LocationSocialProof = ({ cityName, citySlug, serviceSlug, serviceLabel, co
 
         <div className="text-center mt-6">
           <Button variant="cta" size="lg" asChild>
-            <a href="#quote">Get My Free {cityName} {serviceLabel} Quote →</a>
+            <a href="#quote" className="whitespace-normal text-center h-auto py-3 leading-snug max-w-full">Get My Free {cityName} {serviceLabel} Quote →</a>
           </Button>
         </div>
       </div>

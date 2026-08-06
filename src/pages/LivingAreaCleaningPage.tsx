@@ -279,7 +279,7 @@ const LivingAreaCleaningPage = () => {
                 <div className="rounded-3xl overflow-hidden shadow-xl border border-border aspect-[4/3]">
                   <img
                     src="/images/services/living-area-detail.webp"
-                    alt="A Capital Clean Care team dusting and cleaning a living room, dining and stair area during a professional living area cleaning"
+                    alt="A Capital Clean Care team member in a branded navy uniform mopping the floor of a bright, clean living area"
                     className="w-full h-full object-cover"
                     width={900}
                     height={675}
@@ -302,7 +302,7 @@ const LivingAreaCleaningPage = () => {
               All our living area cleanings involve everything you'd normally expect, plus a few extras, using our EPA
               Safer Choice™ plant-based products. It's the same zone-by-zone routine we work through on every visit:
             </p>
-            <div className="grid sm:grid-cols-2 gap-4">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {ZONES.map((z) => (
                 <div key={z.zone} className="bg-card border border-border rounded-xl p-5 shadow-sm">
                   <h3 className="font-heading text-lg font-bold mb-3">{z.zone}</h3>
@@ -376,11 +376,11 @@ const LivingAreaCleaningPage = () => {
               </div>
               <div className="min-h-[280px] lg:min-h-full">
                 <img
-                  src="/images/services/living-area-hero.webp"
-                  alt="A Capital Clean Care team cleaning the floors of a bright, spacious living area"
+                  src="/images/services/living-area-panel.webp"
+                  alt="A Capital Clean Care team cleaning the windows and floors of a bright, spacious living area"
                   className="w-full h-full object-cover"
-                  width={1000}
-                  height={750}
+                  width={800}
+                  height={1000}
                   loading="lazy"
                 />
               </div>
