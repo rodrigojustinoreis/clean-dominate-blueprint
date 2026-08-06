@@ -15,9 +15,16 @@ interface SEOProps {
   noIndex?: boolean;
   /** LCP image to <link rel="preload"> for this page only (e.g. the hero on the homepage). */
   preloadImage?: string;
+  /**
+   * Per-page geo signals. Defaults to the business HQ (Silver Spring, MD) for pages that
+   * don't set it. City/location pages pass their OWN region + placename so a Virginia or DC
+   * page never declares itself as Silver Spring, MD. Omit `position` when real lat/long isn't
+   * known (we then skip geo.position/ICBM rather than emit the wrong HQ coordinates).
+   */
+  geo?: { region?: string; placename?: string; position?: string };
 }
 
-export const useSEO = ({ title, description, canonical, ogType = "website", ogImage, noIndex, preloadImage }: SEOProps) => {
+export const useSEO = ({ title, description, canonical, ogType = "website", ogImage, noIndex, preloadImage, geo }: SEOProps) => {
   const { pathname } = useLocation();
   // Central doorway-pruning denylist overrides any page's own indexable decision.
   const effectiveNoIndex = noIndex || isNoIndexPath(pathname);
@@ -39,6 +46,23 @@ export const useSEO = ({ title, description, canonical, ogType = "website", ogIm
   const ogImageUrl = ogImage
     ? (ogImage.startsWith("http") ? ogImage : `${ORIGIN}${ogImage.startsWith("/") ? "" : "/"}${ogImage}`)
     : `${ORIGIN}/og-image.jpg`;
+
+  // Geo tags: default to the HQ (Silver Spring, MD) only when a page provides no geo of its own.
+  // A page that passes `geo` but no `position` intentionally emits region+placename WITHOUT
+  // coordinates (better than inheriting Silver Spring's lat/long on a VA/DC page).
+  const geoRegion = geo?.region ?? "US-MD";
+  const geoPlacename = geo?.placename ?? "Silver Spring";
+  const geoPosition = geo ? geo.position : "39.08;-77.02";
+  const geoTags = [
+    createElement("meta", { key: "geo-region", name: "geo.region", content: geoRegion }),
+    createElement("meta", { key: "geo-place", name: "geo.placename", content: geoPlacename }),
+    ...(geoPosition
+      ? [
+          createElement("meta", { key: "geo-pos", name: "geo.position", content: geoPosition }),
+          createElement("meta", { key: "icbm", name: "ICBM", content: geoPosition.replace(";", ", ") }),
+        ]
+      : []),
+  ];
 
   const hreflangLinks = pair
     ? [
@@ -88,6 +112,7 @@ export const useSEO = ({ title, description, canonical, ogType = "website", ogIm
     createElement("meta", { key: "og-img-h", property: "og:image:height", content: "630" }),
     createElement("meta", { key: "og-img-alt", property: "og:image:alt", content: finalTitle }),
     createElement("meta", { key: "tw-img", name: "twitter:image", content: ogImageUrl }),
+    ...geoTags,
   ];
 
   const seoHelmet = createElement(Helmet, null, ...children);

@@ -53,7 +53,12 @@ const LocationHub = () => {
 
   if (!hub) return <NotFound />;
 
-  const { seoHelmet } = useSEO({ title: hub.metaTitle, description: hub.metaDescription, canonical: `https://capitalcleancare.com/${hub.slug}` });
+  const { seoHelmet } = useSEO({
+    title: hub.metaTitle,
+    description: hub.metaDescription,
+    canonical: `https://capitalcleancare.com/${hub.slug}`,
+    geo: { region: `US-${hub.stateAbbr}`, placename: hub.stateAbbr === "MD" ? "Maryland" : hub.stateAbbr === "DC" ? "Washington" : "Virginia" },
+  });
 
   const hubCities = hub.citySlugs.map(getCityBySlug).filter(Boolean);
   const reviews = testimonialsByState[hub.stateAbbr] || [];

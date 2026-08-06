@@ -82,6 +82,7 @@ const ServiceLocationPage = () => {
     description: metaDescription,
     canonical: pageUrl,
     noIndex: !isIndexable,
+    geo: { region: `US-${city.state}`, placename: city.name },
   });
 
   const realReviews = pickReviews(`${city.slug}/${service.slug}`, 2);

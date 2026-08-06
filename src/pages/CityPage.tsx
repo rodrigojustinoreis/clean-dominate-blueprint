@@ -148,7 +148,7 @@ const CityPage = () => {
 
   if (!city) return <NotFound />;
 
-  const { seoHelmet } = useSEO({ title: city.metaTitle, description: city.metaDescription, canonical: `https://capitalcleancare.com/locations/${city.slug}` });
+  const { seoHelmet } = useSEO({ title: city.metaTitle, description: city.metaDescription, canonical: `https://capitalcleancare.com/locations/${city.slug}`, geo: { region: `US-${city.state}`, placename: city.name } });
 
   const nearbyCities = city.nearbySlugs.map(getCityBySlug).filter(Boolean);
   const expandedFaqs = getExpandedCityFaqs(city);
