@@ -131,7 +131,7 @@ export const cities: CityData[] = [
       { q: "Are your Silver Spring teams background-checked?", a: "Yes. Every Capital Clean Care team member undergoes thorough background checks. We're fully licensed and insured for your complete peace of mind." },
       { q: "Do you use eco-friendly products in Silver Spring?", a: "Yes. We exclusively use plant-based, non-toxic cleaning products across all our Silver Spring service areas. Safe for families, pets, and the environment." }
     ],
-    metaTitle: "House Cleaning Services in Silver Spring, MD | Capital Clean Care",
+    metaTitle: "Cleaning Services in Silver Spring, MD — All Services | Capital Clean Care",
     metaDescription: "Professional house cleaning in Silver Spring, MD. Serving all neighborhoods with eco-friendly products and background-checked teams. Get your free quote today."
   },
   {
@@ -168,7 +168,7 @@ export const cities: CityData[] = [
       { q: "Are your products safe for kids and pets?", a: "Absolutely. We exclusively use eco-friendly, non-toxic products that are safe for children, pets, and the environment." },
       { q: "Can I get recurring cleaning in Germantown?", a: "Yes. Weekly, bi-weekly, and monthly plans are available with preferred pricing and dedicated cleaning teams." }
     ],
-    metaTitle: "House Cleaning Services in Germantown, MD | Capital Clean Care",
+    metaTitle: "Cleaning Services in Germantown, MD — All Services | Capital Clean Care",
     metaDescription: "Professional house cleaning in Germantown, MD. Family-friendly, eco-friendly products, flexible scheduling. Serving all Germantown neighborhoods. Free quotes."
   },
   {
@@ -204,7 +204,7 @@ export const cities: CityData[] = [
       { q: "Can I schedule pre-event cleaning?", a: "Yes. Many Potomac clients schedule cleanings before dinner parties, holiday gatherings, and other events. We accommodate special scheduling needs." },
       { q: "Do you offer regular weekly service in Potomac?", a: "Yes. Weekly, bi-weekly, and monthly recurring plans are available with dedicated teams and preferred pricing for Potomac residents." }
     ],
-    metaTitle: "House Cleaning Services in Potomac, MD | Capital Clean Care",
+    metaTitle: "Cleaning Services in Potomac, MD — All Services | Capital Clean Care",
     metaDescription: "Premium house cleaning in Potomac, MD. Specialized care for fine homes, eco-friendly products, background-checked teams. Serving all Potomac neighborhoods. Free quotes."
   },
   {
@@ -491,7 +491,7 @@ export const cities: CityData[] = [
       { q: "Are your products safe for original hardwood?", a: "Yes. Our eco-friendly products include pH-neutral solutions specifically safe for hardwood floors and other historic surfaces." },
       { q: "How do I schedule on Capitol Hill?", a: "Fill out our quote form or call us. We serve all of Capitol Hill and can typically schedule within a few days." }
     ],
-    metaTitle: "House Cleaning on Capitol Hill, DC | Capital Clean Care",
+    metaTitle: "Cleaning Services on Capitol Hill, DC — All Services | Capital Clean Care",
     metaDescription: "Professional house cleaning on Capitol Hill, DC. Expert care for historic rowhouses, eco-friendly products, background-checked teams. Get a free quote."
   },
   {
@@ -559,7 +559,7 @@ export const cities: CityData[] = [
       { q: "Are weekday cleaning appointments available?", a: "Yes. Weekday appointments are popular with Downtown DC professionals who prefer cleaning while they're at work." },
       { q: "How quickly can I get an appointment Downtown?", a: "We typically schedule new Downtown DC clients within 3-5 business days." }
     ],
-    metaTitle: "House Cleaning in Downtown Washington, DC | Capital Clean Care",
+    metaTitle: "Cleaning Services in Downtown DC — All Services | Capital Clean Care",
     metaDescription: "Professional house cleaning in Downtown DC. Serving luxury condos, apartments & lofts. Eco-friendly, background-checked teams. Get a free quote today."
   },
   // VIRGINIA
@@ -578,7 +578,7 @@ export const cities: CityData[] = [
       { q: "Are your Arlington teams background-checked?", a: "Yes. Every team member is background-checked, and we're fully licensed and insured." },
       { q: "Do you offer same-day service in Arlington?", a: "Same-day availability depends on our schedule. Arlington's proximity to our operations often allows for quicker scheduling." }
     ],
-    metaTitle: "House Cleaning Services in Arlington, VA | Capital Clean Care",
+    metaTitle: "Cleaning Services in Arlington, VA — All Services | Capital Clean Care",
     metaDescription: "Professional house cleaning in Arlington, VA. Serving Rosslyn, Ballston, Clarendon & all neighborhoods. Eco-friendly, insured. Get a free quote today."
   },
   {
@@ -595,7 +595,7 @@ export const cities: CityData[] = [
       { q: "Do you serve areas around George Mason?", a: "Yes. We serve all residential areas in and around the City of Fairfax." },
       { q: "Are recurring plans available in Fairfax?", a: "Yes. Weekly, bi-weekly, and monthly plans with preferred pricing and dedicated teams." }
     ],
-    metaTitle: "House Cleaning Services in Fairfax, VA | Capital Clean Care",
+    metaTitle: "Cleaning Services in Fairfax, VA — All Services | Capital Clean Care",
     metaDescription: "Professional house cleaning in Fairfax, VA. Eco-friendly products, background-checked teams, flexible plans. Serving all Fairfax neighborhoods. Free quotes."
   },
   {
@@ -612,7 +612,7 @@ export const cities: CityData[] = [
       { q: "Do you offer pre-event cleaning?", a: "Yes. Many McLean clients schedule cleanings before social events, holiday gatherings, and dinner parties." },
       { q: "How discreet is your service?", a: "Very. We understand the privacy expectations of McLean residents and conduct ourselves with complete professionalism and discretion." }
     ],
-    metaTitle: "House Cleaning Services in McLean, VA | Capital Clean Care",
+    metaTitle: "Cleaning Services in McLean, VA — All Services | Capital Clean Care",
     metaDescription: "Premium house cleaning in McLean, VA. Specialized care for luxury homes, eco-friendly products, discreet professional teams. Get your free quote today."
   },
   {
@@ -630,7 +630,7 @@ export const cities: CityData[] = [
       { q: "Are weekend appointments available?", a: "Yes. Saturday availability for Alexandria clients. Early booking recommended for weekend slots." },
       { q: "Do you serve Del Ray?", a: "Yes. Del Ray is one of our popular Alexandria service areas." }
     ],
-    metaTitle: "House Cleaning Services in Alexandria, VA | Capital Clean Care",
+    metaTitle: "Cleaning Services in Alexandria, VA — All Services | Capital Clean Care",
     metaDescription: "Professional house cleaning in Alexandria, VA. Serving Old Town, Del Ray, West End & more. Eco-friendly, experienced with historic homes. Free quotes."
   },
   {
@@ -1019,7 +1019,7 @@ export const cities: CityData[] = [
       { q: "Are your cleaners background-checked?", a: "Yes. Every Capital Clean Care team member passes a thorough background check before joining our team. We are fully licensed, bonded, and insured." },
       { q: "Do you offer recurring cleaning plans in North Bethesda?", a: "Yes, we offer weekly, bi-weekly, and monthly recurring plans with preferred pricing for North Bethesda clients." }
     ],
-    metaTitle: "House Cleaning Services in North Bethesda, MD | Capital Clean Care",
+    metaTitle: "Cleaning Services in North Bethesda, MD — All Services | Capital Clean Care",
     metaDescription: "Professional house cleaning in North Bethesda, MD. Eco-friendly products, background-checked teams, flexible scheduling. Serving all North Bethesda neighborhoods. Free quotes."
   },
   {
