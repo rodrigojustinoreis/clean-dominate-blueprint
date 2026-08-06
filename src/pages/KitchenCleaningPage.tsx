@@ -214,7 +214,7 @@ const KitchenCleaningPage = () => {
                 <div className="rounded-3xl overflow-hidden shadow-2xl border border-border aspect-[4/3]">
                   <img
                     src="/images/services/kitchen-hero.webp"
-                    alt="A bright, spotless kitchen after a professional Capital Clean Care kitchen cleaning in Maryland, DC & Northern Virginia"
+                    alt="A Capital Clean Care team member in a branded navy uniform carrying eco-friendly supplies in a bright, modern kitchen in the DMV"
                     className="w-full h-full object-cover"
                     width={800}
                     height={600}
@@ -376,11 +376,11 @@ const KitchenCleaningPage = () => {
               </div>
               <div className="min-h-[280px] lg:min-h-full">
                 <img
-                  src="/images/services/kitchen-hero.webp"
+                  src="/images/services/kitchen-clean.webp"
                   alt="A bright, freshly cleaned modern kitchen with a spotless stovetop and counters"
                   className="w-full h-full object-cover"
-                  width={1000}
-                  height={750}
+                  width={900}
+                  height={900}
                   loading="lazy"
                 />
               </div>
