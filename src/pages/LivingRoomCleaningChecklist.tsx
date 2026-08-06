@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import { useSEO } from "@/hooks/useSEO";
 import { Helmet } from "react-helmet-async";
-import { ArticleSchema, FAQSchema } from "@/components/SchemaMarkup";
+import { ArticleSchema, FAQSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import BlogHero from "@/components/blog/BlogHero";
 import FadeInSection from "@/components/blog/FadeInSection";
 import FAQAccordion from "@/components/blog/FAQAccordion";
@@ -48,7 +48,7 @@ const LivingRoomCleaningChecklist = () => {
   const { seoHelmet } = useSEO({
     title: "Living Room Cleaning Checklist: How to Clean Living Areas",
     description:
-      "A room-by-room living areas cleaning checklist — dusting, upholstery, floors, and touchpoints for your living room, dining room and home office, plus when to book a pro in the DMV.",
+      "A living room cleaning checklist — dusting, upholstery, floors and touchpoints for your living room, dining and home office, plus a daily/weekly/monthly routine.",
     canonical: URL,
   });
 
@@ -59,17 +59,20 @@ const LivingRoomCleaningChecklist = () => {
         <meta name="keywords" content="living room cleaning checklist, how to clean living room, living area cleaning, family room cleaning, living room deep cleaning" />
       </Helmet>
       <ArticleSchema
-        title="The Living Areas Cleaning Checklist"
-        description="A step-by-step living areas cleaning checklist — how to clean the living room, dining room, and home office: dusting, upholstery, floors, and touchpoints — plus when to hand it to a pro."
+        title="Living Room Cleaning Checklist: How to Clean Your Living Areas"
+        description="A step-by-step living room cleaning checklist — how to clean the living room, dining room, and home office: dusting, upholstery, floors, and touchpoints — with a daily, weekly and monthly routine."
         url={URL}
         datePublished="2026-08-06"
         image={HERO_IMAGE}
       />
       <FAQSchema faqs={faqs} />
+      <BreadcrumbSchema
+        items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "Living Room Cleaning Checklist", href: "/resources/living-room-cleaning-checklist" }]}
+      />
 
       <BlogHero src={HERO_IMAGE} alt="A Capital Clean Care team member cleaning a bright, comfortable living area in a DMV home">
         <span className="bg-accent/20 text-accent font-semibold px-4 py-1.5 rounded-full text-sm inline-block mb-6 uppercase tracking-wider border border-accent/30">Cleaning Guides</span>
-        <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight drop-shadow-md">The Living Areas Cleaning Checklist</h1>
+        <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight drop-shadow-md">Living Room Cleaning Checklist: How to Clean Your Living Areas</h1>
         <p className="text-xl md:text-2xl text-gray-200 mb-4 leading-relaxed font-medium">Spend less time cleaning your living spaces — and more time living in them</p>
         <p className="text-gray-300 mb-8 text-sm uppercase tracking-widest">By Rodrigo Reis, Owner · MD · DC · VA · August 2026</p>
         <Button size="lg" className="bg-accent hover:bg-accent/90 text-white text-lg px-8 py-6 rounded-full shadow-lg" asChild>
@@ -117,6 +120,44 @@ const LivingRoomCleaningChecklist = () => {
             <p className="text-muted-foreground leading-relaxed mb-6">
               If your home has a special need you don't see covered here, just ask — we're flexible, and we want to get your
               living areas cleaned your way.
+            </p>
+          </FadeInSection>
+
+          <FadeInSection>
+            <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mt-10 mb-4">Your Living Room Cleaning Routine: Daily, Weekly &amp; Monthly</h2>
+            <p className="text-muted-foreground leading-relaxed mb-5">
+              The easiest way to keep a living room clean is to split the work by how often it's actually needed. A few
+              minutes daily, a proper clean weekly, and a deeper pass monthly keeps your living areas looking cared-for
+              without a marathon session.
+            </p>
+            <div className="overflow-x-auto rounded-2xl border border-border mb-4">
+              <table className="w-full text-left text-[15px] bg-white">
+                <thead>
+                  <tr className="border-b border-border bg-secondary/40">
+                    <th className="p-3 font-heading font-bold whitespace-nowrap">How often</th>
+                    <th className="p-3 font-heading font-bold">What to do</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b border-border align-top">
+                    <td className="p-3 font-semibold text-foreground whitespace-nowrap">Daily (5 min)</td>
+                    <td className="p-3 text-muted-foreground">Straighten cushions and throws, clear clutter and dishes, fluff pillows, and spot-wipe the coffee table and any obvious marks.</td>
+                  </tr>
+                  <tr className="border-b border-border align-top">
+                    <td className="p-3 font-semibold text-foreground whitespace-nowrap">Weekly</td>
+                    <td className="p-3 text-muted-foreground">Dust surfaces, shelves, and electronics; wipe touchpoints (remotes, switch plates, door handles); vacuum upholstery and floors; mop hard floors; empty the trash.</td>
+                  </tr>
+                  <tr className="align-top">
+                    <td className="p-3 font-semibold text-foreground whitespace-nowrap">Monthly</td>
+                    <td className="p-3 text-muted-foreground">Dust ceiling fans, light fixtures, and lampshades; wipe baseboards and windowsills; clean blinds; vacuum under and behind furniture; wash throw covers and spot-clean upholstery.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="text-muted-foreground leading-relaxed mb-8">
+              <strong>What you'll need:</strong> a microfiber duster and cloths, a vacuum with an upholstery attachment,
+              an all-purpose (or EPA Safer Choice™) cleaner, glass cleaner for screens and windows, and a mop for hard
+              floors. That's it — no specialty products required for routine living area cleaning.
             </p>
           </FadeInSection>
 

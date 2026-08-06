@@ -731,7 +731,7 @@ export const services: ServiceData[] = [
     ],
     testimonials: [],
     metaTitle: "Kitchen Cleaning Services in MD, DC & VA | Capital Clean Care",
-    metaDescription: "Professional kitchen cleaning in Maryland, DC & Northern Virginia — degreased stovetop & range hood, appliance exteriors, sanitized sink & counters. Insured team. Free quote.",
+    metaDescription: "Professional kitchen cleaning in MD, DC & Northern Virginia — degreased stovetop, range hood, appliance exteriors & sanitized counters. Insured team. Free quote.",
   },
   {
     name: "Bathroom Cleaning",
@@ -817,7 +817,7 @@ export const services: ServiceData[] = [
     ],
     testimonials: [],
     metaTitle: "Living Areas Cleaning in MD, DC & VA | Capital Clean Care",
-    metaDescription: "Professional living area cleaning across MD, DC & Northern Virginia — living room, dining, home office: dusting, upholstery, floors & straightening. Insured team. Free quote.",
+    metaDescription: "Living area cleaning across MD, DC & Northern Virginia — living room, dining & home office: dusting, upholstery, floors & straightening. Insured team. Free quote.",
   }
 ];
 
