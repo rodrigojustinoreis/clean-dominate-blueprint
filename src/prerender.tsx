@@ -145,6 +145,7 @@ function getAllRoutes(): string[] {
     "/services/maid-service",
     "/services/kitchen-cleaning",
     "/services/bathroom-cleaning",
+    "/services/living-area-cleaning",
     "/checklist",
     "/services/office-cleaning",
     "/services/post-construction-cleaning",

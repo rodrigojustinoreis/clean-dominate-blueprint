@@ -13,6 +13,7 @@ import AirbnbCleaningPage from "./pages/AirbnbCleaningPage";
 import CondoCleaningPage from "./pages/CondoCleaningPage";
 import KitchenCleaningPage from "./pages/KitchenCleaningPage";
 import BathroomCleaningPage from "./pages/BathroomCleaningPage";
+import LivingAreaCleaningPage from "./pages/LivingAreaCleaningPage";
 import MaidServicePage from "./pages/MaidServicePage";
 import CleaningChecklistPage from "./pages/CleaningChecklistPage";
 import LocationHub from "./pages/LocationHub";
@@ -226,6 +227,7 @@ const AppRoutes = () => (
     <Route path="/services/maid-service" element={<MaidServicePage />} />
     <Route path="/services/kitchen-cleaning" element={<KitchenCleaningPage />} />
     <Route path="/services/bathroom-cleaning" element={<BathroomCleaningPage />} />
+    <Route path="/services/living-area-cleaning" element={<LivingAreaCleaningPage />} />
     <Route path="/services/eco-friendly-cleaning" element={<EcoFriendlyCleaningPage />} />
     <Route path="/services/house-cleaning" element={<HouseCleaningPage />} />
     <Route path="/services/:slug" element={<ServicePage />} />

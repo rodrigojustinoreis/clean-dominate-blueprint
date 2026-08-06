@@ -101,6 +101,11 @@ export const dirServiceCards: { slug: string; name: string; shortDescription: st
     "shortDescription": "Sanitized toilet, scrubbed shower and tub, detailed tile and grout, polished vanity and mirror — one-time or recurring."
   },
   {
+    "slug": "living-area-cleaning",
+    "name": "Living Areas Cleaning",
+    "shortDescription": "Living room, dining and home office — furniture dusted, upholstery vacuumed, floors washed and everything straightened."
+  },
+  {
     "slug": "move-out-cleaning",
     "name": "Move In / Move Out Cleaning",
     "shortDescription": "Comprehensive cleaning for property transitions — leave or arrive to a spotless space."
