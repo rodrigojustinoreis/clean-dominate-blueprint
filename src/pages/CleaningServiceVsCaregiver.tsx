@@ -8,6 +8,7 @@ import { Helmet } from "react-helmet-async";
 import { ArticleSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import BlogHero from "@/components/blog/BlogHero";
 import FadeInSection from "@/components/blog/FadeInSection";
+import BlogInlineImage from "@/components/blog/BlogInlineImage";
 import StickyCTA from "@/components/blog/StickyCTA";
 import RelatedPosts from "@/components/blog/RelatedPosts";
 
@@ -89,6 +90,11 @@ const CleaningServiceVsCaregiver = () => {
           </FadeInSection>
 
           <FadeInSection>
+            <BlogInlineImage
+              src="/images/services/recurring-cleaning.webp"
+              alt="A professional cleaner maintaining a tidy home on a recurring schedule."
+              caption="A cleaning service keeps the home itself in shape — a separate job from the hands-on personal care a caregiver provides."
+            />
             <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-4">What a Caregiver Does (and Costs)</h2>
             <p className="mb-4">
               A caregiver — sometimes called a home health aide or personal care aide — provides hands-on support with

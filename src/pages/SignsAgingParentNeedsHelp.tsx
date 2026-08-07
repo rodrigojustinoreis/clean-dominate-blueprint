@@ -8,6 +8,7 @@ import { Helmet } from "react-helmet-async";
 import { ArticleSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import BlogHero from "@/components/blog/BlogHero";
 import FadeInSection from "@/components/blog/FadeInSection";
+import BlogInlineImage from "@/components/blog/BlogInlineImage";
 import StickyCTA from "@/components/blog/StickyCTA";
 import RelatedPosts from "@/components/blog/RelatedPosts";
 
@@ -77,6 +78,11 @@ const SignsAgingParentNeedsHelp = () => {
           </FadeInSection>
 
           <FadeInSection>
+            <BlogInlineImage
+              src="/images/team/real-team-maria-fridge.webp"
+              alt="A Capital Clean Care team member wiping down a refrigerator in a clean kitchen."
+              caption="Keeping up with everyday cleaning is one of the first things to slip — and one of the easiest to hand off."
+            />
             <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-3">1. Clutter building up in rooms that used to be tidy</h2>
             <p className="mb-4">
               If your parent was always organized and their living room is now crowded with papers, laundry, or things

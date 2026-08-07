@@ -8,6 +8,7 @@ import { Helmet } from "react-helmet-async";
 import { ArticleSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import BlogHero from "@/components/blog/BlogHero";
 import FadeInSection from "@/components/blog/FadeInSection";
+import BlogInlineImage from "@/components/blog/BlogInlineImage";
 import StickyCTA from "@/components/blog/StickyCTA";
 import RelatedPosts from "@/components/blog/RelatedPosts";
 
@@ -86,6 +87,11 @@ const AgingInPlaceMontgomeryCounty = () => {
           </FadeInSection>
 
           <FadeInSection>
+            <BlogInlineImage
+              src="/images/services/kitchen-hero.webp"
+              alt="A clean, easy-to-manage kitchen with wiped counters and appliances."
+              caption="A clean, easy-to-manage kitchen makes staying in your own home safer and simpler."
+            />
             <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-4">What "Aging in Place" Really Means</h2>
             <p className="mb-4">
               "Aging in place" just means living in your own home, safely and comfortably, for as long as you choose —

@@ -8,6 +8,7 @@ import { Helmet } from "react-helmet-async";
 import { ArticleSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import BlogHero from "@/components/blog/BlogHero";
 import FadeInSection from "@/components/blog/FadeInSection";
+import BlogInlineImage from "@/components/blog/BlogInlineImage";
 import StickyCTA from "@/components/blog/StickyCTA";
 import RelatedPosts from "@/components/blog/RelatedPosts";
 
@@ -90,6 +91,11 @@ const CleanHomeFallPrevention = () => {
           </FadeInSection>
 
           <FadeInSection>
+            <BlogInlineImage
+              src="/images/services/bathroom-hero.webp"
+              alt="A clean, dry bathroom with a spotless tub and a clear floor."
+              caption="Dry floors and a clutter-free bathroom remove some of the most common fall hazards in the home."
+            />
             <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-4">The Hidden Fall Hazards in Every Home</h2>
             <p className="mb-6">
               Most fall hazards are ordinary, everyday things we stop noticing precisely because they're always there.

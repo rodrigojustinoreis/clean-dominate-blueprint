@@ -8,6 +8,7 @@ import { Helmet } from "react-helmet-async";
 import { ArticleSchema, FAQSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import BlogHero from "@/components/blog/BlogHero";
 import FadeInSection from "@/components/blog/FadeInSection";
+import BlogInlineImage from "@/components/blog/BlogInlineImage";
 import BlogInlineCTA from "@/components/blog/BlogInlineCTA";
 import StickyCTA from "@/components/blog/StickyCTA";
 import RelatedPosts from "@/components/blog/RelatedPosts";
@@ -241,6 +242,12 @@ const HouseCleaningForSeniors = () => {
               ))}
             </ul>
 
+            <BlogInlineImage
+              src="/images/services/kitchen-hero.webp"
+              alt="A clean, bright kitchen with wiped counters and appliances after a Capital Clean Care visit."
+              caption="A senior-friendly kitchen clean — counters, appliances, and floors handled for you, no bending or scrubbing required."
+            />
+
             <h3 className="font-heading text-xl md:text-2xl font-semibold text-foreground mb-3">Bathroom Cleaning</h3>
             <ul className="space-y-2 mb-6 pl-1">
               {[
@@ -256,6 +263,12 @@ const HouseCleaningForSeniors = () => {
               ))}
             </ul>
 
+            <BlogInlineImage
+              src="/images/services/bathroom-hero.webp"
+              alt="A freshly cleaned, sanitized bathroom with a spotless tub and tile."
+              caption="Bathrooms get extra attention — sanitized tub, shower, and floors in one of the most important rooms for everyday safety."
+            />
+
             <h3 className="font-heading text-xl md:text-2xl font-semibold text-foreground mb-3">Bedroom and Living Area Cleaning</h3>
             <ul className="space-y-2 mb-6 pl-1">
               {[
@@ -270,6 +283,12 @@ const HouseCleaningForSeniors = () => {
                 </li>
               ))}
             </ul>
+
+            <BlogInlineImage
+              src="/images/services/living-area-hero.webp"
+              alt="A tidy, dust-free living room with clean floors and surfaces."
+              caption="Fresh, dust-free living areas and bedrooms — the comfortable spaces where you spend most of your day."
+            />
 
             <h3 className="font-heading text-xl md:text-2xl font-semibold text-foreground mb-3">Deep-Cleaning Add-ons</h3>
             <p className="mb-8">

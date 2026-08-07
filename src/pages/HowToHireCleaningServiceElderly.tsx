@@ -8,6 +8,7 @@ import { Helmet } from "react-helmet-async";
 import { ArticleSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import BlogHero from "@/components/blog/BlogHero";
 import FadeInSection from "@/components/blog/FadeInSection";
+import BlogInlineImage from "@/components/blog/BlogInlineImage";
 import StickyCTA from "@/components/blog/StickyCTA";
 import RelatedPosts from "@/components/blog/RelatedPosts";
 
@@ -109,6 +110,12 @@ const HowToHireCleaningServiceElderly = () => {
           </FadeInSection>
 
           <FadeInSection>
+            <BlogInlineImage
+              src="/images/team/eco-friendly-products.webp"
+              alt="Non-toxic, plant-based cleaning products used in the home."
+              caption="One key question when hiring: are the products safe for the household? It's worth asking before the first visit."
+              single
+            />
             <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-4">Before You Call: Know What Your Parent Needs</h2>
             <p className="mb-4">
               A little clarity before you start calling companies makes every conversation shorter and every quote more
