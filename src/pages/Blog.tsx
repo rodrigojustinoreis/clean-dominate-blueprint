@@ -58,7 +58,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-08-06",
     readTime: "9 min read",
     category: "Home Care Guides",
-    coverImage: "/images/services/living-area-hero.webp",
+    coverImage: "/images/team/real-team-two-members.webp",
   },
   {
     slug: "caregiver-guide-house-cleaning-aging-parent",

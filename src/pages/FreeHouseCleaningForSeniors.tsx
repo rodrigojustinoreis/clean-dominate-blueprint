@@ -14,7 +14,7 @@ import AuthorBio from "@/components/blog/AuthorBio";
 import StickyCTA from "@/components/blog/StickyCTA";
 import RelatedPosts from "@/components/blog/RelatedPosts";
 
-const HERO_IMAGE = "/images/services/living-area-hero.webp";
+const HERO_IMAGE = "/images/team/real-team-two-members.webp";
 const URL = "https://capitalcleancare.com/resources/free-house-cleaning-for-seniors";
 const PILLAR = "/resources/house-cleaning-for-seniors";
 const SENIOR = "/senior-home-cleaning-montgomery-county-md";
@@ -105,7 +105,7 @@ const FreeHouseCleaningForSeniors = () => {
         </div>
       </div>
 
-      <BlogHero src={HERO_IMAGE} alt="A bright, comfortable living room in a well-kept home in the Washington DC area.">
+      <BlogHero src={HERO_IMAGE} alt="A Capital Clean Care team keeping an older adult's home fresh, comfortable, and cared for.">
         <span className="bg-accent/20 text-accent font-semibold px-4 py-1.5 rounded-full text-sm inline-block mb-6 uppercase tracking-wider border border-accent/30">
           Senior Home Care
         </span>
