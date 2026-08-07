@@ -115,6 +115,8 @@ const TermsOfService = lazy(() => import("./pages/TermsOfService"));
 const VanityLandingPage = lazy(() => import("./pages/VanityLandingPage"));
 const HouseCleaningNearMe = lazy(() => import("./pages/HouseCleaningNearMe"));
 const SeniorHomeCleaning = lazy(() => import("./pages/SeniorHomeCleaning"));
+const SeniorHomeCleaningDC = lazy(() => import("./pages/SeniorHomeCleaningDC"));
+const SeniorHomeCleaningNoVA = lazy(() => import("./pages/SeniorHomeCleaningNoVA"));
 const Careers = lazy(() => import("./pages/Careers"));
 const PremiumFanPage = lazy(() => import("./pages/PremiumFanPage"));
 const WhyEcoFriendlyPage = lazy(() => import("./pages/WhyEcoFriendlyPage"));
@@ -334,6 +336,8 @@ const AppRoutesLazy = () => (
     <Route path="/spring-cleaning-md" element={<SpringCleaningMD />} />
     <Route path="/house-cleaning-near-me" element={<HouseCleaningNearMe />} />
     <Route path="/senior-home-cleaning-montgomery-county-md" element={<SeniorHomeCleaning />} />
+    <Route path="/senior-home-cleaning-washington-dc" element={<SeniorHomeCleaningDC />} />
+    <Route path="/senior-home-cleaning-northern-virginia" element={<SeniorHomeCleaningNoVA />} />
     <Route path="/careers" element={<Careers />} />
     <Route path="/join-our-team" element={<Careers />} />
     <Route path="/gift-cards" element={<GiftCards />} />

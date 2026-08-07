@@ -156,6 +156,16 @@ const CityPage = () => {
   const cityLabel = city.state !== "DC" ? `${city.name}, ${city.state}` : city.name;
   const whyIntro = cityWhyIntros[city.slug] || `${city.name} homeowners choose Capital Clean Care for our reliable, eco-friendly cleaning services.`;
   const hasServiceLocationPages = slCities.some((c) => c.slug === city.slug);
+  // Region-aware senior-cleaning hub for this city (MoCo / DC / Northern Virginia).
+  const seniorHub =
+    city.state === "DC"
+      ? "/senior-home-cleaning-washington-dc"
+      : city.state === "VA"
+      ? "/senior-home-cleaning-northern-virginia"
+      : city.county === "Montgomery County"
+      ? "/senior-home-cleaning-montgomery-county-md"
+      : null;
+  const seniorRegionLabel = city.state === "DC" ? "Washington, DC" : city.state === "VA" ? "Northern Virginia" : "Montgomery County";
   // Real Google reviews only (deterministic per city) — never fabricated testimonials.
   const testimonials = pickReviews(city.slug, 3);
 
@@ -295,16 +305,16 @@ const CityPage = () => {
             ))}
           </div>
 
-          {/* Senior Home Cleaning — Montgomery County cities only */}
-          {city.county === "Montgomery County" && (
+          {/* Senior Home Cleaning — region-aware hub (MoCo / DC / Northern Virginia) */}
+          {seniorHub && (
             <div className="mt-4">
-              <Link to="/senior-home-cleaning-montgomery-county-md" className="group flex items-center gap-3 rounded-xl border border-accent/30 bg-accent/5 p-5 hover:bg-accent/10 transition-colors">
+              <Link to={seniorHub} className="group flex items-center gap-3 rounded-xl border border-accent/30 bg-accent/5 p-5 hover:bg-accent/10 transition-colors">
                 <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center shrink-0">
                   <Sparkles className="h-5 w-5 text-accent" />
                 </div>
                 <div className="flex-1">
                   <h3 className="font-medium text-foreground group-hover:text-accent transition-colors">Senior Home Cleaning in {city.name}</h3>
-                  <p className="text-xs text-muted-foreground mt-0.5">Gentle, trusted cleaning for older adults across Montgomery County</p>
+                  <p className="text-xs text-muted-foreground mt-0.5">Gentle, trusted cleaning for older adults across {seniorRegionLabel}</p>
                 </div>
                 <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-accent transition-colors shrink-0" />
               </Link>

@@ -153,6 +153,8 @@ function getAllRoutes(): string[] {
     "/services/post-construction-cleaning",
     "/house-cleaning-near-me",
     "/senior-home-cleaning-montgomery-county-md",
+    "/senior-home-cleaning-washington-dc",
+    "/senior-home-cleaning-northern-virginia",
     "/why-eco-friendly-cleaning",
     "/careers",
     "/spring-cleaning-md",
