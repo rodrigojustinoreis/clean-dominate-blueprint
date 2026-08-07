@@ -135,6 +135,7 @@ const CleaningDuringPregnancy = () => {
     description:
       "Learn practical ways to clean and prepare your home during pregnancy, including ventilation, product safety, deep-cleaning priorities, and a pre-baby checklist.",
     canonical: URL,
+    ogType: "article",
     ogImage: HERO_IMAGE,
     preloadImage: HERO_IMAGE,
   });
@@ -177,7 +178,7 @@ const CleaningDuringPregnancy = () => {
         </div>
       </div>
 
-      <BlogHero src={HERO_IMAGE} alt="Expecting parent preparing a bright, clean home before the arrival of a baby">
+      <BlogHero src={HERO_IMAGE} alt="A calm, tidy nursery corner prepared for a new baby — crib, folded baby clothes, and soft natural daylight">
         <span className="bg-accent/20 text-accent font-semibold px-4 py-1.5 rounded-full text-sm inline-block mb-6 uppercase tracking-wider border border-accent/30">
           Family &amp; New Baby
         </span>
