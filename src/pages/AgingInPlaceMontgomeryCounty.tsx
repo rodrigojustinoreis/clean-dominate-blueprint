@@ -9,6 +9,7 @@ import { ArticleSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import BlogHero from "@/components/blog/BlogHero";
 import FadeInSection from "@/components/blog/FadeInSection";
 import BlogInlineImage from "@/components/blog/BlogInlineImage";
+import AuthorBio from "@/components/blog/AuthorBio";
 import StickyCTA from "@/components/blog/StickyCTA";
 import RelatedPosts from "@/components/blog/RelatedPosts";
 
@@ -244,6 +245,9 @@ const AgingInPlaceMontgomeryCounty = () => {
         </div>
       </article>
 
+      <div className="container mx-auto px-4 max-w-3xl">
+        <AuthorBio />
+      </div>
       <RelatedPosts currentSlug="aging-in-place-montgomery-county-cleaning" />
       <StickyCTA />
     </Layout>
