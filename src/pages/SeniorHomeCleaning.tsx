@@ -270,6 +270,7 @@ const SeniorHomeCleaning = () => {
               { to: "/resources/aging-in-place-montgomery-county-cleaning", label: "A practical guide to aging in place in Montgomery County" },
               { to: "/resources/house-cleaning-for-seniors", label: "House cleaning for seniors: what to look for and how to choose" },
               { to: "/resources/free-house-cleaning-for-seniors", label: "Free & low-cost cleaning help: Medicare, Medicaid, VA & more" },
+              { to: "/resources/caregiver-guide-house-cleaning-aging-parent", label: "A family caregiver's guide to arranging cleaning for a parent" },
             ].map((g) => (
               <Link key={g.to} to={g.to} className="group flex items-start gap-3 bg-white rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow border border-border">
                 <ArrowRight className="h-5 w-5 text-accent flex-shrink-0 mt-1 transition-transform group-hover:translate-x-1" />

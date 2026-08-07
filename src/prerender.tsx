@@ -55,6 +55,7 @@ function getAllRoutes(): string[] {
     "/resources/aging-in-place-montgomery-county-cleaning",
     "/resources/house-cleaning-for-seniors",
     "/resources/free-house-cleaning-for-seniors",
+    "/resources/caregiver-guide-house-cleaning-aging-parent",
     "/resources/real-deep-cleaning-project-bethesda-home",
     "/resources/how-often-should-you-hire-a-cleaning-service",
     "/resources/one-time-vs-recurring-cleaning",

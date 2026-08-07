@@ -61,6 +61,15 @@ export const blogPosts: BlogPost[] = [
     coverImage: "/images/services/living-area-hero.webp",
   },
   {
+    slug: "caregiver-guide-house-cleaning-aging-parent",
+    title: "A Family Caregiver's Guide to Arranging House Cleaning for an Aging Parent",
+    excerpt: "A practical, step-by-step guide for adult children and caregivers on arranging house cleaning for an aging parent in the DMV — noticing the signs, choosing a service, setting it up from a distance, paying for it, and having the conversation with care.",
+    date: "2026-08-07",
+    readTime: "8 min read",
+    category: "Home Care Guides",
+    coverImage: "/images/team/real-team-door.webp",
+  },
+  {
     slug: "house-cleaning-seniors-silver-spring-leisure-world",
     title: "House Cleaning Help for Seniors in Silver Spring & Leisure World: What to Expect",
     excerpt: "Thinking about house cleaning help? A warm, plain-language guide for older adults in Silver Spring and Leisure World — what a visit looks like, what to expect, and how to start. No pressure.",

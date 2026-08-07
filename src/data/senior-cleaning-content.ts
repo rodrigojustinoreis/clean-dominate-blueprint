@@ -32,4 +32,5 @@ export const SENIOR_GUIDE_LINKS: { to: string; label: string }[] = [
   { to: "/resources/aging-in-place-montgomery-county-cleaning", label: "A practical guide to aging in place in Montgomery County" },
   { to: "/resources/house-cleaning-for-seniors", label: "House cleaning for seniors: what to look for and how to choose" },
   { to: "/resources/free-house-cleaning-for-seniors", label: "Free & low-cost cleaning help: Medicare, Medicaid, VA & more" },
+  { to: "/resources/caregiver-guide-house-cleaning-aging-parent", label: "A family caregiver's guide to arranging cleaning for a parent" },
 ];

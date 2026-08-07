@@ -184,6 +184,7 @@ export const MANUAL_RELATED_POSTS: Record<string, string[]> = {
   "holiday-cleaning-checklist-dmv": ["fall-cleaning-checklist-maryland", "airbnb-cleaning-tips-dmv-hosts", "move-in-cleaning-guide-dmv"],
   "house-cleaning-for-seniors": ["free-house-cleaning-for-seniors", "signs-aging-parent-needs-help-housekeeping", "cleaning-service-vs-caregiver-elderly", "how-to-hire-cleaning-service-elderly-parents", "aging-in-place-montgomery-county-cleaning", "house-cleaning-seniors-silver-spring-leisure-world"],
   "free-house-cleaning-for-seniors": ["house-cleaning-for-seniors", "cleaning-service-vs-caregiver-elderly", "how-to-hire-cleaning-service-elderly-parents", "aging-in-place-montgomery-county-cleaning", "house-cleaning-seniors-silver-spring-leisure-world", "signs-aging-parent-needs-help-housekeeping"],
+  "caregiver-guide-house-cleaning-aging-parent": ["signs-aging-parent-needs-help-housekeeping", "cleaning-service-vs-caregiver-elderly", "how-to-hire-cleaning-service-elderly-parents", "house-cleaning-for-seniors", "free-house-cleaning-for-seniors", "aging-in-place-montgomery-county-cleaning"],
 };
 
 // ── Guide selectors (posts) ─────────────────────────────────────────────────────
