@@ -79,6 +79,15 @@ export const blogPosts: BlogPost[] = [
     coverImage: "/images/team/real-team-luxury-home.webp",
   },
   {
+    slug: "senior-downsizing-decluttering-cleaning",
+    title: "Senior Downsizing and Decluttering: Handling the Cleaning Side of a Big Move",
+    excerpt: "Downsizing or decluttering a parent's home? See how the move-out deep clean and a fresh move-in clean fit in, plus gentle decluttering for aging in place — and how to handle it all with dignity across the DMV.",
+    date: "2026-08-07",
+    readTime: "7 min read",
+    category: "Home Care Guides",
+    coverImage: "/images/team/real-team-maria-fridge.webp",
+  },
+  {
     slug: "house-cleaning-seniors-silver-spring-leisure-world",
     title: "House Cleaning Help for Seniors in Silver Spring & Leisure World: What to Expect",
     excerpt: "Thinking about house cleaning help? A warm, plain-language guide for older adults in Silver Spring and Leisure World — what a visit looks like, what to expect, and how to start. No pressure.",

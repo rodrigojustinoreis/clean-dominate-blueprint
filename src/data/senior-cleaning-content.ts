@@ -34,4 +34,5 @@ export const SENIOR_GUIDE_LINKS: { to: string; label: string }[] = [
   { to: "/resources/free-house-cleaning-for-seniors", label: "Free & low-cost cleaning help: Medicare, Medicaid, VA & more" },
   { to: "/resources/caregiver-guide-house-cleaning-aging-parent", label: "A family caregiver's guide to arranging cleaning for a parent" },
   { to: "/resources/house-cleaning-after-hospital-surgery-seniors", label: "Cleaning after a hospital stay or surgery: a safe home to return to" },
+  { to: "/resources/senior-downsizing-decluttering-cleaning", label: "Downsizing & decluttering: the cleaning side of a big move" },
 ];

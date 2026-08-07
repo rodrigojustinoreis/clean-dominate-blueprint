@@ -59,6 +59,7 @@ import HouseCleaningForSeniors from "./pages/HouseCleaningForSeniors";
 import FreeHouseCleaningForSeniors from "./pages/FreeHouseCleaningForSeniors";
 import CaregiverGuideHouseCleaning from "./pages/CaregiverGuideHouseCleaning";
 import HouseCleaningAfterHospital from "./pages/HouseCleaningAfterHospital";
+import SeniorDownsizingDecluttering from "./pages/SeniorDownsizingDecluttering";
 import RealDeepCleaningProjectBethesda from "./pages/RealDeepCleaningProjectBethesda";
 import HowOftenHireCleaningService from "./pages/HowOftenHireCleaningService";
 import OneTimeVsRecurringCleaning from "./pages/OneTimeVsRecurringCleaning";
@@ -284,6 +285,7 @@ const AppRoutes = () => (
     <Route path="/resources/free-house-cleaning-for-seniors" element={<FreeHouseCleaningForSeniors />} />
     <Route path="/resources/caregiver-guide-house-cleaning-aging-parent" element={<CaregiverGuideHouseCleaning />} />
     <Route path="/resources/house-cleaning-after-hospital-surgery-seniors" element={<HouseCleaningAfterHospital />} />
+    <Route path="/resources/senior-downsizing-decluttering-cleaning" element={<SeniorDownsizingDecluttering />} />
     <Route path="/resources/real-deep-cleaning-project-bethesda-home" element={<RealDeepCleaningProjectBethesda />} />
     <Route path="/resources/how-often-should-you-hire-a-cleaning-service" element={<HowOftenHireCleaningService />} />
     <Route path="/resources/one-time-vs-recurring-cleaning" element={<OneTimeVsRecurringCleaning />} />
