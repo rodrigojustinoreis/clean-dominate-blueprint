@@ -1,17 +1,34 @@
 import { Link } from "react-router-dom";
-import { Phone, ArrowRight, Shield, UserCheck, Star, CheckCircle2, Home } from "lucide-react";
+import { Phone, ArrowRight, Shield, UserCheck, Star, CheckCircle2, Home, Heart, MessageSquare, CalendarClock } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { useSEO } from "@/hooks/useSEO";
 import { LocalBusinessSchema, ServiceSchema, FAQSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import SeniorQuoteForm from "@/components/SeniorQuoteForm";
 import { pickReviews, GOOGLE_LISTING_URL } from "@/data/realReviews";
-import { SENIOR_INCLUDED, SENIOR_PROMISE, SENIOR_GUIDE_LINKS } from "@/data/senior-cleaning-content";
+import { SENIOR_GUIDE_LINKS } from "@/data/senior-cleaning-content";
 
 const URL = "https://capitalcleancare.com/senior-home-cleaning-northern-virginia";
 const PHONE = "(240) 704-2551";
 const PHONE_HREF = "tel:+12407042551";
-const HERO_IMAGE = "/images/team/real-team-two-members.webp";
+const HERO_IMAGE = "/images/team/cleaning-window-blinds.webp";
+
+// Northern-Virginia-specific service descriptions (worded distinctly from the other regional hubs)
+const INCLUDED = [
+  { title: "Reaching high and low, safely", text: "Ceiling fans, tall shelves, and low baseboards are taken care of for you — no stretching or climbing, whether it's a multi-level Fairfax home or an Arlington high-rise." },
+  { title: "Bathrooms left clean and dry", text: "Tubs, tile, and floors finished residue-free and slip-safe — one of the most important rooms to get right." },
+  { title: "Fresh, made-up beds", text: "Beds changed and neatly made with clean linens, taking a tiring, awkward task off your parent's plate." },
+  { title: "Kitchen and fridge cleaning", text: "Counters, sink, stovetop, and the inside of the refrigerator, with expired-food removal whenever you request it." },
+  { title: "Respectful light organizing", text: "We tidy surfaces and keep paths clear, always with permission and never rearranging belongings on our own." },
+  { title: "Products chosen for sensitivities", text: "Non-toxic, plant-based, EPA Safer Choice cleaners, fragrance-free when preferred — gentle for older adults." },
+];
+
+const PROMISE = [
+  { Icon: Heart, title: "The same cleaner you know", text: "We keep a familiar, trusted cleaner on your schedule, so every visit feels easy, comfortable, and safe." },
+  { Icon: Shield, title: "Background-checked and insured", text: "Thorough background checks on every team member, plus full licensing and insurance for real peace of mind." },
+  { Icon: MessageSquare, title: "Family kept in the loop", text: "Texts when we arrive and finish go to whoever arranges the service — reassuring for relatives nearby or across the country." },
+  { Icon: CalendarClock, title: "Flexible, easy scheduling", text: "Weekly, biweekly, or monthly, and adjusted whenever your parent's needs shift." },
+];
 const AREA = ["Arlington", "Alexandria", "Fairfax", "McLean", "Northern Virginia"];
 const CCC_PLUS = "https://www.dmas.virginia.gov/for-members/benefits-and-services/waivers/ccc-plus-waiver/";
 
@@ -116,13 +133,13 @@ const SeniorHomeCleaningNoVA = () => {
             <p>
               If you're arranging cleaning for a parent — perhaps from another state —{" "}
               <strong className="text-foreground">we understand what you're really looking for: peace of mind that Mom or
-              Dad's home is safe and clean, even when you can't be there.</strong> We treat your parent's home, and your
-              parent, with the same patience and respect we'd want for our own family.
+              Dad's home is safe and clean, even when you can't be there.</strong> We look after your parent's home — and
+              your parent — the way we'd want our own family looked after.
             </p>
             <p>
               That means gentle, unhurried visits, a friendly and familiar cleaner, and clear communication every step of
-              the way — including coordinating with your building's concierge or front desk. It's more than cleaning; it's
-              care.
+              the way — including coordinating with your building's concierge or front desk. That's not just housekeeping;
+              it's genuine care.
             </p>
           </div>
         </div>
@@ -133,7 +150,7 @@ const SeniorHomeCleaningNoVA = () => {
         <div className="container mx-auto px-4 max-w-4xl">
           <h2 className="font-heading text-3xl md:text-4xl font-bold mb-8 text-foreground">What's Included in Our Senior Cleaning Service</h2>
           <div className="grid sm:grid-cols-2 gap-5">
-            {SENIOR_INCLUDED.map((item) => (
+            {INCLUDED.map((item) => (
               <div key={item.title} className="flex items-start gap-4 rounded-2xl border border-border bg-card p-6">
                 <CheckCircle2 className="h-7 w-7 text-accent shrink-0 mt-0.5" aria-hidden="true" />
                 <div>
@@ -152,7 +169,7 @@ const SeniorHomeCleaningNoVA = () => {
           <h2 className="font-heading text-3xl md:text-4xl font-bold mb-3 text-foreground">Our Senior Care Promise</h2>
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl">The commitments that make Northern Virginia families comfortable trusting us with a parent&#x27;s home.</p>
           <div className="grid sm:grid-cols-2 gap-6">
-            {SENIOR_PROMISE.map(({ Icon, title, text }) => (
+            {PROMISE.map(({ Icon, title, text }) => (
               <div key={title} className="rounded-2xl border border-border bg-card p-6">
                 <div className="flex items-center gap-3 mb-3">
                   <div className="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center shrink-0">
@@ -185,7 +202,7 @@ const SeniorHomeCleaningNoVA = () => {
               <strong className="text-foreground">Mount Vernon At Home</strong> help older residents stay independent, and
               Virginia's{" "}
               <a href={CCC_PLUS} target="_blank" rel="noopener noreferrer" className="text-accent font-semibold underline hover:no-underline">CCC Plus Medicaid waiver</a>{" "}
-              can help those who qualify. Whatever your parent's home looks like, we bring the same gentle, dependable care.
+              can help those who qualify. No matter the type of home, the care we bring is the same: gentle, reliable, and respectful.
             </p>
             <p className="text-lg">
               Explore cleaning in your city:{" "}
@@ -250,7 +267,7 @@ const SeniorHomeCleaningNoVA = () => {
         <div className="container mx-auto px-4 max-w-4xl">
           <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4 text-foreground">Senior Cleaning Guides</h2>
           <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-8">
-            Helping a parent — or planning your own next chapter? These guides cover the questions families ask us most.
+            Helping a parent in Northern Virginia, or thinking ahead for yourself? These are the questions local families ask us most.
           </p>
           <div className="grid md:grid-cols-2 gap-4">
             {SENIOR_GUIDE_LINKS.map((g) => (

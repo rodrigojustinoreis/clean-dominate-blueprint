@@ -14,7 +14,7 @@ import AuthorBio from "@/components/blog/AuthorBio";
 import StickyCTA from "@/components/blog/StickyCTA";
 import RelatedPosts from "@/components/blog/RelatedPosts";
 
-const HERO_IMAGE = "/images/team/real-team-luxury-home.webp";
+const HERO_IMAGE = "/images/services/recurring-cleaning.webp";
 const URL = "https://capitalcleancare.com/resources/house-cleaning-after-hospital-surgery-seniors";
 const DEEP = "/services/deep-cleaning";
 const PILLAR = "/resources/house-cleaning-for-seniors";
@@ -176,9 +176,10 @@ const HouseCleaningAfterHospital = () => {
 
           <FadeInSection>
             <BlogInlineImage
-              src="/images/services/bathroom-hero.webp"
+              src="/images/services/bathroom-detail.webp"
               alt="A freshly cleaned, sanitized bathroom with a clear, dry floor."
               caption="Recovery cleans focus on the bathroom and kitchen — the rooms used most, where a clean, dry, clutter-free space matters most for safety."
+              single
             />
           </FadeInSection>
 

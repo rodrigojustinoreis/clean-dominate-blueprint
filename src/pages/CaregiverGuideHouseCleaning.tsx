@@ -173,9 +173,10 @@ const CaregiverGuideHouseCleaning = () => {
 
           <FadeInSection>
             <BlogInlineImage
-              src="/images/services/living-area-hero.webp"
+              src="/images/services/living-area-detail.webp"
               alt="A bright, tidy living room kept comfortable and safe for an older adult."
               caption="For many families, a regularly cleaned home is the one piece of help that makes everything else feel manageable."
+              single
             />
           </FadeInSection>
 

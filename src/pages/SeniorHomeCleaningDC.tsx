@@ -6,20 +6,37 @@ import { useSEO } from "@/hooks/useSEO";
 import { LocalBusinessSchema, ServiceSchema, FAQSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import SeniorQuoteForm from "@/components/SeniorQuoteForm";
 import { pickReviews, GOOGLE_LISTING_URL } from "@/data/realReviews";
-import { SENIOR_INCLUDED, SENIOR_PROMISE, SENIOR_GUIDE_LINKS } from "@/data/senior-cleaning-content";
+import { SENIOR_GUIDE_LINKS } from "@/data/senior-cleaning-content";
 
 const URL = "https://capitalcleancare.com/senior-home-cleaning-washington-dc";
 const PHONE = "(240) 704-2551";
 const PHONE_HREF = "tel:+12407042551";
-const HERO_IMAGE = "/images/team/real-team-two-members.webp";
+const HERO_IMAGE = "/images/team/team-supplies-basket.webp";
+
+// DC-specific service descriptions (worded distinctly from the other regional hubs)
+const INCLUDED = [
+  { title: "High and low dusting, no climbing", text: "Ceiling fans, tall shelves, and low baseboards in your rowhouse or condo are handled for you — no ladders, no bending, no risk of a fall." },
+  { title: "Slip-safe bathroom cleaning", text: "Tubs, tile, and floors left clean and dry with no slippery film — a real safety point in older DC bathrooms." },
+  { title: "Beds changed and made", text: "We strip the bed and remake it with fresh linens — one of the chores that quietly gets harder to manage with age." },
+  { title: "Kitchen and refrigerator care", text: "Counters, sink, stovetop, and the inside of the fridge, including clearing expired food whenever you ask us to." },
+  { title: "Careful, permission-first tidying", text: "We clear clutter and keep walkways safe, always checking first and never moving personal belongings on our own." },
+  { title: "Fragrance-free, gentle products", text: "Plant-based, EPA Safer Choice cleaners available fragrance-free — easy on sensitive lungs, skin, and allergies." },
+];
+
+const PROMISE = [
+  { Icon: Heart, title: "One familiar cleaner, every visit", text: "A consistent, trusted face on your schedule — reassuring for an older adult, especially someone living alone in the city." },
+  { Icon: Shield, title: "Vetted, licensed, and insured", text: "Every cleaner is background-checked, and we carry full licensing and insurance, so your family is protected." },
+  { Icon: MessageSquare, title: "We keep the family posted", text: "Arrival and departure texts go to whoever books the visit, so out-of-town relatives always know it happened." },
+  { Icon: CalendarClock, title: "A schedule that flexes with you", text: "Weekly, biweekly, or monthly — and simple to change as your parent's needs change over time." },
+];
 const AREA = ["Washington DC", "Capitol Hill", "Georgetown", "Chevy Chase DC", "Palisades"];
 const DACL = "https://dacl.dc.gov/";
 
 const faqs = [
   { q: "Do you clean rowhouses and walk-up condos in DC?", a: "Yes — most of our DC senior clients live in classic rowhouses or apartment and condo buildings, and stairs are part of the job. We handle the carrying, climbing, and reaching so your parent never has to, whether it's a Capitol Hill rowhouse or a high-rise near the Metro." },
   { q: "Can you work with building concierges and access in DC condos?", a: "Absolutely. We regularly coordinate with front desks, concierges, and building management across DC for smooth, scheduled access. Just share the building's entry procedure when you book and we'll take care of the rest." },
-  { q: "Are your cleaners background-checked?", a: "Yes. Every cleaner passes a thorough background check before ever entering a home, and our team is fully licensed and insured. Your parent's safety and your peace of mind are the foundation of everything we do." },
-  { q: "Do you use products safe for seniors with allergies or respiratory issues?", a: "Yes. We offer fragrance-free, hypoallergenic, EPA Safer Choice plant-based products on request — gentle on sensitive lungs and skin, with no harsh chemical fumes. Just tell us about any sensitivities and we'll clean accordingly." },
+  { q: "Are your cleaners background-checked?", a: "Yes — every team member clears a full background check before ever setting foot in a home, and we're fully licensed and insured. For a senior living alone in the city, that vetting is non-negotiable, and it's the foundation of how we operate." },
+  { q: "Do you use products safe for seniors with allergies or respiratory issues?", a: "Yes. On request we clean with plant-based, EPA Safer Choice products in a fragrance-free, hypoallergenic formula — no harsh fumes to trouble sensitive lungs or skin. Just flag any allergies or sensitivities up front and we'll adjust." },
   { q: "My parent lives alone in DC and I'm out of state — can you help?", a: "That's one of the most common situations we help with. You can arrange and pay for the service remotely, we'll coordinate directly with your parent, and we send arrival and departure texts so you always know their home is cared for." },
   { q: "Does DC have programs that help seniors with cleaning?", a: "It can, for those who qualify. The DC Department of Aging and Community Living connects residents to in-home support and programs like Safe at Home. We're a private-pay service, but it's always worth checking your options — see our guide to free and low-cost cleaning help for seniors." },
 ];
@@ -132,7 +149,7 @@ const SeniorHomeCleaningDC = () => {
         <div className="container mx-auto px-4 max-w-4xl">
           <h2 className="font-heading text-3xl md:text-4xl font-bold mb-8 text-foreground">What's Included in Our Senior Cleaning Service</h2>
           <div className="grid sm:grid-cols-2 gap-5">
-            {SENIOR_INCLUDED.map((item) => (
+            {INCLUDED.map((item) => (
               <div key={item.title} className="flex items-start gap-4 rounded-2xl border border-border bg-card p-6">
                 <CheckCircle2 className="h-7 w-7 text-accent shrink-0 mt-0.5" aria-hidden="true" />
                 <div>
@@ -151,7 +168,7 @@ const SeniorHomeCleaningDC = () => {
           <h2 className="font-heading text-3xl md:text-4xl font-bold mb-3 text-foreground">Our Senior Care Promise</h2>
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl">The commitments that make DC families comfortable trusting us with a parent&#x27;s home.</p>
           <div className="grid sm:grid-cols-2 gap-6">
-            {SENIOR_PROMISE.map(({ Icon, title, text }) => (
+            {PROMISE.map(({ Icon, title, text }) => (
               <div key={title} className="rounded-2xl border border-border bg-card p-6">
                 <div className="flex items-center gap-3 mb-3">
                   <div className="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center shrink-0">
@@ -250,7 +267,7 @@ const SeniorHomeCleaningDC = () => {
         <div className="container mx-auto px-4 max-w-4xl">
           <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4 text-foreground">Senior Cleaning Guides</h2>
           <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-8">
-            Helping a parent — or planning your own next chapter? These guides cover the questions families ask us most.
+            Caring for a parent in the District, or planning ahead for yourself? These guides answer the questions DC families ask us most.
           </p>
           <div className="grid md:grid-cols-2 gap-4">
             {SENIOR_GUIDE_LINKS.map((g) => (

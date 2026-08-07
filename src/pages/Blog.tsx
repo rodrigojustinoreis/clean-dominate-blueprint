@@ -76,7 +76,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-08-07",
     readTime: "7 min read",
     category: "Home Care Guides",
-    coverImage: "/images/team/real-team-luxury-home.webp",
+    coverImage: "/images/services/recurring-cleaning.webp",
   },
   {
     slug: "senior-downsizing-decluttering-cleaning",

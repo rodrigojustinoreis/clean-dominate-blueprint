@@ -183,9 +183,10 @@ const SeniorDownsizingDecluttering = () => {
 
           <FadeInSection>
             <BlogInlineImage
-              src="/images/services/kitchen-hero.webp"
+              src="/images/services/kitchen-clean.webp"
               alt="A spotless, deep-cleaned kitchen ready for a home sale or a fresh start."
               caption="An empty home shows every mark — a move-out deep clean gets it ready to sell, rent, or hand back."
+              single
             />
           </FadeInSection>
 
