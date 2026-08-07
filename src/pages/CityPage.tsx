@@ -297,16 +297,24 @@ const CityPage = () => {
 
           {/* Senior Home Cleaning — Montgomery County cities only */}
           {city.county === "Montgomery County" && (
-            <Link to="/senior-home-cleaning-montgomery-county-md" className="group mt-4 flex items-center gap-3 rounded-xl border border-accent/30 bg-accent/5 p-5 hover:bg-accent/10 transition-colors">
-              <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center shrink-0">
-                <Sparkles className="h-5 w-5 text-accent" />
-              </div>
-              <div className="flex-1">
-                <h3 className="font-medium text-foreground group-hover:text-accent transition-colors">Senior Home Cleaning in {city.name}</h3>
-                <p className="text-xs text-muted-foreground mt-0.5">Gentle, trusted cleaning for older adults across Montgomery County</p>
-              </div>
-              <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-accent transition-colors shrink-0" />
-            </Link>
+            <div className="mt-4">
+              <Link to="/senior-home-cleaning-montgomery-county-md" className="group flex items-center gap-3 rounded-xl border border-accent/30 bg-accent/5 p-5 hover:bg-accent/10 transition-colors">
+                <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center shrink-0">
+                  <Sparkles className="h-5 w-5 text-accent" />
+                </div>
+                <div className="flex-1">
+                  <h3 className="font-medium text-foreground group-hover:text-accent transition-colors">Senior Home Cleaning in {city.name}</h3>
+                  <p className="text-xs text-muted-foreground mt-0.5">Gentle, trusted cleaning for older adults across Montgomery County</p>
+                </div>
+                <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-accent transition-colors shrink-0" />
+              </Link>
+              <p className="text-xs text-muted-foreground mt-2 px-1">
+                Senior guides:{" "}
+                <Link to="/resources/house-cleaning-for-seniors" className="text-accent hover:underline">house cleaning for seniors</Link>
+                {" · "}
+                <Link to="/resources/free-house-cleaning-for-seniors" className="text-accent hover:underline">free &amp; low-cost help</Link>
+              </p>
+            </div>
           )}
         </div>
       </section>

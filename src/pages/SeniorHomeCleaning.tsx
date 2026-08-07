@@ -5,6 +5,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { useSEO } from "@/hooks/useSEO";
 import { LocalBusinessSchema, ServiceSchema, FAQSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import SeniorQuoteForm from "@/components/SeniorQuoteForm";
+import { pickReviews, GOOGLE_LISTING_URL } from "@/data/realReviews";
 
 const URL = "https://capitalcleancare.com/senior-home-cleaning-montgomery-county-md";
 const PHONE = "(240) 704-2551";
@@ -159,7 +160,8 @@ const SeniorHomeCleaning = () => {
       {/* ── Why Families Trust Us ── */}
       <section className="py-14 md:py-20">
         <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold mb-8 text-foreground">Why Families Trust Us With Their Parents</h2>
+          <h2 className="font-heading text-3xl md:text-4xl font-bold mb-3 text-foreground">Our Senior Care Promise</h2>
+          <p className="text-lg text-muted-foreground mb-8 max-w-2xl">The commitments that make families comfortable trusting us with a parent&#x27;s home.</p>
           <div className="grid sm:grid-cols-2 gap-6">
             {TRUST.map(({ Icon, title, text }) => (
               <div key={title} className="rounded-2xl border border-border bg-card p-6">
@@ -199,6 +201,39 @@ const SeniorHomeCleaning = () => {
               <Link to="/locations/rockville-md" className="text-accent font-semibold underline hover:no-underline">Rockville</Link>, and{" "}
               <Link to="/locations/bethesda-md" className="text-accent font-semibold underline hover:no-underline">Bethesda</Link>.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Real Google reviews ── */}
+      <section className="py-14 md:py-20">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="text-center mb-10">
+            <div className="flex items-center justify-center gap-1 mb-3" aria-hidden="true">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <Star key={i} className="h-5 w-5 fill-accent text-accent" />
+              ))}
+            </div>
+            <p className="text-sm font-semibold text-muted-foreground mb-2">Rated 5.0 from 45 Google reviews</p>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground">What Families Say</h2>
+          </div>
+          <div className="grid gap-6 md:grid-cols-3">
+            {pickReviews("senior-home-cleaning", 3).map((r) => (
+              <figure key={r.name} className="rounded-2xl border border-border bg-card p-6 shadow-sm flex flex-col">
+                <div className="flex gap-0.5 mb-3" aria-hidden="true">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Star key={i} className="h-4 w-4 fill-accent text-accent" />
+                  ))}
+                </div>
+                <blockquote className="text-foreground leading-relaxed mb-4 flex-1">&ldquo;{r.text}&rdquo;</blockquote>
+                <figcaption className="text-sm font-semibold text-foreground">{r.name}</figcaption>
+              </figure>
+            ))}
+          </div>
+          <div className="text-center mt-8">
+            <a href={GOOGLE_LISTING_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-accent font-medium hover:underline">
+              Read all reviews on Google <ArrowRight className="h-4 w-4" />
+            </a>
           </div>
         </div>
       </section>
