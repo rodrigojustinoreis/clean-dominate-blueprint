@@ -43,6 +43,15 @@ export const blogPosts: BlogPost[] = [
     coverImage: "/images/team/real-team-luxury-home.webp",
   },
   {
+    slug: "house-cleaning-for-seniors",
+    title: "House Cleaning for Seniors: A Safer, Easier Way to Care for Home",
+    excerpt: "A warm, plain-language guide to house cleaning for seniors in Maryland, DC and Northern Virginia — why housework gets harder with age, what senior home cleaning should include, how to choose a service you can trust, and what Medicare covers.",
+    date: "2026-08-06",
+    readTime: "8 min read",
+    category: "Home Care Guides",
+    coverImage: "/images/team/real-team-luxury-home.webp",
+  },
+  {
     slug: "house-cleaning-seniors-silver-spring-leisure-world",
     title: "House Cleaning Help for Seniors in Silver Spring & Leisure World: What to Expect",
     excerpt: "Thinking about house cleaning help? A warm, plain-language guide for older adults in Silver Spring and Leisure World — what a visit looks like, what to expect, and how to start. No pressure.",

@@ -182,6 +182,7 @@ export const MANUAL_RELATED_POSTS: Record<string, string[]> = {
   "house-cleaning-cost-silver-spring-md": ["best-house-cleaning-service-rockville-md", "how-to-choose-cleaning-service-silver-spring", "cleaning-service-columbia-md"],
   "summer-cleaning-checklist-maryland": ["fall-cleaning-checklist-maryland", "spring-cleaning-checklist-maryland-2026", "eco-cleaning-tips-winters-maryland"],
   "holiday-cleaning-checklist-dmv": ["fall-cleaning-checklist-maryland", "airbnb-cleaning-tips-dmv-hosts", "move-in-cleaning-guide-dmv"],
+  "house-cleaning-for-seniors": ["signs-aging-parent-needs-help-housekeeping", "cleaning-service-vs-caregiver-elderly", "how-to-hire-cleaning-service-elderly-parents", "aging-in-place-montgomery-county-cleaning", "house-cleaning-seniors-silver-spring-leisure-world", "clean-home-fall-prevention-seniors"],
 };
 
 // ── Guide selectors (posts) ─────────────────────────────────────────────────────

@@ -55,6 +55,7 @@ import CleaningServiceVsCaregiver from "./pages/CleaningServiceVsCaregiver";
 import HowToHireCleaningServiceElderly from "./pages/HowToHireCleaningServiceElderly";
 import HouseCleaningSeniorsSilverSpring from "./pages/HouseCleaningSeniorsSilverSpring";
 import AgingInPlaceMontgomeryCounty from "./pages/AgingInPlaceMontgomeryCounty";
+import HouseCleaningForSeniors from "./pages/HouseCleaningForSeniors";
 import RealDeepCleaningProjectBethesda from "./pages/RealDeepCleaningProjectBethesda";
 import HowOftenHireCleaningService from "./pages/HowOftenHireCleaningService";
 import OneTimeVsRecurringCleaning from "./pages/OneTimeVsRecurringCleaning";
@@ -274,6 +275,7 @@ const AppRoutes = () => (
     <Route path="/resources/how-to-hire-cleaning-service-elderly-parents" element={<HowToHireCleaningServiceElderly />} />
     <Route path="/resources/house-cleaning-seniors-silver-spring-leisure-world" element={<HouseCleaningSeniorsSilverSpring />} />
     <Route path="/resources/aging-in-place-montgomery-county-cleaning" element={<AgingInPlaceMontgomeryCounty />} />
+    <Route path="/resources/house-cleaning-for-seniors" element={<HouseCleaningForSeniors />} />
     <Route path="/resources/real-deep-cleaning-project-bethesda-home" element={<RealDeepCleaningProjectBethesda />} />
     <Route path="/resources/how-often-should-you-hire-a-cleaning-service" element={<HowOftenHireCleaningService />} />
     <Route path="/resources/one-time-vs-recurring-cleaning" element={<OneTimeVsRecurringCleaning />} />
