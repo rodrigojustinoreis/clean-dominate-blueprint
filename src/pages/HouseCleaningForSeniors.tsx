@@ -455,7 +455,9 @@ const HouseCleaningForSeniors = () => {
               <a href={MEDICARE} target="_blank" rel="noopener noreferrer" className="text-accent font-medium hover:underline">
                 home health services at Medicare.gov
               </a>
-              , and confirm anything specific with Medicare or your plan directly.
+              , and confirm anything specific with Medicare or your plan directly. For a fuller breakdown of Medicaid
+              waivers, veterans&#x27; benefits, and other ways to lower the cost, see our guide to{" "}
+              <Link to="/resources/free-house-cleaning-for-seniors" className="text-accent font-medium hover:underline">free and low-cost house cleaning for seniors</Link>.
             </p>
           </FadeInSection>
 

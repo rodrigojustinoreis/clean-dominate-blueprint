@@ -52,6 +52,15 @@ export const blogPosts: BlogPost[] = [
     coverImage: "/images/team/real-team-luxury-home.webp",
   },
   {
+    slug: "free-house-cleaning-for-seniors",
+    title: "Free and Low-Cost House Cleaning for Seniors: What Actually Helps",
+    excerpt: "An honest guide to free and low-cost house cleaning help for seniors in Maryland, DC and Virginia — what Medicare and Medicaid cover, state waivers, veterans' benefits, local programs, and affordable private options.",
+    date: "2026-08-06",
+    readTime: "9 min read",
+    category: "Home Care Guides",
+    coverImage: "/images/services/living-area-hero.webp",
+  },
+  {
     slug: "house-cleaning-seniors-silver-spring-leisure-world",
     title: "House Cleaning Help for Seniors in Silver Spring & Leisure World: What to Expect",
     excerpt: "Thinking about house cleaning help? A warm, plain-language guide for older adults in Silver Spring and Leisure World — what a visit looks like, what to expect, and how to start. No pressure.",

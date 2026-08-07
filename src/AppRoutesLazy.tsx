@@ -64,6 +64,7 @@ const HowToHireCleaningServiceElderly = lazy(() => import("./pages/HowToHireClea
 const HouseCleaningSeniorsSilverSpring = lazy(() => import("./pages/HouseCleaningSeniorsSilverSpring"));
 const AgingInPlaceMontgomeryCounty = lazy(() => import("./pages/AgingInPlaceMontgomeryCounty"));
 const HouseCleaningForSeniors = lazy(() => import("./pages/HouseCleaningForSeniors"));
+const FreeHouseCleaningForSeniors = lazy(() => import("./pages/FreeHouseCleaningForSeniors"));
 const RealDeepCleaningProjectBethesda = lazy(() => import("./pages/RealDeepCleaningProjectBethesda"));
 const HowOftenHireCleaningService = lazy(() => import("./pages/HowOftenHireCleaningService"));
 const OneTimeVsRecurringCleaning = lazy(() => import("./pages/OneTimeVsRecurringCleaning"));
@@ -284,6 +285,7 @@ const AppRoutesLazy = () => (
     <Route path="/resources/house-cleaning-seniors-silver-spring-leisure-world" element={<HouseCleaningSeniorsSilverSpring />} />
     <Route path="/resources/aging-in-place-montgomery-county-cleaning" element={<AgingInPlaceMontgomeryCounty />} />
     <Route path="/resources/house-cleaning-for-seniors" element={<HouseCleaningForSeniors />} />
+    <Route path="/resources/free-house-cleaning-for-seniors" element={<FreeHouseCleaningForSeniors />} />
     <Route path="/resources/real-deep-cleaning-project-bethesda-home" element={<RealDeepCleaningProjectBethesda />} />
     <Route path="/resources/how-often-should-you-hire-a-cleaning-service" element={<HowOftenHireCleaningService />} />
     <Route path="/resources/one-time-vs-recurring-cleaning" element={<OneTimeVsRecurringCleaning />} />
