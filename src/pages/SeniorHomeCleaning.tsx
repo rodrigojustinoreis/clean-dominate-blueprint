@@ -10,7 +10,7 @@ import { pickReviews, GOOGLE_LISTING_URL } from "@/data/realReviews";
 const URL = "https://capitalcleancare.com/senior-home-cleaning-montgomery-county-md";
 const PHONE = "(240) 704-2551";
 const PHONE_HREF = "tel:+12407042551";
-const HERO_IMAGE = "/images/team/real-team-two-members.webp";
+const HERO_IMAGE = "/images/services/kitchen-team.webp";
 const AREA = ["Silver Spring", "Rockville", "Bethesda", "Gaithersburg", "Montgomery County"];
 
 const INCLUDED: { title: string; text: string }[] = [
