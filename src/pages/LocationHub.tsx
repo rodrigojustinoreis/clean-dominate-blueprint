@@ -58,6 +58,7 @@ const LocationHub = () => {
     description: hub.metaDescription,
     canonical: `https://capitalcleancare.com/${hub.slug}`,
     geo: { region: `US-${hub.stateAbbr}`, placename: hub.stateAbbr === "MD" ? "Maryland" : hub.stateAbbr === "DC" ? "Washington" : "Virginia" },
+    preloadImage: regionImages[hub.stateAbbr] || regionMD,
   });
 
   const hubCities = hub.citySlugs.map(getCityBySlug).filter(Boolean);
@@ -76,6 +77,8 @@ const LocationHub = () => {
             alt={`Professional house cleaning service areas in ${hub.name} — Capital Clean Care`}
             className="w-full h-full object-cover"
             loading="eager"
+            fetchPriority="high"
+            decoding="async"
           />
           <div className="absolute inset-0 bg-primary/80" />
         </div>

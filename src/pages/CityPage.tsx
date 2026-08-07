@@ -148,7 +148,7 @@ const CityPage = () => {
 
   if (!city) return <NotFound />;
 
-  const { seoHelmet } = useSEO({ title: city.metaTitle, description: city.metaDescription, canonical: `https://capitalcleancare.com/locations/${city.slug}`, geo: { region: `US-${city.state}`, placename: city.name } });
+  const { seoHelmet } = useSEO({ title: city.metaTitle, description: city.metaDescription, canonical: `https://capitalcleancare.com/locations/${city.slug}`, geo: { region: `US-${city.state}`, placename: city.name }, preloadImage: cityImages[city.slug] || regionImages[city.stateSlug] || regionMD });
 
   const nearbyCities = city.nearbySlugs.map(getCityBySlug).filter(Boolean);
   const expandedFaqs = getExpandedCityFaqs(city);
@@ -183,6 +183,8 @@ const CityPage = () => {
             alt={`Eco-friendly house cleaning team serving ${city.name}, ${city.state} — Capital Clean Care`}
             className="w-full h-full object-cover"
             loading="eager"
+            fetchPriority="high"
+            decoding="async"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/80 to-primary/60" />
         </div>
