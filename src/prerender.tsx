@@ -58,6 +58,7 @@ function getAllRoutes(): string[] {
     "/resources/caregiver-guide-house-cleaning-aging-parent",
     "/resources/house-cleaning-after-hospital-surgery-seniors",
     "/resources/senior-downsizing-decluttering-cleaning",
+    "/resources/cleaning-during-pregnancy-prepare-home-for-baby",
     "/resources/real-deep-cleaning-project-bethesda-home",
     "/resources/how-often-should-you-hire-a-cleaning-service",
     "/resources/one-time-vs-recurring-cleaning",

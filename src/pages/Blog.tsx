@@ -88,6 +88,15 @@ export const blogPosts: BlogPost[] = [
     coverImage: "/images/team/real-team-maria-fridge.webp",
   },
   {
+    slug: "cleaning-during-pregnancy-prepare-home-for-baby",
+    title: "Cleaning During Pregnancy: A Safer, Lower-Stress Guide to Preparing Your Home for Baby",
+    excerpt: "A practical, educational guide to cleaning during pregnancy and getting your home ready before baby arrives — product safety and ventilation, what to clean first, a pre-baby deep-cleaning checklist, and when professional cleaning can help.",
+    date: "2026-08-07",
+    readTime: "9 min read",
+    category: "Home Care Guides",
+    coverImage: "/images/blog/cleaning-during-pregnancy-prepare-home-for-baby.webp",
+  },
+  {
     slug: "house-cleaning-seniors-silver-spring-leisure-world",
     title: "House Cleaning Help for Seniors in Silver Spring & Leisure World: What to Expect",
     excerpt: "Thinking about house cleaning help? A warm, plain-language guide for older adults in Silver Spring and Leisure World — what a visit looks like, what to expect, and how to start. No pressure.",

@@ -187,6 +187,7 @@ export const MANUAL_RELATED_POSTS: Record<string, string[]> = {
   "caregiver-guide-house-cleaning-aging-parent": ["signs-aging-parent-needs-help-housekeeping", "cleaning-service-vs-caregiver-elderly", "how-to-hire-cleaning-service-elderly-parents", "house-cleaning-for-seniors", "free-house-cleaning-for-seniors", "aging-in-place-montgomery-county-cleaning"],
   "house-cleaning-after-hospital-surgery-seniors": ["house-cleaning-for-seniors", "caregiver-guide-house-cleaning-aging-parent", "clean-home-fall-prevention-seniors", "free-house-cleaning-for-seniors", "aging-in-place-montgomery-county-cleaning", "signs-aging-parent-needs-help-housekeeping"],
   "senior-downsizing-decluttering-cleaning": ["move-out-cleaning-checklist-maryland-tenants", "move-out-cleaning-cost-maryland", "house-cleaning-for-seniors", "caregiver-guide-house-cleaning-aging-parent", "aging-in-place-montgomery-county-cleaning", "move-in-cleaning-checklist"],
+  "cleaning-during-pregnancy-prepare-home-for-baby": ["what-is-included-in-a-deep-cleaning", "move-in-cleaning-checklist", "how-to-prepare-home-for-professional-cleaning", "deep-cleaning-checklist-dmv-homeowners", "eco-cleaning-tips-maryland-homes", "spring-cleaning-checklist-maryland-2026"],
 };
 
 // ── Guide selectors (posts) ─────────────────────────────────────────────────────
