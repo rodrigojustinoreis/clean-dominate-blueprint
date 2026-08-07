@@ -56,6 +56,7 @@ function getAllRoutes(): string[] {
     "/resources/house-cleaning-for-seniors",
     "/resources/free-house-cleaning-for-seniors",
     "/resources/caregiver-guide-house-cleaning-aging-parent",
+    "/resources/house-cleaning-after-hospital-surgery-seniors",
     "/resources/real-deep-cleaning-project-bethesda-home",
     "/resources/how-often-should-you-hire-a-cleaning-service",
     "/resources/one-time-vs-recurring-cleaning",

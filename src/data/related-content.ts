@@ -185,6 +185,7 @@ export const MANUAL_RELATED_POSTS: Record<string, string[]> = {
   "house-cleaning-for-seniors": ["free-house-cleaning-for-seniors", "signs-aging-parent-needs-help-housekeeping", "cleaning-service-vs-caregiver-elderly", "how-to-hire-cleaning-service-elderly-parents", "aging-in-place-montgomery-county-cleaning", "house-cleaning-seniors-silver-spring-leisure-world"],
   "free-house-cleaning-for-seniors": ["house-cleaning-for-seniors", "cleaning-service-vs-caregiver-elderly", "how-to-hire-cleaning-service-elderly-parents", "aging-in-place-montgomery-county-cleaning", "house-cleaning-seniors-silver-spring-leisure-world", "signs-aging-parent-needs-help-housekeeping"],
   "caregiver-guide-house-cleaning-aging-parent": ["signs-aging-parent-needs-help-housekeeping", "cleaning-service-vs-caregiver-elderly", "how-to-hire-cleaning-service-elderly-parents", "house-cleaning-for-seniors", "free-house-cleaning-for-seniors", "aging-in-place-montgomery-county-cleaning"],
+  "house-cleaning-after-hospital-surgery-seniors": ["house-cleaning-for-seniors", "caregiver-guide-house-cleaning-aging-parent", "clean-home-fall-prevention-seniors", "free-house-cleaning-for-seniors", "aging-in-place-montgomery-county-cleaning", "signs-aging-parent-needs-help-housekeeping"],
 };
 
 // ── Guide selectors (posts) ─────────────────────────────────────────────────────

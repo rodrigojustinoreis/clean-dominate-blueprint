@@ -70,6 +70,15 @@ export const blogPosts: BlogPost[] = [
     coverImage: "/images/team/real-team-door.webp",
   },
   {
+    slug: "house-cleaning-after-hospital-surgery-seniors",
+    title: "House Cleaning After a Hospital Stay or Surgery: A Safe, Clean Space to Come Home To",
+    excerpt: "Bringing an older adult home after a hospital stay or surgery? Learn why a clean, safe home helps recovery, what a recovery clean includes, when to schedule it, and how to arrange it across the DMV.",
+    date: "2026-08-07",
+    readTime: "7 min read",
+    category: "Home Care Guides",
+    coverImage: "/images/team/real-team-luxury-home.webp",
+  },
+  {
     slug: "house-cleaning-seniors-silver-spring-leisure-world",
     title: "House Cleaning Help for Seniors in Silver Spring & Leisure World: What to Expect",
     excerpt: "Thinking about house cleaning help? A warm, plain-language guide for older adults in Silver Spring and Leisure World — what a visit looks like, what to expect, and how to start. No pressure.",
