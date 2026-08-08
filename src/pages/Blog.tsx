@@ -97,6 +97,15 @@ export const blogPosts: BlogPost[] = [
     coverImage: "/images/blog/cleaning-during-pregnancy-prepare-home-for-baby.webp",
   },
   {
+    slug: "why-is-my-dog-coughing-after-house-cleaning",
+    title: "Why Is My Dog Coughing After House Cleaning? Causes & How to Prevent It",
+    excerpt: "Dog coughing right after you clean? Cleaning-product fumes and residue are a common, overlooked cause. Learn the triggers, the warning signs, what to do right now, when to call the vet, and how pet-safe cleaning prevents it.",
+    date: "2026-06-04",
+    readTime: "5 min read",
+    category: "Pet Health",
+    coverImage: "/images/blog/dog-coughing/hero.webp",
+  },
+  {
     slug: "house-cleaning-seniors-silver-spring-leisure-world",
     title: "House Cleaning Help for Seniors in Silver Spring & Leisure World: What to Expect",
     excerpt: "Thinking about house cleaning help? A warm, plain-language guide for older adults in Silver Spring and Leisure World — what a visit looks like, what to expect, and how to start. No pressure.",

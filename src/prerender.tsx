@@ -59,6 +59,7 @@ function getAllRoutes(): string[] {
     "/resources/house-cleaning-after-hospital-surgery-seniors",
     "/resources/senior-downsizing-decluttering-cleaning",
     "/resources/cleaning-during-pregnancy-prepare-home-for-baby",
+    "/resources/why-is-my-dog-coughing-after-house-cleaning",
     "/resources/real-deep-cleaning-project-bethesda-home",
     "/resources/how-often-should-you-hire-a-cleaning-service",
     "/resources/one-time-vs-recurring-cleaning",

@@ -160,7 +160,7 @@ export const MANUAL_RELATED_POSTS: Record<string, string[]> = {
   "choose-pet-safe-cleaning-company": ["pet-dander-air-quality", "cleaning-product-poisoning-in-pets", "allergen-free-home-dog-cat-owners"],
   "seasonal-vs-household-pet-allergies": ["hepa-filters-pets-asthma", "pet-sneezing-household-dust", "allergen-free-home-dog-cat-owners"],
   "why-pet-skin-allergies-start-in-carpet": ["pet-dander-air-quality", "pet-sneezing-household-dust", "hepa-filters-pets-asthma"],
-  "what-pet-safe-cleaning-really-means": ["cleaning-product-poisoning-in-pets", "allergen-free-home-dog-cat-owners", "pet-dander-air-quality"],
+  "what-pet-safe-cleaning-really-means": ["why-is-my-dog-coughing-after-house-cleaning", "cleaning-product-poisoning-in-pets", "allergen-free-home-dog-cat-owners", "pet-dander-air-quality"],
   "how-to-get-rid-of-dog-smell-pet-safe": ["pet-sneezing-household-dust", "hepa-filters-pets-asthma", "allergen-free-home-dog-cat-owners"],
   "how-to-clean-a-bathroom-step-by-step": ["how-to-clean-grout-without-bleach", "how-to-remove-hard-water-stains-naturally", "how-to-get-rid-of-mildew-smell-naturally"],
   "how-to-remove-red-wine-stains": ["how-to-remove-candle-wax-eco-friendly", "how-to-remove-sharpie-safely", "mrs-meyers-clean-day-review-how-to-use"],
@@ -188,6 +188,7 @@ export const MANUAL_RELATED_POSTS: Record<string, string[]> = {
   "house-cleaning-after-hospital-surgery-seniors": ["house-cleaning-for-seniors", "caregiver-guide-house-cleaning-aging-parent", "clean-home-fall-prevention-seniors", "free-house-cleaning-for-seniors", "aging-in-place-montgomery-county-cleaning", "signs-aging-parent-needs-help-housekeeping"],
   "senior-downsizing-decluttering-cleaning": ["move-out-cleaning-checklist-maryland-tenants", "move-out-cleaning-cost-maryland", "house-cleaning-for-seniors", "caregiver-guide-house-cleaning-aging-parent", "aging-in-place-montgomery-county-cleaning", "move-in-cleaning-checklist"],
   "cleaning-during-pregnancy-prepare-home-for-baby": ["what-is-included-in-a-deep-cleaning", "move-in-cleaning-checklist", "how-to-prepare-home-for-professional-cleaning", "deep-cleaning-checklist-dmv-homeowners", "eco-cleaning-tips-maryland-homes", "spring-cleaning-checklist-maryland-2026"],
+  "why-is-my-dog-coughing-after-house-cleaning": ["what-pet-safe-cleaning-really-means", "choose-pet-safe-cleaning-company", "cleaning-product-poisoning-in-pets", "hepa-filters-pets-asthma", "pet-dander-air-quality", "pet-sneezing-household-dust"],
 };
 
 // ── Guide selectors (posts) ─────────────────────────────────────────────────────

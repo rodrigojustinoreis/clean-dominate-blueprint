@@ -61,6 +61,7 @@ import CaregiverGuideHouseCleaning from "./pages/CaregiverGuideHouseCleaning";
 import HouseCleaningAfterHospital from "./pages/HouseCleaningAfterHospital";
 import SeniorDownsizingDecluttering from "./pages/SeniorDownsizingDecluttering";
 import CleaningDuringPregnancy from "./pages/CleaningDuringPregnancy";
+import WhyIsMyDogCoughingAfterCleaning from "./pages/WhyIsMyDogCoughingAfterCleaning";
 import RealDeepCleaningProjectBethesda from "./pages/RealDeepCleaningProjectBethesda";
 import HowOftenHireCleaningService from "./pages/HowOftenHireCleaningService";
 import OneTimeVsRecurringCleaning from "./pages/OneTimeVsRecurringCleaning";
@@ -288,6 +289,7 @@ const AppRoutes = () => (
     <Route path="/resources/house-cleaning-after-hospital-surgery-seniors" element={<HouseCleaningAfterHospital />} />
     <Route path="/resources/senior-downsizing-decluttering-cleaning" element={<SeniorDownsizingDecluttering />} />
     <Route path="/resources/cleaning-during-pregnancy-prepare-home-for-baby" element={<CleaningDuringPregnancy />} />
+    <Route path="/resources/why-is-my-dog-coughing-after-house-cleaning" element={<WhyIsMyDogCoughingAfterCleaning />} />
     <Route path="/resources/real-deep-cleaning-project-bethesda-home" element={<RealDeepCleaningProjectBethesda />} />
     <Route path="/resources/how-often-should-you-hire-a-cleaning-service" element={<HowOftenHireCleaningService />} />
     <Route path="/resources/one-time-vs-recurring-cleaning" element={<OneTimeVsRecurringCleaning />} />

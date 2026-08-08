@@ -232,7 +232,8 @@ const CleaningProductPoisoningPets = () => {
             <div className="bg-accent/10 border border-accent/30 rounded-2xl p-5 mb-10 flex gap-4 items-start">
               <Lightbulb className="h-5 w-5 text-accent shrink-0 mt-0.5" />
               <p className="text-sm text-foreground leading-relaxed">
-                <strong>Pets are exposed in three ways:</strong> ingesting a product, walking on a wet treated surface and then licking their paws, or inhaling fumes in a closed room. Prevention has to cover all three — not just keeping bottles capped.
+                <strong>Pets are exposed in three ways:</strong> ingesting a product, walking on a wet treated surface and then licking their paws, or inhaling fumes in a closed room. Prevention has to cover all three — not just keeping bottles capped. If your dog reacts to the fumes with coughing, see{" "}
+                <Link to="/resources/why-is-my-dog-coughing-after-house-cleaning" className="text-accent underline hover:no-underline">why dogs cough after house cleaning</Link>.
               </p>
             </div>
           </FadeInSection>
