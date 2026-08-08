@@ -1664,6 +1664,28 @@
 # (slugs preserved). Specific old-slug redirects above run first, then this catch-all.
 # Exact /blog MUST precede /blog/* — the splat matches /blog with an empty splat and
 # would send /blog → /resources/ (extra hop). This exact rule catches it first (1 hop).
+# ── FIX (2026-08): direct 301s for /blog & /resources URLs whose target slug was
+#     renamed or removed. Previously these fell through to the /blog/* catch-all below
+#     and 301'd into a non-existent /resources slug (301 → 404). Netlify is first-match,
+#     so these MUST stay ABOVE the /blog and /blog/* rules. No existing rule removed.
+[[redirects]]
+  from = "/blog/how-to-clean-led-tv-screen-safely"
+  to = "/resources/how-to-clean-oled-tv-screen-safely"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/resources/how-to-clean-led-tv-screen-safely"
+  to = "/resources/how-to-clean-oled-tv-screen-safely"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/topic/tips-seasonal"
+  to = "/resources/cleaning-tips"
+  status = 301
+  force = true
+
 [[redirects]]
   from = "/blog"
   to = "/resources"
