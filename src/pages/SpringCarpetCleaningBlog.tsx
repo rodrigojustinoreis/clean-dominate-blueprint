@@ -3,6 +3,7 @@ import { ArrowRight, CheckCircle2, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import { BreadcrumbSchema } from "@/components/SchemaMarkup";
 import { useSEO } from "@/hooks/useSEO";
 import { Helmet } from "react-helmet-async";
 import BeforeAfterTabs from "@/components/BeforeAfterTabs";
@@ -25,6 +26,7 @@ const SpringCarpetCleaningBlog = () => {
       {/* Breadcrumbs */}
       <div className="bg-gray-50 py-4 border-b">
         <div className="container mx-auto px-4 max-w-5xl">
+          <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "Spring Carpet Cleaning", href: "/resources/spring-carpet-cleaning" }]} />
           <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "Spring Carpet Cleaning" }]} />
         </div>
       </div>

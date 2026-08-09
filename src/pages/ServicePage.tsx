@@ -54,7 +54,7 @@ const ServicePage = () => {
   return (
     <Layout>
       {seoHelmet}
-      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: service.name, href: `/services/${service.slug}` }]} />
+      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Services", href: "/services" }, { label: service.name, href: `/services/${service.slug}` }]} />
       <ServiceSchema
         serviceName={service.name}
         description={service.shortDescription}
@@ -66,7 +66,7 @@ const ServicePage = () => {
       {/* ── Hero ── */}
       <section className="relative overflow-hidden bg-gradient-to-br from-[#F1F8F1] via-background to-accent/5 py-10 md:py-16">
         <div className="container mx-auto px-4 max-w-6xl">
-          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Services" }, { label: service.name }]} className="mb-6" />
+          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Services", href: "/services" }, { label: service.name }]} className="mb-6" />
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
             <FadeInSection>
               <div className="inline-flex items-center gap-2 bg-white border border-accent/20 rounded-full px-3.5 py-1.5 shadow-sm mb-5">

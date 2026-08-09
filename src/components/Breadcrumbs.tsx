@@ -1,4 +1,4 @@
-import { Fragment, useEffect } from "react";
+import { Fragment } from "react";
 import { Link } from "react-router-dom";
 import {
   Breadcrumb,
@@ -20,31 +20,6 @@ interface BreadcrumbsProps {
 }
 
 const Breadcrumbs = ({ items, className }: BreadcrumbsProps) => {
-  // Inject BreadcrumbList JSON-LD schema
-  useEffect(() => {
-    const schema = {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      itemListElement: items.map((item, i) => ({
-        "@type": "ListItem",
-        position: i + 1,
-        name: item.label,
-        ...(item.href ? { item: `https://capitalcleancare.com${item.href}` } : {}),
-      })),
-    };
-
-    const script = document.createElement("script");
-    script.type = "application/ld+json";
-    script.id = "breadcrumb-schema";
-    script.textContent = JSON.stringify(schema);
-    document.head.appendChild(script);
-
-    return () => {
-      const existing = document.getElementById("breadcrumb-schema");
-      if (existing) existing.remove();
-    };
-  }, [items]);
-
   return (
     <Breadcrumb className={className}>
       <BreadcrumbList>

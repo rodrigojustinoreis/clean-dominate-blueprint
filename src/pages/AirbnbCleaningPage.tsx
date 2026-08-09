@@ -147,7 +147,7 @@ const AirbnbCleaningPage = () => {
     <div className="min-h-screen flex flex-col">
       {seoHelmet}
       <BreadcrumbSchema
-        items={[{ label: "Home", href: "/" }, { label: "Airbnb Cleaning", href: "/services/airbnb-cleaning" }]}
+        items={[{ label: "Home", href: "/" }, { label: "Services", href: "/services" }, { label: "Airbnb Cleaning", href: "/services/airbnb-cleaning" }]}
       />
       {/* Defines the #business LocalBusiness entity that ServiceSchema's provider references —
           same shared entity (+ real 5.0/45 aggregateRating) the home & city pages already emit.
@@ -211,7 +211,7 @@ const AirbnbCleaningPage = () => {
       <section className="relative overflow-hidden bg-gradient-to-br from-[#EAF6EA] via-background to-accent/5 py-10 md:py-16">
         <div className="container mx-auto px-4 max-w-6xl">
           <Breadcrumbs
-            items={[{ label: "Home", href: "/" }, { label: "Services" }, { label: service.name }]}
+            items={[{ label: "Home", href: "/" }, { label: "Services", href: "/services" }, { label: service.name }]}
             className="mb-6"
           />
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">

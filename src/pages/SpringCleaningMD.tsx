@@ -6,7 +6,7 @@ import Layout from "@/components/layout/Layout";
 import QuoteForm from "@/components/QuoteForm";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { useSEO } from "@/hooks/useSEO";
-import { FAQSchema, ServiceSchema, LocalBusinessSchema } from "@/components/SchemaMarkup";
+import { FAQSchema, ServiceSchema, LocalBusinessSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import FAQ from "@/components/FAQ";
 import VideoTestimonials from "@/components/VideoTestimonials";
 import GreenShield5Step from "@/components/GreenShield5Step";
@@ -41,6 +41,7 @@ const SpringCleaningMD = () => {
       {/* Hero */}
       <section className="relative bg-gradient-to-br from-accent/20 via-background to-secondary py-16 md:py-24">
         <div className="container mx-auto px-4 max-w-4xl">
+          <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Spring Cleaning MD", href: "/spring-cleaning-md" }]} />
           <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Spring Cleaning MD" }]} className="mb-6" />
           <div className="flex items-center gap-2 mb-4">
             <Sun className="h-6 w-6 text-accent" />

@@ -168,7 +168,7 @@ const RecurringCleaningPage = () => {
     <div className="min-h-screen flex flex-col">
       {seoHelmet}
       <BreadcrumbSchema
-        items={[{ label: "Home", href: "/" }, { label: "Recurring Cleaning", href: "/services/recurring-cleaning" }]}
+        items={[{ label: "Home", href: "/" }, { label: "Services", href: "/services" }, { label: "Recurring Cleaning", href: "/services/recurring-cleaning" }]}
       />
       <LocalBusinessSchema reviews={pickReviews("services/recurring-cleaning", 2)} />
       <ServiceSchema
@@ -229,7 +229,7 @@ const RecurringCleaningPage = () => {
       <section className="relative overflow-hidden bg-gradient-to-br from-[#EAF6EA] via-background to-accent/5 py-10 md:py-16">
         <div className="container mx-auto px-4 max-w-6xl">
           <Breadcrumbs
-            items={[{ label: "Home", href: "/" }, { label: "Services" }, { label: service.name }]}
+            items={[{ label: "Home", href: "/" }, { label: "Services", href: "/services" }, { label: service.name }]}
             className="mb-6"
           />
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">

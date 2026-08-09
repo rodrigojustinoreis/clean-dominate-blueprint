@@ -5,7 +5,7 @@ import {
 } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import FAQ from "@/components/FAQ";
-import { FAQSchema } from "@/components/SchemaMarkup";
+import { FAQSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import QuoteForm from "@/components/QuoteForm";
@@ -97,6 +97,7 @@ const FAQPage = () => {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left — copy */}
             <div>
+              <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "FAQ", href: "/faq" }]} />
               <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "FAQ" }]} className="mb-6" />
               <div className="inline-flex items-center gap-2 glass rounded-full px-4 py-2 mb-6 animate-fade-up">
                 <Sparkles className="h-4 w-4 text-accent" />

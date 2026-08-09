@@ -1,5 +1,6 @@
 import Layout from "@/components/layout/Layout";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import { BreadcrumbSchema } from "@/components/SchemaMarkup";
 import { useSEO } from "@/hooks/useSEO";
 
 const PrivacyPolicy = () => {
@@ -14,6 +15,7 @@ const PrivacyPolicy = () => {
       {seoHelmet}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 max-w-3xl">
+          <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Privacy Policy", href: "/privacy-policy" }]} />
           <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Privacy Policy" }]} className="mb-6" />
           <h1 className="font-heading text-4xl font-bold mb-8">Privacy Policy</h1>
           <div className="prose prose-lg max-w-none text-foreground">
