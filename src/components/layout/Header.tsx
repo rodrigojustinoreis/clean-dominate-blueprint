@@ -115,7 +115,7 @@ const Header = () => {
           <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1">
             {isSpanish ? (
               <>
-                <Link to="/es/" className="whitespace-nowrap px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">Inicio</Link>
+                <Link to="/es" className="whitespace-nowrap px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors">Inicio</Link>
 
                 <div className="relative group">
                   <button className="whitespace-nowrap px-3 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors flex items-center gap-1">
@@ -257,7 +257,7 @@ const Header = () => {
             </div>
             {isSpanish ? (
               <>
-                <Link to="/es/" className="block px-3 py-2 rounded-md hover:bg-secondary" onClick={() => setMobileOpen(false)}>Inicio</Link>
+                <Link to="/es" className="block px-3 py-2 rounded-md hover:bg-secondary" onClick={() => setMobileOpen(false)}>Inicio</Link>
 
                 <button className="w-full flex items-center justify-between px-3 py-2 rounded-md hover:bg-secondary" onClick={() => setServicesOpen(!servicesOpen)}>
                   Servicios <ChevronDown className={`h-4 w-4 transition-transform ${servicesOpen ? "rotate-180" : ""}`} />

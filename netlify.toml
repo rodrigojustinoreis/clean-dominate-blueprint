@@ -126,12 +126,12 @@
 
 [[redirects]]
   from = "/services-areas"
-  to = "/contact/"
+  to = "/contact"
   status = 301
 
 [[redirects]]
   from = "/services-areas/"
-  to = "/contact/"
+  to = "/contact"
   status = 301
 
 # Fase 1.2 — legacy /resources/topic/* hubs consolidated into the 10-category Resource Center.
@@ -201,7 +201,7 @@
 
 [[redirects]]
   from = "/seasonal-cleaning"
-  to = "/spring-cleaning-md/"
+  to = "/spring-cleaning-md"
   status = 301
 
 [[redirects]]
@@ -292,7 +292,7 @@
 
 [[redirects]]
   from = "/contact-us"
-  to = "/contact/"
+  to = "/contact"
   status = 301
 
 [[redirects]]

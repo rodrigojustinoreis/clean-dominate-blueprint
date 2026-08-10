@@ -9,7 +9,7 @@ export default function LanguageSwitcher({ compact = false }: { compact?: boolea
   const isSpanish = pathname.startsWith("/es/") || pathname === "/es";
 
   const alternateUrl = isSpanish ? ROUTE_MAP_ES_TO_EN[pathname] : ROUTE_MAP_EN_TO_ES[pathname];
-  const fallbackUrl = isSpanish ? "/" : "/es/";
+  const fallbackUrl = isSpanish ? "/" : "/es";
   const targetUrl = alternateUrl || fallbackUrl;
   const pad = compact ? "px-1" : "px-2";
 
