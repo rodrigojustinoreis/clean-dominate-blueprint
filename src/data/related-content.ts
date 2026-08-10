@@ -189,6 +189,7 @@ export const MANUAL_RELATED_POSTS: Record<string, string[]> = {
   "senior-downsizing-decluttering-cleaning": ["move-out-cleaning-checklist-maryland-tenants", "move-out-cleaning-cost-maryland", "house-cleaning-for-seniors", "caregiver-guide-house-cleaning-aging-parent", "aging-in-place-montgomery-county-cleaning", "move-in-cleaning-checklist"],
   "cleaning-during-pregnancy-prepare-home-for-baby": ["what-is-included-in-a-deep-cleaning", "move-in-cleaning-checklist", "how-to-prepare-home-for-professional-cleaning", "deep-cleaning-checklist-dmv-homeowners", "eco-cleaning-tips-maryland-homes", "spring-cleaning-checklist-maryland-2026"],
   "why-is-my-dog-coughing-after-house-cleaning": ["what-pet-safe-cleaning-really-means", "choose-pet-safe-cleaning-company", "cleaning-product-poisoning-in-pets", "hepa-filters-pets-asthma", "pet-dander-air-quality", "pet-sneezing-household-dust"],
+  "how-to-clean-hardwood-floors-naturally": ["how-to-clean-grout-without-bleach", "how-to-remove-hard-water-stains-naturally", "eco-friendly-deep-cleaning", "how-to-remove-sticker-residue-natural", "what-is-included-in-a-deep-cleaning", "how-to-get-rid-of-mildew-smell-naturally"],
 };
 
 // ── Guide selectors (posts) ─────────────────────────────────────────────────────

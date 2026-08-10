@@ -183,7 +183,11 @@ const HowToCleanGroutWithoutBleach = () => {
               <Link to="/resources/eco-cleaning-tips-maryland-homes" className="text-accent underline hover:no-underline">
                 eco-friendly cleaning tips for Maryland homes
               </Link>
-              , see our full guide.
+              , see our full guide. Cleaning wood instead of tile? The same residue-free, pH-neutral approach applies — see{" "}
+              <Link to="/resources/how-to-clean-hardwood-floors-naturally" className="text-accent underline hover:no-underline">
+                how to clean hardwood floors naturally
+              </Link>
+              .
             </p>
           </FadeInSection>
 

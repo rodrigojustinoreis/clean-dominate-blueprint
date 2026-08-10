@@ -106,6 +106,15 @@ export const blogPosts: BlogPost[] = [
     coverImage: "/images/blog/dog-coughing/hero.webp",
   },
   {
+    slug: "how-to-clean-hardwood-floors-naturally",
+    title: "How to Clean Hardwood Floors Naturally (Without Damaging the Finish)",
+    excerpt: "Clean sealed hardwood floors safely with a pH-neutral, residue-free method — why to skip vinegar, steam mops, and oil soap, plus how to bring back the natural shine. A Maryland eco guide.",
+    date: "2026-06-02",
+    readTime: "6 min read",
+    category: "Home Care Guides",
+    coverImage: "/images/blog/hardwood/hero.webp",
+  },
+  {
     slug: "house-cleaning-seniors-silver-spring-leisure-world",
     title: "House Cleaning Help for Seniors in Silver Spring & Leisure World: What to Expect",
     excerpt: "Thinking about house cleaning help? A warm, plain-language guide for older adults in Silver Spring and Leisure World — what a visit looks like, what to expect, and how to start. No pressure.",
