@@ -688,61 +688,6 @@ const WhyEcoFriendlyPage = () => {
       {/* ── Trust Badges ── */}
       <TrustBadges compact withBackground={false} />
 
-      {/* ── Testimonials ── */}
-      <section className="py-16 md:py-20">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <div className="text-center mb-10">
-            <span className="inline-block bg-accent/10 text-accent font-semibold text-sm uppercase tracking-wider px-3 py-1 rounded-full mb-4">
-              What Clients Say
-            </span>
-            <h2 className="font-heading text-3xl font-bold">
-              DMV Families Who Made the Switch
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {[
-              {
-                name: "Sarah M.",
-                location: "Bethesda, MD",
-                stars: 5,
-                text: "I have two kids under 5 and a dog. Knowing Capital Clean Care only uses plant-based products means I don't have to worry about what they're touching after the house is cleaned. Game changer.",
-              },
-              {
-                name: "David K.",
-                location: "Arlington, VA",
-                stars: 5,
-                text: "My wife has asthma and we'd always struggle with cleaning smells. We haven't had a single reaction since switching to Capital Clean Care. Their eco products are genuinely different.",
-              },
-              {
-                name: "Michelle R.",
-                location: "Silver Spring, MD",
-                stars: 5,
-                text: "I was skeptical that 'green' products would actually clean as well. I was completely wrong. My bathroom has never looked this good and there's none of that harsh bleach smell.",
-              },
-              {
-                name: "Thomas L.",
-                location: "Washington, DC",
-                stars: 5,
-                text: "We have three cats. The fact that these products are safe if our cats walk on freshly cleaned floors and then groom themselves — that was the deciding factor for us. Highly recommend.",
-              },
-            ].map((t) => (
-              <Card key={t.name}>
-                <CardContent className="p-5">
-                  <div className="flex items-center gap-1 mb-3">
-                    {Array.from({ length: t.stars }).map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" />
-                    ))}
-                  </div>
-                  <p className="text-sm text-foreground italic mb-3 leading-relaxed">"{t.text}"</p>
-                  <p className="text-sm font-semibold text-foreground">{t.name}</p>
-                  <p className="text-xs text-muted-foreground">{t.location}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ── Internal Links / Related Pages ── */}
       <section className="py-12 bg-secondary/40">
         <div className="container mx-auto px-4 max-w-4xl">

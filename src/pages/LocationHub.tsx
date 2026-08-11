@@ -12,6 +12,7 @@ import { useSEO } from "@/hooks/useSEO";
 import { getHubBySlug, getCityBySlug } from "@/data/locations";
 import { vanityLandingPages } from "@/data/vanity-landings";
 import { services } from "@/data/services";
+import { pickReviews } from "@/data/realReviews";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import NotFound from "./NotFound";
 import TrustBadges from "@/components/TrustBadges";
@@ -32,21 +33,6 @@ const trustSignals = [
   { icon: Star, title: "Satisfaction Guaranteed", desc: "Not happy? We'll re-clean at no charge." },
 ];
 
-const testimonialsByState: Record<string, { name: string; location: string; text: string }[]> = {
-  MD: [
-    { name: "Sarah M.", location: "Bethesda, MD", text: "Capital Clean Care transformed our home. The team was professional, thorough, and used products safe for my kids and pets." },
-    { name: "David R.", location: "Rockville, MD", text: "Consistent quality every visit. Our dedicated team knows our home perfectly. Best cleaning service in Montgomery County." },
-  ],
-  DC: [
-    { name: "Lauren K.", location: "Capitol Hill, DC", text: "After our kitchen renovation, the post-construction cleaning was incredible. They removed every trace of dust." },
-    { name: "Monica J.", location: "Georgetown, DC", text: "They handle our historic Georgetown rowhouse with care. Love the eco-friendly products and flexible scheduling." },
-  ],
-  VA: [
-    { name: "James T.", location: "Arlington, VA", text: "We've used their bi-weekly service for six months and every visit exceeds expectations. Highly recommend!" },
-    { name: "Priya S.", location: "McLean, VA", text: "Professional, reliable, and always on time. Our McLean home has never looked better." },
-  ],
-};
-
 const LocationHub = () => {
   const { stateSlug } = useParams<{ stateSlug: string }>();
   const hub = getHubBySlug(stateSlug || "");
@@ -62,7 +48,9 @@ const LocationHub = () => {
   });
 
   const hubCities = hub.citySlugs.map(getCityBySlug).filter(Boolean);
-  const reviews = testimonialsByState[hub.stateAbbr] || [];
+  // REAL Google reviews only (deterministically rotated per state so hubs differ).
+  // realReviews.ts carries no location, so we never attribute a review to a city.
+  const reviews = pickReviews(hub.slug, 2);
 
   return (
     <Layout>
@@ -202,7 +190,7 @@ const LocationHub = () => {
                     </div>
                     <p className="text-foreground italic mb-4">"{r.text}"</p>
                     <p className="text-sm font-semibold">{r.name}</p>
-                    <p className="text-xs text-muted-foreground">{r.location}</p>
+                    <p className="text-xs text-muted-foreground">Verified Google review</p>
                   </CardContent>
                 </Card>
               ))}

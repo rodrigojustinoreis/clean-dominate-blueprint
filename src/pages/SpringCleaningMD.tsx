@@ -8,7 +8,6 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { useSEO } from "@/hooks/useSEO";
 import { FAQSchema, ServiceSchema, LocalBusinessSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import FAQ from "@/components/FAQ";
-import VideoTestimonials from "@/components/VideoTestimonials";
 import GreenShield5Step from "@/components/GreenShield5Step";
 import TrustBadges from "@/components/TrustBadges";
 
@@ -140,9 +139,6 @@ const SpringCleaningMD = () => {
           </div>
         </div>
       </section>
-
-      {/* Video Testimonials */}
-      <VideoTestimonials />
 
       {/* GreenShield 5-Step */}
       <GreenShield5Step compact showCTA={false} />
