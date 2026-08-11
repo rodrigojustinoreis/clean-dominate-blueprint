@@ -26,6 +26,11 @@ interface QuoteFormProps {
    *  fields land in view when a CTA scrolls to the form. Desktop is unchanged. Opt-in —
    *  NOT passed on the /services/house-cleaning ads landing, which stays as-is. */
   compact?: boolean;
+  /** When true, Full Address is a required field (asterisk + HTML required).
+   *  Default false — address is optional to reduce quote-form friction; ZIP still
+   *  validates the service area. The /services/house-cleaning ads landing uses its
+   *  own inline form (QuoteFormInline) and is unaffected by this prop. */
+  requireAddress?: boolean;
 }
 
 /* Brand CTA gradient (blue → teal) + accent-tinted glow */
@@ -43,7 +48,7 @@ const glossOverlay = (
   <span className="pointer-events-none absolute inset-x-0 top-0 h-1/2 rounded-t-2xl" style={{ background: "linear-gradient(to bottom,rgba(255,255,255,0.55),transparent)" }} />
 );
 
-const QuoteForm = ({ submitLabel = "GET MY FREE QUOTE →", defaultService = "", showPhoto = true, compact = false }: QuoteFormProps) => {
+const QuoteForm = ({ submitLabel = "GET MY FREE QUOTE →", defaultService = "", showPhoto = true, compact = false, requireAddress = false }: QuoteFormProps) => {
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -85,7 +90,7 @@ const QuoteForm = ({ submitLabel = "GET MY FREE QUOTE →", defaultService = "",
           bathrooms: formData.bathrooms || null,
           frequency: formData.frequency || null,
           preferred_date: formData.date || null,
-          message: [`Address: ${formData.address}`, formData.sqft ? `Home size: ${formData.sqft} sq ft` : "", formData.message || ""].filter(Boolean).join(" · ") || null,
+          message: [formData.address ? `Address: ${formData.address}` : "", formData.sqft ? `Home size: ${formData.sqft} sq ft` : "", formData.message || ""].filter(Boolean).join(" · ") || null,
           sms_consent: formData.smsConsent,
           email_consent: formData.emailConsent,
         }).then(({ error }) => { if (error) console.error("DB error:", error); })
@@ -410,25 +415,29 @@ const QuoteForm = ({ submitLabel = "GET MY FREE QUOTE →", defaultService = "",
         {/* ── Contact fields (landing order) ── */}
         <div>
           <Label htmlFor="name" className="text-xs font-semibold mb-1 block">Full Name *</Label>
-          <Input id="name" required className="h-11" value={formData.name} onChange={(e) => update("name", e.target.value)} placeholder="Jane Smith" />
+          <Input id="name" required className="h-11" autoComplete="name" value={formData.name} onChange={(e) => update("name", e.target.value)} placeholder="Jane Smith" />
         </div>
         <div>
           <Label htmlFor="phone" className="text-xs font-semibold mb-1 block">Phone Number *</Label>
-          <Input id="phone" type="tel" required className="h-11" value={formData.phone} onChange={(e) => update("phone", e.target.value)} placeholder="(240) 000-0000" />
+          <Input id="phone" type="tel" required className="h-11" autoComplete="tel" value={formData.phone} onChange={(e) => update("phone", e.target.value)} placeholder="(240) 000-0000" />
         </div>
         <div>
           <Label htmlFor="email" className="text-xs font-semibold mb-1 block">Email Address *</Label>
-          <Input id="email" type="email" required className="h-11" value={formData.email} onChange={(e) => update("email", e.target.value)} placeholder="jane@email.com" />
+          <Input id="email" type="email" required className="h-11" autoComplete="email" value={formData.email} onChange={(e) => update("email", e.target.value)} placeholder="jane@email.com" />
         </div>
         <div>
           <Label htmlFor="zip" className="text-xs font-semibold mb-1 block">ZIP Code *</Label>
-          <Input id="zip" required className="h-11" value={formData.zip} onChange={(e) => update("zip", e.target.value)} placeholder="20850" />
+          <Input id="zip" required className="h-11" inputMode="numeric" autoComplete="postal-code" value={formData.zip} onChange={(e) => update("zip", e.target.value)} placeholder="20850" />
         </div>
         <div>
           <Label htmlFor="address" className="text-xs font-semibold mb-1 block">
-            Full Address <span className="text-accent">*</span>
+            {requireAddress ? (
+              <>Full Address <span className="text-accent">*</span></>
+            ) : (
+              <>Full Address <span className="text-muted-foreground font-normal">(optional — speeds up scheduling)</span></>
+            )}
           </Label>
-          <Input id="address" required className="h-11" autoComplete="street-address" value={formData.address} onChange={(e) => update("address", e.target.value)} placeholder="123 Main St, Rockville, MD 20850" />
+          <Input id="address" required={requireAddress} className="h-11" autoComplete="street-address" value={formData.address} onChange={(e) => update("address", e.target.value)} placeholder="123 Main St, Rockville, MD 20850" />
         </div>
 
         {/* ── "Tell us about your home" box with drag sliders ── */}
