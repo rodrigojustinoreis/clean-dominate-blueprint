@@ -325,6 +325,53 @@ const PotomacHouseCleaningPage = () => {
         </div>
       </section>
 
+      {/* ── Neighborhood Spotlight ──────────────────────── */}
+      <section className="py-12 md:py-16 bg-muted/20">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-3">
+            House Cleaning by Potomac Neighborhood
+          </h2>
+          <p className="text-muted-foreground mb-8 leading-relaxed max-w-2xl">
+            Potomac spreads across large-lot neighborhoods with very different layouts — from the
+            historic village center to gated golf communities and homes backing the C&amp;O Canal. We
+            scale each visit to the property.
+          </p>
+          <div className="grid md:grid-cols-3 gap-5">
+            {[
+              {
+                name: "Potomac Village",
+                zip: "20854",
+                body:
+                  "The historic center around Falls Road and River Road blends established estates with newer construction. These are usually larger homes with formal entertaining spaces and several bathrooms, so we bring a multi-cleaner team and scale the checklist to keep the whole house — bedrooms, baths, and lower levels — thorough in one visit, not just the rooms guests see.",
+              },
+              {
+                name: "Avenel",
+                zip: "20854",
+                body:
+                  "Built around the TPC Potomac golf course, Avenel is a community of large custom homes with high ceilings, extensive millwork, and often a gate or community check-in to plan around. We confirm access ahead of time and match products to the premium stone and hardwood these homes use, so detailing stays even from the two-story foyer to the finished basement.",
+              },
+              {
+                name: "River Falls",
+                zip: "20854",
+                body:
+                  "Backing to the C&amp;O Canal and the Potomac River, River Falls sits on generous, wooded lots — many homes with finished basements, sunrooms, and detached spaces. Our checklist plans for that extra square footage up front, so the lower level and guest areas common on acre-plus Potomac properties get cleaned to the same standard as the main floor.",
+              },
+            ].map((n) => (
+              <div
+                key={n.name}
+                className="bg-card border border-border rounded-xl p-6 hover:shadow-md transition-shadow"
+              >
+                <div className="flex items-baseline gap-2 mb-3">
+                  <h3 className="font-heading font-bold text-foreground">{n.name}</h3>
+                  <span className="text-xs text-muted-foreground">ZIP {n.zip}</span>
+                </div>
+                <p className="text-sm text-muted-foreground leading-relaxed">{n.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── FAQ ───────────────────────────────────────────── */}
       <section className="py-12 md:py-16 bg-muted/30">
         <div className="container mx-auto px-4 max-w-4xl">

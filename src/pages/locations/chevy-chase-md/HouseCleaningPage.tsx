@@ -329,6 +329,53 @@ const ChevyChaseHouseCleaningPage = () => {
         </div>
       </section>
 
+      {/* ── Neighborhood Spotlight ──────────────────────── */}
+      <section className="py-12 md:py-16 bg-muted/20">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-3">
+            House Cleaning by Chevy Chase Neighborhood
+          </h2>
+          <p className="text-muted-foreground mb-8 leading-relaxed max-w-2xl">
+            "Chevy Chase" is really a cluster of small, distinct municipalities along the DC line —
+            each with its own housing stock and street pattern. We fit the visit to how each one is
+            actually built.
+          </p>
+          <div className="grid md:grid-cols-3 gap-5">
+            {[
+              {
+                name: "Village of Chevy Chase (Section 5)",
+                zip: "20815",
+                body:
+                  "One of the region's earliest planned communities, the Village and Section 5 are known for early-1900s Georgian, colonial, and Victorian homes on tree-lined lots near Chevy Chase Circle. They're larger houses with formal rooms, deep trim, and glass-front built-ins that reward patient, detailed dusting rather than a quick pass — our checklist gives the millwork, staircases, and multiple living areas the time they actually take.",
+              },
+              {
+                name: "Martin's Additions",
+                zip: "20815",
+                body:
+                  "A small tree-lined municipality off Brookville Road, Martin's Additions mixes 1920s bungalows with larger renovated homes on compact lots. With on-street parking and tighter driveways, we keep our kit compact and stage efficiently, and we adapt to homes that frequently pair original character with a modern rear addition or finished basement.",
+              },
+              {
+                name: "Somerset",
+                zip: "20815",
+                body:
+                  "Incorporated and walkable to Friendship Heights and the Metro, Somerset runs from older cottages to newer infill houses and nearby condominiums. For units near the high-rises we coordinate front-desk or elevator access first, then size the visit to the layout — a compact two-bedroom or a full single-family both get the same room-by-room attention.",
+              },
+            ].map((n) => (
+              <div
+                key={n.name}
+                className="bg-card border border-border rounded-xl p-6 hover:shadow-md transition-shadow"
+              >
+                <div className="flex items-baseline gap-2 mb-3">
+                  <h3 className="font-heading font-bold text-foreground">{n.name}</h3>
+                  <span className="text-xs text-muted-foreground">ZIP {n.zip}</span>
+                </div>
+                <p className="text-sm text-muted-foreground leading-relaxed">{n.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── FAQ ───────────────────────────────────────────── */}
       <section className="py-12 md:py-16 bg-muted/30">
         <div className="container mx-auto px-4 max-w-4xl">
