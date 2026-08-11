@@ -112,7 +112,7 @@ export const cities: CityData[] = [
       { q: "Are you available on weekends in Rockville?", a: "Yes, we offer Saturday and limited Sunday availability for Rockville clients. Weekend slots fill up quickly, so we recommend booking in advance." },
       { q: "Do you bring your own supplies to Rockville homes?", a: "Yes. Our teams arrive fully equipped with eco-friendly cleaning products and professional equipment. You don't need to provide anything." }
     ],
-    metaTitle: "House Cleaning Services in Rockville, MD | Capital Clean Care",
+    metaTitle: "Cleaning Services in Rockville, MD — All Services | Capital Clean Care",
     metaDescription: "Professional house cleaning in Rockville, MD. Eco-friendly products, background-checked teams, flexible scheduling. Serving all Rockville neighborhoods. Free quotes."
   },
   {
@@ -150,7 +150,7 @@ export const cities: CityData[] = [
       { q: "Are your Bethesda teams experienced with high-end finishes?", a: "Yes. Our teams are trained in proper care for marble, granite, hardwood, and other premium surfaces commonly found in Bethesda homes." },
       { q: "Can I schedule around my Bethesda social calendar?", a: "Of course. Many Bethesda clients schedule cleanings before events or gatherings. We offer flexible scheduling to accommodate your lifestyle." }
     ],
-    metaTitle: "House Cleaning Services in Bethesda, MD | Capital Clean Care",
+    metaTitle: "Cleaning Services in Bethesda, MD — All Services | Capital Clean Care",
     metaDescription: "Premium house cleaning in Bethesda, MD. Expert care for fine homes, eco-friendly products, background-checked teams. Serving all Bethesda neighborhoods. Free quotes."
   },
   {

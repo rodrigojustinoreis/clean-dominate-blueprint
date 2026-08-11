@@ -55,6 +55,11 @@ const regionImages: Record<string, string> = {
   virginia: regionVA,
 };
 
+// 8C P1 pilot — hubs repositioned as an all-services umbrella (H1 "Cleaning Services in <City>")
+// so they stop competing with the city's own /house-cleaning subpage for the head term.
+// Their metaTitle already carries the "Cleaning Services … — All Services" framing.
+const UMBRELLA_HUBS = new Set(["bethesda-md", "rockville-md"]);
+
 /** Specific neighborhoods served per city — boosts local SEO relevance */
 const cityNeighborhoods: Record<string, string[]> = {
   "rockville-md": ["Fallsgrove", "King Farm", "Twinbrook", "West End", "Town Center", "Potomac Woods", "Hungerford", "Montrose", "Brightview", "Congressional"],
@@ -204,7 +209,7 @@ const CityPage = () => {
             className="mb-4 text-primary-foreground/60 [&_a]:text-primary-foreground/60 [&_a:hover]:text-primary-foreground [&_span[aria-current]]:text-primary-foreground/80 [&_svg]:text-primary-foreground/40"
           />
           <h1 className="font-heading text-3xl md:text-5xl lg:text-[3.25rem] font-bold mb-5 text-primary-foreground leading-tight">
-            House Cleaning Services in {cityLabel}
+            {UMBRELLA_HUBS.has(city.slug) ? "Cleaning Services in " : "House Cleaning Services in "}{cityLabel}
           </h1>
           <p className="text-primary-foreground/85 text-lg md:text-xl max-w-2xl leading-relaxed mb-8">
             Professional, eco-friendly house cleaning for {city.name} homes. Licensed, insured, and background-checked teams you can trust.

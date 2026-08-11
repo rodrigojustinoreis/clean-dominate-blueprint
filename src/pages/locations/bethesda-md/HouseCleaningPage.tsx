@@ -329,6 +329,53 @@ const BethesdaHouseCleaningPage = () => {
         </div>
       </section>
 
+      {/* ── Neighborhood Spotlight ──────────────────────── */}
+      <section className="py-12 md:py-16 bg-muted/20">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-3">
+            House Cleaning by Bethesda Neighborhood
+          </h2>
+          <p className="text-muted-foreground mb-8 leading-relaxed max-w-2xl">
+            Bethesda is really a collection of very different neighborhoods — historic homes near
+            downtown, large estates to the west, and high-rise condos in the walkable core. We tailor
+            each visit to how that part of Bethesda is actually built.
+          </p>
+          <div className="grid md:grid-cols-3 gap-5">
+            {[
+              {
+                name: "Edgemoor",
+                zip: "20814",
+                body:
+                  "One of Bethesda's oldest neighborhoods, Edgemoor sits steps from Bethesda Row and the Metro, with early-20th-century homes that often keep original hardwood, built-ins, and plaster detail. We use soft microfiber and pH-neutral products so those period finishes stay intact while the home still gets a thorough, top-to-bottom clean.",
+              },
+              {
+                name: "Kenwood & Bradley Hills",
+                zip: "20815 / 20817",
+                body:
+                  "Known for its cherry-blossom streets and large single-family homes on generous lots, this part of Bethesda usually means multiple bedrooms, formal dining, and finished lower levels. Our checklist scales to bigger floor plans, and we can send a multi-cleaner team so every room gets the same attention as the main suite.",
+              },
+              {
+                name: "Woodmont Triangle & Downtown",
+                zip: "20814",
+                body:
+                  "The walkable downtown core around Woodmont Triangle and the Wisconsin Avenue corridor is mostly high-rise condos and apartments. We coordinate with front desks and service elevators, provide a certificate of insurance when a building requires one, and fit visits to condo layouts on weekday or weekend windows.",
+              },
+            ].map((n) => (
+              <div
+                key={n.name}
+                className="bg-card border border-border rounded-xl p-6 hover:shadow-md transition-shadow"
+              >
+                <div className="flex items-baseline gap-2 mb-3">
+                  <h3 className="font-heading font-bold text-foreground">{n.name}</h3>
+                  <span className="text-xs text-muted-foreground">ZIP {n.zip}</span>
+                </div>
+                <p className="text-sm text-muted-foreground leading-relaxed">{n.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── FAQ ───────────────────────────────────────────── */}
       <section className="py-12 md:py-16 bg-muted/30">
         <div className="container mx-auto px-4 max-w-4xl">
