@@ -36,6 +36,18 @@ interface QuoteFormProps {
 /* Brand CTA gradient (blue → teal) + accent-tinted glow */
 const CTA_GRADIENT = "linear-gradient(135deg,hsl(214 70% 30%),hsl(195 85% 45%))";
 
+/* Critical-destination confirmation window before we tell the user the lead was received. */
+const CRITICAL_TIMEOUT_MS = 9000;
+
+/* Reject a promise if it hasn't settled within `ms` — used to bound the critical waits so a
+ * hung network never leaves the user staring at a spinner. */
+function withTimeout<T>(p: Promise<T>, ms: number): Promise<T> {
+  return Promise.race([
+    p,
+    new Promise<never>((_, reject) => setTimeout(() => reject(new Error("timeout")), ms)),
+  ]);
+}
+
 /* Layered 3D card treatment copied from the ads landing (only the glow tint varies per card). */
 const card3dStyle = (glow: string): React.CSSProperties => ({
   background: "linear-gradient(145deg,#ffffff,#f1f4f9)",
@@ -69,18 +81,71 @@ const QuoteForm = ({ submitLabel = "GET MY FREE QUOTE →", defaultService = "",
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [submittedName, setSubmittedName] = useState("");
+  // Honeypot — hidden from real users; a filled value means a bot submitted the form.
+  const [botField, setBotField] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Honeypot: a real user never sees or fills #bot-field. A filled value = bot.
+    // Silently drop: no network calls, no tracking, no success/error UI (do not tip the bot off).
+    if (botField) return;
+
     setSubmitting(true);
 
-    try {
-      // Save to database (non-blocking; Supabase is loaded on demand so its 169KB
-      // bundle stays out of the initial page load and only loads on form submit).
-      import("@/integrations/supabase/client").then(({ supabase }) =>
-        supabase.from("quote_requests").insert({
-          // NOTE: the quote_requests table has no `address`/`sqft` columns — both are folded
-          // into `message` below. Adding them here fails the whole insert with PGRST204.
+    // ── Secondary channels (fire-and-forget backups — success NEVER depends on these) ──
+    const encode = (data: Record<string, string>) =>
+      Object.keys(data).map(k => `${encodeURIComponent(k)}=${encodeURIComponent(data[k])}`).join("&");
+
+    // Netlify Forms (backup record) — includes the honeypot field so Netlify can filter bots.
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({
+        "form-name": "quote",
+        "bot-field": botField,
+        name: formData.name,
+        phone: formData.phone,
+        email: formData.email,
+        zip: formData.zip,
+        address: formData.address,
+        sqft: formData.sqft,
+        service: formData.service,
+        bedrooms: formData.bedrooms || "",
+        bathrooms: formData.bathrooms || "",
+        frequency: formData.frequency || "",
+        preferred_date: formData.date || "",
+        message: formData.message || "",
+      }),
+    }).catch(console.error);
+
+    // Formatted HTML email via Netlify Function (Resend) — backup notification.
+    fetch("/api/send-quote-email", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: formData.name,
+        phone: formData.phone,
+        email: formData.email,
+        address: formData.address,
+        zip: formData.zip,
+        sqft: formData.sqft || null,
+        service: formData.service,
+        bedrooms: formData.bedrooms || null,
+        bathrooms: formData.bathrooms || null,
+        frequency: formData.frequency || null,
+        preferred_date: formData.date || null,
+        message: formData.message || null,
+      }),
+    }).catch((err) => console.error("Email notification failed (non-critical):", err));
+
+    // ── Critical destinations: we only tell the user "received" if AT LEAST ONE confirms. ──
+    // (1) Supabase insert — confirmed when the insert returns no error.
+    const supabaseCritical = withTimeout(
+      (async () => {
+        const { supabase } = await import("@/integrations/supabase/client");
+        // NOTE: quote_requests has no `address`/`sqft` columns — both folded into `message`.
+        const { error } = await supabase.from("quote_requests").insert({
           name: formData.name,
           phone: formData.phone,
           email: formData.email,
@@ -93,78 +158,57 @@ const QuoteForm = ({ submitLabel = "GET MY FREE QUOTE →", defaultService = "",
           message: [formData.address ? `Address: ${formData.address}` : "", formData.sqft ? `Home size: ${formData.sqft} sq ft` : "", formData.message || ""].filter(Boolean).join(" · ") || null,
           sms_consent: formData.smsConsent,
           email_consent: formData.emailConsent,
-        }).then(({ error }) => { if (error) console.error("DB error:", error); })
-      ).catch((err) => console.error("Supabase load error:", err));
+        });
+        if (error) throw error;
+        return true;
+      })(),
+      CRITICAL_TIMEOUT_MS,
+    );
 
-      // Submit via Netlify Forms (backup record)
-      const encode = (data: Record<string, string>) =>
-        Object.keys(data).map(k => `${encodeURIComponent(k)}=${encodeURIComponent(data[k])}`).join("&");
+    // (2) receive-lead scheduling app — confirmed only when response.ok === true.
+    const receiveLeadCritical = withTimeout(
+      (async () => {
+        const controller = new AbortController();
+        const abortTimer = setTimeout(() => controller.abort(), CRITICAL_TIMEOUT_MS);
+        try {
+          const res = await fetch('https://jzxhejqokcjyxxklnnza.supabase.co/functions/v1/receive-lead', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'x-webhook-secret': 'ccc-lead-webhook-2026',
+            },
+            signal: controller.signal,
+            body: JSON.stringify({
+              name: formData.name,
+              phone: formData.phone,
+              email: formData.email,
+              address: formData.address,
+              zip: formData.zip,
+              sqft: formData.sqft,
+              service: formData.service,
+              bedrooms: formData.bedrooms,
+              bathrooms: formData.bathrooms,
+              frequency: formData.frequency,
+              date: formData.date,
+              message: formData.message,
+              smsConsent: formData.smsConsent,
+              emailConsent: formData.emailConsent,
+            }),
+          });
+          if (!res.ok) throw new Error(`receive-lead ${res.status}`);
+          return true;
+        } finally {
+          clearTimeout(abortTimer);
+        }
+      })(),
+      CRITICAL_TIMEOUT_MS,
+    );
 
-      fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode({
-          "form-name": "quote",
-          name: formData.name,
-          phone: formData.phone,
-          email: formData.email,
-          zip: formData.zip,
-          address: formData.address,
-          sqft: formData.sqft,
-          service: formData.service,
-          bedrooms: formData.bedrooms || "",
-          bathrooms: formData.bathrooms || "",
-          frequency: formData.frequency || "",
-          preferred_date: formData.date || "",
-          message: formData.message || "",
-        }),
-      }).catch(console.error);
+    const settled = await Promise.allSettled([supabaseCritical, receiveLeadCritical]);
+    const confirmed = settled.some((r) => r.status === "fulfilled" && r.value === true);
 
-      // Forward lead to Capital Clean Care scheduling app
-      fetch('https://jzxhejqokcjyxxklnnza.supabase.co/functions/v1/receive-lead', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'x-webhook-secret': 'ccc-lead-webhook-2026',
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          phone: formData.phone,
-          email: formData.email,
-          address: formData.address,
-          zip: formData.zip,
-          sqft: formData.sqft,
-          service: formData.service,
-          bedrooms: formData.bedrooms,
-          bathrooms: formData.bathrooms,
-          frequency: formData.frequency,
-          date: formData.date,
-          message: formData.message,
-          smsConsent: formData.smsConsent,
-          emailConsent: formData.emailConsent,
-        }),
-      }).catch(() => { /* non-blocking */ });
-
-      // Send formatted HTML email via Netlify Function (non-blocking — form succeeds regardless)
-      fetch("/api/send-quote-email", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: formData.name,
-          phone: formData.phone,
-          email: formData.email,
-          address: formData.address,
-          zip: formData.zip,
-          sqft: formData.sqft || null,
-          service: formData.service,
-          bedrooms: formData.bedrooms || null,
-          bathrooms: formData.bathrooms || null,
-          frequency: formData.frequency || null,
-          preferred_date: formData.date || null,
-          message: formData.message || null,
-        }),
-      }).catch((err) => console.error("Email notification failed (non-critical):", err));
-
+    if (confirmed) {
+      // Only fire conversion tracking, clear the form and show success once a lead is confirmed.
       trackQuoteFormSubmit(formData.service);
       if (typeof gtag !== "undefined") {
         gtag('event', 'conversion', {
@@ -176,12 +220,11 @@ const QuoteForm = ({ submitLabel = "GET MY FREE QUOTE →", defaultService = "",
       setSubmittedName(formData.name.split(" ")[0]);
       setFormData({ name: "", phone: "", email: "", address: "", zip: "", sqft: "", service: "", bedrooms: "3", bathrooms: "2", frequency: "", date: "", message: "", smsConsent: false, emailConsent: false });
       setSubmitted(true);
-    } catch (err) {
-      console.error("Submission error:", err);
-      toast.error("Something went wrong. Please try again or call us directly.");
-    } finally {
-      setSubmitting(false);
+    } else {
+      // Both critical destinations failed/timed out — keep the user's data, no false success.
+      toast.error("We couldn't confirm your request. Please try again or call (240) 704-2551.");
     }
+    setSubmitting(false);
   };
 
   const update = (field: string, value: string) =>
@@ -391,6 +434,17 @@ const QuoteForm = ({ submitLabel = "GET MY FREE QUOTE →", defaultService = "",
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-4">
+        {/* Honeypot — visually hidden, off-tab, no autofill. Bots fill it; real users never do. */}
+        <input
+          type="text"
+          name="bot-field"
+          tabIndex={-1}
+          autoComplete="off"
+          aria-hidden="true"
+          value={botField}
+          onChange={(e) => setBotField(e.target.value)}
+          style={{ position: "absolute", left: "-9999px", width: 1, height: 1, opacity: 0 }}
+        />
         {/* ── Service Type ── */}
         <div>
           <Label className="text-xs font-semibold mb-1 block">Service Type *</Label>
