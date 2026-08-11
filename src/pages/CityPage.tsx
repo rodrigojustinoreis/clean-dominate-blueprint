@@ -55,10 +55,19 @@ const regionImages: Record<string, string> = {
   virginia: regionVA,
 };
 
-// 8C P1 pilot — hubs repositioned as an all-services umbrella (H1 "Cleaning Services in <City>")
-// so they stop competing with the city's own /house-cleaning subpage for the head term.
-// Their metaTitle already carries the "Cleaning Services … — All Services" framing.
-const UMBRELLA_HUBS = new Set(["bethesda-md", "rockville-md"]);
+// Hubs repositioned as an all-services umbrella (H1 "Cleaning Services in <City>") so they
+// stop competing with the city's own /house-cleaning subpage for the head term. Every slug
+// here already carries the "Cleaning Services … — All Services" metaTitle, so only the H1 is
+// being aligned. 8D piloted bethesda + rockville; 8F extends to the four hubs whose umbrella
+// title was already in place (silver-spring, north-bethesda, chevy-chase, potomac).
+const UMBRELLA_HUBS = new Set([
+  "bethesda-md",
+  "rockville-md",
+  "silver-spring-md",
+  "north-bethesda-md",
+  "chevy-chase-md",
+  "potomac-md",
+]);
 
 /** Specific neighborhoods served per city — boosts local SEO relevance */
 const cityNeighborhoods: Record<string, string[]> = {
