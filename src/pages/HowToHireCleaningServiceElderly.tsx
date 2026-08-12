@@ -22,9 +22,7 @@ const FTC = "https://consumer.ftc.gov/articles/how-avoid-scam";
 const PHONE = "(240) 704-2551";
 const PHONE_HREF = "tel:+12407042551";
 
-// The 10 vetting questions — rendered as a visible numbered list AND emitted as an
-// ItemList JSON-LD (see itemListSchema below). Keeping one source of truth so the
-// visible content and the structured data can never drift apart.
+// The 10 vetting questions — rendered as a visible numbered list in the article body.
 const QUESTIONS: string[] = [
   "Are you licensed and insured, and can you email me a current certificate of insurance?",
   "Who exactly will enter my parent's home — your own employees, or subcontractors?",
@@ -37,17 +35,6 @@ const QUESTIONS: string[] = [
   "Is your pricing a clear written flat rate, and what exactly does it include?",
   "Can I reach a real person — and get a heads-up or text update after each visit?",
 ];
-
-const itemListSchema = {
-  "@context": "https://schema.org",
-  "@type": "ItemList",
-  name: "10 Questions to Ask Before Hiring a Cleaning Service for an Elderly Parent",
-  itemListElement: QUESTIONS.map((q, i) => ({
-    "@type": "ListItem",
-    position: i + 1,
-    name: q,
-  })),
-};
 
 const HowToHireCleaningServiceElderly = () => {
   const { seoHelmet } = useSEO({
@@ -63,7 +50,6 @@ const HowToHireCleaningServiceElderly = () => {
       {seoHelmet}
       <Helmet>
         <meta name="keywords" content="hire cleaning service for elderly parents, vetting a cleaner for aging parent, questions to ask a cleaning company senior" />
-        <script type="application/ld+json" id="itemlist-schema">{JSON.stringify(itemListSchema)}</script>
       </Helmet>
 
       <ArticleSchema
