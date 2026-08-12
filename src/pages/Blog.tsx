@@ -811,7 +811,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-01-25",
     readTime: "7 min read",
     category: "Cleaning Guides",
-    coverImage: "https://images.pexels.com/photos/1909652/pexels-photo-1909652.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
+    coverImage: "/images/blog/deep-scrub-detail.webp",
   },
   {
     slug: "eco-cleaning-tips-winters-maryland",
@@ -930,7 +930,7 @@ export const blogPosts: BlogPost[] = [
     date: "2026-03-18",
     readTime: "6 min read",
     category: "Cleaning Guides",
-    coverImage: "https://images.pexels.com/photos/1909652/pexels-photo-1909652.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
+    coverImage: "/images/blog/move-in-empty-home.webp",
   },
   {
     slug: "allergy-proofing-home-dmv",
