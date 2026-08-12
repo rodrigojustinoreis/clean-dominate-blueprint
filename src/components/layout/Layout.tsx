@@ -13,8 +13,9 @@ const Layout = ({ children }: { children: ReactNode }) => (
     <Footer />
     <StickyMobileCTA />
     <QuoteChatbot />
-    {/* bottom padding for mobile sticky CTA */}
-    <div className="h-14 md:hidden" />
+    {/* Bottom spacer matching the sticky CTA (~73px) + iPhone safe area, on the same
+        breakpoint as the bar (lg:hidden) so tablets 768–1023px are compensated too. */}
+    <div className="lg:hidden" style={{ height: "calc(4.5rem + env(safe-area-inset-bottom))" }} />
   </div>
 );
 

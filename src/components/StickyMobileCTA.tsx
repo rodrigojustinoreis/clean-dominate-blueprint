@@ -26,7 +26,10 @@ const StickyMobileCTA = () => {
   if (dismissed || !visible) return null;
 
   return (
-    <div className="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-card/97 backdrop-blur border-t border-border shadow-[0_-4px_24px_rgba(0,0,0,0.12)] px-3 py-3 flex items-center gap-2 animate-fade-up">
+    <div
+      className="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-card/97 backdrop-blur border-t border-border shadow-[0_-4px_24px_rgba(0,0,0,0.12)] px-3 py-3 flex items-center gap-2 animate-fade-up"
+      style={{ paddingBottom: "calc(0.75rem + env(safe-area-inset-bottom))" }}
+    >
       <a
         href="tel:+12407042551"
         className="flex items-center justify-center gap-1.5 h-12 px-4 rounded-full border-2 border-border font-bold text-sm text-foreground hover:bg-secondary transition-colors shrink-0"
