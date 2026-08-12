@@ -430,11 +430,9 @@ export const FounderPersonSchema = () => {
     "@type": "Person",
     name: "Rodrigo Reis",
     jobTitle: "Founder & Owner",
-    worksFor: {
-      "@type": "LocalBusiness",
-      "@id": `${BUSINESS.url}/#business`,
-      name: BUSINESS.name,
-    },
+    // Pure @id reference to the #business node defined by LocalBusinessSchema (with address)
+    // — avoids emitting a second, address-less LocalBusiness object.
+    worksFor: { "@id": `${BUSINESS.url}/#business` },
     url: `${BUSINESS.url}/about`,
     description: "Founder of Capital Clean Care, a family-owned eco-friendly residential cleaning company serving Maryland, Washington DC, and Northern Virginia since 2015.",
     knowsAbout: ["Eco-Friendly Cleaning", "Residential House Cleaning", "Green Cleaning Products", "Home Sanitation", "DMV Area Cleaning Services"],
@@ -451,22 +449,9 @@ export const AboutPageSchema = () => {
     name: "About Capital Clean Care — Founder Story, GreenShield Method & Our Team",
     description: "The story behind Capital Clean Care: a family-founded eco-friendly cleaning service serving MD, DC & VA for over a decade. Learn about our GreenShield 5-Step Clean™ methodology and our dedicated team.",
     url: `${BUSINESS.url}/about`,
-    mainEntity: {
-      "@type": "LocalBusiness",
-      "@id": `${BUSINESS.url}/#business`,
-      name: BUSINESS.name,
-      foundingDate: BUSINESS_INFO.yearFounded,
-      foundingLocation: {
-        "@type": "Place",
-        name: "Silver Spring, MD",
-      },
-      founder: {
-        "@type": "Person",
-        name: "Rodrigo Reis",
-      },
-      numberOfEmployees: { "@type": "QuantitativeValue", minValue: 5, maxValue: 20 },
-      slogan: "We Clean Like It's Our Own Home",
-    },
+    // Pure @id reference to the #business node defined by LocalBusinessSchema (with address)
+    // — avoids emitting a second, address-less LocalBusiness object.
+    mainEntity: { "@id": `${BUSINESS.url}/#business` },
   };
   return <JsonLd id="about-page-schema" schema={schema} />;
 };
