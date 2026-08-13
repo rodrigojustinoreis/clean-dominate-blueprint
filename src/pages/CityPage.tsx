@@ -156,6 +156,18 @@ const cityWhyIntros: Record<string, string> = {
   "annandale-va": "Annandale's welcoming, multicultural community deserves a cleaning service that treats every home with genuine care — dependable, eco-friendly, and always consistent.",
 };
 
+// Explicit allowlist: when a city+service card would point at the noindex
+// /locations/<city>/<service> twin AND an indexed vanity page owns that
+// city+service, link the vanity instead. Only these exact pairs are affected —
+// no regex, no inference. (Gaithersburg is intentionally excluded: its twin is
+// also indexed, so it stays on /locations/... pending GSC review.)
+const RETARGET_TO_VANITY: Record<string, string> = {
+  "takoma-park-md/apartment-cleaning": "/apartment-cleaning-takoma-park-md",
+  "kensington-md/deep-cleaning": "/deep-cleaning-kensington-md",
+  "ellicott-city-md/house-cleaning": "/house-cleaning-ellicott-city-md",
+  "clarksburg-md/post-construction-cleaning": "/post-construction-cleaning-clarksburg-md",
+};
+
 const CityPage = () => {
   const { slug } = useParams<{ slug: string }>();
   const city = getCityBySlug(slug || "");
@@ -280,10 +292,12 @@ const CityPage = () => {
           {/* Service-location specific links */}
           {hasServiceLocationPages && (
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-              {slServices.map((sl) => (
+              {slServices.map((sl) => {
+                const serviceHref = RETARGET_TO_VANITY[`${city.slug}/${sl.slug}`] ?? `/locations/${city.slug}/${sl.slug}`;
+                return (
                 <Card key={sl.slug} className="group hover:shadow-md transition-all duration-200 hover:-translate-y-0.5">
                   <CardContent className="p-5">
-                    <Link to={`/locations/${city.slug}/${sl.slug}`} className="flex items-center gap-3">
+                    <Link to={serviceHref} className="flex items-center gap-3">
                       <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center shrink-0">
                         <Sparkles className="h-5 w-5 text-accent" />
                       </div>
@@ -295,7 +309,8 @@ const CityPage = () => {
                     </Link>
                   </CardContent>
                 </Card>
-              ))}
+                );
+              })}
             </div>
           )}
 
