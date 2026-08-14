@@ -166,6 +166,9 @@ const RETARGET_TO_VANITY: Record<string, string> = {
   "kensington-md/deep-cleaning": "/deep-cleaning-kensington-md",
   "ellicott-city-md/house-cleaning": "/house-cleaning-ellicott-city-md",
   "clarksburg-md/post-construction-cleaning": "/post-construction-cleaning-clarksburg-md",
+  "wheaton-md/house-cleaning": "/house-cleaning-wheaton-md",
+  "germantown-md/deep-cleaning": "/deep-cleaning-germantown-md",
+  "frederick-md/house-cleaning": "/house-cleaning-frederick-md",
 };
 
 const CityPage = () => {
