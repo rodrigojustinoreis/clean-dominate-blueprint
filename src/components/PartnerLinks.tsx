@@ -2,10 +2,10 @@ import { ExternalLink } from "lucide-react";
 
 const partners = [
   { name: "Montgomery County Chamber of Commerce", url: "https://www.montgomerycountychamber.com" },
-  { name: "Greater Silver Spring Chamber", url: "https://www.silverspringchamber.com" },
+  { name: "Greater Silver Spring Chamber", url: "https://www.gsscc.org/" },
   { name: "Arlington Chamber of Commerce", url: "https://www.arlingtonchamber.org" },
   { name: "DC Chamber of Commerce", url: "https://www.dcchamber.org" },
-  { name: "Fairfax County Chamber", url: "https://www.fairfaxcountychamber.org" },
+  { name: "Northern Virginia Chamber of Commerce", url: "https://nvcbusiness.org/" },
 ];
 
 const PartnerLinks = ({ className = "" }: { className?: string }) => (
