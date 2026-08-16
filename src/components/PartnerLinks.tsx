@@ -1,7 +1,7 @@
 import { ExternalLink } from "lucide-react";
 
 const partners = [
-  { name: "Montgomery County Chamber of Commerce", url: "https://www.montgomerycountychamber.com" },
+  { name: "Montgomery County Chamber of Commerce", url: "https://www.mcccmd.com/" },
   { name: "Greater Silver Spring Chamber", url: "https://www.gsscc.org/" },
   { name: "Arlington Chamber of Commerce", url: "https://www.arlingtonchamber.org" },
   { name: "DC Chamber of Commerce", url: "https://www.dcchamber.org" },
