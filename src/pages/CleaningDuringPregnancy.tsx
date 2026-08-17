@@ -119,7 +119,8 @@ const Bullets = ({ items }: { items: string[] }) => (
   </ul>
 );
 
-// Contextual, real-team illustration that supports the text of the section it sits in.
+// Contextual illustration that supports the text of the section it sits in.
+// The campaign carousel slides carry their own caption text, so `caption` is optional.
 const Illo = ({
   src,
   alt,
@@ -130,12 +131,12 @@ const Illo = ({
 }: {
   src: string;
   alt: string;
-  caption: string;
+  caption?: string;
   width: number;
   height: number;
   narrow?: boolean;
 }) => (
-  <figure className={`my-10 not-prose ${narrow ? "max-w-sm" : "max-w-xl"} mx-auto`}>
+  <figure className={`my-10 not-prose ${narrow ? "max-w-md" : "max-w-xl"} mx-auto`}>
     <img
       src={src}
       alt={alt}
@@ -145,7 +146,7 @@ const Illo = ({
       width={width}
       height={height}
     />
-    <figcaption className="text-center text-sm text-muted-foreground mt-3">{caption}</figcaption>
+    {caption ? <figcaption className="text-center text-sm text-muted-foreground mt-3">{caption}</figcaption> : null}
   </figure>
 );
 
@@ -265,6 +266,13 @@ const CleaningDuringPregnancy = () => {
               This approach gives the household a clear finish line. It also leaves room for lighter maintenance closer to
               the due date.
             </p>
+            <Illo
+              src="/images/blog/pregnancy-prepare-home.webp"
+              alt="A calm expecting mother arranging folded baby clothes in a bright, freshly cleaned nursery"
+              caption="The goal is a clean, comfortable, manageable home — not a perfectly sterile one."
+              width={1400}
+              height={933}
+            />
           </FadeInSection>
 
           {/* ── Products / precautions ── */}
@@ -275,15 +283,6 @@ const CleaningDuringPregnancy = () => {
               appropriate for every pregnancy. Start with the product label. Use the product only for its intended purpose,
               follow dilution and surface instructions, and use any protective equipment specified by the manufacturer.
             </p>
-
-            <Illo
-              src="/images/team/eco-friendly-products.webp"
-              alt="A Capital Clean Care team member carrying eco-friendly cleaning supplies and wearing protective gloves"
-              caption="Following the label, ventilating the room, and using gloves keeps product exposure low."
-              width={800}
-              height={800}
-              narrow
-            />
 
             <h3 className="font-heading text-xl md:text-2xl font-semibold text-foreground mb-3">Use one product at a time</h3>
             <p className="mb-4">
@@ -368,14 +367,6 @@ const CleaningDuringPregnancy = () => {
               "Keep household cleaners separated from food and feeding items.",
             ]} />
 
-            <Illo
-              src="/images/team/real-team-maria-fridge.webp"
-              alt="A Capital Clean Care team member cleaning refrigerator shelves in a client's kitchen"
-              caption="The kitchen works overtime after a baby arrives — a clean fridge and clear counters help most."
-              width={1280}
-              height={960}
-            />
-
             <h3 className="font-heading text-xl md:text-2xl font-semibold text-foreground mb-3">3. Bathroom</h3>
             <p className="mb-4">A bathroom reset can reduce the amount of work waiting after delivery:</p>
             <Bullets items={[
@@ -389,14 +380,6 @@ const CleaningDuringPregnancy = () => {
               If scrubbing the tub or shower requires prolonged bending, an uncomfortable posture, or significant effort,
               place it on the delegation list.
             </p>
-
-            <Illo
-              src="/images/services/bathroom-detail.webp"
-              alt="A Capital Clean Care team member deep-scrubbing bathroom tile with a powered brush"
-              caption="Heavy scrubbing that requires prolonged bending is a good task to hand off."
-              width={900}
-              height={675}
-            />
 
             <h3 className="font-heading text-xl md:text-2xl font-semibold text-foreground mb-3">4. Floors, rugs, and accumulated dust</h3>
             <p className="mb-4">
@@ -413,14 +396,6 @@ const CleaningDuringPregnancy = () => {
               Large rugs, heavy furniture, and appliances should not be moved by someone who has been advised to avoid heavy
               lifting.
             </p>
-
-            <Illo
-              src="/images/team/team-mopping-bright-room.jpg"
-              alt="A Capital Clean Care team member mopping a hardwood floor in a bright, empty room"
-              caption="A whole-home floor reset makes everyday maintenance easier once the baby is home."
-              width={760}
-              height={570}
-            />
 
             <h3 className="font-heading text-xl md:text-2xl font-semibold text-foreground mb-3">5. Frequently touched surfaces</h3>
             <p className="mb-4">
@@ -472,6 +447,13 @@ const CleaningDuringPregnancy = () => {
               A partner, family member, friend, or professional cleaning team can handle labor-intensive work while the
               expecting parent focuses on lighter organization and baby preparation.
             </p>
+            <Illo
+              src="/images/blog/pregnancy-delegate-cleaning.webp"
+              alt="A professional cleaner in a navy uniform vacuuming while an expecting parent folds baby laundry"
+              caption="A professional team can handle the labor-intensive work while you prepare for the baby."
+              width={1400}
+              height={933}
+            />
           </FadeInSection>
 
           {/* ── Timing ── */}
@@ -537,16 +519,6 @@ const CleaningDuringPregnancy = () => {
               Professional cleaning can be useful when time, fatigue, discomfort, or physical restrictions make a whole-home
               reset difficult. It is not a requirement, and it does not need to replace every household task.
             </p>
-
-            <Illo
-              src="/images/team/real-team-two-members.webp"
-              alt="Two Capital Clean Care team members ready to help a family prepare their home before a baby arrives"
-              caption="A professional team can take the labor-intensive work off your list while you prepare for baby."
-              width={800}
-              height={1067}
-              narrow
-            />
-
             <p className="mb-4">
               A pre-baby cleaning service can focus on labor-intensive areas such as bathrooms, kitchen details, floors,
               dust, and high-touch surfaces. The family can then handle personal organizing, baby supplies, and lighter
