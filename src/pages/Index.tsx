@@ -152,6 +152,20 @@ const Index = () => {
               </p>
             </div>
 
+            <figure className="max-w-2xl mx-auto mb-12">
+              <img
+                src="/images/team/real-team-maria-fridge.webp"
+                alt="A uniformed Capital Clean Care team member detailing a refrigerator in a DMV home"
+                className="rounded-2xl shadow-xl w-full h-auto"
+                loading="lazy"
+                width={1280}
+                height={960}
+              />
+              <figcaption className="text-center text-xs text-muted-foreground mt-3">
+                Our uniformed, background-checked team at work in a capital-area home.
+              </figcaption>
+            </figure>
+
             <div className="grid md:grid-cols-3 gap-6 mb-10">
               {[
                 {
