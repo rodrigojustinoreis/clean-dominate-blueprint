@@ -22,7 +22,8 @@ const ES_MESSAGE = {
 };
 
 const AnnouncementBar = () => {
-  const isSpanish = useLocation().pathname.startsWith("/es");
+  const pathname = useLocation().pathname;
+  const isSpanish = pathname.startsWith("/es");
   const [july4] = useState(() => isJuly4Promo());
   const [visible, setVisible] = useState(() => {
     if (typeof window === "undefined") return true;
@@ -51,7 +52,8 @@ const AnnouncementBar = () => {
     setVisible(false);
   };
 
-  if (!visible) return null;
+  // Hidden on the home page per request; still shown on every other route.
+  if (pathname === "/" || !visible) return null;
 
   // ── Festive 4th of July bar (same visual language as the popup) ──
   if (july4) {
