@@ -67,13 +67,13 @@ const HeroSection = () => {
         </div>
 
         <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] font-bold text-foreground leading-[1.1] tracking-[-0.03em] mb-6 animate-fade-up drop-shadow-sm" style={{ animationDelay: "100ms" }}>
-          Eco-Friendly House Cleaning
+          Professional House Cleaning
           <br />
           <span className="text-gradient">in Maryland, DC & Virginia</span>
         </h1>
 
         <p className="text-muted-foreground text-sm md:text-lg mb-8 leading-relaxed max-w-xl animate-fade-up" style={{ animationDelay: "200ms" }}>
-          Background-checked professionals. Eco-friendly products safe for kids and pets. A 24-hour satisfaction guarantee — or we re-clean free.
+          Eco-friendly cleaning by background-checked professionals. Safe for kids and pets. Licensed & insured, with a 24-hour satisfaction guarantee.
         </p>
 
         {/* Trust pills */}
@@ -94,7 +94,7 @@ const HeroSection = () => {
         <div className="flex flex-col sm:flex-row gap-4 animate-fade-up" style={{ animationDelay: "400ms" }}>
           <div className="flex flex-col items-start gap-1">
             <Button variant="cta" size="lg" className="text-sm px-8 h-14 rounded-full shadow-lg shadow-accent/25 hover:shadow-accent/40 hover:-translate-y-0.5 transition-all duration-300" asChild>
-              <a href="#quote" onClick={() => trackBookNowClick("hero_section")}>Get a Free Quote <ArrowRight className="ml-2 h-4 w-4" /></a>
+              <a href="#quote" onClick={() => trackBookNowClick("hero_section")}>Get My Free Quote <ArrowRight className="ml-2 h-4 w-4" /></a>
             </Button>
             <span className="text-xs text-muted-foreground pl-2">No commitment · Response within hours</span>
           </div>
