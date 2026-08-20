@@ -60,6 +60,7 @@ function getAllRoutes(): string[] {
     "/resources/senior-downsizing-decluttering-cleaning",
     "/resources/cleaning-during-pregnancy-prepare-home-for-baby",
     "/resources/bringing-baby-home-cleaning-guide",
+    "/resources/baby-crawling-floor-cleaning-guide",
     "/resources/why-is-my-dog-coughing-after-house-cleaning",
     "/resources/how-to-clean-hardwood-floors-naturally",
     "/resources/real-deep-cleaning-project-bethesda-home",

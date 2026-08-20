@@ -88,6 +88,15 @@ export const blogPosts: BlogPost[] = [
     coverImage: "/images/team/real-team-maria-fridge.webp",
   },
   {
+    slug: "baby-crawling-floor-cleaning-guide",
+    title: "Baby Starts Crawling: How Often Should You Clean Your Floors—and Which Products Are Baby-Safe?",
+    excerpt: "How often to mop by floor type, choosing a baby-safe cleaner by reading the label, cleaning vs. disinfecting, and when recurring cleaning helps.",
+    date: "2026-08-20",
+    readTime: "9 min read",
+    category: "Home Care Guides",
+    coverImage: "/images/resources/baby-crawling/hero-family-official-uniform-v2.webp",
+  },
+  {
     slug: "bringing-baby-home-cleaning-guide",
     title: "Bringing Baby Home: A Practical Cleaning Guide for the First Weeks With a Newborn",
     excerpt: "A realistic newborn cleaning routine — feeding items, diaper areas, laundry, floors, pets, visitors, safer products, and tasks to delegate.",

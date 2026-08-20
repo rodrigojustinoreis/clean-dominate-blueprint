@@ -337,6 +337,11 @@ const BringingBabyHomeCleaning = () => {
               Your newborn may not be crawling yet, but floors still affect daily comfort—especially when adults are walking through the house, sitting on rugs, or caring for pets.
             </p>
             <p className="mb-6">
+              When your baby does start crawling, floors become an even bigger priority. See our{" "}
+              <Link to="/resources/baby-crawling-floor-cleaning-guide" className="text-accent font-medium hover:underline">floor-cleaning guide for the crawling stage</Link>{" "}
+              for how often to mop by floor type and how to choose a safer cleaner.
+            </p>
+            <p className="mb-6">
               Prioritize:
             </p>
             <InlineArticleImage
