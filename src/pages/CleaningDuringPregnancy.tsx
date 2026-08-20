@@ -579,6 +579,16 @@ const CleaningDuringPregnancy = () => {
             </div>
           </FadeInSection>
 
+          {/* ── Bridge link to newborn guide ── */}
+          <FadeInSection>
+            <p className="mb-8 text-center text-lg">
+              Already home with your newborn?{" "}
+              <Link to="/resources/bringing-baby-home-cleaning-guide" className="text-accent font-medium hover:underline">
+                Continue with our practical cleaning guide for the first weeks after bringing baby home.
+              </Link>
+            </p>
+          </FadeInSection>
+
           {/* ── Medical disclaimer (end) ── */}
           <FadeInSection>
             <div className="rounded-2xl border border-border bg-secondary/40 p-5 md:p-6 mt-10 text-base md:text-lg text-muted-foreground italic">

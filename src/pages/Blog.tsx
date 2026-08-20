@@ -88,6 +88,15 @@ export const blogPosts: BlogPost[] = [
     coverImage: "/images/team/real-team-maria-fridge.webp",
   },
   {
+    slug: "bringing-baby-home-cleaning-guide",
+    title: "Bringing Baby Home: A Practical Cleaning Guide for the First Weeks With a Newborn",
+    excerpt: "A realistic newborn cleaning routine — feeding items, diaper areas, laundry, floors, pets, visitors, safer products, and tasks to delegate.",
+    date: "2026-08-18",
+    readTime: "8 min read",
+    category: "Home Care Guides",
+    coverImage: "/images/resources/bringing-baby-home-cleaning-guide.webp",
+  },
+  {
     slug: "cleaning-during-pregnancy-prepare-home-for-baby",
     title: "Cleaning During Pregnancy: How to Prepare Your Home for Baby",
     excerpt: "A practical guide to cleaning during pregnancy — product precautions, priority rooms, tasks to delegate, and a complete pre-baby cleaning checklist.",
