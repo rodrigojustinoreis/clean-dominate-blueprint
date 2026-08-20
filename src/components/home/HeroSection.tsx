@@ -67,7 +67,7 @@ const HeroSection = () => {
         </div>
 
         <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] font-bold text-foreground leading-[1.1] tracking-[-0.03em] mb-6 animate-fade-up drop-shadow-sm" style={{ animationDelay: "100ms" }}>
-          Professional House Cleaning
+          Professional Eco-Friendly House Cleaning
           <br />
           <span className="text-gradient">in Maryland, DC & Virginia</span>
         </h1>
