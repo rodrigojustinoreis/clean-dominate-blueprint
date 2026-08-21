@@ -71,6 +71,7 @@ const SeniorDownsizingDecluttering = lazy(() => import("./pages/SeniorDownsizing
 const CleaningDuringPregnancy = lazy(() => import("./pages/CleaningDuringPregnancy"));
 const BringingBabyHomeCleaning = lazy(() => import("./pages/BringingBabyHomeCleaning"));
 const BabyCrawlingFloorCleaning = lazy(() => import("./pages/BabyCrawlingFloorCleaning"));
+const ToddlerCleaningSchedule = lazy(() => import("./pages/ToddlerCleaningSchedule"));
 const WhyIsMyDogCoughingAfterCleaning = lazy(() => import("./pages/WhyIsMyDogCoughingAfterCleaning"));
 const HowToCleanHardwoodFloorsNaturally = lazy(() => import("./pages/HowToCleanHardwoodFloorsNaturally"));
 const RealDeepCleaningProjectBethesda = lazy(() => import("./pages/RealDeepCleaningProjectBethesda"));
@@ -302,6 +303,7 @@ const AppRoutesLazy = () => (
     <Route path="/resources/cleaning-during-pregnancy-prepare-home-for-baby" element={<CleaningDuringPregnancy />} />
     <Route path="/resources/bringing-baby-home-cleaning-guide" element={<BringingBabyHomeCleaning />} />
     <Route path="/resources/baby-crawling-floor-cleaning-guide" element={<BabyCrawlingFloorCleaning />} />
+    <Route path="/resources/cleaning-schedule-working-parents-toddlers" element={<ToddlerCleaningSchedule />} />
     <Route path="/resources/why-is-my-dog-coughing-after-house-cleaning" element={<WhyIsMyDogCoughingAfterCleaning />} />
     <Route path="/resources/how-to-clean-hardwood-floors-naturally" element={<HowToCleanHardwoodFloorsNaturally />} />
     <Route path="/resources/real-deep-cleaning-project-bethesda-home" element={<RealDeepCleaningProjectBethesda />} />

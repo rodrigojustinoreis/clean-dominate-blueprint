@@ -28,6 +28,7 @@ const QUOTE = "/#quote";
 const PREGNANCY = "/resources/cleaning-during-pregnancy-prepare-home-for-baby";
 const NEWBORN = "/resources/bringing-baby-home-cleaning-guide";
 const HARDWOOD = "/resources/how-to-clean-hardwood-floors-naturally";
+const TODDLER = "/resources/cleaning-schedule-working-parents-toddlers";
 
 // External authority sources (verified live)
 const CDC_HOME = "https://www.cdc.gov/hygiene/about/when-and-how-to-clean-and-disinfect-your-home.html";
@@ -615,6 +616,18 @@ const BabyCrawlingFloorCleaning = () => {
                   <Phone className="h-5 w-5" /> {PHONE}
                 </a>
               </div>
+            </div>
+          </FadeInSection>
+
+          <FadeInSection>
+            <div className="mt-10 rounded-2xl border border-accent/20 bg-accent/5 p-6 text-lg">
+              <p>
+                <strong>Next in the family life-stage series:</strong> once your child is walking, eating more independently,
+                and spreading small messes from room to room, use our{" "}
+                <Link to={TODDLER} className="font-medium text-accent hover:underline">
+                  realistic cleaning schedule for working parents with toddlers
+                </Link>.
+              </p>
             </div>
           </FadeInSection>
 

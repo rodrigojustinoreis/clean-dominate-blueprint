@@ -88,6 +88,15 @@ export const blogPosts: BlogPost[] = [
     coverImage: "/images/team/real-team-maria-fridge.webp",
   },
   {
+    slug: "cleaning-schedule-working-parents-toddlers",
+    title: "The Best Cleaning Schedule for Working Parents With Toddlers",
+    excerpt: "A realistic daily and weekly cleaning routine for food spills, floors, bathrooms, toys, pets, and the repeat work busy parents can delegate.",
+    date: "2026-08-21",
+    readTime: "10 min read",
+    category: "Home Care Guides",
+    coverImage: "/images/resources/toddler-cleaning-schedule/hero.webp",
+  },
+  {
     slug: "baby-crawling-floor-cleaning-guide",
     title: "Baby Starts Crawling: How Often Should You Clean Your Floors—and Which Products Are Baby-Safe?",
     excerpt: "How often to mop by floor type, choosing a baby-safe cleaner by reading the label, cleaning vs. disinfecting, and when recurring cleaning helps.",
