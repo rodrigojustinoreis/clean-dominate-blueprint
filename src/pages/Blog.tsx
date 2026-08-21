@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { Search, X, ArrowRight } from "lucide-react";
+import { Search, X, ArrowRight, BookOpen, Leaf, MapPin, Sparkles } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { useSEO } from "@/hooks/useSEO";
@@ -1093,9 +1093,9 @@ const Blog = () => {
   const bySlug = (s: string) => allPosts.find((p) => p.slug === s);
   // Three hand-picked, image-backed features (all have real cover images).
   const featured = [
-    "how-often-to-clean-pet-bowls-and-toys",
+    "how-to-clean-a-backpack-and-lunch-box",
+    "cleaning-schedule-working-parents-toddlers",
     "deep-cleaning-vs-regular-cleaning",
-    "aging-in-place-montgomery-county-cleaning",
   ]
     .map(bySlug)
     .filter(Boolean) as BlogPost[];
@@ -1133,109 +1133,93 @@ const Blog = () => {
         url="https://capitalcleancare.com/resources"
         items={recentPosts.map((p) => ({ title: p.title, slug: p.slug }))}
       />
-      <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Resources" }]} className="mb-6" />
-          <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4 tracking-[-0.03em] leading-[1.1]">
-            Cleaning <span className="text-gradient">Resource Center</span>
-          </h1>
-          <p className="text-muted-foreground text-lg mb-8 max-w-3xl">
-            Practical, eco-friendly guides for keeping your Maryland, DC &amp; Virginia home spotless —
-            checklists, real pricing, deep-cleaning and move-out guides, pet-safe methods, and everyday
-            how-tos. Browse by category, or scroll down for the latest.
-          </p>
+      <section className="relative overflow-hidden bg-primary text-white">
+        <div className="absolute -right-24 -top-24 h-80 w-80 rounded-full bg-accent/20 blur-3xl" aria-hidden="true" />
+        <div className="absolute bottom-0 left-0 h-px w-full bg-white/15" aria-hidden="true" />
+        <div className="container relative mx-auto max-w-6xl px-4 pb-24 pt-10 md:pb-28 md:pt-14">
+          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Resources" }]} className="mb-10 [&_a]:text-white/70 [&_a:hover]:text-white [&_span]:text-white/90" />
+          <div className="grid items-end gap-10 lg:grid-cols-[1.15fr_.85fr]">
+            <div>
+              <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-[#bce8f8] backdrop-blur-sm">
+                <Sparkles className="h-4 w-4" aria-hidden="true" /> Practical advice from a local cleaning team
+              </span>
+              <h1 className="max-w-3xl font-heading text-4xl font-extrabold leading-[1.02] tracking-[-0.035em] sm:text-5xl md:text-6xl">
+                A cleaner home starts with the right answer.
+              </h1>
+              <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/78 md:text-xl">
+                Clear, field-tested guides for real homes in Maryland, DC and Northern Virginia—from everyday routines and safer products to pricing, deep cleaning and moving.
+              </p>
+            </div>
 
-          {/* Search — client-side filter over all guides (big touch target for mobile) */}
-          <div className="relative mb-6 max-w-xl">
-            <Search className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground" aria-hidden="true" />
-            <input
-              type="search"
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              placeholder={`Search ${allPosts.length}+ cleaning guides…`}
-              aria-label="Search cleaning guides"
-              className="h-12 w-full rounded-full border border-border bg-secondary/30 pl-12 pr-12 text-base text-foreground placeholder:text-muted-foreground focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30 [&::-webkit-search-cancel-button]:hidden [&::-webkit-search-decoration]:hidden"
-            />
-            {query && (
-              <button
-                type="button"
-                onClick={() => setQuery("")}
-                aria-label="Clear search"
-                className="absolute right-2 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full text-muted-foreground hover:bg-secondary hover:text-foreground"
-              >
-                <X className="h-4 w-4" />
-              </button>
-            )}
+            <div className="rounded-3xl border border-white/15 bg-white/10 p-5 shadow-2xl backdrop-blur-md md:p-6">
+              <label htmlFor="resource-search" className="mb-3 block text-sm font-semibold text-white">What can we help you clean?</label>
+              <div className="relative">
+                <Search className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-primary" aria-hidden="true" />
+                <input
+                  id="resource-search"
+                  type="search"
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                  placeholder={`Search ${allPosts.length}+ guides`}
+                  aria-label="Search cleaning guides"
+                  className="h-14 w-full rounded-2xl border border-white/30 bg-white pl-12 pr-12 text-base text-foreground shadow-sm placeholder:text-muted-foreground focus:border-accent focus:outline-none focus:ring-4 focus:ring-accent/25 [&::-webkit-search-cancel-button]:hidden [&::-webkit-search-decoration]:hidden"
+                />
+                {query && <button type="button" onClick={() => setQuery("")} aria-label="Clear search" className="absolute right-2 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-xl text-muted-foreground hover:bg-secondary hover:text-foreground"><X className="h-4 w-4" /></button>}
+              </div>
+              <div className="mt-5 grid grid-cols-3 gap-3 border-t border-white/15 pt-5 text-center">
+                <div><strong className="block font-heading text-2xl">{allPosts.length}+</strong><span className="text-xs text-white/65">guides</span></div>
+                <div><strong className="block font-heading text-2xl">10</strong><span className="text-xs text-white/65">topics</span></div>
+                <div><strong className="block font-heading text-2xl">DMV</strong><span className="text-xs text-white/65">local insight</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="relative bg-[#f7fafc] pb-20 md:pb-28">
+        <div className="container mx-auto max-w-6xl px-4">
+          <div className="relative -top-10 rounded-3xl border border-border/80 bg-white p-4 shadow-[0_20px_60px_-30px_rgba(13,43,94,.38)] md:p-5">
+            <p className="mb-3 px-1 text-xs font-bold uppercase tracking-[0.16em] text-muted-foreground">Browse by topic</p>
+            <ResourceCategoryNav className="mb-0" />
           </div>
 
-          <ResourceCategoryNav />
-
           {results ? (
-            /* Search results replace the hub sections while a query is active */
-            <>
-              <h2 className="font-heading text-2xl font-bold mb-5" aria-live="polite">
-                {results.length} {results.length === 1 ? "guide matches" : "guides match"} “{query.trim()}”
-              </h2>
-              {results.length === 0 ? (
-                <p className="text-muted-foreground mb-16">
-                  No guides found. Try a shorter word — e.g. “cost”, “pet”, “deep”, “senior” — or browse a
-                  category above.
-                </p>
-              ) : (
-                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 mb-16">
-                  {results.slice(0, 30).map((post) => (
-                    <FeaturedResourceCard key={post.slug} post={post} />
-                  ))}
-                </div>
-              )}
-            </>
+            <div className="-mt-2">
+              <div className="mb-7 flex flex-wrap items-end justify-between gap-4">
+                <div><span className="text-sm font-semibold text-accent">Search results</span><h2 className="mt-1 font-heading text-3xl font-bold" aria-live="polite">{results.length} {results.length === 1 ? "guide matches" : "guides match"} “{query.trim()}”</h2></div>
+                <button type="button" onClick={() => setQuery("")} className="inline-flex min-h-11 items-center gap-2 rounded-full border bg-white px-5 text-sm font-semibold hover:border-accent hover:text-accent"><X className="h-4 w-4" /> Clear search</button>
+              </div>
+              {results.length === 0 ? <div className="rounded-3xl border border-dashed bg-white px-6 py-16 text-center"><Search className="mx-auto mb-4 h-8 w-8 text-muted-foreground" /><h3 className="font-heading text-xl font-bold">No guide found yet</h3><p className="mx-auto mt-2 max-w-lg text-muted-foreground">Try a shorter word such as “cost”, “pet”, “deep”, “senior” or “move”. You can also browse one of the topics above.</p></div> : <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">{results.slice(0, 30).map((post) => <FeaturedResourceCard key={post.slug} post={post} />)}</div>}
+            </div>
           ) : (
             <>
-              {/* Featured — large image-backed hero cards */}
-              <h2 className="font-heading text-2xl font-bold mb-5">Featured guides</h2>
-              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 mb-14">
-                {featured.map((post) => (
-                  <FeaturedResourceCard key={post.slug} post={post} />
-                ))}
-              </div>
+              <section className="-mt-2 mb-20">
+                <div className="mb-7 flex items-end justify-between gap-5"><div><span className="text-sm font-bold uppercase tracking-[0.14em] text-accent">Start here</span><h2 className="mt-2 font-heading text-3xl font-bold tracking-tight md:text-4xl">Guides families are reading now</h2></div><BookOpen className="hidden h-9 w-9 text-primary/20 sm:block" aria-hidden="true" /></div>
+                <div className="grid gap-5 lg:grid-cols-2 lg:grid-rows-2">
+                  {featured.map((post, index) => <FeaturedResourceCard key={post.slug} post={post} priority={index === 0} className={index === 0 ? "lg:row-span-2 lg:min-h-[620px]" : "lg:min-h-[300px]"} />)}
+                </div>
+              </section>
 
-              {/* Category rows — colored cards + "See all" (hub-and-spoke to each category page) */}
-              {categoryRows.map(({ category, posts }) => (
-                <section key={category.slug} className="mb-14">
-                  <div className="mb-5 flex items-end justify-between gap-4">
-                    <h2 className="font-heading text-2xl font-bold flex items-center gap-2">
-                      <span aria-hidden="true">{category.emoji}</span> {category.label}
-                    </h2>
-                    <Link
-                      to={`/resources/${category.slug}`}
-                      className="shrink-0 inline-flex items-center gap-1 text-sm font-semibold text-accent transition-all hover:gap-2"
-                    >
-                      See all <ArrowRight className="h-4 w-4" />
-                    </Link>
-                  </div>
-                  <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                    {posts.map((post) => (
-                      <FeaturedResourceCard key={post.slug} post={post} />
-                    ))}
-                  </div>
+              <section className="mb-20 rounded-[2rem] bg-white p-5 shadow-sm ring-1 ring-border/70 md:p-8">
+                <div className="mb-7 flex flex-col justify-between gap-4 sm:flex-row sm:items-end"><div><span className="text-sm font-bold uppercase tracking-[0.14em] text-accent">Find your path</span><h2 className="mt-2 font-heading text-3xl font-bold tracking-tight">Explore the complete library</h2><p className="mt-2 max-w-2xl text-muted-foreground">Go straight to a checklist, compare prices, solve a specific cleaning problem or find advice for your neighborhood.</p></div><span className="shrink-0 rounded-full bg-secondary px-4 py-2 text-sm font-semibold text-primary">{allPosts.length}+ expert guides</span></div>
+                <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-3">{categoryCards.map(({ category, count }) => <CategoryCard key={category.slug} category={category} count={count} />)}</div>
+              </section>
+
+              <section className="mb-20">
+                <div className="mb-7 flex items-end justify-between gap-4"><div><span className="text-sm font-bold uppercase tracking-[0.14em] text-accent">New this week</span><h2 className="mt-2 font-heading text-3xl font-bold tracking-tight">Latest guides</h2></div><Link to="/resources/cleaning-tips" className="inline-flex min-h-11 items-center gap-2 rounded-full border bg-white px-5 text-sm font-semibold text-primary hover:border-accent hover:text-accent">Browse all <ArrowRight className="h-4 w-4" /></Link></div>
+                <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">{recentPosts.slice(0, 6).map((post) => <FeaturedResourceCard key={post.slug} post={post} />)}</div>
+              </section>
+
+              {categoryRows.map(({ category, posts }, rowIndex) => (
+                <section key={category.slug} className={`mb-16 rounded-[2rem] p-5 md:p-8 ${rowIndex % 2 === 0 ? "bg-primary text-white" : "border border-border/70 bg-white"}`}>
+                  <div className="mb-7 flex items-end justify-between gap-4"><div><span className={`text-sm font-bold uppercase tracking-[0.14em] ${rowIndex % 2 === 0 ? "text-[#9eddf4]" : "text-accent"}`}>Curated collection</span><h2 className="mt-2 flex items-center gap-3 font-heading text-3xl font-bold"><span aria-hidden="true">{category.emoji}</span>{category.label}</h2></div><Link to={`/resources/${category.slug}`} className={`inline-flex min-h-11 shrink-0 items-center gap-2 rounded-full px-5 text-sm font-semibold ${rowIndex % 2 === 0 ? "bg-white text-primary hover:bg-[#e8f6fb]" : "border bg-white text-primary hover:border-accent hover:text-accent"}`}>See all <ArrowRight className="h-4 w-4" /></Link></div>
+                  <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">{posts.map((post) => <FeaturedResourceCard key={post.slug} post={post} />)}</div>
                 </section>
               ))}
 
-              {/* Latest guides — raised above the category grid */}
-              <h2 className="font-heading text-2xl font-bold mb-5">Latest guides</h2>
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 mb-14">
-                {recentPosts.slice(0, 6).map((post) => (
-                  <FeaturedResourceCard key={post.slug} post={post} />
-                ))}
-              </div>
-
-              {/* Browse every category — keeps all 10 category pages crawlable & described */}
-              <h2 className="font-heading text-2xl font-bold mb-5">Browse every category</h2>
-              <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-3">
-                {categoryCards.map(({ category, count }) => (
-                  <CategoryCard key={category.slug} category={category} count={count} />
-                ))}
-              </div>
+              <section className="grid gap-4 rounded-[2rem] border border-accent/20 bg-[#eaf7fb] p-6 md:grid-cols-[1fr_auto] md:items-center md:p-9">
+                <div><div className="mb-3 flex gap-3"><Leaf className="h-6 w-6 text-accent" aria-hidden="true" /><MapPin className="h-6 w-6 text-primary" aria-hidden="true" /></div><h2 className="font-heading text-2xl font-bold md:text-3xl">Advice built for homes in the DMV</h2><p className="mt-3 max-w-2xl text-muted-foreground">Our guides combine safer cleaning practices with the realities of Maryland humidity, local hard water, pets, children and busy family schedules.</p></div><Link to="/services/house-cleaning" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-primary px-6 font-semibold text-white shadow-md hover:bg-primary/90">Explore our services <ArrowRight className="h-4 w-4" /></Link>
+              </section>
             </>
           )}
         </div>

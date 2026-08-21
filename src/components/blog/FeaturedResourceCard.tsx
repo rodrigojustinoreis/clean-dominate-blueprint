@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Clock } from "lucide-react";
 import type { BlogPost } from "@/pages/Blog";
 
 // The single image-backed card for the whole Resource Center — hub features & rows, category
@@ -15,6 +15,8 @@ interface FeaturedResourceCardProps {
   category?: string;
   coverImage?: string;
   ctaLabel?: string;
+  className?: string;
+  priority?: boolean;
 }
 
 const FALLBACK_COVER = "/images/team/team-mopping-bright-room.jpg";
@@ -26,6 +28,8 @@ export default function FeaturedResourceCard({
   category,
   coverImage,
   ctaLabel = "Read the guide",
+  className = "",
+  priority = false,
 }: FeaturedResourceCardProps) {
   const to = post ? `/resources/${post.slug}` : href || "#";
   const cardTitle = post?.title ?? title ?? "";
@@ -35,13 +39,14 @@ export default function FeaturedResourceCard({
   return (
     <Link
       to={to}
-      className="group relative flex min-h-[260px] flex-col justify-end overflow-hidden rounded-2xl p-5 md:min-h-[300px] md:p-6 shadow-md ring-1 ring-black/5 outline-none transition-shadow hover:shadow-xl focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
+      className={`group relative flex min-h-[260px] flex-col justify-end overflow-hidden rounded-3xl p-5 md:min-h-[300px] md:p-6 shadow-md ring-1 ring-black/5 outline-none transition-all duration-300 hover:shadow-2xl focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 ${className}`}
     >
       <img
         src={cover}
         alt=""
         aria-hidden="true"
-        loading="lazy"
+        loading={priority ? "eager" : "lazy"}
+        fetchPriority={priority ? "high" : "auto"}
         className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 motion-safe:group-hover:scale-105"
       />
       {/* Navy brand scrim */}
@@ -56,6 +61,13 @@ export default function FeaturedResourceCard({
         <h3 className="font-heading text-xl md:text-2xl font-bold leading-snug text-white drop-shadow-sm line-clamp-3">
           {cardTitle}
         </h3>
+        {post && (
+          <div className="mt-3 flex items-center gap-3 text-xs font-medium text-white/75">
+            <time dateTime={post.date}>{new Date(`${post.date}T12:00:00`).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}</time>
+            <span aria-hidden="true">·</span>
+            <span className="inline-flex items-center gap-1"><Clock className="h-3.5 w-3.5" aria-hidden="true" /> {post.readTime}</span>
+          </div>
+        )}
         <span className="mt-4 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold text-[#0D2B5E] shadow-sm transition-transform motion-safe:group-hover:translate-y-[-1px]">
           {ctaLabel}
           <ArrowRight className="h-4 w-4 transition-transform motion-safe:group-hover:translate-x-0.5" />

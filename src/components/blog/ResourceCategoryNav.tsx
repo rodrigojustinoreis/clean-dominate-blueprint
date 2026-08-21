@@ -5,14 +5,14 @@ import { RESOURCE_CATEGORIES } from "@/data/resource-categories";
 // and on each /resources/<category> index (active=slug). Every pill is a real <Link> to a
 // prerendered, indexable category page — so it doubles as instant client-side navigation AND a
 // crawlable internal link (hub-and-spoke). Mobile-first: horizontal scroll, no wrap.
-export default function ResourceCategoryNav({ active }: { active?: string }) {
+export default function ResourceCategoryNav({ active, className = "mb-10" }: { active?: string; className?: string }) {
   const base =
     "shrink-0 inline-flex items-center gap-1.5 rounded-full px-4 py-2.5 text-sm font-semibold transition-colors whitespace-nowrap border";
   const on = "bg-accent text-white border-accent shadow-sm";
   const off =
     "bg-secondary/40 text-foreground border-border hover:border-accent/60 hover:text-accent";
   return (
-    <nav className="-mx-4 px-4 mb-10 overflow-x-auto scrollbar-none" aria-label="Browse guides by category">
+    <nav className={`-mx-4 overflow-x-auto px-4 scrollbar-none ${className}`} aria-label="Browse guides by category">
       <div className="flex items-center gap-2 w-max">
         <Link to="/resources" className={`${base} ${!active ? on : off}`} aria-current={!active ? "page" : undefined}>
           All Guides
