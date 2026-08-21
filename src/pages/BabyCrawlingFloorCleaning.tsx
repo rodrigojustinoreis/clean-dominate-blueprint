@@ -34,6 +34,7 @@ const CDC_HOME = "https://www.cdc.gov/hygiene/about/when-and-how-to-clean-and-di
 const EPA_SAFER = "https://www.epa.gov/saferchoice/products";
 const EPA_DISINFECTANTS = "https://www.epa.gov/pesticide-registration/selected-epa-registered-disinfectants";
 const AAP_CHILDPROOF = "https://www.healthychildren.org/English/safety-prevention/at-home/Pages/Childproofing-Your-Home.aspx";
+const AAP_GREEN = "https://www.healthychildren.org/English/safety-prevention/all-around/Pages/green-cleaning-choosing-products-that-are-safer-for-your-family.aspx";
 const POISON_CONTROL = "https://www.poison.org/";
 
 const PHONE = "(240) 704-2551";
@@ -130,13 +131,25 @@ const faqs = [
     q: "Is recurring house cleaning worth it once the baby is crawling?",
     a: "For many families, yes. Recurring cleaning keeps floors, bathrooms, and high-touch surfaces consistently maintained so parents get time back for rest and for the baby. It does not replace daily tidying or medical care—it removes the heavy, repetitive work.",
   },
+  {
+    q: "Can you use a robot vacuum around a crawling baby?",
+    a: "It can help with routine maintenance, but run it while the baby is in another safe, supervised area rather than crawling next to it. Keep the dock, cords, and small parts out of reach, and maintain the unit so it actually picks up debris. A robot does not replace prompt spill cleanup or the approved wet cleaning your floors need.",
+  },
+  {
+    q: "How should you clean a baby play mat?",
+    a: "Shake off or vacuum loose debris, then wipe spills and soil with a cleaner the manufacturer approves for that material. Rinse if the label says to, and let the mat dry completely before the baby is back on it. Do not assume a play mat tolerates disinfectant—follow the maker's directions to avoid damage and residue.",
+  },
+  {
+    q: "Are vinegar or steam mops safe for floors with a crawling baby?",
+    a: "Not universally. Vinegar and steam can damage hardwood, laminate, stone, and some finishes, and neither is a guaranteed disinfectant. Match the method to your floor type and follow the manufacturer's instructions. Whatever you use, keep the baby off the floor until it is dry, and store any products out of reach.",
+  },
 ];
 
 const BabyCrawlingFloorCleaning = () => {
   const { seoHelmet } = useSEO({
     title: "Mopping Floors With a Crawling Baby | Capital Clean Care",
     description:
-      "When baby starts crawling, floors become high-touch. Learn how often to mop by floor type, how to choose a baby-safe cleaner, and what to delegate.",
+      "How often should you mop with a crawling baby? Compare floor types, safer product labels, pets, play mats, and realistic cleaning help.",
     canonical: URL,
     ogType: "article",
     ogImage: HERO_IMAGE,
@@ -154,7 +167,7 @@ const BabyCrawlingFloorCleaning = () => {
       </Helmet>
 
       <ArticleSchema
-        title="Baby Starts Crawling: How Often Should You Clean Your Floors—and Which Products Are Baby-Safe?"
+        title="Baby Starts Crawling: How Often Should You Mop Your Floors—and Which Products Are Baby-Safe?"
         description="A practical guide to cleaning floors once your baby is crawling: how often to mop by floor type, how to choose a baby-safe cleaner by reading the label, cleaning vs. disinfecting, and when recurring cleaning helps."
         url={URL}
         datePublished="2026-08-20"
@@ -190,7 +203,7 @@ const BabyCrawlingFloorCleaning = () => {
           Family &amp; New Baby
         </span>
         <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl font-extrabold mb-6 leading-tight drop-shadow-md">
-          Baby Starts Crawling: How Often Should You Clean Your Floors—and Which Products Are Baby-Safe?
+          Baby Starts Crawling: How Often Should You Mop Your Floors—and Which Products Are Baby-Safe?
         </h1>
         <p className="text-xl md:text-2xl text-gray-200 mb-4 leading-relaxed font-medium">
           A practical floor-cleaning routine for the crawling stage—how often to mop by floor type, and how to pick a safer cleaner.
@@ -210,10 +223,10 @@ const BabyCrawlingFloorCleaning = () => {
           <FadeInSection>
             <div className="rounded-2xl border border-accent/30 bg-accent/5 p-5 md:p-6 mb-8">
               <p className="text-base md:text-lg text-foreground leading-relaxed">
-                <strong className="font-semibold">Quick answer:</strong> Once your baby starts crawling, the floor becomes a
-                high-touch surface. There is no universal schedule, but a practical routine is a quick daily pass on the
-                busiest paths and a thorough mop a few times a week—cleaning first, following each product and floor label,
-                and disinfecting only when it is truly needed.
+                <strong className="font-semibold">Quick answer:</strong> How often should you mop your floors once your baby
+                starts crawling? There is no universal schedule. A practical routine is a quick daily pass on the busiest
+                paths and a thorough mop a few times a week—adjusted for floor type, pets, spills, shoes, and visible soil.
+                Clean first, follow every product and floor label, and disinfect only when it is truly needed.
               </p>
             </div>
             <p className="mb-6">
@@ -421,6 +434,41 @@ const BabyCrawlingFloorCleaning = () => {
             </p>
           </FadeInSection>
 
+          {/* ── Play mats, rugs, robot vacuums ── */}
+          <FadeInSection>
+            <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-4">What About Play Mats, Rugs, and Robot Vacuums?</h2>
+            <p className="mb-4">
+              Once a baby is crawling and putting hands to mouth, the mats, rugs, and gear they play on get more contact than
+              the rest of the floor. Clean them the way you clean floors: remove debris, wipe spills, follow the
+              manufacturer&apos;s directions, and let everything dry. The{" "}
+              <a href={AAP_GREEN} target="_blank" rel="noopener noreferrer" className="text-accent font-medium hover:underline">American Academy of Pediatrics&apos; green-cleaning guidance</a>{" "}
+              is a helpful reference for choosing and storing products as your baby becomes more mobile.
+            </p>
+
+            <h3 className="font-heading text-xl md:text-2xl font-semibold text-foreground mb-3">Play mats</h3>
+            <p className="mb-6">
+              Shake off or vacuum loose debris, then wipe spills and visible soil with a cleaner the manufacturer approves
+              for that material. Rinse if the label calls for it, and let the mat dry completely before the baby is back on
+              it. Do not assume a play mat tolerates disinfectant—foam and fabric can be damaged, and residue is left right
+              where hands and mouths go.
+            </p>
+
+            <h3 className="font-heading text-xl md:text-2xl font-semibold text-foreground mb-3">Rugs and carpet</h3>
+            <p className="mb-6">
+              Vacuum play-area rugs and carpet as often as debris and pets require, and spot-clean spills before they set.
+              Use a product suited to the rug&apos;s material and follow the label; over-wetting can leave residue or take too
+              long to dry. Let treated areas dry fully before the baby crawls back over them.
+            </p>
+
+            <h3 className="font-heading text-xl md:text-2xl font-semibold text-foreground mb-3">Robot vacuums and robot mops</h3>
+            <p className="mb-8">
+              A robot vacuum or mop can help with day-to-day maintenance, but run it while the baby is in another safe,
+              supervised area—not crawling alongside it. Keep the dock, cords, and any small parts out of reach; empty and
+              maintain the unit so it actually picks up debris; and remember it does not replace prompt spill cleanup or the
+              approved wet cleaning your floors need.
+            </p>
+          </FadeInSection>
+
           <FadeInSection>
             <BlogInlineCTA
               headline="Get the deep floor work off your plate"
@@ -482,6 +530,21 @@ const BabyCrawlingFloorCleaning = () => {
                 </li>
               ))}
             </ul>
+          </FadeInSection>
+
+          {/* ── Common mistakes ── */}
+          <FadeInSection>
+            <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-4">Common Floor-Cleaning Mistakes With a Crawling Baby</h2>
+            <p className="mb-6">
+              A few habits create more work—or more risk—without making floors any safer. The most common ones:
+            </p>
+            <ol className="space-y-4 mb-8 pl-6 list-decimal marker:text-accent marker:font-bold">
+              <li className="text-foreground"><strong>Trying to sterilize everything, every day.</strong> Routine cleaning removes most germs; whole-floor disinfecting is a situational step for illness or contamination, not a daily requirement.</li>
+              <li className="text-foreground"><strong>Using too much product—or mixing products.</strong> More cleaner does not mean cleaner floors, and it can leave residue right where hands and mouths go. Never mix cleaning or disinfecting products.</li>
+              <li className="text-foreground"><strong>Assuming &quot;natural,&quot; &quot;baby-safe,&quot; &quot;fragrance-free,&quot; vinegar, or steam works on any floor.</strong> None of these are guarantees or universal methods. Match the product and method to your floor type and follow the manufacturer&apos;s directions—steam and acids can damage some surfaces.</li>
+              <li className="text-foreground"><strong>Letting the baby back before the floor is dry or rinsed.</strong> Wet floors are a slip and exposure risk. Keep the baby off until the surface is dry and any label-required rinse is finished.</li>
+              <li className="text-foreground"><strong>Cleaning the whole house instead of the zones that matter.</strong> Prioritize crawling paths, entryways, and the spots that collect food and pet hair before the rooms the baby rarely touches.</li>
+            </ol>
           </FadeInSection>
 
           {/* ── Recurring cleaning ── */}
