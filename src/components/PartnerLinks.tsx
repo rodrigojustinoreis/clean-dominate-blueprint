@@ -9,16 +9,16 @@ const partners = [
 ];
 
 const PartnerLinks = ({ className = "" }: { className?: string }) => (
-  <div className={className}>
-    <h4 className="font-heading font-semibold mb-3 text-sm">Community Partners</h4>
-    <ul className="space-y-1.5">
+  <div className={`flex flex-col gap-2.5 lg:flex-row lg:items-center ${className}`}>
+    <h4 className="shrink-0 font-heading text-xs font-semibold uppercase tracking-[0.12em] text-primary-foreground/80">Community Partners</h4>
+    <ul className="flex flex-wrap gap-x-4 gap-y-1.5">
       {partners.map((p) => (
         <li key={p.url}>
           <a
             href={p.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-xs text-primary-foreground/60 hover:text-accent transition-colors inline-flex items-center gap-1"
+            className="inline-flex items-center gap-1 text-[11px] text-primary-foreground/60 transition-colors hover:text-accent"
             aria-label={`Visit ${p.name} website`}
           >
             {p.name}

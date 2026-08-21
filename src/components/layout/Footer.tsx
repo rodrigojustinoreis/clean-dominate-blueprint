@@ -61,16 +61,16 @@ const Footer = () => {
     <footer className="bg-primary text-primary-foreground">
       {/* CTA Band */}
       <div className="bg-accent">
-        <div className="container mx-auto px-4 py-5 md:py-6 flex flex-col md:flex-row items-center justify-between gap-4 text-accent-foreground text-center md:text-left">
+        <div className="container mx-auto flex flex-col items-center justify-between gap-3 px-4 py-4 text-center text-accent-foreground sm:flex-row sm:text-left">
           <div>
-            <h3 className="font-heading text-xl md:text-2xl font-bold">{t("Ready for a Spotless Home?", "¿Listo para una casa impecable?")}</h3>
-            <p className="opacity-90 text-sm">{t("Get your free, no-obligation quote in minutes.", "Obtén tu cotización gratis y sin compromiso en minutos.")}</p>
+            <h3 className="font-heading text-lg font-bold md:text-xl">{t("Ready for a Spotless Home?", "¿Listo para una casa impecable?")}</h3>
+            <p className="hidden text-sm opacity-90 md:block">{t("Get your free, no-obligation quote in minutes.", "Obtén tu cotización gratis y sin compromiso en minutos.")}</p>
           </div>
-          <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 w-full sm:w-auto shrink-0">
-            <Button variant="default" size="lg" asChild>
+          <div className="flex w-full shrink-0 gap-2 sm:w-auto">
+            <Button variant="default" size="default" className="min-h-11 flex-1 rounded-full px-5 sm:flex-none" asChild>
               <a href={isSpanish ? "/es/contacto" : "/#quote"} onClick={() => trackBookNowClick("footer_cta_band")}>{t("Get a Free Quote", "Cotización Gratis")}</a>
             </Button>
-            <Button variant="outline" size="lg" className="bg-transparent border-2 border-accent-foreground/70 text-accent-foreground hover:bg-accent-foreground/10 hover:text-accent-foreground" asChild>
+            <Button variant="outline" size="default" className="min-h-11 flex-1 rounded-full border border-accent-foreground/70 bg-transparent px-5 text-accent-foreground hover:bg-accent-foreground/10 hover:text-accent-foreground sm:flex-none" asChild>
               <a href="tel:+12407042551" onClick={() => trackPhoneClick("footer_cta_band")}><Phone className="h-4 w-4 mr-2" /> {t("Call Now", "Llamar Ahora")}</a>
             </Button>
           </div>
@@ -79,7 +79,7 @@ const Footer = () => {
 
       {/* Trust strip */}
       <div className="border-b border-primary-foreground/10 bg-primary-foreground/[0.04]">
-        <div className="container mx-auto px-4 py-3.5 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs font-medium text-primary-foreground/80">
+        <div className="container mx-auto flex flex-wrap items-center justify-center gap-x-5 gap-y-1.5 px-4 py-2.5 text-[11px] font-medium text-primary-foreground/80 sm:text-xs">
           {TRUST.map((it) => (
             <span key={it.en} className="flex items-center gap-1.5">
               <it.icon className="h-4 w-4 text-accent" /> {t(it.en, it.es)}
@@ -92,21 +92,21 @@ const Footer = () => {
       </div>
 
       {/* Main grid */}
-      <div className="container mx-auto px-4 py-10">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="container mx-auto px-4 py-7 md:py-8">
+        <div className="grid grid-cols-2 gap-x-6 gap-y-7 lg:grid-cols-12 lg:gap-8">
           {/* Brand + contact */}
-          <div className="col-span-2 lg:col-span-1 space-y-3">
+          <div className="col-span-2 space-y-3 lg:col-span-3">
             <Link to={isSpanish ? "/es" : "/"} className="flex items-center gap-2">
               <img src={logo} alt="Capital Clean Care logo" className="h-7 w-7 object-contain" />
               <span className="font-heading font-bold text-lg">Capital Clean Care</span>
             </Link>
-            <p className="text-primary-foreground/70 text-sm leading-relaxed max-w-xs">
+            <p className="max-w-sm text-sm leading-relaxed text-primary-foreground/70">
               {t(
                 "Premium eco-friendly residential cleaning. Licensed, insured & background-checked teams across MD, DC & Northern Virginia.",
                 "Limpieza residencial premium y ecológica. Equipos con licencia, seguro y verificados en MD, DC y el Norte de Virginia."
               )}
             </p>
-            <div className="space-y-1.5 text-sm text-primary-foreground/70">
+            <div className="grid gap-x-4 gap-y-1.5 text-sm text-primary-foreground/70 sm:grid-cols-2 lg:grid-cols-1">
               <p className="flex items-center gap-2"><MapPin className="h-4 w-4 shrink-0" /> Silver Spring, MD 20906</p>
               <a href="tel:+12407042551" className="flex items-center gap-2 hover:text-primary-foreground transition-colors"><Phone className="h-4 w-4 shrink-0" /> (240) 704-2551</a>
               <a href="mailto:info@capitalcleancare.com" className="flex items-center gap-2 hover:text-primary-foreground transition-colors"><Mail className="h-4 w-4 shrink-0" /> info@capitalcleancare.com</a>
@@ -115,9 +115,9 @@ const Footer = () => {
           </div>
 
           {/* Services */}
-          <div>
+          <div className="lg:col-span-4">
             <h4 className="font-heading font-semibold text-sm mb-3">{t("Services", "Servicios")}</h4>
-            <ul className="space-y-1.5 text-sm text-primary-foreground/70">
+            <ul className="grid gap-x-5 gap-y-1.5 text-sm text-primary-foreground/70 sm:grid-cols-2">
               {serviceLinks.map((s) => (
                 <li key={s.to}><Link to={s.to} className="hover:text-accent transition-colors">{s.label}</Link></li>
               ))}
@@ -125,7 +125,7 @@ const Footer = () => {
           </div>
 
           {/* Areas We Serve */}
-          <div>
+          <div className="lg:col-span-3">
             <h4 className="font-heading font-semibold text-sm mb-3">{t("Areas We Serve", "Áreas de Servicio")}</h4>
             <ul className="space-y-1.5 text-sm text-primary-foreground/70">
               <li><Link to="/maryland" className="hover:text-accent transition-colors font-medium">{t("Maryland", "Maryland")}</Link></li>
@@ -140,7 +140,7 @@ const Footer = () => {
           </div>
 
           {/* Company */}
-          <div>
+          <div className="lg:col-span-2">
             <h4 className="font-heading font-semibold text-sm mb-3">{t("Company", "Empresa")}</h4>
             <ul className="space-y-1.5 text-sm text-primary-foreground/70">
               {companyLinks.map((l) => (
@@ -152,12 +152,12 @@ const Footer = () => {
         </div>
 
         {/* Partners */}
-        <div className="mt-8 pt-6 border-t border-primary-foreground/10">
+        <div className="mt-6 border-t border-primary-foreground/10 pt-4">
           <PartnerLinks />
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-6 pt-6 border-t border-primary-foreground/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-primary-foreground/75">
+        <div className="mt-4 flex flex-col items-center justify-between gap-3 border-t border-primary-foreground/10 pt-4 text-xs text-primary-foreground/75 md:flex-row">
           <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1">
             <p>© {new Date().getFullYear()} Capital Clean Care</p>
             <Link to="/privacy-policy" className="hover:text-accent transition-colors">{t("Privacy Policy", "Privacidad")}</Link>
@@ -176,7 +176,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <p className="text-center text-[11px] text-primary-foreground/60 mt-5">
+        <p className="mt-3 text-center text-[10px] text-primary-foreground/55">
           {t(
             "Capital Clean Care LLC is not affiliated with any other cleaning company with a similar name operating in the Maryland area.",
             "Capital Clean Care LLC no está afiliada a ninguna otra empresa de limpieza con nombre similar que opere en el área de Maryland."
