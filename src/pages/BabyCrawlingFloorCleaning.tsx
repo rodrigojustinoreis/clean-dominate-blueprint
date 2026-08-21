@@ -239,6 +239,8 @@ const BabyCrawlingFloorCleaning = () => {
               guide covers how often to clean by floor type, how to choose a safer cleaner by reading the label, the
               difference between cleaning and disinfecting, and when handing the heavy work to a professional makes sense. It
               is general household information—not medical advice. Ask your pediatrician about your baby's individual needs.
+              If you're in Montgomery County, Maryland, Washington DC, or Northern Virginia, Capital Clean Care can handle the
+              floors while your family focuses on the baby.
             </p>
           </FadeInSection>
 
@@ -566,7 +568,7 @@ const BabyCrawlingFloorCleaning = () => {
               <Link to={HOUSE} className="text-accent font-medium hover:underline">house cleaning</Link>,{" "}
               <Link to={DEEP} className="text-accent font-medium hover:underline">deep cleaning</Link>, and{" "}
               <Link to={ECO} className="text-accent font-medium hover:underline">eco-friendly cleaning</Link>{" "}
-              for families across Montgomery County, Maryland, Washington DC, and Northern Virginia. A recurring plan can
+              for families across Montgomery County, Maryland—including Bethesda, Silver Spring, Rockville, and Takoma Park—as well as Washington DC and Northern Virginia. A recurring plan can
               handle floors, bathrooms, kitchens, and accumulated dust so the household work does not pile up during the
               crawling stage.
             </p>
@@ -602,8 +604,8 @@ const BabyCrawlingFloorCleaning = () => {
               <h2 className="font-heading text-2xl md:text-3xl font-bold mb-3">Keep the Floors Handled—Focus on the Baby</h2>
               <p className="text-primary-foreground/85 mb-6 leading-relaxed max-w-xl mx-auto text-lg">
                 If floors, bathrooms, and recurring cleaning are taking time away from rest and your baby, Capital Clean Care
-                can help. Request a free quote for professional cleaning in Montgomery County, Maryland, Washington DC, or
-                Northern Virginia.
+                can help. Request a free quote for professional house cleaning in Bethesda, Silver Spring, Rockville, and
+                other areas of Montgomery County, Maryland, as well as Washington DC and Northern Virginia.
               </p>
               <div className="flex flex-col items-center gap-4">
                 <Button size="lg" className="bg-accent hover:bg-accent/90 text-white text-lg px-10 py-6 rounded-full shadow-md w-full sm:w-auto" asChild>
