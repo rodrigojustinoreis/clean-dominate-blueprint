@@ -25,6 +25,8 @@ export default async function canonicalUrl(
   if (hasLegacyBlogQuery) {
     if (url.pathname === "/") {
       url.pathname = "/resources";
+    } else if (url.pathname.replace(/\/+$/, "") === "/seasonal-cleaning") {
+      url.pathname = "/spring-cleaning-md";
     }
     url.searchParams.delete("blog");
     url.searchParams.delete("blogcategory");
