@@ -62,6 +62,7 @@ function getAllRoutes(): string[] {
     "/resources/bringing-baby-home-cleaning-guide",
     "/resources/baby-crawling-floor-cleaning-guide",
     "/resources/cleaning-schedule-working-parents-toddlers",
+    "/resources/how-to-clean-a-backpack-and-lunch-box",
     "/resources/why-is-my-dog-coughing-after-house-cleaning",
     "/resources/how-to-clean-hardwood-floors-naturally",
     "/resources/real-deep-cleaning-project-bethesda-home",

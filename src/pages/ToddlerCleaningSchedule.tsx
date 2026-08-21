@@ -28,6 +28,7 @@ const BATHROOM = "/services/bathroom-cleaning";
 const CRAWLING = "/resources/baby-crawling-floor-cleaning-guide";
 const NEWBORN = "/resources/bringing-baby-home-cleaning-guide";
 const PREGNANCY = "/resources/cleaning-during-pregnancy-prepare-home-for-baby";
+const PRESCHOOL = "/resources/how-to-clean-a-backpack-and-lunch-box";
 
 const CDC_CLEANING = "https://www.cdc.gov/hygiene/about/when-and-how-to-clean-and-disinfect-your-home.html";
 const AAP_GREEN = "https://www.healthychildren.org/English/safety-prevention/all-around/Pages/green-cleaning-choosing-products-that-are-safer-for-your-family.aspx";
@@ -372,6 +373,11 @@ const ToddlerCleaningSchedule = () => {
             <h2 className="mb-5 mt-12 font-heading text-3xl font-bold text-gray-900">This Guide's Place in the Family Life-Stage Series</h2>
             <p className="mb-6">
               Each stage changes what matters most. The <Link to={PREGNANCY} className="font-medium text-accent hover:underline">pregnancy cleaning guide</Link> focuses on preparing the home and delegating physically demanding work. <Link to={NEWBORN} className="font-medium text-accent hover:underline">Bringing Baby Home</Link> covers realistic cleaning during the first sleep-deprived weeks. The <Link to={CRAWLING} className="font-medium text-accent hover:underline">crawling-baby floor guide</Link> explains mopping frequency, floor types, and product labels. This toddler guide moves beyond the floor to a whole-home system for continuous small messes.
+            </p>
+            <p className="mb-8">
+              <strong>Next in the series:</strong> when preschool begins, the daily routine gains a school-to-home transition.
+              Learn <Link to={PRESCHOOL} className="font-medium text-accent hover:underline">how to clean a backpack and lunch box</Link>,
+              handle leaks and odors, and create a practical unloading zone.
             </p>
           </FadeInSection>
 

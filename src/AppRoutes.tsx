@@ -64,6 +64,7 @@ import CleaningDuringPregnancy from "./pages/CleaningDuringPregnancy";
 import BringingBabyHomeCleaning from "./pages/BringingBabyHomeCleaning";
 import BabyCrawlingFloorCleaning from "./pages/BabyCrawlingFloorCleaning";
 import ToddlerCleaningSchedule from "./pages/ToddlerCleaningSchedule";
+import PreschoolBackpackLunchbox from "./pages/PreschoolBackpackLunchbox";
 import WhyIsMyDogCoughingAfterCleaning from "./pages/WhyIsMyDogCoughingAfterCleaning";
 import HowToCleanHardwoodFloorsNaturally from "./pages/HowToCleanHardwoodFloorsNaturally";
 import RealDeepCleaningProjectBethesda from "./pages/RealDeepCleaningProjectBethesda";
@@ -296,6 +297,7 @@ const AppRoutes = () => (
     <Route path="/resources/bringing-baby-home-cleaning-guide" element={<BringingBabyHomeCleaning />} />
     <Route path="/resources/baby-crawling-floor-cleaning-guide" element={<BabyCrawlingFloorCleaning />} />
     <Route path="/resources/cleaning-schedule-working-parents-toddlers" element={<ToddlerCleaningSchedule />} />
+    <Route path="/resources/how-to-clean-a-backpack-and-lunch-box" element={<PreschoolBackpackLunchbox />} />
     <Route path="/resources/why-is-my-dog-coughing-after-house-cleaning" element={<WhyIsMyDogCoughingAfterCleaning />} />
     <Route path="/resources/how-to-clean-hardwood-floors-naturally" element={<HowToCleanHardwoodFloorsNaturally />} />
     <Route path="/resources/real-deep-cleaning-project-bethesda-home" element={<RealDeepCleaningProjectBethesda />} />
