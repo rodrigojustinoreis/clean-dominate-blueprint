@@ -20,6 +20,7 @@ const HERO_SMALL = "/images/resources/preschool-backpack-lunchbox/hero-640.webp"
 const RESET_IMAGE = "/images/resources/preschool-backpack-lunchbox/school-items-reset.webp";
 const TODDLER = "/resources/cleaning-schedule-working-parents-toddlers";
 const CRAWLING = "/resources/baby-crawling-floor-cleaning-guide";
+const SCHOOL_AGE = "/resources/cleaning-routine-families-school-age-kids";
 const RECURRING = "/services/recurring-cleaning";
 const HOUSE = "/services/house-cleaning";
 const KITCHEN = "/services/kitchen-cleaning";
@@ -149,7 +150,7 @@ const PreschoolBackpackLunchbox = () => {
 
         <FadeInSection>
           <h2 className="mb-5 mt-12 font-heading text-3xl font-bold text-gray-900">Where This Fits in the Family Life-Stage Series</h2>
-          <p className="mb-8">When babies begin moving, our <Link to={CRAWLING} className="font-medium text-accent hover:underline">crawling-stage floor guide</Link> focuses on floor type, product labels, and realistic frequency. The <Link to={TODDLER} className="font-medium text-accent hover:underline">working-parents' toddler schedule</Link> expands to food, toys, bathrooms, pets, and weekly zones. This preschool guide adds the school-to-home transition: caring for the backpack and lunch box while keeping the arrival routine manageable.</p>
+          <p className="mb-8">When babies begin moving, our <Link to={CRAWLING} className="font-medium text-accent hover:underline">crawling-stage floor guide</Link> focuses on floor type, product labels, and realistic frequency. The <Link to={TODDLER} className="font-medium text-accent hover:underline">working-parents' toddler schedule</Link> expands to food, toys, bathrooms, pets, and weekly zones. This preschool guide adds the school-to-home transition; the next step is our <Link to={SCHOOL_AGE} className="font-medium text-accent hover:underline">realistic cleaning routine for families with school-age kids</Link>, including age-appropriate chores and a flexible weekly plan.</p>
         </FadeInSection>
 
         <FadeInSection><h2 className="mb-6 mt-14 font-heading text-3xl font-bold text-gray-900">Frequently Asked Questions</h2><div className="space-y-5">{faqs.map((faq) => <section key={faq.q} className="rounded-2xl border border-gray-200 bg-gray-50 p-6"><h3 className="mb-2 font-heading text-xl font-bold text-gray-900">{faq.q}</h3><p className="text-lg leading-relaxed">{faq.a}</p></section>)}</div></FadeInSection>

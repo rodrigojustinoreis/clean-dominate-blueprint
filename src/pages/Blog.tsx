@@ -88,6 +88,15 @@ export const blogPosts: BlogPost[] = [
     coverImage: "/images/team/real-team-maria-fridge.webp",
   },
   {
+    slug: "cleaning-routine-families-school-age-kids",
+    title: "A Realistic Cleaning Routine for Families With School-Age Kids",
+    excerpt: "A practical daily, weekly and monthly cleaning schedule for working parents, with age-appropriate chores for children ages 5 to 12.",
+    date: "2026-08-23",
+    readTime: "12 min read",
+    category: "Home Care Guides",
+    coverImage: "/images/resources/school-age-cleaning-routine/hero.webp",
+  },
+  {
     slug: "how-to-clean-a-backpack-and-lunch-box",
     title: "How to Clean a Backpack and Lunch Box: A Preschool-to-Home Routine",
     excerpt: "How to clean children's backpacks and lunch boxes, handle leaks and odors, follow care labels, and build a realistic after-preschool reset.",
