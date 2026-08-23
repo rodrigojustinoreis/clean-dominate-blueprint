@@ -172,13 +172,47 @@ const RETARGET_TO_VANITY: Record<string, string> = {
   "rockville-md/move-out-cleaning": "/move-out-cleaning-rockville-md",
 };
 
+const rockvilleServiceGuide = [
+  {
+    name: "House cleaning",
+    bestFor: "Routine home care and a dependable reset",
+    href: "/locations/rockville-md/house-cleaning",
+  },
+  {
+    name: "Recurring cleaning",
+    bestFor: "Weekly, bi-weekly, or monthly maintenance",
+    href: "/locations/rockville-md/recurring-cleaning",
+  },
+  {
+    name: "Deep cleaning",
+    bestFor: "First visits, seasonal buildup, or neglected details",
+    href: "/locations/rockville-md/deep-cleaning",
+  },
+  {
+    name: "Move-out cleaning",
+    bestFor: "Turnovers, final walkthroughs, and deposit-ready homes",
+    href: "/move-out-cleaning-rockville-md",
+  },
+  {
+    name: "Apartment cleaning",
+    bestFor: "Condos, apartments, elevators, and managed buildings",
+    href: "/locations/rockville-md/apartment-cleaning",
+  },
+  {
+    name: "Eco-friendly cleaning",
+    bestFor: "Homes with children, pets, allergies, or fragrance concerns",
+    href: "/locations/rockville-md/eco-friendly-cleaning",
+  },
+];
+
 const CityPage = () => {
   const { slug } = useParams<{ slug: string }>();
   const city = getCityBySlug(slug || "");
+  const { seoHelmet } = useSEO(city
+    ? { title: city.metaTitle, description: city.metaDescription, canonical: `https://capitalcleancare.com/locations/${city.slug}`, geo: { region: `US-${city.state}`, placename: city.name }, preloadImage: cityImages[city.slug] || regionImages[city.stateSlug] || regionMD }
+    : { title: "Location Not Found", description: "The requested service location could not be found.", noIndex: true });
 
   if (!city) return <NotFound />;
-
-  const { seoHelmet } = useSEO({ title: city.metaTitle, description: city.metaDescription, canonical: `https://capitalcleancare.com/locations/${city.slug}`, geo: { region: `US-${city.state}`, placename: city.name }, preloadImage: cityImages[city.slug] || regionImages[city.stateSlug] || regionMD });
 
   const nearbyCities = city.nearbySlugs.map(getCityBySlug).filter(Boolean);
   const expandedFaqs = getExpandedCityFaqs(city);
@@ -198,6 +232,11 @@ const CityPage = () => {
   const seniorRegionLabel = city.state === "DC" ? "Washington, DC" : city.state === "VA" ? "Northern Virginia" : "Montgomery County";
   // Real Google reviews only (deterministic per city) — never fabricated testimonials.
   const testimonials = pickReviews(city.slug, 3);
+  const isRockvilleHub = city.slug === "rockville-md";
+  const isUmbrellaHub = UMBRELLA_HUBS.has(city.slug);
+  const serviceSchemaName = isUmbrellaHub
+    ? `Cleaning Services in ${city.name}, ${city.state}`
+    : `House Cleaning in ${city.name}`;
 
   return (
     <Layout>
@@ -205,9 +244,13 @@ const CityPage = () => {
       <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: stateLabel, href: `/${city.stateSlug}` }, { label: city.name, href: `/locations/${city.slug}` }]} />
       <FAQSchema faqs={expandedFaqs} />
       <ServiceSchema
-        serviceName={`House Cleaning in ${city.name}`}
-        description={`Professional eco-friendly house cleaning services in ${cityLabel}. Licensed, insured, background-checked teams.`}
+        serviceName={serviceSchemaName}
+        description={isUmbrellaHub
+          ? `Professional residential cleaning services in ${cityLabel}, including recurring, deep, move-in, move-out, apartment, and eco-friendly cleaning.`
+          : `Professional eco-friendly house cleaning services in ${cityLabel}. Licensed, insured, background-checked teams.`}
         url={`https://capitalcleancare.com/locations/${city.slug}`}
+        areaServed={isRockvilleHub ? ["Rockville, MD", "20850", "20851", "20852", "20853", "20854"] : undefined}
+        serviceType={isUmbrellaHub ? "Residential Cleaning Services" : "House Cleaning"}
       />
       <CityReviewSchema
         cityName={city.name}
@@ -221,6 +264,8 @@ const CityPage = () => {
           <img
             src={cityImages[city.slug] || regionImages[city.stateSlug] || regionMD}
             alt={`Eco-friendly house cleaning team serving ${city.name}, ${city.state} — Capital Clean Care`}
+            width={1280}
+            height={720}
             className="w-full h-full object-cover"
             loading="eager"
             fetchPriority="high"
@@ -234,10 +279,12 @@ const CityPage = () => {
             className="mb-4 text-primary-foreground/60 [&_a]:text-primary-foreground/60 [&_a:hover]:text-primary-foreground [&_span[aria-current]]:text-primary-foreground/80 [&_svg]:text-primary-foreground/40"
           />
           <h1 className="font-heading text-3xl md:text-5xl lg:text-[3.25rem] font-bold mb-5 text-primary-foreground leading-tight">
-            {UMBRELLA_HUBS.has(city.slug) ? "Cleaning Services in " : "House Cleaning Services in "}{cityLabel}
+            {isUmbrellaHub ? "Cleaning Services in " : "House Cleaning Services in "}{cityLabel}
           </h1>
           <p className="text-primary-foreground/85 text-lg md:text-xl max-w-2xl leading-relaxed mb-8">
-            Professional, eco-friendly house cleaning for {city.name} homes. Licensed, insured, and background-checked teams you can trust.
+            {isRockvilleHub
+              ? "One trusted local team for recurring, deep, move-in, move-out, apartment, and eco-friendly cleaning across Rockville."
+              : `Professional, eco-friendly house cleaning for ${city.name} homes. Licensed, insured, and background-checked teams you can trust.`}
           </p>
           <div className="flex flex-col sm:flex-row gap-3">
             <Button variant="cta" size="lg" className="text-base" asChild>
@@ -252,6 +299,44 @@ const CityPage = () => {
 
       {/* Trust Bar */}
       <TrustBar variant="dark" />
+
+      {/* Rockville search-intent hub: concise answer + clear routes to each dedicated service page. */}
+      {isRockvilleHub && (
+        <section className="py-12 md:py-16 border-b border-border" aria-labelledby="rockville-cleaning-answer">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <p className="text-sm font-semibold text-accent mb-3">Updated August 2026 · Serving ZIP codes 20850–20854</p>
+            <h2 id="rockville-cleaning-answer" className="font-heading text-2xl md:text-3xl font-bold mb-5">
+              What cleaning services are available in Rockville, MD?
+            </h2>
+            <p className="text-foreground leading-relaxed text-lg">
+              Capital Clean Care provides residential cleaning throughout Rockville, including weekly and bi-weekly recurring care, one-time deep cleaning, move-in and move-out cleaning, apartment and condo cleaning, and eco-friendly service. Our insured, background-checked employees bring the equipment and plant-based products, follow a room-by-room checklist, and back every visit with a satisfaction guarantee. We serve homes in King Farm, Fallsgrove, Twinbrook, West End, College Gardens, Woodley Gardens, Rockville Town Center, and nearby neighborhoods. Choose a service below for its complete scope, or request a written quote based on your home size, number of bathrooms, condition, and preferred frequency. Most Rockville appointments can be planned around building access, elevator windows, pets, and household priorities.
+            </p>
+
+            <div className="mt-8 overflow-hidden rounded-2xl border border-border bg-card">
+              <div className="grid grid-cols-[minmax(0,0.8fr)_minmax(0,1.5fr)] bg-secondary px-4 py-3 text-sm font-semibold">
+                <span>Service</span>
+                <span>Best for</span>
+              </div>
+              {rockvilleServiceGuide.map((service) => (
+                <Link
+                  key={service.name}
+                  to={service.href}
+                  className="grid grid-cols-[minmax(0,0.8fr)_minmax(0,1.5fr)] items-center gap-4 border-t border-border px-4 py-4 hover:bg-accent/5 transition-colors"
+                >
+                  <span className="font-semibold text-accent">{service.name}</span>
+                  <span className="text-sm text-muted-foreground flex items-center justify-between gap-3">
+                    {service.bestFor}<ArrowRight className="h-4 w-4 shrink-0" aria-hidden="true" />
+                  </span>
+                </Link>
+              ))}
+            </div>
+
+            <p className="mt-5 text-sm text-muted-foreground">
+              Comparing budgets? See our transparent <Link to="/resources/house-cleaning-cost-rockville-md" className="text-accent font-semibold hover:underline">2026 Rockville cleaning cost guide</Link>.
+            </p>
+          </div>
+        </section>
+      )}
 
       {/* About Our Work */}
       <section className="py-14 md:py-20">

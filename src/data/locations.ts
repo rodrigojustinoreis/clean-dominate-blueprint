@@ -106,14 +106,14 @@ export const cities: CityData[] = [
     nearbySlugs: ["bethesda-md", "gaithersburg-md", "silver-spring-md", "potomac-md", "germantown-md"],
     faqs: [
       { q: "What Rockville neighborhoods do you serve?", a: "We serve all Rockville neighborhoods including Fallsgrove, King Farm, Twinbrook, Woodley Gardens, College Gardens, Rockville Town Center, and surrounding areas." },
-      { q: "How much does house cleaning cost in Rockville?", a: "Pricing depends on your home's size, condition, and the service type you choose. Most Rockville homes range based on bedrooms and bathrooms. Request a free, no-obligation quote for accurate pricing." },
+      { q: "How much do cleaning services cost in Rockville?", a: "Rockville pricing depends on home size, bathrooms, condition, service type, and frequency. As a planning range, many bi-weekly cleanings run about $165–$310 per visit; a first-time deep clean or move-in/out service costs more because it covers added detail. We provide a written, no-obligation quote before service." },
       { q: "Do you serve Rockville condos and apartments?", a: "Yes, we clean all types of Rockville residences including condos, apartments, townhomes, and single-family homes." },
       { q: "Can I book same-day cleaning in Rockville?", a: "Same-day availability depends on our schedule. Rockville is one of our primary service areas, so we often have availability. Contact us to check." },
       { q: "Are you available on weekends in Rockville?", a: "Yes, we offer Saturday and limited Sunday availability for Rockville clients. Weekend slots fill up quickly, so we recommend booking in advance." },
       { q: "Do you bring your own supplies to Rockville homes?", a: "Yes. Our teams arrive fully equipped with eco-friendly cleaning products and professional equipment. You don't need to provide anything." }
     ],
-    metaTitle: "Cleaning Services in Rockville, MD — All Services | Capital Clean Care",
-    metaDescription: "Professional house cleaning in Rockville, MD. Eco-friendly products, background-checked teams, flexible scheduling. Serving all Rockville neighborhoods. Free quotes."
+    metaTitle: "Cleaning Services Rockville, MD | Capital Clean Care",
+    metaDescription: "Explore professional cleaning services in Rockville, MD: recurring, deep, move-in/out and eco-friendly care. Insured teams and free written quotes."
   },
   {
     name: "Silver Spring",
