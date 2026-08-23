@@ -169,6 +169,7 @@ const RETARGET_TO_VANITY: Record<string, string> = {
   "wheaton-md/house-cleaning": "/house-cleaning-wheaton-md",
   "germantown-md/deep-cleaning": "/deep-cleaning-germantown-md",
   "frederick-md/house-cleaning": "/house-cleaning-frederick-md",
+  "rockville-md/move-out-cleaning": "/move-out-cleaning-rockville-md",
 };
 
 const CityPage = () => {
