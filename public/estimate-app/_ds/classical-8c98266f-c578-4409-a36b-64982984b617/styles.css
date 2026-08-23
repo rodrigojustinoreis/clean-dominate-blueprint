@@ -1,0 +1,78 @@
+/* Base design-system layer for the Capital Clean & Care estimate prototype.
+   The document's inline <helmet> <style> repoints the tokens to the brand
+   palette and re-themes .btn / .tag / .table / .plate on top of these
+   structural defaults. Reconstructed to match the classical-* kit the
+   .dc.html was authored against. */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+:root {
+  --color-bg: #f2f4f6;
+  --color-surface: #e5eaee;
+  --color-text: #14232e;
+  --color-accent: #17557f;
+  --color-divider: color-mix(in srgb, #14232e 16%, transparent);
+  --font-body: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-heading: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+}
+
+html, body { color: var(--color-text); }
+
+/* Buttons ---------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 18px;
+  min-height: 44px;
+  line-height: 1;
+  border: 1px solid var(--color-divider);
+  background: #fff;
+  color: var(--color-text);
+  cursor: pointer;
+  text-decoration: none;
+  box-sizing: border-box;
+  transition: background .15s ease, border-color .15s ease, transform .12s ease;
+}
+.btn:disabled { opacity: .5; cursor: default; }
+.btn-block { width: 100%; }
+
+/* Tags / pills ----------------------------------------------------------- */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 9px;
+  line-height: 1.4;
+  border: 1px solid var(--color-divider);
+  background: transparent;
+  white-space: nowrap;
+}
+
+/* Tables ----------------------------------------------------------------- */
+.table { width: 100%; border-collapse: collapse; }
+.table th, .table td {
+  padding: 11px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--color-divider);
+  vertical-align: middle;
+}
+.table th { color: var(--color-text); }
+.table tr:last-child td { border-bottom: 0; }
+
+/* Plates (photo / image frames) ----------------------------------------- */
+.plate {
+  background: var(--color-surface);
+  border: 1px solid var(--color-divider);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Figures ---------------------------------------------------------------- */
+figure { margin: 0; }
+figcaption { color: var(--color-text); margin-top: 7px; }
+
+/* Native control reset so inline-styled buttons render predictably -------- */
+button { font-family: inherit; }
+img { display: block; max-width: 100%; }
