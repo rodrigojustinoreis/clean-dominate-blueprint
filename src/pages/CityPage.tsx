@@ -205,11 +205,59 @@ const rockvilleServiceGuide = [
   },
 ];
 
+const rockvilleRealWorkPhotos = [
+  {
+    src480: "/images/locations/rockville-real-work/window-detailing-480.webp",
+    src768: "/images/locations/rockville-real-work/window-detailing-768.webp",
+    alt: "Capital Clean Care employee detailing the upper frame of an open window during a residential cleaning in Rockville, Maryland",
+    caption: "Upper window-frame detailing",
+  },
+  {
+    src480: "/images/locations/rockville-real-work/window-frame-cleaning-480.webp",
+    src768: "/images/locations/rockville-real-work/window-frame-cleaning-768.webp",
+    alt: "Capital Clean Care employee cleaning a window track and latch in a Rockville, Maryland home",
+    caption: "Window track and latch cleaning",
+  },
+  {
+    src480: "/images/locations/rockville-real-work/bathroom-fixture-detailing-480.webp",
+    src768: "/images/locations/rockville-real-work/bathroom-fixture-detailing-768.webp",
+    alt: "Capital Clean Care professional in uniform detailing the bathroom mirror and lighting area in a Rockville home",
+    caption: "Bathroom mirror and lighting-area detail",
+  },
+  {
+    src480: "/images/locations/rockville-real-work/bathroom-light-cleaning-480.webp",
+    src768: "/images/locations/rockville-real-work/bathroom-light-cleaning-768.webp",
+    alt: "Capital Clean Care professional wiping bathroom light fixtures above a mirror during a Rockville cleaning visit",
+    caption: "Bathroom light-fixture cleaning",
+  },
+];
+
+const rockvilleCoreServiceSlugs = new Set([
+  "house-cleaning",
+  "deep-cleaning",
+  "move-out-cleaning",
+  "move-in-cleaning",
+  "apartment-cleaning",
+  "post-construction-cleaning",
+  "recurring-cleaning",
+  "eco-friendly-cleaning",
+]);
+
+const rockvilleSupportingServiceSlugs = new Set([
+  "airbnb-cleaning",
+  "condo-cleaning",
+  "maid-service",
+  "office-cleaning",
+  "kitchen-cleaning",
+  "bathroom-cleaning",
+  "living-area-cleaning",
+]);
+
 const CityPage = () => {
   const { slug } = useParams<{ slug: string }>();
   const city = getCityBySlug(slug || "");
   const { seoHelmet } = useSEO(city
-    ? { title: city.metaTitle, description: city.metaDescription, canonical: `https://capitalcleancare.com/locations/${city.slug}`, geo: { region: `US-${city.state}`, placename: city.name }, preloadImage: cityImages[city.slug] || regionImages[city.stateSlug] || regionMD, ogImage: city.slug === "rockville-md" ? "/images/locations/rockville-cleaning-team-floor-machine-og-v3.webp" : undefined }
+    ? { title: city.metaTitle, description: city.metaDescription, canonical: `https://capitalcleancare.com/locations/${city.slug}`, geo: { region: `US-${city.state}`, placename: city.name }, preloadImage: city.slug === "rockville-md" ? undefined : cityImages[city.slug] || regionImages[city.stateSlug] || regionMD, ogImage: city.slug === "rockville-md" ? "/images/locations/rockville-real-work/rockville-real-cleaning-og.webp" : undefined }
     : { title: "Location Not Found", description: "The requested service location could not be found.", noIndex: true });
 
   if (!city) return <NotFound />;
@@ -234,6 +282,12 @@ const CityPage = () => {
   const testimonials = pickReviews(city.slug, 3);
   const isRockvilleHub = city.slug === "rockville-md";
   const isUmbrellaHub = UMBRELLA_HUBS.has(city.slug);
+  const visibleServiceLocationPages = isRockvilleHub
+    ? slServices.filter((service) => rockvilleCoreServiceSlugs.has(service.slug))
+    : slServices;
+  const visibleGeneralServices = isRockvilleHub
+    ? services.filter((service) => rockvilleSupportingServiceSlugs.has(service.slug))
+    : services;
   const serviceSchemaName = isUmbrellaHub
     ? `Cleaning Services in ${city.name}, ${city.state}`
     : `House Cleaning in ${city.name}`;
@@ -249,9 +303,9 @@ const CityPage = () => {
           ? `Professional residential cleaning services in ${cityLabel}, including recurring, deep, move-in, move-out, apartment, and eco-friendly cleaning.`
           : `Professional eco-friendly house cleaning services in ${cityLabel}. Licensed, insured, background-checked teams.`}
         url={`https://capitalcleancare.com/locations/${city.slug}`}
-        areaServed={isRockvilleHub ? ["Rockville, MD", "20850", "20851", "20852", "20853", "20854"] : undefined}
+        areaServed={isRockvilleHub ? ["Rockville, MD", "20850", "20851", "20852", "20853"] : undefined}
         serviceType={isUmbrellaHub ? "Residential Cleaning Services" : "House Cleaning"}
-        image={isRockvilleHub ? "https://capitalcleancare.com/images/locations/rockville-cleaning-team-floor-machine-v3.webp" : undefined}
+        image={isRockvilleHub ? "https://capitalcleancare.com/images/locations/rockville-real-work/window-frame-cleaning-768.webp" : undefined}
       />
       <CityReviewSchema
         cityName={city.name}
@@ -264,6 +318,10 @@ const CityPage = () => {
         <div className="absolute inset-0">
           <img
             src={cityImages[city.slug] || regionImages[city.stateSlug] || regionMD}
+            srcSet={isRockvilleHub
+              ? "/images/locations/rockville-md-hero-v2-640.webp 640w, /images/locations/rockville-md-hero-v2-960.webp 960w, /images/locations/rockville-md-hero-v2-1280.webp 1280w"
+              : undefined}
+            sizes={isRockvilleHub ? "100vw" : undefined}
             alt={`Eco-friendly house cleaning team serving ${city.name}, ${city.state} — Capital Clean Care`}
             width={1280}
             height={720}
@@ -305,7 +363,7 @@ const CityPage = () => {
       {isRockvilleHub && (
         <section className="py-12 md:py-16 border-b border-border" aria-labelledby="rockville-cleaning-answer">
           <div className="container mx-auto px-4 max-w-4xl">
-            <p className="text-sm font-semibold text-accent mb-3">Updated August 2026 · Serving ZIP codes 20850–20854</p>
+            <p className="text-sm font-semibold text-accent mb-3">Updated August 2026 · Serving Rockville ZIP codes 20850–20853</p>
             <h2 id="rockville-cleaning-answer" className="font-heading text-2xl md:text-3xl font-bold mb-5">
               What cleaning services are available in Rockville, MD?
             </h2>
@@ -354,23 +412,47 @@ const CityPage = () => {
               </div>
             </div>
             <div className="md:sticky md:top-28">
-              <div className="rounded-2xl overflow-hidden shadow-lg border border-border">
-                <img
-                  src={isRockvilleHub ? "/images/locations/rockville-cleaning-team-floor-machine-v3.webp" : teamPhotos[cityPhotoIndex(city.slug)]}
-                  alt={isRockvilleHub
-                    ? "Capital Clean Care professional in the official navy uniform using a powered floor-cleaning machine on hardwood in a Rockville, Maryland home"
-                    : `Capital Clean Care team cleaning a home in ${city.name}, ${city.state}`}
-                  width={isRockvilleHub ? 1536 : undefined}
-                  height={isRockvilleHub ? 1024 : undefined}
-                  className={`w-full ${isRockvilleHub ? "aspect-[3/2]" : "aspect-[4/3]"} object-cover`}
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              {!isRockvilleHub && (
+              {isRockvilleHub ? (
+                <div>
+                  <div className="grid grid-cols-2 gap-3" aria-label="Documented Capital Clean Care work completed in Rockville">
+                    {rockvilleRealWorkPhotos.map((photo) => (
+                      <figure key={photo.src480} className="overflow-hidden rounded-xl border border-border bg-card shadow-sm">
+                        <img
+                          src={photo.src480}
+                          srcSet={`${photo.src480} 480w, ${photo.src768} 768w`}
+                          sizes="(max-width: 767px) 46vw, 220px"
+                          alt={photo.alt}
+                          width="480"
+                          height="640"
+                          className="aspect-[4/3] w-full object-cover"
+                          loading="lazy"
+                          decoding="async"
+                        />
+                        <figcaption className="px-3 py-2 text-xs leading-snug text-muted-foreground">
+                          {photo.caption}
+                        </figcaption>
+                      </figure>
+                    ))}
+                  </div>
+                  <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                    These original photographs document a Capital Clean Care residential cleaning visit in Rockville on <time dateTime="2026-08-17">August 17, 2026</time>. The work shown includes interior window-frame, track, latch, bathroom mirror-area, and light-fixture detailing. The client's identity and exact address are withheld for privacy.
+                  </p>
+                </div>
+              ) : (
+                <>
+                  <div className="rounded-2xl overflow-hidden shadow-lg border border-border">
+                    <img
+                      src={teamPhotos[cityPhotoIndex(city.slug)]}
+                      alt={`Capital Clean Care team cleaning a home in ${city.name}, ${city.state}`}
+                      className="w-full aspect-[4/3] object-cover"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
                 <p className="text-xs text-muted-foreground text-center mt-2">
                   Our team serving {city.name} and surrounding areas
                 </p>
+                </>
               )}
             </div>
           </div>
@@ -389,7 +471,7 @@ const CityPage = () => {
           {/* Service-location specific links */}
           {hasServiceLocationPages && (
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-              {slServices.map((sl) => {
+              {visibleServiceLocationPages.map((sl) => {
                 const serviceHref = RETARGET_TO_VANITY[`${city.slug}/${sl.slug}`] ?? `/locations/${city.slug}/${sl.slug}`;
                 return (
                 <Card key={sl.slug} className="group hover:shadow-md transition-all duration-200 hover:-translate-y-0.5">
@@ -413,7 +495,7 @@ const CityPage = () => {
 
           {/* General service links */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {services.map((s) => (
+            {visibleGeneralServices.map((s) => (
               <Card key={s.slug} className="group hover:shadow-md transition-all duration-200 hover:-translate-y-0.5">
                 <CardContent className="p-5">
                   <Link to={`/services/${s.slug}`} className="flex items-center gap-3">
