@@ -21,6 +21,8 @@
 
 The new answer block appears in the first portion of the page and independently states what the company offers, where it serves, how service works, and how a quote is determined. The adjacent service table gives machines and users an exact relationship between service type, use case, and canonical detail URL.
 
+The page also includes a lightweight, original Rockville cleaning illustration created from the company's official uniform reference, with transparent AI-assistance disclosure, descriptive alt text, fixed dimensions, social-preview metadata, and an `ImageObject` attached to the Service entity. This provides a consistent multimodal signal without misrepresenting a generated scene as a documented customer job.
+
 ## Authority signals present
 
 - Named company and consistent phone/entity schema
@@ -39,4 +41,3 @@ The new answer block appears in the first portion of the page and independently 
 5. Refresh operational facts only when they actually change; do not manipulate dates for artificial freshness.
 
 Google's current guidance treats AI visibility as strong SEO, not a separate trick. No AI-specific markup, keyword stuffing, fake mentions, or manufactured citations were added.
-

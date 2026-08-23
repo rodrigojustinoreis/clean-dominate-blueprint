@@ -154,6 +154,7 @@ interface ServiceSchemaProps {
   url: string;
   areaServed?: string[];
   serviceType?: string;
+  image?: string;
   /** Visible price range for this service — emits a valid AggregateOffer (low/high). */
   priceRange?: { low: number; high: number };
 }
@@ -164,6 +165,7 @@ export const ServiceSchema = ({
   url,
   areaServed,
   serviceType = "House Cleaning",
+  image,
   priceRange,
 }: ServiceSchemaProps) => {
   const schema = {
@@ -177,6 +179,7 @@ export const ServiceSchema = ({
       ? areaServed.map((a) => ({ "@type": "Place", name: a }))
       : defaultAreaServedRegions,
     serviceType,
+    ...(image ? { image: { "@type": "ImageObject", url: image } } : {}),
     offers: priceRange
       ? {
           "@type": "AggregateOffer",
