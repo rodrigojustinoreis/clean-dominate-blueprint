@@ -56,7 +56,6 @@ export const NOINDEX_PATHS: ReadonlySet<string> = new Set([
   "/locations/prince-georges-county-md",
   "/locations/rockville-md/move-out-cleaning",
   "/locations/rockville-md/office-cleaning",
-  "/locations/rockville-md/post-construction-cleaning",
   "/locations/silver-spring-md/eco-friendly-cleaning",
   "/locations/silver-spring-md/move-out-cleaning",
   "/locations/silver-spring-md/office-cleaning",
