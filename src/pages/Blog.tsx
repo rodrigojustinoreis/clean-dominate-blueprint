@@ -88,6 +88,15 @@ export const blogPosts: BlogPost[] = [
     coverImage: "/images/team/real-team-two-members.webp",
   },
   {
+    slug: "back-to-school-cleaning-checklist",
+    title: "Back-to-School Cleaning Checklist for Busy DMV Families",
+    excerpt: "Reset your entryway, kitchen, bathrooms, homework area and family routine with a practical back-to-school cleaning checklist built for busy DMV households.",
+    date: "2026-08-23",
+    readTime: "9 min read",
+    category: "Seasonal Guides",
+    coverImage: "/images/blog/back-to-school/hero.webp",
+  },
+  {
     slug: "summer-cleaning-checklist-maryland",
     title: "Summer Cleaning Checklist for Maryland Homes (2026)",
     excerpt: "A summer cleaning checklist built for Maryland's humidity — mildew control, HVAC and vent care, windows and screens, outdoor spaces, and kitchen prep for entertaining.",

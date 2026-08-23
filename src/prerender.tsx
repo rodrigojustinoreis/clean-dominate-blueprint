@@ -90,6 +90,7 @@ function getAllRoutes(): string[] {
     "/resources/how-to-prepare-home-for-professional-cleaning",
     "/resources/how-to-keep-house-clean-between-cleanings",
     "/resources/summer-cleaning-checklist-maryland",
+    "/resources/back-to-school-cleaning-checklist",
     "/resources/holiday-cleaning-checklist-dmv",
     "/resources/cleaning-tips-for-working-professionals",
     "/resources/how-to-remove-red-wine-stains",

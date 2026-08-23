@@ -179,6 +179,7 @@ export const MANUAL_RELATED_POSTS: Record<string, string[]> = {
   "house-cleaning-cost-bethesda-md": ["cleaning-service-chevy-chase-md", "house-cleaning-potomac-md", "cleaning-service-columbia-md"],
   "house-cleaning-cost-silver-spring-md": ["best-house-cleaning-service-rockville-md", "how-to-choose-cleaning-service-silver-spring", "cleaning-service-columbia-md"],
   "summer-cleaning-checklist-maryland": ["fall-cleaning-checklist-maryland", "spring-cleaning-checklist-maryland-2026", "eco-cleaning-tips-winters-maryland"],
+  "back-to-school-cleaning-checklist": ["best-cleaning-schedule-busy-families-dmv", "how-to-keep-house-clean-between-cleanings", "recurring-cleaning-weekly-biweekly-monthly"],
   "holiday-cleaning-checklist-dmv": ["fall-cleaning-checklist-maryland", "airbnb-cleaning-tips-dmv-hosts", "move-in-cleaning-guide-dmv"],
 };
 
