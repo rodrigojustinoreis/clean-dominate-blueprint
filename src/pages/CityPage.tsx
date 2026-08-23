@@ -34,7 +34,7 @@ import PricingTable from "@/components/PricingTable";
 import TrustBar from "@/components/TrustBar";
 import TrustBadges from "@/components/TrustBadges";
 import ConversionCTA from "@/components/ConversionCTA";
-import { FAQSchema, ServiceSchema, BreadcrumbSchema, CityReviewSchema } from "@/components/SchemaMarkup";
+import { FAQSchema, ServiceSchema, BreadcrumbSchema, CityReviewSchema, WebPageSchema } from "@/components/SchemaMarkup";
 import { pickReviews } from "@/data/realReviews";
 import { useSEO } from "@/hooks/useSEO";
 import { getCityBySlug, getExpandedCityFaqs } from "@/data/locations";
@@ -253,6 +253,49 @@ const rockvilleSupportingServiceSlugs = new Set([
   "living-area-cleaning",
 ]);
 
+const rockvilleFaqs = [
+  {
+    q: "What cleaning services does Capital Clean Care provide in Rockville?",
+    a: "We provide recurring house cleaning, deep cleaning, move-in and move-out cleaning, apartment and condo cleaning, post-construction cleaning, and eco-friendly cleaning throughout Rockville. Each service has a defined scope, and your written quote reflects the home size, bathrooms, condition, frequency, and requested add-ons.",
+  },
+  {
+    q: "How much does house cleaning cost in Rockville, MD?",
+    a: "Pricing depends on the size and condition of the home, the number of bathrooms, service type, and frequency. As a planning range, many bi-weekly Rockville cleanings run about $165–$310 per visit. First-time deep cleaning and move-in or move-out cleaning generally cost more because more detailed tasks are included. We confirm the scope and price in writing before service.",
+  },
+  {
+    q: "Do you offer weekly, bi-weekly, and monthly cleaning in Rockville?",
+    a: "Yes. Rockville households can request weekly, bi-weekly, or monthly recurring cleaning. The right frequency depends on household size, pets, cooking habits, floor type, and how quickly dust and clutter return. Bi-weekly service is a common starting point, while homes with pets, children, or frequent guests may prefer weekly visits.",
+  },
+  {
+    q: "Can you help with pet hair and dander in a Rockville home?",
+    a: "Yes. Tell us about pets when requesting your quote so we can plan for extra vacuuming, floor care, upholstery-accessible areas, and frequently used pet zones. Cleaning can reduce loose hair, dust, and surface dander, but it is not a medical treatment or a replacement for HVAC filtration and veterinary or allergy guidance.",
+  },
+  {
+    q: "What is included in a Rockville deep cleaning?",
+    a: "A deep clean is designed for buildup and details beyond routine maintenance. Depending on the agreed scope, it can include baseboards, reachable trim, doors, window sills and tracks, cabinet fronts, bathroom fixtures, kitchen surfaces, and more detailed dust removal. Inside appliances, interior windows, and other add-ons should be confirmed in the written quote rather than assumed.",
+  },
+  {
+    q: "Do you clean Rockville apartments, condos, townhomes, and single-family homes?",
+    a: "Yes. We clean apartments, condos, townhomes, and single-family homes across Rockville. For managed buildings, share parking, concierge, elevator, key, fob, and permitted service-hour requirements before the appointment so the team can plan access correctly.",
+  },
+  {
+    q: "Do you bring cleaning products and equipment?",
+    a: "Yes. Capital Clean Care teams arrive with cleaning products and professional equipment for the agreed service. If your home has a sensitive finish, product restriction, fragrance concern, allergy consideration, or a product you specifically want used, include that information when requesting the quote.",
+  },
+  {
+    q: "Which Rockville ZIP codes and neighborhoods do you serve?",
+    a: "We serve Rockville ZIP codes 20850, 20851, 20852, and 20853, including King Farm, Fallsgrove, Twinbrook, West End, College Gardens, Woodley Gardens, Rockville Town Center, and nearby neighborhoods. Call us if your address is near the service-area boundary so we can confirm availability.",
+  },
+  {
+    q: "Can I request same-day or Saturday cleaning in Rockville?",
+    a: "Same-day and Saturday appointments depend on crew availability, home size, and the requested scope. Contact us with your preferred date and service details; we will confirm whether the requested window is available before treating the appointment as booked.",
+  },
+  {
+    q: "Are Capital Clean Care teams insured and background-checked?",
+    a: "Yes. Capital Clean Care is insured, and team members are background-checked and trained before serving clients. You can request current business or insurance documentation when discussing a service that requires building-management approval.",
+  },
+];
+
 const CityPage = () => {
   const { slug } = useParams<{ slug: string }>();
   const city = getCityBySlug(slug || "");
@@ -263,7 +306,8 @@ const CityPage = () => {
   if (!city) return <NotFound />;
 
   const nearbyCities = city.nearbySlugs.map(getCityBySlug).filter(Boolean);
-  const expandedFaqs = getExpandedCityFaqs(city);
+  const isRockvilleHub = city.slug === "rockville-md";
+  const expandedFaqs = isRockvilleHub ? rockvilleFaqs : getExpandedCityFaqs(city);
   const stateLabel = city.stateSlug === "maryland" ? "Maryland" : city.stateSlug === "washington-dc" ? "Washington DC" : "Virginia";
   const cityLabel = city.state !== "DC" ? `${city.name}, ${city.state}` : city.name;
   const whyIntro = cityWhyIntros[city.slug] || `${city.name} homeowners choose Capital Clean Care for our reliable, eco-friendly cleaning services.`;
@@ -280,7 +324,6 @@ const CityPage = () => {
   const seniorRegionLabel = city.state === "DC" ? "Washington, DC" : city.state === "VA" ? "Northern Virginia" : "Montgomery County";
   // Real Google reviews only (deterministic per city) — never fabricated testimonials.
   const testimonials = pickReviews(city.slug, 3);
-  const isRockvilleHub = city.slug === "rockville-md";
   const isUmbrellaHub = UMBRELLA_HUBS.has(city.slug);
   const visibleServiceLocationPages = isRockvilleHub
     ? slServices.filter((service) => rockvilleCoreServiceSlugs.has(service.slug))
@@ -296,6 +339,17 @@ const CityPage = () => {
     <Layout>
       {seoHelmet}
       <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: stateLabel, href: `/${city.stateSlug}` }, { label: city.name, href: `/locations/${city.slug}` }]} />
+      {isRockvilleHub && (
+        <WebPageSchema
+          name={city.metaTitle}
+          description={city.metaDescription}
+          url={`https://capitalcleancare.com/locations/${city.slug}`}
+          dateModified="2026-08-23"
+          cityName="Rockville"
+          stateCode="Maryland"
+          primaryImage="https://capitalcleancare.com/images/locations/rockville-real-work/rockville-real-cleaning-og.webp"
+        />
+      )}
       <FAQSchema faqs={expandedFaqs} />
       <ServiceSchema
         serviceName={serviceSchemaName}
@@ -363,7 +417,7 @@ const CityPage = () => {
       {isRockvilleHub && (
         <section className="py-12 md:py-16 border-b border-border" aria-labelledby="rockville-cleaning-answer">
           <div className="container mx-auto px-4 max-w-4xl">
-            <p className="text-sm font-semibold text-accent mb-3">Updated August 2026 · Serving Rockville ZIP codes 20850–20853</p>
+            <p className="text-sm font-semibold text-accent mb-3">Updated August 23, 2026 · Serving Rockville ZIP codes 20850–20853</p>
             <h2 id="rockville-cleaning-answer" className="font-heading text-2xl md:text-3xl font-bold mb-5">
               What cleaning services are available in Rockville, MD?
             </h2>
@@ -437,6 +491,12 @@ const CityPage = () => {
                   <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
                     These original photographs document a Capital Clean Care residential cleaning visit in Rockville on <time dateTime="2026-08-17">August 17, 2026</time>. The work shown includes interior window-frame, track, latch, bathroom mirror-area, and light-fixture detailing. The client's identity and exact address are withheld for privacy.
                   </p>
+                  <div className="mt-5 rounded-xl border border-accent/25 bg-accent/5 p-5">
+                    <h3 className="font-heading text-lg font-bold mb-3">Rockville service note: what this visit documents</h3>
+                    <p className="text-sm leading-relaxed text-foreground">
+                      On August 17, 2026, a Capital Clean Care team completed residential detail work in Rockville, Maryland. The photographs on this page show the team cleaning an interior window's upper frame, track, and latch, then detailing the bathroom mirror area and light fixtures. These are original photographs from that Rockville appointment, not stock images or AI illustrations. They document the type of reachable-detail work that may be included when it appears in the client's confirmed cleaning scope. Because every home and service package is different, the photographs are evidence of work completed on this visit rather than a promise that every item is included automatically. Capital Clean Care protects the client's privacy by publishing neither the resident's identity nor the property's street address. Homeowners who need window tracks, light fixtures, or another detail handled should list it when requesting a quote so the written scope can confirm it before the appointment.
+                    </p>
+                  </div>
                 </div>
               ) : (
                 <>

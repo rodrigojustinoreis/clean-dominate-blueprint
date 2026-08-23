@@ -202,6 +202,60 @@ export const ServiceSchema = ({
   return <JsonLd id={id} schema={schema} />;
 };
 
+// ── WebPage Schema ────────────────────────────────────────────
+interface WebPageSchemaProps {
+  name: string;
+  description: string;
+  url: string;
+  dateModified: string;
+  cityName?: string;
+  stateCode?: string;
+  primaryImage?: string;
+}
+
+export const WebPageSchema = ({
+  name,
+  description,
+  url,
+  dateModified,
+  cityName,
+  stateCode,
+  primaryImage,
+}: WebPageSchemaProps) => {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${url}#webpage`,
+    url,
+    name,
+    description,
+    inLanguage: "en-US",
+    dateModified,
+    isPartOf: { "@id": `${BUSINESS.url}/#website` },
+    publisher: { "@id": `${BUSINESS.url}/#business` },
+    ...(cityName
+      ? {
+          about: {
+            "@type": "City",
+            name: cityName,
+            ...(stateCode ? { containedInPlace: { "@type": "State", name: stateCode } } : {}),
+          },
+        }
+      : {}),
+    ...(primaryImage
+      ? {
+          primaryImageOfPage: {
+            "@type": "ImageObject",
+            contentUrl: primaryImage,
+            caption: `Capital Clean Care residential cleaning work in ${cityName || "the DMV"}`,
+          },
+        }
+      : {}),
+  };
+
+  return <JsonLd id="webpage-schema" schema={schema} />;
+};
+
 // ── FAQ Schema ────────────────────────────────────────────────
 interface FAQSchemaProps {
   faqs: { q: string; a: string }[];
