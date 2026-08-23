@@ -209,7 +209,7 @@ const CityPage = () => {
   const { slug } = useParams<{ slug: string }>();
   const city = getCityBySlug(slug || "");
   const { seoHelmet } = useSEO(city
-    ? { title: city.metaTitle, description: city.metaDescription, canonical: `https://capitalcleancare.com/locations/${city.slug}`, geo: { region: `US-${city.state}`, placename: city.name }, preloadImage: cityImages[city.slug] || regionImages[city.stateSlug] || regionMD, ogImage: city.slug === "rockville-md" ? "/images/locations/rockville-cleaning-team-hardwood-og-v1.webp" : undefined }
+    ? { title: city.metaTitle, description: city.metaDescription, canonical: `https://capitalcleancare.com/locations/${city.slug}`, geo: { region: `US-${city.state}`, placename: city.name }, preloadImage: cityImages[city.slug] || regionImages[city.stateSlug] || regionMD, ogImage: city.slug === "rockville-md" ? "/images/locations/rockville-cleaning-team-floor-machine-og-v2.webp" : undefined }
     : { title: "Location Not Found", description: "The requested service location could not be found.", noIndex: true });
 
   if (!city) return <NotFound />;
@@ -251,7 +251,7 @@ const CityPage = () => {
         url={`https://capitalcleancare.com/locations/${city.slug}`}
         areaServed={isRockvilleHub ? ["Rockville, MD", "20850", "20851", "20852", "20853", "20854"] : undefined}
         serviceType={isUmbrellaHub ? "Residential Cleaning Services" : "House Cleaning"}
-        image={isRockvilleHub ? "https://capitalcleancare.com/images/locations/rockville-cleaning-team-hardwood-v1.webp" : undefined}
+        image={isRockvilleHub ? "https://capitalcleancare.com/images/locations/rockville-cleaning-team-floor-machine-v2.webp" : undefined}
       />
       <CityReviewSchema
         cityName={city.name}
@@ -356,9 +356,9 @@ const CityPage = () => {
             <div className="md:sticky md:top-28">
               <div className="rounded-2xl overflow-hidden shadow-lg border border-border">
                 <img
-                  src={isRockvilleHub ? "/images/locations/rockville-cleaning-team-hardwood-v1.webp" : teamPhotos[cityPhotoIndex(city.slug)]}
+                  src={isRockvilleHub ? "/images/locations/rockville-cleaning-team-floor-machine-v2.webp" : teamPhotos[cityPhotoIndex(city.slug)]}
                   alt={isRockvilleHub
-                    ? "Illustration of a Capital Clean Care professional in the official navy uniform cleaning hardwood floors in a Rockville, Maryland home"
+                    ? "Capital Clean Care professional in the official navy uniform using a powered floor-cleaning machine on hardwood in a Rockville, Maryland home"
                     : `Capital Clean Care team cleaning a home in ${city.name}, ${city.state}`}
                   width={isRockvilleHub ? 1536 : undefined}
                   height={isRockvilleHub ? 1024 : undefined}
