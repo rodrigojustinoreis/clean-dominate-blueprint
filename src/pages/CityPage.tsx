@@ -367,11 +367,11 @@ const CityPage = () => {
                   decoding="async"
                 />
               </div>
-              <p className="text-xs text-muted-foreground text-center mt-2">
-                {isRockvilleHub
-                  ? "AI-assisted illustration created from Capital Clean Care's official uniform reference."
-                  : `Our team serving ${city.name} and surrounding areas`}
-              </p>
+              {!isRockvilleHub && (
+                <p className="text-xs text-muted-foreground text-center mt-2">
+                  Our team serving {city.name} and surrounding areas
+                </p>
+              )}
             </div>
           </div>
         </div>
