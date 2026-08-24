@@ -1,5 +1,6 @@
+import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, CheckCircle2, Lightbulb, MapPin, Quote, ShieldCheck, Sparkles, Star } from "lucide-react";
+import { ArrowRight, Check, CheckCircle2, Home, Lightbulb, MapPin, Quote, ShieldCheck, Sparkles, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -27,6 +28,113 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import NotFound from "./NotFound";
+
+type AlexandriaFrequency = "biweekly" | "monthly" | "onetime" | "deep";
+
+const alexandriaHomeLabels = ["Studio / 1 BR", "2 bedrooms", "3 bedrooms", "4+ bedrooms"];
+const alexandriaEstimateRanges: Record<AlexandriaFrequency, Array<[number, number]>> = {
+  biweekly: [[140, 165], [180, 215], [215, 260], [260, 325]],
+  monthly: [[170, 205], [215, 265], [260, 325], [315, 400]],
+  onetime: [[160, 195], [215, 255], [255, 310], [310, 400]],
+  deep: [[230, 295], [310, 390], [375, 470], [450, 570]],
+};
+const alexandriaFrequencyLabels: Record<AlexandriaFrequency, string> = {
+  biweekly: "Bi-weekly",
+  monthly: "Monthly",
+  onetime: "One-time",
+  deep: "Deep clean",
+};
+
+const AlexandriaProgressNav = () => {
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    const updateProgress = () => {
+      const available = document.documentElement.scrollHeight - window.innerHeight;
+      setProgress(available > 0 ? Math.min(100, (window.scrollY / available) * 100) : 0);
+    };
+    updateProgress();
+    window.addEventListener("scroll", updateProgress, { passive: true });
+    return () => window.removeEventListener("scroll", updateProgress);
+  }, []);
+
+  return (
+    <div className="sticky top-[72px] z-40 border-y border-border bg-white/95 shadow-sm backdrop-blur md:top-[104px]">
+      <div className="h-1 bg-secondary">
+        <div className="h-full bg-accent transition-[width] duration-150" style={{ width: `${progress}%` }} />
+      </div>
+      <nav className="mx-auto flex max-w-5xl gap-1 overflow-x-auto px-3 py-2 [scrollbar-width:none]" aria-label="Alexandria cost guide navigation">
+        {[
+          ["alexandria-estimate", "Estimate"],
+          ["prices-by-home-size", "Prices"],
+          ["alexandria-price-examples", "Local homes"],
+          ["alexandria-reviews", "Reviews"],
+          ["alexandria-faq", "FAQ"],
+        ].map(([id, label]) => (
+          <a key={id} href={`#${id}`} className="min-h-11 shrink-0 rounded-full px-4 py-2.5 text-sm font-semibold text-muted-foreground transition hover:bg-accent/10 hover:text-accent">
+            {label}
+          </a>
+        ))}
+      </nav>
+    </div>
+  );
+};
+
+const AlexandriaPricePlanner = () => {
+  const [homeIndex, setHomeIndex] = useState(1);
+  const [frequency, setFrequency] = useState<AlexandriaFrequency>("biweekly");
+  const estimate = useMemo(() => alexandriaEstimateRanges[frequency][homeIndex], [frequency, homeIndex]);
+
+  return (
+    <section id="alexandria-estimate" className="scroll-mt-40 mb-12 overflow-hidden rounded-[2rem] border border-border bg-white shadow-[0_20px_60px_rgba(26,71,91,.12)]" aria-labelledby="alexandria-estimate-title">
+      <div className="grid lg:grid-cols-[1.12fr_.88fr]">
+        <div className="p-6 md:p-9">
+          <p className="mb-2 text-xs font-bold uppercase tracking-[.16em] text-accent">30-second price planner</p>
+          <h2 id="alexandria-estimate-title" className="font-heading text-2xl font-bold text-foreground md:text-3xl">Start with a realistic Alexandria range</h2>
+          <p className="mt-3 text-sm leading-relaxed text-muted-foreground">Choose the closest home size and service. No contact information is required to see the estimate.</p>
+          <fieldset className="mt-7">
+            <legend className="mb-3 text-sm font-bold text-foreground">1. Your home</legend>
+            <div className="grid grid-cols-2 gap-2">
+              {alexandriaHomeLabels.map((label, index) => (
+                <button key={label} type="button" aria-pressed={homeIndex === index} onClick={() => setHomeIndex(index)} className={`min-h-12 rounded-xl border px-3 py-3 text-sm font-semibold transition ${homeIndex === index ? "border-accent bg-accent/10 text-accent ring-2 ring-accent/15" : "border-border bg-white text-muted-foreground hover:border-accent/50"}`}>
+                  {label}
+                </button>
+              ))}
+            </div>
+          </fieldset>
+          <fieldset className="mt-6">
+            <legend className="mb-3 text-sm font-bold text-foreground">2. Cleaning type</legend>
+            <div className="grid grid-cols-2 gap-2">
+              {(Object.keys(alexandriaFrequencyLabels) as AlexandriaFrequency[]).map((key) => (
+                <button key={key} type="button" aria-pressed={frequency === key} onClick={() => setFrequency(key)} className={`min-h-12 rounded-xl border px-3 py-3 text-sm font-semibold transition ${frequency === key ? "border-accent bg-accent/10 text-accent ring-2 ring-accent/15" : "border-border bg-white text-muted-foreground hover:border-accent/50"}`}>
+                  {alexandriaFrequencyLabels[key]}
+                </button>
+              ))}
+            </div>
+          </fieldset>
+        </div>
+        <div className="flex flex-col justify-between bg-primary p-7 text-primary-foreground md:p-9">
+          <div>
+            <Sparkles className="h-7 w-7 text-accent" />
+            <p className="mt-6 text-sm font-semibold text-primary-foreground/60">Your planning range</p>
+            <p aria-live="polite" className="mt-1 font-heading text-5xl font-bold tracking-tight">${estimate[0]}–${estimate[1]}</p>
+            <p className="mt-2 text-primary-foreground/70">per visit · {alexandriaFrequencyLabels[frequency].toLowerCase()}</p>
+            <div className="my-7 h-px bg-primary-foreground/15" />
+            <ul className="space-y-3 text-sm text-primary-foreground/75">
+              {["Supplies and equipment included", "Plant-based, family-safe products", "Exact written quote before booking"].map((item) => (
+                <li key={item} className="flex gap-3"><Check className="mt-0.5 h-4 w-4 shrink-0 text-accent" />{item}</li>
+              ))}
+            </ul>
+          </div>
+          <Button asChild className="mt-8 h-14 rounded-full bg-accent text-base font-bold text-white hover:bg-accent/90">
+            <Link to="/contact" onClick={() => trackBookNowClick("alexandria_cost_planner")}>Get my exact price <ArrowRight className="ml-2 h-4 w-4" /></Link>
+          </Button>
+        </div>
+      </div>
+      <p className="border-t border-border bg-secondary/30 px-6 py-3 text-xs leading-relaxed text-muted-foreground">Planning estimate only. Bathrooms, condition, pets, stairs, access, and selected add-ons determine the written quote.</p>
+    </section>
+  );
+};
 
 // Renders a "House Cleaning Cost in <City>" lead-gen article from cost-cities.ts data.
 // One template, many cities. citySlug is passed per route so each URL prerenders statically.
@@ -123,7 +231,9 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
           {title}
         </h1>
         <p className="text-xl md:text-2xl text-gray-200 mb-4 leading-relaxed font-medium">
-          Real 2026 price ranges by home size — plus what actually drives the cost
+          {isAlexandria
+            ? "Know what your Alexandria home should cost to clean — with a clear estimate in under 30 seconds"
+            : "Real 2026 price ranges by home size — plus what actually drives the cost"}
         </p>
         <p className="text-gray-300 mb-8 text-sm uppercase tracking-widest">
           By Rodrigo Reis, Owner · {where} · {isAlexandria ? "Updated August 24, 2026" : "June 2026"}
@@ -154,6 +264,8 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
         </section>
       )}
 
+      {isAlexandria && <AlexandriaProgressNav />}
+
       {/* ARTICLE */}
       <article className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4 max-w-3xl">
@@ -171,18 +283,18 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
                 </p>
               )}
             </div>
+            {isAlexandria && <AlexandriaPricePlanner />}
             {isAlexandria && (
-              <nav aria-label="Alexandria price guide sections" className="mb-8 rounded-xl border border-border bg-secondary/30 p-4">
-                <p className="text-sm font-semibold text-foreground mb-3">Jump to what you need</p>
-                <div className="flex flex-wrap gap-2 text-sm">
-                  <a href="#prices-by-frequency" className="rounded-full bg-white border border-border px-3 py-1.5 text-accent hover:border-accent">Prices by frequency</a>
-                  <a href="#prices-by-home-size" className="rounded-full bg-white border border-border px-3 py-1.5 text-accent hover:border-accent">Prices by home size</a>
-                  <a href="#hourly-vs-flat-rate" className="rounded-full bg-white border border-border px-3 py-1.5 text-accent hover:border-accent">Hourly vs. flat rate</a>
-                  <a href="#alexandria-price-examples" className="rounded-full bg-white border border-border px-3 py-1.5 text-accent hover:border-accent">Local examples</a>
-                  <a href="#price-factors" className="rounded-full bg-white border border-border px-3 py-1.5 text-accent hover:border-accent">What changes the price</a>
-                  <a href="#alexandria-faq" className="rounded-full bg-white border border-border px-3 py-1.5 text-accent hover:border-accent">Alexandria FAQ</a>
+              <aside className="mb-10 grid items-center gap-6 rounded-2xl bg-[#edf6f1] p-6 md:grid-cols-[1fr_auto]" aria-label="Featured verified Google review">
+                <div>
+                  <div className="mb-3 flex gap-1 text-amber-500" aria-label="5 out of 5 stars">
+                    {Array.from({ length: 5 }).map((_, index) => <Star key={index} className="h-4 w-4 fill-current" aria-hidden="true" />)}
+                  </div>
+                  <blockquote className="text-base font-medium leading-relaxed text-foreground">“{REAL_REVIEWS[4].text}”</blockquote>
+                  <p className="mt-3 text-sm font-bold text-foreground">— {REAL_REVIEWS[4].name} <span className="font-normal text-muted-foreground">· Verified Google review</span></p>
                 </div>
-              </nav>
+                <a href="#alexandria-reviews" className="inline-flex min-h-11 items-center justify-center rounded-full border border-[#2e7d62]/20 bg-white px-5 text-sm font-bold text-[#2e7d62] hover:border-[#2e7d62]/50">Read customer reviews</a>
+              </aside>
             )}
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">{c.intro}</p>
             {isAlexandria && (
@@ -232,7 +344,24 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
             <p className="text-muted-foreground leading-relaxed mb-5">
               Typical per-visit ranges for {c.city} homes. Recurring (bi-weekly) is the lowest per visit; deep cleaning is the most thorough, top-to-bottom service.
             </p>
-            <div className="overflow-x-auto rounded-2xl border border-border mb-4">
+            {isAlexandria && (
+              <div className="mb-6 grid gap-3 sm:hidden" aria-label="Alexandria cleaning prices by home size">
+                {alexandriaHomeLabels.map((home, index) => (
+                  <article key={home} className={`rounded-2xl border p-5 ${index === 1 ? "border-accent bg-accent/5 shadow-md" : "border-border bg-white"}`}>
+                    <div className="flex items-center justify-between gap-3">
+                      <div className="flex items-center gap-3"><Home className="h-5 w-5 text-accent" /><h3 className="font-bold text-foreground">{home}</h3></div>
+                      {index === 1 && <span className="rounded-full bg-accent/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-accent">Popular</span>}
+                    </div>
+                    <dl className="mt-5 space-y-3 text-sm">
+                      <div className="flex justify-between border-b border-border pb-3"><dt className="text-muted-foreground">Recurring</dt><dd className="font-bold text-accent">${alexandriaEstimateRanges.biweekly[index][0]}–${alexandriaEstimateRanges.biweekly[index][1]}</dd></div>
+                      <div className="flex justify-between border-b border-border pb-3"><dt className="text-muted-foreground">One-time</dt><dd className="font-bold text-foreground">${alexandriaEstimateRanges.onetime[index][0]}–${alexandriaEstimateRanges.onetime[index][1]}</dd></div>
+                      <div className="flex justify-between"><dt className="text-muted-foreground">Deep clean</dt><dd className="font-bold text-foreground">${alexandriaEstimateRanges.deep[index][0]}–${alexandriaEstimateRanges.deep[index][1]}</dd></div>
+                    </dl>
+                  </article>
+                ))}
+              </div>
+            )}
+            <div className={`overflow-x-auto rounded-2xl border border-border mb-4 ${isAlexandria ? "hidden sm:block" : ""}`}>
               <table className="w-full text-sm">
                 <thead>
                   <tr className="bg-secondary text-left">
