@@ -819,6 +819,7 @@ const blogContent: Record<string, React.ReactNode> = {
         <li><strong>2BR home or condo:</strong> $185 – $240 per standard clean</li>
         <li><strong>3BR home:</strong> $230 – $300 per standard clean</li>
       </ul>
+      <p>For a fuller breakdown of flat-rate versus hourly pricing, cleaner-hours, home-size examples, and what each service level includes, see our <Link to="/resources/house-cleaning-cost-alexandria-va" className="text-accent hover:underline font-semibold">2026 Alexandria house cleaning cost guide</Link>.</p>
 
       <BlogInlineCTA
         headline="Alexandria's Trusted House Cleaning Service"

@@ -397,6 +397,14 @@ const CityPage = () => {
               </div>
             ))}
           </div>
+          {city.slug === "alexandria-va" && (
+            <p className="mt-6 text-muted-foreground leading-relaxed">
+              Planning your budget? Compare realistic examples for Old Town rowhouses, Del Ray bungalows, and local condos in our{" "}
+              <Link to="/resources/house-cleaning-cost-alexandria-va" className="text-accent font-semibold underline hover:no-underline">
+                Alexandria cleaning cost breakdown by home size
+              </Link>.
+            </p>
+          )}
         </div>
       </section>
 
