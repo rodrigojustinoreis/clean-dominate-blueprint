@@ -164,7 +164,7 @@ const blogContent: Record<string, React.ReactNode> = {
       <p>Many homeowners assume that <Link to="/services/eco-friendly-cleaning" className="text-accent hover:underline">eco-friendly cleaning</Link> is a premium add-on. At Capital Clean Care, plant-based, non-toxic products are standard — included in every service at no extra charge. You don't pay more to keep your family safe.</p>
 
       <h2>Get an Instant Quote</h2>
-      <p>Pricing depends on your specific home. Use our free quote form to get an accurate estimate for your address in <Link to="/locations/silver-spring-md" className="text-accent hover:underline">Silver Spring</Link>, <Link to="/locations/bethesda-md" className="text-accent hover:underline">Bethesda</Link>, <Link to="/locations/fairfax-va" className="text-accent hover:underline">Fairfax</Link>, or anywhere in the DMV.</p>
+      <p>Pricing depends on your specific home. Use our free quote form to get an accurate estimate for your address in <Link to="/locations/silver-spring-md" className="text-accent hover:underline">Silver Spring</Link>, <Link to="/locations/bethesda-md" className="text-accent hover:underline">Bethesda</Link>, <Link to="/locations/fairfax-va/house-cleaning" className="text-accent hover:underline">Fairfax</Link>, or anywhere in the DMV.</p>
         </div>
       </details>
 
@@ -721,7 +721,7 @@ const blogContent: Record<string, React.ReactNode> = {
   ),
   "cleaning-service-fairfax-va": (
     <article className="prose prose-lg max-w-none">
-      <p><Link to="/locations/fairfax-va" className="text-accent hover:underline">Fairfax, VA</Link> is one of Northern Virginia's most family-oriented communities — with excellent schools, large suburban homes, and a lifestyle that keeps families constantly on the move. Between jobs in DC, kids' activities, and weekend commitments, Fairfax homeowners are among the busiest in the DMV. Professional cleaning isn't a luxury here — it's a practical necessity.</p>
+      <p><Link to="/locations/fairfax-va/house-cleaning" className="text-accent hover:underline">House cleaning in Fairfax, VA</Link> serves one of Northern Virginia's most family-oriented communities — with excellent schools, large suburban homes, and a lifestyle that keeps families constantly on the move. Between jobs in DC, kids' activities, and weekend commitments, Fairfax homeowners are among the busiest in the DMV. Professional cleaning isn't a luxury here — it's a practical necessity.</p>
 
       <h2>Fairfax Home Characteristics</h2>
       <p>Most Fairfax homes are larger suburban properties — colonials, split-levels, and traditional two-stories with three to five bedrooms, two-car garages, and finished basements. These homes take significantly longer to clean than urban condos, and the cleaning challenges are different:</p>
@@ -733,7 +733,7 @@ const blogContent: Record<string, React.ReactNode> = {
       </ul>
 
       <h2>Recommended Cleaning Frequency for Fairfax Families</h2>
-      <p>For most Fairfax households with children and pets, bi-weekly professional cleaning is the sweet spot — frequent enough to maintain a clean home, affordable enough to sustain long-term. See our full breakdown: <Link to="/resources/recurring-cleaning-weekly-biweekly-monthly" className="text-accent hover:underline">weekly vs. bi-weekly vs. monthly cleaning</Link>.</p>
+      <p>For most Fairfax households with children and pets, bi-weekly professional cleaning is the sweet spot — frequent enough to maintain a clean home, affordable enough to sustain long-term. See our full breakdown of <Link to="/resources/recurring-cleaning-weekly-biweekly-monthly" className="text-accent hover:underline">weekly vs. bi-weekly vs. monthly cleaning</Link>, then review our <Link to="/locations/fairfax-va/house-cleaning" className="text-accent hover:underline">Fairfax house cleaning service</Link> for local scheduling and coverage.</p>
 
       <h2>Fairfax Neighborhoods We Serve</h2>
       <p>We cover all of Fairfax City and surrounding communities including Fair Oaks, Burke, Annandale, Springfield, Reston, Herndon, Centreville, Chantilly, and areas near <Link to="/locations/mclean-va" className="text-accent hover:underline">McLean</Link> and <Link to="/locations/falls-church-va" className="text-accent hover:underline">Falls Church</Link>.</p>

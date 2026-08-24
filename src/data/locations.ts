@@ -601,8 +601,11 @@ export const cities: CityData[] = [
       { q: "Do you serve areas around George Mason?", a: "Yes. We serve all residential areas in and around the City of Fairfax." },
       { q: "Are recurring plans available in Fairfax?", a: "Yes. Weekly, bi-weekly, and monthly plans with preferred pricing and dedicated teams." }
     ],
-    metaTitle: "House Cleaning Services in Fairfax, VA | Capital Clean Care",
-    metaDescription: "Professional house cleaning in Fairfax, VA. Eco-friendly products, background-checked teams, flexible plans. Serving all Fairfax neighborhoods. Free quotes."
+    metaTitle: "Cleaning Services in Fairfax, VA | All Service Options",
+    metaDescription: "Explore cleaning services available in Fairfax, VA, including house, deep, recurring, move-out, office, and eco-friendly cleaning. Get a free quote.",
+    h1: "Professional Cleaning Services in Fairfax, VA",
+    heroLead: "Explore house cleaning, deep cleaning, recurring plans, move-out cleaning, office cleaning, and other professional services available in Fairfax.",
+    schemaServiceName: "Cleaning Services in Fairfax, VA"
   },
   {
     name: "McLean",
