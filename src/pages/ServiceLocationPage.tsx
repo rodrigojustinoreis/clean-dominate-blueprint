@@ -71,6 +71,9 @@ const ServiceLocationPage = () => {
   const metaTitle = override?.metaTitle || `${service.name} in ${city.name}, ${city.state} | Capital Clean Care`;
   const metaDescription = override?.metaDescription || `Top-rated ${serviceLabel} in ${city.name}, ${city.state}. Eco-friendly products, background-checked teams, satisfaction guaranteed. Serving ${city.county}. Free quotes.`;
   const pageUrl = `https://capitalcleancare.com/locations/${city.slug}/${service.slug}`;
+  const heroImage = city.slug === "fairfax-va" && service.slug === "house-cleaning"
+    ? "/images/locations/fairfax-house-cleaning-hero-v2.webp"
+    : null;
 
   // PR #5 — zombie-page pruning: only allowlisted (city, service) pairs are indexable.
   // All other dynamic permutations from this template render with <meta name="robots" content="noindex,nofollow">
@@ -108,33 +111,45 @@ const ServiceLocationPage = () => {
       <FAQSchema faqs={faqs} />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary/5 via-background to-accent/5 pt-24 pb-12 md:pt-32 md:pb-16">
-        <div className="container mx-auto px-4 max-w-4xl">
+      <section className="relative overflow-hidden bg-gradient-to-br from-primary/5 via-background to-accent/5 pt-24 pb-12 md:pt-32 md:pb-16">
+        {heroImage && (
+          <>
+            <img
+              src={heroImage}
+              alt="Professional Capital Clean Care team providing house cleaning in a Fairfax, Virginia home"
+              className="absolute inset-0 h-full w-full object-cover object-center"
+              loading="eager"
+              fetchPriority="high"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/30" />
+          </>
+        )}
+        <div className="relative container mx-auto px-4 max-w-4xl">
           <Breadcrumbs
             items={[
               { label: "Home", href: "/" },
               { label: city.name, href: `/locations/${city.slug}` },
               { label: service.name },
             ]}
-            className="mb-4"
+            className={heroImage ? "mb-4 text-primary-foreground/70 [&_a]:text-primary-foreground/70 [&_a:hover]:text-primary-foreground [&_span[aria-current]]:text-primary-foreground/90 [&_svg]:text-primary-foreground/50" : "mb-4"}
           />
-          <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+          <h1 className={`font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-4 ${heroImage ? "max-w-2xl text-primary-foreground drop-shadow-sm" : "text-foreground"}`}>
             {override?.h1 || <>Professional {service.name} in {city.name}, {city.state}</>}
           </h1>
-          <p className="text-lg text-muted-foreground mb-6 max-w-2xl">
+          <p className={`text-lg mb-6 max-w-2xl ${heroImage ? "text-primary-foreground/90 drop-shadow-sm" : "text-muted-foreground"}`}>
             {override?.heroLead || <>Trusted {service.shortName} for {city.name} homes. Eco-friendly products, experienced teams, satisfaction guaranteed.</>}
           </p>
-          <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-8">
-            <span className="flex items-center gap-1.5"><MapPin className="h-4 w-4 text-primary" /> {city.name}, {city.state}</span>
-            <span className="flex items-center gap-1.5"><Shield className="h-4 w-4 text-primary" /> Licensed & Insured</span>
-            <span className="flex items-center gap-1.5"><Leaf className="h-4 w-4 text-primary" /> Eco-Friendly</span>
-            <span className="flex items-center gap-1.5"><Star className="h-4 w-4 text-primary" /> 5.0 Rated</span>
+          <div className={`flex flex-wrap gap-4 text-sm mb-8 ${heroImage ? "text-primary-foreground/85" : "text-muted-foreground"}`}>
+            <span className="flex items-center gap-1.5"><MapPin className={`h-4 w-4 ${heroImage ? "text-accent" : "text-primary"}`} /> {city.name}, {city.state}</span>
+            <span className="flex items-center gap-1.5"><Shield className={`h-4 w-4 ${heroImage ? "text-accent" : "text-primary"}`} /> Licensed & Insured</span>
+            <span className="flex items-center gap-1.5"><Leaf className={`h-4 w-4 ${heroImage ? "text-accent" : "text-primary"}`} /> Eco-Friendly</span>
+            <span className="flex items-center gap-1.5"><Star className={`h-4 w-4 ${heroImage ? "text-accent" : "text-primary"}`} /> 5.0 Rated</span>
           </div>
           <div className="flex flex-col sm:flex-row gap-3">
             <Button variant="cta" size="lg" asChild>
               <a href="#quote">Get a Free Quote <ArrowRight className="ml-1 h-4 w-4" /></a>
             </Button>
-            <Button variant="outline" size="lg" asChild>
+            <Button variant="outline" size="lg" className={heroImage ? "border-primary-foreground/70 bg-background/90 hover:bg-background" : undefined} asChild>
               <a href="tel:+12407042551">(240) 704-2551</a>
             </Button>
           </div>
