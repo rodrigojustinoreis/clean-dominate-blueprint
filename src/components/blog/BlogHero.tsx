@@ -27,6 +27,8 @@ const BlogHero = ({ src, alt, children }: BlogHeroProps) => {
         srcSet={srcSet}
         sizes="100vw"
         alt={alt}
+        width={1280}
+        height={720}
         className="w-full h-full object-cover opacity-35"
         loading="eager"
         fetchPriority="high"

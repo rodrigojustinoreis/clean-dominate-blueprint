@@ -26,7 +26,13 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
   if (!c) return <NotFound />;
 
   const where = `${c.city}, ${c.state}`;
-  const title = `House Cleaning Cost in ${where}: 2026 Prices & Rates`;
+  const isAlexandria = c.slug === "alexandria-va";
+  const title = isAlexandria
+    ? "House Cleaning Cost in Alexandria, VA | 2026 Prices"
+    : `House Cleaning Cost in ${where}: 2026 Prices & Rates`;
+  const description = isAlexandria
+    ? "Alexandria house cleaning costs $180–$325 recurring, $215–$400 one-time, and $310–$570+ deep. Compare 2026 rates by home size and get a free quote."
+    : `House cleaning cost in ${where}: recurring cleans ${c.quick.recurring}, one-time ${c.quick.onetime}, deep cleans ${c.quick.deep}. Real price ranges by home size, what affects the price, and how to get a free quote.`;
   const url = `https://capitalcleancare.com/resources/house-cleaning-cost-${c.slug}`;
 
   // City-specific FAQs + two shared ones (general enough to repeat).
@@ -44,8 +50,9 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
 
   const { seoHelmet } = useSEO({
     title,
-    description: `House cleaning cost in ${where}: recurring cleans ${c.quick.recurring}, one-time ${c.quick.onetime}, deep cleans ${c.quick.deep}. Real price ranges by home size, what affects the price, and how to get a free quote.`,
+    description,
     canonical: url,
+    ogImage: isAlexandria ? "https://capitalcleancare.com/images/blog/cost-alexandria/hero.webp" : undefined,
   });
 
   return (
@@ -60,9 +67,10 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
 
       <ArticleSchema
         title={title}
-        description={`A 2026 price guide to house cleaning in ${where} — recurring, one-time, and deep cleaning price ranges by home size, the factors that affect the price, and how to get an accurate free quote.`}
+        description={description}
         url={url}
         datePublished="2026-06-16"
+        dateModified={isAlexandria ? "2026-08-24" : undefined}
         image={c.hero}
       />
       <FAQSchema faqs={faqs} />
@@ -99,7 +107,7 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
           Real 2026 price ranges by home size — plus what actually drives the cost
         </p>
         <p className="text-gray-300 mb-8 text-sm uppercase tracking-widest">
-          By Rodrigo Reis, Owner · {where} · June 2026
+          By Rodrigo Reis, Owner · {where} · {isAlexandria ? "Updated August 24, 2026" : "June 2026"}
         </p>
         <Button size="lg" className="bg-accent hover:bg-accent/90 text-white text-lg px-8 py-6 rounded-full shadow-lg" asChild>
           <a href="/#quote">Get My Free {c.city} Quote</a>
@@ -119,6 +127,27 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
               </p>
             </div>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">{c.intro}</p>
+            {isAlexandria && (
+              <div className="mb-10">
+                <h2 className="font-heading text-3xl font-bold text-foreground mb-4">
+                  Alexandria Cleaning Prices by Frequency
+                </h2>
+                <div className="grid sm:grid-cols-2 gap-4" aria-label="Alexandria cleaning price options">
+                  {[
+                    ["Bi-weekly cleaning", "$180–$325 per visit", "The lowest practical per-visit range for consistent maintenance."],
+                    ["Monthly cleaning", "$215–$400 typical range", "Usually closer to a one-time clean because more buildup accumulates between visits."],
+                    ["One-time cleaning", "$215–$400 per visit", "A flexible option before guests, events, or seasonal resets."],
+                    ["Deep cleaning", "$310–$570+ per visit", "The detailed top-to-bottom reset for first visits or homes needing extra attention."],
+                  ].map(([label, price, detail]) => (
+                    <div key={label} className="rounded-xl border border-border bg-background p-5">
+                      <h3 className="text-base font-bold text-foreground mb-1">{label}</h3>
+                      <p className="text-accent font-bold mb-2">{price}</p>
+                      <p className="text-sm text-muted-foreground leading-relaxed">{detail}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
           </FadeInSection>
 
           {/* Price ranges table */}
