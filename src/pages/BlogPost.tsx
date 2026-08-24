@@ -587,72 +587,6 @@ const blogContent: Record<string, React.ReactNode> = {
       <p><Link to="/contact" className="text-accent hover:underline font-semibold">Start your recurring cleaning plan today</Link> — 15% off your first visit for new clients!</p>
     </article>
   ),
-  "house-cleaning-bethesda-md": (
-    <article className="prose prose-lg max-w-none">
-      <p><Link to="/locations/bethesda-md" className="text-accent hover:underline">Bethesda, MD</Link> is one of the most health-conscious communities in the entire DMV. Residents here prioritize organic food, walkable neighborhoods, and — increasingly — the products used inside their homes. If you're looking for professional house cleaning in Bethesda, here's what to expect, what to look for, and what the best local services offer.</p>
-
-      <h2>What Makes Bethesda Homes Unique</h2>
-      <p>Bethesda homes range from pre-war Cape Cods in Chevy Chase sections to modern luxury condos near Bethesda Row and spacious colonials in Burning Tree and Bradley Hills. Each has distinct cleaning needs:</p>
-      <ul>
-        <li><strong>Older homes:</strong> More surface area, crown molding, hardwood floors, and period details that need careful, non-abrasive cleaning</li>
-        <li><strong>Condos and apartments:</strong> Smaller square footage but high-touch shared amenities and limited ventilation</li>
-        <li><strong>Large family homes:</strong> Multiple bathrooms, finished basements, and frequent guest use all require thorough recurring service</li>
-      </ul>
-
-      <h2>What Professional House Cleaning Covers in Bethesda</h2>
-      <p>A standard recurring clean at a Bethesda home typically includes:</p>
-      <ul>
-        <li>All bathrooms — scrub toilets, showers, sinks, mirrors, and floors</li>
-        <li>Kitchen surfaces, appliance exteriors, stovetop, and sink</li>
-        <li>Vacuum all carpets and area rugs with HEPA equipment</li>
-        <li>Mop all hard floors with appropriate solutions for the floor type</li>
-        <li>Dust furniture, shelves, ceiling fans, and light fixtures</li>
-        <li>Empty trash cans and replace liners</li>
-      </ul>
-      <p>A <Link to="/services/deep-cleaning" className="text-accent hover:underline">deep cleaning</Link> adds inside appliances, grout scrubbing, cabinet interiors, baseboards, and window sills.</p>
-
-      <h2>Pricing for House Cleaning in Bethesda</h2>
-      <p>Bethesda pricing reflects the area's cost of living. Typical ranges for a professional clean:</p>
-      <ul>
-        <li><strong>2-bedroom condo:</strong> $160 – $210 per standard visit</li>
-        <li><strong>3-bedroom home:</strong> $200 – $270 per standard visit</li>
-        <li><strong>4-bedroom home:</strong> $250 – $340 per standard visit</li>
-        <li><strong>First-time / deep clean:</strong> 25–40% higher than recurring rates</li>
-      </ul>
-      <p>Recurring clients save significantly — weekly plans can reduce per-visit cost by 20–25%. For a detailed DMV-wide pricing breakdown, see our <Link to="/resources/house-cleaning-prices-maryland-2026" className="text-accent hover:underline">2026 house cleaning price guide →</Link></p>
-
-      <h2>Why Bethesda Families Choose Eco-Friendly Cleaning</h2>
-      <p>Given Bethesda's proximity to Rock Creek Park and the broader Chesapeake Bay watershed, many residents are thoughtful about the chemicals entering their homes and drains. Our <Link to="/services/eco-friendly-cleaning" className="text-accent hover:underline">eco-friendly cleaning service</Link> uses only EPA Safer Choice certified, plant-based products — no chlorine, ammonia, phthalates, or VOCs. Read more about <Link to="/why-eco-friendly-cleaning" className="text-accent hover:underline">why eco-friendly cleaning matters</Link> for your family's health.</p>
-
-      <h2>Vetting a Cleaning Service in Bethesda</h2>
-      <ol>
-        <li><strong>Confirm insurance:</strong> Liability coverage protects you if anything is damaged</li>
-        <li><strong>Ask about background checks:</strong> Every Capital Clean Care team member is background-verified before entering a client's home — <Link to="/about" className="text-accent hover:underline">learn about our hiring process</Link></li>
-        <li><strong>Check local reviews:</strong> Look specifically for Bethesda and Montgomery County reviews on Google</li>
-        <li><strong>Request a walkthrough quote:</strong> Be wary of one-size-fits-all pricing without assessing your home</li>
-      </ol>
-
-      <h2>What Makes a House Cleaning Company the Best Choice in Bethesda</h2>
-      <p>Vetting tells you who's <em>safe</em> to hire; these are the criteria that separate the genuinely <strong>best</strong> cleaning services in Bethesda from the merely adequate:</p>
-      <ul>
-        <li><strong>EPA Safer Choice, plant-based products:</strong> In a community this health-conscious — and this close to Rock Creek Park and the Chesapeake watershed — the best companies use genuinely certified eco-friendly products, not vague "green" marketing.</li>
-        <li><strong>A consistent, background-checked team:</strong> The best services send the same vetted cleaners to your home each visit, so they learn your preferences and your home's specifics rather than rotating strangers through.</li>
-        <li><strong>Transparent, walkthrough-based pricing:</strong> The best companies price your actual home — square footage, bathrooms, condition — and put it in writing, with no surprise upcharges.</li>
-        <li><strong>A real satisfaction guarantee:</strong> Look for a re-clean guarantee in writing, not a slogan. It signals a company that stands behind its work.</li>
-        <li><strong>Genuine Montgomery County roots:</strong> A locally owned company that knows Bethesda's housing stock — pre-war Cape Cods to Bethesda Row condos — cleans them more appropriately than a national franchise running a single checklist.</li>
-      </ul>
-      <p>For a step-by-step framework you can apply to any company, see our guide on <Link to="/resources/is-professional-house-cleaning-worth-it" className="text-accent hover:underline">whether professional cleaning is worth it</Link> and <Link to="/resources/how-often-should-you-hire-a-cleaning-service" className="text-accent hover:underline">how often to hire a cleaning service</Link>.</p>
-
-      <BlogInlineCTA
-        headline="Bethesda's Trusted Eco-Friendly Cleaning Service"
-        subtext="Background-checked teams, EPA Safer Choice products, 100% satisfaction guarantee. Serving Bethesda, Chevy Chase, Potomac, Rockville, and all of Montgomery County."
-        ctaLabel="Get My Bethesda Quote →"
-        ctaTo="/contact"
-      />
-
-      <p>Capital Clean Care has served <Link to="/locations/bethesda-md/house-cleaning" className="text-accent hover:underline">Bethesda</Link> and surrounding Montgomery County communities for 10+ years. <Link to="/contact" className="text-accent hover:underline font-semibold">Get your free quote today</Link> — 15% off for new clients.</p>
-    </article>
-  ),
   "cleaning-service-arlington-va": (
     <article className="prose prose-lg max-w-none">
       <p><Link to="/locations/arlington-va/house-cleaning" className="text-accent hover:underline">Arlington, VA</Link> is one of the most densely populated and professionally active communities in the DMV. With a mix of high-rise condos, townhomes, and detached houses, Arlington residents have diverse cleaning needs — and high standards. Here's what Northern Virginia homeowners should know when choosing a professional cleaning service.</p>
@@ -1251,7 +1185,7 @@ const blogContent: Record<string, React.ReactNode> = {
       <p>Chevy Chase's older homes have less airtight construction — chemical products linger longer and can react with period finishes. Our EPA Safer Choice certified approach protects both your family and your home's original materials. <Link to="/why-eco-friendly-cleaning" className="text-accent hover:underline">Our eco commitment →</Link></p>
 
       <h2>Serving Chevy Chase and Nearby Neighborhoods</h2>
-      <p>We serve both the Maryland and DC sides of Chevy Chase, as well as <Link to="/locations/kensington-md" className="text-accent hover:underline">Kensington</Link>, <Link to="/locations/bethesda-md" className="text-accent hover:underline">Bethesda</Link>, and DC neighborhoods like <Link to="/locations/georgetown-dc" className="text-accent hover:underline">Georgetown</Link>. See our <Link to="/resources/house-cleaning-bethesda-md" className="text-accent hover:underline">Bethesda cleaning guide →</Link></p>
+      <p>We serve both the Maryland and DC sides of Chevy Chase, as well as <Link to="/locations/kensington-md" className="text-accent hover:underline">Kensington</Link>, <Link to="/locations/bethesda-md" className="text-accent hover:underline">Bethesda</Link>, and DC neighborhoods like <Link to="/locations/georgetown-dc" className="text-accent hover:underline">Georgetown</Link>. See our <Link to="/locations/bethesda-md/house-cleaning" className="text-accent hover:underline">Bethesda house cleaning service →</Link></p>
 
       <BlogInlineCTA
         headline="Chevy Chase's Trusted House Cleaning Service"

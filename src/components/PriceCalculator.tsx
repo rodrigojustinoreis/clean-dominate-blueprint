@@ -1,10 +1,10 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
-import { trackQuoteFormSubmit } from "@/lib/analytics";
+import { trackQuoteFormStart, trackQuoteFormSubmit } from "@/lib/analytics";
 import {
   Select,
   SelectContent,
@@ -81,12 +81,19 @@ const PriceCalculator = () => {
   const [sqft, setSqft] = useState([1500]);
   const [selectedAddons, setSelectedAddons] = useState<string[]>([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const formStarted = useRef(false);
 
   // Client Details
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [address, setAddress] = useState("");
+
+  const handleFormStart = () => {
+    if (formStarted.current) return;
+    formStarted.current = true;
+    trackQuoteFormStart(service || "calculator", `${window.location.pathname}:calculator`);
+  };
 
   const toggleAddon = (id: string) => {
     setSelectedAddons((prev) =>
@@ -180,7 +187,7 @@ const PriceCalculator = () => {
         body: JSON.stringify(formPayload),
       });
 
-      trackQuoteFormSubmit(service || "calculator");
+      trackQuoteFormSubmit(service || "calculator", `${window.location.pathname}:calculator`);
       toast({
         title: "Quote Sent Successfully!",
         description: "We'll be in touch shortly to confirm your booking.",
@@ -320,7 +327,7 @@ const PriceCalculator = () => {
 
         {/* Client Details Form */}
         {estimate && (
-          <form onSubmit={handleSubmit} className="space-y-4 mb-6 animate-in fade-in duration-300">
+          <form onSubmit={handleSubmit} onFocusCapture={handleFormStart} className="space-y-4 mb-6 animate-in fade-in duration-300">
             <h4 className="font-semibold text-lg border-b pb-2">Send me this quote</h4>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="space-y-2">

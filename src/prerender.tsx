@@ -112,7 +112,6 @@ function getAllRoutes(): string[] {
     "/resources/how-to-deep-clean-a-stove-maryland",
     "/resources/how-to-clean-a-bathroom-step-by-step",
     "/resources/mrs-meyers-clean-day-review-how-to-use",
-    "/resources/house-cleaning-bethesda-md",
     "/resources/cleaning-service-arlington-va",
     "/resources/deep-cleaning-rockville-md",
     "/resources/house-cleaning-washington-dc",

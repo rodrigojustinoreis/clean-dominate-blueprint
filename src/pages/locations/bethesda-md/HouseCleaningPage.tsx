@@ -127,7 +127,7 @@ const nearbyCities = [
 const BethesdaHouseCleaningPage = () => {
   const faqs = getServiceLocationOverride("bethesda-md", "house-cleaning")?.faqs ?? localFaqs;
   const { seoHelmet } = useSEO({
-    title: "Home Cleaning Bethesda MD | Top-Rated House Cleaning",
+    title: "House Cleaning in Bethesda, MD | Free Quote",
     description:
       "Professional house cleaning in Bethesda, MD. Eco-friendly products safe for kids & pets. Background-checked, bonded & insured. Latino-owned. Free quote in 60 seconds.",
     canonical: PAGE_URL,
@@ -190,7 +190,7 @@ const BethesdaHouseCleaningPage = () => {
 
       {/* ── Hero ──────────────────────────────────────────── */}
       <HeroLocation
-        h1="Home Cleaning in Bethesda, MD: Top-Rated House Cleaning"
+        h1="Professional House Cleaning in Bethesda, MD"
         lead="Capital Clean Care brings professional, eco-friendly house cleaning to Bethesda homes — from Bethesda Row to Kenwood. Our background-checked, bonded team uses EPA Safer Choice™ certified products, safe for your kids and pets, and backs every visit with 100% satisfaction: we re-clean if you're not happy."
         cityName="Bethesda"
         state="MD"

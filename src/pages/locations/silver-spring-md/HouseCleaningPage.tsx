@@ -133,7 +133,7 @@ const SilverSpringHouseCleaningPage = () => {
   const faqs = getServiceLocationOverride("silver-spring-md", "house-cleaning")?.faqs ?? localFaqs;
 
   const { seoHelmet } = useSEO({
-    title: "House Cleaning Silver Spring MD",
+    title: "House Cleaning in Silver Spring, MD | Free Quote",
     description:
       "House cleaning in Silver Spring MD — eco-friendly products safe for kids & pets, background-checked, bonded & insured. Latino-owned. Free quote.",
     canonical: PAGE_URL,

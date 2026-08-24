@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { GOOGLE_LISTING_URL } from "@/data/realReviews";
 import { BUSINESS_INFO } from "@/data/business-info";
 import { Button } from "@/components/ui/button";
@@ -15,7 +15,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { toast } from "sonner";
-import { trackQuoteFormSubmit } from "@/lib/analytics";
+import { trackQuoteFormStart, trackQuoteFormSubmit } from "@/lib/analytics";
 import quotePhoto from "@/assets/luana-cleaning.webp";
 
 interface QuoteFormProps {
@@ -64,6 +64,13 @@ const QuoteForm = ({ submitLabel = "GET MY FREE QUOTE →", defaultService = "",
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [submittedName, setSubmittedName] = useState("");
+  const formStarted = useRef(false);
+
+  const handleFormStart = () => {
+    if (formStarted.current) return;
+    formStarted.current = true;
+    trackQuoteFormStart(formData.service, window.location.pathname);
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -160,14 +167,7 @@ const QuoteForm = ({ submitLabel = "GET MY FREE QUOTE →", defaultService = "",
         }),
       }).catch((err) => console.error("Email notification failed (non-critical):", err));
 
-      trackQuoteFormSubmit(formData.service);
-      if (typeof gtag !== "undefined") {
-        gtag('event', 'conversion', {
-          'send_to': 'AW-16450100951/quote_form_submit',
-          'value': 50.0,
-          'currency': 'USD'
-        });
-      }
+      trackQuoteFormSubmit(formData.service, window.location.pathname);
       setSubmittedName(formData.name.split(" ")[0]);
       setFormData({ name: "", phone: "", email: "", address: "", zip: "", sqft: "", service: "", bedrooms: "3", bathrooms: "2", frequency: "", date: "", message: "", smsConsent: false, emailConsent: false });
       setSubmitted(true);
@@ -385,7 +385,7 @@ const QuoteForm = ({ submitLabel = "GET MY FREE QUOTE →", defaultService = "",
         </div>
       </div>
 
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form onSubmit={handleSubmit} onFocusCapture={handleFormStart} className="space-y-4">
         {/* ── Service Type ── */}
         <div>
           <Label className="text-xs font-semibold mb-1 block">Service Type *</Label>

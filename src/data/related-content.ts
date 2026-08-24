@@ -147,7 +147,7 @@ export const MANUAL_RELATED_POSTS: Record<string, string[]> = {
   "house-cleaning-prices-maryland-2026": ["flat-rate-vs-hourly-house-cleaning", "hidden-fees-house-cleaning", "how-to-choose-cleaning-service-silver-spring"],
   "deep-cleaning-checklist-dmv-homeowners": ["spring-cleaning-checklist-maryland-2026", "post-renovation-cleaning-guide-maryland", "recurring-cleaning-weekly-biweekly-monthly"],
   "airbnb-cleaning-tips-dmv-hosts": ["airbnb-cleaning-checklist", "move-in-cleaning-checklist", "recurring-cleaning-weekly-biweekly-monthly"],
-  "how-to-choose-cleaning-service-silver-spring": ["house-cleaning-prices-maryland-2026", "house-cleaning-bethesda-md", "recurring-cleaning-weekly-biweekly-monthly"],
+  "how-to-choose-cleaning-service-silver-spring": ["house-cleaning-prices-maryland-2026", "best-house-cleaning-service-bethesda-md", "recurring-cleaning-weekly-biweekly-monthly"],
   "move-out-cleaning-checklist-maryland-tenants": ["house-cleaning-prices-maryland-2026", "post-renovation-cleaning-guide-maryland", "move-out-cleaning-cost-maryland"],
   "eco-cleaning-tips-winters-maryland": ["eco-cleaning-tips-maryland-homes", "how-to-get-cigarette-smell-out-of-your-house", "remove-pet-hair-odors-dmv-homes"],
   "best-cleaning-schedule-busy-families-dmv": ["recurring-cleaning-weekly-biweekly-monthly", "how-to-choose-cleaning-service-silver-spring", "deep-cleaning-checklist-dmv-homeowners"],

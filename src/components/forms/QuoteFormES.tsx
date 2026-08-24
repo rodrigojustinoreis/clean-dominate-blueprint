@@ -13,8 +13,7 @@ import {
 } from "@/components/ui/select";
 import { CheckCircle, Phone, Clock, MessageCircle } from "lucide-react";
 import { BUSINESS_INFO } from "@/data/business-info";
-
-declare const gtag: (...args: unknown[]) => void;
+import { trackQuoteFormStart, trackQuoteFormSubmit } from "@/lib/analytics";
 
 interface QuoteFormESProps {
   id?: string;
@@ -68,6 +67,13 @@ const QuoteFormES = ({ id = "cotizacion", defaultService = "", submitLabel = "So
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [submittedName, setSubmittedName] = useState("");
+  const formStarted = useRef(false);
+
+  const handleFormStart = () => {
+    if (formStarted.current) return;
+    formStarted.current = true;
+    trackQuoteFormStart(formData.service, pathname, "es");
+  };
 
   const set = (field: string, value: string | boolean) =>
     setFormData((p) => ({ ...p, [field]: value }));
@@ -126,17 +132,8 @@ const QuoteFormES = ({ id = "cotizacion", defaultService = "", submitLabel = "So
         }),
       }).catch(console.error);
 
-      // 4. GA4 generate_lead
-      if (typeof gtag !== "undefined") {
-        gtag("event", "generate_lead", {
-          form_location: pathname,
-          service_type: formData.service,
-          language: "es",
-          zip_code: formData.zip,
-        });
-        // Google Ads conversion
-        gtag("event", "conversion", { send_to: "AW-16450100951/quote_form_submit", value: 50.0, currency: "USD" });
-      }
+      // 4. GA4 + Google Ads conversion (centralized to avoid duplicate events)
+      trackQuoteFormSubmit(formData.service, pathname, "es");
 
       setSubmittedName(formData.name.split(" ")[0]);
       setFormData({ name: "", phone: "", email: "", zip: "", service: "", size: "", timing: "", message: "", smsConsent: false });
@@ -227,6 +224,7 @@ const QuoteFormES = ({ id = "cotizacion", defaultService = "", submitLabel = "So
       id={id}
       ref={formRef}
       onSubmit={handleSubmit}
+      onFocusCapture={handleFormStart}
       noValidate
       className="space-y-5"
       data-netlify="true"

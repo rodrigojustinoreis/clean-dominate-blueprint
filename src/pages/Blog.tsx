@@ -782,17 +782,6 @@ export const blogPosts: BlogPost[] = [
     coverImage: "https://images.pexels.com/photos/2062426/pexels-photo-2062426.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
   },
   {
-    slug: "house-cleaning-bethesda-md",
-    title: "House Cleaning in Bethesda, MD: How to Choose the Best Service (2026)",
-    excerpt: "A local guide to choosing the best house cleaning service in Bethesda — the criteria that separate the best companies, plus pricing, what's included, and why eco-friendly matters in this health-conscious community.",
-    date: "2026-04-08",
-    readTime: "6 min read",
-    category: "Local Guides",
-    coverImage: "https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
-    // SEO: same commercial-local intent as the Bethesda location page — canonicalised to the strategic hub so it wins (reversible).
-    canonical: "https://capitalcleancare.com/locations/bethesda-md/house-cleaning",
-  },
-  {
     slug: "cleaning-service-arlington-va",
     title: "Choosing a Cleaning Service in Arlington, VA",
     excerpt: "Arlington condos, townhomes, and apartments have unique cleaning needs. Here's how Northern Virginia residents find and evaluate the right professional cleaning service.",

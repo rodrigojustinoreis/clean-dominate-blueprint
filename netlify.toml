@@ -28,6 +28,16 @@
 # ── Spanish section: /es is served directly (canonical, no trailing slash) ───
 # Redirect /es → /es/ removed: it was shadowed/dead and would loop with the /es canonical.
 
+# ── Bethesda cannibalization consolidation (GSC verified 2026-08-23) ─────────
+# Google ignored the old article's canonical and indexed it separately from the
+# commercial location page. A permanent redirect is required to consolidate
+# ranking signals and prevent both URLs competing for "house cleaning Bethesda".
+[[redirects]]
+  from = "/resources/house-cleaning-bethesda-md"
+  to = "/locations/bethesda-md/house-cleaning"
+  status = 301
+  force = true
+
 # ── State hub: trailing-slash normalisation removed (was causing infinite redirect loop)
 # The 200 force=true rewrites below serve /maryland, /virginia, /washington-dc directly.
 

@@ -131,7 +131,7 @@ export const cities: CityData[] = [
       { q: "Are your Silver Spring teams background-checked?", a: "Yes. Every Capital Clean Care team member undergoes thorough background checks. We're fully licensed and insured for your complete peace of mind." },
       { q: "Do you use eco-friendly products in Silver Spring?", a: "Yes. We exclusively use plant-based, non-toxic cleaning products across all our Silver Spring service areas. Safe for families, pets, and the environment." }
     ],
-    metaTitle: "House Cleaning Services in Silver Spring, MD | Capital Clean Care",
+    metaTitle: "Cleaning Services in Silver Spring, MD | Capital Clean Care",
     metaDescription: "Professional house cleaning in Silver Spring, MD. Serving all neighborhoods with eco-friendly products and background-checked teams. Get your free quote today."
   },
   {
@@ -150,7 +150,7 @@ export const cities: CityData[] = [
       { q: "Are your Bethesda teams experienced with high-end finishes?", a: "Yes. Our teams are trained in proper care for marble, granite, hardwood, and other premium surfaces commonly found in Bethesda homes." },
       { q: "Can I schedule around my Bethesda social calendar?", a: "Of course. Many Bethesda clients schedule cleanings before events or gatherings. We offer flexible scheduling to accommodate your lifestyle." }
     ],
-    metaTitle: "House Cleaning Services in Bethesda, MD | Capital Clean Care",
+    metaTitle: "Cleaning Services in Bethesda, MD | Capital Clean Care",
     metaDescription: "Premium house cleaning in Bethesda, MD. Expert care for fine homes, eco-friendly products, background-checked teams. Serving all Bethesda neighborhoods. Free quotes."
   },
   {

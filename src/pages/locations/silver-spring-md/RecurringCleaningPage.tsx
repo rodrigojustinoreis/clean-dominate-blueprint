@@ -118,7 +118,7 @@ const nearbyCities = [
 const SilverSpringRecurringCleaningPage = () => {
   const faqs = getServiceLocationOverride("silver-spring-md", "recurring-cleaning")?.faqs ?? localFaqs;
   const { seoHelmet } = useSEO({
-    title: "Recurring House Cleaning in Silver Spring, MD",
+    title: "Recurring Cleaning in Silver Spring, MD | Weekly & Biweekly",
     description:
       "Weekly and bi-weekly house cleaning in Silver Spring, MD. Same trusted team, eco-friendly products, 100% satisfaction guaranteed. Build the routine. Free quote in 60 seconds.",
     canonical: PAGE_URL,
