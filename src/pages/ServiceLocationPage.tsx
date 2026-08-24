@@ -71,9 +71,13 @@ const ServiceLocationPage = () => {
   const metaTitle = override?.metaTitle || `${service.name} in ${city.name}, ${city.state} | Capital Clean Care`;
   const metaDescription = override?.metaDescription || `Top-rated ${serviceLabel} in ${city.name}, ${city.state}. Eco-friendly products, background-checked teams, satisfaction guaranteed. Serving ${city.county}. Free quotes.`;
   const pageUrl = `https://capitalcleancare.com/locations/${city.slug}/${service.slug}`;
-  const heroImage = city.slug === "fairfax-va" && service.slug === "house-cleaning"
+  const isFairfaxHouseCleaning = city.slug === "fairfax-va" && service.slug === "house-cleaning";
+  const heroImage = isFairfaxHouseCleaning
     ? "/images/locations/fairfax-house-cleaning-hero-v2.webp"
     : null;
+  const nearbyCitiesForLinks = isFairfaxHouseCleaning
+    ? slCities.filter((candidate) => ["vienna-va", "mclean-va", "falls-church-va", "arlington-va", "alexandria-va", "reston-va"].includes(candidate.slug))
+    : slCities.filter((candidate) => candidate.slug !== city.slug);
 
   // PR #5 — zombie-page pruning: only allowlisted (city, service) pairs are indexable.
   // All other dynamic permutations from this template render with <meta name="robots" content="noindex,nofollow">
@@ -85,6 +89,8 @@ const ServiceLocationPage = () => {
     description: metaDescription,
     canonical: pageUrl,
     noIndex: !isIndexable,
+    ogImage: heroImage || undefined,
+    preloadImage: heroImage || undefined,
   });
 
   const realReviews = pickReviews(`${city.slug}/${service.slug}`, 2);
@@ -116,7 +122,9 @@ const ServiceLocationPage = () => {
           <>
             <img
               src={heroImage}
-              alt="Professional Capital Clean Care team providing house cleaning in a Fairfax, Virginia home"
+              alt="Illustrative scene of professional house cleaning in a Fairfax, Virginia home"
+              width="1672"
+              height="941"
               className="absolute inset-0 h-full w-full object-cover object-center"
               loading="eager"
               fetchPriority="high"
@@ -188,6 +196,8 @@ const ServiceLocationPage = () => {
                   }
                   className="w-full aspect-[4/3] object-cover"
                   loading="lazy"
+                  width="1280"
+                  height="720"
                 />
               </div>
               <p className="text-xs text-muted-foreground text-center mt-2">
@@ -225,6 +235,39 @@ const ServiceLocationPage = () => {
                 <p key={i} className="mb-4 leading-relaxed">{paragraph}</p>
               ))}
             </div>
+            {isFairfaxHouseCleaning && (
+              <p className="mt-6 text-sm text-muted-foreground">
+                Page updated <time dateTime="2026-08-24">August 24, 2026</time> to reflect current Fairfax coverage, service scope, and scheduling information.
+              </p>
+            )}
+          </div>
+        </section>
+      )}
+
+      {isFairfaxHouseCleaning && (
+        <section className="py-12 md:py-16" aria-labelledby="fairfax-quick-facts">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <h2 id="fairfax-quick-facts" className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-3">
+              Fairfax House Cleaning: Quick Facts
+            </h2>
+            <p className="text-muted-foreground mb-8 max-w-3xl">
+              Clear answers for homeowners comparing professional house cleaning in Fairfax, Virginia.
+            </p>
+            <dl className="grid sm:grid-cols-2 gap-4">
+              {[
+                ["Areas served", "Fairfax City, Old Town Fairfax, Providence, Layton Hall, Pickett, University Village, and Mosby Woods."],
+                ["ZIP codes", "22030, 22031, 22032, and 22033."],
+                ["Typical visit length", "About 1.5–3 hours for an apartment, 2.5–4 hours for a rambler or townhome, and 3–5 hours for a larger Colonial. Final timing depends on the home's condition and room count."],
+                ["Scheduling options", "One-time, weekly, biweekly, and monthly residential house cleaning."],
+                ["Products", "Eco-friendly, EPA Safer Choice products selected with children, pets, and household surfaces in mind."],
+                ["What is included", "Kitchens, bathrooms, bedrooms, living areas, dusting, floors, high-touch surfaces, and a final quality inspection."],
+              ].map(([term, description]) => (
+                <div key={term} className="rounded-xl border border-border bg-background p-5">
+                  <dt className="font-semibold text-foreground mb-2">{term}</dt>
+                  <dd className="text-sm leading-relaxed text-muted-foreground">{description}</dd>
+                </div>
+              ))}
+            </dl>
           </div>
         </section>
       )}
@@ -236,13 +279,28 @@ const ServiceLocationPage = () => {
             {checklistHeadingVariants[checklistV](service.name, city.name)}
           </h2>
           <div className="grid md:grid-cols-2 gap-3">
-            {checklistItems.map((item, i) => (
+            {(isFairfaxHouseCleaning ? checklistItems.slice(0, 12) : checklistItems).map((item, i) => (
               <div key={i} className="flex items-start gap-3 bg-background p-4 rounded-lg border border-border/50">
                 <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                 <span className="text-foreground text-sm">{item}</span>
               </div>
             ))}
           </div>
+          {isFairfaxHouseCleaning && checklistItems.length > 12 && (
+            <details className="mt-6 rounded-xl border border-border bg-background p-5">
+              <summary className="cursor-pointer font-semibold text-foreground">
+                View the complete Fairfax house cleaning checklist ({checklistItems.length} items)
+              </summary>
+              <div className="grid md:grid-cols-2 gap-3 mt-5">
+                {checklistItems.slice(12).map((item, i) => (
+                  <div key={i} className="flex items-start gap-3 rounded-lg border border-border/50 p-4">
+                    <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-foreground text-sm">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </details>
+          )}
         </div>
       </section>
 
@@ -343,8 +401,7 @@ const ServiceLocationPage = () => {
         serviceLabel={service.name}
         serviceSlug={service.slug}
         services={slServices.map((s) => ({ name: s.name, slug: s.slug }))}
-        nearbyCities={slCities
-          .filter((c) => c.slug !== city.slug)
+        nearbyCities={nearbyCitiesForLinks
           .map((c) => ({
             name: c.name,
             slug: c.slug,

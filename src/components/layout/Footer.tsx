@@ -135,7 +135,7 @@ const Footer = () => {
         {/* Brand */}
         <div className="space-y-4">
           <div className="flex items-center gap-2">
-            <img src={logo} alt="Capital Clean Care logo" className="h-7 w-7 object-contain" />
+            <img src={logo} alt="Capital Clean Care logo" width="940" height="788" className="h-7 w-7 object-contain" />
             <span className="font-heading font-bold text-lg">Capital Clean Care</span>
           </div>
           <p className="text-primary-foreground/70 text-sm leading-relaxed">
