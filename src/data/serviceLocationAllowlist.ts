@@ -56,7 +56,6 @@ export const EXTRA_INDEXABLE_PAIRS: ReadonlySet<string> = new Set([
   // Tier 2 — moderate demand
   "arlington-va/recurring-cleaning",       // 90 impr
   "montgomery-village-md/house-cleaning",  // 70 impr
-  "georgetown-dc/house-cleaning",          // 54 impr
   "capitol-hill-dc/house-cleaning",        // 37 impr
   "columbia-md/recurring-cleaning",        // 30 impr
   "burtonsville-md/deep-cleaning",         // 21 impr, pos 11

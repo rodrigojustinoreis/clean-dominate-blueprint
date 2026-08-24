@@ -9,6 +9,9 @@ export interface CityData {
   faqs: { q: string; a: string }[];
   metaTitle: string;
   metaDescription: string;
+  h1?: string;
+  heroLead?: string;
+  schemaServiceName?: string;
 }
 
 export interface HubData {
@@ -499,7 +502,7 @@ export const cities: CityData[] = [
     slug: "georgetown-dc",
     state: "DC",
     stateSlug: "washington-dc",
-    intro: "Georgetown stands as one of Washington's most prestigious and historic neighborhoods, predating the District of Columbia itself. This cobblestoned enclave along the Potomac River features stunning Federal and Georgian architecture, world-class dining, exclusive boutiques, and some of the most valuable residential real estate in the nation's capital.\n\nCapital Clean Care provides Georgetown homeowners with cleaning services that match the neighborhood's exceptional standards. Our teams are specially trained in caring for fine homes — proper treatment for marble, crystal, hardwood, and the museum-quality finishes often found in Georgetown residences. We understand that these homes require elevated attention and expertise.\n\nGeorgetown's social calendar is legendary, and many residents rely on Capital Clean Care to keep their homes entertaining-ready year-round. From pre-event preparations to regular maintenance that ensures your Georgetown home always reflects your standards, we deliver the premium service this extraordinary neighborhood demands.",
+    intro: "Georgetown stands as one of Washington's most prestigious and historic neighborhoods, predating the District of Columbia itself. Capital Clean Care provides house cleaning, deep cleaning, recurring service, move-in and move-out cleaning, Airbnb turnover, office cleaning, post-construction cleanup, and eco-friendly cleaning throughout Georgetown.\n\nCleaning a Georgetown home requires experience with some of Washington's oldest residential architecture. Federal and Georgian rowhouses in West and East Georgetown often have original heart-pine or antique hardwood floors, plaster walls, narrow staircases, and delicate period details. Around Book Hill and toward Foxhall, larger detached homes, carriage houses, and luxury residences may include marble, crystal, designer fabrics, and other fine finishes that call for careful, non-abrasive methods.\n\nOur background-checked, bonded, and insured teams use eco-friendly, EPA Safer Choice products and adapt the cleaning plan to the property. A compact condo may need a routine maintenance visit, while a multi-floor rowhouse, move-out, renovation, or event preparation may require a deeper scope. Every service begins with a free quote and is backed by our satisfaction guarantee.\n\nGeorgetown's cobblestone streets, narrow lanes, and permit-heavy parking also require planning. Our crews coordinate arrival and equipment instead of assuming driveway access. We serve West Village, East Village, Book Hill, Burleith, Hillandale, Foxhall, and nearby Georgetown communities.\n\nWhether you need a one-time house cleaning or dependable weekly, biweekly, or monthly service, Capital Clean Care delivers one coordinated local solution for Georgetown homes and businesses.",
     nearbySlugs: ["washington-dc", "dupont-circle-dc", "adams-morgan-dc", "bethesda-md", "mclean-va"],
     faqs: [
       { q: "Do you have experience with Georgetown's historic homes?", a: "Yes. Our teams are trained in proper care for Georgetown's Federal and Georgian architecture, including appropriate products for period materials." },
@@ -508,8 +511,11 @@ export const cities: CityData[] = [
       { q: "What premium finishes can you clean?", a: "We're experienced with marble, granite, hardwood, crystal, designer fabrics, and other premium materials common in Georgetown homes." },
       { q: "How often should I schedule cleaning in Georgetown?", a: "Most Georgetown clients prefer weekly or bi-weekly service. Homes that host frequently may benefit from weekly cleaning." }
     ],
-    metaTitle: "Cleaning Services in Georgetown, DC — All Services | Capital Clean Care",
-    metaDescription: "Premium house cleaning in Georgetown, DC. Expert care for historic homes, fine finishes, and luxury properties. Eco-friendly, insured. Get a free quote."
+    metaTitle: "Cleaning Services in Georgetown, DC | House, Deep & Recurring",
+    metaDescription: "Cleaning services in Georgetown, DC for historic homes, condos, and businesses. House, deep, recurring, move-out, and eco-friendly cleaning. Free quote.",
+    h1: "Professional Cleaning Services in Georgetown, DC",
+    heroLead: "House cleaning, deep cleaning, recurring service, move-out cleaning, and more for Georgetown's historic homes, condos, and businesses.",
+    schemaServiceName: "Cleaning Services in Georgetown, DC"
   },
   {
     name: "Dupont Circle",

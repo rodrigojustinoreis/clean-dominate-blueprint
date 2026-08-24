@@ -156,6 +156,11 @@ const CityPage = () => {
   const cityLabel = city.state !== "DC" ? `${city.name}, ${city.state}` : city.name;
   const whyIntro = cityWhyIntros[city.slug] || `${city.name} homeowners choose Capital Clean Care for our reliable, eco-friendly cleaning services.`;
   const hasServiceLocationPages = slCities.some((c) => c.slug === city.slug);
+  // Georgetown's house-cleaning child is permanently consolidated into the
+  // stronger all-services hub, so do not create an internal link to a redirect.
+  const localServiceCards = city.slug === "georgetown-dc"
+    ? slServices.filter((service) => service.slug !== "house-cleaning")
+    : slServices;
   // Real Google reviews only (deterministic per city) — never fabricated testimonials.
   const testimonials = pickReviews(city.slug, 3);
 
@@ -165,8 +170,8 @@ const CityPage = () => {
       <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: stateLabel, href: `/${city.stateSlug}` }, { label: city.name, href: `/locations/${city.slug}` }]} />
       <FAQSchema faqs={expandedFaqs} />
       <ServiceSchema
-        serviceName={`House Cleaning in ${city.name}`}
-        description={`Professional eco-friendly house cleaning services in ${cityLabel}. Licensed, insured, background-checked teams.`}
+        serviceName={city.schemaServiceName || `House Cleaning in ${city.name}`}
+        description={city.metaDescription}
         url={`https://capitalcleancare.com/locations/${city.slug}`}
       />
       <CityReviewSchema
@@ -192,10 +197,10 @@ const CityPage = () => {
             className="mb-4 text-primary-foreground/60 [&_a]:text-primary-foreground/60 [&_a:hover]:text-primary-foreground [&_span[aria-current]]:text-primary-foreground/80 [&_svg]:text-primary-foreground/40"
           />
           <h1 className="font-heading text-3xl md:text-5xl lg:text-[3.25rem] font-bold mb-5 text-primary-foreground leading-tight">
-            House Cleaning Services in {cityLabel}
+            {city.h1 || `House Cleaning Services in ${cityLabel}`}
           </h1>
           <p className="text-primary-foreground/85 text-lg md:text-xl max-w-2xl leading-relaxed mb-8">
-            Professional, eco-friendly house cleaning for {city.name} homes. Licensed, insured, and background-checked teams you can trust.
+            {city.heroLead || `Professional, eco-friendly house cleaning for ${city.name} homes. Licensed, insured, and background-checked teams you can trust.`}
           </p>
           <div className="flex flex-col sm:flex-row gap-3">
             <Button variant="cta" size="lg" className="text-base" asChild>
@@ -254,7 +259,7 @@ const CityPage = () => {
           {/* Service-location specific links */}
           {hasServiceLocationPages && (
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-              {slServices.map((sl) => (
+              {localServiceCards.map((sl) => (
                 <Card key={sl.slug} className="group hover:shadow-md transition-all duration-200 hover:-translate-y-0.5">
                   <CardContent className="p-5">
                     <Link to={`/locations/${city.slug}/${sl.slug}`} className="flex items-center gap-3">

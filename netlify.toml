@@ -28,6 +28,16 @@
 # ── Spanish section: /es is served directly (canonical, no trailing slash) ───
 # Redirect /es → /es/ removed: it was shadowed/dead and would loop with the /es canonical.
 
+# ── Georgetown cannibalization consolidation (GSC verified 2026-08-23) ──────
+# The location hub is the proven URL (259 impressions, avg. position 17.6 in the
+# latest 28 days); the house-cleaning child had only 3 impressions. Consolidate
+# the weak child into the hub so all local intent and link equity accrue to one URL.
+[[redirects]]
+  from = "/locations/georgetown-dc/house-cleaning"
+  to = "/locations/georgetown-dc"
+  status = 301
+  force = true
+
 # ── Bethesda cannibalization consolidation (GSC verified 2026-08-23) ─────────
 # Google ignored the old article's canonical and indexed it separately from the
 # commercial location page. A permanent redirect is required to consolidate

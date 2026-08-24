@@ -34,7 +34,6 @@ export const NOINDEX_PATHS: ReadonlySet<string> = new Set([
   "/locations/gaithersburg-md/move-out-cleaning",
   "/locations/gaithersburg-md/office-cleaning",
   "/locations/gaithersburg-md/post-construction-cleaning",
-  "/locations/georgetown-dc",
   "/locations/germantown-md",
   "/locations/germantown-md/airbnb-cleaning",
   "/locations/germantown-md/deep-cleaning",
