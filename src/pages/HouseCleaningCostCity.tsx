@@ -17,6 +17,7 @@ import BlogInlineCTA from "@/components/blog/BlogInlineCTA";
 import StickyCTA from "@/components/blog/StickyCTA";
 import PricingTable from "@/components/PricingTable";
 import { getCostCity, COST_PRICE_ROWS, type CostFAQ } from "@/data/cost-cities";
+import { trackBookNowClick } from "@/lib/analytics";
 import NotFound from "./NotFound";
 
 // Renders a "House Cleaning Cost in <City>" lead-gen article from cost-cities.ts data.
@@ -110,7 +111,7 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
           By Rodrigo Reis, Owner · {where} · {isAlexandria ? "Updated August 24, 2026" : "June 2026"}
         </p>
         <Button size="lg" className="bg-accent hover:bg-accent/90 text-white text-lg px-8 py-6 rounded-full shadow-lg" asChild>
-          <a href="/#quote">Get My Free {c.city} Quote</a>
+          <Link to="/contact" onClick={() => trackBookNowClick(`${c.slug}_cost_hero`)}>Get My Free {c.city} Quote</Link>
         </Button>
       </BlogHero>
 
@@ -125,11 +126,27 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
               <p className="text-muted-foreground leading-relaxed">
                 In {c.city}, most homeowners pay roughly <strong className="text-foreground">{c.quick.recurring} per visit</strong> for recurring (bi-weekly) cleaning, <strong className="text-foreground">{c.quick.onetime}</strong> for a one-time standard clean, and <strong className="text-foreground">{c.quick.deep}</strong> for a deep clean. Your exact price depends mainly on home size, the type of clean, and how often you book.
               </p>
+              {isAlexandria && (
+                <p className="mt-4 pt-4 border-t border-accent/20 text-sm text-foreground">
+                  <strong>Most popular:</strong> bi-weekly service for Alexandria homes, with a free exact quote before booking and no obligation.
+                </p>
+              )}
             </div>
+            {isAlexandria && (
+              <nav aria-label="Alexandria price guide sections" className="mb-8 rounded-xl border border-border bg-secondary/30 p-4">
+                <p className="text-sm font-semibold text-foreground mb-3">Jump to what you need</p>
+                <div className="flex flex-wrap gap-2 text-sm">
+                  <a href="#prices-by-frequency" className="rounded-full bg-white border border-border px-3 py-1.5 text-accent hover:border-accent">Prices by frequency</a>
+                  <a href="#prices-by-home-size" className="rounded-full bg-white border border-border px-3 py-1.5 text-accent hover:border-accent">Prices by home size</a>
+                  <a href="#price-factors" className="rounded-full bg-white border border-border px-3 py-1.5 text-accent hover:border-accent">What changes the price</a>
+                  <a href="#alexandria-faq" className="rounded-full bg-white border border-border px-3 py-1.5 text-accent hover:border-accent">Alexandria FAQ</a>
+                </div>
+              </nav>
+            )}
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">{c.intro}</p>
             {isAlexandria && (
               <div className="mb-10">
-                <h2 className="font-heading text-3xl font-bold text-foreground mb-4">
+                <h2 id="prices-by-frequency" className="font-heading text-3xl font-bold text-foreground mb-4 scroll-mt-24">
                   Alexandria Cleaning Prices by Frequency
                 </h2>
                 <div className="grid sm:grid-cols-2 gap-4" aria-label="Alexandria cleaning price options">
@@ -152,7 +169,7 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
 
           {/* Price ranges table */}
           <FadeInSection>
-            <h2 className="font-heading text-3xl font-bold text-foreground mb-4">
+            <h2 id={isAlexandria ? "prices-by-home-size" : undefined} className="font-heading text-3xl font-bold text-foreground mb-4 scroll-mt-24">
               {c.city} House Cleaning Prices by Home Size
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-5">
@@ -187,7 +204,7 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
 
           {/* What affects price */}
           <FadeInSection>
-            <h2 className="font-heading text-3xl font-bold text-foreground mb-4">
+            <h2 id={isAlexandria ? "price-factors" : undefined} className="font-heading text-3xl font-bold text-foreground mb-4 scroll-mt-24">
               What Actually Drives the Price
             </h2>
             <div className="space-y-3 mb-8">
@@ -217,6 +234,7 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
             subtext={`Capital Clean Care gives free, no-obligation quotes for every ${c.city} home — fast online estimate or an in-home walkthrough. Eco-friendly, background-checked, locally owned.`}
             ctaLabel="Get My Free Quote"
             ctaTo="/contact"
+            analyticsLocation={`${c.slug}_cost_mid_article`}
           />
 
           {/* Full interactive price list */}
@@ -247,7 +265,7 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
 
           {/* FAQ */}
           <FadeInSection>
-            <h2 className="font-heading text-3xl font-bold text-foreground mb-6">
+            <h2 id={isAlexandria ? "alexandria-faq" : undefined} className="font-heading text-3xl font-bold text-foreground mb-6 scroll-mt-24">
               Frequently Asked Questions
             </h2>
             <FAQAccordion faqs={faqs} />
@@ -273,7 +291,7 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
                 ))}
               </div>
               <Button size="lg" className="bg-accent hover:bg-accent/90 text-white px-8 py-6 rounded-full text-base font-semibold shadow-md" asChild>
-                <a href="/#quote">Get My Free Quote <ArrowRight className="ml-2 h-4 w-4" /></a>
+                <Link to="/contact" onClick={() => trackBookNowClick(`${c.slug}_cost_final`)}>Get My Free Quote <ArrowRight className="ml-2 h-4 w-4" /></Link>
               </Button>
               <p className="text-xs text-primary-foreground/60 mt-4">
                 Licensed, insured, and locally owned. Serving {c.city} &amp; {c.county}.
