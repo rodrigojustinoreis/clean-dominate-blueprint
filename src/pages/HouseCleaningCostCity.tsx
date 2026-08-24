@@ -48,7 +48,17 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
       a: `Yes. Capital Clean Care gives free, no-obligation quotes for every ${c.city} home, and you can get a fast estimate online in about two minutes using your home's size and service type. Because we price on your actual home rather than a one-size-fits-all rate, the quote you get is the price you pay — no surprises on cleaning day.`,
     },
   ];
-  const faqs = [...c.faqs, ...sharedFaqs];
+  const alexandriaResearchFaqs: CostFAQ[] = isAlexandria ? [
+    {
+      q: "How much do house cleaners charge per hour in Alexandria, VA?",
+      a: "Hourly quotes can be hard to compare because one company may send one cleaner while another sends a two-person crew. Capital Clean Care quotes the home and scope instead of leaving the final bill open-ended. To compare an hourly offer fairly, divide the total quote by total cleaner-hours: a $240 visit completed by two cleaners in two hours equals $60 per cleaner-hour. Always confirm whether supplies, travel, insurance, and add-ons are included.",
+    },
+    {
+      q: "Is a flat-rate or hourly house-cleaning price better?",
+      a: "A written flat rate is usually easier for homeowners to budget because it ties the price to an agreed scope rather than how long the crew happens to take. Hourly pricing can make sense for a short, custom task, but ask for a time cap and a clear checklist. For a full Alexandria home, compare what is included, the number of cleaners, and the satisfaction policy — not only the hourly number.",
+    },
+  ] : [];
+  const faqs = [...c.faqs, ...alexandriaResearchFaqs, ...sharedFaqs];
 
   const { seoHelmet } = useSEO({
     title,
@@ -160,6 +170,8 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
                 <div className="flex flex-wrap gap-2 text-sm">
                   <a href="#prices-by-frequency" className="rounded-full bg-white border border-border px-3 py-1.5 text-accent hover:border-accent">Prices by frequency</a>
                   <a href="#prices-by-home-size" className="rounded-full bg-white border border-border px-3 py-1.5 text-accent hover:border-accent">Prices by home size</a>
+                  <a href="#hourly-vs-flat-rate" className="rounded-full bg-white border border-border px-3 py-1.5 text-accent hover:border-accent">Hourly vs. flat rate</a>
+                  <a href="#alexandria-price-examples" className="rounded-full bg-white border border-border px-3 py-1.5 text-accent hover:border-accent">Local examples</a>
                   <a href="#price-factors" className="rounded-full bg-white border border-border px-3 py-1.5 text-accent hover:border-accent">What changes the price</a>
                   <a href="#alexandria-faq" className="rounded-full bg-white border border-border px-3 py-1.5 text-accent hover:border-accent">Alexandria FAQ</a>
                 </div>
@@ -239,6 +251,104 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
             </div>
             <p className="text-xs text-muted-foreground mb-10">Ranges are typical for the {c.city} / {c.county} area and vary with your home's condition and any add-ons. Get your exact price with a free quote.</p>
           </FadeInSection>
+
+          {isAlexandria && (
+            <FadeInSection>
+              <section className="mb-12" aria-labelledby="hourly-vs-flat-rate">
+                <h2 id="hourly-vs-flat-rate" className="scroll-mt-24 font-heading text-3xl font-bold text-foreground mb-4">
+                  Alexandria House Cleaner Cost: Flat Rate vs. Hourly
+                </h2>
+                <p className="text-muted-foreground leading-relaxed mb-6">
+                  Searchers often compare a house cleaning cost per hour, but the hourly number alone can be misleading. A two-person crew working for two hours represents four cleaner-hours, while one cleaner working for four hours represents the same labor. The clearest comparison is the total price for the same written scope.
+                </p>
+                <div className="grid gap-4 md:grid-cols-2 mb-6">
+                  <div className="rounded-2xl border-2 border-accent/40 bg-accent/5 p-6">
+                    <p className="mb-1 text-xs font-bold uppercase tracking-wider text-accent">Best for a full home</p>
+                    <h3 className="mb-3 text-xl font-bold text-foreground">Written flat-rate quote</h3>
+                    <ul className="space-y-2 text-sm text-muted-foreground">
+                      {["Known total before cleaning day", "Scope tied to rooms and service level", "No penalty when an efficient crew finishes sooner", "Easier to compare recurring, one-time, and deep cleaning"].map((item) => (
+                        <li key={item} className="flex gap-2"><CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-accent" />{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="rounded-2xl border border-border bg-secondary/30 p-6">
+                    <p className="mb-1 text-xs font-bold uppercase tracking-wider text-muted-foreground">Useful for custom tasks</p>
+                    <h3 className="mb-3 text-xl font-bold text-foreground">Hourly cleaning</h3>
+                    <ul className="space-y-2 text-sm text-muted-foreground">
+                      {["Ask how many cleaners will arrive", "Confirm the estimated cleaner-hours", "Set a maximum time or budget", "Verify whether supplies and add-ons are included"].map((item) => (
+                        <li key={item} className="flex gap-2"><CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-accent" />{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+                <div className="rounded-xl border border-border bg-white p-5 text-sm text-foreground shadow-sm">
+                  <strong>Quick comparison formula:</strong> total quote ÷ (number of cleaners × hours on site) = cost per cleaner-hour. Example: $240 ÷ (2 cleaners × 2 hours) = $60 per cleaner-hour.
+                </div>
+              </section>
+            </FadeInSection>
+          )}
+
+          {isAlexandria && (
+            <FadeInSection>
+              <section className="mb-12" aria-labelledby="alexandria-price-examples">
+                <h2 id="alexandria-price-examples" className="scroll-mt-24 font-heading text-3xl font-bold text-foreground mb-4">
+                  Realistic Alexandria House Cleaning Cost Examples
+                </h2>
+                <p className="text-muted-foreground leading-relaxed mb-6">
+                  These examples apply the price table above to common Alexandria home types. They are planning ranges, not binding quotes; bathrooms, condition, pets, stairs, access, and requested extras determine the final number.
+                </p>
+                <div className="space-y-4">
+                  {[
+                    { home: "Carlyle or Potomac Yard condo", profile: "Studio or 1 bedroom · up to 900 sq ft · single level", recurring: "$140–$165", oneTime: "$160–$195", note: "Usually the most efficient layout, although elevator and parking instructions should be confirmed." },
+                    { home: "Del Ray bungalow", profile: "2 bedrooms · about 1,300–1,700 sq ft", recurring: "$180–$215", oneTime: "$215–$255", note: "Original woodwork, pets, and a finished lower level can move the home toward the upper end." },
+                    { home: "Old Town rowhouse", profile: "3 bedrooms · multiple narrow levels · about 1,700–2,200 sq ft", recurring: "$215–$260", oneTime: "$255–$310", note: "Stairs, extra bathrooms, heart-pine floors, and delicate historic finishes can add time and care." },
+                  ].map((example) => (
+                    <article key={example.home} className="rounded-2xl border border-border bg-white p-6 shadow-sm">
+                      <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                        <div className="max-w-md">
+                          <h3 className="text-lg font-bold text-foreground">{example.home}</h3>
+                          <p className="mt-1 text-sm text-muted-foreground">{example.profile}</p>
+                        </div>
+                        <div className="grid grid-cols-2 gap-4 text-sm sm:text-right">
+                          <div><p className="text-xs text-muted-foreground">Recurring</p><p className="font-bold text-accent">{example.recurring}</p></div>
+                          <div><p className="text-xs text-muted-foreground">One-time</p><p className="font-bold text-foreground">{example.oneTime}</p></div>
+                        </div>
+                      </div>
+                      <p className="mt-4 border-t border-border pt-4 text-sm leading-relaxed text-muted-foreground">{example.note}</p>
+                    </article>
+                  ))}
+                </div>
+              </section>
+            </FadeInSection>
+          )}
+
+          {isAlexandria && (
+            <FadeInSection>
+              <section className="mb-12" aria-labelledby="included-by-service">
+                <h2 id="included-by-service" className="font-heading text-3xl font-bold text-foreground mb-4">
+                  What Is Included at Each Cleaning Price Level?
+                </h2>
+                <div className="overflow-x-auto rounded-2xl border border-border">
+                  <table className="w-full min-w-[620px] text-sm">
+                    <thead className="bg-secondary text-left">
+                      <tr><th className="px-4 py-3">Service</th><th className="px-4 py-3">Best for</th><th className="px-4 py-3">Typical scope</th></tr>
+                    </thead>
+                    <tbody>
+                      {[
+                        ["Recurring cleaning", "Weekly or bi-weekly upkeep", "Kitchen and bathroom surfaces, dusting, vacuuming, mopping, beds, trash, and routine touchpoints."],
+                        ["One-time standard", "Guests, events, or an occasional reset", "The standard maintenance scope with more time allowed for buildup because there is no recurring baseline."],
+                        ["Deep cleaning", "First visit or seasonal reset", "Standard cleaning plus detail work such as baseboards, buildup, cabinet fronts, fixtures, and other agreed deep-clean items."],
+                        ["Move-out cleaning", "Lease turnover or home sale", "An empty-home reset with detailed kitchens, bathrooms, floors, cabinets, and selected appliance interiors."],
+                      ].map(([service, bestFor, scope]) => (
+                        <tr key={service} className="border-t border-border align-top"><td className="px-4 py-4 font-bold text-foreground">{service}</td><td className="px-4 py-4 text-muted-foreground">{bestFor}</td><td className="px-4 py-4 text-muted-foreground">{scope}</td></tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <p className="mt-4 text-sm text-muted-foreground">Always compare a written checklist. Inside ovens, refrigerators, interior windows, laundry, and heavy buildup may be priced as add-ons depending on the quote.</p>
+              </section>
+            </FadeInSection>
+          )}
 
           {/* What affects price */}
           <FadeInSection>
