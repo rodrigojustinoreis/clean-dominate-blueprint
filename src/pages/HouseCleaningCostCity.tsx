@@ -172,6 +172,18 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
       q: "Is a flat-rate or hourly house-cleaning price better?",
       a: "A written flat rate is usually easier for homeowners to budget because it ties the price to an agreed scope rather than how long the crew happens to take. Hourly pricing can make sense for a short, custom task, but ask for a time cap and a clear checklist. For a full Alexandria home, compare what is included, the number of cleaners, and the satisfaction policy — not only the hourly number.",
     },
+    {
+      q: "How much does it cost to clean a three-bedroom house in Alexandria?",
+      a: "For a typical three-bedroom, two-bath Alexandria home of about 1,700–2,200 square feet, plan on roughly $215–$260 for recurring cleaning, $255–$310 for a one-time standard clean, or $375–$445 for a deep clean. Multiple levels, extra bathrooms, pets, heavy buildup, and delicate historic finishes can move the quote higher.",
+    },
+    {
+      q: "Can I estimate Alexandria house cleaning cost by square footage?",
+      a: "Square footage is a useful starting point, but it is not enough by itself. A home under 900 square feet may run about $140–$165 recurring, while a 2,200–3,000-square-foot home may run about $265–$325. Bathrooms, condition, stairs, pets, frequency, and add-ons also affect cleaner-hours, so the final written quote should use both size and scope.",
+    },
+    {
+      q: "How much should I budget per month for house cleaning in Alexandria?",
+      a: "Using typical per-visit ranges, monthly service is about $215–$400 per month, bi-weekly service is roughly $390–$705 per average month, and weekly service is roughly $780–$1,410 before any frequency discount. These are planning figures; an exact recurring quote may be lower because regularly maintained homes usually take less time per visit.",
+    },
   ] : [];
   const faqs = [...c.faqs, ...alexandriaResearchFaqs, ...sharedFaqs];
 
@@ -335,6 +347,37 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
               </div>
             )}
           </FadeInSection>
+
+          {isAlexandria && (
+            <FadeInSection>
+              <section className="mb-12" aria-labelledby="monthly-cleaning-budget">
+                <div className="rounded-[2rem] border border-border bg-secondary/30 p-6 md:p-8">
+                  <p className="mb-2 text-xs font-bold uppercase tracking-[.16em] text-accent">Monthly budget planner</p>
+                  <h2 id="monthly-cleaning-budget" className="font-heading text-3xl font-bold text-foreground mb-4">
+                    How Much Does House Cleaning Cost per Month in Alexandria?
+                  </h2>
+                  <p className="text-muted-foreground leading-relaxed mb-6">
+                    Convert the per-visit price into a realistic household budget. The figures below use an average 4.33-week month and the published Alexandria ranges on this page.
+                  </p>
+                  <div className="grid gap-4 md:grid-cols-3">
+                    {[
+                      ["Monthly", "1 visit / month", "$215–$400", "Best for lighter-use homes and occasional maintenance."],
+                      ["Bi-weekly", "2.17 visits / month", "$390–$705", "The most practical balance of consistency and cost."],
+                      ["Weekly", "4.33 visits / month", "$780–$1,410", "Best for busy homes, children, pets, or frequent entertaining."],
+                    ].map(([frequencyLabel, cadence, budget, note]) => (
+                      <article key={frequencyLabel} className="rounded-2xl border border-border bg-white p-5 shadow-sm">
+                        <p className="text-sm font-bold text-foreground">{frequencyLabel}</p>
+                        <p className="mt-1 text-xs text-muted-foreground">{cadence}</p>
+                        <p className="mt-4 font-heading text-2xl font-bold text-accent">{budget}</p>
+                        <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{note}</p>
+                      </article>
+                    ))}
+                  </div>
+                  <p className="mt-5 text-xs leading-relaxed text-muted-foreground">Planning estimate, not a binding quote. Regularly maintained homes may qualify for a lower per-visit recurring rate after a walkthrough.</p>
+                </div>
+              </section>
+            </FadeInSection>
+          )}
 
           {/* Price ranges table */}
           <FadeInSection>
