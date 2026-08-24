@@ -19,6 +19,13 @@ import PricingTable from "@/components/PricingTable";
 import { getCostCity, COST_PRICE_ROWS, type CostFAQ } from "@/data/cost-cities";
 import { trackBookNowClick } from "@/lib/analytics";
 import { GOOGLE_LISTING_URL, REAL_REVIEWS } from "@/data/realReviews";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import NotFound from "./NotFound";
 
 // Renders a "House Cleaning Cost in <City>" lead-gen article from cost-cities.ts data.
@@ -389,24 +396,33 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
                     Real feedback from customers published on our Google Business Profile.
                   </p>
                 </div>
-                <div className="grid gap-4 md:grid-cols-3">
-                  {REAL_REVIEWS.slice(0, 3).map((review) => (
-                    <article key={review.name} className="flex h-full flex-col rounded-2xl border border-border bg-white p-6 shadow-sm">
-                      <div className="mb-4 flex items-center justify-between">
-                        <div className="flex" aria-label="5 out of 5 stars">
-                          {Array.from({ length: 5 }).map((_, index) => (
-                            <Star key={index} className="h-4 w-4 fill-amber-400 text-amber-400" aria-hidden="true" />
-                          ))}
-                        </div>
-                        <Quote className="h-5 w-5 text-accent/50" aria-hidden="true" />
-                      </div>
-                      <blockquote className="flex-1 text-sm leading-relaxed text-foreground">“{review.text}”</blockquote>
-                      <p className="mt-5 text-sm font-bold text-foreground">{review.name}</p>
-                      <p className="text-xs text-muted-foreground">Verified Google review</p>
-                    </article>
-                  ))}
-                </div>
-                <div className="mt-5 text-center">
+                <Carousel opts={{ align: "start", loop: true }} className="mx-auto max-w-3xl" aria-label="Verified Google customer reviews">
+                  <CarouselContent className="-ml-3 md:-ml-4">
+                    {REAL_REVIEWS.map((review) => (
+                      <CarouselItem key={review.name} className="pl-3 md:basis-1/2 md:pl-4">
+                        <article className="flex h-full min-h-[270px] flex-col rounded-2xl border border-border bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
+                          <div className="mb-4 flex items-center justify-between">
+                            <div className="flex" aria-label="5 out of 5 stars">
+                              {Array.from({ length: 5 }).map((_, index) => (
+                                <Star key={index} className="h-4 w-4 fill-amber-400 text-amber-400" aria-hidden="true" />
+                              ))}
+                            </div>
+                            <Quote className="h-6 w-6 text-accent/40" aria-hidden="true" />
+                          </div>
+                          <blockquote className="flex-1 text-sm leading-relaxed text-foreground">“{review.text}”</blockquote>
+                          <div className="mt-5 border-t border-border pt-4">
+                            <p className="text-sm font-bold text-foreground">{review.name}</p>
+                            <p className="text-xs text-muted-foreground">Verified Google review</p>
+                          </div>
+                        </article>
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                  <CarouselPrevious className="left-2 top-1/2 h-11 w-11 border-accent/30 bg-white/95 text-accent shadow-lg hover:bg-white md:-left-5" />
+                  <CarouselNext className="right-2 top-1/2 h-11 w-11 border-accent/30 bg-white/95 text-accent shadow-lg hover:bg-white md:-right-5" />
+                </Carousel>
+                <p className="mt-4 text-center text-xs text-muted-foreground">Swipe on mobile or use the arrows to read all {REAL_REVIEWS.length} featured reviews.</p>
+                <div className="mt-4 text-center">
                   <a href={GOOGLE_LISTING_URL} target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-accent underline hover:no-underline">
                     Read all reviews on Google
                   </a>
