@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, CheckCircle2, Lightbulb, MapPin, Sparkles } from "lucide-react";
+import { ArrowRight, CheckCircle2, Lightbulb, MapPin, Quote, ShieldCheck, Sparkles, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -18,6 +18,7 @@ import StickyCTA from "@/components/blog/StickyCTA";
 import PricingTable from "@/components/PricingTable";
 import { getCostCity, COST_PRICE_ROWS, type CostFAQ } from "@/data/cost-cities";
 import { trackBookNowClick } from "@/lib/analytics";
+import { GOOGLE_LISTING_URL, REAL_REVIEWS } from "@/data/realReviews";
 import NotFound from "./NotFound";
 
 // Renders a "House Cleaning Cost in <City>" lead-gen article from cost-cities.ts data.
@@ -115,6 +116,27 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
         </Button>
       </BlogHero>
 
+      {isAlexandria && (
+        <section aria-label="Why Alexandria homeowners choose Capital Clean Care" className="border-b border-border bg-white">
+          <div className="container mx-auto grid max-w-5xl grid-cols-2 gap-x-3 gap-y-4 px-4 py-5 md:grid-cols-4">
+            {[
+              { icon: Star, title: "5-Star Rated", detail: "Verified Google reviews" },
+              { icon: ShieldCheck, title: "Licensed & Insured", detail: "Background-checked crews" },
+              { icon: CheckCircle2, title: "Satisfaction Guarantee", detail: "We make it right" },
+              { icon: MapPin, title: "Alexandria Service", detail: "Old Town, Del Ray & more" },
+            ].map(({ icon: Icon, title: trustTitle, detail }) => (
+              <div key={trustTitle} className="flex items-center gap-3">
+                <Icon className="h-5 w-5 shrink-0 text-accent" aria-hidden="true" />
+                <div>
+                  <p className="text-sm font-bold text-foreground">{trustTitle}</p>
+                  <p className="text-xs text-muted-foreground">{detail}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
       {/* ARTICLE */}
       <article className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4 max-w-3xl">
@@ -144,6 +166,22 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
               </nav>
             )}
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">{c.intro}</p>
+            {isAlexandria && (
+              <figure className="mb-10 overflow-hidden rounded-2xl border border-border bg-secondary/20 shadow-sm">
+                <img
+                  src="/images/locations/alexandria-neighborhood-v1.webp"
+                  alt="Federal-style brick rowhouses on a tree-lined street in Old Town Alexandria, Virginia"
+                  width="1280"
+                  height="605"
+                  loading="lazy"
+                  decoding="async"
+                  className="aspect-[1280/605] w-full object-cover"
+                />
+                <figcaption className="px-5 py-3 text-sm text-muted-foreground">
+                  Old Town Alexandria's historic rowhouses require careful cleaning methods for original hardwood, tile, millwork, and narrow multi-level layouts.
+                </figcaption>
+              </figure>
+            )}
             {isAlexandria && (
               <div className="mb-10">
                 <h2 id="prices-by-frequency" className="font-heading text-3xl font-bold text-foreground mb-4 scroll-mt-24">
@@ -228,6 +266,44 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
               <p className="text-sm text-amber-900 leading-relaxed"><strong>{c.city} tip:</strong> {c.localTip}</p>
             </div>
           </FadeInSection>
+
+          {isAlexandria && (
+            <FadeInSection>
+              <section aria-labelledby="alexandria-reviews" className="my-12">
+                <div className="mb-7 text-center">
+                  <p className="mb-2 text-sm font-bold uppercase tracking-wider text-accent">Verified customer feedback</p>
+                  <h2 id="alexandria-reviews" className="font-heading text-3xl font-bold text-foreground">
+                    Why Local Homeowners Trust Capital Clean Care
+                  </h2>
+                  <p className="mx-auto mt-3 max-w-2xl text-muted-foreground">
+                    Real feedback from customers published on our Google Business Profile.
+                  </p>
+                </div>
+                <div className="grid gap-4 md:grid-cols-3">
+                  {REAL_REVIEWS.slice(0, 3).map((review) => (
+                    <article key={review.name} className="flex h-full flex-col rounded-2xl border border-border bg-white p-6 shadow-sm">
+                      <div className="mb-4 flex items-center justify-between">
+                        <div className="flex" aria-label="5 out of 5 stars">
+                          {Array.from({ length: 5 }).map((_, index) => (
+                            <Star key={index} className="h-4 w-4 fill-amber-400 text-amber-400" aria-hidden="true" />
+                          ))}
+                        </div>
+                        <Quote className="h-5 w-5 text-accent/50" aria-hidden="true" />
+                      </div>
+                      <blockquote className="flex-1 text-sm leading-relaxed text-foreground">“{review.text}”</blockquote>
+                      <p className="mt-5 text-sm font-bold text-foreground">{review.name}</p>
+                      <p className="text-xs text-muted-foreground">Verified Google review</p>
+                    </article>
+                  ))}
+                </div>
+                <div className="mt-5 text-center">
+                  <a href={GOOGLE_LISTING_URL} target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-accent underline hover:no-underline">
+                    Read all reviews on Google
+                  </a>
+                </div>
+              </section>
+            </FadeInSection>
+          )}
 
           <BlogInlineCTA
             headline={`Want your exact ${c.city} price?`}
