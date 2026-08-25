@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight, CheckCircle2, CircleDollarSign, Clock3, Home, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -33,7 +33,7 @@ const drivers = [
 ];
 
 const faqs = [
-  { q: "How much does a deep cleaning cost?", a: "In the DMV (Maryland, DC, Northern Virginia), a one-time deep cleaning typically runs from about $230 for a studio or 1-bedroom up to $540+ for a large 4–5 bedroom home. A typical 3-bedroom house lands around $375–$445. The price is driven by home size, number of bathrooms, and how long it's been since the last thorough cleaning — the more build-up, the more time it takes." },
+  { q: "How much does a deep house cleaning cost?", a: "In the DMV (Maryland, DC, Northern Virginia), a one-time deep house cleaning typically runs from about $230 for a studio or 1-bedroom up to $540+ for a large 4–5 bedroom home. A typical 3-bedroom house lands around $375–$445. The price is driven by home size, number of bathrooms, and how long it's been since the last thorough cleaning — the more build-up, the more time it takes." },
   { q: "Why is a deep clean more expensive than a regular clean?", a: "A deep clean includes everything a standard clean does plus all the detailed work routine cleans skip: inside the oven and fridge, grout scrubbing, baseboards and trim, ceiling fans and vents, window tracks, and the build-up behind furniture. That extra detail takes significantly more time — usually 1.5 to 2.5 times longer than a standard clean — which is why a deep clean runs roughly 40–75% more for the same home." },
   { q: "How often do I need to pay for a deep clean?", a: "Only occasionally. Most homes need a deep clean a few times a year — or just once, before starting recurring service. After the first deep clean resets the home, lighter recurring maintenance cleans keep it that way at a lower per-visit cost, so you're not paying deep-clean prices every visit." },
   { q: "Can I get an exact deep cleaning price?", a: "Yes — the ranges above are typical, but an exact quote depends on your specific home and any add-ons. Tell us your home size, number of bathrooms, and roughly how long since the last deep clean, and we'll give you a clear, no-obligation price. There are no hidden fees." },
@@ -43,9 +43,9 @@ const faqs = [
 
 const HowMuchDeepCleaningCosts = () => {
   const { seoHelmet } = useSEO({
-    title: "How Much Does a Deep Cleaning Cost? (2026 Prices)",
+    title: "House Deep Cleaning Cost: 2026 Prices",
     description:
-      "How much a deep cleaning costs in the DMV — real 2026 prices by home size, what drives the cost, and how it compares to a standard clean. Typical 3-bed deep clean runs $375–$445.",
+      "House deep cleaning costs $230–$540+ in 2026. See prices by home size, what raises the price, what's included, and when a deep clean is worth it for DMV homes.",
     canonical: "https://capitalcleancare.com/resources/how-much-does-deep-cleaning-cost",
     ogImage: OG_IMAGE,
   });
@@ -54,11 +54,11 @@ const HowMuchDeepCleaningCosts = () => {
     <Layout>
       {seoHelmet}
       <Helmet>
-        <meta name="keywords" content="how much does deep cleaning cost, deep cleaning price, deep clean cost, deep cleaning cost per home, cost of deep cleaning house" />
+        <meta name="keywords" content="house deep cleaning cost, deep cleaning house cost, how much does a deep house cleaning cost, cost for deep cleaning house, deep cleaning price" />
       </Helmet>
 
       <ArticleSchema
-        title="How Much Does a Deep Cleaning Cost? (2026 Prices)"
+        title="Deep Cleaning Cost (2026): $230–$540+ Price Guide"
         description="Real 2026 deep cleaning prices in the DMV by home size, what drives the cost, and how a deep clean compares to a standard clean."
         url="https://capitalcleancare.com/resources/how-much-does-deep-cleaning-cost"
         datePublished="2026-06-16"
@@ -75,7 +75,7 @@ const HowMuchDeepCleaningCosts = () => {
 
       <BlogHero src={HERO_IMAGE} alt="A pristine, freshly deep-cleaned living room in soft daylight">
         <span className="bg-accent/20 text-accent font-semibold px-4 py-1.5 rounded-full text-sm inline-block mb-6 uppercase tracking-wider border border-accent/30">Cleaning Guides</span>
-        <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight drop-shadow-md">How Much Does a Deep Cleaning Cost?</h1>
+        <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight drop-shadow-md">How Much Does a House Deep Cleaning Cost in 2026?</h1>
         <p className="text-xl md:text-2xl text-gray-200 mb-4 leading-relaxed font-medium">Real 2026 deep cleaning prices by home size in Maryland, DC & Virginia</p>
         <p className="text-gray-300 mb-8 text-sm uppercase tracking-widest">By Rodrigo Reis, Owner · MD · DC · VA · June 2026</p>
         <Button size="lg" className="bg-accent hover:bg-accent/90 text-white text-lg px-8 py-6 rounded-full shadow-lg" asChild>
@@ -86,13 +86,34 @@ const HowMuchDeepCleaningCosts = () => {
       <article className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4 max-w-3xl">
           <FadeInSection>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              A one-time deep cleaning in the DMV typically runs from about <strong>$230 for a small apartment up to $540+ for a large home</strong>, with a typical 3-bedroom house landing around <strong>$375–$445</strong>. Here's the full breakdown by home size, what drives the price, and how to keep deep-clean costs down over time.
-            </p>
+            <section className="relative mb-12 overflow-hidden rounded-3xl border border-sky-200 bg-gradient-to-br from-sky-50 via-white to-cyan-50 p-6 shadow-[0_22px_60px_-35px_rgba(2,132,199,0.5)] md:p-8" aria-labelledby="quick-cost-answer">
+              <div aria-hidden="true" className="absolute -right-12 -top-12 h-40 w-40 rounded-full bg-accent/10 blur-2xl" />
+              <div className="relative">
+                <p className="mb-2 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-accent"><Sparkles className="h-4 w-4" /> Quick answer</p>
+                <h2 id="quick-cost-answer" className="font-heading text-2xl font-bold leading-tight text-foreground md:text-3xl">A house deep cleaning costs about $230–$540+ in 2026</h2>
+                <p className="mt-4 text-base leading-relaxed text-muted-foreground md:text-lg">
+                  For homes in Maryland, Washington DC, and Northern Virginia, a typical <strong>3-bedroom deep clean costs $375–$445</strong>. Smaller apartments start near <strong>$230</strong>, while large homes generally cost <strong>$540 or more</strong>. Home size, bathrooms, buildup, and optional inside-appliance cleaning create most of the price difference.
+                </p>
+                <div className="mt-6 grid gap-3 sm:grid-cols-3">
+                  {[
+                    { icon: Home, label: "Small home", value: "$230–$285" },
+                    { icon: CircleDollarSign, label: "Typical 3-bedroom", value: "$375–$445" },
+                    { icon: Clock3, label: "Large home", value: "$540+" },
+                  ].map(({ icon: Icon, label, value }) => (
+                    <div key={label} className="rounded-2xl border border-white bg-white/80 p-4 shadow-sm backdrop-blur-sm transition-transform duration-300 hover:-translate-y-1">
+                      <Icon className="mb-3 h-5 w-5 text-accent" />
+                      <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">{label}</p>
+                      <p className="mt-1 text-xl font-bold text-foreground">{value}</p>
+                    </div>
+                  ))}
+                </div>
+                <p className="mt-5 text-xs leading-relaxed text-muted-foreground">These are transparent DMV-area pricing ranges, not a universal national rate. Your written quote should reflect the actual size and condition of your home.</p>
+              </div>
+            </section>
           </FadeInSection>
 
           <FadeInSection>
-            <h2 className="font-heading text-3xl font-bold text-foreground mb-6">Deep Cleaning Prices by Home Size</h2>
+            <h2 className="font-heading text-3xl font-bold text-foreground mb-6">Deep Cleaning Cost by Home Size</h2>
             <div className="overflow-x-auto mb-4">
               <table className="w-full border-collapse text-sm">
                 <thead>
@@ -114,6 +135,26 @@ const HowMuchDeepCleaningCosts = () => {
               </table>
             </div>
             <p className="text-xs text-muted-foreground mb-10">Typical DMV ranges for 2026. Exact price depends on bathrooms, condition, and add-ons. Prices in nearby cities vary slightly — see our city cost guides below.</p>
+          </FadeInSection>
+
+          <FadeInSection>
+            <section className="mb-12" aria-labelledby="cost-vs-regular-cleaning">
+              <h2 id="cost-vs-regular-cleaning" className="mb-4 font-heading text-3xl font-bold text-foreground">Deep Cleaning Cost vs. Regular Cleaning</h2>
+              <p className="mb-4 leading-relaxed text-muted-foreground">
+                A deep clean generally costs more because it covers detailed buildup that a maintenance visit is not designed to remove. For the same home, it often takes <strong>1.5 to 2.5 times longer</strong> and can cost roughly <strong>40–75% more</strong> than a standard clean.
+              </p>
+              <div className="grid gap-4 md:grid-cols-2">
+                <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                  <p className="font-heading text-lg font-bold text-foreground">Regular cleaning</p>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">Routine surfaces, floors, bathrooms, kitchen exteriors, and general maintenance for a home already in good condition.</p>
+                </div>
+                <div className="rounded-2xl border border-accent/30 bg-accent/10 p-5">
+                  <p className="font-heading text-lg font-bold text-foreground">Deep cleaning</p>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">Baseboards, detailed buildup, grout, vents, fixtures, and selected inside-appliance or cabinet work that requires additional time.</p>
+                </div>
+              </div>
+              <p className="mt-4 text-sm leading-relaxed text-muted-foreground">Compare the scopes in our <Link to="/resources/deep-cleaning-vs-regular-cleaning" className="font-semibold text-accent underline hover:no-underline">deep cleaning vs. regular cleaning guide</Link> or review <Link to="/resources/what-is-included-in-a-deep-cleaning" className="font-semibold text-accent underline hover:no-underline">everything included in a professional deep clean</Link>.</p>
+            </section>
           </FadeInSection>
 
           <FadeInSection>
