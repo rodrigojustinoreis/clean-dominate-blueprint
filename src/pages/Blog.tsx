@@ -170,8 +170,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "house-cleaning-guide-clarksburg-md",
-    title: "The Complete Guide to House Cleaning in Clarksburg, MD",
-    excerpt: "A complete local guide to house cleaning in Clarksburg — new-construction homes, move-in and post-construction cleans, builder-grade finishes, pricing, and choosing a company.",
+    title: "House Cleaning Cost in Clarksburg, MD: 2026 Guide",
+    excerpt: "Compare 2026 Clarksburg house cleaning prices for recurring, deep, move-in, and post-construction service, plus local factors and a hiring checklist.",
     date: "2026-06-16",
     readTime: "6 min read",
     category: "Local Guides",

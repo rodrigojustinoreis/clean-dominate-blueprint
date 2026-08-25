@@ -66,11 +66,11 @@ const HouseCleaningGuideClarksburg = () => {
         image={HERO_IMAGE}
       />
       <FAQSchema faqs={faqs} />
-      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "House Cleaning Guide: Clarksburg, MD", href: "/resources/house-cleaning-guide-clarksburg-md" }]} />
+      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "House Cleaning Cost: Clarksburg, MD", href: "/resources/house-cleaning-guide-clarksburg-md" }]} />
 
       <div className="bg-gray-50 py-4 border-b">
         <div className="container mx-auto px-4 max-w-5xl">
-          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "House Cleaning Guide: Clarksburg, MD" }]} />
+          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Resources", href: "/resources" }, { label: "House Cleaning Cost: Clarksburg, MD" }]} />
         </div>
       </div>
 

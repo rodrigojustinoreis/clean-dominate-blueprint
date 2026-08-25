@@ -304,6 +304,20 @@ const ServiceLocationPage = () => {
         </div>
       </section>
 
+      {city.slug === "clarksburg-md" && service.slug === "house-cleaning" && (
+        <section className="border-y border-border bg-accent/5 py-8">
+          <div className="container mx-auto max-w-4xl px-4">
+            <p className="text-muted-foreground leading-relaxed">
+              Comparing service levels or planning your monthly budget? Review the{" "}
+              <Link to="/resources/house-cleaning-guide-clarksburg-md" className="font-semibold text-accent underline hover:no-underline">
+                2026 Clarksburg house cleaning cost guide
+              </Link>{" "}
+              for recurring, deep, move-in, and post-construction price ranges for local homes.
+            </p>
+          </div>
+        </section>
+      )}
+
       {/* Our Process */}
       <section className="py-12 md:py-16">
         <div className="container mx-auto px-4 max-w-4xl">

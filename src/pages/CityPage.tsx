@@ -405,6 +405,14 @@ const CityPage = () => {
               </Link>.
             </p>
           )}
+          {city.slug === "clarksburg-md" && (
+            <p className="mt-6 text-muted-foreground leading-relaxed">
+              Planning your budget for a newer home? Compare recurring, deep, move-in, and post-construction ranges in our{" "}
+              <Link to="/resources/house-cleaning-guide-clarksburg-md" className="text-accent font-semibold underline hover:no-underline">
+                2026 Clarksburg house cleaning cost guide
+              </Link>.
+            </p>
+          )}
         </div>
       </section>
 

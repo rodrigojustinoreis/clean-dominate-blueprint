@@ -113,6 +113,8 @@ const blogContent: Record<string, React.ReactNode> = {
         <PricingTable />
       </div>
 
+      <p>Pricing a newer home near Cabin Branch, Arora Hills, or Clarksburg Village? See our dedicated <Link to="/resources/house-cleaning-guide-clarksburg-md" className="text-accent hover:underline font-semibold">Clarksburg house cleaning cost guide</Link> for local recurring, deep, move-in, and post-construction planning ranges.</p>
+
       <details className="my-8 not-prose rounded-xl border border-border bg-secondary/30 overflow-hidden">
         <summary className="cursor-pointer select-none px-5 py-4 font-heading font-semibold text-foreground flex items-center justify-between hover:bg-secondary/50 transition-colors [&::-webkit-details-marker]:hidden">
           <span>See the full 2026 price breakdown, in writing</span>
