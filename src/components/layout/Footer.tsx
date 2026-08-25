@@ -90,45 +90,64 @@ const Footer = () => {
     </section>
 
     {/* ====== TRUST BAR ====== */}
-    <div className="border-b border-slate-200 bg-slate-50 py-7 md:py-9">
+    <div className="border-b border-slate-200 bg-gradient-to-b from-white to-slate-100 py-9 md:py-12">
       <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
-        <p className="mb-5 text-center text-xs font-bold uppercase tracking-[0.18em] text-slate-500">{t("Trusted care, every visit", "Confianza en cada visita")}</p>
-        <div className="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-6">
-          <div className="group flex min-h-28 flex-col items-center justify-center gap-2 rounded-2xl border border-slate-200 bg-white px-3 py-4 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-accent/50 hover:shadow-lg">
-            <span className="grid h-10 w-10 place-items-center rounded-xl bg-primary/10 transition-colors group-hover:bg-accent/20"><Shield className="h-5 w-5 text-primary" /></span>
+        <div className="rounded-[2rem] border border-white bg-white/75 p-4 shadow-[0_24px_70px_-28px_rgba(15,50,85,0.28)] ring-1 ring-slate-200/70 backdrop-blur-xl sm:p-6">
+          <div className="mb-6 flex flex-col items-center justify-between gap-2 px-2 text-center md:flex-row md:text-left">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-accent">{t("The Capital Clean Care standard", "El estándar Capital Clean Care")}</p>
+              <h4 className="mt-1 font-heading text-xl font-bold text-slate-900 md:text-2xl">{t("Confidence built into every clean.", "Confianza incluida en cada limpieza.")}</h4>
+            </div>
+            <p className="max-w-sm text-sm leading-relaxed text-slate-500">{t("Tap any promise to see how we protect your home.", "Selecciona una promesa para ver cómo protegemos tu hogar.")}</p>
+          </div>
+          <div className="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-6">
+          <Link to={isSpanish ? "/es/nosotros" : "/about"} className="group relative flex min-h-32 flex-col items-center justify-center gap-2 overflow-hidden rounded-2xl border border-slate-200/80 bg-white px-3 py-4 text-center transition-all duration-500 hover:-translate-y-1.5 hover:border-sky-300 hover:shadow-[0_18px_35px_-18px_rgba(2,132,199,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">
+            <span className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-accent/70 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+            <span className="grid h-11 w-11 place-items-center rounded-2xl bg-primary/10 transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 group-hover:bg-accent/20"><Shield className="h-5 w-5 text-primary" /></span>
             <span className="text-xs font-semibold leading-snug text-slate-700">{t("Licensed & Insured", "Con Licencia y Seguro")}</span>
-          </div>
-          <div className="group flex min-h-28 flex-col items-center justify-center gap-2 rounded-2xl border border-slate-200 bg-white px-3 py-4 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-accent/50 hover:shadow-lg">
-            <span className="grid h-10 w-10 place-items-center rounded-xl bg-primary/10 transition-colors group-hover:bg-accent/20"><Search className="h-5 w-5 text-primary" /></span>
+            <ArrowRight className="absolute bottom-3 right-3 h-3.5 w-3.5 translate-x-1 text-accent opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
+          </Link>
+          <Link to={isSpanish ? "/es/nosotros" : "/about"} className="group relative flex min-h-32 flex-col items-center justify-center gap-2 overflow-hidden rounded-2xl border border-slate-200/80 bg-white px-3 py-4 text-center transition-all duration-500 hover:-translate-y-1.5 hover:border-sky-300 hover:shadow-[0_18px_35px_-18px_rgba(2,132,199,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">
+            <span className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-accent/70 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+            <span className="grid h-11 w-11 place-items-center rounded-2xl bg-primary/10 transition-all duration-500 group-hover:scale-110 group-hover:-rotate-3 group-hover:bg-accent/20"><Search className="h-5 w-5 text-primary" /></span>
             <span className="text-xs font-semibold leading-snug text-slate-700">{t("Background-Checked", "Personal Verificado")}</span>
-          </div>
-          <div className="group flex min-h-28 flex-col items-center justify-center gap-2 rounded-2xl border border-slate-200 bg-white px-3 py-4 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-accent/50 hover:shadow-lg">
-            <span className="grid h-10 w-10 place-items-center rounded-xl bg-emerald-50 transition-colors group-hover:bg-emerald-100"><Leaf className="h-5 w-5 text-emerald-600" /></span>
+            <ArrowRight className="absolute bottom-3 right-3 h-3.5 w-3.5 translate-x-1 text-accent opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
+          </Link>
+          <Link to="/services/eco-friendly-cleaning" className="group relative flex min-h-32 flex-col items-center justify-center gap-2 overflow-hidden rounded-2xl border border-slate-200/80 bg-white px-3 py-4 text-center transition-all duration-500 hover:-translate-y-1.5 hover:border-emerald-300 hover:shadow-[0_18px_35px_-18px_rgba(5,150,105,0.5)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500">
+            <span className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-emerald-400 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+            <span className="grid h-11 w-11 place-items-center rounded-2xl bg-emerald-50 transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 group-hover:bg-emerald-100"><Leaf className="h-5 w-5 text-emerald-600" /></span>
             <span className="text-xs font-semibold leading-snug text-slate-700">{t("100% Eco-Friendly", "100% Ecológico")}</span>
-          </div>
-          <div className="group flex min-h-28 flex-col items-center justify-center gap-2 rounded-2xl border border-slate-200 bg-white px-3 py-4 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-accent/50 hover:shadow-lg">
-            <span className="grid h-10 w-10 place-items-center rounded-xl bg-primary/10 transition-colors group-hover:bg-accent/20"><Users className="h-5 w-5 text-primary" /></span>
+            <ArrowRight className="absolute bottom-3 right-3 h-3.5 w-3.5 translate-x-1 text-emerald-600 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
+          </Link>
+          <Link to={isSpanish ? "/es/nosotros" : "/about"} className="group relative flex min-h-32 flex-col items-center justify-center gap-2 overflow-hidden rounded-2xl border border-slate-200/80 bg-white px-3 py-4 text-center transition-all duration-500 hover:-translate-y-1.5 hover:border-sky-300 hover:shadow-[0_18px_35px_-18px_rgba(2,132,199,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">
+            <span className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-accent/70 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+            <span className="grid h-11 w-11 place-items-center rounded-2xl bg-primary/10 transition-all duration-500 group-hover:scale-110 group-hover:-rotate-3 group-hover:bg-accent/20"><Users className="h-5 w-5 text-primary" /></span>
             <span className="text-xs font-semibold leading-snug text-slate-700">{t("Family & Latino-Owned", "Negocio Familiar Latino")}</span>
-          </div>
+            <ArrowRight className="absolute bottom-3 right-3 h-3.5 w-3.5 translate-x-1 text-accent opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
+          </Link>
           {/* Real Google counter (single source: BUSINESS_INFO.rating) linked to the live listing */}
           <a
             href={GOOGLE_LISTING_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex min-h-28 flex-col items-center justify-center gap-2 rounded-2xl border border-amber-200 bg-amber-50/70 px-3 py-4 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-amber-300 hover:shadow-lg"
+            className="group relative flex min-h-32 flex-col items-center justify-center gap-2 overflow-hidden rounded-2xl border border-amber-200 bg-gradient-to-b from-amber-50 to-white px-3 py-4 text-center transition-all duration-500 hover:-translate-y-1.5 hover:border-amber-300 hover:shadow-[0_18px_35px_-18px_rgba(245,158,11,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
             aria-label={t("Read our Google reviews", "Lee nuestras reseñas en Google")}
           >
-            <span className="grid h-10 w-10 place-items-center rounded-xl bg-amber-100"><Star className="h-5 w-5 fill-amber-400 text-amber-500" /></span>
+            <span className="grid h-11 w-11 place-items-center rounded-2xl bg-amber-100 transition-all duration-500 group-hover:scale-110 group-hover:rotate-6"><Star className="h-5 w-5 fill-amber-400 text-amber-500" /></span>
             <span className="text-xs font-bold leading-snug text-slate-800">
               {t(
                 `${BUSINESS_INFO.rating.value}★ · ${BUSINESS_INFO.rating.count} Google Reviews`,
                 `${BUSINESS_INFO.rating.value}★ · ${BUSINESS_INFO.rating.count} Reseñas en Google`,
               )}
             </span>
+            <ArrowRight className="absolute bottom-3 right-3 h-3.5 w-3.5 translate-x-1 text-amber-600 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
           </a>
-          <div className="group flex min-h-28 flex-col items-center justify-center gap-2 rounded-2xl border border-slate-200 bg-white px-3 py-4 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-accent/50 hover:shadow-lg">
-            <span className="grid h-10 w-10 place-items-center rounded-xl bg-primary/10 transition-colors group-hover:bg-accent/20"><CheckCircle className="h-5 w-5 text-primary" /></span>
+          <Link to={isSpanish ? "/es/contacto" : "/contact"} className="group relative flex min-h-32 flex-col items-center justify-center gap-2 overflow-hidden rounded-2xl border border-slate-200/80 bg-white px-3 py-4 text-center transition-all duration-500 hover:-translate-y-1.5 hover:border-sky-300 hover:shadow-[0_18px_35px_-18px_rgba(2,132,199,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent">
+            <span className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-accent/70 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+            <span className="grid h-11 w-11 place-items-center rounded-2xl bg-primary/10 transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 group-hover:bg-accent/20"><CheckCircle className="h-5 w-5 text-primary" /></span>
             <span className="text-xs font-semibold leading-snug text-slate-700">{t("Satisfaction Guarantee", "Garantía de Satisfacción")}</span>
+            <ArrowRight className="absolute bottom-3 right-3 h-3.5 w-3.5 translate-x-1 text-accent opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
+          </Link>
           </div>
         </div>
       </div>
