@@ -2,8 +2,10 @@ import { Phone, Mail, Clock, MapPin } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import Layout from "@/components/layout/Layout";
 import QuoteForm from "@/components/QuoteForm";
+import ContactReviews from "@/components/ContactReviews";
 import { useSEO } from "@/hooks/useSEO";
 import { LocalBusinessSchema, ContactPageSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
+import { pickReviews } from "@/data/realReviews";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import TrustBadges from "@/components/TrustBadges";
 import PriceCalculator from "@/components/PriceCalculator";
@@ -19,7 +21,7 @@ const Contact = () => {
   return (
     <Layout>
       {seoHelmet}
-      <LocalBusinessSchema />
+      <LocalBusinessSchema reviews={pickReviews("contact", 2)} />
       <ContactPageSchema />
       <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Contact", href: "/contact" }]} />
       <section className="pt-4 pb-16 md:py-24">
@@ -30,12 +32,18 @@ const Contact = () => {
             <p className="hidden md:block text-muted-foreground text-lg max-w-2xl mx-auto">Ready for a cleaner home? Reach out for a free, no-obligation quote.</p>
           </div>
 
-          {/* Quote Form — top */}
-          <Card className="max-w-3xl mx-auto mb-12">
-            <CardContent className="p-4 md:p-8">
-              <QuoteForm />
-            </CardContent>
-          </Card>
+          {/* Quote form + real-review social proof — form left, reviews sticky right on
+              desktop; stacked with the form first on mobile */}
+          <div className="max-w-6xl mx-auto mb-12 lg:grid lg:grid-cols-[minmax(0,1fr)_340px] lg:gap-8 lg:items-start">
+            <Card id="quote" className="scroll-mt-24 mb-8 lg:mb-0">
+              <CardContent className="p-4 md:p-8">
+                <QuoteForm />
+              </CardContent>
+            </Card>
+            <div className="lg:sticky lg:top-24 self-start">
+              <ContactReviews />
+            </div>
+          </div>
 
           {/* Contact info + map */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
