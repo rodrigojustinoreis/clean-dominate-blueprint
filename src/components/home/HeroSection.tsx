@@ -48,22 +48,17 @@ const HeroSection = () => {
         width={1920}
         height={1080}
       />
-      {/* Layered overlays for premium depth + text readability */}
+      {/* Richer gradient overlays for depth */}
       {/* Mobile: vertical backing for the full-width text. Desktop: left→right so the team photo stays visible on the right. */}
-      <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/70 to-background/30 md:bg-gradient-to-r md:from-background md:via-background/65 md:to-transparent" />
-      {/* Soft radial spotlight behind the headline — adds depth and lifts the text off the photo (desktop) */}
-      <div className="hidden md:block absolute inset-0 [background:radial-gradient(58%_68%_at_24%_42%,hsl(var(--background)/0.6),transparent_72%)]" />
+      <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/70 to-background/30 md:bg-gradient-to-r md:from-background md:via-background/60 md:to-transparent" />
       <div className="absolute inset-0 bg-mesh opacity-20" />
-      {/* Crisp top + bottom edge fades for a polished, framed finish */}
-      <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-background/80 to-transparent" />
-      <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background to-transparent" />
     </div>
 
     {/* Content */}
     <div className="relative z-10 container mx-auto px-4 py-16 md:py-24">
       <div className="max-w-2xl">
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 glass rounded-full px-5 py-2.5 mb-8 animate-fade-up ring-1 ring-white/40 shadow-lg shadow-primary/5">
+        <div className="inline-flex items-center gap-2 glass rounded-full px-5 py-2.5 mb-8 animate-fade-up">
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
@@ -88,7 +83,7 @@ const HeroSection = () => {
             { icon: Shield, label: "Licensed & Insured" },
             { icon: Leaf, label: "Eco-Friendly" },
           ].map(({ icon: Icon, label }) => (
-            <span key={label} className="inline-flex items-center gap-2 glass rounded-full px-4 py-2 text-sm font-medium text-foreground ring-1 ring-white/30 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md hover:ring-accent/40">
+            <span key={label} className="inline-flex items-center gap-2 glass rounded-full px-4 py-2 text-sm font-medium text-foreground">
               <Icon className="h-4 w-4 text-accent" />
               {label}
             </span>
@@ -134,7 +129,7 @@ const HeroSection = () => {
             </div>
           </div>
           {/* Mini testimonial — rotates every 5 s */}
-          <div className="glass-card rounded-xl px-4 py-3 max-w-sm transition-all duration-500 ring-1 ring-white/20 shadow-lg shadow-primary/5">
+          <div className="glass-card rounded-xl px-4 py-3 max-w-sm transition-opacity duration-500">
             <p className="text-xs text-foreground italic leading-relaxed">
               "{miniTestimonials[testimonialIdx].text}"
             </p>
