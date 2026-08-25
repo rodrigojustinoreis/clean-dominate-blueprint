@@ -3,7 +3,7 @@ import { Phone, Mail, Clock, Instagram, Facebook, MapPin, Shield, Search, Leaf, 
 import { Button } from "@/components/ui/button";
 import { dirServiceCards as services } from "@/data/home-directory";
 import { mdCities, dcCities, vaCities } from "@/data/locations";
-import { dirCities as slCities, dirServices as slServices } from "@/data/sl-directory";
+import { dirCities as slCities } from "@/data/sl-directory";
 import { trackPhoneClick, trackBookNowClick } from "@/lib/analytics";
 import { BUSINESS_INFO } from "@/data/business-info";
 import { GOOGLE_LISTING_URL } from "@/data/realReviews";
@@ -12,7 +12,6 @@ import GoogleBusinessLinks from "@/components/GoogleBusinessLinks";
 import logo from "@/assets/logo.webp";
 
 const TOP_SERVICE_CITIES = ["rockville-md", "bethesda-md", "silver-spring-md", "arlington-va", "alexandria-va", "washington-dc", "fairfax-va", "gaithersburg-md"];
-const TOP_SERVICES = ["house-cleaning", "deep-cleaning", "move-out-cleaning", "recurring-cleaning"];
 
 // Popular Guides — real, prerendered /resources posts (static links in the footer).
 const POPULAR_GUIDES: { to: string; label: string }[] = [
@@ -23,14 +22,6 @@ const POPULAR_GUIDES: { to: string; label: string }[] = [
   { to: "/resources/move-in-cleaning-checklist", label: "Move-In / Move-Out Cleaning Checklist" },
   { to: "/resources/how-often-should-you-hire-a-cleaning-service", label: "How Often Should You Hire a Cleaner?" },
 ];
-
-// Spanish labels for the data-driven "Popular Services by Area" links (links stay on EN pages).
-const ES_SERVICE_LABELS: Record<string, string> = {
-  "house cleaning": "limpieza de casas",
-  "deep cleaning": "limpieza profunda",
-  "move-out cleaning": "limpieza de mudanza",
-  "recurring cleaning": "limpieza recurrente",
-};
 
 const Footer = () => {
   const isSpanish = useLocation().pathname.startsWith("/es");
@@ -67,10 +58,10 @@ const Footer = () => {
       ];
 
   return (
-  <footer className="bg-primary text-primary-foreground">
+  <footer className="w-full overflow-x-clip bg-primary text-primary-foreground">
     {/* CTA Band */}
     <div className="bg-accent">
-      <div className="container mx-auto px-4 py-6 md:py-8 flex flex-col md:flex-row items-center justify-between gap-4 text-accent-foreground text-center md:text-left">
+      <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-between gap-5 px-5 py-7 text-center text-accent-foreground sm:px-6 md:flex-row md:py-8 md:text-left lg:px-8">
         <div>
           <h3 className="font-heading text-xl md:text-2xl font-bold">{t("Ready for a Spotless Home?", "¿Listo para una casa impecable?")}</h3>
           <p className="opacity-90 text-sm md:text-base">{t("Get your free, no-obligation quote in minutes.", "Obtén tu cotización gratis y sin compromiso en minutos.")}</p>
@@ -88,7 +79,7 @@ const Footer = () => {
 
     {/* ====== TRUST BAR ====== */}
     <div className="border-y border-border bg-muted/30 py-6">
-      <div className="container mx-auto px-4">
+      <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 text-center">
           <div className="flex flex-col items-center gap-1">
             <Shield className="w-6 h-6 text-primary" />
@@ -130,7 +121,7 @@ const Footer = () => {
       </div>
     </div>
 
-    <div className="container mx-auto px-4 py-12">
+    <div className="mx-auto w-full max-w-7xl px-5 py-10 sm:px-6 md:py-12 lg:px-8">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {/* Brand */}
         <div className="space-y-4">
@@ -219,24 +210,6 @@ const Footer = () => {
               <Link key={c.slug} to={`/locations/${c.slug}`} className="hover:text-accent transition-colors truncate">{c.name}</Link>
             ))}
           </div>
-        </div>
-      </div>
-
-      {/* Service + City Links */}
-      <div className="mt-10 pt-8 border-t border-primary-foreground/10">
-        <h4 className="font-heading font-semibold mb-4 text-sm">{t("Popular Services by Area", "Servicios Populares por Área")}</h4>
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-4 gap-y-1">
-          {slCities.filter(c => TOP_SERVICE_CITIES.includes(c.slug)).flatMap(city =>
-            slServices.filter(s => TOP_SERVICES.includes(s.slug)).map(svc => (
-              <Link
-                key={`${city.slug}-${svc.slug}`}
-                to={`/locations/${city.slug}/${svc.slug}`}
-                className="text-xs text-primary-foreground/50 hover:text-accent transition-colors truncate"
-              >
-                {isSpanish ? (ES_SERVICE_LABELS[svc.shortName] ?? svc.shortName) : svc.shortName} – {city.name}
-              </Link>
-            ))
-          )}
         </div>
       </div>
 
