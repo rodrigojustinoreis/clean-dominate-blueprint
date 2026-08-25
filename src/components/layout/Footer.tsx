@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { Phone, Mail, Clock, Instagram, Facebook, MapPin, Shield, Search, Leaf, Users, Star, CheckCircle } from "lucide-react";
+import { Phone, Mail, Clock, Instagram, Facebook, MapPin, Shield, Search, Leaf, Users, Star, CheckCircle, Sparkles, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { dirServiceCards as services } from "@/data/home-directory";
 import { mdCities, dcCities, vaCities } from "@/data/locations";
@@ -59,63 +59,76 @@ const Footer = () => {
 
   return (
   <footer className="w-full overflow-x-clip bg-primary text-primary-foreground">
-    {/* CTA Band */}
-    <div className="bg-accent">
-      <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-between gap-5 px-5 py-7 text-center text-accent-foreground sm:px-6 md:flex-row md:py-8 md:text-left lg:px-8">
-        <div>
-          <h3 className="font-heading text-xl md:text-2xl font-bold">{t("Ready for a Spotless Home?", "¿Listo para una casa impecable?")}</h3>
-          <p className="opacity-90 text-sm md:text-base">{t("Get your free, no-obligation quote in minutes.", "Obtén tu cotización gratis y sin compromiso en minutos.")}</p>
+    {/* Conversion CTA */}
+    <section className="relative isolate overflow-hidden bg-gradient-to-br from-primary via-primary to-[#1268a0]">
+      <div aria-hidden="true" className="absolute -left-20 top-1/2 h-72 w-72 -translate-y-1/2 rounded-full bg-accent/25 blur-3xl" />
+      <div aria-hidden="true" className="absolute -right-16 -top-32 h-80 w-80 rounded-full border-[64px] border-white/5" />
+      <div className="relative mx-auto grid w-full max-w-7xl items-center gap-8 px-5 py-12 sm:px-6 md:grid-cols-[1fr_auto] md:py-14 lg:px-8">
+        <div className="max-w-2xl text-center md:text-left">
+          <p className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-white/90 backdrop-blur-sm">
+            <Sparkles className="h-3.5 w-3.5 text-accent" />
+            {t("A cleaner home starts here", "Un hogar más limpio comienza aquí")}
+          </p>
+          <h3 className="font-heading text-3xl font-bold leading-tight text-white md:text-4xl">
+            {t("Ready to come home to spotless?", "¿Listo para volver a un hogar impecable?")}
+          </h3>
+          <p className="mt-3 text-base leading-relaxed text-white/75 md:text-lg">
+            {t("Tell us what you need. Your personalized, no-obligation quote takes only minutes.", "Cuéntanos qué necesitas. Tu cotización personalizada y sin compromiso toma solo minutos.")}
+          </p>
         </div>
-        <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 w-full sm:w-auto">
-          <Button variant="default" size="lg" asChild>
-            <a href={isSpanish ? "/es/contacto" : "/#quote"} onClick={() => trackBookNowClick("footer_cta_band")}>{t("Get a Free Quote", "Cotización Gratis")}</a>
+        <div className="flex w-full flex-col gap-3 sm:mx-auto sm:w-auto sm:flex-row md:mx-0 md:flex-col lg:flex-row">
+          <Button size="lg" className="h-14 rounded-xl bg-accent px-7 font-bold text-accent-foreground shadow-xl shadow-black/20 transition-all duration-300 hover:-translate-y-1 hover:bg-accent/90 hover:shadow-2xl" asChild>
+            <a href={isSpanish ? "/es/contacto" : "/#quote"} onClick={() => trackBookNowClick("footer_cta_band")}>
+              {t("Get My Free Quote", "Obtener Mi Cotización")} <ArrowRight className="ml-2 h-4 w-4" />
+            </a>
           </Button>
-          <Button variant="outline" size="lg" className="bg-transparent border-2 border-accent-foreground/70 text-accent-foreground hover:bg-accent-foreground/10 hover:text-accent-foreground" asChild>
-            <a href="tel:+12407042551" onClick={() => trackPhoneClick("footer_cta_band")}><Phone className="h-4 w-4 mr-2" /> {t("Call Now", "Llamar Ahora")}</a>
+          <Button variant="outline" size="lg" className="h-14 rounded-xl border-white/35 bg-white/5 px-6 font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-white/60 hover:bg-white/15 hover:text-white" asChild>
+            <a href="tel:+12407042551" onClick={() => trackPhoneClick("footer_cta_band")}><Phone className="mr-2 h-4 w-4" /> {t("Call (240) 704-2551", "Llama al (240) 704-2551")}</a>
           </Button>
         </div>
       </div>
-    </div>
+    </section>
 
     {/* ====== TRUST BAR ====== */}
-    <div className="border-y border-border bg-muted/30 py-6">
+    <div className="border-b border-slate-200 bg-slate-50 py-7 md:py-9">
       <div className="mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 text-center">
-          <div className="flex flex-col items-center gap-1">
-            <Shield className="w-6 h-6 text-primary" />
-            <span className="text-xs font-medium">{t("Licensed & Insured", "Con Licencia y Seguro")}</span>
+        <p className="mb-5 text-center text-xs font-bold uppercase tracking-[0.18em] text-slate-500">{t("Trusted care, every visit", "Confianza en cada visita")}</p>
+        <div className="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-6">
+          <div className="group flex min-h-28 flex-col items-center justify-center gap-2 rounded-2xl border border-slate-200 bg-white px-3 py-4 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-accent/50 hover:shadow-lg">
+            <span className="grid h-10 w-10 place-items-center rounded-xl bg-primary/10 transition-colors group-hover:bg-accent/20"><Shield className="h-5 w-5 text-primary" /></span>
+            <span className="text-xs font-semibold leading-snug text-slate-700">{t("Licensed & Insured", "Con Licencia y Seguro")}</span>
           </div>
-          <div className="flex flex-col items-center gap-1">
-            <Search className="w-6 h-6 text-primary" />
-            <span className="text-xs font-medium">{t("Background-Checked", "Personal Verificado")}</span>
+          <div className="group flex min-h-28 flex-col items-center justify-center gap-2 rounded-2xl border border-slate-200 bg-white px-3 py-4 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-accent/50 hover:shadow-lg">
+            <span className="grid h-10 w-10 place-items-center rounded-xl bg-primary/10 transition-colors group-hover:bg-accent/20"><Search className="h-5 w-5 text-primary" /></span>
+            <span className="text-xs font-semibold leading-snug text-slate-700">{t("Background-Checked", "Personal Verificado")}</span>
           </div>
-          <div className="flex flex-col items-center gap-1">
-            <Leaf className="w-6 h-6 text-primary" />
-            <span className="text-xs font-medium">{t("100% Eco-Friendly", "100% Ecológico")}</span>
+          <div className="group flex min-h-28 flex-col items-center justify-center gap-2 rounded-2xl border border-slate-200 bg-white px-3 py-4 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-accent/50 hover:shadow-lg">
+            <span className="grid h-10 w-10 place-items-center rounded-xl bg-emerald-50 transition-colors group-hover:bg-emerald-100"><Leaf className="h-5 w-5 text-emerald-600" /></span>
+            <span className="text-xs font-semibold leading-snug text-slate-700">{t("100% Eco-Friendly", "100% Ecológico")}</span>
           </div>
-          <div className="flex flex-col items-center gap-1">
-            <Users className="w-6 h-6 text-primary" />
-            <span className="text-xs font-medium">{t("Family & Latino-Owned", "Negocio Familiar Latino")}</span>
+          <div className="group flex min-h-28 flex-col items-center justify-center gap-2 rounded-2xl border border-slate-200 bg-white px-3 py-4 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-accent/50 hover:shadow-lg">
+            <span className="grid h-10 w-10 place-items-center rounded-xl bg-primary/10 transition-colors group-hover:bg-accent/20"><Users className="h-5 w-5 text-primary" /></span>
+            <span className="text-xs font-semibold leading-snug text-slate-700">{t("Family & Latino-Owned", "Negocio Familiar Latino")}</span>
           </div>
           {/* Real Google counter (single source: BUSINESS_INFO.rating) linked to the live listing */}
           <a
             href={GOOGLE_LISTING_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex flex-col items-center gap-1 hover:opacity-80 transition-opacity"
+            className="group flex min-h-28 flex-col items-center justify-center gap-2 rounded-2xl border border-amber-200 bg-amber-50/70 px-3 py-4 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-amber-300 hover:shadow-lg"
             aria-label={t("Read our Google reviews", "Lee nuestras reseñas en Google")}
           >
-            <Star className="w-6 h-6 text-primary fill-primary/20" />
-            <span className="text-xs font-medium">
+            <span className="grid h-10 w-10 place-items-center rounded-xl bg-amber-100"><Star className="h-5 w-5 fill-amber-400 text-amber-500" /></span>
+            <span className="text-xs font-bold leading-snug text-slate-800">
               {t(
                 `${BUSINESS_INFO.rating.value}★ · ${BUSINESS_INFO.rating.count} Google Reviews`,
                 `${BUSINESS_INFO.rating.value}★ · ${BUSINESS_INFO.rating.count} Reseñas en Google`,
               )}
             </span>
           </a>
-          <div className="flex flex-col items-center gap-1">
-            <CheckCircle className="w-6 h-6 text-primary" />
-            <span className="text-xs font-medium">{t("Satisfaction Guarantee", "Garantía de Satisfacción")}</span>
+          <div className="group flex min-h-28 flex-col items-center justify-center gap-2 rounded-2xl border border-slate-200 bg-white px-3 py-4 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-accent/50 hover:shadow-lg">
+            <span className="grid h-10 w-10 place-items-center rounded-xl bg-primary/10 transition-colors group-hover:bg-accent/20"><CheckCircle className="h-5 w-5 text-primary" /></span>
+            <span className="text-xs font-semibold leading-snug text-slate-700">{t("Satisfaction Guarantee", "Garantía de Satisfacción")}</span>
           </div>
         </div>
       </div>
