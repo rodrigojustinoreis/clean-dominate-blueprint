@@ -691,8 +691,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "house-cleaning-prices-maryland-2026",
-    title: "House Cleaning Prices in Maryland: What to Expect in 2026",
-    excerpt: "How much does house cleaning cost in Maryland, DC & Virginia? A transparent pricing breakdown by home size, service type, and city — updated for 2026.",
+    title: "Maryland House Cleaning Cost (2026): $150–$480+",
+    excerpt: "Maryland house cleaning costs $150–$480+ in 2026. Compare standard, deep, move-out and recurring prices by home size, frequency and service type in Maryland.",
     date: "2026-02-22",
     readTime: "6 min read",
     category: "Tips & Advice",

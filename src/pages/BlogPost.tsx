@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import { ArrowLeft, Calendar, Clock } from "lucide-react";
+import { ArrowLeft, Calendar, Clock, CircleDollarSign, Home, CalendarRange, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -105,6 +105,29 @@ const blogContent: Record<string, React.ReactNode> = {
       <div className="not-prose mb-8">
         <img src="/images/blog/pricing-md-2026.webp" alt="A professional Capital Clean Care cleaner tidying a bright, immaculate Maryland living room" className="w-full rounded-2xl shadow-md" width={1200} height={675} loading="eager" fetchPriority="high" decoding="async" />
       </div>
+      <div className="not-prose relative mb-10 overflow-hidden rounded-3xl border border-sky-200 bg-gradient-to-br from-sky-50 via-white to-cyan-50 p-6 shadow-[0_22px_60px_-35px_rgba(2,132,199,0.5)] md:p-8">
+        <div aria-hidden="true" className="absolute -right-12 -top-12 h-40 w-40 rounded-full bg-accent/10 blur-2xl" />
+        <div className="relative">
+          <p className="mb-2 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-accent"><Sparkles className="h-4 w-4" /> 2026 Maryland quick answer</p>
+          <h2 className="font-heading text-2xl font-bold leading-tight text-foreground md:text-3xl">House cleaning in Maryland costs about $150–$480+ per visit</h2>
+          <p className="mt-4 text-base leading-relaxed text-muted-foreground md:text-lg">A standard clean starts around <strong>$150–$180 for a studio or 1-bedroom</strong>. A typical <strong>3-bedroom home costs $220–$290</strong>, while larger 5-bedroom homes generally cost <strong>$340–$480+</strong>. Deep cleaning, move-out work, home condition, bathrooms, and optional add-ons increase the price.</p>
+          <div className="mt-6 grid gap-3 sm:grid-cols-3">
+            {[
+              { icon: Home, label: "Small home", value: "$150–$180" },
+              { icon: CircleDollarSign, label: "Typical 3-bedroom", value: "$220–$290" },
+              { icon: CalendarRange, label: "5+ bedrooms", value: "$340–$480+" },
+            ].map(({ icon: Icon, label, value }) => (
+              <div key={label} className="rounded-2xl border border-white bg-white/85 p-4 shadow-sm backdrop-blur-sm transition-transform duration-300 hover:-translate-y-1">
+                <Icon className="mb-3 h-5 w-5 text-accent" />
+                <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">{label}</p>
+                <p className="mt-1 text-xl font-bold text-foreground">{value}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-5 text-xs leading-relaxed text-muted-foreground">Typical 2026 DMV ranges for a standard residential clean. Your written quote should reflect the home's actual size, bathrooms, condition, service scope, and frequency.</p>
+        </div>
+      </div>
+
       <p>One of the most common questions from <Link to="/maryland" className="text-accent hover:underline">Maryland</Link> homeowners is simple: <em>How much does house cleaning cost?</em> The answer depends on your home's size, the type of service, how often you book, and your location. This guide breaks it all down with real pricing for the DMV market in 2026.</p>
 
       <div className="not-prose my-10 rounded-2xl border border-border bg-card p-5 md:p-7 shadow-sm">
@@ -117,7 +140,7 @@ const blogContent: Record<string, React.ReactNode> = {
 
       <details className="my-8 not-prose rounded-xl border border-border bg-secondary/30 overflow-hidden">
         <summary className="cursor-pointer select-none px-5 py-4 font-heading font-semibold text-foreground flex items-center justify-between hover:bg-secondary/50 transition-colors [&::-webkit-details-marker]:hidden">
-          <span>See the full 2026 price breakdown, in writing</span>
+          <span>Compare standard, deep, move-out and recurring prices</span>
           <span className="text-accent text-sm shrink-0 ml-3">View ▾</span>
         </summary>
         <div className="prose prose-lg max-w-none px-5 pb-4 pt-1">
@@ -1532,6 +1555,13 @@ const HOWTO_DATA: Record<string, { steps: { name: string; text: string }[]; tota
 // Optional per-post FAQs — any blogContent/auto post listed here renders a visible FAQ section
 // and emits FAQPage schema. Keeps the content pipeline able to add FAQs without a dedicated page.
 const FAQ_DATA: Record<string, { q: string; a: string }[]> = {
+  "house-cleaning-prices-maryland-2026": [
+    { q: "How much does house cleaning cost in Maryland?", a: "In 2026, a standard residential clean in the Maryland DMV area typically costs about $150–$180 for a studio or 1-bedroom, $220–$290 for a 3-bedroom home, and $340–$480+ for a home with 5 or more bedrooms. Bathrooms, condition, service scope, add-ons, and frequency determine the final written quote." },
+    { q: "How much should a 3-bedroom house cleaning cost?", a: "A standard clean for a typical 3-bedroom Maryland home generally costs $220–$290 per visit. A first-time, one-time, or deep clean costs more because the team must remove accumulated buildup before the home reaches a maintainable baseline." },
+    { q: "Does recurring house cleaning cost less per visit?", a: "Usually, yes. Weekly service commonly costs 20–25% less per visit than a one-time rate, bi-weekly service 10–15% less, and monthly service about 5–8% less. The exact discount depends on the home and agreed cleaning scope." },
+    { q: "Is house cleaning priced by the hour or by the job?", a: "Pricing models vary. Capital Clean Care uses a written price based on home size, bathrooms, condition, service type, add-ons, and frequency rather than leaving the final bill open-ended. This makes the expected scope and price clear before service begins." },
+    { q: "What makes a house cleaning quote more expensive?", a: "The main price drivers are square footage, number of bathrooms, heavy buildup, pet hair, first-time or deep-cleaning scope, and add-ons such as inside the oven, refrigerator, cabinets, or interior windows. Urban access and parking can also affect labor time." },
+  ],
   "post-renovation-cleaning-guide-maryland": [
     { q: "Is post-renovation cleaning the same as a deep clean?", a: "It's a deep clean plus construction-specific work. A regular deep cleaning resets an ordinary lived-in home; a post-renovation clean adds the removal of fine construction dust from HVAC systems, cabinet interiors, and every surface, plus adhesive and paint residue — the debris a remodel leaves behind. For heavier jobs we run it as a dedicated post-construction cleaning rather than a standard deep clean." },
     { q: "Should my contractor handle the cleanup, or do I need a cleaning service?", a: "Both have a role. Your contractor should haul away their own large debris, leftover materials, and packaging, and handle any paint or finish touch-ups. But the fine dust that settles into vents, ductwork, cabinet interiors, window tracks, and carpet needs professional cleaning equipment — commercial HEPA vacuums and the right degreasers — which is a different job from construction cleanup. Most homeowners have the contractor clear the big stuff and bring in a cleaning team for the detail." },
@@ -1560,8 +1590,11 @@ const BlogPost = () => {
 
   // Keep the <title> under 70 chars (Bing): append the brand only when it fits,
   // otherwise use the post title alone so it isn't truncated in search results.
+  const seoTitleOverrides: Record<string, string> = {
+    "house-cleaning-prices-maryland-2026": "House Cleaning Cost MD: $150–$480+",
+  };
   const withBrand = `${post.title} | Capital Clean Care`;
-  const postTitle = withBrand.length <= 70 ? withBrand : post.title;
+  const postTitle = seoTitleOverrides[post.slug] ?? (withBrand.length <= 70 ? withBrand : post.title);
   const postImage = post.coverImage || "https://capitalcleancare.com/og-image.jpg";
 
   const { seoHelmet } = useSEO({
