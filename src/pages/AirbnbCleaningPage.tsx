@@ -7,7 +7,7 @@ import Footer from "@/components/layout/Footer";
 import QuoteForm from "@/components/QuoteForm";
 import FAQ from "@/components/FAQ";
 import BeforeAfterGallery from "@/components/BeforeAfterGallery";
-import TransformationsGallery from "@/components/TransformationsGallery";
+import TestimonialsCarousel from "@/components/home/TestimonialsCarousel";
 import GreenShield5Step from "@/components/GreenShield5Step";
 import TrustBadges from "@/components/TrustBadges";
 import { ServiceSchema, FAQSchema, BreadcrumbSchema, LocalBusinessSchema } from "@/components/SchemaMarkup";
@@ -282,7 +282,7 @@ const AirbnbCleaningPage = () => {
         </div>
       </section>
 
-      {/* ── Client video testimonial (2nd position, autoplay-on-scroll) ── */}
+      {/* ── Client video testimonial (autoplay-on-scroll) — replaces the video carousel ── */}
       <TestimonialVideo
         src="/videos/client-testimonial-0805.mp4"
         poster="/videos/client-testimonial-0805-poster.jpg"
@@ -290,9 +290,6 @@ const AirbnbCleaningPage = () => {
         heading="Hear It From an Airbnb Host"
         subtext="A DMV Airbnb host on what it's like to have Capital Clean Care handle turnovers."
       />
-
-      {/* ── Real video transformations (3rd position) ── */}
-      <TransformationsGallery />
 
       {/* ── Intro / About ── */}
       <section className="py-12 md:py-16">
@@ -308,6 +305,9 @@ const AirbnbCleaningPage = () => {
       </section>
 
       {/* ═══════════ SERVICE CONTENT ═══════════ */}
+
+      {/* ── Google reviews carousel ── */}
+      <TestimonialsCarousel />
 
       {/* ── Before & After photo carousel ── */}
       <BeforeAfterGallery />
