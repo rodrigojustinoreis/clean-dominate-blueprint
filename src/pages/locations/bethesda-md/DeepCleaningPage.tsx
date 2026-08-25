@@ -111,7 +111,7 @@ const nearbyCities = [
 
 const BethesdaDeepCleaningPage = () => {
   const { seoHelmet } = useSEO({
-    title: "Deep Cleaning Bethesda MD | Top-Rated Home Deep Clean",
+    title: "Deep Cleaning in Bethesda, MD | Prices & Checklist",
     description:
       "Professional deep cleaning in Bethesda, MD. Inside appliances, grout, baseboards, ceiling fans — everywhere standard cleanings miss. EPA-certified products. Free quote.",
     canonical: PAGE_URL,

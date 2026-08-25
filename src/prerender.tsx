@@ -6,7 +6,7 @@ import { HelmetProvider } from "react-helmet-async";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import AppRoutes from "./AppRoutes";
 import { slCities, slServices } from "./data/service-locations";
-import { vanityLandingPages } from "./data/vanity-landings";
+import { vanityLandingPages, redirectedVanitySlugs } from "./data/vanity-landings";
 import { cities as locationCities } from "./data/locations";
 import { RESOURCE_CATEGORIES } from "./data/resource-categories";
 
@@ -105,6 +105,7 @@ function getAllRoutes(): string[] {
     "/resources/how-to-prepare-home-for-professional-cleaning",
     "/resources/how-to-keep-house-clean-between-cleanings",
     "/resources/summer-cleaning-checklist-maryland",
+    "/resources/back-to-school-cleaning-checklist",
     "/resources/holiday-cleaning-checklist-dmv",
     "/resources/cleaning-tips-for-working-professionals",
     "/resources/how-to-remove-red-wine-stains",
@@ -126,7 +127,6 @@ function getAllRoutes(): string[] {
     "/resources/how-to-deep-clean-a-stove-maryland",
     "/resources/how-to-clean-a-bathroom-step-by-step",
     "/resources/mrs-meyers-clean-day-review-how-to-use",
-    "/resources/house-cleaning-bethesda-md",
     "/resources/cleaning-service-arlington-va",
     "/resources/deep-cleaning-rockville-md",
     "/resources/house-cleaning-washington-dc",
@@ -211,17 +211,11 @@ function getAllRoutes(): string[] {
     }
   }
 
-  // Vanity landing pages — except the 5 consolidated via 301 in netlify.toml
-  // (Lote 3B Group 1). Excluding them here drops them from prerender + sitemap.
-  const REDIRECTED_VANITY = new Set([
-    "house-cleaning-silver-spring-md",
-    "eco-cleaning-chevy-chase-md",
-    "eco-cleaning-potomac-md",
-    "eco-cleaning-bethesda-md",
-    "recurring-cleaning-columbia-md",
-  ]);
+  // Vanity landing pages — pula as consolidadas via 301 (10 slugs; superset do
+  // "Lote 3B Group 1" do branch restore-house-cleaning). Fonte única:
+  // redirectedVanitySlugs em vanity-landings.ts.
   for (const vp of vanityLandingPages) {
-    if (REDIRECTED_VANITY.has(vp.slug)) continue;
+    if (redirectedVanitySlugs.has(vp.slug)) continue;
     routes.push(`/${vp.slug}`);
   }
 

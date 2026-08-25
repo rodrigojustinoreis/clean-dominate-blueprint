@@ -1,12 +1,10 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { CheckCircle2, Phone } from "lucide-react";
 import { toast } from "sonner";
-import { trackQuoteFormSubmit } from "@/lib/analytics";
+import { trackQuoteFormStart, trackQuoteFormSubmit } from "@/lib/analytics";
 
 const PHONE = "(240) 704-2551";
 const PHONE_HREF = "tel:+12407042551";
-
-declare const gtag: (...args: unknown[]) => void;
 
 /**
  * Short 3-field lead form (name · phone · city) for the Senior Home Cleaning page.
@@ -20,6 +18,13 @@ const SeniorQuoteForm = () => {
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [firstName, setFirstName] = useState("");
+  const formStarted = useRef(false);
+
+  const handleFormStart = () => {
+    if (formStarted.current) return;
+    formStarted.current = true;
+    trackQuoteFormStart("Senior Home Cleaning", window.location.pathname);
+  };
 
   const set = (k: keyof typeof data, v: string) => setData((p) => ({ ...p, [k]: v }));
 
@@ -63,10 +68,7 @@ const SeniorQuoteForm = () => {
         body: JSON.stringify({ name: data.name, phone: data.phone, address: data.city, service, message }),
       }).catch((err) => console.error("Email notification failed (non-critical):", err));
 
-      trackQuoteFormSubmit(service);
-      if (typeof gtag !== "undefined") {
-        gtag("event", "conversion", { send_to: "AW-16450100951/quote_form_submit", value: 50.0, currency: "USD" });
-      }
+      trackQuoteFormSubmit(service, window.location.pathname);
       setFirstName(data.name.split(" ")[0]);
       setData({ name: "", phone: "", city: "" });
       setSubmitted(true);
@@ -95,7 +97,7 @@ const SeniorQuoteForm = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="rounded-2xl border-2 border-border bg-card p-6 md:p-8 space-y-5" aria-label="Request a free senior cleaning quote">
+    <form onSubmit={handleSubmit} onFocusCapture={handleFormStart} className="rounded-2xl border-2 border-border bg-card p-6 md:p-8 space-y-5" aria-label="Request a free senior cleaning quote">
       <div>
         <label htmlFor="senior-name" className="block text-lg font-semibold text-foreground mb-2">Your name</label>
         <input

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { GOOGLE_LISTING_URL } from "@/data/realReviews";
 import { BUSINESS_INFO } from "@/data/business-info";
 import { Button } from "@/components/ui/button";
@@ -15,7 +15,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { toast } from "sonner";
-import { trackQuoteFormSubmit } from "@/lib/analytics";
+import { trackQuoteFormStart, trackQuoteFormSubmit } from "@/lib/analytics";
 import quotePhoto from "@/assets/luana-cleaning.webp";
 
 interface QuoteFormProps {
@@ -83,6 +83,13 @@ const QuoteForm = ({ submitLabel = "GET MY FREE QUOTE →", defaultService = "",
   const [submittedName, setSubmittedName] = useState("");
   // Honeypot — hidden from real users; a filled value means a bot submitted the form.
   const [botField, setBotField] = useState("");
+  const formStarted = useRef(false);
+
+  const handleFormStart = () => {
+    if (formStarted.current) return;
+    formStarted.current = true;
+    trackQuoteFormStart(formData.service, window.location.pathname);
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -209,7 +216,7 @@ const QuoteForm = ({ submitLabel = "GET MY FREE QUOTE →", defaultService = "",
 
     if (confirmed) {
       // Only fire conversion tracking, clear the form and show success once a lead is confirmed.
-      trackQuoteFormSubmit(formData.service);
+      trackQuoteFormSubmit(formData.service, window.location.pathname);
       if (typeof gtag !== "undefined") {
         gtag('event', 'conversion', {
           'send_to': 'AW-16450100951/quote_form_submit',
@@ -433,7 +440,7 @@ const QuoteForm = ({ submitLabel = "GET MY FREE QUOTE →", defaultService = "",
         </div>
       </div>
 
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form onSubmit={handleSubmit} onFocusCapture={handleFormStart} className="space-y-4">
         {/* Honeypot — visually hidden, off-tab, no autofill. Bots fill it; real users never do. */}
         <input
           type="text"

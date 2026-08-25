@@ -352,10 +352,10 @@ const CityPage = () => {
       )}
       <FAQSchema faqs={expandedFaqs} />
       <ServiceSchema
-        serviceName={serviceSchemaName}
+        serviceName={city.schemaServiceName || serviceSchemaName}
         description={isUmbrellaHub
           ? `Professional residential cleaning services in ${cityLabel}, including recurring, deep, move-in, move-out, apartment, and eco-friendly cleaning.`
-          : `Professional eco-friendly house cleaning services in ${cityLabel}. Licensed, insured, background-checked teams.`}
+          : (city.metaDescription || `Professional eco-friendly house cleaning services in ${cityLabel}. Licensed, insured, background-checked teams.`)}
         url={`https://capitalcleancare.com/locations/${city.slug}`}
         areaServed={isRockvilleHub ? ["Rockville, MD", "20850", "20851", "20852", "20853"] : undefined}
         serviceType={isUmbrellaHub ? "Residential Cleaning Services" : "House Cleaning"}
@@ -392,12 +392,12 @@ const CityPage = () => {
             className="mb-4 text-primary-foreground/60 [&_a]:text-primary-foreground/60 [&_a:hover]:text-primary-foreground [&_span[aria-current]]:text-primary-foreground/80 [&_svg]:text-primary-foreground/40"
           />
           <h1 className="font-heading text-3xl md:text-5xl lg:text-[3.25rem] font-bold mb-5 text-primary-foreground leading-tight">
-            {isUmbrellaHub ? "Cleaning Services in " : "House Cleaning Services in "}{cityLabel}
+            {city.h1 || `${isUmbrellaHub ? "Cleaning Services in " : "House Cleaning Services in "}${cityLabel}`}
           </h1>
           <p className="text-primary-foreground/85 text-lg md:text-xl max-w-2xl leading-relaxed mb-8">
-            {isRockvilleHub
+            {city.heroLead || (isRockvilleHub
               ? "One trusted local team for recurring, deep, move-in, move-out, apartment, and eco-friendly cleaning across Rockville."
-              : `Professional, eco-friendly house cleaning for ${city.name} homes. Licensed, insured, and background-checked teams you can trust.`}
+              : `Professional, eco-friendly house cleaning for ${city.name} homes. Licensed, insured, and background-checked teams you can trust.`)}
           </p>
           <div className="flex flex-col sm:flex-row gap-3">
             <Button variant="cta" size="lg" className="text-base" asChild>
@@ -531,7 +531,9 @@ const CityPage = () => {
           {/* Service-location specific links */}
           {hasServiceLocationPages && (
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-              {visibleServiceLocationPages.map((sl) => {
+              {visibleServiceLocationPages
+                .filter((sl) => !(city.slug === "georgetown-dc" && sl.slug === "house-cleaning"))
+                .map((sl) => {
                 const serviceHref = RETARGET_TO_VANITY[`${city.slug}/${sl.slug}`] ?? `/locations/${city.slug}/${sl.slug}`;
                 return (
                 <Card key={sl.slug} className="group hover:shadow-md transition-all duration-200 hover:-translate-y-0.5">
@@ -680,6 +682,22 @@ const CityPage = () => {
               </div>
             ))}
           </div>
+          {city.slug === "alexandria-va" && (
+            <p className="mt-6 text-muted-foreground leading-relaxed">
+              Planning your budget? Compare realistic examples for Old Town rowhouses, Del Ray bungalows, and local condos in our{" "}
+              <Link to="/resources/house-cleaning-cost-alexandria-va" className="text-accent font-semibold underline hover:no-underline">
+                Alexandria cleaning cost breakdown by home size
+              </Link>.
+            </p>
+          )}
+          {city.slug === "clarksburg-md" && (
+            <p className="mt-6 text-muted-foreground leading-relaxed">
+              Planning your budget for a newer home? Compare recurring, deep, move-in, and post-construction ranges in our{" "}
+              <Link to="/resources/house-cleaning-guide-clarksburg-md" className="text-accent font-semibold underline hover:no-underline">
+                2026 Clarksburg house cleaning cost guide
+              </Link>.
+            </p>
+          )}
         </div>
       </section>
 

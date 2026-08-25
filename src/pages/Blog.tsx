@@ -205,6 +205,15 @@ export const blogPosts: BlogPost[] = [
     coverImage: "/images/team/real-team-two-members.webp",
   },
   {
+    slug: "back-to-school-cleaning-checklist",
+    title: "Back-to-School Cleaning Checklist for Busy DMV Families",
+    excerpt: "Reset your entryway, kitchen, bathrooms, homework area and family routine with a practical back-to-school cleaning checklist built for busy DMV households.",
+    date: "2026-08-23",
+    readTime: "9 min read",
+    category: "Seasonal Guides",
+    coverImage: "/images/blog/back-to-school/hero.webp",
+  },
+  {
     slug: "summer-cleaning-checklist-maryland",
     title: "Summer Cleaning Checklist for Maryland Homes (2026)",
     excerpt: "A summer cleaning checklist built for Maryland's humidity — mildew control, HVAC and vent care, windows and screens, outdoor spaces, and kitchen prep for entertaining.",
@@ -278,8 +287,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "house-cleaning-guide-clarksburg-md",
-    title: "The Complete Guide to House Cleaning in Clarksburg, MD",
-    excerpt: "A complete local guide to house cleaning in Clarksburg — new-construction homes, move-in and post-construction cleans, builder-grade finishes, pricing, and choosing a company.",
+    title: "House Cleaning Cost in Clarksburg, MD: 2026 Guide",
+    excerpt: "Compare 2026 Clarksburg house cleaning prices for recurring, deep, move-in, and post-construction service, plus local factors and a hiring checklist.",
     date: "2026-06-16",
     readTime: "6 min read",
     category: "Local Guides",
@@ -813,8 +822,8 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "house-cleaning-prices-maryland-2026",
-    title: "House Cleaning Prices in Maryland: What to Expect in 2026",
-    excerpt: "How much does house cleaning cost in Maryland, DC & Virginia? A transparent pricing breakdown by home size, service type, and city — updated for 2026.",
+    title: "Maryland House Cleaning Cost (2026): $150–$480+",
+    excerpt: "Maryland house cleaning costs $150–$480+ in 2026. Compare standard, deep, move-out and recurring prices by home size, frequency and service type in Maryland.",
     date: "2026-02-22",
     readTime: "6 min read",
     category: "Tips & Advice",
@@ -902,17 +911,6 @@ export const blogPosts: BlogPost[] = [
     readTime: "5 min read",
     category: "Tips & Advice",
     coverImage: "https://images.pexels.com/photos/2062426/pexels-photo-2062426.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
-  },
-  {
-    slug: "house-cleaning-bethesda-md",
-    title: "House Cleaning in Bethesda, MD: How to Choose the Best Service (2026)",
-    excerpt: "A local guide to choosing the best house cleaning service in Bethesda — the criteria that separate the best companies, plus pricing, what's included, and why eco-friendly matters in this health-conscious community.",
-    date: "2026-04-08",
-    readTime: "6 min read",
-    category: "Local Guides",
-    coverImage: "https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
-    // SEO: same commercial-local intent as the Bethesda location page — canonicalised to the strategic hub so it wins (reversible).
-    canonical: "https://capitalcleancare.com/locations/bethesda-md/house-cleaning",
   },
   {
     slug: "cleaning-service-arlington-va",

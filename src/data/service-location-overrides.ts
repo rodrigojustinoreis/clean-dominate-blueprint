@@ -28,6 +28,84 @@ export interface ServiceLocationOverride {
 // Key format: "citySlug/serviceSlug"
 export const serviceLocationOverrides: Record<string, ServiceLocationOverride> = {
 
+  // ── Fase 2 SEO (2026-07): overrides para páginas do gap "crawled, not indexed" ──
+  "silver-spring-md/recurring-cleaning": {
+    uniqueContent: `Silver Spring runs on a schedule, and recurring cleaning is built for the people who keep it moving — the federal workers, healthcare staff, and downtown professionals living between Downtown Silver Spring, Woodside, Forest Glen, and Four Corners. On a weekly, bi-weekly, or monthly plan, the same team returns on a rhythm that keeps your home consistently clean without you ever managing it: kitchens, bathrooms, floors, and high-touch surfaces every visit, with deeper rotating tasks so nothing quietly builds up between cleans.
+
+Homes here range from high-rise condos near the Silver Spring Metro and Ellsworth Drive to the older bungalows and colonials along Sligo Creek and the Takoma Park line. Your dedicated team learns your layout, your finishes, and your preferences, so results get more personalized with every visit — and because we're minutes away off Georgia Avenue and Colesville Road, we keep your plan reliable week after week. No contracts, plant-based products safe for kids and pets, and background-checked staff every time.`,
+    photos: [
+      { src: "/images/team/team-mopping-uniform.jpg", alt: "Capital Clean Care team member in uniform on a recurring cleaning visit in Silver Spring, MD" },
+      { src: "/images/team/vacuuming-living-room.jpg", alt: "Capital Clean Care vacuuming a Silver Spring living room on a recurring plan" },
+      { src: "/images/team/mopping-hardwood-floor.jpg", alt: "Capital Clean Care mopping hardwood floors in a Silver Spring, MD home" },
+    ],
+  },
+
+  "silver-spring-md/move-out-cleaning": {
+    uniqueContent: `Moving out in Silver Spring means meeting Montgomery County landlord and property-management standards — and that's exactly what our move-out cleaning is built to pass. Whether you're leaving a high-rise apartment near the Silver Spring Metro and Downtown, a rental in Woodside or Long Branch, or a house near Forest Glen, we clean to the checklist inspectors actually use: inside every appliance, cabinet, and closet, baseboards and door frames, window tracks, and the bathrooms and kitchen scrubbed to move-in condition.
+
+The goal is your full deposit back, with no chemical smell for the next tenant to complain about. Our teams handle the details that fail inspections — oven interiors, refrigerator drawers, grime behind and under appliances, and hard-water buildup in showers — using plant-based products that leave surfaces genuinely clean rather than just masked with fragrance. Booked around your move date off Georgia Avenue or Colesville Road, so the place is ready the moment you hand over the keys.`,
+    photos: [
+      { src: "/images/team/real-team-mopping.jpg", alt: "Capital Clean Care team performing move-out cleaning in a Silver Spring, MD rental" },
+      { src: "/images/team/cleaning-under-cabinet.jpg", alt: "Capital Clean Care cleaning under kitchen cabinets during a Silver Spring move-out clean" },
+      { src: "/images/team/team-window-frame-detail.jpg", alt: "Capital Clean Care detailing a window frame during a move-out clean in Silver Spring, MD" },
+    ],
+  },
+
+  "rockville-md/recurring-cleaning": {
+    uniqueContent: `Recurring cleaning in Rockville is made for Montgomery County's busiest households — the I-270 corridor commuters, county employees, and families in King Farm, Fallsgrove, Twinbrook, and near Rockville Town Center who simply don't have a weekend to give up to cleaning. On a weekly, bi-weekly, or monthly rhythm, the same team returns and keeps your home steady: kitchens, bathrooms, floors, and high-touch surfaces every visit, with rotating deep tasks so grime never gets a foothold.
+
+Rockville's mix of Metro-adjacent townhomes, single-family homes off Rockville Pike, and newer builds near Fallsgrove all clean a little differently, and a dedicated team that knows your home is what makes recurring service actually save you time. We're right in the middle of the county, so your plan stays dependable — same crew, same standard, no contracts. Plant-based, EPA Safer Choice products keep it safe for kids and pets between every visit.`,
+    photos: [
+      { src: "/images/team/team-mopping-uniform.jpg", alt: "Capital Clean Care team member on a recurring cleaning visit in Rockville, MD" },
+      { src: "/images/team/vacuuming-living-room.jpg", alt: "Capital Clean Care vacuuming a Rockville living room on a recurring plan" },
+      { src: "/images/team/mopping-hardwood-floor.jpg", alt: "Capital Clean Care mopping floors in a Rockville, MD home" },
+    ],
+  },
+
+  "potomac-md/deep-cleaning": {
+    uniqueContent: `Potomac's large estates and luxury homes need deep cleaning that reaches everywhere routine service skips — and does it without risking the finishes. From the gated residences of Avenel to the waterfront homes of River Falls and the properties along Falls Road, our deep cleaning crews work room by room: inside appliances, behind and beneath furniture, baseboards and crown molding, vents, light fixtures, and the grout and hard-water buildup that collects in large bathrooms.
+
+Bigger homes mean more square footage of the surfaces that matter most — marble, custom hardwood, and designer finishes that can't take harsh chemicals. We use plant-based, non-toxic products and detail techniques suited to high-end materials, so your home comes out spotless and protected. With Potomac's mature tree canopy driving heavy seasonal pollen, a periodic deep clean also does real work on indoor air quality, not just appearances.`,
+    photos: [
+      { src: "/images/team/power-scrubber-tile.jpg", alt: "Capital Clean Care deep cleaning tile in a Potomac, MD estate" },
+      { src: "/images/team/team-tile-scrubber.jpg", alt: "Capital Clean Care team performing a deep clean in Potomac, MD" },
+      { src: "/images/team/scrubbing-door-frame.jpg", alt: "Capital Clean Care detailing a door frame during a deep clean in Potomac, MD" },
+    ],
+  },
+
+  "bethesda-md/move-out-cleaning": {
+    uniqueContent: `Move-out cleaning in Bethesda has to satisfy demanding landlords and property managers — from the downtown condo towers near the Metro and Bethesda Row to rentals around Burning Tree, Bradley Boulevard, and the NIH corridor. Our teams clean to the standard that gets deposits returned in full: inside every appliance, cabinet, and closet, baseboards and window tracks, and kitchens and bathrooms scrubbed back to move-in condition.
+
+Bethesda's premium finishes raise the stakes — marble, custom hardwood, and high-end fixtures need to be left flawless, not scratched or dulled by the wrong products. We use plant-based, non-toxic solutions and careful detail work on exactly those surfaces, removing oven grime, refrigerator residue, and shower hard-water stains without leaving a chemical smell behind. Scheduled around your move date, so the unit is inspection-ready the day you hand back the keys.`,
+    photos: [
+      { src: "/images/team/real-team-mopping.jpg", alt: "Capital Clean Care performing move-out cleaning in a Bethesda, MD condo" },
+      { src: "/images/team/cleaning-under-cabinet.jpg", alt: "Capital Clean Care cleaning under cabinets during a Bethesda move-out clean" },
+      { src: "/images/team/team-window-frame-detail.jpg", alt: "Capital Clean Care detailing window tracks during a Bethesda, MD move-out clean" },
+    ],
+  },
+
+  "gaithersburg-md/deep-cleaning": {
+    uniqueContent: `Gaithersburg homes — from the New Urbanist streets of Kentlands and Lakelands to Quince Orchard and historic Olde Towne — benefit from periodic deep cleaning that reaches every hidden corner routine service misses. Our crews go inside appliances, behind furniture, under beds, into grout and baseboards, and across vents and light fixtures, turning a maintained home into a genuinely reset one.
+
+The area's steady development off the I-270 corridor and pollen from nearby Seneca Creek State Park mean Gaithersburg homes trap more fine dust than most — the kind that settles into sealed modern builds and older homes alike. Our eco-friendly, plant-based approach is tough on that buildup but gentle on your finishes, improving both how clean the home looks and the air your family breathes. Background-checked teams, satisfaction guaranteed, no harsh chemicals.`,
+    photos: [
+      { src: "/images/team/power-scrubber-tile.jpg", alt: "Capital Clean Care deep cleaning tile in a Gaithersburg, MD home" },
+      { src: "/images/team/team-tile-scrubber.jpg", alt: "Capital Clean Care team performing a deep clean in Gaithersburg, MD" },
+      { src: "/images/team/scrubbing-door-frame.jpg", alt: "Capital Clean Care detailing a door frame during a deep clean in Gaithersburg, MD" },
+    ],
+  },
+
+  "wheaton-md/house-cleaning": {
+    uniqueContent: `Wheaton is one of Montgomery County's most diverse and down-to-earth communities, anchored by Wheaton Regional Park, Brookside Gardens, and the Metro corridor along Georgia Avenue — and its homes deserve a cleaning service that matches that mix. Capital Clean Care provides professional house cleaning across Wheaton, from the tree-lined blocks of Wheaton Hills and Kemp Mill to the apartments and townhomes near the Metro and the Kensington border.
+
+Our background-checked teams tailor each visit to the home in front of them: compact condos that need efficient, careful work; older single-family homes with the surfaces and quirks of the neighborhood's mid-century housing stock. Everything is done with plant-based, non-toxic products that are safe for children, pets, and the environment — and because we're based right here in Montgomery County, Wheaton is a quick, dependable trip for us, whether you want a one-time clean or a regular plan.`,
+    photos: [
+      { src: "/images/team/real-team-two-members.webp", alt: "Capital Clean Care team cleaning a house in Wheaton, MD" },
+      { src: "/images/team/team-mopping-bright-room.jpg", alt: "Capital Clean Care mopping a bright room in a Wheaton, MD home" },
+      { src: "/images/team/cleaning-kitchen-detail.jpg", alt: "Capital Clean Care detailing a kitchen in a Wheaton, MD house cleaning" },
+    ],
+  },
+
   "north-bethesda-md/deep-cleaning": {
     metaTitle: "Deep Cleaning in North Bethesda, MD — Condos & Homes",
     metaDescription: "Deep cleaning in North Bethesda, MD — Pike District condos, high-rises & homes. HEPA equipment, eco-friendly products, building-aware service. Free quote.",

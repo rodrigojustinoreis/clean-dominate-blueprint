@@ -31,7 +31,7 @@ const faqs = [
 
 const BestHouseCleaningBethesda = () => {
   const { seoHelmet } = useSEO({
-    title: "Best House Cleaning in Bethesda, MD: How to Choose (2026)",
+    title: "How to Choose a House Cleaning Service in Bethesda (2026)",
     description:
       "How to choose the best house cleaning service in Bethesda, MD — insurance, real reviews, safe products, flat pricing — plus what Bethesda homes cost to clean.",
     canonical: URL,
@@ -41,10 +41,10 @@ const BestHouseCleaningBethesda = () => {
     <Layout>
       {seoHelmet}
       <Helmet>
-        <meta name="keywords" content="best house cleaning bethesda md, house cleaning service bethesda, home cleaning bethesda, maid service bethesda md, cleaning company bethesda" />
+        <meta name="keywords" content="how to choose cleaning service bethesda, cleaning company checklist bethesda, questions to ask house cleaner" />
       </Helmet>
       <ArticleSchema
-        title="Best House Cleaning in Bethesda, MD: How to Choose (2026)"
+        title="How to Choose a House Cleaning Service in Bethesda (2026)"
         description="A Bethesda homeowner's guide to choosing a house cleaning service: the four criteria that matter, local pricing, and the questions to ask before booking."
         url={URL}
         datePublished="2026-07-08"
@@ -54,7 +54,7 @@ const BestHouseCleaningBethesda = () => {
 
       <BlogHero src={HERO_IMAGE} alt="Tree-lined Bethesda MD street with brick colonial homes served by Capital Clean Care">
         <span className="bg-accent/20 text-accent font-semibold px-4 py-1.5 rounded-full text-sm inline-block mb-6 uppercase tracking-wider border border-accent/30">Local Guides</span>
-        <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight drop-shadow-md">Best House Cleaning in Bethesda, MD: How to Choose</h1>
+        <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight drop-shadow-md">How to Choose a House Cleaning Service in Bethesda</h1>
         <p className="text-xl md:text-2xl text-gray-200 mb-4 leading-relaxed font-medium">The four criteria that separate a great cleaning company from a headache</p>
         <p className="text-gray-300 mb-8 text-sm uppercase tracking-widest">By Rodrigo Reis, Owner · Bethesda, MD · July 2026</p>
         <Button size="lg" className="bg-accent hover:bg-accent/90 text-white text-lg px-8 py-6 rounded-full shadow-lg" asChild>
@@ -105,6 +105,11 @@ const BestHouseCleaningBethesda = () => {
               page — services, checklist, and a flat quote in 60 seconds — or, if the home needs a reset first, our{" "}
               <Link to="/locations/bethesda-md/deep-cleaning" className="text-accent underline hover:no-underline">deep cleaning in Bethesda</Link>. And if you're arranging help for an older parent, we offer{" "}
               <Link to="/senior-home-cleaning-montgomery-county-md" className="text-accent underline hover:no-underline">senior cleaning in Bethesda and beyond</Link>.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              Prefer a predictable weekly or bi-weekly schedule? Compare frequency, continuity, and recurring rates on our{" "}
+              <Link to="/locations/bethesda-md/recurring-cleaning" className="text-accent underline hover:no-underline">recurring cleaning in Bethesda</Link>{" "}
+              page. That service page is the dedicated destination for ongoing plans; this guide is designed to help you evaluate providers.
             </p>
           </FadeInSection>
 

@@ -20,7 +20,7 @@ const areas = [
   { name: "Arlington", state: "VA", slug: "arlington-va" },
   { name: "Alexandria", state: "VA", slug: "alexandria-va" },
   { name: "McLean", state: "VA", slug: "mclean-va" },
-  { name: "Fairfax", state: "VA", slug: "fairfax-va" },
+  { name: "Fairfax", state: "VA", slug: "fairfax-va", href: "/locations/fairfax-va/house-cleaning" },
   { name: "Reston", state: "VA", slug: "reston-va" },
 ];
 
@@ -152,7 +152,7 @@ const HouseCleaningNearMe = () => {
             {areas.map((area) => (
               <Link
                 key={area.slug}
-                to={`/locations/${area.slug}`}
+                to={"href" in area ? area.href : `/locations/${area.slug}`}
                 className="group block"
               >
                 <Card className="hover:shadow-md transition-all hover:-translate-y-0.5 h-full">

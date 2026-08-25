@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import { ArrowLeft, Calendar, Clock } from "lucide-react";
+import { ArrowLeft, Calendar, Clock, CircleDollarSign, Home, CalendarRange, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -105,7 +105,54 @@ const blogContent: Record<string, React.ReactNode> = {
       <div className="not-prose mb-8">
         <img src="/images/blog/pricing-md-2026.webp" alt="A professional Capital Clean Care cleaner tidying a bright, immaculate Maryland living room" className="w-full rounded-2xl shadow-md" width={1200} height={675} loading="eager" fetchPriority="high" decoding="async" />
       </div>
+      <div className="not-prose relative mb-10 overflow-hidden rounded-3xl border border-sky-200 bg-gradient-to-br from-sky-50 via-white to-cyan-50 p-6 shadow-[0_22px_60px_-35px_rgba(2,132,199,0.5)] md:p-8">
+        <div aria-hidden="true" className="absolute -right-12 -top-12 h-40 w-40 rounded-full bg-accent/10 blur-2xl" />
+        <div className="relative">
+          <p className="mb-2 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-accent"><Sparkles className="h-4 w-4" /> 2026 Maryland quick answer</p>
+          <h2 className="font-heading text-2xl font-bold leading-tight text-foreground md:text-3xl">House cleaning in Maryland costs about $150–$480+ per visit</h2>
+          <p className="mt-4 text-base leading-relaxed text-muted-foreground md:text-lg">A standard clean starts around <strong>$150–$180 for a studio or 1-bedroom</strong>. A typical <strong>3-bedroom home costs $220–$290</strong>, while larger 5-bedroom homes generally cost <strong>$340–$480+</strong>. Deep cleaning, move-out work, home condition, bathrooms, and optional add-ons increase the price.</p>
+          <div className="mt-6 grid gap-3 sm:grid-cols-3">
+            {[
+              { icon: Home, label: "Small home", value: "$150–$180" },
+              { icon: CircleDollarSign, label: "Typical 3-bedroom", value: "$220–$290" },
+              { icon: CalendarRange, label: "5+ bedrooms", value: "$340–$480+" },
+            ].map(({ icon: Icon, label, value }) => (
+              <div key={label} className="rounded-2xl border border-white bg-white/85 p-4 shadow-sm backdrop-blur-sm transition-transform duration-300 hover:-translate-y-1">
+                <Icon className="mb-3 h-5 w-5 text-accent" />
+                <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">{label}</p>
+                <p className="mt-1 text-xl font-bold text-foreground">{value}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-5 text-xs leading-relaxed text-muted-foreground">Typical 2026 DMV ranges for a standard residential clean. Your written quote should reflect the home's actual size, bathrooms, condition, service scope, and frequency.</p>
+        </div>
+      </div>
+
       <p>One of the most common questions from <Link to="/maryland" className="text-accent hover:underline">Maryland</Link> homeowners is simple: <em>How much does house cleaning cost?</em> The answer depends on your home's size, the type of service, how often you book, and your location. This guide breaks it all down with real pricing for the DMV market in 2026.</p>
+
+      <figure className="not-prose my-10 overflow-hidden rounded-3xl border border-sky-100 bg-white shadow-[0_24px_70px_-36px_rgba(15,76,129,0.55)]">
+        <div className="grid items-stretch md:grid-cols-[minmax(0,1.25fr)_minmax(250px,0.75fr)]">
+          <div className="relative min-h-[380px] overflow-hidden bg-stone-100 md:min-h-[620px]">
+            <img
+              src="/images/blog/maryland-cleaner-sofa-professional-v2.webp"
+              alt="Capital Clean Care professional arranging a blanket during detailed sofa care in a Maryland home"
+              className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-700 hover:scale-[1.025]"
+              width={960}
+              height={1267}
+              loading="lazy"
+              decoding="async"
+            />
+            <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-slate-950/25 via-transparent to-transparent" />
+            <span className="absolute bottom-4 left-4 rounded-full border border-white/50 bg-white/90 px-4 py-2 text-xs font-bold uppercase tracking-[0.14em] text-slate-800 shadow-lg backdrop-blur-md">Real care. Real local team.</span>
+          </div>
+          <figcaption className="flex flex-col justify-center bg-gradient-to-br from-sky-50 via-white to-cyan-50 p-7 md:p-10">
+            <Sparkles className="mb-5 h-7 w-7 text-accent" aria-hidden="true" />
+            <p className="font-heading text-2xl font-bold leading-tight text-foreground md:text-3xl">The difference is in the details</p>
+            <p className="mt-4 text-base leading-relaxed text-muted-foreground">Our local cleaning professionals treat each room with careful, hands-on attention—from high-touch surfaces to the finishing details that make a home feel truly refreshed.</p>
+            <Link to="/#quote" className="mt-7 inline-flex w-fit items-center rounded-full bg-primary px-5 py-3 text-sm font-bold text-primary-foreground shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg">Get a personalized quote</Link>
+          </figcaption>
+        </div>
+      </figure>
 
       <div className="not-prose my-10 rounded-2xl border border-border bg-card p-5 md:p-7 shadow-sm">
         <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-1.5 tracking-tight">2026 Price Guide — by Home Size &amp; Service</h2>
@@ -113,9 +160,11 @@ const blogContent: Record<string, React.ReactNode> = {
         <PricingTable />
       </div>
 
+      <p>Pricing a newer home near Cabin Branch, Arora Hills, or Clarksburg Village? See our dedicated <Link to="/resources/house-cleaning-guide-clarksburg-md" className="text-accent hover:underline font-semibold">Clarksburg house cleaning cost guide</Link> for local recurring, deep, move-in, and post-construction planning ranges.</p>
+
       <details className="my-8 not-prose rounded-xl border border-border bg-secondary/30 overflow-hidden">
         <summary className="cursor-pointer select-none px-5 py-4 font-heading font-semibold text-foreground flex items-center justify-between hover:bg-secondary/50 transition-colors [&::-webkit-details-marker]:hidden">
-          <span>See the full 2026 price breakdown, in writing</span>
+          <span>Compare standard, deep, move-out and recurring prices</span>
           <span className="text-accent text-sm shrink-0 ml-3">View ▾</span>
         </summary>
         <div className="prose prose-lg max-w-none px-5 pb-4 pt-1">
@@ -164,7 +213,7 @@ const blogContent: Record<string, React.ReactNode> = {
       <p>Many homeowners assume that <Link to="/services/eco-friendly-cleaning" className="text-accent hover:underline">eco-friendly cleaning</Link> is a premium add-on. At Capital Clean Care, plant-based, non-toxic products are standard — included in every service at no extra charge. You don't pay more to keep your family safe.</p>
 
       <h2>Get an Instant Quote</h2>
-      <p>Pricing depends on your specific home. Use our free quote form to get an accurate estimate for your address in <Link to="/locations/silver-spring-md" className="text-accent hover:underline">Silver Spring</Link>, <Link to="/locations/bethesda-md" className="text-accent hover:underline">Bethesda</Link>, <Link to="/locations/fairfax-va" className="text-accent hover:underline">Fairfax</Link>, or anywhere in the DMV.</p>
+      <p>Pricing depends on your specific home. Use our free quote form to get an accurate estimate for your address in <Link to="/locations/silver-spring-md" className="text-accent hover:underline">Silver Spring</Link>, <Link to="/locations/bethesda-md" className="text-accent hover:underline">Bethesda</Link>, <Link to="/locations/fairfax-va/house-cleaning" className="text-accent hover:underline">Fairfax</Link>, or anywhere in the DMV.</p>
         </div>
       </details>
 
@@ -587,72 +636,6 @@ const blogContent: Record<string, React.ReactNode> = {
       <p><Link to="/contact" className="text-accent hover:underline font-semibold">Start your recurring cleaning plan today</Link> — 15% off your first visit for new clients!</p>
     </article>
   ),
-  "house-cleaning-bethesda-md": (
-    <article className="prose prose-lg max-w-none">
-      <p><Link to="/locations/bethesda-md" className="text-accent hover:underline">Bethesda, MD</Link> is one of the most health-conscious communities in the entire DMV. Residents here prioritize organic food, walkable neighborhoods, and — increasingly — the products used inside their homes. If you're looking for professional house cleaning in Bethesda, here's what to expect, what to look for, and what the best local services offer.</p>
-
-      <h2>What Makes Bethesda Homes Unique</h2>
-      <p>Bethesda homes range from pre-war Cape Cods in Chevy Chase sections to modern luxury condos near Bethesda Row and spacious colonials in Burning Tree and Bradley Hills. Each has distinct cleaning needs:</p>
-      <ul>
-        <li><strong>Older homes:</strong> More surface area, crown molding, hardwood floors, and period details that need careful, non-abrasive cleaning</li>
-        <li><strong>Condos and apartments:</strong> Smaller square footage but high-touch shared amenities and limited ventilation</li>
-        <li><strong>Large family homes:</strong> Multiple bathrooms, finished basements, and frequent guest use all require thorough recurring service</li>
-      </ul>
-
-      <h2>What Professional House Cleaning Covers in Bethesda</h2>
-      <p>A standard recurring clean at a Bethesda home typically includes:</p>
-      <ul>
-        <li>All bathrooms — scrub toilets, showers, sinks, mirrors, and floors</li>
-        <li>Kitchen surfaces, appliance exteriors, stovetop, and sink</li>
-        <li>Vacuum all carpets and area rugs with HEPA equipment</li>
-        <li>Mop all hard floors with appropriate solutions for the floor type</li>
-        <li>Dust furniture, shelves, ceiling fans, and light fixtures</li>
-        <li>Empty trash cans and replace liners</li>
-      </ul>
-      <p>A <Link to="/services/deep-cleaning" className="text-accent hover:underline">deep cleaning</Link> adds inside appliances, grout scrubbing, cabinet interiors, baseboards, and window sills.</p>
-
-      <h2>Pricing for House Cleaning in Bethesda</h2>
-      <p>Bethesda pricing reflects the area's cost of living. Typical ranges for a professional clean:</p>
-      <ul>
-        <li><strong>2-bedroom condo:</strong> $160 – $210 per standard visit</li>
-        <li><strong>3-bedroom home:</strong> $200 – $270 per standard visit</li>
-        <li><strong>4-bedroom home:</strong> $250 – $340 per standard visit</li>
-        <li><strong>First-time / deep clean:</strong> 25–40% higher than recurring rates</li>
-      </ul>
-      <p>Recurring clients save significantly — weekly plans can reduce per-visit cost by 20–25%. For a detailed DMV-wide pricing breakdown, see our <Link to="/resources/house-cleaning-prices-maryland-2026" className="text-accent hover:underline">2026 house cleaning price guide →</Link></p>
-
-      <h2>Why Bethesda Families Choose Eco-Friendly Cleaning</h2>
-      <p>Given Bethesda's proximity to Rock Creek Park and the broader Chesapeake Bay watershed, many residents are thoughtful about the chemicals entering their homes and drains. Our <Link to="/services/eco-friendly-cleaning" className="text-accent hover:underline">eco-friendly cleaning service</Link> uses only EPA Safer Choice certified, plant-based products — no chlorine, ammonia, phthalates, or VOCs. Read more about <Link to="/why-eco-friendly-cleaning" className="text-accent hover:underline">why eco-friendly cleaning matters</Link> for your family's health.</p>
-
-      <h2>Vetting a Cleaning Service in Bethesda</h2>
-      <ol>
-        <li><strong>Confirm insurance:</strong> Liability coverage protects you if anything is damaged</li>
-        <li><strong>Ask about background checks:</strong> Every Capital Clean Care team member is background-verified before entering a client's home — <Link to="/about" className="text-accent hover:underline">learn about our hiring process</Link></li>
-        <li><strong>Check local reviews:</strong> Look specifically for Bethesda and Montgomery County reviews on Google</li>
-        <li><strong>Request a walkthrough quote:</strong> Be wary of one-size-fits-all pricing without assessing your home</li>
-      </ol>
-
-      <h2>What Makes a House Cleaning Company the Best Choice in Bethesda</h2>
-      <p>Vetting tells you who's <em>safe</em> to hire; these are the criteria that separate the genuinely <strong>best</strong> cleaning services in Bethesda from the merely adequate:</p>
-      <ul>
-        <li><strong>EPA Safer Choice, plant-based products:</strong> In a community this health-conscious — and this close to Rock Creek Park and the Chesapeake watershed — the best companies use genuinely certified eco-friendly products, not vague "green" marketing.</li>
-        <li><strong>A consistent, background-checked team:</strong> The best services send the same vetted cleaners to your home each visit, so they learn your preferences and your home's specifics rather than rotating strangers through.</li>
-        <li><strong>Transparent, walkthrough-based pricing:</strong> The best companies price your actual home — square footage, bathrooms, condition — and put it in writing, with no surprise upcharges.</li>
-        <li><strong>A real satisfaction guarantee:</strong> Look for a re-clean guarantee in writing, not a slogan. It signals a company that stands behind its work.</li>
-        <li><strong>Genuine Montgomery County roots:</strong> A locally owned company that knows Bethesda's housing stock — pre-war Cape Cods to Bethesda Row condos — cleans them more appropriately than a national franchise running a single checklist.</li>
-      </ul>
-      <p>For a step-by-step framework you can apply to any company, see our guide on <Link to="/resources/is-professional-house-cleaning-worth-it" className="text-accent hover:underline">whether professional cleaning is worth it</Link> and <Link to="/resources/how-often-should-you-hire-a-cleaning-service" className="text-accent hover:underline">how often to hire a cleaning service</Link>.</p>
-
-      <BlogInlineCTA
-        headline="Bethesda's Trusted Eco-Friendly Cleaning Service"
-        subtext="Background-checked teams, EPA Safer Choice products, 100% satisfaction guarantee. Serving Bethesda, Chevy Chase, Potomac, Rockville, and all of Montgomery County."
-        ctaLabel="Get My Bethesda Quote →"
-        ctaTo="/contact"
-      />
-
-      <p>Capital Clean Care has served <Link to="/locations/bethesda-md/house-cleaning" className="text-accent hover:underline">Bethesda</Link> and surrounding Montgomery County communities for 10+ years. <Link to="/contact" className="text-accent hover:underline font-semibold">Get your free quote today</Link> — 15% off for new clients.</p>
-    </article>
-  ),
   "cleaning-service-arlington-va": (
     <article className="prose prose-lg max-w-none">
       <p><Link to="/locations/arlington-va/house-cleaning" className="text-accent hover:underline">Arlington, VA</Link> is one of the most densely populated and professionally active communities in the DMV. With a mix of high-rise condos, townhomes, and detached houses, Arlington residents have diverse cleaning needs — and high standards. Here's what Northern Virginia homeowners should know when choosing a professional cleaning service.</p>
@@ -787,7 +770,7 @@ const blogContent: Record<string, React.ReactNode> = {
   ),
   "cleaning-service-fairfax-va": (
     <article className="prose prose-lg max-w-none">
-      <p><Link to="/locations/fairfax-va" className="text-accent hover:underline">Fairfax, VA</Link> is one of Northern Virginia's most family-oriented communities — with excellent schools, large suburban homes, and a lifestyle that keeps families constantly on the move. Between jobs in DC, kids' activities, and weekend commitments, Fairfax homeowners are among the busiest in the DMV. Professional cleaning isn't a luxury here — it's a practical necessity.</p>
+      <p><Link to="/locations/fairfax-va/house-cleaning" className="text-accent hover:underline">House cleaning in Fairfax, VA</Link> serves one of Northern Virginia's most family-oriented communities — with excellent schools, large suburban homes, and a lifestyle that keeps families constantly on the move. Between jobs in DC, kids' activities, and weekend commitments, Fairfax homeowners are among the busiest in the DMV. Professional cleaning isn't a luxury here — it's a practical necessity.</p>
 
       <h2>Fairfax Home Characteristics</h2>
       <p>Most Fairfax homes are larger suburban properties — colonials, split-levels, and traditional two-stories with three to five bedrooms, two-car garages, and finished basements. These homes take significantly longer to clean than urban condos, and the cleaning challenges are different:</p>
@@ -799,7 +782,7 @@ const blogContent: Record<string, React.ReactNode> = {
       </ul>
 
       <h2>Recommended Cleaning Frequency for Fairfax Families</h2>
-      <p>For most Fairfax households with children and pets, bi-weekly professional cleaning is the sweet spot — frequent enough to maintain a clean home, affordable enough to sustain long-term. See our full breakdown: <Link to="/resources/recurring-cleaning-weekly-biweekly-monthly" className="text-accent hover:underline">weekly vs. bi-weekly vs. monthly cleaning</Link>.</p>
+      <p>For most Fairfax households with children and pets, bi-weekly professional cleaning is the sweet spot — frequent enough to maintain a clean home, affordable enough to sustain long-term. See our full breakdown of <Link to="/resources/recurring-cleaning-weekly-biweekly-monthly" className="text-accent hover:underline">weekly vs. bi-weekly vs. monthly cleaning</Link>, then review our <Link to="/locations/fairfax-va/house-cleaning" className="text-accent hover:underline">Fairfax house cleaning service</Link> for local scheduling and coverage.</p>
 
       <h2>Fairfax Neighborhoods We Serve</h2>
       <p>We cover all of Fairfax City and surrounding communities including Fair Oaks, Burke, Annandale, Springfield, Reston, Herndon, Centreville, Chantilly, and areas near <Link to="/locations/mclean-va" className="text-accent hover:underline">McLean</Link> and <Link to="/locations/falls-church-va" className="text-accent hover:underline">Falls Church</Link>.</p>
@@ -885,6 +868,7 @@ const blogContent: Record<string, React.ReactNode> = {
         <li><strong>2BR home or condo:</strong> $185 – $240 per standard clean</li>
         <li><strong>3BR home:</strong> $230 – $300 per standard clean</li>
       </ul>
+      <p>For a fuller breakdown of flat-rate versus hourly pricing, cleaner-hours, home-size examples, and what each service level includes, see our <Link to="/resources/house-cleaning-cost-alexandria-va" className="text-accent hover:underline font-semibold">2026 Alexandria house cleaning cost guide</Link>.</p>
 
       <BlogInlineCTA
         headline="Alexandria's Trusted House Cleaning Service"
@@ -1251,7 +1235,7 @@ const blogContent: Record<string, React.ReactNode> = {
       <p>Chevy Chase's older homes have less airtight construction — chemical products linger longer and can react with period finishes. Our EPA Safer Choice certified approach protects both your family and your home's original materials. <Link to="/why-eco-friendly-cleaning" className="text-accent hover:underline">Our eco commitment →</Link></p>
 
       <h2>Serving Chevy Chase and Nearby Neighborhoods</h2>
-      <p>We serve both the Maryland and DC sides of Chevy Chase, as well as <Link to="/locations/kensington-md" className="text-accent hover:underline">Kensington</Link>, <Link to="/locations/bethesda-md" className="text-accent hover:underline">Bethesda</Link>, and DC neighborhoods like <Link to="/locations/georgetown-dc" className="text-accent hover:underline">Georgetown</Link>. See our <Link to="/resources/house-cleaning-bethesda-md" className="text-accent hover:underline">Bethesda cleaning guide →</Link></p>
+      <p>We serve both the Maryland and DC sides of Chevy Chase, as well as <Link to="/locations/kensington-md" className="text-accent hover:underline">Kensington</Link>, <Link to="/locations/bethesda-md" className="text-accent hover:underline">Bethesda</Link>, and DC neighborhoods like <Link to="/locations/georgetown-dc" className="text-accent hover:underline">Georgetown</Link>. See our <Link to="/locations/bethesda-md/house-cleaning" className="text-accent hover:underline">Bethesda house cleaning service →</Link></p>
 
       <BlogInlineCTA
         headline="Chevy Chase's Trusted House Cleaning Service"
@@ -1595,6 +1579,13 @@ const HOWTO_DATA: Record<string, { steps: { name: string; text: string }[]; tota
 // Optional per-post FAQs — any blogContent/auto post listed here renders a visible FAQ section
 // and emits FAQPage schema. Keeps the content pipeline able to add FAQs without a dedicated page.
 const FAQ_DATA: Record<string, { q: string; a: string }[]> = {
+  "house-cleaning-prices-maryland-2026": [
+    { q: "How much does house cleaning cost in Maryland?", a: "In 2026, a standard residential clean in the Maryland DMV area typically costs about $150–$180 for a studio or 1-bedroom, $220–$290 for a 3-bedroom home, and $340–$480+ for a home with 5 or more bedrooms. Bathrooms, condition, service scope, add-ons, and frequency determine the final written quote." },
+    { q: "How much should a 3-bedroom house cleaning cost?", a: "A standard clean for a typical 3-bedroom Maryland home generally costs $220–$290 per visit. A first-time, one-time, or deep clean costs more because the team must remove accumulated buildup before the home reaches a maintainable baseline." },
+    { q: "Does recurring house cleaning cost less per visit?", a: "Usually, yes. Weekly service commonly costs 20–25% less per visit than a one-time rate, bi-weekly service 10–15% less, and monthly service about 5–8% less. The exact discount depends on the home and agreed cleaning scope." },
+    { q: "Is house cleaning priced by the hour or by the job?", a: "Pricing models vary. Capital Clean Care uses a written price based on home size, bathrooms, condition, service type, add-ons, and frequency rather than leaving the final bill open-ended. This makes the expected scope and price clear before service begins." },
+    { q: "What makes a house cleaning quote more expensive?", a: "The main price drivers are square footage, number of bathrooms, heavy buildup, pet hair, first-time or deep-cleaning scope, and add-ons such as inside the oven, refrigerator, cabinets, or interior windows. Urban access and parking can also affect labor time." },
+  ],
   "post-renovation-cleaning-guide-maryland": [
     { q: "Is post-renovation cleaning the same as a deep clean?", a: "It's a deep clean plus construction-specific work. A regular deep cleaning resets an ordinary lived-in home; a post-renovation clean adds the removal of fine construction dust from HVAC systems, cabinet interiors, and every surface, plus adhesive and paint residue — the debris a remodel leaves behind. For heavier jobs we run it as a dedicated post-construction cleaning rather than a standard deep clean." },
     { q: "Should my contractor handle the cleanup, or do I need a cleaning service?", a: "Both have a role. Your contractor should haul away their own large debris, leftover materials, and packaging, and handle any paint or finish touch-ups. But the fine dust that settles into vents, ductwork, cabinet interiors, window tracks, and carpet needs professional cleaning equipment — commercial HEPA vacuums and the right degreasers — which is a different job from construction cleanup. Most homeowners have the contractor clear the big stuff and bring in a cleaning team for the detail." },
@@ -1623,8 +1614,11 @@ const BlogPost = () => {
 
   // Keep the <title> under 70 chars (Bing): append the brand only when it fits,
   // otherwise use the post title alone so it isn't truncated in search results.
+  const seoTitleOverrides: Record<string, string> = {
+    "house-cleaning-prices-maryland-2026": "House Cleaning Cost MD: $150–$480+",
+  };
   const withBrand = `${post.title} | Capital Clean Care`;
-  const postTitle = withBrand.length <= 70 ? withBrand : post.title;
+  const postTitle = seoTitleOverrides[post.slug] ?? (withBrand.length <= 70 ? withBrand : post.title);
   const postImage = post.coverImage || "https://capitalcleancare.com/og-image.jpg";
 
   const { seoHelmet } = useSEO({

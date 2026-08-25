@@ -288,7 +288,7 @@ export const services: ServiceData[] = [
     h1: "Post-Construction Cleaning in Maryland, Washington DC & Northern Virginia",
     slug: "post-construction-cleaning",
     shortDescription: "Specialized cleanup after renovations, removing construction dust, debris, and residue.",
-    intro: "Renovations and construction projects transform spaces, but they also leave behind layers of dust, debris, and residue that require specialized cleaning. Capital Clean Care's post-construction cleaning service is designed to handle the unique challenges that come after building or remodeling work is completed.\n\nConstruction dust is unlike regular household dust — it's finer, more pervasive, and can settle in places you'd never expect. Our trained teams use specialized equipment and techniques to capture and remove this stubborn dust from every surface, vent, and crevice in your home.\n\nOur post-construction cleaning typically involves multiple phases. The initial rough clean removes large debris and bulk dust. The detailed clean addresses surfaces, fixtures, and finishes. The final touch-up ensures everything meets our exacting standards and your expectations.\n\nWhether you've completed a kitchen remodel, bathroom renovation, room addition, or whole-home construction, our team has the expertise and equipment to transform your construction site into a livable, pristine space. We work with homeowners, contractors, and property developers throughout the DMV area.",
+    intro: "Renovations and construction projects transform spaces — but they also leave behind fine dust, debris, and leftover materials that need a specialized cleanup. Capital Clean Care's post-construction cleaning service handles the unique mess that remains after building or remodeling work is done.\n\nConstruction dust is not like regular household dust. It is finer, spreads further, and settles in places you would never expect. Our trained teams use HEPA equipment and proven techniques to capture this fine dust from every surface, vent, and crevice in your home.\n\nWe work in phases. The rough clean removes large debris and bulk dust. The detailed clean covers surfaces, fixtures, and finishes. The final cleaning pass makes sure every room is professionally cleaned and ready to live in.\n\nWhether you finished a kitchen remodel, a bathroom renovation, a room addition, or a whole-home build, our post construction cleanup team turns your job site into a pristine, move-in-ready space. We work with homeowners, contractors, and property developers throughout the DMV area.",
     whatsIncluded: [
       // DUST REMOVAL (12 items)
       "Remove all visible construction dust from every surface",
@@ -358,7 +358,7 @@ export const services: ServiceData[] = [
       { q: "Do you remove protective films from new appliances?", a: "Yes. We carefully remove all protective films, stickers, and labels from new appliances, fixtures, windows, and surfaces as part of our post-construction service." },
       { q: "Can you clean after a kitchen or bathroom remodel?", a: "Kitchen and bathroom remodels are our most common post-construction projects. We address grout haze, adhesive residue, dust in cabinets, and all surfaces specific to these spaces." },
       { q: "Do you handle drywall dust removal?", a: "Yes. Drywall dust is one of the most pervasive types of construction dust. Our HEPA-filtered vacuums and specialized techniques effectively capture this ultra-fine dust from all surfaces." },
-      { q: "Will post-construction cleaning damage new finishes?", a: "No. Our teams are trained to use appropriate products and techniques for new finishes. We protect fresh paint, new tile, sealed grout, and all other newly installed materials." },
+      { q: "Will the final cleaning damage new finishes?", a: "No. Our teams are trained to use appropriate products and techniques for new finishes. We protect fresh paint, new tile, sealed grout, and all other newly installed materials." },
       { q: "Do you offer post-renovation air quality testing?", a: "We perform a visual and sensory assessment of air quality after cleaning. For formal air quality testing, we recommend a specialized HVAC or environmental service." },
       { q: "Can I schedule a walkthrough before booking?", a: "Yes. For larger post-construction projects, we offer a pre-cleaning walkthrough to assess the scope of work and provide an accurate estimate." }
     ],
@@ -369,7 +369,7 @@ export const services: ServiceData[] = [
       { name: "Tom D.", location: "Columbia, MD", text: "Built a new home and hired them for the pre-move-in clean. They removed all the protective films, cleaned inside every cabinet, and made it truly move-in ready." }
     ],
     metaTitle: "Post-Construction Cleaning in MD, DC & VA | Capital Clean Care",
-    metaDescription: "Expert post-renovation & new-build cleanup across Maryland, DC & Virginia. HEPA dust removal, multi-phase cleaning, eco-friendly. Get your free estimate today!"
+    metaDescription: "Professional post construction cleaning in MD, DC & VA. HEPA fine dust removal, final cleaning after renovations & new builds. Get your free estimate today!"
   },
   {
     name: "Recurring Cleaning",

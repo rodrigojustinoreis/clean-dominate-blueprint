@@ -115,6 +115,7 @@ const WhyDustBuildsUpMaryland = lazy(() => import("./pages/WhyDustBuildsUpMaryla
 const PrepareHomeForCleaning = lazy(() => import("./pages/PrepareHomeForCleaning"));
 const KeepHouseCleanBetween = lazy(() => import("./pages/KeepHouseCleanBetween"));
 const SummerCleaningChecklist = lazy(() => import("./pages/SummerCleaningChecklist"));
+const BackToSchoolCleaningChecklist = lazy(() => import("./pages/BackToSchoolCleaningChecklist"));
 const HolidayCleaningChecklist = lazy(() => import("./pages/HolidayCleaningChecklist"));
 const CleaningTipsWorkingProfessionals = lazy(() => import("./pages/CleaningTipsWorkingProfessionals"));
 const HowToRemoveRedWineStains = lazy(() => import("./pages/HowToRemoveRedWineStains"));
@@ -349,6 +350,7 @@ const AppRoutesLazy = () => (
     <Route path="/resources/how-to-prepare-home-for-professional-cleaning" element={<PrepareHomeForCleaning />} />
     <Route path="/resources/how-to-keep-house-clean-between-cleanings" element={<KeepHouseCleanBetween />} />
     <Route path="/resources/summer-cleaning-checklist-maryland" element={<SummerCleaningChecklist />} />
+    <Route path="/resources/back-to-school-cleaning-checklist" element={<BackToSchoolCleaningChecklist />} />
     <Route path="/resources/holiday-cleaning-checklist-dmv" element={<HolidayCleaningChecklist />} />
     <Route path="/resources/cleaning-tips-for-working-professionals" element={<CleaningTipsWorkingProfessionals />} />
     <Route path="/resources/how-to-remove-red-wine-stains" element={<HowToRemoveRedWineStains />} />

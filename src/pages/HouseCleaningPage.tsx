@@ -13,7 +13,7 @@ import GoogleBusinessLinks from "@/components/GoogleBusinessLinks";
 import { ServiceSchema, FAQSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import { useSEO } from "@/hooks/useSEO";
 import { getServiceBySlug } from "@/data/services";
-import { trackPhoneClick, trackBookNowClick, trackQuoteFormSubmit } from "@/lib/analytics";
+import { trackPhoneClick, trackBookNowClick, trackQuoteFormStart, trackQuoteFormSubmit } from "@/lib/analytics";
 import { toast } from "sonner";
 import teamPhoto from "@/assets/luana-cleaning.webp";
 import kitchenGraniteBefore from "@/assets/real-work/kitchen-granite-before.webp";
@@ -22,8 +22,6 @@ import kitchenIslandBefore  from "@/assets/real-work/kitchen-island-before.webp"
 import kitchenIslandAfter   from "@/assets/real-work/kitchen-island-after.webp";
 import stoveBefore          from "@/assets/real-work/stove-before.webp";
 import stoveAfter           from "@/assets/real-work/stove-after.webp";
-
-declare function gtag(...args: unknown[]): void;
 
 const service = getServiceBySlug("house-cleaning")!;
 
@@ -85,7 +83,14 @@ const QuoteFormInline = ({ variant = "hero" }: { variant?: "hero" | "footer" }) 
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [submittedName, setSubmittedName] = useState("");
+  const formStarted = useRef(false);
   const set = (k: string, v: string) => setForm(p => ({ ...p, [k]: v }));
+
+  const handleFormStart = () => {
+    if (formStarted.current) return;
+    formStarted.current = true;
+    trackQuoteFormStart("house-cleaning", `${window.location.pathname}:${variant}`);
+  };
 
   // Slider positions derived from the stored display strings ("5+" → 5, "4+" → 4)
   const bedNum = Math.min(5, Math.max(1, parseInt(form.bedrooms, 10) || 1));
@@ -104,8 +109,7 @@ const QuoteFormInline = ({ variant = "hero" }: { variant?: "hero" | "footer" }) 
       fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: encode({ "form-name": "quote", ...form, service: "House Cleaning" }) }).catch(console.error);
       fetch("https://jzxhejqokcjyxxklnnza.supabase.co/functions/v1/receive-lead", { method: "POST", headers: { "Content-Type": "application/json", "x-webhook-secret": "ccc-lead-webhook-2026" }, body: JSON.stringify({ ...form, service: "House Cleaning" }) }).catch(() => {});
       fetch("/api/send-quote-email", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ ...form, service: "House Cleaning" }) }).catch(() => {});
-      trackQuoteFormSubmit("house-cleaning");
-      if (typeof gtag !== "undefined") gtag("event", "conversion", { send_to: "AW-16450100951/9MghCM3k2bIcENe9gqQ9", value: 50.0, currency: "USD" });
+      trackQuoteFormSubmit("house-cleaning", `${window.location.pathname}:${variant}`);
       setSubmittedName(form.name.split(" ")[0]);
       setSubmitted(true);
     } catch { toast.error("Something went wrong. Please call us directly."); }
@@ -130,7 +134,7 @@ const QuoteFormInline = ({ variant = "hero" }: { variant?: "hero" | "footer" }) 
   );
 
   return (
-    <form onSubmit={handleSubmit} className={isFooter ? "flex flex-col sm:flex-row gap-3 flex-wrap" : "space-y-4"}>
+    <form onSubmit={handleSubmit} onFocusCapture={handleFormStart} className={isFooter ? "flex flex-col sm:flex-row gap-3 flex-wrap" : "space-y-4"}>
       {[
         { k: "name",  label: "Full Name",     placeholder: "Jane Smith",     type: "text"  },
         { k: "phone", label: "Phone Number",  placeholder: "(240) 000-0000", type: "tel"   },

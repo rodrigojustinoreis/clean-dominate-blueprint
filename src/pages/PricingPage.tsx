@@ -177,6 +177,13 @@ const PricingPage = () => {
               </Link>
             ))}
           </div>
+          <p className="-mt-5 mb-10 text-sm text-muted-foreground max-w-3xl">
+            Live in Northern Virginia? Read the detailed{" "}
+            <Link to="/resources/house-cleaning-cost-alexandria-va" className="text-accent font-semibold underline hover:no-underline">
+              house cleaning cost guide for Alexandria, VA
+            </Link>{" "}
+            for neighborhood-specific examples and cleaner-hour calculations.
+          </p>
 
           {/* ── FAQ ── */}
           <h2 className="font-heading text-2xl md:text-3xl font-bold mb-6">Pricing FAQ</h2>

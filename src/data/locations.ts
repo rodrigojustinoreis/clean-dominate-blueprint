@@ -9,6 +9,9 @@ export interface CityData {
   faqs: { q: string; a: string }[];
   metaTitle: string;
   metaDescription: string;
+  h1?: string;
+  heroLead?: string;
+  schemaServiceName?: string;
 }
 
 export interface HubData {
@@ -131,7 +134,7 @@ export const cities: CityData[] = [
       { q: "Are your Silver Spring teams background-checked?", a: "Yes. Every Capital Clean Care team member undergoes thorough background checks. We're fully licensed and insured for your complete peace of mind." },
       { q: "Do you use eco-friendly products in Silver Spring?", a: "Yes. We exclusively use plant-based, non-toxic cleaning products across all our Silver Spring service areas. Safe for families, pets, and the environment." }
     ],
-    metaTitle: "Cleaning Services in Silver Spring, MD — All Services | Capital Clean Care",
+    metaTitle: "Cleaning Services in Silver Spring, MD | Capital Clean Care",
     metaDescription: "Professional house cleaning in Silver Spring, MD. Serving all neighborhoods with eco-friendly products and background-checked teams. Get your free quote today."
   },
   {
@@ -150,7 +153,7 @@ export const cities: CityData[] = [
       { q: "Are your Bethesda teams experienced with high-end finishes?", a: "Yes. Our teams are trained in proper care for marble, granite, hardwood, and other premium surfaces commonly found in Bethesda homes." },
       { q: "Can I schedule around my Bethesda social calendar?", a: "Of course. Many Bethesda clients schedule cleanings before events or gatherings. We offer flexible scheduling to accommodate your lifestyle." }
     ],
-    metaTitle: "Cleaning Services in Bethesda, MD — All Services | Capital Clean Care",
+    metaTitle: "Cleaning Services in Bethesda, MD | Capital Clean Care",
     metaDescription: "Premium house cleaning in Bethesda, MD. Expert care for fine homes, eco-friendly products, background-checked teams. Serving all Bethesda neighborhoods. Free quotes."
   },
   {
@@ -499,7 +502,7 @@ export const cities: CityData[] = [
     slug: "georgetown-dc",
     state: "DC",
     stateSlug: "washington-dc",
-    intro: "Georgetown stands as one of Washington's most prestigious and historic neighborhoods, predating the District of Columbia itself. This cobblestoned enclave along the Potomac River features stunning Federal and Georgian architecture, world-class dining, exclusive boutiques, and some of the most valuable residential real estate in the nation's capital.\n\nCapital Clean Care provides Georgetown homeowners with cleaning services that match the neighborhood's exceptional standards. Our teams are specially trained in caring for fine homes — proper treatment for marble, crystal, hardwood, and the museum-quality finishes often found in Georgetown residences. We understand that these homes require elevated attention and expertise.\n\nGeorgetown's social calendar is legendary, and many residents rely on Capital Clean Care to keep their homes entertaining-ready year-round. From pre-event preparations to regular maintenance that ensures your Georgetown home always reflects your standards, we deliver the premium service this extraordinary neighborhood demands.",
+    intro: "Georgetown stands as one of Washington's most prestigious and historic neighborhoods, predating the District of Columbia itself. Capital Clean Care provides house cleaning, deep cleaning, recurring service, move-in and move-out cleaning, Airbnb turnover, office cleaning, post-construction cleanup, and eco-friendly cleaning throughout Georgetown.\n\nCleaning a Georgetown home requires experience with some of Washington's oldest residential architecture. Federal and Georgian rowhouses in West and East Georgetown often have original heart-pine or antique hardwood floors, plaster walls, narrow staircases, and delicate period details. Around Book Hill and toward Foxhall, larger detached homes, carriage houses, and luxury residences may include marble, crystal, designer fabrics, and other fine finishes that call for careful, non-abrasive methods.\n\nOur background-checked, bonded, and insured teams use eco-friendly, EPA Safer Choice products and adapt the cleaning plan to the property. A compact condo may need a routine maintenance visit, while a multi-floor rowhouse, move-out, renovation, or event preparation may require a deeper scope. Every service begins with a free quote and is backed by our satisfaction guarantee.\n\nGeorgetown's cobblestone streets, narrow lanes, and permit-heavy parking also require planning. Our crews coordinate arrival and equipment instead of assuming driveway access. We serve West Village, East Village, Book Hill, Burleith, Hillandale, Foxhall, and nearby Georgetown communities.\n\nWhether you need a one-time house cleaning or dependable weekly, biweekly, or monthly service, Capital Clean Care delivers one coordinated local solution for Georgetown homes and businesses.",
     nearbySlugs: ["washington-dc", "dupont-circle-dc", "adams-morgan-dc", "bethesda-md", "mclean-va"],
     faqs: [
       { q: "Do you have experience with Georgetown's historic homes?", a: "Yes. Our teams are trained in proper care for Georgetown's Federal and Georgian architecture, including appropriate products for period materials." },
@@ -508,8 +511,11 @@ export const cities: CityData[] = [
       { q: "What premium finishes can you clean?", a: "We're experienced with marble, granite, hardwood, crystal, designer fabrics, and other premium materials common in Georgetown homes." },
       { q: "How often should I schedule cleaning in Georgetown?", a: "Most Georgetown clients prefer weekly or bi-weekly service. Homes that host frequently may benefit from weekly cleaning." }
     ],
-    metaTitle: "Cleaning Services in Georgetown, DC — All Services | Capital Clean Care",
-    metaDescription: "Premium house cleaning in Georgetown, DC. Expert care for historic homes, fine finishes, and luxury properties. Eco-friendly, insured. Get a free quote."
+    metaTitle: "Cleaning Services in Georgetown, DC | House, Deep & Recurring",
+    metaDescription: "Cleaning services in Georgetown, DC for historic homes, condos, and businesses. House, deep, recurring, move-out, and eco-friendly cleaning. Free quote.",
+    h1: "Professional Cleaning Services in Georgetown, DC",
+    heroLead: "House cleaning, deep cleaning, recurring service, move-out cleaning, and more for Georgetown's historic homes, condos, and businesses.",
+    schemaServiceName: "Cleaning Services in Georgetown, DC"
   },
   {
     name: "Dupont Circle",
@@ -595,8 +601,11 @@ export const cities: CityData[] = [
       { q: "Do you serve areas around George Mason?", a: "Yes. We serve all residential areas in and around the City of Fairfax." },
       { q: "Are recurring plans available in Fairfax?", a: "Yes. Weekly, bi-weekly, and monthly plans with preferred pricing and dedicated teams." }
     ],
-    metaTitle: "Cleaning Services in Fairfax, VA — All Services | Capital Clean Care",
-    metaDescription: "Professional house cleaning in Fairfax, VA. Eco-friendly products, background-checked teams, flexible plans. Serving all Fairfax neighborhoods. Free quotes."
+    metaTitle: "Cleaning Services in Fairfax, VA | All Service Options",
+    metaDescription: "Explore cleaning services available in Fairfax, VA, including house, deep, recurring, move-out, office, and eco-friendly cleaning. Get a free quote.",
+    h1: "Professional Cleaning Services in Fairfax, VA",
+    heroLead: "Explore house cleaning, deep cleaning, recurring plans, move-out cleaning, office cleaning, and other professional services available in Fairfax.",
+    schemaServiceName: "Cleaning Services in Fairfax, VA"
   },
   {
     name: "McLean",

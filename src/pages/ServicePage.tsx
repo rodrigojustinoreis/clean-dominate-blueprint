@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import QuoteForm from "@/components/QuoteForm";
+import VideoShowcase from "@/components/VideoShowcase";
 import FAQ from "@/components/FAQ";
 import { ServiceSchema, FAQSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import { useSEO } from "@/hooks/useSEO";
@@ -268,6 +269,9 @@ const ServicePage = () => {
           </FadeInSection>
         </div>
       </section>
+
+      {/* Carrossel de vídeos — antes da cotação */}
+      <VideoShowcase heading={`See our ${service.name.toLowerCase()} team in action 👇`} />
 
       {/* ── Quote Form ── */}
       <section id="quote" className="py-16 bg-secondary scroll-mt-24">

@@ -107,7 +107,7 @@ const Header = () => {
         {/* Main nav */}
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center gap-2">
-            <img src={logo} alt="Capital Clean Care logo" className="h-7 w-7 md:h-8 md:w-8 object-contain shrink-0" />
+            <img src={logo} alt="Capital Clean Care logo" width="940" height="788" className="h-7 w-7 md:h-8 md:w-8 object-contain shrink-0" />
             <span className="font-heading font-bold text-sm sm:text-lg md:text-xl text-foreground whitespace-nowrap leading-tight">Capital Clean Care</span>
           </Link>
 

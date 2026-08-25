@@ -107,6 +107,7 @@ import WhyDustBuildsUpMaryland from "./pages/WhyDustBuildsUpMaryland";
 import PrepareHomeForCleaning from "./pages/PrepareHomeForCleaning";
 import KeepHouseCleanBetween from "./pages/KeepHouseCleanBetween";
 import SummerCleaningChecklist from "./pages/SummerCleaningChecklist";
+import BackToSchoolCleaningChecklist from "./pages/BackToSchoolCleaningChecklist";
 import HolidayCleaningChecklist from "./pages/HolidayCleaningChecklist";
 import CleaningTipsWorkingProfessionals from "./pages/CleaningTipsWorkingProfessionals";
 import HowToRemoveRedWineStains from "./pages/HowToRemoveRedWineStains";
@@ -341,6 +342,7 @@ const AppRoutes = () => (
     <Route path="/resources/how-to-prepare-home-for-professional-cleaning" element={<PrepareHomeForCleaning />} />
     <Route path="/resources/how-to-keep-house-clean-between-cleanings" element={<KeepHouseCleanBetween />} />
     <Route path="/resources/summer-cleaning-checklist-maryland" element={<SummerCleaningChecklist />} />
+    <Route path="/resources/back-to-school-cleaning-checklist" element={<BackToSchoolCleaningChecklist />} />
     <Route path="/resources/holiday-cleaning-checklist-dmv" element={<HolidayCleaningChecklist />} />
     <Route path="/resources/cleaning-tips-for-working-professionals" element={<CleaningTipsWorkingProfessionals />} />
     <Route path="/resources/how-to-remove-red-wine-stains" element={<HowToRemoveRedWineStains />} />
