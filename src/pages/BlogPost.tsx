@@ -130,6 +130,30 @@ const blogContent: Record<string, React.ReactNode> = {
 
       <p>One of the most common questions from <Link to="/maryland" className="text-accent hover:underline">Maryland</Link> homeowners is simple: <em>How much does house cleaning cost?</em> The answer depends on your home's size, the type of service, how often you book, and your location. This guide breaks it all down with real pricing for the DMV market in 2026.</p>
 
+      <figure className="not-prose my-10 overflow-hidden rounded-3xl border border-sky-100 bg-white shadow-[0_24px_70px_-36px_rgba(15,76,129,0.55)]">
+        <div className="grid items-stretch md:grid-cols-[minmax(0,1.25fr)_minmax(250px,0.75fr)]">
+          <div className="relative min-h-[380px] overflow-hidden bg-stone-100 md:min-h-[620px]">
+            <img
+              src="/images/blog/maryland-cleaner-sofa-professional-v2.webp"
+              alt="Capital Clean Care professional arranging a blanket during detailed sofa care in a Maryland home"
+              className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-700 hover:scale-[1.025]"
+              width={960}
+              height={1267}
+              loading="lazy"
+              decoding="async"
+            />
+            <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-slate-950/25 via-transparent to-transparent" />
+            <span className="absolute bottom-4 left-4 rounded-full border border-white/50 bg-white/90 px-4 py-2 text-xs font-bold uppercase tracking-[0.14em] text-slate-800 shadow-lg backdrop-blur-md">Real care. Real local team.</span>
+          </div>
+          <figcaption className="flex flex-col justify-center bg-gradient-to-br from-sky-50 via-white to-cyan-50 p-7 md:p-10">
+            <Sparkles className="mb-5 h-7 w-7 text-accent" aria-hidden="true" />
+            <p className="font-heading text-2xl font-bold leading-tight text-foreground md:text-3xl">The difference is in the details</p>
+            <p className="mt-4 text-base leading-relaxed text-muted-foreground">Our local cleaning professionals treat each room with careful, hands-on attention—from high-touch surfaces to the finishing details that make a home feel truly refreshed.</p>
+            <Link to="/#quote" className="mt-7 inline-flex w-fit items-center rounded-full bg-primary px-5 py-3 text-sm font-bold text-primary-foreground shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg">Get a personalized quote</Link>
+          </figcaption>
+        </div>
+      </figure>
+
       <div className="not-prose my-10 rounded-2xl border border-border bg-card p-5 md:p-7 shadow-sm">
         <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-1.5 tracking-tight">2026 Price Guide — by Home Size &amp; Service</h2>
         <p className="text-sm text-muted-foreground mb-6">The same transparent pricing we show on our homepage. Tap a service tab to see typical ranges for the DMV.</p>
