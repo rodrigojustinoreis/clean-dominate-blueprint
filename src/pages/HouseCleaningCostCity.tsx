@@ -38,6 +38,31 @@ const alexandriaEstimateRanges: Record<AlexandriaFrequency, Array<[number, numbe
   onetime: [[160, 195], [215, 255], [255, 310], [310, 400]],
   deep: [[230, 295], [310, 390], [375, 470], [450, 570]],
 };
+const cityEstimateRanges: Record<string, Record<AlexandriaFrequency, Array<[number, number]>>> = {
+  "rockville-md": {
+    biweekly: [[140, 165], [165, 205], [205, 250], [250, 310]],
+    monthly: [[160, 195], [190, 245], [245, 300], [300, 385]],
+    onetime: [[160, 195], [190, 245], [245, 300], [300, 385]],
+    deep: [[230, 285], [285, 365], [365, 435], [435, 540]],
+  },
+  "silver-spring-md": {
+    biweekly: [[140, 165], [165, 205], [205, 250], [250, 310]],
+    monthly: [[160, 195], [190, 245], [245, 300], [300, 385]],
+    onetime: [[160, 195], [190, 245], [245, 300], [300, 385]],
+    deep: [[230, 285], [285, 365], [365, 435], [435, 540]],
+  },
+  "arlington-va": {
+    biweekly: [[150, 185], [185, 225], [225, 270], [270, 330]],
+    monthly: [[175, 220], [220, 275], [275, 335], [335, 410]],
+    onetime: [[175, 220], [220, 275], [275, 335], [335, 410]],
+    deep: [[245, 320], [320, 400], [400, 485], [485, 580]],
+  },
+};
+const cityMonthlyBudgets: Record<string, { monthly: string; biweekly: string; weekly: string }> = {
+  "rockville-md": { monthly: "$190–$385", biweekly: "$360–$670", weekly: "$715–$1,340" },
+  "silver-spring-md": { monthly: "$190–$385", biweekly: "$360–$670", weekly: "$715–$1,340" },
+  "arlington-va": { monthly: "$220–$410", biweekly: "$400–$715", weekly: "$800–$1,430" },
+};
 const alexandriaFrequencyLabels: Record<AlexandriaFrequency, string> = {
   biweekly: "Bi-weekly",
   monthly: "Monthly",
@@ -80,10 +105,10 @@ const AlexandriaProgressNav = () => {
   );
 };
 
-const AlexandriaPricePlanner = ({ city = "Alexandria", idPrefix = "alexandria", analyticsLocation = "alexandria_cost_planner" }: { city?: string; idPrefix?: string; analyticsLocation?: string }) => {
+const AlexandriaPricePlanner = ({ city = "Alexandria", idPrefix = "alexandria", analyticsLocation = "alexandria_cost_planner", ranges = alexandriaEstimateRanges }: { city?: string; idPrefix?: string; analyticsLocation?: string; ranges?: Record<AlexandriaFrequency, Array<[number, number]>> }) => {
   const [homeIndex, setHomeIndex] = useState(1);
   const [frequency, setFrequency] = useState<AlexandriaFrequency>("biweekly");
-  const estimate = useMemo(() => alexandriaEstimateRanges[frequency][homeIndex], [frequency, homeIndex]);
+  const estimate = useMemo(() => ranges[frequency][homeIndex], [frequency, homeIndex, ranges]);
 
   return (
     <section id={`${idPrefix}-estimate`} className="scroll-mt-40 mb-12 overflow-hidden rounded-[2rem] border border-border bg-white shadow-[0_20px_60px_rgba(26,71,91,.12)]" aria-labelledby={`${idPrefix}-estimate-title`}>
@@ -145,12 +170,21 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
   const where = `${c.city}, ${c.state}`;
   const isAlexandria = c.slug === "alexandria-va";
   const isBethesda = c.slug === "bethesda-md";
-  const title = isBethesda
+  const isRockville = c.slug === "rockville-md";
+  const isEnhanced = isAlexandria || isBethesda || isRockville;
+  const estimateRanges = cityEstimateRanges[c.slug] ?? alexandriaEstimateRanges;
+  const monthlyBudgets = cityMonthlyBudgets[c.slug] ?? { monthly: "$215–$400", biweekly: "$390–$705", weekly: "$780–$1,410" };
+  const modifiedDate = isRockville ? "2026-08-26" : isAlexandria || isBethesda ? "2026-08-25" : undefined;
+  const title = isRockville
+    ? "Rockville House Cleaning Cost: $165–$540+ (2026)"
+    : isBethesda
     ? "Bethesda House Cleaning Cost: $180–$570+ (2026)"
     : isAlexandria
     ? "Alexandria House Cleaning Cost: $180–$570+ (2026)"
     : `House Cleaning Cost in ${where}: 2026 Prices & Rates`;
-  const description = isBethesda
+  const description = isRockville
+    ? "Rockville house cleaning costs $165–$310 recurring, $190–$385 one-time and $285–$540+ deep. Compare 2026 prices and get a free written quote."
+    : isBethesda
     ? "Bethesda house cleaning costs $180–$325 recurring, $215–$400 one-time and $310–$570+ deep. Compare 2026 prices by home size and get a free quote today."
     : isAlexandria
     ? "Alexandria house cleaning costs $180–$325 recurring, $215–$400 one-time, and $310–$570+ deep. Compare 2026 rates by home size and get a free quote."
@@ -212,18 +246,38 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
       a: "Square footage is a useful starting point: a studio or one-bedroom up to about 900 square feet may cost $140–$165 recurring, while a 2,200–3,000-square-foot home may cost $265–$325 recurring. Bathrooms, levels, pets, current condition, frequency, and add-ons also determine cleaner-hours, so an exact quote should use both size and scope.",
     },
   ] : [];
-  const faqs = [...c.faqs, ...bethesdaResearchFaqs, ...alexandriaResearchFaqs, ...sharedFaqs];
+  const rockvilleResearchFaqs: CostFAQ[] = isRockville ? [
+    {
+      q: "How much should I budget per month for house cleaning in Rockville?",
+      a: "A monthly visit typically means budgeting about $190–$385 per month. Bi-weekly service commonly works out to roughly $360–$670 in an average month, while weekly service may total about $715–$1,340 before frequency discounts. Home size, bathrooms, condition, pets, stairs, and add-ons determine the exact written quote.",
+    },
+    {
+      q: "How much do house cleaners charge per hour in Rockville?",
+      a: "Hourly prices are only comparable when the crew size is clear. A $220 visit completed by two cleaners in two hours equals $55 per cleaner-hour. For a full home, a written flat-rate scope is usually easier to budget. If comparing hourly offers, confirm cleaner count, estimated hours, supplies, insurance, travel, and a maximum budget.",
+    },
+    {
+      q: "How much does a deep clean cost for a three-bedroom Rockville home?",
+      a: "A three-bedroom, two-bath Rockville home of roughly 1,700–2,200 square feet generally falls around $365–$435 for a deep clean. Extra bathrooms, three-level townhome layouts, pets, heavy buildup, finished basements, and requested appliance interiors can move the quote higher.",
+    },
+    {
+      q: "Can I estimate Rockville house cleaning cost by square footage?",
+      a: "Square footage is a useful first filter: a studio or one-bedroom may cost about $140–$165 recurring, while a 2,200–3,000-square-foot home may cost about $250–$310 recurring. Bathrooms, levels, condition, frequency, and add-ons also determine cleaner-hours, so size alone is not a final quote.",
+    },
+  ] : [];
+  const faqs = [...c.faqs, ...rockvilleResearchFaqs, ...bethesdaResearchFaqs, ...alexandriaResearchFaqs, ...sharedFaqs];
 
   const { seoHelmet } = useSEO({
     title,
     description,
     canonical: url,
-    ogImage: isAlexandria ? "https://capitalcleancare.com/images/blog/cost-alexandria/hero.webp" : isBethesda ? c.hero : undefined,
-    preloadImage: isAlexandria || isBethesda ? c.hero : undefined,
+    ogImage: isAlexandria ? "https://capitalcleancare.com/images/blog/cost-alexandria/hero.webp" : isEnhanced ? c.hero : undefined,
+    preloadImage: isEnhanced ? c.hero : undefined,
     geo: isAlexandria
       ? { region: "US-VA", placename: "Alexandria" }
       : isBethesda
       ? { region: "US-MD", placename: "Bethesda" }
+      : isRockville
+      ? { region: "US-MD", placename: "Rockville" }
       : undefined,
   });
 
@@ -242,7 +296,7 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
         description={description}
         url={url}
         datePublished="2026-06-16"
-        dateModified={isAlexandria || isBethesda ? "2026-08-25" : undefined}
+        dateModified={modifiedDate}
         image={c.hero}
       />
       <FAQSchema faqs={faqs} />
@@ -276,28 +330,30 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
           {title}
         </h1>
         <p className="text-xl md:text-2xl text-gray-200 mb-4 leading-relaxed font-medium">
-          {isBethesda
+          {isRockville
+            ? "Compare realistic Rockville prices by home size and frequency — then get a written quote"
+            : isBethesda
             ? "See realistic Bethesda prices by home size, frequency, and service — then get a written quote"
             : isAlexandria
             ? "Know what your Alexandria home should cost to clean — with a clear estimate in under 30 seconds"
             : "Real 2026 price ranges by home size — plus what actually drives the cost"}
         </p>
         <p className="text-gray-300 mb-8 text-sm uppercase tracking-widest">
-          By Rodrigo Reis, Owner · {where} · {isAlexandria || isBethesda ? "Updated August 25, 2026" : "June 2026"}
+          By Rodrigo Reis, Owner · {where} · {modifiedDate ? `Updated ${modifiedDate === "2026-08-26" ? "August 26, 2026" : "August 25, 2026"}` : "June 2026"}
         </p>
         <Button size="lg" className="bg-accent hover:bg-accent/90 text-white text-lg px-8 py-6 rounded-full shadow-lg" asChild>
           <Link to="/contact" onClick={() => trackBookNowClick(`${c.slug}_cost_hero`)}>Get My Free {c.city} Quote</Link>
         </Button>
       </BlogHero>
 
-      {(isAlexandria || isBethesda) && (
+      {isEnhanced && (
         <section aria-label={`Why ${c.city} homeowners choose Capital Clean Care`} className="border-b border-border bg-white">
           <div className="container mx-auto grid max-w-5xl grid-cols-2 gap-x-3 gap-y-4 px-4 py-5 md:grid-cols-4">
             {[
               { icon: Star, title: "5-Star Rated", detail: "Verified Google reviews" },
               { icon: ShieldCheck, title: "Licensed & Insured", detail: "Background-checked crews" },
               { icon: CheckCircle2, title: "Satisfaction Guarantee", detail: "We make it right" },
-              { icon: MapPin, title: `${c.city} Service`, detail: isBethesda ? "Downtown, Kenwood & more" : "Old Town, Del Ray & more" },
+              { icon: MapPin, title: `${c.city} Service`, detail: isRockville ? "King Farm, Twinbrook & more" : isBethesda ? "Downtown, Kenwood & more" : "Old Town, Del Ray & more" },
             ].map(({ icon: Icon, title: trustTitle, detail }) => (
               <div key={trustTitle} className="flex items-center gap-3">
                 <Icon className="h-5 w-5 shrink-0 text-accent" aria-hidden="true" />
@@ -324,20 +380,21 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
               <p className="text-muted-foreground leading-relaxed">
                 In {c.city}, most homeowners pay roughly <strong className="text-foreground">{c.quick.recurring} per visit</strong> for recurring (bi-weekly) cleaning, <strong className="text-foreground">{c.quick.onetime}</strong> for a one-time standard clean, and <strong className="text-foreground">{c.quick.deep}</strong> for a deep clean. Your exact price depends mainly on home size, the type of clean, and how often you book.
               </p>
-              {(isAlexandria || isBethesda) && (
+              {isEnhanced && (
                 <p className="mt-4 pt-4 border-t border-accent/20 text-sm text-foreground">
                   <strong>Most popular:</strong> bi-weekly service for {c.city} homes, with a free exact quote before booking and no obligation.
                 </p>
               )}
-              {isAlexandria && (
+              {(isAlexandria || isRockville) && (
                 <p className="mt-3 rounded-xl bg-accent/10 px-4 py-3 text-sm text-foreground">
-                  <strong>New-client savings:</strong> get 15% off your first Alexandria clean. Request a written quote to confirm the scope, total price, and offer details before booking.
+                  <strong>New-client savings:</strong> get 15% off your first {c.city} clean. Request a written quote to confirm the scope, total price, and offer details before booking.
                 </p>
               )}
             </div>
             {isAlexandria && <AlexandriaPricePlanner />}
             {isBethesda && <AlexandriaPricePlanner city="Bethesda" idPrefix="bethesda" analyticsLocation="bethesda_cost_planner" />}
-            {(isAlexandria || isBethesda) && (
+            {isRockville && <AlexandriaPricePlanner city="Rockville" idPrefix="rockville" analyticsLocation="rockville_cost_planner" ranges={estimateRanges} />}
+            {isEnhanced && (
               <aside className="mb-10 grid items-center gap-6 rounded-2xl bg-[#edf6f1] p-6 md:grid-cols-[1fr_auto]" aria-label="Featured verified Google review">
                 <div>
                   <div className="mb-3 flex gap-1 text-amber-500" aria-label="5 out of 5 stars">
@@ -346,7 +403,7 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
                   <blockquote className="text-base font-medium leading-relaxed text-foreground">“{REAL_REVIEWS[4].text}”</blockquote>
                   <p className="mt-3 text-sm font-bold text-foreground">— {REAL_REVIEWS[4].name} <span className="font-normal text-muted-foreground">· Verified Google review</span></p>
                 </div>
-                <a href={`#${isBethesda ? "bethesda" : "alexandria"}-reviews`} className="inline-flex min-h-11 items-center justify-center rounded-full border border-[#2e7d62]/20 bg-white px-5 text-sm font-bold text-[#2e7d62] hover:border-[#2e7d62]/50">Read customer reviews</a>
+                <a href={`#${c.city.toLowerCase().replace(/\s+/g, "-")}-reviews`} className="inline-flex min-h-11 items-center justify-center rounded-full border border-[#2e7d62]/20 bg-white px-5 text-sm font-bold text-[#2e7d62] hover:border-[#2e7d62]/50">Read customer reviews</a>
               </aside>
             )}
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">{c.intro}</p>
@@ -366,17 +423,17 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
                 </figcaption>
               </figure>
             )}
-            {(isAlexandria || isBethesda) && (
+            {isEnhanced && (
               <div className="mb-10">
                 <h2 id="prices-by-frequency" className="font-heading text-3xl font-bold text-foreground mb-4 scroll-mt-24">
                   {c.city} Cleaning Prices by Frequency
                 </h2>
                 <div className="grid sm:grid-cols-2 gap-4" aria-label={`${c.city} cleaning price options`}>
                   {[
-                    ["Bi-weekly cleaning", "$180–$325 per visit", "The lowest practical per-visit range for consistent maintenance."],
-                    ["Monthly cleaning", "$215–$400 typical range", "Usually closer to a one-time clean because more buildup accumulates between visits."],
-                    ["One-time cleaning", "$215–$400 per visit", "A flexible option before guests, events, or seasonal resets."],
-                    ["Deep cleaning", "$310–$570+ per visit", "The detailed top-to-bottom reset for first visits or homes needing extra attention."],
+                    ["Bi-weekly cleaning", `${c.quick.recurring} per visit`, "The lowest practical per-visit range for consistent maintenance."],
+                    ["Monthly cleaning", `${monthlyBudgets.monthly} typical range`, "Usually closer to a one-time clean because more buildup accumulates between visits."],
+                    ["One-time cleaning", `${c.quick.onetime} per visit`, "A flexible option before guests, events, or seasonal resets."],
+                    ["Deep cleaning", `${c.quick.deep} per visit`, "The detailed top-to-bottom reset for first visits or homes needing extra attention."],
                   ].map(([label, price, detail]) => (
                     <div key={label} className="rounded-xl border border-border bg-background p-5">
                       <h3 className="text-base font-bold text-foreground mb-1">{label}</h3>
@@ -389,7 +446,7 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
             )}
           </FadeInSection>
 
-          {(isAlexandria || isBethesda) && (
+          {isEnhanced && (
             <FadeInSection>
               <section className="mb-12" aria-labelledby="monthly-cleaning-budget">
                 <div className="rounded-[2rem] border border-border bg-secondary/30 p-6 md:p-8">
@@ -402,9 +459,9 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
                   </p>
                   <div className="grid gap-4 md:grid-cols-3">
                     {[
-                      ["Monthly", "1 visit / month", "$215–$400", "Best for lighter-use homes and occasional maintenance."],
-                      ["Bi-weekly", "2.17 visits / month", "$390–$705", "The most practical balance of consistency and cost."],
-                      ["Weekly", "4.33 visits / month", "$780–$1,410", "Best for busy homes, children, pets, or frequent entertaining."],
+                      ["Monthly", "1 visit / month", monthlyBudgets.monthly, "Best for lighter-use homes and occasional maintenance."],
+                      ["Bi-weekly", "2.17 visits / month", monthlyBudgets.biweekly, "The most practical balance of consistency and cost."],
+                      ["Weekly", "4.33 visits / month", monthlyBudgets.weekly, "Best for busy homes, children, pets, or frequent entertaining."],
                     ].map(([frequencyLabel, cadence, budget, note]) => (
                       <article key={frequencyLabel} className="rounded-2xl border border-border bg-white p-5 shadow-sm">
                         <p className="text-sm font-bold text-foreground">{frequencyLabel}</p>
@@ -455,15 +512,47 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
             </FadeInSection>
           )}
 
+          {isRockville && (
+            <FadeInSection>
+              <section className="mb-12" aria-labelledby="rockville-price-examples">
+                <p className="mb-2 text-xs font-bold uppercase tracking-[.16em] text-accent">Rockville home examples</p>
+                <h2 id="rockville-price-examples" className="font-heading text-3xl font-bold text-foreground mb-4">
+                  Realistic House Cleaning Prices for Rockville Homes
+                </h2>
+                <p className="text-muted-foreground leading-relaxed mb-6">
+                  Rockville prices depend more on layout and cleaner-hours than the neighborhood name. These examples apply the published planning ranges to common local homes.
+                </p>
+                <div className="space-y-4">
+                  {[
+                    { home: "Rockville Town Center apartment", profile: "Studio to 2 bedrooms · single level · up to 1,700 sq ft", recurring: "$140–$205", deep: "$230–$365", note: "Confirm parking, front-desk access, elevator procedures, and building hours before the visit." },
+                    { home: "Twinbrook rambler", profile: "3 bedrooms · about 1,700–2,200 sq ft", recurring: "$205–$250", deep: "$365–$435", note: "Finished basements, pets, extra bathrooms, and older flooring can move the quote toward the upper end." },
+                    { home: "King Farm or Fallsgrove townhome", profile: "3–4 bedrooms · multiple levels · 2,200–3,000 sq ft", recurring: "$250–$310", deep: "$435–$540", note: "Three levels, stairs, multiple bathrooms, and requested appliance interiors increase cleaner-hours." },
+                  ].map((example) => (
+                    <article key={example.home} className="rounded-2xl border border-border bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
+                      <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                        <div className="max-w-md"><h3 className="text-lg font-bold text-foreground">{example.home}</h3><p className="mt-1 text-sm text-muted-foreground">{example.profile}</p></div>
+                        <div className="grid grid-cols-2 gap-4 text-sm sm:text-right">
+                          <div><p className="text-xs text-muted-foreground">Recurring</p><p className="font-bold text-accent">{example.recurring}</p></div>
+                          <div><p className="text-xs text-muted-foreground">Deep clean</p><p className="font-bold text-foreground">{example.deep}</p></div>
+                        </div>
+                      </div>
+                      <p className="mt-4 border-t border-border pt-4 text-sm leading-relaxed text-muted-foreground">{example.note}</p>
+                    </article>
+                  ))}
+                </div>
+              </section>
+            </FadeInSection>
+          )}
+
           {/* Price ranges table */}
           <FadeInSection>
-            <h2 id={isAlexandria || isBethesda ? "prices-by-home-size" : undefined} className="font-heading text-3xl font-bold text-foreground mb-4 scroll-mt-24">
+            <h2 id={isEnhanced ? "prices-by-home-size" : undefined} className="font-heading text-3xl font-bold text-foreground mb-4 scroll-mt-24">
               {c.city} House Cleaning Prices by Home Size
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-5">
               Typical per-visit ranges for {c.city} homes. Recurring (bi-weekly) is the lowest per visit; deep cleaning is the most thorough, top-to-bottom service.
             </p>
-            {(isAlexandria || isBethesda) && (
+            {isEnhanced && (
               <div className="mb-6 grid gap-3 sm:hidden" aria-label={`${c.city} cleaning prices by home size`}>
                 {alexandriaHomeLabels.map((home, index) => (
                   <article key={home} className={`rounded-2xl border p-5 ${index === 1 ? "border-accent bg-accent/5 shadow-md" : "border-border bg-white"}`}>
@@ -472,15 +561,15 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
                       {index === 1 && <span className="rounded-full bg-accent/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-accent">Popular</span>}
                     </div>
                     <dl className="mt-5 space-y-3 text-sm">
-                      <div className="flex justify-between border-b border-border pb-3"><dt className="text-muted-foreground">Recurring</dt><dd className="font-bold text-accent">${alexandriaEstimateRanges.biweekly[index][0]}–${alexandriaEstimateRanges.biweekly[index][1]}</dd></div>
-                      <div className="flex justify-between border-b border-border pb-3"><dt className="text-muted-foreground">One-time</dt><dd className="font-bold text-foreground">${alexandriaEstimateRanges.onetime[index][0]}–${alexandriaEstimateRanges.onetime[index][1]}</dd></div>
-                      <div className="flex justify-between"><dt className="text-muted-foreground">Deep clean</dt><dd className="font-bold text-foreground">${alexandriaEstimateRanges.deep[index][0]}–${alexandriaEstimateRanges.deep[index][1]}</dd></div>
+                      <div className="flex justify-between border-b border-border pb-3"><dt className="text-muted-foreground">Recurring</dt><dd className="font-bold text-accent">${estimateRanges.biweekly[index][0]}–${estimateRanges.biweekly[index][1]}</dd></div>
+                      <div className="flex justify-between border-b border-border pb-3"><dt className="text-muted-foreground">One-time</dt><dd className="font-bold text-foreground">${estimateRanges.onetime[index][0]}–${estimateRanges.onetime[index][1]}</dd></div>
+                      <div className="flex justify-between"><dt className="text-muted-foreground">Deep clean</dt><dd className="font-bold text-foreground">${estimateRanges.deep[index][0]}–${estimateRanges.deep[index][1]}</dd></div>
                     </dl>
                   </article>
                 ))}
               </div>
             )}
-            <div className={`overflow-x-auto rounded-2xl border border-border mb-4 ${isAlexandria || isBethesda ? "hidden sm:block" : ""}`}>
+            <div className={`overflow-x-auto rounded-2xl border border-border mb-4 ${isEnhanced ? "hidden sm:block" : ""}`}>
               <table className="w-full text-sm">
                 <thead>
                   <tr className="bg-secondary text-left">
@@ -507,7 +596,7 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
             <p className="text-xs text-muted-foreground mb-10">Ranges are typical for the {c.city} / {c.county} area and vary with your home's condition and any add-ons. Get your exact price with a free quote.</p>
           </FadeInSection>
 
-          {(isAlexandria || isBethesda) && (
+          {isEnhanced && (
             <FadeInSection>
               <section className="mb-12" aria-labelledby="hourly-vs-flat-rate">
                 <h2 id="hourly-vs-flat-rate" className="scroll-mt-24 font-heading text-3xl font-bold text-foreground mb-4">
@@ -577,7 +666,7 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
             </FadeInSection>
           )}
 
-          {(isAlexandria || isBethesda) && (
+          {isEnhanced && (
             <FadeInSection>
               <section className="mb-12" aria-labelledby="included-by-service">
                 <h2 id="included-by-service" className="font-heading text-3xl font-bold text-foreground mb-4">
@@ -632,12 +721,12 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
             </div>
           </FadeInSection>
 
-          {(isAlexandria || isBethesda) && (
+          {isEnhanced && (
             <FadeInSection>
-              <section aria-labelledby={`${isBethesda ? "bethesda" : "alexandria"}-reviews`} className="my-12">
+              <section aria-labelledby={`${c.city.toLowerCase().replace(/\s+/g, "-")}-reviews`} className="my-12">
                 <div className="mb-7 text-center">
                   <p className="mb-2 text-sm font-bold uppercase tracking-wider text-accent">Verified customer feedback</p>
-                  <h2 id={`${isBethesda ? "bethesda" : "alexandria"}-reviews`} className="font-heading text-3xl font-bold text-foreground">
+                  <h2 id={`${c.city.toLowerCase().replace(/\s+/g, "-")}-reviews`} className="font-heading text-3xl font-bold text-foreground">
                     Why Local Homeowners Trust Capital Clean Care
                   </h2>
                   <p className="mx-auto mt-3 max-w-2xl text-muted-foreground">
@@ -715,7 +804,7 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
 
           {/* FAQ */}
           <FadeInSection>
-            <h2 id={isAlexandria ? "alexandria-faq" : isBethesda ? "bethesda-faq" : undefined} className="font-heading text-3xl font-bold text-foreground mb-6 scroll-mt-24">
+            <h2 id={isEnhanced ? `${c.city.toLowerCase().replace(/\s+/g, "-")}-faq` : undefined} className="font-heading text-3xl font-bold text-foreground mb-6 scroll-mt-24">
               Frequently Asked Questions
             </h2>
             <FAQAccordion faqs={faqs} />
