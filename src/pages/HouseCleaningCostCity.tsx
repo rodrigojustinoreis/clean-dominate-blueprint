@@ -80,17 +80,17 @@ const AlexandriaProgressNav = () => {
   );
 };
 
-const AlexandriaPricePlanner = () => {
+const AlexandriaPricePlanner = ({ city = "Alexandria", idPrefix = "alexandria", analyticsLocation = "alexandria_cost_planner" }: { city?: string; idPrefix?: string; analyticsLocation?: string }) => {
   const [homeIndex, setHomeIndex] = useState(1);
   const [frequency, setFrequency] = useState<AlexandriaFrequency>("biweekly");
   const estimate = useMemo(() => alexandriaEstimateRanges[frequency][homeIndex], [frequency, homeIndex]);
 
   return (
-    <section id="alexandria-estimate" className="scroll-mt-40 mb-12 overflow-hidden rounded-[2rem] border border-border bg-white shadow-[0_20px_60px_rgba(26,71,91,.12)]" aria-labelledby="alexandria-estimate-title">
+    <section id={`${idPrefix}-estimate`} className="scroll-mt-40 mb-12 overflow-hidden rounded-[2rem] border border-border bg-white shadow-[0_20px_60px_rgba(26,71,91,.12)]" aria-labelledby={`${idPrefix}-estimate-title`}>
       <div className="grid lg:grid-cols-[1.12fr_.88fr]">
         <div className="p-6 md:p-9">
           <p className="mb-2 text-xs font-bold uppercase tracking-[.16em] text-accent">30-second price planner</p>
-          <h2 id="alexandria-estimate-title" className="font-heading text-2xl font-bold text-foreground md:text-3xl">Start with a realistic Alexandria range</h2>
+          <h2 id={`${idPrefix}-estimate-title`} className="font-heading text-2xl font-bold text-foreground md:text-3xl">Start with a realistic {city} range</h2>
           <p className="mt-3 text-sm leading-relaxed text-muted-foreground">Choose the closest home size and service. No contact information is required to see the estimate.</p>
           <fieldset className="mt-7">
             <legend className="mb-3 text-sm font-bold text-foreground">1. Your home</legend>
@@ -127,7 +127,7 @@ const AlexandriaPricePlanner = () => {
             </ul>
           </div>
           <Button asChild className="mt-8 h-14 rounded-full bg-accent text-base font-bold text-white hover:bg-accent/90">
-            <Link to="/contact" onClick={() => trackBookNowClick("alexandria_cost_planner")}>Get my exact price <ArrowRight className="ml-2 h-4 w-4" /></Link>
+            <Link to="/contact" onClick={() => trackBookNowClick(analyticsLocation)}>Get my exact price <ArrowRight className="ml-2 h-4 w-4" /></Link>
           </Button>
         </div>
       </div>
@@ -144,10 +144,15 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
 
   const where = `${c.city}, ${c.state}`;
   const isAlexandria = c.slug === "alexandria-va";
-  const title = isAlexandria
+  const isBethesda = c.slug === "bethesda-md";
+  const title = isBethesda
+    ? "Bethesda House Cleaning Cost: $180–$570+ (2026)"
+    : isAlexandria
     ? "House Cleaning Cost in Alexandria, VA | 2026 Prices"
     : `House Cleaning Cost in ${where}: 2026 Prices & Rates`;
-  const description = isAlexandria
+  const description = isBethesda
+    ? "Bethesda house cleaning costs $180–$325 recurring, $215–$400 one-time and $310–$570+ deep. Compare 2026 prices by home size and get a free quote today."
+    : isAlexandria
     ? "Alexandria house cleaning costs $180–$325 recurring, $215–$400 one-time, and $310–$570+ deep. Compare 2026 rates by home size and get a free quote."
     : `House cleaning cost in ${where}: recurring cleans ${c.quick.recurring}, one-time ${c.quick.onetime}, deep cleans ${c.quick.deep}. Real price ranges by home size, what affects the price, and how to get a free quote.`;
   const url = `https://capitalcleancare.com/resources/house-cleaning-cost-${c.slug}`;
@@ -185,13 +190,37 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
       a: "Using typical per-visit ranges, monthly service is about $215–$400 per month, bi-weekly service is roughly $390–$705 per average month, and weekly service is roughly $780–$1,410 before any frequency discount. These are planning figures; an exact recurring quote may be lower because regularly maintained homes usually take less time per visit.",
     },
   ] : [];
-  const faqs = [...c.faqs, ...alexandriaResearchFaqs, ...sharedFaqs];
+  const bethesdaResearchFaqs: CostFAQ[] = isBethesda ? [
+    {
+      q: "How much does it cost to clean a three-bedroom house in Bethesda?",
+      a: "For a typical three-bedroom, two-bath Bethesda home of about 1,700–2,200 square feet, plan on roughly $215–$260 for recurring cleaning, $255–$310 for a one-time standard clean, or $375–$445 for a deep clean. Extra bathrooms, multiple levels, pets, heavy buildup, and premium finishes can move the written quote higher.",
+    },
+    {
+      q: "How much do house cleaners charge per hour in Bethesda?",
+      a: "Hourly offers are difficult to compare unless you know the crew size. A $240 visit completed by two cleaners in two hours equals $60 per cleaner-hour. Capital Clean Care uses a written scope and total quote so the bill does not depend on how long an efficient crew takes. If comparing hourly prices, confirm the number of cleaners, supplies, insurance, travel, and a maximum time or budget.",
+    },
+    {
+      q: "How much should I budget per month for house cleaning in Bethesda?",
+      a: "A monthly visit generally means budgeting about $215–$400 per month. Bi-weekly service commonly works out to roughly $390–$705 in an average month, while weekly service may total about $780–$1,410 before frequency discounts. Your exact monthly budget depends on home size, bathrooms, condition, add-ons, and how often the team visits.",
+    },
+    {
+      q: "Is flat-rate or hourly house cleaning better in Bethesda?",
+      a: "A written flat-rate quote is usually easier to budget for a full home because the price is tied to an agreed checklist. Hourly pricing can work for a short custom task, but ask for the crew size, estimated cleaner-hours, included supplies, and a spending cap. Compare the total price for the same scope rather than the hourly number alone.",
+    },
+    {
+      q: "Can I estimate Bethesda house cleaning cost by square footage?",
+      a: "Square footage is a useful starting point: a studio or one-bedroom up to about 900 square feet may cost $140–$165 recurring, while a 2,200–3,000-square-foot home may cost $265–$325 recurring. Bathrooms, levels, pets, current condition, frequency, and add-ons also determine cleaner-hours, so an exact quote should use both size and scope.",
+    },
+  ] : [];
+  const faqs = [...c.faqs, ...bethesdaResearchFaqs, ...alexandriaResearchFaqs, ...sharedFaqs];
 
   const { seoHelmet } = useSEO({
     title,
     description,
     canonical: url,
-    ogImage: isAlexandria ? "https://capitalcleancare.com/images/blog/cost-alexandria/hero.webp" : undefined,
+    ogImage: isAlexandria ? "https://capitalcleancare.com/images/blog/cost-alexandria/hero.webp" : isBethesda ? c.hero : undefined,
+    preloadImage: isBethesda ? c.hero : undefined,
+    geo: isBethesda ? { region: "US-MD", placename: "Bethesda" } : undefined,
   });
 
   return (
@@ -209,7 +238,7 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
         description={description}
         url={url}
         datePublished="2026-06-16"
-        dateModified={isAlexandria ? "2026-08-24" : undefined}
+        dateModified={isAlexandria ? "2026-08-24" : isBethesda ? "2026-08-25" : undefined}
         image={c.hero}
       />
       <FAQSchema faqs={faqs} />
@@ -243,26 +272,28 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
           {title}
         </h1>
         <p className="text-xl md:text-2xl text-gray-200 mb-4 leading-relaxed font-medium">
-          {isAlexandria
+          {isBethesda
+            ? "See realistic Bethesda prices by home size, frequency, and service — then get a written quote"
+            : isAlexandria
             ? "Know what your Alexandria home should cost to clean — with a clear estimate in under 30 seconds"
             : "Real 2026 price ranges by home size — plus what actually drives the cost"}
         </p>
         <p className="text-gray-300 mb-8 text-sm uppercase tracking-widest">
-          By Rodrigo Reis, Owner · {where} · {isAlexandria ? "Updated August 24, 2026" : "June 2026"}
+          By Rodrigo Reis, Owner · {where} · {isAlexandria ? "Updated August 24, 2026" : isBethesda ? "Updated August 25, 2026" : "June 2026"}
         </p>
         <Button size="lg" className="bg-accent hover:bg-accent/90 text-white text-lg px-8 py-6 rounded-full shadow-lg" asChild>
           <Link to="/contact" onClick={() => trackBookNowClick(`${c.slug}_cost_hero`)}>Get My Free {c.city} Quote</Link>
         </Button>
       </BlogHero>
 
-      {isAlexandria && (
-        <section aria-label="Why Alexandria homeowners choose Capital Clean Care" className="border-b border-border bg-white">
+      {(isAlexandria || isBethesda) && (
+        <section aria-label={`Why ${c.city} homeowners choose Capital Clean Care`} className="border-b border-border bg-white">
           <div className="container mx-auto grid max-w-5xl grid-cols-2 gap-x-3 gap-y-4 px-4 py-5 md:grid-cols-4">
             {[
               { icon: Star, title: "5-Star Rated", detail: "Verified Google reviews" },
               { icon: ShieldCheck, title: "Licensed & Insured", detail: "Background-checked crews" },
               { icon: CheckCircle2, title: "Satisfaction Guarantee", detail: "We make it right" },
-              { icon: MapPin, title: "Alexandria Service", detail: "Old Town, Del Ray & more" },
+              { icon: MapPin, title: `${c.city} Service`, detail: isBethesda ? "Downtown, Kenwood & more" : "Old Town, Del Ray & more" },
             ].map(({ icon: Icon, title: trustTitle, detail }) => (
               <div key={trustTitle} className="flex items-center gap-3">
                 <Icon className="h-5 w-5 shrink-0 text-accent" aria-hidden="true" />
@@ -289,14 +320,15 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
               <p className="text-muted-foreground leading-relaxed">
                 In {c.city}, most homeowners pay roughly <strong className="text-foreground">{c.quick.recurring} per visit</strong> for recurring (bi-weekly) cleaning, <strong className="text-foreground">{c.quick.onetime}</strong> for a one-time standard clean, and <strong className="text-foreground">{c.quick.deep}</strong> for a deep clean. Your exact price depends mainly on home size, the type of clean, and how often you book.
               </p>
-              {isAlexandria && (
+              {(isAlexandria || isBethesda) && (
                 <p className="mt-4 pt-4 border-t border-accent/20 text-sm text-foreground">
-                  <strong>Most popular:</strong> bi-weekly service for Alexandria homes, with a free exact quote before booking and no obligation.
+                  <strong>Most popular:</strong> bi-weekly service for {c.city} homes, with a free exact quote before booking and no obligation.
                 </p>
               )}
             </div>
             {isAlexandria && <AlexandriaPricePlanner />}
-            {isAlexandria && (
+            {isBethesda && <AlexandriaPricePlanner city="Bethesda" idPrefix="bethesda" analyticsLocation="bethesda_cost_planner" />}
+            {(isAlexandria || isBethesda) && (
               <aside className="mb-10 grid items-center gap-6 rounded-2xl bg-[#edf6f1] p-6 md:grid-cols-[1fr_auto]" aria-label="Featured verified Google review">
                 <div>
                   <div className="mb-3 flex gap-1 text-amber-500" aria-label="5 out of 5 stars">
@@ -305,7 +337,7 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
                   <blockquote className="text-base font-medium leading-relaxed text-foreground">“{REAL_REVIEWS[4].text}”</blockquote>
                   <p className="mt-3 text-sm font-bold text-foreground">— {REAL_REVIEWS[4].name} <span className="font-normal text-muted-foreground">· Verified Google review</span></p>
                 </div>
-                <a href="#alexandria-reviews" className="inline-flex min-h-11 items-center justify-center rounded-full border border-[#2e7d62]/20 bg-white px-5 text-sm font-bold text-[#2e7d62] hover:border-[#2e7d62]/50">Read customer reviews</a>
+                <a href={`#${isBethesda ? "bethesda" : "alexandria"}-reviews`} className="inline-flex min-h-11 items-center justify-center rounded-full border border-[#2e7d62]/20 bg-white px-5 text-sm font-bold text-[#2e7d62] hover:border-[#2e7d62]/50">Read customer reviews</a>
               </aside>
             )}
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">{c.intro}</p>
@@ -325,12 +357,12 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
                 </figcaption>
               </figure>
             )}
-            {isAlexandria && (
+            {(isAlexandria || isBethesda) && (
               <div className="mb-10">
                 <h2 id="prices-by-frequency" className="font-heading text-3xl font-bold text-foreground mb-4 scroll-mt-24">
-                  Alexandria Cleaning Prices by Frequency
+                  {c.city} Cleaning Prices by Frequency
                 </h2>
-                <div className="grid sm:grid-cols-2 gap-4" aria-label="Alexandria cleaning price options">
+                <div className="grid sm:grid-cols-2 gap-4" aria-label={`${c.city} cleaning price options`}>
                   {[
                     ["Bi-weekly cleaning", "$180–$325 per visit", "The lowest practical per-visit range for consistent maintenance."],
                     ["Monthly cleaning", "$215–$400 typical range", "Usually closer to a one-time clean because more buildup accumulates between visits."],
@@ -348,16 +380,16 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
             )}
           </FadeInSection>
 
-          {isAlexandria && (
+          {(isAlexandria || isBethesda) && (
             <FadeInSection>
               <section className="mb-12" aria-labelledby="monthly-cleaning-budget">
                 <div className="rounded-[2rem] border border-border bg-secondary/30 p-6 md:p-8">
                   <p className="mb-2 text-xs font-bold uppercase tracking-[.16em] text-accent">Monthly budget planner</p>
                   <h2 id="monthly-cleaning-budget" className="font-heading text-3xl font-bold text-foreground mb-4">
-                    How Much Does House Cleaning Cost per Month in Alexandria?
+                    How Much Does House Cleaning Cost per Month in {c.city}?
                   </h2>
                   <p className="text-muted-foreground leading-relaxed mb-6">
-                    Convert the per-visit price into a realistic household budget. The figures below use an average 4.33-week month and the published Alexandria ranges on this page.
+                    Convert the per-visit price into a realistic household budget. The figures below use an average 4.33-week month and the published {c.city} ranges on this page.
                   </p>
                   <div className="grid gap-4 md:grid-cols-3">
                     {[
@@ -379,16 +411,51 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
             </FadeInSection>
           )}
 
+          {isBethesda && (
+            <FadeInSection>
+              <section className="mb-12" aria-labelledby="bethesda-price-examples">
+                <p className="mb-2 text-xs font-bold uppercase tracking-[.16em] text-accent">Bethesda home examples</p>
+                <h2 id="bethesda-price-examples" className="font-heading text-3xl font-bold text-foreground mb-4">
+                  Realistic House Cleaning Prices for Bethesda Homes
+                </h2>
+                <p className="text-muted-foreground leading-relaxed mb-6">
+                  Bethesda prices vary because a Metro-area condo and a large single-family home in Bradley Hills require very different cleaner-hours. These examples apply the published ranges above to common local layouts.
+                </p>
+                <div className="space-y-4">
+                  {[
+                    { home: "Downtown Bethesda condo", profile: "Studio to 2 bedrooms · single level · up to 1,700 sq ft", recurring: "$140–$215", deep: "$230–$375", note: "Elevator reservations, front-desk access, parking, and building hours should be confirmed before the visit." },
+                    { home: "Edgemoor or Westmoreland Hills home", profile: "3 bedrooms · about 1,700–2,200 sq ft", recurring: "$215–$260", deep: "$375–$445", note: "Extra bathrooms, multiple levels, pets, and original hardwood can move the quote toward the upper end." },
+                    { home: "Bradley Hills or Burning Tree residence", profile: "4–5+ bedrooms · 2,200–3,000+ sq ft", recurring: "$265–$350+", deep: "$450–$570+", note: "Larger kitchens, premium stone, custom millwork, finished lower levels, and requested add-ons increase the scope." },
+                  ].map((example) => (
+                    <article key={example.home} className="rounded-2xl border border-border bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
+                      <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                        <div className="max-w-md">
+                          <h3 className="text-lg font-bold text-foreground">{example.home}</h3>
+                          <p className="mt-1 text-sm text-muted-foreground">{example.profile}</p>
+                        </div>
+                        <div className="grid grid-cols-2 gap-4 text-sm sm:text-right">
+                          <div><p className="text-xs text-muted-foreground">Recurring</p><p className="font-bold text-accent">{example.recurring}</p></div>
+                          <div><p className="text-xs text-muted-foreground">Deep clean</p><p className="font-bold text-foreground">{example.deep}</p></div>
+                        </div>
+                      </div>
+                      <p className="mt-4 border-t border-border pt-4 text-sm leading-relaxed text-muted-foreground">{example.note}</p>
+                    </article>
+                  ))}
+                </div>
+              </section>
+            </FadeInSection>
+          )}
+
           {/* Price ranges table */}
           <FadeInSection>
-            <h2 id={isAlexandria ? "prices-by-home-size" : undefined} className="font-heading text-3xl font-bold text-foreground mb-4 scroll-mt-24">
+            <h2 id={isAlexandria || isBethesda ? "prices-by-home-size" : undefined} className="font-heading text-3xl font-bold text-foreground mb-4 scroll-mt-24">
               {c.city} House Cleaning Prices by Home Size
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-5">
               Typical per-visit ranges for {c.city} homes. Recurring (bi-weekly) is the lowest per visit; deep cleaning is the most thorough, top-to-bottom service.
             </p>
-            {isAlexandria && (
-              <div className="mb-6 grid gap-3 sm:hidden" aria-label="Alexandria cleaning prices by home size">
+            {(isAlexandria || isBethesda) && (
+              <div className="mb-6 grid gap-3 sm:hidden" aria-label={`${c.city} cleaning prices by home size`}>
                 {alexandriaHomeLabels.map((home, index) => (
                   <article key={home} className={`rounded-2xl border p-5 ${index === 1 ? "border-accent bg-accent/5 shadow-md" : "border-border bg-white"}`}>
                     <div className="flex items-center justify-between gap-3">
@@ -404,7 +471,7 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
                 ))}
               </div>
             )}
-            <div className={`overflow-x-auto rounded-2xl border border-border mb-4 ${isAlexandria ? "hidden sm:block" : ""}`}>
+            <div className={`overflow-x-auto rounded-2xl border border-border mb-4 ${isAlexandria || isBethesda ? "hidden sm:block" : ""}`}>
               <table className="w-full text-sm">
                 <thead>
                   <tr className="bg-secondary text-left">
@@ -431,11 +498,11 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
             <p className="text-xs text-muted-foreground mb-10">Ranges are typical for the {c.city} / {c.county} area and vary with your home's condition and any add-ons. Get your exact price with a free quote.</p>
           </FadeInSection>
 
-          {isAlexandria && (
+          {(isAlexandria || isBethesda) && (
             <FadeInSection>
               <section className="mb-12" aria-labelledby="hourly-vs-flat-rate">
                 <h2 id="hourly-vs-flat-rate" className="scroll-mt-24 font-heading text-3xl font-bold text-foreground mb-4">
-                  Alexandria House Cleaner Cost: Flat Rate vs. Hourly
+                  {c.city} House Cleaner Cost: Flat Rate vs. Hourly
                 </h2>
                 <p className="text-muted-foreground leading-relaxed mb-6">
                   Searchers often compare a house cleaning cost per hour, but the hourly number alone can be misleading. A two-person crew working for two hours represents four cleaner-hours, while one cleaner working for four hours represents the same labor. The clearest comparison is the total price for the same written scope.
@@ -501,7 +568,7 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
             </FadeInSection>
           )}
 
-          {isAlexandria && (
+          {(isAlexandria || isBethesda) && (
             <FadeInSection>
               <section className="mb-12" aria-labelledby="included-by-service">
                 <h2 id="included-by-service" className="font-heading text-3xl font-bold text-foreground mb-4">
@@ -556,12 +623,12 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
             </div>
           </FadeInSection>
 
-          {isAlexandria && (
+          {(isAlexandria || isBethesda) && (
             <FadeInSection>
-              <section aria-labelledby="alexandria-reviews" className="my-12">
+              <section aria-labelledby={`${isBethesda ? "bethesda" : "alexandria"}-reviews`} className="my-12">
                 <div className="mb-7 text-center">
                   <p className="mb-2 text-sm font-bold uppercase tracking-wider text-accent">Verified customer feedback</p>
-                  <h2 id="alexandria-reviews" className="font-heading text-3xl font-bold text-foreground">
+                  <h2 id={`${isBethesda ? "bethesda" : "alexandria"}-reviews`} className="font-heading text-3xl font-bold text-foreground">
                     Why Local Homeowners Trust Capital Clean Care
                   </h2>
                   <p className="mx-auto mt-3 max-w-2xl text-muted-foreground">
@@ -639,7 +706,7 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
 
           {/* FAQ */}
           <FadeInSection>
-            <h2 id={isAlexandria ? "alexandria-faq" : undefined} className="font-heading text-3xl font-bold text-foreground mb-6 scroll-mt-24">
+            <h2 id={isAlexandria ? "alexandria-faq" : isBethesda ? "bethesda-faq" : undefined} className="font-heading text-3xl font-bold text-foreground mb-6 scroll-mt-24">
               Frequently Asked Questions
             </h2>
             <FAQAccordion faqs={faqs} />
