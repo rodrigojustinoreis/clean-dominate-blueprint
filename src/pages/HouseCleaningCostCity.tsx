@@ -171,18 +171,23 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
   const isAlexandria = c.slug === "alexandria-va";
   const isBethesda = c.slug === "bethesda-md";
   const isRockville = c.slug === "rockville-md";
-  const isEnhanced = isAlexandria || isBethesda || isRockville;
+  const isSilverSpring = c.slug === "silver-spring-md";
+  const isEnhanced = isAlexandria || isBethesda || isRockville || isSilverSpring;
   const estimateRanges = cityEstimateRanges[c.slug] ?? alexandriaEstimateRanges;
   const monthlyBudgets = cityMonthlyBudgets[c.slug] ?? { monthly: "$215–$400", biweekly: "$390–$705", weekly: "$780–$1,410" };
-  const modifiedDate = isRockville ? "2026-08-26" : isAlexandria || isBethesda ? "2026-08-25" : undefined;
-  const title = isRockville
+  const modifiedDate = isRockville || isSilverSpring ? "2026-08-26" : isAlexandria || isBethesda ? "2026-08-25" : undefined;
+  const title = isSilverSpring
+    ? "Silver Spring House Cleaning Cost: $165–$540+ (2026)"
+    : isRockville
     ? "Rockville House Cleaning Cost: $165–$540+ (2026)"
     : isBethesda
     ? "Bethesda House Cleaning Cost: $180–$570+ (2026)"
     : isAlexandria
     ? "Alexandria House Cleaning Cost: $180–$570+ (2026)"
     : `House Cleaning Cost in ${where}: 2026 Prices & Rates`;
-  const description = isRockville
+  const description = isSilverSpring
+    ? "Silver Spring house cleaning costs $165–$310 recurring, $190–$385 one-time and $285–$540+ deep. Compare 2026 prices and get a free written quote."
+    : isRockville
     ? "Rockville house cleaning costs $165–$310 recurring, $190–$385 one-time and $285–$540+ deep. Compare 2026 prices and get a free written quote."
     : isBethesda
     ? "Bethesda house cleaning costs $180–$325 recurring, $215–$400 one-time and $310–$570+ deep. Compare 2026 prices by home size and get a free quote today."
@@ -264,7 +269,25 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
       a: "Square footage is a useful first filter: a studio or one-bedroom may cost about $140–$165 recurring, while a 2,200–3,000-square-foot home may cost about $250–$310 recurring. Bathrooms, levels, condition, frequency, and add-ons also determine cleaner-hours, so size alone is not a final quote.",
     },
   ] : [];
-  const faqs = [...c.faqs, ...rockvilleResearchFaqs, ...bethesdaResearchFaqs, ...alexandriaResearchFaqs, ...sharedFaqs];
+  const silverSpringResearchFaqs: CostFAQ[] = isSilverSpring ? [
+    {
+      q: "How much should I budget per month for house cleaning in Silver Spring?",
+      a: "A monthly visit typically means budgeting about $190–$385 per month. Bi-weekly service commonly works out to roughly $360–$670 in an average month, while weekly service may total about $715–$1,340 before frequency discounts. Home size, bathrooms, condition, pets, and requested add-ons determine the written quote.",
+    },
+    {
+      q: "How much do house cleaners charge per hour in Silver Spring?",
+      a: "Hourly prices are only comparable when the crew size is clear. A $220 visit completed by two cleaners in two hours equals $55 per cleaner-hour. A written flat-rate scope is usually easier to budget for a complete home. When comparing hourly offers, confirm cleaner count, estimated hours, supplies, insurance, travel, and a maximum budget.",
+    },
+    {
+      q: "How much does a deep clean cost for a three-bedroom Silver Spring home?",
+      a: "A three-bedroom, two-bath Silver Spring home of roughly 1,700–2,200 square feet generally falls around $365–$435 for a deep clean. Older finishes, extra bathrooms, pets, heavy buildup, finished basements, and appliance interiors can move the quote higher.",
+    },
+    {
+      q: "Can I estimate Silver Spring house cleaning cost by square footage?",
+      a: "Square footage is a useful starting point: a studio or one-bedroom may cost about $140–$165 recurring, while a 2,200–3,000-square-foot home may cost about $250–$310 recurring. Bathrooms, home condition, frequency, stairs, pets, and add-ons also determine cleaner-hours, so size alone is not a final quote.",
+    },
+  ] : [];
+  const faqs = [...c.faqs, ...silverSpringResearchFaqs, ...rockvilleResearchFaqs, ...bethesdaResearchFaqs, ...alexandriaResearchFaqs, ...sharedFaqs];
 
   const { seoHelmet } = useSEO({
     title,
@@ -278,6 +301,8 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
       ? { region: "US-MD", placename: "Bethesda" }
       : isRockville
       ? { region: "US-MD", placename: "Rockville" }
+      : isSilverSpring
+      ? { region: "US-MD", placename: "Silver Spring" }
       : undefined,
   });
 
@@ -330,7 +355,9 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
           {title}
         </h1>
         <p className="text-xl md:text-2xl text-gray-200 mb-4 leading-relaxed font-medium">
-          {isRockville
+          {isSilverSpring
+            ? "Compare realistic Silver Spring prices by home size and frequency — then get a written quote"
+            : isRockville
             ? "Compare realistic Rockville prices by home size and frequency — then get a written quote"
             : isBethesda
             ? "See realistic Bethesda prices by home size, frequency, and service — then get a written quote"
@@ -353,7 +380,7 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
               { icon: Star, title: "5-Star Rated", detail: "Verified Google reviews" },
               { icon: ShieldCheck, title: "Licensed & Insured", detail: "Background-checked crews" },
               { icon: CheckCircle2, title: "Satisfaction Guarantee", detail: "We make it right" },
-              { icon: MapPin, title: `${c.city} Service`, detail: isRockville ? "King Farm, Twinbrook & more" : isBethesda ? "Downtown, Kenwood & more" : "Old Town, Del Ray & more" },
+              { icon: MapPin, title: `${c.city} Service`, detail: isSilverSpring ? "Downtown, Woodside & more" : isRockville ? "King Farm, Twinbrook & more" : isBethesda ? "Downtown, Kenwood & more" : "Old Town, Del Ray & more" },
             ].map(({ icon: Icon, title: trustTitle, detail }) => (
               <div key={trustTitle} className="flex items-center gap-3">
                 <Icon className="h-5 w-5 shrink-0 text-accent" aria-hidden="true" />
@@ -385,7 +412,7 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
                   <strong>Most popular:</strong> bi-weekly service for {c.city} homes, with a free exact quote before booking and no obligation.
                 </p>
               )}
-              {(isAlexandria || isRockville) && (
+              {(isAlexandria || isRockville || isSilverSpring) && (
                 <p className="mt-3 rounded-xl bg-accent/10 px-4 py-3 text-sm text-foreground">
                   <strong>New-client savings:</strong> get 15% off your first {c.city} clean. Request a written quote to confirm the scope, total price, and offer details before booking.
                 </p>
@@ -394,6 +421,7 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
             {isAlexandria && <AlexandriaPricePlanner />}
             {isBethesda && <AlexandriaPricePlanner city="Bethesda" idPrefix="bethesda" analyticsLocation="bethesda_cost_planner" />}
             {isRockville && <AlexandriaPricePlanner city="Rockville" idPrefix="rockville" analyticsLocation="rockville_cost_planner" ranges={estimateRanges} />}
+            {isSilverSpring && <AlexandriaPricePlanner city="Silver Spring" idPrefix="silver-spring" analyticsLocation="silver_spring_cost_planner" ranges={estimateRanges} />}
             {isEnhanced && (
               <aside className="mb-10 grid items-center gap-6 rounded-2xl bg-[#edf6f1] p-6 md:grid-cols-[1fr_auto]" aria-label="Featured verified Google review">
                 <div>
@@ -527,6 +555,38 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
                     { home: "Rockville Town Center apartment", profile: "Studio to 2 bedrooms · single level · up to 1,700 sq ft", recurring: "$140–$205", deep: "$230–$365", note: "Confirm parking, front-desk access, elevator procedures, and building hours before the visit." },
                     { home: "Twinbrook rambler", profile: "3 bedrooms · about 1,700–2,200 sq ft", recurring: "$205–$250", deep: "$365–$435", note: "Finished basements, pets, extra bathrooms, and older flooring can move the quote toward the upper end." },
                     { home: "King Farm or Fallsgrove townhome", profile: "3–4 bedrooms · multiple levels · 2,200–3,000 sq ft", recurring: "$250–$310", deep: "$435–$540", note: "Three levels, stairs, multiple bathrooms, and requested appliance interiors increase cleaner-hours." },
+                  ].map((example) => (
+                    <article key={example.home} className="rounded-2xl border border-border bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
+                      <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                        <div className="max-w-md"><h3 className="text-lg font-bold text-foreground">{example.home}</h3><p className="mt-1 text-sm text-muted-foreground">{example.profile}</p></div>
+                        <div className="grid grid-cols-2 gap-4 text-sm sm:text-right">
+                          <div><p className="text-xs text-muted-foreground">Recurring</p><p className="font-bold text-accent">{example.recurring}</p></div>
+                          <div><p className="text-xs text-muted-foreground">Deep clean</p><p className="font-bold text-foreground">{example.deep}</p></div>
+                        </div>
+                      </div>
+                      <p className="mt-4 border-t border-border pt-4 text-sm leading-relaxed text-muted-foreground">{example.note}</p>
+                    </article>
+                  ))}
+                </div>
+              </section>
+            </FadeInSection>
+          )}
+
+          {isSilverSpring && (
+            <FadeInSection>
+              <section className="mb-12" aria-labelledby="silver-spring-price-examples">
+                <p className="mb-2 text-xs font-bold uppercase tracking-[.16em] text-accent">Silver Spring home examples</p>
+                <h2 id="silver-spring-price-examples" className="font-heading text-3xl font-bold text-foreground mb-4">
+                  Realistic House Cleaning Prices for Silver Spring Homes
+                </h2>
+                <p className="text-muted-foreground leading-relaxed mb-6">
+                  Silver Spring ranges from efficient downtown apartments to older multi-level homes. These examples translate the price table into common local layouts without treating the neighborhood name as a surcharge.
+                </p>
+                <div className="space-y-4">
+                  {[
+                    { home: "Downtown Silver Spring condo", profile: "Studio to 2 bedrooms · single level · up to 1,700 sq ft", recurring: "$140–$205", deep: "$230–$365", note: "Confirm parking, loading access, elevator reservations, front-desk procedures, and building hours." },
+                    { home: "Woodside or Seven Oaks home", profile: "3 bedrooms · about 1,700–2,200 sq ft", recurring: "$205–$250", deep: "$365–$435", note: "Original hardwood, vintage tile, finished basements, pets, and extra bathrooms can add cleaner-hours." },
+                    { home: "Four Corners or Woodmoor residence", profile: "4 bedrooms · 2,200–3,000 sq ft", recurring: "$250–$310", deep: "$435–$540", note: "Multiple levels, larger kitchens, older surfaces, and requested appliance interiors move the scope upward." },
                   ].map((example) => (
                     <article key={example.home} className="rounded-2xl border border-border bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
                       <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
