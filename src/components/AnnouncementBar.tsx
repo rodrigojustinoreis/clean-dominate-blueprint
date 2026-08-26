@@ -25,13 +25,19 @@ const AnnouncementBar = () => {
   const pathname = useLocation().pathname;
   const isSpanish = pathname.startsWith("/es");
   const [july4] = useState(() => isJuly4Promo());
-  const [visible, setVisible] = useState(() => {
-    if (typeof window === "undefined") return true;
-    const key = isJuly4Promo() ? "july4BarDismissed" : "announcementDismissed";
-    return sessionStorage.getItem(key) !== "1";
-  });
+  // Init server-safe (true / 0) so the client's first render matches the prerendered HTML.
+  // The dismissed flag (sessionStorage) and the live clock are read AFTER mount, in effects
+  // below — reading them during render would diverge server↔client and break hydration.
+  const [visible, setVisible] = useState(true);
   const [msgIndex, setMsgIndex] = useState(0);
-  const [now, setNow] = useState(() => Date.now());
+  const [now, setNow] = useState(0);
+
+  // Apply the dismissed flag post-hydration (sessionStorage is client-only).
+  useEffect(() => {
+    const key = isJuly4Promo() ? "july4BarDismissed" : "announcementDismissed";
+    if (sessionStorage.getItem(key) === "1") setVisible(false);
+    setNow(Date.now());
+  }, []);
 
   // Rotate the standard messages (non-promo only).
   useEffect(() => {

@@ -1,4 +1,4 @@
-import { useState, useMemo, useRef } from "react";
+import { useState, useEffect, useMemo, useRef } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
@@ -82,6 +82,16 @@ const PriceCalculator = () => {
   const [selectedAddons, setSelectedAddons] = useState<string[]>([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const formStarted = useRef(false);
+
+  // Hydration guard. This estimator is built on Radix Select/Slider, whose useId-based ids
+  // (aria-controls / content ids) differ between the eager prerender tree (AppRoutes) and the
+  // lazy browser route tree (AppRoutesLazy) — the React.lazy wrapper frame shifts useId's tree
+  // context, so the ids don't match and React aborts hydration of this subtree (#418/#425/#422).
+  // Rendering an identical static shell during SSR + the first client render makes hydration
+  // match; the interactive widget mounts right after. It's an interactive tool, not indexable
+  // content (the static PricingTable carries the pricing SEO) and sits below the fold — no CLS/LCP hit.
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
 
   // Client Details
   const [name, setName] = useState("");
@@ -210,6 +220,30 @@ const PriceCalculator = () => {
       setIsSubmitting(false);
     }
   };
+
+  // Static, Radix-free shell rendered on the server and the first client render (identical →
+  // clean hydration). Height matches the live widget (≈650px desktop / ≈948px mobile) so the
+  // swap-in is shift-free.
+  if (!mounted) {
+    return (
+      <Card className="border-accent/20">
+        <CardContent className="p-6 md:p-8 min-h-[948px] md:min-h-[650px]">
+          <div className="flex items-center gap-2 mb-6">
+            <Calculator className="h-6 w-6 text-accent" />
+            <h3 className="font-heading text-2xl font-bold">Instant Price Estimator</h3>
+          </div>
+          <p className="text-muted-foreground text-sm mb-6">
+            Get a detailed estimate based on your home. For an exact quote, contact us directly.
+          </p>
+          <div className="space-y-4" aria-hidden="true">
+            <div className="h-12 rounded-md bg-muted/40 animate-pulse" />
+            <div className="h-12 rounded-md bg-muted/40 animate-pulse" />
+            <div className="h-20 rounded-md bg-muted/40 animate-pulse" />
+          </div>
+        </CardContent>
+      </Card>
+    );
+  }
 
   return (
     <Card className="border-accent/20">
