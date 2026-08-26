@@ -148,7 +148,7 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
   const title = isBethesda
     ? "Bethesda House Cleaning Cost: $180–$570+ (2026)"
     : isAlexandria
-    ? "House Cleaning Cost in Alexandria, VA | 2026 Prices"
+    ? "Alexandria House Cleaning Cost: $180–$570+ (2026)"
     : `House Cleaning Cost in ${where}: 2026 Prices & Rates`;
   const description = isBethesda
     ? "Bethesda house cleaning costs $180–$325 recurring, $215–$400 one-time and $310–$570+ deep. Compare 2026 prices by home size and get a free quote today."
@@ -219,8 +219,12 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
     description,
     canonical: url,
     ogImage: isAlexandria ? "https://capitalcleancare.com/images/blog/cost-alexandria/hero.webp" : isBethesda ? c.hero : undefined,
-    preloadImage: isBethesda ? c.hero : undefined,
-    geo: isBethesda ? { region: "US-MD", placename: "Bethesda" } : undefined,
+    preloadImage: isAlexandria || isBethesda ? c.hero : undefined,
+    geo: isAlexandria
+      ? { region: "US-VA", placename: "Alexandria" }
+      : isBethesda
+      ? { region: "US-MD", placename: "Bethesda" }
+      : undefined,
   });
 
   return (
@@ -238,7 +242,7 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
         description={description}
         url={url}
         datePublished="2026-06-16"
-        dateModified={isAlexandria ? "2026-08-24" : isBethesda ? "2026-08-25" : undefined}
+        dateModified={isAlexandria || isBethesda ? "2026-08-25" : undefined}
         image={c.hero}
       />
       <FAQSchema faqs={faqs} />
@@ -279,7 +283,7 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
             : "Real 2026 price ranges by home size — plus what actually drives the cost"}
         </p>
         <p className="text-gray-300 mb-8 text-sm uppercase tracking-widest">
-          By Rodrigo Reis, Owner · {where} · {isAlexandria ? "Updated August 24, 2026" : isBethesda ? "Updated August 25, 2026" : "June 2026"}
+          By Rodrigo Reis, Owner · {where} · {isAlexandria || isBethesda ? "Updated August 25, 2026" : "June 2026"}
         </p>
         <Button size="lg" className="bg-accent hover:bg-accent/90 text-white text-lg px-8 py-6 rounded-full shadow-lg" asChild>
           <Link to="/contact" onClick={() => trackBookNowClick(`${c.slug}_cost_hero`)}>Get My Free {c.city} Quote</Link>
@@ -323,6 +327,11 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
               {(isAlexandria || isBethesda) && (
                 <p className="mt-4 pt-4 border-t border-accent/20 text-sm text-foreground">
                   <strong>Most popular:</strong> bi-weekly service for {c.city} homes, with a free exact quote before booking and no obligation.
+                </p>
+              )}
+              {isAlexandria && (
+                <p className="mt-3 rounded-xl bg-accent/10 px-4 py-3 text-sm text-foreground">
+                  <strong>New-client savings:</strong> get 15% off your first Alexandria clean. Request a written quote to confirm the scope, total price, and offer details before booking.
                 </p>
               )}
             </div>
