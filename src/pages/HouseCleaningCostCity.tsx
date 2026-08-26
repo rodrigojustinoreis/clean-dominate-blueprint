@@ -172,11 +172,14 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
   const isBethesda = c.slug === "bethesda-md";
   const isRockville = c.slug === "rockville-md";
   const isSilverSpring = c.slug === "silver-spring-md";
-  const isEnhanced = isAlexandria || isBethesda || isRockville || isSilverSpring;
+  const isArlington = c.slug === "arlington-va";
+  const isEnhanced = isAlexandria || isBethesda || isRockville || isSilverSpring || isArlington;
   const estimateRanges = cityEstimateRanges[c.slug] ?? alexandriaEstimateRanges;
   const monthlyBudgets = cityMonthlyBudgets[c.slug] ?? { monthly: "$215–$400", biweekly: "$390–$705", weekly: "$780–$1,410" };
-  const modifiedDate = isRockville || isSilverSpring ? "2026-08-26" : isAlexandria || isBethesda ? "2026-08-25" : undefined;
-  const title = isSilverSpring
+  const modifiedDate = isRockville || isSilverSpring || isArlington ? "2026-08-26" : isAlexandria || isBethesda ? "2026-08-25" : undefined;
+  const title = isArlington
+    ? "Arlington House Cleaning Cost: $185–$580+ (2026)"
+    : isSilverSpring
     ? "Silver Spring House Cleaning Cost: $165–$540+ (2026)"
     : isRockville
     ? "Rockville House Cleaning Cost: $165–$540+ (2026)"
@@ -185,7 +188,9 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
     : isAlexandria
     ? "Alexandria House Cleaning Cost: $180–$570+ (2026)"
     : `House Cleaning Cost in ${where}: 2026 Prices & Rates`;
-  const description = isSilverSpring
+  const description = isArlington
+    ? "Arlington house cleaning costs $185–$330 recurring, $220–$410 one-time and $320–$580+ deep. Compare 2026 prices and get a free written quote."
+    : isSilverSpring
     ? "Silver Spring house cleaning costs $165–$310 recurring, $190–$385 one-time and $285–$540+ deep. Compare 2026 prices and get a free written quote."
     : isRockville
     ? "Rockville house cleaning costs $165–$310 recurring, $190–$385 one-time and $285–$540+ deep. Compare 2026 prices and get a free written quote."
@@ -287,7 +292,29 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
       a: "Square footage is a useful starting point: a studio or one-bedroom may cost about $140–$165 recurring, while a 2,200–3,000-square-foot home may cost about $250–$310 recurring. Bathrooms, home condition, frequency, stairs, pets, and add-ons also determine cleaner-hours, so size alone is not a final quote.",
     },
   ] : [];
-  const faqs = [...c.faqs, ...silverSpringResearchFaqs, ...rockvilleResearchFaqs, ...bethesdaResearchFaqs, ...alexandriaResearchFaqs, ...sharedFaqs];
+  const arlingtonResearchFaqs: CostFAQ[] = isArlington ? [
+    {
+      q: "How much should I budget per month for house cleaning in Arlington?",
+      a: "A monthly visit generally means budgeting about $220–$410 per month. Bi-weekly service commonly works out to roughly $400–$715 in an average month, while weekly service may total about $800–$1,430 before frequency discounts. Home size, bathrooms, building access, condition, pets, and add-ons determine the written quote.",
+    },
+    {
+      q: "How much do house cleaners charge per hour in Arlington, VA?",
+      a: "Hourly prices are only comparable when the crew size is clear. A $250 visit completed by two cleaners in two hours equals $62.50 per cleaner-hour. A written flat-rate scope is usually easier to budget for a complete home. If comparing hourly offers, confirm cleaner count, estimated hours, supplies, insurance, parking, travel, and a maximum budget.",
+    },
+    {
+      q: "How much does a deep clean cost for a three-bedroom Arlington home?",
+      a: "A three-bedroom, two-bath Arlington home of roughly 1,700–2,200 square feet generally falls around $400–$485 for a deep clean. Extra bathrooms, multiple levels, pets, heavy buildup, older finishes, parking logistics, and appliance interiors can move the quote higher.",
+    },
+    {
+      q: "What should an Arlington residential cleaning package include?",
+      a: "A recurring package should clearly list kitchen and bathroom surfaces, dusting, vacuuming, mopping, beds, trash, and routine touchpoints. Deep and move-out packages should identify additional detail work and optional appliance interiors. Compare the written checklist, frequency, cleaner count, supplies, insurance, and satisfaction policy—not only the headline price.",
+    },
+    {
+      q: "Can I estimate Arlington house cleaning cost by square footage?",
+      a: "Square footage is a useful starting point: a studio or one-bedroom may cost about $150–$185 recurring, while a 2,200–3,000-square-foot home may cost about $270–$330 recurring. Bathrooms, layout, condo access, condition, frequency, and add-ons also determine cleaner-hours, so size alone is not a final quote.",
+    },
+  ] : [];
+  const faqs = [...c.faqs, ...arlingtonResearchFaqs, ...silverSpringResearchFaqs, ...rockvilleResearchFaqs, ...bethesdaResearchFaqs, ...alexandriaResearchFaqs, ...sharedFaqs];
 
   const { seoHelmet } = useSEO({
     title,
@@ -303,6 +330,8 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
       ? { region: "US-MD", placename: "Rockville" }
       : isSilverSpring
       ? { region: "US-MD", placename: "Silver Spring" }
+      : isArlington
+      ? { region: "US-VA", placename: "Arlington" }
       : undefined,
   });
 
@@ -355,7 +384,9 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
           {title}
         </h1>
         <p className="text-xl md:text-2xl text-gray-200 mb-4 leading-relaxed font-medium">
-          {isSilverSpring
+          {isArlington
+            ? "Compare realistic Arlington prices, packages, and frequencies — then get a written quote"
+            : isSilverSpring
             ? "Compare realistic Silver Spring prices by home size and frequency — then get a written quote"
             : isRockville
             ? "Compare realistic Rockville prices by home size and frequency — then get a written quote"
@@ -380,7 +411,7 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
               { icon: Star, title: "5-Star Rated", detail: "Verified Google reviews" },
               { icon: ShieldCheck, title: "Licensed & Insured", detail: "Background-checked crews" },
               { icon: CheckCircle2, title: "Satisfaction Guarantee", detail: "We make it right" },
-              { icon: MapPin, title: `${c.city} Service`, detail: isSilverSpring ? "Downtown, Woodside & more" : isRockville ? "King Farm, Twinbrook & more" : isBethesda ? "Downtown, Kenwood & more" : "Old Town, Del Ray & more" },
+              { icon: MapPin, title: `${c.city} Service`, detail: isArlington ? "Ballston, Clarendon & more" : isSilverSpring ? "Downtown, Woodside & more" : isRockville ? "King Farm, Twinbrook & more" : isBethesda ? "Downtown, Kenwood & more" : "Old Town, Del Ray & more" },
             ].map(({ icon: Icon, title: trustTitle, detail }) => (
               <div key={trustTitle} className="flex items-center gap-3">
                 <Icon className="h-5 w-5 shrink-0 text-accent" aria-hidden="true" />
@@ -412,7 +443,7 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
                   <strong>Most popular:</strong> bi-weekly service for {c.city} homes, with a free exact quote before booking and no obligation.
                 </p>
               )}
-              {(isAlexandria || isRockville || isSilverSpring) && (
+              {(isAlexandria || isRockville || isSilverSpring || isArlington) && (
                 <p className="mt-3 rounded-xl bg-accent/10 px-4 py-3 text-sm text-foreground">
                   <strong>New-client savings:</strong> get 15% off your first {c.city} clean. Request a written quote to confirm the scope, total price, and offer details before booking.
                 </p>
@@ -422,6 +453,7 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
             {isBethesda && <AlexandriaPricePlanner city="Bethesda" idPrefix="bethesda" analyticsLocation="bethesda_cost_planner" />}
             {isRockville && <AlexandriaPricePlanner city="Rockville" idPrefix="rockville" analyticsLocation="rockville_cost_planner" ranges={estimateRanges} />}
             {isSilverSpring && <AlexandriaPricePlanner city="Silver Spring" idPrefix="silver-spring" analyticsLocation="silver_spring_cost_planner" ranges={estimateRanges} />}
+            {isArlington && <AlexandriaPricePlanner city="Arlington" idPrefix="arlington" analyticsLocation="arlington_cost_planner" ranges={estimateRanges} />}
             {isEnhanced && (
               <aside className="mb-10 grid items-center gap-6 rounded-2xl bg-[#edf6f1] p-6 md:grid-cols-[1fr_auto]" aria-label="Featured verified Google review">
                 <div>
@@ -587,6 +619,38 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
                     { home: "Downtown Silver Spring condo", profile: "Studio to 2 bedrooms · single level · up to 1,700 sq ft", recurring: "$140–$205", deep: "$230–$365", note: "Confirm parking, loading access, elevator reservations, front-desk procedures, and building hours." },
                     { home: "Woodside or Seven Oaks home", profile: "3 bedrooms · about 1,700–2,200 sq ft", recurring: "$205–$250", deep: "$365–$435", note: "Original hardwood, vintage tile, finished basements, pets, and extra bathrooms can add cleaner-hours." },
                     { home: "Four Corners or Woodmoor residence", profile: "4 bedrooms · 2,200–3,000 sq ft", recurring: "$250–$310", deep: "$435–$540", note: "Multiple levels, larger kitchens, older surfaces, and requested appliance interiors move the scope upward." },
+                  ].map((example) => (
+                    <article key={example.home} className="rounded-2xl border border-border bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
+                      <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                        <div className="max-w-md"><h3 className="text-lg font-bold text-foreground">{example.home}</h3><p className="mt-1 text-sm text-muted-foreground">{example.profile}</p></div>
+                        <div className="grid grid-cols-2 gap-4 text-sm sm:text-right">
+                          <div><p className="text-xs text-muted-foreground">Recurring</p><p className="font-bold text-accent">{example.recurring}</p></div>
+                          <div><p className="text-xs text-muted-foreground">Deep clean</p><p className="font-bold text-foreground">{example.deep}</p></div>
+                        </div>
+                      </div>
+                      <p className="mt-4 border-t border-border pt-4 text-sm leading-relaxed text-muted-foreground">{example.note}</p>
+                    </article>
+                  ))}
+                </div>
+              </section>
+            </FadeInSection>
+          )}
+
+          {isArlington && (
+            <FadeInSection>
+              <section className="mb-12" aria-labelledby="arlington-price-examples">
+                <p className="mb-2 text-xs font-bold uppercase tracking-[.16em] text-accent">Arlington home examples</p>
+                <h2 id="arlington-price-examples" className="font-heading text-3xl font-bold text-foreground mb-4">
+                  Realistic House Cleaning Prices for Arlington Homes
+                </h2>
+                <p className="text-muted-foreground leading-relaxed mb-6">
+                  Arlington combines Metro-corridor condos with older single-family homes. These examples show how layout, size, access, and scope translate into a realistic planning range.
+                </p>
+                <div className="space-y-4">
+                  {[
+                    { home: "Rosslyn or Ballston condo", profile: "Studio to 2 bedrooms · single level · up to 1,700 sq ft", recurring: "$150–$225", deep: "$245–$400", note: "Front-desk check-in, parking, loading-dock access, elevator reservations, and building hours should be confirmed." },
+                    { home: "Cherrydale or Arlington Forest bungalow", profile: "3 bedrooms · about 1,700–2,200 sq ft", recurring: "$225–$270", deep: "$400–$485", note: "Older finishes, pets, finished lower levels, stairs, and extra bathrooms can move the quote upward." },
+                    { home: "Lyon Village or Country Club Hills home", profile: "4 bedrooms · 2,200–3,000 sq ft", recurring: "$270–$330", deep: "$485–$580", note: "Larger kitchens, multiple levels, premium surfaces, and requested appliance interiors increase cleaner-hours." },
                   ].map((example) => (
                     <article key={example.home} className="rounded-2xl border border-border bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
                       <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
