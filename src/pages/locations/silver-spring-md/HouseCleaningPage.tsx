@@ -1,13 +1,11 @@
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { CheckCircle, Star, ArrowRight } from "lucide-react";
+import { CheckCircle } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FAQ from "@/components/FAQ";
 import ConversionCTA from "@/components/ConversionCTA";
 import TrustBadges from "@/components/TrustBadges";
-import StickyMobileCTA from "@/components/StickyMobileCTA";
-import { Button } from "@/components/ui/button";
 import {
   LocalBusinessSchema,
   ServiceSchema,
@@ -133,9 +131,9 @@ const SilverSpringHouseCleaningPage = () => {
   const faqs = getServiceLocationOverride("silver-spring-md", "house-cleaning")?.faqs ?? localFaqs;
 
   const { seoHelmet } = useSEO({
-    title: "House Cleaning in Silver Spring, MD | Free Quote",
+    title: "House Cleaning Services in Silver Spring, MD | Free Quote",
     description:
-      "House cleaning in Silver Spring MD — eco-friendly products safe for kids & pets, background-checked, bonded & insured. Latino-owned. Free quote.",
+      "Trusted house cleaning services in Silver Spring, MD. Eco-friendly products, background-checked team and satisfaction guarantee. Get a free quote.",
     canonical: PAGE_URL,
     ogImage: "https://capitalcleancare.com/og-image.jpg",
   });
@@ -164,13 +162,6 @@ const SilverSpringHouseCleaningPage = () => {
           "Long Branch, Silver Spring MD",
           "Montgomery County, MD",
         ]}
-        reviews={[
-          {
-            name: "Sarah M.",
-            text: "Capital Clean Care transformed our home. Thorough, eco-friendly products safe for my kids and pets.",
-            location: "Bethesda, MD",
-          },
-        ]}
       />
       <ServiceSchema
         serviceName="House Cleaning in Silver Spring, MD"
@@ -195,7 +186,7 @@ const SilverSpringHouseCleaningPage = () => {
 
       {/* Hero */}
       <HeroLocation
-        h1="Professional House Cleaning in Silver Spring, MD"
+        h1="House Cleaning Services in Silver Spring, MD"
         lead="Capital Clean Care brings professional, eco-friendly house cleaning to Silver Spring homes — from Downtown Silver Spring to Four Corners to Fenton Village. Our background-checked, bonded team uses EPA Safer Choice™ certified products, safe for your kids and pets, and backs every visit with 100% satisfaction: we re-clean if you're not happy."
         cityName="Silver Spring"
         state="MD"
@@ -324,29 +315,57 @@ const SilverSpringHouseCleaningPage = () => {
         </div>
       </section>
 
-      {/* Pricing */}
+      {/* Service selection — keeps this commercial page distinct from the pricing guide */}
       <section className="py-12 md:py-16 bg-muted/20">
         <div className="container mx-auto px-4 max-w-4xl">
           <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-6">
-            How Much Does House Cleaning Cost in Silver Spring, MD?
+            Choose the Right Cleaning Service for Your Silver Spring Home
           </h2>
-          <div className="space-y-4 text-muted-foreground leading-relaxed">
-            <p>
-              House cleaning prices in Silver Spring, MD depend mainly on your home's size, the
-              number of bathrooms, and how often you book. As a general guide, a recurring clean for
-              a typical two- to three-bedroom Silver Spring home starts in the lower range, while
-              larger homes — or first-time and one-time cleans — cost more simply because they take
-              longer and tackle more built-up grime. Recurring weekly, bi-weekly, and monthly plans
-              carry a discounted rate compared with a single one-time visit.
-            </p>
-            <p>
-              Every quote is flat and transparent — no hourly surprises and no hidden fees. Tell us
-              your home size and how often you'd like service, and you'll get an exact price in about
-              60 seconds, online or by phone, with no obligation. Many Silver Spring homeowners start
-              with a one-time deep reset, then switch to a recurring plan to keep their home
-              effortlessly clean year-round.
-            </p>
+          <p className="text-muted-foreground leading-relaxed mb-7">
+            Start with the service that matches your home today. Every option includes a
+            background-checked team, eco-friendly supplies, and our satisfaction guarantee.
+          </p>
+          <div className="grid gap-4 md:grid-cols-3">
+            {[
+              {
+                title: "Recurring Cleaning",
+                text: "Weekly, bi-weekly, or monthly upkeep for a consistently clean home.",
+                href: "/locations/silver-spring-md/recurring-cleaning",
+              },
+              {
+                title: "Deep Cleaning",
+                text: "A detailed reset for built-up dust, grease, baseboards, and overlooked areas.",
+                href: "/locations/silver-spring-md/deep-cleaning",
+              },
+              {
+                title: "Move-Out Cleaning",
+                text: "A top-to-bottom clean designed for handovers, inspections, and fresh starts.",
+                href: "/locations/silver-spring-md/move-out-cleaning",
+              },
+            ].map((service) => (
+              <Link
+                key={service.title}
+                to={service.href}
+                className="group rounded-2xl border border-border bg-card p-5 shadow-sm transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+              >
+                <h3 className="font-heading text-lg font-bold text-foreground group-hover:text-primary">
+                  {service.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{service.text}</p>
+                <span className="mt-4 inline-flex text-sm font-semibold text-primary">View service →</span>
+              </Link>
+            ))}
           </div>
+          <p className="mt-7 text-sm text-muted-foreground">
+            Comparing budgets first? Read our focused{" "}
+            <Link
+              to="/resources/house-cleaning-cost-silver-spring-md"
+              className="font-semibold text-primary underline underline-offset-4"
+            >
+              Silver Spring house cleaning cost guide
+            </Link>
+            , then request an exact quote for your home.
+          </p>
         </div>
       </section>
 
@@ -374,7 +393,6 @@ const SilverSpringHouseCleaningPage = () => {
 
       <LocationQuoteSection cityName="Silver Spring" serviceLabel="House Cleaning" defaultService="standard" zipLine="Serving Silver Spring and nearby communities." ctaProse={ctaProseVariants[pickVariant("silver-spring-md", 2, 3)]("Silver Spring", "House Cleaning")} />
 
-      <StickyMobileCTA />
     </Layout>
   );
 };

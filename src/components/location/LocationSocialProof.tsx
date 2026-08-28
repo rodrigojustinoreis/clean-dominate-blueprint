@@ -2,6 +2,7 @@ import { useRef, useState, useEffect } from "react";
 import { Star, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { pickReviews, GOOGLE_LISTING_URL } from "@/data/realReviews";
+import { trackBookNowClick } from "@/lib/analytics";
 
 interface LocationSocialProofProps {
   cityName: string;
@@ -171,7 +172,13 @@ const LocationSocialProof = ({ cityName, citySlug, serviceSlug, serviceLabel, co
 
         <div className="text-center mt-6">
           <Button variant="cta" size="lg" asChild>
-            <a href="#quote" className="whitespace-normal text-center h-auto py-3 leading-snug max-w-full">Get My Free {cityName} {serviceLabel} Quote →</a>
+            <a
+              href="#quote"
+              className="whitespace-normal text-center h-auto py-3 leading-snug max-w-full"
+              onClick={() => trackBookNowClick("location_social_proof")}
+            >
+              Get My Free {cityName} {serviceLabel} Quote →
+            </a>
           </Button>
         </div>
       </div>

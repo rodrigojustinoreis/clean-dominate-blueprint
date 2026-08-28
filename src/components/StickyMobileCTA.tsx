@@ -25,6 +25,16 @@ const StickyMobileCTA = () => {
 
   if (dismissed || !visible) return null;
 
+  const handleQuoteClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    trackBookNowClick("sticky_mobile_cta");
+
+    const quoteSection = document.getElementById(isSpanish ? "cotizacion" : "quote");
+    if (!quoteSection) return;
+
+    event.preventDefault();
+    quoteSection.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   return (
     <div
       className="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-card/97 backdrop-blur border-t border-border shadow-[0_-4px_24px_rgba(0,0,0,0.12)] px-3 py-3 flex items-center gap-2 animate-fade-up"
@@ -40,7 +50,10 @@ const StickyMobileCTA = () => {
         {isSpanish ? "Llamar" : "Call"}
       </a>
       <Button variant="cta" className="flex-1 h-12 rounded-full text-sm font-bold shadow-lg shadow-accent/25" asChild>
-        <a href={isSpanish ? "/es/contacto#cotizacion" : "/#quote"} onClick={() => trackBookNowClick("sticky_mobile_cta")}>
+        <a
+          href={isSpanish ? "/es/contacto#cotizacion" : "/contact#quote"}
+          onClick={handleQuoteClick}
+        >
           {isSpanish ? "Cotización Gratis" : "Free Quote"} <ArrowRight className="ml-1 h-4 w-4" />
         </a>
       </Button>
