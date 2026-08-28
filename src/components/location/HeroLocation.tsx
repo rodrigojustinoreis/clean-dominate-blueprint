@@ -12,6 +12,8 @@ interface HeroLocationProps {
   heroImage: string;
   heroImageAlt: string;
   ctaPrimary?: string;
+  teamTrustLabel?: string;
+  ctaNote?: string;
 }
 
 const defaultPills = [
@@ -31,11 +33,13 @@ const HeroLocation = ({
   heroImage,
   heroImageAlt,
   ctaPrimary = "Get a Free Quote in 60 Seconds",
+  teamTrustLabel,
+  ctaNote = "No commitment · Same-day slots available · 100% satisfaction guaranteed",
 }: HeroLocationProps) => {
   const pills = [
     ...defaultPills,
     { Icon: MapPin, label: `Serving ${cityName}, ${state} ${zipRange}` },
-  ];
+  ].map((pill) => pill.label === "Same Team Every Visit" && teamTrustLabel ? { ...pill, label: teamTrustLabel } : pill);
 
   return (
     <section className="bg-gradient-to-br from-primary/5 via-background to-accent/5 pb-12 md:pb-16 pt-6">
@@ -78,7 +82,7 @@ const HeroLocation = ({
               </Button>
             </div>
             <p className="text-xs text-muted-foreground mt-3">
-              No commitment · Same-day slots available · 100% satisfaction guaranteed
+              {ctaNote}
             </p>
           </div>
 

@@ -1,13 +1,11 @@
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { CheckCircle, Star, ArrowRight } from "lucide-react";
+import { CheckCircle, ArrowRight, Camera, ShieldCheck } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FAQ from "@/components/FAQ";
 import ConversionCTA from "@/components/ConversionCTA";
 import TrustBadges from "@/components/TrustBadges";
-import StickyMobileCTA from "@/components/StickyMobileCTA";
-import { Button } from "@/components/ui/button";
 import {
   LocalBusinessSchema,
   ServiceSchema,
@@ -20,10 +18,13 @@ import ServiceChecklistLocation from "@/components/location/ServiceChecklistLoca
 import InternalLinksGrid from "@/components/location/InternalLinksGrid";
 import LocationSocialProof from "@/components/location/LocationSocialProof";
 import LocationQuoteSection from "@/components/location/LocationQuoteSection";
+import { pickReviews } from "@/data/realReviews";
 
 // ── Page constants ────────────────────────────────────────────────────────────
 
 const PAGE_URL = "https://capitalcleancare.com/locations/bethesda-md/deep-cleaning";
+const CASE_STUDY_URL = "/resources/real-deep-cleaning-project-bethesda-home";
+const verifiedReviews = pickReviews("bethesda-md/deep-cleaning", 2);
 
 const faqs = [
   {
@@ -32,7 +33,7 @@ const faqs = [
   },
   {
     q: "How much does a deep cleaning cost in Bethesda, MD?",
-    a: "Pricing is based on home size and scope. Get your exact quote in 60 seconds — use the form below or call (240) 704-2551. No commitment required.",
+    a: "Pricing depends on the home's size, current condition, room count, and requested add-ons. Capital Clean Care provides a written quote before service; use the form below or call (240) 704-2551.",
   },
   {
     q: "Do I need to be home during the deep cleaning?",
@@ -49,6 +50,10 @@ const faqs = [
   {
     q: "How often should I get a deep cleaning in Bethesda?",
     a: "Once or twice a year is typical for most Bethesda homes, combined with regular maintenance cleanings in between. We can recommend a schedule based on your home.",
+  },
+  {
+    q: "Do you provide deep cleaning in North Bethesda too?",
+    a: "Yes. This page covers Bethesda ZIP codes 20814–20817. Homes and high-rise residences around Pike & Rose, White Flint, and the Pike District are covered by our dedicated North Bethesda deep cleaning service.",
   },
   {
     q: "Is Capital Clean Care locally owned?",
@@ -111,9 +116,9 @@ const nearbyCities = [
 
 const BethesdaDeepCleaningPage = () => {
   const { seoHelmet } = useSEO({
-    title: "Deep Cleaning in Bethesda, MD | Prices & Checklist",
+    title: "Deep Cleaning Bethesda MD | Detailed, Eco-Friendly Service",
     description:
-      "Professional deep cleaning in Bethesda, MD. Inside appliances, grout, baseboards, ceiling fans — everywhere standard cleanings miss. EPA-certified products. Free quote.",
+      "Detailed deep cleaning in Bethesda, MD for appliances, grout, baseboards and hidden buildup. Eco-friendly products, insured teams and free written quotes.",
     canonical: PAGE_URL,
     ogImage: "https://capitalcleancare.com/og-image.jpg",
   });
@@ -143,13 +148,7 @@ const BethesdaDeepCleaningPage = () => {
           "Bethesda Row, Bethesda MD",
           "Montgomery County, MD",
         ]}
-        reviews={[
-          {
-            name: "Brian G.",
-            text: "After our renovation, they got every last bit of construction dust. Professional and incredibly thorough.",
-            location: "Bethesda, MD",
-          },
-        ]}
+        reviews={verifiedReviews}
       />
       <ServiceSchema
         serviceName="Deep Cleaning in Bethesda, MD"
@@ -174,14 +173,16 @@ const BethesdaDeepCleaningPage = () => {
 
       {/* ── Hero ──────────────────────────────────────────── */}
       <HeroLocation
-        h1="Deep Cleaning Bethesda MD: Top-Rated & Eco-Friendly"
-        lead="When a standard clean isn't enough, Capital Clean Care's deep cleaning goes top-to-bottom through every corner of your Bethesda home — from Kenwood to Bradley Hills. Baseboards, grout lines, inside appliances, ceiling fans — we cover everything a routine cleaning skips. EPA Safer Choice™ products only."
+        h1="Deep Cleaning Services in Bethesda, MD"
+        lead="When routine cleaning no longer reaches the buildup, our Bethesda deep cleaning resets the home room by room. We detail baseboards, grout, appliance interiors, window tracks and ceiling fans using surface-appropriate, eco-friendly products."
         cityName="Bethesda"
         state="MD"
         zipRange="20814–20817"
         heroImage="/images/team/team-tile-scrubber.jpg"
         heroImageAlt="Capital Clean Care deep cleaning service in Bethesda, MD — top-to-bottom professional results"
         ctaPrimary="Schedule a Deep Clean in Bethesda"
+        teamTrustLabel="Background-Checked Team"
+        ctaNote="No commitment · Written quote before service · 100% satisfaction guaranteed"
       />
 
       {/* ── Cross-link Banner ──────────────────────────────── */}
@@ -202,6 +203,45 @@ const BethesdaDeepCleaningPage = () => {
 
       {/* ── Social Proof (3rd — trust video early) ── */}
       <LocationSocialProof cityName="Bethesda" citySlug="bethesda-md" serviceSlug="deep-cleaning" serviceLabel="Deep Cleaning" />
+
+      {/* ── First-party Bethesda project proof ───────────── */}
+      <section className="py-12 md:py-16 bg-background" aria-labelledby="bethesda-project-proof">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="grid gap-8 lg:grid-cols-[1.05fr_.95fr] items-center rounded-3xl border border-border bg-gradient-to-br from-primary/5 via-background to-accent/5 p-5 sm:p-8 shadow-sm">
+            <div className="overflow-hidden rounded-2xl border border-border bg-muted">
+              <img
+                src="/images/blog/real-deep-cleaning-bethesda/bethesda-bathroom-walkthrough-crew.webp"
+                alt="Capital Clean Care crew assessing a bathroom during a real deep cleaning project in Bethesda, Maryland"
+                width="1280"
+                height="720"
+                loading="lazy"
+                className="aspect-video h-full w-full object-cover transition-transform duration-500 hover:scale-[1.02]"
+              />
+            </div>
+            <div>
+              <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-background px-3 py-1.5 text-sm font-semibold text-primary">
+                <Camera className="h-4 w-4" aria-hidden="true" /> Real Bethesda project
+              </div>
+              <h2 id="bethesda-project-proof" className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-4">
+                See how we deep cleaned a Bethesda bathroom
+              </h2>
+              <p className="text-muted-foreground leading-relaxed mb-5">
+                This documented local project shows the crew walkthrough, dry-first vent dusting, hand-scrubbed grout and final detail pass—so you can evaluate the process before requesting a quote.
+              </p>
+              <ul className="space-y-2.5 mb-6 text-sm text-foreground">
+                {["Original on-site photos", "Step-by-step cleaning method", "Real detail work on grout, vents and fixtures"].map((item) => (
+                  <li key={item} className="flex items-center gap-2">
+                    <ShieldCheck className="h-4 w-4 text-accent flex-none" aria-hidden="true" /> {item}
+                  </li>
+                ))}
+              </ul>
+              <Link to={CASE_STUDY_URL} className="inline-flex items-center gap-2 font-semibold text-primary hover:text-primary/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm">
+                View the real Bethesda project <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* ── Comparison Table ──────────────────────────────── */}
       <section className="py-12 md:py-16 bg-muted/30">
@@ -265,7 +305,7 @@ const BethesdaDeepCleaningPage = () => {
               },
               {
                 title: "Post-renovation or construction",
-                body: "Drywall dust and construction residue require more than a standard clean. See our{' '} dedicated post-construction page for full-scope work.",
+                body: "Drywall dust and construction residue require a specialized scope beyond a residential deep clean. Our post-construction service is designed for that work.",
               },
               {
                 title: "Preparing a home for sale or listing",
@@ -322,6 +362,17 @@ const BethesdaDeepCleaningPage = () => {
               </Link>{" "}
               for specialized situations.
             </p>
+            <p>
+              Comparing the investment first? Review our current{" "}
+              <Link to="/resources/house-cleaning-cost-bethesda-md" className="text-primary underline">
+                Bethesda house cleaning cost guide
+              </Link>{" "}
+              for typical ranges and the factors that change a deep-clean quote. For Pike &amp; Rose, White Flint,
+              and the Pike District, use our{" "}
+              <Link to="/locations/north-bethesda-md/deep-cleaning" className="text-primary underline">
+                North Bethesda deep cleaning page
+              </Link>.
+            </p>
           </div>
         </div>
       </section>
@@ -355,8 +406,6 @@ const BethesdaDeepCleaningPage = () => {
       {/* ── Final CTA + #quote anchor ─────────────────────── */}
       <LocationQuoteSection cityName="Bethesda" serviceLabel="Deep Cleaning" defaultService="deep" zipLine="Serving Bethesda and nearby communities." />
 
-      {/* ── Sticky mobile phone CTA ───────────────────────── */}
-      <StickyMobileCTA />
     </Layout>
   );
 };
