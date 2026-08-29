@@ -20,9 +20,12 @@ import LocationSocialProof from "@/components/location/LocationSocialProof";
 import LocationQuoteSection from "@/components/location/LocationQuoteSection";
 import TransformationsGallery from "@/components/TransformationsGallery";
 import { getServiceLocationOverride } from "@/data/service-location-overrides";
+import { pickReviews } from "@/data/realReviews";
 import { trustBlurbVariants, ctaProseVariants, pickVariant } from "@/data/template-variants";
 
 const PAGE_URL = "https://capitalcleancare.com/locations/silver-spring-md/house-cleaning";
+const HERO_IMAGE = "/images/locations/bethesda-house-cleaning/team-cleaning-hardwood.webp";
+const verifiedReviews = pickReviews("silver-spring-md/house-cleaning", 2);
 
 const localFaqs = [
   {
@@ -142,7 +145,7 @@ const SilverSpringHouseCleaningPage = () => {
     <Layout>
       {seoHelmet}
       <Helmet>
-        <link rel="preload" as="image" href="/images/team/team-mopping-bright-room.jpg" />
+        <link rel="preload" as="image" href={HERO_IMAGE} />
         <link rel="alternate" hrefLang="en-US" href={PAGE_URL} />
       </Helmet>
 
@@ -162,6 +165,7 @@ const SilverSpringHouseCleaningPage = () => {
           "Long Branch, Silver Spring MD",
           "Montgomery County, MD",
         ]}
+        reviews={verifiedReviews}
       />
       <ServiceSchema
         serviceName="House Cleaning in Silver Spring, MD"
@@ -191,10 +195,31 @@ const SilverSpringHouseCleaningPage = () => {
         cityName="Silver Spring"
         state="MD"
         zipRange="20901–20910"
-        heroImage="/images/team/team-mopping-bright-room.jpg"
-        heroImageAlt="Capital Clean Care team providing house cleaning service in Silver Spring, MD — Latino-owned, background-checked professionals"
+        heroImage={HERO_IMAGE}
+        heroImageAlt="Capital Clean Care employee cleaning hardwood floors during a professional house cleaning visit"
+        heroAspectRatio="4/3"
+        heroImageWidth={1200}
+        heroImageHeight={1500}
+        heroImageContainerClassName="max-w-[560px] mx-auto lg:ml-auto lg:mr-0"
         ctaPrimary="Get a Free Quote in Silver Spring"
+        teamTrustLabel="Background-Checked Team"
+        ctaNote="No commitment · Written quote before service · 100% satisfaction guaranteed"
+        updatedLabel="August 2026"
+        updatedDateTime="2026-08-29"
       />
+
+      {/* Self-contained local answer near the top for commercial intent and AI citation. */}
+      <section className="border-y border-border bg-background py-10 md:py-12" aria-labelledby="silver-spring-house-cleaning-answer">
+        <div className="container mx-auto max-w-4xl px-4">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-accent">Local service answer</p>
+          <h2 id="silver-spring-house-cleaning-answer" className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-5">
+            What Does House Cleaning in Silver Spring Include?
+          </h2>
+          <p className="text-lg leading-relaxed text-foreground">
+            Capital Clean Care provides one-time and recurring house cleaning throughout Silver Spring, Maryland, including Downtown, Woodside, Forest Glen, Four Corners, Long Branch, White Oak, and ZIP codes 20901–20910. A standard visit covers kitchens, bathrooms, bedrooms, living areas, dusting, vacuuming, mopping, high-touch surfaces, trash removal, and a final quality check. Our background-checked, bonded, and insured team brings professional equipment and EPA Safer Choice products selected for homes with children, pets, hardwood, vintage tile, and modern condo finishes. Clients receive a free written quote based on home size, room count, condition, and preferred frequency. Weekly, biweekly, monthly, and one-time appointments are available, and completed work is backed by our satisfaction guarantee. Deep cleaning, move-out cleaning, apartment cleaning, and eco-friendly recurring care have dedicated service options so homeowners can choose the scope that matches their home instead of paying for work they do not need.
+          </p>
+        </div>
+      </section>
 
       {/* Checklist */}
       <ServiceChecklistLocation
@@ -203,7 +228,7 @@ const SilverSpringHouseCleaningPage = () => {
       />
 
       {/* ── Social Proof (3rd — trust video early) ── */}
-      <LocationSocialProof cityName="Silver Spring" citySlug="silver-spring-md" serviceSlug="house-cleaning" serviceLabel="House Cleaning" />
+      <LocationSocialProof cityName="Silver Spring" citySlug="silver-spring-md" serviceSlug="house-cleaning" serviceLabel="House Cleaning" count={3} showVideo={false} />
 
       {/* ── Before & After video carousel — real footage from our team (breaks up the text) ── */}
       <TransformationsGallery
