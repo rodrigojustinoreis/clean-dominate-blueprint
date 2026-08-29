@@ -24,7 +24,9 @@ import { pickReviews } from "@/data/realReviews";
 
 const PAGE_URL = "https://capitalcleancare.com/locations/bethesda-md/deep-cleaning";
 const CASE_STUDY_URL = "/resources/real-deep-cleaning-project-bethesda-home";
-const verifiedReviews = pickReviews("bethesda-md/deep-cleaning", 2);
+const HERO_IMAGE = "/images/blog/real-deep-cleaning-bethesda/bethesda-bathroom-walkthrough-crew.webp";
+const PROJECT_IMAGE = "/images/blog/real-deep-cleaning-bethesda/vanity-detail-clean-respirator.webp";
+const verifiedReviews = pickReviews("bethesda-md/deep-cleaning", 3);
 
 const faqs = [
   {
@@ -116,11 +118,12 @@ const nearbyCities = [
 
 const BethesdaDeepCleaningPage = () => {
   const { seoHelmet } = useSEO({
-    title: "Deep Cleaning Bethesda MD | Detailed, Eco-Friendly Service",
+    title: "Deep Cleaning Bethesda MD | Detailed Service & Free Quote",
     description:
       "Detailed deep cleaning in Bethesda, MD for appliances, grout, baseboards and hidden buildup. Eco-friendly products, insured teams and free written quotes.",
     canonical: PAGE_URL,
-    ogImage: "https://capitalcleancare.com/og-image.jpg",
+    ogImage: `https://capitalcleancare.com${HERO_IMAGE}`,
+    preloadImage: HERO_IMAGE,
   });
 
   return (
@@ -128,7 +131,6 @@ const BethesdaDeepCleaningPage = () => {
       {/* ── SEO ───────────────────────────────────────────── */}
       {seoHelmet}
       <Helmet>
-        <link rel="preload" as="image" href="/images/team/team-tile-scrubber.jpg" />
         <link rel="alternate" hrefLang="en-US" href={PAGE_URL} />
       </Helmet>
 
@@ -178,12 +180,31 @@ const BethesdaDeepCleaningPage = () => {
         cityName="Bethesda"
         state="MD"
         zipRange="20814–20817"
-        heroImage="/images/team/team-tile-scrubber.jpg"
-        heroImageAlt="Capital Clean Care deep cleaning service in Bethesda, MD — top-to-bottom professional results"
+        heroImage={HERO_IMAGE}
+        heroImageAlt="Capital Clean Care crew performing a real bathroom deep cleaning project in Bethesda, Maryland"
+        heroAspectRatio="16/9"
+        heroImageWidth={1280}
+        heroImageHeight={720}
+        heroImageContainerClassName="max-w-[640px] mx-auto lg:ml-auto lg:mr-0"
         ctaPrimary="Schedule a Deep Clean in Bethesda"
         teamTrustLabel="Background-Checked Team"
         ctaNote="No commitment · Written quote before service · 100% satisfaction guaranteed"
+        updatedLabel="August 2026"
+        updatedDateTime="2026-08-29"
       />
+
+      {/* Direct, self-contained answer for local commercial intent and AI citation. */}
+      <section className="border-y border-border bg-background py-10 md:py-12" aria-labelledby="bethesda-deep-cleaning-answer">
+        <div className="container mx-auto max-w-4xl px-4">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-accent">Bethesda service answer</p>
+          <h2 id="bethesda-deep-cleaning-answer" className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-5">
+            What Does a Deep Cleaning in Bethesda Include?
+          </h2>
+          <p className="text-lg leading-relaxed text-foreground">
+            A Capital Clean Care deep cleaning in Bethesda is a room-by-room reset for buildup that routine house cleaning does not reach. The service covers kitchen appliance interiors, range hoods, cabinet interiors, faucets and backsplashes; bathroom grout, showerheads, exhaust fans and detailed toilet areas; plus baseboards, window sills and tracks, ceiling fans, doors, switches and accessible spaces beneath furniture. Our bonded, insured and background-checked team uses surface-appropriate, EPA Safer Choice products and follows a written checklist before the final quality check. Most Bethesda homes require about four to six hours, although size, room count, condition and requested add-ons determine the actual scope and written quote. This page serves Bethesda ZIP codes 20814–20817, including Bethesda Row, Edgemoor, Kenwood and Bradley Hills. Pike &amp; Rose, White Flint and the Pike District are served through our dedicated North Bethesda page, preventing homeowners from booking the wrong local service area.
+          </p>
+        </div>
+      </section>
 
       {/* ── Cross-link Banner ──────────────────────────────── */}
       <div className="bg-primary/5 border-b border-primary/10">
@@ -202,7 +223,7 @@ const BethesdaDeepCleaningPage = () => {
       />
 
       {/* ── Social Proof (3rd — trust video early) ── */}
-      <LocationSocialProof cityName="Bethesda" citySlug="bethesda-md" serviceSlug="deep-cleaning" serviceLabel="Deep Cleaning" />
+      <LocationSocialProof cityName="Bethesda" citySlug="bethesda-md" serviceSlug="deep-cleaning" serviceLabel="Deep Cleaning" count={3} showVideo={false} />
 
       {/* ── First-party Bethesda project proof ───────────── */}
       <section className="py-12 md:py-16 bg-background" aria-labelledby="bethesda-project-proof">
@@ -210,12 +231,12 @@ const BethesdaDeepCleaningPage = () => {
           <div className="grid gap-8 lg:grid-cols-[1.05fr_.95fr] items-center rounded-3xl border border-border bg-gradient-to-br from-primary/5 via-background to-accent/5 p-5 sm:p-8 shadow-sm">
             <div className="overflow-hidden rounded-2xl border border-border bg-muted">
               <img
-                src="/images/blog/real-deep-cleaning-bethesda/bethesda-bathroom-walkthrough-crew.webp"
-                alt="Capital Clean Care crew assessing a bathroom during a real deep cleaning project in Bethesda, Maryland"
-                width="1280"
-                height="720"
+                src={PROJECT_IMAGE}
+                alt="Capital Clean Care professionals detailing a vanity and tiled bath during a real Bethesda deep cleaning project"
+                width="1080"
+                height="1350"
                 loading="lazy"
-                className="aspect-video h-full w-full object-cover transition-transform duration-500 hover:scale-[1.02]"
+                className="aspect-[4/3] h-full w-full object-cover object-center transition-transform duration-500 hover:scale-[1.02]"
               />
             </div>
             <div>
