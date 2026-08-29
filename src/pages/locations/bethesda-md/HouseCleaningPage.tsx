@@ -1,13 +1,11 @@
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { CheckCircle, Star, ArrowRight } from "lucide-react";
+import { CheckCircle, Camera, ShieldCheck } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FAQ from "@/components/FAQ";
 import ConversionCTA from "@/components/ConversionCTA";
 import TrustBadges from "@/components/TrustBadges";
-import StickyMobileCTA from "@/components/StickyMobileCTA";
-import { Button } from "@/components/ui/button";
 import {
   LocalBusinessSchema,
   ServiceSchema,
@@ -21,11 +19,15 @@ import InternalLinksGrid from "@/components/location/InternalLinksGrid";
 import LocationSocialProof from "@/components/location/LocationSocialProof";
 import LocationQuoteSection from "@/components/location/LocationQuoteSection";
 import { getServiceLocationOverride } from "@/data/service-location-overrides";
+import { pickReviews } from "@/data/realReviews";
 import { trustBlurbVariants, ctaProseVariants, pickVariant, ecoSafeVariants, satisfactionVariants, arriveStepVariants } from "@/data/template-variants";
 
 // ── Page constants ────────────────────────────────────────────────────────────
 
 const PAGE_URL = "https://capitalcleancare.com/locations/bethesda-md/house-cleaning";
+const TEAM_IMAGE = "/images/locations/bethesda-house-cleaning/capital-clean-care-team.webp";
+const SERVICE_IMAGE = "/images/locations/bethesda-house-cleaning/team-cleaning-hardwood.webp";
+const verifiedReviews = pickReviews("bethesda-md/house-cleaning", 2);
 
 const localFaqs = [
   {
@@ -139,7 +141,7 @@ const BethesdaHouseCleaningPage = () => {
       {/* ── SEO ───────────────────────────────────────────── */}
       {seoHelmet}
       <Helmet>
-        <link rel="preload" as="image" href="/images/team/team-mopping-bright-room.jpg" />
+        <link rel="preload" as="image" href={TEAM_IMAGE} />
         <link rel="alternate" hrefLang="en-US" href={PAGE_URL} />
       </Helmet>
 
@@ -159,13 +161,7 @@ const BethesdaHouseCleaningPage = () => {
           "Bradley Hills, Bethesda MD",
           "Montgomery County, MD",
         ]}
-        reviews={[
-          {
-            name: "Sarah M.",
-            text: "Capital Clean Care transformed our home. Thorough, eco-friendly products safe for my kids and pets.",
-            location: "Bethesda, MD",
-          },
-        ]}
+        reviews={verifiedReviews}
       />
       <ServiceSchema
         serviceName="House Cleaning in Bethesda, MD"
@@ -176,7 +172,7 @@ const BethesdaHouseCleaningPage = () => {
       <FAQSchema faqs={faqs} />
 
       {/* ── Breadcrumbs ───────────────────────────────────── */}
-      <div className="pt-24 bg-gradient-to-br from-primary/5 via-background to-accent/5">
+      <div className="pt-6 md:pt-8 bg-gradient-to-br from-primary/5 via-background to-accent/5">
         <div className="container mx-auto px-4 max-w-6xl pb-2">
           <Breadcrumbs
             items={[
@@ -191,13 +187,21 @@ const BethesdaHouseCleaningPage = () => {
       {/* ── Hero ──────────────────────────────────────────── */}
       <HeroLocation
         h1="Professional House Cleaning in Bethesda, MD"
-        lead="Capital Clean Care brings professional, eco-friendly house cleaning to Bethesda homes — from Bethesda Row to Kenwood. Our background-checked, bonded team uses EPA Safer Choice™ certified products, safe for your kids and pets, and backs every visit with 100% satisfaction: we re-clean if you're not happy."
+        lead="Professional, eco-friendly house cleaning for Bethesda homes—from Bethesda Row to Kenwood. Our background-checked, bonded team uses family-safe products and backs every visit with our 100% satisfaction guarantee."
         cityName="Bethesda"
         state="MD"
         zipRange="20814–20817"
-        heroImage="/images/team/team-mopping-bright-room.jpg"
-        heroImageAlt="Capital Clean Care team providing house cleaning service in Bethesda, MD — Latino-owned, background-checked professionals"
+        heroImage={TEAM_IMAGE}
+        heroImageAlt="Capital Clean Care's real background-checked house cleaning team serving Bethesda, Maryland"
+        heroAspectRatio="4/3"
+        heroImageWidth={900}
+        heroImageHeight={1200}
+        heroImageContainerClassName="max-w-[560px] mx-auto lg:ml-auto lg:mr-0"
         ctaPrimary="Get a Free Quote in Bethesda"
+        teamTrustLabel="Background-Checked Team"
+        ctaNote="No commitment · Written quote before service · 100% satisfaction guaranteed"
+        updatedLabel="August 2026"
+        updatedDateTime="2026-08-29"
       />
 
       {/* ── What's Included ───────────────────────────────── */}
@@ -207,7 +211,43 @@ const BethesdaHouseCleaningPage = () => {
       />
 
       {/* ── Social Proof (3rd — trust video early) ── */}
-      <LocationSocialProof cityName="Bethesda" citySlug="bethesda-md" serviceSlug="house-cleaning" serviceLabel="House Cleaning" />
+      <LocationSocialProof cityName="Bethesda" citySlug="bethesda-md" serviceSlug="house-cleaning" serviceLabel="House Cleaning" count={3} showVideo={false} />
+
+      {/* ── Authentic team-in-action proof ──────────────── */}
+      <section className="py-12 md:py-16 bg-background" aria-labelledby="real-bethesda-cleaning-team">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="grid gap-8 lg:grid-cols-[.9fr_1.1fr] items-center rounded-3xl border border-border bg-gradient-to-br from-primary/5 via-background to-accent/5 p-5 sm:p-8 shadow-sm">
+            <div className="overflow-hidden rounded-2xl border border-border bg-muted">
+              <img
+                src={SERVICE_IMAGE}
+                alt="Capital Clean Care team member professionally cleaning hardwood floors in a Bethesda-area home"
+                width="1200"
+                height="1500"
+                loading="lazy"
+                className="aspect-[4/5] w-full object-cover transition-transform duration-500 hover:scale-[1.02]"
+              />
+            </div>
+            <div>
+              <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-background px-3 py-1.5 text-sm font-semibold text-primary">
+                <Camera className="h-4 w-4" aria-hidden="true" /> Our real local team
+              </div>
+              <h2 id="real-bethesda-cleaning-team" className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-4">
+                Professional equipment. Careful technique. Real people.
+              </h2>
+              <p className="text-muted-foreground leading-relaxed mb-5">
+                These are not stock photos. They show the Capital Clean Care team and the equipment we use in local homes. Our cleaners are trained to match the method and product to the surface—from hardwood floors and area rugs to high-touch household areas.
+              </p>
+              <ul className="space-y-3 text-sm text-foreground">
+                {["Background-checked and insured team", "Surface-appropriate cleaning methods", "Professional equipment brought to your home"].map((item) => (
+                  <li key={item} className="flex items-center gap-2.5">
+                    <ShieldCheck className="h-4 w-4 text-accent flex-none" aria-hidden="true" /> {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* ── Why Choose Us ─────────────────────────────────── */}
       <section className="py-12 md:py-16">
@@ -298,7 +338,7 @@ const BethesdaHouseCleaningPage = () => {
           <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-4">
             House Cleaning Throughout Bethesda, MD
           </h2>
-          <div className="space-y-4 text-muted-foreground leading-relaxed">
+          <div className="grid gap-6 md:grid-cols-2 text-muted-foreground leading-relaxed">
             <p>
               Capital Clean Care serves all of Bethesda's ZIP codes — 20814, 20815, 20816, and 20817.
               Whether your home sits near the Bethesda Metro station, in the walkable Bethesda Row district,
@@ -314,7 +354,7 @@ const BethesdaHouseCleaningPage = () => {
               flexible appointment windows — including weekday mornings, afternoons, and weekend slots —
               with same-day availability when the schedule permits.
             </p>
-            <p>
+            <p className="md:col-span-2 rounded-2xl border border-border bg-primary/5 p-5">
               As a Latino-owned Montgomery County business, we take genuine pride in serving the Bethesda
               community. Every team member completes background screening, eco-cleaning training, and a
               quality walk-through checklist before joining our crew. From your first cleaning to your
@@ -405,8 +445,6 @@ const BethesdaHouseCleaningPage = () => {
       {/* ── Final CTA + #quote anchor ─────────────────────── */}
       <LocationQuoteSection cityName="Bethesda" serviceLabel="House Cleaning" defaultService="standard" zipLine="Serving Bethesda and nearby communities." ctaProse={ctaProseVariants[pickVariant("bethesda-md", 2, 3)]("Bethesda", "House Cleaning")} />
 
-      {/* ── Sticky mobile phone CTA ───────────────────────── */}
-      <StickyMobileCTA />
     </Layout>
   );
 };

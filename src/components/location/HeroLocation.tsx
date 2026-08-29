@@ -14,6 +14,13 @@ interface HeroLocationProps {
   ctaPrimary?: string;
   teamTrustLabel?: string;
   ctaNote?: string;
+  heroAspectRatio?: string;
+  heroImageWidth?: number;
+  heroImageHeight?: number;
+  heroImageContainerClassName?: string;
+  preserveFullImage?: boolean;
+  updatedLabel?: string;
+  updatedDateTime?: string;
 }
 
 const defaultPills = [
@@ -35,6 +42,13 @@ const HeroLocation = ({
   ctaPrimary = "Get a Free Quote in 60 Seconds",
   teamTrustLabel,
   ctaNote = "No commitment · Same-day slots available · 100% satisfaction guaranteed",
+  heroAspectRatio = "4/3",
+  heroImageWidth = 600,
+  heroImageHeight = 450,
+  heroImageContainerClassName = "",
+  preserveFullImage = false,
+  updatedLabel,
+  updatedDateTime,
 }: HeroLocationProps) => {
   const pills = [
     ...defaultPills,
@@ -50,7 +64,7 @@ const HeroLocation = ({
             <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-1 leading-tight">
               {h1}
             </h1>
-            <LastUpdated />
+            <LastUpdated date={updatedLabel} dateTime={updatedDateTime} />
             <p className="text-lg text-muted-foreground mb-6 leading-relaxed max-w-prose mt-4">
               {lead}
             </p>
@@ -88,17 +102,28 @@ const HeroLocation = ({
 
           {/* Hero image — LCP element, eager + high priority */}
           <div
-            className="rounded-2xl overflow-hidden shadow-xl border border-border/50"
-            style={{ aspectRatio: "4/3" }}
+            className={`relative w-full rounded-2xl overflow-hidden shadow-xl border border-border/50 bg-primary/10 ${heroImageContainerClassName}`}
+            style={{ aspectRatio: heroAspectRatio }}
           >
+            {preserveFullImage && (
+              <img
+                src={heroImage}
+                alt=""
+                aria-hidden="true"
+                className="absolute inset-0 h-full w-full scale-110 object-cover blur-xl opacity-45"
+                loading="eager"
+                width={heroImageWidth}
+                height={heroImageHeight}
+              />
+            )}
             <img
               src={heroImage}
               alt={heroImageAlt}
-              className="w-full h-full object-cover"
+              className={`relative h-full w-full ${preserveFullImage ? "scale-[1.16] object-contain" : "object-cover"}`}
               loading="eager"
               fetchPriority="high"
-              width={600}
-              height={450}
+              width={heroImageWidth}
+              height={heroImageHeight}
             />
           </div>
         </div>

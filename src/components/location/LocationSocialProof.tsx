@@ -17,6 +17,8 @@ interface LocationSocialProofProps {
    * no autoplay, since it has sound) instead of the muted brand-trust montage.
    */
   testimonialVideo?: { src: string; poster: string; label: string };
+  /** Hide the brand montage when verified review cards are the stronger proof. */
+  showVideo?: boolean;
 }
 
 /**
@@ -29,23 +31,23 @@ interface LocationSocialProofProps {
  * preload="none" in Chromium, so we must gate the element itself to avoid a
  * ~736 KB download on every initial page load.)
  */
-const LocationSocialProof = ({ cityName, citySlug, serviceSlug, serviceLabel, count = 1, testimonialVideo }: LocationSocialProofProps) => {
+const LocationSocialProof = ({ cityName, citySlug, serviceSlug, serviceLabel, count = 1, testimonialVideo, showVideo = true }: LocationSocialProofProps) => {
   // One real review per page (hash-distributed across the 9 verified reviews) so
   // neighbouring city pages rarely share the same review card.
   const reviews = pickReviews(`${citySlug}/${serviceSlug}`, count);
 
   const videoWrapRef = useRef<HTMLDivElement>(null);
-  const [showVideo, setShowVideo] = useState(false);
+  const [videoReady, setVideoReady] = useState(false);
   const [playTestimonial, setPlayTestimonial] = useState(false);
 
   useEffect(() => {
-    if (showVideo) return;
+    if (videoReady || !showVideo) return;
     const el = videoWrapRef.current;
     if (!el || typeof IntersectionObserver === "undefined") return;
     const io = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
-          setShowVideo(true);
+          setVideoReady(true);
           io.disconnect();
         }
       },
@@ -53,7 +55,7 @@ const LocationSocialProof = ({ cityName, citySlug, serviceSlug, serviceLabel, co
     );
     io.observe(el);
     return () => io.disconnect();
-  }, [showVideo]);
+  }, [videoReady, showVideo]);
 
   return (
     <section className="py-12 md:py-16">
@@ -67,7 +69,7 @@ const LocationSocialProof = ({ cityName, citySlug, serviceSlug, serviceLabel, co
           </h2>
         </div>
 
-        {testimonialVideo ? (
+        {showVideo && (testimonialVideo ? (
           /* Real spoken client testimonial — click-to-play with controls + audio (no autoplay). */
           <div className="mb-8 max-w-3xl mx-auto rounded-2xl overflow-hidden border border-white/10 shadow-xl ring-1 ring-accent/20 bg-[#0a1726]">
             {playTestimonial ? (
@@ -113,7 +115,7 @@ const LocationSocialProof = ({ cityName, citySlug, serviceSlug, serviceLabel, co
             ref={videoWrapRef}
             className="mb-8 max-w-3xl mx-auto rounded-2xl overflow-hidden border border-white/10 shadow-xl ring-1 ring-accent/20 bg-[#0a1726]"
           >
-            {showVideo ? (
+            {videoReady ? (
               <video
                 className="w-full aspect-video object-cover block"
                 autoPlay
@@ -137,12 +139,19 @@ const LocationSocialProof = ({ cityName, citySlug, serviceSlug, serviceLabel, co
               />
             )}
           </div>
-        )}
+        ))}
 
         {/* Real reviews */}
-        <div className={`grid gap-4 ${reviews.length > 1 ? "grid-cols-1 md:grid-cols-2" : "grid-cols-1 max-w-xl mx-auto"}`}>
+        <div
+          className={`grid gap-4 ${
+            reviews.length > 1
+              ? "grid-flow-col auto-cols-[88%] overflow-x-auto snap-x snap-mandatory pb-3 md:grid-flow-row md:auto-cols-auto md:grid-cols-3 md:overflow-visible md:pb-0"
+              : "grid-cols-1 max-w-xl mx-auto"
+          }`}
+          aria-label={reviews.length > 1 ? "Verified Google review carousel" : undefined}
+        >
           {reviews.map((r) => (
-            <div key={r.name} className="bg-card border border-border rounded-xl p-5">
+            <article key={r.name} className="h-full snap-center bg-card border border-border rounded-xl p-5 shadow-sm">
               <div role="img" aria-label="5 out of 5 stars" className="flex items-center gap-0.5 mb-3">
                 {[1, 2, 3, 4, 5].map((i) => (
                   <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" aria-hidden="true" />
@@ -151,9 +160,12 @@ const LocationSocialProof = ({ cityName, citySlug, serviceSlug, serviceLabel, co
               <p className="text-sm text-foreground italic mb-3 leading-relaxed">&ldquo;{r.text}&rdquo;</p>
               <p className="text-sm font-semibold text-foreground">{r.name}</p>
               <p className="text-xs text-muted-foreground">Verified Google review</p>
-            </div>
+            </article>
           ))}
         </div>
+        {reviews.length > 1 && (
+          <p className="mt-2 text-center text-xs text-muted-foreground md:hidden">Swipe to read more verified reviews</p>
+        )}
 
         {/* Proof strip */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-x-5 gap-y-2 mt-6">
