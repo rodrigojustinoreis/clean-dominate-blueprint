@@ -67,6 +67,7 @@ const UMBRELLA_HUBS = new Set([
   "north-bethesda-md",
   "chevy-chase-md",
   "potomac-md",
+  "fairfax-va",
 ]);
 
 /** Specific neighborhoods served per city — boosts local SEO relevance */
@@ -412,6 +413,28 @@ const CityPage = () => {
 
       {/* Trust Bar */}
       <TrustBar variant="dark" />
+
+      {/* Fairfax is the all-services hub; route house-cleaning intent to its dedicated canonical page. */}
+      {city.slug === "fairfax-va" && (
+        <section className="border-b border-border bg-accent/5 py-10" aria-labelledby="fairfax-house-cleaning-route">
+          <div className="container mx-auto max-w-4xl px-4">
+            <div className="flex flex-col gap-5 rounded-2xl border border-accent/20 bg-card p-6 shadow-sm sm:flex-row sm:items-center sm:justify-between">
+              <div className="max-w-2xl">
+                <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-accent">Looking for routine home care?</p>
+                <h2 id="fairfax-house-cleaning-route" className="font-heading text-2xl font-bold text-foreground">
+                  Professional House Cleaning in Fairfax, VA
+                </h2>
+                <p className="mt-2 text-muted-foreground">
+                  See the complete scope for one-time, weekly, biweekly, and monthly house cleaning, including local FAQs, verified reviews, and a free written quote.
+                </p>
+              </div>
+              <Button variant="cta" size="lg" className="shrink-0" asChild>
+                <Link to="/locations/fairfax-va/house-cleaning">View House Cleaning <ArrowRight className="ml-1 h-4 w-4" /></Link>
+              </Button>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Rockville search-intent hub: concise answer + clear routes to each dedicated service page. */}
       {isRockvilleHub && (

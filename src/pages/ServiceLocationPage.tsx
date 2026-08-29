@@ -171,7 +171,7 @@ const ServiceLocationPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
             <div>
               <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-6">
-                {service.name} Services for {city.name} Homeowners
+                {isFairfaxHouseCleaning ? "What Does House Cleaning in Fairfax Include?" : `${service.name} Services for ${city.name} Homeowners`}
               </h2>
               {city.localIntro && (
                 <div className="border-l-4 border-primary bg-muted/40 rounded-r-lg px-6 py-5 mb-6">
@@ -180,11 +180,22 @@ const ServiceLocationPage = () => {
                   </p>
                 </div>
               )}
-              <div className="prose prose-lg max-w-none text-muted-foreground">
-                {intro.split("\n\n").map((paragraph, i) => (
-                  <p key={i} className="mb-4 leading-relaxed">{paragraph}</p>
-                ))}
-              </div>
+              {isFairfaxHouseCleaning ? (
+                <div className="space-y-4 text-muted-foreground leading-relaxed">
+                  <p className="text-lg text-foreground">
+                    Capital Clean Care provides professional house cleaning services throughout Fairfax City and nearby Fairfax County communities. A standard visit covers kitchens, bathrooms, bedrooms, living areas, dusting, floors, high-touch surfaces, trash removal, and a final quality check. Clients can choose a one-time cleaning or weekly, biweekly, and monthly recurring service. Our insured, background-checked team brings the equipment and eco-friendly products, then follows a room-by-room checklist tailored to the home's size, surfaces, pets, and priority areas. We serve apartments near George Mason University, townhomes around Old Town Fairfax, brick ramblers in Layton Hall and Mosby Woods, and larger Colonials in Providence. Every appointment begins with a free written quote, and completed work is backed by our satisfaction guarantee.
+                  </p>
+                  <p className="text-sm">
+                    Primary service area: Fairfax ZIP codes 22030, 22031, 22032, and 22033. Timing and scope are confirmed before booking.
+                  </p>
+                </div>
+              ) : (
+                <div className="prose prose-lg max-w-none text-muted-foreground">
+                  {intro.split("\n\n").map((paragraph, i) => (
+                    <p key={i} className="mb-4 leading-relaxed">{paragraph}</p>
+                  ))}
+                </div>
+              )}
             </div>
             <div className="md:sticky md:top-28">
               <div className="rounded-2xl overflow-hidden shadow-lg border border-border">
@@ -217,7 +228,32 @@ const ServiceLocationPage = () => {
         citySlug={city.slug}
         serviceSlug={service.slug}
         serviceLabel={service.name}
+        count={isFairfaxHouseCleaning ? 3 : 1}
+        showVideo={!isFairfaxHouseCleaning}
       />
+
+      {isFairfaxHouseCleaning && override?.photos && (
+        <section className="py-12 md:py-16 bg-background" aria-labelledby="fairfax-real-team">
+          <div className="container mx-auto px-4 max-w-5xl">
+            <div className="text-center mb-8">
+              <p className="text-sm font-semibold uppercase tracking-wider text-accent mb-2">Real team · Real work</p>
+              <h2 id="fairfax-real-team" className="font-heading text-2xl md:text-3xl font-bold text-foreground">
+                Meet the Team Behind Your Fairfax House Cleaning
+              </h2>
+              <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
+                Original Capital Clean Care photographs—not stock images or AI-generated workers.
+              </p>
+            </div>
+            <div className="mx-auto grid max-w-3xl gap-5 sm:grid-cols-2">
+              {override.photos.map((photo) => (
+                <figure key={photo.src} className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
+                  <img src={photo.src} alt={photo.alt} width="900" height="1200" loading="lazy" decoding="async" className="aspect-[4/5] w-full object-cover object-center" />
+                </figure>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Before & After video carousel (4th position) — deep-cleaning pages only (relevant transformation footage, breaks up the text) */}
       {service.slug === "deep-cleaning" && (
@@ -238,7 +274,7 @@ const ServiceLocationPage = () => {
             </div>
             {isFairfaxHouseCleaning && (
               <p className="mt-6 text-sm text-muted-foreground">
-                Page updated <time dateTime="2026-08-24">August 24, 2026</time> to reflect current Fairfax coverage, service scope, and scheduling information.
+                Page updated <time dateTime="2026-08-29">August 29, 2026</time> to reflect current Fairfax coverage, service scope, and scheduling information.
               </p>
             )}
           </div>

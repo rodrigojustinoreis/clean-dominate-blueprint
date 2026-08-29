@@ -129,10 +129,10 @@ export const houseCleaningCityContent: Record<string, ServiceLocationOverride> =
     ],
   },
   "fairfax-va/house-cleaning": {
-    metaTitle: "House Cleaning in Fairfax, VA | Eco-Friendly Local Team",
-    metaDescription: "Professional house cleaning in Fairfax, VA for colonials, ramblers, townhomes, and apartments. Background-checked teams, eco-friendly products. Free quote.",
-    h1: "House Cleaning in Fairfax, VA for Homes, Condos & Townhomes",
-    heroLead: "Reliable one-time and recurring house cleaning for Fairfax homes, with eco-friendly products, background-checked teams, and our satisfaction guarantee.",
+    metaTitle: "House Cleaning Services in Fairfax, VA | Free Quote",
+    metaDescription: "Professional house cleaning services in Fairfax, VA. Background-checked, insured local team, eco-friendly products, verified reviews and a free written quote.",
+    h1: "Professional House Cleaning Services in Fairfax, VA",
+    heroLead: "One-time and recurring house cleaning for Fairfax homes, condos, and townhomes—delivered by an insured, background-checked team using eco-friendly products.",
     uniqueContent: "The City of Fairfax trades the vertical density of the District for room to spread out. As the historic heart of Fairfax County, it offers Colonial and Cape Cod single-family homes, brick ramblers, townhome communities, apartments near George Mason University, and modern infill condominiums around a walkable Old Town. A brick rambler in Layton Hall or Mosby Woods typically sits in the 1,500 to 2,200 square-foot range on a single level, while a two-story Colonial in Providence or near University Village often runs 2,200 to 3,500 square feet with multiple bedrooms and baths. Townhomes and GMU-area apartments are smaller and more vertical, changing how a cleaning visit is timed and routed.\n\nOur Fairfax house cleaning service covers the routine work that keeps a lived-in home consistently comfortable: kitchens, bathrooms, bedrooms, living areas, floors, dusting, and high-touch surfaces. Homeowners can book a one-time standard cleaning or choose weekly, biweekly, or monthly recurring visits. The same page is intentionally focused on residential house cleaning; deep cleaning, moving, office, and post-construction needs are available as separate service options.\n\nBecause homes here are generally larger than city flats, a standard clean of a Fairfax single-family Colonial is often estimated at roughly three to five hours, a rambler or townhome closer to two and a half to four, and a GMU-area apartment around one and a half to three, depending on bedroom and bathroom count. These are size-based estimates rather than fixed figures, and we confirm the scope before booking. Capital Clean Care provides background-checked, bonded, and insured cleaners and uses eco-friendly, EPA Safer Choice products suited to family homes with children and pets. Free quotes and our satisfaction guarantee make it easy for residents from Old Town Fairfax to Pickett to get started.",
     faqs: [
       { q: "How long does it take to clean a single-family Colonial in Fairfax?", a: "A two-story Colonial in a neighborhood like Providence commonly ranges from about 2,200 to 3,500 square feet, and a standard clean is typically estimated at three to five hours depending on the number of bedrooms and bathrooms. This is a size-based estimate, not a fixed price. We walk through the specifics of your home's layout and rooms when we provide your free quote." },
@@ -141,9 +141,8 @@ export const houseCleaningCityContent: Record<string, ServiceLocationOverride> =
       { q: "Are your products safe for homes with kids and pets in Fairfax?", a: "Yes. Family neighborhoods like Mosby Woods and Layton Hall are full of homes with children and pets, which is exactly why we use eco-friendly, EPA Safer Choice products. They clean effectively while being a thoughtful choice for households where little ones and animals are close to the floors and surfaces we treat. If you have specific sensitivities, let us know and we'll accommodate them." },
     ],
     photos: [
-      { src: "/images/team/two-team-members.jpg", alt: "Capital Clean Care team cleaning a Fairfax, VA home \u2014 professional house cleaning service" },
-      { src: "/images/team/team-mopping-uniform.jpg", alt: "Capital Clean Care team member in uniform \u2014 house cleaning in Fairfax, VA" },
-      { src: "/images/team/wiping-door-microfiber.jpg", alt: "Capital Clean Care team member cleaning surfaces in Fairfax, VA home" },
+      { src: "/images/locations/bethesda-house-cleaning/capital-clean-care-team.webp", alt: "Capital Clean Care employees who provide professional house cleaning in Fairfax, Virginia" },
+      { src: "/images/locations/bethesda-house-cleaning/team-cleaning-hardwood.webp", alt: "Capital Clean Care employee cleaning hardwood floors for a local house cleaning visit" },
     ],
   },
   "gaithersburg-md/house-cleaning": {
