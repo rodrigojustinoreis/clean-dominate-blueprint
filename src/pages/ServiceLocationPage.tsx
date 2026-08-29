@@ -238,16 +238,28 @@ const ServiceLocationPage = () => {
             <div className="text-center mb-8">
               <p className="text-sm font-semibold uppercase tracking-wider text-accent mb-2">Real team · Real work</p>
               <h2 id="fairfax-real-team" className="font-heading text-2xl md:text-3xl font-bold text-foreground">
-                Meet the Team Behind Your Fairfax House Cleaning
+                Real House Cleaning Work by Capital Clean Care
               </h2>
               <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
-                Original Capital Clean Care photographs—not stock images or AI-generated workers.
+                Original photographs of our team at work—not stock images or AI-generated workers.
               </p>
             </div>
             <div className="mx-auto grid max-w-3xl gap-5 sm:grid-cols-2">
               {override.photos.map((photo) => (
                 <figure key={photo.src} className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
-                  <img src={photo.src} alt={photo.alt} width="900" height="1200" loading="lazy" decoding="async" className="aspect-[4/5] w-full object-cover object-center" />
+                  <img
+                    src={photo.src}
+                    srcSet={photo.src.includes("real-tile-detail-cleaning.webp")
+                      ? "/images/locations/fairfax-house-cleaning/real-tile-detail-cleaning-640.webp 640w, /images/locations/fairfax-house-cleaning/real-tile-detail-cleaning.webp 900w"
+                      : undefined}
+                    sizes="(max-width: 639px) calc(100vw - 2rem), 368px"
+                    alt={photo.alt}
+                    width="900"
+                    height="1200"
+                    loading="lazy"
+                    decoding="async"
+                    className="aspect-[3/4] w-full object-cover object-center"
+                  />
                 </figure>
               ))}
             </div>

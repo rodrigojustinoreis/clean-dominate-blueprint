@@ -141,7 +141,7 @@ export const houseCleaningCityContent: Record<string, ServiceLocationOverride> =
       { q: "Are your products safe for homes with kids and pets in Fairfax?", a: "Yes. Family neighborhoods like Mosby Woods and Layton Hall are full of homes with children and pets, which is exactly why we use eco-friendly, EPA Safer Choice products. They clean effectively while being a thoughtful choice for households where little ones and animals are close to the floors and surfaces we treat. If you have specific sensitivities, let us know and we'll accommodate them." },
     ],
     photos: [
-      { src: "/images/locations/bethesda-house-cleaning/capital-clean-care-team.webp", alt: "Capital Clean Care employees who provide professional house cleaning in Fairfax, Virginia" },
+      { src: "/images/locations/fairfax-house-cleaning/real-tile-detail-cleaning.webp", alt: "Capital Clean Care employee detail-cleaning tile and grout during a residential cleaning visit" },
       { src: "/images/locations/bethesda-house-cleaning/team-cleaning-hardwood.webp", alt: "Capital Clean Care employee cleaning hardwood floors for a local house cleaning visit" },
     ],
   },
