@@ -142,7 +142,7 @@ export const houseCleaningCityContent: Record<string, ServiceLocationOverride> =
     ],
     photos: [
       { src: "/images/locations/fairfax-house-cleaning/real-tile-detail-cleaning.webp", alt: "Capital Clean Care employee detail-cleaning tile and grout during a residential cleaning visit" },
-      { src: "/images/locations/bethesda-house-cleaning/team-cleaning-hardwood.webp", alt: "Capital Clean Care employee cleaning hardwood floors for a local house cleaning visit" },
+      { src: "/images/locations/fairfax-house-cleaning/real-hardwood-edge-cleaning.webp", alt: "Capital Clean Care professional using specialized floor-cleaning equipment along hardwood edges in a Fairfax home" },
     ],
   },
   "gaithersburg-md/house-cleaning": {

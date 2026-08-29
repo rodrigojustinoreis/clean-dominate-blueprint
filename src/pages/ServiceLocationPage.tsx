@@ -249,8 +249,8 @@ const ServiceLocationPage = () => {
                 <figure key={photo.src} className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
                   <img
                     src={photo.src}
-                    srcSet={photo.src.includes("real-tile-detail-cleaning.webp")
-                      ? "/images/locations/fairfax-house-cleaning/real-tile-detail-cleaning-640.webp 640w, /images/locations/fairfax-house-cleaning/real-tile-detail-cleaning.webp 900w"
+                    srcSet={photo.src.includes("/images/locations/fairfax-house-cleaning/")
+                      ? `${photo.src.replace(".webp", "-640.webp")} 640w, ${photo.src} 900w`
                       : undefined}
                     sizes="(max-width: 639px) calc(100vw - 2rem), 368px"
                     alt={photo.alt}
