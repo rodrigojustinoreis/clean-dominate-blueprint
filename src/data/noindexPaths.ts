@@ -6,7 +6,6 @@
 // intentionally NOT listed. Regenerate from GSC 90d impressions when revisiting.
 export const NOINDEX_PATHS: ReadonlySet<string> = new Set([
   "/locations/bethesda-md/airbnb-cleaning",
-  "/locations/bethesda-md/move-out-cleaning",
   "/locations/bethesda-md/office-cleaning",
   "/locations/brookeville-md",
   "/locations/burtonsville-md",

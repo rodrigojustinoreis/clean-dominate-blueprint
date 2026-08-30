@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect } from "react";
 import { Star, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { pickReviews, GOOGLE_LISTING_URL } from "@/data/realReviews";
+import { pickReviews, GOOGLE_LISTING_URL, type RealReview } from "@/data/realReviews";
 import { trackBookNowClick } from "@/lib/analytics";
 
 interface LocationSocialProofProps {
@@ -11,6 +11,7 @@ interface LocationSocialProofProps {
   serviceLabel: string;
   /** Override the auto-rotated real reviews if a page wants specific ones. */
   count?: number;
+  reviewOverrides?: RealReview[];
   /**
    * When set, the video slot shows a real spoken client testimonial as a
    * click-to-play player (poster first, then <video controls> with audio —
@@ -31,10 +32,12 @@ interface LocationSocialProofProps {
  * preload="none" in Chromium, so we must gate the element itself to avoid a
  * ~736 KB download on every initial page load.)
  */
-const LocationSocialProof = ({ cityName, citySlug, serviceSlug, serviceLabel, count = 1, testimonialVideo, showVideo = true }: LocationSocialProofProps) => {
+const LocationSocialProof = ({ cityName, citySlug, serviceSlug, serviceLabel, count = 1, reviewOverrides, testimonialVideo, showVideo = true }: LocationSocialProofProps) => {
   // One real review per page (hash-distributed across the 9 verified reviews) so
   // neighbouring city pages rarely share the same review card.
-  const reviews = pickReviews(`${citySlug}/${serviceSlug}`, count);
+  const reviews = reviewOverrides?.length
+    ? reviewOverrides.slice(0, count)
+    : pickReviews(`${citySlug}/${serviceSlug}`, count);
 
   const videoWrapRef = useRef<HTMLDivElement>(null);
   const [videoReady, setVideoReady] = useState(false);
