@@ -1,13 +1,12 @@
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { CheckCircle, Star, ArrowRight } from "lucide-react";
+import { CheckCircle, ClipboardCheck, HardHat, Ruler, Sparkles } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FAQ from "@/components/FAQ";
 import ConversionCTA from "@/components/ConversionCTA";
 import TrustBadges from "@/components/TrustBadges";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
-import { Button } from "@/components/ui/button";
 import {
   LocalBusinessSchema,
   ServiceSchema,
@@ -22,23 +21,26 @@ import LocationSocialProof from "@/components/location/LocationSocialProof";
 import LocationQuoteSection from "@/components/location/LocationQuoteSection";
 import { getServiceLocationOverride } from "@/data/service-location-overrides";
 import { ctaProseVariants, pickVariant } from "@/data/template-variants";
+import { REAL_REVIEWS } from "@/data/realReviews";
 
 // ── Page constants ────────────────────────────────────────────────────────────
 
 const PAGE_URL = "https://capitalcleancare.com/locations/bethesda-md/post-construction-cleaning";
+const HERO_IMAGE = "/images/team/team-post-construction.webp";
+const verifiedReviews = [REAL_REVIEWS[6], REAL_REVIEWS[1], REAL_REVIEWS[2]];
 
 const localFaqs = [
   {
     q: "How much does post-construction cleaning cost in Bethesda?",
-    a: "Priced by square footage and scope of work. Get your exact quote in 60 seconds — use the form below or call (240) 704-2551. No commitment required.",
+    a: "The written quote depends on square footage, project phase, dust level, surfaces, access, windows, fixtures, and the requested handoff standard. Photos or a walkthrough help us define the scope before scheduling.",
   },
   {
-    q: "Do you use HEPA vacuums for construction dust?",
-    a: "Yes. We use HEPA-filter equipment specifically designed to capture fine construction particulate including drywall silica dust, which standard vacuums recirculate into the air.",
+    q: "How do you control fine construction dust?",
+    a: "We use detailed top-to-bottom dust removal, appropriate filtered vacuuming, microfiber wiping, and repeat passes based on the agreed scope. Active construction, hazardous dust, and regulated remediation require the appropriate licensed trade and are not represented as ordinary cleaning.",
   },
   {
     q: "How soon after construction can you come to Bethesda?",
-    a: "As soon as your contractors are done. We typically schedule within 24–48 hours of your request throughout Bethesda's 20814–20817 ZIP codes.",
+    a: "The site should be safe, utilities available, contractor work substantially complete, and trades' debris removed. Send the address, completion date, photos, and desired handoff date so we can confirm availability.",
   },
   {
     q: "Can you handle larger commercial post-construction projects in Bethesda?",
@@ -46,7 +48,7 @@ const localFaqs = [
   },
   {
     q: "Are you insured for post-construction work?",
-    a: "Fully licensed, bonded, and insured. All team members are background-checked before any project begins.",
+    a: "Capital Clean Care is licensed and insured, and team members are background-checked. We confirm the proposed scope and site conditions before accepting the project.",
   },
   {
     q: "Do you clean occupied homes during phased renovations?",
@@ -62,18 +64,18 @@ const checklistCategories = [
   {
     heading: "Phase 1 — Rough Clean",
     items: [
-      "Remove large debris and packaging",
-      "Haul construction materials",
-      "Sweep and vacuum heavy dust accumulation",
+      "Confirm contractor work is substantially complete",
+      "Collect light, loose surface debris within the agreed scope",
+      "Initial filtered vacuum and dust-removal pass",
     ],
   },
   {
     heading: "Phase 2 — Detail Clean",
     items: [
-      "HEPA vacuum all surfaces (walls, ceilings, floors, HVAC registers)",
-      "Wipe and wash every surface",
+      "Filtered vacuuming and top-to-bottom dust removal",
+      "Wipe cleanable surfaces using material-appropriate methods",
       "Clean inside all cabinets and drawers",
-      "Remove paint splatters and adhesive residue",
+      "Address removable paint specks and adhesive residue where surface-safe",
       "Deep-clean all bathrooms and appliances",
       "Wash windows, tracks, and frames",
       "Wipe baseboards and all door frames",
@@ -85,7 +87,7 @@ const checklistCategories = [
     items: [
       "Touch-up any missed spots",
       "Final full-property dust pass",
-      "Confirm move-in ready condition",
+      "Walk through the agreed checklist and document completion",
     ],
   },
 ];
@@ -113,7 +115,7 @@ const BethesdaPostConstructionCleaningPage = () => {
     description:
       "Post-construction cleaning in Bethesda, MD. HEPA vacuums, construction dust removal, paint splatters, residue. Move-in ready results. Licensed, insured, free quote.",
     canonical: PAGE_URL,
-    ogImage: "https://capitalcleancare.com/og-image.jpg",
+    ogImage: `https://capitalcleancare.com${HERO_IMAGE}`,
   });
 
   const faqs = getServiceLocationOverride("bethesda-md", "post-construction-cleaning")?.faqs ?? localFaqs;
@@ -123,7 +125,7 @@ const BethesdaPostConstructionCleaningPage = () => {
       {/* ── SEO ───────────────────────────────────────────── */}
       {seoHelmet}
       <Helmet>
-        <link rel="preload" as="image" href="/images/team/team-post-construction.jpg" />
+        <link rel="preload" as="image" href={HERO_IMAGE} />
         <link rel="alternate" hrefLang="en-US" href={PAGE_URL} />
       </Helmet>
 
@@ -143,17 +145,11 @@ const BethesdaPostConstructionCleaningPage = () => {
           "Kenwood, Bethesda MD",
           "Montgomery County, MD",
         ]}
-        reviews={[
-          {
-            name: "Brian G.",
-            text: "After our renovation, they got every last bit of construction dust. Professional and incredibly thorough.",
-            location: "Bethesda, MD",
-          },
-        ]}
+        reviews={verifiedReviews}
       />
       <ServiceSchema
         serviceName="Post-Construction Cleaning in Bethesda, MD"
-        description="Professional post-construction cleaning in Bethesda, MD. HEPA-equipped team removes construction dust, paint splatters, and debris for genuinely move-in ready results."
+        description="Professional post-construction cleaning in Bethesda, Maryland, with phased dust removal, detailed surface cleaning, written scopes, and final checklist review."
         url={PAGE_URL}
         areaServed={["Bethesda, MD", "Montgomery County, MD"]}
       />
@@ -175,14 +171,34 @@ const BethesdaPostConstructionCleaningPage = () => {
       {/* ── Hero ──────────────────────────────────────────── */}
       <HeroLocation
         h1="Post-Construction Cleaning in Bethesda, MD"
-        lead="Renovation done — now comes the real challenge. Construction dust, drywall residue, paint splatters, and debris settle into every corner of your Bethesda home, from Bethesda Row to Bradley Hills. Capital Clean Care's HEPA-equipped team delivers a complete, dust-free clean that leaves your property genuinely move-in ready."
+        lead="Turn a completed renovation into a clean, presentation-ready space. Capital Clean Care defines the scope in writing, performs phased dust and detail cleaning, and reviews the agreed checklist for Bethesda homeowners, contractors, and property managers."
         cityName="Bethesda"
         state="MD"
         zipRange="20814–20817"
-        heroImage="/images/team/team-post-construction.jpg"
-        heroImageAlt="Capital Clean Care post-construction cleaning in Bethesda, MD — HEPA-equipped, move-in ready results"
-        ctaPrimary="Get a Post-Construction Quote in Bethesda"
+        heroImage={HERO_IMAGE}
+        heroImageAlt="Capital Clean Care team completing post-construction cleaning in a Bethesda-area home"
+        preserveFullImage
+        ctaPrimary="Request a Bethesda Project Quote"
+        teamTrustLabel="Background-Checked Project Team"
+        ctaNote="Written scope · Licensed and insured · Residential and light commercial"
+        updatedLabel="August 30, 2026"
+        updatedDateTime="2026-08-30"
       />
+
+      {/* ── Direct answer for Google and AI systems ─────── */}
+      <section className="py-10 md:py-12">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="rounded-2xl border border-primary/15 bg-primary/[0.04] p-6 md:p-8">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary mb-3">Quick answer</p>
+            <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-4">
+              What Is Included in Post-Construction Cleaning in Bethesda?
+            </h2>
+            <p className="text-muted-foreground leading-relaxed">
+              Post-construction cleaning begins after active trade work is substantially complete and contractor debris has been removed. The service focuses on fine dust, cabinets and drawers, baseboards, doors and frames, fixtures, bathrooms, appliance exteriors, floors, window interiors and tracks when included, plus repeat detail passes before handoff. The final checklist depends on the renovation, surfaces, access, and whether the project is residential or light commercial. Capital Clean Care serves Bethesda ZIP codes 20814, 20815, 20816, and 20817. We request photos or a walkthrough, define inclusions and exclusions in writing, and confirm the site is safe and ready before scheduling. Hazardous-material cleanup, regulated remediation, and removal of heavy construction debris require the appropriate specialty contractor and are outside a standard cleaning scope.
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* ── 3-Phase Checklist ─────────────────────────────── */}
       <ServiceChecklistLocation
@@ -191,7 +207,7 @@ const BethesdaPostConstructionCleaningPage = () => {
       />
 
       {/* ── Social Proof (3rd — trust video early) ── */}
-      <LocationSocialProof cityName="Bethesda" citySlug="bethesda-md" serviceSlug="post-construction-cleaning" serviceLabel="Post-Construction Cleaning" />
+      <LocationSocialProof cityName="Bethesda" citySlug="bethesda-md" serviceSlug="post-construction-cleaning" serviceLabel="Post-Construction Cleaning" count={3} reviewOverrides={verifiedReviews} showVideo={false} />
 
       {/* ── Why Specialist ────────────────────────────────── */}
       <section className="py-12 md:py-16 bg-muted/30">
@@ -200,29 +216,28 @@ const BethesdaPostConstructionCleaningPage = () => {
             Why Post-Construction Requires a Specialist in Bethesda
           </h2>
           <p className="text-muted-foreground leading-relaxed mb-8">
-            Construction dust — especially drywall silica — settles into HVAC vents, inside cabinets,
-            and on every surface in the 20814 and 20815 ZIP codes we serve near NIH campus. A standard
-            cleaning crew without HEPA equipment redistributes more than it removes. Capital Clean Care's
-            team is trained and HEPA-equipped specifically for post-construction environments, applying a
-            three-phase approach that leaves no residue behind.
+            Renovation dust settles beyond the visible floor: cabinet interiors, trim, doors, fixtures,
+            window tracks, and other horizontal surfaces often require multiple passes. A successful handoff
+            starts with a safe, substantially completed site and a written scope that distinguishes ordinary
+            cleaning from trade work, heavy debris removal, and regulated remediation.
           </p>
           <div className="grid md:grid-cols-2 gap-4">
             {[
               {
-                title: "HEPA Filtration",
-                body: "HEPA vacuums capture particles down to 0.3 microns — including fine drywall silica that ordinary vacuums blow back into the air.",
+                title: "Filtered Dust Removal",
+                body: "Appropriate filtered vacuuming, microfiber wiping, and repeat passes help remove fine settled dust without making unsupported remediation claims.",
               },
               {
                 title: "Paint & Adhesive Removal",
-                body: "We remove paint splatters, caulk residue, and construction adhesive from floors, windows, and fixtures throughout your Bethesda home.",
+                body: "We assess paint specks, caulk, and adhesive residue before using a method that could affect finished floors, windows, or fixtures.",
               },
               {
-                title: "HVAC Register Cleaning",
-                body: "Construction dust inside HVAC registers circulates through your home for months if left unaddressed. We clean every register as part of our standard scope.",
+                title: "Details Defined in Writing",
+                body: "Cabinet interiors, windows, tracks, registers, appliances, and other details are listed when included so the handoff expectation is clear.",
               },
               {
                 title: "Move-In Ready Verification",
-                body: "Our three-phase process ends with a final inspection walkthrough to confirm your Bethesda property is genuinely move-in ready before we leave.",
+                body: "The team reviews the agreed checklist and identifies any access limitation, trade residue, or item requiring a specialist before completion.",
               },
             ].map((item) => (
               <div
@@ -240,6 +255,38 @@ const BethesdaPostConstructionCleaningPage = () => {
         </div>
       </section>
 
+      {/* ── Quote preparation ────────────────────────────── */}
+      <section className="py-12 md:py-16 bg-muted/30">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-3">
+            What We Need to Quote Your Bethesda Project
+          </h2>
+          <p className="text-muted-foreground mb-8">
+            Clear project information prevents surprises and helps us schedule the right team and time window.
+          </p>
+          <div className="grid sm:grid-cols-2 gap-4">
+            {[
+              { Icon: Ruler, title: "Size and rooms", body: "Approximate square footage, room count, stairs, windows, and finished areas." },
+              { Icon: HardHat, title: "Project status", body: "Trade completion date, remaining punch-list work, utilities, and safe site access." },
+              { Icon: Sparkles, title: "Desired handoff", body: "The surfaces and details required before move-in, listing, turnover, or owner walkthrough." },
+              { Icon: ClipboardCheck, title: "Photos or walkthrough", body: "Current photos help identify dust load, residue, access limits, and specialty items." },
+            ].map(({ Icon, title, body }) => (
+              <article key={title} className="rounded-xl border border-border/60 bg-background p-5">
+                <Icon className="h-5 w-5 text-primary mb-3" aria-hidden="true" />
+                <h3 className="font-semibold text-foreground mb-2">{title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{body}</p>
+              </article>
+            ))}
+          </div>
+          <p className="text-sm text-muted-foreground mt-6">
+            Planning a renovation handoff? See our{" "}
+            <Link to="/resources/post-renovation-cleaning-guide-maryland" className="text-primary font-semibold underline">
+              Maryland post-renovation cleaning guide
+            </Link>.
+          </p>
+        </div>
+      </section>
+
       {/* ── Who Books ─────────────────────────────────────── */}
       <section className="py-12 md:py-16">
         <div className="container mx-auto px-4 max-w-4xl">
@@ -250,19 +297,19 @@ const BethesdaPostConstructionCleaningPage = () => {
             {[
               {
                 title: "Homeowners After Renovation",
-                body: "Kitchen, bathroom, or whole-home renovations in Bradley Hills and Kenwood leave significant dust and residue that requires professional-grade equipment to fully remove.",
+                body: "Kitchen, bathroom, and whole-home renovations can leave fine dust across trim, cabinets, fixtures, and floors after the trades finish.",
               },
               {
                 title: "General Contractors",
-                body: "Bethesda contractors delivering finished projects rely on our three-phase clean to ensure a polished final presentation that reflects well on their work.",
+                body: "A written checklist helps contractors coordinate the cleaning phase before the owner or client handoff.",
               },
               {
                 title: "Real Estate Investors",
-                body: "Investors flipping rental properties throughout Bethesda's 20814–20817 ZIP codes need fast, thorough post-construction cleaning before listing or renting.",
+                body: "Investors can define the cleaning scope needed before photography, listing, leasing, or the final walkthrough.",
               },
               {
                 title: "Developers",
-                body: "New construction projects near the Bethesda Metro and Woodmont Triangle area require a complete clean before occupancy inspections and final walkthroughs.",
+                body: "Developers and project managers can coordinate residential or light-commercial final cleaning around the construction schedule.",
               },
             ].map((item) => (
               <div
@@ -290,8 +337,8 @@ const BethesdaPostConstructionCleaningPage = () => {
             <p>
               Capital Clean Care's post-construction cleaning service covers all Bethesda ZIP codes —
               20814, 20815, 20816, and 20817. From newly renovated kitchens in Kenwood to bathroom
-              remodels in Bradley Hills and full-home renovations near Bethesda Row, our HEPA-equipped
-              team delivers a move-in ready standard that generic cleaners can't match.
+              remodels in Bradley Hills and full-home renovations near Bethesda Row, our team follows
+              the written scope and documents the final checklist before handoff.
             </p>
             <p>
               The Bethesda area sees significant renovation activity — from historic home updates to new
