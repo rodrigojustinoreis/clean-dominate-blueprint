@@ -1,13 +1,12 @@
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { CheckCircle, Star, ArrowRight } from "lucide-react";
+import { CheckCircle, CalendarDays, ClipboardCheck, Home, ShieldCheck } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FAQ from "@/components/FAQ";
 import ConversionCTA from "@/components/ConversionCTA";
 import TrustBadges from "@/components/TrustBadges";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
-import { Button } from "@/components/ui/button";
 import {
   LocalBusinessSchema,
   ServiceSchema,
@@ -22,31 +21,34 @@ import LocationSocialProof from "@/components/location/LocationSocialProof";
 import LocationQuoteSection from "@/components/location/LocationQuoteSection";
 import { getServiceLocationOverride } from "@/data/service-location-overrides";
 import { ctaProseVariants, pickVariant } from "@/data/template-variants";
+import { REAL_REVIEWS } from "@/data/realReviews";
 
 // ── Page constants ────────────────────────────────────────────────────────────
 
 const PAGE_URL = "https://capitalcleancare.com/locations/bethesda-md/recurring-cleaning";
+const HERO_IMAGE = "/images/team/real-team-luxury-home.webp";
+const verifiedReviews = [REAL_REVIEWS[3], REAL_REVIEWS[2], REAL_REVIEWS[0]];
 
 const localFaqs = [
   {
     q: "What's the difference between weekly and bi-weekly cleaning in Bethesda?",
-    a: "Weekly is ideal for larger homes, families with kids or pets, or homes that see high daily use. Bi-weekly is our most popular option — a consistently clean, well-maintained home without maximum cost.",
+    a: "Weekly service suits busy households, homes with children or pets, and spaces with heavy daily use. Biweekly service is a practical maintenance rhythm for many Bethesda households. We recommend the frequency after learning the home's size, condition, occupants, and priorities.",
   },
   {
     q: "Do I get the same cleaners every visit?",
-    a: "Yes. A consistent, bonded and insured team is assigned to your Bethesda home. No strangers showing up each week — the same trusted crew that knows your preferences.",
+    a: "We prioritize a consistent, background-checked team so your cleaners learn the home and your preferences. If staffing or scheduling requires a change, the replacement team receives the documented service notes.",
   },
   {
     q: "How much does recurring cleaning cost in Bethesda?",
-    a: "Recurring clients receive discounted rates compared to one-time bookings. Get your exact quote in 60 seconds — use the form below or call (240) 704-2551.",
+    a: "The written quote depends on square footage, bedrooms and bathrooms, current condition, pets, visit frequency, and any requested extras. Request a free quote or call (240) 704-2551 for pricing specific to your Bethesda home.",
   },
   {
     q: "Can I skip or pause my recurring service?",
-    a: "Yes — 24-hour notice to skip, pause, or modify. No long-term contracts, no lock-in. Easy to adjust around holidays and travel.",
+    a: "Yes. Contact our team as early as possible to discuss a skip, pause, or schedule change. We confirm availability and any applicable policy before changing the visit.",
   },
   {
     q: "Do you use eco-friendly products for recurring cleaning?",
-    a: "Yes, always. EPA Safer Choice™ certified — non-toxic, plant-based, safe for children and pets. We serve all Bethesda ZIPs: 20814, 20815, 20816, 20817.",
+    a: "We use eco-conscious products and can discuss household sensitivities, children, and pets before the first visit. Tell us about any material-specific care requirements when requesting your quote.",
   },
   {
     q: "Can I start with a one-time clean before committing?",
@@ -127,11 +129,11 @@ const nearbyCities = [
 const BethesdaRecurringCleaningPage = () => {
   const faqs = getServiceLocationOverride("bethesda-md", "recurring-cleaning")?.faqs ?? localFaqs;
   const { seoHelmet } = useSEO({
-    title: "Recurring Cleaning in Bethesda, MD | Weekly & Biweekly",
+    title: "Recurring Cleaning Bethesda MD | Weekly & Biweekly",
     description:
-      "Weekly and bi-weekly house cleaning in Bethesda, MD. Same trusted team, eco-friendly products, 100% satisfaction guaranteed. Build the routine. Free quote in 60 seconds.",
+      "Weekly and biweekly recurring cleaning in Bethesda, MD with background-checked teams, eco-conscious products and a written quote. Request yours today.",
     canonical: PAGE_URL,
-    ogImage: "https://capitalcleancare.com/og-image.jpg",
+    ogImage: `https://capitalcleancare.com${HERO_IMAGE}`,
   });
 
   return (
@@ -139,7 +141,7 @@ const BethesdaRecurringCleaningPage = () => {
       {/* ── SEO ───────────────────────────────────────────── */}
       {seoHelmet}
       <Helmet>
-        <link rel="preload" as="image" href="/images/team/team-two-living-room.jpg" />
+        <link rel="preload" as="image" href={HERO_IMAGE} />
         <link rel="alternate" hrefLang="en-US" href={PAGE_URL} />
       </Helmet>
 
@@ -159,17 +161,11 @@ const BethesdaRecurringCleaningPage = () => {
           "Bradley Hills, Bethesda MD",
           "Montgomery County, MD",
         ]}
-        reviews={[
-          {
-            name: "James T.",
-            text: "Best investment we've made. Coming home to a clean house every week is amazing.",
-            location: "Bethesda, MD",
-          },
-        ]}
+        reviews={verifiedReviews}
       />
       <ServiceSchema
         serviceName="Recurring House Cleaning in Bethesda, MD"
-        description="Weekly and bi-weekly house cleaning in Bethesda, MD. Same trusted, background-checked team every visit. EPA Safer Choice certified products. 100% satisfaction guaranteed."
+        description="Weekly and biweekly recurring house cleaning in Bethesda, Maryland, with documented preferences, background-checked teams, eco-conscious products, and written quotes."
         url={PAGE_URL}
         areaServed={["Bethesda, MD", "Montgomery County, MD"]}
       />
@@ -190,15 +186,36 @@ const BethesdaRecurringCleaningPage = () => {
 
       {/* ── Hero ──────────────────────────────────────────── */}
       <HeroLocation
-        h1="Recurring House Cleaning in Bethesda, MD"
-        lead="Stop cleaning on weekends. Capital Clean Care's recurring service comes to your Bethesda home — from Bethesda Row to Kenwood to Bradley Hills — weekly or bi-weekly, with the same trusted, background-checked team every single visit. Eco-friendly products, 100% satisfaction guaranteed: we re-clean if you're not happy."
+        h1="Recurring Cleaning in Bethesda, MD"
+        lead="Keep your Bethesda home consistently cared for with weekly or biweekly visits built around its size, condition, and priorities. Our background-checked team documents your preferences, uses eco-conscious products, and provides a written quote before service begins."
         cityName="Bethesda"
         state="MD"
         zipRange="20814–20817"
-        heroImage="/images/team/team-two-living-room.jpg"
-        heroImageAlt="Capital Clean Care recurring house cleaning in Bethesda, MD — same trusted team, every visit"
-        ctaPrimary="Set Up Recurring Cleaning in Bethesda"
+        heroImage={HERO_IMAGE}
+        heroImageAlt="Capital Clean Care team maintaining a residential home in Bethesda, Maryland"
+        heroAspectRatio="4/3"
+        preserveFullImage
+        ctaPrimary="Request a Bethesda Recurring Quote"
+        teamTrustLabel="Consistent Team & Documented Preferences"
+        ctaNote="Free written quote · Licensed and insured · Satisfaction guarantee"
+        updatedLabel="August 30, 2026"
+        updatedDateTime="2026-08-30"
       />
+
+      {/* ── Direct answer for search and AI systems ─────── */}
+      <section className="py-10 md:py-12 bg-background">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="rounded-2xl border border-primary/15 bg-primary/[0.04] p-6 md:p-8">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary mb-3">Quick answer</p>
+            <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-4">
+              What Does Recurring Cleaning in Bethesda Include?
+            </h2>
+            <p className="text-muted-foreground leading-relaxed">
+              Recurring cleaning is scheduled home maintenance performed weekly, biweekly, or at an agreed interval. A typical Bethesda visit covers kitchens, bathrooms, bedrooms, living areas, dusting, vacuuming, and hard-floor care; the exact checklist is confirmed in writing for the home. The first appointment may require extra time when buildup must be brought to a maintainable baseline. After that, documented preferences and rotating detail tasks help keep results consistent. Capital Clean Care serves Bethesda ZIP codes 20814, 20815, 20816, and 20817, including Bethesda Row, Woodmont Triangle, Kenwood, Edgemoor, and Bradley Hills. A written quote considers the home's size, current condition, visit frequency, pets, and requested extras. North Bethesda addresses are confirmed separately because postal and neighborhood boundaries can differ.
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* ── Cross-link Banner ──────────────────────────────── */}
       <div className="bg-primary/5 border-b border-primary/10">
@@ -217,7 +234,7 @@ const BethesdaRecurringCleaningPage = () => {
       />
 
       {/* ── Social Proof (3rd — trust video early) ── */}
-      <LocationSocialProof cityName="Bethesda" citySlug="bethesda-md" serviceSlug="recurring-cleaning" serviceLabel="Recurring Cleaning" />
+      <LocationSocialProof cityName="Bethesda" citySlug="bethesda-md" serviceSlug="recurring-cleaning" serviceLabel="Recurring Cleaning" count={3} reviewOverrides={verifiedReviews} showVideo={false} />
 
       {/* ── Schedule Comparison ───────────────────────────── */}
       <section className="py-12 md:py-16 bg-muted/30">
@@ -231,7 +248,7 @@ const BethesdaRecurringCleaningPage = () => {
                 <tr className="bg-muted/50">
                   <th className="text-left p-4 font-semibold text-foreground">Plan</th>
                   <th className="text-left p-4 font-semibold text-foreground">Best For</th>
-                  <th className="text-left p-4 font-semibold text-foreground">Discount</th>
+                  <th className="text-left p-4 font-semibold text-foreground">Between Visits</th>
                   <th className="text-left p-4 font-semibold text-foreground">Result</th>
                 </tr>
               </thead>
@@ -240,20 +257,20 @@ const BethesdaRecurringCleaningPage = () => {
                   [
                     "Weekly",
                     "Busy Bethesda families, large homes, pets",
-                    "Largest recurring discount",
-                    "Always guest-ready",
+                    "Less time for dust and pet hair to accumulate",
+                    "High-frequency maintenance",
                   ],
                   [
                     "Bi-Weekly",
                     "Most Bethesda households",
-                    "Standard recurring discount",
-                    "Clean between everyday use",
+                    "More routine upkeep by the household",
+                    "Balanced maintenance rhythm",
                   ],
                   [
                     "Monthly",
                     "Light maintenance, vacation homes",
-                    "Minimal discount",
-                    "Seasonal freshness",
+                    "More buildup can develop between visits",
+                    "Light professional maintenance",
                   ],
                 ].map(([plan, best, disc, result]) => (
                   <tr key={plan} className="bg-background hover:bg-muted/20 transition-colors">
@@ -282,16 +299,16 @@ const BethesdaRecurringCleaningPage = () => {
                 body: "Regular maintenance prevents buildup. Your Bethesda home actually gets cleaner over time — dust, grime, and bacterial load decrease with each visit.",
               },
               {
-                title: "Same Team Every Time",
-                body: "The same background-checked, bonded crew comes every visit. They learn your preferences, your layout, your standards. No retraining, no surprises.",
+                title: "Consistent, Documented Care",
+                body: "We prioritize team consistency and record service preferences so the work remains clear even if scheduling requires a team change.",
               },
               {
-                title: "Better Rates",
-                body: "Recurring Bethesda clients receive better rates than one-time bookings. The savings add up quickly over a year of weekly or bi-weekly service.",
+                title: "A Quote Built for the Schedule",
+                body: "Your written quote reflects the home's size, condition, frequency, pets, and requested extras rather than a generic online price.",
               },
               {
-                title: "Priority Scheduling",
-                body: "Recurring clients get first access to preferred time slots and faster rescheduling — including slots near Bethesda Metro, Kenwood, and Bradley Hills.",
+                title: "A Predictable Routine",
+                body: "An agreed visit rhythm makes home care easier to plan around work, family, travel, and events in Bethesda.",
               },
             ].map((card) => (
               <div
@@ -309,6 +326,39 @@ const BethesdaRecurringCleaningPage = () => {
         </div>
       </section>
 
+      {/* ── Quote factors ────────────────────────────────── */}
+      <section className="py-12 md:py-16 bg-muted/30">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-3">
+            What Shapes a Bethesda Recurring Cleaning Quote?
+          </h2>
+          <p className="text-muted-foreground mb-8 max-w-3xl">
+            We quote the actual scope of work. These are the main variables we confirm before recommending a schedule.
+          </p>
+          <div className="grid sm:grid-cols-2 gap-4">
+            {[
+              { Icon: Home, title: "Home size and layout", body: "Square footage, bedrooms, bathrooms, stairs, and finished living areas." },
+              { Icon: ClipboardCheck, title: "Starting condition", body: "Current buildup and whether an initial deep-clean baseline is appropriate." },
+              { Icon: CalendarDays, title: "Visit frequency", body: "Weekly, biweekly, or another agreed rhythm and the time between visits." },
+              { Icon: ShieldCheck, title: "Priorities and extras", body: "Pets, material sensitivities, rotating details, and requested add-on work." },
+            ].map(({ Icon, title, body }) => (
+              <article key={title} className="rounded-xl border border-border/60 bg-background p-5">
+                <Icon className="h-5 w-5 text-primary mb-3" aria-hidden="true" />
+                <h3 className="font-semibold text-foreground mb-2">{title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{body}</p>
+              </article>
+            ))}
+          </div>
+          <p className="text-sm text-muted-foreground mt-6">
+            Comparing options? Read our guide to{" "}
+            <Link to="/resources/house-cleaning-prices-maryland-2026" className="text-primary font-semibold underline">
+              Maryland house cleaning prices
+            </Link>{" "}
+            and request a written quote for your address.
+          </p>
+        </div>
+      </section>
+
       {/* ── Getting Started ───────────────────────────────── */}
       <section className="py-12 md:py-16 bg-muted/30">
         <div className="container mx-auto px-4 max-w-4xl">
@@ -320,22 +370,22 @@ const BethesdaRecurringCleaningPage = () => {
               {
                 step: "1",
                 title: "Deep baseline first",
-                body: "New recurring clients start with a deeper initial clean to establish a solid baseline throughout your Bethesda home. This ensures your first recurring visit starts from a clean slate.",
+                body: "We assess whether the home needs an initial deep-clean baseline or can begin with routine maintenance. The recommendation is documented in your quote.",
               },
               {
                 step: "2",
-                title: "Consistent team assigned",
-                body: "The same dedicated, bonded team is assigned to your home every visit — whether you're in ZIP 20814 near NIH campus or in the 20815 area of Bethesda.",
+                title: "Preferences documented",
+                body: "We record access details, priorities, surface-care notes, and household preferences so the scope remains clear from visit to visit.",
               },
               {
                 step: "3",
                 title: "Set your schedule",
-                body: "Weekly, bi-weekly, or monthly — whatever fits your life. Easy to adjust for holidays, travel, or schedule changes with 24-hour notice.",
+                body: "Choose a weekly, biweekly, or agreed maintenance rhythm. Contact the office early when travel, holidays, or other changes affect a visit.",
               },
               {
                 step: "4",
                 title: "Ongoing care, guaranteed",
-                body: "100% satisfaction guaranteed on every visit. If anything isn't right, call us and we return to re-clean — no fine print, no arguments.",
+                body: "Review the completed work and contact us promptly if something in the agreed checklist needs attention. Our satisfaction guarantee explains the next step.",
               },
             ].map(({ step, title, body }) => (
               <div
