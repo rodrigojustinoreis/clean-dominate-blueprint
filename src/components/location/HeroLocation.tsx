@@ -17,6 +17,8 @@ interface HeroLocationProps {
   heroAspectRatio?: string;
   heroImageWidth?: number;
   heroImageHeight?: number;
+  heroImageSrcSet?: string;
+  heroImageSizes?: string;
   heroImageContainerClassName?: string;
   preserveFullImage?: boolean;
   updatedLabel?: string;
@@ -45,6 +47,8 @@ const HeroLocation = ({
   heroAspectRatio = "4/3",
   heroImageWidth = 600,
   heroImageHeight = 450,
+  heroImageSrcSet,
+  heroImageSizes,
   heroImageContainerClassName = "",
   preserveFullImage = false,
   updatedLabel,
@@ -118,6 +122,8 @@ const HeroLocation = ({
             )}
             <img
               src={heroImage}
+              srcSet={heroImageSrcSet}
+              sizes={heroImageSizes}
               alt={heroImageAlt}
               className={`relative h-full w-full ${preserveFullImage ? "scale-[1.16] object-contain" : "object-cover"}`}
               loading="eager"

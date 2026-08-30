@@ -24,7 +24,8 @@ import { pickReviews } from "@/data/realReviews";
 
 const PAGE_URL = "https://capitalcleancare.com/locations/bethesda-md/deep-cleaning";
 const CASE_STUDY_URL = "/resources/real-deep-cleaning-project-bethesda-home";
-const HERO_IMAGE = "/images/blog/real-deep-cleaning-bethesda/bethesda-bathroom-walkthrough-crew.webp";
+const HERO_IMAGE = "/images/locations/bethesda-deep-cleaning/real-hvac-filter-deep-cleaning.webp";
+const HERO_IMAGE_SRCSET = "/images/locations/bethesda-deep-cleaning/real-hvac-filter-deep-cleaning-800.webp 800w, /images/locations/bethesda-deep-cleaning/real-hvac-filter-deep-cleaning.webp 1600w";
 const PROJECT_IMAGE = "/images/blog/real-deep-cleaning-bethesda/vanity-detail-clean-respirator.webp";
 const verifiedReviews = pickReviews("bethesda-md/deep-cleaning", 3);
 
@@ -181,10 +182,12 @@ const BethesdaDeepCleaningPage = () => {
         state="MD"
         zipRange="20814–20817"
         heroImage={HERO_IMAGE}
-        heroImageAlt="Capital Clean Care crew performing a real bathroom deep cleaning project in Bethesda, Maryland"
-        heroAspectRatio="16/9"
-        heroImageWidth={1280}
-        heroImageHeight={720}
+        heroImageAlt="Capital Clean Care professional washing a heavily soiled HVAC vent filter during a detailed deep cleaning service"
+        heroAspectRatio="4/3"
+        heroImageWidth={1600}
+        heroImageHeight={1200}
+        heroImageSrcSet={HERO_IMAGE_SRCSET}
+        heroImageSizes="(max-width: 1023px) calc(100vw - 2rem), 560px"
         heroImageContainerClassName="max-w-[640px] mx-auto lg:ml-auto lg:mr-0"
         ctaPrimary="Schedule a Deep Clean in Bethesda"
         teamTrustLabel="Background-Checked Team"
