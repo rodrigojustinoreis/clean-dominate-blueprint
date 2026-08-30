@@ -1,13 +1,12 @@
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { CheckCircle, Star, ArrowRight } from "lucide-react";
+import { CheckCircle, CalendarClock, Camera, KeyRound, PackageCheck } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FAQ from "@/components/FAQ";
 import ConversionCTA from "@/components/ConversionCTA";
 import TrustBadges from "@/components/TrustBadges";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
-import { Button } from "@/components/ui/button";
 import {
   LocalBusinessSchema,
   ServiceSchema,
@@ -20,35 +19,38 @@ import ServiceChecklistLocation from "@/components/location/ServiceChecklistLoca
 import InternalLinksGrid from "@/components/location/InternalLinksGrid";
 import LocationSocialProof from "@/components/location/LocationSocialProof";
 import LocationQuoteSection from "@/components/location/LocationQuoteSection";
+import { REAL_REVIEWS } from "@/data/realReviews";
 
 // ── Page constants ────────────────────────────────────────────────────────────
 
 const PAGE_URL = "https://capitalcleancare.com/locations/bethesda-md/airbnb-cleaning";
+const HERO_IMAGE = "/images/team/bethesda-airbnb-turnover-team.webp";
+const verifiedReviews = [REAL_REVIEWS[5], REAL_REVIEWS[4], REAL_REVIEWS[2]];
 
 const faqs = [
   {
     q: "How quickly can you turn over my Bethesda Airbnb?",
-    a: "Most 1–2 bedroom Bethesda properties turn over in 2–3 hours. We work within same-day check-in windows with advance notice.",
+    a: "Turnover time depends on property size, laundry, starting condition, restocking, and the gap between checkout and check-in. We confirm a realistic service window for the property instead of promising one duration for every rental.",
   },
   {
     q: "Can you manage my cleaning schedule automatically?",
-    a: "Yes — share your Airbnb calendar and we schedule around each checkout automatically. No reminders needed on your end.",
+    a: "We can coordinate an agreed turnover schedule using the booking information you provide. Calendar access, confirmation steps, and change-notice procedures are documented during onboarding.",
   },
   {
     q: "How much does Airbnb turnover cleaning cost in Bethesda?",
-    a: "Pricing depends on property size and scope. Get your exact quote in 60 seconds — use the form below or call (240) 704-2551. No contracts required.",
+    a: "Pricing depends on bedrooms, bathrooms, square footage, laundry, restocking, access, turnover frequency, and the time between guests. We provide a written quote after reviewing the property and checklist.",
   },
   {
     q: "What if a guest leaves the property extra dirty?",
-    a: "We document with photos and charge only for the additional time required. Transparent, fair billing every time.",
+    a: "The team follows the agreed escalation process, documents conditions when authorized, and contacts the host before work outside the standard checklist. Any additional time or scope is confirmed according to the service agreement.",
   },
   {
     q: "Do you clean VRBO and other short-term rental platforms?",
-    a: "Absolutely — Airbnb, VRBO, Booking.com, direct bookings. Any short-term rental in Bethesda's 20814–20817 ZIP codes.",
+    a: "Yes. The cleaning workflow can support Airbnb, Vrbo, Booking.com, and direct-booked short-term rentals when the property, schedule, and access requirements fit our service area.",
   },
   {
     q: "Do you know Airbnb standards in Bethesda?",
-    a: "Yes. We work with multiple hosts across Bethesda (20814–20815) and Montgomery County. Our team knows what guests expect.",
+    a: "Our turnover checklist focuses on guest-ready presentation, bathrooms, kitchens, floors, linens when included, restocking when supplied, and host-approved issue reporting. The exact standard is documented for each property.",
   },
   {
     q: "Is Capital Clean Care locally owned?",
@@ -107,11 +109,11 @@ const nearbyCities = [
 
 const BethesdaAirbnbCleaningPage = () => {
   const { seoHelmet } = useSEO({
-    title: "Airbnb Cleaning in Bethesda, MD",
+    title: "Airbnb Cleaning Bethesda MD | Turnovers",
     description:
-      "Airbnb & short-term rental cleaning in Bethesda, MD. Fast turnovers, hotel-standard results, flexible scheduling. Latino-owned & locally trusted. Free quote.",
+      "Airbnb and short-term rental turnover cleaning in Bethesda, MD with written checklists, linen and restock options, issue reporting and flexible scheduling.",
     canonical: PAGE_URL,
-    ogImage: "https://capitalcleancare.com/og-image.jpg",
+    ogImage: `https://capitalcleancare.com${HERO_IMAGE}`,
   });
 
   return (
@@ -119,7 +121,7 @@ const BethesdaAirbnbCleaningPage = () => {
       {/* ── SEO ───────────────────────────────────────────── */}
       {seoHelmet}
       <Helmet>
-        <link rel="preload" as="image" href="/images/team/team-making-bed.jpg" />
+        <link rel="preload" as="image" href={HERO_IMAGE} />
         <link rel="alternate" hrefLang="en-US" href={PAGE_URL} />
       </Helmet>
 
@@ -139,17 +141,11 @@ const BethesdaAirbnbCleaningPage = () => {
           "Woodmont Triangle, Bethesda MD",
           "Montgomery County, MD",
         ]}
-        reviews={[
-          {
-            name: "Amanda F.",
-            text: "My Airbnb rating went from 4.6 to 5.0 stars after switching to Capital Clean Care. Detail is incredible.",
-            location: "Bethesda, MD",
-          },
-        ]}
+        reviews={verifiedReviews}
       />
       <ServiceSchema
         serviceName="Airbnb & Short-Term Rental Cleaning in Bethesda, MD"
-        description="Professional Airbnb and short-term rental cleaning in Bethesda, MD. Fast turnovers, hotel-standard results, flexible scheduling around your booking calendar."
+        description="Airbnb and short-term rental turnover cleaning in Bethesda, Maryland, with property-specific checklists, linen and restock options, issue reporting, and scheduled handoffs."
         url={PAGE_URL}
         areaServed={["Bethesda, MD", "Montgomery County, MD"]}
       />
@@ -171,14 +167,34 @@ const BethesdaAirbnbCleaningPage = () => {
       {/* ── Hero ──────────────────────────────────────────── */}
       <HeroLocation
         h1="Airbnb & Short-Term Rental Cleaning in Bethesda, MD"
-        lead="Protect your Bethesda Airbnb rating with professional turnover cleanings between every guest. Capital Clean Care — a Latino-owned, locally operated company — delivers hotel-standard results from Bethesda Row to NIH campus. Flexible scheduling, 100% satisfaction guaranteed."
+        lead="Give each guest a clean, consistent arrival with a turnover plan built for your Bethesda rental. We document the checklist, access, linens, restocking, reporting, and check-in deadline before the first scheduled service."
         cityName="Bethesda"
         state="MD"
         zipRange="20814–20817"
-        heroImage="/images/team/team-making-bed.jpg"
-        heroImageAlt="Capital Clean Care Airbnb turnover cleaning in Bethesda, MD — hotel-standard results"
-        ctaPrimary="Set Up Airbnb Turnover Cleaning in Bethesda"
+        heroImage={HERO_IMAGE}
+        heroImageAlt="Capital Clean Care team member preparing a bed during a Bethesda short-term rental turnover"
+        preserveFullImage
+        ctaPrimary="Request a Bethesda Turnover Quote"
+        teamTrustLabel="Checklist-Trained Turnover Team"
+        ctaNote="Written workflow · Licensed and insured · Airbnb, Vrbo and direct bookings"
+        updatedLabel="August 30, 2026"
+        updatedDateTime="2026-08-30"
       />
+
+      {/* ── Direct answer for search and AI systems ─────── */}
+      <section className="py-10 md:py-12">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="rounded-2xl border border-primary/15 bg-primary/[0.04] p-6 md:p-8">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary mb-3">Quick answer</p>
+            <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-4">
+              What Does Airbnb Turnover Cleaning in Bethesda Include?
+            </h2>
+            <p className="text-muted-foreground leading-relaxed">
+              Airbnb turnover cleaning prepares a short-term rental between checkout and the next guest's arrival. A property-specific checklist commonly covers bathrooms, kitchen surfaces, trash, dusting, floors, beds and towels when linens are included, supplied-amenity restocking, and a final presentation check. Capital Clean Care can also follow host-approved procedures for access, issue photos, damaged or missing items, extra-soil escalation, and completion confirmation. We serve qualifying short-term rentals in Bethesda ZIP codes 20814, 20815, 20816, and 20817. The written quote depends on property size, laundry, restocking, turnover frequency, starting condition, parking or access, and the available check-in window. Periodic deep resets are scoped separately from the standard between-guest turnover.
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* ── Checklist ─────────────────────────────────────── */}
       <ServiceChecklistLocation
@@ -187,7 +203,7 @@ const BethesdaAirbnbCleaningPage = () => {
       />
 
       {/* ── Social Proof (3rd — trust video early) ── */}
-      <LocationSocialProof cityName="Bethesda" citySlug="bethesda-md" serviceSlug="airbnb-cleaning" serviceLabel="Airbnb Cleaning" />
+      <LocationSocialProof cityName="Bethesda" citySlug="bethesda-md" serviceSlug="airbnb-cleaning" serviceLabel="Airbnb Cleaning" count={3} reviewOverrides={verifiedReviews} showVideo={false} />
 
       {/* ── Why Hosts Choose Us ───────────────────────────── */}
       <section className="py-12 md:py-16 bg-muted/30">
@@ -199,15 +215,15 @@ const BethesdaAirbnbCleaningPage = () => {
             {[
               {
                 title: "Rating Protection",
-                body: "Consistent, bonded team means guests find your Bethesda property exactly as listed, every time. 100% satisfaction guaranteed: we re-clean if anything falls short of hotel standard.",
+                body: "A written property checklist makes the expected presentation, linens, amenities, and final checks clear for each turnover.",
               },
               {
                 title: "Flexible Scheduling",
-                body: "We work around your checkout and check-in window across Bethesda's 20814 and 20815 ZIP codes and throughout Kenwood and Bradley Hills. Same-day turnovers available.",
+                body: "We confirm checkout, access, laundry, and check-in deadlines before accepting the turnover window; availability varies by date and scope.",
               },
               {
                 title: "Locally Owned & Accountable",
-                body: "We're not a franchise. We're a Latino-owned company operating in Bethesda. Your Airbnb reputation matters to us personally — every 5-star review reflects our work.",
+                body: "A locally operated team and documented escalation process give hosts a clear point of contact when the property needs attention.",
               },
             ].map((card) => (
               <div
@@ -223,6 +239,38 @@ const BethesdaAirbnbCleaningPage = () => {
         </div>
       </section>
 
+      {/* ── Host onboarding details ──────────────────────── */}
+      <section className="py-12 md:py-16 bg-muted/30">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-3">
+            Four Details We Confirm Before the First Turnover
+          </h2>
+          <p className="text-muted-foreground mb-8">
+            Reliable short-term-rental cleaning starts with an operating plan, not a generic house-cleaning checklist.
+          </p>
+          <div className="grid sm:grid-cols-2 gap-4">
+            {[
+              { Icon: KeyRound, title: "Access and security", body: "Entry instructions, alarm procedure, parking, keys, and who to contact if access fails." },
+              { Icon: CalendarClock, title: "Turnover window", body: "Checkout, check-in, laundry time, calendar changes, and the minimum notice for schedule updates." },
+              { Icon: PackageCheck, title: "Linens and supplies", body: "Where clean sets and amenities are stored, what we restock, and how shortages are reported." },
+              { Icon: Camera, title: "Issue reporting", body: "Host-approved photo rules and escalation for damage, missing items, excessive soil, or maintenance concerns." },
+            ].map(({ Icon, title, body }) => (
+              <article key={title} className="rounded-xl border border-border/60 bg-background p-5">
+                <Icon className="h-5 w-5 text-primary mb-3" aria-hidden="true" />
+                <h3 className="font-semibold text-foreground mb-2">{title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{body}</p>
+              </article>
+            ))}
+          </div>
+          <p className="text-sm text-muted-foreground mt-6">
+            Estimate the operating impact with our guide to{" "}
+            <Link to="/resources/airbnb-cleaning-fee" className="text-primary font-semibold underline">
+              short-term rental cleaning fees
+            </Link>.
+          </p>
+        </div>
+      </section>
+
       {/* ── How It Works ──────────────────────────────────── */}
       <section className="py-12 md:py-16">
         <div className="container mx-auto px-4 max-w-4xl">
@@ -234,22 +282,22 @@ const BethesdaAirbnbCleaningPage = () => {
               {
                 step: "1",
                 title: "Share your calendar",
-                body: "We coordinate around your booking schedule across all platforms — Airbnb, VRBO, Booking.com, and direct bookings in Bethesda.",
+                body: "You provide the approved booking schedule or calendar workflow, along with the notice and confirmation process for changes.",
               },
               {
                 step: "2",
-                title: "We arrive at checkout time",
-                body: "Fast turnover anywhere in Bethesda — from Kenwood to Bradley Hills to Woodmont Triangle. Our background-checked team is punctual and prepared.",
+                title: "We confirm the service window",
+                body: "The team works within the accepted access and handoff window, based on property size, laundry, restocking, and starting condition.",
               },
               {
                 step: "3",
-                title: "Hotel-standard clean",
-                body: "Fresh linens, full sanitization, restock, and a final walkthrough inspection. Every surface, every time.",
+                title: "We follow the property checklist",
+                body: "Cleaning, linens, restocking, staging, and issue reporting follow the items approved during onboarding.",
               },
               {
                 step: "4",
-                title: "Ready for next guest",
-                body: "You get confirmation. Your guest checks in to a 5-star clean. Protect your Bethesda Airbnb rating with every turnover.",
+                title: "You receive completion confirmation",
+                body: "The agreed confirmation closes the turnover and flags anything requiring the host, maintenance team, or additional authorization.",
               },
             ].map(({ step, title, body }) => (
               <div
@@ -282,14 +330,13 @@ const BethesdaAirbnbCleaningPage = () => {
             <p>
               Capital Clean Care serves Airbnb and vacation rental hosts across all Bethesda ZIP codes —
               20814, 20815, 20816, and 20817. From condos near the Bethesda Metro to single-family homes
-              in Kenwood and Bradley Hills, we turn over short-term rental properties to hotel-grade
-              standards between every guest.
+              in Kenwood and Bradley Hills, we follow a property-specific turnover checklist between guests.
             </p>
             <p>
               Bethesda attracts a high-quality guest demographic — travelers visiting NIH campus, National
               Naval Medical Center, and the Friendship Heights area expect spotless properties. Our
-              background-checked, bonded team understands these expectations and delivers consistently,
-              protecting your Airbnb Superhost status and guest ratings.
+              background-checked team focuses on clean presentation and timely reporting without making
+              guarantees about platform ratings or host status.
             </p>
             <p>
               Want ongoing support for your property? Pair turnover cleanings with a{" "}
