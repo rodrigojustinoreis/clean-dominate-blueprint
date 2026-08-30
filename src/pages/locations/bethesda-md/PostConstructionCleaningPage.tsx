@@ -26,7 +26,7 @@ import { REAL_REVIEWS } from "@/data/realReviews";
 // ── Page constants ────────────────────────────────────────────────────────────
 
 const PAGE_URL = "https://capitalcleancare.com/locations/bethesda-md/post-construction-cleaning";
-const HERO_IMAGE = "/images/locations/post-construction-authentic/post-construction-hero-team-privacy-v2.webp";
+const HERO_IMAGE = "/images/locations/post-construction-authentic/post-construction-team-portrait.webp";
 const verifiedReviews = [REAL_REVIEWS[6], REAL_REVIEWS[1], REAL_REVIEWS[2]];
 
 const localFaqs = [
@@ -176,7 +176,7 @@ const BethesdaPostConstructionCleaningPage = () => {
         state="MD"
         zipRange="20814–20817"
         heroImage={HERO_IMAGE}
-        heroImageAlt="Capital Clean Care team coordinating post-construction detail cleaning in a Bethesda-area home"
+        heroImageAlt="Full Capital Clean Care team serving post-construction cleaning projects in Bethesda, Maryland"
         heroAspectRatio="4/5"
         heroImageWidth={1086}
         heroImageHeight={1448}
@@ -211,45 +211,6 @@ const BethesdaPostConstructionCleaningPage = () => {
 
       {/* ── Social Proof (3rd — trust video early) ── */}
       <LocationSocialProof cityName="Bethesda" citySlug="bethesda-md" serviceSlug="post-construction-cleaning" serviceLabel="Post-Construction Cleaning" count={3} reviewOverrides={verifiedReviews} showVideo={false} />
-
-      {/* ── Full local team ─────────────────────────────── */}
-      <section className="py-12 md:py-16 bg-background">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <div className="grid gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] items-center">
-            <div className="relative mx-auto w-full max-w-[460px] overflow-hidden rounded-2xl border border-border/60 bg-muted/20 shadow-lg">
-              <img
-                src="/images/locations/post-construction-authentic/post-construction-team-portrait.webp"
-                alt="Full Capital Clean Care team serving post-construction cleaning projects in Bethesda, Maryland"
-                width={1086}
-                height={1448}
-                loading="lazy"
-                className="h-auto w-full object-contain"
-              />
-            </div>
-            <div>
-              <p className="mb-3 text-xs font-bold uppercase tracking-[0.18em] text-primary">The people behind the checklist</p>
-              <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-4">
-                Meet the Capital Clean Care Team
-              </h2>
-              <p className="text-muted-foreground leading-relaxed mb-5">
-                Post-construction cleaning depends on coordinated detail work. Our local team follows the
-                written project scope, communicates access limitations, and reviews the agreed checklist
-                before the final handoff.
-              </p>
-              <div className="grid sm:grid-cols-2 gap-3 text-sm">
-                <div className="rounded-xl border border-border/60 bg-muted/20 p-4">
-                  <p className="font-semibold text-foreground">Background-checked team</p>
-                  <p className="mt-1 text-muted-foreground">Professionals assigned according to project scope and site readiness.</p>
-                </div>
-                <div className="rounded-xl border border-border/60 bg-muted/20 p-4">
-                  <p className="font-semibold text-foreground">Licensed and insured</p>
-                  <p className="mt-1 text-muted-foreground">Clear expectations for residential and light-commercial projects.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* ── Why Specialist ────────────────────────────────── */}
       <section className="py-12 md:py-16 bg-muted/30">
