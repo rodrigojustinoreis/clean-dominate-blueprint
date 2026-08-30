@@ -26,7 +26,7 @@ import { REAL_REVIEWS } from "@/data/realReviews";
 // ── Page constants ────────────────────────────────────────────────────────────
 
 const PAGE_URL = "https://capitalcleancare.com/locations/bethesda-md/post-construction-cleaning";
-const HERO_IMAGE = "/images/locations/post-construction-authentic/post-construction-team-landscape-v2.webp";
+const HERO_IMAGE = "/images/locations/post-construction-authentic/post-construction-team-landscape-v3.webp";
 const verifiedReviews = [REAL_REVIEWS[6], REAL_REVIEWS[1], REAL_REVIEWS[2]];
 
 const localFaqs = [
@@ -178,8 +178,8 @@ const BethesdaPostConstructionCleaningPage = () => {
         heroImage={HERO_IMAGE}
         heroImageAlt="Full Capital Clean Care team serving post-construction cleaning projects in Bethesda, Maryland"
         heroAspectRatio="16/9"
-        heroImageWidth={1672}
-        heroImageHeight={941}
+        heroImageWidth={1400}
+        heroImageHeight={788}
         ctaPrimary="Request a Bethesda Project Quote"
         teamTrustLabel="Background-Checked Project Team"
         ctaNote="Written scope · Licensed and insured · Residential and light commercial"
@@ -265,10 +265,10 @@ const BethesdaPostConstructionCleaningPage = () => {
               <img
                 src="/images/locations/post-construction-authentic/professional-floor-care-equipment.webp"
                 alt="Capital Clean Care professional using powered floor-care equipment on hardwood flooring"
-                className="aspect-[4/3] h-full w-full object-cover object-center"
+                className="aspect-[3/4] h-full w-full object-cover object-center"
                 loading="lazy"
-                width={1400}
-                height={1050}
+                width={1050}
+                height={1400}
               />
             </figure>
             <div className="px-1 md:px-2">
