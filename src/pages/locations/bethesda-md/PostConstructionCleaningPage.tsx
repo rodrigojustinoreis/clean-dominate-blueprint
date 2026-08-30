@@ -263,7 +263,7 @@ const BethesdaPostConstructionCleaningPage = () => {
           <div className="grid md:grid-cols-[1.05fr_0.95fr] items-center gap-7 rounded-2xl border border-border/60 bg-background p-4 md:p-6 shadow-sm">
             <figure className="overflow-hidden rounded-xl bg-muted">
               <img
-                src="/images/locations/post-construction-authentic/professional-floor-care-equipment.webp"
+                src="/images/locations/post-construction-authentic/professional-floor-care-equipment-v2.webp"
                 alt="Capital Clean Care professional using powered floor-care equipment on hardwood flooring"
                 className="aspect-[3/4] h-full w-full object-cover object-center"
                 loading="lazy"
