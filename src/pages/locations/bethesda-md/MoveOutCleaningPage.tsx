@@ -175,7 +175,7 @@ const BethesdaMoveOutCleaningPage = () => {
 
       {/* ── Hero ──────────────────────────────────────────── */}
       <HeroLocation
-        h1="Move-Out Cleaning Services in Bethesda, MD"
+        h1="Move Out Cleaning in Bethesda, MD"
         lead="Hand over a cleaner, inspection-ready home without spending moving day scrubbing it yourself. Our Bethesda move-out cleaning details appliance interiors, cabinets, closets, bathrooms, baseboards, window tracks and floors using a written room-by-room checklist."
         cityName="Bethesda"
         state="MD"
