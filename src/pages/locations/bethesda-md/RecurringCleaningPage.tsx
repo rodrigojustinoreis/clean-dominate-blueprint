@@ -26,7 +26,7 @@ import { REAL_REVIEWS } from "@/data/realReviews";
 // ── Page constants ────────────────────────────────────────────────────────────
 
 const PAGE_URL = "https://capitalcleancare.com/locations/bethesda-md/recurring-cleaning";
-const HERO_IMAGE = "/images/locations/bethesda-service-heroes/recurring-cleaning-hero.webp";
+const HERO_IMAGE = "/images/locations/recurring-cleaning-authentic/recurring-cleaning-hardwood-floor.webp";
 const verifiedReviews = [REAL_REVIEWS[3], REAL_REVIEWS[2], REAL_REVIEWS[0]];
 
 const localFaqs = [
@@ -192,11 +192,11 @@ const BethesdaRecurringCleaningPage = () => {
         state="MD"
         zipRange="20814–20817"
         heroImage={HERO_IMAGE}
-        heroImageAlt="Capital Clean Care team maintaining a residential home in Bethesda, Maryland"
-        heroAspectRatio="16/10"
-        heroImageWidth={1600}
-        heroImageHeight={900}
-        heroImageContainerClassName="lg:min-h-[500px]"
+        heroImageAlt="Capital Clean Care professional performing recurring hardwood floor cleaning in a Bethesda-area home"
+        heroAspectRatio="4/5"
+        heroImageWidth={1200}
+        heroImageHeight={1600}
+        heroImageContainerClassName="lg:max-w-[470px] lg:justify-self-end"
         ctaPrimary="Request a Bethesda Recurring Quote"
         teamTrustLabel="Consistent Team & Documented Preferences"
         ctaNote="Free written quote · Licensed and insured · Satisfaction guarantee"
