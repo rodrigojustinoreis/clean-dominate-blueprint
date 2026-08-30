@@ -26,7 +26,7 @@ import { REAL_REVIEWS } from "@/data/realReviews";
 // ── Page constants ────────────────────────────────────────────────────────────
 
 const PAGE_URL = "https://capitalcleancare.com/locations/bethesda-md/post-construction-cleaning";
-const HERO_IMAGE = "/images/locations/post-construction-authentic/post-construction-team-portrait.webp";
+const HERO_IMAGE = "/images/locations/post-construction-authentic/post-construction-team-landscape-v2.webp";
 const verifiedReviews = [REAL_REVIEWS[6], REAL_REVIEWS[1], REAL_REVIEWS[2]];
 
 const localFaqs = [
@@ -177,10 +177,9 @@ const BethesdaPostConstructionCleaningPage = () => {
         zipRange="20814–20817"
         heroImage={HERO_IMAGE}
         heroImageAlt="Full Capital Clean Care team serving post-construction cleaning projects in Bethesda, Maryland"
-        heroAspectRatio="4/5"
-        heroImageWidth={1086}
-        heroImageHeight={1448}
-        heroImageContainerClassName="lg:max-w-[470px] lg:justify-self-end"
+        heroAspectRatio="16/9"
+        heroImageWidth={1672}
+        heroImageHeight={941}
         ctaPrimary="Request a Bethesda Project Quote"
         teamTrustLabel="Background-Checked Project Team"
         ctaNote="Written scope · Licensed and insured · Residential and light commercial"
