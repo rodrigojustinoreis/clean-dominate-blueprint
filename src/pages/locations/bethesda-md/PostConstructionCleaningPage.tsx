@@ -257,6 +257,36 @@ const BethesdaPostConstructionCleaningPage = () => {
         </div>
       </section>
 
+      {/* ── Authentic equipment proof ───────────────────── */}
+      <section className="py-10 md:py-14">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="grid md:grid-cols-[1.05fr_0.95fr] items-center gap-7 rounded-2xl border border-border/60 bg-background p-4 md:p-6 shadow-sm">
+            <figure className="overflow-hidden rounded-xl bg-muted">
+              <img
+                src="/images/locations/post-construction-authentic/professional-floor-care-equipment.webp"
+                alt="Capital Clean Care professional using powered floor-care equipment on hardwood flooring"
+                className="aspect-[4/3] h-full w-full object-cover object-center"
+                loading="lazy"
+                width={1400}
+                height={1050}
+              />
+            </figure>
+            <div className="px-1 md:px-2">
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary mb-3">Real team. Professional equipment.</p>
+              <h2 className="font-heading text-2xl font-bold text-foreground mb-3">
+                Surface-Appropriate Floor Detailing
+              </h2>
+              <p className="text-muted-foreground leading-relaxed">
+                After fine dust is removed, the finishing method is selected for the installed surface and the written project scope. Powered floor-care equipment may be used where appropriate, followed by an inspection of edges, transitions, and remaining residue.
+              </p>
+              <p className="text-xs text-muted-foreground mt-4">
+                Equipment and products vary by flooring manufacturer, finish, condition, and access.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── Quote preparation ────────────────────────────── */}
       <section className="py-12 md:py-16 bg-muted/30">
         <div className="container mx-auto px-4 max-w-4xl">
