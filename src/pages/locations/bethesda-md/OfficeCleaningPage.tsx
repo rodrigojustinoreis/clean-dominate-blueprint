@@ -1,13 +1,12 @@
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { CheckCircle, Star, ArrowRight } from "lucide-react";
+import { CheckCircle, Building2, CalendarClock, ClipboardCheck, ShieldCheck } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FAQ from "@/components/FAQ";
 import ConversionCTA from "@/components/ConversionCTA";
 import TrustBadges from "@/components/TrustBadges";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
-import { Button } from "@/components/ui/button";
 import {
   LocalBusinessSchema,
   ServiceSchema,
@@ -20,31 +19,34 @@ import ServiceChecklistLocation from "@/components/location/ServiceChecklistLoca
 import InternalLinksGrid from "@/components/location/InternalLinksGrid";
 import LocationSocialProof from "@/components/location/LocationSocialProof";
 import LocationQuoteSection from "@/components/location/LocationQuoteSection";
+import { REAL_REVIEWS } from "@/data/realReviews";
 
 // ── Page constants ────────────────────────────────────────────────────────────
 
 const PAGE_URL = "https://capitalcleancare.com/locations/bethesda-md/office-cleaning";
+const HERO_IMAGE = "/images/locations/bethesda-house-cleaning/capital-clean-care-team.webp";
+const verifiedReviews = [REAL_REVIEWS[0], REAL_REVIEWS[2], REAL_REVIEWS[4]];
 
 const faqs = [
   {
     q: "How much does office cleaning cost in Bethesda?",
-    a: "Priced by square footage, frequency, and scope. Contact us at (240) 704-2551 or use the form below for a custom quote tailored to your Bethesda office.",
+    a: "The written quote considers square footage, traffic, restrooms, break rooms, floor types, frequency, access, consumables, and the tasks assigned to each visit. A walkthrough is the best way to define a commercial scope.",
   },
   {
     q: "Do you clean after business hours in Bethesda?",
-    a: "Yes. Full flexibility — early morning, evenings after close, or weekends. We work around your schedule so your team is never disrupted.",
+    a: "We can discuss early-morning, evening, or weekend service based on team availability, building access, security procedures, and the approved scope.",
   },
   {
     q: "Are your cleaners background-checked for commercial properties?",
-    a: "Every team member is fully background-screened, bonded, and insured before entering any commercial property in Bethesda. Security and discretion are non-negotiable.",
+    a: "Team members are background-checked, and Capital Clean Care is licensed and insured. Access, keys, alarms, restricted areas, and contact procedures are documented before service begins.",
   },
   {
     q: "Do you provide your own supplies and equipment?",
-    a: "Yes. We bring everything — no need for you to stock supplies or equipment. EPA Safer Choice™ certified products only.",
+    a: "We define who supplies cleaning products, equipment, liners, paper goods, soap, and other consumables in the proposal so responsibilities are clear.",
   },
   {
-    q: "Do you offer eco-friendly commercial cleaning in Bethesda?",
-    a: "Yes. EPA Safer Choice™ certified products exclusively — effective disinfection, no harsh fumes or residue. Safe for medical offices and food prep areas.",
+    q: "Do you offer eco-conscious office cleaning in Bethesda?",
+    a: "Yes. We can build an eco-conscious plan and discuss occupants' sensitivities and material-care requirements. Regulated healthcare, food-service, laboratory, or specialized disinfection protocols require separate review and are not implied by a general office-cleaning scope.",
   },
   {
     q: "Can you start with a one-time deep clean before regular service?",
@@ -116,11 +118,11 @@ const nearbyCities = [
 
 const BethesdaOfficeCleaningPage = () => {
   const { seoHelmet } = useSEO({
-    title: "Office Cleaning in Bethesda, MD",
+    title: "Office Cleaning Bethesda MD | Local Team",
     description:
-      "Professional office cleaning in Bethesda, MD. Daily, weekly, or custom schedules. Background-checked, bonded, insured. Latino-owned. Free commercial quote.",
+      "Office cleaning in Bethesda, MD with written scopes, flexible schedules, background-checked teams and clear access procedures. Request a commercial quote.",
     canonical: PAGE_URL,
-    ogImage: "https://capitalcleancare.com/og-image.jpg",
+    ogImage: `https://capitalcleancare.com${HERO_IMAGE}`,
   });
 
   return (
@@ -128,7 +130,7 @@ const BethesdaOfficeCleaningPage = () => {
       {/* ── SEO ───────────────────────────────────────────── */}
       {seoHelmet}
       <Helmet>
-        <link rel="preload" as="image" href="/images/team/team-cleaning-glass-door.jpg" />
+        <link rel="preload" as="image" href={HERO_IMAGE} />
         <link rel="alternate" hrefLang="en-US" href={PAGE_URL} />
       </Helmet>
 
@@ -148,17 +150,11 @@ const BethesdaOfficeCleaningPage = () => {
           "Woodmont Triangle, Bethesda MD",
           "Montgomery County, MD",
         ]}
-        reviews={[
-          {
-            name: "David R.",
-            text: "Consistent, professional, and always on time. Our office near Bethesda Row has never looked better.",
-            location: "Bethesda, MD",
-          },
-        ]}
+        reviews={verifiedReviews}
       />
       <ServiceSchema
         serviceName="Office & Commercial Cleaning in Bethesda, MD"
-        description="Professional office and commercial cleaning in Bethesda, MD. Reliable, background-checked team. Daily, weekly, or custom schedules. EPA Safer Choice certified products."
+        description="Office and light-commercial cleaning in Bethesda, Maryland, with written scopes, documented access procedures, background-checked teams, and flexible schedules."
         url={PAGE_URL}
         areaServed={["Bethesda, MD", "Montgomery County, MD"]}
       />
@@ -180,14 +176,34 @@ const BethesdaOfficeCleaningPage = () => {
       {/* ── Hero ──────────────────────────────────────────── */}
       <HeroLocation
         h1="Office & Commercial Cleaning in Bethesda, MD"
-        lead="Capital Clean Care brings the same reliability Bethesda families trust to commercial spaces — from small offices in Bethesda Row to professional suites near NIH campus. Background-checked, bonded team. Eco-friendly products. Flexible scheduling before, during, or after business hours."
+        lead="Maintain a clean, client-ready Bethesda workplace with a plan built around your space, traffic, floor types, access, and operating hours. We document the scope and security procedure before recurring office service begins."
         cityName="Bethesda"
         state="MD"
         zipRange="20814–20817"
-        heroImage="/images/team/team-cleaning-glass-door.jpg"
-        heroImageAlt="Capital Clean Care office cleaning service in Bethesda, MD — reliable commercial cleaning"
-        ctaPrimary="Get a Commercial Cleaning Quote in Bethesda"
+        heroImage={HERO_IMAGE}
+        heroImageAlt="Capital Clean Care's local background-checked cleaning team serving Bethesda businesses"
+        preserveFullImage
+        ctaPrimary="Request a Bethesda Office Quote"
+        teamTrustLabel="Background-Checked Local Team"
+        ctaNote="Written scope · Licensed and insured · Access procedures documented"
+        updatedLabel="August 30, 2026"
+        updatedDateTime="2026-08-30"
       />
+
+      {/* ── Direct answer for search and AI systems ─────── */}
+      <section className="py-10 md:py-12">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="rounded-2xl border border-primary/15 bg-primary/[0.04] p-6 md:p-8">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-primary mb-3">Quick answer</p>
+            <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-4">
+              What Does Office Cleaning in Bethesda Include?
+            </h2>
+            <p className="text-muted-foreground leading-relaxed">
+              Office cleaning is a recurring or one-time service defined by a written task schedule for the workplace. A typical Bethesda scope can include reception areas, workspaces, conference rooms, break rooms, restrooms, trash, dusting, vacuuming, hard-floor care, interior glass, and supplied-consumable restocking. The exact plan depends on square footage, employee and visitor traffic, floor materials, service frequency, building access, and any restricted areas. Capital Clean Care serves qualifying offices and light-commercial spaces in Bethesda ZIP codes 20814, 20815, 20816, and 20817. Before service begins, we document keys or alarms, approved hours, points of contact, supply responsibilities, and how completed work or exceptions are reported. Regulated medical, laboratory, food-service, hazardous-material, and specialty floor-restoration requirements receive separate review.
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* ── What's Included ───────────────────────────────── */}
       <ServiceChecklistLocation
@@ -196,7 +212,7 @@ const BethesdaOfficeCleaningPage = () => {
       />
 
       {/* ── Social Proof (3rd — trust video early) ── */}
-      <LocationSocialProof cityName="Bethesda" citySlug="bethesda-md" serviceSlug="office-cleaning" serviceLabel="Office Cleaning" />
+      <LocationSocialProof cityName="Bethesda" citySlug="bethesda-md" serviceSlug="office-cleaning" serviceLabel="Office Cleaning" count={3} reviewOverrides={verifiedReviews} showVideo={false} />
 
       {/* ── Space Types ───────────────────────────────────── */}
       <section className="py-12 md:py-16 bg-muted/30">
@@ -212,7 +228,7 @@ const BethesdaOfficeCleaningPage = () => {
               },
               {
                 title: "Medical & Dental Offices",
-                body: "Clinics near NIH campus and the National Naval Medical Center area require rigorous disinfection standards. Our background-checked team is trained for healthcare environments.",
+                body: "General environmental cleaning for professional healthcare offices is considered only after reviewing required protocols, restricted areas, and whether specialized compliance is involved.",
               },
               {
                 title: "Co-Working Spaces",
@@ -241,6 +257,38 @@ const BethesdaOfficeCleaningPage = () => {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── Commercial quote factors ─────────────────────── */}
+      <section className="py-12 md:py-16 bg-muted/30">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-3">
+            What We Confirm During an Office Walkthrough
+          </h2>
+          <p className="text-muted-foreground mb-8">
+            A walkthrough turns a vague request into a measurable scope your business and cleaning team can verify.
+          </p>
+          <div className="grid sm:grid-cols-2 gap-4">
+            {[
+              { Icon: Building2, title: "Space and traffic", body: "Square footage, employee and visitor counts, restrooms, break rooms, and high-use areas." },
+              { Icon: CalendarClock, title: "Frequency and hours", body: "Service days, approved access window, holidays, building rules, and interruption limits." },
+              { Icon: ShieldCheck, title: "Security procedure", body: "Keys, alarms, escorts, restricted areas, points of contact, and incident escalation." },
+              { Icon: ClipboardCheck, title: "Scope and reporting", body: "Tasks by visit, periodic details, supplies, quality checks, and completion reporting." },
+            ].map(({ Icon, title, body }) => (
+              <article key={title} className="rounded-xl border border-border/60 bg-background p-5">
+                <Icon className="h-5 w-5 text-primary mb-3" aria-hidden="true" />
+                <h3 className="font-semibold text-foreground mb-2">{title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{body}</p>
+              </article>
+            ))}
+          </div>
+          <p className="text-sm text-muted-foreground mt-6">
+            Small workplace? Review our guide to{" "}
+            <Link to="/resources/office-cleaning-small-business-dmv" className="text-primary font-semibold underline">
+              office cleaning for DMV small businesses
+            </Link>.
+          </p>
         </div>
       </section>
 
@@ -279,7 +327,7 @@ const BethesdaOfficeCleaningPage = () => {
                   [
                     "Custom",
                     "Unique requirements",
-                    "Medical offices, retail, multi-tenant buildings",
+                    "Professional offices, retail, multi-tenant suites",
                   ],
                 ].map(([freq, best, use]) => (
                   <tr key={freq} className="bg-background hover:bg-muted/20 transition-colors">
@@ -292,7 +340,7 @@ const BethesdaOfficeCleaningPage = () => {
             </table>
           </div>
           <p className="text-sm text-muted-foreground mt-4">
-            All schedules available before business hours, after close, or on weekends. We work around your team.
+            Early-morning, evening, and weekend options depend on availability, building access, security procedures, and the approved scope.
           </p>
         </div>
       </section>
@@ -307,8 +355,8 @@ const BethesdaOfficeCleaningPage = () => {
             <p>
               Capital Clean Care's commercial cleaning service covers all Bethesda ZIP codes — 20814,
               20815, 20816, and 20817. From professional offices along the Bethesda Metro corridor and
-              in Bethesda Row to medical practices near NIH campus and National Naval Medical Center,
-              our background-checked, bonded team provides reliable service on your schedule.
+              in Bethesda Row to professional suites near the NIH and Walter Reed area, our
+              background-checked team follows the approved schedule and access procedure.
             </p>
             <p>
               Bethesda is home to a dense concentration of professional services, healthcare offices,

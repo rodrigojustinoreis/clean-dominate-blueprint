@@ -5,7 +5,6 @@
 // reversible: delete a path here to re-index it. Pages WITH real search demand are
 // intentionally NOT listed. Regenerate from GSC 90d impressions when revisiting.
 export const NOINDEX_PATHS: ReadonlySet<string> = new Set([
-  "/locations/bethesda-md/office-cleaning",
   "/locations/brookeville-md",
   "/locations/burtonsville-md",
   "/locations/chevy-chase-md/airbnb-cleaning",
