@@ -62,7 +62,7 @@ const HeroLocation = ({
   return (
     <section className="bg-gradient-to-br from-primary/5 via-background to-accent/5 pb-12 md:pb-16 pt-6">
       <div className="container mx-auto px-4 max-w-6xl">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)] gap-8 lg:gap-10 items-center">
           {/* Text */}
           <div>
             <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-1 leading-tight">

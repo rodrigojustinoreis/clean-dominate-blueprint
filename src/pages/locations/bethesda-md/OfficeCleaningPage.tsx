@@ -24,7 +24,7 @@ import { REAL_REVIEWS } from "@/data/realReviews";
 // ── Page constants ────────────────────────────────────────────────────────────
 
 const PAGE_URL = "https://capitalcleancare.com/locations/bethesda-md/office-cleaning";
-const HERO_IMAGE = "/images/locations/bethesda-house-cleaning/capital-clean-care-team.webp";
+const HERO_IMAGE = "/images/locations/bethesda-service-heroes/office-cleaning-hero.webp";
 const verifiedReviews = [REAL_REVIEWS[0], REAL_REVIEWS[2], REAL_REVIEWS[4]];
 
 const faqs = [
@@ -182,7 +182,10 @@ const BethesdaOfficeCleaningPage = () => {
         zipRange="20814–20817"
         heroImage={HERO_IMAGE}
         heroImageAlt="Capital Clean Care's local background-checked cleaning team serving Bethesda businesses"
-        preserveFullImage
+        heroAspectRatio="16/10"
+        heroImageWidth={1600}
+        heroImageHeight={900}
+        heroImageContainerClassName="lg:min-h-[500px]"
         ctaPrimary="Request a Bethesda Office Quote"
         teamTrustLabel="Background-Checked Local Team"
         ctaNote="Written scope · Licensed and insured · Access procedures documented"

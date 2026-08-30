@@ -24,7 +24,7 @@ import { REAL_REVIEWS } from "@/data/realReviews";
 // ── Page constants ────────────────────────────────────────────────────────────
 
 const PAGE_URL = "https://capitalcleancare.com/locations/bethesda-md/airbnb-cleaning";
-const HERO_IMAGE = "/images/team/bethesda-airbnb-turnover-team.webp";
+const HERO_IMAGE = "/images/locations/bethesda-service-heroes/airbnb-cleaning-hero.webp";
 const verifiedReviews = [REAL_REVIEWS[5], REAL_REVIEWS[4], REAL_REVIEWS[2]];
 
 const faqs = [
@@ -173,7 +173,10 @@ const BethesdaAirbnbCleaningPage = () => {
         zipRange="20814–20817"
         heroImage={HERO_IMAGE}
         heroImageAlt="Capital Clean Care team member preparing a bed during a Bethesda short-term rental turnover"
-        preserveFullImage
+        heroAspectRatio="16/10"
+        heroImageWidth={1600}
+        heroImageHeight={900}
+        heroImageContainerClassName="lg:min-h-[500px]"
         ctaPrimary="Request a Bethesda Turnover Quote"
         teamTrustLabel="Checklist-Trained Turnover Team"
         ctaNote="Written workflow · Licensed and insured · Airbnb, Vrbo and direct bookings"
