@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Info, CheckCircle2, Plus } from "lucide-react";
@@ -137,27 +136,35 @@ const PricingTable = () => {
         ))}
       </div>
 
-      {/* Service tabs */}
-      <Tabs value={active} onValueChange={setActive} className="w-full">
-        <TabsList className="flex flex-wrap h-auto gap-1 bg-secondary p-1 w-full">
+      {/* Service tabs. Native controls keep SSR and hydration deterministic while
+          every price table remains present in the crawlable HTML. */}
+      <div className="w-full">
+        <div className="flex flex-wrap h-auto gap-1 rounded-md bg-secondary p-1 w-full" role="group" aria-label="Choose a cleaning service">
           {services.map((s) => (
-            <TabsTrigger
+            <button
+              type="button"
               key={s.id}
-              value={s.id}
-              className="flex-1 min-w-[120px] flex flex-col py-2.5 text-xs data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+              aria-pressed={active === s.id}
+              onClick={() => setActive(s.id)}
+              className={`flex-1 min-w-[120px] flex flex-col items-center rounded-sm py-2.5 text-xs transition-colors ${
+                active === s.id
+                  ? "bg-primary text-primary-foreground shadow-sm"
+                  : "text-muted-foreground hover:bg-background/70 hover:text-foreground"
+              }`}
             >
               <span className="font-semibold">{s.label}</span>
               <span className="opacity-70 font-normal text-[10px] leading-tight">{s.sublabel}</span>
-            </TabsTrigger>
+            </button>
           ))}
-        </TabsList>
+        </div>
 
         {services.map((s) => (
-          // forceMount + data-[state=inactive]:hidden → every tab's prices are in the SSR/static
-          // HTML (crawlable), while only the active tab shows. Interactivity is progressive
-          // enhancement. Without this, Radix renders only the active tab client-side (prices
-          // absent from curl / not indexable).
-          <TabsContent key={s.id} value={s.id} forceMount className="mt-4 space-y-3 data-[state=inactive]:hidden">
+          <section
+            key={s.id}
+            aria-label={`${s.label} cleaning prices`}
+            hidden={active !== s.id}
+            className="mt-4 space-y-3"
+          >
 
             {/* Description + badge */}
             <div className={`rounded-xl border p-4 flex items-start justify-between gap-3 ${s.color}`}>
@@ -201,9 +208,9 @@ const PricingTable = () => {
               <Info className="h-3.5 w-3.5 shrink-0 mt-0.5 text-accent" />
               <span>{s.note}</span>
             </div>
-          </TabsContent>
+          </section>
         ))}
-      </Tabs>
+      </div>
 
       {/* Recurring discounts */}
       <div>
