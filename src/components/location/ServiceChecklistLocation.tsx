@@ -38,7 +38,7 @@ const ServiceChecklistLocation = ({ title, categories }: ServiceChecklistLocatio
               key={cat.heading}
               className="bg-background rounded-xl border border-border/50 p-5"
             >
-              <h3 className="text-xs font-bold uppercase tracking-widest text-accent mb-3">
+              <h3 className="text-xs font-bold uppercase tracking-widest text-primary mb-3">
                 {cat.heading}
               </h3>
               <ul className="space-y-2.5">

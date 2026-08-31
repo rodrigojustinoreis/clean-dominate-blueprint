@@ -116,7 +116,7 @@ const AnnouncementBar = () => {
   const msg = isSpanish ? ES_MESSAGE : MESSAGES[msgIndex];
   const ctaHref = isSpanish ? "/es/contacto" : "/#quote";
   return (
-    <div className="bg-accent text-accent-foreground text-sm py-2 px-4 flex items-center justify-center gap-3 relative">
+    <div className="bg-primary text-primary-foreground text-sm py-2 px-4 flex items-center justify-center gap-3 relative">
       <Gift className="h-4 w-4 shrink-0" />
       <span className="font-medium transition-all duration-500">
         {msg.text} —{" "}
@@ -127,7 +127,7 @@ const AnnouncementBar = () => {
       <button
         onClick={dismiss}
         aria-label="Dismiss announcement"
-        className="absolute right-3 top-1/2 -translate-y-1/2 p-1 rounded hover:bg-accent-foreground/10 transition-colors"
+        className="absolute right-3 top-1/2 -translate-y-1/2 p-1 rounded hover:bg-primary-foreground/10 transition-colors"
       >
         <X className="h-3.5 w-3.5" />
       </button>

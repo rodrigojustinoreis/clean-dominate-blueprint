@@ -1,13 +1,12 @@
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { CheckCircle, Star, ArrowRight } from "lucide-react";
+import { CheckCircle } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FAQ from "@/components/FAQ";
 import ConversionCTA from "@/components/ConversionCTA";
 import TrustBadges from "@/components/TrustBadges";
 import StickyMobileCTA from "@/components/StickyMobileCTA";
-import { Button } from "@/components/ui/button";
 import {
   LocalBusinessSchema,
   ServiceSchema,
@@ -28,11 +27,11 @@ const PAGE_URL = "https://capitalcleancare.com/locations/silver-spring-md/airbnb
 const localFaqs = [
   {
     q: "How quickly can you turn over my Silver Spring Airbnb?",
-    a: "Most 1–2 bedroom Silver Spring properties turn over in 2–3 hours. We work within same-day check-in windows with advance notice from Downtown Silver Spring to Four Corners.",
+    a: "Turnover time depends on the property's size, condition, laundry and restocking scope. We confirm the required checkout-to-check-in window before accepting the job, including same-day requests when the schedule allows.",
   },
   {
-    q: "Can you manage my cleaning schedule automatically?",
-    a: "Yes — share your Airbnb calendar and we schedule around each checkout automatically. No need to contact us for each booking.",
+    q: "Can you coordinate cleaning with my booking schedule?",
+    a: "Yes. Share the checkout and next check-in details and we coordinate the confirmed turnover window with you. Recurring host arrangements can use a consistent handoff process for access, linens, supplies and completion updates.",
   },
   {
     q: "How much does Airbnb turnover cleaning cost in Silver Spring?",
@@ -40,7 +39,7 @@ const localFaqs = [
   },
   {
     q: "What if a guest leaves the property extra dirty?",
-    a: "We document with photos and charge only for the additional time required. You'll always be informed before any extra charges are applied.",
+    a: "If the condition falls outside the agreed turnover scope, we contact the host, explain what changed and confirm any additional work before proceeding. Photo documentation can be included when requested and permitted.",
   },
   {
     q: "Do you clean VRBO and other short-term rental platforms?",
@@ -48,7 +47,7 @@ const localFaqs = [
   },
   {
     q: "Do you know Airbnb standards in Silver Spring?",
-    a: "Yes. We work with multiple hosts across Silver Spring (20901, 20902, 20910) and Montgomery County and understand what guests expect.",
+    a: "Our turnover checklist focuses on the guest-ready details hosts control: clean bathrooms and kitchen surfaces, fresh linens supplied by the host, floors, visible dust, trash removal and an agreed restocking checklist. Platform rules and property-specific requirements remain the host's responsibility.",
   },
   {
     q: "Is Capital Clean Care locally owned?",
@@ -107,9 +106,9 @@ const nearbyCities = [
 const SilverSpringAirbnbCleaningPage = () => {
   const faqs = getServiceLocationOverride("silver-spring-md", "airbnb-cleaning")?.faqs ?? localFaqs;
   const { seoHelmet } = useSEO({
-    title: "Airbnb Cleaning in Silver Spring, MD",
+    title: "Airbnb Cleaning Service in Silver Spring, MD | Turnovers",
     description:
-      "Airbnb & short-term rental cleaning in Silver Spring, MD. Fast turnovers, hotel-standard results, flexible scheduling. Latino-owned & locally trusted. Free quote.",
+      "Airbnb cleaning service in Silver Spring, MD for guest turnovers, linens, restocking and completion updates. Get a written scope and free quote.",
     canonical: PAGE_URL,
     ogImage: "https://capitalcleancare.com/og-image.jpg",
   });
@@ -118,7 +117,7 @@ const SilverSpringAirbnbCleaningPage = () => {
     <Layout>
       {seoHelmet}
       <Helmet>
-        <link rel="preload" as="image" href="/images/team/team-kitchen-detail.jpg" />
+        <link rel="preload" as="image" href="/images/airbnb/real-turnover-sofa-professional-v3-960.webp" />
         <link rel="alternate" hrefLang="en-US" href={PAGE_URL} />
       </Helmet>
 
@@ -137,17 +136,10 @@ const SilverSpringAirbnbCleaningPage = () => {
           "Fenton Village, Silver Spring MD",
           "Montgomery County, MD",
         ]}
-        reviews={[
-          {
-            name: "Amanda F.",
-            text: "My Airbnb rating went from 4.6 to 5.0 stars after switching to Capital Clean Care. Detail is incredible.",
-            location: "Bethesda, MD",
-          },
-        ]}
       />
       <ServiceSchema
         serviceName="Airbnb & Short-Term Rental Cleaning in Silver Spring, MD"
-        description="Professional Airbnb turnover cleaning in Silver Spring, MD. Hotel-standard results between every guest. Flexible scheduling, same-day turnovers, calendar coordination. Serving 20901, 20902, 20910."
+        description="Airbnb and short-term rental turnover cleaning in Silver Spring, MD, with a written property checklist, host-supplied linen changes, restocking options and completion updates."
         url={PAGE_URL}
         areaServed={["Silver Spring, MD", "Montgomery County, MD"]}
       />
@@ -169,14 +161,35 @@ const SilverSpringAirbnbCleaningPage = () => {
       {/* Hero */}
       <HeroLocation
         h1="Airbnb & Short-Term Rental Cleaning in Silver Spring, MD"
-        lead="Protect your Silver Spring Airbnb rating with professional turnover cleanings between every guest. Capital Clean Care — a Latino-owned, locally operated company — delivers hotel-standard results from Downtown Silver Spring to Silver Spring Town Center. Flexible scheduling, 100% satisfaction guaranteed."
+        lead="Capital Clean Care provides Airbnb cleaning service in Silver Spring for guest turnovers, with a written property checklist, host-supplied linen changes, restocking options and completion updates. We confirm access, scope and the checkout-to-check-in window before each accepted visit."
         cityName="Silver Spring"
         state="MD"
         zipRange="20901–20910"
-        heroImage="/images/team/team-kitchen-detail.jpg"
-        heroImageAlt="Capital Clean Care Airbnb turnover cleaning in Silver Spring, MD — hotel-standard results"
+        heroImage="/images/airbnb/real-turnover-sofa-professional-v3-960.webp"
+        heroImageAlt="Capital Clean Care cleaner preparing a sofa during a short-term rental turnover"
+        heroImageWidth={960}
+        heroImageHeight={640}
+        heroImageSrcSet="/images/airbnb/real-turnover-sofa-professional-v3-640.webp 640w, /images/airbnb/real-turnover-sofa-professional-v3-960.webp 960w"
+        heroImageSizes="(min-width: 1024px) 54vw, 100vw"
         ctaPrimary="Set Up Airbnb Turnover Cleaning in Silver Spring"
+        updatedLabel="Reviewed August 31, 2026"
+        updatedDateTime="2026-08-31"
       />
+
+      <section className="py-10 md:py-12 bg-card border-y border-border/60">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-4">
+            What does an Airbnb turnover cleaner handle in Silver Spring?
+          </h2>
+          <p className="text-muted-foreground leading-relaxed text-lg">
+            An Airbnb turnover clean resets the property after checkout and before the next guest:
+            bathrooms and kitchen surfaces are cleaned, beds are remade with host-supplied linens,
+            floors are vacuumed or mopped, trash is removed, visible dust is addressed and agreed
+            essentials are restocked. Capital Clean Care documents the property-specific scope in
+            advance, so hosts know what is included and what requires separate approval.
+          </p>
+        </div>
+      </section>
 
       {/* Checklist */}
       <ServiceChecklistLocation
@@ -197,29 +210,25 @@ const SilverSpringAirbnbCleaningPage = () => {
             <div className="p-5 bg-card rounded-xl border border-border/50">
               <h3 className="font-semibold text-foreground mb-2">Rating protection</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Consistent, bonded team means guests find your property exactly as listed, every
-                time. When guests check in to a spotless Silver Spring rental near the AFI Silver
-                Theatre or in the Four Corners area, they write 5-star reviews. That's your
-                income on the line — we take it seriously. 100% satisfaction guaranteed: we
-                re-clean if anything falls short.
+                A repeatable written checklist reduces missed details between stays. We align the
+                scope with your property, access instructions and supplied inventory, then provide
+                a clear completion handoff so you can prepare for the next guest.
               </p>
             </div>
             <div className="p-5 bg-card rounded-xl border border-border/50">
               <h3 className="font-semibold text-foreground mb-2">Flexible scheduling</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                We work around your checkout and check-in window across Silver Spring's 20901
-                and 20902 ZIP codes. Same-day turnovers are available with advance notice. Share
-                your calendar and we handle the scheduling automatically — you focus on hosting,
-                we handle the clean.
+                We confirm the checkout and check-in window for properties across Silver Spring's
+                20901, 20902 and 20910 ZIP codes. Same-day requests depend on availability, property
+                condition and the agreed laundry or restocking scope.
               </p>
             </div>
             <div className="p-5 bg-card rounded-xl border border-border/50">
               <h3 className="font-semibold text-foreground mb-2">Locally owned and accountable</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                We're not a franchise. Capital Clean Care is Latino-owned and we operate in
-                Silver Spring. Your Airbnb reputation matters to us personally — because we're
-                part of this community. When you call, a real person who knows your property
-                answers.
+                Capital Clean Care is a Latino-owned local cleaning company serving Silver Spring
+                and Montgomery County. Hosts receive a written scope and a direct local contact for
+                access notes, schedule changes and property-specific priorities.
               </p>
             </div>
           </div>
@@ -229,10 +238,10 @@ const SilverSpringAirbnbCleaningPage = () => {
           </h2>
           <div className="grid sm:grid-cols-2 gap-4">
             {[
-              "Share your calendar — we coordinate around your booking schedule automatically",
-              "We arrive at checkout time — fast turnover from Four Corners to Woodside",
-              "Hotel-standard clean — linens, sanitization, restock, inspection",
-              "Ready for next guest — you get confirmation, guest checks in to a 5-star clean",
+              "Send the confirmed checkout, next check-in time and access instructions",
+              "Approve the written turnover checklist, linen plan and restocking scope",
+              "The team completes the agreed clean and flags unexpected conditions",
+              "Receive the agreed completion update before the next guest arrives",
             ].map((item) => (
               <div key={item} className="flex items-start gap-3 p-4 bg-card rounded-xl border border-border/50">
                 <CheckCircle className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" aria-hidden="true" />

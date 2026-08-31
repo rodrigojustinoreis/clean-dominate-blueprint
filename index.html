@@ -41,6 +41,7 @@
          the critical path on mobile (LCP/TBT). -->
     <script>
       window.addEventListener('load', function () {
+        if (location.hostname === '127.0.0.1' || location.hostname === 'localhost') return;
         setTimeout(function () {
           var s = document.createElement('script');
           s.async = true;
@@ -52,12 +53,14 @@
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-5NQK4RH08J');
-      gtag('config', 'AW-16450100951');
-      gtag('config', 'AW-16450100951/fTKDCKSQjKQcENe9gqQ9', {
-        'phone_conversion_number': '(240) 704-2551'
-      });
+      if (location.hostname !== '127.0.0.1' && location.hostname !== 'localhost') {
+        gtag('js', new Date());
+        gtag('config', 'G-5NQK4RH08J');
+        gtag('config', 'AW-16450100951');
+        gtag('config', 'AW-16450100951/fTKDCKSQjKQcENe9gqQ9', {
+          'phone_conversion_number': '(240) 704-2551'
+        });
+      }
     </script>
   </head>
 

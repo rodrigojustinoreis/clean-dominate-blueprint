@@ -194,7 +194,8 @@ const PotomacMoveOutCleaningPage = () => {
         heroImageAlt="Capital Clean Care professional cleaning team serving Potomac, Maryland"
         heroImageWidth={900}
         heroImageHeight={1200}
-        preserveFullImage
+        heroImageContainerClassName="lg:self-start"
+        stackCtas
         ctaPrimary="Book Your Move Out Clean in Potomac"
       />
 

@@ -77,7 +77,7 @@ const Footer = () => {
           </p>
         </div>
         <div className="flex w-full flex-col gap-3 sm:mx-auto sm:w-auto sm:flex-row md:mx-0 md:flex-col lg:flex-row">
-          <Button size="lg" className="h-14 rounded-xl bg-accent px-7 font-bold text-accent-foreground shadow-xl shadow-black/20 transition-all duration-300 hover:-translate-y-1 hover:bg-accent/90 hover:shadow-2xl" asChild>
+          <Button size="lg" className="h-14 rounded-xl bg-white px-7 font-bold text-primary shadow-xl shadow-black/20 transition-all duration-300 hover:-translate-y-1 hover:bg-white/90 hover:shadow-2xl" asChild>
             <a href={isSpanish ? "/es/contacto" : "/#quote"} onClick={() => trackBookNowClick("footer_cta_band")}>
               {t("Get My Free Quote", "Obtener Mi Cotización")} <ArrowRight className="ml-2 h-4 w-4" />
             </a>
@@ -131,7 +131,6 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="group relative flex min-h-32 flex-col items-center justify-center gap-2 overflow-hidden rounded-2xl border border-amber-200 bg-gradient-to-b from-amber-50 to-white px-3 py-4 text-center transition-all duration-500 hover:-translate-y-1.5 hover:border-amber-300 hover:shadow-[0_18px_35px_-18px_rgba(245,158,11,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
-            aria-label={t("Read our Google reviews", "Lee nuestras reseñas en Google")}
           >
             <span className="grid h-11 w-11 place-items-center rounded-2xl bg-amber-100 transition-all duration-500 group-hover:scale-110 group-hover:rotate-6"><Star className="h-5 w-5 fill-amber-400 text-amber-500" /></span>
             <span className="text-xs font-bold leading-snug text-slate-800">
@@ -260,7 +259,7 @@ const Footer = () => {
         <PartnerLinks />
       </div>
 
-      <div className="border-t border-primary-foreground/10 mt-8 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-primary-foreground/50">
+      <div className="border-t border-primary-foreground/10 mt-8 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-primary-foreground/70">
         <div className="flex flex-col sm:flex-row items-center gap-2">
           <p>© {new Date().getFullYear()} Capital Clean Care. {t("All rights reserved.", "Todos los derechos reservados.")}</p>
           <span className="hidden sm:inline">·</span>
@@ -287,7 +286,7 @@ const Footer = () => {
         </div>
         <p>{t("Serving Maryland • Washington DC • Northern Virginia", "Sirviendo Maryland • Washington DC • Norte de Virginia")}</p>
       </div>
-      <p className="text-center text-xs text-primary-foreground/30 pb-4">
+      <p className="text-center text-xs text-primary-foreground/70 pb-4">
         {t(
           "Capital Clean Care LLC is not affiliated with any other cleaning company with a similar name operating in the Maryland area.",
           "Capital Clean Care LLC no está afiliada a ninguna otra empresa de limpieza con nombre similar que opere en el área de Maryland."

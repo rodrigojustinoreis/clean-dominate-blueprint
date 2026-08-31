@@ -17,6 +17,9 @@ Date: 2026-08-31
 | `screenshots/final-arlington-mobile.jpg` | Mobile 375×812 | Final Arlington hero |
 | `screenshots/final-potomac-move-out-desktop.jpg` | Desktop 1280×800 | Final Potomac team hero |
 | `screenshots/final-potomac-move-out-mobile.jpg` | Mobile 375×812 | Final Potomac team hero |
+| `screenshots/review-silver-spring-airbnb-desktop-1280.jpg` | Desktop 1280×800 | Silver Spring Airbnb full-page visual audit |
+| `screenshots/review-silver-spring-airbnb-tablet-768.jpg` | Tablet 768×1024 | Silver Spring Airbnb responsive audit |
+| `screenshots/review-silver-spring-airbnb-mobile-375.jpg` | Mobile 375×812 | Silver Spring Airbnb mobile audit |
 
 ## Summary
 
@@ -41,3 +44,4 @@ Arlington originally had weak visual hierarchy: a text-only hero, a small generi
 - The Arlington hero has strong contrast and an immediate service/location hierarchy.
 - The Potomac team image establishes a premium, owner-operated company impression.
 - Both pages reorganize cleanly at mobile and keep calls to action visible.
+- Silver Spring Airbnb now uses an authentic turnover image in the hero, a direct answer-first passage and a clearer host handoff process. Responsive checks passed with one H1, one main landmark, zero broken images and zero horizontal overflow.

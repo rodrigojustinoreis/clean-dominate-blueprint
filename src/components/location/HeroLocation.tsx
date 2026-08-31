@@ -21,6 +21,7 @@ interface HeroLocationProps {
   heroImageSizes?: string;
   heroImageContainerClassName?: string;
   preserveFullImage?: boolean;
+  stackCtas?: boolean;
   updatedLabel?: string;
   updatedDateTime?: string;
 }
@@ -51,6 +52,7 @@ const HeroLocation = ({
   heroImageSizes,
   heroImageContainerClassName = "",
   preserveFullImage = false,
+  stackCtas = false,
   updatedLabel,
   updatedDateTime,
 }: HeroLocationProps) => {
@@ -87,7 +89,7 @@ const HeroLocation = ({
             </div>
 
             {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-3">
+            <div className={`flex gap-3 ${stackCtas ? "max-w-md flex-col" : "flex-col sm:flex-row"}`}>
               <Button variant="cta" size="lg" asChild>
                 <a href="#quote" onClick={() => trackBookNowClick("hero_location")}>
                   {ctaPrimary} <ArrowRight className="ml-1 h-4 w-4" />

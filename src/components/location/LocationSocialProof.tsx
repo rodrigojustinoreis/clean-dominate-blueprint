@@ -64,7 +64,7 @@ const LocationSocialProof = ({ cityName, citySlug, serviceSlug, serviceLabel, co
     <section className="py-12 md:py-16">
       <div className="container mx-auto px-4 max-w-4xl">
         <div className="text-center mb-8">
-          <span className="inline-flex items-center gap-1.5 bg-accent/10 text-accent font-semibold text-sm uppercase tracking-wider px-3 py-1 rounded-full mb-3">
+          <span className="inline-flex items-center gap-1.5 bg-primary/10 text-primary font-semibold text-sm uppercase tracking-wider px-3 py-1 rounded-full mb-3">
             <Star className="h-3.5 w-3.5 fill-accent" aria-hidden="true" /> Client Reviews
           </span>
           <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground">
