@@ -164,9 +164,7 @@ const AirbnbCleaningPage = () => {
         name={service.metaTitle}
         description={service.metaDescription}
         url="https://capitalcleancare.com/services/airbnb-cleaning"
-        dateModified="2026-08-30"
-        cityName="Silver Spring"
-        stateCode="Maryland"
+        dateModified="2026-08-31"
         primaryImage="https://capitalcleancare.com/images/blog/airbnb-service-hero.webp"
       />
 
@@ -177,7 +175,7 @@ const AirbnbCleaningPage = () => {
       >
         <div className="h-full max-w-6xl mx-auto px-4 flex items-center justify-between gap-2">
           <span className="hidden md:block text-xs font-medium whitespace-nowrap">
-            ⭐⭐⭐⭐⭐ 5-Star Rated in Montgomery County
+            ⭐⭐⭐⭐⭐ 5-Star Rated Across the DMV
           </span>
           <span className="text-sm font-bold text-center flex-1 md:flex-none">
             🎁 15% OFF Your First Airbnb Turnover
@@ -216,6 +214,7 @@ const AirbnbCleaningPage = () => {
         </div>
       )}
 
+      <main id="main-content">
       {/* ── Hero ── */}
       <section className="relative overflow-hidden bg-gradient-to-br from-[#EAF6EA] via-background to-accent/5 py-10 md:py-16">
         <div className="container mx-auto px-4 max-w-6xl">
@@ -287,6 +286,36 @@ const AirbnbCleaningPage = () => {
                 </div>
               </div>
             </FadeInSection>
+          </div>
+        </div>
+      </section>
+
+      {/* Answer-first summary keeps the regional service definition concise and quotable. */}
+      <section aria-labelledby="airbnb-cleaning-summary" className="py-10 md:py-12 border-b border-border bg-card">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="rounded-2xl border border-[#2E7D32]/25 bg-[#F4FAF4] p-6 md:p-8 shadow-sm">
+            <span className="text-[#2E7D32] font-semibold text-sm uppercase tracking-wider">Quick answer</span>
+            <h2 id="airbnb-cleaning-summary" className="font-heading text-2xl md:text-3xl font-bold mt-2 mb-3">
+              What Does an Airbnb Turnover Cleaning Service Include?
+            </h2>
+            <p className="text-[17px] md:text-lg leading-relaxed text-foreground max-w-3xl">
+              Airbnb and short-term rental cleaning resets a property between checkout and check-in. Capital Clean Care
+              coordinates with the host's booking calendar, sanitizes kitchens and bathrooms, changes linens, restocks
+              owner-supplied essentials, stages guest areas and provides a final photo-ready check across Maryland,
+              Washington, DC, and Northern Virginia.
+            </p>
+            <div className="grid sm:grid-cols-3 gap-3 mt-6" aria-label="Airbnb turnover essentials">
+              {[
+                ["Timing", "Scheduled between checkout and check-in"],
+                ["Best for", "Airbnb, Vrbo and direct-booked rentals"],
+                ["Verification", "Guest-eye walkthrough and photo-ready check"],
+              ].map(([label, value]) => (
+                <div key={label} className="rounded-xl border border-[#2E7D32]/15 bg-white p-4">
+                  <span className="block text-xs font-bold uppercase tracking-wide text-[#2E7D32]">{label}</span>
+                  <span className="block mt-1 text-sm font-medium text-foreground">{value}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -395,10 +424,38 @@ const AirbnbCleaningPage = () => {
                 </div>
               ))}
             </div>
+            <figure className="mt-8 overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
+              <img
+                src="/images/airbnb/real-turnover-sofa-professional-v3.png"
+                alt="Professional cleaner wearing black gloves arranging a sofa throw during a short-term rental turnover"
+                width={1536}
+                height={1024}
+                loading="lazy"
+                decoding="async"
+                className="aspect-[3/2] w-full object-cover"
+              />
+              <figcaption className="px-5 py-3 text-sm text-muted-foreground">
+                Real turnover detail: resetting and staging the living space so it feels intentional when the next guest arrives.
+              </figcaption>
+            </figure>
             <p className="text-sm text-muted-foreground mt-6">
               Passing the cost to guests? See how to{" "}
               <Link to="/resources/airbnb-cleaning-fee" className="text-accent hover:underline font-medium">add and price a cleaning fee on your listing</Link>.
             </p>
+            <div className="mt-8 rounded-2xl border border-[#2E7D32]/25 bg-[#F4FAF4] p-5 md:p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+              <div>
+                <h3 className="font-heading text-xl font-bold">Have a checkout-to-check-in window to protect?</h3>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  Tell us the property size, location, access method and usual turnover window. We'll confirm service fit and prepare a written quote.
+                </p>
+              </div>
+              <button
+                onClick={scrollToForm}
+                className="shrink-0 inline-flex items-center justify-center rounded-lg bg-[#2E7D32] px-6 py-3 font-bold text-white hover:bg-[#1B5E20] transition-colors"
+              >
+                Request a Turnover Quote →
+              </button>
+            </div>
           </FadeInSection>
         </div>
       </section>
@@ -514,7 +571,7 @@ const AirbnbCleaningPage = () => {
       {/* ── Urgency Block ── */}
       <div className="w-full bg-[#FFFDE7] border-y border-yellow-300 py-4 px-4 text-center">
         <p className="font-bold text-foreground text-base">
-          🗓 Now booking Airbnb &amp; short-term rental turnovers in Rockville, Bethesda &amp; Silver Spring
+          🗓 Now booking Airbnb &amp; short-term rental turnovers across Maryland, DC &amp; Northern Virginia
         </p>
       </div>
 
@@ -567,7 +624,7 @@ const AirbnbCleaningPage = () => {
 
       {/* ── Social Proof — real Google reviews + brand trust video ── */}
       <LocationSocialProof
-        cityName="Montgomery County"
+        cityName="DMV Region"
         citySlug="services"
         serviceSlug="airbnb-cleaning"
         serviceLabel="Airbnb Cleaning"
@@ -640,7 +697,7 @@ const AirbnbCleaningPage = () => {
             Get Your Free Airbnb Cleaning Quote — We Respond in Under 2 Hours
           </h2>
           <p className="text-center text-muted-foreground text-sm mb-6">
-            Serving Rockville, Bethesda, Silver Spring, Germantown &amp; all of Montgomery County
+            Serving short-term rental hosts across Maryland, Washington, DC &amp; Northern Virginia
           </p>
 
           {/* Offer callout */}
@@ -670,6 +727,8 @@ const AirbnbCleaningPage = () => {
           </p>
         </div>
       </section>
+
+      </main>
 
       {!isAdTraffic && <Footer />}
 
