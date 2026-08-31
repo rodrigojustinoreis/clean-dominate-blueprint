@@ -6,7 +6,7 @@ import Layout from "@/components/layout/Layout";
 import QuoteForm from "@/components/QuoteForm";
 import VideoShowcase from "@/components/VideoShowcase";
 import FAQ from "@/components/FAQ";
-import { ServiceSchema, FAQSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
+import { ServiceSchema, FAQSchema, BreadcrumbSchema, LocalBusinessSchema, WebPageSchema } from "@/components/SchemaMarkup";
 import { useSEO } from "@/hooks/useSEO";
 import { getServiceBySlug } from "@/data/services";
 import { cities } from "@/data/locations";
@@ -31,22 +31,23 @@ const SERVICE_IMAGES: Record<string, string> = {
   "post-construction-cleaning": "/images/team/team-post-construction.jpg",
   "recurring-cleaning": "/images/services/recurring-cleaning.webp",
   "airbnb-cleaning": "/images/services/airbnb-cleaning.webp",
-  "office-cleaning": "/images/services/office-cleaning.webp",
+  "office-cleaning": "/images/locations/bethesda-house-cleaning/capital-clean-care-team.webp",
 };
 
 const ServicePage = () => {
   const { slug } = useParams<{ slug: string }>();
   const service = getServiceBySlug(slug || "");
+  const { seoHelmet } = useSEO({
+    title: service?.metaTitle || "Cleaning Service Not Found",
+    description: service?.metaDescription || "The requested cleaning service could not be found.",
+    canonical: service ? `https://capitalcleancare.com/services/${service.slug}` : undefined,
+    noIndex: !service,
+  });
 
   if (!service) return <NotFound />;
 
-  const { seoHelmet } = useSEO({
-    title: service.metaTitle,
-    description: service.metaDescription,
-    canonical: `https://capitalcleancare.com/services/${service.slug}`,
-  });
-
   const heroImg = SERVICE_IMAGES[service.slug] || "/images/team/real-team-two-members.webp";
+  const isOfficeCleaning = service.slug === "office-cleaning";
 
   const matchedSlService = slServices.find(
     (sl) => sl.slug === service.slug || sl.name.toLowerCase().includes(service.name.toLowerCase().split(" ")[0]),
@@ -63,6 +64,20 @@ const ServicePage = () => {
         serviceType={service.name}
       />
       <FAQSchema faqs={service.faqs} />
+      {isOfficeCleaning && (
+        <>
+          <LocalBusinessSchema areaServed={["Maryland", "Washington, DC", "Northern Virginia"]} />
+          <WebPageSchema
+            name={service.metaTitle}
+            description={service.metaDescription}
+            url="https://capitalcleancare.com/services/office-cleaning"
+            dateModified="2026-08-30"
+            cityName="Silver Spring"
+            stateCode="Maryland"
+            primaryImage="https://capitalcleancare.com/images/locations/bethesda-house-cleaning/capital-clean-care-team.webp"
+          />
+        </>
+      )}
 
       {/* ── Hero ── */}
       <section className="relative overflow-hidden bg-gradient-to-br from-[#F1F8F1] via-background to-accent/5 py-10 md:py-16">
@@ -128,6 +143,18 @@ const ServicePage = () => {
           </div>
         </div>
       </section>
+
+      {isOfficeCleaning && (
+        <section className="border-b border-border bg-background py-10 md:py-14" aria-labelledby="office-cleaning-answer">
+          <div className="container mx-auto max-w-4xl px-4">
+            <p className="mb-3 text-sm font-semibold text-accent">Updated August 30, 2026 · Maryland, Washington DC & Northern Virginia</p>
+            <h2 id="office-cleaning-answer" className="font-heading text-2xl font-bold text-foreground md:text-3xl">What does professional office cleaning include?</h2>
+            <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
+              Professional office cleaning covers the shared areas that affect employee comfort and client impressions: entrances, reception, desks and workstations, conference rooms, floors, trash and recycling, restrooms, break rooms, glass, and high-touch points. Capital Clean Care builds a written checklist around the workspace, access rules, business hours, occupancy, and required frequency. Background-checked, insured teams can work before opening, after closing, or on weekends across Maryland, Washington DC, and Northern Virginia. A small office under 1,000 square feet may start around $150–$250 per visit, but the written quote changes with restrooms, floor type, kitchens, traffic, consumable restocking, and daily versus weekly service. Medical treatment areas and regulated biohazards require specialized providers; our scope is routine professional cleaning for offices, waiting rooms, retail, coworking, and similar commercial spaces.
+            </p>
+          </div>
+        </section>
+      )}
 
       {/* ── Intro ── */}
       <section className="py-12 md:py-16">

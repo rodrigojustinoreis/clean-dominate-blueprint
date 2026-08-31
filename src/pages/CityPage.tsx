@@ -308,6 +308,7 @@ const CityPage = () => {
 
   const nearbyCities = city.nearbySlugs.map(getCityBySlug).filter(Boolean);
   const isRockvilleHub = city.slug === "rockville-md";
+  const isGaithersburgHub = city.slug === "gaithersburg-md";
   const expandedFaqs = isRockvilleHub ? rockvilleFaqs : getExpandedCityFaqs(city);
   const stateLabel = city.stateSlug === "maryland" ? "Maryland" : city.stateSlug === "washington-dc" ? "Washington DC" : "Virginia";
   const cityLabel = city.state !== "DC" ? `${city.name}, ${city.state}` : city.name;
@@ -340,15 +341,15 @@ const CityPage = () => {
     <Layout>
       {seoHelmet}
       <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: stateLabel, href: `/${city.stateSlug}` }, { label: city.name, href: `/locations/${city.slug}` }]} />
-      {isRockvilleHub && (
+      {(isRockvilleHub || isGaithersburgHub) && (
         <WebPageSchema
           name={city.metaTitle}
           description={city.metaDescription}
           url={`https://capitalcleancare.com/locations/${city.slug}`}
-          dateModified="2026-08-23"
-          cityName="Rockville"
+          dateModified={isRockvilleHub ? "2026-08-23" : "2026-08-30"}
+          cityName={city.name}
           stateCode="Maryland"
-          primaryImage="https://capitalcleancare.com/images/locations/rockville-real-work/rockville-real-cleaning-og.webp"
+          primaryImage={isRockvilleHub ? "https://capitalcleancare.com/images/locations/rockville-real-work/rockville-real-cleaning-og.webp" : `https://capitalcleancare.com${cityImages[city.slug] || regionMD}`}
         />
       )}
       <FAQSchema faqs={expandedFaqs} />
@@ -413,6 +414,18 @@ const CityPage = () => {
 
       {/* Trust Bar */}
       <TrustBar variant="dark" />
+
+      {isGaithersburgHub && (
+        <section className="border-b border-border bg-background py-10 md:py-14" aria-labelledby="gaithersburg-cleaning-answer">
+          <div className="container mx-auto max-w-4xl px-4">
+            <p className="mb-3 text-sm font-semibold text-accent">Updated August 30, 2026 · Serving Gaithersburg and nearby Montgomery County</p>
+            <h2 id="gaithersburg-cleaning-answer" className="font-heading text-2xl font-bold text-foreground md:text-3xl">What house cleaning services are available in Gaithersburg?</h2>
+            <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
+              Capital Clean Care provides one-time house cleaning, recurring weekly or bi-weekly care, deep cleaning, move-in and move-out cleaning, post-construction cleanup, and eco-friendly service throughout Gaithersburg. Our insured, background-checked team brings its own equipment and plant-based products, then follows a written room-by-room scope. We serve Kentlands and Lakelands townhomes, condos near Washingtonian Center, homes around Crown Farm and Quince Orchard, and older properties near Olde Towne. The right service depends on the home's condition: recurring cleaning maintains kitchens, bathrooms, dust, and floors; deep cleaning tackles accumulated detail work; and move or construction services address an empty home or renovation dust. Start with the dedicated <Link to="/locations/gaithersburg-md/house-cleaning" className="font-semibold text-accent underline">Gaithersburg house-cleaning page</Link>, or request a written quote based on size, bathrooms, condition, and preferred frequency.
+            </p>
+          </div>
+        </section>
+      )}
 
       {/* Fairfax is the all-services hub; route house-cleaning intent to its dedicated canonical page. */}
       {city.slug === "fairfax-va" && (

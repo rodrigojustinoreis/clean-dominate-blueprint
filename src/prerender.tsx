@@ -79,7 +79,6 @@ function getAllRoutes(): string[] {
     "/resources/house-cleaning-guide-clarksburg-md",
     "/resources/post-construction-cleaning-montgomery-county-md",
     "/resources/best-house-cleaning-service-bethesda-md",
-    "/resources/deep-cleaning-cost-maryland",
     "/resources/how-to-clean-up-after-a-party",
     "/resources/cleaning-company-vs-independent-cleaner",
     "/resources/local-cleaning-company-vs-franchise",
@@ -244,7 +243,7 @@ export async function prerender(data: { url: string }) {
     </HelmetProvider>
   );
 
-  const helmet = (helmetContext as any).helmet;
+  const helmet = (helmetContext as { helmet?: Record<string, { toString?: () => string }> }).helmet;
 
   // Build head elements Set — serializeElement handles raw strings directly
   const elements = new Set<string>();

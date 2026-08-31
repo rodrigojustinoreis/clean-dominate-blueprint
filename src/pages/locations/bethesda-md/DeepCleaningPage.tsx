@@ -11,6 +11,7 @@ import {
   ServiceSchema,
   FAQSchema,
   BreadcrumbSchema,
+  WebPageSchema,
 } from "@/components/SchemaMarkup";
 import { useSEO } from "@/hooks/useSEO";
 import HeroLocation from "@/components/location/HeroLocation";
@@ -160,6 +161,7 @@ const BethesdaDeepCleaningPage = () => {
         areaServed={["Bethesda, MD", "Montgomery County, MD"]}
       />
       <FAQSchema faqs={faqs} />
+      <WebPageSchema name="Deep Cleaning Services in Bethesda, MD" description="Professional deep cleaning in Bethesda with original project photography, a written scope, and a background-checked team." url={PAGE_URL} dateModified="2026-08-30" cityName="Bethesda" stateCode="Maryland" primaryImage={`https://capitalcleancare.com${HERO_IMAGE}`} />
 
       {/* ── Breadcrumbs ───────────────────────────────────── */}
       <div className="pt-24 bg-gradient-to-br from-primary/5 via-background to-accent/5">

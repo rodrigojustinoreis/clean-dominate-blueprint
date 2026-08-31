@@ -153,7 +153,7 @@ const PostHolidayCleanup = () => {
               heavy cases (grease through the kitchen, several set-in stains, a packed guest weekend), a{" "}
               <Link to="/services/deep-cleaning" className="text-accent underline hover:no-underline">deep cleaning</Link>{" "}
               covers everything a routine clean skips. Here is{" "}
-              <Link to="/resources/deep-cleaning-cost-maryland" className="text-accent underline hover:no-underline">what deep cleaning costs in Maryland</Link>{" "}
+              <Link to="/resources/how-much-does-deep-cleaning-cost" className="text-accent underline hover:no-underline">what deep cleaning costs in Maryland</Link>{" "}
               and{" "}
               <Link to="/resources/how-long-does-deep-cleaning-take" className="text-accent underline hover:no-underline">how long it takes</Link>.
             </p>

@@ -10,7 +10,7 @@ import BeforeAfterGallery from "@/components/BeforeAfterGallery";
 import TestimonialsCarousel from "@/components/home/TestimonialsCarousel";
 import GreenShield5Step from "@/components/GreenShield5Step";
 import TrustBadges from "@/components/TrustBadges";
-import { ServiceSchema, FAQSchema, BreadcrumbSchema, LocalBusinessSchema } from "@/components/SchemaMarkup";
+import { ServiceSchema, FAQSchema, BreadcrumbSchema, LocalBusinessSchema, WebPageSchema } from "@/components/SchemaMarkup";
 import { pickReviews } from "@/data/realReviews";
 import { useSEO } from "@/hooks/useSEO";
 import { getServiceBySlug } from "@/data/services";
@@ -160,6 +160,15 @@ const AirbnbCleaningPage = () => {
         serviceType="Airbnb Cleaning"
       />
       <FAQSchema faqs={service.faqs} />
+      <WebPageSchema
+        name={service.metaTitle}
+        description={service.metaDescription}
+        url="https://capitalcleancare.com/services/airbnb-cleaning"
+        dateModified="2026-08-30"
+        cityName="Silver Spring"
+        stateCode="Maryland"
+        primaryImage="https://capitalcleancare.com/images/blog/airbnb-service-hero.webp"
+      />
 
       {/* ── Sticky Top Bar (44px, green) ── */}
       <div

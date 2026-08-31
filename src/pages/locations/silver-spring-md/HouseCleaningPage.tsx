@@ -11,6 +11,7 @@ import {
   ServiceSchema,
   FAQSchema,
   BreadcrumbSchema,
+  WebPageSchema,
 } from "@/components/SchemaMarkup";
 import { useSEO } from "@/hooks/useSEO";
 import HeroLocation from "@/components/location/HeroLocation";
@@ -138,7 +139,7 @@ const SilverSpringHouseCleaningPage = () => {
     description:
       "Trusted house cleaning services in Silver Spring, MD. Eco-friendly products, background-checked team and satisfaction guarantee. Get a free quote.",
     canonical: PAGE_URL,
-    ogImage: "https://capitalcleancare.com/og-image.jpg",
+    ogImage: `https://capitalcleancare.com${HERO_IMAGE}`,
   });
 
   return (
@@ -174,6 +175,7 @@ const SilverSpringHouseCleaningPage = () => {
         areaServed={["Silver Spring, MD", "Montgomery County, MD"]}
       />
       <FAQSchema faqs={faqs} />
+      <WebPageSchema name="House Cleaning Services in Silver Spring, MD" description="Professional one-time and recurring house cleaning in Silver Spring with a written scope and background-checked team." url={PAGE_URL} dateModified="2026-08-30" cityName="Silver Spring" stateCode="Maryland" primaryImage={`https://capitalcleancare.com${HERO_IMAGE}`} />
 
       {/* Breadcrumbs */}
       <div className="pt-24 bg-gradient-to-br from-primary/5 via-background to-accent/5">

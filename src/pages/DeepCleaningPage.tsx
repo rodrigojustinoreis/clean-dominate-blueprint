@@ -455,7 +455,7 @@ const DeepCleaningPage = () => {
               Want a deeper cost breakdown by home size and city? See{" "}
               <Link to="/resources/how-much-does-deep-cleaning-cost" className="text-accent hover:underline font-medium">how much a deep cleaning costs</Link>{" "}
               and{" "}
-              <Link to="/resources/deep-cleaning-cost-maryland" className="text-accent hover:underline font-medium">deep cleaning cost in Maryland</Link>.
+              <Link to="/resources/how-much-does-deep-cleaning-cost" className="text-accent hover:underline font-medium">deep cleaning cost in Maryland</Link>.
             </p>
           </FadeInSection>
         </div>

@@ -85,7 +85,6 @@ const IsProfessionalCleaningWorthIt = lazy(() => import("./pages/IsProfessionalC
 const MoveOutCleaningCostMaryland = lazy(() => import("./pages/MoveOutCleaningCostMaryland"));
 const BestHouseCleaningRockville = lazy(() => import("./pages/BestHouseCleaningRockville"));
 const BestHouseCleaningBethesda = lazy(() => import("./pages/BestHouseCleaningBethesda"));
-const DeepCleaningCostMaryland = lazy(() => import("./pages/DeepCleaningCostMaryland"));
 const PostHolidayCleanup = lazy(() => import("./pages/PostHolidayCleanup"));
 const CleaningCompanyVsIndependentCleaner = lazy(() => import("./pages/CleaningCompanyVsIndependentCleaner"));
 const LocalCleaningCompanyVsFranchise = lazy(() => import("./pages/LocalCleaningCompanyVsFranchise"));
@@ -324,7 +323,6 @@ const AppRoutesLazy = () => (
     <Route path="/resources/house-cleaning-guide-clarksburg-md" element={<HouseCleaningGuideClarksburg />} />
     <Route path="/resources/post-construction-cleaning-montgomery-county-md" element={<PostConstructionCleaningMontgomeryCounty />} />
     <Route path="/resources/best-house-cleaning-service-bethesda-md" element={<BestHouseCleaningBethesda />} />
-    <Route path="/resources/deep-cleaning-cost-maryland" element={<DeepCleaningCostMaryland />} />
     <Route path="/resources/how-to-clean-up-after-a-party" element={<PostHolidayCleanup />} />
     <Route path="/resources/cleaning-company-vs-independent-cleaner" element={<CleaningCompanyVsIndependentCleaner />} />
     <Route path="/resources/local-cleaning-company-vs-franchise" element={<LocalCleaningCompanyVsFranchise />} />

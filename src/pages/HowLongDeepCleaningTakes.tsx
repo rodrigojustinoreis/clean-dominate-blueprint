@@ -240,7 +240,7 @@ const HowLongDeepCleaningTakes = () => {
             </p>
             <p className="text-muted-foreground leading-relaxed mb-8">
               Also worth reading before you book:{" "}
-              <Link to="/resources/deep-cleaning-cost-maryland" className="text-accent underline hover:no-underline">what deep cleaning costs in Maryland</Link>{" "}
+              <Link to="/resources/how-much-does-deep-cleaning-cost" className="text-accent underline hover:no-underline">what deep cleaning costs in Maryland</Link>{" "}
               and exactly{" "}
               <Link to="/resources/what-is-included-in-a-deep-cleaning" className="text-accent underline hover:no-underline">what's included in a deep cleaning</Link>.
             </p>

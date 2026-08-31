@@ -358,13 +358,6 @@ export const blogPosts: BlogPost[] = [
     coverImage: "/images/blog/post-party-patio.webp",
   },
   {
-    slug: "deep-cleaning-cost-maryland",
-    title: "How Much Does Deep Cleaning Cost in Maryland? (2026)",
-    excerpt: "Real 2026 deep cleaning prices by home size in Maryland, what drives the price up or down, and what the GreenShield 5-Step Clean includes.",
-    date: "2026-07-08", readTime: "7 min read", category: "Cleaning Guides",
-    coverImage: "/images/blog/maryland-home-exterior.webp",
-  },
-  {
     slug: "how-long-does-deep-cleaning-take",
     title: "How Long Does a Deep Cleaning Take? Real Timelines",
     excerpt: "Real deep cleaning timelines by home size, solo cleaner vs team, what slows the job down, and how to prepare so it goes faster.",

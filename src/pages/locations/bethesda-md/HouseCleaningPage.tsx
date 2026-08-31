@@ -11,6 +11,7 @@ import {
   ServiceSchema,
   FAQSchema,
   BreadcrumbSchema,
+  WebPageSchema,
 } from "@/components/SchemaMarkup";
 import { useSEO } from "@/hooks/useSEO";
 import HeroLocation from "@/components/location/HeroLocation";
@@ -133,7 +134,7 @@ const BethesdaHouseCleaningPage = () => {
     description:
       "Professional house cleaning in Bethesda, MD. Eco-friendly products safe for kids & pets. Background-checked, bonded & insured. Latino-owned. Free quote in 60 seconds.",
     canonical: PAGE_URL,
-    ogImage: "https://capitalcleancare.com/og-image.jpg",
+    ogImage: `https://capitalcleancare.com${TEAM_IMAGE}`,
   });
 
   return (
@@ -170,6 +171,7 @@ const BethesdaHouseCleaningPage = () => {
         areaServed={["Bethesda, MD", "Montgomery County, MD"]}
       />
       <FAQSchema faqs={faqs} />
+      <WebPageSchema name="Professional House Cleaning in Bethesda, MD" description="Professional recurring and one-time house cleaning in Bethesda with a written scope and background-checked local team." url={PAGE_URL} dateModified="2026-08-30" cityName="Bethesda" stateCode="Maryland" primaryImage={`https://capitalcleancare.com${TEAM_IMAGE}`} />
 
       {/* ── Breadcrumbs ───────────────────────────────────── */}
       <div className="pt-6 md:pt-8 bg-gradient-to-br from-primary/5 via-background to-accent/5">
@@ -203,6 +205,16 @@ const BethesdaHouseCleaningPage = () => {
         updatedLabel="August 2026"
         updatedDateTime="2026-08-29"
       />
+
+      <section className="border-b border-border bg-background py-10 md:py-14" aria-labelledby="bethesda-house-cleaning-answer">
+        <div className="container mx-auto max-w-4xl px-4">
+          <h2 id="bethesda-house-cleaning-answer" className="font-heading text-2xl font-bold text-foreground md:text-3xl">What is included in Bethesda house cleaning?</h2>
+          <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
+            Professional house cleaning in Bethesda includes the high-use areas that determine how clean a home feels: kitchen counters and appliance exteriors, sinks, bathrooms, mirrors, dusting, vacuuming, mopping, beds made with client-provided linens, and high-touch surfaces. Capital Clean Care brings the equipment and family-conscious products, uses background-checked employees, and confirms the scope in writing before service. We clean downtown condos near Bethesda Row as well as larger homes in Edgemoor, Kenwood, Bradley Hills, Battery Park, and the 20814–20817 ZIP codes. Weekly, bi-weekly, monthly, and one-time visits are available; the best schedule depends on household size, pets, entertaining, and how quickly surfaces and floors collect dust. For heavier buildup, inside-appliance work, grout, baseboards, or a full reset, choose our <Link to="/locations/bethesda-md/deep-cleaning" className="font-semibold text-primary underline">Bethesda deep-cleaning service</Link> instead of routine maintenance.
+          </p>
+          <p className="mt-4 text-sm text-muted-foreground">See transparent planning ranges in the <Link to="/resources/house-cleaning-cost-bethesda-md" className="font-semibold text-primary underline">Bethesda cleaning cost guide</Link>.</p>
+        </div>
+      </section>
 
       {/* ── What's Included ───────────────────────────────── */}
       <ServiceChecklistLocation

@@ -14,6 +14,7 @@ import {
   ServiceSchema,
   FAQSchema,
   BreadcrumbSchema,
+  WebPageSchema,
 } from "@/components/SchemaMarkup";
 import { useSEO } from "@/hooks/useSEO";
 import HeroLocation from "@/components/location/HeroLocation";
@@ -126,7 +127,7 @@ const RockvilleDeepCleaningPage = () => {
     description:
       "Professional deep cleaning in Rockville, MD. Inside appliances, grout, baseboards, ceiling fans — everywhere standard cleanings miss. EPA Safer Choice certified — safe for kids and pets. Free quote.",
     canonical: PAGE_URL,
-    ogImage: "https://capitalcleancare.com/og-image.jpg",
+    ogImage: "https://capitalcleancare.com/images/team/team-tile-scrubber.jpg",
   });
 
   return (
@@ -161,6 +162,7 @@ const RockvilleDeepCleaningPage = () => {
         areaServed={["Rockville, MD", "Montgomery County, MD"]}
       />
       <FAQSchema faqs={faqs} />
+      <WebPageSchema name="Deep Cleaning Services in Rockville, MD" description="Professional deep cleaning in Rockville with a written scope, background-checked team, and detailed room-by-room checklist." url={PAGE_URL} dateModified="2026-08-30" cityName="Rockville" stateCode="Maryland" primaryImage="https://capitalcleancare.com/images/team/team-tile-scrubber.jpg" />
 
       {/* Breadcrumbs */}
       <div className="pt-24 bg-gradient-to-br from-primary/5 via-background to-accent/5">
@@ -186,6 +188,17 @@ const RockvilleDeepCleaningPage = () => {
         heroImageAlt="Capital Clean Care deep cleaning service in Rockville, MD — scrubbing grout and tile for top-to-bottom results"
         ctaPrimary="Schedule a Deep Clean in Rockville"
       />
+
+      <section className="border-b border-border bg-background py-10 md:py-14" aria-labelledby="rockville-deep-cleaning-answer">
+        <div className="container mx-auto max-w-4xl px-4">
+          <p className="mb-3 text-sm font-semibold text-accent">Updated August 30, 2026 · Rockville ZIP codes 20850–20853</p>
+          <h2 id="rockville-deep-cleaning-answer" className="font-heading text-2xl font-bold text-foreground md:text-3xl">What does deep cleaning in Rockville include?</h2>
+          <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
+            A Capital Clean Care deep cleaning in Rockville covers the detailed buildup a routine visit is not designed to remove. The written scope can include baseboards, window sills and tracks, ceiling fans, door frames, grout lines, bathroom fixtures, kitchen grease, and the inside of selected appliances or cabinets. Our background-checked team brings its own equipment and plant-based products, then completes a final checklist before leaving. Most homes require roughly four to six hours, although size, bathrooms, pets, stairs, and current condition can change the schedule and quote. We serve condos near Rockville Town Center and Metro as well as homes in King Farm, Twinbrook, Fallsgrove, College Gardens, and surrounding neighborhoods. After the reset, many clients move to <Link to="/locations/rockville-md/recurring-cleaning" className="font-semibold text-primary underline">recurring cleaning</Link> to keep the home maintained at a lower per-visit scope.
+          </p>
+          <p className="mt-4 text-sm text-muted-foreground">Compare current planning ranges in our <Link to="/resources/house-cleaning-cost-rockville-md" className="font-semibold text-primary underline">Rockville house-cleaning cost guide</Link>.</p>
+        </div>
+      </section>
 
       {/* ── Cross-link Banner ──────────────────────────────── */}
       <div className="bg-primary/5 border-b border-primary/10">

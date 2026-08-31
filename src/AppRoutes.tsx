@@ -77,7 +77,6 @@ import IsProfessionalCleaningWorthIt from "./pages/IsProfessionalCleaningWorthIt
 import MoveOutCleaningCostMaryland from "./pages/MoveOutCleaningCostMaryland";
 import BestHouseCleaningRockville from "./pages/BestHouseCleaningRockville";
 import BestHouseCleaningBethesda from "./pages/BestHouseCleaningBethesda";
-import DeepCleaningCostMaryland from "./pages/DeepCleaningCostMaryland";
 import PostHolidayCleanup from "./pages/PostHolidayCleanup";
 import CleaningCompanyVsIndependentCleaner from "./pages/CleaningCompanyVsIndependentCleaner";
 import LocalCleaningCompanyVsFranchise from "./pages/LocalCleaningCompanyVsFranchise";
@@ -316,7 +315,6 @@ const AppRoutes = () => (
     <Route path="/resources/house-cleaning-guide-clarksburg-md" element={<HouseCleaningGuideClarksburg />} />
     <Route path="/resources/post-construction-cleaning-montgomery-county-md" element={<PostConstructionCleaningMontgomeryCounty />} />
     <Route path="/resources/best-house-cleaning-service-bethesda-md" element={<BestHouseCleaningBethesda />} />
-    <Route path="/resources/deep-cleaning-cost-maryland" element={<DeepCleaningCostMaryland />} />
     <Route path="/resources/how-to-clean-up-after-a-party" element={<PostHolidayCleanup />} />
     <Route path="/resources/cleaning-company-vs-independent-cleaner" element={<CleaningCompanyVsIndependentCleaner />} />
     <Route path="/resources/local-cleaning-company-vs-franchise" element={<LocalCleaningCompanyVsFranchise />} />

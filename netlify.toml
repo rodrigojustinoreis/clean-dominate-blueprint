@@ -1733,6 +1733,18 @@
 #     and 301'd into a non-existent /resources slug (301 → 404). Netlify is first-match,
 #     so these MUST stay ABOVE the /blog and /blog/* rules. No existing rule removed.
 [[redirects]]
+  from = "/blog/deep-cleaning-cost-maryland"
+  to = "/resources/how-much-does-deep-cleaning-cost"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/resources/deep-cleaning-cost-maryland"
+  to = "/resources/how-much-does-deep-cleaning-cost"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/blog/how-to-clean-led-tv-screen-safely"
   to = "/resources/how-to-clean-oled-tv-screen-safely"
   status = 301
