@@ -49,10 +49,20 @@ const ClientToasters = () => {
   );
 };
 
+// Signals that React has committed the first hydrated tree. Third-party call
+// tracking waits for this event before it is allowed to replace phone text.
+const HydrationSignal = () => {
+  useEffect(() => {
+    window.dispatchEvent(new Event("capitalclean:hydrated"));
+  }, []);
+  return null;
+};
+
 const App = () => (
   <HelmetProvider>
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
+        <HydrationSignal />
         <ClientToasters />
         <BrowserRouter>
           <ScrollToTop />

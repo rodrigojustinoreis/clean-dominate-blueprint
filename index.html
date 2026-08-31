@@ -40,14 +40,29 @@
          meanwhile, so no events are lost — keeps analytics/Ads intact while freeing
          the critical path on mobile (LCP/TBT). -->
     <script>
-      window.addEventListener('load', function () {
-        setTimeout(function () {
+      (function () {
+        var loaded = false;
+        function loadGoogleTag() {
+          if (loaded) return;
+          loaded = true;
           var s = document.createElement('script');
           s.async = true;
           s.src = 'https://www.googletagmanager.com/gtag/js?id=G-5NQK4RH08J';
           document.head.appendChild(s);
-        }, 2000);
-      });
+        }
+
+        // Google call tracking can replace phone-number text nodes. Waiting for
+        // React's first committed effect prevents it from mutating prerendered
+        // HTML while hydration is still comparing the server and client trees.
+        window.addEventListener('capitalclean:hydrated', function () {
+          setTimeout(loadGoogleTag, 500);
+        }, { once: true });
+
+        // Analytics must still initialize if the app bundle is blocked.
+        window.addEventListener('load', function () {
+          setTimeout(loadGoogleTag, 8000);
+        }, { once: true });
+      })();
     </script>
     <script>
       window.dataLayer = window.dataLayer || [];
