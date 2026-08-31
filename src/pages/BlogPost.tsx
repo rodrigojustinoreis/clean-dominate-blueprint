@@ -1657,7 +1657,7 @@ const BlogPost = () => {
           
           <div className="flex items-center gap-3 text-xs text-muted-foreground mb-4">
             <span className="bg-accent/10 text-accent px-2 py-0.5 rounded-full font-medium">{post.category}</span>
-            <span className="flex items-center gap-1"><Calendar className="h-3 w-3" /> {new Date(post.date).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}</span>
+            <span className="flex items-center gap-1"><Calendar className="h-3 w-3" /> {new Date(`${post.date}T00:00:00Z`).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" })}</span>
             <span className="flex items-center gap-1"><Clock className="h-3 w-3" /> {post.readTime}</span>
             <span className="flex items-center gap-1">By <span className="font-medium text-foreground" itemProp="author" itemScope itemType="https://schema.org/Person"><span itemProp="name">Rodrigo Reis</span></span></span>
           </div>
