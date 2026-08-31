@@ -33,7 +33,7 @@ const faqs = [
   },
   {
     q: "How much does a deep cleaning cost in Rockville, MD?",
-    a: "Pricing is based on home size and scope of work. Get your exact quote in 60 seconds — free, no commitment required. Same-day slots available throughout ZIP codes 20850, 20851, 20852, and 20853.",
+    a: "Pricing is based on home size, current condition, priority areas and optional tasks. Request a free written quote for ZIP codes 20850, 20851, 20852 and 20853; availability is confirmed before booking.",
   },
   {
     q: "Do I need to be home during the deep cleaning?",
@@ -41,7 +41,7 @@ const faqs = [
   },
   {
     q: "Is your deep cleaning eco-friendly?",
-    a: "Yes. We use only EPA Safer Choice™ certified products — powerful enough for deep cleaning every surface, yet non-toxic and safe for your family and pets. No bleach fumes, no harsh ammonia.",
+    a: "We offer product-conscious, lower-odor options and follow the product label for each surface. Tell us about pets, children, allergies or fragrance sensitivities so we can record appropriate preferences and precautions.",
   },
   {
     q: "Do you do spring cleaning in Rockville?",
@@ -125,7 +125,7 @@ const RockvilleDeepCleaningPage = () => {
   const { seoHelmet } = useSEO({
     title: "Deep Cleaning Services in Rockville, MD",
     description:
-      "Professional deep cleaning in Rockville, MD. Inside appliances, grout, baseboards, ceiling fans — everywhere standard cleanings miss. EPA Safer Choice certified — safe for kids and pets. Free quote.",
+      "Deep cleaning in Rockville, MD for baseboards, grout, fixtures and selected appliance interiors. Written scope, insured team and free quote.",
     canonical: PAGE_URL,
     ogImage: "https://capitalcleancare.com/images/team/team-tile-scrubber.jpg",
   });
@@ -157,7 +157,7 @@ const RockvilleDeepCleaningPage = () => {
       />
       <ServiceSchema
         serviceName="Deep Cleaning Service in Rockville, MD"
-        description="Professional deep cleaning in Rockville, MD. Inside appliances, grout scrubbing, baseboards, ceiling fans — top-to-bottom. EPA Safer Choice certified eco-friendly products. 100% satisfaction guaranteed."
+        description="Professional deep cleaning in Rockville for grout, baseboards, fixtures, floors and selected appliance interiors, with a written scope and insured team."
         url={PAGE_URL}
         areaServed={["Rockville, MD", "Montgomery County, MD"]}
       />
@@ -180,7 +180,7 @@ const RockvilleDeepCleaningPage = () => {
       {/* Hero */}
       <HeroLocation
         h1="Deep Cleaning Services in Rockville, MD"
-        lead="When a standard clean isn't enough, Capital Clean Care's deep cleaning goes top-to-bottom through every corner of your Rockville home — from Twinbrook to Fallsgrove. Baseboards, grout lines, inside appliances, ceiling fans — we cover everything a routine cleaning skips. EPA Safer Choice™ certified products only."
+        lead="When routine upkeep is not enough, Capital Clean Care addresses accumulated buildup and detail work throughout Rockville homes—from Twinbrook to Fallsgrove. Your written quote confirms baseboards, grout, fixtures, floors, priority areas and any selected appliance interiors."
         cityName="Rockville"
         state="MD"
         zipRange="20850–20853"
@@ -335,12 +335,11 @@ const RockvilleDeepCleaningPage = () => {
               finished.
             </p>
             <p>
-              We use EPA Safer Choice™ certified products exclusively — meaning our deep cleaning
-              is genuinely effective without leaving behind bleach residue, harsh chemical fumes,
-              or surfaces sticky from diluted cleaner. For homes in 20850 and 20852 with young
-              children or pets, this matters beyond the label. Our products are tested and verified
-              safe for re-entry immediately after cleaning, which is particularly important for
-              Rockville families with infants or immunocompromised members.
+              We select each cleaner for the surface and type of buildup, follow its label and use
+              lower-odor options when appropriate. For homes in 20850 and 20852 with children,
+              pets, allergies or fragrance sensitivities, we document those preferences before the
+              visit. We do not make blanket medical or immediate re-entry claims; any product-specific
+              precautions on the label take priority.
             </p>
             <p>
               Every deep cleaning is backed by our 100% satisfaction guarantee. If anything was
@@ -362,17 +361,15 @@ const RockvilleDeepCleaningPage = () => {
           </h2>
           <div className="space-y-4 text-muted-foreground leading-relaxed">
             <p>
-              Every deep clean we do in Rockville uses only{" "}
-              <strong className="text-foreground">EPA Safer Choice™ certified, plant-based products</strong> —
-              never bleach or ammonia. That means no harsh fumes lingering in your home, and a space that's
-              safe to walk back into right away, even with kids and pets underfoot. For families in King Farm,
-              Twinbrook, and Fallsgrove, it's the difference between a home that just looks clean and one that's
-              genuinely healthier to breathe in.
+              Our Rockville process uses{" "}
+              <strong className="text-foreground">product-conscious, label-directed cleaning options</strong>.
+              We match the product, tool and dwell time to grease, soap scum, dust or mineral buildup and
+              confirm household sensitivities in advance. This gives families in King Farm, Twinbrook and
+              Fallsgrove a clear, documented approach without unsupported health claims.
             </p>
             <p>
-              And green doesn't mean weaker. Our eco-friendly products cut grease, lift soap scum, and sanitize
-              every surface to the same standard as conventional chemicals — without the runoff that ends up in
-              the Chesapeake Bay watershed that all of Rockville drains into.{" "}
+              Product choice is only part of the result. Correct dilution, dwell time, agitation and microfiber
+              or vacuum technique determine how well grease, soap scum and dust are removed.{" "}
               <Link to="/services/eco-friendly-cleaning" className="text-primary font-medium underline">
                 See how our eco-friendly cleaning works →
               </Link>

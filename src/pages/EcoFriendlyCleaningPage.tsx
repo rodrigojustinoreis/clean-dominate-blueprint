@@ -10,7 +10,7 @@ import TrustBadges from "@/components/TrustBadges";
 import BeforeAfterGallery from "@/components/BeforeAfterGallery";
 import LocationSocialProof from "@/components/location/LocationSocialProof";
 import { useSEO } from "@/hooks/useSEO";
-import { ServiceSchema, FAQSchema, BreadcrumbSchema, LocalBusinessSchema } from "@/components/SchemaMarkup";
+import { ServiceSchema, FAQSchema, BreadcrumbSchema, LocalBusinessSchema, WebPageSchema } from "@/components/SchemaMarkup";
 import { pickReviews } from "@/data/realReviews";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { cities } from "@/data/locations";
@@ -27,11 +27,11 @@ const topCities = cities
 const faqs = [
   {
     q: "What eco-friendly products does Capital Clean Care use?",
-    a: "We use EPA Safer Choice certified, plant-based cleaning solutions free from chlorine, ammonia, formaldehyde, phthalates, and synthetic fragrances. Our products are biodegradable, low-VOC, and safe for children, pets, and allergy sufferers.",
+    a: "We select lower-odor, plant-derived cleaning options according to the product label and the surface being cleaned. Tell us about children, pets, allergies or fragrance sensitivities during quoting so we can confirm the appropriate products and precautions.",
   },
   {
     q: "Are eco-friendly products as effective as chemical cleaners?",
-    a: "Yes. Our plant-based formulas remove bacteria, grease, soap scum, and grime as effectively as conventional cleaners — without toxic residues. EPA Safer Choice products undergo rigorous efficacy testing.",
+    a: "Effectiveness depends on the soil, dwell time, tool and surface—not marketing language alone. We match the method to grease, soap scum, dust or mineral buildup and follow the product label rather than making blanket disinfecting or health claims.",
   },
   {
     q: "Is eco-friendly cleaning safe for my baby or toddler?",
@@ -60,7 +60,7 @@ const faqs = [
 ];
 
 const trustBadges = [
-  { Icon: Leaf, text: "EPA Safer Choice Products" },
+  { Icon: Leaf, text: "Product-Conscious Cleaning" },
   { Icon: Shield, text: "Licensed & Insured" },
   { Icon: UserCheck, text: "Background-Checked" },
   { Icon: Award, text: "Satisfaction Guaranteed" },
@@ -97,7 +97,7 @@ const EcoFriendlyCleaningPage = () => {
   const { seoHelmet } = useSEO({
     title: "Eco-Friendly House Cleaning in MD, DC & VA | Capital Clean Care",
     description:
-      "Book eco-friendly house cleaning in Maryland, DC & Virginia. Plant-based, EPA Safer Choice certified products. Background-checked teams. Get 15% off your first clean.",
+      "Eco-friendly house cleaning in Maryland, DC and Northern Virginia. Product-conscious methods, background-checked team and a written scope. Free quote.",
     canonical: "https://capitalcleancare.com/services/eco-friendly-cleaning",
   });
 
@@ -119,11 +119,12 @@ const EcoFriendlyCleaningPage = () => {
       <LocalBusinessSchema reviews={pickReviews("services/eco-friendly-cleaning", 2)} />
       <ServiceSchema
         serviceName="Eco-Friendly House Cleaning"
-        description="Plant-based, non-toxic house cleaning using EPA Safer Choice certified products. Safe for children, pets, and allergy sufferers across Maryland, DC, and Northern Virginia."
+        description="Product-conscious house cleaning with lower-odor options and a written scope for homes across Maryland, DC and Northern Virginia."
         url="https://capitalcleancare.com/services/eco-friendly-cleaning"
         serviceType="Eco-Friendly Cleaning"
       />
       <FAQSchema faqs={faqs} />
+      <WebPageSchema name="Eco-Friendly House Cleaning in MD, DC & Virginia" description="Product-conscious house cleaning with lower-odor options, documented preferences and a written scope." url="https://capitalcleancare.com/services/eco-friendly-cleaning" dateModified="2026-08-31" cityName="Silver Spring" stateCode="Maryland" primaryImage="https://capitalcleancare.com/images/services/eco-friendly-cleaning.webp" />
 
       {/* ── Hero ── */}
       <section className="py-12 md:py-16 bg-gradient-to-b from-[#F1F8F1] to-white">
@@ -139,13 +140,13 @@ const EcoFriendlyCleaningPage = () => {
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
             <div>
               <span className="inline-flex items-center gap-2 bg-accent/10 text-accent font-semibold text-sm uppercase tracking-wider px-4 py-1.5 rounded-full mb-4">
-                <Leaf className="h-3.5 w-3.5" /> Plant-Based · EPA Certified · Non-Toxic
+                <Leaf className="h-3.5 w-3.5" /> Product-Conscious · Lower-Odor Options
               </span>
               <h1 className="font-heading text-4xl md:text-5xl font-bold mb-5 leading-[1.1]">
                 Eco-Friendly House Cleaning in Maryland, DC & Virginia
               </h1>
               <p className="text-lg text-muted-foreground leading-relaxed mb-7 max-w-xl">
-                A genuinely clean home shouldn't come with chemical residues, toxic fumes, or health risks. Capital Clean Care uses exclusively EPA Safer Choice certified, plant-based products — safer for your children, your pets, your family, and the environment. At no extra charge.
+                Eco-friendly cleaning starts with informed product selection, correct dilution, reusable tools and a method matched to each surface. Tell us about pets, children, allergies or fragrance sensitivities; we document the requested precautions and product preferences in your quote.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 mb-6">
@@ -164,7 +165,7 @@ const EcoFriendlyCleaningPage = () => {
               </div>
 
               <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted-foreground">
-                {["EPA Safer Choice Products", "No Chlorine or Ammonia", "Safe for Children & Pets", "15% Off First Clean"].map((b) => (
+                {["Product Preferences Documented", "Lower-Odor Options", "Label-Directed Use", "15% Off First Clean"].map((b) => (
                   <span key={b} className="flex items-center gap-1.5">
                     <CheckCircle className="h-4 w-4 text-[#2E7D32] shrink-0" /> {b}
                   </span>
@@ -186,7 +187,7 @@ const EcoFriendlyCleaningPage = () => {
               </div>
               <div className="absolute -bottom-5 left-2 sm:-left-4 bg-white rounded-2xl shadow-xl border border-border px-5 py-3.5 flex items-center gap-2.5">
                 <Leaf className="h-7 w-7 text-[#2E7D32] shrink-0" />
-                <span className="text-xs text-muted-foreground leading-tight">EPA Safer Choice<br />certified products</span>
+                <span className="text-xs text-muted-foreground leading-tight">Product-conscious<br />cleaning methods</span>
               </div>
             </div>
           </div>
@@ -218,7 +219,7 @@ const EcoFriendlyCleaningPage = () => {
               Most conventional cleaning products contain chemicals that never appear on the label. Under U.S. law, manufacturers aren't required to disclose every ingredient — only "active" disinfectants. The rest hide under terms like "fragrance," which can represent dozens of synthetic compounds including phthalates, synthetic musks, and VOCs.
             </p>
             <p>
-              The EPA reports that indoor air can be 2–5x more polluted than outdoor air, with cleaning product VOCs being a major contributor. Children — who spend more time on floors and put their hands in their mouths — are most at risk. Pets absorb chemicals through their paw pads when they groom.
+              Product choice matters most when it is paired with ventilation, correct dilution, label-directed dwell time and tools suited to the surface. We ask about children, pets, allergies and fragrance sensitivities before the visit so those preferences are part of the written service notes.
             </p>
             <p>
               Capital Clean Care was founded on the conviction that your home should be both clean and safe. Our plant-based products deliver the same cleaning power as chemical alternatives — removing bacteria, grease, soap scum, and grime — without the residues, fumes, or long-term health risks.
@@ -317,7 +318,7 @@ const EcoFriendlyCleaningPage = () => {
               What We Use in Your Home
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Every product in our toolkit meets EPA Safer Choice standards. Here's how we clean each area of your home safely and effectively.
+              We choose each product for the surface and type of buildup, use it according to its label and avoid unsupported blanket claims. Here's how we approach each area of the home.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -432,7 +433,7 @@ const EcoFriendlyCleaningPage = () => {
             Serving MD, DC & VA — 15% off your first eco-clean, new clients only
           </p>
           <div className="bg-[#2E7D32] text-white rounded-lg py-3 px-5 text-center mb-6 font-medium text-sm">
-            🌿 EPA Safer Choice certified products — included in every service at no extra charge
+            🌿 Product-conscious methods and lower-odor options — preferences confirmed before service
           </div>
           <Card>
             <CardContent className="p-6 md:p-8">

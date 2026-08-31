@@ -228,8 +228,8 @@ export const services: ServiceData[] = [
     name: "Move In / Move Out Cleaning",
     h1: "Move Out & Move In Cleaning Services in MD, DC & Northern Virginia",
     slug: "move-out-cleaning",
-    shortDescription: "Comprehensive cleaning for property transitions — leave or arrive to a spotless space.",
-    intro: "Moving is stressful enough without worrying about cleaning. Capital Clean Care's move-in and move-out cleaning service ensures every property transition starts or ends with a perfectly clean space. Whether you're a homeowner, tenant, or property manager, we deliver the thorough cleaning needed to meet inspection standards and personal expectations.\n\nOur move-in/move-out service is specifically designed for empty or near-empty properties, allowing our teams unrestricted access to every surface, corner, and fixture. Without furniture in the way, we can address areas that are typically difficult to reach during regular cleanings.\n\nWe understand that timing is critical during moves. Our flexible scheduling accommodates tight timelines, and our efficient teams work quickly without sacrificing quality. We coordinate with your moving schedule to ensure the property is ready exactly when you need it.\n\nFor landlords and property managers, our service helps maximize security deposit returns for tenants and ensures properties are move-in ready for new occupants. We provide detailed cleaning that covers every requirement typically found on move-out inspection checklists.",
+    shortDescription: "Detailed move-in and move-out cleaning for empty homes, apartments and property turnovers across the DMV.",
+    intro: "Moving is stressful enough without adding a full-property clean. Capital Clean Care provides move-in and move-out cleaning for tenants, homeowners, landlords and property managers across Maryland, Washington DC and Northern Virginia. We work from a written scope so the client knows what is included before the appointment.\n\nThe service is designed for empty or nearly empty properties, giving the team access to cabinet interiors, closets, baseboards, fixtures and floors that furniture normally blocks. Appliance interiors and other optional tasks are confirmed during quoting rather than assumed.\n\nScheduling after the movers have finished usually produces the best result. We coordinate access, parking or building procedures and the handover window before arrival. Rush appointments may be possible, but availability is always confirmed at booking.\n\nOur checklist addresses the areas commonly reviewed during a property turnover. Final inspection and security-deposit decisions remain with the landlord or property manager, so no cleaning company can guarantee that outcome.",
     whatsIncluded: [
       "Wipe and degrease stovetop, burners, and range hood exterior",
       "Clean and sanitize kitchen sink and countertops",
@@ -248,12 +248,12 @@ export const services: ServiceData[] = [
       "Empty all trash and remove debris"
     ],
     benefits: [
-      "Meets or exceeds move-out inspection requirements",
-      "Helps maximize security deposit returns",
+      "Detailed scope aligned with common property-turnover checklists",
+      "Photo-ready, move-in-ready presentation without deposit promises",
       "Flexible scheduling around your moving timeline",
       "Empty-home access for the most thorough results",
       "Same-day and next-day availability when possible",
-      "Familiar with property management inspection standards",
+      "Experience coordinating with landlords and property managers",
       "Covers areas not accessible during regular cleaning",
       "Detailed checklist provided for landlord verification"
     ],
@@ -261,13 +261,13 @@ export const services: ServiceData[] = [
       { q: "Should I clean before or after moving out?", a: "We recommend scheduling your cleaning after all belongings have been removed. This allows our team full access to every surface, resulting in the most thorough clean possible." },
       { q: "Do you offer move-in cleaning for new homes?", a: "Yes. Whether it's a newly constructed home or a previously occupied property, we ensure your new space is spotless and sanitized before you settle in." },
       { q: "How far in advance should I book?", a: "We recommend booking at least one week in advance, especially during peak moving seasons. However, we do our best to accommodate last-minute requests when possible." },
-      { q: "Will this cleaning help me get my security deposit back?", a: "Our move-out cleaning is designed to meet or exceed standard inspection requirements. While we can't guarantee deposit outcomes, our thorough approach gives you the best possible chance." },
+      { q: "Will this cleaning guarantee my security deposit?", a: "No cleaning company controls a landlord's inspection or deposit decision. We follow a detailed written scope that addresses common turnover items and can provide the completed checklist for your records." },
       { q: "Do you clean the garage or outdoor spaces?", a: "Garage sweeping and basic outdoor area tidying can be included upon request. Please let us know when booking so we can plan accordingly." },
       { q: "Can you clean on the same day as my move?", a: "Yes, we can coordinate with your moving schedule. We recommend having us come in after the movers have finished for the most thorough results." },
       { q: "Do you work with property managers?", a: "Yes. We regularly work with property managers and landlords throughout the DMV. We can coordinate directly with building management for access and scheduling." },
       { q: "What if the property hasn't been cleaned in months?", a: "No problem. Our teams handle properties in all conditions. Heavily soiled or neglected properties may require additional time, which we'll discuss during your quote." },
       { q: "How much does move-in/move-out cleaning cost?", a: "Pricing depends on property size and condition. A typical 2-bedroom apartment ranges from $250-$400. Larger homes or heavily soiled properties may cost more. Request a free quote for accurate pricing." },
-      { q: "Do you clean inside all appliances?", a: "Yes. Our move-in/move-out service includes cleaning inside the oven, refrigerator, dishwasher, and microwave — areas that are critical for inspection requirements." },
+      { q: "Do you clean inside appliances?", a: "Oven, refrigerator, dishwasher and microwave interiors can be included. We confirm each appliance in the written quote so the expected scope and price are clear." },
       { q: "Can you provide a checklist for my landlord?", a: "Yes. We provide a detailed cleaning checklist that documents everything our team addressed. This can be shared with your landlord or property manager as verification." },
       { q: "Do you offer same-day or next-day move-out cleaning?", a: "We do our best to accommodate rush requests. Same-day and next-day availability depends on our schedule, but we prioritize move-related cleanings due to their time-sensitive nature." },
       { q: "Are your teams experienced with apartment complexes?", a: "Yes. We regularly clean apartments in complexes throughout the DMV, and we're experienced with building access procedures, elevators, and common area coordination." },
@@ -280,8 +280,8 @@ export const services: ServiceData[] = [
       { name: "Samantha K.", location: "Georgetown, DC", text: "They cleaned our new home before we moved in. Every cabinet, every closet, every surface was pristine. It felt truly fresh and safe for our newborn." },
       { name: "Carlos M.", location: "Gaithersburg, MD", text: "Moved out of our house of 15 years. The team spent a full day and left it spotless. Absolutely worth it for the peace of mind." }
     ],
-    metaTitle: "Move In & Move Out Cleaning in MD, DC & VA | Capital Clean Care",
-    metaDescription: "Professional move-in/move-out cleaning in Maryland, DC & Virginia. Pass inspection, maximize deposit return. Eco-friendly, licensed & insured. Get a free quote!"
+    metaTitle: "Move Out Cleaning Services in MD, DC & VA | Capital Clean Care",
+    metaDescription: "Move-out and move-in cleaning for empty homes across Maryland, DC and Northern Virginia. Detailed written scope, insured team and free quote."
   },
   {
     name: "Post-Construction Cleaning",

@@ -4,7 +4,7 @@ import { useSEO } from "@/hooks/useSEO";
 import FAQ from "@/components/FAQ";
 import ConversionCTA from "@/components/ConversionCTA";
 import TrustBadges from "@/components/TrustBadges";
-import { LocalBusinessSchema, ServiceSchema, FAQSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
+import { LocalBusinessSchema, ServiceSchema, FAQSchema, BreadcrumbSchema, WebPageSchema } from "@/components/SchemaMarkup";
 import LocationSocialProof from "@/components/location/LocationSocialProof";
 import LocationQuoteSection from "@/components/location/LocationQuoteSection";
 import InternalLinksGrid from "@/components/location/InternalLinksGrid";
@@ -72,9 +72,12 @@ const ServiceLocationPage = () => {
   const metaDescription = override?.metaDescription || `Top-rated ${serviceLabel} in ${city.name}, ${city.state}. Eco-friendly products, background-checked teams, satisfaction guaranteed. Serving ${city.county}. Free quotes.`;
   const pageUrl = `https://capitalcleancare.com/locations/${city.slug}/${service.slug}`;
   const isFairfaxHouseCleaning = city.slug === "fairfax-va" && service.slug === "house-cleaning";
+  const isArlingtonDeepCleaning = city.slug === "arlington-va" && service.slug === "deep-cleaning";
   const heroImage = isFairfaxHouseCleaning
     ? "/images/locations/fairfax-house-cleaning-hero-v2.webp"
-    : null;
+    : isArlingtonDeepCleaning
+      ? "/images/locations/arlington-deep-cleaning/power-scrubber-upright.jpg"
+      : null;
   const nearbyCitiesForLinks = isFairfaxHouseCleaning
     ? slCities.filter((candidate) => ["vienna-va", "mclean-va", "falls-church-va", "arlington-va", "alexandria-va", "reston-va"].includes(candidate.slug))
     : slCities.filter((candidate) => candidate.slug !== city.slug);
@@ -116,6 +119,7 @@ const ServiceLocationPage = () => {
         url={pageUrl}
       />
       <FAQSchema faqs={faqs} />
+      <WebPageSchema name={metaTitle} description={metaDescription} url={pageUrl} dateModified="2026-08-31" cityName={city.name} stateCode={city.state === "VA" ? "Virginia" : city.state === "MD" ? "Maryland" : city.state} primaryImage={`https://capitalcleancare.com${cityImages[city.slug] ?? teamPhotos[cityPhotoIndex(city.slug)]}`} />
 
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-primary/5 via-background to-accent/5 pt-24 pb-12 md:pt-32 md:pb-16">
@@ -123,7 +127,9 @@ const ServiceLocationPage = () => {
           <>
             <img
               src={heroImage}
-              alt="Illustrative scene of professional house cleaning in a Fairfax, Virginia home"
+              alt={isArlingtonDeepCleaning
+                ? "Capital Clean Care team member detail-cleaning tile during a deep cleaning visit"
+                : "Illustrative scene of professional house cleaning in a Fairfax, Virginia home"}
               width="1672"
               height="941"
               className="absolute inset-0 h-full w-full object-cover object-center"
@@ -164,6 +170,16 @@ const ServiceLocationPage = () => {
           </div>
         </div>
       </section>
+
+      {city.slug === "arlington-va" && service.slug === "deep-cleaning" && (
+        <section className="border-b border-border bg-background py-10 md:py-14" aria-labelledby="arlington-deep-answer">
+          <div className="container mx-auto max-w-4xl px-4">
+            <p className="mb-3 text-sm font-semibold text-accent">Reviewed August 31, 2026 · Arlington, Virginia</p>
+            <h2 id="arlington-deep-answer" className="font-heading text-2xl font-bold text-foreground md:text-3xl">What is included in deep cleaning for an Arlington home?</h2>
+            <p className="mt-4 text-lg leading-relaxed text-muted-foreground">Deep cleaning goes beyond routine upkeep by addressing accumulated buildup and detail work: baseboards, door frames, ceiling fans, window sills and tracks, cabinet fronts, bathroom grout and fixtures, kitchen grease, appliance interiors selected in the quote, and edge-to-edge floor care. Capital Clean Care confirms the scope, parking or building access, home size and priority areas before booking. Apartments and condos near Rosslyn, Ballston and Crystal City may require elevator, loading-zone or front-desk coordination; detached homes may need more time for stairs and additional rooms.</p>
+          </div>
+        </section>
+      )}
 
       {/* Intro Section */}
       <section className="py-12 md:py-16">
@@ -270,6 +286,25 @@ const ServiceLocationPage = () => {
       {/* Before & After video carousel (4th position) — deep-cleaning pages only (relevant transformation footage, breaks up the text) */}
       {service.slug === "deep-cleaning" && (
         <TransformationsGallery heading={`Before & After: Real Deep Cleaning in ${city.name}`} />
+      )}
+
+      {isArlingtonDeepCleaning && override?.photos && (
+        <section className="border-y border-border bg-background py-12 md:py-16" aria-labelledby="arlington-real-work">
+          <div className="container mx-auto max-w-5xl px-4">
+            <div className="mx-auto mb-8 max-w-2xl text-center">
+              <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-accent">Real team · Detail work</p>
+              <h2 id="arlington-real-work" className="font-heading text-2xl font-bold text-foreground md:text-3xl">Deep-Cleaning Details Our Arlington Team Handles</h2>
+              <p className="mt-3 leading-relaxed text-muted-foreground">Original Capital Clean Care work photos showing the detailed floor, grout and under-cabinet attention described in this service.</p>
+            </div>
+            <div className="grid gap-5 md:grid-cols-2">
+              {override.photos.slice(1, 3).map((photo) => (
+                <figure key={photo.src} className="overflow-hidden rounded-2xl border border-border bg-card shadow-md">
+                  <img src={photo.src} alt={photo.alt} width="570" height="760" loading="lazy" decoding="async" className="aspect-[3/4] w-full object-cover" />
+                </figure>
+              ))}
+            </div>
+          </div>
+        </section>
       )}
 
       {/* Unique local content (only on priority pages) */}

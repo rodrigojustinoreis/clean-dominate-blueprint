@@ -13,6 +13,7 @@ import {
   ServiceSchema,
   FAQSchema,
   BreadcrumbSchema,
+  WebPageSchema,
 } from "@/components/SchemaMarkup";
 import { useSEO } from "@/hooks/useSEO";
 import HeroLocation from "@/components/location/HeroLocation";
@@ -30,7 +31,7 @@ const PAGE_URL = "https://capitalcleancare.com/locations/potomac-md/move-out-cle
 const localFaqs = [
   {
     q: "How much does move out cleaning cost in Potomac?",
-    a: "Pricing depends on home size and condition. Get your exact quote in 60 seconds — use the form below or call (240) 704-2551. Same-day availability confirmed at booking.",
+    a: "Pricing depends on home size, condition, appliance interiors, stairs and requested extras. Use the form below or call (240) 704-2551 for a written quote. Rush availability is confirmed at booking.",
   },
   {
     q: "Do I need to be present during the move out cleaning in Potomac?",
@@ -38,15 +39,15 @@ const localFaqs = [
   },
   {
     q: "Can you do same-day or next-day move out cleaning in Potomac?",
-    a: "In most cases, yes. Contact us early to confirm availability in your ZIP code (20854, 20859). We understand move-out timelines are tight.",
+    a: "Rush appointments may be available in ZIP codes 20854 and 20859, but they are not guaranteed. Contact us early so we can confirm the date, access and scope in writing.",
   },
   {
     q: "Do you clean empty apartments?",
     a: "Yes. Empty-home move out cleanings are our specialty. Completely empty homes are preferred — it allows our team to reach every surface without furniture in the way.",
   },
   {
-    q: "Does your move out cleaning meet Maryland landlord inspection standards?",
-    a: "Yes. Our checklist is built to meet typical property management standards in Potomac and throughout Montgomery County, covering everything landlords commonly inspect.",
+    q: "Does move-out cleaning guarantee a landlord inspection or deposit return?",
+    a: "No. The landlord or property manager controls the inspection and deposit decision. Our written checklist addresses common turnover items and documents the agreed cleaning scope.",
   },
   {
     q: "Do you also do move-in cleaning for the new home?",
@@ -118,9 +119,9 @@ const nearbyCities = [
 
 const PotomacMoveOutCleaningPage = () => {
   const { seoHelmet } = useSEO({
-    title: "Move Out Cleaning in Potomac, MD",
+    title: "Move Out Cleaning Services in Potomac, MD | Free Quote",
     description:
-      "Move out cleaning in Potomac, MD. We clean to landlord & inspection standards so you get your deposit back. Bonded, insured, eco-friendly. Book today — same-day available.",
+      "Move-out cleaning in Potomac, MD for homes, apartments and property turnovers. Written checklist, insured team, appliance options and free quote.",
     canonical: PAGE_URL,
     ogImage: "https://capitalcleancare.com/og-image.jpg",
   });
@@ -132,7 +133,7 @@ const PotomacMoveOutCleaningPage = () => {
       {/* ── SEO ───────────────────────────────────────────── */}
       {seoHelmet}
       <Helmet>
-        <link rel="preload" as="image" href="/images/team/team-mopping-dark-floor.jpg" />
+        <link rel="preload" as="image" href="/images/locations/bethesda-house-cleaning/capital-clean-care-team.webp" />
         <link rel="alternate" hrefLang="en-US" href={PAGE_URL} />
       </Helmet>
 
@@ -167,6 +168,7 @@ const PotomacMoveOutCleaningPage = () => {
         areaServed={["Potomac, MD", "Montgomery County, MD"]}
       />
       <FAQSchema faqs={faqs} />
+      <WebPageSchema name="Move Out Cleaning Services in Potomac, MD" description="Detailed move-out and move-in cleaning in Potomac with a written checklist, clear optional tasks and an insured team." url={PAGE_URL} dateModified="2026-08-31" cityName="Potomac" stateCode="Maryland" primaryImage="https://capitalcleancare.com/images/locations/bethesda-house-cleaning/capital-clean-care-team.webp" />
 
       {/* ── Breadcrumbs ───────────────────────────────────── */}
       <div className="pt-24 bg-gradient-to-br from-primary/5 via-background to-accent/5">
@@ -184,12 +186,15 @@ const PotomacMoveOutCleaningPage = () => {
       {/* ── Hero ──────────────────────────────────────────── */}
       <HeroLocation
         h1="Move Out Cleaning in Potomac, MD"
-        lead="Moving out in Potomac? Capital Clean Care's move out cleaning covers every inch your landlord will inspect — from oven interior to baseboards to grout lines. We serve Glen Echo, River Falls, and all Potomac neighborhoods (ZIP 20854 and 20859). Deposit-ready results backed by 100% satisfaction guarantee."
+        lead="Moving in or out of Potomac? Capital Clean Care prepares empty and nearly empty homes with a written room-by-room scope—from appliance interiors selected in your quote to cabinets, bathrooms, baseboards and floors. We serve ZIP codes 20854 and 20859, including River Falls and Avenel."
         cityName="Potomac"
         state="MD"
         zipRange="20854"
-        heroImage="/images/team/team-mopping-dark-floor.jpg"
-        heroImageAlt="Capital Clean Care move out cleaning service in Potomac, MD — deposit-ready results"
+        heroImage="/images/locations/bethesda-house-cleaning/capital-clean-care-team.webp"
+        heroImageAlt="Capital Clean Care professional cleaning team serving Potomac, Maryland"
+        heroImageWidth={900}
+        heroImageHeight={1200}
+        preserveFullImage
         ctaPrimary="Book Your Move Out Clean in Potomac"
       />
 
@@ -206,14 +211,13 @@ const PotomacMoveOutCleaningPage = () => {
       <section className="py-12 md:py-16">
         <div className="container mx-auto px-4 max-w-4xl">
           <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-6">
-            Why Your Security Deposit Depends on the Cleaning
+            What Potomac Property Turnovers Usually Require
           </h2>
           <p className="text-muted-foreground leading-relaxed mb-6">
-            Landlords in Potomac and across Montgomery County routinely withhold deposits for
-            cleaning deficiencies — even minor ones. A professional move out cleaning built to
-            landlord standards is the most reliable way to protect your deposit. We know what
-            property managers inspect in the 20854 and 20859 ZIP codes, from the Avenel community
-            to Glen Echo rentals and properties near the C&O Canal National Historical Park area.
+            Potomac handovers vary by lease, property manager and home condition. Our team confirms
+            the rooms, appliance interiors, cabinets, closets, baseboards, floors and requested extras
+            before arrival, then works through the agreed checklist. This creates a clear record of the
+            cleaning performed without claiming to control the landlord's final inspection or deposit decision.
           </p>
           <div className="grid sm:grid-cols-3 gap-4">
             {[

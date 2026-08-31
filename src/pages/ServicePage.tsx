@@ -48,6 +48,7 @@ const ServicePage = () => {
 
   const heroImg = SERVICE_IMAGES[service.slug] || "/images/team/real-team-two-members.webp";
   const isOfficeCleaning = service.slug === "office-cleaning";
+  const isMoveOutCleaning = service.slug === "move-out-cleaning";
 
   const matchedSlService = slServices.find(
     (sl) => sl.slug === service.slug || sl.name.toLowerCase().includes(service.name.toLowerCase().split(" ")[0]),
@@ -64,14 +65,14 @@ const ServicePage = () => {
         serviceType={service.name}
       />
       <FAQSchema faqs={service.faqs} />
-      {isOfficeCleaning && (
+      {(isOfficeCleaning || isMoveOutCleaning) && (
         <>
           <LocalBusinessSchema areaServed={["Maryland", "Washington, DC", "Northern Virginia"]} />
           <WebPageSchema
             name={service.metaTitle}
             description={service.metaDescription}
-            url="https://capitalcleancare.com/services/office-cleaning"
-            dateModified="2026-08-30"
+            url={`https://capitalcleancare.com/services/${service.slug}`}
+            dateModified="2026-08-31"
             cityName="Silver Spring"
             stateCode="Maryland"
             primaryImage="https://capitalcleancare.com/images/locations/bethesda-house-cleaning/capital-clean-care-team.webp"
@@ -143,6 +144,30 @@ const ServicePage = () => {
           </div>
         </div>
       </section>
+
+      {isMoveOutCleaning && (
+        <section className="border-b border-border bg-background py-10 md:py-14" aria-labelledby="move-out-answer">
+          <div className="container mx-auto max-w-4xl px-4">
+            <p className="mb-3 text-sm font-semibold text-accent">Reviewed August 31, 2026 · Maryland, Washington DC & Northern Virginia</p>
+            <h2 id="move-out-answer" className="font-heading text-2xl font-bold text-foreground md:text-3xl">What does a professional move-out cleaning service include?</h2>
+            <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
+              A professional move-out cleaning prepares an empty or nearly empty home for its next occupant. Capital Clean Care cleans kitchens and bathrooms in detail, wipes cabinets and drawers, addresses appliance interiors included in the written quote, removes dust from baseboards, fixtures, doors and accessible surfaces, and vacuums or mops every floor. The best time to schedule is after belongings are removed and before the final walkthrough. Price depends on square footage, condition, appliance interiors, stairs and requested extras. We confirm the scope in writing; a landlord or property manager—not the cleaning company—makes the final inspection and deposit decision.
+            </p>
+            <div className="mt-7 grid gap-4 sm:grid-cols-3">
+              {[
+                ["Best timing", "After movers finish, while the property is empty and utilities remain on."],
+                ["Built for transitions", "For tenants, homeowners, landlords, property managers and move-in preparation."],
+                ["Clear written scope", "Home size, condition and optional interiors are confirmed before the appointment."],
+              ].map(([title, copy]) => (
+                <div key={title} className="rounded-xl border border-border bg-card p-5 shadow-sm">
+                  <h3 className="font-heading font-bold text-foreground">{title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{copy}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {isOfficeCleaning && (
         <section className="border-b border-border bg-background py-10 md:py-14" aria-labelledby="office-cleaning-answer">

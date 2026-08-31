@@ -10,7 +10,7 @@ import BeforeAfterGallery from "@/components/BeforeAfterGallery";
 import TransformationsGallery from "@/components/TransformationsGallery";
 import GreenShield5Step from "@/components/GreenShield5Step";
 import TrustBadges from "@/components/TrustBadges";
-import { ServiceSchema, FAQSchema, BreadcrumbSchema, LocalBusinessSchema } from "@/components/SchemaMarkup";
+import { ServiceSchema, FAQSchema, BreadcrumbSchema, LocalBusinessSchema, WebPageSchema } from "@/components/SchemaMarkup";
 import { pickReviews } from "@/data/realReviews";
 import { useSEO } from "@/hooks/useSEO";
 import { getServiceBySlug } from "@/data/services";
@@ -100,7 +100,7 @@ const BY_ROOM: { room: string; tasks: string[] }[] = [
       "High dusting and cobweb removal in corners and ceilings",
       "Interior glass and mirrors",
       "Trash removed and liners replaced",
-      "EPA Safer Choice™ sanitize of every high-touch surface",
+      "Label-directed cleaning of high-touch surfaces",
       "Final white-glove inspection against our 50-point checklist",
     ],
   },
@@ -161,6 +161,7 @@ const DeepCleaningPage = () => {
         priceRange={{ low: 230, high: 570 }}
       />
       <FAQSchema faqs={service.faqs} />
+      <WebPageSchema name="Deep Cleaning Services in Montgomery County, MD" description={service.metaDescription} url="https://capitalcleancare.com/services/deep-cleaning" dateModified="2026-08-31" cityName="Silver Spring" stateCode="Maryland" primaryImage="https://capitalcleancare.com/images/cluster/pillar-og.jpg" />
 
       {/* ── Sticky Top Bar (44px, green) ── */}
       <div
@@ -208,6 +209,7 @@ const DeepCleaningPage = () => {
         </div>
       )}
 
+      <main id="main-content">
       {/* ── Hero ── */}
       <section className="relative overflow-hidden bg-gradient-to-br from-[#EAF6EA] via-background to-accent/5 py-10 md:py-16">
         <div className="container mx-auto px-4 max-w-6xl">
@@ -338,7 +340,7 @@ const DeepCleaningPage = () => {
               <p>
                 Every deep clean follows the <strong>GreenShield 5-Step Clean™</strong>, our proprietary process:
                 we assess and protect the home, dry-dust top-to-bottom before any wet work so dust never resettles,
-                sanitize high-touch areas with EPA Safer Choice™ plant-based products, deep-scrub and polish every
+                clean high-touch areas with label-directed products, deep-scrub and polish every
                 surface, and finish with a white-glove inspection against a 50-point checklist. That methodology is
                 what keeps a deep clean consistent from the first visit to the fiftieth — you can see all five steps
                 in detail further down this page.
@@ -749,6 +751,8 @@ const DeepCleaningPage = () => {
           </div>
         </div>
       </section>
+
+      </main>
 
       {!isAdTraffic && <Footer />}
 

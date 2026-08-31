@@ -321,17 +321,17 @@ Navy Yard's contemporary condos come with the surfaces eco-friendly products are
   },
 
   "arlington-va/deep-cleaning": {
-    h1: "Deep Cleaning Arlington VA: Top-Rated & Eco-Friendly",
-    heroLead: "Deep cleaning for Arlington VA homes, with HEPA-filtered equipment, eco-friendly products, and background-checked crews serving Clarendon, Ballston, Cherrydale, and every Arlington neighborhood.",
-    metaTitle: "Deep Cleaning Arlington VA | Top-Rated & Eco-Friendly",
-    metaDescription: "Deep cleaning in Arlington VA serving Clarendon, Ballston, Cherrydale and beyond. HEPA gear, eco-friendly products, background-checked crews. Free quote.",
+    h1: "Deep Cleaning Services in Arlington, VA",
+    heroLead: "Detailed deep cleaning for Arlington homes, apartments and condos, with a written scope and background-checked crews serving Clarendon, Ballston, Cherrydale and nearby neighborhoods.",
+    metaTitle: "Deep Cleaning Services in Arlington, VA | Free Quote",
+    metaDescription: "Deep cleaning in Arlington, VA for grout, baseboards, fixtures, floors and selected appliance interiors. Written scope, insured team and free quote.",
     uniqueContent: `Arlington is really two cleaning markets in one county. Along the Rosslyn–Ballston Metro corridor (Clarendon, Courthouse, Virginia Square, Ballston), most of our deep cleaning work is in high-rise and mid-rise condos, where forced-air HVAC systems and nearby garage and street traffic push a fine particulate into every horizontal surface, light fixture, and air return. In the older neighborhoods of Cherrydale, Maywood, Lyon Village, and Arlington Forest, we're working in 1920s–1950s bungalows and brick colonials with original hex-tile bathrooms, plaster walls, and hardwood that needs a far gentler hand than a builder-grade rental. Our Arlington VA deep cleaning crews carry HEPA-filtered vacuums rated for fine dust and a power scrubber for grout and tile, and we switch technique by surface rather than running the same pad over marble, vintage tile, and laminate alike.
 
 Arlington also turns over fast. Between young federal and Pentagon-adjacent professionals, military families on orders, and a heavy rental market near the Metro, a large share of our deep cleans are move-in resets, end-of-lease cleans, and seasonal top-to-bottom refreshes. After hundreds of deep cleans across Arlington VA, we know exactly where the grime hides in this housing stock: the glass between oven doors, the runners and weep holes of aluminum window tracks, the top edges of crown molding in older units, the baseboard tucked behind the bathroom door, and ceiling-fan blades in homes without central air. That spot-by-spot checklist was built specifically from Arlington properties, and it is what our team works through, room by room, on every deep clean.`,
     photos: [
       { src: "/images/team/scrubbing-door-frame.jpg", alt: "Capital Clean Care team member scrubbing door frame during a deep cleaning in Arlington, VA" },
-      { src: "/images/team/power-scrubber-tile.jpg", alt: "Capital Clean Care using a power scrubber on tile grout — deep cleaning service in Arlington, VA" },
-      { src: "/images/team/cleaning-under-cabinet.jpg", alt: "Capital Clean Care cleaner reaching under a cabinet during a thorough deep cleaning in Arlington, VA" },
+      { src: "/images/locations/arlington-deep-cleaning/power-scrubber-upright.jpg", alt: "Capital Clean Care using a power scrubber on tile grout during deep cleaning" },
+      { src: "/images/locations/arlington-deep-cleaning/under-cabinet-upright.jpg", alt: "Capital Clean Care cleaner reaching under cabinetry during a detailed cleaning" },
     ],
   },
 
