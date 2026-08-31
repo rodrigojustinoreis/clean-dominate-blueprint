@@ -7,10 +7,9 @@ import Footer from "@/components/layout/Footer";
 import QuoteForm from "@/components/QuoteForm";
 import FAQ from "@/components/FAQ";
 import BeforeAfterGallery from "@/components/BeforeAfterGallery";
-import TransformationsGallery from "@/components/TransformationsGallery";
 import GreenShield5Step from "@/components/GreenShield5Step";
 import TrustBadges from "@/components/TrustBadges";
-import { ServiceSchema, FAQSchema, BreadcrumbSchema, LocalBusinessSchema } from "@/components/SchemaMarkup";
+import { ServiceSchema, FAQSchema, BreadcrumbSchema, LocalBusinessSchema, WebPageSchema } from "@/components/SchemaMarkup";
 import { pickReviews } from "@/data/realReviews";
 import { useSEO } from "@/hooks/useSEO";
 import { getServiceBySlug } from "@/data/services";
@@ -33,6 +32,17 @@ const topCities = cities
   .filter((c) => !c.slug.includes("county") && isIndexable(`/locations/${c.slug}`))
   .slice(0, 8);
 
+// Keep this regional page as the umbrella and hand city-specific intent to the
+// matching local recurring-cleaning page. Live search data determines this order.
+const PRIORITY_RECURRING_CITIES = [
+  "bethesda-md",
+  "washington-dc",
+  "rockville-md",
+  "silver-spring-md",
+  "arlington-va",
+  "fairfax-va",
+];
+
 // The recurring-cleaning cluster spokes (frequency, cadence, maintenance-between-visits),
 // in reading order. guidesBySlugs() drops any that are noindex / canonicalised away / missing.
 const RECURRING_SPOKES = [
@@ -43,6 +53,8 @@ const RECURRING_SPOKES = [
   "best-cleaning-schedule-busy-families-dmv",
   "how-to-keep-house-clean-between-cleanings",
 ];
+
+const HERO_IMAGE = "/images/recurring-cleaning/real-recurring-sofa-care.webp";
 
 // What every recurring maintenance visit covers, by area. These are ROUTINE upkeep tasks —
 // the same-team, every-visit checklist that keeps an already-clean home fresh. The intensive,
@@ -125,28 +137,6 @@ const FREQUENCY_COMPARE: { label: string; weekly: string; biweekly: string; mont
   },
 ];
 
-// Frequency guidance by household type — who each cadence fits best.
-const HOW_OFTEN: { freq: string; who: string; detail: string }[] = [
-  {
-    freq: "Weekly",
-    who: "Busy families, pets & high foot traffic",
-    detail:
-      "A weekly maid service is the right call when the home never gets a chance to slow down — kids, shedding pets, home offices, and constant coming and going. Each visit is quick because nothing has time to build up, so weekly is also the best per-visit value.",
-  },
-  {
-    freq: "Bi-weekly",
-    who: "Most homes — the popular middle ground",
-    detail:
-      "A bi-weekly cleaning service is our most-requested plan and fits the majority of Montgomery County households. It keeps the home consistently presentable without ever letting it reach the 'it really needs cleaning' point, at a comfortable balance of cost and cleanliness.",
-  },
-  {
-    freq: "Monthly",
-    who: "Light, tidy or single-person homes",
-    detail:
-      "A monthly house cleaning service works well for smaller households, tidy homes, or anyone who keeps up with daily upkeep and just wants a thorough reset every few weeks. It's the lightest-touch regular cleaning service we offer.",
-  },
-];
-
 const RecurringCleaningPage = () => {
   const [searchParams] = useSearchParams();
   const isAdTraffic = searchParams.has("gclid") || searchParams.get("src") === "google";
@@ -155,8 +145,8 @@ const RecurringCleaningPage = () => {
     title: service.metaTitle,
     description: service.metaDescription,
     canonical: "https://capitalcleancare.com/services/recurring-cleaning",
-    ogImage: "/images/cluster/pillar-og.jpg",
-    preloadImage: "/images/cluster/pillar.webp",
+    ogImage: HERO_IMAGE,
+    preloadImage: HERO_IMAGE,
   });
 
   const scrollToForm = (e: React.MouseEvent) => {
@@ -178,6 +168,13 @@ const RecurringCleaningPage = () => {
         serviceType="Recurring Cleaning"
       />
       <FAQSchema faqs={service.faqs} />
+      <WebPageSchema
+        name="Recurring House Cleaning in Maryland, DC & Virginia"
+        description={service.metaDescription}
+        url="https://capitalcleancare.com/services/recurring-cleaning"
+        dateModified="2026-08-31"
+        primaryImage={`https://capitalcleancare.com${HERO_IMAGE}`}
+      />
 
       {/* ── Sticky Top Bar (44px, green) ── */}
       <div
@@ -186,7 +183,7 @@ const RecurringCleaningPage = () => {
       >
         <div className="h-full max-w-6xl mx-auto px-4 flex items-center justify-between gap-2">
           <span className="hidden md:block text-xs font-medium whitespace-nowrap">
-            ⭐⭐⭐⭐⭐ 5-Star Rated in Montgomery County
+            ⭐⭐⭐⭐⭐ 5-Star Rated Across the DMV
           </span>
           <span className="text-sm font-bold text-center flex-1 md:flex-none">
             🎁 15% OFF Your First Recurring Clean
@@ -225,6 +222,7 @@ const RecurringCleaningPage = () => {
         </div>
       )}
 
+      <main id="main-content">
       {/* ── Hero ── */}
       <section className="relative overflow-hidden bg-gradient-to-br from-[#EAF6EA] via-background to-accent/5 py-10 md:py-16">
         <div className="container mx-auto px-4 max-w-6xl">
@@ -281,8 +279,8 @@ const RecurringCleaningPage = () => {
               <div className="relative lg:pl-4">
                 <div className="rounded-3xl overflow-hidden shadow-2xl border border-border aspect-[4/3]">
                   <img
-                    src="/images/cluster/pillar.webp"
-                    alt="A dedicated Capital Clean Care team keeping a bright Montgomery County home fresh on a recurring maintenance cleaning visit"
+                    src={HERO_IMAGE}
+                    alt="Capital Clean Care professional wearing black gloves arranging a sofa throw during a recurring home cleaning visit"
                     className="w-full h-full object-cover"
                     width={800}
                     height={600}
@@ -300,8 +298,35 @@ const RecurringCleaningPage = () => {
         </div>
       </section>
 
-      {/* ── Real video transformations (2nd position) ── */}
-      <TransformationsGallery />
+      {/* ── Answer-first summary: compact, quotable and useful to search/AI systems ── */}
+      <section aria-labelledby="recurring-cleaning-summary" className="py-10 md:py-12 border-b border-border bg-card">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="rounded-2xl border border-[#2E7D32]/25 bg-[#F4FAF4] p-6 md:p-8 shadow-sm">
+            <span className="text-[#2E7D32] font-semibold text-sm uppercase tracking-wider">Quick answer</span>
+            <h2 id="recurring-cleaning-summary" className="font-heading text-2xl md:text-3xl font-bold mt-2 mb-3">
+              What Is Recurring House Cleaning?
+            </h2>
+            <p className="text-[17px] md:text-lg leading-relaxed text-foreground max-w-3xl">
+              Recurring house cleaning is a scheduled recurring maintenance cleaning service performed weekly, every two weeks,
+              or monthly. Capital Clean Care sends a trusted team to clean kitchens, bathrooms, bedrooms,
+              living areas, floors, dust and high-touch surfaces throughout Maryland, Washington, DC, and
+              Northern Virginia—with no long-term contract and a plan tailored to the home.
+            </p>
+            <div className="grid sm:grid-cols-3 gap-3 mt-6" aria-label="Recurring cleaning essentials">
+              {[
+                ["Frequency", "Weekly, bi-weekly or monthly"],
+                ["Best for", "Ongoing whole-home upkeep"],
+                ["Pricing", "Flat quote based on size and condition"],
+              ].map(([label, value]) => (
+                <div key={label} className="rounded-xl border border-[#2E7D32]/15 bg-white p-4">
+                  <span className="block text-xs font-bold uppercase tracking-wide text-[#2E7D32]">{label}</span>
+                  <span className="block mt-1 text-sm font-medium text-foreground">{value}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* ── Intro / About ── */}
       <section className="py-12 md:py-16">
@@ -318,7 +343,7 @@ const RecurringCleaningPage = () => {
 
       {/* ═══════════ PILLAR CONTENT — informative reference ═══════════ */}
 
-      {/* ── Before & After photo carousel (4th position) ── */}
+      {/* ── One authentic proof gallery; duplicate media galleries intentionally removed ── */}
       <BeforeAfterGallery />
 
       {/* ── What's included, by area ── */}
@@ -386,7 +411,7 @@ const RecurringCleaningPage = () => {
               breakdown lives in our{" "}
               <Link to="/resources/recurring-cleaning-weekly-biweekly-monthly" className="text-accent hover:underline font-medium">weekly vs bi-weekly vs monthly guide</Link>.
             </p>
-            <div className="overflow-x-auto rounded-xl border border-border">
+            <div className="hidden md:block overflow-x-auto rounded-xl border border-border">
               <table className="w-full text-left text-[15px] bg-card">
                 <thead>
                   <tr className="border-b border-border bg-secondary/60">
@@ -408,6 +433,25 @@ const RecurringCleaningPage = () => {
                 </tbody>
               </table>
             </div>
+            <div className="grid gap-4 md:hidden" aria-label="Recurring cleaning frequency comparison">
+              {[
+                { name: "Weekly", values: FREQUENCY_COMPARE.map((row) => [row.label, row.weekly]) },
+                { name: "Bi-Weekly", values: FREQUENCY_COMPARE.map((row) => [row.label, row.biweekly]) },
+                { name: "Monthly", values: FREQUENCY_COMPARE.map((row) => [row.label, row.monthly]) },
+              ].map((plan) => (
+                <article key={plan.name} className="rounded-xl border border-border bg-card p-5 shadow-sm">
+                  <h3 className="font-heading text-xl font-bold text-[#2E7D32] mb-3">{plan.name}</h3>
+                  <dl className="space-y-3">
+                    {plan.values.map(([label, value]) => (
+                      <div key={label} className="border-t border-border pt-3 first:border-0 first:pt-0">
+                        <dt className="text-xs font-bold uppercase tracking-wide text-muted-foreground">{label}</dt>
+                        <dd className="mt-1 text-[15px] text-foreground">{value}</dd>
+                      </div>
+                    ))}
+                  </dl>
+                </article>
+              ))}
+            </div>
             <p className="text-sm text-muted-foreground mt-4">
               Not sure whether to commit to a plan at all? Compare{" "}
               <Link to="/resources/one-time-vs-recurring-cleaning" className="text-accent hover:underline font-medium">one-time vs recurring cleaning</Link>.
@@ -420,14 +464,14 @@ const RecurringCleaningPage = () => {
       <section className="py-12 md:py-16 border-t border-border">
         <div className="container mx-auto px-4 max-w-4xl">
           <FadeInSection>
-            <h2 className="font-heading text-2xl md:text-3xl font-bold mb-4">Recurring Cleaning Prices &amp; How You Save in Montgomery County</h2>
+            <h2 className="font-heading text-2xl md:text-3xl font-bold mb-4">Recurring Cleaning Prices &amp; How You Save Across the DMV</h2>
             <p className="text-[17px] leading-relaxed text-foreground mb-6 max-w-3xl">
               Every recurring plan is quoted as a <strong>flat per-visit price</strong> based on the size of
               your home — never an open-ended hourly rate. Recurring clients get <strong>preferred pricing</strong>:
               because the home stays maintained, each visit is quicker, so you pay less per visit than a one-time
               clean. Weekly plans save the most — up to <strong>25%</strong> — followed by bi-weekly and monthly.
               There are <strong>no contracts</strong> and no cancellation penalties. The ranges below are real
-              recurring per-visit prices across Montgomery County and the wider DMV.
+              recurring per-visit prices across Maryland, Washington, DC, and Northern Virginia.
             </p>
             <div className="overflow-x-auto rounded-xl border border-border">
               <table className="w-full text-left text-[15px] bg-card">
@@ -457,83 +501,10 @@ const RecurringCleaningPage = () => {
         </div>
       </section>
 
-      {/* ── How often should you schedule (replaces "How long") ── */}
-      <section className="py-12 md:py-16 bg-secondary/40">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <FadeInSection>
-            <h2 className="font-heading text-2xl md:text-3xl font-bold mb-4">How Often Should You Schedule Recurring Cleaning?</h2>
-            <p className="text-[17px] leading-relaxed text-foreground mb-6 max-w-3xl">
-              There's no single right answer — the best frequency matches how much life your home sees each week.
-              Here's the guidance we give most DMV households when they set up a regular cleaning service.
-            </p>
-            <div className="grid sm:grid-cols-3 gap-5">
-              {HOW_OFTEN.map((h) => (
-                <div key={h.freq} className="bg-card border border-border rounded-xl p-6 shadow-sm">
-                  <span className="inline-block text-[#2E7D32] font-heading font-bold text-lg mb-1">{h.freq}</span>
-                  <h3 className="font-heading text-base font-bold mb-2 text-foreground">{h.who}</h3>
-                  <p className="text-[15px] text-muted-foreground leading-relaxed">{h.detail}</p>
-                </div>
-              ))}
-            </div>
-            <p className="text-sm text-muted-foreground mt-6">
-              Still weighing it up? Read{" "}
-              <Link to="/resources/how-often-should-you-hire-a-cleaning-service" className="text-accent hover:underline font-medium">how often you should hire a cleaning service</Link>.
-            </p>
-          </FadeInSection>
-        </div>
-      </section>
-
-      {/* ── Is recurring right for you? ── */}
-      <section className="py-12 md:py-16 border-t border-border">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <FadeInSection>
-            <h2 className="font-heading text-2xl md:text-3xl font-bold mb-4">Is Recurring Cleaning Right for You?</h2>
-            <p className="text-[17px] leading-relaxed text-foreground mb-6 max-w-3xl">
-              A recurring residential cleaning service pays off most when a clean home matters every week, not
-              just once in a while. If any of these sound like you, a recurring plan is likely the best fit.
-            </p>
-            <div className="grid sm:grid-cols-2 gap-5">
-              <div className="bg-card border border-border rounded-xl p-6 shadow-sm">
-                <h3 className="font-heading text-lg font-bold mb-2">Busy professionals</h3>
-                <p className="text-[15px] text-muted-foreground leading-relaxed">
-                  Long hours and packed calendars leave no time for upkeep. A weekly or bi-weekly maid service
-                  hands you back your evenings and weekends — you come home to a clean house without ever
-                  picking up a mop.
-                </p>
-              </div>
-              <div className="bg-card border border-border rounded-xl p-6 shadow-sm">
-                <h3 className="font-heading text-lg font-bold mb-2">Families with kids or pets</h3>
-                <p className="text-[15px] text-muted-foreground leading-relaxed">
-                  Little ones and shedding pets keep a home working overtime. A dedicated cleaning team that
-                  visits on a regular schedule stays ahead of the mess, using pet- and kid-safe products every
-                  single visit.
-                </p>
-              </div>
-              <div className="bg-card border border-border rounded-xl p-6 shadow-sm">
-                <h3 className="font-heading text-lg font-bold mb-2">Larger homes</h3>
-                <p className="text-[15px] text-muted-foreground leading-relaxed">
-                  More square footage and more bathrooms mean more to stay on top of. Regular maintenance
-                  cleaning keeps a big home consistently presentable instead of letting it snowball into an
-                  all-day project.
-                </p>
-              </div>
-              <div className="bg-card border border-border rounded-xl p-6 shadow-sm">
-                <h3 className="font-heading text-lg font-bold mb-2">Anyone who wants time back</h3>
-                <p className="text-[15px] text-muted-foreground leading-relaxed">
-                  If the home hasn't had a thorough clean in a while, we usually suggest you{" "}
-                  <Link to="/services/deep-cleaning" className="text-accent hover:underline font-medium">start with a one-time deep clean to reset</Link>,
-                  then maintain that baseline effortlessly with a recurring plan at a fraction of the time and cost.
-                </p>
-              </div>
-            </div>
-          </FadeInSection>
-        </div>
-      </section>
-
       {/* ── Urgency Block ── */}
       <div className="w-full bg-[#FFFDE7] border-y border-yellow-300 py-4 px-4 text-center">
         <p className="font-bold text-foreground text-base">
-          🗓 Now booking new weekly &amp; bi-weekly plans in Rockville, Bethesda &amp; Silver Spring
+          🗓 Now booking new weekly &amp; bi-weekly plans across Maryland, DC &amp; Northern Virginia
         </p>
       </div>
 
@@ -559,34 +530,9 @@ const RecurringCleaningPage = () => {
         </div>
       </section>
 
-      {/* ── Benefits ── */}
-      <section className="py-12 md:py-16 bg-secondary/40">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <FadeInSection>
-            <div className="text-center mb-10">
-              <span className="text-[#2E7D32] font-semibold text-sm uppercase tracking-wider">Why a recurring plan</span>
-              <h2 className="font-heading text-2xl md:text-3xl font-bold mt-2">What You Get With Our Recurring Cleaning</h2>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {service.benefits.map((b, i) => (
-                <div
-                  key={i}
-                  className="flex gap-3 items-start bg-card border border-border rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow"
-                >
-                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#2E7D32]/10">
-                    <CheckCircle className="h-5 w-5 text-[#2E7D32]" />
-                  </div>
-                  <span className="text-foreground leading-relaxed">{b}</span>
-                </div>
-              ))}
-            </div>
-          </FadeInSection>
-        </div>
-      </section>
-
       {/* ── Social Proof — real Google reviews + brand trust video ── */}
       <LocationSocialProof
-        cityName="Montgomery County"
+        cityName="DMV Region"
         citySlug="services"
         serviceSlug="recurring-cleaning"
         serviceLabel="Recurring Cleaning"
@@ -610,8 +556,9 @@ const RecurringCleaningPage = () => {
               <p className="text-sm text-muted-foreground mb-2">Detailed Recurring Cleaning pages by city:</p>
               <div className="flex flex-wrap gap-2">
                 {slCities
+                  .filter((c) => PRIORITY_RECURRING_CITIES.includes(c.slug))
                   .filter((c) => isIndexable(`/locations/${c.slug}/recurring-cleaning`))
-                  .slice(0, 6)
+                  .sort((a, b) => PRIORITY_RECURRING_CITIES.indexOf(a.slug) - PRIORITY_RECURRING_CITIES.indexOf(b.slug))
                   .map((c) => (
                     <Link
                       key={c.slug}
@@ -624,13 +571,8 @@ const RecurringCleaningPage = () => {
               </div>
             </div>
           )}
-        </div>
-      </section>
-
-      {/* ── Focus on one room? (room service cross-links) ── */}
-      <section className="py-10 border-t border-border">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <h2 className="font-heading text-2xl font-bold mb-2">Want to Focus on One Room?</h2>
+          <div className="mt-8 pt-8 border-t border-border">
+          <h3 className="font-heading text-xl font-bold mb-2">Want to Focus on One Room?</h3>
           <p className="text-muted-foreground mb-4 max-w-2xl">
             Recurring visits keep the whole home fresh — but you can also book a single room on its own:
           </p>
@@ -638,6 +580,7 @@ const RecurringCleaningPage = () => {
             <Link to="/services/kitchen-cleaning" className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm font-semibold text-accent hover:border-accent/40 transition-colors">Kitchen cleaning service →</Link>
             <Link to="/services/bathroom-cleaning" className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm font-semibold text-accent hover:border-accent/40 transition-colors">Bathroom cleaning service →</Link>
             <Link to="/services/living-area-cleaning" className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm font-semibold text-accent hover:border-accent/40 transition-colors">Living area cleaning →</Link>
+          </div>
           </div>
         </div>
       </section>
@@ -660,6 +603,14 @@ const RecurringCleaningPage = () => {
         <div className="container mx-auto px-4 max-w-4xl">
           <h2 className="font-heading text-2xl font-bold mb-6">Recurring Cleaning FAQ</h2>
           <FAQ faqs={service.faqs} />
+          <div className="mt-8 rounded-xl border border-border bg-secondary/40 p-5 text-sm leading-relaxed text-muted-foreground">
+            <p className="font-semibold text-foreground">Reviewed by Capital Clean Care · Updated August 31, 2026</p>
+            <p className="mt-2">
+              Service details reflect Capital Clean Care's recurring-cleaning checklist and current service area.
+              Price ranges are planning estimates based on home size and typical condition; every home receives a
+              written custom quote. Review totals and availability can change and are verified before publication.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -674,7 +625,7 @@ const RecurringCleaningPage = () => {
             Get Your Free Recurring Cleaning Quote — We Respond in Under 2 Hours
           </h2>
           <p className="text-center text-muted-foreground text-sm mb-6">
-            Serving Rockville, Bethesda, Silver Spring, Germantown &amp; all of Montgomery County
+            Serving Maryland, Washington, DC &amp; Northern Virginia
           </p>
 
           {/* Offer callout */}
@@ -703,24 +654,9 @@ const RecurringCleaningPage = () => {
             — Mon–Sat 8AM–6PM
           </p>
 
-          {/* Real clean transformation Short */}
-          <div className="mt-10">
-            <p className="text-center text-sm font-semibold text-muted-foreground mb-3">
-              See the results our recurring clients count on 👇
-            </p>
-            <div className="mx-auto w-full max-w-[320px] rounded-2xl overflow-hidden shadow-lg border border-border" style={{ aspectRatio: "9/16" }}>
-              <iframe
-                src="https://www.youtube.com/embed/zaj8T4r_3MY"
-                title="Real cleaning transformation — Capital Clean Care"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="w-full h-full"
-                loading="lazy"
-              />
-            </div>
-          </div>
         </div>
       </section>
+      </main>
 
       {!isAdTraffic && <Footer />}
 

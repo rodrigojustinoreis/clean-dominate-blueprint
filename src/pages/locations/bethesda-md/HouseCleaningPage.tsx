@@ -373,7 +373,7 @@ const BethesdaHouseCleaningPage = () => {
               hundredth, you'll receive the same meticulous standard — because we treat every Bethesda home
               the way we'd want ours cleaned. Prefer a{" "}
               <Link to="/locations/bethesda-md/recurring-cleaning" className="text-primary underline">
-                recurring cleaning
+                recurring cleaning in Bethesda, MD
               </Link>{" "}
               plan? We offer weekly and bi-weekly options at discounted rates.
             </p>
