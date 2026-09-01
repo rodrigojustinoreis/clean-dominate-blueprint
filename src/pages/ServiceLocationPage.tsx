@@ -73,6 +73,7 @@ const ServiceLocationPage = () => {
   const pageUrl = `https://capitalcleancare.com/locations/${city.slug}/${service.slug}`;
   const isFairfaxHouseCleaning = city.slug === "fairfax-va" && service.slug === "house-cleaning";
   const isArlingtonDeepCleaning = city.slug === "arlington-va" && service.slug === "deep-cleaning";
+  const isEllicottCityDeepCleaning = city.slug === "ellicott-city-md" && service.slug === "deep-cleaning";
   const heroImage = isFairfaxHouseCleaning
     ? "/images/locations/fairfax-house-cleaning-hero-v2.webp"
     : isArlingtonDeepCleaning
@@ -177,6 +178,16 @@ const ServiceLocationPage = () => {
             <p className="mb-3 text-sm font-semibold text-accent">Reviewed August 31, 2026 · Arlington, Virginia</p>
             <h2 id="arlington-deep-answer" className="font-heading text-2xl font-bold text-foreground md:text-3xl">What is included in deep cleaning for an Arlington home?</h2>
             <p className="mt-4 text-lg leading-relaxed text-muted-foreground">Deep cleaning goes beyond routine upkeep by addressing accumulated buildup and detail work: baseboards, door frames, ceiling fans, window sills and tracks, cabinet fronts, bathroom grout and fixtures, kitchen grease, appliance interiors selected in the quote, and edge-to-edge floor care. Capital Clean Care confirms the scope, parking or building access, home size and priority areas before booking. Apartments and condos near Rosslyn, Ballston and Crystal City may require elevator, loading-zone or front-desk coordination; detached homes may need more time for stairs and additional rooms.</p>
+          </div>
+        </section>
+      )}
+
+      {isEllicottCityDeepCleaning && (
+        <section className="border-b border-border bg-background py-10 md:py-14" aria-labelledby="ellicott-deep-answer">
+          <div className="container mx-auto max-w-4xl px-4">
+            <p className="mb-3 text-sm font-semibold text-primary">Reviewed August 31, 2026 · Ellicott City, Maryland</p>
+            <h2 id="ellicott-deep-answer" className="font-heading text-2xl font-bold text-foreground md:text-3xl">What is included in an Ellicott City deep cleaning service?</h2>
+            <p className="mt-4 text-lg leading-relaxed text-muted-foreground">A deep clean addresses accumulated buildup and detail work beyond routine upkeep. Your written scope can include baseboards, door frames, ceiling fans, vents, window sills and tracks, cabinet fronts, bathroom fixtures and grout, kitchen grease, and edge-to-edge floor care. Appliance and cabinet interiors are included when selected in the quote. We confirm the home's size, condition, access, sensitive finishes, and priority rooms before booking.</p>
           </div>
         </section>
       )}
@@ -300,6 +311,25 @@ const ServiceLocationPage = () => {
               {override.photos.slice(1, 3).map((photo) => (
                 <figure key={photo.src} className="overflow-hidden rounded-2xl border border-border bg-card shadow-md">
                   <img src={photo.src} alt={photo.alt} width="570" height="760" loading="lazy" decoding="async" className="aspect-[3/4] w-full object-cover" />
+                </figure>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {isEllicottCityDeepCleaning && override?.photos && (
+        <section className="border-y border-border bg-background py-12 md:py-16" aria-labelledby="ellicott-real-work">
+          <div className="container mx-auto max-w-5xl px-4">
+            <div className="mx-auto mb-8 max-w-2xl text-center">
+              <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-accent">Real team · Real detail work</p>
+              <h2 id="ellicott-real-work" className="font-heading text-2xl font-bold text-foreground md:text-3xl">The Details Our Deep-Cleaning Team Handles</h2>
+              <p className="mt-3 leading-relaxed text-muted-foreground">Original Capital Clean Care work photos illustrating floor, window, door-frame, and whole-room attention. Final tasks follow the written scope for your home.</p>
+            </div>
+            <div className="mx-auto grid max-w-3xl gap-5 md:grid-cols-2">
+              {override.photos.map((photo, index) => (
+                <figure key={photo.src} className="overflow-hidden rounded-2xl border border-border bg-card shadow-md">
+                  <img src={photo.src} alt={photo.alt} width={index === 0 ? "640" : "1000"} height={index === 0 ? "847" : "1324"} loading="lazy" decoding="async" className="aspect-[3/4] w-full object-cover object-center" />
                 </figure>
               ))}
             </div>

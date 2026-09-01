@@ -20,6 +20,10 @@ Date: 2026-08-31
 | `screenshots/review-silver-spring-airbnb-desktop-1280.jpg` | Desktop 1280×800 | Silver Spring Airbnb full-page visual audit |
 | `screenshots/review-silver-spring-airbnb-tablet-768.jpg` | Tablet 768×1024 | Silver Spring Airbnb responsive audit |
 | `screenshots/review-silver-spring-airbnb-mobile-375.jpg` | Mobile 375×812 | Silver Spring Airbnb mobile audit |
+| `screenshots/review-ellicott-deep-desktop-1280.jpg` | Desktop 1280×800 | Ellicott City deep-cleaning hero and answer-first section |
+| `screenshots/review-ellicott-deep-tablet-768.jpg` | Tablet 768×1024 | Ellicott City responsive audit |
+| `screenshots/review-ellicott-deep-mobile-375.jpg` | Mobile 375×812 | Ellicott City mobile audit |
+| `screenshots/review-ellicott-deep-gallery-desktop.jpg` | Desktop 1280×800 | Real-work gallery review |
 
 ## Summary
 
@@ -45,3 +49,4 @@ Arlington originally had weak visual hierarchy: a text-only hero, a small generi
 - The Potomac team image establishes a premium, owner-operated company impression.
 - Both pages reorganize cleanly at mobile and keep calls to action visible.
 - Silver Spring Airbnb now uses an authentic turnover image in the hero, a direct answer-first passage and a clearer host handoff process. Responsive checks passed with one H1, one main landmark, zero broken images and zero horizontal overflow.
+- Ellicott City Deep Cleaning now presents the exact service and city in the H1, a direct written-scope answer, clear service-intent boundaries, and two distinct real-work photographs. Desktop, tablet, and mobile checks passed with zero horizontal overflow; the final accessibility audit scored 100.

@@ -154,7 +154,7 @@ const TransformationsGallery = ({
                 <button
                   type="button"
                   onClick={() => setActive(i)}
-                  aria-label={`${t("Watch", "Ver")}: ${clipTitle(c)}`}
+                  aria-label={`${t("Watch", "Ver")}: ${clipTitle(c)}. ${clipCaption(c)}`}
                   className="group relative block w-full rounded-2xl overflow-hidden bg-card shadow-lg ring-1 ring-border transition-all duration-300 hover:shadow-2xl hover:ring-accent/40 hover:-translate-y-1 aspect-[9/16]"
                 >
                   <img

@@ -211,13 +211,25 @@ Burtonsville families book deep cleans for the moments that matter — moving in
   },
 
   "ellicott-city-md/deep-cleaning": {
-    uniqueContent: `Ellicott City's historic granite homes and older Howard County houses carry a lot of character — and a lot of the deep-set grime that comes with age, humidity, and decades of use. The mill-town's older building stock, stone foundations, and flood-and-moisture history mean basements, bathrooms, and grout lines hold onto buildup and mildew that surface cleaning won't budge. Our deep cleaning teams attack exactly that: power-scrubbed tile and grout, HEPA vacuuming, detailed work on baseboards, vents, and fixtures, and a thorough top-to-bottom reset.
+    metaTitle: "Deep Cleaning Service in Ellicott City, MD | Capital Clean Care",
+    metaDescription: "Detailed deep cleaning in Ellicott City, MD for kitchens, bathrooms, baseboards, fixtures and buildup. Written scope, insured team and free quote.",
+    h1: "Deep Cleaning Service in Ellicott City, MD",
+    heroLead: "A detailed top-to-bottom reset for Ellicott City homes, with the scope confirmed in writing before your appointment.",
+    uniqueContent: `Deep cleaning is a one-time reset for areas routine maintenance does not fully address. In an Ellicott City home, our written scope can include detailed work on baseboards, door frames, vents, ceiling fans, cabinet fronts, bathroom fixtures and grout, kitchen grease, and edge-to-edge floor care. Appliance and cabinet interiors are added when selected in the quote, so you know what the team will handle before arrival.
 
-Whether it's a historic home near old Main Street or a newer build up the hill, a deep clean is the difference between a house that looks tidy and one that's genuinely clean underneath. We detail the kitchen and bathrooms, clean inside appliances and cabinets on request, and address the humidity-prone corners Ellicott City homes are prone to. Eco-friendly products throughout — safe for older surfaces, families, and pets — and a background-checked local team.`,
+Homes near Old Ellicott City may have older woodwork, stone, tile, or other finishes that need a careful, surface-specific approach. Newer homes around Turf Valley, Waverly Woods, Font Hill, and Centennial can have larger open layouts or additional bathrooms that affect the time and team size. We confirm the home's size, condition, priority rooms, access, and any sensitive surfaces before scheduling instead of promising a one-size-fits-all result.
+
+This page is specifically for an intensive one-time deep clean. For weekly, biweekly, or monthly upkeep, use our Ellicott City recurring-cleaning service; for a property handoff, choose move-in or move-out cleaning. That distinction keeps the recommended scope aligned with the job you actually need.`,
+    faqs: [
+      { q: "What does a deep cleaning service include in Ellicott City?", a: "The confirmed scope can include baseboards, door frames, ceiling fans, vents, window sills and tracks, cabinet fronts, detailed bathroom fixtures and grout, kitchen grease removal, and edge-to-edge floor care. Appliance and cabinet interiors are included when selected in your written quote." },
+      { q: "How is deep cleaning different from recurring house cleaning?", a: "Deep cleaning is an intensive one-time reset focused on accumulated buildup and detail work. Recurring cleaning maintains kitchens, bathrooms, floors, dusting, and high-touch surfaces on a weekly, biweekly, or monthly schedule after the home has reached a manageable baseline." },
+      { q: "How long does deep cleaning take?", a: "Timing depends on square footage, room count, condition, access, and the selected add-ons. We review those details before booking and confirm the scope in writing rather than giving every home the same time estimate." },
+      { q: "Do you bring cleaning supplies and equipment?", a: "Yes. The team arrives with the supplies and equipment needed for the agreed scope. Tell us about delicate stone, original woodwork, specialty finishes, allergies, children, or pets when requesting the quote so the plan can be adjusted." },
+      { q: "What areas of Ellicott City do you serve?", a: "We serve Ellicott City and nearby Howard County communities, including Old Ellicott City, Turf Valley, Waverly Woods, Font Hill, and Centennial. Availability is confirmed for your address when you request a quote." },
+    ],
     photos: [
-      { src: "/images/team/power-scrubber-tile.jpg", alt: "Capital Clean Care power-scrubbing grout during a deep clean in Ellicott City, MD" },
-      { src: "/images/team/scrubbing-door-frame.jpg", alt: "Capital Clean Care detailing trim during a deep clean in Ellicott City, MD" },
-      { src: "/images/team/cleaning-under-cabinet.jpg", alt: "Capital Clean Care deep cleaning under cabinets in a historic Ellicott City, MD home" },
+      { src: "/images/team/team-post-construction.webp", alt: "Capital Clean Care team detailing floors and windows during a professional cleaning visit" },
+      { src: "/images/team/team-scrubbing-door-detail.jpg", alt: "Capital Clean Care team member detailing a door and trim during a deep clean" },
     ],
   },
 

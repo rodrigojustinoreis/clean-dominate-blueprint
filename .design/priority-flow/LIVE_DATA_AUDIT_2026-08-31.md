@@ -11,6 +11,7 @@ Scope: six indexable commercial pages. Sources were accessed live in the in-app 
 | `/locations/rockville-md/deep-cleaning` | 4 | 2,309 | 0.2% | 28.9 | Exact local long-tail volume 0; GSC shows 97 impressions for the target query |
 | `/locations/arlington-va/deep-cleaning` | 2 | 1,108 | 0.2% | 35.3 | Exact local keyword: 20 monthly volume |
 | `/locations/silver-spring-md/airbnb-cleaning` | 0 | 462 | 0% | 27.8 | `airbnb cleaning service`: 12.1K volume, KD 28, commercial |
+| `/locations/ellicott-city-md/deep-cleaning` | 0 | 3 | 0% | 51.0 | `deep cleaning service`: 4.4K volume, KD 36, commercial |
 
 ## Query evidence and decisions
 
@@ -20,10 +21,13 @@ Scope: six indexable commercial pages. Sources were accessed live in the in-app 
 - Rockville Deep: `deep cleaning rockville md` had 97 impressions at 26.4. Metadata was rewritten around the observed query, scope and quote intent; unsupported product/re-entry claims were removed.
 - Arlington Deep: `deep cleaning arlington va` had 73 impressions at 26.9. The generic local page now has a unique answer-first Arlington section and a focused commercial title/description.
 - Silver Spring Airbnb: the page appeared most often for `airbnb cleaning services` (39 impressions, position 20.6), `airbnb cleaning service` (29, position 18.3), `airbnb cleaners` (26, position 13.9) and `airbnb cleaning service near me` (23, position 22.1). The revised page leads with the commercial service term, adds an answer-first turnover definition and keeps Silver Spring operational details as the local differentiator.
+- Ellicott City Deep: the exact page had 3 impressions over three months, including `deep cleaning services ellicot city` at position 38.0. Semrush returned no isolated metrics for the local long-tail, so the page uses the observed local query plus the validated commercial parent term. `deep cleaning service` showed 4.4K US monthly volume, KD 36, commercial intent; `deep cleaning services near me` showed 6.6K volume and KD 46. The page now leads with the local commercial service, answers what is included, and explicitly separates one-time deep cleaning from recurring maintenance and move services.
 
 ## Release audit gate
 
 The final local Lighthouse run for Silver Spring Airbnb passed the release threshold: Performance 94, Accessibility 100, Best Practices 100 and SEO 100. LCP was 2.7 s, TBT 0 ms and CLS 0.018. The audit artifact is stored at `lighthouse-silver-spring-airbnb-gate.json`.
+
+The confirmation Lighthouse run for Ellicott City Deep Cleaning passed the release threshold: Performance 94, Accessibility 100, Best Practices 100 and SEO 100. LCP was 2.6 s, FCP 2.3 s, TBT 0 ms and CLS 0.014. The release artifact is stored at `lighthouse-ellicott-city-deep-confirmation.json`.
 
 ## Cannibalization guardrails
 
