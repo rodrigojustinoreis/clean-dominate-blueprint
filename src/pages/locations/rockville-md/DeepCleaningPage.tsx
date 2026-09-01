@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { CheckCircle, Star, ArrowRight } from "lucide-react";
+import { CheckCircle, Camera, ShieldCheck } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FAQ from "@/components/FAQ";
@@ -25,11 +25,13 @@ import LocationQuoteSection from "@/components/location/LocationQuoteSection";
 import { pickReviews } from "@/data/realReviews";
 
 const PAGE_URL = "https://capitalcleancare.com/locations/rockville-md/deep-cleaning";
+const HERO_IMAGE = "/images/locations/post-construction-authentic/post-construction-team-landscape-v3.webp";
+const HERO_IMAGE_SRCSET = "/images/locations/post-construction-authentic/post-construction-team-landscape-v3-640.webp 640w, /images/locations/post-construction-authentic/post-construction-team-landscape-v3.webp 1400w";
 
 const faqs = [
   {
     q: "How long does a deep cleaning take in Rockville?",
-    a: "Most Rockville homes take 4–6 hours. Larger homes or homes with heavy buildup may take longer. We'll give you a time estimate when you book your free quote.",
+    a: "A four-to-six-hour window is a useful planning range for many homes, but it is not a fixed promise. Home size, room count, buildup, access and selected add-ons determine the written estimate provided before booking.",
   },
   {
     q: "How much does a deep cleaning cost in Rockville, MD?",
@@ -53,7 +55,7 @@ const faqs = [
   },
   {
     q: "Do you deep clean apartments and condos in Rockville?",
-    a: "Yes. We deep clean apartments and condos across the 20850 ZIP near the Rockville Metro, plus townhomes throughout 20851, 20852, and 20853. Apartment deep cleans typically take 2–4 hours depending on size — same top-to-bottom work (inside appliances, grout, ceiling fans, baseboards) with eco-friendly products. Get a free quote in 60 seconds.",
+    a: "Yes. Deep-clean scopes are available for occupied apartments, condos and townhomes across Rockville. For an empty home at the end of a lease, use our dedicated Rockville move-out cleaning service so the quote includes turnover-specific priorities.",
   },
   {
     q: "Is Capital Clean Care locally owned?",
@@ -125,16 +127,15 @@ const RockvilleDeepCleaningPage = () => {
   const { seoHelmet } = useSEO({
     title: "Deep Cleaning Services in Rockville, MD",
     description:
-      "Deep cleaning in Rockville, MD for baseboards, grout, fixtures and selected appliance interiors. Written scope, insured team and free quote.",
+      "Deep cleaning in Rockville, MD for grout, baseboards, fixtures and selected appliance interiors. See the written scope, local work and request a quote.",
     canonical: PAGE_URL,
-    ogImage: "https://capitalcleancare.com/images/team/team-tile-scrubber.jpg",
+    ogImage: `https://capitalcleancare.com${HERO_IMAGE}`,
   });
 
   return (
     <Layout>
       {seoHelmet}
       <Helmet>
-        <link rel="preload" as="image" href="/images/team/team-tile-scrubber.jpg" />
         <link rel="alternate" hrefLang="en-US" href={PAGE_URL} />
       </Helmet>
 
@@ -162,10 +163,10 @@ const RockvilleDeepCleaningPage = () => {
         areaServed={["Rockville, MD", "Montgomery County, MD"]}
       />
       <FAQSchema faqs={faqs} />
-      <WebPageSchema name="Deep Cleaning Services in Rockville, MD" description="Professional deep cleaning in Rockville with a written scope, background-checked team, and detailed room-by-room checklist." url={PAGE_URL} dateModified="2026-08-30" cityName="Rockville" stateCode="Maryland" primaryImage="https://capitalcleancare.com/images/team/team-tile-scrubber.jpg" />
+      <WebPageSchema name="Deep Cleaning Services in Rockville, MD" description="Professional deep cleaning in Rockville with a written scope, background-checked team, and detailed room-by-room checklist." url={PAGE_URL} dateModified="2026-08-31" cityName="Rockville" stateCode="Maryland" primaryImage={`https://capitalcleancare.com${HERO_IMAGE}`} />
 
       {/* Breadcrumbs */}
-      <div className="pt-24 bg-gradient-to-br from-primary/5 via-background to-accent/5">
+      <div className="pt-12 md:pt-16 bg-gradient-to-br from-primary/5 via-background to-accent/5">
         <div className="container mx-auto px-4 max-w-6xl pb-2">
           <Breadcrumbs
             items={[
@@ -180,23 +181,60 @@ const RockvilleDeepCleaningPage = () => {
       {/* Hero */}
       <HeroLocation
         h1="Deep Cleaning Services in Rockville, MD"
-        lead="When routine upkeep is not enough, Capital Clean Care addresses accumulated buildup and detail work throughout Rockville homes—from Twinbrook to Fallsgrove. Your written quote confirms baseboards, grout, fixtures, floors, priority areas and any selected appliance interiors."
+        lead="Detailed deep cleaning for Rockville homes, with a written scope for baseboards, grout, fixtures, floors and selected appliance interiors."
         cityName="Rockville"
         state="MD"
         zipRange="20850–20853"
-        heroImage="/images/team/team-tile-scrubber.jpg"
-        heroImageAlt="Capital Clean Care deep cleaning service in Rockville, MD — scrubbing grout and tile for top-to-bottom results"
+        heroImage={HERO_IMAGE}
+        heroImageAlt="Five members of the Capital Clean Care professional cleaning team in company uniforms"
+        heroAspectRatio="1400/788"
+        heroImageWidth={1400}
+        heroImageHeight={788}
+        heroImageSrcSet={HERO_IMAGE_SRCSET}
+        heroImageSizes="(max-width: 1023px) 320px, 640px"
         ctaPrimary="Schedule a Deep Clean in Rockville"
+        ctaBeforePills
+        stackCtas
+        teamTrustLabel="Background-Checked Team"
+        ctaNote="No commitment · Written quote before service · Satisfaction guarantee applies"
+        updatedLabel="August 31, 2026"
+        updatedDateTime="2026-08-31"
       />
 
       <section className="border-b border-border bg-background py-10 md:py-14" aria-labelledby="rockville-deep-cleaning-answer">
         <div className="container mx-auto max-w-4xl px-4">
-          <p className="mb-3 text-sm font-semibold text-accent">Updated August 30, 2026 · Rockville ZIP codes 20850–20853</p>
+          <p className="mb-3 text-sm font-semibold text-accent">Reviewed August 31, 2026 · Rockville ZIP codes 20850–20853</p>
           <h2 id="rockville-deep-cleaning-answer" className="font-heading text-2xl font-bold text-foreground md:text-3xl">What does deep cleaning in Rockville include?</h2>
           <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
-            A Capital Clean Care deep cleaning in Rockville covers the detailed buildup a routine visit is not designed to remove. The written scope can include baseboards, window sills and tracks, ceiling fans, door frames, grout lines, bathroom fixtures, kitchen grease, and the inside of selected appliances or cabinets. Our background-checked team brings its own equipment and plant-based products, then completes a final checklist before leaving. Most homes require roughly four to six hours, although size, bathrooms, pets, stairs, and current condition can change the schedule and quote. We serve condos near Rockville Town Center and Metro as well as homes in King Farm, Twinbrook, Fallsgrove, College Gardens, and surrounding neighborhoods. After the reset, many clients move to <Link to="/locations/rockville-md/recurring-cleaning" className="font-semibold text-primary underline">recurring cleaning</Link> to keep the home maintained at a lower per-visit scope.
+            A Capital Clean Care deep cleaning in Rockville is a room-by-room reset for accumulated buildup that routine maintenance does not target. The written scope can include baseboards, window sills and tracks, ceiling fans, door frames, grout lines, bathroom fixtures, kitchen grease, and selected appliance or cabinet interiors. Our bonded, insured and background-checked team brings its equipment, follows product labels for each surface and completes a final checklist. Four to six hours is a planning range for many homes—not a fixed promise—because size, bathrooms, stairs, condition and add-ons determine the written estimate. Service covers ZIP codes 20850–20853, including Rockville Town Center, King Farm, Twinbrook, Fallsgrove and College Gardens. This page is specifically for occupied-home deep cleaning; empty-home turnovers, routine visits and renovation dust have separate service scopes below.
           </p>
           <p className="mt-4 text-sm text-muted-foreground">Compare current planning ranges in our <Link to="/resources/house-cleaning-cost-rockville-md" className="font-semibold text-primary underline">Rockville house-cleaning cost guide</Link>.</p>
+        </div>
+      </section>
+
+      <section className="border-b border-border bg-muted/30 py-10" aria-labelledby="rockville-service-match">
+        <div className="container mx-auto max-w-5xl px-4">
+          <h2 id="rockville-service-match" className="font-heading text-2xl font-bold text-foreground">Choose the right Rockville cleaning scope</h2>
+          <p className="mt-2 max-w-3xl text-muted-foreground">These services solve different needs. Selecting the closest match produces a more accurate checklist and quote.</p>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              ["Routine upkeep", "/locations/rockville-md/recurring-cleaning", "Recurring cleaning"],
+              ["Empty home or lease end", "/locations/rockville-md/move-out-cleaning", "Move-out cleaning"],
+              ["Renovation dust", "/locations/rockville-md/post-construction-cleaning", "Post-construction cleaning"],
+              ["Workplace scope", "/locations/rockville-md/office-cleaning", "Office cleaning"],
+            ].map(([need, href, label]) => (
+              <Link key={href} to={href} className="rounded-xl border border-border bg-background p-4 shadow-sm transition-colors hover:border-primary/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+                <span className="block text-xs font-semibold uppercase tracking-wide text-accent">{need}</span>
+                <span className="mt-1 block font-semibold text-primary">{label} →</span>
+              </Link>
+            ))}
+          </div>
+          <dl className="mt-8 grid gap-4 rounded-2xl border border-border bg-background p-5 sm:grid-cols-2 lg:grid-cols-4">
+            <div><dt className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Primary service</dt><dd className="mt-1 font-semibold">Occupied-home deep clean</dd></div>
+            <div><dt className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Service area</dt><dd className="mt-1 font-semibold">Rockville 20850–20853</dd></div>
+            <div><dt className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Scope</dt><dd className="mt-1 font-semibold">Written before service</dd></div>
+            <div><dt className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Timing</dt><dd className="mt-1 font-semibold">Estimated after property details</dd></div>
+          </dl>
         </div>
       </section>
 
@@ -298,7 +336,7 @@ const RockvilleDeepCleaningPage = () => {
               Capital Clean Care provides professional deep cleaning across all Rockville ZIP codes —
               20850, 20851, 20852, and 20853. From homes near the Rockville Metro station in ZIP 20850
               to larger single-family homes along the 20852 corridor near Rockville Pike, our experienced,
-              HEPA-equipped teams deliver top-to-bottom results on every job.
+              equipped teams follow the written room-by-room scope and final quality check.
             </p>
             <p>
               Rockville residents in King Farm, Twinbrook, Fallsgrove, and Woodley Gardens regularly book
@@ -326,8 +364,7 @@ const RockvilleDeepCleaningPage = () => {
           <div className="space-y-4 text-muted-foreground leading-relaxed">
             <p>
               A deep cleaning is only as good as the team performing it. Capital Clean Care trains
-              every technician on our four-category protocol — not a checklist printed from the
-              internet, but a systematic approach refined across hundreds of Rockville homes in
+              every technician on a four-category protocol — a systematic approach used for homes in
               King Farm, Twinbrook, Fallsgrove, and along the Rockville Pike corridor. Each visit
               starts at the ceiling and works methodically downward: ceiling fans and light fixtures
               first, then wall surfaces and windows, then furniture and appliances, then floors —
@@ -346,8 +383,7 @@ const RockvilleDeepCleaningPage = () => {
               missed or doesn't meet your standard, call us within 24 hours and we return to
               re-clean the specific areas at no charge. No negotiations, no fine print — just
               the thorough clean your Rockville home deserves. We schedule most follow-up
-              returns within the same business day for clients throughout the 20850, 20851,
-              20852, and 20853 ZIP codes.
+              the follow-up window when you report the issue.
             </p>
           </div>
         </div>

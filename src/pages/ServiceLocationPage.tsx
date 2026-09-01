@@ -74,10 +74,13 @@ const ServiceLocationPage = () => {
   const isFairfaxHouseCleaning = city.slug === "fairfax-va" && service.slug === "house-cleaning";
   const isArlingtonDeepCleaning = city.slug === "arlington-va" && service.slug === "deep-cleaning";
   const isEllicottCityDeepCleaning = city.slug === "ellicott-city-md" && service.slug === "deep-cleaning";
+  const isDowntownHouseCleaning = city.slug === "downtown-dc" && service.slug === "house-cleaning";
   const heroImage = isFairfaxHouseCleaning
     ? "/images/locations/fairfax-house-cleaning-hero-v2.webp"
     : isArlingtonDeepCleaning
       ? "/images/locations/arlington-deep-cleaning/power-scrubber-upright.jpg"
+      : isDowntownHouseCleaning
+        ? "/images/locations/downtown-dc-house-cleaning-hero-v1.webp"
       : null;
   const nearbyCitiesForLinks = isFairfaxHouseCleaning
     ? slCities.filter((candidate) => ["vienna-va", "mclean-va", "falls-church-va", "arlington-va", "alexandria-va", "reston-va"].includes(candidate.slug))
@@ -130,6 +133,8 @@ const ServiceLocationPage = () => {
               src={heroImage}
               alt={isArlingtonDeepCleaning
                 ? "Capital Clean Care team member detail-cleaning tile during a deep cleaning visit"
+                : isDowntownHouseCleaning
+                  ? "Freshly cleaned luxury high-rise condominium interior in Downtown Washington, DC"
                 : "Illustrative scene of professional house cleaning in a Fairfax, Virginia home"}
               width="1672"
               height="941"
@@ -227,20 +232,28 @@ const ServiceLocationPage = () => {
             <div className="md:sticky md:top-28">
               <div className="rounded-2xl overflow-hidden shadow-lg border border-border">
                 <img
-                  src={cityImages[city.slug] ?? teamPhotos[cityPhotoIndex(city.slug)]}
+                  src={isDowntownHouseCleaning
+                    ? "/images/locations/bethesda-house-cleaning/capital-clean-care-team.webp"
+                    : cityImages[city.slug] ?? teamPhotos[cityPhotoIndex(city.slug)]}
                   alt={
-                    cityImages[city.slug]
+                    isDowntownHouseCleaning
+                      ? "Capital Clean Care professional cleaning team"
+                      : cityImages[city.slug]
                       ? `${city.name}, ${city.state} — Capital Clean Care ${service.shortName} service area`
                       : `Capital Clean Care team providing ${service.shortName} in ${city.name}, ${city.state}`
                   }
-                  className="w-full aspect-[4/3] object-cover"
+                  className={isDowntownHouseCleaning
+                    ? "w-full aspect-[3/4] object-cover object-center"
+                    : "w-full aspect-[4/3] object-cover"}
                   loading="lazy"
                   width="1280"
                   height="720"
                 />
               </div>
               <p className="text-xs text-muted-foreground text-center mt-2">
-                {cityImages[city.slug]
+                {isDowntownHouseCleaning
+                  ? "The Capital Clean Care team serving Washington, DC"
+                  : cityImages[city.slug]
                   ? `${service.shortName} in ${city.name}, ${city.state} — serving ${city.county}`
                   : `Our team serving ${city.name} and the ${city.county} area`}
               </p>
@@ -330,6 +343,25 @@ const ServiceLocationPage = () => {
               {override.photos.map((photo, index) => (
                 <figure key={photo.src} className="overflow-hidden rounded-2xl border border-border bg-card shadow-md">
                   <img src={photo.src} alt={photo.alt} width={index === 0 ? "640" : "1000"} height={index === 0 ? "847" : "1324"} loading="lazy" decoding="async" className="aspect-[3/4] w-full object-cover object-center" />
+                </figure>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {isDowntownHouseCleaning && override?.photos && (
+        <section className="border-y border-border bg-background py-12 md:py-16" aria-labelledby="downtown-real-work">
+          <div className="container mx-auto max-w-5xl px-4">
+            <div className="mx-auto mb-8 max-w-2xl text-center">
+              <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-primary">Real team · Real house cleaning</p>
+              <h2 id="downtown-real-work" className="font-heading text-2xl font-bold text-foreground md:text-3xl">House-Cleaning Details Handled by Our Team</h2>
+              <p className="mt-3 leading-relaxed text-muted-foreground">Original Capital Clean Care photographs showing bedroom reset and detailed blind cleaning. The exact tasks for your Downtown DC home follow the written quote.</p>
+            </div>
+            <div className="mx-auto grid max-w-3xl gap-5 sm:grid-cols-2">
+              {override.photos.map((photo) => (
+                <figure key={photo.src} className="overflow-hidden rounded-2xl border border-border bg-card shadow-md">
+                  <img src={photo.src} alt={photo.alt} width="640" height="853" loading="lazy" decoding="async" className="aspect-[3/4] w-full object-cover object-center" />
                 </figure>
               ))}
             </div>

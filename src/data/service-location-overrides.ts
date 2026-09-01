@@ -249,9 +249,8 @@ Moving is stressful enough in a town like Damascus where the next place might be
 
 Downtown residents are typically busy professionals who want their limited time back, not a chore list. Recurring or one-time house cleaning handles it with the same background-checked team, eco-friendly supplies, and a detailed checklist suited to compact urban layouts — open kitchens, in-unit laundry, and the floor-to-ceiling windows that show every smudge. They learn your unit and your building's rules, so each visit is quick to set up and consistently done right.`,
     photos: [
-      { src: "/images/team/team-two-living-room.jpg", alt: "Capital Clean Care cleaning a downtown Washington, DC condo living room" },
-      { src: "/images/team/mopping-hardwood-floor.jpg", alt: "Capital Clean Care mopping a downtown DC apartment floor" },
-      { src: "/images/team/vacuuming-living-room.jpg", alt: "Capital Clean Care vacuuming a high-rise unit in downtown Washington, DC" },
+      { src: "/images/team/bethesda-airbnb-turnover-team.webp", alt: "Capital Clean Care team member making a bed during a professional house cleaning visit" },
+      { src: "/images/team/cleaning-window-blinds.webp", alt: "Capital Clean Care team member detailing window blinds during a professional house cleaning visit" },
     ],
   },
 

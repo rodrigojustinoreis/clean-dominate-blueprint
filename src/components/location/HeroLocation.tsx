@@ -24,6 +24,7 @@ interface HeroLocationProps {
   stackCtas?: boolean;
   updatedLabel?: string;
   updatedDateTime?: string;
+  ctaBeforePills?: boolean;
 }
 
 const defaultPills = [
@@ -55,11 +56,30 @@ const HeroLocation = ({
   stackCtas = false,
   updatedLabel,
   updatedDateTime,
+  ctaBeforePills = false,
 }: HeroLocationProps) => {
   const pills = [
     ...defaultPills,
     { Icon: MapPin, label: `Serving ${cityName}, ${state} ${zipRange}` },
   ].map((pill) => pill.label === "Same Team Every Visit" && teamTrustLabel ? { ...pill, label: teamTrustLabel } : pill);
+
+  const ctas = (
+    <>
+      <div className={`flex gap-3 ${stackCtas ? "max-w-md flex-col" : "flex-col sm:flex-row"}`}>
+        <Button variant="cta" size="lg" asChild>
+          <a href="#quote" onClick={() => trackBookNowClick("hero_location")}>
+            {ctaPrimary} <ArrowRight className="ml-1 h-4 w-4" />
+          </a>
+        </Button>
+        <Button variant="outline" size="lg" asChild>
+          <a href="tel:+12407042551" onClick={() => trackPhoneClick("hero_location")}>
+            <Phone className="h-4 w-4 mr-2" /> (240) 704-2551
+          </a>
+        </Button>
+      </div>
+      <p className="text-xs text-muted-foreground mt-3">{ctaNote}</p>
+    </>
+  );
 
   return (
     <section className="bg-gradient-to-br from-primary/5 via-background to-accent/5 pb-12 md:pb-16 pt-6">
@@ -75,6 +95,8 @@ const HeroLocation = ({
               {lead}
             </p>
 
+            {ctaBeforePills && <div className="mb-6">{ctas}</div>}
+
             {/* Trust pills */}
             <div className="flex flex-wrap gap-2 mb-8" aria-label="Trust signals">
               {pills.map(({ Icon, label }) => (
@@ -88,22 +110,7 @@ const HeroLocation = ({
               ))}
             </div>
 
-            {/* CTAs */}
-            <div className={`flex gap-3 ${stackCtas ? "max-w-md flex-col" : "flex-col sm:flex-row"}`}>
-              <Button variant="cta" size="lg" asChild>
-                <a href="#quote" onClick={() => trackBookNowClick("hero_location")}>
-                  {ctaPrimary} <ArrowRight className="ml-1 h-4 w-4" />
-                </a>
-              </Button>
-              <Button variant="outline" size="lg" asChild>
-                <a href="tel:+12407042551" onClick={() => trackPhoneClick("hero_location")}>
-                  <Phone className="h-4 w-4 mr-2" /> (240) 704-2551
-                </a>
-              </Button>
-            </div>
-            <p className="text-xs text-muted-foreground mt-3">
-              {ctaNote}
-            </p>
+            {!ctaBeforePills && ctas}
           </div>
 
           {/* Hero image — LCP element, eager + high priority */}

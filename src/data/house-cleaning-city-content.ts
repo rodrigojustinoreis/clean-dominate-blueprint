@@ -101,6 +101,8 @@ export const houseCleaningCityContent: Record<string, ServiceLocationOverride> =
     ],
   },
   "downtown-dc/house-cleaning": {
+    metaTitle: "House Cleaning in Downtown Washington, DC | Free Quote",
+    h1: "Professional House Cleaning in Downtown Washington, DC",
     uniqueContent: "Downtown DC has quietly become a place people live rather than just commute to, and the housing reflects that shift. Over the past two decades, former office towers and commercial buildings have been reborn as luxury high-rise condominiums, converted loft apartments, boutique condo buildings, and modern apartment towers. In Penn Quarter and City Center DC, that usually means one- and two-bedroom high-rise units in the 600 to 1,300 square-foot range, while a converted loft near NoMa can run larger and more open, with concrete floors, exposed ductwork, and double-height windows that show every streak. Cleaning here is less about sprawling square footage and more about finish-heavy spaces packed into compact, vertical footprints.\n\nFor a typical downtown one-bedroom high-rise condo, a standard clean is often estimated at roughly one and a half to two and a half hours, while a two-bedroom unit or a larger open-plan loft may take closer to three to four hours depending on kitchen and bathroom detail. These are size-based estimates, not fixed quotes, and every building layout is different. Capital Clean Care serves the DMV with background-checked, bonded, and insured cleaners and eco-friendly, EPA Safer Choice products that suit tight, well-sealed condo interiors. Quotes are always free and our work is backed by a satisfaction guarantee, so a resident near Chinatown, Mount Vernon Triangle, or the Union Station area can book with a clear sense of what to expect.",
     faqs: [
       { q: "Do you need a certificate of insurance (COI) for my Downtown DC high-rise building?", a: "Many Penn Quarter and City Center DC condo towers require a certificate of insurance on file with building management before a vendor can work on-site. Because Capital Clean Care is fully insured and bonded, we can provide a COI naming your association or management company. Just let us know the requirement when you book, and we will coordinate the paperwork ahead of your first cleaning." },
@@ -109,9 +111,8 @@ export const houseCleaningCityContent: Record<string, ServiceLocationOverride> =
       { q: "Is there a service elevator or loading dock I should reserve for my downtown unit?", a: "Some Downtown DC towers ask vendors to use a designated service elevator or loading dock, and a few require you to reserve a time window with management. Our team travels light with our own eco-friendly supplies, so we rarely need a freight reservation for a routine clean. If your building has a strict policy, share it when scheduling and we will plan the visit around it." },
     ],
     photos: [
-      { src: "/images/team/team-two-living-room.jpg", alt: "Capital Clean Care cleaning a downtown Washington, DC condo living room" },
-      { src: "/images/team/mopping-hardwood-floor.jpg", alt: "Capital Clean Care mopping a downtown DC apartment floor" },
-      { src: "/images/team/vacuuming-living-room.jpg", alt: "Capital Clean Care vacuuming a high-rise unit in downtown Washington, DC" },
+      { src: "/images/team/bethesda-airbnb-turnover-team.webp", alt: "Capital Clean Care team member making a bed during a professional house cleaning visit" },
+      { src: "/images/team/cleaning-window-blinds.webp", alt: "Capital Clean Care team member detailing window blinds during a professional house cleaning visit" },
     ],
   },
   "dupont-circle-dc/house-cleaning": {

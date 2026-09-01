@@ -26,14 +26,14 @@ import { pickReviews } from "@/data/realReviews";
 const PAGE_URL = "https://capitalcleancare.com/locations/bethesda-md/deep-cleaning";
 const CASE_STUDY_URL = "/resources/real-deep-cleaning-project-bethesda-home";
 const HERO_IMAGE = "/images/locations/bethesda-deep-cleaning/real-hvac-filter-deep-cleaning.webp";
-const HERO_IMAGE_SRCSET = "/images/locations/bethesda-deep-cleaning/real-hvac-filter-deep-cleaning-800.webp 800w, /images/locations/bethesda-deep-cleaning/real-hvac-filter-deep-cleaning.webp 1600w";
+const HERO_IMAGE_SRCSET = "/images/locations/bethesda-deep-cleaning/real-hvac-filter-deep-cleaning-640.webp 640w, /images/locations/bethesda-deep-cleaning/real-hvac-filter-deep-cleaning-800.webp 800w, /images/locations/bethesda-deep-cleaning/real-hvac-filter-deep-cleaning.webp 1600w";
 const PROJECT_IMAGE = "/images/blog/real-deep-cleaning-bethesda/vanity-detail-clean-respirator.webp";
 const verifiedReviews = pickReviews("bethesda-md/deep-cleaning", 3);
 
 const faqs = [
   {
     q: "How long does a deep cleaning take in Bethesda?",
-    a: "Most Bethesda homes take 4–6 hours. Larger homes or homes with heavy buildup may take longer. We'll give you a realistic estimate when you book.",
+    a: "A four-to-six-hour window is a useful planning range for many homes, but it is not a fixed promise. Home size, room count, buildup, access and selected add-ons determine the written estimate provided before booking.",
   },
   {
     q: "How much does a deep cleaning cost in Bethesda, MD?",
@@ -45,7 +45,7 @@ const faqs = [
   },
   {
     q: "Is your deep cleaning eco-friendly?",
-    a: "Yes. We use only EPA Safer Choice™ certified products — powerful enough for deep cleaning, non-toxic for your family and pets throughout Bethesda.",
+    a: "We offer product-conscious, lower-odor options and follow the product label for each surface. Tell us about pets, children, allergies or fragrance sensitivities so the team can record appropriate preferences and precautions.",
   },
   {
     q: "Do you do spring cleaning in Bethesda?",
@@ -122,10 +122,9 @@ const BethesdaDeepCleaningPage = () => {
   const { seoHelmet } = useSEO({
     title: "Deep Cleaning Bethesda MD | Detailed Service & Free Quote",
     description:
-      "Detailed deep cleaning in Bethesda, MD for appliances, grout, baseboards and hidden buildup. Eco-friendly products, insured teams and free written quotes.",
+      "Deep cleaning in Bethesda, MD for grout, baseboards and selected appliance interiors. See real local project work, written scope and request a quote.",
     canonical: PAGE_URL,
     ogImage: `https://capitalcleancare.com${HERO_IMAGE}`,
-    preloadImage: HERO_IMAGE,
   });
 
   return (
@@ -156,15 +155,15 @@ const BethesdaDeepCleaningPage = () => {
       />
       <ServiceSchema
         serviceName="Deep Cleaning in Bethesda, MD"
-        description="Professional deep cleaning in Bethesda, MD. Inside appliances, grout lines, baseboards, ceiling fans — everywhere standard cleanings miss. EPA Safer Choice certified products."
+        description="Professional deep cleaning in Bethesda, MD for selected appliance interiors, grout lines, baseboards and ceiling fans, with a written scope and local project evidence."
         url={PAGE_URL}
         areaServed={["Bethesda, MD", "Montgomery County, MD"]}
       />
       <FAQSchema faqs={faqs} />
-      <WebPageSchema name="Deep Cleaning Services in Bethesda, MD" description="Professional deep cleaning in Bethesda with original project photography, a written scope, and a background-checked team." url={PAGE_URL} dateModified="2026-08-30" cityName="Bethesda" stateCode="Maryland" primaryImage={`https://capitalcleancare.com${HERO_IMAGE}`} />
+      <WebPageSchema name="Deep Cleaning Services in Bethesda, MD" description="Professional deep cleaning in Bethesda with original project photography, a written scope, and a background-checked team." url={PAGE_URL} dateModified="2026-08-31" cityName="Bethesda" stateCode="Maryland" primaryImage={`https://capitalcleancare.com${HERO_IMAGE}`} />
 
       {/* ── Breadcrumbs ───────────────────────────────────── */}
-      <div className="pt-24 bg-gradient-to-br from-primary/5 via-background to-accent/5">
+      <div className="pt-12 md:pt-16 bg-gradient-to-br from-primary/5 via-background to-accent/5">
         <div className="container mx-auto px-4 max-w-6xl pb-2">
           <Breadcrumbs
             items={[
@@ -189,13 +188,14 @@ const BethesdaDeepCleaningPage = () => {
         heroImageWidth={1600}
         heroImageHeight={1200}
         heroImageSrcSet={HERO_IMAGE_SRCSET}
-        heroImageSizes="(max-width: 1023px) calc(100vw - 2rem), 560px"
+        heroImageSizes="(max-width: 1023px) 320px, 560px"
         heroImageContainerClassName="max-w-[640px] mx-auto lg:ml-auto lg:mr-0"
         ctaPrimary="Schedule a Deep Clean in Bethesda"
+        ctaBeforePills
         teamTrustLabel="Background-Checked Team"
         ctaNote="No commitment · Written quote before service · 100% satisfaction guaranteed"
-        updatedLabel="August 2026"
-        updatedDateTime="2026-08-29"
+        updatedLabel="August 31, 2026"
+        updatedDateTime="2026-08-31"
       />
 
       {/* Direct, self-contained answer for local commercial intent and AI citation. */}
@@ -206,8 +206,34 @@ const BethesdaDeepCleaningPage = () => {
             What Does a Deep Cleaning in Bethesda Include?
           </h2>
           <p className="text-lg leading-relaxed text-foreground">
-            A Capital Clean Care deep cleaning in Bethesda is a room-by-room reset for buildup that routine house cleaning does not reach. The service covers kitchen appliance interiors, range hoods, cabinet interiors, faucets and backsplashes; bathroom grout, showerheads, exhaust fans and detailed toilet areas; plus baseboards, window sills and tracks, ceiling fans, doors, switches and accessible spaces beneath furniture. Our bonded, insured and background-checked team uses surface-appropriate, EPA Safer Choice products and follows a written checklist before the final quality check. Most Bethesda homes require about four to six hours, although size, room count, condition and requested add-ons determine the actual scope and written quote. This page serves Bethesda ZIP codes 20814–20817, including Bethesda Row, Edgemoor, Kenwood and Bradley Hills. Pike &amp; Rose, White Flint and the Pike District are served through our dedicated North Bethesda page, preventing homeowners from booking the wrong local service area.
+            A Capital Clean Care deep cleaning in Bethesda is a room-by-room reset for buildup that routine maintenance does not target. The written scope can cover selected kitchen appliance and cabinet interiors, range hoods, faucets and backsplashes; bathroom grout, showerheads, exhaust fans and detailed toilet areas; plus baseboards, window tracks, ceiling fans, doors, switches and accessible spaces beneath furniture. Our bonded, insured and background-checked team uses surface-appropriate products, follows each label and completes a final checklist. Four to six hours is a planning range for many homes—not a fixed promise—because size, condition and add-ons determine the estimate. This page serves Bethesda ZIP codes 20814–20817, including Bethesda Row, Edgemoor, Kenwood and Bradley Hills. Pike &amp; Rose, White Flint and the Pike District use our dedicated North Bethesda page. Routine visits, empty-home turnovers and renovation dust have separate scopes below.
           </p>
+        </div>
+      </section>
+
+      <section className="border-b border-border bg-muted/30 py-10" aria-labelledby="bethesda-service-match">
+        <div className="container mx-auto max-w-5xl px-4">
+          <h2 id="bethesda-service-match" className="font-heading text-2xl font-bold text-foreground">Choose the right Bethesda cleaning scope</h2>
+          <p className="mt-2 max-w-3xl text-muted-foreground">These pages represent different search needs and checklists, helping homeowners reach the correct service without overlap.</p>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              ["Routine upkeep", "/locations/bethesda-md/recurring-cleaning", "Recurring cleaning"],
+              ["Empty home or lease end", "/locations/bethesda-md/move-out-cleaning", "Move-out cleaning"],
+              ["Renovation dust", "/locations/bethesda-md/post-construction-cleaning", "Post-construction cleaning"],
+              ["Pike & Rose / White Flint", "/locations/north-bethesda-md/deep-cleaning", "North Bethesda deep cleaning"],
+            ].map(([need, href, label]) => (
+              <Link key={href} to={href} className="rounded-xl border border-border bg-background p-4 shadow-sm transition-colors hover:border-primary/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+                <span className="block text-xs font-semibold uppercase tracking-wide text-accent">{need}</span>
+                <span className="mt-1 block font-semibold text-primary">{label} →</span>
+              </Link>
+            ))}
+          </div>
+          <dl className="mt-8 grid gap-4 rounded-2xl border border-border bg-background p-5 sm:grid-cols-2 lg:grid-cols-4">
+            <div><dt className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Primary service</dt><dd className="mt-1 font-semibold">Occupied-home deep clean</dd></div>
+            <div><dt className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Service area</dt><dd className="mt-1 font-semibold">Bethesda 20814–20817</dd></div>
+            <div><dt className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Evidence</dt><dd className="mt-1 font-semibold">Real Bethesda project photos</dd></div>
+            <div><dt className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Timing</dt><dd className="mt-1 font-semibold">Estimated after property details</dd></div>
+          </dl>
         </div>
       </section>
 
