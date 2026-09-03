@@ -37,7 +37,8 @@ const faqs = [
 
 const PricingPage = () => {
   const { seoHelmet } = useSEO({
-    title: "House Cleaning Prices in Montgomery County & the DMV",
+    // Differs from the H1 (Semrush "H1 == title") while staying ≤ 49 chars so useSEO keeps the brand suffix.
+    title: "House Cleaning Prices: Montgomery County & DMV",
     description:
       "Transparent, flat-rate house cleaning prices for Montgomery County, DC & Northern Virginia — recurring, one-time, and deep cleaning costs by home size, plus add-ons and what affects the price.",
     canonical: URL,

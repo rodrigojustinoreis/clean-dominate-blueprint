@@ -35,7 +35,7 @@ const badges = [
   },
   {
     icon: Home,
-    title: "10+ Years Serving the DMV",
+    title: "Serving the DMV Since 2015",
     description: "Trusted by hundreds of homeowners across Maryland, DC, and Northern Virginia.",
   },
 ];

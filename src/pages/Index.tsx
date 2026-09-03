@@ -73,7 +73,7 @@ const Index = () => {
                 { icon: Leaf, label: "EPA Safer Choice", sub: "100% non-toxic products" },
                 { icon: Star, label: "5-Star Rated", sub: "500+ happy clients" },
                 { icon: CheckCircle, label: "Satisfaction Guarantee", sub: "Re-clean free in 24h" },
-                { icon: Clock, label: "10+ Years in DMV", sub: "Family-owned & trusted" },
+                { icon: Clock, label: "In the DMV Since 2015", sub: "Family-owned & trusted" },
               ].map((item) => (
                 <div key={item.label} className="group flex items-center gap-2.5 cursor-default">
                   <div className="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center shrink-0 transition-all duration-300 group-hover:bg-accent/20 group-hover:scale-110">

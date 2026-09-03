@@ -126,10 +126,13 @@ const whyDifferent = [
   },
 ];
 
+// Founded 2015 — computed so the "years" badges never drift (same dynamic-year pattern as the footer ©).
+const YEARS_IN_BUSINESS = new Date().getFullYear() - 2015;
+
 const About = () => {
   const { seoHelmet } = useSEO({
     title: "About Capital Clean Care — Eco-Friendly Cleaning in MD, DC & VA",
-    description: "The story behind Capital Clean Care: a family-founded eco-friendly cleaning service serving MD, DC & VA for 10+ years. Learn about our GreenShield 5-Step Clean™ methodology, our licensed team, and our 100% satisfaction guarantee.",
+    description: "The story behind Capital Clean Care: a family-founded eco-friendly cleaning service serving MD, DC & VA since 2015. Learn about our GreenShield 5-Step Clean™ methodology, our licensed team, and our 100% satisfaction guarantee.",
     canonical: "https://capitalcleancare.com/about",
   });
 
@@ -177,7 +180,7 @@ const About = () => {
                 loading="eager"
               />
               <div className="absolute -bottom-4 -right-4 bg-accent text-accent-foreground rounded-xl p-4 shadow-lg text-center">
-                <p className="font-heading font-bold text-3xl">9+</p>
+                <p className="font-heading font-bold text-3xl">{YEARS_IN_BUSINESS}+</p>
                 <p className="text-xs font-medium leading-tight">Years<br/>Serving DMV</p>
               </div>
             </div>
@@ -192,7 +195,7 @@ const About = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
               {[
                 { value: "500+", label: "Homes Cleaned" },
-                { value: "9+", label: "Years in DMV" },
+                { value: `${YEARS_IN_BUSINESS}+`, label: "Years in DMV" },
                 { value: "5.0 ★", label: "Google Rating" },
                 { value: "100%", label: "Satisfaction Guarantee" },
               ].map((stat) => (

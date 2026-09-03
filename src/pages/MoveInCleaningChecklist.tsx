@@ -31,7 +31,7 @@ const faqs = [
 
 const MoveInCleaningChecklist = () => {
   const { seoHelmet } = useSEO({
-    title: "Move-In Cleaning Checklist: What to Clean Before You Unpack",
+    title: "Move-In Cleaning Checklist (2026): What to Clean Before You Unpack",
     description:
       "Move-in cleaning checklist for MD, DC & VA homes: what to clean before the boxes arrive, room by room — cabinets, appliances, bathrooms — plus cost and when to book.",
     canonical: URL,
