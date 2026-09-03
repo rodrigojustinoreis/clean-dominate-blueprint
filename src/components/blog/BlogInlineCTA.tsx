@@ -22,9 +22,10 @@ const BlogInlineCTA = ({
     <div className="flex flex-col md:flex-row md:items-center gap-6">
       <div className="flex-1">
         <p className="text-xs font-semibold uppercase tracking-wider text-accent mb-1">Capital Clean Care</p>
-        <h3 className="font-heading text-xl font-bold text-foreground mb-2 leading-tight">
+        {/* <p>, not a heading: this promo card must not join the document outline (it caused h1→h3 skips). */}
+        <p className="font-heading text-xl font-bold text-foreground mb-2 leading-tight">
           {headline}
-        </h3>
+        </p>
         <p className="text-sm text-muted-foreground leading-relaxed">{subtext}</p>
       </div>
       <div className="flex flex-col gap-2 shrink-0">
