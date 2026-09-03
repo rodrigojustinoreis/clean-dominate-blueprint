@@ -420,6 +420,16 @@ const RockvilleHouseCleaningPage = () => {
             House Cleaning FAQ — Rockville, MD
           </h2>
           <FAQ faqs={faqs} />
+          {/* Contextual links into the specialty service pages from this high-authority page (they had few inbound links). */}
+          <p className="mt-8 text-sm text-muted-foreground">
+            Need something more specific than a standard clean? Rockville homes can also book{" "}
+            <Link to="/services/kitchen-cleaning" className="text-accent underline hover:no-underline">kitchen cleaning</Link>,{" "}
+            <Link to="/services/bathroom-cleaning" className="text-accent underline hover:no-underline">bathroom cleaning</Link>,{" "}
+            <Link to="/services/living-area-cleaning" className="text-accent underline hover:no-underline">living area cleaning</Link>,{" "}
+            <Link to="/services/condo-cleaning" className="text-accent underline hover:no-underline">condo &amp; apartment cleaning</Link>,{" "}
+            <Link to="/services/maid-service" className="text-accent underline hover:no-underline">maid service</Link>, or{" "}
+            <Link to="/services/office-cleaning" className="text-accent underline hover:no-underline">office cleaning</Link>.
+          </p>
         </div>
       </section>
 

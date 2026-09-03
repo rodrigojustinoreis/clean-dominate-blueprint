@@ -93,6 +93,13 @@ const PricingPage = () => {
             <Link to="/resources/house-cleaning-prices-maryland-2026" className="text-accent underline hover:no-underline">2026 Maryland pricing guide</Link>, and our dedicated{" "}
             <Link to="/services/move-out-cleaning" className="text-accent underline hover:no-underline">move-out</Link>{" "}and{" "}
             <Link to="/services/post-construction-cleaning" className="text-accent underline hover:no-underline">post-construction</Link>{" "}cleaning pages.
+            Looking for a room-by-room or specialty service? See{" "}
+            <Link to="/services/kitchen-cleaning" className="text-accent underline hover:no-underline">kitchen cleaning</Link>,{" "}
+            <Link to="/services/bathroom-cleaning" className="text-accent underline hover:no-underline">bathroom cleaning</Link>,{" "}
+            <Link to="/services/living-area-cleaning" className="text-accent underline hover:no-underline">living area cleaning</Link>,{" "}
+            <Link to="/services/condo-cleaning" className="text-accent underline hover:no-underline">condo &amp; apartment cleaning</Link>,{" "}
+            <Link to="/services/maid-service" className="text-accent underline hover:no-underline">maid service</Link>, and{" "}
+            <Link to="/services/office-cleaning" className="text-accent underline hover:no-underline">office cleaning</Link>.
           </p>
 
           {/* ── What affects the price ── */}
@@ -198,7 +205,9 @@ const PricingPage = () => {
           </div>
           <p className="text-sm text-muted-foreground">
             More quick answers on booking, services, and trust in our{" "}
-            <Link to="/resources/faq" className="text-accent underline hover:no-underline">cleaning FAQ hub</Link>.
+            <Link to="/resources/faq" className="text-accent underline hover:no-underline">cleaning FAQ hub</Link>{" "}
+            and the full{" "}
+            <Link to="/faq" className="text-accent underline hover:no-underline">house cleaning FAQ</Link>.
           </p>
         </div>
       </section>

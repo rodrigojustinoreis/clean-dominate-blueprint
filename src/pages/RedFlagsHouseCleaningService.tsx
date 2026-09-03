@@ -269,7 +269,9 @@ const RedFlagsHouseCleaningService = () => {
               Run through these red flags when hiring a house cleaning service and most bad options eliminate themselves within
               a single phone call. Whether you need a weekly maid service or a one-time{" "}
               <Link to="/services/deep-cleaning" className="text-accent underline hover:no-underline">deep cleaning</Link>,
-              the vetting takes minutes and can save you hundreds.
+              the vetting takes minutes and can save you hundreds. And if you keep putting off the call because the house feels
+              too far gone, read our honest guide on whether a home can be{" "}
+              <Link to="/resources/house-too-messy-for-cleaning-service" className="text-accent underline hover:no-underline">too messy for a cleaning service</Link>.
             </p>
             <div className="bg-primary text-primary-foreground rounded-2xl p-6 md:p-8 text-center mt-8">
               <h3 className="font-heading text-xl md:text-2xl font-bold mb-3">Rather skip the detective work entirely?</h3>

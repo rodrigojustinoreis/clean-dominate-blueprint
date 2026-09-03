@@ -438,6 +438,11 @@ const Index = () => {
               <h2 className="font-heading text-3xl md:text-4xl font-bold mt-2">Frequently Asked Questions</h2>
             </div>
             <FAQ faqs={homeFaqs} />
+            {/* /faq had zero contextual inbound links (footer only) — give it one from the home FAQ block. */}
+            <p className="mt-8 text-center text-sm text-muted-foreground">
+              Have a question we didn't cover?{" "}
+              <Link to="/faq" className="font-semibold text-accent underline underline-offset-2 hover:no-underline">Browse all house cleaning FAQs</Link>
+            </p>
           </div>
         </section>
       </ScrollReveal>
