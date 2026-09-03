@@ -90,6 +90,18 @@ const BestHouseCleaningBethesda = () => {
             </div>
           </FadeInSection>
 
+          {/* This guide ranks for "recurring cleaning services bethesda md" but the dedicated recurring page
+              barely got a link from it — route that intent to its owner (kept separate from the house-cleaning CTA below). */}
+          <FadeInSection>
+            <BlogInlineCTA
+              headline="Prefer scheduled recurring service?"
+              subtext="Weekly, bi-weekly, or monthly plans for Bethesda homes — compare frequency options, what each visit includes, and recurring rates on the dedicated Bethesda recurring cleaning page."
+              ctaLabel="See Bethesda recurring plans & pricing"
+              ctaTo="/locations/bethesda-md/recurring-cleaning"
+              analyticsLocation="blog_inline_cta_recurring"
+            />
+          </FadeInSection>
+
           <FadeInSection>
             <img src="/images/team/team-two-living-room.jpg" alt="Capital Clean Care team cleaning a Bethesda MD living room" loading="lazy" width={1000} height={667} className="w-full rounded-2xl shadow-lg ring-1 ring-border transition-transform duration-500 hover:scale-[1.02] my-8" />
             <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mt-10 mb-4">What house cleaning costs in Bethesda</h2>
