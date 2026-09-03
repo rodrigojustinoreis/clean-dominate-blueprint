@@ -27,12 +27,15 @@ const businessAddress = {
 };
 
 const businessRef = {
-  "@type": ["HouseCleaner", "LocalBusiness"] as const,
+  "@type": ["HomeAndConstructionBusiness", "LocalBusiness"] as const,
   "@id": `${BUSINESS.url}/#business`,
   name: BUSINESS.name,
+  // legalName + sameAs on every #business instance: the two entity-disambiguation signals.
+  legalName: BUSINESS.legalName,
   telephone: BUSINESS.phone,
   address: businessAddress,
   priceRange: BUSINESS.priceRange,
+  sameAs: BUSINESS_INFO.socialProfiles,
 };
 
 const defaultAreaServedRegions = [
@@ -57,10 +60,9 @@ interface LocalBusinessSchemaProps {
   reviews?: { name: string; text: string; location?: string; datePublished?: string }[];
   /** Emit individual Review items — true ONLY on the /reviews page where the real text is shown. */
   emitReviewItems?: boolean;
-  inLanguage?: string;
 }
 
-export const LocalBusinessSchema = ({ areaServed, reviews, emitReviewItems, inLanguage = "en-US" }: LocalBusinessSchemaProps = {}) => {
+export const LocalBusinessSchema = ({ areaServed, reviews, emitReviewItems }: LocalBusinessSchemaProps = {}) => {
   const defaultCityAreas = [
     "Silver Spring, MD", "Rockville, MD", "Bethesda, MD", "Germantown, MD",
     "Gaithersburg, MD", "Potomac, MD", "Frederick, MD", "Columbia, MD",
@@ -74,9 +76,11 @@ export const LocalBusinessSchema = ({ areaServed, reviews, emitReviewItems, inLa
 
   const schema: Record<string, unknown> = {
     "@context": "https://schema.org",
-    "@type": ["HouseCleaner", "LocalBusiness"],
+    // HouseCleaner is not a schema.org type (404); HomeAndConstructionBusiness is the valid
+    // LocalBusiness subtype for home services. inLanguage is not a LocalBusiness property
+    // (it belongs to CreativeWork/WebPage — see WebPageSchema).
+    "@type": ["HomeAndConstructionBusiness", "LocalBusiness"],
     "@id": `${BUSINESS.url}/#business`,
-    inLanguage,
     name: BUSINESS.name,
     legalName: BUSINESS.legalName,
     slogan: "Eco-friendly house cleaning the DMV trusts",
@@ -344,6 +348,8 @@ export const WebSiteSchema = () => {
   const schema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
+    // Declared so every WebPageSchema `isPartOf: {"@id": ".../#website"}` reference resolves.
+    "@id": `${BUSINESS.url}/#website`,
     name: BUSINESS.name,
     url: BUSINESS.url,
   };
@@ -381,18 +387,32 @@ export const ArticleSchema = ({
       "@type": "Person",
       name: "Rodrigo Reis",
       url: `${BUSINESS.url}/about`,
-      worksFor: { "@type": "Organization", name: BUSINESS.name },
+      worksFor: {
+        "@type": "Organization",
+        "@id": `${BUSINESS.url}/#business`,
+        name: BUSINESS.name,
+        legalName: BUSINESS.legalName,
+        sameAs: BUSINESS_INFO.socialProfiles,
+      },
     },
+    // Same @id as the site-wide #business node so blog pages reconcile to the one entity.
     publisher: {
       "@type": "Organization",
+      "@id": `${BUSINESS.url}/#business`,
       name: BUSINESS.name,
+      legalName: BUSINESS.legalName,
       url: BUSINESS.url,
       logo: { "@type": "ImageObject", url: `${BUSINESS.url}/logo.png` },
+      sameAs: BUSINESS_INFO.socialProfiles,
     },
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
   };
 
-  if (image) schema.image = { "@type": "ImageObject", url: image, width: 800, height: 450 };
+  if (image) {
+    // Pages pass "/images/..." — schema.org/Google require absolute URLs (same guard as BreadcrumbSchema).
+    const absoluteImage = image.startsWith("http") ? image : `${BUSINESS.url}${image}`;
+    schema.image = { "@type": "ImageObject", url: absoluteImage, width: 800, height: 450 };
+  }
 
   const id = `article-schema-${title.replace(/\s/g, "-").toLowerCase().slice(0, 40)}`;
   return <JsonLd id={id} schema={schema} />;
@@ -429,7 +449,7 @@ export const HowToSchema = ({ name, description, url, steps, totalTime, image }:
   };
 
   if (totalTime) schema.totalTime = totalTime;
-  if (image) schema.image = { "@type": "ImageObject", url: image };
+  if (image) schema.image = { "@type": "ImageObject", url: image.startsWith("http") ? image : `${BUSINESS.url}${image}` };
 
   return <JsonLd id="howto-schema" schema={schema} />;
 };
@@ -449,12 +469,14 @@ export const CityReviewSchema = ({ cityName, cityUrl, reviews }: CityReviewSchem
   // /reviews (policy): duplicating the same reviewers across 55 city pages is self-serving.
   const schema = {
     "@context": "https://schema.org",
-    "@type": ["HouseCleaner", "LocalBusiness"],
+    "@type": ["HomeAndConstructionBusiness", "LocalBusiness"],
     "@id": `${BUSINESS.url}/#business`,
     name: BUSINESS.name,
+    legalName: BUSINESS.legalName,
     url: BUSINESS.url,
     telephone: BUSINESS.phone,
     address: businessAddress,
+    sameAs: BUSINESS_INFO.socialProfiles,
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: BUSINESS_INFO.rating.value,
