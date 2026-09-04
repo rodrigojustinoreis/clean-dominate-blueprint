@@ -9,6 +9,7 @@ import TrustBadges from "@/components/TrustBadges";
 import GreenShield5Step from "@/components/GreenShield5Step";
 import FAQ from "@/components/FAQ";
 import ScrollReveal from "@/components/ScrollReveal";
+import TransparencySection from "@/components/sections/TransparencySection";
 import { FAQSchema, LocalBusinessSchema, BreadcrumbSchema, FounderPersonSchema, AboutPageSchema } from "@/components/SchemaMarkup";
 import { useSEO } from "@/hooks/useSEO";
 import teamPhoto from "@/assets/team-photo.webp";
@@ -188,6 +189,15 @@ const About = () => {
         </div>
       </section>
 
+      {/* Entity-first passage (AI/LLM citability): exact legal name + category + place + verifiable facts. */}
+      <section className="border-b border-border bg-background py-8">
+        <div className="container mx-auto max-w-4xl px-4">
+          <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
+            Capital Clean Care LLC is a family-owned, eco-friendly residential cleaning company founded in 2015 and based in Silver Spring, MD, serving Maryland, Washington DC, and Northern Virginia. Every visit follows our proprietary GreenShield 5-Step Clean™, delivered by background-checked teams using EPA Safer Choice products. Licensed, bonded, and insured, with a 5.0-star Google rating across 45 reviews and a 24-hour satisfaction guarantee.
+          </p>
+        </div>
+      </section>
+
       {/* ══════════════ STATS BAR ══════════════ */}
       <ScrollReveal>
         <section className="border-y border-border bg-card py-8">
@@ -208,6 +218,9 @@ const About = () => {
           </div>
         </section>
       </ScrollReveal>
+
+      {/* Explicit "we are a registered Maryland LLC" trust block — previously Spanish-only (entity signal). */}
+      <TransparencySection lang="en" />
 
       {/* ══════════════ FOUNDER STORY ══════════════ */}
       <ScrollReveal>

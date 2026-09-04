@@ -75,6 +75,11 @@ const PricingPage = () => {
             ))}
           </div>
 
+          {/* Entity-first passage (AI/LLM citability): legal name + offer + place + verifiable facts. */}
+          <p className="text-base leading-relaxed text-muted-foreground mb-10 max-w-3xl">
+            Capital Clean Care LLC offers flat-rate house cleaning pricing across Maryland, Washington DC, and Northern Virginia — no hourly meter, no surprise charges. We've served the DMV since 2015 as a licensed, insured, background-checked team using EPA Safer Choice products, backed by a 24-hour re-clean guarantee and a 5.0-star rating across 45 Google reviews.
+          </p>
+
           {/* ── Interactive price matrix (same component + data as the homepage — zero number
                  duplication). forceMount makes every tab's prices render in the static HTML,
                  so recurring/one-time/deep/move/post-construction are all crawlable via curl. ── */}

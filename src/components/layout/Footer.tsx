@@ -288,8 +288,8 @@ const Footer = () => {
       </div>
       <p className="text-center text-xs text-primary-foreground/70 pb-4">
         {t(
-          "Capital Clean Care LLC is not affiliated with any other cleaning company with a similar name operating in the Maryland area.",
-          "Capital Clean Care LLC no está afiliada a ninguna otra empresa de limpieza con nombre similar que opere en el área de Maryland."
+          "Capital Clean Care LLC is a residential house cleaning company based in Silver Spring, MD — not a dry cleaner, tailor, or laundry service, and not affiliated with any similarly named business.",
+          "Capital Clean Care LLC es una empresa de limpieza residencial con sede en Silver Spring, MD — no es tintorería, sastrería ni lavandería, y no está afiliada a ninguna empresa de nombre similar."
         )}
       </p>
     </div>

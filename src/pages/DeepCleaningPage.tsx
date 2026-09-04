@@ -284,6 +284,16 @@ const DeepCleaningPage = () => {
         </div>
       </section>
 
+      {/* Entity-first passage (AI/LLM citability): legal name + service + place + verifiable facts, additive
+          right after the hero. No price figure here — the site's ranges live in the pricing table/schema. */}
+      <section className="border-b border-border bg-background py-8">
+        <div className="container mx-auto max-w-4xl px-4">
+          <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
+            Capital Clean Care LLC's deep cleaning service is an intensive, top-to-bottom clean for homes in Maryland, Washington DC, and Northern Virginia, following our proprietary GreenShield 5-Step Clean™. Every deep clean is performed by background-checked teams using EPA Safer Choice products, and backed by our 24-hour re-clean guarantee and a 5.0-star Google rating across 45 reviews.
+          </p>
+        </div>
+      </section>
+
       {/* ── Real video transformations (2nd position) ── */}
       <TransformationsGallery />
 
