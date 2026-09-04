@@ -32,7 +32,7 @@ const ScrollReveal = ({ children, className = "", delay = 0 }: Props) => {
     return () => observer.disconnect();
   }, [delay]);
 
-  return <div ref={ref} className={className}>{children}</div>;
+  return <div ref={ref} className={`cv-auto ${className}`.trim()}>{children}</div>;
 };
 
 export default ScrollReveal;

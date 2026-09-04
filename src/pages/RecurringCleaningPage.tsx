@@ -395,7 +395,7 @@ const RecurringCleaningPage = () => {
       {/* ── Client video testimonial (autoplay-on-scroll), above the frequency section ── */}
       <TestimonialVideo
         src="/videos/client-testimonial-0805.mp4"
-        poster="/videos/client-testimonial-0805-poster.jpg"
+        poster="/videos/client-testimonial-0805-poster-640.webp"
         label="Capital Clean Care client testimonial — a DMV client on working with our cleaning team"
         heading="Hear It From a Capital Clean Care Client"
         subtext="A DMV client on what it's like to have Capital Clean Care handle the cleaning."

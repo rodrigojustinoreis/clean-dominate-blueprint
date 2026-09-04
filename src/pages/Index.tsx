@@ -125,7 +125,7 @@ const Index = () => {
       <ScrollReveal>
         <TestimonialVideo
           src="/videos/client-testimonial-0805.mp4"
-          poster="/videos/client-testimonial-0805-poster.jpg"
+          poster="/videos/client-testimonial-0805-poster-640.webp"
           label="Capital Clean Care client testimonial — a DMV client shares their experience"
           subtext="A real Capital Clean Care client on what it's like to work with our team."
         />

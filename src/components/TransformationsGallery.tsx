@@ -14,6 +14,8 @@ import {
 interface Clip {
   src: string;
   poster: string;
+  /** Right-sized card thumbnail (480w); the full poster stays for the lightbox video + schema. */
+  thumb: string;
   title: string;
   caption: string;
   description: string;
@@ -25,6 +27,7 @@ const CLIPS: Clip[] = [
   {
     src: "/videos/transformations/transformation-2.mp4",
     poster: "/videos/transformations/transformation-2-poster.webp",
+    thumb: "/videos/transformations/transformation-2-poster-480.webp",
     title: "Bathtub & Shower Deep Clean",
     caption: "Soap scum & mold → spotless",
     description: "Real before-and-after: a heavily stained bathtub and tile shower restored to spotless white by the Capital Clean Care team.",
@@ -32,6 +35,7 @@ const CLIPS: Clip[] = [
   {
     src: "/videos/transformations/transformation-4.mp4",
     poster: "/videos/transformations/transformation-4-poster.webp",
+    thumb: "/videos/transformations/transformation-4-poster-480.webp",
     title: "Stovetop Deep Clean",
     caption: "Baked-on grease → like new",
     description: "Capital Clean Care deep cleaning in action — cutting through built-up grease and grime down to a spotless finish.",
@@ -39,6 +43,7 @@ const CLIPS: Clip[] = [
   {
     src: "/videos/transformations/transformation-1.mp4",
     poster: "/videos/transformations/transformation-1-poster.webp",
+    thumb: "/videos/transformations/transformation-1-poster-480.webp",
     title: "Tile & Grout Restoration",
     caption: "Dingy grout → bright & even",
     description: "Discolored tile and grout scrubbed back to like-new — a real Capital Clean Care deep cleaning result.",
@@ -46,6 +51,7 @@ const CLIPS: Clip[] = [
   {
     src: "/videos/transformations/transformation-3.mp4",
     poster: "/videos/transformations/transformation-3-poster.webp",
+    thumb: "/videos/transformations/transformation-3-poster-480.webp",
     title: "Bathroom Deep Clean",
     caption: "Neglected → sanitized & fresh",
     description: "A neglected bathroom transformed top to bottom by the Capital Clean Care deep cleaning team.",
@@ -158,7 +164,7 @@ const TransformationsGallery = ({
                   className="group relative block w-full rounded-2xl overflow-hidden bg-card shadow-lg ring-1 ring-border transition-all duration-300 hover:shadow-2xl hover:ring-accent/40 hover:-translate-y-1 aspect-[9/16]"
                 >
                   <img
-                    src={c.poster}
+                    src={c.thumb}
                     alt={`${clipTitle(c)} — ${clipCaption(c)}`}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     loading="lazy"

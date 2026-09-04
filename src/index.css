@@ -110,6 +110,12 @@
 }
 
 @layer utilities {
+  /* Below-the-fold sections: the browser skips style/layout/paint until they approach the
+     viewport (content is still in the DOM and indexable). Big mobile win for Style & Layout. */
+  .cv-auto {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 640px;
+  }
   .scrollbar-none {
     -ms-overflow-style: none;
     scrollbar-width: none;

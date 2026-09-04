@@ -15,10 +15,10 @@ const miniTestimonials = [
 ];
 
 const avatars = [
-  { src: "/images/team/team-scrubbing-door-detail.jpg", alt: "Capital Clean Care team member" },
-  { src: "/images/team/team-cleaning-glass-door.jpg",   alt: "Capital Clean Care team member" },
-  { src: "/images/team/team-polishing-fridge.jpg",      alt: "Capital Clean Care team member" },
-  { src: "/images/team/team-mopping-uniform.jpg",       alt: "Capital Clean Care team member" },
+  { src: "/images/team/avatars/team-scrubbing-door-detail-96.webp", alt: "Capital Clean Care team member" },
+  { src: "/images/team/avatars/team-cleaning-glass-door-96.webp",   alt: "Capital Clean Care team member" },
+  { src: "/images/team/avatars/team-polishing-fridge-96.webp",      alt: "Capital Clean Care team member" },
+  { src: "/images/team/avatars/team-mopping-uniform-96.webp",       alt: "Capital Clean Care team member" },
 ];
 
 const HeroSection = () => {
@@ -114,7 +114,7 @@ const HeroSection = () => {
             <div className="flex -space-x-3">
               {avatars.map((a) => (
                 <div key={a.src} className="w-10 h-10 rounded-full border-2 border-background shadow-sm overflow-hidden">
-                  <img src={a.src} alt={a.alt} className="w-full h-full object-cover" loading="lazy" />
+                  <img src={a.src} alt={a.alt} width={40} height={40} className="w-full h-full object-cover" loading="lazy" decoding="async" />
                 </div>
               ))}
             </div>
