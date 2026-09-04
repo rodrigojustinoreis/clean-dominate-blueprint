@@ -40,8 +40,6 @@ const HeroSection = () => {
     <div className="absolute inset-0 z-0">
       <img
         src={teamPhoto}
-        srcSet="/images/hero/team-hero-1080.webp 1080w, /images/hero/team-hero-1440.webp 1440w, /images/hero/team-hero.webp 1920w"
-        sizes="100vw"
         alt="Capital Clean Care team of professional cleaners"
         className="w-full h-full object-cover object-top scale-105"
         loading="eager"
