@@ -8,7 +8,7 @@
 // EVERY page's modulepreload graph. Lazy keeps it on the "/" route only.
 import { lazy } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
-import { RESOURCE_CATEGORIES } from "./data/resource-categories";
+import { RESOURCE_CATEGORY_SLUGS } from "./data/resource-category-slugs";
 
 const Index = lazy(() => import("./pages/Index"));
 const About = lazy(() => import("./pages/About"));
@@ -261,8 +261,8 @@ const AppRoutesLazy = () => (
     {/* /resources/faq is the central FAQ hub (not the category listing). */}
     <Route path="/resources/faq" element={<FaqHub />} />
     {/* Resource Center category indexes — static paths, so they rank above /resources/:slug */}
-    {RESOURCE_CATEGORIES.filter((c) => c.slug !== "faq").map((c) => (
-      <Route key={c.slug} path={`/resources/${c.slug}`} element={<ResourceCategory slug={c.slug} />} />
+    {RESOURCE_CATEGORY_SLUGS.filter((slug) => slug !== "faq").map((slug) => (
+      <Route key={slug} path={`/resources/${slug}`} element={<ResourceCategory slug={slug} />} />
     ))}
     <Route path="/resources/topic/:topicSlug" element={<BlogTopic />} />
     <Route path="/resources/how-to-clean-carpet-home-apartment" element={<HowToCleanCarpetBlog />} />

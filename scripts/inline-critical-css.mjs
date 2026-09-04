@@ -32,12 +32,25 @@ function dedupeBlockingFonts(html) {
   });
 }
 
+// Helmet emits the LCP image preload (useSEO preloadImage) at the END of <head>, i.e. after the
+// ~60KB of inlined critical CSS and after Vite's modulepreload links — so on a throttled phone the
+// hero image is discovered late and queues behind ~200KB of JS. Hoist it to the top of <head>
+// (right after the viewport meta) so it is the first resource the preload scanner sees.
+function hoistLcpPreload(html) {
+  const m = html.match(/<link[^>]*rel="preload"[^>]*as="image"[^>]*>/);
+  if (!m) return html;
+  const anchor = html.match(/<meta name="viewport"[^>]*>/);
+  if (!anchor || anchor.index > m.index) return html;
+  const without = html.slice(0, m.index) + html.slice(m.index + m[0].length);
+  return without.replace(anchor[0], anchor[0] + m[0]);
+}
+
 const files = await glob("**/*.html", { cwd: DIST, absolute: true });
 let ok = 0;
 for (const file of files) {
   try {
     const html = await readFile(file, "utf8");
-    const out = dedupeBlockingFonts(await beasties.process(html));
+    const out = hoistLcpPreload(dedupeBlockingFonts(await beasties.process(html)));
     await writeFile(file, out, "utf8");
     ok++;
   } catch (e) {

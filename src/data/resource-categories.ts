@@ -13,6 +13,7 @@
 // posts that match nothing fall back to "cleaning-tips" — so there are never orphan posts.
 
 import type { BlogPost } from "@/pages/Blog";
+import { RESOURCE_CATEGORY_SLUGS } from "./resource-category-slugs";
 
 export interface ResourceCategory {
   slug: string;
@@ -192,4 +193,11 @@ export function postsInCategory<T extends Pick<BlogPost, "slug" | "category">>(
   posts: T[]
 ): T[] {
   return posts.filter((p) => categoriesForPost(p).includes(categorySlug));
+}
+
+// Route registration (AppRoutesLazy) uses the lightweight slug list; fail loudly in dev if they drift.
+if (import.meta.env.DEV) {
+  const here = RESOURCE_CATEGORIES.map((c) => c.slug).join(",");
+  const light = RESOURCE_CATEGORY_SLUGS.join(",");
+  if (here !== light) throw new Error(`resource-category-slugs.ts is out of sync with resource-categories.ts:\n${here}\n${light}`);
 }
