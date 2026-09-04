@@ -70,7 +70,7 @@ const Index = () => {
                 facts. Lives inside the trust band as its lead-in so it stays within the first ~150 words
                 of main content without adding a separate block. The hero (LCP) is untouched. */}
             <p className="mx-auto mb-5 max-w-3xl text-center text-sm leading-relaxed text-balance text-muted-foreground">
-              Capital Clean Care LLC is a licensed, bonded, and insured house cleaning company based in Silver Spring, MD, serving Maryland, Washington DC, and Northern Virginia since 2015, rated 5.0 stars across 45 Google reviews.
+              Capital Clean Care LLC is a licensed, bonded, and insured house cleaning company in Silver Spring, MD, serving Maryland, DC, and Northern Virginia since 2015, using EPA Safer Choice, plant-based products safe for kids and pets — 5.0 stars across 45 Google reviews.
             </p>
             {/* Compact trust chips: label only. "5-Star Rated" and "Since 2015" were dropped here because the
                 sentence above and the counters below already state both. */}
