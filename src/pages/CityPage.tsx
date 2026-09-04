@@ -206,6 +206,45 @@ const rockvilleServiceGuide = [
   },
 ];
 
+// Silver Spring intent-routing table — only the city's INDEXABLE service pages (move-out, office and
+// eco-friendly are intentionally noindex for this city, see noindexPaths.ts).
+const silverSpringServiceGuide = [
+  {
+    name: "House cleaning",
+    bestFor: "Routine home care and a dependable reset",
+    href: "/locations/silver-spring-md/house-cleaning",
+  },
+  {
+    name: "Recurring cleaning",
+    bestFor: "Weekly, bi-weekly, or monthly maintenance",
+    href: "/locations/silver-spring-md/recurring-cleaning",
+  },
+  {
+    name: "Deep cleaning",
+    bestFor: "First visits, seasonal buildup, or neglected details",
+    href: "/locations/silver-spring-md/deep-cleaning",
+  },
+  {
+    name: "Airbnb & rental turnover",
+    bestFor: "Guest-ready resets between stays",
+    href: "/locations/silver-spring-md/airbnb-cleaning",
+  },
+  {
+    name: "Post-construction cleaning",
+    bestFor: "Renovation dust and debris before move-in",
+    href: "/locations/silver-spring-md/post-construction-cleaning",
+  },
+];
+
+// Hubs that carry a WebPage node with a real dateModified (the date the hub content was last revised).
+const HUB_PAGE_DATES: Record<string, string> = {
+  "rockville-md": "2026-08-23",
+  "gaithersburg-md": "2026-08-30",
+  "silver-spring-md": "2026-09-03",
+  "alexandria-va": "2026-09-03",
+  "fairfax-va": "2026-09-03",
+};
+
 const rockvilleRealWorkPhotos = [
   {
     src480: "/images/locations/rockville-real-work/window-detailing-480.webp",
@@ -309,6 +348,8 @@ const CityPage = () => {
   const nearbyCities = city.nearbySlugs.map(getCityBySlug).filter(Boolean);
   const isRockvilleHub = city.slug === "rockville-md";
   const isGaithersburgHub = city.slug === "gaithersburg-md";
+  const isSilverSpringHub = city.slug === "silver-spring-md";
+  const isBethesdaHub = city.slug === "bethesda-md";
   const expandedFaqs = isRockvilleHub ? rockvilleFaqs : getExpandedCityFaqs(city);
   const stateLabel = city.stateSlug === "maryland" ? "Maryland" : city.stateSlug === "washington-dc" ? "Washington DC" : "Virginia";
   const cityLabel = city.state !== "DC" ? `${city.name}, ${city.state}` : city.name;
@@ -341,15 +382,15 @@ const CityPage = () => {
     <Layout>
       {seoHelmet}
       <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: stateLabel, href: `/${city.stateSlug}` }, { label: city.name, href: `/locations/${city.slug}` }]} />
-      {(isRockvilleHub || isGaithersburgHub) && (
+      {HUB_PAGE_DATES[city.slug] && (
         <WebPageSchema
           name={city.metaTitle}
           description={city.metaDescription}
           url={`https://capitalcleancare.com/locations/${city.slug}`}
-          dateModified={isRockvilleHub ? "2026-08-23" : "2026-08-30"}
+          dateModified={HUB_PAGE_DATES[city.slug]}
           cityName={city.name}
-          stateCode="Maryland"
-          primaryImage={isRockvilleHub ? "https://capitalcleancare.com/images/locations/rockville-real-work/rockville-real-cleaning-og.webp" : `https://capitalcleancare.com${cityImages[city.slug] || regionMD}`}
+          stateCode={stateLabel === "Washington DC" ? "District of Columbia" : stateLabel}
+          primaryImage={isRockvilleHub ? "https://capitalcleancare.com/images/locations/rockville-real-work/rockville-real-cleaning-og.webp" : `https://capitalcleancare.com${cityImages[city.slug] || regionImages[city.stateSlug] || regionMD}`}
         />
       )}
       <FAQSchema faqs={expandedFaqs} />
@@ -411,6 +452,18 @@ const CityPage = () => {
           </div>
         </div>
       </section>
+
+      {/* Entity-first passage (AI/LLM citability): exact legal name + category + place + verifiable facts,
+          placed right after the hero hook, additive — the hero itself is untouched. Bethesda pilot. */}
+      {isBethesdaHub && (
+        <section className="border-b border-border bg-background py-8">
+          <div className="container mx-auto max-w-4xl px-4">
+            <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
+              Capital Clean Care LLC provides house and deep cleaning in Bethesda, MD, part of Montgomery County, with flat-rate pricing and EPA Safer Choice eco-friendly products. We've served Bethesda households since 2015 with licensed, insured, background-checked local teams, backed by a 5.0-star Google rating across 45 reviews and a 24-hour re-clean guarantee.
+            </p>
+          </div>
+        </section>
+      )}
 
       {/* Trust Bar */}
       <TrustBar variant="dark" />
@@ -482,6 +535,46 @@ const CityPage = () => {
 
             <p className="mt-5 text-sm text-muted-foreground">
               Comparing budgets? See our transparent <Link to="/resources/house-cleaning-cost-rockville-md" className="text-accent font-semibold hover:underline">2026 Rockville cleaning cost guide</Link>.
+            </p>
+          </div>
+        </section>
+      )}
+
+      {/* Silver Spring search-intent hub (Rockville pattern): the hub ranked #51–74 while its own service
+          pages outranked it for unqualified "cleaning services in silver spring md" — name the query and
+          route each intent to its dedicated, indexable page. */}
+      {isSilverSpringHub && (
+        <section className="py-12 md:py-16 border-b border-border" aria-labelledby="silver-spring-cleaning-answer">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <p className="text-sm font-semibold text-accent mb-3">Updated September 3, 2026 · Serving Silver Spring ZIP codes 20901–20906 and 20910</p>
+            <h2 id="silver-spring-cleaning-answer" className="font-heading text-2xl md:text-3xl font-bold mb-5">
+              What cleaning services are available in Silver Spring, MD?
+            </h2>
+            <p className="text-foreground leading-relaxed text-lg">
+              Capital Clean Care provides residential cleaning throughout Silver Spring, including one-time house cleaning, weekly and bi-weekly recurring care, deep cleaning, Airbnb and short-term-rental turnovers, and post-construction cleanup. Our insured, background-checked employees bring the equipment and plant-based products, follow a room-by-room checklist, and back every visit with a satisfaction guarantee. We serve downtown high-rises and condos, the brick colonials of Woodside, and homes across Forest Glen, Four Corners, Long Branch, Colesville, White Oak, Wheaton Hills, Kemp Mill, and Burnt Mills. Start with the dedicated <Link to="/locations/silver-spring-md/house-cleaning" className="font-semibold text-accent underline">Silver Spring house-cleaning page</Link>, or choose a service below for its complete scope and a written quote based on size, bathrooms, condition, and frequency.
+            </p>
+
+            <div className="mt-8 overflow-hidden rounded-2xl border border-border bg-card">
+              <div className="grid grid-cols-[minmax(0,0.8fr)_minmax(0,1.5fr)] bg-secondary px-4 py-3 text-sm font-semibold">
+                <span>Service</span>
+                <span>Best for</span>
+              </div>
+              {silverSpringServiceGuide.map((service) => (
+                <Link
+                  key={service.name}
+                  to={service.href}
+                  className="grid grid-cols-[minmax(0,0.8fr)_minmax(0,1.5fr)] items-center gap-4 border-t border-border px-4 py-4 hover:bg-accent/5 transition-colors"
+                >
+                  <span className="font-semibold text-accent">{service.name}</span>
+                  <span className="text-sm text-muted-foreground flex items-center justify-between gap-3">
+                    {service.bestFor}<ArrowRight className="h-4 w-4 shrink-0" aria-hidden="true" />
+                  </span>
+                </Link>
+              ))}
+            </div>
+
+            <p className="mt-5 text-sm text-muted-foreground">
+              Comparing budgets? See our transparent <Link to="/resources/house-cleaning-cost-silver-spring-md" className="text-accent font-semibold hover:underline">2026 Silver Spring cleaning cost guide</Link>.
             </p>
           </div>
         </section>
