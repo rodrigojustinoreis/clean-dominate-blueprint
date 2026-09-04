@@ -58,7 +58,7 @@ const Footer = () => {
       ];
 
   return (
-  <footer className="w-full overflow-x-clip bg-primary text-primary-foreground">
+  <footer className="cv-auto w-full overflow-x-clip bg-primary text-primary-foreground">
     {/* Conversion CTA */}
     <section className="relative isolate overflow-hidden bg-gradient-to-br from-primary via-primary to-[#1268a0]">
       <div aria-hidden="true" className="absolute -left-20 top-1/2 h-72 w-72 -translate-y-1/2 rounded-full bg-accent/25 blur-3xl" />
