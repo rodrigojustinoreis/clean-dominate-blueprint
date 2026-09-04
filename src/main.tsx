@@ -27,4 +27,15 @@ if (typeof Node === "function" && Node.prototype) {
   };
 }
 
-hydrateRoot(document.getElementById("root")!, <App />);
+// ── Paint first, hydrate second ───────────────────────────────────────────────
+// The HTML is fully prerendered, so nothing is gained by hydrating in the same task
+// that finishes parsing the document. On mobile that task ran before the browser had
+// produced a single frame, holding FCP/LCP hostage to React hydration (observed first
+// paint 1.3–2.4s with everything loaded at 0.5s). Yield one frame so the static HTML
+// paints, then hydrate. Interactivity arrives ~1 frame later; markup is identical.
+const hydrate = () => hydrateRoot(document.getElementById("root")!, <App />);
+if (typeof requestAnimationFrame === "function") {
+  requestAnimationFrame(() => setTimeout(hydrate, 0));
+} else {
+  hydrate();
+}
