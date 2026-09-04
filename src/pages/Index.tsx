@@ -62,20 +62,16 @@ const Index = () => {
       {/* ══════════════ 1. HERO ══════════════ */}
       <HeroSection />
 
-      {/* Entity-first passage (AI/LLM citability): exact legal name + category + place + verifiable facts,
-          right after the hero hook and additive — the hero (LCP) is untouched. */}
-      <section className="border-b border-border bg-background py-8">
-        <div className="container mx-auto max-w-4xl px-4">
-          <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
-            Capital Clean Care LLC is a licensed, bonded, and insured house cleaning company based in Silver Spring, MD, serving Maryland, Washington DC, and Northern Virginia since 2015. Our background-checked teams clean with EPA Safer Choice, plant-based products safe for kids and pets, and every visit is backed by a 24-hour re-clean guarantee. Capital Clean Care holds a 5.0-star rating across 45 Google reviews.
-          </p>
-        </div>
-      </section>
-
       {/* ══════════════ 2. TRUST BAR + NÚMEROS (merged) ══════════════ */}
       <ScrollReveal>
         <section className="border-b border-border bg-card shadow-sm">
           <div className="container mx-auto px-4 py-6">
+            {/* Entity-first passage (AI/LLM citability): exact legal name + category + place + verifiable
+                facts. Lives inside the trust band as its lead-in so it stays within the first ~150 words
+                of main content without adding a separate block. The hero (LCP) is untouched. */}
+            <p className="mx-auto mb-6 max-w-3xl text-center text-sm md:text-base leading-relaxed text-muted-foreground">
+              Capital Clean Care LLC is a licensed, bonded, and insured house cleaning company based in Silver Spring, MD, serving Maryland, Washington DC, and Northern Virginia since 2015. Our background-checked teams clean with EPA Safer Choice, plant-based products safe for kids and pets, and every visit is backed by a 24-hour re-clean guarantee. Capital Clean Care holds a 5.0-star rating across 45 Google reviews.
+            </p>
             <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-4 mb-6">
               {[
                 { icon: Shield, label: "Licensed & Insured", sub: "Full liability coverage" },
