@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { CheckCircle, Shield, Leaf, Star, MapPin, Sparkles, ArrowRight, Phone, Users, Clock, Check } from "lucide-react";
+import { CheckCircle, Shield, Leaf, Star, MapPin, Sparkles, ArrowRight, Phone, Users, Check } from "lucide-react";
 import { trackPhoneClick, trackBookNowClick } from "@/lib/analytics";
 import PricingTable from "@/components/PricingTable";
 import PriceCalculator from "@/components/PriceCalculator";
@@ -69,26 +69,23 @@ const Index = () => {
             {/* Entity-first passage (AI/LLM citability): exact legal name + category + place + verifiable
                 facts. Lives inside the trust band as its lead-in so it stays within the first ~150 words
                 of main content without adding a separate block. The hero (LCP) is untouched. */}
-            <p className="mx-auto mb-6 max-w-3xl text-center text-sm md:text-base leading-relaxed text-muted-foreground">
-              Capital Clean Care LLC is a licensed, bonded, and insured house cleaning company based in Silver Spring, MD, serving Maryland, Washington DC, and Northern Virginia since 2015. Our background-checked teams clean with EPA Safer Choice, plant-based products safe for kids and pets, and every visit is backed by a 24-hour re-clean guarantee. Capital Clean Care holds a 5.0-star rating across 45 Google reviews.
+            <p className="mx-auto mb-5 max-w-3xl text-center text-sm md:text-base leading-relaxed text-muted-foreground">
+              Capital Clean Care LLC is a licensed, bonded, and insured house cleaning company based in Silver Spring, MD, serving Maryland, Washington DC, and Northern Virginia since 2015, rated 5.0 stars across 45 Google reviews.
             </p>
-            <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-4 mb-6">
+            {/* Compact trust chips: label only. "5-Star Rated" and "Since 2015" were dropped here because the
+                sentence above and the counters below already state both. */}
+            <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-3 mb-6">
               {[
-                { icon: Shield, label: "Licensed & Insured", sub: "Full liability coverage" },
-                { icon: Users, label: "Background-Checked", sub: "Every team member" },
-                { icon: Leaf, label: "EPA Safer Choice", sub: "100% non-toxic products" },
-                { icon: Star, label: "5-Star Rated", sub: "500+ happy clients" },
-                { icon: CheckCircle, label: "Satisfaction Guarantee", sub: "Re-clean free in 24h" },
-                { icon: Clock, label: "In the DMV Since 2015", sub: "Family-owned & trusted" },
+                { icon: Shield, label: "Licensed & Insured" },
+                { icon: Users, label: "Background-Checked" },
+                { icon: Leaf, label: "EPA Safer Choice" },
+                { icon: CheckCircle, label: "24-Hour Re-Clean Guarantee" },
               ].map((item) => (
                 <div key={item.label} className="group flex items-center gap-2.5 cursor-default">
                   <div className="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center shrink-0 transition-all duration-300 group-hover:bg-accent/20 group-hover:scale-110">
                     <item.icon className="h-4 w-4 text-accent transition-transform duration-300 group-hover:scale-110" />
                   </div>
-                  <div>
-                    <p className="font-semibold text-sm text-foreground leading-tight">{item.label}</p>
-                    <p className="text-xs text-muted-foreground leading-tight">{item.sub}</p>
-                  </div>
+                  <p className="font-semibold text-sm text-foreground leading-tight">{item.label}</p>
                 </div>
               ))}
             </div>
