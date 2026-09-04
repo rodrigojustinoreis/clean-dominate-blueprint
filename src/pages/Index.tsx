@@ -69,12 +69,12 @@ const Index = () => {
             {/* Entity-first passage (AI/LLM citability): exact legal name + category + place + verifiable
                 facts. Lives inside the trust band as its lead-in so it stays within the first ~150 words
                 of main content without adding a separate block. The hero (LCP) is untouched. */}
-            <p className="mx-auto mb-5 max-w-3xl text-center text-sm md:text-base leading-relaxed text-muted-foreground">
+            <p className="mx-auto mb-5 max-w-3xl text-center text-sm leading-relaxed text-balance text-muted-foreground">
               Capital Clean Care LLC is a licensed, bonded, and insured house cleaning company based in Silver Spring, MD, serving Maryland, Washington DC, and Northern Virginia since 2015, rated 5.0 stars across 45 Google reviews.
             </p>
             {/* Compact trust chips: label only. "5-Star Rated" and "Since 2015" were dropped here because the
                 sentence above and the counters below already state both. */}
-            <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-3 mb-6">
+            <div className="grid grid-cols-2 gap-x-3 gap-y-3 mb-6 sm:flex sm:flex-wrap sm:justify-center sm:items-center sm:gap-x-8">
               {[
                 { icon: Shield, label: "Licensed & Insured" },
                 { icon: Users, label: "Background-Checked" },
@@ -89,7 +89,7 @@ const Index = () => {
                 </div>
               ))}
             </div>
-            <div className="border-t border-border pt-5">
+            <div className="mx-auto max-w-4xl border-t border-border pt-5">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto text-center">
                 {[
                   { to: 500, decimals: 0, suffix: "+", label: "Homes Cleaned", icon: "🏠" },
