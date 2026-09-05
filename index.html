@@ -36,9 +36,13 @@
     <link rel="manifest" href="/manifest.json" />
 
     <!-- Google Analytics 4 + Google Ads — unified tag -->
-    <!-- gtag.js (179KB) deferred until after load+idle: dataLayer queues everything
-         meanwhile, so no events are lost — keeps analytics/Ads intact while freeing
-         the critical path on mobile (LCP/TBT). -->
+    <!-- gtag.js (179KB) is deferred: Google Ads traffic (the /services/house-cleaning landing,
+         or gclid/gbraid/wbraid/src=google) loads it 2s after `load`; everyone else loads it on
+         the first interaction or 6s after `load`, whichever comes first. dataLayer queues the
+         config calls meanwhile, so nothing is lost once it loads — BUT a visit with no
+         interaction that closes before the 6s fallback is NOT recorded. Accepted trade-off
+         for organic pages (frees the critical path on mobile: LCP/TBT); Ads traffic keeps the
+         previous timing so call-conversion tracking is unchanged. -->
     <script>
       (function () {
         if (location.hostname === '127.0.0.1' || location.hostname === 'localhost') return;

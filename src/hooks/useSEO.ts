@@ -6,6 +6,12 @@ import { useLocation } from "react-router-dom";
 import { isNoIndexPath } from "@/data/noindexPaths";
 import { getRoutePair, getCanonicalUrl } from "@/data/route-map";
 
+export interface ResponsivePreloadImage {
+  href: string;
+  /** e.g. "(max-width: 767px)"; omit to preload on every viewport */
+  media?: string;
+}
+
 interface SEOProps {
   title: string;
   description: string;
@@ -13,8 +19,13 @@ interface SEOProps {
   ogType?: string;
   ogImage?: string;
   noIndex?: boolean;
-  /** LCP image to <link rel="preload"> for this page only (e.g. the hero on the homepage). */
-  preloadImage?: string;
+  /**
+   * LCP image(s) to <link rel="preload"> for this page only (e.g. the hero on the homepage).
+   * A string preloads one file everywhere. An array emits one preload per entry, each with its
+   * own `media` query, so a <picture> with a phone-only variant preloads exactly the file that
+   * device will render (and never both).
+   */
+  preloadImage?: string | ResponsivePreloadImage[];
   /**
    * Per-page geo signals. Defaults to the business HQ (Silver Spring, MD) for pages that
    * don't set it. City/location pages pass their OWN region + placename so a Virginia or DC
@@ -92,7 +103,16 @@ export const useSEO = ({ title, description, canonical, ogType = "website", ogIm
     createElement("meta", { key: "tw-site", name: "twitter:site", content: "@capitalcleancare" }),
     ...hreflangLinks,
     ...(preloadImage
-      ? [createElement("link", { key: "preload-lcp", rel: "preload", as: "image", href: preloadImage, fetchPriority: "high" })]
+      ? (typeof preloadImage === "string" ? [{ href: preloadImage }] : preloadImage).map((img, i) =>
+          createElement("link", {
+            key: `preload-lcp-${i}`,
+            rel: "preload",
+            as: "image",
+            href: img.href,
+            ...(img.media ? { media: img.media } : {}),
+            fetchPriority: "high",
+          }),
+        )
       : []),
     // Single source of truth for robots. Emitted on every page so there is never a
     // conflict with a static index.html default (noindex pages previously carried BOTH

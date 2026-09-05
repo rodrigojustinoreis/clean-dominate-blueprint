@@ -32,25 +32,24 @@ function dedupeBlockingFonts(html) {
   });
 }
 
-// Helmet emits the LCP image preload (useSEO preloadImage) at the END of <head>, i.e. after the
+// Helmet emits the LCP image preload(s) (useSEO preloadImage) at the END of <head>, i.e. after the
 // ~60KB of inlined critical CSS and after Vite's modulepreload links — so on a throttled phone the
-// hero image is discovered late and queues behind ~200KB of JS. Hoist it to the top of <head>
-// (right after the viewport meta) so it is the first resource the preload scanner sees.
-function hoistLcpPreload(html) {
-  const m = html.match(/<link[^>]*rel="preload"[^>]*as="image"[^>]*>/);
-  if (!m) return html;
+// hero image is discovered late and queues behind ~200KB of JS. Hoist every <link rel="preload"
+// as="image"> to the top of <head> (right after the viewport meta), in document order and with
+// all attributes preserved (notably `media`, which scopes responsive preloads to one viewport).
+function hoistLcpPreloads(html) {
   const anchor = html.match(/<meta name="viewport"[^>]*>/);
-  if (!anchor || anchor.index > m.index) return html;
-  const without = html.slice(0, m.index) + html.slice(m.index + m[0].length);
-  // The home hero has a phone-only variant (see HeroSection <picture>): split the preload into
-  // two media-scoped links so each device preloads exactly the file the <picture> will render.
-  let links = m[0];
-  if (/href="\/images\/hero\/team-hero\.webp"/.test(m[0])) {
-    const mobile = m[0].replace('href="/images/hero/team-hero.webp"', 'href="/images/hero/team-hero-m.webp" media="(max-width: 767px)"');
-    const desktop = m[0].replace('href="/images/hero/team-hero.webp"', 'href="/images/hero/team-hero.webp" media="(min-width: 768px)"');
-    links = mobile + desktop;
+  if (!anchor) return html;
+  const re = /<link[^>]*rel="preload"[^>]*as="image"[^>]*>/g;
+  const links = [];
+  let m;
+  while ((m = re.exec(html)) !== null) {
+    if (m.index > anchor.index) links.push(m[0]);
   }
-  return without.replace(anchor[0], anchor[0] + links);
+  if (!links.length) return html;
+  let out = html;
+  for (const l of links) out = out.replace(l, "");
+  return out.replace(anchor[0], anchor[0] + links.join(""));
 }
 
 const files = await glob("**/*.html", { cwd: DIST, absolute: true });
@@ -58,7 +57,7 @@ let ok = 0;
 for (const file of files) {
   try {
     const html = await readFile(file, "utf8");
-    const out = hoistLcpPreload(dedupeBlockingFonts(await beasties.process(html)));
+    const out = hoistLcpPreloads(dedupeBlockingFonts(await beasties.process(html)));
     await writeFile(file, out, "utf8");
     ok++;
   } catch (e) {
