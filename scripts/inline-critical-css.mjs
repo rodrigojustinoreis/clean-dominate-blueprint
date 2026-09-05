@@ -45,20 +45,12 @@ function hoistLcpPreload(html) {
   return without.replace(anchor[0], anchor[0] + m[0]);
 }
 
-// Vite's modulepreload links are fetched at High priority, in parallel with the LCP hero image
-// and the CSS. On a throttled phone the ~145KB of JS shares bandwidth with the 42KB hero, which
-// then finishes at ~2.7s. Mark the preloads low priority: they still start immediately (no
-// discovery cost, so hydration is not delayed by a round-trip) but the hero + CSS win bandwidth.
-function deprioritizeModulePreloads(html) {
-  return html.replace(/<link rel="modulepreload"(?![^>]*fetchpriority)([^>]*)>/g, '<link rel="modulepreload" fetchpriority="low"$1>');
-}
-
 const files = await glob("**/*.html", { cwd: DIST, absolute: true });
 let ok = 0;
 for (const file of files) {
   try {
     const html = await readFile(file, "utf8");
-    const out = deprioritizeModulePreloads(hoistLcpPreload(dedupeBlockingFonts(await beasties.process(html))));
+    const out = hoistLcpPreload(dedupeBlockingFonts(await beasties.process(html)));
     await writeFile(file, out, "utf8");
     ok++;
   } catch (e) {
