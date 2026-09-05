@@ -50,8 +50,18 @@
           s.src = 'https://www.googletagmanager.com/gtag/js?id=G-5NQK4RH08J';
           document.head.appendChild(s);
         }
-        // First real interaction (touch/scroll/key/pointer) or a 6s fallback — whichever comes first.
-        // gtag('config', ...) calls below are queued in dataLayer meanwhile, so nothing is lost.
+        // Google Ads traffic (the /services/house-cleaning landing, or any page reached with
+        // gclid / src=google): keep the previous behaviour — load 2s after `load` — so the
+        // call-conversion number swap is in place before a first tap on the phone number.
+        var q = location.search || '';
+        var adsTraffic = location.pathname.indexOf('/services/house-cleaning') === 0 ||
+          /[?&](gclid|gbraid|wbraid)=/.test(q) || /[?&]src=google\b/.test(q);
+        if (adsTraffic) {
+          window.addEventListener('load', function () { setTimeout(loadGtag, 2000); });
+          return;
+        }
+        // Everyone else: first real interaction (touch/scroll/key/pointer) or a 6s fallback —
+        // whichever comes first. gtag('config', ...) calls below stay queued in dataLayer.
         ['pointerdown', 'touchstart', 'keydown', 'scroll'].forEach(function (ev) {
           window.addEventListener(ev, loadGtag, { once: true, passive: true });
         });
