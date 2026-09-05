@@ -42,7 +42,15 @@ function hoistLcpPreload(html) {
   const anchor = html.match(/<meta name="viewport"[^>]*>/);
   if (!anchor || anchor.index > m.index) return html;
   const without = html.slice(0, m.index) + html.slice(m.index + m[0].length);
-  return without.replace(anchor[0], anchor[0] + m[0]);
+  // The home hero has a phone-only variant (see HeroSection <picture>): split the preload into
+  // two media-scoped links so each device preloads exactly the file the <picture> will render.
+  let links = m[0];
+  if (/href="\/images\/hero\/team-hero\.webp"/.test(m[0])) {
+    const mobile = m[0].replace('href="/images/hero/team-hero.webp"', 'href="/images/hero/team-hero-m.webp" media="(max-width: 767px)"');
+    const desktop = m[0].replace('href="/images/hero/team-hero.webp"', 'href="/images/hero/team-hero.webp" media="(min-width: 768px)"');
+    links = mobile + desktop;
+  }
+  return without.replace(anchor[0], anchor[0] + links);
 }
 
 const files = await glob("**/*.html", { cwd: DIST, absolute: true });

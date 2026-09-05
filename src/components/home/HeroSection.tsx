@@ -38,16 +38,22 @@ const HeroSection = () => {
 
     {/* Background image */}
     <div className="absolute inset-0 z-0">
-      <img
-        src={teamPhoto}
-        alt="Capital Clean Care team of professional cleaners"
-        className="w-full h-full object-cover object-top scale-105"
-        loading="eager"
-        fetchPriority="high"
-        decoding="async"
-        width={1920}
-        height={1080}
-      />
+      {/* Phones get a 640w/q50 variant (19KB vs 49KB): on <md the photo sits under a 30–95% white
+          overlay, so the extra compression is invisible, and the LCP image lands ~0.5s sooner on 4G.
+          The matching media-scoped <link rel="preload"> pair is emitted by scripts/inline-critical-css.mjs. */}
+      <picture>
+        <source media="(max-width: 767px)" srcSet="/images/hero/team-hero-m.webp" type="image/webp" />
+        <img
+          src={teamPhoto}
+          alt="Capital Clean Care team of professional cleaners"
+          className="w-full h-full object-cover object-top scale-105"
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
+          width={760}
+          height={1140}
+        />
+      </picture>
       {/* Richer gradient overlays for depth */}
       {/* Mobile: vertical backing for the full-width text. Desktop: left→right so the team photo stays visible on the right. */}
       <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/70 to-background/30 md:bg-gradient-to-r md:from-background md:via-background/60 md:to-transparent" />
