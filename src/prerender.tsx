@@ -112,7 +112,6 @@ function getAllRoutes(): string[] {
     "/resources/spring-cleaning-checklist-maryland-2026",
     "/resources/eco-cleaning-tips-maryland-homes",
     "/resources/house-cleaning-prices-maryland-2026",
-    "/resources/deep-cleaning-checklist-dmv-homeowners",
     "/resources/airbnb-cleaning-tips-dmv-hosts",
     "/resources/how-to-choose-cleaning-service-silver-spring",
     "/resources/move-out-cleaning-checklist-maryland-tenants",

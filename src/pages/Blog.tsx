@@ -822,17 +822,10 @@ export const blogPosts: BlogPost[] = [
     category: "Tips & Advice",
     coverImage: "/images/blog/pricing-md-2026.webp",
   },
-  {
-    slug: "deep-cleaning-checklist-dmv-homeowners",
-    title: "The Ultimate Deep Cleaning Checklist for DMV Homeowners",
-    excerpt: "A room-by-room guide to deep cleaning your home in Maryland, DC, or Virginia — including seasonal tips for mid-Atlantic humidity and pollen.",
-    date: "2026-02-15",
-    readTime: "8 min read",
-    category: "Cleaning Guides",
-    coverImage: "https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
-    // SEO: thin near-duplicate of the fuller checklist post — canonicalised so Google indexes that one instead (reversible).
-    canonical: "https://capitalcleancare.com/resources/what-is-included-in-a-deep-cleaning",
-  },
+  // "deep-cleaning-checklist-dmv-homeowners" (2026-02-15) was a thin near-duplicate of
+  // /resources/what-is-included-in-a-deep-cleaning and had canonicalised to it. Consolidated
+  // 2026-09-05: permanent 301 in netlify.toml, removed from prerender + this list so no hub or
+  // category page links to a redirect. Restore by re-adding the entry + prerender path + rule.
   {
     slug: "airbnb-cleaning-tips-dmv-hosts",
     title: "Airbnb Cleaning Tips for DMV Hosts: How to Get 5 Stars Every Time",

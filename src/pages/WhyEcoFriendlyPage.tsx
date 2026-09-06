@@ -722,7 +722,7 @@ const WhyEcoFriendlyPage = () => {
               { label: "Eco Cleaning Tips for Winter — Maryland", href: "/resources/eco-cleaning-tips-winters-maryland" },
               { label: "Allergy-Proofing Your DMV Home", href: "/resources/allergy-proofing-home-dmv" },
               { label: "Remove Pet Hair & Odors — DMV Homes", href: "/resources/remove-pet-hair-odors-dmv-homes" },
-              { label: "Deep Cleaning Checklist — DMV Homeowners", href: "/resources/deep-cleaning-checklist-dmv-homeowners" },
+              { label: "What Is Included in a Deep Cleaning? (Full Checklist)", href: "/resources/what-is-included-in-a-deep-cleaning" },
               { label: "Best Cleaning Schedule for Busy Families", href: "/resources/best-cleaning-schedule-busy-families-dmv" },
             ].map((link) => (
               <Link

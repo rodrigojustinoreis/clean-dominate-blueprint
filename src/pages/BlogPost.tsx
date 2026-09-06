@@ -621,7 +621,7 @@ const blogContent: Record<string, React.ReactNode> = {
         <li>Carpet deep-cleaning</li>
         <li>Grout scrubbing in kitchens and baths</li>
       </ul>
-      <p>Our <Link to="/services/deep-cleaning" className="text-accent hover:underline">quarterly deep cleaning</Link> handles all of this in a single visit. See our <Link to="/resources/deep-cleaning-checklist-dmv-homeowners" className="text-accent hover:underline">deep cleaning checklist for DMV homeowners</Link> to see exactly what's covered.</p>
+      <p>Our <Link to="/services/deep-cleaning" className="text-accent hover:underline">quarterly deep cleaning</Link> handles all of this in a single visit. See our <Link to="/resources/what-is-included-in-a-deep-cleaning" className="text-accent hover:underline">deep cleaning checklist</Link> to see exactly what's covered.</p>
 
       <h2>How Recurring Service Saves Time and Money</h2>
       <p>Families on our weekly plan save 25% per visit. That's hundreds of dollars annually — plus the hours you reclaim each week. Most <Link to="/locations/rockville-md" className="text-accent hover:underline">Rockville</Link> and <Link to="/locations/bethesda-md" className="text-accent hover:underline">Bethesda</Link> clients tell us recurring service is their best household investment.</p>
@@ -737,7 +737,7 @@ const blogContent: Record<string, React.ReactNode> = {
       <p>Urban condos benefit from frequent maintenance cleaning — weekly or bi-weekly. Limited square footage doesn't mean limited complexity: kitchen surfaces, bathrooms, hardwood floors, and shared air quality all need consistent attention.</p>
 
       <h3>Larger Homes (Georgetown, Chevy Chase DC, Spring Valley)</h3>
-      <p>Larger DC homes in established neighborhoods often have multiple floors, formal dining rooms, home offices, and finished basements. These benefit most from quarterly <Link to="/services/deep-cleaning" className="text-accent hover:underline">deep cleaning</Link> alongside regular maintenance service. Use our <Link to="/resources/deep-cleaning-checklist-dmv-homeowners" className="text-accent hover:underline">deep cleaning checklist for DMV homeowners</Link> to prepare.</p>
+      <p>Larger DC homes in established neighborhoods often have multiple floors, formal dining rooms, home offices, and finished basements. These benefit most from quarterly <Link to="/services/deep-cleaning" className="text-accent hover:underline">deep cleaning</Link> alongside regular maintenance service. Use our <Link to="/resources/what-is-included-in-a-deep-cleaning" className="text-accent hover:underline">deep cleaning checklist</Link> to prepare.</p>
 
       <h2>What DC Residents Value in a Cleaning Service</h2>
       <ul>
@@ -1152,7 +1152,7 @@ const blogContent: Record<string, React.ReactNode> = {
       <p>Newer, larger homes with contemporary finishes — open kitchens, formal dining rooms, and primary suites. These homes reward consistent <Link to="/services/recurring-cleaning" className="text-accent hover:underline">maintenance cleaning</Link> to keep surfaces looking new.</p>
 
       <h2>Deep Cleaning in Columbia</h2>
-      <p>A <Link to="/services/deep-cleaning" className="text-accent hover:underline">deep cleaning</Link> is the ideal starting point for new recurring clients. Our <Link to="/resources/deep-cleaning-checklist-dmv-homeowners" className="text-accent hover:underline">deep cleaning checklist</Link> covers every room with 60+ items.</p>
+      <p>A <Link to="/services/deep-cleaning" className="text-accent hover:underline">deep cleaning</Link> is the ideal starting point for new recurring clients. Our <Link to="/resources/what-is-included-in-a-deep-cleaning" className="text-accent hover:underline">deep cleaning checklist</Link> shows exactly what's included, room by room.</p>
 
       <h2>Columbia Cleaning Prices</h2>
       <ul>

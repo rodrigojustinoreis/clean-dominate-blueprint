@@ -464,6 +464,16 @@
   to = "/resources/how-to-clean-carpet-home-apartment"
   status = 301
 
+# SEO Fase 1 (2026-09-05): the thin DMV deep-cleaning checklist already canonicalised to the full
+# guide but still answered 200 and received internal links (7 pages). Consolidate for real: 301 to
+# the canonical target. force=true so a cached static file can never shadow the redirect.
+# Rollback: delete this rule, re-add the path in prerender.tsx and the post entry in Blog.tsx.
+[[redirects]]
+  from = "/resources/deep-cleaning-checklist-dmv-homeowners"
+  to = "/resources/what-is-included-in-a-deep-cleaning"
+  status = 301
+  force = true
+
 # ── Blog slugs with date → evergreen slugs ───────────────────────────────────
 [[redirects]]
   from = "/blog/deep-cleaning-tips-maryland-homes-spring-prep-march-2026"
