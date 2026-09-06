@@ -843,6 +843,11 @@ export const blogPosts: BlogPost[] = [
     readTime: "5 min read",
     category: "Tips & Advice",
     coverImage: "https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
+    // SEO Fase 2 (2026-09-06): same intent as the newer, fuller Silver Spring buyer's guide
+    // (/resources/best-house-cleaning-service-silver-spring-md — same H1 intent, 30% shared text,
+    // both linked from the same city blocks). Canonicalised first (reversible); 301 only after GSC
+    // confirms which URL Google keeps.
+    canonical: "https://capitalcleancare.com/resources/best-house-cleaning-service-silver-spring-md",
   },
   {
     slug: "move-out-cleaning-checklist-maryland-tenants",
