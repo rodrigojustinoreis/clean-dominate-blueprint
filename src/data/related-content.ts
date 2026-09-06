@@ -229,10 +229,19 @@ export function guidesBySlugs(slugs: string[]): GuideLink[] {
     .map(toGuide);
 }
 
-/** Guides for a service page — drawn from the service's mapped category. */
+// Hand-picked guides that must lead a service page's "Guides & Resources" block even when the
+// category feed (newest first, capped) would push them out. SEO Fase 2, 2026-09-06: the office
+// small-business guide had only 2 inbound links and never surfaced on /services/office-cleaning.
+const MANUAL_GUIDES_FOR_SERVICE: Record<string, string[]> = {
+  "office-cleaning": ["office-cleaning-small-business-dmv"],
+};
+
+/** Guides for a service page — hand-picked leads first, then the service's mapped category. */
 export function guidesForService(serviceSlug: string, limit = 6): GuideLink[] {
   const cat = CATEGORY_FOR_SERVICE[serviceSlug];
-  return cat ? guidesForCategories([cat], undefined, limit) : [];
+  const manual = guidesBySlugs(MANUAL_GUIDES_FOR_SERVICE[serviceSlug] ?? []);
+  const fromCategory = cat ? guidesForCategories([cat], undefined, limit) : [];
+  return dedupe([...manual, ...fromCategory]).slice(0, limit);
 }
 
 /** Guides for a city×service page: local (city) posts first, then the service's category. */
