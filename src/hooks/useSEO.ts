@@ -79,7 +79,13 @@ export const useSEO = ({ title, description, canonical, ogType = "website", ogIm
       : []),
   ];
 
-  const hreflangLinks = pair
+  // A page canonicalised to ANOTHER URL must not declare hreflang: Google ignores alternates on
+  // non-canonical pages, and an alternate pointing at the canonical target is never reciprocal
+  // (it showed up as "invalid hreflang" in the inventory). SEO Fase 2, 2026-09-06.
+  const canonicalIsSelf = canonicalUrl.replace(/\/$/, "") === getCanonicalUrl(pathname).replace(/\/$/, "");
+  const hreflangLinks = !canonicalIsSelf
+    ? []
+    : pair
     ? [
         createElement("link", { key: "hreflang-en", rel: "alternate", hrefLang: "en", href: getCanonicalUrl(pair.en) }),
         createElement("link", { key: "hreflang-es", rel: "alternate", hrefLang: "es", href: getCanonicalUrl(pair.es) }),
