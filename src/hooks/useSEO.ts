@@ -48,7 +48,11 @@ export const useSEO = ({ title, description, canonical, ogType = "website", ogIm
   const withBrand = title.includes("Capital Clean Care") ? title : `${title} | Capital Clean Care`;
   const finalTitle = withBrand.length <= 70 ? withBrand : title;
   const canonicalUrl = canonical || getCanonicalUrl(pathname);
-  const pair = getRoutePair(pathname);
+  // hreflang is only valid between two indexable pages: an alternate that is noindex (pruned) is
+  // ignored by Google and breaks reciprocity for the other side. The raw pair still drives the
+  // language switcher (a user link to a noindex,follow page is fine). SEO Fase 1, 2026-09-05.
+  const rawPair = getRoutePair(pathname);
+  const pair = rawPair && !isNoIndexPath(rawPair.en) && !isNoIndexPath(rawPair.es) ? rawPair : null;
 
   // og:image must be an ABSOLUTE URL for social crawlers. Absolutize a per-page image, or fall
   // back to the site default. Emitted on every page (single source of truth) so it never
