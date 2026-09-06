@@ -1615,7 +1615,9 @@ const BlogPost = () => {
   // Keep the <title> under 70 chars (Bing): append the brand only when it fits,
   // otherwise use the post title alone so it isn't truncated in search results.
   const seoTitleOverrides: Record<string, string> = {
-    "house-cleaning-prices-maryland-2026": "House Cleaning Cost MD: $150–$480+",
+    // SEO Fase 2 (2026-09-06): impressions +127% WoW with flat clicks; the title was the only element
+    // saying "MD" while the H1, listing title, meta and opening answer say "Maryland … (2026)".
+    "house-cleaning-prices-maryland-2026": "Maryland House Cleaning Cost (2026): $150–$480+",
   };
   const withBrand = `${post.title} | Capital Clean Care`;
   const postTitle = seoTitleOverrides[post.slug] ?? (withBrand.length <= 70 ? withBrand : post.title);
