@@ -18,7 +18,9 @@ export const NOINDEX_PATHS: ReadonlySet<string> = new Set([
   "/locations/gaithersburg-md/post-construction-cleaning",
   "/locations/germantown-md",
   "/locations/germantown-md/airbnb-cleaning",
-  "/locations/germantown-md/deep-cleaning",
+  // "/locations/germantown-md/deep-cleaning" re-indexed 2026-09-06 (SEO Fase 2): the legacy vanity
+  // /deep-cleaning-germantown-md still earns GSC impressions/clicks and 301s here, so the target
+  // must be indexable or the demand lands on a noindex page. Page has a local intro + 888 words.
   "/locations/germantown-md/eco-friendly-cleaning",
   "/locations/germantown-md/office-cleaning",
   "/locations/germantown-md/post-construction-cleaning",
