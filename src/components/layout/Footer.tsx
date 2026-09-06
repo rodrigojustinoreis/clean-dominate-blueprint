@@ -4,6 +4,12 @@ import { Button } from "@/components/ui/button";
 import { dirServiceCards as services } from "@/data/home-directory";
 import { mdCities, dcCities, vaCities } from "@/data/locations";
 import { dirCities as slCities } from "@/data/sl-directory";
+import { isNoIndexPath } from "@/data/noindexPaths";
+
+// Site-wide footer must never link to a pruned (noindex) location hub: a global link to a page
+// Google is told not to index wastes crawl/equity on every one of ~1,200 pages. Contextual links
+// (state hubs, nearby-city lists) still reach those pages. SEO Fase 1, 2026-09-05.
+const isLinkableCity = (c: { slug: string }) => !isNoIndexPath(`/locations/${c.slug}`);
 import { trackPhoneClick, trackBookNowClick } from "@/lib/analytics";
 import { BUSINESS_INFO } from "@/data/business-info";
 import { GOOGLE_LISTING_URL } from "@/data/realReviews";
@@ -194,14 +200,14 @@ const Footer = () => {
           <h4 className="font-heading font-semibold mb-4">Maryland</h4>
           <div className="grid grid-cols-2 md:grid-cols-1 gap-x-2 gap-y-1 text-sm text-primary-foreground/70">
             <Link to="/maryland" className="hover:text-accent transition-colors font-medium col-span-2 md:col-span-1 mb-1">{t("All Maryland →", "Todo Maryland →")}</Link>
-            {mdCities.filter(c => !c.slug.includes("county")).slice(0, 8).map((c) => (
+            {mdCities.filter(c => !c.slug.includes("county")).filter(isLinkableCity).slice(0, 8).map((c) => (
               <Link key={c.slug} to={`/locations/${c.slug}`} className="hover:text-accent transition-colors truncate">{c.name}</Link>
             ))}
           </div>
           <h4 className="font-heading font-semibold mt-6 mb-4">DC</h4>
           <div className="grid grid-cols-2 md:grid-cols-1 gap-x-2 gap-y-1 text-sm text-primary-foreground/70">
             <Link to="/washington-dc" className="hover:text-accent transition-colors font-medium col-span-2 md:col-span-1 mb-1">{t("All DC →", "Todo DC →")}</Link>
-            {dcCities.slice(0, 4).map((c) => (
+            {dcCities.filter(isLinkableCity).slice(0, 4).map((c) => (
               <Link key={c.slug} to={`/locations/${c.slug}`} className="hover:text-accent transition-colors truncate">{c.name}</Link>
             ))}
           </div>
@@ -212,7 +218,7 @@ const Footer = () => {
           <h4 className="font-heading font-semibold mb-4">Virginia</h4>
           <div className="grid grid-cols-2 md:grid-cols-1 gap-x-2 gap-y-1 text-sm text-primary-foreground/70">
             <Link to="/virginia" className="hover:text-accent transition-colors font-medium col-span-2 md:col-span-1 mb-1">{t("All Virginia →", "Toda Virginia →")}</Link>
-            {vaCities.map((c) => (
+            {vaCities.filter(isLinkableCity).map((c) => (
               <Link key={c.slug} to={`/locations/${c.slug}`} className="hover:text-accent transition-colors truncate">{c.name}</Link>
             ))}
           </div>
@@ -237,7 +243,7 @@ const Footer = () => {
         <div>
           <h4 className="font-heading font-semibold mb-4 text-sm">{t("Service Areas", "Áreas de Servicio")}</h4>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-1.5 text-sm text-primary-foreground/70">
-            {slCities.filter((c) => TOP_SERVICE_CITIES.includes(c.slug)).map((c) => (
+            {slCities.filter((c) => TOP_SERVICE_CITIES.includes(c.slug)).filter(isLinkableCity).map((c) => (
               <Link key={c.slug} to={`/locations/${c.slug}`} className="hover:text-accent transition-colors truncate">{c.name}</Link>
             ))}
           </div>
