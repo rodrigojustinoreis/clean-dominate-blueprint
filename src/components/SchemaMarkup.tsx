@@ -385,6 +385,8 @@ export const ArticleSchema = ({
     dateModified: dateModified || datePublished,
     author: {
       "@type": "Person",
+      // Same @id as FounderPersonSchema on /about so every article's author resolves to one entity.
+      "@id": `${BUSINESS.url}/#founder`,
       name: "Rodrigo Reis",
       url: `${BUSINESS.url}/about`,
       worksFor: {
@@ -494,6 +496,7 @@ export const FounderPersonSchema = () => {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Person",
+    "@id": `${BUSINESS.url}/#founder`,
     name: "Rodrigo Reis",
     jobTitle: "Founder & Owner",
     // Pure @id reference to the #business node defined by LocalBusinessSchema (with address)
