@@ -308,6 +308,8 @@ const Index = () => {
               <div className="relative order-2 lg:order-1">
                 <img
                   src="/images/team/team-two-large-room.jpg"
+                  width={574}
+                  height={760}
                   alt="Capital Clean Care two team members cleaning a client's home"
                   className="rounded-2xl shadow-xl w-full object-cover aspect-[4/5]"
                   loading="lazy"
@@ -468,6 +470,8 @@ const Index = () => {
                   <div className="relative h-56 md:h-64 rounded-2xl overflow-hidden shadow-md group-hover:shadow-xl transition-shadow duration-300">
                     <img
                       src={area.image}
+                      width={1024}
+                      height={576}
                       alt={`House cleaning service areas in ${area.label}`}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       loading="lazy"

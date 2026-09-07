@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { dirServiceCards as services } from "@/data/home-directory";
+import { imgDims } from "@/lib/image-dims";
 
 // Real team photos / service imagery keyed by slug — an image-led card reads faster
 // and more trustworthy than a generic icon. Prefer authentic team photos where we have them.
@@ -36,6 +37,7 @@ const ServicesSection = () => (
             <Link to={`/services/${s.slug}`} className="block relative aspect-[16/10] overflow-hidden" aria-label={`Learn more about ${s.name}`}>
               <img
                 src={SERVICE_CARD_IMAGES[s.slug] || "/images/team/real-team-two-members.webp"}
+                {...imgDims(SERVICE_CARD_IMAGES[s.slug] || "/images/team/real-team-two-members.webp")}
                 alt={`${s.name} by Capital Clean Care in Maryland, DC & Northern Virginia`}
                 loading="lazy"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"

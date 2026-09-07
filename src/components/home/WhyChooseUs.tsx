@@ -1,4 +1,5 @@
 import { Leaf, Shield, CheckCircle, Star } from "lucide-react";
+import { imgDims } from "@/lib/image-dims";
 
 const pillars = [
   {
@@ -76,6 +77,7 @@ const WhyChooseUs = () => (
             <div className="w-full md:w-2/5 h-52 md:h-auto flex-shrink-0 overflow-hidden">
               <img
                 src={p.photo}
+                {...imgDims(p.photo)}
                 alt={p.photoAlt}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"

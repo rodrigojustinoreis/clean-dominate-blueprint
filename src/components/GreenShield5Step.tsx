@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { imgDims } from "@/lib/image-dims";
 
 interface GreenShield5StepProps {
   /** Show the CTA button at the bottom */
@@ -113,6 +114,7 @@ const GreenShield5Step = ({ showCTA = true, compact = false }: GreenShield5StepP
                   <div className="h-36 overflow-hidden">
                     <img
                       src={step.photo}
+                      {...imgDims(step.photo)}
                       alt={step.photoAlt}
                       className="w-full h-full object-cover"
                       loading="lazy"
