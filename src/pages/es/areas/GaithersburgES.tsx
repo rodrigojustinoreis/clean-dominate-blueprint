@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
 import { useSEO } from "@/hooks/useSEO";
-import { LocalBusinessSchema } from "@/components/SchemaMarkup";
+import { LocalBusinessSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import { trackPhoneClick, trackBookNowClick } from "@/lib/analytics";
 import MeetTheTeamSection from "@/components/sections/MeetTheTeamSection";
 import TransparencySection from "@/components/sections/TransparencySection";
@@ -31,6 +31,7 @@ export default function GaithersburgES() {
   return (
     <Layout>
       {seoHelmet}
+      <BreadcrumbSchema items={[{ label: "Inicio", href: "/es" }, { label: "Gaithersburg, MD", href: "/es/areas/gaithersburg-md" }]} />
       <LocalBusinessSchema inLanguage="es-US" areaServed={["Gaithersburg, MD", "Montgomery County, MD"]} />
 
       <div lang="es">

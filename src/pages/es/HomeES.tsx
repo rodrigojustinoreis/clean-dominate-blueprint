@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
 import { useSEO } from "@/hooks/useSEO";
-import { LocalBusinessSchema } from "@/components/SchemaMarkup";
+import { LocalBusinessSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import { trackPhoneClick, trackBookNowClick } from "@/lib/analytics";
 import ProcessSection from "@/components/sections/ProcessSection";
 import TransformationsGallery from "@/components/TransformationsGallery";
@@ -31,6 +31,7 @@ export default function HomeES() {
   return (
     <Layout>
       {seoHelmet}
+      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Inicio (Español)", href: "/es" }]} />
       <LocalBusinessSchema inLanguage="es-US" areaServed={["Silver Spring, MD", "Rockville, MD", "Bethesda, MD", "Wheaton, MD", "Gaithersburg, MD", "Germantown, MD", "Aspen Hill, MD", "Takoma Park, MD", "Montgomery Village, MD"]} />
 
       <div lang="es">

@@ -2,7 +2,7 @@ import { Phone, ArrowRight, Shield, Star, Leaf, Users, Heart, CheckCircle, Clock
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import { useSEO } from "@/hooks/useSEO";
-import { LocalBusinessSchema } from "@/components/SchemaMarkup";
+import { LocalBusinessSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import { trackPhoneClick, trackBookNowClick } from "@/lib/analytics";
 import MeetTheTeamSection from "@/components/sections/MeetTheTeamSection";
 import FAQExpandedSection from "@/components/sections/FAQExpandedSection";
@@ -21,6 +21,7 @@ export default function NosotrosPage() {
   return (
     <Layout>
       {seoHelmet}
+      <BreadcrumbSchema items={[{ label: "Inicio", href: "/es" }, { label: "Nosotros", href: "/es/nosotros" }]} />
       <LocalBusinessSchema inLanguage="es-US" areaServed={["Montgomery County, MD", "Silver Spring, MD", "Rockville, MD", "Bethesda, MD", "Wheaton, MD", "Gaithersburg, MD"]} />
 
       <div lang="es">

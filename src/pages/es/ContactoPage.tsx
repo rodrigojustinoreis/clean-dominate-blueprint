@@ -2,7 +2,7 @@ import { Phone, Mail, MapPin, Clock, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import { useSEO } from "@/hooks/useSEO";
-import { LocalBusinessSchema } from "@/components/SchemaMarkup";
+import { LocalBusinessSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import { trackPhoneClick } from "@/lib/analytics";
 import QuoteFormES from "@/components/forms/QuoteFormES";
 import MeetTheTeamSection from "@/components/sections/MeetTheTeamSection";
@@ -22,6 +22,7 @@ export default function ContactoPage() {
   return (
     <Layout>
       {seoHelmet}
+      <BreadcrumbSchema items={[{ label: "Inicio", href: "/es" }, { label: "Contacto", href: "/es/contacto" }]} />
       <LocalBusinessSchema inLanguage="es-US" areaServed={["Montgomery County, MD", "Silver Spring, MD", "Rockville, MD", "Gaithersburg, MD", "Wheaton, MD", "Bethesda, MD"]} />
 
       <div lang="es">

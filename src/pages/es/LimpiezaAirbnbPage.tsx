@@ -2,7 +2,7 @@ import { Phone, ArrowRight, CheckCircle, Clock, Camera } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import { useSEO } from "@/hooks/useSEO";
-import { LocalBusinessSchema } from "@/components/SchemaMarkup";
+import { LocalBusinessSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import { trackPhoneClick, trackBookNowClick } from "@/lib/analytics";
 import ProcessSection from "@/components/sections/ProcessSection";
 import TransparencySection from "@/components/sections/TransparencySection";
@@ -23,6 +23,7 @@ export default function LimpiezaAirbnbPage() {
   return (
     <Layout>
       {seoHelmet}
+      <BreadcrumbSchema items={[{ label: "Inicio", href: "/es" }, { label: "Limpieza de Airbnb", href: "/es/limpieza-airbnb" }]} />
       <LocalBusinessSchema inLanguage="es-US" areaServed={["Montgomery County, MD", "Silver Spring, MD", "Rockville, MD", "Gaithersburg, MD", "Bethesda, MD"]} />
 
       <div lang="es">

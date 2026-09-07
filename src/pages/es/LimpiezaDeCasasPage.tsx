@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
 import { useSEO } from "@/hooks/useSEO";
-import { LocalBusinessSchema } from "@/components/SchemaMarkup";
+import { LocalBusinessSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import { trackPhoneClick, trackBookNowClick } from "@/lib/analytics";
 import ProcessSection from "@/components/sections/ProcessSection";
 import TransparencySection from "@/components/sections/TransparencySection";
@@ -38,6 +38,7 @@ export default function LimpiezaDeCasasPage() {
   return (
     <Layout>
       {seoHelmet}
+      <BreadcrumbSchema items={[{ label: "Inicio", href: "/es" }, { label: "Limpieza de Casas", href: "/es/limpieza-de-casas" }]} />
       <LocalBusinessSchema inLanguage="es-US" areaServed={["Montgomery County, MD", "Silver Spring, MD", "Rockville, MD", "Wheaton, MD"]} />
 
       <div lang="es">
