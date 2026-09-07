@@ -433,25 +433,12 @@ interface HowToSchemaProps {
   image?: string;
 }
 
-export const HowToSchema = ({ name, description, url, steps, totalTime, image }: HowToSchemaProps) => {
-  const schema: Record<string, unknown> = {
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    name,
-    description,
-    url,
-    step: steps.map((step, i) => ({
-      "@type": "HowToStep",
-      position: i + 1,
-      name: step.name,
-      text: step.text,
-    })),
-  };
-
-  if (totalTime) schema.totalTime = totalTime;
-  if (image) schema.image = { "@type": "ImageObject", url: image.startsWith("http") ? image : `${BUSINESS.url}${image}` };
-
-  return <JsonLd id="howto-schema" schema={schema} />;
+// Fase 3 / Lote 2 (2026-09-07): HowTo rich results were retired by Google in September 2023 and the
+// markup only added ~1–2 KB of JSON-LD to 30 guide pages. The component keeps its signature so the
+// 25 call sites stay untouched, but emits nothing. Article + FAQPage + BreadcrumbList remain.
+export const HowToSchema = (_props: HowToSchemaProps) => {
+  void _props;
+  return null;
 };
 
 // ── City/Location Review Schema ───────────────────────────────
