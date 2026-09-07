@@ -1,0 +1,66 @@
+{
+  "desktop": {
+    "errors": [],
+    "title": "How to Clean Hardwood Floors After Construction | Capital Clean Care",
+    "h1": 1,
+    "h1Text": "How to Clean Hardwood Floors After Construction",
+    "ovf": 0,
+    "broken": [],
+    "hero": {
+      "src": "hero-portrait-640.webp",
+      "w": 448,
+      "h": 597,
+      "rw": 448,
+      "rh": 597
+    },
+    "video": {
+      "ready": 4,
+      "src": "hardwood-final-pass.webm",
+      "poster": true,
+      "w": 378,
+      "h": 672,
+      "paused": true,
+      "muted": true
+    },
+    "canonical": "https://capitalcleancare.com/resources/how-to-clean-hardwood-floors-after-construction",
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "schemas": [
+      "VideoObject",
+      "BlogPosting",
+      "BreadcrumbList"
+    ],
+    "docH": 11530
+  },
+  "mobile": {
+    "errors": [],
+    "title": "How to Clean Hardwood Floors After Construction | Capital Clean Care",
+    "h1": 1,
+    "h1Text": "How to Clean Hardwood Floors After Construction",
+    "ovf": 0,
+    "broken": [],
+    "hero": {
+      "src": "hero-portrait.webp",
+      "w": 389,
+      "h": 519,
+      "rw": 358,
+      "rh": 477
+    },
+    "video": {
+      "ready": 4,
+      "src": "hardwood-final-pass.webm",
+      "poster": true,
+      "w": 356,
+      "h": 633,
+      "paused": true,
+      "muted": true
+    },
+    "canonical": "https://capitalcleancare.com/resources/how-to-clean-hardwood-floors-after-construction",
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "schemas": [
+      "VideoObject",
+      "BlogPosting",
+      "BreadcrumbList"
+    ],
+    "docH": 14102
+  }
+}

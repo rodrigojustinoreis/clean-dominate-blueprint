@@ -1,0 +1,35 @@
+PASS new page prerendered
+PASS sitemap 299 → 300, only the new URL added — 300 added=['/resources/how-to-clean-hardwood-floors-after-construction'] removed=[]
+PASS sitemap: no duplicates
+PASS new page: index,follow + self-canonical — index, follow https://capitalcleancare.com/resources/how-to-clean-hardwood-floors-after-construction
+PASS new page: exactly one H1 — ['How to Clean Hardwood Floors After Construction']
+PASS title = 'How to Clean Hardwood Floors After Construction | Capital Clean Care' — How to Clean Hardwood Floors After Construction | Capital Clean Care
+PASS meta description 120–160 chars — 137: Clean hardwood floors after construction safely: HEPA vacuum first, let dust settle, repeat, then use one nearly dry pass on sealed wood.
+PASS schema: BlogPosting + BreadcrumbList + VideoObject present; no FAQPage/HowTo/Rating/Review; JSON valid — ['BlogPosting', 'BreadcrumbList', 'ImageObject', 'ListItem', 'Organization', 'Person', 'VideoObject', 'WebPage']
+PASS VideoObject: PT9S, uploadDate 2026-09-07, publisher @id #business, poster + mp4 URLs
+PASS BlogPosting: datePublished 2026-09-07, author #founder, publisher #business, image set
+PASS main content ≥ 1,500 words — 3864 words
+PASS visible date 2026-09-07 + byline Rodrigo Reis
+PASS internal links: post-construction service + both related guides
+PASS sources: NWFA, OSHA silica, EPA lead, EPA asbestos
+PASS media referenced exist in dist
+PASS video: controls + playsInline + preload=metadata + poster, no autoplay
+PASS og:image = hero-og.jpg
+PASS no hreflang on the new page pointing at a non-indexable URL
+PASS reciprocal: hardwood-naturally → new page
+PASS reciprocal: post-construction Montgomery → new page
+PASS listed on /resources
+PASS 0 NEW indexable→noindex links vs baseline
+PASS Ads landing identical to baseline (asset hashes normalised)
+PASS protected pages: title/meta/canonical/robots/H1/schema unchanged
+   existing pages whose HTML changed: 69 ['/locations/adams-morgan-dc/house-cleaning', '/locations/alexandria-va/house-cleaning', '/locations/alexandria-va/office-cleaning', '/locations/arlington-va/house-cleaning', '/locations/bethesda-md/house-cleaning', '/locations/bethesda-md/office-cleaning', '/locations/capitol-hill-dc/house-cleaning', '/locations/chevy-chase-md/house-cleaning', '/locations/damascus-md/office-cleaning', '/locations/downtown-dc/house-cleaning', '/locations/dupont-circle-dc/house-cleaning', '/locations/fairfax-va/house-cleaning', '/locations/gaithersburg-md/house-cleaning', '/locations/germantown-md/house-cleaning', '/locations/kensington-md/house-cleaning', '/locations/kentlands-md/house-cleaning', '/locations/mclean-va/house-cleaning', '/locations/montgomery-village-md/house-cleaning', '/locations/mount-airy-md/house-cleaning', '/locations/north-bethesda-md/house-cleaning']
+   related /resources/how-to-clean-hardwood-floors-naturally: title='How to Clean Hardwood Floors Naturally (Without Damaging the Finish)' h1=['How to Clean Hardwood Floors Naturally'] unchanged_title=True
+   related /resources/post-construction-cleaning-montgomery-county-md: title='Post-Construction Cleaning in Montgomery County, MD: A Guide' h1=['Post-Construction Cleaning in Montgomery County, MD'] unchanged_title=True
+   related /services/post-construction-cleaning: title='Post-Construction Cleaning in MD, DC & VA | Capital Clean Care' h1=['Post-Construction Cleaning in Maryland, Washington DC &amp; Northern Virginia'] unchanged_title=True
+   related /resources/post-renovation-cleaning-guide-maryland: title='Post-Renovation Cleaning Guide for Maryland Homeowners' h1=['Post-Renovation Cleaning Guide for Maryland Homeowners'] unchanged_title=True
+   shingle overlap with /resources/how-to-clean-hardwood-floors-naturally: 6.4%
+   shingle overlap with /resources/post-construction-cleaning-montgomery-county-md: 4.1%
+   shingle overlap with /resources/post-renovation-cleaning-guide-maryland: 4.0%
+   shingle overlap with /services/post-construction-cleaning: 0.0%
+
+SUMMARY 24/24 passed
