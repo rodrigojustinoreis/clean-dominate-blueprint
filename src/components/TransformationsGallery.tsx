@@ -88,10 +88,19 @@ const videoSchema = {
 interface TransformationsGalleryProps {
   heading?: string;
   subtext?: string;
+  /**
+   * Emit the VideoObject JSON-LD for the four clips. Default true for pages that showcase the
+   * gallery as their own content (home, /es, /reviews, deep cleaning, maid service, the Bethesda
+   * project, Silver Spring house cleaning). Pass false where the gallery is an appended block —
+   * RelatedPosts (117 guides) and the city×service template — so the same four videos are not
+   * declared on 161 URLs (Fase 3 / Lote 2, 2026-09-07).
+   */
+  withSchema?: boolean;
 }
 
 const TransformationsGallery = ({
   heading = "Before & After: The Capital Clean Care Difference",
+  withSchema = true,
   subtext = "These aren't stock clips. Every video is unedited footage from our own DMV team: soap-scummed tubs, grease-caked stovetops, and grimy grout brought back to life with eco-friendly, family-safe products. This is what a real deep clean looks like.",
 }: TransformationsGalleryProps) => {
   const [active, setActive] = useState<number | null>(null);
@@ -128,7 +137,7 @@ const TransformationsGallery = ({
 
   return (
     <section className="relative overflow-hidden py-16 md:py-24 bg-gradient-to-b from-secondary/60 via-background to-secondary/30">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }} />
+      {withSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }} />}
 
       {/* Soft on-brand depth — blurred accent/primary glows */}
       <div className="pointer-events-none absolute -top-24 -left-24 h-72 w-72 rounded-full bg-accent/10 blur-3xl" />

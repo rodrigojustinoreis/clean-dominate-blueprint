@@ -22,6 +22,7 @@ const RelatedPosts = ({ currentSlug, showVideos = true }: RelatedPostsProps) => 
       <AuthorBio />
       {showVideos && (
         <TransformationsGallery
+          withSchema={false}
           heading="See the Results: Real Before & After Videos"
           subtext="Every clip is unedited footage from our own DMV team, using the same eco-friendly products we bring to every home. This is the standard behind everything we write."
         />

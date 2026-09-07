@@ -310,7 +310,7 @@ const ServiceLocationPage = () => {
 
       {/* Before & After video carousel (4th position) — deep-cleaning pages only (relevant transformation footage, breaks up the text) */}
       {service.slug === "deep-cleaning" && (
-        <TransformationsGallery heading={`Before & After: Real Deep Cleaning in ${city.name}`} />
+        <TransformationsGallery withSchema={false} heading={`Before & After: Real Deep Cleaning in ${city.name}`} />
       )}
 
       {isArlingtonDeepCleaning && override?.photos && (
