@@ -131,7 +131,7 @@ const HowToCleanHardwoodFloorsAfterConstruction = () => {
   const { seoHelmet } = useSEO({
     title: "How to Clean Hardwood Floors After Construction",
     description:
-      "How to clean hardwood floors after construction: dry removal, HEPA vacuum, a second pass once dust settles, then one damp pass on sealed wood. What to avoid.",
+      "Clean hardwood floors after construction safely: HEPA vacuum first, let dust settle, repeat, then use one nearly dry pass on sealed wood.",
     canonical: URL,
     ogType: "article",
     ogImage: OG_IMAGE,
