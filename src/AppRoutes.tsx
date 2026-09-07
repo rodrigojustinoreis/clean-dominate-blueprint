@@ -68,6 +68,7 @@ import PreschoolBackpackLunchbox from "./pages/PreschoolBackpackLunchbox";
 import SchoolAgeCleaningRoutine from "./pages/SchoolAgeCleaningRoutine";
 import WhyIsMyDogCoughingAfterCleaning from "./pages/WhyIsMyDogCoughingAfterCleaning";
 import HowToCleanHardwoodFloorsNaturally from "./pages/HowToCleanHardwoodFloorsNaturally";
+import HowToCleanHardwoodFloorsAfterConstruction from "./pages/HowToCleanHardwoodFloorsAfterConstruction";
 import RealDeepCleaningProjectBethesda from "./pages/RealDeepCleaningProjectBethesda";
 import HowOftenHireCleaningService from "./pages/HowOftenHireCleaningService";
 import OneTimeVsRecurringCleaning from "./pages/OneTimeVsRecurringCleaning";
@@ -302,6 +303,7 @@ const AppRoutes = () => (
     <Route path="/resources/cleaning-routine-families-school-age-kids" element={<SchoolAgeCleaningRoutine />} />
     <Route path="/resources/why-is-my-dog-coughing-after-house-cleaning" element={<WhyIsMyDogCoughingAfterCleaning />} />
     <Route path="/resources/how-to-clean-hardwood-floors-naturally" element={<HowToCleanHardwoodFloorsNaturally />} />
+    <Route path="/resources/how-to-clean-hardwood-floors-after-construction" element={<HowToCleanHardwoodFloorsAfterConstruction />} />
     <Route path="/resources/real-deep-cleaning-project-bethesda-home" element={<RealDeepCleaningProjectBethesda />} />
     <Route path="/resources/how-often-should-you-hire-a-cleaning-service" element={<HowOftenHireCleaningService />} />
     <Route path="/resources/one-time-vs-recurring-cleaning" element={<OneTimeVsRecurringCleaning />} />

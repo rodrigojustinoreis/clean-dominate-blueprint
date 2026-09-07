@@ -177,7 +177,7 @@ export const MANUAL_RELATED_POSTS: Record<string, string[]> = {
   "eco-cleaning-tips-winters-maryland": ["eco-cleaning-tips-maryland-homes", "how-to-get-cigarette-smell-out-of-your-house", "remove-pet-hair-odors-dmv-homes"],
   "best-cleaning-schedule-busy-families-dmv": ["recurring-cleaning-weekly-biweekly-monthly", "best-house-cleaning-service-silver-spring-md", "what-is-included-in-a-deep-cleaning"],
   "remove-pet-hair-odors-dmv-homes": ["eco-cleaning-tips-maryland-homes", "what-is-included-in-a-deep-cleaning", "recurring-cleaning-weekly-biweekly-monthly"],
-  "post-renovation-cleaning-guide-maryland": ["what-is-included-in-a-deep-cleaning", "house-cleaning-prices-maryland-2026", "move-out-cleaning-checklist-maryland-tenants"],
+  "post-renovation-cleaning-guide-maryland": ["how-to-clean-hardwood-floors-after-construction", "what-is-included-in-a-deep-cleaning", "house-cleaning-prices-maryland-2026", "move-out-cleaning-checklist-maryland-tenants"],
   "recurring-cleaning-weekly-biweekly-monthly": ["best-cleaning-schedule-busy-families-dmv", "house-cleaning-prices-maryland-2026", "best-house-cleaning-service-silver-spring-md"],
   "deep-cleaning-tips-maryland-homes-spring-prep": ["spring-cleaning-checklist-maryland-2026", "what-is-included-in-a-deep-cleaning", "eco-cleaning-tips-maryland-homes"],
   "choose-pet-safe-cleaning-company": ["pet-dander-air-quality", "cleaning-product-poisoning-in-pets", "allergen-free-home-dog-cat-owners"],
@@ -218,7 +218,8 @@ export const MANUAL_RELATED_POSTS: Record<string, string[]> = {
   "how-to-clean-a-backpack-and-lunch-box": ["cleaning-routine-families-school-age-kids", "cleaning-schedule-working-parents-toddlers", "baby-crawling-floor-cleaning-guide", "cleaning-tips-for-working-professionals", "how-to-keep-house-clean-between-cleanings", "is-professional-house-cleaning-worth-it"],
   "cleaning-routine-families-school-age-kids": ["how-to-clean-a-backpack-and-lunch-box", "cleaning-schedule-working-parents-toddlers", "cleaning-tips-for-working-professionals", "how-to-keep-house-clean-between-cleanings", "is-professional-house-cleaning-worth-it"],
   "why-is-my-dog-coughing-after-house-cleaning": ["what-pet-safe-cleaning-really-means", "choose-pet-safe-cleaning-company", "cleaning-product-poisoning-in-pets", "hepa-filters-pets-asthma", "pet-dander-air-quality", "pet-sneezing-household-dust"],
-  "how-to-clean-hardwood-floors-naturally": ["how-to-clean-grout-without-bleach", "how-to-remove-hard-water-stains-naturally", "eco-friendly-deep-cleaning", "how-to-remove-sticker-residue-natural", "what-is-included-in-a-deep-cleaning", "how-to-get-rid-of-mildew-smell-naturally"],
+  "how-to-clean-hardwood-floors-after-construction": ["how-to-clean-hardwood-floors-naturally", "post-construction-cleaning-montgomery-county-md", "post-renovation-cleaning-guide-maryland"],
+  "how-to-clean-hardwood-floors-naturally": ["how-to-clean-hardwood-floors-after-construction", "how-to-clean-grout-without-bleach", "how-to-remove-hard-water-stains-naturally", "eco-friendly-deep-cleaning", "how-to-remove-sticker-residue-natural", "what-is-included-in-a-deep-cleaning", "how-to-get-rid-of-mildew-smell-naturally"],
 };
 
 // ── Guide selectors (posts) ─────────────────────────────────────────────────────

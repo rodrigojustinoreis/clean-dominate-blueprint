@@ -151,6 +151,13 @@ export const blogPosts: BlogPost[] = [
     coverImage: "/images/blog/dog-coughing/hero.webp",
   },
   {
+    slug: "how-to-clean-hardwood-floors-after-construction",
+    title: "How to Clean Hardwood Floors After Construction",
+    excerpt: "Dry removal first, HEPA vacuum, a second pass after the dust settles, then one controlled damp pass on sealed wood: the 7-step sequence our crews use, what never to use, and when to stop.",
+    date: "2026-09-07", readTime: "9 min read", category: "Cleaning Guides",
+    coverImage: "/images/blog/hardwood-post-construction/hero-portrait.webp",
+  },
+  {
     slug: "how-to-clean-hardwood-floors-naturally",
     title: "How to Clean Hardwood Floors Naturally (Without Damaging the Finish)",
     excerpt: "Clean sealed hardwood floors safely with a pH-neutral, residue-free method — why to skip vinegar, steam mops, and oil soap, plus how to bring back the natural shine. A Maryland eco guide.",
