@@ -48,12 +48,12 @@ PAA da SERP ao vivo cobertas: "How to clean construction dust from hardwood floo
 | URL | Title | H1 | Sobreposição de shingles (5 palavras) com a nova página | Intenção |
 |---|---|---|---:|---|
 | nova `/resources/how-to-clean-hardwood-floors-after-construction` | How to Clean Hardwood Floors After Construction \| Capital Clean Care | How to Clean Hardwood Floors After Construction | — | poeira fina/drywall em hardwood após obra; processo técnico |
-| `/resources/how-to-clean-hardwood-floors-naturally` | How to Clean Hardwood Floors Naturally (Without Damaging the Finish) | How to Clean Hardwood Floors Naturally | 6,4% | manutenção rotineira/natural; dono de "how to clean hardwood floors" |
+| `/resources/how-to-clean-hardwood-floors-naturally` | How to Clean Hardwood Floors Naturally (Without Damaging the Finish) | How to Clean Hardwood Floors Naturally | 6,5% | manutenção rotineira/natural; dono de "how to clean hardwood floors" |
 | `/resources/post-construction-cleaning-montgomery-county-md` | Post-Construction Cleaning in Montgomery County, MD: A Guide | Post-Construction Cleaning in Montgomery County, MD | 4,1% | pós-obra geral, regional |
 | `/resources/post-renovation-cleaning-guide-maryland` | Post-Renovation Cleaning Guide for Maryland Homeowners | idem | 4,0% | pós-reforma geral, MD |
 | `/services/post-construction-cleaning` | Post-Construction Cleaning in MD, DC & VA \| Capital Clean Care | Post-Construction Cleaning in Maryland, Washington DC & Northern Virginia | 0,0% | transacional |
 
-Titles/H1/canonicals das quatro páginas existentes inalterados; a sobreposição textual máxima é 6,4% (a rotina de manutenção só é citada para o link).
+Titles/H1/canonicals das quatro páginas existentes inalterados; a sobreposição textual máxima é 6,5% (a rotina de manutenção só é citada para o link).
 
 ## Estrutura e GEO
 
@@ -74,7 +74,7 @@ Titles/H1/canonicals das quatro páginas existentes inalterados; a sobreposiçã
 - EPA Lead-Safe Renovations for DIYers — https://www.epa.gov/lead/lead-safe-renovations-diyers (pré-1978: parar e escalar; a página afirma que a Capital Clean Care não faz abatimento de chumbo).
 - EPA Protect Your Family from Exposures to Asbestos — https://www.epa.gov/asbestos/protect-your-family-exposures-asbestos (não se identifica olhando; deixar quieto; inspeção/amostragem por profissional treinado; a página orienta não aspirar nem varrer).
 
-Frases absolutas foram tornadas condicionais ("may recirculate", "can scratch or remove the finish", "can lift", "often shows", etc.). Sem teste de água para identificar acabamento: acabamento desconhecido → confirmar com instalador/fabricante e não fazer etapa úmida.
+Frases absolutas foram tornadas condicionais ("may recirculate", "can scratch or remove the finish", "can lift", "often shows", etc.). A revisão editorial final também substituiu a afirmação absoluta sobre aspiração HEPA, limitou o CTA a pisos selados com acabamento confirmado e suavizou a explicação sobre vapor e resíduos. Sem teste de água para identificar acabamento: acabamento desconhecido → confirmar com instalador/fabricante e não fazer etapa úmida.
 
 ## Decisões de mídia
 

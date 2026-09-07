@@ -88,7 +88,7 @@ const faqs: { q: string; a: string }[] = [
   },
   {
     q: "Can I use a steam mop on hardwood floors after construction?",
-    a: "No. The National Wood Flooring Association advises against wet mops and steam mops on wood floors because moisture and heat can drive into seams, cloud the finish and swell the boards. After construction the risk is worse: steam plus fine compound dust makes a film that sets into the grain. Use a nearly dry microfiber pad on sealed floors, and nothing wet at all on oiled or waxed floors.",
+    a: "No. The National Wood Flooring Association advises against wet mops and steam mops on wood floors because moisture and heat can drive into seams, cloud the finish and swell the boards. After construction, steam can add moisture to remaining compound dust and leave haze while also risking seams and the finish. Use a nearly dry microfiber pad on sealed floors, and nothing wet at all on oiled or waxed floors.",
   },
   {
     q: "What kind of vacuum should I use for construction dust on wood floors?",
@@ -291,9 +291,8 @@ const HowToCleanHardwoodFloorsAfterConstruction = () => {
               the specific finish. Where a job involved cutting or grinding concrete, tile, stone or block, the dust may
               contain respirable crystalline silica; OSHA's silica standard for construction treats dry sweeping and dry
               brushing as unacceptable housekeeping where they could add to exposure, and names HEPA-filtered vacuuming as
-              the method that minimizes it. Not every renovation produces silica dust, but a sealed HEPA vacuum is the
-              right tool either way, because it is also the only one that does not blow the finest drywall dust back into
-              the room.
+              the method that minimizes it. Not every renovation produces silica dust, but a properly sealed HEPA vacuum is
+              designed to capture fine particles instead of recirculating them.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-4">
               So the safest method is dry, filtered and patient: remove what you can without water, capture it instead of
@@ -531,8 +530,8 @@ const HowToCleanHardwoodFloorsAfterConstruction = () => {
               <Sparkles className="h-8 w-8 mx-auto mb-4 text-accent" aria-hidden="true" />
               <h2 className="font-heading text-2xl md:text-3xl font-bold mb-4">Move-in ready floors, without the haze</h2>
               <p className="text-primary-foreground/80 mb-6 leading-relaxed max-w-xl mx-auto">
-                Our post-construction crews follow the dry-then-damp sequence on every hardwood floor, then hand you a
-                written note of anything that needs a flooring professional.
+                Our post-construction crews follow the dry-then-damp sequence on applicable sealed hardwood floors whose
+                finish has been confirmed, then hand you a written note of anything that needs a flooring professional.
               </p>
               <Button size="lg" className="bg-accent hover:bg-accent/90 text-white rounded-full px-8" asChild>
                 <Link to="/services/post-construction-cleaning">
