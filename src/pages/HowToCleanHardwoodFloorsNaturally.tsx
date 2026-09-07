@@ -207,6 +207,10 @@ const HowToCleanHardwoodFloorsNaturally = () => {
             <p className="text-muted-foreground leading-relaxed mb-6">
               Not sure which you have? Put a few drops of water in an inconspicuous spot. If it beads up, your floor is sealed. If it soaks in and darkens the wood, it's unsealed or oiled — stop and dust-clean only.
             </p>
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              One exception to the routine below: fresh construction or renovation dust. That has to come off dry, with a HEPA vacuum, before any damp pad touches the floor — see our guide to{" "}
+              <Link to="/resources/how-to-clean-hardwood-floors-after-construction" className="text-accent underline hover:no-underline">cleaning hardwood floors after construction</Link>.
+            </p>
           </FadeInSection>
 
           {/* The 4-step method */}

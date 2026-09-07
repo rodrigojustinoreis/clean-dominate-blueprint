@@ -120,8 +120,9 @@ const PostConstructionCleaningMontgomeryCounty = () => {
               <p className="text-sm text-muted-foreground leading-relaxed">
                 See our{" "}
                 <Link to="/services/post-construction-cleaning" className="text-accent underline hover:no-underline">post-construction cleaning service</Link>, the{" "}
-                <Link to="/resources/house-cleaning-guide-clarksburg-md" className="text-accent underline hover:no-underline">Clarksburg new-construction guide</Link>, or{" "}
-                <Link to="/resources/what-is-included-in-a-deep-cleaning" className="text-accent underline hover:no-underline">what's included in a deep cleaning</Link>.
+                <Link to="/resources/house-cleaning-guide-clarksburg-md" className="text-accent underline hover:no-underline">Clarksburg new-construction guide</Link>,{" "}
+                <Link to="/resources/what-is-included-in-a-deep-cleaning" className="text-accent underline hover:no-underline">what's included in a deep cleaning</Link>, or the floor-specific{" "}
+                <Link to="/resources/how-to-clean-hardwood-floors-after-construction" className="text-accent underline hover:no-underline">hardwood sequence after construction</Link>.
               </p>
             </div>
           </FadeInSection>
