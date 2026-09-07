@@ -124,7 +124,7 @@ const ServiceLocationPage = () => {
         url={pageUrl}
       />
       <FAQSchema faqs={faqs} />
-      <WebPageSchema name={metaTitle} description={metaDescription} url={pageUrl} dateModified="2026-08-31" cityName={city.name} stateCode={city.state === "VA" ? "Virginia" : city.state === "MD" ? "Maryland" : city.state} primaryImage={`https://capitalcleancare.com${cityImages[city.slug] ?? teamPhotos[cityPhotoIndex(city.slug)]}`} />
+      <WebPageSchema name={metaTitle} description={metaDescription} url={pageUrl} cityName={city.name} stateCode={city.state === "VA" ? "Virginia" : city.state === "MD" ? "Maryland" : city.state} primaryImage={`https://capitalcleancare.com${cityImages[city.slug] ?? teamPhotos[cityPhotoIndex(city.slug)]}`} />
 
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-primary/5 via-background to-accent/5 pt-24 pb-12 md:pt-32 md:pb-16">

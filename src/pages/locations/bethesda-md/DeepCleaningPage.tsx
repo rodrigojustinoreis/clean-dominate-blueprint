@@ -160,7 +160,7 @@ const BethesdaDeepCleaningPage = () => {
         areaServed={["Bethesda, MD", "Montgomery County, MD"]}
       />
       <FAQSchema faqs={faqs} />
-      <WebPageSchema name="Deep Cleaning Services in Bethesda, MD" description="Professional deep cleaning in Bethesda with original project photography, a written scope, and a background-checked team." url={PAGE_URL} dateModified="2026-08-31" cityName="Bethesda" stateCode="Maryland" primaryImage={`https://capitalcleancare.com${HERO_IMAGE}`} />
+      <WebPageSchema name="Deep Cleaning Services in Bethesda, MD" description="Professional deep cleaning in Bethesda with original project photography, a written scope, and a background-checked team." url={PAGE_URL} dateModified="2026-09-01" cityName="Bethesda" stateCode="Maryland" primaryImage={`https://capitalcleancare.com${HERO_IMAGE}`} />
 
       {/* ── Breadcrumbs ───────────────────────────────────── */}
       <div className="pt-12 md:pt-16 bg-gradient-to-br from-primary/5 via-background to-accent/5">
@@ -194,8 +194,8 @@ const BethesdaDeepCleaningPage = () => {
         ctaBeforePills
         teamTrustLabel="Background-Checked Team"
         ctaNote="No commitment · Written quote before service · 100% satisfaction guaranteed"
-        updatedLabel="August 31, 2026"
-        updatedDateTime="2026-08-31"
+        updatedLabel="September 1, 2026"
+        updatedDateTime="2026-09-01"
       />
 
       {/* Direct, self-contained answer for local commercial intent and AI citation. */}

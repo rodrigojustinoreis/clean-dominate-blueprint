@@ -161,7 +161,7 @@ const DeepCleaningPage = () => {
         priceRange={{ low: 230, high: 570 }}
       />
       <FAQSchema faqs={service.faqs} />
-      <WebPageSchema name="Deep Cleaning Services in Montgomery County, MD" description={service.metaDescription} url="https://capitalcleancare.com/services/deep-cleaning" dateModified="2026-08-31" cityName="Silver Spring" stateCode="Maryland" primaryImage="https://capitalcleancare.com/images/cluster/pillar-og.jpg" />
+      <WebPageSchema name="Deep Cleaning Services in Montgomery County, MD" description={service.metaDescription} url="https://capitalcleancare.com/services/deep-cleaning" dateModified="2026-09-03" cityName="Silver Spring" stateCode="Maryland" primaryImage="https://capitalcleancare.com/images/cluster/pillar-og.jpg" />
 
       {/* ── Sticky Top Bar (44px, green) ── */}
       <div

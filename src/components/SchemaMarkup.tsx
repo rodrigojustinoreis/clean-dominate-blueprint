@@ -211,7 +211,8 @@ interface WebPageSchemaProps {
   name: string;
   description: string;
   url: string;
-  dateModified: string;
+  /** Only when the page content has a real revision date (git history). Omitted → no dateModified, no sitemap lastmod. */
+  dateModified?: string;
   cityName?: string;
   stateCode?: string;
   primaryImage?: string;
@@ -234,7 +235,7 @@ export const WebPageSchema = ({
     name,
     description,
     inLanguage: "en-US",
-    dateModified,
+    ...(dateModified ? { dateModified } : {}),
     isPartOf: { "@id": `${BUSINESS.url}/#website` },
     publisher: { "@id": `${BUSINESS.url}/#business` },
     ...(cityName

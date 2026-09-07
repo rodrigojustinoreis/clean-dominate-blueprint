@@ -163,7 +163,7 @@ const RockvilleDeepCleaningPage = () => {
         areaServed={["Rockville, MD", "Montgomery County, MD"]}
       />
       <FAQSchema faqs={faqs} />
-      <WebPageSchema name="Deep Cleaning Services in Rockville, MD" description="Professional deep cleaning in Rockville with a written scope, background-checked team, and detailed room-by-room checklist." url={PAGE_URL} dateModified="2026-08-31" cityName="Rockville" stateCode="Maryland" primaryImage={`https://capitalcleancare.com${HERO_IMAGE}`} />
+      <WebPageSchema name="Deep Cleaning Services in Rockville, MD" description="Professional deep cleaning in Rockville with a written scope, background-checked team, and detailed room-by-room checklist." url={PAGE_URL} dateModified="2026-09-01" cityName="Rockville" stateCode="Maryland" primaryImage={`https://capitalcleancare.com${HERO_IMAGE}`} />
 
       {/* Breadcrumbs */}
       <div className="pt-12 md:pt-16 bg-gradient-to-br from-primary/5 via-background to-accent/5">
@@ -197,8 +197,8 @@ const RockvilleDeepCleaningPage = () => {
         stackCtas
         teamTrustLabel="Background-Checked Team"
         ctaNote="No commitment · Written quote before service · Satisfaction guarantee applies"
-        updatedLabel="August 31, 2026"
-        updatedDateTime="2026-08-31"
+        updatedLabel="September 1, 2026"
+        updatedDateTime="2026-09-01"
       />
 
       <section className="border-b border-border bg-background py-10 md:py-14" aria-labelledby="rockville-deep-cleaning-answer">

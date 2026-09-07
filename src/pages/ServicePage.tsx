@@ -72,7 +72,6 @@ const ServicePage = () => {
             name={service.metaTitle}
             description={service.metaDescription}
             url={`https://capitalcleancare.com/services/${service.slug}`}
-            dateModified="2026-08-31"
             cityName="Silver Spring"
             stateCode="Maryland"
             primaryImage="https://capitalcleancare.com/images/locations/bethesda-house-cleaning/capital-clean-care-team.webp"
