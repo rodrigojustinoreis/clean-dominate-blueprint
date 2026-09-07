@@ -162,15 +162,14 @@ const cityWhyIntros: Record<string, string> = {
 // city+service, link the vanity instead. Only these exact pairs are affected —
 // no regex, no inference. (Gaithersburg is intentionally excluded: its twin is
 // also indexed, so it stays on /locations/... pending GSC review.)
+// Fase 3 / Lote 1 (2026-09-07): only vanity pages that are themselves live and indexed
+// belong here. Slugs that 301 (wheaton house, rockville move-out, germantown deep,
+// kensington deep) were removed — cards now link the /locations/ page directly.
 const RETARGET_TO_VANITY: Record<string, string> = {
   "takoma-park-md/apartment-cleaning": "/apartment-cleaning-takoma-park-md",
-  "kensington-md/deep-cleaning": "/deep-cleaning-kensington-md",
   "ellicott-city-md/house-cleaning": "/house-cleaning-ellicott-city-md",
   "clarksburg-md/post-construction-cleaning": "/post-construction-cleaning-clarksburg-md",
-  "wheaton-md/house-cleaning": "/house-cleaning-wheaton-md",
-  "germantown-md/deep-cleaning": "/deep-cleaning-germantown-md",
   "frederick-md/house-cleaning": "/house-cleaning-frederick-md",
-  "rockville-md/move-out-cleaning": "/move-out-cleaning-rockville-md",
 };
 
 const rockvilleServiceGuide = [

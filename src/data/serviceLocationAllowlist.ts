@@ -41,6 +41,9 @@ export type StaticService = (typeof STATIC_SERVICES)[number];
 // Impression figures are GSC 16-month historical data — these pages were getting real
 // search demand while stuck on noindex (the MD-only STATIC_CITIES grid excluded them).
 export const EXTRA_INDEXABLE_PAIRS: ReadonlySet<string> = new Set([
+  // Fase 3 / Lote 1 (2026-09-07): the retired vanity /apartment-cleaning-wheaton-md still draws
+  // impressions (273 in 90 days) and 301s here — the target must be indexable to receive them.
+  "wheaton-md/apartment-cleaning",
   "arlington-va/deep-cleaning",            // ranked for "deep cleaning arlington", converted, then noindex'd
   "takoma-park-md/eco-friendly-cleaning",  // ranked ~pos 2.4 for eco cleaning Takoma Park, then noindex'd
   // Tier 1 — high demand

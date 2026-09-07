@@ -106,6 +106,15 @@ Our background-checked teams tailor each visit to the home in front of them: com
     ],
   },
 
+  // Fase 3 / Lote 1 (2026-09-07): promoted from noindex — the retired vanity
+  // /move-out-cleaning-rockville-md still drew 207 impressions in 90 days and 301s here.
+  // City-specific copy so the page carries its own text, not only the template.
+  "rockville-md/move-out-cleaning": {
+    uniqueContent: `Move-out cleaning in Rockville usually runs on a deadline set by someone else: a lease end date, a settlement, or a property manager's walkthrough. We see the same pattern across the city — townhouses in King Farm and Fallsgrove where the finish standard is high, mid-century ranchers and split-levels in Twinbrook and Woodley Gardens with carpeted bedrooms and original tile, and apartments near Rockville Town Center and Twinbrook Metro where the building sets the move-out window. Our visit is planned around that date, with the property empty or nearly empty so every surface is reachable.
+
+What we clean is the list inspectors actually check: inside the oven, refrigerator, and cabinets; bathroom tile, grout, and fixtures; baseboards, door frames, and light switches; closets and shelving; windowsills and tracks; and floors as the last step. Maryland law gives landlords up to 45 days after you move out to return the deposit or itemize deductions, and tenants who ask in writing can be present at the final inspection — a documented professional clean is the simplest way to keep that inspection uneventful. If the home is going on the market instead, the same checklist works as a pre-listing reset.`,
+  },
+
   "north-bethesda-md/deep-cleaning": {
     metaTitle: "Deep Cleaning in North Bethesda, MD — Condos & Homes",
     metaDescription: "Deep cleaning in North Bethesda, MD — Pike District condos, high-rises & homes. HEPA equipment, eco-friendly products, building-aware service. Free quote.",

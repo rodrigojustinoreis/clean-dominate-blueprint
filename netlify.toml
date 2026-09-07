@@ -138,7 +138,9 @@
   status = 301
 [[redirects]]
   from = "/deep-cleaning-kensington-md"
-  to = "/locations/kensington-md/deep-cleaning"
+  # Fase 3 / Lote 1: the nested twin stays noindex (55 impressions in 90 days) — send the
+  # legacy URL to the indexable Kensington hub instead of a noindex page.
+  to = "/locations/kensington-md"
   status = 301
 [[redirects]]
   from = "/eco-cleaning-chevy-chase-md"
