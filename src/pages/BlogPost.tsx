@@ -388,7 +388,7 @@ const blogContent: Record<string, React.ReactNode> = {
   ),
   "recurring-cleaning-weekly-biweekly-monthly": (
     <article className="prose prose-lg max-w-none">
-      <p>One of the most common questions from new clients in <Link to="/locations/silver-spring-md" className="text-accent hover:underline">Silver Spring</Link>, <Link to="/locations/bethesda-md" className="text-accent hover:underline">Bethesda</Link>, and <Link to="/locations/rockville-md" className="text-accent hover:underline">Rockville</Link> is: <em>"How often should I schedule professional cleaning?"</em> The honest answer: it depends on your household. Here's a practical guide to choosing the right frequency.</p>
+      <p>One of the most common questions from new clients in <Link to="/locations/silver-spring-md" className="text-accent hover:underline">Silver Spring</Link>, <Link to="/locations/bethesda-md" className="text-accent hover:underline">Bethesda</Link>, and <Link to="/locations/rockville-md/recurring-cleaning" className="text-accent hover:underline">Rockville</Link> is: <em>"How often should I schedule professional cleaning?"</em> The honest answer: it depends on your household. Here's a practical guide to choosing the right frequency.</p>
 
       <h2>Weekly Cleaning — Best For:</h2>
       <ul>
@@ -701,7 +701,7 @@ const blogContent: Record<string, React.ReactNode> = {
         <li><strong>Spring:</strong> After a long winter, to address dust buildup, pollen infiltration, and post-heating-season grime</li>
         <li><strong>Before a major event:</strong> Holidays, family visits, or home listing preparation</li>
         <li><strong>After renovation:</strong> Construction dust embeds in HVAC systems — see our <Link to="/resources/post-renovation-cleaning-guide-maryland" className="text-accent hover:underline">post-renovation cleaning guide</Link></li>
-        <li><strong>New recurring clients:</strong> A deep clean establishes the baseline before maintenance visits</li>
+        <li><strong>New recurring clients:</strong> A deep clean establishes the baseline before <Link to="/locations/rockville-md/recurring-cleaning" className="text-accent hover:underline">recurring cleaning in Rockville</Link> takes over the maintenance visits</li>
         <li><strong>Quarterly maintenance:</strong> Even well-maintained homes benefit from a quarterly reset</li>
       </ul>
 
