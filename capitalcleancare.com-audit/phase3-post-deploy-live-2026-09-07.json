@@ -1,0 +1,192 @@
+[
+  {
+    "check": "/house-cleaning-wheaton-md → /locations/wheaton-md/house-cleaning in one 301 hop, target 200 + index",
+    "ok": true,
+    "detail": "chain=[('/house-cleaning-wheaton-md', 301), ('/locations/wheaton-md/house-cleaning', 200)] robots=index"
+  },
+  {
+    "check": "/apartment-cleaning-wheaton-md → /locations/wheaton-md/apartment-cleaning in one 301 hop, target 200 + index",
+    "ok": true,
+    "detail": "chain=[('/apartment-cleaning-wheaton-md', 301), ('/locations/wheaton-md/apartment-cleaning', 200)] robots=index"
+  },
+  {
+    "check": "/move-out-cleaning-rockville-md → /locations/rockville-md/move-out-cleaning in one 301 hop, target 200 + index",
+    "ok": true,
+    "detail": "chain=[('/move-out-cleaning-rockville-md', 301), ('/locations/rockville-md/move-out-cleaning', 200)] robots=index"
+  },
+  {
+    "check": "/deep-cleaning-germantown-md → /locations/germantown-md/deep-cleaning in one 301 hop, target 200 + index",
+    "ok": true,
+    "detail": "chain=[('/deep-cleaning-germantown-md', 301), ('/locations/germantown-md/deep-cleaning', 200)] robots=index"
+  },
+  {
+    "check": "/deep-cleaning-kensington-md → /locations/kensington-md in one 301 hop, target 200 + index",
+    "ok": true,
+    "detail": "chain=[('/deep-cleaning-kensington-md', 301), ('/locations/kensington-md', 200)] robots=index"
+  },
+  {
+    "check": "sitemap.xml 200 with 299 URLs",
+    "ok": true,
+    "detail": "200 299"
+  },
+  {
+    "check": "/locations/wheaton-md/house-cleaning 200, index, self-canonical, in sitemap",
+    "ok": true,
+    "detail": "200 robots=index canonical=https://capitalcleancare.com/locations/wheaton-md/house-cleaning"
+  },
+  {
+    "check": "/locations/wheaton-md/apartment-cleaning 200, index, self-canonical, in sitemap",
+    "ok": true,
+    "detail": "200 robots=index canonical=https://capitalcleancare.com/locations/wheaton-md/apartment-cleaning"
+  },
+  {
+    "check": "/locations/rockville-md/move-out-cleaning 200, index, self-canonical, in sitemap",
+    "ok": true,
+    "detail": "200 robots=index canonical=https://capitalcleancare.com/locations/rockville-md/move-out-cleaning"
+  },
+  {
+    "check": "/locations/kensington-md/deep-cleaning stays noindex",
+    "ok": true,
+    "detail": "noindex,follow"
+  },
+  {
+    "check": "/locations/rockville-md: 0 links to noindex pages",
+    "ok": true,
+    "detail": "[]"
+  },
+  {
+    "check": "/locations/bethesda-md: 0 links to noindex pages",
+    "ok": true,
+    "detail": "[]"
+  },
+  {
+    "check": "/locations/germantown-md: 0 links to noindex pages",
+    "ok": true,
+    "detail": "[]"
+  },
+  {
+    "check": "/locations/wheaton-md: 0 links to noindex pages",
+    "ok": true,
+    "detail": "[]"
+  },
+  {
+    "check": "/locations/kensington-md: 0 links to noindex pages",
+    "ok": true,
+    "detail": "[]"
+  },
+  {
+    "check": "/locations/silver-spring-md: 0 links to noindex pages",
+    "ok": true,
+    "detail": "[]"
+  },
+  {
+    "check": "/maryland: 0 links to noindex pages",
+    "ok": true,
+    "detail": "[]"
+  },
+  {
+    "check": "/virginia: 0 links to noindex pages",
+    "ok": true,
+    "detail": "[]"
+  },
+  {
+    "check": "/services links /services/post-construction-cleaning and /services/move-out-cleaning",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "check": "deep-cleaning cost guide links move-out + post-construction",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "check": "/es/limpieza-de-casas links the 8 /es/areas/* pages",
+    "ok": true,
+    "detail": "8"
+  },
+  {
+    "check": "guide page without HowTo JSON-LD",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "check": "blog post without gallery VideoObject, author has #founder @id",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "check": "home keeps VideoObject",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "check": "template deep-cleaning page without VideoObject and without the 2026-08-31 literal",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "check": "Spanish area page has BreadcrumbList",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "check": "hub has the full LocalBusiness node",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "check": "/about Person has #founder @id",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "check": "Bethesda deep dateModified 2026-09-01 + visible Updated line",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "check": "unknown URL → real 404 with the branded body (title + noindex)",
+    "ok": true,
+    "detail": "404 Page Not Found (404) | Capital Clean Care"
+  },
+  {
+    "check": "unknown /es/a/b → 404 with the Spanish body",
+    "ok": true,
+    "detail": "404 Página no encontrada (404) | Capital Clean Care"
+  },
+  {
+    "check": "/404 itself is served (noindex)",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "check": "Ads landing /services/house-cleaning 200 + index + title unchanged",
+    "ok": true,
+    "detail": "Standard House Cleaning in MD, DC & VA | Capital Clean Care"
+  },
+  {
+    "check": "home: every <img> in <main> has width and height",
+    "ok": true,
+    "detail": "38 imgs"
+  },
+  {
+    "check": "/blog/x/ chain ends 200 in ≤3 hops (platform slash normalisation)",
+    "ok": true,
+    "detail": "[('/blog/spring-carpet-cleaning/', 301), ('/blog/spring-carpet-cleaning', 301), ('/resources/how-to-clean-carpet-home-apartment', 200)]"
+  },
+  {
+    "check": "/locations/bethesda-md 200 + index + canonical self",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "check": "/services/deep-cleaning 200 + index + canonical self",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "check": "/resources/house-cleaning-for-seniors 200 + index + canonical self",
+    "ok": true,
+    "detail": ""
+  }
+]
