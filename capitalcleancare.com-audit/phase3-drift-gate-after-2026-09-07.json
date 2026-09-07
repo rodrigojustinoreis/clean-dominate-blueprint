@@ -1,0 +1,435 @@
+[
+  {
+    "url": "https://capitalcleancare.com/",
+    "baseline_id": 192,
+    "sev": {
+      "critical": 0,
+      "warning": 0,
+      "info": 1
+    },
+    "triggered": [
+      {
+        "severity": "INFO",
+        "rule": "content_hash_changed",
+        "message": "Page content has changed (HTML body hash differs from baseline)."
+      }
+    ]
+  },
+  {
+    "url": "https://capitalcleancare.com/services/house-cleaning",
+    "baseline_id": 193,
+    "sev": {
+      "critical": 0,
+      "warning": 0,
+      "info": 1
+    },
+    "triggered": [
+      {
+        "severity": "INFO",
+        "rule": "content_hash_changed",
+        "message": "Page content has changed (HTML body hash differs from baseline)."
+      }
+    ]
+  },
+  {
+    "url": "https://capitalcleancare.com/services/deep-cleaning",
+    "baseline_id": 194,
+    "sev": {
+      "critical": 0,
+      "warning": 1,
+      "info": 1
+    },
+    "triggered": [
+      {
+        "severity": "WARNING",
+        "rule": "schema_modified",
+        "message": "Schema/JSON-LD content has been modified. Validate with /seo schema."
+      },
+      {
+        "severity": "INFO",
+        "rule": "content_hash_changed",
+        "message": "Page content has changed (HTML body hash differs from baseline)."
+      }
+    ]
+  },
+  {
+    "url": "https://capitalcleancare.com/services/recurring-cleaning",
+    "baseline_id": 195,
+    "sev": {
+      "critical": 0,
+      "warning": 0,
+      "info": 1
+    },
+    "triggered": [
+      {
+        "severity": "INFO",
+        "rule": "content_hash_changed",
+        "message": "Page content has changed (HTML body hash differs from baseline)."
+      }
+    ]
+  },
+  {
+    "url": "https://capitalcleancare.com/services/move-out-cleaning",
+    "baseline_id": 196,
+    "sev": {
+      "critical": 0,
+      "warning": 1,
+      "info": 1
+    },
+    "triggered": [
+      {
+        "severity": "WARNING",
+        "rule": "schema_modified",
+        "message": "Schema/JSON-LD content has been modified. Validate with /seo schema."
+      },
+      {
+        "severity": "INFO",
+        "rule": "content_hash_changed",
+        "message": "Page content has changed (HTML body hash differs from baseline)."
+      }
+    ]
+  },
+  {
+    "url": "https://capitalcleancare.com/services/maid-service",
+    "baseline_id": 197,
+    "sev": {
+      "critical": 0,
+      "warning": 0,
+      "info": 1
+    },
+    "triggered": [
+      {
+        "severity": "INFO",
+        "rule": "content_hash_changed",
+        "message": "Page content has changed (HTML body hash differs from baseline)."
+      }
+    ]
+  },
+  {
+    "url": "https://capitalcleancare.com/services/airbnb-cleaning",
+    "baseline_id": 198,
+    "sev": {
+      "critical": 0,
+      "warning": 0,
+      "info": 1
+    },
+    "triggered": [
+      {
+        "severity": "INFO",
+        "rule": "content_hash_changed",
+        "message": "Page content has changed (HTML body hash differs from baseline)."
+      }
+    ]
+  },
+  {
+    "url": "https://capitalcleancare.com/pricing",
+    "baseline_id": 199,
+    "sev": {
+      "critical": 0,
+      "warning": 0,
+      "info": 1
+    },
+    "triggered": [
+      {
+        "severity": "INFO",
+        "rule": "content_hash_changed",
+        "message": "Page content has changed (HTML body hash differs from baseline)."
+      }
+    ]
+  },
+  {
+    "url": "https://capitalcleancare.com/about",
+    "baseline_id": 200,
+    "sev": {
+      "critical": 0,
+      "warning": 1,
+      "info": 1
+    },
+    "triggered": [
+      {
+        "severity": "WARNING",
+        "rule": "schema_modified",
+        "message": "Schema/JSON-LD content has been modified. Validate with /seo schema."
+      },
+      {
+        "severity": "INFO",
+        "rule": "content_hash_changed",
+        "message": "Page content has changed (HTML body hash differs from baseline)."
+      }
+    ]
+  },
+  {
+    "url": "https://capitalcleancare.com/contact",
+    "baseline_id": 201,
+    "sev": {
+      "critical": 0,
+      "warning": 0,
+      "info": 1
+    },
+    "triggered": [
+      {
+        "severity": "INFO",
+        "rule": "content_hash_changed",
+        "message": "Page content has changed (HTML body hash differs from baseline)."
+      }
+    ]
+  },
+  {
+    "url": "https://capitalcleancare.com/faq",
+    "baseline_id": 202,
+    "sev": {
+      "critical": 0,
+      "warning": 0,
+      "info": 1
+    },
+    "triggered": [
+      {
+        "severity": "INFO",
+        "rule": "content_hash_changed",
+        "message": "Page content has changed (HTML body hash differs from baseline)."
+      }
+    ]
+  },
+  {
+    "url": "https://capitalcleancare.com/locations/bethesda-md",
+    "baseline_id": 203,
+    "sev": {
+      "critical": 0,
+      "warning": 1,
+      "info": 1
+    },
+    "triggered": [
+      {
+        "severity": "WARNING",
+        "rule": "schema_modified",
+        "message": "Schema/JSON-LD content has been modified. Validate with /seo schema."
+      },
+      {
+        "severity": "INFO",
+        "rule": "content_hash_changed",
+        "message": "Page content has changed (HTML body hash differs from baseline)."
+      }
+    ]
+  },
+  {
+    "url": "https://capitalcleancare.com/locations/bethesda-md/deep-cleaning",
+    "baseline_id": 204,
+    "sev": {
+      "critical": 0,
+      "warning": 1,
+      "info": 1
+    },
+    "triggered": [
+      {
+        "severity": "WARNING",
+        "rule": "schema_modified",
+        "message": "Schema/JSON-LD content has been modified. Validate with /seo schema."
+      },
+      {
+        "severity": "INFO",
+        "rule": "content_hash_changed",
+        "message": "Page content has changed (HTML body hash differs from baseline)."
+      }
+    ]
+  },
+  {
+    "url": "https://capitalcleancare.com/locations/bethesda-md/recurring-cleaning",
+    "baseline_id": 205,
+    "sev": {
+      "critical": 0,
+      "warning": 0,
+      "info": 1
+    },
+    "triggered": [
+      {
+        "severity": "INFO",
+        "rule": "content_hash_changed",
+        "message": "Page content has changed (HTML body hash differs from baseline)."
+      }
+    ]
+  },
+  {
+    "url": "https://capitalcleancare.com/locations/bethesda-md/house-cleaning",
+    "baseline_id": 206,
+    "sev": {
+      "critical": 0,
+      "warning": 0,
+      "info": 1
+    },
+    "triggered": [
+      {
+        "severity": "INFO",
+        "rule": "content_hash_changed",
+        "message": "Page content has changed (HTML body hash differs from baseline)."
+      }
+    ]
+  },
+  {
+    "url": "https://capitalcleancare.com/locations/silver-spring-md",
+    "baseline_id": 207,
+    "sev": {
+      "critical": 0,
+      "warning": 1,
+      "info": 1
+    },
+    "triggered": [
+      {
+        "severity": "WARNING",
+        "rule": "schema_modified",
+        "message": "Schema/JSON-LD content has been modified. Validate with /seo schema."
+      },
+      {
+        "severity": "INFO",
+        "rule": "content_hash_changed",
+        "message": "Page content has changed (HTML body hash differs from baseline)."
+      }
+    ]
+  },
+  {
+    "url": "https://capitalcleancare.com/locations/fairfax-va",
+    "baseline_id": 208,
+    "sev": {
+      "critical": 0,
+      "warning": 1,
+      "info": 1
+    },
+    "triggered": [
+      {
+        "severity": "WARNING",
+        "rule": "schema_modified",
+        "message": "Schema/JSON-LD content has been modified. Validate with /seo schema."
+      },
+      {
+        "severity": "INFO",
+        "rule": "content_hash_changed",
+        "message": "Page content has changed (HTML body hash differs from baseline)."
+      }
+    ]
+  },
+  {
+    "url": "https://capitalcleancare.com/locations/alexandria-va",
+    "baseline_id": 209,
+    "sev": {
+      "critical": 0,
+      "warning": 1,
+      "info": 1
+    },
+    "triggered": [
+      {
+        "severity": "WARNING",
+        "rule": "schema_modified",
+        "message": "Schema/JSON-LD content has been modified. Validate with /seo schema."
+      },
+      {
+        "severity": "INFO",
+        "rule": "content_hash_changed",
+        "message": "Page content has changed (HTML body hash differs from baseline)."
+      }
+    ]
+  },
+  {
+    "url": "https://capitalcleancare.com/locations/rockville-md",
+    "baseline_id": 210,
+    "sev": {
+      "critical": 0,
+      "warning": 1,
+      "info": 1
+    },
+    "triggered": [
+      {
+        "severity": "WARNING",
+        "rule": "schema_modified",
+        "message": "Schema/JSON-LD content has been modified. Validate with /seo schema."
+      },
+      {
+        "severity": "INFO",
+        "rule": "content_hash_changed",
+        "message": "Page content has changed (HTML body hash differs from baseline)."
+      }
+    ]
+  },
+  {
+    "url": "https://capitalcleancare.com/resources/best-house-cleaning-service-bethesda-md",
+    "baseline_id": 211,
+    "sev": {
+      "critical": 0,
+      "warning": 1,
+      "info": 1
+    },
+    "triggered": [
+      {
+        "severity": "WARNING",
+        "rule": "schema_modified",
+        "message": "Schema/JSON-LD content has been modified. Validate with /seo schema."
+      },
+      {
+        "severity": "INFO",
+        "rule": "content_hash_changed",
+        "message": "Page content has changed (HTML body hash differs from baseline)."
+      }
+    ]
+  },
+  {
+    "url": "https://capitalcleancare.com/resources/free-house-cleaning-for-seniors",
+    "baseline_id": 212,
+    "sev": {
+      "critical": 0,
+      "warning": 1,
+      "info": 1
+    },
+    "triggered": [
+      {
+        "severity": "WARNING",
+        "rule": "schema_modified",
+        "message": "Schema/JSON-LD content has been modified. Validate with /seo schema."
+      },
+      {
+        "severity": "INFO",
+        "rule": "content_hash_changed",
+        "message": "Page content has changed (HTML body hash differs from baseline)."
+      }
+    ]
+  },
+  {
+    "url": "https://capitalcleancare.com/resources/house-cleaning-for-seniors",
+    "baseline_id": 213,
+    "sev": {
+      "critical": 0,
+      "warning": 1,
+      "info": 1
+    },
+    "triggered": [
+      {
+        "severity": "WARNING",
+        "rule": "schema_modified",
+        "message": "Schema/JSON-LD content has been modified. Validate with /seo schema."
+      },
+      {
+        "severity": "INFO",
+        "rule": "content_hash_changed",
+        "message": "Page content has changed (HTML body hash differs from baseline)."
+      }
+    ]
+  },
+  {
+    "url": "https://capitalcleancare.com/resources/move-in-cleaning-checklist",
+    "baseline_id": 214,
+    "sev": {
+      "critical": 0,
+      "warning": 1,
+      "info": 1
+    },
+    "triggered": [
+      {
+        "severity": "WARNING",
+        "rule": "schema_modified",
+        "message": "Schema/JSON-LD content has been modified. Validate with /seo schema."
+      },
+      {
+        "severity": "INFO",
+        "rule": "content_hash_changed",
+        "message": "Page content has changed (HTML body hash differs from baseline)."
+      }
+    ]
+  }
+]
