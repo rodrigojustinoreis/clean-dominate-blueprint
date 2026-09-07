@@ -80,7 +80,7 @@ const PostConstructionCleaningMontgomeryCounty = () => {
         <div className="container mx-auto px-4 max-w-3xl">
           <FadeInSection>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              Montgomery County is in a near-constant state of building — new neighborhoods in Clarksburg and Germantown, teardown rebuilds in Bethesda and Potomac, and kitchen, bath, and basement renovations everywhere in between. When the trades pack up, what's left behind is <strong>fine construction dust on every surface</strong> and a layer of residue a normal clean can't handle. Here's what a proper post-construction cleaning actually involves.
+              Montgomery County is in a near-constant state of building — new neighborhoods in Clarksburg and Germantown, teardown rebuilds in Bethesda and Potomac, and kitchen, bath, and basement renovations everywhere in between, including the older bungalows and colonials of <Link to="/locations/silver-spring-md/post-construction-cleaning" className="text-accent underline hover:no-underline">Silver Spring</Link>. When the trades pack up, what's left behind is <strong>fine construction dust on every surface</strong> and a layer of residue a normal clean can't handle. Here's what a proper post-construction cleaning actually involves.
             </p>
           </FadeInSection>
 
