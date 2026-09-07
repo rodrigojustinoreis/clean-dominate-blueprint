@@ -418,7 +418,7 @@ const BethesdaMoveOutCleaningPage = () => {
             <p>
               Moving from Pike &amp; Rose, White Flint, or the Pike District? Those neighborhoods are covered
               by our dedicated{" "}
-              <Link to="/locations/north-bethesda-md/move-out-cleaning" className="text-primary underline">
+              <Link to="/locations/north-bethesda-md" className="text-primary underline">
                 North Bethesda move-out cleaning service
               </Link>
               , helping residents reach the correct local page and quote route.

@@ -14,6 +14,7 @@ import { getCity, getService, getServiceLocationIntro, getWhyChooseUs, getServic
 import { getServiceLocationOverride } from "@/data/service-location-overrides";
 import { pickVariant, whyChooseVariants, checklistHeadingVariants, checklistOrder, ctaProseVariants } from "@/data/template-variants";
 import { isAllowlistedServiceLocation } from "@/data/serviceLocationAllowlist";
+import { hubHref } from "@/data/related-content";
 import { cityImages } from "@/data/city-images";
 import { CheckCircle, MapPin, ArrowRight, Shield, Leaf, Clock, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -149,7 +150,7 @@ const ServiceLocationPage = () => {
           <Breadcrumbs
             items={[
               { label: "Home", href: "/" },
-              { label: city.name, href: `/locations/${city.slug}` },
+              { label: city.name, href: hubHref(city.slug) ?? undefined },
               { label: service.name },
             ]}
             className={heroImage ? "mb-4 text-primary-foreground/70 [&_a]:text-primary-foreground/70 [&_a:hover]:text-primary-foreground [&_span[aria-current]]:text-primary-foreground/90 [&_svg]:text-primary-foreground/50" : "mb-4"}

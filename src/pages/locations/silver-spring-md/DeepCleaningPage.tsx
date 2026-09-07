@@ -255,7 +255,7 @@ const SilverSpringDeepCleaningPage = () => {
                 recurring cleaning
               </Link>{" "}
               to maintain the results. For move-outs, see our{" "}
-              <Link to="/locations/silver-spring-md/move-out-cleaning" className="text-primary underline font-medium">
+              <Link to="/services/move-out-cleaning" className="text-primary underline font-medium">
                 move out cleaning
               </Link>{" "}
               — built specifically for landlord inspections and deposit recovery.

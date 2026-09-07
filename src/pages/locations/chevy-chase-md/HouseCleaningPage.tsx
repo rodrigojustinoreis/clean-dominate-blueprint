@@ -320,7 +320,7 @@ const ChevyChaseHouseCleaningPage = () => {
               walk-through checklist before joining our crew. From your first cleaning to your hundredth, you'll
               receive the same meticulous standard — because we treat every home the way we'd want ours cleaned.
               We also offer{" "}
-              <Link to="/locations/chevy-chase-md/recurring-cleaning" className="text-primary underline">
+              <Link to="/services/recurring-cleaning" className="text-primary underline">
                 recurring cleaning
               </Link>{" "}
               plans for Chevy Chase households that want consistent, ongoing care.

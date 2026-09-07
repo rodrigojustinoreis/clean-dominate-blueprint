@@ -40,6 +40,7 @@ import { useSEO } from "@/hooks/useSEO";
 import { getCityBySlug, getExpandedCityFaqs } from "@/data/locations";
 import { services } from "@/data/services";
 import { slServices, slCities } from "@/data/service-locations";
+import { serviceCardHref, hubHref } from "@/data/related-content";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import GoogleMapEmbed from "@/components/GoogleMapEmbed";
 import GoogleBusinessLinks from "@/components/GoogleBusinessLinks";
@@ -662,20 +663,29 @@ const CityPage = () => {
               {visibleServiceLocationPages
                 .filter((sl) => !(city.slug === "georgetown-dc" && sl.slug === "house-cleaning"))
                 .map((sl) => {
-                const serviceHref = RETARGET_TO_VANITY[`${city.slug}/${sl.slug}`] ?? `/locations/${city.slug}/${sl.slug}`;
+                // Fase 3 / Lote 1: never link a noindex page. Indexable twin → national service page
+                // (never the Ads landing) → plain text card.
+                const serviceHref = RETARGET_TO_VANITY[`${city.slug}/${sl.slug}`] ?? serviceCardHref(city.slug, sl.slug);
+                const cardInner = (
+                  <>
+                    <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center shrink-0">
+                      <Sparkles className="h-5 w-5 text-accent" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className={`font-medium text-foreground transition-colors${serviceHref ? " group-hover:text-accent" : ""}`}>{sl.name} in {city.name}</h3>
+                      <p className="text-xs text-muted-foreground mt-0.5">Professional {sl.shortName} tailored for {city.name} homes</p>
+                    </div>
+                    {serviceHref && <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-accent transition-colors shrink-0" />}
+                  </>
+                );
                 return (
                 <Card key={sl.slug} className="group hover:shadow-md transition-all duration-200 hover:-translate-y-0.5">
                   <CardContent className="p-5">
-                    <Link to={serviceHref} className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center shrink-0">
-                        <Sparkles className="h-5 w-5 text-accent" />
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="font-medium text-foreground group-hover:text-accent transition-colors">{sl.name} in {city.name}</h3>
-                        <p className="text-xs text-muted-foreground mt-0.5">Professional {sl.shortName} tailored for {city.name} homes</p>
-                      </div>
-                      <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-accent transition-colors shrink-0" />
-                    </Link>
+                    {serviceHref ? (
+                      <Link to={serviceHref} className="flex items-center gap-3">{cardInner}</Link>
+                    ) : (
+                      <div className="flex items-center gap-3">{cardInner}</div>
+                    )}
                   </CardContent>
                 </Card>
                 );
@@ -883,14 +893,20 @@ const CityPage = () => {
           <div className="container mx-auto px-4 max-w-4xl">
             <h2 className="font-heading text-2xl font-bold mb-6">Nearby Areas We Serve</h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
-              {nearbyCities.map((nc) => nc && (
+              {nearbyCities.map((nc) => nc && (hubHref(nc.slug) ? (
                 <Button key={nc.slug} variant="outline" className="h-auto py-3 flex-col gap-1" asChild>
-                  <Link to={`/locations/${nc.slug}`}>
+                  <Link to={hubHref(nc.slug)!}>
                     <MapPin className="h-4 w-4 text-accent" />
                     <span className="text-xs font-medium">{nc.name}{nc.state !== "DC" ? `, ${nc.state}` : ""}</span>
                   </Link>
                 </Button>
-              ))}
+              ) : (
+                // Fase 3 / Lote 1: a noindex hub is shown as text — an indexable page never links a noindex one.
+                <div key={nc.slug} className="inline-flex h-auto flex-col items-center justify-center gap-1 rounded-md border border-input bg-background px-4 py-3 text-sm">
+                  <MapPin className="h-4 w-4 text-accent" />
+                  <span className="text-xs font-medium">{nc.name}{nc.state !== "DC" ? `, ${nc.state}` : ""}</span>
+                </div>
+              )))}
             </div>
           </div>
         </section>

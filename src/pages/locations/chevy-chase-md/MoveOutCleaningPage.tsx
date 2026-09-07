@@ -319,7 +319,7 @@ const ChevyChaseMoveOutCleaningPage = () => {
                 move out cleaning in Bethesda
               </Link>{" "}
               and{" "}
-              <Link to="/locations/kensington-md/move-out-cleaning" className="text-primary underline">
+              <Link to="/locations/kensington-md" className="text-primary underline">
                 move out cleaning in Kensington
               </Link>{" "}
               for clients relocating within the area.

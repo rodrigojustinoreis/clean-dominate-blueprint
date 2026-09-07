@@ -355,7 +355,7 @@ const BethesdaAirbnbCleaningPage = () => {
                 Airbnb cleaning in Rockville
               </Link>{" "}
               and{" "}
-              <Link to="/locations/chevy-chase-md/airbnb-cleaning" className="text-primary underline">
+              <Link to="/locations/chevy-chase-md" className="text-primary underline">
                 Airbnb cleaning in Chevy Chase
               </Link>
               .

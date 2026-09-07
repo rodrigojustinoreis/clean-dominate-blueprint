@@ -263,7 +263,7 @@ const WheatonHouseCleaningPage = () => {
               Whether your home is a classic split-level in Forest Glen, a townhome near the Glenmont
               Metro, or a single-family house in the Arcola neighborhood, our consistent top-to-bottom
               checklist ensures nothing gets skipped. We also offer{" "}
-              <Link to="/locations/wheaton-md/recurring-cleaning" className="text-primary underline">
+              <Link to="/services/recurring-cleaning" className="text-primary underline">
                 recurring cleaning
               </Link>{" "}
               for Wheaton households who want weekly or bi-weekly service with the same trusted team.
@@ -271,7 +271,7 @@ const WheatonHouseCleaningPage = () => {
             <p>
               If your home needs more than a standard clean — perhaps after a long period between
               professional visits — our{" "}
-              <Link to="/locations/wheaton-md/deep-cleaning" className="text-primary underline">
+              <Link to="/services/deep-cleaning" className="text-primary underline">
                 deep cleaning
               </Link>{" "}
               service covers inside appliances, grout lines, baseboards, ceiling fans, and every

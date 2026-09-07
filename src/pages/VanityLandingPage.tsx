@@ -14,6 +14,7 @@ import { useSEO } from "@/hooks/useSEO";
 import { getVanityPageBySlug } from "@/data/vanity-landings";
 import { getCity, getService, getServiceLocationIntro, getWhyChooseUs, getServiceLocationFAQs } from "@/data/service-locations";
 import { slServices } from "@/data/service-locations";
+import { serviceCardHref, hubHref } from "@/data/related-content";
 import { vanityFaqs } from "@/data/vanity-faqs";
 import { checklistOrder } from "@/data/template-variants";
 import NotFound from "./NotFound";
@@ -45,7 +46,13 @@ const VanityLandingPage = () => {
   });
 
   // Related service pages for this city
-  const relatedServices = slServices.filter(s => s.slug !== service.slug).slice(0, 4);
+  // Fase 3 / Lote 1: only indexable targets (local twin → national service page), never noindex.
+  const relatedServices = slServices
+    .filter((s) => s.slug !== service.slug)
+    .map((s) => ({ ...s, href: serviceCardHref(city.slug, s.slug) }))
+    .filter((s): s is typeof s & { href: string } => !!s.href)
+    .slice(0, 4);
+  const hubLink = hubHref(city.slug);
 
   return (
     <Layout>
@@ -136,7 +143,7 @@ const VanityLandingPage = () => {
           </div>
           {service.checklist.length > 30 && (
             <p className="text-sm text-muted-foreground mt-4 text-center">
-              Plus {service.checklist.length - 30} more items — <Link to={`/locations/${city.slug}/${service.slug}`} className="text-accent hover:underline">view full checklist</Link>
+              Plus {service.checklist.length - 30} more items on the full checklist
             </p>
           )}
         </div>
@@ -230,7 +237,7 @@ const VanityLandingPage = () => {
                 {relatedServices.map(s => (
                   <li key={s.slug}>
                     <Link
-                      to={`/locations/${city.slug}/${s.slug}`}
+                      to={s.href}
                       className="text-primary hover:underline flex items-center gap-2"
                       aria-label={`${s.name} in ${city.name}`}
                     >
@@ -245,7 +252,7 @@ const VanityLandingPage = () => {
                 Explore More
               </h3>
               <ul className="space-y-2">
-                <li><Link to={`/locations/${city.slug}`} className="text-primary hover:underline flex items-center gap-2"><ArrowRight className="h-3 w-3" aria-hidden="true" /> All services in {city.name}</Link></li>
+                {hubLink && <li><Link to={hubLink} className="text-primary hover:underline flex items-center gap-2"><ArrowRight className="h-3 w-3" aria-hidden="true" /> All services in {city.name}</Link></li>}
                 <li><Link to={`/services/${service.slug === "eco-friendly-cleaning" ? "standard-cleaning" : service.slug}`} className="text-primary hover:underline flex items-center gap-2"><ArrowRight className="h-3 w-3" aria-hidden="true" /> {service.name} overview</Link></li>
                 <li><Link to="/maryland" className="text-primary hover:underline flex items-center gap-2"><ArrowRight className="h-3 w-3" aria-hidden="true" /> Maryland cleaning services</Link></li>
                 <li><Link to="/contact" className="text-primary hover:underline flex items-center gap-2"><ArrowRight className="h-3 w-3" aria-hidden="true" /> Contact us for a free quote</Link></li>

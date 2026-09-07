@@ -296,7 +296,7 @@ const ChevyChasePostConstructionPage = () => {
             </p>
             <p>
               After your post-construction clean, consider setting up a{" "}
-              <Link to="/locations/chevy-chase-md/recurring-cleaning" className="text-primary underline">
+              <Link to="/services/recurring-cleaning" className="text-primary underline">
                 recurring cleaning
               </Link>{" "}
               schedule to maintain your newly renovated space. We also offer{" "}

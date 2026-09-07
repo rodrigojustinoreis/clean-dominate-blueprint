@@ -318,7 +318,7 @@ const PotomacMoveOutCleaningPage = () => {
             </p>
             <p>
               Also moving into a new home nearby? Combine your Potomac move out clean with a{" "}
-              <Link to="/locations/potomac-md/deep-cleaning" className="text-primary underline">
+              <Link to="/services/deep-cleaning" className="text-primary underline">
                 deep cleaning
               </Link>{" "}
               at your new address. Or consider{" "}

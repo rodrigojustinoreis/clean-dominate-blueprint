@@ -275,7 +275,7 @@ const ChevyChaseDeepCleaningPage = () => {
           </div>
           <p className="text-sm text-muted-foreground mt-4">
             Need ongoing care after your deep clean? Our{" "}
-            <Link to="/locations/chevy-chase-md/recurring-cleaning" className="text-primary underline">
+            <Link to="/services/recurring-cleaning" className="text-primary underline">
               recurring cleaning
             </Link>{" "}
             plans keep your Chevy Chase home consistently clean between deep clean visits.
@@ -307,7 +307,7 @@ const ChevyChaseDeepCleaningPage = () => {
                 house cleaning
               </Link>{" "}
               and{" "}
-              <Link to="/locations/chevy-chase-md/recurring-cleaning" className="text-primary underline">
+              <Link to="/services/recurring-cleaning" className="text-primary underline">
                 recurring cleaning
               </Link>{" "}
               services keep your Chevy Chase home consistently fresh. We also serve nearby{" "}
@@ -315,7 +315,7 @@ const ChevyChaseDeepCleaningPage = () => {
                 deep cleaning in Bethesda
               </Link>{" "}
               and{" "}
-              <Link to="/locations/kensington-md/deep-cleaning" className="text-primary underline">
+              <Link to="/locations/kensington-md" className="text-primary underline">
                 deep cleaning in Kensington
               </Link>
               .

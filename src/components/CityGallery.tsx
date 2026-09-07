@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, MapPin } from "lucide-react";
 import { cities, type CityData } from "@/data/locations";
+import { hubHref } from "@/data/related-content";
 
 const teamPhotos = [
   "/images/team/team-mopping-dark-floor.jpg",
@@ -141,11 +142,11 @@ function ImageCard({
   phrase: string;
   img: string;
 }) {
-  return (
-    <Link
-      to={`/locations/${city.slug}`}
-      className="group relative block aspect-[4/3] rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 ring-1 ring-border/60"
-    >
+  // Fase 3 / Lote 1: a noindex hub renders as a plain card — an indexable page never links a noindex one.
+  const href = hubHref(city.slug);
+  const cardClass = "group relative block aspect-[4/3] rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 ring-1 ring-border/60";
+  const card = (
+    <>
       <img
         src={img}
         alt={`House cleaning in ${label}`}
@@ -156,6 +157,7 @@ function ImageCard({
       {/* Resting gradient */}
       <div className="absolute inset-0 bg-gradient-to-t from-foreground/70 via-foreground/20 to-transparent transition-opacity duration-500 group-hover:opacity-0" />
 
+      {href && (<>
       {/* Hover overlay */}
       <div className="absolute inset-0 bg-primary/85 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col items-center justify-center p-8 text-center">
         <MapPin className="h-5 w-5 text-accent mb-3 opacity-0 group-hover:opacity-100 transition-all duration-400 delay-75 -translate-y-2 group-hover:translate-y-0" />
@@ -167,6 +169,7 @@ function ImageCard({
         </span>
       </div>
 
+      </>)}
       {/* City badge */}
       <div className="absolute bottom-0 left-0 right-0 p-5 transition-all duration-500 group-hover:opacity-0 group-hover:translate-y-1">
         <div className="flex items-center gap-2">
@@ -178,7 +181,12 @@ function ImageCard({
           </h3>
         </div>
       </div>
-    </Link>
+    </>
+  );
+  return href ? (
+    <Link to={href} className={cardClass}>{card}</Link>
+  ) : (
+    <div className={cardClass.replace("hover:shadow-xl ", "")}>{card}</div>
   );
 }
 

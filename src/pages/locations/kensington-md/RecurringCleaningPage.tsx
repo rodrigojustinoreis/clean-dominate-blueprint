@@ -340,7 +340,7 @@ const KensingtonRecurringCleaningPage = () => {
                 house cleaning
               </Link>{" "}
               or{" "}
-              <Link to="/locations/kensington-md/deep-cleaning" className="text-primary underline">
+              <Link to="/services/deep-cleaning" className="text-primary underline">
                 deep cleaning
               </Link>{" "}
               first, then convert. Many Kensington clients start with a one-time clean and become

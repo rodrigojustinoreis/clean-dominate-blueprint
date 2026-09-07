@@ -377,11 +377,11 @@ const BethesdaOfficeCleaningPage = () => {
                 house cleaning
               </Link>{" "}
               for Bethesda residents and serve nearby businesses with{" "}
-              <Link to="/locations/rockville-md/office-cleaning" className="text-primary underline">
+              <Link to="/locations/rockville-md" className="text-primary underline">
                 office cleaning in Rockville
               </Link>{" "}
               and{" "}
-              <Link to="/locations/chevy-chase-md/office-cleaning" className="text-primary underline">
+              <Link to="/locations/chevy-chase-md" className="text-primary underline">
                 office cleaning in Chevy Chase
               </Link>
               .

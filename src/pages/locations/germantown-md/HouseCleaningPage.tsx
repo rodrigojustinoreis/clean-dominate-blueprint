@@ -170,7 +170,7 @@ const GermantownHouseCleaningPage = () => {
           <Breadcrumbs
             items={[
               { label: "Home", href: "/" },
-              { label: "Germantown, MD", href: "/locations/germantown-md" },
+              { label: "Germantown, MD" },
               { label: "House Cleaning" },
             ]}
           />
@@ -272,7 +272,7 @@ const GermantownHouseCleaningPage = () => {
               homeowner near Great Seneca Creek who simply wants more free time on weekends, our
               professional house cleaning service is built for your schedule. We offer
               <Link
-                to="/locations/germantown-md/recurring-cleaning"
+                to="/services/recurring-cleaning"
                 className="text-primary underline mx-1"
               >
                 recurring cleaning

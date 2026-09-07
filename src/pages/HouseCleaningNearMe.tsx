@@ -14,7 +14,7 @@ const areas = [
   { name: "Rockville", state: "MD", slug: "rockville-md" },
   { name: "Bethesda", state: "MD", slug: "bethesda-md" },
   { name: "Gaithersburg", state: "MD", slug: "gaithersburg-md" },
-  { name: "Germantown", state: "MD", slug: "germantown-md" },
+  { name: "Germantown", state: "MD", slug: "germantown-md", href: "/locations/germantown-md/house-cleaning" },
   { name: "Frederick", state: "MD", slug: "frederick-md" },
   { name: "Washington", state: "DC", slug: "washington-dc" },
   { name: "Arlington", state: "VA", slug: "arlington-va" },

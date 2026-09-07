@@ -470,7 +470,7 @@ const BethesdaRecurringCleaningPage = () => {
                 recurring cleaning in Rockville
               </Link>{" "}
               and{" "}
-              <Link to="/locations/chevy-chase-md/recurring-cleaning" className="text-primary underline">
+              <Link to="/locations/chevy-chase-md" className="text-primary underline">
                 recurring cleaning in Chevy Chase
               </Link>
               .

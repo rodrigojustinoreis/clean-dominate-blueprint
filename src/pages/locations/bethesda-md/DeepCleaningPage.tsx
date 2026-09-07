@@ -421,7 +421,7 @@ const BethesdaDeepCleaningPage = () => {
               </Link>{" "}
               for typical ranges and the factors that change a deep-clean quote. For Pike &amp; Rose, White Flint,
               and the Pike District, use our{" "}
-              <Link to="/locations/north-bethesda-md/deep-cleaning" className="text-primary underline">
+              <Link to="/locations/north-bethesda-md" className="text-primary underline">
                 North Bethesda deep cleaning page
               </Link>.
             </p>

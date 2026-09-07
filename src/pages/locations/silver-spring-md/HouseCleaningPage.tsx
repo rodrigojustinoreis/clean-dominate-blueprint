@@ -324,7 +324,7 @@ const SilverSpringHouseCleaningPage = () => {
             </p>
             <p>
               Many Silver Spring homeowners also book our{" "}
-              <Link to="/locations/silver-spring-md/move-out-cleaning" className="text-primary underline font-medium">
+              <Link to="/services/move-out-cleaning" className="text-primary underline font-medium">
                 move out cleaning
               </Link>{" "}
               when transitioning between properties, or our{" "}
@@ -333,7 +333,7 @@ const SilverSpringHouseCleaningPage = () => {
               </Link>{" "}
               for short-term rental properties near the transit hub. For offices and commercial
               spaces, see our{" "}
-              <Link to="/locations/silver-spring-md/office-cleaning" className="text-primary underline font-medium">
+              <Link to="/locations/silver-spring-md" className="text-primary underline font-medium">
                 office cleaning in Silver Spring
               </Link>.
               Call (240) 704-2551 to discuss any cleaning need in Silver Spring.
@@ -367,7 +367,7 @@ const SilverSpringHouseCleaningPage = () => {
               {
                 title: "Move-Out Cleaning",
                 text: "A top-to-bottom clean designed for handovers, inspections, and fresh starts.",
-                href: "/locations/silver-spring-md/move-out-cleaning",
+                href: "/services/move-out-cleaning",
               },
             ].map((service) => (
               <Link

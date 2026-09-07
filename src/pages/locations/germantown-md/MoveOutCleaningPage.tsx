@@ -168,7 +168,7 @@ const GermantownMoveOutCleaningPage = () => {
           <Breadcrumbs
             items={[
               { label: "Home", href: "/" },
-              { label: "Germantown, MD", href: "/locations/germantown-md" },
+              { label: "Germantown, MD" },
               { label: "Move Out Cleaning" },
             ]}
           />

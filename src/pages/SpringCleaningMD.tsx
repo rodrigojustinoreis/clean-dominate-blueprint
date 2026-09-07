@@ -127,7 +127,7 @@ const SpringCleaningMD = () => {
               { name: "Bethesda, MD", slug: "bethesda-md" },
               { name: "Silver Spring, MD", slug: "silver-spring-md" },
               { name: "Wheaton, MD", slug: "wheaton-md" },
-              { name: "Germantown, MD", slug: "germantown-md" },
+              { name: "Germantown, MD", slug: "germantown-md/house-cleaning" },
               { name: "Arlington, VA", slug: "arlington-va" },
               { name: "Washington, DC", slug: "washington-dc" },
               { name: "Fairfax, VA", slug: "fairfax-va" },

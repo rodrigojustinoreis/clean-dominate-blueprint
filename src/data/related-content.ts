@@ -40,6 +40,31 @@ export function isIndexable(path: string): boolean {
   return true; // hubs, /services/*, /resources/*, static pages: index unless denylisted
 }
 
+// ── Link fallbacks for city×service cards (Fase 3 / Lote 1, 2026-09-07) ──────────
+// Hubs, vanity pages and "related" blocks must never link a noindex page. Fallback order for a
+// city×service card: the /locations/city/service page when it is indexable → the national
+// /services/service page (never /services/house-cleaning, the Ads landing) → plain text (null).
+const NATIONAL_SERVICE_PAGES: ReadonlySet<string> = new Set([
+  "house-cleaning", "deep-cleaning", "move-out-cleaning", "post-construction-cleaning",
+  "recurring-cleaning", "eco-friendly-cleaning", "airbnb-cleaning", "condo-cleaning",
+  "maid-service", "office-cleaning", "kitchen-cleaning", "bathroom-cleaning", "living-area-cleaning",
+]);
+
+export function serviceCardHref(citySlug: string, serviceSlug: string): string | null {
+  const local = `/locations/${citySlug}/${serviceSlug}`;
+  if (isIndexable(local)) return local;
+  if (serviceSlug !== "house-cleaning" && NATIONAL_SERVICE_PAGES.has(serviceSlug) && isIndexable(`/services/${serviceSlug}`)) {
+    return `/services/${serviceSlug}`;
+  }
+  return null;
+}
+
+/** City hub href, or null when the hub itself is noindex (render the city name as text). */
+export function hubHref(citySlug: string): string | null {
+  const hub = `/locations/${citySlug}`;
+  return isIndexable(hub) ? hub : null;
+}
+
 // ── Service ↔ category maps ─────────────────────────────────────────────────────
 export const SERVICE_LABEL: Record<string, string> = {
   "house-cleaning": "House Cleaning",

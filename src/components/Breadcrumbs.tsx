@@ -30,10 +30,13 @@ const Breadcrumbs = ({ items, className }: BreadcrumbsProps) => {
               <BreadcrumbItem>
                 {isLast ? (
                   <BreadcrumbPage>{item.label}</BreadcrumbPage>
-                ) : (
+                ) : item.href ? (
                   <BreadcrumbLink asChild>
-                    <Link to={item.href || "/"}>{item.label}</Link>
+                    <Link to={item.href}>{item.label}</Link>
                   </BreadcrumbLink>
+                ) : (
+                  // Fase 3 / Lote 1: a crumb whose page is noindex is shown as text, not linked.
+                  <span>{item.label}</span>
                 )}
               </BreadcrumbItem>
               {!isLast && <BreadcrumbSeparator />}

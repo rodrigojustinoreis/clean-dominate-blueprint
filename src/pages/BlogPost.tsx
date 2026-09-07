@@ -47,7 +47,7 @@ const blogContent: Record<string, React.ReactNode> = {
       </ul>
 
       <h2>Bedrooms — Allergy Season Prep</h2>
-      <p>Spring pollen is relentless in <Link to="/locations/germantown-md" className="text-accent hover:underline">Germantown</Link> and <Link to="/locations/gaithersburg-md" className="text-accent hover:underline">Gaithersburg</Link>. Reduce indoor allergens with these steps:</p>
+      <p>Spring pollen is relentless in <Link to="/locations/germantown-md/house-cleaning" className="text-accent hover:underline">Germantown</Link> and <Link to="/locations/gaithersburg-md" className="text-accent hover:underline">Gaithersburg</Link>. Reduce indoor allergens with these steps:</p>
       <ul>
         <li>Wash all bedding — comforters, pillows, mattress covers — in hot water</li>
         <li>HEPA vacuum mattress tops and sides</li>
@@ -344,7 +344,7 @@ const blogContent: Record<string, React.ReactNode> = {
   ),
   "remove-pet-hair-odors-dmv-homes": (
     <article className="prose prose-lg max-w-none">
-      <p>Maryland families love their pets — and their pets love to leave hair on every surface in sight. Whether you have a golden retriever in <Link to="/locations/potomac-md" className="text-accent hover:underline">Potomac</Link>, two cats in <Link to="/locations/arlington-va" className="text-accent hover:underline">Arlington</Link>, or a pack of rescues in <Link to="/locations/laurel-md" className="text-accent hover:underline">Laurel</Link>, keeping a clean, odor-free home requires a consistent strategy. Here's what actually works.</p>
+      <p>Maryland families love their pets — and their pets love to leave hair on every surface in sight. Whether you have a golden retriever in <Link to="/locations/potomac-md" className="text-accent hover:underline">Potomac</Link>, two cats in <Link to="/locations/arlington-va" className="text-accent hover:underline">Arlington</Link>, or a pack of rescues in Laurel, keeping a clean, odor-free home requires a consistent strategy. Here's what actually works.</p>
 
       <h2>Controlling Pet Hair: Room by Room</h2>
 
@@ -546,7 +546,7 @@ const blogContent: Record<string, React.ReactNode> = {
   ),
   "eco-cleaning-tips-winters-maryland": (
     <article className="prose prose-lg max-w-none">
-      <p>Maryland winters bring unique cleaning challenges — road salt tracked indoors, dry air creating static dust buildup, and holiday gatherings leaving extra messes. At <Link to="/" className="text-accent hover:underline">Capital Clean Care</Link>, we help families across <Link to="/locations/rockville-md" className="text-accent hover:underline">Rockville</Link>, <Link to="/locations/bethesda-md" className="text-accent hover:underline">Bethesda</Link>, and <Link to="/locations/germantown-md" className="text-accent hover:underline">Germantown</Link> keep their homes spotless through the coldest months — using only eco-friendly methods.</p>
+      <p>Maryland winters bring unique cleaning challenges — road salt tracked indoors, dry air creating static dust buildup, and holiday gatherings leaving extra messes. At <Link to="/" className="text-accent hover:underline">Capital Clean Care</Link>, we help families across <Link to="/locations/rockville-md" className="text-accent hover:underline">Rockville</Link>, <Link to="/locations/bethesda-md" className="text-accent hover:underline">Bethesda</Link>, and <Link to="/locations/germantown-md/house-cleaning" className="text-accent hover:underline">Germantown</Link> keep their homes spotless through the coldest months — using only eco-friendly methods.</p>
 
       <h2>1. Tackle Salt and Slush Stains Immediately</h2>
       <p>Road salt from Maryland's treated highways gets tracked onto hardwood, tile, and carpet. White residue can damage finishes over time. Mix equal parts water and white vinegar — a natural, non-toxic solution — and wipe entryway floors daily during snowy weeks. Place washable mats at every entrance to reduce salt spread.</p>
@@ -660,7 +660,7 @@ const blogContent: Record<string, React.ReactNode> = {
       </ul>
 
       <h2>Popular Arlington Neighborhoods We Serve</h2>
-      <p>Capital Clean Care covers all of Arlington, including Clarendon, Courthouse, Ballston, Pentagon City, Crystal City, Rosslyn, Lyon Village, Cherrydale, and Westover. Whether you're in a high-rise condo near Metro or a detached colonial near <Link to="/locations/falls-church-va" className="text-accent hover:underline">Falls Church</Link>, our teams know the area.</p>
+      <p>Capital Clean Care covers all of Arlington, including Clarendon, Courthouse, Ballston, Pentagon City, Crystal City, Rosslyn, Lyon Village, Cherrydale, and Westover. Whether you're in a high-rise condo near Metro or a detached colonial near Falls Church, our teams know the area.</p>
 
       <h2>Arlington Cleaning Prices</h2>
       <ul>
@@ -712,7 +712,7 @@ const blogContent: Record<string, React.ReactNode> = {
       <p>Our plant-based, EPA Safer Choice certified products are used in every deep clean — whether you have children, pets, or specific sensitivities. No chlorine bleach, ammonia, or artificial fragrances enter your home. Learn more about <Link to="/why-eco-friendly-cleaning" className="text-accent hover:underline">why we chose to go chemical-free</Link> from day one.</p>
 
       <h2>Neighborhoods We Serve in Rockville</h2>
-      <p>We cover all of Rockville including Twinbrook, Lincoln Park, Fallsmead, Hungerford, King Farm, Potomac Woods, East Rockville, and communities near <Link to="/locations/gaithersburg-md" className="text-accent hover:underline">Gaithersburg</Link> and <Link to="/locations/germantown-md" className="text-accent hover:underline">Germantown</Link>.</p>
+      <p>We cover all of Rockville including Twinbrook, Lincoln Park, Fallsmead, Hungerford, King Farm, Potomac Woods, East Rockville, and communities near <Link to="/locations/gaithersburg-md" className="text-accent hover:underline">Gaithersburg</Link> and <Link to="/locations/germantown-md/house-cleaning" className="text-accent hover:underline">Germantown</Link>.</p>
 
       <BlogInlineCTA
         headline="Rockville's Deep Cleaning Specialists"
@@ -785,7 +785,7 @@ const blogContent: Record<string, React.ReactNode> = {
       <p>For most Fairfax households with children and pets, bi-weekly professional cleaning is the sweet spot — frequent enough to maintain a clean home, affordable enough to sustain long-term. See our full breakdown of <Link to="/resources/recurring-cleaning-weekly-biweekly-monthly" className="text-accent hover:underline">weekly vs. bi-weekly vs. monthly cleaning</Link>, then review our <Link to="/locations/fairfax-va/house-cleaning" className="text-accent hover:underline">Fairfax house cleaning service</Link> for local scheduling and coverage.</p>
 
       <h2>Fairfax Neighborhoods We Serve</h2>
-      <p>We cover all of Fairfax City and surrounding communities including Fair Oaks, Burke, Annandale, Springfield, Reston, Herndon, Centreville, Chantilly, and areas near <Link to="/locations/mclean-va" className="text-accent hover:underline">McLean</Link> and <Link to="/locations/falls-church-va" className="text-accent hover:underline">Falls Church</Link>.</p>
+      <p>We cover all of Fairfax City and surrounding communities including Fair Oaks, Burke, Annandale, Springfield, Reston, Herndon, Centreville, Chantilly, and areas near <Link to="/locations/mclean-va" className="text-accent hover:underline">McLean</Link> and Falls Church.</p>
 
       <h2>Eco-Friendly Cleaning for Fairfax Kids and Pets</h2>
       <p>Fairfax families with young children and pets need products that are genuinely safe — not just "green-washed" marketing. Every Capital Clean Care visit uses EPA Safer Choice certified, plant-based products with no toxic residue. Read more: <Link to="/why-eco-friendly-cleaning" className="text-accent hover:underline">why eco-friendly cleaning matters for your family</Link>.</p>
@@ -1124,7 +1124,7 @@ const blogContent: Record<string, React.ReactNode> = {
       <p>Our plant-based, EPA Safer Choice certified products won't damage marble countertops, hardwood floors, or specialty finishes. No ammonia, no chlorine, no abrasives on delicate surfaces. <Link to="/why-eco-friendly-cleaning" className="text-accent hover:underline">Why this matters for high-end homes →</Link></p>
 
       <h2>Serving McLean and Northern Virginia</h2>
-      <p>In addition to McLean, we serve <Link to="/locations/falls-church-va" className="text-accent hover:underline">Falls Church</Link>, <Link to="/locations/arlington-va" className="text-accent hover:underline">Arlington</Link>, <Link to="/locations/fairfax-va" className="text-accent hover:underline">Fairfax</Link>, and <Link to="/locations/reston-va" className="text-accent hover:underline">Reston</Link>. See our <Link to="/resources/cleaning-service-fairfax-va" className="text-accent hover:underline">Fairfax cleaning guide</Link> and <Link to="/resources/cleaning-service-reston-va" className="text-accent hover:underline">Reston cleaning guide →</Link></p>
+      <p>In addition to McLean, we serve Falls Church, <Link to="/locations/arlington-va" className="text-accent hover:underline">Arlington</Link>, <Link to="/locations/fairfax-va" className="text-accent hover:underline">Fairfax</Link>, and <Link to="/locations/reston-va" className="text-accent hover:underline">Reston</Link>. See our <Link to="/resources/cleaning-service-fairfax-va" className="text-accent hover:underline">Fairfax cleaning guide</Link> and <Link to="/resources/cleaning-service-reston-va" className="text-accent hover:underline">Reston cleaning guide →</Link></p>
 
       <BlogInlineCTA
         headline="McLean's Trusted Professional Cleaning Service"
@@ -1293,9 +1293,9 @@ const blogContent: Record<string, React.ReactNode> = {
       <p>In a lot of places, choosing green cleaning products is a personal preference. In Montgomery County it's also a watershed issue. Every storm drain, sink, and septic field in the county eventually connects to a tributary that feeds the Potomac and, ultimately, the Chesapeake Bay. The phosphates, ammonia, chlorine bleach, and synthetic surfactants in conventional cleaners don't disappear when they go down the drain — they move through the system.</p>
       <p>Three things make this especially relevant locally:</p>
       <ul>
-        <li><strong>Septic systems in the up-county.</strong> Homes in <Link to="/locations/damascus-md" className="text-accent hover:underline">Damascus</Link>, Poolesville, Boyds, and parts of the agricultural reserve run on septic. Harsh disinfectants and drain chemicals kill the bacteria a septic system needs to work and leach toward groundwater. Plant-based products are far gentler on these systems.</li>
+        <li><strong>Septic systems in the up-county.</strong> Homes in Damascus, Poolesville, Boyds, and parts of the agricultural reserve run on septic. Harsh disinfectants and drain chemicals kill the bacteria a septic system needs to work and leach toward groundwater. Plant-based products are far gentler on these systems.</li>
         <li><strong>A health-conscious, allergy-prone population.</strong> The county sits in one of the worst pollen corridors on the East Coast. Families already fighting seasonal allergies don't need volatile fumes from bleach and ammonia layered on top — low-VOC, fragrance-free products keep indoor air clean.</li>
-        <li><strong>Kids, pets, and older homes.</strong> From historic homes in <Link to="/locations/chevy-chase-md" className="text-accent hover:underline">Chevy Chase</Link> to family-filled subdivisions in <Link to="/locations/germantown-md" className="text-accent hover:underline">Germantown</Link>, residue-free, non-toxic surfaces matter for the people and animals who actually live on them.</li>
+        <li><strong>Kids, pets, and older homes.</strong> From historic homes in <Link to="/locations/chevy-chase-md" className="text-accent hover:underline">Chevy Chase</Link> to family-filled subdivisions in <Link to="/locations/germantown-md/house-cleaning" className="text-accent hover:underline">Germantown</Link>, residue-free, non-toxic surfaces matter for the people and animals who actually live on them.</li>
       </ul>
       <p>The good news: a properly executed eco deep clean is <em>not</em> a weaker clean. EPA Safer Choice–certified, plant-based products cut grease, lift soap scum, and sanitize at the same level as conventional chemicals — they just do it without the collateral damage. <Link to="/why-eco-friendly-cleaning" className="text-accent hover:underline">Here's how that works →</Link></p>
 

@@ -289,7 +289,7 @@ const KensingtonHouseCleaningPage = () => {
                 recurring cleaning
               </Link>{" "}
               every week or two, or need a thorough{" "}
-              <Link to="/locations/kensington-md/deep-cleaning" className="text-primary underline">
+              <Link to="/services/deep-cleaning" className="text-primary underline">
                 deep cleaning
               </Link>{" "}
               after a long stretch between visits, we are ready to help. Call (240) 704-2551 or

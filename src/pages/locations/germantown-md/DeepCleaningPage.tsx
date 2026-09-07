@@ -171,7 +171,7 @@ const GermantownDeepCleaningPage = () => {
           <Breadcrumbs
             items={[
               { label: "Home", href: "/" },
-              { label: "Germantown, MD", href: "/locations/germantown-md" },
+              { label: "Germantown, MD" },
               { label: "Deep Cleaning" },
             ]}
           />
@@ -269,7 +269,7 @@ const GermantownDeepCleaningPage = () => {
               When you book a deep cleaning through Capital Clean Care, you get an EPA Safer Choice™
               certified clean that reaches every surface — not a standard cleaning completed at double
               speed. Many clients pair our deep cleaning with a{" "}
-              <Link to="/locations/germantown-md/recurring-cleaning" className="text-primary underline">
+              <Link to="/services/recurring-cleaning" className="text-primary underline">
                 recurring cleaning
               </Link>{" "}
               plan to maintain the results long-term. Others book a deep clean as a standalone for

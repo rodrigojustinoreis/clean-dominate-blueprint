@@ -274,7 +274,7 @@ const OlneyOfficeCleaningPage = () => {
             </p>
             <p>
               New commercial clients can begin with a one-time{" "}
-              <Link to="/locations/olney-md/deep-cleaning" className="text-primary underline">
+              <Link to="/services/deep-cleaning" className="text-primary underline">
                 deep cleaning
               </Link>{" "}
               baseline before transitioning to a regular maintenance schedule. This approach
