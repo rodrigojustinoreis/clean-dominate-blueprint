@@ -1,5 +1,6 @@
 import { Phone, ArrowRight, CheckCircle, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
 import { useSEO } from "@/hooks/useSEO";
 import { LocalBusinessSchema } from "@/components/SchemaMarkup";
@@ -103,6 +104,9 @@ export default function LimpiezaDeCasasPage() {
             </div>
             <p className="text-sm text-muted-foreground mt-6 p-4 bg-secondary/50 rounded-lg">
               <strong>No incluido en limpieza regular:</strong> lavado de ventanas exteriores, limpieza de paredes, dentro del horno o refrigerador (requiere limpieza profunda), tapicería con vapor.
+            </p>
+            <p className="text-sm text-muted-foreground mt-4">
+              Atendemos <Link to="/es/areas/silver-spring-md" className="text-primary font-medium hover:underline">Silver Spring</Link>, <Link to="/es/areas/rockville-md" className="text-primary font-medium hover:underline">Rockville</Link>, <Link to="/es/areas/wheaton-md" className="text-primary font-medium hover:underline">Wheaton</Link>, <Link to="/es/areas/gaithersburg-md" className="text-primary font-medium hover:underline">Gaithersburg</Link>, <Link to="/es/areas/germantown-md" className="text-primary font-medium hover:underline">Germantown</Link>, <Link to="/es/areas/aspen-hill-md" className="text-primary font-medium hover:underline">Aspen Hill</Link>, <Link to="/es/areas/takoma-park-md" className="text-primary font-medium hover:underline">Takoma Park</Link> y <Link to="/es/areas/montgomery-village-md" className="text-primary font-medium hover:underline">Montgomery Village</Link>.
             </p>
           </div>
         </section>

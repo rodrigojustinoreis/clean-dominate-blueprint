@@ -114,6 +114,9 @@ const MasterServicesPage = () => {
               <p className="text-muted-foreground">
                 Available as one-time or recurring (weekly, biweekly, monthly). Most 2-3 bedroom Maryland homes complete in 2-3 hours with a team of 2 cleaners.
               </p>
+              <p className="mt-4">
+                <Link to="/services/house-cleaning" className="text-primary font-medium hover:underline">House cleaning details, checklist and pricing →</Link>
+              </p>
             </article>
           </ScrollReveal>
 
@@ -131,6 +134,9 @@ const MasterServicesPage = () => {
               </p>
               <p className="text-muted-foreground">
                 Typical timeline: 4-7 hours depending on home size. Many clients schedule a deep cleaning every 3-6 months, then maintain with standard cleaning between.
+              </p>
+              <p className="mt-4">
+                <Link to="/services/deep-cleaning" className="text-primary font-medium hover:underline">Deep cleaning details, checklist and pricing →</Link>
               </p>
             </article>
           </ScrollReveal>
@@ -150,6 +156,9 @@ const MasterServicesPage = () => {
               <p className="text-muted-foreground">
                 Pricing typically $300-$500 for a 2-3 bedroom home, depending on condition. We provide before/after documentation on request.
               </p>
+              <p className="mt-4">
+                <Link to="/services/move-out-cleaning" className="text-primary font-medium hover:underline">Move-out cleaning details, inspection checklist and pricing →</Link>
+              </p>
             </article>
           </ScrollReveal>
 
@@ -168,6 +177,9 @@ const MasterServicesPage = () => {
               <p className="text-muted-foreground">
                 Pricing per square foot. We work with general contractors, remodelers, and homeowners directly.
               </p>
+              <p className="mt-4">
+                <Link to="/services/post-construction-cleaning" className="text-primary font-medium hover:underline">Post-construction cleaning details, scope and pricing →</Link>
+              </p>
             </article>
           </ScrollReveal>
 
@@ -185,6 +197,9 @@ const MasterServicesPage = () => {
               </p>
               <p className="text-muted-foreground">
                 Recurring pricing is approximately 15-20% lower than one-time pricing per visit.
+              </p>
+              <p className="mt-4">
+                <Link to="/services/recurring-cleaning" className="text-primary font-medium hover:underline">Recurring cleaning plans and pricing →</Link>
               </p>
             </article>
           </ScrollReveal>
@@ -218,6 +233,9 @@ const MasterServicesPage = () => {
               </p>
               <p className="text-muted-foreground">
                 Hosts can pay per turn or move to a monthly retainer for high-volume rentals.
+              </p>
+              <p className="mt-4">
+                <Link to="/services/airbnb-cleaning" className="text-primary font-medium hover:underline">Airbnb turnover cleaning details and pricing →</Link>
               </p>
             </article>
           </ScrollReveal>
@@ -270,6 +288,9 @@ const MasterServicesPage = () => {
               <p className="text-muted-foreground">
                 Safe for newborns, pregnant women, asthma and allergy sufferers, chemically sensitive individuals, and pets.
               </p>
+              <p className="mt-4">
+                <Link to="/services/eco-friendly-cleaning" className="text-primary font-medium hover:underline">Eco-friendly cleaning details and products →</Link>
+              </p>
             </article>
           </ScrollReveal>
 
@@ -285,6 +306,9 @@ const MasterServicesPage = () => {
               <p className="text-muted-foreground">
                 Studio and 1-bedroom: typically 90 minutes. 2-bedroom: typically 2-2.5 hours. Pricing starts at $120 for studios.
               </p>
+              <p className="mt-4">
+                <Link to="/services/condo-cleaning" className="text-primary font-medium hover:underline">Condo and apartment cleaning details and pricing →</Link>
+              </p>
             </article>
           </ScrollReveal>
 
@@ -299,6 +323,9 @@ const MasterServicesPage = () => {
               </p>
               <p className="text-muted-foreground">
                 Our eco-friendly products are also better for office air quality — important for medical and dental practices where patients with allergies/sensitivities visit daily.
+              </p>
+              <p className="mt-4">
+                <Link to="/services/office-cleaning" className="text-primary font-medium hover:underline">Office cleaning details and pricing →</Link>
               </p>
             </article>
           </ScrollReveal>
@@ -341,7 +368,7 @@ const MasterServicesPage = () => {
                 <li><Link to="/locations/bethesda-md" className="hover:text-primary">Bethesda, MD</Link></li>
                 <li><Link to="/locations/gaithersburg-md" className="hover:text-primary">Gaithersburg, MD</Link></li>
                 <li><Link to="/locations/silver-spring-md" className="hover:text-primary">Silver Spring, MD</Link></li>
-                <li><Link to="/locations/germantown-md" className="hover:text-primary">Germantown, MD</Link></li>
+                <li><Link to="/locations/germantown-md/house-cleaning" className="hover:text-primary">Germantown, MD</Link></li>
                 <li><Link to="/locations/potomac-md" className="hover:text-primary">Potomac, MD</Link></li>
                 <li><Link to="/locations/chevy-chase-md" className="hover:text-primary">Chevy Chase, MD</Link></li>
                 <li><Link to="/locations/north-bethesda-md" className="hover:text-primary">North Bethesda, MD</Link></li>

@@ -193,6 +193,13 @@ const HowMuchDeepCleaningCosts = () => {
               Put in those terms, a $375–$445 deep clean for a typical 3-bedroom home is often the best-value visit a
               household books all year — it's the one that makes every clean after it faster and cheaper.
             </p>
+            <p className="text-muted-foreground leading-relaxed mb-10">
+              Two of those moments have their own scope and price range: a{" "}
+              <Link to="/services/move-out-cleaning" className="text-accent underline hover:no-underline">move-out cleaning</Link>{" "}
+              follows the landlord's inspection checklist, and a{" "}
+              <Link to="/services/post-construction-cleaning" className="text-accent underline hover:no-underline">post-construction cleaning</Link>{" "}
+              is built around fine dust removal after building work.
+            </p>
           </FadeInSection>
 
           <FadeInSection>
