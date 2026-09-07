@@ -192,12 +192,12 @@ const rockvilleServiceGuide = [
   {
     name: "Move-out cleaning",
     bestFor: "Turnovers, final walkthroughs, and deposit-ready homes",
-    href: "/move-out-cleaning-rockville-md",
+    href: "/locations/rockville-md/move-out-cleaning",
   },
   {
     name: "Apartment cleaning",
     bestFor: "Condos, apartments, elevators, and managed buildings",
-    href: "/locations/rockville-md/apartment-cleaning",
+    href: "/services/condo-cleaning", // Fase 3 / Lote 1: the Rockville apartment twin is noindex
   },
   {
     name: "Eco-friendly cleaning",

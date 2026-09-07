@@ -187,7 +187,7 @@ const HouseCleaningGuideClarksburg = () => {
                 See{" "}
                 <Link to="/resources/post-construction-cleaning-montgomery-county-md" className="text-accent underline hover:no-underline">post-construction cleaning in Montgomery County</Link>,{" "}
                 <Link to="/resources/what-is-included-in-a-deep-cleaning" className="text-accent underline hover:no-underline">what's included in a deep cleaning</Link>, or book on our{" "}
-                <Link to="/locations/clarksburg-md/house-cleaning" className="text-accent underline hover:no-underline">Clarksburg house cleaning</Link>{" "}page.
+                <Link to="/locations/clarksburg-md" className="text-accent underline hover:no-underline">Clarksburg house cleaning</Link>{" "}page.
               </p>
             </div>
           </FadeInSection>

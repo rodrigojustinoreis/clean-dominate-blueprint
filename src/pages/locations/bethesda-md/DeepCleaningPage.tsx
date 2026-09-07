@@ -220,7 +220,7 @@ const BethesdaDeepCleaningPage = () => {
               ["Routine upkeep", "/locations/bethesda-md/recurring-cleaning", "Recurring cleaning"],
               ["Empty home or lease end", "/locations/bethesda-md/move-out-cleaning", "Move-out cleaning"],
               ["Renovation dust", "/locations/bethesda-md/post-construction-cleaning", "Post-construction cleaning"],
-              ["Pike & Rose / White Flint", "/locations/north-bethesda-md/deep-cleaning", "North Bethesda deep cleaning"],
+              ["Pike & Rose / White Flint", "/locations/north-bethesda-md", "North Bethesda deep cleaning"],
             ].map(([need, href, label]) => (
               <Link key={href} to={href} className="rounded-xl border border-border bg-background p-4 shadow-sm transition-colors hover:border-primary/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
                 <span className="block text-xs font-semibold uppercase tracking-wide text-accent">{need}</span>

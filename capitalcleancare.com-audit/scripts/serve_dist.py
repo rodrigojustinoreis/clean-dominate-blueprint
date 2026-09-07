@@ -28,7 +28,7 @@ class H(http.server.SimpleHTTPRequestHandler):
             path = note.split("→ ", 1)[1].rstrip("/") or "/"
         f = static_file(path)
         if f is None or st == 404:
-            f = DIST / "index.html"; st = 404
+            f = (DIST / "404.html") if (DIST / "404.html").exists() else (DIST / "index.html"); st = 404
         data = f.read_bytes()
         self.send_response(200 if st == 200 else st)
         ctype = "text/html; charset=utf-8" if f.suffix == ".html" else self.guess_type(str(f))

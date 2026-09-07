@@ -108,6 +108,12 @@
   from = "/house-cleaning-wheaton-md"
   to = "/locations/wheaton-md/house-cleaning"
   status = 301
+# Fase 3 / Lote 1 (2026-09-07): this retired URL returned 404 yet still had 273 impressions in 90 days;
+# its nested page is indexable again, so send the demand there in one hop.
+[[redirects]]
+  from = "/apartment-cleaning-wheaton-md"
+  to = "/locations/wheaton-md/apartment-cleaning"
+  status = 301
 [[redirects]]
   from = "/eco-cleaning-bethesda-md"
   to = "/locations/bethesda-md/eco-friendly-cleaning"

@@ -126,7 +126,7 @@ export const autoBlogPosts: AutoBlogPost[] = [
 <p>Start by dry-dusting the exhaust fan cover, light fixtures, top of the mirror frame, and any shelving. This takes 60 seconds and prevents you from scrubbing surfaces only to have dust fall on them again. A dry microfiber cloth works perfectly here.</p>
 
 <h3>Step 2 — Apply Cleaner to the Toilet and Let It Sit</h3>
-<p>Spray the toilet bowl with cleaner and let it dwell while you work on other surfaces. This contact time does the work for you — the longer the cleaner sits, the less scrubbing you need. Our team uses plant-based, non-toxic disinfectants that are safe for septic systems — important for many homes in <a href="/locations/potomac-md">Potomac</a> and <a href="/locations/damascus-md">Damascus, MD</a>.</p>
+<p>Spray the toilet bowl with cleaner and let it dwell while you work on other surfaces. This contact time does the work for you — the longer the cleaner sits, the less scrubbing you need. Our team uses plant-based, non-toxic disinfectants that are safe for septic systems — important for many homes in <a href="/locations/potomac-md">Potomac</a> and Damascus, MD.</p>
 
 <h3>Step 3 — Spray and Wipe Counters, Sink, and Fixtures</h3>
 <p>Apply cleaner to the countertop, sink basin, and faucet handles. Wipe in one direction to avoid spreading bacteria. Pay special attention to the base of the faucet — mineral deposits and soap scum accumulate here in DMV homes with hard water. White vinegar on a cloth dissolves buildup without scratching chrome.</p>
