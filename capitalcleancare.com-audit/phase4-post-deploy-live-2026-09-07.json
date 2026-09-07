@@ -1,0 +1,107 @@
+[
+  {
+    "check": "sitemap.xml 200 with 299 URLs",
+    "ok": true,
+    "detail": "200 299"
+  },
+  {
+    "check": "/resources/airbnb-cleaning-tips-dmv-hosts: 200, index,follow, self-canonical, contextual link → /locations/bethesda-md/airbnb-cleaning",
+    "ok": true,
+    "detail": "200 robots=index, follow canonical=self link=True"
+  },
+  {
+    "check": "/resources/office-cleaning-small-business-dmv: 200, index,follow, self-canonical, contextual link → /locations/bethesda-md/office-cleaning",
+    "ok": true,
+    "detail": "200 robots=index, follow canonical=self link=True"
+  },
+  {
+    "check": "/resources/recurring-cleaning-weekly-biweekly-monthly: 200, index,follow, self-canonical, contextual link → /locations/rockville-md/recurring-cleaning",
+    "ok": true,
+    "detail": "200 robots=index, follow canonical=self link=True"
+  },
+  {
+    "check": "/resources/deep-cleaning-rockville-md: 200, index,follow, self-canonical, contextual link → /locations/rockville-md/recurring-cleaning",
+    "ok": true,
+    "detail": "200 robots=index, follow canonical=self link=True"
+  },
+  {
+    "check": "/resources/post-construction-cleaning-montgomery-county-md: 200, index,follow, self-canonical, contextual link → /locations/silver-spring-md/post-construction-cleaning",
+    "ok": true,
+    "detail": "200 robots=index, follow canonical=self link=True"
+  },
+  {
+    "check": "/resources/post-renovation-cleaning-guide-maryland: 200, index,follow, self-canonical, contextual link → /locations/silver-spring-md/post-construction-cleaning",
+    "ok": true,
+    "detail": "200 robots=index, follow canonical=self link=True"
+  },
+  {
+    "check": "/locations/bethesda-md/airbnb-cleaning: 200, index,follow, self-canonical, in sitemap",
+    "ok": true,
+    "detail": "200 index, follow self sitemap=True"
+  },
+  {
+    "check": "/locations/bethesda-md/office-cleaning: 200, index,follow, self-canonical, in sitemap",
+    "ok": true,
+    "detail": "200 index, follow self sitemap=True"
+  },
+  {
+    "check": "/locations/rockville-md/recurring-cleaning: 200, index,follow, self-canonical, in sitemap",
+    "ok": true,
+    "detail": "200 index, follow self sitemap=True"
+  },
+  {
+    "check": "/locations/silver-spring-md/post-construction-cleaning: 200, index,follow, self-canonical, in sitemap",
+    "ok": true,
+    "detail": "200 index, follow self sitemap=True"
+  },
+  {
+    "check": "/services/move-out-cleaning: 200, index,follow, self-canonical, in sitemap",
+    "ok": true,
+    "detail": "200 index, follow self sitemap=True"
+  },
+  {
+    "check": "/services/post-construction-cleaning: 200, index,follow, self-canonical, in sitemap",
+    "ok": true,
+    "detail": "200 index, follow self sitemap=True"
+  },
+  {
+    "check": "/locations/wheaton-md/house-cleaning: 200, index,follow, self-canonical, in sitemap",
+    "ok": true,
+    "detail": "200 index, follow self sitemap=True"
+  },
+  {
+    "check": "/locations/wheaton-md/apartment-cleaning: 200, index,follow, self-canonical, in sitemap",
+    "ok": true,
+    "detail": "200 index, follow self sitemap=True"
+  },
+  {
+    "check": "/locations/rockville-md/move-out-cleaning: 200, index,follow, self-canonical, in sitemap",
+    "ok": true,
+    "detail": "200 index, follow self sitemap=True"
+  },
+  {
+    "check": "/locations/alexandria-va: 200, index,follow, self-canonical, in sitemap",
+    "ok": true,
+    "detail": "200 index, follow self sitemap=True"
+  },
+  {
+    "check": "/locations/washington-dc: 200, index,follow, self-canonical, in sitemap",
+    "ok": true,
+    "detail": "200 index, follow self sitemap=True"
+  },
+  {
+    "check": "/locations/georgetown-dc: 200, index,follow, self-canonical, in sitemap",
+    "ok": true,
+    "detail": "200 index, follow self sitemap=True"
+  },
+  {
+    "check": "Ads landing /services/house-cleaning identical to the pre-phase-4 baseline (asset hashes normalised)",
+    "ok": false,
+    "detail": ""
+  },
+  {
+    "check": "protected pages: title/meta/canonical/robots/H1/schema identical to the pre-phase-4 baseline",
+    "ok": true,
+    "detail": "[]"
+  }
+]
