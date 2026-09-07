@@ -34,7 +34,7 @@ import PricingTable from "@/components/PricingTable";
 import TrustBar from "@/components/TrustBar";
 import TrustBadges from "@/components/TrustBadges";
 import ConversionCTA from "@/components/ConversionCTA";
-import { FAQSchema, ServiceSchema, BreadcrumbSchema, CityReviewSchema, WebPageSchema } from "@/components/SchemaMarkup";
+import { FAQSchema, ServiceSchema, BreadcrumbSchema, LocalBusinessSchema, WebPageSchema } from "@/components/SchemaMarkup";
 import { pickReviews } from "@/data/realReviews";
 import { useSEO } from "@/hooks/useSEO";
 import { getCityBySlug, getExpandedCityFaqs } from "@/data/locations";
@@ -404,9 +404,11 @@ const CityPage = () => {
         serviceType={isUmbrellaHub ? "Residential Cleaning Services" : "House Cleaning"}
         image={isRockvilleHub ? "https://capitalcleancare.com/images/locations/rockville-real-work/window-frame-cleaning-768.webp" : undefined}
       />
-      <CityReviewSchema
-        cityName={city.name}
-        cityUrl={`https://capitalcleancare.com/locations/${city.slug}`}
+      {/* Fase 3 / Lote 2: the complete #business node (id, phone, url, logo/image, price range, hours,
+          geo, sameAs, offer catalog, aggregateRating) with this city as the specific areaServed —
+          CityReviewSchema only carried name/phone/address/rating. Address unchanged (GBP decision pending). */}
+      <LocalBusinessSchema
+        areaServed={[cityLabel, ...(city.county ? [`${city.county}, ${city.state}`] : [])]}
         reviews={testimonials}
       />
 
