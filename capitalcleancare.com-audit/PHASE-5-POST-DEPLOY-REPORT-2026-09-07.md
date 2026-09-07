@@ -37,4 +37,5 @@
 
 ## Próximo passo
 
-- Inspecionar a nova URL no Google Search Console e solicitar indexação. A URL já está 200, indexável, autocanônica e presente no sitemap.
+- Google Search Console inspecionado após a publicação: `URL is not on Google` / `URL is unknown to Google`, comportamento esperado para uma página recém-criada.
+- A solicitação de indexação foi tentada, mas o GSC respondeu `Quota Exceeded` porque a cota diária da propriedade já havia sido consumida. Repetir amanhã. A URL já está 200, indexável, autocanônica e presente no sitemap.
