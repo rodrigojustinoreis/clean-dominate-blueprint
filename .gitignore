@@ -31,3 +31,7 @@ dist-ssr
 .env.local
 .env.*.local
 CLI-Anything/
+
+# Python bytecode (audit scripts)
+__pycache__/
+*.py[cod]
