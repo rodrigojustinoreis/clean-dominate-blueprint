@@ -1408,7 +1408,7 @@ const blogContent: Record<string, React.ReactNode> = {
       </ol>
 
       <h2>Markets We Serve</h2>
-      <p>Capital Clean Care provides commercial cleaning throughout <Link to="/locations/silver-spring-md" className="text-accent hover:underline">Silver Spring</Link>, <Link to="/locations/bethesda-md" className="text-accent hover:underline">Bethesda</Link>, <Link to="/locations/rockville-md" className="text-accent hover:underline">Rockville</Link>, <Link to="/locations/washington-dc" className="text-accent hover:underline">Washington DC</Link>, <Link to="/locations/arlington-va" className="text-accent hover:underline">Arlington</Link>, and throughout the DMV.</p>
+      <p>Capital Clean Care provides commercial cleaning throughout <Link to="/locations/silver-spring-md" className="text-accent hover:underline">Silver Spring</Link>, <Link to="/locations/bethesda-md" className="text-accent hover:underline">Bethesda</Link>, <Link to="/locations/rockville-md" className="text-accent hover:underline">Rockville</Link>, <Link to="/locations/washington-dc" className="text-accent hover:underline">Washington DC</Link>, <Link to="/locations/arlington-va" className="text-accent hover:underline">Arlington</Link>, and throughout the DMV. For offices around Bethesda Row and the Woodmont Triangle, see <Link to="/locations/bethesda-md/office-cleaning" className="text-accent hover:underline">office cleaning in Bethesda</Link>.</p>
 
       <BlogInlineCTA
         headline="Professional Office Cleaning for DMV Small Businesses"
