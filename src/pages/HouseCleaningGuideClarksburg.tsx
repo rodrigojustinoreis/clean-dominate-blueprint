@@ -149,7 +149,7 @@ const HouseCleaningGuideClarksburg = () => {
           ))}
           </div>
 
-          <BlogInlineCTA headline="Looking for house cleaning in Clarksburg?" subtext="From move-in cleans for new builds to recurring service — locally owned, background-checked, eco-friendly. See our Clarksburg house cleaning service." ctaLabel="See Our Clarksburg Service" ctaTo="/locations/clarksburg-md/house-cleaning" />
+          <BlogInlineCTA headline="Looking for house cleaning in Clarksburg?" subtext="From move-in cleans for new builds to recurring service — locally owned, background-checked, eco-friendly. See our Clarksburg house cleaning service." ctaLabel="See Our Clarksburg Service" ctaTo="/locations/clarksburg-md" />
 
           <FadeInSection>
             <div className="my-12 rounded-[2rem] border border-border bg-white p-6 shadow-sm md:p-8">
@@ -200,9 +200,9 @@ const HouseCleaningGuideClarksburg = () => {
           <FadeInSection>
             <div className="bg-primary text-primary-foreground rounded-2xl p-8 text-center shadow-lg mt-14">
               <h2 className="font-heading text-2xl md:text-3xl font-bold mb-4">See Capital Clean Care in Clarksburg</h2>
-              <p className="text-primary-foreground/80 mb-6 leading-relaxed">Locally owned, background-checked, eco-friendly{" "}<Link to="/locations/clarksburg-md/house-cleaning" className="underline text-primary-foreground/90 hover:text-white">house cleaning in Clarksburg</Link>{" "}— move-in, recurring, and deep cleans with transparent pricing.</p>
+              <p className="text-primary-foreground/80 mb-6 leading-relaxed">Locally owned, background-checked, eco-friendly{" "}<Link to="/locations/clarksburg-md" className="underline text-primary-foreground/90 hover:text-white">house cleaning in Clarksburg</Link>{" "}— move-in, recurring, and deep cleans with transparent pricing.</p>
               <Button size="lg" className="bg-accent hover:bg-accent/90 text-white px-8 py-6 rounded-full text-base font-semibold shadow-md" asChild>
-                <Link to="/locations/clarksburg-md/house-cleaning">Clarksburg House Cleaning <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                <Link to="/locations/clarksburg-md">Clarksburg House Cleaning <ArrowRight className="ml-2 h-4 w-4" /></Link>
               </Button>
             </div>
           </FadeInSection>

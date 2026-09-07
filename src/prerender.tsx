@@ -22,6 +22,7 @@ function getAllRoutes(): string[] {
     "/pricing",
     // Fase 3 / Lote 2: prerendered 404 body — netlify.toml serves dist/404.html (flatten alias) with status 404.
     "/404",
+    "/es/404",
     "/resources",
     "/resources/how-to-clean-carpet-home-apartment",
     "/resources/how-to-remove-candle-wax-eco-friendly",

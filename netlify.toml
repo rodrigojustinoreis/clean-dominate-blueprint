@@ -1959,6 +1959,11 @@
 # Fase 3 / Lote 2 (2026-09-07): the body is the prerendered, branded, noindex 404 page (dist/404.html)
 # instead of the home page's HTML.
 [[redirects]]
+  from = "/es/*"
+  to = "/es/404.html"
+  status = 404
+
+[[redirects]]
   from = "/*"
   to = "/404.html"
   status = 404
