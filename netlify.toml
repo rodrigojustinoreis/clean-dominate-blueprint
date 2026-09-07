@@ -1950,9 +1950,11 @@
 # Genuinely unmatched URLs now return a real HTTP 404 (was 200 = soft-404, the root
 # cause of "Crawled – not indexed"). The SPA shell still loads and React Router
 # renders the NotFound page, which also carries <meta name="robots" content="noindex">.
+# Fase 3 / Lote 2 (2026-09-07): the body is the prerendered, branded, noindex 404 page (dist/404.html)
+# instead of the home page's HTML.
 [[redirects]]
   from = "/*"
-  to = "/index.html"
+  to = "/404.html"
   status = 404
 
 # ── Cache: content-hashed assets are safe to cache forever ──
