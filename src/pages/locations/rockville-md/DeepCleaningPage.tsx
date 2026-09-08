@@ -23,6 +23,7 @@ import InternalLinksGrid from "@/components/location/InternalLinksGrid";
 import LocationSocialProof from "@/components/location/LocationSocialProof";
 import LocationQuoteSection from "@/components/location/LocationQuoteSection";
 import { pickReviews } from "@/data/realReviews";
+import { rockvilleRealWorkPhotos, ROCKVILLE_REAL_WORK_DATE, ROCKVILLE_REAL_WORK_DATE_LABEL } from "@/data/rockville-real-work";
 
 const PAGE_URL = "https://capitalcleancare.com/locations/rockville-md/deep-cleaning";
 const HERO_IMAGE = "/images/locations/post-construction-authentic/post-construction-team-landscape-v3.webp";
@@ -208,7 +209,7 @@ const RockvilleDeepCleaningPage = () => {
           <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
             A Capital Clean Care deep cleaning in Rockville is a room-by-room reset for accumulated buildup that routine maintenance does not target. The written scope can include baseboards, window sills and tracks, ceiling fans, door frames, grout lines, bathroom fixtures, kitchen grease, and selected appliance or cabinet interiors. Our bonded, insured and background-checked team brings its equipment, follows product labels for each surface and completes a final checklist. Four to six hours is a planning range for many homes—not a fixed promise—because size, bathrooms, stairs, condition and add-ons determine the written estimate. Service covers ZIP codes 20850–20853, including Rockville Town Center, King Farm, Twinbrook, Fallsgrove and College Gardens. This page is specifically for occupied-home deep cleaning; empty-home turnovers, routine visits and renovation dust have separate service scopes below.
           </p>
-          <p className="mt-4 text-sm text-muted-foreground">Compare current planning ranges in our <Link to="/resources/house-cleaning-cost-rockville-md" className="font-semibold text-primary underline">Rockville house-cleaning cost guide</Link>.</p>
+          <p className="mt-4 text-sm text-muted-foreground">Planning range for a Rockville deep clean, as published in our <Link to="/resources/house-cleaning-cost-rockville-md" className="font-semibold text-primary underline">Rockville house-cleaning cost guide</Link>: <strong className="text-foreground">$285–$540+</strong> depending on home size, current condition and the add-ons you select. Your written quote is prepared before service.</p>
         </div>
       </section>
 
@@ -253,6 +254,43 @@ const RockvilleDeepCleaningPage = () => {
         title="What's Included in Our Rockville Deep Cleaning"
         categories={checklistCategories}
       />
+
+      {/* ── Documented detail work in Rockville (owner photographs shared with the Rockville hub) ── */}
+      <section className="py-12 md:py-16 bg-muted/30" aria-labelledby="rockville-deep-documented-work">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="flex items-center gap-2 mb-3">
+            <Camera className="h-5 w-5 text-accent" aria-hidden="true" />
+            <p className="text-sm font-semibold text-accent">Original photographs · Rockville, MD · <time dateTime={ROCKVILLE_REAL_WORK_DATE}>{ROCKVILLE_REAL_WORK_DATE_LABEL}</time></p>
+          </div>
+          <h2 id="rockville-deep-documented-work" className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-4">
+            Documented detail work in Rockville
+          </h2>
+          <p className="text-muted-foreground leading-relaxed mb-6">
+            These photographs document a Capital Clean Care residential cleaning visit in Rockville on {ROCKVILLE_REAL_WORK_DATE_LABEL}.
+            The tasks shown — upper window frames, window tracks and latches, bathroom mirror areas and light fixtures — are the
+            kind of detail work listed in the deep-cleaning scope above. The full record of that visit is on our{" "}
+            <Link to="/locations/rockville-md" className="text-primary font-medium underline">Rockville page</Link>.
+          </p>
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-4" aria-label="Documented Capital Clean Care work completed in Rockville">
+            {rockvilleRealWorkPhotos.map((photo) => (
+              <figure key={photo.src480} className="overflow-hidden rounded-xl border border-border bg-card shadow-sm">
+                <img
+                  src={photo.src480}
+                  srcSet={`${photo.src480} 480w, ${photo.src768} 768w`}
+                  sizes="(max-width: 639px) 46vw, 220px"
+                  alt={photo.alt}
+                  width="480"
+                  height="640"
+                  className="aspect-[4/3] w-full object-cover"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <figcaption className="px-3 py-2 text-xs leading-snug text-muted-foreground">{photo.caption}</figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* ── Social Proof (3rd — trust video early) ── */}
       <LocationSocialProof cityName="Rockville" citySlug="rockville-md" serviceSlug="deep-cleaning" serviceLabel="Deep Cleaning" />
