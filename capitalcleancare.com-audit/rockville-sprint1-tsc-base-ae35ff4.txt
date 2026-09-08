@@ -1,0 +1,35 @@
+src/components/ExitIntentPopup.tsx(114,45): error TS2769: No overload matches this call.
+src/components/QuoteForm.tsx(220,18): error TS2304: Cannot find name 'gtag'.
+src/components/QuoteForm.tsx(221,9): error TS2304: Cannot find name 'gtag'.
+src/components/SeniorQuoteForm.tsx(39,41): error TS2769: No overload matches this call.
+src/data/related-content.ts(133,24): error TS2339: Property 'canonical' does not exist on type 'AutoBlogPost | BlogPost'.
+src/data/related-content.ts(133,9): error TS2339: Property 'canonical' does not exist on type 'AutoBlogPost | BlogPost'.
+src/pages/BackToSchoolCleaningChecklist.tsx(67,5): error TS2561: Object literal may only specify known properties, but 'image' does not exist in type 'SEOProps'. Did you mean to write 'ogImage'?
+src/pages/HouseCleaningPage.tsx(307,57): error TS2322: Type '{ rel: string; as: string; href: string; fetchpriority: string; }' is not assignable to type 'DetailedHTMLProps<LinkHTMLAttributes<HTMLLinkElement>, HTMLLinkElement>'.
+src/pages/HouseCleaningPage.tsx(310,105): error TS2741: Property 'href' is missing in type '{ label: string; }' but required in type '{ label: string; href: string; }'.
+src/pages/HouseCleaningPage.tsx(313,9): error TS2322: Type '{ serviceName: string; description: string; url: string; reviews: { name: string; text: string; location: string; }[]; }' is not assignable to type 'IntrinsicAttributes & ServiceSchemaProps'.
+src/pages/es/ContactoPage.tsx(26,28): error TS2322: Type '{ inLanguage: string; areaServed: string[]; }' is not assignable to type 'IntrinsicAttributes & LocalBusinessSchemaProps'.
+src/pages/es/HomeES.tsx(246,10): error TS2741: Property 'faqs' is missing in type '{ schemaId: string; }' but required in type 'FAQExpandedSectionProps'.
+src/pages/es/HomeES.tsx(35,28): error TS2322: Type '{ inLanguage: string; areaServed: string[]; }' is not assignable to type 'IntrinsicAttributes & LocalBusinessSchemaProps'.
+src/pages/es/LimpiezaAirbnbPage.tsx(132,10): error TS2741: Property 'faqs' is missing in type '{ schemaId: string; }' but required in type 'FAQExpandedSectionProps'.
+src/pages/es/LimpiezaAirbnbPage.tsx(27,28): error TS2322: Type '{ inLanguage: string; areaServed: string[]; }' is not assignable to type 'IntrinsicAttributes & LocalBusinessSchemaProps'.
+src/pages/es/LimpiezaDeCasasPage.tsx(153,10): error TS2741: Property 'faqs' is missing in type '{ schemaId: string; }' but required in type 'FAQExpandedSectionProps'.
+src/pages/es/LimpiezaDeCasasPage.tsx(42,28): error TS2322: Type '{ inLanguage: string; areaServed: string[]; }' is not assignable to type 'IntrinsicAttributes & LocalBusinessSchemaProps'.
+src/pages/es/LimpiezaDeMudanzaPage.tsx(121,10): error TS2741: Property 'faqs' is missing in type '{ schemaId: string; }' but required in type 'FAQExpandedSectionProps'.
+src/pages/es/LimpiezaDeMudanzaPage.tsx(27,28): error TS2322: Type '{ inLanguage: string; areaServed: string[]; }' is not assignable to type 'IntrinsicAttributes & LocalBusinessSchemaProps'.
+src/pages/es/LimpiezaPostConstruccionPage.tsx(130,10): error TS2741: Property 'faqs' is missing in type '{ schemaId: string; }' but required in type 'FAQExpandedSectionProps'.
+src/pages/es/LimpiezaPostConstruccionPage.tsx(27,28): error TS2322: Type '{ inLanguage: string; areaServed: string[]; }' is not assignable to type 'IntrinsicAttributes & LocalBusinessSchemaProps'.
+src/pages/es/LimpiezaProfundaPage.tsx(131,10): error TS2741: Property 'faqs' is missing in type '{ schemaId: string; }' but required in type 'FAQExpandedSectionProps'.
+src/pages/es/LimpiezaProfundaPage.tsx(27,28): error TS2322: Type '{ inLanguage: string; areaServed: string[]; }' is not assignable to type 'IntrinsicAttributes & LocalBusinessSchemaProps'.
+src/pages/es/LimpiezaRecurrentePage.tsx(150,10): error TS2741: Property 'faqs' is missing in type '{ schemaId: string; }' but required in type 'FAQExpandedSectionProps'.
+src/pages/es/LimpiezaRecurrentePage.tsx(27,28): error TS2322: Type '{ inLanguage: string; areaServed: string[]; }' is not assignable to type 'IntrinsicAttributes & LocalBusinessSchemaProps'.
+src/pages/es/NosotrosPage.tsx(160,10): error TS2741: Property 'faqs' is missing in type '{ schemaId: string; }' but required in type 'FAQExpandedSectionProps'.
+src/pages/es/NosotrosPage.tsx(25,28): error TS2322: Type '{ inLanguage: string; areaServed: string[]; }' is not assignable to type 'IntrinsicAttributes & LocalBusinessSchemaProps'.
+src/pages/es/areas/AspenHillES.tsx(35,28): error TS2322: Type '{ inLanguage: string; areaServed: string[]; }' is not assignable to type 'IntrinsicAttributes & LocalBusinessSchemaProps'.
+src/pages/es/areas/GaithersburgES.tsx(35,28): error TS2322: Type '{ inLanguage: string; areaServed: string[]; }' is not assignable to type 'IntrinsicAttributes & LocalBusinessSchemaProps'.
+src/pages/es/areas/GermantownES.tsx(35,28): error TS2322: Type '{ inLanguage: string; areaServed: string[]; }' is not assignable to type 'IntrinsicAttributes & LocalBusinessSchemaProps'.
+src/pages/es/areas/MontgomeryVillageES.tsx(35,28): error TS2322: Type '{ inLanguage: string; areaServed: string[]; }' is not assignable to type 'IntrinsicAttributes & LocalBusinessSchemaProps'.
+src/pages/es/areas/RockvilleES.tsx(35,28): error TS2322: Type '{ inLanguage: string; areaServed: string[]; }' is not assignable to type 'IntrinsicAttributes & LocalBusinessSchemaProps'.
+src/pages/es/areas/SilverSpringES.tsx(35,28): error TS2322: Type '{ inLanguage: string; areaServed: string[]; }' is not assignable to type 'IntrinsicAttributes & LocalBusinessSchemaProps'.
+src/pages/es/areas/TakomaParkES.tsx(35,28): error TS2322: Type '{ inLanguage: string; areaServed: string[]; }' is not assignable to type 'IntrinsicAttributes & LocalBusinessSchemaProps'.
+src/pages/es/areas/WheatonES.tsx(35,28): error TS2322: Type '{ inLanguage: string; areaServed: string[]; }' is not assignable to type 'IntrinsicAttributes & LocalBusinessSchemaProps'.

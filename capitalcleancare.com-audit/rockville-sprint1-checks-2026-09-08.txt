@@ -1,0 +1,36 @@
+PASS sitemap unchanged (300, same URL set) — 300 vs 300; diff=[]
+PASS page count unchanged — 1227 vs 1227
+PASS /locations/rockville-md/deep-cleaning: 200 prerendered, index,follow, self-canonical, in sitemap
+PASS /locations/rockville-md/deep-cleaning: title, H1, canonical, robots, schema TYPES unchanged — types=['AdministrativeArea', 'AggregateRating', 'Answer', 'BreadcrumbList', 'City', 'FAQPage', 'GeoCoordinates', 'ImageObject', 'ListItem', 'Offer', 'OfferCatalog', 'OpeningHoursSpecification', 'Place', 'PostalAddress', 'Question', 'Service', 'State', 'WebPage']
+PASS /locations/rockville-md/deep-cleaning: meta description 120–160 — 151: Deep cleaning in Rockville, MD for grout, baseboards, fixtures and selected appliance interiors. See the written scope, local work and request a quote.
+PASS /locations/rockville-md/deep-cleaning: tel + quote form/CTA present
+PASS /locations/rockville-md/deep-cleaning: 0 new links to noindex pages
+   words 1373 → 1479
+PASS /locations/rockville-md/move-out-cleaning: 200 prerendered, index,follow, self-canonical, in sitemap
+PASS /locations/rockville-md/move-out-cleaning: title, H1, canonical, robots, schema TYPES unchanged — types=['AdministrativeArea', 'AggregateRating', 'Answer', 'BreadcrumbList', 'FAQPage', 'GeoCoordinates', 'ListItem', 'Offer', 'OfferCatalog', 'OpeningHoursSpecification', 'Place', 'PostalAddress', 'Question', 'Service', 'State']
+PASS /locations/rockville-md/move-out-cleaning: meta description 120–160 — 145: Move-out cleaning in Rockville, MD with a written scope for your final walkthrough. Bonded and insured. Request a quote and confirm availability.
+PASS /locations/rockville-md/move-out-cleaning: tel + quote form/CTA present
+PASS /locations/rockville-md/move-out-cleaning: 0 new links to noindex pages
+   words 1120 → 1132
+PASS /locations/rockville-md/recurring-cleaning: 200 prerendered, index,follow, self-canonical, in sitemap
+PASS /locations/rockville-md/recurring-cleaning: title, H1, canonical, robots, schema TYPES unchanged — types=['AdministrativeArea', 'AggregateRating', 'Answer', 'BreadcrumbList', 'FAQPage', 'GeoCoordinates', 'ListItem', 'Offer', 'OfferCatalog', 'OpeningHoursSpecification', 'Place', 'PostalAddress', 'Question', 'Service', 'State']
+PASS /locations/rockville-md/recurring-cleaning: meta description 120–160 — 160: Weekly, bi-weekly or monthly house cleaning in Rockville, MD: a deeper first visit, then the same background-checked team on a set schedule. Free written quote.
+PASS /locations/rockville-md/recurring-cleaning: tel + quote form/CTA present
+PASS /locations/rockville-md/recurring-cleaning: 0 new links to noindex pages
+   words 1111 → 1208
+PASS deep: documented-work section with the 4 hub photographs + date + hub link
+PASS deep: no dollar figures added — $ in after=0 before=0
+PASS move-out: no 'same-day'/'same day'/'deposit back' left (visible text, meta, schema)
+PASS recurring: checklist + FAQs + FAQPage schema == baseline; no inferred table; monthly in meta/lead/Service; cost-guide block; no new $ — {'checklist kept': True, 'no inferred table': True, 'cost-guide link': True, 'no new $': True, 'checklist text == baseline': True, 'FAQ text == baseline': True, 'FAQPage schema == baseline': True, 'monthly in meta': True, 'monthly in hero lead': True, "monthly in the page's Service description": True, 'cost/scope block present': True}
+PASS recurring: no dollar figures added — $ after=0 before=0
+   recurring overlap with Rockville house page: 32.3% → 29.8%
+   recurring unique vs all other recurring pages: 63.2% → 66.4%
+PASS NO-OP /locations/rockville-md: HTML identical to baseline (asset hashes normalised)
+PASS NO-OP /locations/rockville-md/house-cleaning: HTML identical to baseline (asset hashes normalised)
+PASS NO-OP /resources/house-cleaning-cost-rockville-md: HTML identical to baseline (asset hashes normalised)
+PASS protected pages: title/meta/canonical/robots/H1/schema unchanged
+PASS Ads landing byte-identical
+   indexable pages whose HTML changed: ['/locations/rockville-md/deep-cleaning', '/locations/rockville-md/move-out-cleaning', '/locations/rockville-md/recurring-cleaning']
+PASS only the 3 target pages changed among indexable URLs — ['/locations/rockville-md/deep-cleaning', '/locations/rockville-md/move-out-cleaning', '/locations/rockville-md/recurring-cleaning']
+
+SUMMARY 28/28 passed
