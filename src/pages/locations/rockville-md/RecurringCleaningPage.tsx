@@ -95,7 +95,7 @@ const RockvilleRecurringCleaningPage = () => {
   const { seoHelmet } = useSEO({
     title: "Recurring House Cleaning in Rockville, MD",
     description:
-      "Weekly, bi-weekly or monthly house cleaning in Rockville, MD: a deeper first visit, then the same team on a set schedule. Most Rockville plans run $165–$310 per visit.",
+      "Weekly, bi-weekly or monthly house cleaning in Rockville, MD: a deeper first visit, then the same background-checked team on a set schedule. Free written quote.",
     canonical: PAGE_URL,
     ogImage: "https://capitalcleancare.com/og-image.jpg",
   });
@@ -257,8 +257,7 @@ const RockvilleRecurringCleaningPage = () => {
           <div className="mt-8 rounded-xl border border-border bg-muted/30 p-5 text-sm text-muted-foreground leading-relaxed">
             <p className="font-semibold text-foreground mb-2">What recurring cleaning costs in Rockville</p>
             <p>
-              For most Rockville homes, a bi-weekly recurring visit runs about <strong className="text-foreground">$165–$310 per visit</strong>{" "}
-              depending on size — the planning range published in our{" "}
+              Per-visit planning ranges for Rockville homes by frequency are published in our{" "}
               <Link to="/resources/house-cleaning-cost-rockville-md" className="text-primary font-medium underline">Rockville house-cleaning cost guide</Link>.
               Weekly plans carry the largest recurring discount because less builds up between visits; monthly visits take
               longer for the same reason, so the per-visit price sits higher and the first visit is still a full baseline clean.
