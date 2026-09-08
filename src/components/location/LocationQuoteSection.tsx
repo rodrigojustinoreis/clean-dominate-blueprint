@@ -42,8 +42,7 @@ const LocationQuoteSection = ({
               <a href="tel:+12407042551" className="text-primary font-semibold underline">(240) 704-2551</a>.</>
           ) : (
             <>{zipLine ? `${zipLine} ` : ""}Fill out the form for a free, no-obligation quote, or call{" "}
-              <a href="tel:+12407042551" className="text-primary font-semibold underline">(240) 704-2551</a>.
-              {" "}{availabilityNote}</>
+              <a href="tel:+12407042551" className="text-primary font-semibold underline">(240) 704-2551</a>{`. ${availabilityNote}`}</>
           )}
         </p>
       </div>
