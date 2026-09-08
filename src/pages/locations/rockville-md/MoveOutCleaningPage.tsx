@@ -26,15 +26,15 @@ const PAGE_URL = "https://capitalcleancare.com/locations/rockville-md/move-out-c
 const faqs = [
   {
     q: "How much does move out cleaning cost in Rockville?",
-    a: "Pricing depends on home size and condition. Get your exact quote in 60 seconds — free, no commitment. Same-day availability confirmed at booking for ZIP codes 20850, 20851, 20852, and 20853.",
+    a: "Pricing depends on home size and condition. Get your exact quote in 60 seconds — free, no commitment — for ZIP codes 20850, 20851, 20852, and 20853. Your date is confirmed at booking.",
   },
   {
     q: "Do I need to be present during the move out cleaning in Rockville?",
     a: "No. Our fully insured, background-checked team handles everything while you manage your move. Many clients coordinate key drop-off and handle the cleaning remotely.",
   },
   {
-    q: "Can you do same-day or next-day move out cleaning in Rockville?",
-    a: "In most cases, yes. Contact us early to confirm availability — we regularly accommodate urgent move-out timelines throughout Rockville and Montgomery County.",
+    q: "How far in advance should I book a move out cleaning in Rockville?",
+    a: "As early as you know your move-out or walkthrough date. Short-notice dates depend on the schedule, so send your date first and we confirm the earliest available slot at booking — throughout Rockville and Montgomery County.",
   },
   {
     q: "Do you clean empty apartments and homes?",
@@ -122,7 +122,7 @@ const RockvilleMoveOutCleaningPage = () => {
   const { seoHelmet } = useSEO({
     title: "Move Out Cleaning in Rockville, MD",
     description:
-      "Move out cleaning in Rockville, MD. We clean to landlord & inspection standards so you get your deposit back. Bonded, insured, eco-friendly. Book today — same-day available.",
+      "Move out cleaning in Rockville, MD. We clean to landlord and inspection standards so the walkthrough goes smoothly. Bonded, insured, eco-friendly. Free written quote.",
     canonical: PAGE_URL,
     ogImage: "https://capitalcleancare.com/og-image.jpg",
   });
@@ -160,7 +160,7 @@ const RockvilleMoveOutCleaningPage = () => {
       />
       <ServiceSchema
         serviceName="Move Out Cleaning in Rockville, MD"
-        description="Move out cleaning in Rockville, MD. Landlord-ready checklist covers inside appliances, grout, baseboards, inside cabinets. Bonded and insured. Same-day available. 100% satisfaction guaranteed."
+        description="Move out cleaning in Rockville, MD. Landlord-ready checklist covers inside appliances, grout, baseboards, inside cabinets. Bonded and insured. 100% satisfaction guaranteed."
         url={PAGE_URL}
         areaServed={["Rockville, MD", "Montgomery County, MD"]}
       />
@@ -230,8 +230,8 @@ const RockvilleMoveOutCleaningPage = () => {
             {[
               {
                 step: "1",
-                title: "Book your date — same-day available",
-                body: "Same-day and next-day slots available for urgent moves in 20850 and 20851. Call (240) 704-2551 or use the form below to confirm availability.",
+                title: "Book your date",
+                body: "Tell us your move-out or walkthrough date. Call (240) 704-2551 or use the form below and we confirm the earliest available slot for 20850–20853.",
               },
               {
                 step: "2",
@@ -289,8 +289,8 @@ const RockvilleMoveOutCleaningPage = () => {
             <p>
               Don't risk your security deposit on a rushed DIY clean the night before inspection.
               A professional move out cleaning is one of the highest-ROI services you can book
-              before vacating. Call (240) 704-2551 or use the form below — same-day slots available
-              throughout Rockville.
+              before vacating. Call (240) 704-2551 or use the form below to lock in a date before
+              your walkthrough anywhere in Rockville.
             </p>
           </div>
         </div>
