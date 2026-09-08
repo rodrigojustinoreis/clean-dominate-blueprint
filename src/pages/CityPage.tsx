@@ -41,7 +41,6 @@ import { getCityBySlug, getExpandedCityFaqs } from "@/data/locations";
 import { services } from "@/data/services";
 import { slServices, slCities } from "@/data/service-locations";
 import { serviceCardHref, hubHref } from "@/data/related-content";
-import { rockvilleRealWorkPhotos } from "@/data/rockville-real-work";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import GoogleMapEmbed from "@/components/GoogleMapEmbed";
 import GoogleBusinessLinks from "@/components/GoogleBusinessLinks";
@@ -246,6 +245,32 @@ const HUB_PAGE_DATES: Record<string, string> = {
   "fairfax-va": "2026-09-03",
 };
 
+const rockvilleRealWorkPhotos = [
+  {
+    src480: "/images/locations/rockville-real-work/window-detailing-480.webp",
+    src768: "/images/locations/rockville-real-work/window-detailing-768.webp",
+    alt: "Capital Clean Care employee detailing the upper frame of an open window during a residential cleaning in Rockville, Maryland",
+    caption: "Upper window-frame detailing",
+  },
+  {
+    src480: "/images/locations/rockville-real-work/window-frame-cleaning-480.webp",
+    src768: "/images/locations/rockville-real-work/window-frame-cleaning-768.webp",
+    alt: "Capital Clean Care employee cleaning a window track and latch in a Rockville, Maryland home",
+    caption: "Window track and latch cleaning",
+  },
+  {
+    src480: "/images/locations/rockville-real-work/bathroom-fixture-detailing-480.webp",
+    src768: "/images/locations/rockville-real-work/bathroom-fixture-detailing-768.webp",
+    alt: "Capital Clean Care professional in uniform detailing the bathroom mirror and lighting area in a Rockville home",
+    caption: "Bathroom mirror and lighting-area detail",
+  },
+  {
+    src480: "/images/locations/rockville-real-work/bathroom-light-cleaning-480.webp",
+    src768: "/images/locations/rockville-real-work/bathroom-light-cleaning-768.webp",
+    alt: "Capital Clean Care professional wiping bathroom light fixtures above a mirror during a Rockville cleaning visit",
+    caption: "Bathroom light-fixture cleaning",
+  },
+];
 
 const rockvilleCoreServiceSlugs = new Set([
   "house-cleaning",

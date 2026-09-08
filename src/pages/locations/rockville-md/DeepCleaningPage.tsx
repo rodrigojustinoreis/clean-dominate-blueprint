@@ -23,11 +23,42 @@ import InternalLinksGrid from "@/components/location/InternalLinksGrid";
 import LocationSocialProof from "@/components/location/LocationSocialProof";
 import LocationQuoteSection from "@/components/location/LocationQuoteSection";
 import { pickReviews } from "@/data/realReviews";
-import { rockvilleRealWorkPhotos, ROCKVILLE_REAL_WORK_DATE, ROCKVILLE_REAL_WORK_DATE_LABEL } from "@/data/rockville-real-work";
 
 const PAGE_URL = "https://capitalcleancare.com/locations/rockville-md/deep-cleaning";
 const HERO_IMAGE = "/images/locations/post-construction-authentic/post-construction-team-landscape-v3.webp";
 const HERO_IMAGE_SRCSET = "/images/locations/post-construction-authentic/post-construction-team-landscape-v3-640.webp 640w, /images/locations/post-construction-authentic/post-construction-team-landscape-v3.webp 1400w";
+
+// Owner-provided photographs of a Capital Clean Care residential cleaning visit in Rockville on
+// 2026-08-17 (same set and captions as the Rockville hub, added there in af18f64). Do not add
+// photos without the owner's authorisation and the real date/location.
+const ROCKVILLE_REAL_WORK_DATE = "2026-08-17";
+const ROCKVILLE_REAL_WORK_DATE_LABEL = "August 17, 2026";
+const rockvilleRealWorkPhotos = [
+  {
+    src480: "/images/locations/rockville-real-work/window-detailing-480.webp",
+    src768: "/images/locations/rockville-real-work/window-detailing-768.webp",
+    alt: "Capital Clean Care employee detailing the upper frame of an open window during a residential cleaning in Rockville, Maryland",
+    caption: "Upper window-frame detailing",
+  },
+  {
+    src480: "/images/locations/rockville-real-work/window-frame-cleaning-480.webp",
+    src768: "/images/locations/rockville-real-work/window-frame-cleaning-768.webp",
+    alt: "Capital Clean Care employee cleaning a window track and latch in a Rockville, Maryland home",
+    caption: "Window track and latch cleaning",
+  },
+  {
+    src480: "/images/locations/rockville-real-work/bathroom-fixture-detailing-480.webp",
+    src768: "/images/locations/rockville-real-work/bathroom-fixture-detailing-768.webp",
+    alt: "Capital Clean Care professional in uniform detailing the bathroom mirror and lighting area in a Rockville home",
+    caption: "Bathroom mirror and lighting-area detail",
+  },
+  {
+    src480: "/images/locations/rockville-real-work/bathroom-light-cleaning-480.webp",
+    src768: "/images/locations/rockville-real-work/bathroom-light-cleaning-768.webp",
+    alt: "Capital Clean Care professional wiping bathroom light fixtures above a mirror during a Rockville cleaning visit",
+    caption: "Bathroom light-fixture cleaning",
+  },
+];
 
 const faqs = [
   {

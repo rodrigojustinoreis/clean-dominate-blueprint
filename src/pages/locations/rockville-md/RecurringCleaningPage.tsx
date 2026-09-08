@@ -16,6 +16,7 @@ import {
 } from "@/components/SchemaMarkup";
 import { useSEO } from "@/hooks/useSEO";
 import HeroLocation from "@/components/location/HeroLocation";
+import ServiceChecklistLocation from "@/components/location/ServiceChecklistLocation";
 import InternalLinksGrid from "@/components/location/InternalLinksGrid";
 import LocationSocialProof from "@/components/location/LocationSocialProof";
 import LocationQuoteSection from "@/components/location/LocationQuoteSection";
@@ -31,7 +32,7 @@ const localFaqs = [
   },
   {
     q: "Is monthly house cleaning available in Rockville?",
-    a: "Yes. Monthly works for lighter-use homes or as a supplement to your own upkeep. Because more builds up between visits, each monthly visit takes longer than a bi-weekly one, and your first visit is still a full baseline clean before the routine starts. Weekly, bi-weekly and monthly are all available across Rockville ZIP codes 20850–20853.",
+    a: "Yes. Monthly works for lighter-use homes or as a supplement to your own upkeep. Because more can build up between visits, a monthly visit may take longer than a bi-weekly one, and your first visit is still a baseline clean before the routine starts. Weekly, bi-weekly and monthly are all available across Rockville ZIP codes 20850–20853; the scope of each visit is set in your written quote.",
   },
   {
     q: "Do I get the same cleaners every recurring visit?",
@@ -59,20 +60,57 @@ const localFaqs = [
   },
 ];
 
-// What a maintenance visit covers versus what the first (baseline) visit adds, and which tasks are
-// deep-cleaning add-ons. Facts mirror the Rockville house-cleaning checklist and the Rockville
-// deep-cleaning scope already published on this site; nothing here is a new promise.
-const visitScope: { task: string; every: string; first: string; deep: string }[] = [
-  { task: "Kitchen counters, backsplash, sink and appliance exteriors", every: "Included", first: "Included", deep: "—" },
-  { task: "Microwave interior", every: "Included", first: "Included", deep: "—" },
-  { task: "Bathrooms: toilets, tub and shower, sinks, mirrors, floors", every: "Included", first: "Included", deep: "—" },
-  { task: "Dusting, vacuuming, mopping, beds made (linens if provided), trash", every: "Included", first: "Included", deep: "—" },
-  { task: "Baseboards, door frames, light switches and handles", every: "Wiped", first: "Wiped top and sides", deep: "—" },
-  { task: "Accumulated buildup since your last professional clean", every: "Maintained", first: "Reset top to bottom", deep: "—" },
-  { task: "Window sills and tracks", every: "Sills wiped", first: "Sills and tracks", deep: "—" },
-  { task: "Inside oven, range hood degreasing, inside cabinets", every: "—", first: "—", deep: "Add-on" },
-  { task: "Grout lines, showerhead descaling, exhaust fans", every: "—", first: "—", deep: "Add-on" },
-  { task: "Ceiling fans, vacuuming under furniture", every: "—", first: "—", deep: "Add-on" },
+const checklistCategories = [
+  {
+    heading: "Kitchen",
+    items: [
+      "Countertops and backsplash wiped down",
+      "Appliance exteriors cleaned",
+      "Microwave interior cleaned",
+      "Sink scrubbed and polished",
+      "Floors swept and mopped",
+    ],
+  },
+  {
+    heading: "Bathrooms",
+    items: [
+      "Toilet sanitized inside and out",
+      "Tub and shower scrubbed",
+      "Sink and faucets polished",
+      "Mirrors cleaned streak-free",
+      "Floors mopped",
+    ],
+  },
+  {
+    heading: "Bedrooms",
+    items: [
+      "Dusting of all surfaces",
+      "Vacuuming floors and rugs",
+      "Beds made (linens changed if provided)",
+      "Mirrors and glass wiped",
+      "Trash emptied",
+    ],
+  },
+  {
+    heading: "Living Areas",
+    items: [
+      "Dusting of furniture and shelves",
+      "Vacuuming all upholstered surfaces",
+      "Hard floors mopped",
+      "Window sills wiped",
+      "Trash emptied and relined",
+    ],
+  },
+  {
+    heading: "All Rooms",
+    items: [
+      "Baseboards dusted",
+      "Light switches and door handles wiped",
+      "Door frames dusted",
+      "Trash emptied throughout",
+      "Final walkthrough check",
+    ],
+  },
 ];
 
 const rockvilleServices = [
@@ -174,43 +212,11 @@ const RockvilleRecurringCleaningPage = () => {
         </div>
       </div>
 
-      {/* Visit-by-visit scope: what every visit covers, what the first visit adds, what needs a deep clean */}
-      <section className="py-12 md:py-16" aria-labelledby="rockville-recurring-scope">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <h2 id="rockville-recurring-scope" className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-3">
-            What each Rockville visit covers — and what the first visit adds
-          </h2>
-          <p className="text-muted-foreground leading-relaxed mb-6">
-            Recurring service is two different visits. The first one is a baseline clean that resets the buildup since your
-            last professional clean; every visit after it maintains that standard on your schedule. Tasks marked as add-ons
-            belong to a{" "}
-            <Link to="/locations/rockville-md/deep-cleaning" className="text-primary font-medium underline">Rockville deep cleaning</Link>{" "}
-            and are quoted separately.
-          </p>
-          <div className="overflow-x-auto rounded-xl border border-border">
-            <table className="w-full text-sm">
-              <thead className="bg-muted/50 text-foreground">
-                <tr>
-                  <th scope="col" className="text-left p-3 font-semibold">Task</th>
-                  <th scope="col" className="text-left p-3 font-semibold">Every visit</th>
-                  <th scope="col" className="text-left p-3 font-semibold text-primary">First (baseline) visit</th>
-                  <th scope="col" className="text-left p-3 font-semibold">Deep-clean add-on</th>
-                </tr>
-              </thead>
-              <tbody>
-                {visitScope.map((row, i) => (
-                  <tr key={row.task} className={i % 2 === 0 ? "bg-background" : "bg-muted/20"}>
-                    <td className="p-3 text-foreground">{row.task}</td>
-                    <td className="p-3 text-muted-foreground">{row.every}</td>
-                    <td className="p-3 text-foreground font-medium">{row.first}</td>
-                    <td className="p-3 text-muted-foreground">{row.deep}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
+      {/* Checklist */}
+      <ServiceChecklistLocation
+        title="What's Included in Every Rockville Recurring Clean"
+        categories={checklistCategories}
+      />
 
       {/* ── Social Proof (3rd — trust video early) ── */}
       <LocationSocialProof cityName="Rockville" citySlug="rockville-md" serviceSlug="recurring-cleaning" serviceLabel="Recurring Cleaning" />
@@ -259,8 +265,8 @@ const RockvilleRecurringCleaningPage = () => {
             <p>
               Per-visit planning ranges for Rockville homes by frequency are published in our{" "}
               <Link to="/resources/house-cleaning-cost-rockville-md" className="text-primary font-medium underline">Rockville house-cleaning cost guide</Link>.
-              Weekly plans carry the largest recurring discount because less builds up between visits; monthly visits take
-              longer for the same reason, so the per-visit price sits higher and the first visit is still a full baseline clean.
+              Weekly plans carry the largest recurring discount because less builds up between visits; monthly visits can
+              take longer for the same reason, so per-visit pricing may differ, and the first visit is still a baseline clean.
               Your exact price comes as a written quote for your home, frequency and priorities.
             </p>
           </div>
@@ -345,7 +351,8 @@ const RockvilleRecurringCleaningPage = () => {
           <div className="space-y-4 text-muted-foreground leading-relaxed">
             <p>
               Your first recurring visit is always a deeper, more thorough baseline clean — not a
-              routine maintenance pass. Before we establish your regular schedule, our team works
+              routine maintenance pass. What that first visit and each maintenance visit cover is
+              written into your quote before we start, so there is no guesswork about scope. Before we establish your regular schedule, our team works
               through your Rockville home top-to-bottom, addressing any buildup that's accumulated
               since your last professional clean. Think of it as resetting the baseline so that
               every routine visit after stays fast, thorough, and consistent.
