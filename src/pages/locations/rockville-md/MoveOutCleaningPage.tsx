@@ -122,7 +122,7 @@ const RockvilleMoveOutCleaningPage = () => {
   const { seoHelmet } = useSEO({
     title: "Move Out Cleaning in Rockville, MD",
     description:
-      "Move out cleaning in Rockville, MD. We clean to landlord and inspection standards so the walkthrough goes smoothly. Bonded, insured, eco-friendly. Free written quote.",
+      "Move-out cleaning in Rockville, MD with a written scope for your final walkthrough. Bonded and insured. Request a quote and confirm availability.",
     canonical: PAGE_URL,
     ogImage: "https://capitalcleancare.com/og-image.jpg",
   });
@@ -189,6 +189,7 @@ const RockvilleMoveOutCleaningPage = () => {
         heroImage="/images/team/team-mopping-dark-floor.jpg"
         heroImageAlt="Capital Clean Care move out cleaning service in Rockville, MD — deposit-ready landlord inspection results"
         ctaPrimary="Book Your Move Out Clean in Rockville"
+        ctaNote="No commitment · Date confirmed at booking · 100% satisfaction guaranteed"
       />
 
       {/* Checklist */}
@@ -344,7 +345,14 @@ const RockvilleMoveOutCleaningPage = () => {
       <TrustBadges compact />
       <ConversionCTA cityName="Rockville" />
 
-      <LocationQuoteSection cityName="Rockville" serviceLabel="Move-Out Cleaning" defaultService="move" zipLine="Serving Rockville across ZIPs 20850, 20851, 20852, and 20853." />
+      <LocationQuoteSection
+        cityName="Rockville"
+        serviceLabel="Move-Out Cleaning"
+        defaultService="move"
+        zipLine="Serving Rockville across ZIPs 20850, 20851, 20852, and 20853."
+        availabilityNote="Your date is confirmed at booking."
+        trustLine="Date confirmed at booking · 100% satisfaction guaranteed · Bonded & Insured"
+      />
 
       <StickyMobileCTA />
     </Layout>

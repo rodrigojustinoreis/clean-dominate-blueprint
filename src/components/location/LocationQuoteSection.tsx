@@ -9,6 +9,10 @@ interface LocationQuoteSectionProps {
   zipLine?: string;
   /** Optional CTA prose variant (Lote 1b) — replaces the default "Fill out the form…" line. */
   ctaProse?: string;
+  /** Sentence after the phone number in the default prose. Default unchanged; override only where the page must not promise same-day slots. */
+  availabilityNote?: string;
+  /** Trust line under the form. Default unchanged; override only where the page must not promise same-day slots. */
+  trustLine?: string;
 }
 
 /**
@@ -17,7 +21,15 @@ interface LocationQuoteSectionProps {
  * form must live here. Replaces the old "button that just links to /contact"
  * dead-end that contradicted the "free quote in 60 seconds" copy.
  */
-const LocationQuoteSection = ({ cityName, serviceLabel, defaultService, zipLine, ctaProse }: LocationQuoteSectionProps) => (
+const LocationQuoteSection = ({
+  cityName,
+  serviceLabel,
+  defaultService,
+  zipLine,
+  ctaProse,
+  availabilityNote = "Same-day slots often available.",
+  trustLine = "Same-day slots available · 100% satisfaction guaranteed · Bonded & Insured",
+}: LocationQuoteSectionProps) => (
   <section id="quote" className="py-12 md:py-16 bg-muted/30 scroll-mt-20">
     <div className="container mx-auto px-4 max-w-2xl">
       <div className="text-center mb-6">
@@ -31,7 +43,7 @@ const LocationQuoteSection = ({ cityName, serviceLabel, defaultService, zipLine,
           ) : (
             <>{zipLine ? `${zipLine} ` : ""}Fill out the form for a free, no-obligation quote, or call{" "}
               <a href="tel:+12407042551" className="text-primary font-semibold underline">(240) 704-2551</a>.
-              Same-day slots often available.</>
+              {" "}{availabilityNote}</>
           )}
         </p>
       </div>
@@ -39,7 +51,7 @@ const LocationQuoteSection = ({ cityName, serviceLabel, defaultService, zipLine,
         <QuoteForm defaultService={defaultService} submitLabel={`Get My Free ${serviceLabel} Quote →`} compact />
       </div>
       <p className="text-center text-xs text-muted-foreground mt-3">
-        Same-day slots available · 100% satisfaction guaranteed · Bonded &amp; Insured
+        {trustLine}
       </p>
     </div>
   </section>
