@@ -31,10 +31,6 @@ const localFaqs = [
     a: "Weekly is ideal for larger homes, families with kids or pets, or anyone who wants the home consistently guest-ready. Bi-weekly is our most popular plan — a clean, well-maintained home without maximum frequency or cost. Both include the same thorough checklist.",
   },
   {
-    q: "Is monthly house cleaning available in Rockville?",
-    a: "Yes. Monthly works for lighter-use homes or as a supplement to your own upkeep. Because more can build up between visits, a monthly visit may take longer than a bi-weekly one, and your first visit is still a baseline clean before the routine starts. Weekly, bi-weekly and monthly are all available across Rockville ZIP codes 20850–20853; the scope of each visit is set in your written quote.",
-  },
-  {
     q: "Do I get the same cleaners every recurring visit?",
     a: "Yes. We assign a consistent, bonded and insured team to your Rockville home so they learn your preferences, your layout, and your standards over time. No strangers walking into your house each week — the same trusted crew, every visit.",
   },
