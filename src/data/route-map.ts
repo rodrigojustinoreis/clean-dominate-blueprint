@@ -16,12 +16,15 @@ export const ROUTE_MAP_EN_TO_ES: Record<string, string> = {
   "/locations/wheaton-md": "/es/areas/wheaton-md",
   "/locations/rockville-md": "/es/areas/rockville-md",
   "/locations/gaithersburg-md": "/es/areas/gaithersburg-md",
-  "/locations/germantown-md": "/es/areas/germantown-md",
+  // Germantown and Montgomery Village: the EN hub is noindex (planned pruning), so the pair used to send
+  // the EN selector to a noindex page and emitted no hreflang. The indexable EN house-cleaning child has
+  // the same intent as the Spanish "Limpieza de Casas" page (2026-09-09).
+  "/locations/germantown-md/house-cleaning": "/es/areas/germantown-md",
   // "/locations/aspen-hill-md" ↔ "/es/areas/aspen-hill-md" removed 2026-09-05: the EN page was never
   // built (netlify.toml 301s it to /maryland), so the pair emitted hreflang to a redirect. The ES
   // page now declares itself only; the switcher falls back to "/". Re-add when an EN page exists.
   "/locations/takoma-park-md": "/es/areas/takoma-park-md",
-  "/locations/montgomery-village-md": "/es/areas/montgomery-village-md",
+  "/locations/montgomery-village-md/house-cleaning": "/es/areas/montgomery-village-md",
 };
 
 export const ROUTE_MAP_ES_TO_EN: Record<string, string> = Object.fromEntries(
