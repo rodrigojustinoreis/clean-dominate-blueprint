@@ -130,7 +130,9 @@ const GermantownHouseCleaningPage = () => {
       {seoHelmet}
       <Helmet>
         <link rel="preload" as="image" href="/images/team/team-mopping-bright-room.jpg" />
-        <link rel="alternate" hrefLang="en-US" href={PAGE_URL} />
+        {/* The manual en-US alternate was removed 2026-09-09: it overrode the useSEO pair (Helmet dedupes by
+            href) and left this page declaring a different alternate set from its Spanish version. useSEO now
+            emits en / es / x-default here, identical and reciprocal to /es/areas/germantown-md. */}
       </Helmet>
 
       <BreadcrumbSchema
