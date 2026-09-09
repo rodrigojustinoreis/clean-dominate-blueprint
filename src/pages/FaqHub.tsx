@@ -7,7 +7,7 @@ import { useSEO } from "@/hooks/useSEO";
 import { FAQSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import { Button } from "@/components/ui/button";
 
-// Central FAQ hub at /resources/faq. All 45 Q&As are consolidated + deduped from the real FAQs
+// Central FAQ hub at /resources/faq. All Q&As are consolidated + deduped from the real FAQs
 // already on the site (services.ts, the /faq page, the deep-cleaning cluster). Every answer's
 // FIRST sentence answers the question directly (AI / featured-snippet friendly). Optional `href`
 // links to a RELEVANT INDEXABLE page. Content renders in full static HTML; the search box is a
@@ -120,7 +120,7 @@ const FaqHub = () => {
   const { seoHelmet } = useSEO({
     title: "Cleaning FAQ — Booking, Pricing, Services & More | Capital Clean Care",
     description:
-      "Answers to 45 common questions about house cleaning in Maryland, DC & Virginia — booking, pricing, what's included, products, trust & safety, and scheduling. Search or browse by topic.",
+      `Answers to ${ALL_FAQS.length} common questions about house cleaning in Maryland, DC & Virginia — booking, pricing, what's included, products, trust & safety, and scheduling. Search or browse by topic.`,
     canonical: "https://capitalcleancare.com/resources/faq",
     ogImage: "/images/cluster/faq-og.jpg",
   });

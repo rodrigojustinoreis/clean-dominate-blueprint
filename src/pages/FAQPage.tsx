@@ -77,7 +77,8 @@ const popularTopics = [
 const FAQPage = () => {
   const { seoHelmet } = useSEO({
     title: "House Cleaning FAQ — MD, DC & VA | Capital Clean Care",
-    description: "Answers to 30+ questions about eco-friendly house cleaning in Maryland, DC & Virginia — pricing, products, scheduling & more. Get 15% off your first clean!",
+    // Count derived from the array so the page never advertises more answers than it has.
+    description: `Answers to ${allFaqs.length} questions about eco-friendly house cleaning in Maryland, DC & Virginia — pricing, products, scheduling & more. Get 15% off your first clean!`,
     canonical: "https://capitalcleancare.com/faq",
   });
 
@@ -101,7 +102,7 @@ const FAQPage = () => {
               <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "FAQ" }]} className="mb-6" />
               <div className="inline-flex items-center gap-2 glass rounded-full px-4 py-2 mb-6 animate-fade-up">
                 <Sparkles className="h-4 w-4 text-accent" />
-                <span className="text-xs font-semibold text-foreground uppercase tracking-wider">30+ Answers · Eco-Friendly Cleaning</span>
+                <span className="text-xs font-semibold text-foreground uppercase tracking-wider">{allFaqs.length} Answers · Eco-Friendly Cleaning</span>
               </div>
 
               <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] text-foreground mb-6 animate-fade-up drop-shadow-sm" style={{ animationDelay: "100ms" }}>
