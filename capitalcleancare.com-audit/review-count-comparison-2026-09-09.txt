@@ -1,0 +1,4 @@
+pages 1227 sitemap_identical True
+unchanged 0 {'changed': 1227, 'text_changed_as_expected': 1227, 'alt_aria_changed_as_expected': 984}
+still_showing_count_in_visible_text: ['services/house-cleaning']
+problems 0
