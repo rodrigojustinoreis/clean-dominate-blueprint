@@ -20,7 +20,7 @@ const DEFAULT_FAQS: FAQItem[] = [
   },
   {
     q: "¿Qué pasa si rompen algo durante la limpieza?",
-    a: "Capital Clean Care LLC tiene seguro de responsabilidad civil activo y fianza individual por empleada. Si algo se daña durante el servicio, cubrimos el 100% del costo de reposición o reparación. En más de 10 años, los incidentes han sido mínimos — pero si ocurren, estás protegido.",
+    a: "Capital Clean Care LLC tiene seguro de responsabilidad civil activo y fianza. Si algo se daña durante el servicio, cubrimos el 100% del costo de reposición o reparación. En más de 10 años, los incidentes han sido mínimos — pero si ocurren, estás protegido.",
   },
   {
     q: "¿Puedo conocer al equipo antes de la primera limpieza?",

@@ -20,12 +20,13 @@ const CARDS_ES = [
     iconColor: "text-accent",
     bgColor: "bg-accent/5 border-accent/20",
     heading: "SÍ somos LLC registrada en Maryland",
-    body: "Capital Clean Care LLC · Seguro de responsabilidad civil de $1M + fianza individual por empleada. Maryland State ID disponible al solicitar.",
+    body: "Capital Clean Care LLC · asegurados y con fianza, con equipos verificados de antecedentes. Registro comercial de Maryland disponible al solicitar.",
   },
 ];
 
-// English variant for the EN About/home — same three promises. The liability dollar figure is
-// intentionally omitted until the insurer confirms it for the English pages.
+// English variant for the EN About/home — same three promises. The liability dollar figure and any
+// per-employee coverage are intentionally omitted in BOTH languages until the insurer confirms them
+// (2026-09-09: the Spanish card previously stated $1M + individual bond without that confirmation).
 const CARDS_EN = [
   {
     icon: X,
