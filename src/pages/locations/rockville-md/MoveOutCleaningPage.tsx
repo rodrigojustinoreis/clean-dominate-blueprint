@@ -188,6 +188,13 @@ const RockvilleMoveOutCleaningPage = () => {
         zipRange="20850–20853"
         heroImage="/images/team/team-mopping-dark-floor.jpg"
         heroImageAlt="Capital Clean Care move out cleaning service in Rockville, MD — deposit-ready landlord inspection results"
+        heroAspectRatio="3/4"
+        // Rockville move-out only: the shared team photo (760x570) is stored sideways. Present it upright in a
+        // 3:4 frame — the img is 4/3 of the frame width (= frame height) by 3/4 of the frame height (= frame
+        // width), centred and rotated 90° clockwise with object-fit contain: whole photo, no crop, same bitmap,
+        // src, alt and preload. Tailwind direct-child variants (precedent: DeepCleaningPage "[&>header]") keep
+        // the rule on this page without a style element. HeroLocation defaults untouched.
+        heroImageContainerClassName="rockville-moveout-hero max-w-[420px] mx-auto [&>img]:absolute [&>img]:left-1/2 [&>img]:top-1/2 [&>img]:h-3/4 [&>img]:w-[133.333333%] [&>img]:max-w-none [&>img]:-translate-x-1/2 [&>img]:-translate-y-1/2 [&>img]:rotate-90 [&>img]:object-contain"
         ctaPrimary="Book Your Move Out Clean in Rockville"
         ctaNote="No commitment · Date confirmed at booking · 100% satisfaction guaranteed"
       />
