@@ -189,12 +189,12 @@ const RockvilleRecurringCleaningPage = () => {
       {/* Hero */}
       <HeroLocation
         h1="Recurring House Cleaning in Rockville, MD"
-        lead="Stop cleaning on weekends. Capital Clean Care's recurring cleaning service comes to your Rockville home — from King Farm to Twinbrook to Fallsgrove — weekly, bi-weekly or monthly, with the same trusted, background-checked team every single visit. EPA Safer Choice™ products, and 100% satisfaction guaranteed: we re-clean if you're not happy."
+        lead="Stop cleaning on weekends. Capital Clean Care's recurring cleaning service comes to your Rockville home — from King Farm to Twinbrook to Fallsgrove — weekly, bi-weekly or monthly, with the same trusted, background-checked team whenever possible. EPA Safer Choice™ products, and 100% satisfaction guaranteed: we re-clean if you're not happy."
         cityName="Rockville"
         state="MD"
         zipRange="20850–20853"
         heroImage="/images/team/team-two-living-room.jpg"
-        heroImageAlt="Capital Clean Care team providing recurring house cleaning service in Rockville, MD — same team every visit"
+        heroImageAlt="Capital Clean Care team providing recurring house cleaning service in Rockville, MD — same team whenever possible"
         ctaPrimary="Set Up Recurring Cleaning in Rockville"
       />
 
@@ -282,8 +282,8 @@ const RockvilleRecurringCleaningPage = () => {
                 body: "Regular maintenance prevents buildup. Your Rockville home actually gets cleaner over time — not just reset to zero after each visit. After a few months, deep cleaning is rarely needed.",
               },
               {
-                title: "Same team every time",
-                body: "The same background-checked, bonded crew comes to your Rockville home every visit. They learn your preferences, your layout, your standards. No retraining strangers. No surprises.",
+                title: "Same team whenever possible",
+                body: "The same background-checked, bonded crew comes to your Rockville home whenever possible, so they learn your preferences, your layout, your standards. If a regular team member is out, a fully trained team covers to the same checklist.",
               },
               {
                 title: "Priority scheduling & better rates",
@@ -362,11 +362,11 @@ const RockvilleRecurringCleaningPage = () => {
               the routine keeps everything at that standard continuously.
             </p>
             <p>
-              There are no long-term contracts and no penalties for rescheduling. If something
-              comes up, 24-hour notice is all we ask. Rockville clients across ZIP codes 20850,
-              20851, 20852, and 20853 enjoy flexible recurring service that adapts to vacations,
-              work travel, and changing household needs — without ever losing their assigned team
-              or their preferred schedule slot.
+              There are no long-term contracts. If something comes up, let us know as early as you
+              can — rescheduling terms are confirmed with your booking. Rockville clients across ZIP
+              codes 20850, 20851, 20852, and 20853 enjoy flexible recurring service that adapts to
+              vacations, work travel, and changing household needs, keeping their preferred schedule
+              slot and their regular team whenever possible.
             </p>
           </div>
         </div>
