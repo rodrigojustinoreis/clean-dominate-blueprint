@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { BUSINESS_INFO } from "@/data/business-info";
+import { imgDims } from "@/lib/image-dims";
 
 // Shared business info constants — single source of truth in src/data/business-info.ts
 const BUSINESS = {
@@ -414,7 +415,9 @@ export const ArticleSchema = ({
   if (image) {
     // Pages pass "/images/..." — schema.org/Google require absolute URLs (same guard as BreadcrumbSchema).
     const absoluteImage = image.startsWith("http") ? image : `${BUSINESS.url}${image}`;
-    schema.image = { "@type": "ImageObject", url: absoluteImage, width: 800, height: 450 };
+    // width/height are optional: use the real intrinsic size when it is known (src/lib/image-dims.ts)
+    // and omit them otherwise — the former 800×450 constant was wrong for most article images.
+    schema.image = { "@type": "ImageObject", url: absoluteImage, ...imgDims(image) };
   }
 
   const id = `article-schema-${title.replace(/\s/g, "-").toLowerCase().slice(0, 40)}`;
