@@ -30,8 +30,12 @@ const POPULAR_GUIDES: { to: string; label: string }[] = [
 ];
 
 const Footer = () => {
-  const isSpanish = useLocation().pathname.startsWith("/es");
+  const { pathname } = useLocation();
+  const isSpanish = pathname.startsWith("/es");
   const t = (en: string, es: string) => (isSpanish ? es : en);
+  // /services/house-cleaning is the live Google Ads landing page: its rendered output must not change.
+  // The site-wide review badge dropped the review count; this route keeps the exact previous text.
+  const isAdsLanding = pathname === "/services/house-cleaning";
 
   const serviceLinks = isSpanish
     ? [
@@ -140,10 +144,12 @@ const Footer = () => {
           >
             <span className="grid h-11 w-11 place-items-center rounded-2xl bg-amber-100 transition-all duration-500 group-hover:scale-110 group-hover:rotate-6"><Star className="h-5 w-5 fill-amber-400 text-amber-500" /></span>
             <span className="text-xs font-bold leading-snug text-slate-800">
-              {t(
-                `${BUSINESS_INFO.rating.value}★ · Google Reviews`,
-                `${BUSINESS_INFO.rating.value}★ · Reseñas en Google`,
-              )}
+              {isAdsLanding
+                ? `${BUSINESS_INFO.rating.value}★ · ${BUSINESS_INFO.rating.count} Google Reviews`
+                : t(
+                    `${BUSINESS_INFO.rating.value}★ · Google Reviews`,
+                    `${BUSINESS_INFO.rating.value}★ · Reseñas en Google`,
+                  )}
             </span>
             <ArrowRight className="absolute bottom-3 right-3 h-3.5 w-3.5 translate-x-1 text-amber-600 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
           </a>
