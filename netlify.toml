@@ -515,6 +515,7 @@
   from = "/locations/rockville-md/maid-service"
   to   = "/locations/rockville-md/house-cleaning"
   status = 301
+  force = true # 2026-09-09: origin is a prerendered noindex page that shadowed this rule; retirement confirmed
 
 [[redirects]]
   from = "/locations/rockville-md/residential-cleaning"
@@ -575,6 +576,7 @@
   from = "/locations/bethesda-md/maid-service"
   to   = "/locations/bethesda-md/house-cleaning"
   status = 301
+  force = true # 2026-09-09: origin is a prerendered noindex page that shadowed this rule; retirement confirmed
 
 [[redirects]]
   from = "/locations/bethesda-md/residential-cleaning"
