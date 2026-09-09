@@ -220,7 +220,7 @@ const DeepCleaningCostMaryland = () => {
               In Montgomery County, it also tends to be worth more than the sticker price suggests. Homes in Bethesda skew large,
               with multiple bathrooms that dominate cleaning time, and older houses in Rockville and Silver Spring often carry
               years of buildup in grout and behind appliances that a standard cleaning never addresses. We have cleaned 500+ homes
-              across the area since 2015 and hold a 5.0-star rating across 45 Google reviews doing exactly this work.
+              across the area since 2015 and hold a 5.0-star rating on Google doing exactly this work.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-8">
               You can see the full scope on our{" "}

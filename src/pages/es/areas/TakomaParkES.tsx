@@ -55,7 +55,7 @@ export default function TakomaParkES() {
               Takoma Park es conocida por sus valores eco-conscientes — y nosotros también. Capital Clean Care usa productos certificados EPA Safer Choice, seguros para tu familia, tus mascotas y el medio ambiente.
             </p>
             <div className="flex flex-wrap gap-2 mb-8">
-              {["⭐ 5.0 (45 reseñas)", "🌿 EPA Safer Choice", "🗣️ Español", "📍 Takoma Park"].map((p) => (
+              {["⭐ 5.0 en Google", "🌿 EPA Safer Choice", "🗣️ Español", "📍 Takoma Park"].map((p) => (
                 <span key={p} className="bg-background border border-border rounded-full px-3 py-1.5 text-sm font-medium shadow-sm">{p}</span>
               ))}
             </div>

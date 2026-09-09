@@ -76,7 +76,7 @@ export default function NosotrosPage() {
                 <div className="grid grid-cols-2 gap-6">
                   {[
                     { number: "10+", label: "Años de experiencia" },
-                    { number: "45", label: "Reseñas 5★ en Google" },
+                    { number: "5.0★", label: "Calificación en Google" },
                     { number: "500+", label: "Casas limpiadas" },
                     { number: "100%", label: "Bilingüe: EN/ES" },
                   ].map(({ number, label }) => (
@@ -143,7 +143,7 @@ export default function NosotrosPage() {
                 "Verificación de antecedentes — todo el equipo",
                 "Productos EPA Safer Choice certificados",
                 "Bilingüe: inglés y español",
-                "5★ en Google Maps (45 reseñas verificadas)",
+                "5★ en Google Maps (reseñas verificadas)",
                 "Negocio familiar operando desde 2015",
               ].map((item) => (
                 <div key={item} className="flex items-center gap-3 bg-background border border-border rounded-lg px-4 py-3">

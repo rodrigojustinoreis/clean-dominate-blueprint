@@ -55,7 +55,7 @@ export default function RockvilleES() {
               Desde Twinbrook hasta King Farm, Capital Clean Care limpia casas en toda Rockville. Equipo bilingüe, asegurado y con fianza. Mismo personal cada visita.
             </p>
             <div className="flex flex-wrap gap-2 mb-8">
-              {["⭐ 5.0 (45 reseñas)", "🛡️ Asegurados", "🗣️ Español", "📍 Rockville"].map((p) => (
+              {["⭐ 5.0 en Google", "🛡️ Asegurados", "🗣️ Español", "📍 Rockville"].map((p) => (
                 <span key={p} className="bg-background border border-border rounded-full px-3 py-1.5 text-sm font-medium shadow-sm">{p}</span>
               ))}
             </div>

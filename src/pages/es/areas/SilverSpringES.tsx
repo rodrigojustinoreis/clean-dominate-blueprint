@@ -55,7 +55,7 @@ export default function SilverSpringES() {
               Tu vecindario, nuestro hogar. Capital Clean Care nació en Silver Spring en 2015 y conocemos bien cada barrio — desde Wheaton Hills hasta White Oak. Equipo bilingüe, asegurado, mismo personal cada visita.
             </p>
             <div className="flex flex-wrap gap-2 mb-8">
-              {["⭐ 5.0 (45 reseñas)", "🛡️ Asegurados", "🗣️ Español", "📍 Silver Spring"].map((p) => (
+              {["⭐ 5.0 en Google", "🛡️ Asegurados", "🗣️ Español", "📍 Silver Spring"].map((p) => (
                 <span key={p} className="bg-background border border-border rounded-full px-3 py-1.5 text-sm font-medium shadow-sm">{p}</span>
               ))}
             </div>

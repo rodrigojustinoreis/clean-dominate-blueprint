@@ -149,7 +149,7 @@ const RealDeepCleaningProjectBethesda = () => {
           <a href="/#quote">Get My Free Quote</a>
         </Button>
         <p className="mt-4 text-sm text-gray-300">
-          <span aria-hidden="true">★</span> 5.0 · 45 Google reviews · Bonded &amp; insured
+          <span aria-hidden="true">★</span> 5.0 on Google · Bonded &amp; insured
         </p>
       </BlogHero>
 
@@ -368,7 +368,7 @@ const RealDeepCleaningProjectBethesda = () => {
           <FadeInSection>
             <BlogInlineCTA
               headline="Ready for your home's reset?"
-              subtext="Tell us about your home and get a free, no-obligation quote — same five-step process as the project above. New clients get 15% OFF their first clean, and we're rated 5.0★ across 45 Google reviews."
+              subtext="Tell us about your home and get a free, no-obligation quote — same five-step process as the project above. New clients get 15% OFF their first clean, and we're rated 5.0★ on Google."
               ctaLabel="Get My Free Quote"
               ctaTo="/#quote"
             />

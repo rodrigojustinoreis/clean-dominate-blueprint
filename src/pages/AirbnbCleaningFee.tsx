@@ -225,7 +225,7 @@ const AirbnbCleaningFee = () => {
             <div className="bg-primary text-primary-foreground rounded-2xl p-8 text-center shadow-lg mt-14 mb-14">
               <h2 className="font-heading text-2xl md:text-3xl font-bold mb-4">Set a Fee That Covers a Real Clean</h2>
               <p className="text-primary-foreground/80 mb-6 leading-relaxed">
-                Rated 5.0 stars across 45 Google reviews. Flat per-turnover pricing, booking-synced scheduling, and photo
+                Rated 5.0 stars on Google. Flat per-turnover pricing, booking-synced scheduling, and photo
                 verification so you can build your Airbnb cleaning fee on a number you can trust.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">

@@ -141,8 +141,8 @@ const Footer = () => {
             <span className="grid h-11 w-11 place-items-center rounded-2xl bg-amber-100 transition-all duration-500 group-hover:scale-110 group-hover:rotate-6"><Star className="h-5 w-5 fill-amber-400 text-amber-500" /></span>
             <span className="text-xs font-bold leading-snug text-slate-800">
               {t(
-                `${BUSINESS_INFO.rating.value}★ · ${BUSINESS_INFO.rating.count} Google Reviews`,
-                `${BUSINESS_INFO.rating.value}★ · ${BUSINESS_INFO.rating.count} Reseñas en Google`,
+                `${BUSINESS_INFO.rating.value}★ · Google Reviews`,
+                `${BUSINESS_INFO.rating.value}★ · Reseñas en Google`,
               )}
             </span>
             <ArrowRight className="absolute bottom-3 right-3 h-3.5 w-3.5 translate-x-1 text-amber-600 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />

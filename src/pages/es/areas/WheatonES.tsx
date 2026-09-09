@@ -55,7 +55,7 @@ export default function WheatonES() {
               Wheaton es uno de los vecindarios más latinos de Maryland — y somos parte de esa comunidad. Capital Clean Care atiende Wheaton con orgullo: equipo bilingüe, mismo personal cada visita, precios justos.
             </p>
             <div className="flex flex-wrap gap-2 mb-8">
-              {["⭐ 5.0 (45 reseñas)", "🛡️ Asegurados", "🗣️ Español", "📍 Wheaton"].map((p) => (
+              {["⭐ 5.0 en Google", "🛡️ Asegurados", "🗣️ Español", "📍 Wheaton"].map((p) => (
                 <span key={p} className="bg-background border border-border rounded-full px-3 py-1.5 text-sm font-medium shadow-sm">{p}</span>
               ))}
             </div>

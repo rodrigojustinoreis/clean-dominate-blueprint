@@ -55,7 +55,7 @@ export default function MontgomeryVillageES() {
               Capital Clean Care atiende Montgomery Village con servicio completo de limpieza residencial. Comunidades de townhomes, condos y casas unifamiliares — todos son bienvenidos.
             </p>
             <div className="flex flex-wrap gap-2 mb-8">
-              {["⭐ 5.0 (45 reseñas)", "🛡️ Asegurados", "🗣️ Español", "📍 Montgomery Village"].map((p) => (
+              {["⭐ 5.0 en Google", "🛡️ Asegurados", "🗣️ Español", "📍 Montgomery Village"].map((p) => (
                 <span key={p} className="bg-background border border-border rounded-full px-3 py-1.5 text-sm font-medium shadow-sm">{p}</span>
               ))}
             </div>

@@ -126,7 +126,7 @@ const LocationSocialProof = ({ cityName, citySlug, serviceSlug, serviceLabel, co
                 loop
                 playsInline
                 poster="/videos/reviews-poster.jpg"
-                aria-label="Capital Clean Care — rated 5.0 stars across 45 Google reviews from homeowners in Maryland, DC and Northern Virginia"
+                aria-label="Capital Clean Care — rated 5.0 stars on Google by homeowners in Maryland, DC and Northern Virginia"
               >
                 <source src="/videos/reviews.webm" type="video/webm" />
                 <source src="/videos/reviews.mp4" type="video/mp4" />
@@ -134,7 +134,7 @@ const LocationSocialProof = ({ cityName, citySlug, serviceSlug, serviceLabel, co
             ) : (
               <img
                 src="/videos/reviews-poster.jpg"
-                alt="Capital Clean Care — 5.0 stars across 45 Google reviews"
+                alt="Capital Clean Care — 5.0 stars on Google"
                 className="w-full aspect-video object-cover block"
                 loading="lazy"
                 width={1280}
@@ -173,7 +173,7 @@ const LocationSocialProof = ({ cityName, citySlug, serviceSlug, serviceLabel, co
         {/* Proof strip */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-x-5 gap-y-2 mt-6">
           <p className="text-sm text-muted-foreground">
-            <span className="font-semibold text-foreground">5.0 ★</span> average · 45 reviews on Google
+            <span className="font-semibold text-foreground">5.0 ★</span> average on Google
           </p>
           <a
             href={GOOGLE_LISTING_URL}
@@ -181,7 +181,7 @@ const LocationSocialProof = ({ cityName, citySlug, serviceSlug, serviceLabel, co
             target="_blank"
             rel="noopener noreferrer"
           >
-            Read our 45 reviews →
+            Read our Google reviews →
           </a>
         </div>
 

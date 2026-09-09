@@ -374,7 +374,7 @@ const QuoteFormES = ({ id = "cotizacion", defaultService = "", submitLabel = "So
           ))}
         </div>
         <p className="text-xs text-muted-foreground">
-          <span className="font-semibold text-foreground">{BUSINESS_INFO.rating.value} estrellas</span> · {BUSINESS_INFO.rating.count} reseñas en Google · Montgomery County
+          <span className="font-semibold text-foreground">{BUSINESS_INFO.rating.value} estrellas</span> en Google · Montgomery County
         </p>
       </div>
 

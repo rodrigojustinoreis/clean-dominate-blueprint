@@ -97,7 +97,7 @@ const HowMuchTipHouseCleaner = () => {
             <div className="border-l-4 border-accent bg-accent/5 p-4 mb-8">
               <p className="text-sm text-muted-foreground leading-relaxed">
                 Looking for a team worth thanking? <a href="/#quote" className="text-accent font-semibold underline hover:no-underline">Get a free quote</a>{" "}
-                from Capital Clean Care, rated 5.0 stars across 45 Google reviews.
+                from Capital Clean Care, rated 5.0 stars on Google.
               </p>
             </div>
           </FadeInSection>
@@ -229,7 +229,7 @@ const HowMuchTipHouseCleaner = () => {
               <h2 className="font-heading text-2xl md:text-3xl font-bold mb-4">Meet the Crews Behind the 5.0 Stars</h2>
               <p className="text-primary-foreground/80 mb-6 leading-relaxed">
                 Bonded, insured, background-checked teams cleaning with EPA Safer Choice products since 2015. 500+ homes,
-                45 five-star Google reviews, and a 24-hour re-clean guarantee on every visit.
+                a 5.0-star Google rating, and a 24-hour re-clean guarantee on every visit.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <Button size="lg" className="bg-accent hover:bg-accent/90 text-white px-8 py-6 rounded-full text-base font-semibold shadow-md" asChild>

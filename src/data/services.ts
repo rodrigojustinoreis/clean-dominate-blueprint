@@ -619,7 +619,7 @@ export const services: ServiceData[] = [
       "Eco-friendly, non-toxic plant-based products — safe for kids and pets",
       "Flexible scheduling and a maid service near you across the DMV",
       "Backed by our 24-hour re-clean guarantee",
-      "Rated 5.0 stars across 45 Google reviews",
+      "Rated 5.0 stars on Google",
     ],
     faqs: [
       { q: "How much does a maid service cost?", a: "A maid service is quoted as a flat per-visit price based on the size and condition of your home, never an open-ended hourly rate. In the DMV, most homes fall between roughly $160 and $385 per visit, and recurring plans save up to 25% per visit because a maintained home cleans faster. Request a free quote for an exact number for your home." },

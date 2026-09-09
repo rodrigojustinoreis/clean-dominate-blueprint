@@ -334,7 +334,7 @@ const ExitIntentPopup = () => {
               ))}
             </span>
             <span className="font-semibold text-foreground">{BUSINESS_INFO.rating.value}</span>
-            <span>· {BUSINESS_INFO.rating.count} Google reviews</span>
+            <span>· Google reviews</span>
           </div>
 
           <form onSubmit={handleSubmit} className="ccc-rise mt-5 space-y-2.5 text-left" style={{ animationDelay: "180ms" }}>

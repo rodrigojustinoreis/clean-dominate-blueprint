@@ -203,7 +203,7 @@ const CleaningChecklistPage = () => {
           <div className="bg-primary text-primary-foreground rounded-2xl p-8 text-center shadow-lg">
             <h2 className="font-heading text-2xl md:text-3xl font-bold mb-3">Want this checklist done for you?</h2>
             <p className="text-primary-foreground/80 mb-6 leading-relaxed max-w-2xl mx-auto">
-              Rated 5.0 stars across 45 Google reviews. Book a clean and our team works through every point, then finishes
+              Rated 5.0 stars on Google. Book a clean and our team works through every point, then finishes
               with a quality check — backed by our 24-hour re-clean guarantee.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">

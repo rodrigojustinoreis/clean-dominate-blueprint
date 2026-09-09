@@ -71,7 +71,7 @@ const ContactReviews = () => (
       rel="noopener noreferrer"
       className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-primary transition-colors hover:text-accent"
     >
-      <span className="font-semibold">5.0 ★</span> · 45 Google reviews &rarr;
+      <span className="font-semibold">5.0 ★</span> on Google &rarr;
     </a>
   </aside>
 );

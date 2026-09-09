@@ -461,7 +461,7 @@ const CityPage = () => {
         <section className="border-b border-border bg-background py-8">
           <div className="container mx-auto max-w-4xl px-4">
             <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
-              Capital Clean Care LLC provides house and deep cleaning in Bethesda, MD, part of Montgomery County, with flat-rate pricing and EPA Safer Choice eco-friendly products. We've served Bethesda households since 2015 with licensed, insured, background-checked local teams, backed by a 5.0-star Google rating across 45 reviews and a 24-hour re-clean guarantee.
+              Capital Clean Care LLC provides house and deep cleaning in Bethesda, MD, part of Montgomery County, with flat-rate pricing and EPA Safer Choice eco-friendly products. We've served Bethesda households since 2015 with licensed, insured, background-checked local teams, backed by a 5.0-star Google rating and a 24-hour re-clean guarantee.
             </p>
           </div>
         </section>

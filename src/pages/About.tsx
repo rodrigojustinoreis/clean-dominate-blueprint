@@ -193,7 +193,7 @@ const About = () => {
       <section className="border-b border-border bg-background py-8">
         <div className="container mx-auto max-w-4xl px-4">
           <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
-            Capital Clean Care LLC is a family-owned, eco-friendly residential cleaning company founded in 2015 and based in Silver Spring, MD, serving Maryland, Washington DC, and Northern Virginia. Every visit follows our proprietary GreenShield 5-Step Clean™, delivered by background-checked teams using EPA Safer Choice products. Licensed, bonded, and insured, with a 5.0-star Google rating across 45 reviews and a 24-hour satisfaction guarantee.
+            Capital Clean Care LLC is a family-owned, eco-friendly residential cleaning company founded in 2015 and based in Silver Spring, MD, serving Maryland, Washington DC, and Northern Virginia. Every visit follows our proprietary GreenShield 5-Step Clean™, delivered by background-checked teams using EPA Safer Choice products. Licensed, bonded, and insured, with a 5.0-star Google rating and a 24-hour satisfaction guarantee.
           </p>
         </div>
       </section>

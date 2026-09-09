@@ -112,7 +112,7 @@ const Reviews = () => {
                 <span className="text-5xl font-heading font-extrabold text-foreground leading-none">5.0</span>
                 <div className="text-left">
                   <Stars />
-                  <p className="text-sm text-muted-foreground mt-1">from <strong>45</strong> Google reviews</p>
+                  <p className="text-sm text-muted-foreground mt-1">from verified Google reviews</p>
                 </div>
               </div>
               <div className="hidden sm:block w-px h-12 bg-border" />
@@ -142,7 +142,7 @@ const Reviews = () => {
         <div className="container relative mx-auto px-4 max-w-4xl">
           <FadeInSection>
             <div className="text-center mb-8">
-              <span className="text-accent font-semibold text-sm uppercase tracking-[0.2em]">45 Five-Star Reviews</span>
+              <span className="text-accent font-semibold text-sm uppercase tracking-[0.2em]">Verified Google Reviews</span>
               <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mt-3">
                 See Why the DMV Trusts Capital Clean Care
               </h2>
@@ -156,7 +156,7 @@ const Reviews = () => {
                 playsInline
                 preload="none"
                 poster="/videos/reviews-poster.jpg"
-                aria-label="Capital Clean Care — rated 5.0 stars across 45 Google reviews from homeowners in Maryland, DC and Northern Virginia"
+                aria-label="Capital Clean Care — rated 5.0 stars on Google by homeowners in Maryland, DC and Northern Virginia"
               >
                 <source src="/videos/reviews.webm" type="video/webm" />
                 <source src="/videos/reviews.mp4" type="video/mp4" />
@@ -167,7 +167,7 @@ const Reviews = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mt-8">
               {[
                 { v: "5.0", l: "Average rating" },
-                { v: "45", l: "Google reviews" },
+                { v: "24h", l: "Re-clean guarantee" },
                 { v: "100%", l: "Five-star" },
                 { v: "2015", l: "Serving the DMV" },
               ].map((s) => (
@@ -185,8 +185,8 @@ const Reviews = () => {
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 max-w-5xl">
           <FadeInSection>
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-center mb-3">45 Five-Star Reviews on Google</h2>
-            <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">Every one of our 45 Google reviews is a 5-star rating. Here are some of the most recent.</p>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-center mb-3">Five-Star Reviews on Google</h2>
+            <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">Every one of our Google reviews is a 5-star rating. Here are some of the most recent.</p>
           </FadeInSection>
 
           {HAS_GOOGLE_API ? (
@@ -254,7 +254,7 @@ const Reviews = () => {
           <div className="text-center mt-10">
             <Button variant="outline" size="lg" className="rounded-full" asChild>
               <a href={GOOGLE_LISTING_URL} target="_blank" rel="noopener noreferrer">
-                See all 45 reviews on Google <ExternalLink className="ml-2 h-4 w-4" />
+                See all reviews on Google <ExternalLink className="ml-2 h-4 w-4" />
               </a>
             </Button>
           </div>
@@ -354,7 +354,7 @@ const Reviews = () => {
         <div className="container mx-auto px-4 max-w-2xl">
           <FadeInSection>
             <h2 className="font-heading text-3xl font-bold text-center mb-3">Ready to Experience It Yourself?</h2>
-            <p className="text-center text-muted-foreground mb-8">Get a free quote in 60 seconds — and find out why 45 families left us 5 stars.</p>
+            <p className="text-center text-muted-foreground mb-8">Get a free quote in 60 seconds — and find out why our clients leave us 5 stars.</p>
             <Card><CardContent className="p-6 md:p-8"><QuoteForm /></CardContent></Card>
           </FadeInSection>
         </div>

@@ -239,7 +239,7 @@ const RecurringCleaningPage = () => {
                   ))}
                 </div>
                 <span className="text-sm font-bold text-foreground">5.0</span>
-                <span className="text-sm text-muted-foreground">· 45 Google reviews</span>
+                <span className="text-sm text-muted-foreground">· Google reviews</span>
               </div>
 
               <h1 className="font-heading text-4xl md:text-5xl font-bold mb-5 leading-[1.1]">
@@ -514,7 +514,7 @@ const RecurringCleaningPage = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             {[
               { v: "5.0★", l: "Google rating" },
-              { v: "45", l: "Five-star reviews" },
+              { v: "24h", l: "Re-clean guarantee" },
               { v: "9+ yrs", l: "Serving the DMV" },
               { v: "100%", l: "Satisfaction guarantee" },
             ].map((s) => (

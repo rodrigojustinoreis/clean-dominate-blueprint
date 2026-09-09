@@ -77,7 +77,7 @@ const PricingPage = () => {
 
           {/* Entity-first passage (AI/LLM citability): legal name + offer + place + verifiable facts. */}
           <p className="text-base leading-relaxed text-muted-foreground mb-10 max-w-3xl">
-            Capital Clean Care LLC offers flat-rate house cleaning pricing across Maryland, Washington DC, and Northern Virginia — no hourly meter, no surprise charges. We've served the DMV since 2015 as a licensed, insured, background-checked team using EPA Safer Choice products, backed by a 24-hour re-clean guarantee and a 5.0-star rating across 45 Google reviews.
+            Capital Clean Care LLC offers flat-rate house cleaning pricing across Maryland, Washington DC, and Northern Virginia — no hourly meter, no surprise charges. We've served the DMV since 2015 as a licensed, insured, background-checked team using EPA Safer Choice products, backed by a 24-hour re-clean guarantee and a 5.0-star rating on Google.
           </p>
 
           {/* ── Interactive price matrix (same component + data as the homepage — zero number
@@ -159,7 +159,7 @@ const PricingPage = () => {
             <h2 className="font-heading text-2xl md:text-3xl font-bold mb-3">Get Your Exact Flat Price — Free</h2>
             <p className="text-primary-foreground/80 mb-6 leading-relaxed max-w-2xl mx-auto">
               Tell us your home size and what you need, and we'll send a clear, no-obligation quote — usually within a few
-              hours. No hidden fees, ever. 5.0 stars across 45 Google reviews, serving the DMV since 2015.
+              hours. No hidden fees, ever. 5.0 stars on Google, serving the DMV since 2015.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Button size="lg" className="bg-accent hover:bg-accent/90 text-white px-8 py-6 rounded-full text-base font-semibold shadow-md" asChild>

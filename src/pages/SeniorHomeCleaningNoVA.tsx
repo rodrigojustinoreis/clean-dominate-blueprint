@@ -223,7 +223,7 @@ const SeniorHomeCleaningNoVA = () => {
                 <Star key={i} className="h-5 w-5 fill-accent text-accent" />
               ))}
             </div>
-            <p className="text-sm font-semibold text-muted-foreground mb-2">Rated 5.0 from 45 Google reviews</p>
+            <p className="text-sm font-semibold text-muted-foreground mb-2">Rated 5.0 on Google</p>
             <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground">What Families Say</h2>
           </div>
           <div className="grid gap-6 md:grid-cols-3">

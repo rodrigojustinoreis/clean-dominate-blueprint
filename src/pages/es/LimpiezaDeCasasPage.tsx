@@ -63,7 +63,7 @@ export default function LimpiezaDeCasasPage() {
               El equipo en el que confían tus vecinos. Limpieza profesional, asegurada y con fianza, hecha por gente que entiende cómo te gusta tu casa.
             </p>
             <div className="flex flex-wrap gap-2 mb-8">
-              {["⭐ 5.0 (45 reseñas)", "🛡️ Asegurados", "🗣️ Español", "🏡 Familiar"].map((p) => (
+              {["⭐ 5.0 en Google", "🛡️ Asegurados", "🗣️ Español", "🏡 Familiar"].map((p) => (
                 <span key={p} className="bg-background border border-border rounded-full px-3 py-1.5 text-sm font-medium shadow-sm">{p}</span>
               ))}
             </div>

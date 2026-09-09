@@ -57,7 +57,7 @@ export default function HomeES() {
             </p>
 
             <div className="flex flex-wrap gap-2 mb-8">
-              {["⭐ 5.0 en Google (45 reseñas)", "🛡️ Asegurados y con Fianza", "🏡 Negocio Familiar", "🗣️ Hablamos Español"].map((pill) => (
+              {["⭐ 5.0 en Google", "🛡️ Asegurados y con Fianza", "🏡 Negocio Familiar", "🗣️ Hablamos Español"].map((pill) => (
                 <span key={pill} className="inline-flex items-center bg-background border border-border rounded-full px-3 py-1.5 text-sm font-medium text-foreground shadow-sm">{pill}</span>
               ))}
             </div>
@@ -153,7 +153,7 @@ export default function HomeES() {
               Tu navegador no soporta la reproducción de video.
             </video>
             <p className="text-muted-foreground text-sm mt-6 text-center">
-              Reseñas reales de clientes en Google — 5.0 estrellas, 45 reseñas.
+              Reseñas reales de clientes en Google — 5.0 estrellas.
             </p>
             <div className="mt-4 text-center">
               <Button variant="outline" size="lg" asChild>

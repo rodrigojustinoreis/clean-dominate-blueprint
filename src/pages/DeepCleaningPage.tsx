@@ -226,7 +226,7 @@ const DeepCleaningPage = () => {
                   ))}
                 </div>
                 <span className="text-sm font-bold text-foreground">5.0</span>
-                <span className="text-sm text-muted-foreground">· 45 Google reviews</span>
+                <span className="text-sm text-muted-foreground">· Google reviews</span>
               </div>
 
               <h1 className="font-heading text-4xl md:text-5xl font-bold mb-5 leading-[1.1]">
@@ -289,7 +289,7 @@ const DeepCleaningPage = () => {
       <section className="border-b border-border bg-background py-8">
         <div className="container mx-auto max-w-4xl px-4">
           <p className="text-base md:text-lg leading-relaxed text-muted-foreground">
-            Capital Clean Care LLC's deep cleaning service is an intensive, top-to-bottom clean for homes in Maryland, Washington DC, and Northern Virginia, following our proprietary GreenShield 5-Step Clean™. Every deep clean is performed by background-checked teams using EPA Safer Choice products, and backed by our 24-hour re-clean guarantee and a 5.0-star Google rating across 45 reviews.
+            Capital Clean Care LLC's deep cleaning service is an intensive, top-to-bottom clean for homes in Maryland, Washington DC, and Northern Virginia, following our proprietary GreenShield 5-Step Clean™. Every deep clean is performed by background-checked teams using EPA Safer Choice products, and backed by our 24-hour re-clean guarantee and a 5.0-star Google rating.
           </p>
         </div>
       </section>
@@ -562,7 +562,7 @@ const DeepCleaningPage = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             {[
               { v: "5.0★", l: "Google rating" },
-              { v: "45", l: "Five-star reviews" },
+              { v: "24h", l: "Re-clean guarantee" },
               { v: "9+ yrs", l: "Serving the DMV" },
               { v: "100%", l: "Satisfaction guarantee" },
             ].map((s) => (

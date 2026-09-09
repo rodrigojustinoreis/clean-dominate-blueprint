@@ -55,7 +55,7 @@ export default function GaithersburgES() {
               Desde Lakelands hasta Crown, Capital Clean Care atiende toda Gaithersburg. Equipo bilingüe que entiende lo que necesitas — en tu idioma y a tu horario.
             </p>
             <div className="flex flex-wrap gap-2 mb-8">
-              {["⭐ 5.0 (45 reseñas)", "🛡️ Asegurados", "🗣️ Español", "📍 Gaithersburg"].map((p) => (
+              {["⭐ 5.0 en Google", "🛡️ Asegurados", "🗣️ Español", "📍 Gaithersburg"].map((p) => (
                 <span key={p} className="bg-background border border-border rounded-full px-3 py-1.5 text-sm font-medium shadow-sm">{p}</span>
               ))}
             </div>

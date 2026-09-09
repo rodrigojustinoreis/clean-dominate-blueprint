@@ -55,7 +55,7 @@ export default function AspenHillES() {
               Capital Clean Care atiende Aspen Hill con el mismo cuidado que si fuera nuestra propia casa. Equipo bilingüe, asegurado con fianza. Sin contratos, sin sorpresas.
             </p>
             <div className="flex flex-wrap gap-2 mb-8">
-              {["⭐ 5.0 (45 reseñas)", "🛡️ Asegurados", "🗣️ Español", "📍 Aspen Hill"].map((p) => (
+              {["⭐ 5.0 en Google", "🛡️ Asegurados", "🗣️ Español", "📍 Aspen Hill"].map((p) => (
                 <span key={p} className="bg-background border border-border rounded-full px-3 py-1.5 text-sm font-medium shadow-sm">{p}</span>
               ))}
             </div>

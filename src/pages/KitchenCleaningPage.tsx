@@ -182,7 +182,7 @@ const KitchenCleaningPage = () => {
                   ))}
                 </div>
                 <span className="text-sm font-bold text-foreground">5.0</span>
-                <span className="text-sm text-muted-foreground">· 45 Google reviews</span>
+                <span className="text-sm text-muted-foreground">· Google reviews</span>
               </div>
 
               <h1 className="font-heading text-4xl md:text-5xl font-bold mb-5 leading-[1.1]">{service.h1}</h1>

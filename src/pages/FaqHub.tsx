@@ -91,7 +91,7 @@ const THEMES: Theme[] = [
       { q: "Do I need to be home during the cleaning?", a: "No. Many clients provide a key, door code, or smart-lock access so we can clean while they're out. Every team member is background-checked and insured, so your home is in trusted hands." },
       { q: "How is my key or access kept secure?", a: "Access details are handled discreetly and only shared with your assigned team. Many clients use a lockbox, smart lock, or building front desk, and you can update or revoke access at any time." },
       { q: "Do you clean homes with pets?", a: "Yes, we love homes with pets. Our eco-friendly products are pet-safe, and our teams are experienced working calmly around dogs and cats — just let us know about your pets when you book." },
-      { q: "How can I trust the quality before booking?", a: "Check our real reviews — we hold a 5.0 rating across 45 Google reviews, and every testimonial on our site is from a genuine client. We've served the DMV since 2015.", href: "/reviews", linkText: "Read our reviews" },
+      { q: "How can I trust the quality before booking?", a: "Check our real reviews — we hold a 5.0 rating on Google, and every testimonial on our site is from a genuine client. We've served the DMV since 2015.", href: "/reviews", linkText: "Read our reviews" },
     ],
   },
   {
@@ -229,8 +229,7 @@ const FaqHub = () => {
           <div className="mt-16 rounded-2xl bg-primary text-primary-foreground p-8 text-center shadow-lg">
             <h2 className="font-heading text-2xl md:text-3xl font-bold mb-3">Still have a question?</h2>
             <p className="text-primary-foreground/80 mb-6 leading-relaxed max-w-2xl mx-auto">
-              We're happy to help — get a free, no-obligation quote or reach our team directly. 5.0 stars across 45 Google
-              reviews, serving Montgomery County and the DMV since 2015.
+              We're happy to help — get a free, no-obligation quote or reach our team directly. 5.0 stars on Google, serving Montgomery County and the DMV since 2015.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Button size="lg" className="bg-accent hover:bg-accent/90 text-white px-8 py-6 rounded-full text-base font-semibold shadow-md" asChild>

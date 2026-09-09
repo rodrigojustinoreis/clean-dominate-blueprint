@@ -189,7 +189,7 @@ const DeepCleaningForApartments = () => {
           <FadeInSection>
             <div className="bg-primary text-primary-foreground rounded-2xl p-8 text-center shadow-lg my-12">
               <h2 className="font-heading text-2xl md:text-3xl font-bold mb-4">Book a Deep Clean for Your Unit</h2>
-              <p className="text-primary-foreground/80 mb-6 leading-relaxed">Flat pricing sized to your apartment or condo, building logistics handled, and a white-glove finish. 5.0 stars across 45 Google reviews, serving the DMV since 2015.</p>
+              <p className="text-primary-foreground/80 mb-6 leading-relaxed">Flat pricing sized to your apartment or condo, building logistics handled, and a white-glove finish. 5.0 stars on Google, serving the DMV since 2015.</p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <Button size="lg" className="bg-accent hover:bg-accent/90 text-white px-8 py-6 rounded-full text-base font-semibold shadow-md" asChild>
                   <a href="/#quote">Get My Free Quote <ArrowRight className="ml-2 h-4 w-4" /></a>
