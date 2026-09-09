@@ -1,0 +1,26 @@
+PASS sitemap.xml 200 with 300 URLs — 200 300
+PASS /locations/rockville-md/deep-cleaning: 200, index,follow, self-canonical, in sitemap, no X-Robots noindex — 200 robots=index, follow canonical=self
+PASS /locations/rockville-md/deep-cleaning: title, H1, schema types unchanged vs previous deploy — title='Deep Cleaning Services in Rockville, MD | Capital Clean Care' h1=['Deep Cleaning Services in Rockville, MD']
+PASS /locations/rockville-md/deep-cleaning: sprint change live ('Documented detail work in Rockville')
+PASS /locations/rockville-md/deep-cleaning: tel + quote form present (not submitted)
+   meta (151): Deep cleaning in Rockville, MD for grout, baseboards, fixtures and selected appliance interiors. See the written scope, local work and request a quote.
+PASS /locations/rockville-md/recurring-cleaning: 200, index,follow, self-canonical, in sitemap, no X-Robots noindex — 200 robots=index, follow canonical=self
+PASS /locations/rockville-md/recurring-cleaning: title, H1, schema types unchanged vs previous deploy — title='Recurring House Cleaning in Rockville, MD | Capital Clean Care' h1=['Recurring House Cleaning in Rockville, MD']
+PASS /locations/rockville-md/recurring-cleaning: sprint change live ('What recurring cleaning costs in Rockville')
+PASS /locations/rockville-md/recurring-cleaning: tel + quote form present (not submitted)
+   meta (160): Weekly, bi-weekly or monthly house cleaning in Rockville, MD: a deeper first visit, then the same background-checked team on a set schedule. Free written quote.
+PASS /locations/rockville-md/move-out-cleaning: 200, index,follow, self-canonical, in sitemap, no X-Robots noindex — 200 robots=index, follow canonical=self
+PASS /locations/rockville-md/move-out-cleaning: title, H1, schema types unchanged vs previous deploy — title='Move Out Cleaning in Rockville, MD | Capital Clean Care' h1=['Move Out Cleaning in Rockville, MD']
+PASS /locations/rockville-md/move-out-cleaning: sprint change live ('Your date is confirmed at booking')
+PASS /locations/rockville-md/move-out-cleaning: tel + quote form present (not submitted)
+   meta (145): Move-out cleaning in Rockville, MD with a written scope for your final walkthrough. Bonded and insured. Request a quote and confirm availability.
+PASS deep: 4 documented photographs referenced and served (200) — ['/images/locations/rockville-real-work/bathroom-fixture-detailing-480.webp', '/images/locations/rockville-real-work/bathroom-light-cleaning-480.webp', '/images/locations/rockville-real-work/window-detailing-480.webp', '/images/locations/rockville-real-work/window-frame-cleaning-480.webp']
+PASS deep: no dollar figures in main text
+PASS move-out: no same-day / deposit-back promise in visible text, meta or schema
+PASS recurring: the 4 rendered FAQs and FAQPage schema identical to previous deploy
+PASS recurring: checklist preserved; no inferred scope table; monthly in meta
+PASS protected/NO-OP pages: title/meta/canonical/robots/H1/schema identical to previous deploy (21 URLs)
+PASS protected/NO-OP pages: full HTML identical live×live after asset-hash normalisation — 21/21 identical
+PASS legacy /move-out-cleaning-rockville-md → 301 → current page 200 (redirect untouched) — [('/move-out-cleaning-rockville-md', 301), ('/locations/rockville-md/move-out-cleaning', 200)]
+
+SUMMARY 21/21 passed

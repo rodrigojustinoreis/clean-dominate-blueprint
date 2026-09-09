@@ -1,0 +1,107 @@
+[
+  {
+    "check": "sitemap.xml 200 with 300 URLs",
+    "ok": true,
+    "detail": "200 300"
+  },
+  {
+    "check": "/locations/rockville-md/deep-cleaning: 200, index,follow, self-canonical, in sitemap, no X-Robots noindex",
+    "ok": true,
+    "detail": "200 robots=index, follow canonical=self"
+  },
+  {
+    "check": "/locations/rockville-md/deep-cleaning: title, H1, schema types unchanged vs previous deploy",
+    "ok": true,
+    "detail": "title='Deep Cleaning Services in Rockville, MD | Capital Clean Care' h1=['Deep Cleaning Services in Rockville, MD']"
+  },
+  {
+    "check": "/locations/rockville-md/deep-cleaning: sprint change live ('Documented detail work in Rockville')",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "check": "/locations/rockville-md/deep-cleaning: tel + quote form present (not submitted)",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "check": "/locations/rockville-md/recurring-cleaning: 200, index,follow, self-canonical, in sitemap, no X-Robots noindex",
+    "ok": true,
+    "detail": "200 robots=index, follow canonical=self"
+  },
+  {
+    "check": "/locations/rockville-md/recurring-cleaning: title, H1, schema types unchanged vs previous deploy",
+    "ok": true,
+    "detail": "title='Recurring House Cleaning in Rockville, MD | Capital Clean Care' h1=['Recurring House Cleaning in Rockville, MD']"
+  },
+  {
+    "check": "/locations/rockville-md/recurring-cleaning: sprint change live ('What recurring cleaning costs in Rockville')",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "check": "/locations/rockville-md/recurring-cleaning: tel + quote form present (not submitted)",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "check": "/locations/rockville-md/move-out-cleaning: 200, index,follow, self-canonical, in sitemap, no X-Robots noindex",
+    "ok": true,
+    "detail": "200 robots=index, follow canonical=self"
+  },
+  {
+    "check": "/locations/rockville-md/move-out-cleaning: title, H1, schema types unchanged vs previous deploy",
+    "ok": true,
+    "detail": "title='Move Out Cleaning in Rockville, MD | Capital Clean Care' h1=['Move Out Cleaning in Rockville, MD']"
+  },
+  {
+    "check": "/locations/rockville-md/move-out-cleaning: sprint change live ('Your date is confirmed at booking')",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "check": "/locations/rockville-md/move-out-cleaning: tel + quote form present (not submitted)",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "check": "deep: 4 documented photographs referenced and served (200)",
+    "ok": true,
+    "detail": "['/images/locations/rockville-real-work/bathroom-fixture-detailing-480.webp', '/images/locations/rockville-real-work/bathroom-light-cleaning-480.webp', '/images/locations/rockville-real-work/window-detailing-480.webp', '/images/locations/rockville-real-work/window-frame-cleaning-480.webp']"
+  },
+  {
+    "check": "deep: no dollar figures in main text",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "check": "move-out: no same-day / deposit-back promise in visible text, meta or schema",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "check": "recurring: the 4 rendered FAQs and FAQPage schema identical to previous deploy",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "check": "recurring: checklist preserved; no inferred scope table; monthly in meta",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "check": "protected/NO-OP pages: title/meta/canonical/robots/H1/schema identical to previous deploy (21 URLs)",
+    "ok": true,
+    "detail": "[]"
+  },
+  {
+    "check": "protected/NO-OP pages: full HTML identical live×live after asset-hash normalisation",
+    "ok": true,
+    "detail": "21/21 identical"
+  },
+  {
+    "check": "legacy /move-out-cleaning-rockville-md → 301 → current page 200 (redirect untouched)",
+    "ok": true,
+    "detail": "[('/move-out-cleaning-rockville-md', 301), ('/locations/rockville-md/move-out-cleaning', 200)]"
+  }
+]
