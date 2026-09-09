@@ -1,0 +1,456 @@
+[
+ {
+  "url": "https://capitalcleancare.com/services/recurring-cleaning",
+  "target": "https://capitalcleancare.com/services/recurring-cleaning",
+  "baseline_id": 215,
+  "critical": 0,
+  "warning": 0,
+  "info": 1,
+  "triggered": [
+   {
+    "rule": "content_hash_changed",
+    "severity": "INFO",
+    "triggered": true,
+    "old_value": "13f7ebae2aa9...",
+    "new_value": "1713b54cdf4d...",
+    "message": "Page content has changed (HTML body hash differs from baseline)."
+   }
+  ]
+ },
+ {
+  "url": "https://capitalcleancare.com/services/house-cleaning",
+  "target": "https://capitalcleancare.com/services/house-cleaning",
+  "baseline_id": 216,
+  "critical": 0,
+  "warning": 0,
+  "info": 1,
+  "triggered": [
+   {
+    "rule": "content_hash_changed",
+    "severity": "INFO",
+    "triggered": true,
+    "old_value": "97f1f29731fb...",
+    "new_value": "16b0b9329255...",
+    "message": "Page content has changed (HTML body hash differs from baseline)."
+   }
+  ]
+ },
+ {
+  "url": "https://capitalcleancare.com/",
+  "target": "https://capitalcleancare.com/",
+  "baseline_id": 217,
+  "critical": 0,
+  "warning": 0,
+  "info": 1,
+  "triggered": [
+   {
+    "rule": "content_hash_changed",
+    "severity": "INFO",
+    "triggered": true,
+    "old_value": "51c216798e32...",
+    "new_value": "29b1d898afc8...",
+    "message": "Page content has changed (HTML body hash differs from baseline)."
+   }
+  ]
+ },
+ {
+  "url": "https://capitalcleancare.com/services/deep-cleaning",
+  "target": "https://capitalcleancare.com/services/deep-cleaning",
+  "baseline_id": 218,
+  "critical": 0,
+  "warning": 0,
+  "info": 1,
+  "triggered": [
+   {
+    "rule": "content_hash_changed",
+    "severity": "INFO",
+    "triggered": true,
+    "old_value": "a46683354279...",
+    "new_value": "98f2c8482d61...",
+    "message": "Page content has changed (HTML body hash differs from baseline)."
+   }
+  ]
+ },
+ {
+  "url": "https://capitalcleancare.com/services/move-out-cleaning",
+  "target": "https://capitalcleancare.com/services/move-out-cleaning",
+  "baseline_id": 219,
+  "critical": 0,
+  "warning": 0,
+  "info": 1,
+  "triggered": [
+   {
+    "rule": "content_hash_changed",
+    "severity": "INFO",
+    "triggered": true,
+    "old_value": "b90c9568fc66...",
+    "new_value": "a7db39ba9548...",
+    "message": "Page content has changed (HTML body hash differs from baseline)."
+   }
+  ]
+ },
+ {
+  "url": "https://capitalcleancare.com/services/airbnb-cleaning",
+  "target": "https://capitalcleancare.com/services/airbnb-cleaning",
+  "baseline_id": 220,
+  "critical": 0,
+  "warning": 0,
+  "info": 1,
+  "triggered": [
+   {
+    "rule": "content_hash_changed",
+    "severity": "INFO",
+    "triggered": true,
+    "old_value": "abc0bade8f1a...",
+    "new_value": "070f468b8b95...",
+    "message": "Page content has changed (HTML body hash differs from baseline)."
+   }
+  ]
+ },
+ {
+  "url": "https://capitalcleancare.com/services/maid-service",
+  "target": "https://capitalcleancare.com/services/maid-service",
+  "baseline_id": 221,
+  "critical": 0,
+  "warning": 0,
+  "info": 1,
+  "triggered": [
+   {
+    "rule": "content_hash_changed",
+    "severity": "INFO",
+    "triggered": true,
+    "old_value": "968dbdc875bc...",
+    "new_value": "b47577862fd3...",
+    "message": "Page content has changed (HTML body hash differs from baseline)."
+   }
+  ]
+ },
+ {
+  "url": "https://capitalcleancare.com/pricing",
+  "target": "https://capitalcleancare.com/pricing",
+  "baseline_id": 222,
+  "critical": 0,
+  "warning": 0,
+  "info": 1,
+  "triggered": [
+   {
+    "rule": "content_hash_changed",
+    "severity": "INFO",
+    "triggered": true,
+    "old_value": "bd1275e17e10...",
+    "new_value": "205dca4a70e7...",
+    "message": "Page content has changed (HTML body hash differs from baseline)."
+   }
+  ]
+ },
+ {
+  "url": "https://capitalcleancare.com/contact",
+  "target": "https://capitalcleancare.com/contact",
+  "baseline_id": 223,
+  "critical": 0,
+  "warning": 0,
+  "info": 1,
+  "triggered": [
+   {
+    "rule": "content_hash_changed",
+    "severity": "INFO",
+    "triggered": true,
+    "old_value": "4570c89119f9...",
+    "new_value": "bd55035d54ff...",
+    "message": "Page content has changed (HTML body hash differs from baseline)."
+   }
+  ]
+ },
+ {
+  "url": "https://capitalcleancare.com/faq",
+  "target": "https://capitalcleancare.com/faq",
+  "baseline_id": 224,
+  "critical": 0,
+  "warning": 1,
+  "info": 1,
+  "triggered": [
+   {
+    "rule": "meta_description_changed",
+    "severity": "WARNING",
+    "triggered": true,
+    "old_value": "Answers to 30+ questions about eco-friendly house cleaning in Maryland, DC & Virginia \u2014 pricing, products, scheduling & ...",
+    "new_value": "Answers to 19 questions about eco-friendly house cleaning in Maryland, DC & Virginia \u2014 pricing, products, scheduling & m...",
+    "message": "Meta description has changed. Verify it includes target keywords and CTA."
+   },
+   {
+    "rule": "content_hash_changed",
+    "severity": "INFO",
+    "triggered": true,
+    "old_value": "1a7a61774d1a...",
+    "new_value": "fe62be69d0f6...",
+    "message": "Page content has changed (HTML body hash differs from baseline)."
+   }
+  ]
+ },
+ {
+  "url": "https://capitalcleancare.com/about",
+  "target": "https://capitalcleancare.com/about",
+  "baseline_id": 225,
+  "critical": 0,
+  "warning": 0,
+  "info": 1,
+  "triggered": [
+   {
+    "rule": "content_hash_changed",
+    "severity": "INFO",
+    "triggered": true,
+    "old_value": "70261b796930...",
+    "new_value": "b7a6e9b21ce4...",
+    "message": "Page content has changed (HTML body hash differs from baseline)."
+   }
+  ]
+ },
+ {
+  "url": "https://capitalcleancare.com/locations/bethesda-md",
+  "target": "https://capitalcleancare.com/locations/bethesda-md",
+  "baseline_id": 226,
+  "critical": 0,
+  "warning": 0,
+  "info": 1,
+  "triggered": [
+   {
+    "rule": "content_hash_changed",
+    "severity": "INFO",
+    "triggered": true,
+    "old_value": "f6e6ffd76b75...",
+    "new_value": "f0b6c31ce5d6...",
+    "message": "Page content has changed (HTML body hash differs from baseline)."
+   }
+  ]
+ },
+ {
+  "url": "https://capitalcleancare.com/locations/bethesda-md/recurring-cleaning",
+  "target": "https://capitalcleancare.com/locations/bethesda-md/recurring-cleaning",
+  "baseline_id": 227,
+  "critical": 0,
+  "warning": 0,
+  "info": 1,
+  "triggered": [
+   {
+    "rule": "content_hash_changed",
+    "severity": "INFO",
+    "triggered": true,
+    "old_value": "1300461fc8f4...",
+    "new_value": "ca6d6e3a0f3e...",
+    "message": "Page content has changed (HTML body hash differs from baseline)."
+   }
+  ]
+ },
+ {
+  "url": "https://capitalcleancare.com/locations/bethesda-md/deep-cleaning",
+  "target": "https://capitalcleancare.com/locations/bethesda-md/deep-cleaning",
+  "baseline_id": 228,
+  "critical": 0,
+  "warning": 0,
+  "info": 1,
+  "triggered": [
+   {
+    "rule": "content_hash_changed",
+    "severity": "INFO",
+    "triggered": true,
+    "old_value": "909b39176af6...",
+    "new_value": "de594c0463de...",
+    "message": "Page content has changed (HTML body hash differs from baseline)."
+   }
+  ]
+ },
+ {
+  "url": "https://capitalcleancare.com/locations/bethesda-md/house-cleaning",
+  "target": "https://capitalcleancare.com/locations/bethesda-md/house-cleaning",
+  "baseline_id": 229,
+  "critical": 0,
+  "warning": 0,
+  "info": 1,
+  "triggered": [
+   {
+    "rule": "content_hash_changed",
+    "severity": "INFO",
+    "triggered": true,
+    "old_value": "be5f3cfd2246...",
+    "new_value": "a4a4ec85cfe9...",
+    "message": "Page content has changed (HTML body hash differs from baseline)."
+   }
+  ]
+ },
+ {
+  "url": "https://capitalcleancare.com/locations/silver-spring-md",
+  "target": "https://capitalcleancare.com/locations/silver-spring-md",
+  "baseline_id": 230,
+  "critical": 0,
+  "warning": 0,
+  "info": 1,
+  "triggered": [
+   {
+    "rule": "content_hash_changed",
+    "severity": "INFO",
+    "triggered": true,
+    "old_value": "e8e6f7392b18...",
+    "new_value": "053120929b3e...",
+    "message": "Page content has changed (HTML body hash differs from baseline)."
+   }
+  ]
+ },
+ {
+  "url": "https://capitalcleancare.com/locations/fairfax-va",
+  "target": "https://capitalcleancare.com/locations/fairfax-va",
+  "baseline_id": 231,
+  "critical": 0,
+  "warning": 0,
+  "info": 1,
+  "triggered": [
+   {
+    "rule": "content_hash_changed",
+    "severity": "INFO",
+    "triggered": true,
+    "old_value": "c7426f2a8911...",
+    "new_value": "98c8661b5eda...",
+    "message": "Page content has changed (HTML body hash differs from baseline)."
+   }
+  ]
+ },
+ {
+  "url": "https://capitalcleancare.com/locations/rockville-md",
+  "target": "https://capitalcleancare.com/locations/rockville-md",
+  "baseline_id": 232,
+  "critical": 0,
+  "warning": 0,
+  "info": 1,
+  "triggered": [
+   {
+    "rule": "content_hash_changed",
+    "severity": "INFO",
+    "triggered": true,
+    "old_value": "2f044460a2f9...",
+    "new_value": "bdb98991f089...",
+    "message": "Page content has changed (HTML body hash differs from baseline)."
+   }
+  ]
+ },
+ {
+  "url": "https://capitalcleancare.com/locations/alexandria-va",
+  "target": "https://capitalcleancare.com/locations/alexandria-va",
+  "baseline_id": 233,
+  "critical": 0,
+  "warning": 0,
+  "info": 1,
+  "triggered": [
+   {
+    "rule": "content_hash_changed",
+    "severity": "INFO",
+    "triggered": true,
+    "old_value": "b7af3d345fd5...",
+    "new_value": "26e519f27c16...",
+    "message": "Page content has changed (HTML body hash differs from baseline)."
+   }
+  ]
+ },
+ {
+  "url": "https://capitalcleancare.com/resources/best-house-cleaning-service-bethesda-md",
+  "target": "https://capitalcleancare.com/resources/best-house-cleaning-service-bethesda-md",
+  "baseline_id": 234,
+  "critical": 0,
+  "warning": 1,
+  "info": 1,
+  "triggered": [
+   {
+    "rule": "schema_modified",
+    "severity": "WARNING",
+    "triggered": true,
+    "old_value": "1bd4f3f77774...",
+    "new_value": "d6089e1e99d8...",
+    "message": "Schema/JSON-LD content has been modified. Validate with /seo schema."
+   },
+   {
+    "rule": "content_hash_changed",
+    "severity": "INFO",
+    "triggered": true,
+    "old_value": "bb068302f1a4...",
+    "new_value": "4c8e266ee47d...",
+    "message": "Page content has changed (HTML body hash differs from baseline)."
+   }
+  ]
+ },
+ {
+  "url": "https://capitalcleancare.com/resources/free-house-cleaning-for-seniors",
+  "target": "https://capitalcleancare.com/resources/free-house-cleaning-for-seniors",
+  "baseline_id": 235,
+  "critical": 0,
+  "warning": 1,
+  "info": 1,
+  "triggered": [
+   {
+    "rule": "schema_modified",
+    "severity": "WARNING",
+    "triggered": true,
+    "old_value": "6ada86d28d25...",
+    "new_value": "ca255e9161ea...",
+    "message": "Schema/JSON-LD content has been modified. Validate with /seo schema."
+   },
+   {
+    "rule": "content_hash_changed",
+    "severity": "INFO",
+    "triggered": true,
+    "old_value": "302f3c60ec93...",
+    "new_value": "badb0b365359...",
+    "message": "Page content has changed (HTML body hash differs from baseline)."
+   }
+  ]
+ },
+ {
+  "url": "https://capitalcleancare.com/resources/move-in-cleaning-checklist",
+  "target": "https://capitalcleancare.com/resources/move-in-cleaning-checklist",
+  "baseline_id": 236,
+  "critical": 0,
+  "warning": 1,
+  "info": 1,
+  "triggered": [
+   {
+    "rule": "schema_modified",
+    "severity": "WARNING",
+    "triggered": true,
+    "old_value": "a946c1edeb27...",
+    "new_value": "6bdd92462275...",
+    "message": "Schema/JSON-LD content has been modified. Validate with /seo schema."
+   },
+   {
+    "rule": "content_hash_changed",
+    "severity": "INFO",
+    "triggered": true,
+    "old_value": "55811d2b48a2...",
+    "new_value": "98f39009602e...",
+    "message": "Page content has changed (HTML body hash differs from baseline)."
+   }
+  ]
+ },
+ {
+  "url": "https://capitalcleancare.com/resources/house-cleaning-for-seniors",
+  "target": "https://capitalcleancare.com/resources/house-cleaning-for-seniors",
+  "baseline_id": 237,
+  "critical": 0,
+  "warning": 1,
+  "info": 1,
+  "triggered": [
+   {
+    "rule": "schema_modified",
+    "severity": "WARNING",
+    "triggered": true,
+    "old_value": "0c199c536db0...",
+    "new_value": "4b250394fc2d...",
+    "message": "Schema/JSON-LD content has been modified. Validate with /seo schema."
+   },
+   {
+    "rule": "content_hash_changed",
+    "severity": "INFO",
+    "triggered": true,
+    "old_value": "1687534fbdd4...",
+    "new_value": "98348440185b...",
+    "message": "Page content has changed (HTML body hash differs from baseline)."
+   }
+  ]
+ }
+]

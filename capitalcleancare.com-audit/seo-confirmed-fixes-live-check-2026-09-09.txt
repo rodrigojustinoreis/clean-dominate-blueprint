@@ -1,0 +1,49 @@
+ok   /  (changed: True, closed panels hidden: 7)
+ok   /faq  (changed: True, closed panels hidden: 19)
+ok   /resources/faq  (changed: True, closed panels hidden: 0)
+ok   /locations/rockville-md/house-cleaning  (changed: True, closed panels hidden: 4)
+ok   /locations/rockville-md/recurring-cleaning  (changed: True, closed panels hidden: 4)
+ok   /locations/rockville-md/deep-cleaning  (changed: True, closed panels hidden: 8)
+ok   /locations/rockville-md/move-out-cleaning  (changed: True, closed panels hidden: 7)
+ok   /locations/silver-spring-md/deep-cleaning  (changed: True, closed panels hidden: 7)
+ok   /pricing  (changed: True, closed panels hidden: 0)
+ok   /contact  (changed: True, closed panels hidden: 0)
+ok   /about  (changed: True, closed panels hidden: 12)
+ok   /locations/bethesda-md  (changed: True, closed panels hidden: 15)
+ok   /locations/bethesda-md/house-cleaning  (changed: True, closed panels hidden: 6)
+ok   /locations/rockville-md  (changed: True, closed panels hidden: 10)
+ok   /services/deep-cleaning  (changed: True, closed panels hidden: 15)
+ok   /services/recurring-cleaning  (changed: True, closed panels hidden: 15)
+ok   /services/move-out-cleaning  (changed: True, closed panels hidden: 15)
+ok   /services/maid-service  (changed: True, closed panels hidden: 6)
+ok   /services/airbnb-cleaning  (changed: True, closed panels hidden: 6)
+ok   /locations/silver-spring-md  (changed: True, closed panels hidden: 14)
+ok   /locations/fairfax-va  (changed: True, closed panels hidden: 14)
+ok   /locations/alexandria-va  (changed: True, closed panels hidden: 15)
+ok   /locations/bethesda-md/deep-cleaning  (changed: True, closed panels hidden: 8)
+ok   /locations/bethesda-md/recurring-cleaning  (changed: True, closed panels hidden: 4)
+ok   /resources/best-house-cleaning-service-bethesda-md  (changed: True, closed panels hidden: 0)
+ok   /resources/free-house-cleaning-for-seniors  (changed: True, closed panels hidden: 0)
+ok   /resources/house-cleaning-for-seniors  (changed: True, closed panels hidden: 0)
+ok   /resources/move-in-cleaning-checklist  (changed: True, closed panels hidden: 0)
+ok   /es  (changed: True, closed panels hidden: 0)
+ok   /es/areas/rockville-md  (changed: True, closed panels hidden: 0)
+ok   /es/areas/germantown-md  (changed: True, closed panels hidden: 0)
+ok   /es/areas/montgomery-village-md  (changed: True, closed panels hidden: 0)
+ok   /es/limpieza-de-casas  (changed: True, closed panels hidden: 0)
+ok   /locations/germantown-md/house-cleaning  (changed: True, closed panels hidden: 4)
+ok   /locations/montgomery-village-md/house-cleaning  (changed: True, closed panels hidden: 4)
+ok   /resources/airbnb-cleaning-fee  (changed: True, closed panels hidden: 0)
+ok   /resources/how-to-clean-hardwood-floors-after-construction  (changed: True, closed panels hidden: 0)
+ok   /services/house-cleaning  (changed: False, closed panels hidden: 14)
+--- redirects (production)
+  /locations/rockville-md/maid-service -> 301 /locations/rockville-md/house-cleaning ok
+  /locations/bethesda-md/maid-service -> 301 /locations/bethesda-md/house-cleaning ok
+  /locations/north-bethesda-md/maid-service -> 200 robots=noindex,follow
+  /services -> 200 robots=index, follow,
+  /locations/wheaton-md/apartment-cleaning -> 200 robots=index, follow,
+--- hreflang sets
+  /es/areas/germantown-md vs /locations/germantown-md/house-cleaning: identical=True [('en', 'https://capitalcleancare.com/locations/germantown-md/house-cleaning'), ('es', 'https://capitalcleancare.com/es/areas/germantown-md'), ('x-default', 'https://capitalcleancare.com/locations/germantown-md/house-cleaning')]
+  /es/areas/montgomery-village-md vs /locations/montgomery-village-md/house-cleaning: identical=True [('en', 'https://capitalcleancare.com/locations/montgomery-village-md/house-cleaning'), ('es', 'https://capitalcleancare.com/es/areas/montgomery-village-md'), ('x-default', 'https://capitalcleancare.com/locations/montgomery-village-md/house-cleaning')]
+sitemap identical True 300
+RESULT PASS (38/38 pages ok)

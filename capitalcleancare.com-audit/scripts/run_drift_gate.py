@@ -27,8 +27,13 @@ for bid, url in rows:
         p_err = (p.stderr or p.stdout or str(e))
         results.append({"url": url, "baseline_id": bid, "error": (p_err or str(e))[-400:], "rc": p.returncode}); continue
     tf = data.get("triggered_findings") or [f for f in data.get("findings", []) if f.get("triggered")]
+    # drift_compare reports severities in upper case ("CRITICAL"/"WARNING"/"INFO") and a summary block; normalise.
     sev = {"critical": 0, "warning": 0, "info": 0}
-    for f in tf: sev[f.get("severity", "info")] = sev.get(f.get("severity", "info"), 0) + 1
+    for f in tf:
+        k = str(f.get("severity", "info")).lower(); sev[k] = sev.get(k, 0) + 1
+    summ = data.get("summary") or {}
+    for k in sev:
+        if isinstance(summ.get(k), int) and summ[k] != sev[k]: sev[k] = summ[k]
     results.append({"url": url, "target": target, "baseline_id": bid, **sev, "triggered": tf})
 json.dump(results, open(out_path, "w"), indent=1)
 print(f"{'URL':70s} crit warn info")
@@ -43,7 +48,11 @@ print(f"TOTAL triggered — critical: {tot['critical']}  warning: {tot['warning'
 print("\nTriggered findings detail (warning+critical):")
 for r in results:
     for f in r.get("triggered", []):
-        if f.get("severity") in ("warning", "critical"): print(f"  [{f.get('severity')}] {r['url'].replace('https://capitalcleancare.com','') or '/'} — {f.get('check') or f.get('type') or f.get('name')}: {str(f.get('message') or f.get('detail') or '')[:160]}")
+        if str(f.get("severity", "")).lower() in ("warning", "critical"): print(f"  [{str(f.get('severity')).lower()}] {r['url'].replace('https://capitalcleancare.com','') or '/'} — {f.get('rule') or f.get('check') or f.get('type')}: {str(f.get('message') or '')[:120]} | old={str(f.get('old_value',''))[:70]} | new={str(f.get('new_value',''))[:70]}")
+print("\nInfo findings (rule per URL):")
+for r in results:
+    infos=[f.get("rule") or f.get("check") for f in r.get("triggered", []) if str(f.get("severity","")).lower()=="info"]
+    if infos: print(f"  {r['url'].replace('https://capitalcleancare.com','') or '/'}: {', '.join(map(str,infos))}")
 if verified != 23 or len(rows) != 23:
     print("GATE RESULT: FAIL (incomplete verification)"); sys.exit(2)
 print("GATE RESULT: complete (23/23 verified) — judge the triggered findings above")
