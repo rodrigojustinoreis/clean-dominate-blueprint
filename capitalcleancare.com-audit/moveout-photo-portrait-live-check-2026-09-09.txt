@@ -1,0 +1,35 @@
+move-out status prod=200 prev=200 x-robots prod=None prev=noindex
+  title      identical
+  meta       identical
+  canonical  identical
+  robots     identical
+  h1         identical
+  jsonld     identical
+  text       identical
+  imgs       identical
+  preloads   identical
+  forms      identical
+  fields     identical
+  tel        identical
+  links      identical
+  html diff lines (hash-normalized) = 4
+    -    <style>*,:before,:after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: 
+    +    <style>*,:before,:after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: 
+    -<div class="relative w-full rounded-2xl overflow-hidden shadow-xl border border-border/50 bg-primary/10 " style="aspect-ratio:4/3">
+    +<div class="relative w-full rounded-2xl overflow-hidden shadow-xl border border-border/50 bg-primary/10 rockville-moveout-hero max-w-[420px] mx-auto [&amp;&gt;img]:absolute [&amp;&gt;img]:left-1/2 [&amp;&gt;img]:top-1/2 [&amp;&gt
+  hero portrait markup live: True
+  /locations/chevy-chase-md                        prod=200 prev=200 identical=True
+  /locations/chevy-chase-md/move-out-cleaning      prod=200 prev=200 identical=True
+  /locations/howard-county-md                      prod=200 prev=200 identical=True
+  /locations/north-bethesda-md/move-out-cleaning   prod=200 prev=200 identical=True
+  /maryland                                        prod=200 prev=200 identical=True
+  /virginia                                        prod=200 prev=200 identical=True
+  /washington-dc                                   prod=200 prev=200 identical=True
+  /services/house-cleaning                         prod=200 prev=200 identical=True
+  /                                                prod=200 prev=200 identical=True
+  /locations/rockville-md                          prod=200 prev=200 identical=True
+  /locations/rockville-md/deep-cleaning            prod=200 prev=200 identical=True
+  /locations/rockville-md/recurring-cleaning       prod=200 prev=200 identical=True
+  /locations/rockville-md/house-cleaning           prod=200 prev=200 identical=True
+  /sitemap.xml                                     prod=200 prev=200 identical=True
+RESULT PASS
