@@ -2,6 +2,7 @@
 
 **Status:** implementado e validado LOCALMENTE. Sem merge, push ou deploy. **Aguarda decisão de publicação.**
 **Branch:** `codex/remove-review-count` (worktree `.worktrees/reviews-count`), base `origin/main` c7b38d3 (anterior à publicação da foto 66cef5b — rebase/ff trivial: nenhum arquivo em comum). Commit do código: **aed448d**.
+**Preview público (draft Netlify, X-Robots-Tag noindex, não publicado):** https://6aa0cd5de223cccd739bb718--vocal-paprenjak-561aa9.netlify.app (deploy 6aa0cd5de223cccd739bb718, dist do commit aed448d; produção continua 6aa0ca66 / 66cef5b).
 **Preview local:** http://127.0.0.1:4201/ (`serve_dist.py` do dist desta worktree; ex.: /locations/rockville-md/move-out-cleaning, /reviews, /services/deep-cleaning, /es).
 
 ## Decisão aplicada (Rodrigo/Codex)
