@@ -13,7 +13,7 @@ const services = [
     badge: "Most Popular",
     badgeColor: "bg-emerald-600 text-white",
     description: "Ongoing maintenance cleaning. Price shown is per visit at bi-weekly frequency.",
-    note: "Bi-weekly pricing shown. Weekly saves 25% · Monthly adds 5%.",
+    note: "Bi-weekly pricing shown (15% off our one-time rate). Weekly is 25% off and monthly 5% off the same one-time rate.",
     rows: [
       { config: "Studio / 1 Bed · 1 Bath", sqft: "up to 900 sq ft",   price: "$140 – $165" },
       { config: "2 Bed · 1 Bath",           sqft: "900 – 1,300 sq ft", price: "$160 – $190" },
@@ -217,6 +217,9 @@ const PricingTable = () => {
         <h4 className="font-heading text-base font-bold mb-3 flex items-center gap-2">
           Recurring Service Discounts
         </h4>
+        <p className="text-sm text-muted-foreground mb-3">
+          Each percentage is off our one-time (single-visit) rate for the same home — the same base the price calculator uses.
+        </p>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
           {frequencyDiscounts.map((d, i) => (
             <Card key={i} className="border-accent/20 hover:border-accent/50 transition-colors">
