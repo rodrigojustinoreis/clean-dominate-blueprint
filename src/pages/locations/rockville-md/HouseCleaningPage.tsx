@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { CheckCircle, Star, ArrowRight } from "lucide-react";
+import { CheckCircle, Star, ArrowRight, Camera } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FAQ from "@/components/FAQ";
@@ -21,7 +21,8 @@ import InternalLinksGrid from "@/components/location/InternalLinksGrid";
 import LocationSocialProof from "@/components/location/LocationSocialProof";
 import LocationQuoteSection from "@/components/location/LocationQuoteSection";
 import { getServiceLocationOverride } from "@/data/service-location-overrides";
-import { trustBlurbVariants, ctaProseVariants, ecoSafeVariants, satisfactionVariants, arriveStepVariants, pickVariant } from "@/data/template-variants";
+import { pickReviews } from "@/data/realReviews";
+import { satisfactionVariants, pickVariant } from "@/data/template-variants";
 
 // ── Page constants ────────────────────────────────────────────────────────────
 
@@ -30,7 +31,7 @@ const PAGE_URL = "https://capitalcleancare.com/locations/rockville-md/house-clea
 const localFaqs = [
   {
     q: "Do you bring your own cleaning supplies to Rockville homes?",
-    a: "Yes. We supply all equipment and EPA Safer Choice™ certified eco-friendly products to every Rockville home. You don't need to provide anything — just let us in.",
+    a: "Yes. We supply all equipment and products, follow the product label for each surface, and record any sensitivities you tell us about before the visit. You don't need to provide anything — just let us in.",
   },
   {
     q: "Are your cleaners background-checked?",
@@ -38,11 +39,11 @@ const localFaqs = [
   },
   {
     q: "How much does house cleaning cost in Rockville, MD?",
-    a: "Pricing depends on home size and frequency. Get your exact quote in 60 seconds with no commitment required — use the form below or call (240) 704-2551.",
+    a: "Pricing depends on home size, bathrooms, frequency and condition. Request a free written quote with no commitment — use the form below or call (240) 704-2551.",
   },
   {
     q: "Do you offer recurring cleaning in Rockville?",
-    a: "Yes — weekly, bi-weekly, and monthly plans are available at discounted recurring rates. Recurring clients in Rockville get the same background-checked team every single visit.",
+    a: "Yes — weekly, bi-weekly, and monthly plans are available at discounted recurring rates. Recurring clients in Rockville get the same background-checked team whenever possible; if a regular team member is out, a fully trained team covers to the same checklist.",
   },
   {
     q: "What areas of Rockville do you serve?",
@@ -50,11 +51,31 @@ const localFaqs = [
   },
   {
     q: "What is your cancellation policy for Rockville clients?",
-    a: "We ask for 24-hour notice for cancellations. No fees for first-time cancellations. We understand life happens — just let us know as early as possible.",
+    a: "Let us know as early as possible; rescheduling and cancellation terms are confirmed with your booking. We understand life happens.",
   },
   {
     q: "Is Capital Clean Care locally owned?",
     a: "Yes — Capital Clean Care is a Latino-owned and operated cleaning company serving Rockville and the greater Montgomery County area. We live and work in this community, and your home matters to us personally.",
+  },
+];
+
+// Owner-provided photographs of a Capital Clean Care residential cleaning visit in Rockville on
+// 2026-08-17 — the same set, alt text and captions already published on the Rockville hub and on the
+// Rockville deep-cleaning page (two of the four). No new photos; no before/after, price or duration claims.
+const ROCKVILLE_REAL_WORK_DATE = "2026-08-17";
+const ROCKVILLE_REAL_WORK_DATE_LABEL = "August 17, 2026";
+const rockvilleRealWorkPhotos = [
+  {
+    src480: "/images/locations/rockville-real-work/window-frame-cleaning-480.webp",
+    src768: "/images/locations/rockville-real-work/window-frame-cleaning-768.webp",
+    alt: "Capital Clean Care employee cleaning a window track and latch in a Rockville, Maryland home",
+    caption: "Window track and latch cleaning",
+  },
+  {
+    src480: "/images/locations/rockville-real-work/bathroom-fixture-detailing-480.webp",
+    src768: "/images/locations/rockville-real-work/bathroom-fixture-detailing-768.webp",
+    alt: "Capital Clean Care professional in uniform detailing the bathroom mirror and lighting area in a Rockville home",
+    caption: "Bathroom mirror and lighting-area detail",
   },
 ];
 
@@ -129,7 +150,7 @@ const RockvilleHouseCleaningPage = () => {
   const { seoHelmet } = useSEO({
     title: "House Cleaning in Rockville, MD",
     description:
-      "Professional house cleaning in Rockville, MD. Eco-friendly products safe for kids & pets. Background-checked, bonded & insured. Latino-owned. Free quote in 60 seconds.",
+      "House cleaning in Rockville, MD (ZIPs 20850–20853): a written checklist, a background-checked, bonded & insured Latino-owned team, and a free written quote.",
     canonical: PAGE_URL,
     ogImage: "https://capitalcleancare.com/og-image.jpg",
   });
@@ -159,17 +180,11 @@ const RockvilleHouseCleaningPage = () => {
           "Fallsgrove, Rockville MD",
           "Montgomery County, MD",
         ]}
-        reviews={[
-          {
-            name: "Sarah M.",
-            text: "Capital Clean Care transformed our home. Thorough, eco-friendly products safe for my kids and pets.",
-            location: "Bethesda, MD",
-          },
-        ]}
+        reviews={pickReviews("rockville-md/house-cleaning")}
       />
       <ServiceSchema
         serviceName="House Cleaning in Rockville, MD"
-        description="Professional, eco-friendly house cleaning in Rockville, MD. Background-checked, bonded & insured team. EPA Safer Choice certified products. 100% satisfaction guaranteed."
+        description="Professional house cleaning in Rockville, MD with a written checklist and a free written quote. Background-checked, bonded and insured team; re-clean guarantee."
         url={PAGE_URL}
         areaServed={["Rockville, MD", "Montgomery County, MD"]}
       />
@@ -191,13 +206,17 @@ const RockvilleHouseCleaningPage = () => {
       {/* ── Hero ──────────────────────────────────────────── */}
       <HeroLocation
         h1="Professional House Cleaning in Rockville, MD"
-        lead="Capital Clean Care brings professional, eco-friendly house cleaning to Rockville homes — from King Farm to Twinbrook. Our background-checked, bonded team uses EPA Safer Choice™ certified products, safe for your kids and pets, and backs every visit with 100% satisfaction: we re-clean if you're not happy."
+        lead="Capital Clean Care brings professional house cleaning to Rockville homes — from King Farm to Twinbrook. A background-checked, bonded team works from a written checklist, follows the product label and material for each surface, records the sensitivities you tell us about before the visit, and backs every visit with our re-clean guarantee."
         cityName="Rockville"
         state="MD"
         zipRange="20850–20853"
         heroImage="/images/team/team-mopping-bright-room.jpg"
         heroImageAlt="Capital Clean Care team providing house cleaning service in Rockville, MD — Latino-owned, background-checked professionals"
-        ctaPrimary="Get a Free Quote in Rockville"
+        ctaPrimary="Request a Free Written Quote"
+        teamTrustLabel="Background-Checked Team"
+        ctaNote="No commitment · Date confirmed at booking · 100% satisfaction guaranteed"
+        updatedLabel="Updated September 2026"
+        updatedDateTime="2026-09-09"
       />
 
       {/* ── What's Included ───────────────────────────────── */}
@@ -209,6 +228,45 @@ const RockvilleHouseCleaningPage = () => {
       {/* ── Social Proof (3rd — trust video early) ── */}
       <LocationSocialProof cityName="Rockville" citySlug="rockville-md" serviceSlug="house-cleaning" serviceLabel="House Cleaning" />
 
+      {/* ── Documented work in Rockville (owner photographs already published on the hub and deep page) ── */}
+      <section className="py-12 md:py-16 bg-muted/30" aria-labelledby="rockville-house-documented-work">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="flex items-center gap-2 mb-3">
+            <Camera className="h-5 w-5 text-accent" aria-hidden="true" />
+            <p className="text-sm font-semibold text-accent">Original photographs · Rockville, MD · <time dateTime={ROCKVILLE_REAL_WORK_DATE}>{ROCKVILLE_REAL_WORK_DATE_LABEL}</time></p>
+          </div>
+          <h2 id="rockville-house-documented-work" className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-4">
+            Documented work in a Rockville home
+          </h2>
+          <p className="text-muted-foreground leading-relaxed mb-6">
+            These photographs are from a Capital Clean Care residential cleaning visit in Rockville on {ROCKVILLE_REAL_WORK_DATE_LABEL}.
+            They show detail tasks — window tracks and latches, bathroom fixtures — that go beyond the standard checklist above.
+            When you want that level of detail, ask for it in your quote or see our{" "}
+            <Link to="/locations/rockville-md/deep-cleaning" className="text-primary font-medium underline">Rockville deep cleaning</Link>.
+            The full photo record of that visit is on our{" "}
+            <Link to="/locations/rockville-md" className="text-primary font-medium underline">Rockville page</Link>.
+          </p>
+          <div className="grid grid-cols-2 gap-3 sm:max-w-md" aria-label="Documented Capital Clean Care work completed in Rockville">
+            {rockvilleRealWorkPhotos.map((photo) => (
+              <figure key={photo.src480} className="overflow-hidden rounded-xl border border-border bg-card shadow-sm">
+                <img
+                  src={photo.src480}
+                  srcSet={`${photo.src480} 480w, ${photo.src768} 768w`}
+                  sizes="(max-width: 639px) 46vw, 220px"
+                  alt={photo.alt}
+                  width="480"
+                  height="640"
+                  className="aspect-[4/3] w-full object-cover"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <figcaption className="px-3 py-2 text-xs leading-snug text-muted-foreground">{photo.caption}</figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── Why Choose Us ─────────────────────────────────── */}
       <section className="py-12 md:py-16">
         <div className="container mx-auto px-4 max-w-4xl">
@@ -219,11 +277,11 @@ const RockvilleHouseCleaningPage = () => {
             {[
               {
                 title: "Latino-Owned & Locally Operated",
-                body: trustBlurbVariants[pickVariant("rockville-md", 3)]("Rockville", "Montgomery County"),
+                body: "We're not a franchise — we're a Latino-owned Montgomery County company, and our reputation in Rockville is built one clean at a time. Every cleaner is background-checked, bonded and insured.",
               },
               {
-                title: "Eco-Safe for Your Family",
-                body: ecoSafeVariants[pickVariant("rockville-md", 3, 4)]("Rockville"),
+                title: "Products Chosen for Your Home",
+                body: "We offer product-conscious, lower-odor options and follow the product label for each surface. Tell us about pets, children, allergies or fragrance sensitivities so we can record the right preferences and precautions before the visit.",
               },
               {
                 title: "100% Satisfaction Guaranteed",
@@ -253,13 +311,13 @@ const RockvilleHouseCleaningPage = () => {
             {[
               {
                 step: "1",
-                title: "Book online or call",
-                body: "Get a free quote in 60 seconds — no commitment required. Same-day slots are often available throughout Rockville (ZIP 20850 and surrounding areas). Call (240) 704-2551 or use the form below.",
+                title: "Request a written quote",
+                body: "Tell us your ZIP (20850–20853), home size, bathrooms and what you need — online or at (240) 704-2551. We send a written quote and confirm the date and details before the visit. No commitment.",
               },
               {
                 step: "2",
-                title: "We arrive on time",
-                body: arriveStepVariants[pickVariant("rockville-md", 3, 6)]("Rockville"),
+                title: "We arrive on the confirmed date",
+                body: "A vetted, bonded and insured crew arrives on the confirmed date with its own supplies and equipment. Product choices follow the label and material of each surface, and the sensitivities you told us about are already on the checklist.",
               },
               {
                 step: "3",
@@ -307,19 +365,17 @@ const RockvilleHouseCleaningPage = () => {
               on a schedule that fits your life.
             </p>
             <p>
-              We regularly clean homes throughout Twinbrook, Fallsgrove, Congressional, and the Town Center
-              area. Rockville is one of Montgomery County's most vibrant and diverse cities — and the residents
-              here deserve a cleaning company that respects their time, their homes, and their families.
-              That's why we offer flexible appointment windows — including weekday mornings, afternoons,
-              and weekend slots — with same-day availability when the schedule permits. No long wait lists,
-              no guessing games.
+              We serve Twinbrook, Fallsgrove, Congressional, and the Town Center area as well. Rockville is
+              one of Montgomery County's most vibrant and diverse cities — and the residents here deserve a
+              cleaning company that respects their time, their homes, and their families. Appointment windows
+              and your first date are confirmed with your written quote, so you know when to expect us
+              before we arrive.
             </p>
             <p>
               As a Latino-owned Montgomery County business, we take genuine pride in serving the Rockville
-              community. Every team member completes background screening, eco-cleaning training, and a
-              quality walk-through checklist before joining our crew. From your first cleaning to your
-              hundredth, you'll receive the same meticulous standard — because we treat every Rockville home
-              the way we'd want ours cleaned.
+              community. Every team member is background-screened before joining our crew and works from the
+              same written checklist and final walk-through. From your first cleaning onward, the standard is
+              the checklist, not a guess — because we treat every Rockville home the way we'd want ours cleaned.
             </p>
           </div>
         </div>
@@ -342,19 +398,19 @@ const RockvilleHouseCleaningPage = () => {
                 name: "King Farm",
                 zip: "20850",
                 body:
-                  "King Farm townhomes and single-family homes near Pleasant Drive have tight schedules and busy families. We run efficient weekday and Saturday morning slots, and we're used to working around stroller drop-offs, dog walkers, and the King Farm Village Center coffee runs. Most King Farm clients use bi-weekly recurring service.",
+                  "For a King Farm townhome or single-family home near Pleasant Drive, tell us how many levels and bathrooms need attention, along with parking or HOA access requirements.",
               },
               {
                 name: "Twinbrook",
                 zip: "20851",
                 body:
-                  "Twinbrook's mid-century brick ranches and split-levels deserve a cleaner who respects original hardwood, plaster walls, and tile bathrooms. We bring soft microfiber, pH-neutral floor cleaner, and zero abrasives so the character of these homes — many built in the 1950s — stays intact while still getting a thorough, deep refresh.",
+                  "Twinbrook's mid-century brick ranches and split-levels often keep original hardwood, plaster walls and tile bathrooms. We follow the material and product label for each surface and note any finish you want handled with extra care — just tell us when you book.",
               },
               {
                 name: "Fallsgrove",
                 zip: "20850",
                 body:
-                  "Fallsgrove homes near Shady Grove Road tend to be larger, with formal dining, multiple bathrooms, and finished basements. Our checklist scales — we send 2-cleaner teams for 3,000+ sq ft homes so the visit stays within a reasonable window and every surface gets the same attention as the master suite.",
+                  "Fallsgrove homes near Shady Grove Road tend to be larger, with formal dining, multiple bathrooms and finished basements. Team size and visit length are set in your written quote from square footage, bathrooms and the areas you want covered, so the checklist scales with the home.",
               },
             ].map((n) => (
               <div
@@ -372,41 +428,29 @@ const RockvilleHouseCleaningPage = () => {
         </div>
       </section>
 
-      {/* ── Transparent Pricing ─────────────────────────── */}
+      {/* ── Pricing guidance (no standalone table: ranges live in the cost guide; quotes are written) ── */}
       <section className="py-12 md:py-16">
         <div className="container mx-auto px-4 max-w-4xl">
           <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-3">
             House Cleaning Pricing in Rockville, MD
           </h2>
-          <p className="text-muted-foreground mb-8 leading-relaxed max-w-2xl">
-            Pricing depends on home size, frequency, and condition. The ranges below reflect what most
-            Rockville families actually pay for a standard house cleaning. Recurring clients save 10–25%
-            off these rates. Get your exact quote in 60 seconds — no commitment required.
+          <p className="text-muted-foreground mb-6 leading-relaxed max-w-2xl">
+            Pricing depends on home size, number of bathrooms, frequency and current condition. Planning ranges for
+            Rockville are published in our{" "}
+            <Link to="/resources/house-cleaning-cost-rockville-md" className="text-primary font-medium underline">Rockville house cleaning cost guide</Link>;
+            your written quote is based on your own home, not on an average. Request it below or call (240) 704-2551 — no commitment.
           </p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {[
-              { size: "1 BR / 1 BA", range: "$140 – $170", note: "Studios &amp; condos" },
-              { size: "2 BR / 2 BA", range: "$170 – $220", note: "Most townhomes" },
-              { size: "3 BR / 2 BA", range: "$210 – $290", note: "Typical single-family" },
-              { size: "4 BR+ / 3 BA+", range: "$280 – $420", note: "Larger Fallsgrove homes" },
-            ].map((p) => (
-              <div
-                key={p.size}
-                className="bg-card border border-border rounded-xl p-5 text-center"
-              >
-                <p className="text-xs uppercase tracking-wider text-muted-foreground mb-1">{p.size}</p>
-                <p className="font-heading font-bold text-2xl text-foreground mb-1">{p.range}</p>
-                <p className="text-xs text-muted-foreground" dangerouslySetInnerHTML={{ __html: p.note }} />
-              </div>
-            ))}
-          </div>
-          <div className="mt-8 p-5 bg-primary/5 border border-primary/20 rounded-xl">
+          <div className="p-5 bg-primary/5 border border-primary/20 rounded-xl">
             <div className="flex items-start gap-3">
               <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" aria-hidden="true" />
               <div className="text-sm text-muted-foreground leading-relaxed">
-                <strong className="text-foreground">Recurring savings in Rockville:</strong> weekly clients save up to 25%,
-                bi-weekly clients save 15%, monthly clients save 5%. Deep cleaning (first visit or seasonal refresh)
-                typically runs 1.5× the standard rate. Move-in / move-out cleaning is quoted separately based on condition.
+                <strong className="text-foreground">Recurring plans in Rockville:</strong> weekly, bi-weekly and monthly visits are
+                discounted off the one-time rate (25%, 15% and 5% — the same base our price calculator uses). See{" "}
+                <Link to="/locations/rockville-md/recurring-cleaning" className="text-primary font-medium underline">recurring cleaning in Rockville</Link>.
+                A first-visit reset is quoted as a{" "}
+                <Link to="/locations/rockville-md/deep-cleaning" className="text-primary font-medium underline">deep cleaning</Link>, and an empty
+                home at the end of a lease as a{" "}
+                <Link to="/locations/rockville-md/move-out-cleaning" className="text-primary font-medium underline">move-out cleaning</Link>; each has its own written scope.
               </div>
             </div>
           </div>
@@ -450,7 +494,7 @@ const RockvilleHouseCleaningPage = () => {
       <ConversionCTA cityName="Rockville" />
 
       {/* ── Final CTA + #quote anchor ─────────────────────── */}
-      <LocationQuoteSection cityName="Rockville" serviceLabel="House Cleaning" defaultService="standard" zipLine="Serving Rockville across ZIPs 20850, 20851, 20852, and 20853." ctaProse={ctaProseVariants[pickVariant("rockville-md", 2, 3)]("Rockville", "House Cleaning")} />
+      <LocationQuoteSection cityName="Rockville" serviceLabel="House Cleaning" defaultService="standard" zipLine="Serving Rockville across ZIPs 20850, 20851, 20852, and 20853." ctaProse="Tell us about your Rockville home and we'll send a clear, no-obligation house cleaning quote, with your date confirmed before the visit." availabilityNote="Your date is confirmed at booking." trustLine="Date confirmed at booking · 100% satisfaction guaranteed · Bonded & Insured" />
 
       {/* ── Sticky mobile phone CTA ───────────────────────── */}
       <StickyMobileCTA />
