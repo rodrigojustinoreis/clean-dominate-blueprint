@@ -285,6 +285,15 @@ const RockvilleDeepCleaningPage = () => {
         title="What's Included in Our Rockville Deep Cleaning"
         categories={checklistCategories}
       />
+      {/* The checklist lists interior items; the lead and FAQs say "selected" interiors — this note reconciles both. */}
+      <section className="pb-10 -mt-4">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <p className="text-sm text-muted-foreground leading-relaxed">
+            Interior items in this checklist — oven, cabinets and drawers, vanity interiors — are confirmed as part of your
+            written scope: the quote lists exactly which of them are included for your home.
+          </p>
+        </div>
+      </section>
 
       {/* ── Documented detail work in Rockville (owner photographs shared with the Rockville hub) ── */}
       <section className="py-12 md:py-16 bg-muted/30" aria-labelledby="rockville-deep-documented-work">
