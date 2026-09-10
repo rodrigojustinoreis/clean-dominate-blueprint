@@ -13,6 +13,7 @@ import FAQ from "@/components/FAQ";
 import { useSEO } from "@/hooks/useSEO";
 import { mdCities, dcCities, vaCities } from "@/data/locations";
 import { dirVanity as vanityLandingPages } from "@/data/home-directory";
+import { vanityLinkHref } from "@/data/vanity-link-targets";
 import regionMD from "@/assets/region-maryland.webp";
 import regionDC from "@/assets/region-dc.webp";
 import regionVA from "@/assets/region-virginia.webp";
@@ -508,7 +509,7 @@ const Index = () => {
               {vanityLandingPages.slice(0, 9).map((vp) => (
                 <Link
                   key={vp.slug}
-                  to={`/${vp.slug}`}
+                  to={vanityLinkHref(vp.slug)}
                   className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-4 py-2 text-sm font-medium text-foreground shadow-sm transition-all hover:border-accent/50 hover:text-accent hover:-translate-y-0.5"
                 >
                   <MapPin className="h-3.5 w-3.5 text-accent" aria-hidden="true" />

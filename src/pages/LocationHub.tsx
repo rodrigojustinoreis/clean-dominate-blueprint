@@ -11,6 +11,7 @@ import { LocalBusinessSchema, FAQSchema, BreadcrumbSchema } from "@/components/S
 import { useSEO } from "@/hooks/useSEO";
 import { getHubBySlug, getCityBySlug } from "@/data/locations";
 import { vanityLandingPages } from "@/data/vanity-landings";
+import { vanityLinkHref } from "@/data/vanity-link-targets";
 import { services } from "@/data/services";
 import { pickReviews } from "@/data/realReviews";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -139,7 +140,7 @@ const LocationHub = () => {
               {vanityLandingPages.filter(vp => vp.citySlug.endsWith("-md")).map((vp) => (
                 <Link
                   key={vp.slug}
-                  to={`/${vp.slug}`}
+                  to={vanityLinkHref(vp.slug)}
                   className="flex items-center gap-2 p-3 rounded-lg border border-border bg-background hover:shadow-sm hover:border-accent/30 transition-all text-sm"
                   aria-label={vp.h1}
                 >

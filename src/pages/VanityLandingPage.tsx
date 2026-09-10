@@ -18,6 +18,7 @@ import { serviceCardHref, hubHref } from "@/data/related-content";
 import { vanityFaqs } from "@/data/vanity-faqs";
 import { checklistOrder } from "@/data/template-variants";
 import NotFound from "./NotFound";
+import { serviceOverviewHref } from "@/data/vanity-link-targets";
 
 const VanityLandingPage = () => {
   const location = useLocation();
@@ -253,7 +254,7 @@ const VanityLandingPage = () => {
               </h3>
               <ul className="space-y-2">
                 {hubLink && <li><Link to={hubLink} className="text-primary hover:underline flex items-center gap-2"><ArrowRight className="h-3 w-3" aria-hidden="true" /> All services in {city.name}</Link></li>}
-                <li><Link to={`/services/${service.slug === "eco-friendly-cleaning" ? "standard-cleaning" : service.slug}`} className="text-primary hover:underline flex items-center gap-2"><ArrowRight className="h-3 w-3" aria-hidden="true" /> {service.name} overview</Link></li>
+                <li><Link to={serviceOverviewHref(service.slug)} className="text-primary hover:underline flex items-center gap-2"><ArrowRight className="h-3 w-3" aria-hidden="true" /> {service.name} overview</Link></li>
                 <li><Link to="/maryland" className="text-primary hover:underline flex items-center gap-2"><ArrowRight className="h-3 w-3" aria-hidden="true" /> Maryland cleaning services</Link></li>
                 <li><Link to="/contact" className="text-primary hover:underline flex items-center gap-2"><ArrowRight className="h-3 w-3" aria-hidden="true" /> Contact us for a free quote</Link></li>
               </ul>
