@@ -28,9 +28,10 @@ export function vanityLinkHref(slug: string): string {
 }
 
 /**
- * Service overview link used by vanity landing pages. Two service slugs have no page of their own:
- * "apartment-cleaning" 301s to the house-cleaning overview (batch 3), and "eco-friendly-cleaning"
- * has always linked to the standard-cleaning overview (pre-existing behaviour, preserved).
+ * Service overview link used by vanity landing pages. "apartment-cleaning" points straight at the
+ * house-cleaning overview, mirroring its existing 301 (batch 3). The "eco-friendly-cleaning" case
+ * reproduces the overview link the page already used before this batch (behaviour preserved as-is,
+ * not reviewed here). Every other service keeps /services/<slug>.
  */
 export function serviceOverviewHref(serviceSlug: string): string {
   if (serviceSlug === "apartment-cleaning") return "/services/house-cleaning";
