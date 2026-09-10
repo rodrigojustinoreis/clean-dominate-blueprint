@@ -18,7 +18,7 @@ const ConversionCTA = ({ cityName, variant = "full" }: ConversionCTAProps) => {
           Ready for a Cleaner Home{location}?
         </h3>
         <p className="text-primary-foreground/80 text-sm mb-5 max-w-md mx-auto">
-          Get a personalized quote in minutes. No obligation, no hidden fees.
+          Tell us about your home and cleaning priorities. Request a written quote with no obligation.
         </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <Button variant="cta" size="lg" asChild>
@@ -42,7 +42,7 @@ const ConversionCTA = ({ cityName, variant = "full" }: ConversionCTAProps) => {
               Get Your Free Cleaning Quote{location}
             </h2>
             <p className="text-primary-foreground/80 mb-6 max-w-lg mx-auto">
-              Join hundreds of happy homeowners{location}. Eco-friendly products, background-checked teams, satisfaction guaranteed.
+              Request a written cleaning quote{location}. Tell us your priorities so we can confirm the scope and visit details.
             </p>
             <div className="flex flex-wrap justify-center gap-4 mb-8 text-sm text-primary-foreground/70">
               <span className="flex items-center gap-1.5"><Shield className="h-4 w-4 text-accent" /> Licensed & Insured</span>
