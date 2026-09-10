@@ -7,36 +7,39 @@ interface TrustBadgesProps {
   withBackground?: boolean;
 }
 
+// Copy revised 2026-09-10 (trust batch 2): descriptions describe what the client can ask for or read,
+// without universal safety, coverage, timing or customer-count claims. Titles, icons, order and
+// layout are unchanged; only the product card title changed (no certification claim).
 const badges = [
   {
     icon: Shield,
     title: "Licensed & Insured",
-    description: "Full business license + general liability insurance covers every visit in your home.",
+    description: "Ask us about business and insurance documentation before booking.",
   },
   {
     icon: Search,
     title: "Background-Checked Teams",
-    description: "Every cleaner passes rigorous background screening before entering any client's home.",
+    description: "Ask us about the screening process for the team assigned to your home.",
   },
   {
     icon: Leaf,
-    title: "EPA Safer Choice Products",
-    description: "Only plant-based, non-toxic products — safe for children, pets, and allergy sufferers.",
+    title: "Products Chosen for Your Home",
+    description: "We follow product labels and surface guidance. Tell us about pets, allergies or fragrance sensitivities before your visit.",
   },
   {
     icon: CheckCircle,
     title: "100% Satisfaction Guarantee",
-    description: "Not happy? We return within 24 hours to re-clean at no charge — no questions asked.",
+    description: "Something missed? Contact us about our re-clean guarantee.",
   },
   {
     icon: Star,
     title: "5-Star Rated",
-    description: "Consistently rated 5 stars on Google and Facebook by real DMV-area families.",
+    description: "Read customer feedback on our official review profiles.",
   },
   {
     icon: Home,
     title: "Serving the DMV Since 2015",
-    description: "Trusted by hundreds of homeowners across Maryland, DC, and Northern Virginia.",
+    description: "Residential cleaning across Maryland, Washington DC and Northern Virginia.",
   },
 ];
 
@@ -52,7 +55,7 @@ const TrustBadges = ({ compact = false, withBackground = true }: TrustBadgesProp
             Your Home Deserves a Team You Can Trust
           </h2>
           <p className="text-muted-foreground mt-2 max-w-xl mx-auto text-sm md:text-base">
-            Every guarantee, certification, and standard that makes Capital Clean Care the DMV's most trusted eco-friendly cleaning service.
+            Learn about our team, product choices and re-clean guarantee before you book.
           </p>
         </div>
       )}
