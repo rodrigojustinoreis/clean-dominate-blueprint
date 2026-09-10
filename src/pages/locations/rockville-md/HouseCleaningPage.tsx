@@ -215,7 +215,7 @@ const RockvilleHouseCleaningPage = () => {
         ctaPrimary="Request a Free Written Quote"
         teamTrustLabel="Background-Checked Team"
         ctaNote="No commitment · Date confirmed at booking · 100% satisfaction guaranteed"
-        updatedLabel="Updated September 2026"
+        updatedLabel="September 2026"
         updatedDateTime="2026-09-09"
       />
 
