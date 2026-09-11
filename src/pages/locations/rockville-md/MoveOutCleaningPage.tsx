@@ -187,7 +187,7 @@ const RockvilleMoveOutCleaningPage = () => {
         state="MD"
         zipRange="20850–20853"
         heroImage="/images/team/team-mopping-dark-floor.jpg"
-        heroImageAlt="Capital Clean Care move out cleaning service in Rockville, MD — deposit-ready landlord inspection results"
+        heroImageAlt="Capital Clean Care move out cleaning service in Rockville, MD — final walkthrough preparation"
         heroAspectRatio="3/4"
         // Rockville move-out only: the shared team photo (760x570) is stored sideways. Present it upright in a
         // 3:4 frame — the img is 4/3 of the frame width (= frame height) by 3/4 of the frame height (= frame
@@ -196,6 +196,7 @@ const RockvilleMoveOutCleaningPage = () => {
         // the rule on this page without a style element. HeroLocation defaults untouched.
         heroImageContainerClassName="rockville-moveout-hero max-w-[420px] mx-auto [&>img]:absolute [&>img]:left-1/2 [&>img]:top-1/2 [&>img]:h-3/4 [&>img]:w-[133.333333%] [&>img]:max-w-none [&>img]:-translate-x-1/2 [&>img]:-translate-y-1/2 [&>img]:rotate-90 [&>img]:object-contain"
         ctaPrimary="Book Your Move Out Clean in Rockville"
+        teamTrustLabel="Background-Checked Team"
         ctaNote="No commitment · Date confirmed at booking · 100% satisfaction guaranteed"
       />
 
@@ -216,11 +217,10 @@ const RockvilleMoveOutCleaningPage = () => {
           </h2>
           <div className="space-y-4 text-muted-foreground leading-relaxed">
             <p>
-              Landlords in Rockville and across Montgomery County routinely withhold security deposits
-              for cleaning deficiencies. A professional move out cleaning built to landlord standards —
-              specifically addressing the Rockville rental market from Fallsgrove apartments to
-              King Farm townhomes — is the most reliable way to protect your deposit. We know what
-              property managers inspect, and our checklist covers all of it.
+              Our Rockville move-out cleaning focuses on the cleaning tasks agreed in your written
+              scope. Share your property manager's move-out checklist before booking so we can
+              confirm which items are included. Cleaning does not guarantee the outcome of an
+              inspection or a security-deposit refund.
             </p>
             <p>
               Unlike a standard house cleaning, a move out cleaning goes deeper: inside every cabinet
@@ -285,7 +285,8 @@ const RockvilleMoveOutCleaningPage = () => {
               We provide move out cleaning across all Rockville ZIP codes — 20850, 20851, 20852,
               and 20853. Whether you're leaving an apartment near Rockville Town Center, a townhome
               in King Farm, or a single-family home in Twinbrook or Fallsgrove, our bonded,
-              background-checked team will have the property deposit-ready before your inspection.
+              background-checked team cleans the property to the agreed written scope before your
+              scheduled walkthrough.
             </p>
             <p>
               Rockville has one of the highest rental densities in Montgomery County, with a large

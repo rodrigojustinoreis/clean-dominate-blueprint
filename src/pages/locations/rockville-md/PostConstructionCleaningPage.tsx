@@ -195,6 +195,8 @@ const RockvillePostConstructionCleaningPage = () => {
         heroImage="/images/team/team-post-construction.jpg"
         heroImageAlt="Capital Clean Care post-construction cleaning in Rockville, MD — HEPA-equipped team delivering move-in ready results"
         ctaPrimary="Get a Post-Construction Quote"
+        teamTrustLabel="Background-Checked Team"
+        ctaNote="No commitment · Written scope before service · Satisfaction guarantee applies"
       />
 
       {/* Answer-first local intent block */}
@@ -313,7 +315,14 @@ const RockvillePostConstructionCleaningPage = () => {
       <TrustBadges compact />
       <ConversionCTA cityName="Rockville" />
 
-      <LocationQuoteSection cityName="Rockville" serviceLabel="Post-Construction Cleaning" defaultService="post-construction" zipLine="Serving Rockville across ZIPs 20850, 20851, 20852, and 20853." />
+      <LocationQuoteSection
+        cityName="Rockville"
+        serviceLabel="Post-Construction Cleaning"
+        defaultService="post-construction"
+        zipLine="Serving Rockville across ZIPs 20850, 20851, 20852, and 20853."
+        availabilityNote="Availability is confirmed from your project address and requested date."
+        trustLine="Written scope before service · 100% satisfaction guaranteed · Bonded & Insured"
+      />
 
       <StickyMobileCTA />
     </Layout>

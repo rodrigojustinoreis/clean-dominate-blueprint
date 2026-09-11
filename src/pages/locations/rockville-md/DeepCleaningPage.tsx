@@ -514,7 +514,14 @@ const RockvilleDeepCleaningPage = () => {
       <TrustBadges compact />
       <ConversionCTA cityName="Rockville" />
 
-      <LocationQuoteSection cityName="Rockville" serviceLabel="Deep Cleaning" defaultService="deep" zipLine="Serving Rockville across ZIPs 20850, 20851, 20852, and 20853." />
+      <LocationQuoteSection
+        cityName="Rockville"
+        serviceLabel="Deep Cleaning"
+        defaultService="deep"
+        zipLine="Serving Rockville across ZIPs 20850, 20851, 20852, and 20853."
+        availabilityNote="Your date is confirmed at booking."
+        trustLine="Written quote before service · 100% satisfaction guaranteed · Bonded & Insured"
+      />
 
       <StickyMobileCTA />
     </Layout>

@@ -21,7 +21,6 @@ import InternalLinksGrid from "@/components/location/InternalLinksGrid";
 import LocationSocialProof from "@/components/location/LocationSocialProof";
 import LocationQuoteSection from "@/components/location/LocationQuoteSection";
 import { getServiceLocationOverride } from "@/data/service-location-overrides";
-import { ctaProseVariants, pickVariant } from "@/data/template-variants";
 
 const PAGE_URL = "https://capitalcleancare.com/locations/rockville-md/recurring-cleaning";
 
@@ -167,7 +166,7 @@ const RockvilleRecurringCleaningPage = () => {
       />
       <ServiceSchema
         serviceName="Recurring House Cleaning in Rockville, MD"
-        description="Weekly, bi-weekly and monthly recurring house cleaning in Rockville, MD. A deeper baseline first visit, then the same background-checked team every visit. EPA Safer Choice certified eco-friendly products. 100% satisfaction guaranteed."
+        description="Weekly, bi-weekly and monthly recurring house cleaning in Rockville, MD. A deeper baseline first visit, then the same background-checked team whenever possible. EPA Safer Choice certified eco-friendly products. 100% satisfaction guaranteed."
         url={PAGE_URL}
         areaServed={["Rockville, MD", "Montgomery County, MD"]}
       />
@@ -196,6 +195,8 @@ const RockvilleRecurringCleaningPage = () => {
         heroImage="/images/team/team-two-living-room.jpg"
         heroImageAlt="Capital Clean Care team providing recurring house cleaning service in Rockville, MD — same team whenever possible"
         ctaPrimary="Set Up Recurring Cleaning in Rockville"
+        teamTrustLabel="Background-Checked Team"
+        ctaNote="No commitment · Date confirmed at booking · 100% satisfaction guaranteed"
       />
 
       {/* ── Cross-link Banner ──────────────────────────────── */}
@@ -397,7 +398,14 @@ const RockvilleRecurringCleaningPage = () => {
       <ConversionCTA cityName="Rockville" />
 
       {/* Final CTA */}
-      <LocationQuoteSection cityName="Rockville" serviceLabel="Recurring Cleaning" defaultService="recurring" zipLine="Serving Rockville across ZIPs 20850, 20851, 20852, and 20853." ctaProse={ctaProseVariants[pickVariant("rockville-md", 2, 3)]("Rockville", "Recurring Cleaning")} />
+      <LocationQuoteSection
+        cityName="Rockville"
+        serviceLabel="Recurring Cleaning"
+        defaultService="recurring"
+        zipLine="Serving Rockville across ZIPs 20850, 20851, 20852, and 20853."
+        ctaProse="Tell us about your Rockville home and we'll send a clear, no-obligation recurring cleaning quote. Your first visit date is confirmed at booking."
+        trustLine="Date confirmed at booking · 100% satisfaction guaranteed · Bonded & Insured"
+      />
 
       <StickyMobileCTA />
     </Layout>
