@@ -197,6 +197,8 @@ const RockvilleRecurringCleaningPage = () => {
         ctaPrimary="Set Up Recurring Cleaning in Rockville"
         teamTrustLabel="Background-Checked Team"
         ctaNote="No commitment · Date confirmed at booking · 100% satisfaction guaranteed"
+        updatedLabel="September 11, 2026"
+        updatedDateTime="2026-09-11"
       />
 
       {/* ── Cross-link Banner ──────────────────────────────── */}

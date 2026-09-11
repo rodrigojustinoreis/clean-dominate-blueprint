@@ -2,7 +2,9 @@
  * Rockville page-local clarity (2026-09-11, gate IMPLEMENTATION-GATE.md): four Rockville service pages stop
  * inheriting the shared "Same-day slots" / "Same Team Every Visit" defaults through page-local props, the
  * recurring FAQ/Service copy says "whenever possible", move-out drops the deposit-outcome wording, and the
- * Montgomery County guide gains one contextual link. Pages are rendered through the same providers as
+ * Montgomery County guide gains one contextual link. Final preview gate (2026-09-11): move-out hero lead without
+ * deposit-outcome wording, true local revision dates on post-construction/recurring/move-out, and post-construction
+ * answer label + WebPage dateModified aligned to 2026-09-11. Pages are rendered through the same providers as
  * src/prerender.tsx (eager AppRoutes) so the assertions run on the HTML the prerender emits. Helmet output
  * (title/meta/canonical and the JSON-LD blocks) is not collected under jsdom; those fields are verified on the
  * built dist by the release comparison script instead.
@@ -43,6 +45,8 @@ function renderRoute(url: string) {
 const SAME_DAY = /same-day slots/i;
 const SAME_TEAM_PILL = "Same Team Every Visit";
 const PILL = "Background-Checked Team</span>";
+const DATE_LABEL = "Updated September 11, 2026";
+const occurrences = (text: string, needle: string) => text.split(needle).length - 1;
 
 describe("Rockville post-construction (P1)", () => {
   const page = renderRoute("/locations/rockville-md/post-construction-cleaning");
@@ -56,9 +60,12 @@ describe("Rockville post-construction (P1)", () => {
     expect(page.count("Availability is confirmed from your project address and requested date.")).toBe(1);
     expect(page.count("Written scope before service · 100% satisfaction guaranteed · Bonded & Insured")).toBe(1);
   });
-  it("keeps H1, real date label and the nine FAQ questions", () => {
+  it("keeps H1, carries the true revision date twice (hero + answer block) and the nine FAQ questions", () => {
     expect(page.main).toContain("Post-Construction Cleaning in Rockville, MD</h1>");
-    expect(page.count("Updated August 23, 2026")).toBe(1);
+    expect(page.text).not.toContain("Updated August 23, 2026");
+    expect(page.text).not.toContain("Updated May 2026");
+    expect(occurrences(page.text, DATE_LABEL)).toBe(2);
+    expect((page.main.match(/date[tT]ime="2026-09-11"/g) || []).length).toBe(1); // attribute casing differs between SSR builds
     expect(page.count("Are Capital Clean Care teams insured and background-checked?")).toBe(1);
     expect(page.count("Which Rockville areas do you serve for post-renovation cleaning?")).toBe(1);
   });
@@ -85,8 +92,11 @@ describe("Rockville recurring (P2 + P2b)", () => {
     // the other three Rockville answers are untouched
     expect(faqs.filter((f) => f.a.includes("whenever possible"))).toHaveLength(1);
   });
-  it("keeps H1", () => {
+  it("keeps H1 and carries the true revision date instead of the LastUpdated default", () => {
     expect(page.main).toContain("Recurring House Cleaning in Rockville, MD</h1>");
+    expect(page.text).not.toContain("Updated May 2026");
+    expect(occurrences(page.text, DATE_LABEL)).toBe(1);
+    expect((page.main.match(/date[tT]ime="2026-09-11"/g) || []).length).toBe(1); // attribute casing differs between SSR builds
   });
 });
 
@@ -119,9 +129,21 @@ describe("Rockville move-out (P4)", () => {
     );
     expect(page.text).toContain("our bonded, background-checked team cleans the property to the agreed written scope before your scheduled walkthrough.");
   });
+  it("hero lead no longer promises deposit outcomes (case-insensitive) and keeps the no-guarantee statement", () => {
+    const lower = page.text.toLowerCase();
+    expect(lower).not.toContain("deposit-ready");
+    expect(lower).not.toContain("covers every inch");
+    expect(page.text).toContain(
+      "Moving out of your Rockville home? Capital Clean Care provides move-out cleaning with a written scope for your final walkthrough. Share your property manager's checklist so we can confirm what is included. Your date is confirmed at booking, and our satisfaction guarantee applies to the cleaning service."
+    );
+    expect(page.text).toContain("Cleaning does not guarantee the outcome of an inspection or a security-deposit refund.");
+    expect(page.text).not.toContain("Updated May 2026");
+    expect(occurrences(page.text, DATE_LABEL)).toBe(1);
+    expect((page.main.match(/date[tT]ime="2026-09-11"/g) || []).length).toBe(1); // attribute casing differs between SSR builds
+  });
   it("keeps date-confirmed copy, the upright hero photo and H1", () => {
     expect(page.count("Date confirmed at booking")).toBe(2); // hero note + trust line
-    expect(page.count("Your date is confirmed at booking.")).toBe(2); // availability note + cost FAQ answer (as in base)
+    expect(page.count("Your date is confirmed at booking")).toBe(3); // hero lead + availability note + cost FAQ answer
     expect(page.count("rotate-90")).toBe(1);
     expect(page.main).toContain("Move Out Cleaning in Rockville, MD</h1>");
   });

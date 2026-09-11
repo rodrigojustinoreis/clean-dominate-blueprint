@@ -182,7 +182,7 @@ const RockvilleMoveOutCleaningPage = () => {
       {/* Hero */}
       <HeroLocation
         h1="Move Out Cleaning in Rockville, MD"
-        lead="Moving out in Rockville? Capital Clean Care's move out cleaning covers every inch your landlord will inspect — from oven interior to baseboards to grout lines. We serve King Farm, Twinbrook, and all Rockville neighborhoods across ZIPs 20850–20853. Deposit-ready results backed by 100% satisfaction guarantee."
+        lead="Moving out of your Rockville home? Capital Clean Care provides move-out cleaning with a written scope for your final walkthrough. Share your property manager's checklist so we can confirm what is included. Your date is confirmed at booking, and our satisfaction guarantee applies to the cleaning service."
         cityName="Rockville"
         state="MD"
         zipRange="20850–20853"
@@ -198,6 +198,8 @@ const RockvilleMoveOutCleaningPage = () => {
         ctaPrimary="Book Your Move Out Clean in Rockville"
         teamTrustLabel="Background-Checked Team"
         ctaNote="No commitment · Date confirmed at booking · 100% satisfaction guaranteed"
+        updatedLabel="September 11, 2026"
+        updatedDateTime="2026-09-11"
       />
 
       {/* Checklist */}

@@ -148,7 +148,7 @@ const RockvillePostConstructionCleaningPage = () => {
         name="Post-Construction Cleaning in Rockville, MD"
         description="Post-construction and post-renovation cleaning for Rockville homes, with a written scope, HEPA-filtered dust removal, finish-aware detailing, and clear exclusions."
         url={PAGE_URL}
-        dateModified="2026-08-23"
+        dateModified="2026-09-11"
         cityName="Rockville"
         stateCode="Maryland"
         primaryImage="https://capitalcleancare.com/images/team/team-post-construction.jpg"
@@ -197,12 +197,14 @@ const RockvillePostConstructionCleaningPage = () => {
         ctaPrimary="Get a Post-Construction Quote"
         teamTrustLabel="Background-Checked Team"
         ctaNote="No commitment · Written scope before service · Satisfaction guarantee applies"
+        updatedLabel="September 11, 2026"
+        updatedDateTime="2026-09-11"
       />
 
       {/* Answer-first local intent block */}
       <section className="py-12 md:py-16 border-b border-border" aria-labelledby="rockville-post-construction-answer">
         <div className="container mx-auto px-4 max-w-4xl">
-          <p className="text-sm font-semibold text-accent mb-3">Updated August 23, 2026 · Rockville ZIP codes 20850–20853</p>
+          <p className="text-sm font-semibold text-accent mb-3">Updated September 11, 2026 · Rockville ZIP codes 20850–20853</p>
           <h2 id="rockville-post-construction-answer" className="font-heading text-2xl md:text-3xl font-bold mb-5">
             What is post-construction cleaning in Rockville?
           </h2>
