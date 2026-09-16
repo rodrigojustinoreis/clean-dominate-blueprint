@@ -523,7 +523,7 @@ const RockvilleDeepCleaningPage = () => {
         trustLine="Written quote before service · 100% satisfaction guaranteed · Bonded & Insured"
       />
 
-      <StickyMobileCTA />
+      <StickyMobileCTA quoteHref="#quote" />
     </Layout>
   );
 };

@@ -155,7 +155,8 @@ describe("Montgomery County post-construction guide (P5)", () => {
     expect(page.count('href="/locations/rockville-md/post-construction-cleaning"')).toBe(1);
     expect(page.main).toMatch(/<a[^>]*href="\/locations\/rockville-md\/post-construction-cleaning"[^>]*>post-construction cleaning in Rockville<\/a>/);
     expect(page.count('href="/locations/silver-spring-md/post-construction-cleaning"')).toBe(1);
-    expect(page.count('href="/services/post-construction-cleaning"')).toBe(3);
+    expect(page.count('href="/services/post-construction-cleaning"')).toBe(2); // UX batch 2026-09-16: the inline CTA now targets the service page #quote
+    expect(page.count('href="/services/post-construction-cleaning#quote"')).toBe(3);
   });
   it("keeps its H1", () => {
     expect(page.main).toMatch(/<h1[^>]*>Post-Construction Cleaning in Montgomery County/);

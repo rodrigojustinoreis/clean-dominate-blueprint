@@ -72,7 +72,7 @@ const PostConstructionCleaningMontgomeryCounty = () => {
         <p className="text-xl md:text-2xl text-gray-200 mb-4 leading-relaxed font-medium">Why construction dust is the real challenge — and what a proper cleanup covers</p>
         <p className="text-gray-300 mb-8 text-sm uppercase tracking-widest">By Rodrigo Reis, Owner · Montgomery County, MD · June 2026</p>
         <Button size="lg" className="bg-accent hover:bg-accent/90 text-white text-lg px-8 py-6 rounded-full shadow-lg" asChild>
-          <a href="/#quote">Get My Free Quote</a>
+          <a href="/services/post-construction-cleaning#quote">Get My Free Quote</a>
         </Button>
       </BlogHero>
 
@@ -112,7 +112,7 @@ const PostConstructionCleaningMontgomeryCounty = () => {
             </div>
           </FadeInSection>
 
-          <BlogInlineCTA headline="Just finished building or renovating?" subtext="Capital Clean Care's post-construction cleaning makes a new or renovated space truly move-in ready — HEPA filtration, multiple passes, finish-safe. Serving all of Montgomery County." ctaLabel="Get My Free Quote" ctaTo="/services/post-construction-cleaning" />
+          <BlogInlineCTA headline="Just finished building or renovating?" subtext="Capital Clean Care's post-construction cleaning makes a new or renovated space truly move-in ready — HEPA filtration, multiple passes, finish-safe. Serving all of Montgomery County." ctaLabel="Get My Free Quote" ctaTo="/services/post-construction-cleaning#quote" />
 
           <FadeInSection>
             <div className="bg-accent/10 border border-accent/30 rounded-2xl p-6 my-12">
@@ -137,14 +137,14 @@ const PostConstructionCleaningMontgomeryCounty = () => {
               <h2 className="font-heading text-2xl md:text-3xl font-bold mb-4">Make Your New Space Move-In Ready</h2>
               <p className="text-primary-foreground/80 mb-6 leading-relaxed">Eco-friendly{" "}<Link to="/services/post-construction-cleaning" className="underline text-primary-foreground/90 hover:text-white">post-construction cleaning</Link>{" "}across Montgomery County and the DMV — HEPA equipment, finish-safe, satisfaction guaranteed.</p>
               <Button size="lg" className="bg-accent hover:bg-accent/90 text-white px-8 py-6 rounded-full text-base font-semibold shadow-md" asChild>
-                <a href="/#quote">Get My Free Quote <ArrowRight className="ml-2 h-4 w-4" /></a>
+                <a href="/services/post-construction-cleaning#quote">Get My Free Quote <ArrowRight className="ml-2 h-4 w-4" /></a>
               </Button>
             </div>
           </FadeInSection>
         </div>
       </article>
       <RelatedPosts currentSlug="post-construction-cleaning-montgomery-county-md" />
-      <StickyCTA />
+      <StickyCTA to="/services/post-construction-cleaning#quote" />
     </Layout>
   );
 };

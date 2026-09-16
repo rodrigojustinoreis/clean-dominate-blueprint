@@ -195,6 +195,8 @@ const RockvillePostConstructionCleaningPage = () => {
         heroImage="/images/team/team-post-construction.jpg"
         heroImageAlt="Capital Clean Care post-construction cleaning in Rockville, MD — HEPA-equipped team delivering move-in ready results"
         ctaPrimary="Get a Post-Construction Quote"
+        ctaBeforePills
+        stackCtas
         teamTrustLabel="Background-Checked Team"
         ctaNote="No commitment · Written scope before service · Satisfaction guarantee applies"
         updatedLabel="September 11, 2026"
@@ -326,7 +328,7 @@ const RockvillePostConstructionCleaningPage = () => {
         trustLine="Written scope before service · 100% satisfaction guaranteed · Bonded & Insured"
       />
 
-      <StickyMobileCTA />
+      <StickyMobileCTA quoteHref="#quote" />
     </Layout>
   );
 };

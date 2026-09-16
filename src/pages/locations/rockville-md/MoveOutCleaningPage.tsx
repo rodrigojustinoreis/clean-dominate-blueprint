@@ -196,6 +196,8 @@ const RockvilleMoveOutCleaningPage = () => {
         // the rule on this page without a style element. HeroLocation defaults untouched.
         heroImageContainerClassName="rockville-moveout-hero max-w-[420px] mx-auto [&>img]:absolute [&>img]:left-1/2 [&>img]:top-1/2 [&>img]:h-3/4 [&>img]:w-[133.333333%] [&>img]:max-w-none [&>img]:-translate-x-1/2 [&>img]:-translate-y-1/2 [&>img]:rotate-90 [&>img]:object-contain"
         ctaPrimary="Book Your Move Out Clean in Rockville"
+        ctaBeforePills
+        stackCtas
         teamTrustLabel="Background-Checked Team"
         ctaNote="No commitment · Date confirmed at booking · 100% satisfaction guaranteed"
         updatedLabel="September 11, 2026"
@@ -364,7 +366,7 @@ const RockvilleMoveOutCleaningPage = () => {
         trustLine="Date confirmed at booking · 100% satisfaction guaranteed · Bonded & Insured"
       />
 
-      <StickyMobileCTA />
+      <StickyMobileCTA quoteHref="#quote" />
     </Layout>
   );
 };

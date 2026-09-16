@@ -4,7 +4,15 @@ import { Phone, ArrowRight, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { trackPhoneClick, trackBookNowClick } from "@/lib/analytics";
 
-const StickyMobileCTA = () => {
+interface StickyMobileCTAProps {
+  /** Native href of the "Free Quote" button. The bar only mounts after hydration (on scroll), and the
+   *  click handler already scrolls to the local #quote section when one exists; this prop keeps the
+   *  href itself coherent with that destination (copy/open-in-new-tab, explicit per-page contract).
+   *  Defaults to the contact page for every other consumer. */
+  quoteHref?: string;
+}
+
+const StickyMobileCTA = ({ quoteHref }: StickyMobileCTAProps = {}) => {
   const isSpanish = useLocation().pathname.startsWith("/es");
   const [visible, setVisible] = useState(false);
   const [dismissed, setDismissed] = useState(false);
@@ -51,7 +59,7 @@ const StickyMobileCTA = () => {
       </a>
       <Button variant="cta" className="flex-1 h-12 rounded-full text-sm font-bold shadow-lg shadow-accent/25" asChild>
         <a
-          href={isSpanish ? "/es/contacto#cotizacion" : "/contact#quote"}
+          href={quoteHref ?? (isSpanish ? "/es/contacto#cotizacion" : "/contact#quote")}
           onClick={handleQuoteClick}
         >
           {isSpanish ? "Cotización Gratis" : "Free Quote"} <ArrowRight className="ml-1 h-4 w-4" />

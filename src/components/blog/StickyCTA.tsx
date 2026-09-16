@@ -2,7 +2,12 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 
-const StickyCTA = () => {
+interface StickyCTAProps {
+  /** Destination of the desktop pill. Defaults to the home quote section. */
+  to?: string;
+}
+
+const StickyCTA = ({ to = "/#quote" }: StickyCTAProps) => {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -16,7 +21,7 @@ const StickyCTA = () => {
   return (
     <div className="hidden lg:block fixed bottom-6 right-6 z-50 animate-in fade-in slide-in-from-bottom-2 duration-300">
       <Link
-        to="/#quote"
+        to={to}
         className="flex items-center gap-2 bg-accent hover:bg-accent/90 text-white font-semibold px-5 py-3 rounded-full shadow-xl transition-all hover:shadow-2xl hover:gap-3"
       >
         Get Free Quote <ArrowRight className="h-4 w-4" />

@@ -195,6 +195,8 @@ const RockvilleRecurringCleaningPage = () => {
         heroImage="/images/team/team-two-living-room.jpg"
         heroImageAlt="Capital Clean Care team providing recurring house cleaning service in Rockville, MD — same team whenever possible"
         ctaPrimary="Set Up Recurring Cleaning in Rockville"
+        ctaBeforePills
+        stackCtas
         teamTrustLabel="Background-Checked Team"
         ctaNote="No commitment · Date confirmed at booking · 100% satisfaction guaranteed"
         updatedLabel="September 11, 2026"
@@ -409,7 +411,7 @@ const RockvilleRecurringCleaningPage = () => {
         trustLine="Date confirmed at booking · 100% satisfaction guaranteed · Bonded & Insured"
       />
 
-      <StickyMobileCTA />
+      <StickyMobileCTA quoteHref="#quote" />
     </Layout>
   );
 };
