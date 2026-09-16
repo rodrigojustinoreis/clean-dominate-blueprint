@@ -86,11 +86,14 @@ describe("Rockville service pages — hero CTAs rendered before the trust pills"
       expect(main).toMatch(/<h1[^>]*>[^<]*Rockville, MD<\/h1>/);
     });
   }
-  it("control: Bethesda house page keeps the shared default order (pills before CTAs)", () => {
+  it("control: Bethesda house page (HeroLocation without ctaBeforePills) keeps pills before CTAs", () => {
     const main = renderRoute("/locations/bethesda-md/house-cleaning");
     const cta = main.indexOf('href="#quote"');
     const pills = main.indexOf("Latino-Owned &amp; Operated");
-    if (cta > -1 && pills > -1) expect(pills).toBeLessThan(cta);
+    expect(cta).toBeGreaterThan(-1);
+    expect(pills).toBeGreaterThan(-1);
+    expect(pills).toBeLessThan(cta);
+    expect(main).not.toContain("max-w-md flex-col");
   });
 });
 
