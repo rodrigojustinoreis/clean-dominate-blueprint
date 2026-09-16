@@ -6,7 +6,6 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FAQ from "@/components/FAQ";
 import ConversionCTA from "@/components/ConversionCTA";
 import TrustBadges from "@/components/TrustBadges";
-import StickyMobileCTA from "@/components/StickyMobileCTA";
 import {
   LocalBusinessSchema,
   ServiceSchema,
@@ -130,7 +129,7 @@ const RockvillePostConstructionCleaningPage = () => {
   });
 
   return (
-    <Layout>
+    <Layout stickyQuoteHref="#quote">
       {seoHelmet}
       <Helmet>
         <link rel="preload" as="image" href="/images/team/team-post-construction.jpg" />
@@ -227,7 +226,7 @@ const RockvillePostConstructionCleaningPage = () => {
       />
 
       {/* ── Social Proof (3rd — trust video early) ── */}
-      <LocationSocialProof cityName="Rockville" citySlug="rockville-md" serviceSlug="post-construction-cleaning" serviceLabel="Post-Construction Cleaning" />
+      <LocationSocialProof cityName="Rockville" citySlug="rockville-md" serviceSlug="post-construction-cleaning" serviceLabel="Post-Construction Cleaning" ctaLabel="Get a Post-Construction Quote →" />
 
       {/* Project fit and local scheduling */}
       <section className="py-12 md:py-16">
@@ -328,7 +327,6 @@ const RockvillePostConstructionCleaningPage = () => {
         trustLine="Written scope before service · 100% satisfaction guaranteed · Bonded & Insured"
       />
 
-      <StickyMobileCTA quoteHref="#quote" />
     </Layout>
   );
 };

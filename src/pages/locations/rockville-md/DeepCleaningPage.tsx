@@ -7,7 +7,6 @@ import FAQ from "@/components/FAQ";
 import ConversionCTA from "@/components/ConversionCTA";
 import QuoteForm from "@/components/QuoteForm";
 import TrustBadges from "@/components/TrustBadges";
-import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { Button } from "@/components/ui/button";
 import {
   LocalBusinessSchema,
@@ -165,7 +164,7 @@ const RockvilleDeepCleaningPage = () => {
   });
 
   return (
-    <Layout>
+    <Layout stickyQuoteHref="#quote">
       {seoHelmet}
       <Helmet>
         <link rel="alternate" hrefLang="en-US" href={PAGE_URL} />
@@ -333,7 +332,7 @@ const RockvilleDeepCleaningPage = () => {
       </section>
 
       {/* ── Social Proof (3rd — trust video early) ── */}
-      <LocationSocialProof cityName="Rockville" citySlug="rockville-md" serviceSlug="deep-cleaning" serviceLabel="Deep Cleaning" />
+      <LocationSocialProof cityName="Rockville" citySlug="rockville-md" serviceSlug="deep-cleaning" serviceLabel="Deep Cleaning" ctaLabel="Get a Deep Cleaning Quote →" />
 
       {/* Standard vs Deep */}
       <section className="py-12 md:py-16">
@@ -523,7 +522,6 @@ const RockvilleDeepCleaningPage = () => {
         trustLine="Written quote before service · 100% satisfaction guaranteed · Bonded & Insured"
       />
 
-      <StickyMobileCTA quoteHref="#quote" />
     </Layout>
   );
 };

@@ -6,7 +6,6 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FAQ from "@/components/FAQ";
 import ConversionCTA from "@/components/ConversionCTA";
 import TrustBadges from "@/components/TrustBadges";
-import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { Button } from "@/components/ui/button";
 import {
   LocalBusinessSchema,
@@ -128,7 +127,7 @@ const RockvilleMoveOutCleaningPage = () => {
   });
 
   return (
-    <Layout>
+    <Layout stickyQuoteHref="#quote">
       {seoHelmet}
       <Helmet>
         <link rel="preload" as="image" href="/images/team/team-mopping-dark-floor.jpg" />
@@ -211,7 +210,7 @@ const RockvilleMoveOutCleaningPage = () => {
       />
 
       {/* ── Social Proof (3rd — trust video early) ── */}
-      <LocationSocialProof cityName="Rockville" citySlug="rockville-md" serviceSlug="move-out-cleaning" serviceLabel="Move-Out Cleaning" />
+      <LocationSocialProof cityName="Rockville" citySlug="rockville-md" serviceSlug="move-out-cleaning" serviceLabel="Move-Out Cleaning" ctaLabel="Get a Move-Out Cleaning Quote →" />
 
       {/* Why deposit section */}
       <section className="py-12 md:py-16">
@@ -366,7 +365,6 @@ const RockvilleMoveOutCleaningPage = () => {
         trustLine="Date confirmed at booking · 100% satisfaction guaranteed · Bonded & Insured"
       />
 
-      <StickyMobileCTA quoteHref="#quote" />
     </Layout>
   );
 };

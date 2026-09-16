@@ -9,6 +9,8 @@ interface LocationSocialProofProps {
   citySlug: string;
   serviceSlug: string;
   serviceLabel: string;
+  /** Optional shorter label for the closing CTA button; the default keeps the city + service wording. */
+  ctaLabel?: string;
   /** Override the auto-rotated real reviews if a page wants specific ones. */
   count?: number;
   reviewOverrides?: RealReview[];
@@ -32,7 +34,7 @@ interface LocationSocialProofProps {
  * preload="none" in Chromium, so we must gate the element itself to avoid a
  * ~736 KB download on every initial page load.)
  */
-const LocationSocialProof = ({ cityName, citySlug, serviceSlug, serviceLabel, count = 1, reviewOverrides, testimonialVideo, showVideo = true }: LocationSocialProofProps) => {
+const LocationSocialProof = ({ cityName, citySlug, serviceSlug, serviceLabel, ctaLabel, count = 1, reviewOverrides, testimonialVideo, showVideo = true }: LocationSocialProofProps) => {
   // One real review per page (hash-distributed across the 9 verified reviews) so
   // neighbouring city pages rarely share the same review card.
   const reviews = reviewOverrides?.length
@@ -192,7 +194,7 @@ const LocationSocialProof = ({ cityName, citySlug, serviceSlug, serviceLabel, co
               className="whitespace-normal text-center h-auto py-3 leading-snug max-w-full"
               onClick={() => trackBookNowClick("location_social_proof")}
             >
-              Get My Free {cityName} {serviceLabel} Quote →
+              {ctaLabel ?? <>Get My Free {cityName} {serviceLabel} Quote →</>}
             </a>
           </Button>
         </div>

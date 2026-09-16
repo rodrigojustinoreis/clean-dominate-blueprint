@@ -6,7 +6,6 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FAQ from "@/components/FAQ";
 import ConversionCTA from "@/components/ConversionCTA";
 import TrustBadges from "@/components/TrustBadges";
-import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { Button } from "@/components/ui/button";
 import {
   LocalBusinessSchema,
@@ -134,7 +133,7 @@ const RockvilleRecurringCleaningPage = () => {
   });
 
   return (
-    <Layout>
+    <Layout stickyQuoteHref="#quote">
       {seoHelmet}
       <Helmet>
         <link rel="preload" as="image" href="/images/team/team-two-living-room.jpg" />
@@ -220,7 +219,7 @@ const RockvilleRecurringCleaningPage = () => {
       />
 
       {/* ── Social Proof (3rd — trust video early) ── */}
-      <LocationSocialProof cityName="Rockville" citySlug="rockville-md" serviceSlug="recurring-cleaning" serviceLabel="Recurring Cleaning" />
+      <LocationSocialProof cityName="Rockville" citySlug="rockville-md" serviceSlug="recurring-cleaning" serviceLabel="Recurring Cleaning" ctaLabel="Get a Recurring Cleaning Quote →" />
 
       {/* Frequency Plans */}
       <section className="py-12 md:py-16">
@@ -411,7 +410,6 @@ const RockvilleRecurringCleaningPage = () => {
         trustLine="Date confirmed at booking · 100% satisfaction guaranteed · Bonded & Insured"
       />
 
-      <StickyMobileCTA quoteHref="#quote" />
     </Layout>
   );
 };

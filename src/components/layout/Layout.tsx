@@ -5,13 +5,20 @@ import StickyMobileCTA from "@/components/StickyMobileCTA";
 import QuoteChatbot from "@/components/QuoteChatbot";
 import AnnouncementBar from "@/components/AnnouncementBar";
 
-const Layout = ({ children }: { children: ReactNode }) => (
+interface LayoutProps {
+  children: ReactNode;
+  /** Optional native href for the mobile sticky "Free Quote" button rendered by this layout
+   *  (pages with their own #quote section pass "#quote"). Undefined keeps the shared default. */
+  stickyQuoteHref?: string;
+}
+
+const Layout = ({ children, stickyQuoteHref }: LayoutProps) => (
   <div className="min-h-screen flex flex-col">
     <AnnouncementBar />
     <Header />
     <main className="flex-1">{children}</main>
     <Footer />
-    <StickyMobileCTA />
+    <StickyMobileCTA quoteHref={stickyQuoteHref} />
     <QuoteChatbot />
     {/* Bottom spacer matching the sticky CTA (~73px) + iPhone safe area, on the same
         breakpoint as the bar (lg:hidden) so tablets 768–1023px are compensated too. */}

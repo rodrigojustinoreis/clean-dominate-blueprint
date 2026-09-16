@@ -19,6 +19,13 @@ import StickyCTA from "@/components/blog/StickyCTA";
 
 vi.mock("@/lib/analytics", () => ({ trackPhoneClick: vi.fn(), trackBookNowClick: vi.fn() }));
 
+// jsdom has no ResizeObserver; a client-only widget on the full routes calls it after mount.
+// Test-local stub (not in the global setup) so the route-level mounts below can run.
+class ObserverStub { observe() {} unobserve() {} disconnect() {} takeRecords() { return []; } }
+const g = globalThis as unknown as { ResizeObserver?: unknown; IntersectionObserver?: unknown };
+if (typeof g.ResizeObserver === "undefined") g.ResizeObserver = ObserverStub;
+if (typeof g.IntersectionObserver === "undefined") g.IntersectionObserver = ObserverStub;
+
 function renderRoute(url: string) {
   const html = renderToString(
     <HelmetProvider>
@@ -94,6 +101,73 @@ describe("Rockville service pages — hero CTAs rendered before the trust pills"
     expect(pills).toBeGreaterThan(-1);
     expect(pills).toBeLessThan(cta);
     expect(main).not.toContain("max-w-md flex-col");
+  });
+});
+
+describe("Layout owns the single sticky mobile bar — one bar per route, page-local href, dismiss removes it", () => {
+  function mountRoute(url: string) {
+    return render(
+      <HelmetProvider>
+        <QueryClientProvider client={new QueryClient({ defaultOptions: { queries: { retry: false } } })}>
+          <TooltipProvider>
+            <MemoryRouter initialEntries={[url]}>
+              <Suspense fallback={null}><AppRoutes /></Suspense>
+            </MemoryRouter>
+          </TooltipProvider>
+        </QueryClientProvider>
+      </HelmetProvider>
+    );
+  }
+  const bars = () => [...document.querySelectorAll("div.fixed.bottom-0")].filter((d) => /Free Quote|Cotización Gratis/.test(d.textContent ?? ""));
+  const CASES: [string, string][] = [
+    ["/locations/rockville-md/post-construction-cleaning", "#quote"],
+    ["/locations/rockville-md/recurring-cleaning", "#quote"],
+    ["/locations/rockville-md/deep-cleaning", "#quote"],
+    ["/locations/rockville-md/move-out-cleaning", "#quote"],
+    ["/resources/post-construction-cleaning-montgomery-county-md", "/services/post-construction-cleaning#quote"],
+    ["/locations/bethesda-md/house-cleaning", "/contact#quote"], // control: shared default
+    ["/es/areas/rockville-md", "/es/contacto#cotizacion"], // control: Spanish default
+  ];
+  for (const [url, href] of CASES) {
+    it(`${url} → exactly one bar with href ${href}`, () => {
+      const { unmount } = mountRoute(url);
+      // jsdom reports every rect as 0×0 at (0,0); the bar hides itself when #quote is "in view", so place the
+      // page's quote section far below the fold the way a real scroll-from-top would see it.
+      const quoteSection = document.getElementById("quote");
+      if (quoteSection) quoteSection.getBoundingClientRect = () => ({ top: 5000, bottom: 5600, left: 0, right: 0, width: 0, height: 600, x: 0, y: 5000, toJSON: () => ({}) }) as DOMRect;
+      revealSticky();
+      const found = bars();
+      expect(found).toHaveLength(1);
+      const quote = [...found[0].querySelectorAll("a")].find((a) => /Free Quote|Cotización Gratis/.test(a.textContent ?? ""));
+      expect(quote).toHaveAttribute("href", href);
+      expect(found[0].querySelectorAll('a[href^="tel:+12407042551"]')).toHaveLength(1);
+      const dismiss = found[0].querySelector('button[aria-label="Dismiss"]') as HTMLButtonElement;
+      expect(dismiss).not.toBeNull();
+      act(() => { dismiss.click(); });
+      expect(bars()).toHaveLength(0);
+      unmount();
+    });
+  }
+});
+
+describe("LocationSocialProof closing CTA — shorter labels only on the four Rockville pages", () => {
+  const CASES: [string, string][] = [
+    ["/locations/rockville-md/post-construction-cleaning", "Get a Post-Construction Quote →"],
+    ["/locations/rockville-md/recurring-cleaning", "Get a Recurring Cleaning Quote →"],
+    ["/locations/rockville-md/deep-cleaning", "Get a Deep Cleaning Quote →"],
+    ["/locations/rockville-md/move-out-cleaning", "Get a Move-Out Cleaning Quote →"],
+  ];
+  for (const [url, label] of CASES) {
+    it(`${url}: "${label}" on the #quote anchor, old label gone`, () => {
+      const main = renderRoute(url);
+      expect(main).toContain(`>${label}</a>`);
+      expect(main).not.toContain("Get My Free Rockville");
+    });
+  }
+  it("control: Bethesda house keeps the shared default label", () => {
+    // the default label interpolates city/service, so SSR inserts <!-- --> markers between the text nodes
+    const main = renderRoute("/locations/bethesda-md/house-cleaning").replace(/<!-- -->/g, "");
+    expect(main).toContain("Get My Free Bethesda House Cleaning Quote →");
   });
 });
 
