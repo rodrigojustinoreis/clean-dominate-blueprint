@@ -142,3 +142,54 @@ describe("support content — CTAs stay on a page that owns a quote form", () =>
     expect(renderMain("/resources/how-often-should-you-deep-clean")).toContain('href="/spring-cleaning-md"');
   });
 });
+
+describe("content gate 2 (2026-09-17) — expired promotion, absolute claims, authorship; defaults preserved elsewhere", () => {
+  it("spring-cleaning-md: no SPRING25 campaign, no expiry date, no unpublished price; form preselects deep cleaning", () => {
+    const main = renderMain("/spring-cleaning-md");
+    const t = text(main);
+    expect(t).not.toContain("SPRING25");
+    expect(t).not.toMatch(/May 31|Valid through|Seasonal Special/);
+    expect(t).not.toContain("$150");
+    expect(t).not.toMatch(/EPA Safer Choice certified|non-toxic/i);
+    expect(t).toContain("New clients get 15% off their first clean"); // the site-wide offer, no seasonal code
+    expect(t).toContain("chosen by their labels");
+    expect(main).toContain('href="/services/deep-cleaning"');
+    expect(main).toContain('id="spring-quote"');
+  });
+
+  it("why-eco-friendly-cleaning: absolute health/safety and certification claims are gone; sources stay", () => {
+    const t = text(renderMain("/why-eco-friendly-cleaning"));
+    for (const phrase of [
+      "no risk to your family", "Plant-based products eliminate that risk", "zero harmful residues", "kills 99.9%",
+      "Safe — no harmful residues", "non-toxic after drying", "We only use products that meet this standard",
+      "EPA Safer Choice certified products", "Zero Recontamination", "Safe for children, pets, and allergy sufferers",
+      "Especially Dangerous for Children", "may disrupt hormonal function", "100% Of our products", "Ethylene glycol",
+      "developed over 10+ years", "food-safe and antimicrobial", "Their 2016 policy statement",
+    ]) expect(t, phrase).not.toContain(phrase);
+    expect(t).toContain("Parks et al.");
+    expect(t).toContain("Svanes et al.");
+    expect(t).toContain("Dye et al.");
+    expect(t).toContain("Only an EPA-registered product");
+    expect(t).toContain("Label-Guided Products"); // GreenShield label-based variant rendered here
+  });
+
+  it("GreenShield default copy is untouched on a control consumer (/services/deep-cleaning)", () => {
+    const t = text(renderMain("/services/deep-cleaning"));
+    expect(t).toContain("Zero Recontamination");
+    expect(t).toContain("Eco-Certified Products");
+    expect(t).toContain("developed over 10+ years");
+    expect(t).not.toContain("Label-Guided Products");
+  });
+
+  it("how-long guide: factual author bio (no 500+ homes, logo alt); default bio kept on a control post", () => {
+    const howLong = renderMain("/resources/how-long-does-deep-cleaning-take");
+    expect(text(howLong)).not.toContain("500+ homes");
+    expect(text(howLong)).not.toContain("EPA Safer Choice products");
+    expect(howLong).toContain('alt="Capital Clean Care logo"');
+    expect(howLong).toContain("Rodrigo founded Capital Clean Care in 2015");
+    expect(howLong).toContain('href="/about"');
+    const control = renderMain("/resources/hidden-fees-house-cleaning");
+    expect(text(control)).toContain("500+ homes");
+    expect(control).toContain('alt="Rodrigo Reis, Capital Clean Care"');
+  });
+});
