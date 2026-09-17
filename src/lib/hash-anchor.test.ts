@@ -102,6 +102,24 @@ describe("keepAnchorAligned", () => {
     expect(scrollSpy).toHaveBeenCalledTimes(2);
   });
 
+  it("re-aligns when the anchor drifts even if the document height does not change (frame watcher)", () => {
+    let top = 96;
+    el.getBoundingClientRect = () => ({ top, bottom: top + 600, left: 0, right: 0, width: 0, height: 600, x: 0, y: top, toJSON: () => ({}) }) as DOMRect;
+    scrollSpy.mockImplementation(() => { top = 96; });
+    start(el, { settleMs: 600, maxMs: 5000 });
+    expect(scrollSpy).toHaveBeenCalledTimes(1);
+    vi.advanceTimersByTime(100); // frames pass, anchor stays put → no extra alignment
+    expect(scrollSpy).toHaveBeenCalledTimes(1);
+    top = -444; // content above shrank; body height unchanged, so no ResizeObserver callback
+    vi.advanceTimersByTime(50);
+    expect(scrollSpy).toHaveBeenCalledTimes(2);
+    expect(top).toBe(96);
+    vi.advanceTimersByTime(700); // settle → stop; later drift is ignored
+    top = 300;
+    vi.advanceTimersByTime(100);
+    expect(scrollSpy).toHaveBeenCalledTimes(2);
+  });
+
   it("works without ResizeObserver (single alignment + load re-alignment, bounded by timers)", () => {
     delete (globalThis as unknown as { ResizeObserver?: unknown }).ResizeObserver;
     start(el, { settleMs: 600, maxMs: 5000 });

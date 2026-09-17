@@ -6,8 +6,9 @@
  * `/services/post-construction-cleaning#quote`, 2026-09-17).
  *
  * Event-driven, bounded and user-respecting rather than a blind timer:
- * - re-aligns on every document size change reported by ResizeObserver (falls back to a single
- *   `load` re-alignment where ResizeObserver is unavailable);
+ * - re-aligns on every document size change reported by ResizeObserver and whenever the anchor's own
+ *   viewport position drifts from where it was placed (checked per animation frame while the window
+ *   is open), plus once on `load`;
  * - stops after `settleMs` without size changes, or `maxMs` at most;
  * - stops immediately on the first user scroll intent (wheel, touch, keyboard, pointer), so it
  *   never fights the visitor; programmatic scrolls do not cancel it.
@@ -29,8 +30,11 @@ export function keepAnchorAligned(el: HTMLElement, opts: KeepAnchorAlignedOption
   let observer: ResizeObserver | null = null;
   let settleTimer: ReturnType<typeof setTimeout> | undefined;
 
+  let expectedTop: number | null = null;
   const align = () => {
-    if (!stopped) el.scrollIntoView();
+    if (stopped) return;
+    el.scrollIntoView();
+    expectedTop = el.getBoundingClientRect().top;
   };
 
   const stop = () => {
@@ -61,6 +65,21 @@ export function keepAnchorAligned(el: HTMLElement, opts: KeepAnchorAlignedOption
     });
     observer.observe(document.documentElement);
     observer.observe(document.body);
+  }
+
+  // Layout changes above the anchor do not always change the document height (one block shrinks while
+  // another grows), so also watch the anchor's own viewport position frame by frame during the same
+  // bounded window and re-align when it drifts — measured movement, not a timer guess.
+  if (typeof requestAnimationFrame !== "undefined") {
+    const watch = () => {
+      if (stopped) return;
+      if (expectedTop !== null && Math.abs(el.getBoundingClientRect().top - expectedTop) > 2) {
+        align();
+        armSettle();
+      }
+      requestAnimationFrame(watch);
+    };
+    requestAnimationFrame(watch);
   }
 
   return stop;
