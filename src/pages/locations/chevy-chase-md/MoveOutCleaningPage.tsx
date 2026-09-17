@@ -6,7 +6,6 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FAQ from "@/components/FAQ";
 import ConversionCTA from "@/components/ConversionCTA";
 import TrustBadges from "@/components/TrustBadges";
-import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { Button } from "@/components/ui/button";
 import {
   LocalBusinessSchema,
@@ -21,7 +20,6 @@ import InternalLinksGrid from "@/components/location/InternalLinksGrid";
 import LocationSocialProof from "@/components/location/LocationSocialProof";
 import LocationQuoteSection from "@/components/location/LocationQuoteSection";
 import { getServiceLocationOverride } from "@/data/service-location-overrides";
-import { ctaProseVariants, pickVariant } from "@/data/template-variants";
 
 // ── Page constants ────────────────────────────────────────────────────────────
 
@@ -30,7 +28,7 @@ const PAGE_URL = "https://capitalcleancare.com/locations/chevy-chase-md/move-out
 const localFaqs = [
   {
     q: "How much does move out cleaning cost in Chevy Chase?",
-    a: "Pricing depends on home size and condition. Get your exact quote in 60 seconds — use the form below or call (240) 704-2551. Same-day availability confirmed at booking.",
+    a: "Pricing depends on home size and condition. Get your exact quote in 60 seconds — use the form below or call (240) 704-2551. Your date is confirmed at booking.",
   },
   {
     q: "Do I need to be present during the move out cleaning in Chevy Chase?",
@@ -38,7 +36,7 @@ const localFaqs = [
   },
   {
     q: "Can you do same-day or next-day move out cleaning in Chevy Chase?",
-    a: "In most cases, yes. Contact us early to confirm availability in your ZIP code (20815). We understand move-out deadlines are real — we work fast.",
+    a: "Sometimes, but it is not guaranteed. Short-notice dates depend on the schedule — contact us as early as possible to confirm a team and arrival window in your ZIP code (20815). We understand move-out deadlines are real.",
   },
   {
     q: "Do you clean empty apartments?",
@@ -121,13 +119,13 @@ const ChevyChaseMoveOutCleaningPage = () => {
   const { seoHelmet } = useSEO({
     title: "Move Out Cleaning in Chevy Chase, MD",
     description:
-      "Move out cleaning in Chevy Chase, MD. We clean to landlord & inspection standards so you get your deposit back. Bonded, insured, eco-friendly. Book today — same-day available.",
+      "Move-out cleaning in Chevy Chase, MD with a written scope for your final walkthrough. Bonded and insured. Request a quote and confirm availability.",
     canonical: PAGE_URL,
     ogImage: "https://capitalcleancare.com/og-image.jpg",
   });
 
   return (
-    <Layout>
+    <Layout stickyQuoteHref="#quote">
       {/* ── SEO ───────────────────────────────────────────── */}
       {seoHelmet}
       <Helmet>
@@ -190,6 +188,10 @@ const ChevyChaseMoveOutCleaningPage = () => {
         heroImage="/images/team/team-mopping-dark-floor.jpg"
         heroImageAlt="Capital Clean Care move out cleaning service in Chevy Chase, MD — deposit-ready results"
         ctaPrimary="Book Your Move Out Clean in Chevy Chase"
+        ctaBeforePills
+        stackCtas
+        teamTrustLabel="Background-Checked Team"
+        ctaNote="No commitment · Date confirmed at booking · 100% satisfaction guaranteed"
       />
 
       {/* ── What's Included ───────────────────────────────── */}
@@ -221,7 +223,7 @@ const ChevyChaseMoveOutCleaningPage = () => {
               },
               {
                 title: "Same-Day & Next-Day Available",
-                body: "Move-out deadlines don't wait. We offer same-day and next-day move out cleaning slots across Chevy Chase ZIP 20815 — including Martin's Additions.",
+                body: "Move-out deadlines don't wait. Send your walkthrough date first and we confirm the earliest available slot across Chevy Chase ZIP 20815 — including Martin's Additions. Short-notice dates depend on the schedule.",
               },
               {
                 title: "100% Satisfaction Guarantee",
@@ -252,7 +254,7 @@ const ChevyChaseMoveOutCleaningPage = () => {
               {
                 step: "1",
                 title: "Book your date",
-                body: "Same-day and next-day slots available for urgent moves in 20815. Call (240) 704-2551 or use the form below — no commitment, free quote in 60 seconds.",
+                body: "Short-notice slots may be available for urgent moves in 20815; your date is confirmed at booking. Call (240) 704-2551 or use the form below — no commitment, free quote in 60 seconds.",
               },
               {
                 step: "2",
@@ -300,8 +302,8 @@ const ChevyChaseMoveOutCleaningPage = () => {
             <p>
               Capital Clean Care serves all Chevy Chase ZIP codes (20815) for move out cleaning — from Section 3
               to Chevy Chase Village and Martin's Additions. Whether you're vacating an apartment near Friendship
-              Heights or a single-family home along the Connecticut Avenue corridor, our team is ready with
-              same-day and next-day availability.
+              Heights or a single-family home along the Connecticut Avenue corridor, our team confirms your
+              date at booking; short-notice dates depend on the schedule.
             </p>
             <p>
               We understand that move-out day is stressful. Our job is to remove one major source of that stress
@@ -355,10 +357,14 @@ const ChevyChaseMoveOutCleaningPage = () => {
       <ConversionCTA cityName="Chevy Chase" />
 
       {/* ── Final CTA + #quote anchor ─────────────────────── */}
-      <LocationQuoteSection cityName="Chevy Chase" serviceLabel="Move-Out Cleaning" defaultService="move" zipLine="Serving Chevy Chase and nearby communities." ctaProse={ctaProseVariants[pickVariant("chevy-chase-md", 2, 3)]("Chevy Chase", "Move-Out Cleaning")} />
-
-      {/* ── Sticky mobile phone CTA ───────────────────────── */}
-      <StickyMobileCTA />
+      <LocationQuoteSection
+        cityName="Chevy Chase"
+        serviceLabel="Move-Out Cleaning"
+        defaultService="move"
+        zipLine="Serving Chevy Chase and nearby communities."
+        ctaProse="Tell us about the property and your walkthrough date and we'll send a clear, no-obligation move-out cleaning quote. Your date is confirmed at booking."
+        trustLine="Date confirmed at booking · 100% satisfaction guaranteed · Bonded & Insured"
+      />
     </Layout>
   );
 };

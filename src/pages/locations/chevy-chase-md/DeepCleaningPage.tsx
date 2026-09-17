@@ -6,7 +6,6 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FAQ from "@/components/FAQ";
 import ConversionCTA from "@/components/ConversionCTA";
 import TrustBadges from "@/components/TrustBadges";
-import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { Button } from "@/components/ui/button";
 import {
   LocalBusinessSchema,
@@ -121,7 +120,7 @@ const ChevyChaseDeepCleaningPage = () => {
   });
 
   return (
-    <Layout>
+    <Layout stickyQuoteHref="#quote">
       {/* ── SEO ───────────────────────────────────────────── */}
       {seoHelmet}
       <Helmet>
@@ -184,6 +183,10 @@ const ChevyChaseDeepCleaningPage = () => {
         heroImage="/images/team/team-tile-scrubber.jpg"
         heroImageAlt="Capital Clean Care deep cleaning service in Chevy Chase, MD — top-to-bottom professional results"
         ctaPrimary="Schedule a Deep Clean in Chevy Chase"
+        ctaBeforePills
+        stackCtas
+        teamTrustLabel="Background-Checked Team"
+        ctaNote="No commitment · Written quote before service · Satisfaction guarantee applies"
       />
 
       {/* ── What's Included ───────────────────────────────── */}
@@ -351,10 +354,14 @@ const ChevyChaseDeepCleaningPage = () => {
       <ConversionCTA cityName="Chevy Chase" />
 
       {/* ── Final CTA + #quote anchor ─────────────────────── */}
-      <LocationQuoteSection cityName="Chevy Chase" serviceLabel="Deep Cleaning" defaultService="deep" zipLine="Serving Chevy Chase and nearby communities." />
-
-      {/* ── Sticky mobile phone CTA ───────────────────────── */}
-      <StickyMobileCTA />
+      <LocationQuoteSection
+        cityName="Chevy Chase"
+        serviceLabel="Deep Cleaning"
+        defaultService="deep"
+        zipLine="Serving Chevy Chase and nearby communities."
+        availabilityNote="Your date is confirmed at booking."
+        trustLine="Written quote before service · 100% satisfaction guaranteed · Bonded & Insured"
+      />
     </Layout>
   );
 };

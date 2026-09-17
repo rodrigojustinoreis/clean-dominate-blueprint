@@ -6,7 +6,6 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FAQ from "@/components/FAQ";
 import ConversionCTA from "@/components/ConversionCTA";
 import TrustBadges from "@/components/TrustBadges";
-import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { Button } from "@/components/ui/button";
 import {
   LocalBusinessSchema,
@@ -21,7 +20,6 @@ import InternalLinksGrid from "@/components/location/InternalLinksGrid";
 import LocationSocialProof from "@/components/location/LocationSocialProof";
 import LocationQuoteSection from "@/components/location/LocationQuoteSection";
 import { getServiceLocationOverride } from "@/data/service-location-overrides";
-import { ctaProseVariants, pickVariant } from "@/data/template-variants";
 
 const PAGE_URL = "https://capitalcleancare.com/locations/gaithersburg-md/airbnb-cleaning";
 
@@ -84,7 +82,7 @@ const checklistCategories = [
       "Laundry service",
       "Restock consumables",
       "Pre-check-in inspection report",
-      "Same-day turnovers",
+      "Same-day turnovers when the calendar allows",
     ],
   },
 ];
@@ -115,7 +113,7 @@ const GaithersburgAirbnbCleaningPage = () => {
   });
 
   return (
-    <Layout>
+    <Layout stickyQuoteHref="#quote">
       {seoHelmet}
       <Helmet>
         <link rel="preload" as="image" href="/images/team/team-kitchen-detail.jpg" />
@@ -176,6 +174,10 @@ const GaithersburgAirbnbCleaningPage = () => {
         heroImage="/images/team/team-kitchen-detail.jpg"
         heroImageAlt="Capital Clean Care Airbnb turnover cleaning in Gaithersburg, MD — hotel-standard results"
         ctaPrimary="Set Up Airbnb Turnover Cleaning in Gaithersburg"
+        ctaBeforePills
+        stackCtas
+        teamTrustLabel="Checklist-Trained Turnover Team"
+        ctaNote="No commitment · Turnover windows confirmed from your calendar · 100% satisfaction guaranteed"
       />
 
       {/* Checklist */}
@@ -261,9 +263,14 @@ const GaithersburgAirbnbCleaningPage = () => {
       <TrustBadges compact />
       <ConversionCTA cityName="Gaithersburg" />
 
-      <LocationQuoteSection cityName="Gaithersburg" serviceLabel="Airbnb Cleaning" defaultService="airbnb" zipLine="Serving Gaithersburg and nearby communities." ctaProse={ctaProseVariants[pickVariant("gaithersburg-md", 2, 3)]("Gaithersburg", "Airbnb Cleaning")} />
-
-      <StickyMobileCTA />
+      <LocationQuoteSection
+        cityName="Gaithersburg"
+        serviceLabel="Airbnb Cleaning"
+        defaultService="airbnb"
+        zipLine="Serving Gaithersburg and nearby communities."
+        ctaProse="Tell us about your Gaithersburg rental and we'll send a clear, no-obligation turnover cleaning quote. Turnover windows are confirmed from your booking calendar."
+        trustLine="Turnover windows confirmed from your calendar · 100% satisfaction guaranteed · Bonded & Insured"
+      />
     </Layout>
   );
 };

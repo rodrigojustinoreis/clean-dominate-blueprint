@@ -6,7 +6,6 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FAQ from "@/components/FAQ";
 import ConversionCTA from "@/components/ConversionCTA";
 import TrustBadges from "@/components/TrustBadges";
-import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { Button } from "@/components/ui/button";
 import {
   LocalBusinessSchema,
@@ -21,14 +20,13 @@ import InternalLinksGrid from "@/components/location/InternalLinksGrid";
 import LocationSocialProof from "@/components/location/LocationSocialProof";
 import LocationQuoteSection from "@/components/location/LocationQuoteSection";
 import { getServiceLocationOverride } from "@/data/service-location-overrides";
-import { ctaProseVariants, pickVariant } from "@/data/template-variants";
 
 const PAGE_URL = "https://capitalcleancare.com/locations/germantown-md/move-out-cleaning";
 
 const localFaqs = [
   {
     q: "How much does move out cleaning cost in Germantown?",
-    a: "Pricing depends on home size and condition. Get your exact quote in 60 seconds — free, no commitment. Same-day availability confirmed at booking for ZIPs 20874, 20875, and 20876.",
+    a: "Pricing depends on home size and condition. Get your exact quote in 60 seconds — free, no commitment. Your date is confirmed at booking for ZIPs 20874, 20875, and 20876.",
   },
   {
     q: "Do I need to be present during the move out cleaning in Germantown?",
@@ -36,7 +34,7 @@ const localFaqs = [
   },
   {
     q: "Can you do same-day or next-day move out cleaning in Germantown?",
-    a: "In most cases, yes. Contact us early to confirm availability in your ZIP code (20874, 20875, 20876).",
+    a: "Sometimes, but it is not guaranteed. Short-notice dates depend on the schedule — contact us as early as possible to confirm a team and arrival window in your ZIP code (20874, 20875, 20876).",
   },
   {
     q: "Do you clean empty apartments?",
@@ -116,7 +114,7 @@ const GermantownMoveOutCleaningPage = () => {
   const { seoHelmet } = useSEO({
     title: "Move Out Cleaning in Germantown, MD",
     description:
-      "Move out cleaning in Germantown, MD. We clean to landlord & inspection standards so you get your deposit back. Bonded, insured, eco-friendly. Book today — same-day available.",
+      "Move-out cleaning in Germantown, MD with a written scope for your final walkthrough. Bonded and insured. Request a quote and confirm availability.",
     canonical: PAGE_URL,
     ogImage: "https://capitalcleancare.com/og-image.jpg",
   });
@@ -124,7 +122,7 @@ const GermantownMoveOutCleaningPage = () => {
   const faqs = getServiceLocationOverride("germantown-md", "move-out-cleaning")?.faqs ?? localFaqs;
 
   return (
-    <Layout>
+    <Layout stickyQuoteHref="#quote">
       {seoHelmet}
       <Helmet>
         <link rel="preload" as="image" href="/images/team/team-making-bed.jpg" />
@@ -156,7 +154,7 @@ const GermantownMoveOutCleaningPage = () => {
       />
       <ServiceSchema
         serviceName="Move Out Cleaning in Germantown, MD"
-        description="Professional move out cleaning in Germantown, MD. Landlord-standard results, deposit-ready checklist. Oven interior, grout, baseboards, inside cabinets — everything covered. Same-day available."
+        description="Professional move out cleaning in Germantown, MD with a written scope for your final walkthrough: oven interior, grout, baseboards and inside cabinets. Bonded and insured. Date confirmed at booking."
         url={PAGE_URL}
         areaServed={["Germantown, MD", "Montgomery County, MD"]}
       />
@@ -185,6 +183,10 @@ const GermantownMoveOutCleaningPage = () => {
         heroImage="/images/team/team-making-bed.jpg"
         heroImageAlt="Capital Clean Care move out cleaning service in Germantown, MD — deposit-ready results"
         ctaPrimary="Book Your Move Out Clean in Germantown"
+        ctaBeforePills
+        stackCtas
+        teamTrustLabel="Background-Checked Team"
+        ctaNote="No commitment · Date confirmed at booking · 100% satisfaction guaranteed"
       />
 
       {/* Checklist */}
@@ -233,7 +235,7 @@ const GermantownMoveOutCleaningPage = () => {
             {[
               {
                 step: "1. Book your date",
-                body: "Same-day and next-day slots available for urgent moves in 20874 and 20876. We confirm fast.",
+                body: "Short-notice slots may be available for urgent moves in 20874 and 20876; your date is confirmed at booking.",
               },
               {
                 step: "2. We arrive with all supplies",
@@ -282,9 +284,14 @@ const GermantownMoveOutCleaningPage = () => {
       <TrustBadges compact />
       <ConversionCTA cityName="Germantown" />
 
-      <LocationQuoteSection cityName="Germantown" serviceLabel="Move-Out Cleaning" defaultService="move" zipLine="Serving Germantown and nearby communities." ctaProse={ctaProseVariants[pickVariant("germantown-md", 2, 3)]("Germantown", "Move-Out Cleaning")} />
-
-      <StickyMobileCTA />
+      <LocationQuoteSection
+        cityName="Germantown"
+        serviceLabel="Move-Out Cleaning"
+        defaultService="move"
+        zipLine="Serving Germantown and nearby communities."
+        ctaProse="Tell us about the property and your walkthrough date and we'll send a clear, no-obligation move-out cleaning quote. Your date is confirmed at booking."
+        trustLine="Date confirmed at booking · 100% satisfaction guaranteed · Bonded & Insured"
+      />
     </Layout>
   );
 };

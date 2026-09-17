@@ -158,9 +158,9 @@ Post-construction work isn't regular cleaning — it's a different process. We c
 
 A clean office is part of how clients judge a business, especially in a tight-knit community like Damascus where reputation travels. We use commercial-grade, eco-friendly products that disinfect without a harsh chemical smell, and we keep the same crew on your account so they learn your space and your standards. Whether it's a small medical suite that needs strict sanitization or a storefront that needs to shine for walk-ins, recurring office cleaning keeps it consistent.`,
     photos: [
-      { src: "/images/team/team-mopping-uniform.jpg", alt: "Capital Clean Care team member cleaning an office after hours in Damascus, MD" },
-      { src: "/images/team/team-cleaning-glass-door.jpg", alt: "Capital Clean Care cleaning glass doors at a Damascus, MD office" },
-      { src: "/images/team/mopping-hardwood-floor.jpg", alt: "Capital Clean Care mopping a business floor in Damascus, MD" },
+      { src: "/images/team/team-mopping-uniform.jpg", alt: "Capital Clean Care team member mopping a floor in uniform" },
+      { src: "/images/team/team-cleaning-glass-door.jpg", alt: "Capital Clean Care team member cleaning a glass door" },
+      { src: "/images/team/mopping-hardwood-floor.jpg", alt: "Capital Clean Care team member mopping a hardwood floor" },
     ],
   },
 
@@ -169,9 +169,9 @@ A clean office is part of how clients judge a business, especially in a tight-kn
 
 Kentlands residents tend to value their community and their time in equal measure, which is exactly who recurring or one-time house cleaning serves best. We bring all supplies and eco-friendly products, work to a detailed checklist, and assign teams who get to know your home's layout — the open kitchens, the stairs, the finished basements common in these floor plans. Background-checked, insured, and local, so you can hand over the keys and get your weekend back.`,
     photos: [
-      { src: "/images/team/real-team-mopping.jpg", alt: "Capital Clean Care team mopping a Kentlands, MD home" },
-      { src: "/images/team/team-two-living-room.jpg", alt: "Capital Clean Care cleaning a living room in Kentlands, Gaithersburg MD" },
-      { src: "/images/team/team-making-bed.jpg", alt: "Capital Clean Care making a bed during house cleaning in Kentlands, MD" },
+      { src: "/images/team/real-team-mopping.jpg", alt: "Capital Clean Care team member mopping a floor during a house cleaning visit" },
+      { src: "/images/team/team-two-living-room.jpg", alt: "Two Capital Clean Care team members cleaning a living room" },
+      { src: "/images/team/team-making-bed.jpg", alt: "Capital Clean Care team member making a bed during a house cleaning visit" },
     ],
   },
 
@@ -180,9 +180,9 @@ Kentlands residents tend to value their community and their time in equal measur
 
 The variety of housing in Montgomery Village — from compact condos to larger single-family homes — means cleaning has to flex to each layout, and that's where a consistent team pays off. They learn your home, your finishes, and your priorities, bringing eco-friendly supplies and a detailed checklist every visit. For the families and retirees who make up much of the Village, dependable house cleaning is one less thing to manage.`,
     photos: [
-      { src: "/images/team/real-team-mopping.jpg", alt: "Capital Clean Care team cleaning a Montgomery Village, MD home" },
-      { src: "/images/team/vacuuming-living-room.jpg", alt: "Capital Clean Care vacuuming a living room in Montgomery Village, MD" },
-      { src: "/images/team/team-two-living-room.jpg", alt: "Capital Clean Care house cleaning crew in Montgomery Village, MD" },
+      { src: "/images/team/real-team-mopping.jpg", alt: "Capital Clean Care team member mopping a floor during a house cleaning visit" },
+      { src: "/images/team/vacuuming-living-room.jpg", alt: "Capital Clean Care team member vacuuming a living room" },
+      { src: "/images/team/team-two-living-room.jpg", alt: "Two Capital Clean Care team members cleaning a living room" },
     ],
   },
 
@@ -202,9 +202,9 @@ Georgetown homeowners hold a high standard and have little tolerance for inconsi
 
 Life on the Hill moves fast — long hours, packed calendars, and homes near Eastern Market and Lincoln Park that get a lot of foot traffic. Recurring or one-time house cleaning takes it off your plate entirely: the same background-checked team, eco-friendly supplies, and a detailed checklist covering kitchens, baths, floors, and the high-touch surfaces that matter in a busy household. They learn your home's quirks — the stairs, the original wood, the spots that need extra care — so every visit is thorough.`,
     photos: [
-      { src: "/images/team/real-team-mopping.jpg", alt: "Capital Clean Care team cleaning a Capitol Hill, DC rowhouse" },
-      { src: "/images/team/team-making-bed.jpg", alt: "Capital Clean Care making a bed during house cleaning on Capitol Hill, DC" },
-      { src: "/images/team/mopping-hardwood-floor.jpg", alt: "Capital Clean Care mopping heart-pine floors on Capitol Hill, DC" },
+      { src: "/images/team/real-team-mopping.jpg", alt: "Capital Clean Care team member mopping a floor during a house cleaning visit" },
+      { src: "/images/team/team-making-bed.jpg", alt: "Capital Clean Care team member making a bed during a house cleaning visit" },
+      { src: "/images/team/mopping-hardwood-floor.jpg", alt: "Capital Clean Care team member mopping a hardwood floor" },
     ],
   },
 
@@ -213,9 +213,9 @@ Life on the Hill moves fast — long hours, packed calendars, and homes near Eas
 
 Burtonsville families book deep cleans for the moments that matter — moving in or out, hosting, post-renovation, or a seasonal reset a normal clean never quite delivers. We clean from the top down so nothing settles back onto finished surfaces, detail the kitchen and bathrooms (the two rooms that hide the most), and hit the spots a quick weekly pass always skips. Eco-friendly, background-checked, and local to eastern Montgomery County.`,
     photos: [
-      { src: "/images/team/scrubbing-door-frame.jpg", alt: "Capital Clean Care deep cleaning a door frame in Burtonsville, MD" },
-      { src: "/images/team/power-scrubber-tile.jpg", alt: "Capital Clean Care power-scrubbing tile grout during a deep clean in Burtonsville, MD" },
-      { src: "/images/team/cleaning-under-cabinet.jpg", alt: "Capital Clean Care reaching under a cabinet during a deep clean in Burtonsville, MD" },
+      { src: "/images/team/scrubbing-door-frame.jpg", alt: "Capital Clean Care team member scrubbing a door frame during a deep clean" },
+      { src: "/images/team/power-scrubber-tile.jpg", alt: "Capital Clean Care team member power-scrubbing tile grout during a deep clean" },
+      { src: "/images/team/cleaning-under-cabinet.jpg", alt: "Capital Clean Care team member cleaning under a cabinet during a deep clean" },
     ],
   },
 
@@ -247,9 +247,9 @@ This page is specifically for an intensive one-time deep clean. For weekly, biwe
 
 Moving is stressful enough in a town like Damascus where the next place might be a haul; the final clean shouldn't be on you. We bring all supplies, clean the home top to bottom once it's empty (or around what's left), and focus on the high-scrutiny spots that cost tenants their deposits. Eco-friendly, background-checked, and insured — and if you're moving in rather than out, we reset the home before your first night.`,
     photos: [
-      { src: "/images/team/cleaning-appliances.jpg", alt: "Capital Clean Care cleaning inside appliances during a move-out clean in Damascus, MD" },
-      { src: "/images/team/real-team-maria-fridge.jpg", alt: "Capital Clean Care cleaning inside a refrigerator for a move-out in Damascus, MD" },
-      { src: "/images/team/cleaning-under-cabinet.jpg", alt: "Capital Clean Care cleaning inside cabinets during a move-out clean in Damascus, MD" },
+      { src: "/images/team/cleaning-appliances.jpg", alt: "Capital Clean Care team member cleaning inside appliances during a move-out clean" },
+      { src: "/images/team/real-team-maria-fridge.jpg", alt: "Capital Clean Care team member cleaning inside a refrigerator during a move-out clean" },
+      { src: "/images/team/cleaning-under-cabinet.jpg", alt: "Capital Clean Care team member cleaning inside cabinets during a move-out clean" },
     ],
   },
 
@@ -301,9 +301,9 @@ The advantage of a recurring plan is continuity: the same background-checked cre
 
 The neighborhood's blend of renters, owners, professionals, and families all share busy, urban lives where cleaning is the easiest thing to put off. Recurring or one-time house cleaning takes it off your plate entirely — the same background-checked team, eco-friendly supplies, and attention to the kitchen, baths, and high-traffic floors these homes revolve around. They learn your unit and its quirks, so every visit is quick to start and thoroughly done.`,
     photos: [
-      { src: "/images/team/real-team-mopping.jpg", alt: "Capital Clean Care cleaning an Adams Morgan, DC rowhouse" },
-      { src: "/images/team/team-two-living-room.jpg", alt: "Capital Clean Care house cleaning team in an Adams Morgan, DC condo" },
-      { src: "/images/team/vacuuming-living-room.jpg", alt: "Capital Clean Care vacuuming a living room in Adams Morgan, Washington DC" },
+      { src: "/images/team/real-team-mopping.jpg", alt: "Capital Clean Care team member mopping a floor during a house cleaning visit" },
+      { src: "/images/team/team-two-living-room.jpg", alt: "Two Capital Clean Care team members cleaning a living room" },
+      { src: "/images/team/vacuuming-living-room.jpg", alt: "Capital Clean Care team member vacuuming a living room" },
     ],
   },
 
@@ -323,9 +323,9 @@ With more square footage comes more to manage, and that's exactly where a consis
 
 Boyds homeowners book deep cleans for the moments a normal clean can't cover — moving, hosting, post-renovation, or a seasonal reset across a larger house. We clean from the top down so dust doesn't resettle, detail the kitchen and bathrooms, and reach the spots routine cleaning always skips. Eco-friendly products safe for families and pets, a background-checked local team, and the manpower to handle the bigger square footage rural Boyds homes are known for.`,
     photos: [
-      { src: "/images/team/scrubbing-door-frame.jpg", alt: "Capital Clean Care deep cleaning trim in a Boyds, MD home" },
-      { src: "/images/team/power-scrubber-tile.jpg", alt: "Capital Clean Care power-scrubbing tile during a deep clean in Boyds, MD" },
-      { src: "/images/team/cleaning-under-cabinet.jpg", alt: "Capital Clean Care reaching under cabinets during a deep clean in Boyds, MD" },
+      { src: "/images/team/scrubbing-door-frame.jpg", alt: "Capital Clean Care team member scrubbing a door frame during a deep clean" },
+      { src: "/images/team/power-scrubber-tile.jpg", alt: "Capital Clean Care team member power-scrubbing tile during a deep clean" },
+      { src: "/images/team/cleaning-under-cabinet.jpg", alt: "Capital Clean Care team member cleaning under cabinets during a deep clean" },
     ],
   },
 
@@ -334,9 +334,9 @@ Boyds homeowners book deep cleans for the moments a normal clean can't cover —
 
 Navy Yard's contemporary condos come with the surfaces eco-friendly products are made for: quartz counters, engineered floors, glass, and stainless that streak and dull under conventional cleaners. Our pH-balanced, residue-free formulas are safe for those finishes — and for the pets and households living on them — with no chemical smell lingering in a sealed-up high-rise. For a neighborhood built around modern, health-conscious living, eco-friendly cleaning is the natural fit.`,
     photos: [
-      { src: "/images/team/eco-friendly-products.webp", alt: "Capital Clean Care eco-friendly products for a Navy Yard, Washington DC condo" },
-      { src: "/images/team/wiping-door-microfiber.jpg", alt: "Capital Clean Care wiping surfaces with reusable microfiber in Navy Yard, DC" },
-      { src: "/images/team/team-mopping-uniform.jpg", alt: "Capital Clean Care team providing eco-friendly cleaning in Navy Yard, Washington DC" },
+      { src: "/images/team/eco-friendly-products.webp", alt: "Cleaning products used by Capital Clean Care" },
+      { src: "/images/team/wiping-door-microfiber.jpg", alt: "Capital Clean Care team member wiping a surface with a reusable microfiber cloth" },
+      { src: "/images/team/team-mopping-uniform.jpg", alt: "Capital Clean Care team member mopping a floor in uniform" },
     ],
   },
 
@@ -632,9 +632,9 @@ Our Columbia recurring clients span the spectrum — dual-income households in R
 
 Many McLean properties are managed by household managers or estate managers who coordinate multiple service providers. We work within those management structures — following product specifications on file, coordinating schedules with other vendors, and reporting any surface concerns to the property manager rather than improvising. For McLean homeowners who manage their own cleaning arrangements, we provide the same level of documentation and communication. Every visit is logged, every product used is on file, and our satisfaction guarantee is backed by a free return visit within 24 hours.`,
     photos: [
-      { src: "/images/team/team-post-construction.jpg", alt: "Capital Clean Care team cleaning a large McLean, VA home — professional house cleaning service" },
-      { src: "/images/team/cleaning-window-blinds.webp", alt: "Capital Clean Care team member cleaning windows in McLean, VA home" },
-      { src: "/images/team/eco-friendly-products.webp", alt: "Capital Clean Care eco-certified products for McLean, VA premium house cleaning" },
+      { src: "/images/team/team-post-construction.jpg", alt: "Capital Clean Care team members during a cleaning visit" },
+      { src: "/images/team/cleaning-window-blinds.webp", alt: "Capital Clean Care team member cleaning window blinds" },
+      { src: "/images/team/eco-friendly-products.webp", alt: "Cleaning products used by Capital Clean Care" },
     ],
   },
 

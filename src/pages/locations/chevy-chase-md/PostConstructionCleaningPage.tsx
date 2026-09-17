@@ -6,7 +6,6 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FAQ from "@/components/FAQ";
 import ConversionCTA from "@/components/ConversionCTA";
 import TrustBadges from "@/components/TrustBadges";
-import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { Button } from "@/components/ui/button";
 import {
   LocalBusinessSchema,
@@ -21,7 +20,6 @@ import InternalLinksGrid from "@/components/location/InternalLinksGrid";
 import LocationSocialProof from "@/components/location/LocationSocialProof";
 import LocationQuoteSection from "@/components/location/LocationQuoteSection";
 import { getServiceLocationOverride } from "@/data/service-location-overrides";
-import { ctaProseVariants, pickVariant } from "@/data/template-variants";
 
 // ── Page constants ────────────────────────────────────────────────────────────
 
@@ -118,7 +116,7 @@ const ChevyChasePostConstructionPage = () => {
   });
 
   return (
-    <Layout>
+    <Layout stickyQuoteHref="#quote">
       {/* ── SEO ───────────────────────────────────────────── */}
       {seoHelmet}
       <Helmet>
@@ -181,6 +179,10 @@ const ChevyChasePostConstructionPage = () => {
         heroImage="/images/team/team-post-construction.jpg"
         heroImageAlt="Capital Clean Care post-construction cleaning in Chevy Chase, MD — HEPA-equipped, move-in ready results"
         ctaPrimary="Get a Post-Construction Quote in Chevy Chase"
+        ctaBeforePills
+        stackCtas
+        teamTrustLabel="Background-Checked Team"
+        ctaNote="No commitment · Written scope before service · Satisfaction guarantee applies"
       />
 
       {/* ── What's Included ───────────────────────────────── */}
@@ -336,10 +338,14 @@ const ChevyChasePostConstructionPage = () => {
       <ConversionCTA cityName="Chevy Chase" />
 
       {/* ── Final CTA + #quote anchor ─────────────────────── */}
-      <LocationQuoteSection cityName="Chevy Chase" serviceLabel="Post-Construction Cleaning" defaultService="post-construction" zipLine="Serving Chevy Chase and nearby communities." ctaProse={ctaProseVariants[pickVariant("chevy-chase-md", 2, 3)]("Chevy Chase", "Post-Construction Cleaning")} />
-
-      {/* ── Sticky mobile phone CTA ───────────────────────── */}
-      <StickyMobileCTA />
+      <LocationQuoteSection
+        cityName="Chevy Chase"
+        serviceLabel="Post-Construction Cleaning"
+        defaultService="post-construction"
+        zipLine="Serving Chevy Chase and nearby communities."
+        ctaProse="Tell us about the project and we'll send a clear, no-obligation post-construction cleaning quote. Availability is confirmed from your project address and requested date."
+        trustLine="Written scope before service · 100% satisfaction guaranteed · Bonded & Insured"
+      />
     </Layout>
   );
 };

@@ -6,7 +6,6 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FAQ from "@/components/FAQ";
 import ConversionCTA from "@/components/ConversionCTA";
 import TrustBadges from "@/components/TrustBadges";
-import StickyMobileCTA from "@/components/StickyMobileCTA";
 import {
   LocalBusinessSchema,
   ServiceSchema,
@@ -127,7 +126,7 @@ const BethesdaMoveOutCleaningPage = () => {
   });
 
   return (
-    <Layout>
+    <Layout stickyQuoteHref="#quote">
       {/* ── SEO ───────────────────────────────────────────── */}
       {seoHelmet}
       <Helmet>
@@ -187,6 +186,8 @@ const BethesdaMoveOutCleaningPage = () => {
         heroImageHeight={720}
         heroImageContainerClassName="max-w-[640px] mx-auto lg:ml-auto lg:mr-0"
         ctaPrimary="Request a Bethesda Move-Out Quote"
+        ctaBeforePills
+        stackCtas
         teamTrustLabel="Background-Checked Team"
         ctaNote="No commitment · Written quote before service · 100% satisfaction guaranteed"
         updatedLabel="August 2026"
@@ -454,10 +455,14 @@ const BethesdaMoveOutCleaningPage = () => {
       <ConversionCTA cityName="Bethesda" />
 
       {/* ── Final CTA + #quote anchor ─────────────────────── */}
-      <LocationQuoteSection cityName="Bethesda" serviceLabel="Move-Out Cleaning" defaultService="move" zipLine="Serving Bethesda ZIP codes 20814–20817." />
-
-      {/* ── Sticky mobile phone CTA ───────────────────────── */}
-      <StickyMobileCTA />
+      <LocationQuoteSection
+        cityName="Bethesda"
+        serviceLabel="Move-Out Cleaning"
+        defaultService="move"
+        zipLine="Serving Bethesda ZIP codes 20814–20817."
+        availabilityNote="Your date is confirmed at booking."
+        trustLine="Written quote before service · 100% satisfaction guaranteed · Bonded & Insured"
+      />
     </Layout>
   );
 };

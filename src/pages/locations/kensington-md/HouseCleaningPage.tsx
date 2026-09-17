@@ -6,7 +6,6 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FAQ from "@/components/FAQ";
 import ConversionCTA from "@/components/ConversionCTA";
 import TrustBadges from "@/components/TrustBadges";
-import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { Button } from "@/components/ui/button";
 import {
   LocalBusinessSchema,
@@ -21,7 +20,7 @@ import InternalLinksGrid from "@/components/location/InternalLinksGrid";
 import LocationSocialProof from "@/components/location/LocationSocialProof";
 import LocationQuoteSection from "@/components/location/LocationQuoteSection";
 import { getServiceLocationOverride } from "@/data/service-location-overrides";
-import { trustBlurbVariants, ctaProseVariants, pickVariant, ecoSafeVariants, satisfactionVariants, arriveStepVariants } from "@/data/template-variants";
+import { trustBlurbVariants, pickVariant, ecoSafeVariants, satisfactionVariants, arriveStepVariants } from "@/data/template-variants";
 
 const PAGE_URL = "https://capitalcleancare.com/locations/kensington-md/house-cleaning";
 
@@ -36,7 +35,7 @@ const localFaqs = [
   },
   {
     q: "How much does house cleaning cost in Kensington, MD?",
-    a: "Pricing depends on home size and frequency. Get your exact quote in 60 seconds — free, no commitment required. Same-day slots are often available in the 20895 ZIP code.",
+    a: "Pricing depends on home size and frequency. Get your exact quote in 60 seconds — free, no commitment required. Your date is confirmed at booking for the 20895 ZIP code.",
   },
   {
     q: "Do you offer recurring cleaning in Kensington?",
@@ -122,7 +121,7 @@ const KensingtonHouseCleaningPage = () => {
   });
 
   return (
-    <Layout>
+    <Layout stickyQuoteHref="#quote">
       {seoHelmet}
       <Helmet>
         <link rel="preload" as="image" href="/images/team/team-mopping-bright-room.jpg" />
@@ -183,6 +182,10 @@ const KensingtonHouseCleaningPage = () => {
         heroImage="/images/team/team-mopping-bright-room.jpg"
         heroImageAlt="Capital Clean Care team providing house cleaning service in Kensington, MD — Latino-owned, background-checked professionals"
         ctaPrimary="Get a Free Quote in Kensington"
+        ctaBeforePills
+        stackCtas
+        teamTrustLabel="Background-Checked Team"
+        ctaNote="No commitment · Date confirmed at booking · 100% satisfaction guaranteed"
       />
 
       {/* Checklist */}
@@ -230,7 +233,7 @@ const KensingtonHouseCleaningPage = () => {
               {
                 step: "1",
                 title: "Book online or call",
-                body: "Free quote in 60 seconds. Same-day slots often available in Kensington (20895).",
+                body: "Free quote in 60 seconds. Your date is confirmed at booking in Kensington (20895).",
               },
               {
                 step: "2",
@@ -293,7 +296,7 @@ const KensingtonHouseCleaningPage = () => {
                 deep cleaning
               </Link>{" "}
               after a long stretch between visits, we are ready to help. Call (240) 704-2551 or
-              get your free quote online — same-day availability is common in the 20895 area.
+              get your free quote online — your date is confirmed at booking in the 20895 area.
             </p>
           </div>
         </div>
@@ -321,9 +324,14 @@ const KensingtonHouseCleaningPage = () => {
       <TrustBadges compact />
       <ConversionCTA cityName="Kensington" />
 
-      <LocationQuoteSection cityName="Kensington" serviceLabel="House Cleaning" defaultService="standard" zipLine="Serving Kensington and nearby communities." ctaProse={ctaProseVariants[pickVariant("kensington-md", 2, 3)]("Kensington", "House Cleaning")} />
-
-      <StickyMobileCTA />
+      <LocationQuoteSection
+        cityName="Kensington"
+        serviceLabel="House Cleaning"
+        defaultService="standard"
+        zipLine="Serving Kensington and nearby communities."
+        ctaProse="Tell us about your Kensington home and we'll send a clear, no-obligation house cleaning quote. Your date is confirmed at booking."
+        trustLine="Date confirmed at booking · 100% satisfaction guaranteed · Bonded & Insured"
+      />
     </Layout>
   );
 };

@@ -6,7 +6,6 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FAQ from "@/components/FAQ";
 import ConversionCTA from "@/components/ConversionCTA";
 import TrustBadges from "@/components/TrustBadges";
-import StickyMobileCTA from "@/components/StickyMobileCTA";
 import {
   LocalBusinessSchema,
   ServiceSchema,
@@ -117,7 +116,7 @@ const BethesdaAirbnbCleaningPage = () => {
   });
 
   return (
-    <Layout>
+    <Layout stickyQuoteHref="#quote">
       {/* ── SEO ───────────────────────────────────────────── */}
       {seoHelmet}
       <Helmet>
@@ -178,6 +177,8 @@ const BethesdaAirbnbCleaningPage = () => {
         heroImageHeight={900}
         heroImageContainerClassName="lg:min-h-[500px]"
         ctaPrimary="Request a Bethesda Turnover Quote"
+        ctaBeforePills
+        stackCtas
         teamTrustLabel="Checklist-Trained Turnover Team"
         ctaNote="Written workflow · Licensed and insured · Airbnb, Vrbo and direct bookings"
         updatedLabel="August 30, 2026"
@@ -391,10 +392,14 @@ const BethesdaAirbnbCleaningPage = () => {
       <ConversionCTA cityName="Bethesda" />
 
       {/* ── Final CTA + #quote anchor ─────────────────────── */}
-      <LocationQuoteSection cityName="Bethesda" serviceLabel="Airbnb Cleaning" defaultService="airbnb" zipLine="Serving Bethesda and nearby communities." />
-
-      {/* ── Sticky mobile phone CTA ───────────────────────── */}
-      <StickyMobileCTA />
+      <LocationQuoteSection
+        cityName="Bethesda"
+        serviceLabel="Airbnb Cleaning"
+        defaultService="airbnb"
+        zipLine="Serving Bethesda and nearby communities."
+        availabilityNote="Turnover windows are confirmed from your booking calendar."
+        trustLine="Written turnover workflow · Licensed and insured · Airbnb, Vrbo and direct bookings"
+      />
     </Layout>
   );
 };

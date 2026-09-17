@@ -6,7 +6,6 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FAQ from "@/components/FAQ";
 import ConversionCTA from "@/components/ConversionCTA";
 import TrustBadges from "@/components/TrustBadges";
-import StickyMobileCTA from "@/components/StickyMobileCTA";
 import { Button } from "@/components/ui/button";
 import {
   LocalBusinessSchema,
@@ -21,7 +20,7 @@ import InternalLinksGrid from "@/components/location/InternalLinksGrid";
 import LocationSocialProof from "@/components/location/LocationSocialProof";
 import LocationQuoteSection from "@/components/location/LocationQuoteSection";
 import { getServiceLocationOverride } from "@/data/service-location-overrides";
-import { trustBlurbVariants, ctaProseVariants, ecoSafeVariants, satisfactionVariants, arriveStepVariants, pickVariant } from "@/data/template-variants";
+import { trustBlurbVariants, ecoSafeVariants, satisfactionVariants, arriveStepVariants, pickVariant } from "@/data/template-variants";
 
 // ── Page constants ────────────────────────────────────────────────────────────
 
@@ -136,7 +135,7 @@ const ChevyChaseHouseCleaningPage = () => {
   const faqs = getServiceLocationOverride("chevy-chase-md", "house-cleaning")?.faqs ?? localFaqs;
 
   return (
-    <Layout>
+    <Layout stickyQuoteHref="#quote">
       {/* ── SEO ───────────────────────────────────────────── */}
       {seoHelmet}
       <Helmet>
@@ -199,6 +198,10 @@ const ChevyChaseHouseCleaningPage = () => {
         heroImage="/images/team/team-mopping-bright-room.jpg"
         heroImageAlt="Capital Clean Care team providing house cleaning service in Chevy Chase, MD — Latino-owned, background-checked professionals"
         ctaPrimary="Get a Free Quote in Chevy Chase"
+        ctaBeforePills
+        stackCtas
+        teamTrustLabel="Background-Checked Team"
+        ctaNote="No commitment · Date confirmed at booking · 100% satisfaction guaranteed"
       />
 
       {/* ── What's Included ───────────────────────────────── */}
@@ -255,7 +258,7 @@ const ChevyChaseHouseCleaningPage = () => {
               {
                 step: "1",
                 title: "Book online or call",
-                body: "Get a free quote in 60 seconds — no commitment required. Same-day slots are often available throughout Chevy Chase (ZIP 20815). Call (240) 704-2551 or use the form below.",
+                body: "Get a free quote in 60 seconds — no commitment required. Your date is confirmed at booking throughout Chevy Chase (ZIP 20815). Call (240) 704-2551 or use the form below.",
               },
               {
                 step: "2",
@@ -403,10 +406,14 @@ const ChevyChaseHouseCleaningPage = () => {
       <ConversionCTA cityName="Chevy Chase" />
 
       {/* ── Final CTA + #quote anchor ─────────────────────── */}
-      <LocationQuoteSection cityName="Chevy Chase" serviceLabel="House Cleaning" defaultService="standard" zipLine="Serving Chevy Chase and nearby communities." ctaProse={ctaProseVariants[pickVariant("chevy-chase-md", 2, 3)]("Chevy Chase", "House Cleaning")} />
-
-      {/* ── Sticky mobile phone CTA ───────────────────────── */}
-      <StickyMobileCTA />
+      <LocationQuoteSection
+        cityName="Chevy Chase"
+        serviceLabel="House Cleaning"
+        defaultService="standard"
+        zipLine="Serving Chevy Chase and nearby communities."
+        ctaProse="Tell us about your Chevy Chase home and we'll send a clear, no-obligation house cleaning quote. Your date is confirmed at booking."
+        trustLine="Date confirmed at booking · 100% satisfaction guaranteed · Bonded & Insured"
+      />
     </Layout>
   );
 };
