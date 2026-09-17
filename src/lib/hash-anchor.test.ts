@@ -25,6 +25,11 @@ class FakeResizeObserver {
 }
 
 const layoutChanged = () => roCallbacks.forEach((cb) => cb([], null));
+let scrollPos = 0;
+const bumpScroll = () => {
+  scrollPos += 100;
+  Object.defineProperty(window, "scrollY", { value: scrollPos, configurable: true });
+};
 
 describe("keepAnchorAligned", () => {
   let el: HTMLElement;
@@ -39,7 +44,7 @@ describe("keepAnchorAligned", () => {
     el = document.createElement("section");
     el.id = "quote";
     document.body.appendChild(el);
-    scrollSpy = vi.fn();
+    scrollSpy = vi.fn(bumpScroll); // a real scrollIntoView moves the page; jsdom's scrollY is otherwise frozen at 0
     el.scrollIntoView = scrollSpy as unknown as typeof el.scrollIntoView;
   });
 
@@ -103,9 +108,10 @@ describe("keepAnchorAligned", () => {
   });
 
   it("re-aligns when the anchor drifts even if the document height does not change (frame watcher)", () => {
-    let top = 96;
+    // jsdom reports no scroll-margin-top, so the aligned position is top = 0
+    let top = 0;
     el.getBoundingClientRect = () => ({ top, bottom: top + 600, left: 0, right: 0, width: 0, height: 600, x: 0, y: top, toJSON: () => ({}) }) as DOMRect;
-    scrollSpy.mockImplementation(() => { top = 96; });
+    scrollSpy.mockImplementation(() => { top = 0; bumpScroll(); });
     start(el, { settleMs: 600, maxMs: 5000 });
     expect(scrollSpy).toHaveBeenCalledTimes(1);
     vi.advanceTimersByTime(100); // frames pass, anchor stays put → no extra alignment
@@ -113,11 +119,36 @@ describe("keepAnchorAligned", () => {
     top = -444; // content above shrank; body height unchanged, so no ResizeObserver callback
     vi.advanceTimersByTime(50);
     expect(scrollSpy).toHaveBeenCalledTimes(2);
-    expect(top).toBe(96);
+    expect(top).toBe(0);
     vi.advanceTimersByTime(700); // settle → stop; later drift is ignored
     top = 300;
     vi.advanceTimersByTime(100);
     expect(scrollSpy).toHaveBeenCalledTimes(2);
+  });
+
+  it("detects a scroll that landed in the wrong place because the layout was transient at that instant", () => {
+    // The scroll lands the anchor 444px above the viewport (transient layout), then the layout reverts.
+    let top = -444;
+    let landings = 0;
+    el.getBoundingClientRect = () => ({ top, bottom: top + 600, left: 0, right: 0, width: 0, height: 600, x: 0, y: top, toJSON: () => ({}) }) as DOMRect;
+    scrollSpy.mockImplementation(() => { landings += 1; top = landings === 1 ? -444 : 0; bumpScroll(); });
+    start(el, { settleMs: 600, maxMs: 5000 });
+    expect(scrollSpy).toHaveBeenCalledTimes(1);
+    vi.advanceTimersByTime(40); // next frames: anchor is not where CSS says it should be → re-align
+    expect(scrollSpy).toHaveBeenCalledTimes(2);
+    expect(top).toBe(0);
+    vi.advanceTimersByTime(200);
+    expect(scrollSpy).toHaveBeenCalledTimes(2);
+  });
+
+  it("stops once the page can no longer move the anchor (converged) instead of looping", () => {
+    const top = 300; // e.g. near the end of the document the anchor cannot reach the top
+    el.getBoundingClientRect = () => ({ top, bottom: top + 600, left: 0, right: 0, width: 0, height: 600, x: 0, y: top, toJSON: () => ({}) }) as DOMRect;
+    scrollSpy.mockImplementation(() => { /* scrollY does not change */ });
+    start(el, { settleMs: 600, maxMs: 5000 });
+    vi.advanceTimersByTime(200);
+    expect(scrollSpy.mock.calls.length).toBeLessThanOrEqual(3);
+    expect(disconnected).toBe(1);
   });
 
   it("works without ResizeObserver (single alignment + load re-alignment, bounded by timers)", () => {

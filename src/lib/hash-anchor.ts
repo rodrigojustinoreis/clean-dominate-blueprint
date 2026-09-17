@@ -30,17 +30,31 @@ export function keepAnchorAligned(el: HTMLElement, opts: KeepAnchorAlignedOption
   let observer: ResizeObserver | null = null;
   let settleTimer: ReturnType<typeof setTimeout> | undefined;
 
-  let expectedTop: number | null = null;
+  // Where the anchor should sit once aligned: its CSS scroll-margin-top (e.g. `scroll-mt-20` → 80px).
+  // Derived from the stylesheet, not from a measurement taken right after the scroll, so a transient
+  // layout at the moment of the scroll (which lands the page in the wrong place) is detected as drift.
+  const expectedTop = (() => {
+    const css = typeof getComputedStyle === "function" ? getComputedStyle(el).scrollMarginTop : "";
+    const n = parseFloat(css || "0");
+    return Number.isFinite(n) ? n : 0;
+  })();
+  let aligns = 0;
+  let unchangedAligns = 0;
   const align = () => {
     if (stopped) return;
+    const before = window.scrollY;
     el.scrollIntoView();
-    expectedTop = el.getBoundingClientRect().top;
+    aligns += 1;
+    // Converged (the page cannot move the anchor any closer, e.g. near the document end) or runaway: stop.
+    unchangedAligns = window.scrollY === before ? unchangedAligns + 1 : 0;
+    if (unchangedAligns >= 3 || aligns >= 40) stop();
   };
 
   const stop = () => {
     if (stopped) return;
     stopped = true;
     observer?.disconnect();
+    observer = null;
     clearTimeout(settleTimer);
     clearTimeout(maxTimer);
     for (const type of USER_INTENT_EVENTS) window.removeEventListener(type, stop);
@@ -73,7 +87,7 @@ export function keepAnchorAligned(el: HTMLElement, opts: KeepAnchorAlignedOption
   if (typeof requestAnimationFrame !== "undefined") {
     const watch = () => {
       if (stopped) return;
-      if (expectedTop !== null && Math.abs(el.getBoundingClientRect().top - expectedTop) > 2) {
+      if (Math.abs(el.getBoundingClientRect().top - expectedTop) > 2) {
         align();
         armSettle();
       }
