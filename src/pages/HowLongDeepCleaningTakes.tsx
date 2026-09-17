@@ -211,7 +211,7 @@ const HowLongDeepCleaningTakes = () => {
           </FadeInSection>
 
           <FadeInSection>
-            <BlogInlineCTA headline="Want a time and price estimate for your home?" subtext="Tell us the size and condition and we'll quote a flat price with a realistic timeline. EPA Safer Choice products and a 24-hour re-clean guarantee, across Montgomery County and the DMV." ctaLabel="Get My Free Quote" ctaTo="/services/deep-cleaning#quote" />
+            <BlogInlineCTA headline="Want a time and price estimate for your home?" subtext="Tell us the size and condition and we'll quote a flat price with a realistic timeline. Plant-based products chosen by their labels and a 24-hour re-clean guarantee, across Montgomery County and the DMV." ctaLabel="Get My Free Quote" ctaTo="/services/deep-cleaning#quote" />
           </FadeInSection>
 
           <FadeInSection>
@@ -268,7 +268,7 @@ const HowLongDeepCleaningTakes = () => {
         </div>
       </article>
 
-      <RelatedPosts currentSlug="how-long-does-deep-cleaning-take" />
+      <RelatedPosts currentSlug="how-long-does-deep-cleaning-take" authorBioVariant="factual" />
       <StickyCTA to="/services/deep-cleaning#quote" />
     </Layout>
   );

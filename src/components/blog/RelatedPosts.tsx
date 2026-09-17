@@ -1,4 +1,4 @@
-import AuthorBio from "@/components/blog/AuthorBio";
+import AuthorBio, { type AuthorBioProps } from "@/components/blog/AuthorBio";
 import TransformationsGallery from "@/components/TransformationsGallery";
 import { GuideCards, LinkList } from "@/components/RelatedContent";
 import { guidesForPost, servicesForPost } from "@/data/related-content";
@@ -7,19 +7,21 @@ interface RelatedPostsProps {
   currentSlug: string;
   /** Suppress the tail video gallery — for pages that render it higher up themselves. */
   showVideos?: boolean;
+  /** Passed through to AuthorBio; default keeps the historical bio for every existing post. */
+  authorBioVariant?: AuthorBioProps["variant"];
 }
 
 // Post tail: author bio + video proof, then the automatic internal-linking blocks —
 // "Related Guides" (same Resource Center category, supplemented by hand-curated relations)
 // and "Related Services" (the service / city×service pages the post's topic maps to). All
 // targets are indexable and never the current page (enforced in @/data/related-content).
-const RelatedPosts = ({ currentSlug, showVideos = true }: RelatedPostsProps) => {
+const RelatedPosts = ({ currentSlug, showVideos = true, authorBioVariant }: RelatedPostsProps) => {
   const guides = guidesForPost(currentSlug, 6);
   const services = servicesForPost(currentSlug, 4);
 
   return (
     <>
-      <AuthorBio />
+      <AuthorBio variant={authorBioVariant} />
       {showVideos && (
         <TransformationsGallery
           withSchema={false}
