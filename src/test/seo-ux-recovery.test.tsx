@@ -199,6 +199,26 @@ describe("content gate 2 (2026-09-17) — expired promotion, absolute claims, au
     expect(t).not.toContain("Label-Guided Products");
   });
 
+  it("dedicated worklist pages: no certification/inventory, universal-safety, deposit or 'hotel-standard' claims in page-local copy; shared variants untouched (Potomac control)", () => {
+    const PAGES = [
+      "/locations/chevy-chase-md/house-cleaning", "/locations/kensington-md/house-cleaning", "/locations/chevy-chase-md/deep-cleaning",
+      "/locations/chevy-chase-md/move-out-cleaning", "/locations/chevy-chase-md/post-construction-cleaning",
+      "/locations/gaithersburg-md/airbnb-cleaning", "/locations/germantown-md/move-out-cleaning",
+    ];
+    for (const url of PAGES) {
+      const t = text(renderMain(url));
+      expect(t, url).not.toMatch(/Safer Choice|non-toxic|safe for (your )?(kids|families|children)|deposit-ready|hotel-standard|won't etch|no chemical fumes|no residue left/i);
+      expect(t, url).toContain("chosen by their labels");
+    }
+    // Takoma Park vanity page: only its own uniqueIntro is page-local; the city `lifestyle` field and the apartment-cleaning
+    // template (service-locations.ts) feed 20 other Takoma Park pages and still carry shared claims — recorded as a shared pending item.
+    const takoma = text(renderMain("/apartment-cleaning-takoma-park-md"));
+    expect(takoma).not.toMatch(/exclusively plant-based/i);
+    expect(takoma).toContain("chosen by their labels");
+    const control = text(renderMain("/locations/potomac-md/house-cleaning"));
+    expect(control).toContain("Safer Choice"); // outside the worklist: shared variants and data left as they were
+  });
+
   it("how-long guide: factual author bio (no 500+ homes, logo alt); default bio kept on a control post", () => {
     const howLong = renderMain("/resources/how-long-does-deep-cleaning-take");
     expect(text(howLong)).not.toContain("500+ homes");
