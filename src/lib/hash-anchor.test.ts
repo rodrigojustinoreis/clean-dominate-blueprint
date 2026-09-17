@@ -151,6 +151,23 @@ describe("keepAnchorAligned", () => {
     expect(disconnected).toBe(1);
   });
 
+  it("keeps the window open until the document has loaded, then re-aligns on the drift caused right after load", () => {
+    Object.defineProperty(document, "readyState", { value: "loading", configurable: true });
+    let top = 0;
+    el.getBoundingClientRect = () => ({ top, bottom: top + 600, left: 0, right: 0, width: 0, height: 600, x: 0, y: top, toJSON: () => ({}) }) as DOMRect;
+    scrollSpy.mockImplementation(() => { top = 0; bumpScroll(); });
+    start(el, { settleMs: 600, maxMs: 8000 });
+    vi.advanceTimersByTime(2000); // far past settleMs, but the page is still loading → still armed
+    expect(disconnected).toBe(0);
+    Object.defineProperty(document, "readyState", { value: "complete", configurable: true });
+    window.dispatchEvent(new Event("load"));
+    top = -444; // an embed grabbed focus ~20 ms after load and scrolled the page
+    vi.advanceTimersByTime(40);
+    expect(top).toBe(0);
+    vi.advanceTimersByTime(700); // settled after load → stops
+    expect(disconnected).toBe(1);
+  });
+
   it("works without ResizeObserver (single alignment + load re-alignment, bounded by timers)", () => {
     delete (globalThis as unknown as { ResizeObserver?: unknown }).ResizeObserver;
     start(el, { settleMs: 600, maxMs: 5000 });

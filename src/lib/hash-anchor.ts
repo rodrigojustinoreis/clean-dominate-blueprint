@@ -9,7 +9,8 @@
  * - re-aligns on every document size change reported by ResizeObserver and whenever the anchor's own
  *   viewport position drifts from where it was placed (checked per animation frame while the window
  *   is open), plus once on `load`;
- * - stops after `settleMs` without size changes, or `maxMs` at most;
+ * - stops after `settleMs` without changes once the document has finished loading (embeds that grab
+ *   focus right after `load` would otherwise leave the page scrolled to the iframe), `maxMs` at most;
  * - stops immediately on the first user scroll intent (wheel, touch, keyboard, pointer), so it
  *   never fights the visitor; programmatic scrolls do not cancel it.
  * `scrollIntoView()` is used without smooth behaviour, so reduced-motion preferences are honoured.
@@ -25,7 +26,7 @@ const USER_INTENT_EVENTS = ["wheel", "touchstart", "keydown", "pointerdown"] as 
 
 export function keepAnchorAligned(el: HTMLElement, opts: KeepAnchorAlignedOptions = {}): () => void {
   const settleMs = opts.settleMs ?? 600;
-  const maxMs = opts.maxMs ?? 5000;
+  const maxMs = opts.maxMs ?? 8000;
   let stopped = false;
   let observer: ResizeObserver | null = null;
   let settleTimer: ReturnType<typeof setTimeout> | undefined;
@@ -58,17 +59,27 @@ export function keepAnchorAligned(el: HTMLElement, opts: KeepAnchorAlignedOption
     clearTimeout(settleTimer);
     clearTimeout(maxTimer);
     for (const type of USER_INTENT_EVENTS) window.removeEventListener(type, stop);
-    window.removeEventListener("load", align);
+    window.removeEventListener("load", onLoad);
   };
 
+  // The window only closes after the document has finished loading: third-party embeds (YouTube
+  // players on the service pages) grab focus ~20 ms after `load`, which scrolls the page to the
+  // iframe. Until then keep re-arming; maxMs still caps everything.
   const armSettle = () => {
     clearTimeout(settleTimer);
-    settleTimer = setTimeout(stop, settleMs);
+    settleTimer = setTimeout(() => {
+      if (document.readyState !== "complete") armSettle();
+      else stop();
+    }, settleMs);
   };
 
+  const onLoad = () => {
+    align();
+    armSettle();
+  };
   align();
   for (const type of USER_INTENT_EVENTS) window.addEventListener(type, stop, { passive: true });
-  window.addEventListener("load", align);
+  window.addEventListener("load", onLoad);
   const maxTimer = setTimeout(stop, maxMs);
   armSettle();
 
