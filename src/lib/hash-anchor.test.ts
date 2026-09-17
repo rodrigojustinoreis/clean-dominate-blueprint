@@ -168,6 +168,18 @@ describe("keepAnchorAligned", () => {
     expect(disconnected).toBe(1);
   });
 
+  it("alignments that were already on target never count as convergence (regression: window closed before load)", () => {
+    let top = 0; // native hash scroll already put the anchor on target; scrollY does not move on re-alignment
+    el.getBoundingClientRect = () => ({ top, bottom: top + 600, left: 0, right: 0, width: 0, height: 600, x: 0, y: top, toJSON: () => ({}) }) as DOMRect;
+    scrollSpy.mockImplementation(() => { if (top !== 0) { top = 0; bumpScroll(); } });
+    start(el, { settleMs: 600, maxMs: 8000 });
+    layoutChanged(); layoutChanged(); layoutChanged(); window.dispatchEvent(new Event("load"));
+    expect(disconnected).toBe(0); // still armed
+    top = -444; // embed focus-steal after load
+    vi.advanceTimersByTime(40);
+    expect(top).toBe(0);
+  });
+
   it("works without ResizeObserver (single alignment + load re-alignment, bounded by timers)", () => {
     delete (globalThis as unknown as { ResizeObserver?: unknown }).ResizeObserver;
     start(el, { settleMs: 600, maxMs: 5000 });

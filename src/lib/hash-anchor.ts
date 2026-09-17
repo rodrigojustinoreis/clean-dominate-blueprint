@@ -43,11 +43,14 @@ export function keepAnchorAligned(el: HTMLElement, opts: KeepAnchorAlignedOption
   let unchangedAligns = 0;
   const align = () => {
     if (stopped) return;
+    const drifted = Math.abs(el.getBoundingClientRect().top - expectedTop) > 2;
     const before = window.scrollY;
     el.scrollIntoView();
     aligns += 1;
-    // Converged (the page cannot move the anchor any closer, e.g. near the document end) or runaway: stop.
-    unchangedAligns = window.scrollY === before ? unchangedAligns + 1 : 0;
+    // Converged only when the anchor is off target AND scrolling cannot move it (e.g. near the document
+    // end) — three such attempts, or 40 alignments overall, end the window. Alignments that were already
+    // on target (native hash scroll, load re-check) never count as convergence.
+    unchangedAligns = drifted && window.scrollY === before ? unchangedAligns + 1 : 0;
     if (unchangedAligns >= 3 || aligns >= 40) stop();
   };
 
