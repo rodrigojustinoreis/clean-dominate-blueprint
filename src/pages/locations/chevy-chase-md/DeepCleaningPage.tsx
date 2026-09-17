@@ -39,7 +39,7 @@ const faqs = [
   },
   {
     q: "Is your deep cleaning eco-friendly?",
-    a: "Yes. We use only EPA Safer Choice™ certified products — powerful enough for deep cleaning, non-toxic for your family and pets throughout Chevy Chase (ZIP 20815).",
+    a: "Yes. We use plant-based products chosen by their labels, matched to each surface, throughout Chevy Chase (ZIP 20815). Tell us about kids, pets or sensitivities before the visit and the team plans around them.",
   },
   {
     q: "Do you do spring cleaning in Chevy Chase?",
@@ -154,7 +154,7 @@ const ChevyChaseDeepCleaningPage = () => {
       />
       <ServiceSchema
         serviceName="Deep Cleaning in Chevy Chase, MD"
-        description="Professional top-to-bottom deep cleaning in Chevy Chase, MD. Inside appliances, grout scrubbing, ceiling fans, baseboards — everywhere standard cleanings miss. EPA Safer Choice certified products."
+        description="Professional top-to-bottom deep cleaning in Chevy Chase, MD. Inside appliances, grout scrubbing, ceiling fans, baseboards — everywhere standard cleanings miss. Plant-based products chosen by their labels."
         url={PAGE_URL}
         areaServed={["Chevy Chase, MD", "Montgomery County, MD"]}
       />
@@ -176,7 +176,7 @@ const ChevyChaseDeepCleaningPage = () => {
       {/* ── Hero ──────────────────────────────────────────── */}
       <HeroLocation
         h1="Deep Cleaning Services in Chevy Chase, MD"
-        lead="When a standard clean isn't enough, Capital Clean Care's deep cleaning goes top-to-bottom through every corner of your Chevy Chase home — from Section 4 to Martin's Additions. Baseboards, grout lines, inside appliances, ceiling fans — we cover everything a routine cleaning skips. EPA Safer Choice™ products only."
+        lead="When a standard clean isn't enough, Capital Clean Care's deep cleaning goes top-to-bottom through every corner of your Chevy Chase home — from Section 4 to Martin's Additions. Baseboards, grout lines, inside appliances, ceiling fans — we cover everything a routine cleaning skips, with plant-based products chosen by their labels."
         cityName="Chevy Chase"
         state="MD"
         zipRange="20815"

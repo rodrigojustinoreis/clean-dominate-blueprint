@@ -20,7 +20,7 @@ import InternalLinksGrid from "@/components/location/InternalLinksGrid";
 import LocationSocialProof from "@/components/location/LocationSocialProof";
 import LocationQuoteSection from "@/components/location/LocationQuoteSection";
 import { getServiceLocationOverride } from "@/data/service-location-overrides";
-import { trustBlurbVariants, ecoSafeVariants, satisfactionVariants, arriveStepVariants, pickVariant } from "@/data/template-variants";
+import { satisfactionVariants, pickVariant } from "@/data/template-variants";
 
 // ── Page constants ────────────────────────────────────────────────────────────
 
@@ -29,7 +29,7 @@ const PAGE_URL = "https://capitalcleancare.com/locations/chevy-chase-md/house-cl
 const localFaqs = [
   {
     q: "Do you bring your own cleaning supplies to Chevy Chase homes?",
-    a: "Yes. We supply all equipment and EPA Safer Choice™ certified eco-friendly products to every Chevy Chase home. You don't need to provide anything — just let us in.",
+    a: "Yes. We supply all equipment and plant-based products chosen by their labels to every Chevy Chase home. You don't need to provide anything — just let us in.",
   },
   {
     q: "Are your cleaners background-checked?",
@@ -169,7 +169,7 @@ const ChevyChaseHouseCleaningPage = () => {
       />
       <ServiceSchema
         serviceName="House Cleaning in Chevy Chase, MD"
-        description="Professional, eco-friendly house cleaning in Chevy Chase, MD. Background-checked, bonded & insured team. EPA Safer Choice certified products. 100% satisfaction guaranteed."
+        description="Professional, eco-friendly house cleaning in Chevy Chase, MD. Background-checked, bonded & insured team. Plant-based products chosen by their labels. 100% satisfaction guaranteed."
         url={PAGE_URL}
         areaServed={["Chevy Chase, MD", "Montgomery County, MD"]}
       />
@@ -191,7 +191,7 @@ const ChevyChaseHouseCleaningPage = () => {
       {/* ── Hero ──────────────────────────────────────────── */}
       <HeroLocation
         h1="Professional House Cleaning in Chevy Chase, MD"
-        lead="Capital Clean Care brings professional, eco-friendly house cleaning to Chevy Chase homes — from Section 3 to Martin's Additions. Our background-checked, bonded team uses EPA Safer Choice™ certified products, safe for your kids and pets, and backs every visit with 100% satisfaction: we re-clean if you're not happy."
+        lead="Capital Clean Care brings professional, eco-friendly house cleaning to Chevy Chase homes — from Section 3 to Martin's Additions. Our background-checked, bonded team uses plant-based products chosen by their labels — tell us about kids, pets or sensitivities and we plan around them — and backs every visit with 100% satisfaction: we re-clean if you're not happy."
         cityName="Chevy Chase"
         state="MD"
         zipRange="20815"
@@ -223,11 +223,13 @@ const ChevyChaseHouseCleaningPage = () => {
             {[
               {
                 title: "Latino-Owned & Locally Operated",
-                body: trustBlurbVariants[pickVariant("chevy-chase-md", 3)]("Chevy Chase", "Montgomery County"),
+                // Page-local copy (2026-09-17): the shared trustBlurbVariants assert product certification/safety.
+                body: "We're not a franchise — we're your Chevy Chase neighbors, and our reputation in Montgomery County is built one clean at a time. Background-checked, bonded, and insured, with plant-based products chosen by their labels.",
               },
               {
-                title: "Eco-Safe for Your Family",
-                body: ecoSafeVariants[pickVariant("chevy-chase-md", 3, 4)]("Chevy Chase"),
+                title: "Products Chosen for Your Home",
+                // Page-local copy (2026-09-17): the shared ecoSafeVariants text asserts a product inventory that is not documented yet.
+                body: "We clean Chevy Chase homes with plant-based products chosen by their labels and follow the label's directions and drying times. Tell us about kids, pets, allergies or fragrance sensitivities before the visit and the team plans around them.",
               },
               {
                 title: "100% Satisfaction Guaranteed",
@@ -263,7 +265,7 @@ const ChevyChaseHouseCleaningPage = () => {
               {
                 step: "2",
                 title: "We arrive on time",
-                body: arriveStepVariants[pickVariant("chevy-chase-md", 3, 6)]("Chevy Chase"),
+                body: "We arrive when we say we will: a background-checked, bonded team bringing its own plant-based products, chosen by their labels, and tools — so there's nothing for you to set up.",
               },
               {
                 step: "3",

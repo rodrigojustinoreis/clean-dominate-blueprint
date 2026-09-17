@@ -159,7 +159,7 @@ const ChevyChaseMoveOutCleaningPage = () => {
       />
       <ServiceSchema
         serviceName="Move Out Cleaning in Chevy Chase, MD"
-        description="Professional move out cleaning in Chevy Chase, MD. Landlord-standard checklist covering every surface. Deposit-ready results backed by 100% satisfaction guarantee."
+        description="Professional move out cleaning in Chevy Chase, MD with a written scope for your final walkthrough: inside appliances, cabinets, baseboards and bathrooms. Bonded and insured. 100% satisfaction guarantee."
         url={PAGE_URL}
         areaServed={["Chevy Chase, MD", "Montgomery County, MD"]}
       />
@@ -181,12 +181,12 @@ const ChevyChaseMoveOutCleaningPage = () => {
       {/* ── Hero ──────────────────────────────────────────── */}
       <HeroLocation
         h1="Move Out Cleaning in Chevy Chase, MD"
-        lead="Moving out in Chevy Chase? Capital Clean Care's move out cleaning covers every inch your landlord will inspect — from oven interior to baseboards to grout lines. We serve Section 3, Section 4, and all Chevy Chase neighborhoods. Deposit-ready results backed by 100% satisfaction guarantee."
+        lead="Moving out in Chevy Chase? Capital Clean Care's move out cleaning covers every inch your landlord will inspect — from oven interior to baseboards to grout lines. We serve Section 3, Section 4, and all Chevy Chase neighborhoods. A written scope for your final walkthrough, backed by our 100% satisfaction guarantee; the deposit decision stays with your landlord under the lease."
         cityName="Chevy Chase"
         state="MD"
         zipRange="20815"
         heroImage="/images/team/team-mopping-dark-floor.jpg"
-        heroImageAlt="Capital Clean Care move out cleaning service in Chevy Chase, MD — deposit-ready results"
+        heroImageAlt="Capital Clean Care team member mopping a dark floor during a move out cleaning"
         ctaPrimary="Book Your Move Out Clean in Chevy Chase"
         ctaBeforePills
         stackCtas
@@ -259,7 +259,7 @@ const ChevyChaseMoveOutCleaningPage = () => {
               {
                 step: "2",
                 title: "We arrive with all supplies",
-                body: "No need to leave anything behind. Our bonded, insured, background-checked team brings all equipment and EPA Safer Choice™ certified products.",
+                body: "No need to leave anything behind. Our bonded, insured, background-checked team brings all equipment and plant-based products chosen by their labels.",
               },
               {
                 step: "3",

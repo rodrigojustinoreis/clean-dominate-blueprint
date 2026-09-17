@@ -145,7 +145,7 @@ export const vanityLandingPages: VanityLandingConfig[] = [
     zip: "20912",
     nearbyNote: "near Silver Spring and DC border",
     localKeywords: ["apartment cleaning Takoma Park MD", "green apartment cleaning Takoma Park", "eco cleaning Takoma Park 20912"],
-    uniqueIntro: "Takoma Park — 'Azalea City' — is a community where environmental responsibility is a way of life. Capital Clean Care's apartment cleaning service aligns perfectly with Takoma Park values: we use exclusively plant-based, non-toxic cleaning products that are safe for families, pets, and the environment. Our teams are experienced with the charming but compact apartment layouts found throughout Old Town, Flower Avenue, and along the Long Branch corridor, delivering thorough results in spaces that require efficient, careful cleaning."
+    uniqueIntro: "Takoma Park — 'Azalea City' — is a community where environmental responsibility is a way of life. Capital Clean Care's apartment cleaning service fits Takoma Park's priorities: we use plant-based products chosen by their labels and follow the label's directions and drying times; tell us about kids, pets or sensitivities and the team plans around them. Our teams are experienced with the charming but compact apartment layouts found throughout Old Town, Flower Avenue, and along the Long Branch corridor, delivering thorough results in spaces that require efficient, careful cleaning."
   },
   {
     slug: "post-construction-cleaning-clarksburg-md",

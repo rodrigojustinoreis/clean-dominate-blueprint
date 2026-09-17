@@ -20,14 +20,14 @@ import InternalLinksGrid from "@/components/location/InternalLinksGrid";
 import LocationSocialProof from "@/components/location/LocationSocialProof";
 import LocationQuoteSection from "@/components/location/LocationQuoteSection";
 import { getServiceLocationOverride } from "@/data/service-location-overrides";
-import { trustBlurbVariants, pickVariant, ecoSafeVariants, satisfactionVariants, arriveStepVariants } from "@/data/template-variants";
+import { pickVariant, satisfactionVariants } from "@/data/template-variants";
 
 const PAGE_URL = "https://capitalcleancare.com/locations/kensington-md/house-cleaning";
 
 const localFaqs = [
   {
     q: "Do you bring your own cleaning supplies to Kensington homes?",
-    a: "Yes. We supply all equipment and EPA Safer Choice™ certified eco-friendly products. You don't need to provide anything — we arrive prepared and leave nothing behind.",
+    a: "Yes. We supply all equipment and plant-based products chosen by their labels. You don't need to provide anything — we arrive prepared and leave nothing behind.",
   },
   {
     q: "Are your cleaners background-checked?",
@@ -153,7 +153,7 @@ const KensingtonHouseCleaningPage = () => {
       />
       <ServiceSchema
         serviceName="House Cleaning in Kensington, MD"
-        description="Professional house cleaning in Kensington, MD. Eco-friendly, EPA Safer Choice certified products. Background-checked, bonded, insured team. 100% satisfaction guaranteed."
+        description="Professional house cleaning in Kensington, MD. Plant-based products chosen by their labels. Background-checked, bonded, insured team. 100% satisfaction guaranteed."
         url={PAGE_URL}
         areaServed={["Kensington, MD", "Montgomery County, MD"]}
       />
@@ -175,7 +175,7 @@ const KensingtonHouseCleaningPage = () => {
       {/* Hero */}
       <HeroLocation
         h1="Professional House Cleaning in Kensington, MD"
-        lead="Capital Clean Care brings professional, eco-friendly house cleaning to Kensington homes — from Kensington Historic District to Rock Creek Hills. Our background-checked, bonded team uses EPA Safer Choice™ certified products, safe for your kids and pets, and backs every visit with 100% satisfaction: we re-clean if you're not happy."
+        lead="Capital Clean Care brings professional, eco-friendly house cleaning to Kensington homes — from Kensington Historic District to Rock Creek Hills. Our background-checked, bonded team uses plant-based products chosen by their labels — tell us about kids, pets or sensitivities and we plan around them — and backs every visit with 100% satisfaction: we re-clean if you're not happy."
         cityName="Kensington"
         state="MD"
         zipRange="20895"
@@ -207,11 +207,13 @@ const KensingtonHouseCleaningPage = () => {
             {[
               {
                 title: "Latino-Owned & Locally Operated",
-                body: trustBlurbVariants[pickVariant("kensington-md", 3)]("Kensington", "Montgomery County"),
+                // Page-local copy (2026-09-17): the shared trustBlurbVariants assert product certification/safety.
+                body: "We're not a franchise — we're your Kensington neighbors, and our reputation in Montgomery County is built one clean at a time. Background-checked, bonded, and insured, with plant-based products chosen by their labels.",
               },
               {
-                title: "Eco-Safe for Families",
-                body: ecoSafeVariants[pickVariant("kensington-md", 3, 4)]("Kensington"),
+                title: "Products Chosen for Your Home",
+                // Page-local copy (2026-09-17): the shared ecoSafeVariants text asserts a product inventory that is not documented yet.
+                body: "We clean Kensington homes with plant-based products chosen by their labels and follow the label's directions and drying times. Tell us about kids, pets, allergies or fragrance sensitivities before the visit and the team plans around them.",
               },
               {
                 title: "100% Satisfaction Guaranteed",
@@ -238,7 +240,7 @@ const KensingtonHouseCleaningPage = () => {
               {
                 step: "2",
                 title: "We arrive on time",
-                body: arriveStepVariants[pickVariant("kensington-md", 3, 6)]("Kensington"),
+                body: "A vetted, insured crew shows up on schedule with everything needed — supplies, equipment, and plant-based products chosen by their labels. You don't have to lift a finger in your Kensington home.",
               },
               {
                 step: "3",
@@ -281,9 +283,9 @@ const KensingtonHouseCleaningPage = () => {
             </p>
             <p>
               Capital Clean Care was built for exactly this market. Every team member is
-              background-checked, bonded, and insured. We bring our own EPA Safer Choice™
-              certified products — no chemical fumes, no residue left behind on surfaces
-              where your children play and your pets rest. We serve all of ZIP code 20895
+              background-checked, bonded, and insured. We bring our own plant-based products,
+              chosen by their labels, and follow the label's drying times on the floors where
+              your children play and your pets rest. We serve all of ZIP code 20895
               and regularly clean homes near Capitol View Park and the Rock Creek Trail.
             </p>
             <p>

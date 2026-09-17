@@ -176,12 +176,12 @@ const GermantownMoveOutCleaningPage = () => {
       {/* Hero */}
       <HeroLocation
         h1="Move Out Cleaning in Germantown, MD"
-        lead="Moving out in Germantown? Capital Clean Care's move out cleaning covers every inch your landlord will inspect — from oven interior to baseboards to grout lines. We serve Milestone, Churchill Village, and all Germantown neighborhoods. Deposit-ready results backed by 100% satisfaction guarantee."
+        lead="Moving out in Germantown? Capital Clean Care's move out cleaning covers every inch your landlord will inspect — from oven interior to baseboards to grout lines. We serve Milestone, Churchill Village, and all Germantown neighborhoods. A written scope for your final walkthrough, backed by our 100% satisfaction guarantee; the deposit decision stays with your landlord under the lease."
         cityName="Germantown"
         state="MD"
         zipRange="20874–20876"
         heroImage="/images/team/team-making-bed.jpg"
-        heroImageAlt="Capital Clean Care move out cleaning service in Germantown, MD — deposit-ready results"
+        heroImageAlt="Capital Clean Care team member making a bed during a move out cleaning"
         ctaPrimary="Book Your Move Out Clean in Germantown"
         ctaBeforePills
         stackCtas
@@ -239,7 +239,7 @@ const GermantownMoveOutCleaningPage = () => {
               },
               {
                 step: "2. We arrive with all supplies",
-                body: "No need to leave anything behind. Our team brings all professional cleaning equipment and EPA Safer Choice™ products.",
+                body: "No need to leave anything behind. Our team brings all professional cleaning equipment and plant-based products chosen by their labels.",
               },
               {
                 step: "3. Full landlord-standard clean",

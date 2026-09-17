@@ -145,7 +145,7 @@ const GaithersburgAirbnbCleaningPage = () => {
       />
       <ServiceSchema
         serviceName="Airbnb & Short-Term Rental Cleaning in Gaithersburg, MD"
-        description="Professional Airbnb and vacation rental cleaning in Gaithersburg, MD. Fast turnovers, hotel-standard results, flexible scheduling around your checkout windows. Serving hosts in Kentlands, Lakelands, Crown Farm, and all Gaithersburg ZIP codes."
+        description="Professional Airbnb and vacation rental cleaning in Gaithersburg, MD. Checklist-based turnovers scheduled around your checkout windows. Serving hosts in Kentlands, Lakelands, Crown Farm, and all Gaithersburg ZIP codes."
         url={PAGE_URL}
         areaServed={["Gaithersburg, MD", "Montgomery County, MD"]}
       />
@@ -167,12 +167,12 @@ const GaithersburgAirbnbCleaningPage = () => {
       {/* Hero */}
       <HeroLocation
         h1="Airbnb & Short-Term Rental Cleaning in Gaithersburg, MD"
-        lead="Protect your Gaithersburg Airbnb rating with professional turnover cleanings between every guest. Capital Clean Care — a Latino-owned, locally operated company — delivers hotel-standard results from Kentlands to Kentlands Market Square. Flexible scheduling, 100% satisfaction guaranteed."
+        lead="Turnover cleanings between guests for your Gaithersburg short-term rental. Capital Clean Care — a Latino-owned, locally operated company — works a written turnover checklist from Kentlands to Kentlands Market Square. Turnover windows are confirmed from your booking calendar; 100% satisfaction guaranteed."
         cityName="Gaithersburg"
         state="MD"
         zipRange="20877–20879"
         heroImage="/images/team/team-kitchen-detail.jpg"
-        heroImageAlt="Capital Clean Care Airbnb turnover cleaning in Gaithersburg, MD — hotel-standard results"
+        heroImageAlt="Capital Clean Care team member detailing a kitchen during a short-term rental turnover"
         ctaPrimary="Set Up Airbnb Turnover Cleaning in Gaithersburg"
         ctaBeforePills
         stackCtas
@@ -199,7 +199,7 @@ const GaithersburgAirbnbCleaningPage = () => {
             {[
               {
                 title: "Rating protection",
-                desc: "Consistent, bonded team means guests find your property exactly as listed, every time. One bad cleanliness review can drop your Superhost status. We deliver hotel-standard results on every single turnover — 100% satisfaction guaranteed.",
+                desc: "A bonded team working the same written checklist on every turnover, so guests find the property as listed. Cleanliness is one of the factors in guest reviews; we cover our part and report issues we find. 100% satisfaction guaranteed on our work.",
               },
               {
                 title: "Flexible scheduling around your Gaithersburg calendar",
@@ -227,7 +227,7 @@ const GaithersburgAirbnbCleaningPage = () => {
             <p>
               Getting started is simple. Share your Gaithersburg short-term rental calendar with us
               and we coordinate around every checkout automatically — no manual scheduling on your
-              end. We arrive at checkout time, work through our full hotel-standard turnover checklist,
+              end. We arrive at checkout time, work through our full written turnover checklist,
               and confirm when the property is ready for your next guest.
             </p>
             <p>
