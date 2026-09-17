@@ -30,7 +30,7 @@ const SpringCleaningMD = () => {
   });
 
   return (
-    <Layout>
+    <Layout stickyQuoteHref="#spring-quote">
       {seoHelmet}
       <LocalBusinessSchema />
       <ServiceSchema
@@ -163,7 +163,7 @@ const SpringCleaningMD = () => {
       </section>
 
       {/* Quote Form */}
-      <section className="py-16 md:py-24" id="spring-quote">
+      <section className="py-16 md:py-24 scroll-mt-20" id="spring-quote">
         <div className="container mx-auto px-4 max-w-2xl">
           <div className="text-center mb-8">
             <h2 className="font-heading text-3xl font-bold mb-3">Book Your Spring Cleaning</h2>

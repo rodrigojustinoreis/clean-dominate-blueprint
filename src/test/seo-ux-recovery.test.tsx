@@ -72,6 +72,7 @@ describe("Layout sticky bar — exactly one bar per route with the page-local hr
   const CASES: [string, string][] = [
     ...DEDICATED.map((u): [string, string] => [u, "#quote"]),
     ["/why-eco-friendly-cleaning", "#quote"], // support page that owns a #quote form
+    ["/spring-cleaning-md", "#spring-quote"], // gate 2: sticky bar targets the page's own form
     ["/locations/kentlands-md/house-cleaning", "/contact#quote"], // template page (ServiceLocationPage): unchanged default
     ["/locations/bowie-md", "/contact#quote"], // hub: unchanged default
     ["/es/areas/rockville-md", "/es/contacto#cotizacion"],

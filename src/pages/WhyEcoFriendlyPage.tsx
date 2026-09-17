@@ -241,19 +241,22 @@ const WhyEcoFriendlyPage = () => {
           <h1 className="font-heading text-4xl md:text-5xl font-bold mb-6 leading-tight">
             Why Eco-Friendly Cleaning Is the Safer Choice for Your Family and Home
           </h1>
-          <p className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-3xl">
-            Many household cleaners list only some of their ingredients. Here's what the label can tell you, what the research does and doesn't show — and why Capital Clean Care uses plant-based products, chosen by their labels, in the homes we clean across Maryland, DC, and Virginia.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3">
-            <Button variant="cta" size="lg" asChild>
-              <a href="#quote">Get a Free Eco-Clean Quote <ArrowRight className="ml-2 h-4 w-4" /></a>
-            </Button>
-            <a
-              href={PHONE_HREF}
-              className="inline-flex items-center justify-center border-2 border-[#2E7D32] text-[#2E7D32] font-bold px-6 py-3 rounded-md hover:bg-[#2E7D32]/5 transition-colors"
-            >
-              <Phone className="h-4 w-4 mr-2" /> {PHONE}
-            </a>
+          {/* Mobile: CTA row before the intro paragraph so it sits in the first 360×740 viewport (same pattern as the dedicated location pages); ≥ sm unchanged order. */}
+          <div className="flex flex-col">
+            <p className="order-2 sm:order-1 text-lg text-muted-foreground leading-relaxed mt-6 sm:mt-0 mb-0 sm:mb-8 max-w-3xl">
+              Here's what a cleaning label can tell you, what the research does and doesn't show — and why Capital Clean Care uses plant-based products, chosen by their labels, in every home we clean across Maryland, DC, and Virginia.
+            </p>
+            <div className="order-1 sm:order-2 flex flex-col sm:flex-row gap-3">
+              <Button variant="cta" size="lg" asChild>
+                <a href="#quote">Get a Free Eco-Clean Quote <ArrowRight className="ml-2 h-4 w-4" /></a>
+              </Button>
+              <a
+                href={PHONE_HREF}
+                className="inline-flex items-center justify-center border-2 border-[#2E7D32] text-[#2E7D32] font-bold px-6 py-3 rounded-md hover:bg-[#2E7D32]/5 transition-colors"
+              >
+                <Phone className="h-4 w-4 mr-2" /> {PHONE}
+              </a>
+            </div>
           </div>
         </div>
       </section>
