@@ -27,8 +27,7 @@ const AuthorBio = ({ variant = "default" }: AuthorBioProps) => (
       {variant === "factual" ? (
         <p className="text-sm text-muted-foreground leading-relaxed">
           Rodrigo founded Capital Clean Care in 2015 and runs it as a family-owned, Latino-operated residential
-          cleaning business serving Montgomery County and the wider DMV. The timelines and checklists in this
-          guide describe how his own teams work.{" "}
+          cleaning business serving Montgomery County and the wider DMV.{" "}
           <Link to="/about" className="text-accent font-medium hover:underline">Read our story →</Link>
         </p>
       ) : (
