@@ -14,45 +14,48 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 const PHONE = "(240) 704-2551";
 const PHONE_HREF = "tel:+12407042551";
 
+// Content gate 2 (2026-09-17): every answer below is limited to what a product label, a cited primary
+// source or our own operating practice supports. No product inventory is claimed until the owner supplies
+// product names; no medical advice; associations are not presented as causes. See CLAIMS-MATRIX in the audit folder.
 const faqs = [
   {
     q: "Are eco-friendly cleaning products as effective as chemical cleaners?",
-    a: "Yes — modern plant-based formulas remove bacteria, grease, soap scum, mold, and grime as effectively as conventional chemical cleaners. EPA Safer Choice certified products undergo rigorous efficacy testing. The difference is what they leave behind: no toxic residues, no harmful fumes, no risk to your family.",
+    a: "For everyday cleaning, yes: plant-based surfactant cleaners lift grease, soap scum and grime when used as the label directs. Products carrying the EPA Safer Choice label must also meet EPA's performance criteria for their product category. What changes is the ingredient profile and disclosure, not the physics of cleaning. Cleaning, sanitizing and disinfecting are different claims: only an EPA-registered product disinfects, and only for the organisms and contact time on its label.",
   },
   {
     q: "What exactly does 'non-toxic' mean for cleaning products?",
-    a: "Non-toxic means the product doesn't contain ingredients classified as hazardous by the EPA or OSHA — including chlorine bleach, ammonia, formaldehyde, synthetic musks, and phthalates. Our products are plant-derived, biodegradable, and free from VOCs (volatile organic compounds) that cause indoor air pollution.",
+    a: "There is no single regulatory definition of 'non-toxic' on cleaning labels, so we treat it as a marketing term. What we look at instead is the label itself: whether the ingredients are disclosed, whether it carries the EPA Safer Choice or Design for the Environment (DfE) logo, its signal word and first-aid statements, and its directions for use. Our default products are plant-based, and our standard kit avoids chlorine bleach and ammonia.",
   },
   {
     q: "Is eco-friendly cleaning safe for babies and toddlers?",
-    a: "Absolutely. Infants and toddlers are especially vulnerable to chemical residues because they crawl on floors and put hands in their mouths. Our plant-based products leave no harmful residues, making your home genuinely safer for the youngest family members.",
+    a: "We reduce exposure rather than promise zero risk. For homes with infants we use fragrance-free, plant-based products where the label allows, avoid chlorine bleach and ammonia, wipe and dry surfaces as directed, and respect label drying times before floors are used again. Tell us about infants in the home before the visit. For questions about a specific child's sensitivities, your pediatrician is the right source.",
   },
   {
     q: "Does eco-friendly cleaning cost more?",
-    a: "At Capital Clean Care, eco-friendly cleaning is our standard — it's what we use in every home at no extra charge. You don't pay a green premium. Every cleaning, regardless of service type, uses our EPA Safer Choice certified products.",
+    a: "At Capital Clean Care, plant-based products are the standard for every service type at no extra charge. You don't pay a green premium.",
   },
   {
     q: "Are the products safe for pets?",
-    a: "Yes. Dogs and cats are particularly sensitive to cleaning chemicals because they walk on cleaned floors and lick their paws. Our plant-based products are formulated to be safe for household pets. No fumes, no residues that could harm animals.",
+    a: "We plan around pets rather than promise universal safety: we avoid pine-oil and chlorine products by default, follow label drying times before pets return to cleaned floors, and note any animal in the home before the visit. Cats in particular are sensitive to phenol-based (pine) and chlorine products, according to veterinary poison-control references. For a specific animal's sensitivities, check with your veterinarian.",
   },
   {
     q: "What's the difference between 'green' and 'EPA Safer Choice'?",
-    a: "'Green' is a marketing term with no regulatory standard. EPA Safer Choice is a rigorous government certification — every ingredient must be evaluated for human health and environmental safety before a product can carry the label. We only use products that meet this standard.",
+    a: "'Green' is a marketing term with no regulatory standard. EPA Safer Choice is a voluntary EPA label: every intentionally added ingredient is reviewed against EPA's human-health and environmental criteria, the product must pass performance testing for its category, and it must meet limits on VOCs and packaging. We look for the Safer Choice or DfE logo when choosing products; where a product carries neither, we rely on its label and ingredient disclosure.",
   },
   {
     q: "Can eco-friendly products disinfect and kill germs?",
-    a: "Yes, when used as directed. Our sanitizing products use active ingredients such as citric acid and hydrogen peroxide; each product's label states which organisms it is registered against and the contact time required. We follow the label, without chlorine bleach or ammonia.",
+    a: "Only if the product is EPA-registered for that purpose. Sanitizing and disinfecting are label claims: a registered product lists the organisms it is registered against and the contact time required. A general-purpose plant-based cleaner cleans; it does not disinfect. Where a job calls for disinfection, we use a registered product, including hydrogen peroxide- or citric acid-based ones, and follow that label.",
   },
   {
     q: "Do eco-friendly products have a natural scent or no smell?",
-    a: "Our products have a light, natural scent derived from essential oils — or are unscented entirely. There's no artificial fragrance, no overpowering chemical smell. Your home will smell clean and fresh, not like it was just bleached.",
+    a: "We prefer fragrance-free products and can keep scented products out of your home on request. Essential-oil scents are still fragrance and can bother sensitive people, so tell us in advance if any scent is a problem.",
   },
 ];
 
 const chemicalsToAvoid = [
   {
     name: "Chlorine Bleach",
-    risk: "Irritates airways, triggers asthma attacks, damages lung tissue with repeated exposure. Creates toxic chloramine gas when mixed with ammonia.",
+    risk: "Can irritate the airways, eyes and skin, and may trigger symptoms in people with asthma. Never mix with ammonia or acids: the reaction releases toxic gases.",
     found: "Bathroom cleaners, disinfectant sprays, mold removers",
   },
   {
@@ -62,22 +65,22 @@ const chemicalsToAvoid = [
   },
   {
     name: "Phthalates",
-    risk: "Endocrine disruptors linked to hormonal imbalances and developmental issues in children. Often hidden under 'fragrance' on product labels.",
+    risk: "A group of compounds studied for endocrine activity; some are restricted in children's products. Fragrance ingredients are often not itemized on the label, so a scented product may contain them without saying so.",
     found: "Synthetic fragranced products, air fresheners",
   },
   {
     name: "Triclosan",
-    risk: "Antimicrobial agent linked to antibiotic resistance. Disrupts thyroid function and accumulates in body tissue.",
-    found: "Antibacterial soaps, some multi-surface cleaners",
+    risk: "In 2016 the FDA removed triclosan from over-the-counter consumer antiseptic washes after manufacturers did not show it was safe for long-term daily use or more effective than plain soap and water.",
+    found: "Older antibacterial soaps, some multi-surface cleaners",
   },
   {
     name: "Formaldehyde",
-    risk: "Known human carcinogen. Causes nose and throat irritation, watery eyes, and long-term respiratory damage.",
-    found: "Some furniture polish and disinfectant products",
+    risk: "Classified as a known human carcinogen by the U.S. National Toxicology Program; can irritate the eyes, nose and throat.",
+    found: "Some products use formaldehyde-releasing preservatives; check the ingredient list",
   },
   {
     name: "Sodium Lauryl Sulfate (SLS)",
-    risk: "Skin and eye irritant that penetrates skin and may disrupt hormonal function. Causes contact dermatitis in sensitive individuals.",
+    risk: "A common surfactant that can irritate skin and eyes, especially with prolonged contact; some people develop contact dermatitis.",
     found: "Degreasers, dish soaps, bathroom cleaners",
   },
 ];
@@ -85,39 +88,39 @@ const chemicalsToAvoid = [
 const benefits = [
   {
     icon: Heart,
-    title: "Safer for Children",
+    title: "Less Exposure for Children",
     description:
-      "Kids spend 80% of their time indoors and are exposed to 3x more airborne chemicals than adults relative to body weight. Plant-based products eliminate that risk. No toxic residues on floors where babies crawl. No chemical off-gassing in bedrooms where children sleep.",
+      "Children breathe more air for their body weight than adults and spend more time on floors. We use fragrance-free, plant-based products where the label allows, avoid chlorine bleach and ammonia, and respect label drying times before floors are used again. That reduces exposure; no cleaning method removes it entirely.",
   },
   {
     icon: Shield,
-    title: "Safe for Allergy & Asthma Sufferers",
+    title: "Considerate of Allergies & Asthma",
     description:
       "Synthetic fragrances and VOCs in conventional cleaners are common triggers for people with asthma or allergies. We use fragrance-free, low-VOC products where the label allows; tell us about sensitivities before your visit so we can record them.",
   },
   {
     icon: Leaf,
-    title: "Pet-Safe Every Visit",
+    title: "Pets Planned For",
     description:
-      "Dogs and cats absorb chemicals through paw pads and grooming. Studies show pets in chemically-cleaned homes have significantly higher concentrations of toxic compounds in their blood. Our plant-based approach protects four-legged family members.",
+      "Pets walk on cleaned floors and groom by licking, so what is left on the floor reaches them directly. We avoid pine-oil and chlorine products by default and follow label drying times before pets return. Tell us about your animals before the visit.",
   },
   {
     icon: CheckCircle,
-    title: "Cleaner Indoor Air",
+    title: "Less Added to Your Indoor Air",
     description:
-      "The EPA reports indoor air can be 2–5x more polluted than outdoor air — largely due to cleaning product VOCs. Our low-VOC, biodegradable formulas dramatically reduce chemical off-gassing, giving your family genuinely cleaner air to breathe.",
+      "EPA lists cleaning products among the sources of indoor VOCs. Lower-VOC, fragrance-free products and ventilation while we work reduce what a cleaning visit adds to your air. We do not measure air quality and make no air-quality claim for your home.",
   },
   {
     icon: Star,
-    title: "No Toxic Residues",
+    title: "Surfaces Left Clean and Dry",
     description:
-      "Conventional cleaners leave chemical films on counters, floors, and appliances that persist for days. Our plant-based products break down completely, leaving surfaces clean with no harmful residue — safer for food prep, for touching, for living.",
+      "Any cleaner can leave residue if it is not wiped or rinsed as the label directs. We follow the label: dilution, dwell time, wiping and drying, with extra care on food-prep counters and floors.",
   },
   {
     icon: AlertTriangle,
-    title: "Environmental Responsibility",
+    title: "What Goes Down the Drain",
     description:
-      "Harsh chemicals wash down drains into waterways, harming aquatic ecosystems and entering the drinking water supply. Biodegradable plant-based products break down naturally, protecting Maryland's rivers, the Chesapeake Bay, and the water your family drinks.",
+      "Every drain in Montgomery County, DC and Northern Virginia leads to a treatment plant and, downstream, the Chesapeake Bay watershed. We choose products whose labels state readily biodegradable surfactants where available, and use them in the small quantities the label calls for.",
   },
 ];
 
@@ -128,7 +131,7 @@ const roomGuide = [
     tips: [
       "Use a citrus-based degreaser on stovetops and range hoods — dissolves cooking grease without petroleum solvents.",
       "Wipe counters with plant-derived multi-surface spray after food prep — no chemical residue near food contact surfaces.",
-      "Clean inside the refrigerator with a diluted white vinegar solution — food-safe and antimicrobial.",
+      "Wipe inside the refrigerator with a diluted white vinegar solution to cut film and odors — it is a cleaner, not a registered disinfectant.",
       "Scrub sinks with a baking soda paste for gentle abrasion without scratching stainless steel.",
     ],
   },
@@ -136,7 +139,7 @@ const roomGuide = [
     room: "Bathrooms",
     icon: "🚿",
     tips: [
-      "Use hydrogen peroxide-based disinfectant on toilets and tiles — kills 99.9% of bacteria without chlorine gas risk.",
+      "For toilets and tiles, use an EPA-registered hydrogen peroxide disinfectant and keep the surface wet for the contact time on its label — the label, not the ingredient, defines what it is registered to kill.",
       "Remove soap scum and hard water deposits with citric acid solution — no bleach required.",
       "Clean mirrors and glass with ammonia-free plant-based glass cleaner for streak-free results.",
       "Ventilate during and after cleaning — even with eco products, fresh air improves indoor air quality.",
@@ -149,15 +152,15 @@ const roomGuide = [
       "Dust surfaces with a slightly damp microfiber cloth — traps particles rather than scattering them.",
       "Use an enzyme-based fabric refresher on mattresses instead of synthetic fragrances.",
       "Vacuum mattresses and upholstery with a HEPA-filter vacuum before eco-cleaning hard surfaces.",
-      "Wash bedding at 140°F (60°C) to kill dust mites — hot water is more effective than most chemical treatments.",
+      "Wash bedding weekly in hot water, 130°F (54°C) or hotter, to reduce dust mites — the temperature allergy organizations such as the AAAAI recommend.",
     ],
   },
   {
     room: "Living Areas",
     icon: "🛋️",
     tips: [
-      "Clean upholstery with plant-based foam cleaner — no petroleum solvents that can off-gas for days.",
-      "Use wood-safe plant-derived polish on furniture — maintains finish without formaldehyde-containing waxes.",
+      "Check the upholstery care tag (W, S, WS or X) before using any cleaner — the tag, not the product, decides what is safe for the fabric.",
+      "Use a polish the furniture maker recommends for the finish; fragrance-free options exist for most wood finishes.",
       "Clean electronics and screens with distilled water and microfiber — no ammonia sprays near screens.",
       "Refresh area rugs with baking soda before vacuuming — natural deodorizer with no synthetic musks.",
     ],
@@ -166,34 +169,33 @@ const roomGuide = [
     room: "Floors",
     icon: "🧹",
     tips: [
-      "Mop hardwood with a pH-neutral plant-based cleaner — no chemical residue that dulls finish over time.",
-      "Clean tile grout with hydrogen peroxide and baking soda paste — whitens without chlorine bleach.",
-      "Use a steam mop for deep sanitization on tile and vinyl — heat kills bacteria with no chemicals at all.",
-      "Rinse mop heads in hot water after use — prevents chemical buildup if any cleaning solution is used.",
+      "Mop hardwood with the pH-neutral cleaner the floor's finish maker recommends — excess water and leftover residue are what dull a finish over time.",
+      "Clean tile grout with a hydrogen peroxide and baking soda paste — it lifts discoloration without chlorine bleach.",
+      "A steam mop can loosen soil on sealed tile and vinyl without added chemicals — check the flooring maker's guidance first, and do not use it on unsealed wood.",
+      "Rinse mop heads in hot water after use — leftover solution in the mop ends up on the next floor.",
     ],
   },
 ];
 
 const comparisonRows = [
-  { feature: "Active ingredients", conventional: "Chlorine, ammonia, synthetic solvents", plantBased: "Citric acid, hydrogen peroxide, plant surfactants" },
-  { feature: "VOC emissions", conventional: "High — off-gases for hours after use", plantBased: "Low or zero — minimal indoor air impact" },
-  { feature: "Child safety", conventional: "Risk of residue exposure on floors & surfaces", plantBased: "Safe — no harmful residues" },
-  { feature: "Pet safety", conventional: "Risk of paw pad absorption and ingestion during grooming", plantBased: "Safe — plant-derived, non-toxic after drying" },
-  { feature: "Allergy/asthma risk", conventional: "Synthetic fragrances and VOCs trigger reactions", plantBased: "Fragrance-free or essential oil scented — low trigger risk" },
-  { feature: "Environmental impact", conventional: "Bioaccumulates in waterways, harms aquatic ecosystems", plantBased: "Biodegradable — breaks down safely in waterways" },
-  { feature: "Ingredient disclosure", conventional: "Hidden under 'fragrance' — not fully disclosed by law", plantBased: "Full transparency — no hidden ingredients" },
-  { feature: "Disinfection efficacy", conventional: "Effective — but with significant health trade-offs", plantBased: "Equally effective — kills 99.9% of common bacteria and viruses" },
-  { feature: "Regulatory standard", conventional: "No certification required — self-regulated", plantBased: "EPA Safer Choice certified — rigorous third-party evaluation" },
-  { feature: "Disposal safety", conventional: "Can contaminate water treatment systems", plantBased: "Safe for drains — doesn't disrupt water treatment" },
+  { feature: "Typical ingredients", conventional: "Chlorine bleach, ammonia, quaternary ammonium compounds, synthetic solvents", plantBased: "Plant-derived surfactants, citric acid, hydrogen peroxide — as listed on each label" },
+  { feature: "VOC emissions", conventional: "Often higher; solvents and fragrance off-gas after use", plantBased: "Lower-VOC options; Safer Choice products must meet VOC limits" },
+  { feature: "Residue on floors and counters", conventional: "Stays if not wiped or rinsed as directed", plantBased: "Same rule: wipe, rinse and dry as the label directs" },
+  { feature: "Pets in the home", conventional: "Pine-oil and chlorine products are common veterinary concerns", plantBased: "Avoided by default; label drying time before pets return" },
+  { feature: "Fragrance", conventional: "Scented by default; components rarely itemized", plantBased: "Fragrance-free options; essential oils are still fragrance" },
+  { feature: "Waterways", conventional: "Some ingredients persist after treatment", plantBased: "Readily biodegradable surfactants where the label states it" },
+  { feature: "Ingredient disclosure", conventional: "No federal requirement to list every ingredient", plantBased: "Look for full disclosure or the Safer Choice / DfE logo" },
+  { feature: "Disinfection", conventional: "Registered disinfectants: follow the label", plantBased: "Only EPA-registered products disinfect; a plant-based cleaner cleans unless it is registered" },
+  { feature: "Regulatory standard", conventional: "No cleaning-product certification is required", plantBased: "Voluntary EPA Safer Choice or DfE label, when the product carries it" },
 ];
 
 const howToSteps = [
-  { name: "Identify Priority Rooms", text: "Start with the rooms where children or pets spend the most time — typically bedrooms, playrooms, and kitchens. These areas have the highest risk of chemical residue exposure." },
-  { name: "Replace Bathroom Cleaners First", text: "Swap conventional toilet and tile cleaners for hydrogen peroxide-based disinfectants. Bathrooms have poor ventilation and high chemical VOC concentrations from conventional products." },
-  { name: "Switch Kitchen Degreasers", text: "Replace petroleum-based kitchen degreasers with citrus or plant-derived formulas. Food contact surfaces in the kitchen present the highest ingestion risk from chemical residues." },
-  { name: "Update Floor Cleaning Products", text: "Replace ammonia or chemical floor cleaners with pH-neutral, plant-based floor solutions safe for children crawling and pets walking on treated surfaces." },
-  { name: "Eliminate Synthetic Air Fresheners", text: "Replace synthetic air fresheners and fabric sprays with enzyme-based deodorizers or essential oil diffusers. Synthetic fragrances are among the highest-VOC household products." },
-  { name: "Choose EPA Safer Choice Products", text: "When purchasing any new cleaning product, look for the EPA Safer Choice label. This certification guarantees every ingredient has passed rigorous human health and environmental safety evaluation." },
+  { name: "Identify Priority Rooms", text: "Start with the rooms where children or pets spend the most time — typically bedrooms, playrooms, and kitchens — because floors and low surfaces there get the most hand and paw contact." },
+  { name: "Replace Bathroom Cleaners First", text: "Swap conventional toilet and tile cleaners for an EPA-registered hydrogen peroxide disinfectant and follow its contact time. Bathrooms are usually the least ventilated room, so run the fan or open a window while you clean." },
+  { name: "Switch Kitchen Degreasers", text: "Replace solvent-based kitchen degreasers with citrus or plant-derived formulas, and wipe food-contact surfaces with clean water afterwards as most labels direct." },
+  { name: "Update Floor Cleaning Products", text: "Replace ammonia-based floor cleaners with a pH-neutral cleaner the floor's finish maker recommends, and keep children and pets off the floor until it is dry, as the label states." },
+  { name: "Reduce Synthetic Air Fresheners", text: "Replace plug-in and spray air fresheners with ventilation, a fragrance-free deodorizer such as baking soda, or nothing at all. Fragranced products are a common source of indoor VOCs." },
+  { name: "Look for the EPA Safer Choice Label", text: "When buying a new cleaning product, look for the EPA Safer Choice or DfE logo. It means the ingredients were reviewed against EPA's criteria and the product passed performance testing; it is not a guarantee that any product is risk-free, so still follow the directions." },
 ];
 
 const WhyEcoFriendlyPage = () => {
@@ -217,7 +219,7 @@ const WhyEcoFriendlyPage = () => {
       <FAQSchema faqs={faqs} />
       <HowToSchema
         name="How to Switch to Eco-Friendly Home Cleaning"
-        description="A step-by-step guide to transitioning your home from conventional chemical cleaners to safe, EPA Safer Choice certified plant-based products."
+        description="A step-by-step guide to moving a home from conventional chemical cleaners to plant-based products chosen by their labels."
         url="https://capitalcleancare.com/why-eco-friendly-cleaning"
         steps={howToSteps}
         totalTime="PT2H"
@@ -240,7 +242,7 @@ const WhyEcoFriendlyPage = () => {
             Why Eco-Friendly Cleaning Is the Safer Choice for Your Family and Home
           </h1>
           <p className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-3xl">
-            Most households use cleaning products that contain dozens of chemicals never tested for long-term safety. Here's what the research says — and why Capital Clean Care switched to plant-based products, chosen by their labels, for the homes we clean across Maryland, DC, and Virginia.
+            Many household cleaners list only some of their ingredients. Here's what the label can tell you, what the research does and doesn't show — and why Capital Clean Care uses plant-based products, chosen by their labels, in the homes we clean across Maryland, DC, and Virginia.
           </p>
           <div className="flex flex-col sm:flex-row gap-3">
             <Button variant="cta" size="lg" asChild>
@@ -267,16 +269,16 @@ const WhyEcoFriendlyPage = () => {
           </h2>
           <div className="prose prose-lg max-w-none text-muted-foreground space-y-4 mb-10">
             <p>
-              According to the Environmental Working Group (EWG), fewer than half of cleaning product ingredients are disclosed on labels. Under U.S. law, manufacturers are not required to list every ingredient — only "active" disinfectants. The rest can be hidden under umbrella terms like "fragrance," a single word that may represent a cocktail of dozens of synthetic chemicals.
+              Federal law does not require cleaning-product makers to list every ingredient; only EPA-registered disinfectants must declare their active ingredients. California's Cleaning Product Right to Know Act (2017) now requires online and on-label disclosure for products sold there, which is why many labels have improved. Even so, the single word "fragrance" can still stand for several components that are not itemized.
             </p>
             <p>
-              The EPA reports that indoor air is typically <strong className="text-foreground">2 to 5 times more polluted than outdoor air</strong> — and cleaning products are a significant contributor. Volatile organic compounds (VOCs) released during cleaning linger in the air for hours after use, concentrating in poorly ventilated spaces like bathrooms, kitchens, and bedrooms.
+              The EPA notes that indoor levels of some pollutants <strong className="text-foreground">may be 2 to 5 times higher than outdoor levels</strong>, and lists cleaning products among the sources of indoor volatile organic compounds (VOCs). VOCs released during cleaning linger longest in poorly ventilated rooms such as bathrooms, which is why ventilation while cleaning matters as much as the product.
             </p>
             <p>
-              Children are the most vulnerable. They breathe more air relative to body weight than adults, spend more time on floors where residues concentrate, and put their hands in their mouths regularly. The American Academy of Pediatrics recommends minimizing children's exposure to chemical cleaning agents — advice that aligns with everything Capital Clean Care does.
+              Children breathe more air relative to body weight than adults, spend more time on floors where residues settle, and put their hands in their mouths. That does not mean any single product harms a child; it means the exposure route is shorter, so how a floor is cleaned and dried matters more in a home with toddlers.
             </p>
             <p>
-              Pets face similar risks. Dogs and cats absorb chemicals through the paw pads they lick when grooming. A 2008 study found significantly elevated levels of flame retardants and other household chemicals in the blood of pets — many of which are linked to cleaning products used in the home.
+              Pets are in the same position: they walk on cleaned floors and groom by licking. Whatever is left on the floor reaches them more directly than it reaches an adult — a reason to follow label drying times, not proof that a given product has harmed a pet.
             </p>
           </div>
 
@@ -310,20 +312,20 @@ const WhyEcoFriendlyPage = () => {
             <Leaf className="h-3.5 w-3.5" /> The Green Solution
           </span>
           <h2 className="font-heading text-3xl md:text-4xl font-bold mb-6">
-            What Makes a Cleaning Product Truly Safe?
+            What a Cleaning Product Label Can Tell You
           </h2>
           <div className="prose prose-lg max-w-none text-muted-foreground space-y-4 mb-10">
             <p>
-              Not all "green" products are created equal. The word "natural" has no legal definition and is often used as a marketing term with no standards behind it. At Capital Clean Care, we look beyond marketing claims to certifications with real scientific backing.
+              Not all "green" products are created equal. The words "natural" and "non-toxic" have no legal definition on cleaning labels and are often used as marketing terms. At Capital Clean Care, we look past those words to what the label actually states: the ingredient list, any EPA logo, the signal word, and the directions.
             </p>
             <p>
-              The gold standard is the <strong className="text-foreground">EPA Safer Choice certification</strong>. To earn this label, every single ingredient in a product must be evaluated by EPA scientists for human health and environmental safety. Products must be biodegradable, free from carcinogens, and safe for aquatic ecosystems. It's the most rigorous third-party standard for cleaning product safety available in the United States.
+              The most useful logo is <strong className="text-foreground">EPA Safer Choice</strong>. To carry it, every intentionally added ingredient is reviewed against EPA's criteria for human health and the environment, the product must pass performance testing for its category, and it must meet limits on VOCs and packaging. Antimicrobial products cannot carry Safer Choice; the equivalent review for registered disinfectants is EPA's Design for the Environment (DfE) logo. Neither logo means a product is risk-free, and neither replaces the directions on the label.
             </p>
             <p>
-              Our plant-based formulas use active ingredients derived from coconut, corn, and other renewable plant sources. They clean through surfactant action — breaking the bond between dirt and surfaces — rather than through toxic chemical reactions. The result is equally effective cleaning with zero harmful residues.
+              Plant-derived surfactants — typically made from coconut or corn oils — lift soil the same way petroleum-derived surfactants do: by breaking the bond between dirt and the surface. The difference is where the ingredient comes from and how it is disclosed, not a guarantee of zero residue. Wiping, rinsing and drying as the label directs is what leaves a surface clean.
             </p>
             <p>
-              Plant-based disinfectants use hydrogen peroxide, citric acid, and thymol (derived from thyme) as active antimicrobials. Each product's label lists the organisms it is registered against and the contact time needed, and hydrogen peroxide breaks down into water and oxygen after use.
+              Cleaning, sanitizing and disinfecting are different claims. Only an EPA-registered product can be labeled as a sanitizer or disinfectant, and only for the organisms and contact time on its label. Registered products with hydrogen peroxide, citric acid or thymol (from thyme) as the active ingredient exist; where a job calls for disinfection we use one of those and follow that label. A general-purpose plant-based cleaner cleans; it does not disinfect.
             </p>
           </div>
 
@@ -334,17 +336,16 @@ const WhyEcoFriendlyPage = () => {
               </div>
               <div>
                 <h3 className="font-heading text-lg font-bold text-foreground mb-2">
-                  Capital Clean Care's Product Standard
+                  What We Look For on a Label
                 </h3>
                 <ul className="space-y-1.5">
                   {[
-                    "EPA Safer Choice certified or equivalent third-party verified",
-                    "Plant-derived surfactants — no petroleum-based ingredients",
-                    "Free from chlorine, ammonia, formaldehyde, and phthalates",
-                    "Biodegradable — breaks down safely in waterways",
-                    "Low or zero VOC — no harmful off-gassing",
-                    "Cruelty-free — never tested on animals",
-                    "Free from synthetic fragrances and artificial dyes",
+                    "EPA Safer Choice or DfE logo, when a product in that category carries one",
+                    "Full ingredient disclosure, not just 'fragrance' or 'cleaning agents'",
+                    "Plant-derived surfactants listed by name",
+                    "No chlorine bleach or ammonia in our standard kit",
+                    "A fragrance-free option for homes that ask for one",
+                    "Directions we can follow on site: dilution, contact time, drying time",
                   ].map((item) => (
                     <li key={item} className="flex items-center gap-2 text-sm text-foreground">
                       <CheckCircle className="h-4 w-4 text-accent shrink-0" />
@@ -369,7 +370,7 @@ const WhyEcoFriendlyPage = () => {
               6 Reasons to Choose Eco-Friendly Cleaning
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              The science is clear. Switching to plant-based cleaning products delivers measurable benefits for your family, your home, and the environment.
+              Here is what changes when products are chosen by their labels and used as directed — and what stays the same.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -399,20 +400,20 @@ const WhyEcoFriendlyPage = () => {
             <Baby className="h-3.5 w-3.5" /> Children's Health
           </span>
           <h2 className="font-heading text-3xl md:text-4xl font-bold mb-6">
-            Why Conventional Cleaners Are Especially Dangerous for Children
+            Why Children's Exposure Is Different
           </h2>
           <div className="prose prose-lg max-w-none text-muted-foreground space-y-4 mb-8">
             <p>
-              Children are not small adults when it comes to chemical exposure. Their bodies process toxins differently, their developing organs are more vulnerable to disruption, and their behaviors — crawling on floors, mouthing objects, spending more time indoors — dramatically increase their exposure to cleaning product residues.
+              Children are not small adults when it comes to chemical exposure. They breathe more air for their body weight, their organs are still developing, and their behaviors — crawling on floors, mouthing objects, spending most of the day indoors — put them in closer contact with whatever is left on low surfaces.
             </p>
             <p>
               A 2020 study of the Canadian CHILD birth cohort, published in the <strong className="text-foreground">Canadian Medical Association Journal</strong> (Parks et al.), found that infants in homes with frequent use of household cleaning products had a higher risk of recurrent wheeze and asthma by age 3. Research on adults published in the <strong className="text-foreground">American Journal of Respiratory and Critical Care Medicine</strong> (Svanes et al., 2018) associated regular use of cleaning sprays with faster decline in lung function. These are associations from observational studies, not proof that any single product causes disease.
             </p>
             <p>
-              The issue is compounded by where children spend most of their time. Infants and toddlers who crawl on floors are in direct contact with the surfaces where chemical residues from conventional floor cleaners concentrate. Hand-to-mouth contact — a natural behavior in children under 3 — transfers those residues directly. No amount of ventilation eliminates surface residues.
+              Where children spend their time matters as much as which product is used. Infants and toddlers who crawl are in direct contact with the floor, and hand-to-mouth contact — normal in children under 3 — moves whatever is on that floor to their mouths. Ventilation helps with fumes; it does nothing for what is left on the floor, which is why wiping and drying as the label directs matters most in a home with a crawler.
             </p>
             <p>
-              The <strong className="text-foreground">American Academy of Pediatrics (AAP)</strong> specifically recommends that families with young children reduce or eliminate exposure to cleaning products containing synthetic fragrances, ammonia, chlorine bleach, and VOC-emitting solvents. Their 2016 policy statement on chemical management explicitly calls for stricter regulation of household cleaning chemicals and encourages the use of safer alternatives.
+              The <strong className="text-foreground">American Academy of Pediatrics (AAP)</strong> Council on Environmental Health has called for chemical-management policy that puts children's health first (policy statement in <em>Pediatrics</em>, 2011). It does not certify or recommend cleaning products. The practical advice that follows from it is modest: fewer sprays, more ventilation, products with disclosed ingredients, and floors dried before children use them.
             </p>
             <p>
               Capital Clean Care reduces this exposure. We choose plant-based, fragrance-free products by their labels, avoid chlorine bleach and ammonia, and record any allergies or sensitivities you tell us about before the visit. Any product-specific precautions on the label — including drying time before floors are used again — take priority.
@@ -420,9 +421,9 @@ const WhyEcoFriendlyPage = () => {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {[
-              { stat: "2020", label: "Canadian CHILD cohort study (CMAJ) linking frequent early-life exposure to cleaning products with higher asthma and wheeze risk" },
-              { stat: "3×", label: "More air breathed per body weight by children vs. adults" },
-              { stat: "80%+", label: "Of children's time spent indoors where VOC concentrations are highest" },
+              { stat: "2020", label: "Canadian CHILD cohort (CMAJ, Parks et al.): frequent early-life use of cleaning products associated with higher wheeze and asthma risk by age 3 — an association, not proof of cause" },
+              { stat: "2018", label: "AJRCCM (Svanes et al.): regular use of cleaning sprays associated with faster decline in adult lung function over 20 years" },
+              { stat: "2011", label: "AAP Council on Environmental Health policy statement on chemical management — calls for policy that prioritizes children's health; certifies no product" },
             ].map((item) => (
               <div key={item.stat} className="bg-pink-50 rounded-xl p-5 text-center border border-pink-100">
                 <p className="font-heading text-3xl font-bold text-pink-700 mb-1">{item.stat}</p>
@@ -440,35 +441,35 @@ const WhyEcoFriendlyPage = () => {
             <PawPrint className="h-3.5 w-3.5" /> Pet Safety
           </span>
           <h2 className="font-heading text-3xl md:text-4xl font-bold mb-6">
-            The Science of Chemical Exposure in Pets
+            How Pets Are Exposed to What Is on the Floor
           </h2>
           <div className="prose prose-lg max-w-none text-muted-foreground space-y-4 mb-8">
             <p>
-              Cats and dogs are uniquely vulnerable to household cleaning chemicals. Unlike humans, pets walk barefoot on every cleaned surface — absorbing chemical residues through the sensitive skin of their paw pads. Cats are additionally at risk because they groom themselves by licking their paws, directly ingesting whatever cleaning product residues are present on floors and surfaces.
+              Cats and dogs walk on every cleaned surface and groom by licking their paws and coat. Whatever settles or is left on a floor — dust, residue, a product that was not wiped up — reaches them by mouth far more directly than it reaches an adult.
             </p>
             <p>
-              A landmark study published in <strong className="text-foreground">Environmental Science & Technology</strong> found that cats living in homes that used conventional cleaning products had blood levels of polybrominated diphenyl ethers (PBDEs) — flame retardants that accumulate from household products — that were 20 to 100 times higher than those found in human adults. Dogs showed similar accumulation patterns for other household chemical compounds.
+              A 2007 study in <strong className="text-foreground">Environmental Science & Technology</strong> (Dye et al.) measured polybrominated diphenyl ethers (PBDEs, flame retardants) in pet cats at levels 20 to 100 times the median found in U.S. adults, and pointed to house dust and diet as the likely routes. The study did not examine cleaning products; it is cited here for what it shows about how much of a cat's exposure comes from the floor and dust — the surfaces a cleaning visit handles.
             </p>
             <p>
-              Certain cleaning chemicals are acutely dangerous to specific pets. <strong className="text-foreground">Pine-based cleaners</strong> — commonly marketed as natural — contain phenols that are hepatotoxic (liver-damaging) to cats. <strong className="text-foreground">Quaternary ammonium compounds</strong> (quats), found in many disinfecting wipes and sprays, have been linked to fertility problems in mice and are a known skin and respiratory irritant for cats and dogs.
+              Some cleaning chemicals are a specific concern for pets. Veterinary poison-control references list <strong className="text-foreground">pine-oil cleaners</strong> — often marketed as natural — as toxic to cats because of their phenols. <strong className="text-foreground">Quaternary ammonium compounds</strong> (quats), the active ingredient in many disinfecting wipes and sprays, can irritate skin and airways when a surface is used before it dries; a 2014 laboratory study in <em>Reproductive Toxicology</em> associated a common quat blend with reduced fertility in mice, a finding that has not been shown in pets.
             </p>
             <p>
-              Even the fumes from conventional cleaning products represent a hazard. Cats have an exceptionally efficient respiratory system that makes them more susceptible than humans to inhaled chemicals. Cleaning a bathroom with conventional bleach-based products while a cat is in the home can cause acute respiratory distress.
+              Fumes matter too. Cats are sensitive to strong fumes, so keep pets out of the room while any strong product is used and ventilate until the smell is gone.
             </p>
             <p>
-              Our plant-based formulas contain no phenols, no quats (in our standard line), and no chlorine compounds. They're designed to be safe not just for humans — but for every living thing in your home. If you have cats, dogs, or other pets, our eco-friendly approach isn't just a preference — it's a meaningful health safeguard.
+              Our practice: we avoid pine-oil and chlorine products by default, use plant-based products chosen by their labels, and follow label drying times before pets return to cleaned floors. Tell us about your animals before the visit so the team can plan the order of rooms. This reduces exposure; it is not a medical guarantee for any particular animal.
             </p>
           </div>
           <div className="bg-amber-50 border border-amber-200 rounded-2xl p-6">
             <h3 className="font-heading text-lg font-bold text-foreground mb-3 flex items-center gap-2">
-              <PawPrint className="h-5 w-5 text-amber-600" /> Common Cleaning Chemicals That Harm Pets
+              <PawPrint className="h-5 w-5 text-amber-600" /> Cleaning Products Veterinary References Flag for Pets
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {[
-                { name: "Pine-oil cleaners", risk: "Phenols are liver-toxic to cats even in small amounts" },
-                { name: "Quaternary ammonium (quats)", risk: "Linked to respiratory irritation and fertility issues in animals" },
-                { name: "Ethylene glycol", risk: "Causes acute kidney failure in cats and dogs — sweet taste increases ingestion risk" },
-                { name: "Chlorine bleach", risk: "Fumes cause respiratory distress; paw contact causes chemical burns" },
+                { name: "Pine-oil cleaners", risk: "Phenols are listed as toxic to cats; avoid on floors cats walk on" },
+                { name: "Quaternary ammonium (quats)", risk: "Can irritate skin and airways if surfaces are used before they dry" },
+                { name: "Chlorine bleach", risk: "Fumes irritate the airways; keep pets out until the room is aired and the floor is dry" },
+                { name: "Any product, wet", risk: "Most incidents involve paws or tongues on a surface that was not yet dry — the label's drying time is the safeguard" },
               ].map((item) => (
                 <div key={item.name} className="flex items-start gap-2 bg-white rounded-lg p-3 border border-amber-100">
                   <AlertTriangle className="h-4 w-4 text-amber-500 shrink-0 mt-0.5" />
@@ -493,7 +494,7 @@ const WhyEcoFriendlyPage = () => {
             Conventional Chemical Cleaners vs. Plant-Based Products
           </h2>
           <p className="text-muted-foreground mb-8 max-w-2xl">
-            The differences between conventional and plant-based cleaning products go far beyond marketing claims. Here's a factual comparison across the factors that matter most for your family's health and the environment.
+            A side-by-side view of what a label typically tells you in each category. In several rows the rule is the same for both: follow the directions, wipe or rinse, and let the surface dry.
           </p>
           <div className="overflow-x-auto rounded-2xl border border-border">
             <table className="w-full text-sm">
@@ -528,7 +529,7 @@ const WhyEcoFriendlyPage = () => {
             How to Clean Every Room the Eco-Friendly Way
           </h2>
           <p className="text-muted-foreground mb-10 max-w-2xl">
-            Transitioning to plant-based cleaning products is straightforward when you know which products to use in each space. Our professional teams follow this approach in every home we clean across Maryland, DC, and Virginia.
+            Switching to plant-based cleaning is easier room by room. These are the practices our own teams use across Maryland, DC, and Virginia; the product-specific advice always defers to the label and to the surface maker's care guidance.
           </p>
           <div className="space-y-6">
             {roomGuide.map((room) => (
@@ -553,7 +554,7 @@ const WhyEcoFriendlyPage = () => {
               <strong>Want this done for you?</strong> Capital Clean Care's professional teams follow this eco protocol in every home across{" "}
               <Link to="/maryland" className="text-accent hover:underline font-medium">Maryland</Link>,{" "}
               <Link to="/washington-dc" className="text-accent hover:underline font-medium">Washington DC</Link>, and{" "}
-              <Link to="/virginia" className="text-accent hover:underline font-medium">Northern Virginia</Link> — using EPA Safer Choice certified products at no extra charge.{" "}
+              <Link to="/virginia" className="text-accent hover:underline font-medium">Northern Virginia</Link> — with plant-based products chosen by their labels, at no extra charge.{" "}
               <a href="#quote" className="text-accent hover:underline font-medium">Get a free quote →</a>
             </p>
           </div>
@@ -570,7 +571,7 @@ const WhyEcoFriendlyPage = () => {
             How to Switch Your Home to Eco-Friendly Cleaning
           </h2>
           <p className="text-muted-foreground mb-8 max-w-2xl">
-            You don't have to change everything at once. Here's the priority sequence our cleaning experts recommend for transitioning from conventional to plant-based products.
+            You don't have to change everything at once. Here's the order our teams suggest for moving a home from conventional to plant-based products.
           </p>
           <div className="space-y-4">
             {howToSteps.map((step, i) => (
@@ -602,26 +603,26 @@ const WhyEcoFriendlyPage = () => {
               The Chesapeake Bay is the largest estuary in the United States and one of the most ecologically significant bodies of water in North America. It provides habitat for more than 3,600 species of plants, fish, and animals — including blue crabs, rockfish, and migratory waterfowl that define the character of the region. But the Bay is also under severe stress.
             </p>
             <p>
-              Nitrogen and phosphorus from chemical runoff are the primary drivers of the Bay's ongoing water quality crisis. While agricultural runoff is the largest source, household cleaning chemicals — including surfactants, phosphates, and synthetic compounds — contribute meaningfully to the problem when they flow down drains and into the watershed.
+              Excess nitrogen and phosphorus are the main drivers of the Bay's water-quality problems, and agriculture and stormwater are by far the largest sources according to the Chesapeake Bay Program. Household drains are a small share by comparison — but they are the share a household controls.
             </p>
             <p>
-              The Chesapeake Bay watershed spans six states and Washington DC, covering more than 64,000 square miles. Every home in Montgomery County, Fairfax, Arlington, Alexandria, Washington DC, and Prince George's County sits within this watershed. The cleaning products used in those homes — multiplied by hundreds of thousands of households — have a cumulative impact on Bay water quality.
+              The Chesapeake Bay watershed spans six states and Washington DC, covering more than 64,000 square miles. Every home in Montgomery County, Fairfax, Arlington, Alexandria, Washington DC, and Prince George's County sits within it, and every drain in those homes leads to a treatment plant that discharges into a Bay tributary.
             </p>
             <p>
-              <strong className="text-foreground">Biodegradable cleaning products</strong> change this equation. Plant-derived surfactants break down into harmless compounds when they enter water treatment systems and natural waterways. Conventional petroleum-based surfactants and synthetic compounds resist biodegradation, accumulating in sediment and bioaccumulating in aquatic species.
+              Treatment plants remove most, not all, of what goes down a drain. Surfactants labeled <strong className="text-foreground">readily biodegradable</strong> break down during treatment; some other ingredients pass through or persist. That is the reason to prefer products whose labels state readily biodegradable surfactants and to use them in the small quantities the directions call for.
             </p>
             <p>
-              Maryland's Department of the Environment has partnered with businesses committed to reducing their chemical footprint as part of the Chesapeake Bay Restoration effort. When you choose Capital Clean Care, you're participating in that commitment. Every home we clean uses products that won't contribute to Bay pollution — a choice that compounds across thousands of cleanings.
+              We are one cleaning company, not a Bay program. What we can say is what we do: plant-based products chosen by their labels, used as directed, with no chlorine bleach or ammonia in our standard kit — in every home we clean in the watershed.
             </p>
             <p>
-              Beyond the Bay, our low-VOC products contribute less to the regional air quality challenges that affect DMV communities. Ground-level ozone — a significant air quality concern in the Washington-Baltimore corridor — is partly driven by VOC emissions from household and commercial cleaning products. Plant-based formulas emit dramatically less VOC, reducing your household's contribution to regional air quality issues.
+              Beyond the Bay, VOC emissions from consumer products, including cleaners, are one of the sources addressed in the region's ground-level ozone plans, and Maryland is among the states that limit VOC content in consumer products. Lower-VOC products and ventilation while cleaning reduce a household's share of that.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {[
-              { icon: "🌊", stat: "64,000 mi²", label: "Chesapeake Bay watershed — includes all of Maryland, DC, and most of Northern Virginia" },
-              { icon: "🐟", stat: "3,600+", label: "Species depend on Bay water quality — directly affected by chemical runoff" },
-              { icon: "♻️", stat: "100%", label: "Of our products are biodegradable — break down safely without harming waterways" },
+              { icon: "🌊", stat: "64,000 mi²", label: "Chesapeake Bay watershed — includes all of Maryland, DC, and most of Northern Virginia (Chesapeake Bay Program)" },
+              { icon: "🐟", stat: "3,600+", label: "Species of plants and animals in the Bay watershed (Chesapeake Bay Program)" },
+              { icon: "🏙️", stat: "6 + DC", label: "States plus the District whose drains and rivers feed the Bay" },
             ].map((item) => (
               <div key={item.stat} className="bg-blue-50 rounded-xl p-5 text-center border border-blue-100">
                 <p className="text-2xl mb-1">{item.icon}</p>
@@ -641,16 +642,10 @@ const WhyEcoFriendlyPage = () => {
           </h2>
           <div className="prose prose-lg max-w-none text-muted-foreground space-y-4 mb-10">
             <p>
-              The DMV region has some of the most environmentally conscious homeowners in the country — and for good reason. The Chesapeake Bay watershed, which covers most of Maryland and parts of Virginia, is one of the most ecologically sensitive areas on the East Coast. Every chemical poured down a drain in Montgomery County, Fairfax, or Washington DC has the potential to reach this ecosystem.
+              Every drain in Montgomery County, Fairfax, Arlington or Washington DC sits inside the Chesapeake Bay watershed, so household choices here reach the Bay through the region's treatment plants and rivers.
             </p>
             <p>
-              Maryland's Department of the Environment actively encourages residents and businesses to reduce their use of toxic cleaning agents. The Maryland Green Registry recognizes businesses that commit to environmental standards — a recognition that aligns with Capital Clean Care's approach to every single client we serve.
-            </p>
-            <p>
-              In Washington DC, the Department of Energy and Environment (DOEE) has specific guidelines for safer chemical use. Northern Virginia communities from Arlington to Alexandria have increasingly adopted green building and living standards that extend to household cleaning practices.
-            </p>
-            <p>
-              When you choose Capital Clean Care, you're not just protecting your family — you're making a choice that benefits the broader DMV community. Our biodegradable products don't contribute to chemical runoff. Our low-VOC formulas don't add to regional air quality issues. It's green cleaning that goes beyond the label.
+              What you get from us is consistent across the region: the same plant-based products chosen by their labels, the same avoidance of chlorine bleach and ammonia in the standard kit, the same label drying times — whether the home is in Maryland, the District or Northern Virginia.
             </p>
             <p>
               We serve <Link to="/maryland" className="text-accent hover:underline font-medium">Maryland</Link> homeowners across Montgomery County, Frederick County, Howard County, and Prince George's County, <Link to="/washington-dc" className="text-accent hover:underline font-medium">Washington DC</Link> across all quadrants, and <Link to="/virginia" className="text-accent hover:underline font-medium">Northern Virginia</Link> from Arlington to McLean to Fairfax. Eco-friendly cleaning is available for every service type — standard, deep cleaning, move-in/move-out, recurring plans, and post-construction cleanup.
@@ -683,7 +678,7 @@ const WhyEcoFriendlyPage = () => {
       </section>
 
       {/* ── GreenShield Process ── */}
-      <GreenShield5Step showCTA={false} />
+      <GreenShield5Step showCTA={false} claims="label-based" />
 
       {/* ── Trust Badges ── */}
       <TrustBadges compact withBackground={false} />
@@ -692,7 +687,7 @@ const WhyEcoFriendlyPage = () => {
       <section className="py-12 bg-secondary/40">
         <div className="container mx-auto px-4 max-w-4xl">
           <h2 className="font-heading text-2xl font-bold mb-2 text-center">Explore Our Eco-Friendly Services</h2>
-          <p className="text-center text-muted-foreground text-sm mb-6">All services use EPA Safer Choice certified plant-based products — no green premium charged.</p>
+          <p className="text-center text-muted-foreground text-sm mb-6">All services use the same plant-based products, chosen by their labels — no green premium charged.</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 mb-8">
             {[
               { label: "Eco-Friendly Cleaning Service", href: "/services/eco-friendly-cleaning" },
@@ -760,7 +755,7 @@ const WhyEcoFriendlyPage = () => {
             </p>
           </div>
           <div className="bg-accent text-white rounded-lg py-3 px-5 text-center mb-6 font-medium text-sm">
-            🌿 All services use EPA Safer Choice certified plant-based products — at no extra charge
+            🌿 Plant-based products, chosen by their labels, on every service — at no extra charge
           </div>
           <Card>
             <CardContent className="p-6 md:p-8">
