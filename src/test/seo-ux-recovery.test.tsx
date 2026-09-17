@@ -71,6 +71,7 @@ describe("Layout sticky bar — exactly one bar per route with the page-local hr
   const bars = () => [...document.querySelectorAll("div.fixed.bottom-0")].filter((d) => /Free Quote|Cotización Gratis/.test(d.textContent ?? ""));
   const CASES: [string, string][] = [
     ...DEDICATED.map((u): [string, string] => [u, "#quote"]),
+    ["/why-eco-friendly-cleaning", "#quote"], // support page that owns a #quote form
     ["/locations/kentlands-md/house-cleaning", "/contact#quote"], // template page (ServiceLocationPage): unchanged default
     ["/locations/bowie-md", "/contact#quote"], // hub: unchanged default
     ["/es/areas/rockville-md", "/es/contacto#cotizacion"],

@@ -28,7 +28,6 @@ export function keepAnchorAligned(el: HTMLElement, opts: KeepAnchorAlignedOption
   let stopped = false;
   let observer: ResizeObserver | null = null;
   let settleTimer: ReturnType<typeof setTimeout> | undefined;
-  let maxTimer: ReturnType<typeof setTimeout> | undefined;
 
   const align = () => {
     if (!stopped) el.scrollIntoView();
@@ -52,7 +51,7 @@ export function keepAnchorAligned(el: HTMLElement, opts: KeepAnchorAlignedOption
   align();
   for (const type of USER_INTENT_EVENTS) window.addEventListener(type, stop, { passive: true });
   window.addEventListener("load", align);
-  maxTimer = setTimeout(stop, maxMs);
+  const maxTimer = setTimeout(stop, maxMs);
   armSettle();
 
   if (typeof ResizeObserver !== "undefined") {

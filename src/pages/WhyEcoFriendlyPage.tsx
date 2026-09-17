@@ -206,7 +206,7 @@ const WhyEcoFriendlyPage = () => {
   });
 
   return (
-    <Layout>
+    <Layout stickyQuoteHref="#quote">
       {seoHelmet}
       <BreadcrumbSchema
         items={[
