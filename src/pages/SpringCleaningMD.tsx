@@ -11,21 +11,22 @@ import FAQ from "@/components/FAQ";
 import GreenShield5Step from "@/components/GreenShield5Step";
 import TrustBadges from "@/components/TrustBadges";
 
-// Content gate 2 (2026-09-17): no seasonal campaign is presented as active on this page. The only
-// discount mentioned is the site-wide new-client offer already shown in the announcement bar.
+// Consensus lot (2026-09-17): no seasonal campaign and no discount is presented on this page (the site-wide
+// new-client offer stays in the global AnnouncementBar until its validity is confirmed commercially).
 // Scope statements mirror the deep cleaning service data (src/data/services.ts, slug "deep-cleaning").
 const springFaqs = [
-  { q: "When should I schedule spring cleaning?", a: "March and April are the busiest weeks for spring cleaning in Maryland, so booking a few weeks ahead gives you more choice of dates. A spring clean can be booked at any time of year; the checklist is the same." },
+  { q: "When should I schedule spring cleaning?", a: "Any time of year. Tell us your preferred dates when you request the quote and we confirm availability; the checklist is the same in every season." },
   { q: "What does spring deep cleaning include?", a: "Spring cleaning is our deep cleaning with attention to what winter leaves behind: interior window sills and tracks, baseboards and crown molding, vent and register covers, ceiling fans and light fixtures, and the inside of the oven, microwave and refrigerator. Accessible furniture is moved to clean behind and underneath; heavy or built-in items may stay in place and we clean around them." },
-  { q: "How much does spring cleaning cost in Maryland?", a: "Spring cleaning is quoted as a deep clean, by bedroom and bathroom count and the home's condition. Our published deep cleaning price ranges are on the deep cleaning service page, and new clients get 15% off their first clean. Request a free quote for your exact price." },
+  { q: "How much does spring cleaning cost in Maryland?", a: "Spring cleaning is quoted as a deep clean, by bedroom and bathroom count and the home's condition. Our published deep cleaning price ranges are on the deep cleaning service page. Request a free quote for your exact price." },
   { q: "Do you use eco-friendly products for spring cleaning?", a: "Yes. We use plant-based products chosen by their labels and follow the label directions and surface guidance. Tell us about pets, allergies or fragrance sensitivities before your visit so the team can plan around them." },
   { q: "Can I book spring cleaning for my DC or Virginia home?", a: "Yes. We serve Maryland, Washington DC, and Northern Virginia. Spring cleaning is available across all our service areas." },
 ];
 
 const SpringCleaningMD = () => {
   const { seoHelmet } = useSEO({
-    title: "Spring Cleaning Services in Maryland | 15% Off | Capital Clean Care",
-    description: "Book your spring deep cleaning in Maryland, DC & VA. Eco-friendly products, background-checked teams. 15% off for new clients. Call (240) 704-2551.",
+    // Consensus lot (2026-09-17): explicit, documented exception to the title/meta freeze for this URL only.
+    title: "Spring Cleaning in Maryland, DC & VA | Capital Clean Care",
+    description: "Spring deep cleaning in Maryland, DC and Northern Virginia. Review the cleaning checklist, confirm your home's needs and request a written quote.",
     canonical: "https://capitalcleancare.com/spring-cleaning-md",
   });
 
@@ -35,7 +36,7 @@ const SpringCleaningMD = () => {
       <LocalBusinessSchema />
       <ServiceSchema
         serviceName="Spring Deep Cleaning in Maryland"
-        description="Professional spring cleaning services in Maryland, DC & VA. Eco-friendly products, background-checked teams. 15% off for new clients."
+        description="Spring deep cleaning in Maryland, DC and Northern Virginia. Review the cleaning checklist, confirm your home's needs and request a written quote."
         url="https://capitalcleancare.com/spring-cleaning-md"
       />
       <FAQSchema faqs={springFaqs} />
@@ -52,20 +53,19 @@ const SpringCleaningMD = () => {
           <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
             Spring Cleaning in Maryland — Fresh Start for Your Home
           </h1>
-          <p className="text-muted-foreground text-lg md:text-xl mb-6 leading-relaxed max-w-2xl">
-            Shake off winter dust and prepare for spring with our eco-friendly deep cleaning. Available across Maryland, Washington DC, and Northern Virginia.
-          </p>
-          <div className="bg-accent/10 border border-accent/20 rounded-xl p-4 mb-8 inline-block">
-            <p className="text-accent font-bold text-lg">🌸 New clients get 15% off their first clean</p>
-            <p className="text-muted-foreground text-sm">Our standard new-client offer, applied to your quote. No seasonal code needed.</p>
-          </div>
-          <div className="flex flex-col sm:flex-row gap-3">
-            <Button variant="cta" size="lg" asChild>
-              <a href="#spring-quote">Book Spring Cleaning <ArrowRight className="ml-1 h-4 w-4" /></a>
-            </Button>
-            <Button variant="secondary" size="lg" asChild>
-              <a href="tel:+12407042551"><Phone className="h-4 w-4 mr-2" /> (240) 704-2551</a>
-            </Button>
+          {/* Mobile: CTA row before the intro paragraph so the local CTA sits in the first 360×740 viewport; ≥ sm unchanged order. */}
+          <div className="flex flex-col">
+            <p className="order-2 sm:order-1 text-muted-foreground text-lg md:text-xl mt-6 sm:mt-0 mb-0 sm:mb-8 leading-relaxed max-w-2xl">
+              Shake off winter dust and prepare for spring with our eco-friendly deep cleaning. Available across Maryland, Washington DC, and Northern Virginia.
+            </p>
+            <div className="order-1 sm:order-2 flex flex-col sm:flex-row gap-3">
+              <Button variant="cta" size="lg" asChild>
+                <a href="#spring-quote">Book Spring Cleaning <ArrowRight className="ml-1 h-4 w-4" /></a>
+              </Button>
+              <Button variant="secondary" size="lg" asChild>
+                <a href="tel:+12407042551"><Phone className="h-4 w-4 mr-2" /> (240) 704-2551</a>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
