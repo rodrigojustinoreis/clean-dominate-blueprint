@@ -76,7 +76,7 @@ const LABEL_BASED_STEPS: Record<string, Partial<Pick<(typeof steps)[number], "de
   "02": { badge: "Dry Dusting First" },
   "03": {
     description:
-      "We clean every high-touch surface, bathroom and kitchen area with plant-based products chosen by their labels. Where a job calls for disinfection, we use an EPA-registered product and follow its contact time. Tell us about pets, allergies or fragrance sensitivities before the visit.",
+      "We clean every high-touch surface, bathroom and kitchen area with products chosen by their labels. Sanitizing and disinfecting are label claims: only an EPA-registered product disinfects, for the contact time on its label. Tell us about pets, allergies or fragrance sensitivities before the visit.",
     badge: "Label-Guided Products",
   },
   "04": { badge: "Checklist-Based" },
