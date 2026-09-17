@@ -8,6 +8,14 @@ interface GreenShield5StepProps {
   showCTA?: boolean;
   /** Compact layout (no background, less padding) — for embedding in service pages */
   compact?: boolean;
+  /**
+   * Copy variant. `"default"` keeps the historical wording for every existing consumer.
+   * `"label-based"` (content gate 2, 2026-09-17) describes the same 5 steps without product
+   * certification, universal-safety or superiority claims: products are "chosen by their labels",
+   * disinfection is tied to the registered product's contact time, and the re-clean follows the
+   * published guarantee. Opt-in per page; no consumer changes unless it passes the prop.
+   */
+  claims?: "default" | "label-based";
 }
 
 const steps = [
@@ -63,7 +71,24 @@ const steps = [
   },
 ];
 
-const GreenShield5Step = ({ showCTA = true, compact = false }: GreenShield5StepProps) => {
+/** Per-step overrides for the label-based variant; untouched fields fall back to `steps`. */
+const LABEL_BASED_STEPS: Record<string, Partial<Pick<(typeof steps)[number], "description" | "badge">>> = {
+  "02": { badge: "Dry Dusting First" },
+  "03": {
+    description:
+      "We clean every high-touch surface, bathroom and kitchen area with plant-based products chosen by their labels. Where a job calls for disinfection, we use an EPA-registered product and follow its contact time. Tell us about pets, allergies or fragrance sensitivities before the visit.",
+    badge: "Label-Guided Products",
+  },
+  "04": { badge: "Checklist-Based" },
+  "05": {
+    description:
+      "Before we leave, we run a quality inspection against our checklist. If something was missed, contact us and we come back to re-clean it under our satisfaction guarantee.",
+  },
+};
+
+const GreenShield5Step = ({ showCTA = true, compact = false, claims = "default" }: GreenShield5StepProps) => {
+  const labelBased = claims === "label-based";
+  const shownSteps = labelBased ? steps.map((s) => ({ ...s, ...LABEL_BASED_STEPS[s.number] })) : steps;
   return (
     <section
       className={
@@ -82,8 +107,9 @@ const GreenShield5Step = ({ showCTA = true, compact = false }: GreenShield5StepP
             The GreenShield 5-Step Clean™
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-base md:text-lg">
-            Every Capital Clean Care visit follows our proven, 5-step proprietary process — designed to
-            deliver a deeper, safer, and longer-lasting clean than standard cleaning services.
+            {labelBased
+              ? "Every Capital Clean Care visit follows the same 5-step order of work, so dust is removed before surfaces are wet-cleaned and nothing on the checklist is skipped."
+              : "Every Capital Clean Care visit follows our proven, 5-step proprietary process — designed to deliver a deeper, safer, and longer-lasting clean than standard cleaning services."}
           </p>
         </div>
 
@@ -93,7 +119,7 @@ const GreenShield5Step = ({ showCTA = true, compact = false }: GreenShield5StepP
           <div className="absolute left-7 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-accent/20 via-accent/50 to-accent/20 hidden sm:block md:transform md:-translate-x-px" />
 
           <div className="space-y-8 md:space-y-0">
-            {steps.map((step, i) => (
+            {shownSteps.map((step, i) => (
               <div
                 key={step.number}
                 className={`relative flex flex-col md:flex-row gap-6 md:gap-12 items-start md:items-center mb-8 md:mb-12 ${
@@ -147,8 +173,14 @@ const GreenShield5Step = ({ showCTA = true, compact = false }: GreenShield5StepP
         {/* Trust note */}
         <div className="mt-10 text-center bg-accent/5 border border-accent/20 rounded-2xl py-5 px-6">
           <p className="text-sm text-foreground font-medium">
-            🛡️ The GreenShield 5-Step Clean™ is exclusive to Capital Clean Care — developed over{" "}
-            <strong>10+ years</strong> and used in every single visit across Maryland, DC & Virginia.
+            {labelBased ? (
+              <>🛡️ The GreenShield 5-Step Clean™ is the order of work our own teams follow on every visit across Maryland, DC & Virginia.</>
+            ) : (
+              <>
+                🛡️ The GreenShield 5-Step Clean™ is exclusive to Capital Clean Care — developed over{" "}
+                <strong>10+ years</strong> and used in every single visit across Maryland, DC & Virginia.
+              </>
+            )}
           </p>
         </div>
 

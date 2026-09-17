@@ -11,12 +11,15 @@ import FAQ from "@/components/FAQ";
 import GreenShield5Step from "@/components/GreenShield5Step";
 import TrustBadges from "@/components/TrustBadges";
 
+// Content gate 2 (2026-09-17): no seasonal campaign is presented as active on this page. The only
+// discount mentioned is the site-wide new-client offer already shown in the announcement bar.
+// Scope statements mirror the deep cleaning service data (src/data/services.ts, slug "deep-cleaning").
 const springFaqs = [
-  { q: "When should I schedule spring cleaning?", a: "We recommend booking in March or April before the peak pollen season. Early scheduling ensures availability and helps you stay ahead of seasonal allergen buildup." },
-  { q: "What does spring deep cleaning include?", a: "Our spring cleaning covers everything in a deep clean plus seasonal extras: window track cleaning, pollen removal from surfaces, baseboard scrubbing, vent cleaning, and detailed attention to areas that accumulate winter dust." },
-  { q: "How much does spring cleaning cost in Maryland?", a: "Spring cleaning starts at $150 for 1–2 bedroom homes and varies by size and condition. New clients get 15% off their first service. Request a free quote for your exact price." },
-  { q: "Do you use eco-friendly products for spring cleaning?", a: "Absolutely. All our cleaning products are plant-based, non-toxic, and EPA Safer Choice certified — safe for your family, pets, and Maryland's Chesapeake Bay watershed." },
-  { q: "Can I book spring cleaning for my DC or Virginia home?", a: "Yes! We serve Maryland, Washington DC, and Northern Virginia. Spring cleaning is available across all our service areas." },
+  { q: "When should I schedule spring cleaning?", a: "March and April are the busiest weeks for spring cleaning in Maryland, so booking a few weeks ahead gives you more choice of dates. A spring clean can be booked at any time of year; the checklist is the same." },
+  { q: "What does spring deep cleaning include?", a: "Spring cleaning is our deep cleaning with attention to what winter leaves behind: interior window sills and tracks, baseboards and crown molding, vent and register covers, ceiling fans and light fixtures, and the inside of the oven, microwave and refrigerator. Accessible furniture is moved to clean behind and underneath; heavy or built-in items may stay in place and we clean around them." },
+  { q: "How much does spring cleaning cost in Maryland?", a: "Spring cleaning is quoted as a deep clean, by bedroom and bathroom count and the home's condition. Our published deep cleaning price ranges are on the deep cleaning service page, and new clients get 15% off their first clean. Request a free quote for your exact price." },
+  { q: "Do you use eco-friendly products for spring cleaning?", a: "Yes. We use plant-based products chosen by their labels and follow the label directions and surface guidance. Tell us about pets, allergies or fragrance sensitivities before your visit so the team can plan around them." },
+  { q: "Can I book spring cleaning for my DC or Virginia home?", a: "Yes. We serve Maryland, Washington DC, and Northern Virginia. Spring cleaning is available across all our service areas." },
 ];
 
 const SpringCleaningMD = () => {
@@ -44,17 +47,17 @@ const SpringCleaningMD = () => {
           <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Spring Cleaning MD" }]} className="mb-6" />
           <div className="flex items-center gap-2 mb-4">
             <Sun className="h-6 w-6 text-accent" />
-            <span className="text-accent font-semibold text-sm uppercase tracking-wider">Seasonal Special</span>
+            <span className="text-accent font-semibold text-sm uppercase tracking-wider">Seasonal Deep Cleaning</span>
           </div>
           <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
             Spring Cleaning in Maryland — Fresh Start for Your Home
           </h1>
           <p className="text-muted-foreground text-lg md:text-xl mb-6 leading-relaxed max-w-2xl">
-            Shake off winter dust and prepare for spring with our intensive eco-friendly deep cleaning. Available across Maryland, Washington DC, and Northern Virginia.
+            Shake off winter dust and prepare for spring with our eco-friendly deep cleaning. Available across Maryland, Washington DC, and Northern Virginia.
           </p>
           <div className="bg-accent/10 border border-accent/20 rounded-xl p-4 mb-8 inline-block">
-            <p className="text-accent font-bold text-lg">🌸 15% OFF your first spring cleaning — New clients only</p>
-            <p className="text-muted-foreground text-sm">Use code <strong>SPRING25</strong> when booking. Valid through May 31, 2026.</p>
+            <p className="text-accent font-bold text-lg">🌸 New clients get 15% off their first clean</p>
+            <p className="text-muted-foreground text-sm">Our standard new-client offer, applied to your quote. No seasonal code needed.</p>
           </div>
           <div className="flex flex-col sm:flex-row gap-3">
             <Button variant="cta" size="lg" asChild>
@@ -75,16 +78,16 @@ const SpringCleaningMD = () => {
             {[
               "Full deep cleaning of every room",
               "Inside oven, microwave & refrigerator",
-              "Window sill & track pollen removal",
+              "Interior window sill & track cleaning",
               "Baseboard & crown molding scrubbing",
               "Ceiling fan & light fixture dusting",
-              "Vent cover removal & cleaning",
-              "Behind & under furniture deep clean",
+              "Vent & register cover removal and cleaning",
+              "Behind & under accessible furniture (heavy or built-in items may stay in place)",
               "Bathroom grout & tile descaling",
               "HEPA vacuum with slow, deep passes",
-              "Cabinet & drawer interior wipe-down",
+              "Pantry, closet shelf & vanity drawer interiors (surface wipe)",
               "Cobweb removal — ceilings & corners",
-              "Eco-friendly products throughout",
+              "Plant-based products, chosen by their labels",
             ].map((item, i) => (
               <div key={i} className="flex gap-2 items-start">
                 <CheckCircle className="h-5 w-5 text-accent shrink-0 mt-0.5" />
@@ -92,6 +95,11 @@ const SpringCleaningMD = () => {
               </div>
             ))}
           </div>
+          <p className="text-sm text-muted-foreground mt-6">
+            Heavy or built-in furniture may not be moved; we clean around it. Interior window washing is a separate add-on.
+            Anything not on this list, ask when you book and we will say whether it can be quoted. The full 60-item checklist is on our{" "}
+            <Link to="/services/deep-cleaning" className="text-accent font-medium hover:underline">deep cleaning service page</Link>.
+          </p>
         </div>
       </section>
 
@@ -101,9 +109,9 @@ const SpringCleaningMD = () => {
           <h2 className="font-heading text-3xl font-bold mb-8">Why Spring Cleaning Matters in Maryland</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { icon: Leaf, title: "Pollen Season Prep", desc: "Maryland's intense spring pollen requires thorough surface cleaning to reduce allergens and improve indoor air quality." },
-              { icon: Sparkles, title: "Winter Dust Removal", desc: "Months of closed windows and heating systems deposit dust in hidden areas. Our deep clean reaches every corner." },
-              { icon: Star, title: "Fresh Start Guarantee", desc: "100% satisfaction guaranteed. If you're not happy, we'll return within 24 hours to re-clean at no charge." },
+              { icon: Leaf, title: "Pollen Season Prep", desc: "Maryland's spring pollen settles on sills, tracks, blinds and floors. A deep clean removes what has already come inside; it does not stop new pollen from arriving." },
+              { icon: Sparkles, title: "Winter Dust Removal", desc: "Months of closed windows and heating leave dust on vents, baseboards, fans and behind accessible furniture — the areas a routine clean skips." },
+              { icon: Star, title: "Fresh Start Guarantee", desc: "100% satisfaction guaranteed. If something was missed, contact us within 24 hours and we return to re-clean it at no charge." },
             ].map((item) => (
               <Card key={item.title}>
                 <CardContent className="p-6 text-center">
@@ -141,7 +149,7 @@ const SpringCleaningMD = () => {
       </section>
 
       {/* GreenShield 5-Step */}
-      <GreenShield5Step compact showCTA={false} />
+      <GreenShield5Step compact showCTA={false} claims="label-based" />
 
       {/* Trust Badges */}
       <TrustBadges compact withBackground={false} />
@@ -159,9 +167,9 @@ const SpringCleaningMD = () => {
         <div className="container mx-auto px-4 max-w-2xl">
           <div className="text-center mb-8">
             <h2 className="font-heading text-3xl font-bold mb-3">Book Your Spring Cleaning</h2>
-            <p className="text-muted-foreground">New clients get <strong className="text-accent">15% off</strong>. Fill out the form and we'll respond with your personalized quote.</p>
+            <p className="text-muted-foreground">Tell us the size and condition of your home and we'll respond with a personalized deep cleaning quote.</p>
           </div>
-          <Card><CardContent className="p-6 md:p-8"><QuoteForm /></CardContent></Card>
+          <Card><CardContent className="p-6 md:p-8"><QuoteForm defaultService="deep" /></CardContent></Card>
         </div>
       </section>
     </Layout>
