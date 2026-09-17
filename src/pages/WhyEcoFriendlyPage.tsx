@@ -41,7 +41,7 @@ const faqs = [
   },
   {
     q: "Can eco-friendly products disinfect and kill germs?",
-    a: "Yes. Our sanitizing products use plant-derived active ingredients like citric acid and hydrogen peroxide that are proven to kill 99.9% of common household bacteria and viruses — without chlorine or synthetic biocides.",
+    a: "Yes, when used as directed. Our sanitizing products use active ingredients such as citric acid and hydrogen peroxide; each product's label states which organisms it is registered against and the contact time required. We follow the label, without chlorine bleach or ammonia.",
   },
   {
     q: "Do eco-friendly products have a natural scent or no smell?",
@@ -57,7 +57,7 @@ const chemicalsToAvoid = [
   },
   {
     name: "Ammonia",
-    risk: "Causes respiratory inflammation, eye irritation, and chemical burns at high concentrations. Especially dangerous for asthma and COPD sufferers.",
+    risk: "Can irritate the airways and eyes and cause chemical burns at high concentrations. People with asthma or COPD may be more sensitive to the fumes.",
     found: "Glass cleaners, multi-surface sprays, floor cleaners",
   },
   {
@@ -93,7 +93,7 @@ const benefits = [
     icon: Shield,
     title: "Safe for Allergy & Asthma Sufferers",
     description:
-      "Synthetic fragrances and VOCs in conventional cleaners are among the top triggers for asthma attacks and allergic reactions. Our fragrance-free and low-VOC formulas are recommended by allergists and pulmonologists for chemically sensitive individuals.",
+      "Synthetic fragrances and VOCs in conventional cleaners are common triggers for people with asthma or allergies. We use fragrance-free, low-VOC products where the label allows; tell us about sensitivities before your visit so we can record them.",
   },
   {
     icon: Leaf,
@@ -240,11 +240,11 @@ const WhyEcoFriendlyPage = () => {
             Why Eco-Friendly Cleaning Is the Safer Choice for Your Family and Home
           </h1>
           <p className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-3xl">
-            Most households use cleaning products that contain dozens of chemicals never tested for long-term safety. Here's what the science says — and why Capital Clean Care made the switch to plant-based, EPA-certified products for every home we clean across Maryland, DC, and Virginia.
+            Most households use cleaning products that contain dozens of chemicals never tested for long-term safety. Here's what the research says — and why Capital Clean Care switched to plant-based products, chosen by their labels, for the homes we clean across Maryland, DC, and Virginia.
           </p>
           <div className="flex flex-col sm:flex-row gap-3">
             <Button variant="cta" size="lg" asChild>
-              <Link to="/contact">Get a Free Eco-Clean Quote <ArrowRight className="ml-2 h-4 w-4" /></Link>
+              <a href="#quote">Get a Free Eco-Clean Quote <ArrowRight className="ml-2 h-4 w-4" /></a>
             </Button>
             <a
               href={PHONE_HREF}
@@ -323,7 +323,7 @@ const WhyEcoFriendlyPage = () => {
               Our plant-based formulas use active ingredients derived from coconut, corn, and other renewable plant sources. They clean through surfactant action — breaking the bond between dirt and surfaces — rather than through toxic chemical reactions. The result is equally effective cleaning with zero harmful residues.
             </p>
             <p>
-              Plant-based disinfectants use hydrogen peroxide, citric acid, and thymol (derived from thyme) as active antimicrobials. These compounds kill 99.9% of common household bacteria and viruses, including E. coli, Salmonella, and influenza — and they break down into water and oxygen after use, leaving no toxic byproducts.
+              Plant-based disinfectants use hydrogen peroxide, citric acid, and thymol (derived from thyme) as active antimicrobials. Each product's label lists the organisms it is registered against and the contact time needed, and hydrogen peroxide breaks down into water and oxygen after use.
             </p>
           </div>
 
@@ -406,7 +406,7 @@ const WhyEcoFriendlyPage = () => {
               Children are not small adults when it comes to chemical exposure. Their bodies process toxins differently, their developing organs are more vulnerable to disruption, and their behaviors — crawling on floors, mouthing objects, spending more time indoors — dramatically increase their exposure to cleaning product residues.
             </p>
             <p>
-              Research published in the <strong className="text-foreground">American Journal of Respiratory and Critical Care Medicine</strong> found that children regularly exposed to cleaning spray chemicals had a 49% higher risk of developing asthma by age 7. Another study from the <strong className="text-foreground">Silent Spring Institute</strong> found that children in homes where conventional cleaning products are used had measurably higher concentrations of endocrine-disrupting chemicals in their urine.
+              A 2020 study of the Canadian CHILD birth cohort, published in the <strong className="text-foreground">Canadian Medical Association Journal</strong> (Parks et al.), found that infants in homes with frequent use of household cleaning products had a higher risk of recurrent wheeze and asthma by age 3. Research on adults published in the <strong className="text-foreground">American Journal of Respiratory and Critical Care Medicine</strong> (Svanes et al., 2018) associated regular use of cleaning sprays with faster decline in lung function. These are associations from observational studies, not proof that any single product causes disease.
             </p>
             <p>
               The issue is compounded by where children spend most of their time. Infants and toddlers who crawl on floors are in direct contact with the surfaces where chemical residues from conventional floor cleaners concentrate. Hand-to-mouth contact — a natural behavior in children under 3 — transfers those residues directly. No amount of ventilation eliminates surface residues.
@@ -415,12 +415,12 @@ const WhyEcoFriendlyPage = () => {
               The <strong className="text-foreground">American Academy of Pediatrics (AAP)</strong> specifically recommends that families with young children reduce or eliminate exposure to cleaning products containing synthetic fragrances, ammonia, chlorine bleach, and VOC-emitting solvents. Their 2016 policy statement on chemical management explicitly calls for stricter regulation of household cleaning chemicals and encourages the use of safer alternatives.
             </p>
             <p>
-              Capital Clean Care eliminates this risk entirely. Our plant-based products leave no toxic surface residues, emit no VOCs into breathing air, and contain no synthetic fragrances. When your floors are cleaned, your baby can crawl on them safely — because we designed our approach with exactly that in mind.
+              Capital Clean Care reduces this exposure. We choose plant-based, fragrance-free products by their labels, avoid chlorine bleach and ammonia, and record any allergies or sensitivities you tell us about before the visit. Any product-specific precautions on the label — including drying time before floors are used again — take priority.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {[
-              { stat: "49%", label: "Higher asthma risk in children exposed to cleaning sprays (AJRCCM)" },
+              { stat: "2020", label: "Canadian CHILD cohort study (CMAJ) linking frequent early-life exposure to cleaning products with higher asthma and wheeze risk" },
               { stat: "3×", label: "More air breathed per body weight by children vs. adults" },
               { stat: "80%+", label: "Of children's time spent indoors where VOC concentrations are highest" },
             ].map((item) => (
@@ -554,7 +554,7 @@ const WhyEcoFriendlyPage = () => {
               <Link to="/maryland" className="text-accent hover:underline font-medium">Maryland</Link>,{" "}
               <Link to="/washington-dc" className="text-accent hover:underline font-medium">Washington DC</Link>, and{" "}
               <Link to="/virginia" className="text-accent hover:underline font-medium">Northern Virginia</Link> — using EPA Safer Choice certified products at no extra charge.{" "}
-              <Link to="/contact" className="text-accent hover:underline font-medium">Get a free quote →</Link>
+              <a href="#quote" className="text-accent hover:underline font-medium">Get a free quote →</a>
             </p>
           </div>
         </div>

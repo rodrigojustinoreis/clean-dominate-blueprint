@@ -130,8 +130,9 @@ const HowOftenDeepClean = () => {
             <h2 id="baseline" className="font-heading text-2xl md:text-3xl font-bold text-foreground mt-10 mb-4 scroll-mt-24">The Baseline: Once or Twice a Year</h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
               For a home in average condition with no pets or young children, one or two deep cleans a year keeps everything in
-              check. The most common pattern in the DMV is a spring deep clean to clear a winter's worth of closed-window dust,
-              and a fall one to reset before the holidays. If your home is already on a{" "}
+              check. The most common pattern in the DMV is a{" "}
+              <Link to="/spring-cleaning-md" className="text-accent underline hover:no-underline">spring deep clean</Link>{" "}
+              to clear a winter's worth of closed-window dust, and a fall one to reset before the holidays. If your home is already on a{" "}
               <Link to="/services/recurring-cleaning" className="text-accent underline hover:no-underline">recurring cleaning plan</Link>, a
               single annual deep clean is usually enough — the recurring visits handle maintenance, and the deep clean catches up
               on the detail work they intentionally skip.

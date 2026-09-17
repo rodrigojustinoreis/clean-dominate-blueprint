@@ -60,9 +60,9 @@ export const ecoRecurringCityContent: Record<string, ServiceLocationOverride> = 
       { q: "Can you clean the modern finishes in newer Navy Yard mixed-use residences?", a: "Yes. The high-end mixed-use residences and premium condos near Nationals Park often feature quartz counters, engineered floors, and stainless fixtures. Our plant-based products clean these modern surfaces effectively without harsh solvents that can dull or streak them. Every visit is backed by our satisfaction guarantee, so your contemporary finishes stay bright and protected." },
     ],
     photos: [
-      { src: "/images/team/eco-friendly-products.webp", alt: "Capital Clean Care eco-friendly products for a Navy Yard, Washington DC condo" },
-      { src: "/images/team/wiping-door-microfiber.jpg", alt: "Capital Clean Care wiping surfaces with reusable microfiber in Navy Yard, DC" },
-      { src: "/images/team/team-mopping-uniform.jpg", alt: "Capital Clean Care team providing eco-friendly cleaning in Navy Yard, Washington DC" },
+      { src: "/images/team/eco-friendly-products.webp", alt: "Cleaning products used by Capital Clean Care" },
+      { src: "/images/team/wiping-door-microfiber.jpg", alt: "Capital Clean Care team member wiping a surface with a reusable microfiber cloth" },
+      { src: "/images/team/team-mopping-uniform.jpg", alt: "Capital Clean Care team member mopping a floor in uniform" },
     ],
   },
   "olney-md/eco-friendly-cleaning": {

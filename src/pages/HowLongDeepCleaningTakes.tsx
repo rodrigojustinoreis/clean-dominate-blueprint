@@ -76,7 +76,7 @@ const HowLongDeepCleaningTakes = () => {
         <p className="text-xl md:text-2xl text-gray-200 mb-4 leading-relaxed font-medium">Real timelines by home size, from studios to 5-bedroom houses</p>
         <p className="text-gray-300 mb-8 text-sm uppercase tracking-widest">By Rodrigo Reis, Owner · MD · DC · VA · July 2026</p>
         <Button size="lg" className="bg-accent hover:bg-accent/90 text-white text-lg px-8 py-6 rounded-full shadow-lg" asChild>
-          <a href="/#quote">Get My Free Quote</a>
+          <a href="/services/deep-cleaning#quote">Get My Free Quote</a>
         </Button>
       </BlogHero>
 
@@ -98,7 +98,7 @@ const HowLongDeepCleaningTakes = () => {
             <div className="border-l-4 border-accent bg-accent/5 p-4 rounded-r-xl mb-8">
               <p className="text-sm text-muted-foreground leading-relaxed">
                 Want to know exactly how long your home would take?{" "}
-                <a href="/#quote" className="text-accent font-semibold underline hover:no-underline">Get a free quote</a>{" "}
+                <a href="/services/deep-cleaning#quote" className="text-accent font-semibold underline hover:no-underline">Get a free quote</a>{" "}
                 and we'll include a time estimate for your specific home.
               </p>
             </div>
@@ -211,7 +211,7 @@ const HowLongDeepCleaningTakes = () => {
           </FadeInSection>
 
           <FadeInSection>
-            <BlogInlineCTA headline="Want a time and price estimate for your home?" subtext="Tell us the size and condition and we'll quote a flat price with a realistic timeline. EPA Safer Choice products and a 24-hour re-clean guarantee, across Montgomery County and the DMV." ctaLabel="Get My Free Quote" ctaTo="/contact" />
+            <BlogInlineCTA headline="Want a time and price estimate for your home?" subtext="Tell us the size and condition and we'll quote a flat price with a realistic timeline. EPA Safer Choice products and a 24-hour re-clean guarantee, across Montgomery County and the DMV." ctaLabel="Get My Free Quote" ctaTo="/services/deep-cleaning#quote" />
           </FadeInSection>
 
           <FadeInSection>
@@ -252,7 +252,7 @@ const HowLongDeepCleaningTakes = () => {
               <p className="text-primary-foreground/80 mb-6 leading-relaxed">Flat pricing, realistic timelines, and 2-person teams that show up when they say they will. 5.0 stars on Google, serving the DMV since 2015.</p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <Button size="lg" className="bg-accent hover:bg-accent/90 text-white px-8 py-6 rounded-full text-base font-semibold shadow-md" asChild>
-                  <a href="/#quote">Get My Free Quote <ArrowRight className="ml-2 h-4 w-4" /></a>
+                  <a href="/services/deep-cleaning#quote">Get My Free Quote <ArrowRight className="ml-2 h-4 w-4" /></a>
                 </Button>
                 <Button size="lg" className="bg-white/10 hover:bg-white/20 text-white border border-white/40 px-8 py-6 rounded-full text-base font-semibold" asChild>
                   <a href="tel:+12407042551"><Phone className="mr-2 h-4 w-4" /> Call (240) 704-2551</a>
@@ -269,7 +269,7 @@ const HowLongDeepCleaningTakes = () => {
       </article>
 
       <RelatedPosts currentSlug="how-long-does-deep-cleaning-take" />
-      <StickyCTA />
+      <StickyCTA to="/services/deep-cleaning#quote" />
     </Layout>
   );
 };

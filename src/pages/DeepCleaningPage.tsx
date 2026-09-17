@@ -532,7 +532,9 @@ const DeepCleaningPage = () => {
                   deep clean each spring, then maintain it with{" "}
                   <Link to="/services/recurring-cleaning" className="text-accent hover:underline font-medium">recurring service</Link>.
                   See our{" "}
-                  <Link to="/resources/deep-cleaning-tips-maryland-homes-spring-prep" className="text-accent hover:underline font-medium">spring-prep deep cleaning tips</Link>.
+                  <Link to="/resources/deep-cleaning-tips-maryland-homes-spring-prep" className="text-accent hover:underline font-medium">spring-prep deep cleaning tips</Link>{" "}
+                  or the seasonal{" "}
+                  <Link to="/spring-cleaning-md" className="text-accent hover:underline font-medium">spring cleaning service for Maryland homes</Link>.
                 </p>
               </div>
               <div className="bg-card border border-border rounded-xl p-6 shadow-sm">

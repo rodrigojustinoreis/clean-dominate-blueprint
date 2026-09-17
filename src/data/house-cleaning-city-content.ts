@@ -15,9 +15,9 @@ export const houseCleaningCityContent: Record<string, ServiceLocationOverride> =
       { q: "Are your products safe for the original wood and plaster in older Adams Morgan flats?", a: "Yes. Pre-war apartment flats and renovated Victorians in Adams Morgan often keep original hardwood, plaster walls, and older tile that harsh chemicals can damage. We use EPA Safer Choice, plant-based products chosen to clean effectively while being gentle on aged surfaces, and our background-checked, bonded, and insured teams treat vintage finishes with care." },
     ],
     photos: [
-      { src: "/images/team/real-team-mopping.jpg", alt: "Capital Clean Care cleaning an Adams Morgan, DC rowhouse" },
-      { src: "/images/team/team-two-living-room.jpg", alt: "Capital Clean Care house cleaning team in an Adams Morgan, DC condo" },
-      { src: "/images/team/vacuuming-living-room.jpg", alt: "Capital Clean Care vacuuming a living room in Adams Morgan, Washington DC" },
+      { src: "/images/team/real-team-mopping.jpg", alt: "Capital Clean Care team member mopping a floor during a house cleaning visit" },
+      { src: "/images/team/team-two-living-room.jpg", alt: "Two Capital Clean Care team members cleaning a living room" },
+      { src: "/images/team/vacuuming-living-room.jpg", alt: "Capital Clean Care team member vacuuming a living room" },
     ],
   },
   "alexandria-va/house-cleaning": {
@@ -81,9 +81,9 @@ export const houseCleaningCityContent: Record<string, ServiceLocationOverride> =
       { q: "Can you clean an English basement apartment on Capitol Hill?", a: "Yes, English basement units are common across Capitol Hill and we clean them regularly. Because they're typically a single garden level, a basement apartment usually takes about 1 to 1.5 hours. We're glad to coordinate any separate entrance or lockbox access with you, and every visit comes with a free quote and our satisfaction guarantee." },
     ],
     photos: [
-      { src: "/images/team/real-team-mopping.jpg", alt: "Capital Clean Care team cleaning a Capitol Hill, DC rowhouse" },
-      { src: "/images/team/team-making-bed.jpg", alt: "Capital Clean Care making a bed during house cleaning on Capitol Hill, DC" },
-      { src: "/images/team/mopping-hardwood-floor.jpg", alt: "Capital Clean Care mopping heart-pine floors on Capitol Hill, DC" },
+      { src: "/images/team/real-team-mopping.jpg", alt: "Capital Clean Care team member mopping a floor during a house cleaning visit" },
+      { src: "/images/team/team-making-bed.jpg", alt: "Capital Clean Care team member making a bed during a house cleaning visit" },
+      { src: "/images/team/mopping-hardwood-floor.jpg", alt: "Capital Clean Care team member mopping a hardwood floor" },
     ],
   },
   "chevy-chase-md/house-cleaning": {
@@ -211,9 +211,9 @@ export const houseCleaningCityContent: Record<string, ServiceLocationOverride> =
       { q: "Can you clean newer construction near the Kentlands town center and Crown Farm?", a: "Yes. Around the town center, Crown Farm, and the Washingtonian Center you'll find newer single-family homes, apartments, and modern finishes. We adapt our methods and eco-friendly EPA Safer Choice products to contemporary surfaces just as readily as to the classic front-porch homes, and every clean comes with a free estimate and our satisfaction guarantee." },
     ],
     photos: [
-      { src: "/images/team/real-team-mopping.jpg", alt: "Capital Clean Care team mopping a Kentlands, MD home" },
-      { src: "/images/team/team-two-living-room.jpg", alt: "Capital Clean Care cleaning a living room in Kentlands, Gaithersburg MD" },
-      { src: "/images/team/team-making-bed.jpg", alt: "Capital Clean Care making a bed during house cleaning in Kentlands, MD" },
+      { src: "/images/team/real-team-mopping.jpg", alt: "Capital Clean Care team member mopping a floor during a house cleaning visit" },
+      { src: "/images/team/team-two-living-room.jpg", alt: "Two Capital Clean Care team members cleaning a living room" },
+      { src: "/images/team/team-making-bed.jpg", alt: "Capital Clean Care team member making a bed during a house cleaning visit" },
     ],
   },
   "mclean-va/house-cleaning": {
@@ -225,9 +225,9 @@ export const houseCleaningCityContent: Record<string, ServiceLocationOverride> =
       { q: "Do you also clean the luxury high-rise condos near Tysons?", a: "Yes. Alongside McLean's estate homes, we clean luxury high-rise condominiums near Tysons, which usually run 1,500 to 3,000 square feet and take about two and a half to four hours for a standard clean. We're comfortable with building access procedures and service elevators, and every condo clean includes a free estimate and our satisfaction guarantee." },
     ],
     photos: [
-      { src: "/images/team/team-post-construction.jpg", alt: "Capital Clean Care team cleaning a large McLean, VA home \u2014 professional house cleaning service" },
-      { src: "/images/team/cleaning-window-blinds.webp", alt: "Capital Clean Care team member cleaning windows in McLean, VA home" },
-      { src: "/images/team/eco-friendly-products.webp", alt: "Capital Clean Care eco-certified products for McLean, VA premium house cleaning" },
+      { src: "/images/team/team-post-construction.jpg", alt: "Capital Clean Care team members during a cleaning visit" },
+      { src: "/images/team/cleaning-window-blinds.webp", alt: "Capital Clean Care team member cleaning window blinds" },
+      { src: "/images/team/eco-friendly-products.webp", alt: "Cleaning products used by Capital Clean Care" },
     ],
   },
   "montgomery-village-md/house-cleaning": {
@@ -239,9 +239,9 @@ export const houseCleaningCityContent: Record<string, ServiceLocationOverride> =
       { q: "Do you offer recurring cleaning for busy households across the different villages?", a: "Yes. Because Montgomery Village blends single-family homes, townhouses, and apartments across North, South, and East Village, many residents prefer weekly, biweekly, or monthly recurring visits to keep pace with family life. We keep the same trusted, background-checked team on your home when possible, and every visit is backed by our satisfaction guarantee. Free quotes are always available." },
     ],
     photos: [
-      { src: "/images/team/real-team-mopping.jpg", alt: "Capital Clean Care team cleaning a Montgomery Village, MD home" },
-      { src: "/images/team/vacuuming-living-room.jpg", alt: "Capital Clean Care vacuuming a living room in Montgomery Village, MD" },
-      { src: "/images/team/team-two-living-room.jpg", alt: "Capital Clean Care house cleaning crew in Montgomery Village, MD" },
+      { src: "/images/team/real-team-mopping.jpg", alt: "Capital Clean Care team member mopping a floor during a house cleaning visit" },
+      { src: "/images/team/vacuuming-living-room.jpg", alt: "Capital Clean Care team member vacuuming a living room" },
+      { src: "/images/team/team-two-living-room.jpg", alt: "Two Capital Clean Care team members cleaning a living room" },
     ],
   },
   "mount-airy-md/house-cleaning": {

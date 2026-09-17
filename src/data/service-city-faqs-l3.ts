@@ -52,7 +52,7 @@ export const serviceCityFaqsL3: Record<string, ServiceLocationOverride> = {
     ],
   },
   "damascus-md/move-out-cleaning": {
-    uniqueContent: "A move-out clean in Damascus has one job: get every dollar of your security deposit back, or hand the next owner a genuinely spotless home. That means the areas landlords and buyers actually inspect \u2014 inside the oven and refrigerator, inside cabinets and drawers, baseboards, window tracks, closets, and the bathroom grout and caulk that show every bit of neglect. Our move-out teams work a lease-end checklist built around exactly those points, leaving the home empty-and-immaculate rather than just tidy.\n\nMoving is stressful enough in a town like Damascus where the next place might be a haul; the final clean shouldn't be on you. We bring all supplies, clean the home top to bottom once it's empty (or around what's left), and focus on the high-scrutiny spots that cost tenants their deposits. Eco-friendly, background-checked, and insured \u2014 and if you're moving in rather than out, we reset the home before your first night.",
+    uniqueContent: "A move-out clean in Damascus has one job: leave the home ready for the final walkthrough or for the next owner. Cleaning does not decide the security-deposit outcome — that stays with the landlord under the lease — but it covers the areas landlords and buyers actually inspect \u2014 inside the oven and refrigerator, inside cabinets and drawers, baseboards, window tracks, closets, and the bathroom grout and caulk that show every bit of neglect. Our move-out teams work a lease-end checklist built around exactly those points, leaving the home empty-and-immaculate rather than just tidy.\n\nMoving is stressful enough in a town like Damascus where the next place might be a haul; the final clean shouldn't be on you. We bring all supplies, clean the home top to bottom once it's empty (or around what's left), and focus on the high-scrutiny spots that cost tenants their deposits. Eco-friendly, background-checked, and insured \u2014 and if you're moving in rather than out, we reset the home before your first night.",
     faqs: [
       { q: "How long does a move-out clean take for a home in Damascus?", a: "Because Damascus homes tend to be larger with generous lot sizes, timing scales with the house. A smaller single-family home near Damascus Town Center may take 4 to 6 hours once empty, while a large custom-built or farmhouse-style property in Woodfield or Goshen Estates can run 7 to 11 hours to fully detail inside cabinets, closets, and appliances room by room." },
       { q: "Do you clean inside all the cabinets and appliances for a move-out?", a: "Yes. Our move-out service covers inside every cabinet and drawer, inside the oven, refrigerator, and any built-ins, plus closets, baseboards, and fixtures. For the large custom and farmhouse-style residences common around the Ridge Road corridor and Sweepstakes, this whole-home detailing is exactly what a lease-end or sale walkthrough requires." },
@@ -60,9 +60,9 @@ export const serviceCityFaqsL3: Record<string, ServiceLocationOverride> = {
       { q: "Will a move-out clean get my deposit back on a Damascus rental?", a: "That is exactly what it is designed to do. We clean to the landlord walkthrough standard: inside cabinets and appliances, closets, baseboards, bathrooms, and floors throughout. For rentals near Damascus Town Center, delivering the home this clean removes the common reasons a deposit gets docked. We back it with our guarantee and offer free quotes upfront." },
     ],
     photos: [
-      { src: "/images/team/cleaning-appliances.jpg", alt: "Capital Clean Care cleaning inside appliances during a move-out clean in Damascus, MD" },
-      { src: "/images/team/real-team-maria-fridge.jpg", alt: "Capital Clean Care cleaning inside a refrigerator for a move-out in Damascus, MD" },
-      { src: "/images/team/cleaning-under-cabinet.jpg", alt: "Capital Clean Care cleaning inside cabinets during a move-out clean in Damascus, MD" },
+      { src: "/images/team/cleaning-appliances.jpg", alt: "Capital Clean Care team member cleaning inside appliances during a move-out clean" },
+      { src: "/images/team/real-team-maria-fridge.jpg", alt: "Capital Clean Care team member cleaning inside a refrigerator during a move-out clean" },
+      { src: "/images/team/cleaning-under-cabinet.jpg", alt: "Capital Clean Care team member cleaning inside cabinets during a move-out clean" },
     ],
   },
   "germantown-md/move-out-cleaning": {
@@ -104,9 +104,9 @@ export const serviceCityFaqsL3: Record<string, ServiceLocationOverride> = {
       { q: "Do you serve smaller commercial spaces in Damascus, or only large offices?", a: "We serve small businesses across Damascus, from single-suite offices to Town Center storefronts and Woodfield-area shops. Damascus keeps a rural, small-town feel, so many clients are independent operators rather than large corporate floors. We tailor recurring schedules to modest square footage, and every quote is free with no obligation. Our team is bonded, insured, and background-checked." },
     ],
     photos: [
-      { src: "/images/team/team-mopping-uniform.jpg", alt: "Capital Clean Care team member cleaning an office after hours in Damascus, MD" },
-      { src: "/images/team/team-cleaning-glass-door.jpg", alt: "Capital Clean Care cleaning glass doors at a Damascus, MD office" },
-      { src: "/images/team/mopping-hardwood-floor.jpg", alt: "Capital Clean Care mopping a business floor in Damascus, MD" },
+      { src: "/images/team/team-mopping-uniform.jpg", alt: "Capital Clean Care team member mopping a floor in uniform" },
+      { src: "/images/team/team-cleaning-glass-door.jpg", alt: "Capital Clean Care team member cleaning a glass door" },
+      { src: "/images/team/mopping-hardwood-floor.jpg", alt: "Capital Clean Care team member mopping a hardwood floor" },
     ],
   },
   "olney-md/office-cleaning": {
