@@ -145,33 +145,50 @@ describe("support content — CTAs stay on a page that owns a quote form", () =>
 });
 
 describe("content gate 2 (2026-09-17) — expired promotion, absolute claims, authorship; defaults preserved elsewhere", () => {
-  it("spring-cleaning-md: no SPRING25 campaign, no expiry date, no unpublished price; form preselects deep cleaning", () => {
+  it("spring-cleaning-md: no SPRING25 campaign, no expiry date, no unpublished price, no local discount, no demand-peak claim; form preselects deep cleaning", () => {
     const main = renderMain("/spring-cleaning-md");
     const t = text(main);
     expect(t).not.toContain("SPRING25");
     expect(t).not.toMatch(/May 31|Valid through|Seasonal Special/);
     expect(t).not.toContain("$150");
     expect(t).not.toMatch(/EPA Safer Choice certified|non-toxic/i);
-    expect(t).toContain("New clients get 15% off their first clean"); // the site-wide offer, no seasonal code
+    // consensus lot: no page-local repetition of the offer (the shared QuoteForm badge and the global AnnouncementBar are out of scope)
+    expect(t).not.toMatch(/New clients get 15% off|15% off for new clients|15% off their first/i);
+    expect(t).not.toMatch(/busiest/i);
     expect(t).toContain("chosen by their labels");
     expect(main).toContain('href="/services/deep-cleaning"');
     expect(main).toContain('id="spring-quote"');
+    expect(main).toMatch(/<h1[^>]*>Spring Cleaning in Maryland — Fresh Start for Your Home<\/h1>/); // H1 unchanged
   });
 
-  it("why-eco-friendly-cleaning: absolute health/safety and certification claims are gone; sources stay", () => {
-    const t = text(renderMain("/why-eco-friendly-cleaning"));
+  it("why-eco-friendly-cleaning: absolute health/safety, certification and unconfirmed-practice claims are gone; linked sources stay", () => {
+    const main = renderMain("/why-eco-friendly-cleaning");
+    const t = text(main);
     for (const phrase of [
       "no risk to your family", "Plant-based products eliminate that risk", "zero harmful residues", "kills 99.9%",
       "Safe — no harmful residues", "non-toxic after drying", "We only use products that meet this standard",
       "EPA Safer Choice certified products", "Zero Recontamination", "Safe for children, pets, and allergy sufferers",
       "Especially Dangerous for Children", "may disrupt hormonal function", "100% Of our products", "Ethylene glycol",
       "developed over 10+ years", "food-safe and antimicrobial", "Their 2016 policy statement",
+      // consensus lot (2026-09-17)
+      "no chemical residue", "Every drain", "every drain", "all of Maryland", "Most incidents", "standard kit",
+      "we use one of those", "we avoid pine-oil", "We prefer fragrance-free", "no legal definition", "Dye et al.",
+      "Reproductive Toxicology", "Safer Choice for Your Family", "15% off",
     ]) expect(t, phrase).not.toContain(phrase);
+    expect(main).toMatch(/<h1[^>]*>Eco-Friendly Cleaning: How to Choose Products and Use Them<\/h1>/);
     expect(t).toContain("Parks et al.");
     expect(t).toContain("Svanes et al.");
-    expect(t).toContain("Dye et al.");
     expect(t).toContain("Only an EPA-registered product");
     expect(t).toContain("Label-Guided Products"); // GreenShield label-based variant rendered here
+    for (const url of [
+      "https://www.ftc.gov/business-guidance/resources/environmental-claims-summary-green-guides",
+      "https://www.epa.gov/saferchoice/learn-about-safer-choice-label",
+      "https://www.epa.gov/coronavirus-and-disinfectants/whats-difference-between-products-disinfect-sanitize-and-clean",
+      "https://www.aspca.org/pet-care/animal-poison-control/poisonous-household-products",
+      "https://www.chesapeakebay.net/discover/bay-facts",
+      "https://www.fda.gov/consumers/consumer-updates/antibacterial-soap-you-can-skip-it-use-plain-soap-and-water",
+      "https://ntp.niehs.nih.gov/whatwestudy/assessments/cancer/roc",
+    ]) expect(main, url).toContain(`href="${url}"`);
   });
 
   it("GreenShield default copy is untouched on a control consumer (/services/deep-cleaning)", () => {
@@ -188,6 +205,7 @@ describe("content gate 2 (2026-09-17) — expired promotion, absolute claims, au
     expect(text(howLong)).not.toContain("EPA Safer Choice products");
     expect(howLong).toContain('alt="Capital Clean Care logo"');
     expect(howLong).toContain("Rodrigo founded Capital Clean Care in 2015");
+    expect(text(howLong)).not.toContain("describe how his own teams work");
     expect(howLong).toContain('href="/about"');
     const control = renderMain("/resources/hidden-fees-house-cleaning");
     expect(text(control)).toContain("500+ homes");
