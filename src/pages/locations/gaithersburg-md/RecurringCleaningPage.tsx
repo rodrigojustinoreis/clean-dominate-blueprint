@@ -165,7 +165,7 @@ const GaithersburgRecurringCleaningPage = () => {
       <FAQSchema faqs={faqs} />
 
       {/* Breadcrumbs */}
-      <div className="pt-24 bg-gradient-to-br from-primary/5 via-background to-accent/5">
+      <div className="pt-12 md:pt-16 bg-gradient-to-br from-primary/5 via-background to-accent/5">
         <div className="container mx-auto px-4 max-w-6xl pb-2">
           <Breadcrumbs
             items={[
@@ -187,6 +187,8 @@ const GaithersburgRecurringCleaningPage = () => {
         heroImage="/images/team/team-mopping-uniform.jpg"
         heroImageAlt="Capital Clean Care recurring house cleaning in Gaithersburg, MD — same trusted team, every visit"
         ctaPrimary="Set Up Recurring Cleaning in Gaithersburg"
+        ctaAfterHeading
+        stackCtas
       />
 
       {/* Checklist */}
