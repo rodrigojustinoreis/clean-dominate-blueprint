@@ -163,7 +163,7 @@ const OlneyOfficeCleaningPage = () => {
       <FAQSchema faqs={faqs} />
 
       {/* Breadcrumbs */}
-      <div className="pt-24 bg-gradient-to-br from-primary/5 via-background to-accent/5">
+      <div className="pt-12 md:pt-16 bg-gradient-to-br from-primary/5 via-background to-accent/5">
         <div className="container mx-auto px-4 max-w-6xl pb-2">
           <Breadcrumbs
             items={[
@@ -185,6 +185,8 @@ const OlneyOfficeCleaningPage = () => {
         heroImage="/images/team/team-cleaning-glass-door.jpg"
         heroImageAlt="Capital Clean Care office cleaning service in Olney, MD — reliable commercial cleaning"
         ctaPrimary="Get a Commercial Cleaning Quote in Olney"
+        ctaAfterHeading
+        stackCtas
       />
 
       {/* Checklist */}
