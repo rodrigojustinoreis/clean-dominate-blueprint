@@ -15,6 +15,7 @@ import {
 import { Slider } from "@/components/ui/slider";
 import { ArrowRight, Calculator, Home, Bath, BedDouble, Sparkles, User, Phone, Mail, MapPin } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { submitLeadDual, payloadKey, LEAD_SUBMITTED_TEXT, LEAD_UNCONFIRMED_TEXT, type DualLeadState } from "@/lib/submit-lead-dual";
 
 const basePrices: Record<string, number> = {
   standard: 160,
@@ -81,6 +82,9 @@ const PriceCalculator = () => {
   const [sqft, setSqft] = useState([1500]);
   const [selectedAddons, setSelectedAddons] = useState<string[]>([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  // M02c: synchronous submit guard (React state is not a mutex) and per-payload destination states (memory only).
+  const submittingRef = useRef(false);
+  const leadStateRef = useRef<DualLeadState | null>(null);
   const formStarted = useRef(false);
 
   // Hydration guard. This estimator is built on Radix Select/Slider, whose useId-based ids
@@ -149,74 +153,63 @@ const PriceCalculator = () => {
       return;
     }
 
+    if (submittingRef.current) return;
+    submittingRef.current = true;
     setIsSubmitting(true);
 
+    // Two destinations, attempted concurrently (see src/lib/submit-lead-dual.ts): the e-mail notification is the
+    // channel the team reads (critical); the Supabase row is backup storage and never blocks the e-mail.
+    const dbRow = {
+      name,
+      phone,
+      email,
+      service: service || "Not specified",
+      bedrooms: bedrooms,
+      bathrooms: bathrooms,
+      frequency: frequency,
+      zip: address, // mapping address to zip temporarily to satisfy constraints
+      message: `Calculated Estimate: $${estimate.low} - $${estimate.high}. SqFt: ${sqft[0]}. Addons: ${selectedAddons.join(', ')}. Full Address: ${address}`,
+    };
+    const formPayload = {
+      name,
+      phone,
+      email,
+      address,
+      service,
+      bedrooms,
+      bathrooms,
+      frequency,
+      square_feet: sqft[0],
+      selected_addons: selectedAddons.join(', '),
+      estimated_price_low: estimate.low,
+      estimated_price_high: estimate.high,
+      _subject: "New Instant Quote Request!",
+    };
+
     try {
-      // 1. Save to Supabase (assuming a basic quote_requests table structure)
-      // Dynamic import keeps the supabase client out of the home page's initial bundle.
-      // Since address isn't in the default quote_requests schema, we'll map it to zip or message
-      // or if your schema supports it, add it. Here we add it to the message field for now
-      const { supabase } = await import("@/integrations/supabase/client");
-      const { error: dbError } = await supabase.from("quote_requests").insert({
-        name,
-        phone,
-        email,
-        service: service || "Not specified",
-        bedrooms: bedrooms,
-        bathrooms: bathrooms,
-        frequency: frequency,
-        zip: address, // mapping address to zip temporarily to satisfy constraints
-        message: `Calculated Estimate: $${estimate.low} - $${estimate.high}. SqFt: ${sqft[0]}. Addons: ${selectedAddons.join(', ')}. Full Address: ${address}`,
-      });
+      const result = await submitLeadDual({ stateRef: leadStateRef, key: payloadKey(formPayload), emailBody: formPayload, dbRow });
 
-      if (dbError) throw dbError;
-
-      // 2. Send via FormSubmit
-      const formPayload = {
-        name,
-        phone,
-        email,
-        address,
-        service,
-        bedrooms,
-        bathrooms,
-        frequency,
-        square_feet: sqft[0],
-        selected_addons: selectedAddons.join(', '),
-        estimated_price_low: estimate.low,
-        estimated_price_high: estimate.high,
-        _subject: "New Instant Quote Request!",
-      };
-
-      await fetch("https://formsubmit.co/ajax/capitalcleancare@gmail.com", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify(formPayload),
-      });
-
-      trackQuoteFormSubmit(service || "calculator", `${window.location.pathname}:calculator`);
-      toast({
-        title: "Quote Sent Successfully!",
-        description: "We'll be in touch shortly to confirm your booking.",
-      });
-
-      // Reset form
-      setName("");
-      setPhone("");
-      setEmail("");
-      setAddress("");
-      
-    } catch (error) {
-      console.error("Error submitting quote:", error);
-      toast({
-        title: "Submission Failed",
-        description: "There was an error sending your request. Please try again.",
-        variant: "destructive",
-      });
+      if (result.email === "accepted") {
+        if (result.emailJustAccepted) {
+          try {
+            trackQuoteFormSubmit(service || "calculator", `${window.location.pathname}:calculator`);
+          } catch {
+            // Analytics must never invalidate an accepted submission.
+          }
+        }
+        toast({ title: "Request submitted", description: LEAD_SUBMITTED_TEXT });
+        // Reset form (a new request will get a new payload key)
+        setName("");
+        setPhone("");
+        setEmail("");
+        setAddress("");
+        leadStateRef.current = null;
+      } else {
+        // Failed or uncertain (timeout): keep every field for a manual retry; no event; no claim that nothing was sent.
+        toast({ title: "Request not confirmed", description: LEAD_UNCONFIRMED_TEXT, variant: "destructive" });
+      }
     } finally {
+      submittingRef.current = false;
       setIsSubmitting(false);
     }
   };

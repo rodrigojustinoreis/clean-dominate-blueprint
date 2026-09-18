@@ -1,4 +1,5 @@
-import { useState, useEffect, useCallback, Fragment } from "react";
+import { useState, useEffect, useCallback, useRef, Fragment } from "react";
+import { submitLeadDual, payloadKey, LEAD_UNCONFIRMED_TEXT, type DualLeadState } from "@/lib/submit-lead-dual";
 import { X, Star, ShieldCheck, Leaf } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -36,6 +37,9 @@ const SPARKLES = [
 
 const ExitIntentPopup = () => {
   const [show, setShow] = useState(false);
+  // M02c: synchronous submit guard and per-payload destination states (memory only). No analytics event here.
+  const submittingRef = useRef(false);
+  const leadStateRef = useRef<DualLeadState | null>(null);
   const [july4, setJuly4] = useState(false);
   const [now, setNow] = useState(() => Date.now());
   const [name, setName] = useState("");
@@ -108,32 +112,35 @@ const ExitIntentPopup = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!name.trim() || !phone.trim()) return;
+    if (submittingRef.current) return;
+    submittingRef.current = true;
     setSubmitting(true);
+    const dbRow = {
+      name,
+      phone,
+      service: "recurring",
+      message: july4
+        ? "Exit popup — 4th of July 25% OFF (first clean, bi-weekly plan)"
+        : "Exit intent popup — 15% discount claimed",
+    };
+    const emailBody = {
+      _subject: july4 ? `🎆 July 4th Lead: ${name}` : `Exit Intent Lead: ${name}`,
+      Name: name,
+      Phone: phone,
+      Source: july4 ? "Exit Popup — 4th of July 25% OFF (bi-weekly)" : "Exit Intent Popup — 15% Discount",
+    };
     try {
-      const { supabase } = await import("@/integrations/supabase/client");
-      await supabase.from("quote_requests").insert({
-        name,
-        phone,
-        service: "recurring",
-        message: july4
-          ? "Exit popup — 4th of July 25% OFF (first clean, bi-weekly plan)"
-          : "Exit intent popup — 15% discount claimed",
-      });
-      await fetch("https://formsubmit.co/ajax/capitalcleancare@gmail.com", {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({
-          _subject: july4 ? `🎆 July 4th Lead: ${name}` : `Exit Intent Lead: ${name}`,
-          Name: name,
-          Phone: phone,
-          Source: july4 ? "Exit Popup — 4th of July 25% OFF (bi-weekly)" : "Exit Intent Popup — 15% Discount",
-        }),
-      });
-      toast.success(`Got it! We'll call you shortly with your ${discount} discount.`);
-      setShow(false);
-    } catch {
-      toast.error("Something went wrong. Please try again.");
+      // E-mail is the critical destination; the Supabase row is backup (see src/lib/submit-lead-dual.ts).
+      const result = await submitLeadDual({ stateRef: leadStateRef, key: payloadKey(emailBody), emailBody, dbRow });
+      if (result.email === "accepted") {
+        toast.success(`Request submitted. Your ${discount} discount is noted. For immediate assistance, call (240) 704-2551.`);
+        setShow(false);
+      } else {
+        // Keep the popup and the typed data for a manual retry; no claim that nothing was sent.
+        toast.error(LEAD_UNCONFIRMED_TEXT);
+      }
     } finally {
+      submittingRef.current = false;
       setSubmitting(false);
     }
   };
