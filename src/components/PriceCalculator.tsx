@@ -259,9 +259,9 @@ const PriceCalculator = () => {
         {/* Core selections */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
           <div className="space-y-2">
-            <Label className="flex items-center gap-1"><Sparkles className="h-3.5 w-3.5" /> Service Type</Label>
+            <Label htmlFor="calc-service" className="flex items-center gap-1"><Sparkles className="h-3.5 w-3.5" /> Service Type</Label>
             <Select value={service} onValueChange={setService}>
-              <SelectTrigger><SelectValue placeholder="Select service" /></SelectTrigger>
+              <SelectTrigger id="calc-service"><SelectValue placeholder="Select service" /></SelectTrigger>
               <SelectContent>
                 <SelectItem value="standard">Standard Cleaning</SelectItem>
                 <SelectItem value="deep">Deep Cleaning</SelectItem>
@@ -273,9 +273,9 @@ const PriceCalculator = () => {
             </Select>
           </div>
           <div className="space-y-2">
-            <Label>Frequency</Label>
+            <Label htmlFor="calc-frequency">Frequency</Label>
             <Select value={frequency} onValueChange={setFrequency}>
-              <SelectTrigger><SelectValue placeholder="How often?" /></SelectTrigger>
+              <SelectTrigger id="calc-frequency"><SelectValue placeholder="How often?" /></SelectTrigger>
               <SelectContent>
                 {Object.entries(frequencyMultiplier).map(([k, v]) => (
                   <SelectItem key={k} value={k}>{v.label}</SelectItem>
@@ -284,9 +284,9 @@ const PriceCalculator = () => {
             </Select>
           </div>
           <div className="space-y-2">
-            <Label className="flex items-center gap-1"><BedDouble className="h-3.5 w-3.5" /> Bedrooms</Label>
+            <Label htmlFor="calc-bedrooms" className="flex items-center gap-1"><BedDouble className="h-3.5 w-3.5" /> Bedrooms</Label>
             <Select value={bedrooms} onValueChange={setBedrooms}>
-              <SelectTrigger><SelectValue placeholder="Beds" /></SelectTrigger>
+              <SelectTrigger id="calc-bedrooms"><SelectValue placeholder="Beds" /></SelectTrigger>
               <SelectContent>
                 {["1", "2", "3", "4", "5+"].map((n) => (
                   <SelectItem key={n} value={n}>{n}</SelectItem>
@@ -295,9 +295,9 @@ const PriceCalculator = () => {
             </Select>
           </div>
           <div className="space-y-2">
-            <Label className="flex items-center gap-1"><Bath className="h-3.5 w-3.5" /> Bathrooms</Label>
+            <Label htmlFor="calc-bathrooms" className="flex items-center gap-1"><Bath className="h-3.5 w-3.5" /> Bathrooms</Label>
             <Select value={bathrooms} onValueChange={setBathrooms}>
-              <SelectTrigger><SelectValue placeholder="Baths" /></SelectTrigger>
+              <SelectTrigger id="calc-bathrooms"><SelectValue placeholder="Baths" /></SelectTrigger>
               <SelectContent>
                 {["1", "1.5", "2", "2.5", "3", "4+"].map((n) => (
                   <SelectItem key={n} value={n}>{n}</SelectItem>
@@ -313,6 +313,7 @@ const PriceCalculator = () => {
             <Home className="h-3.5 w-3.5" /> Approx. Square Footage: <span className="font-bold text-accent ml-1">{sqft[0].toLocaleString()} sq ft</span>
           </Label>
           <Slider
+            aria-label="Approximate square footage"
             value={sqft}
             onValueChange={setSqft}
             min={500}
