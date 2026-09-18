@@ -126,7 +126,7 @@ const GermantownHouseCleaningPage = () => {
   });
 
   return (
-    <Layout>
+    <Layout chatLauncherAfterScrollOnNarrow>
       {seoHelmet}
       <Helmet>
         <link rel="preload" as="image" href="/images/team/team-mopping-bright-room.jpg" />

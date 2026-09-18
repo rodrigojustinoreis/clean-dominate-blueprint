@@ -140,7 +140,7 @@ const NorthBethesdaRecurringCleaningPage = () => {
   });
 
   return (
-    <Layout>
+    <Layout chatLauncherAfterScrollOnNarrow>
       {/* ── SEO ───────────────────────────────────────────── */}
       {seoHelmet}
       <Helmet>

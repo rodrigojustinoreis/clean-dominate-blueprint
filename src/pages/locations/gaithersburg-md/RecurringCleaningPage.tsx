@@ -126,7 +126,7 @@ const GaithersburgRecurringCleaningPage = () => {
   const faqs = getServiceLocationOverride("gaithersburg-md", "recurring-cleaning")?.faqs ?? localFaqs;
 
   return (
-    <Layout>
+    <Layout chatLauncherAfterScrollOnNarrow>
       {seoHelmet}
       <Helmet>
         <link rel="preload" as="image" href="/images/team/team-mopping-uniform.jpg" />

@@ -114,7 +114,7 @@ const SilverSpringAirbnbCleaningPage = () => {
   });
 
   return (
-    <Layout>
+    <Layout chatLauncherAfterScrollOnNarrow>
       {seoHelmet}
       <Helmet>
         <link rel="preload" as="image" href="/images/airbnb/real-turnover-sofa-professional-v3-960.webp" />

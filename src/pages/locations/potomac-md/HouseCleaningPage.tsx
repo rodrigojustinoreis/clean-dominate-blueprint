@@ -135,7 +135,7 @@ const PotomacHouseCleaningPage = () => {
   });
 
   return (
-    <Layout>
+    <Layout chatLauncherAfterScrollOnNarrow>
       {/* ── SEO ───────────────────────────────────────────── */}
       {seoHelmet}
       <Helmet>

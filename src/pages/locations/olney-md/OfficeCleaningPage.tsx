@@ -124,7 +124,7 @@ const OlneyOfficeCleaningPage = () => {
   const faqs = getServiceLocationOverride("olney-md", "office-cleaning")?.faqs ?? localFaqs;
 
   return (
-    <Layout>
+    <Layout chatLauncherAfterScrollOnNarrow>
       {seoHelmet}
       <Helmet>
         <link rel="preload" as="image" href="/images/team/team-cleaning-glass-door.jpg" />

@@ -129,7 +129,7 @@ const PotomacMoveOutCleaningPage = () => {
   const faqs = getServiceLocationOverride("potomac-md", "move-out-cleaning")?.faqs ?? localFaqs;
 
   return (
-    <Layout>
+    <Layout chatLauncherAfterScrollOnNarrow>
       {/* ── SEO ───────────────────────────────────────────── */}
       {seoHelmet}
       <Helmet>

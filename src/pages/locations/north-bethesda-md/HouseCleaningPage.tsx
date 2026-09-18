@@ -135,7 +135,7 @@ const NorthBethesdaHouseCleaningPage = () => {
   });
 
   return (
-    <Layout>
+    <Layout chatLauncherAfterScrollOnNarrow>
       {/* ── SEO ───────────────────────────────────────────── */}
       {seoHelmet}
       <Helmet>

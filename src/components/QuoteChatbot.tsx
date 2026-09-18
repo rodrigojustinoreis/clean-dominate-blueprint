@@ -41,8 +41,20 @@ const STEPS: Record<Step, { ask: string; next: Step | null; placeholder?: string
   done: { ask: "", next: null },
 };
 
-const QuoteChatbot = () => {
+interface QuoteChatbotProps {
+  /** Opt-in (lot 3, 2026-09-18): below the `sm` breakpoint keep the floating launcher hidden (display:none via
+   *  `max-sm:hidden`) until the visitor has scrolled past 320px, so it cannot sit on top of hero CTAs on short
+   *  viewports. Never applies while the panel is open, never above 640px, and never when the prop is absent/false
+   *  (no listener, byte-identical markup). No aria/tabIndex changes: display:none already removes the button from
+   *  hit-testing and the Tab order only where it is hidden. */
+  launcherAfterScrollOnNarrow?: boolean;
+}
+
+const LAUNCHER_SCROLL_THRESHOLD = 320;
+
+const QuoteChatbot = ({ launcherAfterScrollOnNarrow = false }: QuoteChatbotProps = {}) => {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
   const [step, setStep] = useState<Step>("name");
   const [answers, setAnswers] = useState<Record<string, string>>({});
@@ -52,6 +64,15 @@ const QuoteChatbot = () => {
   const [hasUnread, setHasUnread] = useState(false);
   const bottomRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+
+  // Narrow-screen launcher visibility (opt-in only): check on mount, then follow scroll; cleanup on unmount.
+  useEffect(() => {
+    if (!launcherAfterScrollOnNarrow) return;
+    const update = () => setScrolled(window.scrollY > LAUNCHER_SCROLL_THRESHOLD);
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    return () => window.removeEventListener("scroll", update);
+  }, [launcherAfterScrollOnNarrow]);
 
   // Initial greeting
   useEffect(() => {
@@ -151,7 +172,7 @@ const QuoteChatbot = () => {
       {/* Floating button */}
       <button
         onClick={() => setOpen((v) => !v)}
-        className="fixed bottom-[4.5rem] right-4 z-50 w-14 h-14 rounded-full bg-accent text-accent-foreground shadow-xl flex items-center justify-center hover:scale-105 transition-transform md:bottom-6"
+        className={`fixed bottom-[4.5rem] right-4 z-50 w-14 h-14 rounded-full bg-accent text-accent-foreground shadow-xl flex items-center justify-center hover:scale-105 transition-transform md:bottom-6${launcherAfterScrollOnNarrow && !scrolled && !open ? " max-sm:hidden" : ""}`}
         aria-label={open ? "Close chat" : "Chat with us"}
       >
         {open ? (

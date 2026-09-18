@@ -130,7 +130,7 @@ const GaithersburgDeepCleaningPage = () => {
   });
 
   return (
-    <Layout>
+    <Layout chatLauncherAfterScrollOnNarrow>
       {seoHelmet}
       <Helmet>
         <link rel="preload" as="image" href="/images/team/power-scrubber-tile.jpg" />

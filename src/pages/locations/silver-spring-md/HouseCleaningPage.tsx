@@ -143,7 +143,7 @@ const SilverSpringHouseCleaningPage = () => {
   });
 
   return (
-    <Layout>
+    <Layout chatLauncherAfterScrollOnNarrow>
       {seoHelmet}
       <Helmet>
         <link rel="preload" as="image" href={HERO_IMAGE} />
