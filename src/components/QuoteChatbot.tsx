@@ -51,6 +51,14 @@ interface QuoteChatbotProps {
 }
 
 const LAUNCHER_SCROLL_THRESHOLD = 320;
+const FORMSUBMIT_URL = "https://formsubmit.co/ajax/capitalcleancare@gmail.com";
+const SUBMIT_TIMEOUT_MS = 15000;
+/** Defensive acceptance policy (M02b, 2026-09-18): HTTP ok AND a JSON object whose `success` is true or "true".
+ *  This is a compatibility policy, not a documented contract of the provider; anything else is "unconfirmed". */
+const isAcceptedBody = (body: unknown): boolean =>
+  !!body && typeof body === "object" && ((body as { success?: unknown }).success === true || (body as { success?: unknown }).success === "true");
+type SubmitOutcome = "accepted" | "failed" | "uncertain";
+const UNCONFIRMED_TEXT = "We couldn't confirm your request. Please try again or call (240) 704-2551.";
 
 const QuoteChatbot = ({ launcherAfterScrollOnNarrow = false }: QuoteChatbotProps = {}) => {
   const [open, setOpen] = useState(false);
@@ -63,6 +71,10 @@ const QuoteChatbot = ({ launcherAfterScrollOnNarrow = false }: QuoteChatbotProps
   const [done, setDone] = useState(false);
   const [hasUnread, setHasUnread] = useState(false);
   const bottomRef = useRef<HTMLDivElement>(null);
+  // M02b: synchronous guards (React state is not a mutex). `submittingRef` is taken before the first await and
+  // released in `finally`; `acceptedRef` stays set after an accepted submission until an explicit restart.
+  const submittingRef = useRef(false);
+  const acceptedRef = useRef(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
   // Narrow-screen launcher visibility (opt-in only): check on mount, then follow scroll; cleanup on unmount.
@@ -112,12 +124,18 @@ const QuoteChatbot = ({ launcherAfterScrollOnNarrow = false }: QuoteChatbotProps
     const nextStep = current.next;
 
     if (!nextStep || nextStep === "done") {
-      // All collected — send via FormSubmit
+      // All collected — send via FormSubmit (single destination). Success only after the service accepts it.
+      if (submittingRef.current || acceptedRef.current) return;
+      submittingRef.current = true;
       setSending(true);
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), SUBMIT_TIMEOUT_MS);
+      let outcome: SubmitOutcome = "failed";
       try {
-        await fetch("https://formsubmit.co/ajax/capitalcleancare@gmail.com", {
+        const res = await fetch(FORMSUBMIT_URL, {
           method: "POST",
           headers: { "Content-Type": "application/json", Accept: "application/json" },
+          signal: controller.signal,
           body: JSON.stringify({
             _subject: `New Chat Lead — ${newAnswers.name}`,
             _template: "table",
@@ -130,17 +148,37 @@ const QuoteChatbot = ({ launcherAfterScrollOnNarrow = false }: QuoteChatbotProps
             "Service Type": value,
           }),
         });
-      } catch (e) {
-        console.error("FormSubmit error:", e);
+        let body: unknown = null;
+        try {
+          body = await res.json();
+        } catch {
+          body = null;
+        }
+        outcome = res.ok && isAcceptedBody(body) ? "accepted" : "failed";
+      } catch {
+        outcome = controller.signal.aborted ? "uncertain" : "failed";
       } finally {
+        clearTimeout(timer);
         setSending(false);
+        submittingRef.current = false;
       }
 
-      trackQuoteFormSubmit(value);
-      setDone(true);
-      addBot(
-        `Thank you, ${newAnswers.name}! ✅ Our team will contact you at ${newAnswers.phone} shortly to confirm your free quote.\n\n🎉 New clients get 15% OFF their first cleaning!`
-      );
+      if (outcome === "accepted") {
+        acceptedRef.current = true;
+        try {
+          trackQuoteFormSubmit(value);
+        } catch {
+          // Analytics must never invalidate an accepted submission.
+        }
+        setDone(true);
+        addBot(
+          `Thank you, ${newAnswers.name}! Your quote request has been submitted. For immediate assistance, call (240) 704-2551.\n\n🎉 New clients get 15% OFF their first cleaning!`
+        );
+        return;
+      }
+      // Failed or uncertain (timeout): keep the answers, no event, no success; offer the same options again so the
+      // visitor can retry manually. A timeout does not prove nothing was sent, so the text does not claim that.
+      addBot(UNCONFIRMED_TEXT, current.options);
       return;
     }
 
@@ -157,6 +195,8 @@ const QuoteChatbot = ({ launcherAfterScrollOnNarrow = false }: QuoteChatbotProps
   };
 
   const restart = () => {
+    acceptedRef.current = false;
+    submittingRef.current = false;
     setMessages([{ from: "bot", text: STEPS.name.ask }]);
     setStep("name");
     setAnswers({});
@@ -256,7 +296,7 @@ const QuoteChatbot = ({ launcherAfterScrollOnNarrow = false }: QuoteChatbotProps
               <div className="bg-accent/10 border border-accent/20 rounded-xl p-3 flex items-start gap-2">
                 <CheckCircle className="h-4 w-4 text-accent shrink-0 mt-0.5" />
                 <p className="text-xs text-foreground leading-relaxed">
-                  Info sent to our team!{" "}
+                  Request submitted.{" "}
                   <button onClick={restart} className="text-accent font-semibold underline underline-offset-2">
                     Start new chat
                   </button>
