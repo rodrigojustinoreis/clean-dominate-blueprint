@@ -17,7 +17,7 @@ const HERO_IMAGE = "/images/team/team-window-blinds-pro.webp";
 const URL = "https://capitalcleancare.com/resources/clean-home-fall-prevention-seniors";
 const SENIOR = "/senior-home-cleaning-montgomery-county-md";
 const SIGNS_POST = "/resources/signs-aging-parent-needs-help-housekeeping";
-const NIA = "https://www.nia.nih.gov/health/falls-and-falls-prevention/fall-proofing-your-home";
+const NIA = "https://www.nia.nih.gov/health/falls-and-falls-prevention/preventing-falls-home-room-room";
 const PHONE = "(240) 704-2551";
 const PHONE_HREF = "tel:+12407042551";
 
@@ -209,7 +209,7 @@ const CleanHomeFallPrevention = () => {
               <Link to={SENIOR} className="text-accent font-medium hover:underline">a cleaning team that keeps floors dry and paths clear</Link>{" "}
               can be the difference between worrying from afar and knowing a parent's home is safe between visits. Pair a
               dependable cleaning routine with the NIA's guidance on{" "}
-              <a href={NIA} target="_blank" rel="noopener noreferrer" className="text-accent font-medium hover:underline">fall-proofing the home</a>,
+              <a href={NIA} target="_blank" rel="noopener noreferrer" className="text-accent font-medium hover:underline">preventing falls at home, room by room</a>,
               and a familiar house becomes a genuinely safe one.
             </p>
           </FadeInSection>

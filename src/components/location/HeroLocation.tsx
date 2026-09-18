@@ -25,6 +25,10 @@ interface HeroLocationProps {
   updatedLabel?: string;
   updatedDateTime?: string;
   ctaBeforePills?: boolean;
+  /** Opt-in order: render the CTAs right after the H1/updated line and before the lead paragraph, so
+   *  long leads do not push them below the first mobile viewport. Text, lead and pills are unchanged;
+   *  defaults for every other consumer stay as they are. Takes precedence over `ctaBeforePills`. */
+  ctaAfterHeading?: boolean;
 }
 
 const defaultPills = [
@@ -57,6 +61,7 @@ const HeroLocation = ({
   updatedLabel,
   updatedDateTime,
   ctaBeforePills = false,
+  ctaAfterHeading = false,
 }: HeroLocationProps) => {
   const pills = [
     ...defaultPills,
@@ -91,11 +96,12 @@ const HeroLocation = ({
               {h1}
             </h1>
             <LastUpdated date={updatedLabel} dateTime={updatedDateTime} />
+            {ctaAfterHeading && <div className="mt-4">{ctas}</div>}
             <p className="text-lg text-muted-foreground mb-6 leading-relaxed max-w-prose mt-4">
               {lead}
             </p>
 
-            {ctaBeforePills && <div className="mb-6">{ctas}</div>}
+            {ctaBeforePills && !ctaAfterHeading && <div className="mb-6">{ctas}</div>}
 
             {/* Trust pills */}
             <div className="flex flex-wrap gap-2 mb-8" aria-label="Trust signals">
@@ -110,7 +116,7 @@ const HeroLocation = ({
               ))}
             </div>
 
-            {!ctaBeforePills && ctas}
+            {!ctaBeforePills && !ctaAfterHeading && ctas}
           </div>
 
           {/* Hero image — LCP element, eager + high priority */}

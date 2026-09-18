@@ -191,7 +191,7 @@ const RockvilleHouseCleaningPage = () => {
       <FAQSchema faqs={faqs} />
 
       {/* ── Breadcrumbs ───────────────────────────────────── */}
-      <div className="pt-24 bg-gradient-to-br from-primary/5 via-background to-accent/5">
+      <div className="pt-12 md:pt-16 bg-gradient-to-br from-primary/5 via-background to-accent/5">
         <div className="container mx-auto px-4 max-w-6xl pb-2">
           <Breadcrumbs
             items={[
@@ -217,6 +217,8 @@ const RockvilleHouseCleaningPage = () => {
         ctaNote="No commitment · Date confirmed at booking · 100% satisfaction guaranteed"
         updatedLabel="September 2026"
         updatedDateTime="2026-09-09"
+        ctaAfterHeading
+        stackCtas
       />
 
       {/* ── What's Included ───────────────────────────────── */}
@@ -467,12 +469,12 @@ const RockvilleHouseCleaningPage = () => {
           {/* Contextual links into the specialty service pages from this high-authority page (they had few inbound links). */}
           <p className="mt-8 text-sm text-muted-foreground">
             Need something more specific than a standard clean? Rockville homes can also book{" "}
-            <Link to="/services/kitchen-cleaning" className="text-accent underline hover:no-underline">kitchen cleaning</Link>,{" "}
-            <Link to="/services/bathroom-cleaning" className="text-accent underline hover:no-underline">bathroom cleaning</Link>,{" "}
-            <Link to="/services/living-area-cleaning" className="text-accent underline hover:no-underline">living area cleaning</Link>,{" "}
-            <Link to="/services/condo-cleaning" className="text-accent underline hover:no-underline">condo &amp; apartment cleaning</Link>,{" "}
-            <Link to="/services/maid-service" className="text-accent underline hover:no-underline">maid service</Link>, or{" "}
-            <Link to="/services/office-cleaning" className="text-accent underline hover:no-underline">office cleaning</Link>.
+            <Link to="/services/kitchen-cleaning" className="text-primary underline hover:no-underline">kitchen cleaning</Link>,{" "}
+            <Link to="/services/bathroom-cleaning" className="text-primary underline hover:no-underline">bathroom cleaning</Link>,{" "}
+            <Link to="/services/living-area-cleaning" className="text-primary underline hover:no-underline">living area cleaning</Link>,{" "}
+            <Link to="/services/condo-cleaning" className="text-primary underline hover:no-underline">condo &amp; apartment cleaning</Link>,{" "}
+            <Link to="/services/maid-service" className="text-primary underline hover:no-underline">maid service</Link>, or{" "}
+            <Link to="/services/office-cleaning" className="text-primary underline hover:no-underline">office cleaning</Link>.
           </p>
         </div>
       </section>
