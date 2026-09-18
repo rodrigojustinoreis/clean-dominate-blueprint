@@ -181,7 +181,7 @@ const NorthBethesdaRecurringCleaningPage = () => {
       <FAQSchema faqs={faqs} />
 
       {/* ── Breadcrumbs ───────────────────────────────────── */}
-      <div className="pt-24 bg-gradient-to-br from-primary/5 via-background to-accent/5">
+      <div className="pt-12 md:pt-16 bg-gradient-to-br from-primary/5 via-background to-accent/5">
         <div className="container mx-auto px-4 max-w-6xl pb-2">
           <Breadcrumbs
             items={[
@@ -202,7 +202,9 @@ const NorthBethesdaRecurringCleaningPage = () => {
         zipRange="20852"
         heroImage="/images/team/team-two-living-room.jpg"
         heroImageAlt="Capital Clean Care recurring house cleaning in North Bethesda, MD — same trusted team, every visit"
-        ctaPrimary="Set Up Recurring Cleaning in North Bethesda"
+        ctaPrimary="Get a Recurring Cleaning Quote"
+        ctaAfterHeading
+        stackCtas
       />
 
       {/* ── What's Included ───────────────────────────────── */}
