@@ -115,7 +115,8 @@ const KensingtonHouseCleaningPage = () => {
   const { seoHelmet } = useSEO({
     title: "House Cleaning in Kensington, MD",
     description:
-      "Professional house cleaning in Kensington, MD. Eco-friendly products safe for kids & pets. Background-checked, bonded & insured. Latino-owned. Free quote in 60 seconds.",
+      // Closeout brief (Codex, 2026-09-17): approved meta text; documented exception to the meta freeze for this URL only.
+      "House cleaning in Kensington, MD. Explore recurring and one-time cleaning, discuss your home's needs, and request a written quote from Capital Clean Care.",
     canonical: PAGE_URL,
     ogImage: "https://capitalcleancare.com/og-image.jpg",
   });

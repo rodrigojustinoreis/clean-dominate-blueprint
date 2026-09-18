@@ -114,7 +114,8 @@ const ChevyChaseDeepCleaningPage = () => {
   const { seoHelmet } = useSEO({
     title: "Deep Cleaning Service in Chevy Chase, MD",
     description:
-      "Professional deep cleaning in Chevy Chase, MD. Inside appliances, grout, baseboards, ceiling fans — everywhere standard cleanings miss. EPA-certified products. Free quote.",
+      // Closeout brief (Codex, 2026-09-17): approved meta text; documented exception to the meta freeze for this URL only.
+      "Deep cleaning in Chevy Chase, MD. Review what is included, discuss surfaces and priorities, and request a written quote from Capital Clean Care.",
     canonical: PAGE_URL,
     ogImage: "https://capitalcleancare.com/og-image.jpg",
   });

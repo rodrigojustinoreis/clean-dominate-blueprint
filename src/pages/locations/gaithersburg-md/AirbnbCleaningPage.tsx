@@ -107,7 +107,8 @@ const GaithersburgAirbnbCleaningPage = () => {
   const { seoHelmet } = useSEO({
     title: "Airbnb Cleaning in Gaithersburg, MD",
     description:
-      "Airbnb & short-term rental cleaning in Gaithersburg, MD. Fast turnovers, hotel-standard results, flexible scheduling. Latino-owned & locally trusted. Free quote.",
+      // Closeout brief (Codex, 2026-09-17): approved meta text; documented exception to the meta freeze for this URL only.
+      "Airbnb cleaning in Gaithersburg, MD. Discuss your turnover checklist and checkout schedule, and request a written quote from Capital Clean Care.",
     canonical: PAGE_URL,
     ogImage: "https://capitalcleancare.com/og-image.jpg",
   });

@@ -127,7 +127,8 @@ const ChevyChaseHouseCleaningPage = () => {
   const { seoHelmet } = useSEO({
     title: "House Cleaning in Chevy Chase, MD",
     description:
-      "Professional house cleaning in Chevy Chase, MD. Eco-friendly products safe for kids & pets. Background-checked, bonded & insured. Latino-owned. Free quote in 60 seconds.",
+      // Closeout brief (Codex, 2026-09-17): approved meta text; documented exception to the meta freeze for this URL only.
+      "House cleaning in Chevy Chase, MD. Explore recurring and one-time cleaning, discuss your home's needs, and request a written quote from Capital Clean Care.",
     canonical: PAGE_URL,
     ogImage: "https://capitalcleancare.com/og-image.jpg",
   });
