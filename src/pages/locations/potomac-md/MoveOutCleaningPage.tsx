@@ -171,7 +171,7 @@ const PotomacMoveOutCleaningPage = () => {
       <WebPageSchema name="Move Out Cleaning Services in Potomac, MD" description="Detailed move-out and move-in cleaning in Potomac with a written checklist, clear optional tasks and an insured team." url={PAGE_URL} dateModified="2026-08-31" cityName="Potomac" stateCode="Maryland" primaryImage="https://capitalcleancare.com/images/locations/bethesda-house-cleaning/capital-clean-care-team.webp" />
 
       {/* ── Breadcrumbs ───────────────────────────────────── */}
-      <div className="pt-24 bg-gradient-to-br from-primary/5 via-background to-accent/5">
+      <div className="pt-12 md:pt-16 bg-gradient-to-br from-primary/5 via-background to-accent/5">
         <div className="container mx-auto px-4 max-w-6xl pb-2">
           <Breadcrumbs
             items={[
@@ -197,6 +197,7 @@ const PotomacMoveOutCleaningPage = () => {
         heroImageContainerClassName="lg:self-start"
         stackCtas
         ctaPrimary="Book Your Move Out Clean in Potomac"
+        ctaAfterHeading
       />
 
       {/* ── Checklist ─────────────────────────────────────── */}

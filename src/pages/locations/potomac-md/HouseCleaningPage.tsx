@@ -176,7 +176,7 @@ const PotomacHouseCleaningPage = () => {
       <FAQSchema faqs={faqs} />
 
       {/* ── Breadcrumbs ───────────────────────────────────── */}
-      <div className="pt-24 bg-gradient-to-br from-primary/5 via-background to-accent/5">
+      <div className="pt-12 md:pt-16 bg-gradient-to-br from-primary/5 via-background to-accent/5">
         <div className="container mx-auto px-4 max-w-6xl pb-2">
           <Breadcrumbs
             items={[
@@ -198,6 +198,8 @@ const PotomacHouseCleaningPage = () => {
         heroImage="/images/team/team-mopping-bright-room.jpg"
         heroImageAlt="Capital Clean Care team providing house cleaning service in Potomac, MD — Latino-owned, background-checked professionals"
         ctaPrimary="Get a Free Quote in Potomac"
+        ctaAfterHeading
+        stackCtas
       />
 
       {/* ── What's Included ───────────────────────────────── */}
