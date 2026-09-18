@@ -152,8 +152,10 @@ describe("L2 — clean home fall prevention guide", () => {
 });
 
 describe("controls", () => {
-  it("Gaithersburg house keeps the default order (lead before CTAs)", () => {
-    const page = renderRoute("/locations/gaithersburg-md/house-cleaning");
+  // Lot 3 (2026-09-18) moved Gaithersburg house out of the control set by allowlist; Bethesda house (protected) is the
+  // default-order control from then on.
+  it("Bethesda house keeps the default order (lead before CTAs)", () => {
+    const page = renderRoute("/locations/bethesda-md/house-cleaning");
     const lead = page.main.indexOf('class="text-lg text-muted-foreground mb-6 leading-relaxed max-w-prose mt-4"');
     const quote = page.main.indexOf('href="#quote"');
     const pills = page.main.indexOf('aria-label="Trust signals"');
