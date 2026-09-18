@@ -74,3 +74,39 @@ describe("controls keep their order", () => {
   it("Rockville deep: ctaBeforePills (lead → CTAs → pills)", () => { const p = renderRoute("/locations/rockville-md/deep-cleaning"); const lead = p.m.indexOf('class="text-lg text-muted-foreground mb-6 leading-relaxed max-w-prose mt-4"'); const quote = p.m.indexOf('href="#quote"'); const pills = p.m.indexOf('aria-label="Trust signals"'); expect(quote).toBeGreaterThan(lead); expect(pills).toBeGreaterThan(quote); });
   it("Rockville airbnb: default order untouched", () => { const p = renderRoute("/locations/rockville-md/airbnb-cleaning"); const lead = p.m.indexOf('class="text-lg text-muted-foreground mb-6 leading-relaxed max-w-prose mt-4"'); const pills = p.m.indexOf('aria-label="Trust signals"'); const quote = p.m.indexOf('href="#quote"'); expect(pills).toBeGreaterThan(lead); expect(quote).toBeGreaterThan(pills); });
 });
+
+// ── Narrow-screen wrap opt-in (CODEX-BATCH-3-WRAP-CONSENSUS.md) ──────────────────────────────────────────
+import HeroLocation, { PRIMARY_CTA_NARROW_WRAP_CLASSES } from "@/components/location/HeroLocation";
+
+const heroProps = { h1: "Test H1", lead: "Lead paragraph.", cityName: "Testville", state: "MD", zipRange: "00000", heroImage: "/images/team/team-mopping-bright-room.jpg", heroImageAlt: "alt" };
+function renderHero(extra: Record<string, unknown> = {}) {
+  const html = renderToString(<StaticRouter location="/"><HeroLocation {...heroProps} {...extra} /></StaticRouter>);
+  const quote = html.match(/<a href="#quote" class="([^"]*)"/)?.[1] ?? "";
+  const tel = html.match(/<a href="tel:\+12407042551" class="([^"]*)"/)?.[1] ?? "";
+  return { html, quote, tel };
+}
+
+describe("HeroLocation wrapPrimaryCtaOnNarrow contract", () => {
+  it("default (prop absent) and explicit false: no max-sm classes anywhere", () => {
+    for (const extra of [{}, { wrapPrimaryCtaOnNarrow: false }, { ctaAfterHeading: true, stackCtas: true }]) {
+      const r = renderHero(extra);
+      expect(r.html).not.toContain("max-sm:");
+      expect(r.quote).toContain("whitespace-nowrap");
+    }
+  });
+  it("opt-in adds exactly the approved classes to the primary CTA only; phone button unchanged", () => {
+    const base = renderHero({ ctaAfterHeading: true, stackCtas: true });
+    const r = renderHero({ ctaAfterHeading: true, stackCtas: true, wrapPrimaryCtaOnNarrow: true });
+    for (const c of PRIMARY_CTA_NARROW_WRAP_CLASSES.split(" ")) expect(r.quote).toContain(c);
+    expect(PRIMARY_CTA_NARROW_WRAP_CLASSES).toBe("max-sm:whitespace-normal max-sm:h-auto max-sm:min-h-11 max-sm:py-2.5 max-sm:px-5 max-sm:text-center max-sm:leading-snug");
+    expect(r.tel).toBe(base.tel);
+    expect(r.html.split("max-sm:").length - 1).toBe(PRIMARY_CTA_NARROW_WRAP_CLASSES.split(" ").length);
+    expect(r.html.replace(r.quote, base.quote)).toBe(base.html);
+  });
+  it("the 17 lot pages opt in; protected controls do not", () => {
+    for (const [url] of PAGES) expect(renderRoute(url).m).toContain("max-sm:whitespace-normal");
+    for (const url of ["/locations/bethesda-md/house-cleaning", "/locations/rockville-md/house-cleaning", "/locations/rockville-md/deep-cleaning", "/locations/rockville-md/airbnb-cleaning"]) {
+      expect(renderRoute(url).m).not.toContain("max-sm:");
+    }
+  });
+});

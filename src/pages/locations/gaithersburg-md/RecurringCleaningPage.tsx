@@ -188,6 +188,7 @@ const GaithersburgRecurringCleaningPage = () => {
         heroImageAlt="Capital Clean Care recurring house cleaning in Gaithersburg, MD — same trusted team, every visit"
         ctaPrimary="Set Up Recurring Cleaning in Gaithersburg"
         ctaAfterHeading
+        wrapPrimaryCtaOnNarrow
         stackCtas
       />
 

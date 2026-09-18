@@ -209,6 +209,7 @@ const SilverSpringHouseCleaningPage = () => {
         updatedLabel="August 2026"
         updatedDateTime="2026-08-29"
         ctaAfterHeading
+        wrapPrimaryCtaOnNarrow
         stackCtas
       />
 

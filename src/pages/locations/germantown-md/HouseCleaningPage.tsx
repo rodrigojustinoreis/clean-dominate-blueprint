@@ -190,6 +190,7 @@ const GermantownHouseCleaningPage = () => {
         heroImageAlt="Capital Clean Care team providing house cleaning service in Germantown, MD — Latino-owned, background-checked professionals"
         ctaPrimary="Get a Free Quote in Germantown"
         ctaAfterHeading
+        wrapPrimaryCtaOnNarrow
         stackCtas
       />
 

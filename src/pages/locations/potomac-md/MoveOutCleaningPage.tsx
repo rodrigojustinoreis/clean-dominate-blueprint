@@ -198,6 +198,7 @@ const PotomacMoveOutCleaningPage = () => {
         stackCtas
         ctaPrimary="Book Your Move Out Clean in Potomac"
         ctaAfterHeading
+        wrapPrimaryCtaOnNarrow
       />
 
       {/* ── Checklist ─────────────────────────────────────── */}

@@ -175,6 +175,7 @@ const SilverSpringAirbnbCleaningPage = () => {
         updatedLabel="August 31, 2026"
         updatedDateTime="2026-08-31"
         ctaAfterHeading
+        wrapPrimaryCtaOnNarrow
         stackCtas
       />
 

@@ -188,6 +188,7 @@ const SilverSpringPostConstructionCleaningPage = () => {
         heroImageAlt="Capital Clean Care post-construction cleaning in Silver Spring, MD — HEPA-equipped, move-in ready results"
         ctaPrimary="Get a Post-Construction Quote"
         ctaAfterHeading
+        wrapPrimaryCtaOnNarrow
         stackCtas
       />
 

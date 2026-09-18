@@ -184,6 +184,7 @@ const WheatonHouseCleaningPage = () => {
         heroImageAlt="Capital Clean Care team providing house cleaning service in Wheaton, MD — Latino-owned, background-checked professionals"
         ctaPrimary="Get a Free Quote in Wheaton"
         ctaAfterHeading
+        wrapPrimaryCtaOnNarrow
         stackCtas
       />
 

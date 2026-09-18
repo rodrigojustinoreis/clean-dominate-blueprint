@@ -190,6 +190,7 @@ const KensingtonRecurringCleaningPage = () => {
         heroImageAlt="Capital Clean Care recurring house cleaning in Kensington, MD — same trusted team, every visit"
         ctaPrimary="Set Up Recurring Cleaning in Kensington"
         ctaAfterHeading
+        wrapPrimaryCtaOnNarrow
         stackCtas
       />
 

@@ -199,6 +199,7 @@ const NorthBethesdaHouseCleaningPage = () => {
         heroImageAlt="Capital Clean Care team providing house cleaning service in North Bethesda, MD — Latino-owned, background-checked professionals"
         ctaPrimary="Get a Free Quote in North Bethesda"
         ctaAfterHeading
+        wrapPrimaryCtaOnNarrow
         stackCtas
       />
 

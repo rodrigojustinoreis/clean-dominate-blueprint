@@ -204,6 +204,7 @@ const NorthBethesdaRecurringCleaningPage = () => {
         heroImageAlt="Capital Clean Care recurring house cleaning in North Bethesda, MD — same trusted team, every visit"
         ctaPrimary="Get a Recurring Cleaning Quote"
         ctaAfterHeading
+        wrapPrimaryCtaOnNarrow
         stackCtas
       />
 

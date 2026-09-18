@@ -189,6 +189,7 @@ const GaithersburgHouseCleaningPage = () => {
         heroImageAlt="Capital Clean Care team providing house cleaning service in Gaithersburg, MD — Latino-owned, background-checked professionals"
         ctaPrimary="Get a Free Quote in Gaithersburg"
         ctaAfterHeading
+        wrapPrimaryCtaOnNarrow
         stackCtas
       />
 

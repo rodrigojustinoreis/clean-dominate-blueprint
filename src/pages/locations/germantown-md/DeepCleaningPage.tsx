@@ -189,6 +189,7 @@ const GermantownDeepCleaningPage = () => {
         heroImageAlt="Capital Clean Care deep cleaning service in Germantown, MD — top-to-bottom professional results"
         ctaPrimary="Schedule a Deep Clean in Germantown"
         ctaAfterHeading
+        wrapPrimaryCtaOnNarrow
         stackCtas
       />
 

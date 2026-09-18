@@ -188,6 +188,7 @@ const SilverSpringDeepCleaningPage = () => {
         heroImageAlt="Capital Clean Care deep cleaning service in Silver Spring, MD — top-to-bottom professional results"
         ctaPrimary="Schedule a Deep Clean in Silver Spring"
         ctaAfterHeading
+        wrapPrimaryCtaOnNarrow
         stackCtas
       />
 

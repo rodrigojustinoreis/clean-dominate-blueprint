@@ -29,7 +29,15 @@ interface HeroLocationProps {
    *  long leads do not push them below the first mobile viewport. Text, lead and pills are unchanged;
    *  defaults for every other consumer stay as they are. Takes precedence over `ctaBeforePills`. */
   ctaAfterHeading?: boolean;
+  /** Opt-in: below the `sm` breakpoint let the primary CTA label wrap instead of being clipped by the
+   *  Button's `whitespace-nowrap` (min height stays 44px). Only the primary CTA changes; the phone
+   *  button, texts and every other consumer are untouched. Default false. */
+  wrapPrimaryCtaOnNarrow?: boolean;
 }
+
+/** Classes added to the primary CTA when `wrapPrimaryCtaOnNarrow` is set (all scoped to `< 640px`). */
+export const PRIMARY_CTA_NARROW_WRAP_CLASSES =
+  "max-sm:whitespace-normal max-sm:h-auto max-sm:min-h-11 max-sm:py-2.5 max-sm:px-5 max-sm:text-center max-sm:leading-snug";
 
 const defaultPills = [
   { Icon: Home, label: "Latino-Owned & Operated" },
@@ -62,6 +70,7 @@ const HeroLocation = ({
   updatedDateTime,
   ctaBeforePills = false,
   ctaAfterHeading = false,
+  wrapPrimaryCtaOnNarrow = false,
 }: HeroLocationProps) => {
   const pills = [
     ...defaultPills,
@@ -71,7 +80,7 @@ const HeroLocation = ({
   const ctas = (
     <>
       <div className={`flex gap-3 ${stackCtas ? "max-w-md flex-col" : "flex-col sm:flex-row"}`}>
-        <Button variant="cta" size="lg" asChild>
+        <Button variant="cta" size="lg" className={wrapPrimaryCtaOnNarrow ? PRIMARY_CTA_NARROW_WRAP_CLASSES : undefined} asChild>
           <a href="#quote" onClick={() => trackBookNowClick("hero_location")}>
             {ctaPrimary} <ArrowRight className="ml-1 h-4 w-4" />
           </a>

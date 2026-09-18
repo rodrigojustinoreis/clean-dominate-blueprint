@@ -199,6 +199,7 @@ const PotomacHouseCleaningPage = () => {
         heroImageAlt="Capital Clean Care team providing house cleaning service in Potomac, MD — Latino-owned, background-checked professionals"
         ctaPrimary="Get a Free Quote in Potomac"
         ctaAfterHeading
+        wrapPrimaryCtaOnNarrow
         stackCtas
       />
 

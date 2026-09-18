@@ -189,6 +189,7 @@ const SilverSpringRecurringCleaningPage = () => {
         heroImageAlt="Capital Clean Care recurring house cleaning in Silver Spring, MD — same trusted team, every visit"
         ctaPrimary="Set Up Recurring Cleaning in Silver Spring"
         ctaAfterHeading
+        wrapPrimaryCtaOnNarrow
         stackCtas
       />
 
