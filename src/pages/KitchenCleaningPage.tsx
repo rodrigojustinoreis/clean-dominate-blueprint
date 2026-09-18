@@ -470,7 +470,7 @@ const KitchenCleaningPage = () => {
           <p className="text-center text-xs text-muted-foreground mt-4">🔒 No spam. No contracts. We'll call you back within 2 hours.</p>
           <p className="text-center text-xs text-muted-foreground mt-1">
             Prefer to call?{" "}
-            <a href={PHONE_HREF} className="font-semibold text-accent hover:underline">{PHONE}</a> — Mon–Sat 8AM–6PM
+            <a href={PHONE_HREF} className="font-semibold text-accent hover:underline">{PHONE}</a> — calls answered 24/7
           </p>
         </div>
       </section>

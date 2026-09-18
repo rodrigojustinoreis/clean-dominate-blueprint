@@ -20,9 +20,11 @@ export const BUSINESS_INFO = {
   },
   priceRange: "$$",
   hours: {
-    days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-    opens: "08:00",
-    closes: "18:00",
+    // Owner confirmed 2026-09-18: calls, email and booking are handled 24 hours, 7 days (matches Google Maps).
+    // Cleaning appointments themselves are scheduled; this block describes availability of the business, not job hours.
+    days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+    opens: "00:00",
+    closes: "23:59",
   },
   social: {
     instagram: "https://www.instagram.com/capital_cleancare",

@@ -51,7 +51,7 @@ const Contact = () => {
               { icon: Phone, label: "Phone", value: "(240) 704-2551", href: "tel:+12407042551" },
               // Domain email configured: info@capitalcleancare.com
               { icon: Mail, label: "Email", value: "info@capitalcleancare.com", href: "mailto:info@capitalcleancare.com" },
-              { icon: Clock, label: "Hours", value: "Mon–Sat: 8 AM – 6 PM" },
+              { icon: Clock, label: "Hours", value: "24/7 (calls, email & booking)" },
               { icon: MapPin, label: "Address", value: "4111 Postgate Terrace, Silver Spring, MD 20906" },
             ].map((item) => (
               <Card key={item.label}>

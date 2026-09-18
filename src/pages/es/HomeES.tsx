@@ -266,7 +266,7 @@ export default function HomeES() {
             </div>
             <div className="mt-6 flex items-center justify-center gap-2 text-accent-foreground/70 text-sm">
               <Clock className="h-4 w-4" />
-              <span>Lunes–Sábado 8:00 AM – 6:00 PM</span>
+              <span>Llamadas, e-mail y reservas: 24/7</span>
             </div>
           </div>
         </section>

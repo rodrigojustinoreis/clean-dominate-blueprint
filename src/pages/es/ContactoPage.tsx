@@ -93,7 +93,7 @@ export default function ContactoPage() {
                     </div>
                     <div>
                       <p className="font-semibold text-foreground mb-1">Horario de atención</p>
-                      <p className="text-foreground">Lunes – Sábado: 8:00 AM – 6:00 PM</p>
+                      <p className="text-foreground">Llamadas, e-mail y reservas: 24/7</p>
                       <p className="text-sm text-muted-foreground mt-1">Domingos: descansamos. Para emergencias de domingo, manda texto y vemos cómo ayudarte.</p>
                     </div>
                   </div>

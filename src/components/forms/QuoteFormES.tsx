@@ -209,7 +209,7 @@ const QuoteFormES = ({ id = "cotizacion", defaultService = "", submitLabel = "So
         </div>
         <div className="flex items-center gap-2 text-xs text-muted-foreground bg-accent/5 border border-accent/15 rounded-full px-4 py-2">
           <Clock className="h-3.5 w-3.5 text-accent shrink-0" />
-          <span>Lun–Sáb 8am–6pm · Respuesta en <strong className="text-foreground">menos de 2 horas</strong></span>
+          <span>Llamadas, e-mail y reservas 24/7 · Respuesta en <strong className="text-foreground">menos de 2 horas</strong></span>
         </div>
       </div>
     );

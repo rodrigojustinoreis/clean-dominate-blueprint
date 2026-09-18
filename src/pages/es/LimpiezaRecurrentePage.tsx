@@ -162,7 +162,7 @@ export default function LimpiezaRecurrentePage() {
               </Button>
             </div>
             <div className="mt-4 flex items-center justify-center gap-2 text-accent-foreground/70 text-sm">
-              <Clock className="h-4 w-4" /><span>Lun–Sáb 8:00 AM – 6:00 PM</span>
+              <Clock className="h-4 w-4" /><span>Llamadas, e-mail y reservas: 24/7</span>
             </div>
           </div>
         </section>

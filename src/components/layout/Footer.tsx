@@ -182,7 +182,7 @@ const Footer = () => {
             <p className="flex items-center gap-2"><MapPin className="h-4 w-4" /> 4111 Postgate Terrace, Silver Spring, MD 20906</p>
             <p className="flex items-center gap-2"><Phone className="h-4 w-4" /> (240) 704-2551</p>
             <p className="flex items-center gap-2"><Mail className="h-4 w-4" /> <a href="mailto:info@capitalcleancare.com" className="hover:text-primary-foreground transition-colors">info@capitalcleancare.com</a></p>
-            <p className="flex items-center gap-2"><Clock className="h-4 w-4" /> {t("Mon–Sat: 8 AM – 6 PM", "Lun–Sáb: 8 AM – 6 PM")}</p>
+            <p className="flex items-center gap-2"><Clock className="h-4 w-4" /> {t("Calls, email & booking: 24/7", "Llamadas, e-mail y reservas: 24/7")}</p>
           </div>
         </div>
 

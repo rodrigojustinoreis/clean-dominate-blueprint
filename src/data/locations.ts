@@ -1135,7 +1135,7 @@ export const getExpandedCityFaqs = (city: CityData): { q: string; a: string }[] 
     { q: `Do you offer a satisfaction guarantee in ${city.name}?`, a: `Absolutely. We provide a 100% satisfaction guarantee on every ${city.name} cleaning. If any area doesn't meet your expectations, contact us within 24 hours and we'll return to re-clean it at no charge.` },
     { q: `Can I get a free estimate for my ${city.name} home?`, a: `Yes. All quotes are free with no obligation. Fill out our online form, call us at (240) 704-2551, or visit our contact page for a personalized estimate.` },
     { q: `Do you clean apartments and condos in ${city.name}?`, a: `Yes. We clean all types of ${city.name} residences including single-family homes, townhouses, apartments, and condominiums. We coordinate with building management when needed.` },
-    { q: `What are your hours for ${city.name} service?`, a: `We operate Monday through Saturday, 7 AM to 7 PM. We offer flexible scheduling to accommodate your ${city.name} lifestyle, including early morning and Saturday appointments.` },
+    { q: `What are your hours for ${city.name} service?`, a: `Calls, email and booking are handled 24 hours a day, 7 days a week; cleaning appointments are scheduled at a time you confirm. We offer flexible scheduling to accommodate your ${city.name} lifestyle, including early morning and Saturday appointments.` },
     { q: `Do you bring your own supplies to ${city.name} homes?`, a: `Yes. Our teams arrive fully equipped with eco-friendly cleaning products and professional-grade equipment. You don't need to provide anything.` },
   ];
 

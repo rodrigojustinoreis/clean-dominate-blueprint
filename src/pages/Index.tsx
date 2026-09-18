@@ -423,7 +423,7 @@ const Index = () => {
                   <a href="tel:+12407042551" className="flex items-center gap-2 text-accent font-semibold text-sm hover:underline">
                     <Phone className="h-4 w-4" /> (240) 704-2551
                   </a>
-                  <p className="text-xs text-muted-foreground">Mon–Sat 8am–6pm. We also respond to texts!</p>
+                  <p className="text-xs text-muted-foreground">Calls, email & booking 24/7. We also respond to texts!</p>
                 </div>
               </div>
               <div className="order-1 lg:order-2 lg:col-span-3">

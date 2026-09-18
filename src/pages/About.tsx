@@ -38,7 +38,7 @@ const aboutFaqs = [
   { q: "How do I get a free quote?", a: "Fill out our online quote form, call us at (240) 704-2551, or email info@capitalcleancare.com. We typically respond within a few hours with a personalized estimate." },
   { q: "Are you licensed and insured?", a: "Yes. Capital Clean Care is fully licensed, bonded, and insured with comprehensive liability coverage. We carry general liability insurance for your complete protection on every visit." },
   { q: "Do I need to be home during the cleaning?", a: "No. Many clients provide key, code, or smart lock access so we can clean while they're at work. All team members are background-checked and insured." },
-  { q: "What are your hours of operation?", a: "We operate Monday through Saturday, 8 AM to 6 PM. We offer flexible scheduling including early morning and Saturday appointments to accommodate your lifestyle." },
+  { q: "What are your hours of operation?", a: "Calls, email and booking are handled 24 hours a day, 7 days a week; cleaning appointments are scheduled at a time you confirm. We offer flexible scheduling including early morning and Saturday appointments to accommodate your lifestyle." },
   { q: "Can I customize my cleaning service?", a: "Absolutely. While we follow comprehensive checklists, we're happy to adjust priorities based on your preferences. Just let us know your specific needs when booking." },
 ];
 
@@ -649,7 +649,7 @@ const About = () => {
             </span>
             <span className="flex items-center gap-2">
               <Clock className="h-4 w-4 text-accent" aria-hidden="true" />
-              Mon–Sat: 8 AM–6 PM
+              Calls, email & booking: 24/7
             </span>
           </div>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">

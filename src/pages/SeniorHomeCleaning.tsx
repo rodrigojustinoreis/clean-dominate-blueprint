@@ -296,7 +296,7 @@ const SeniorHomeCleaning = () => {
               <a href={PHONE_HREF} className="inline-flex items-center justify-center gap-3 bg-white text-primary font-bold text-2xl md:text-3xl px-8 py-6 rounded-2xl shadow-xl hover:bg-white/95 transition-colors">
                 <Phone className="h-8 w-8" /> {PHONE}
               </a>
-              <p className="text-lg text-white/80 mt-4">Mon–Sat, 8am–6pm · We also answer texts</p>
+              <p className="text-lg text-white/80 mt-4">Calls answered 24/7 · We also answer texts</p>
             </div>
             <SeniorQuoteForm />
           </div>

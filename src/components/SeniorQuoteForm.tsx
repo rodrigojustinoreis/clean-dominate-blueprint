@@ -1,4 +1,13 @@
 import { useRef, useState } from "react";
+
+// Mirrors QuoteForm: success only when at least one critical destination (Supabase insert or receive-lead)
+// confirms; the Netlify Forms post and the notification e-mail are best-effort backups.
+const CRITICAL_TIMEOUT_MS = 12000;
+const withTimeout = <T,>(p: Promise<T>, ms: number): Promise<T> =>
+  new Promise((resolve, reject) => {
+    const t = setTimeout(() => reject(new Error("timeout")), ms);
+    p.then((v) => { clearTimeout(t); resolve(v); }, (e) => { clearTimeout(t); reject(e); });
+  });
 import { CheckCircle2, Phone } from "lucide-react";
 import { toast } from "sonner";
 import { trackQuoteFormStart, trackQuoteFormSubmit } from "@/lib/analytics";
@@ -19,6 +28,7 @@ const SeniorQuoteForm = () => {
   const [submitted, setSubmitted] = useState(false);
   const [firstName, setFirstName] = useState("");
   const formStarted = useRef(false);
+  const submittingRef = useRef(false);
 
   const handleFormStart = () => {
     if (formStarted.current) return;
@@ -30,52 +40,83 @@ const SeniorQuoteForm = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (submittingRef.current) return;
+    submittingRef.current = true;
     setSubmitting(true);
     const service = "Senior Home Cleaning";
     const message = `Senior home cleaning lead · City: ${data.city}`;
-    try {
-      // 1) Database (loaded on demand)
-      import("@/integrations/supabase/client").then(({ supabase }) =>
-        supabase.from("quote_requests").insert({
-          name: data.name,
-          phone: data.phone,
-          address: data.city,
+    const snapshot = { ...data };
+    const encode = (d: Record<string, string>) =>
+      Object.keys(d).map((k) => `${encodeURIComponent(k)}=${encodeURIComponent(d[k])}`).join("&");
+
+    // Best-effort backups (never decide success): Netlify Forms + notification e-mail.
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "quote", name: snapshot.name, phone: snapshot.phone, address: snapshot.city, service, message }),
+    }).catch(() => { /* non-blocking */ });
+    fetch("/api/send-quote-email", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name: snapshot.name, phone: snapshot.phone, address: snapshot.city, service, message }),
+    }).catch(() => { /* non-blocking */ });
+
+    // Critical destinations: (1) Supabase insert (quote_requests has no address column → city goes to zip/message).
+    const supabaseCritical = withTimeout(
+      (async () => {
+        const { supabase } = await import("@/integrations/supabase/client");
+        const { error } = await supabase.from("quote_requests").insert({
+          name: snapshot.name,
+          phone: snapshot.phone,
+          email: "",
+          zip: snapshot.city,
           service,
           message,
-        }).then(({ error }) => { if (error) console.error("DB error:", error); })
-      ).catch((err) => console.error("Supabase load error:", err));
+        });
+        if (error) throw error;
+        return true;
+      })(),
+      CRITICAL_TIMEOUT_MS,
+    );
+    // (2) receive-lead scheduling app — confirmed only when response.ok.
+    const receiveLeadCritical = withTimeout(
+      (async () => {
+        const controller = new AbortController();
+        const abortTimer = setTimeout(() => controller.abort(), CRITICAL_TIMEOUT_MS);
+        try {
+          const res = await fetch("https://jzxhejqokcjyxxklnnza.supabase.co/functions/v1/receive-lead", {
+            method: "POST",
+            headers: { "Content-Type": "application/json", "x-webhook-secret": "ccc-lead-webhook-2026" },
+            signal: controller.signal,
+            body: JSON.stringify({ name: snapshot.name, phone: snapshot.phone, address: snapshot.city, service, message }),
+          });
+          if (!res.ok) throw new Error(`receive-lead ${res.status}`);
+          return true;
+        } finally {
+          clearTimeout(abortTimer);
+        }
+      })(),
+      CRITICAL_TIMEOUT_MS,
+    );
 
-      // 2) Netlify Forms (reuses the detected "quote" form)
-      const encode = (d: Record<string, string>) =>
-        Object.keys(d).map((k) => `${encodeURIComponent(k)}=${encodeURIComponent(d[k])}`).join("&");
-      fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode({ "form-name": "quote", name: data.name, phone: data.phone, address: data.city, service, message }),
-      }).catch(console.error);
-
-      // 3) Forward to the scheduling app
-      fetch("https://jzxhejqokcjyxxklnnza.supabase.co/functions/v1/receive-lead", {
-        method: "POST",
-        headers: { "Content-Type": "application/json", "x-webhook-secret": "ccc-lead-webhook-2026" },
-        body: JSON.stringify({ name: data.name, phone: data.phone, address: data.city, service, message }),
-      }).catch(() => { /* non-blocking */ });
-
-      // 4) Notification email
-      fetch("/api/send-quote-email", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name: data.name, phone: data.phone, address: data.city, service, message }),
-      }).catch((err) => console.error("Email notification failed (non-critical):", err));
-
-      trackQuoteFormSubmit(service, window.location.pathname);
-      setFirstName(data.name.split(" ")[0]);
-      setData({ name: "", phone: "", city: "" });
-      setSubmitted(true);
-    } catch (err) {
-      console.error("Submission error:", err);
-      toast.error("Something went wrong. Please try again or call us directly.");
+    try {
+      const settled = await Promise.allSettled([supabaseCritical, receiveLeadCritical]);
+      const confirmed = settled.some((r) => r.status === "fulfilled" && r.value === true);
+      if (confirmed) {
+        try {
+          trackQuoteFormSubmit(service, window.location.pathname);
+        } catch {
+          // Analytics must never invalidate a confirmed submission.
+        }
+        setFirstName(snapshot.name.split(" ")[0]);
+        setData({ name: "", phone: "", city: "" });
+        setSubmitted(true);
+      } else {
+        // Both critical destinations failed or timed out — keep the data, no false success.
+        toast.error("We couldn't confirm your request. Please try again or call (240) 704-2551.");
+      }
     } finally {
+      submittingRef.current = false;
       setSubmitting(false);
     }
   };
@@ -86,8 +127,7 @@ const SeniorQuoteForm = () => {
         <CheckCircle2 className="h-14 w-14 text-accent mx-auto mb-4" aria-hidden="true" />
         <p className="font-heading text-2xl font-bold text-foreground mb-2">Thank you{firstName ? `, ${firstName}` : ""}!</p>
         <p className="text-lg text-gray-700 leading-relaxed mb-5">
-          We've received your request and will call you shortly with a free, no-obligation quote.
-          Prefer to talk now? We're here.
+          Your request has been submitted. For immediate assistance, call us now.
         </p>
         <a href={PHONE_HREF} className="inline-flex items-center justify-center gap-2 bg-primary text-white font-bold text-xl px-8 py-4 rounded-xl hover:bg-primary/90 transition-colors">
           <Phone className="h-6 w-6" /> {PHONE}

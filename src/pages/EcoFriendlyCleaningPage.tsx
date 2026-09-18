@@ -443,7 +443,7 @@ const EcoFriendlyCleaningPage = () => {
           <p className="text-center text-xs text-muted-foreground mt-4">
             Or call{" "}
             <a href={PHONE_HREF} className="font-semibold text-accent hover:underline">{PHONE}</a>{" "}
-            — Mon–Sat 8AM–6PM
+            — calls answered 24/7
           </p>
         </div>
       </section>

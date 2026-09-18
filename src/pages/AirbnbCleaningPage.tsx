@@ -723,7 +723,7 @@ const AirbnbCleaningPage = () => {
             <a href={PHONE_HREF} className="font-semibold text-accent hover:underline">
               {PHONE}
             </a>{" "}
-            — Mon–Sat 8AM–6PM
+            — calls answered 24/7
           </p>
         </div>
       </section>

@@ -614,7 +614,7 @@ const WhyEcoFriendlyPage = () => {
             </CardContent>
           </Card>
           <p className="text-center text-xs text-muted-foreground mt-4">
-            Or call <a href={PHONE_HREF} className={`font-semibold ${ext}`}>{PHONE}</a> — Mon–Sat 8AM–6PM. Prefer the service page? <Link to="/services/eco-friendly-cleaning" className={ext}>Eco-friendly cleaning service</Link>.
+            Or call <a href={PHONE_HREF} className={`font-semibold ${ext}`}>{PHONE}</a> — calls answered 24/7. Prefer the service page? <Link to="/services/eco-friendly-cleaning" className={ext}>Eco-friendly cleaning service</Link>.
           </p>
         </div>
       </section>

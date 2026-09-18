@@ -104,7 +104,7 @@ const THEMES: Theme[] = [
       { q: "Can I pause my recurring plan for vacation?", a: "Yes. Recurring plans are flexible — pause or skip a visit when you're traveling with a little notice, and pick right back up when you return with no penalty." },
       { q: "Do I get the same cleaning team each visit?", a: "We aim for consistency, sending the same team to recurring clients whenever possible so they learn your home and preferences. If a regular team member is out, a fully trained team covers to the same checklist." },
       { q: "What areas do you serve?", a: "We serve the DMV: Maryland (Montgomery, Frederick, Howard, and Prince George's Counties), Washington DC, and Northern Virginia (Arlington, Fairfax, McLean, Alexandria, and more). Contact us to confirm your neighborhood.", href: "/maryland", linkText: "Maryland service areas" },
-      { q: "Do you offer evening or weekend availability?", a: "Yes. We offer early-morning, evening, and weekend slots for busy schedules, in addition to standard weekday hours (Mon–Sat, 8AM–6PM). Availability varies by area, so book ahead for the best choice of times." },
+      { q: "Do you offer evening or weekend availability?", a: "Yes. We offer early-morning, evening, and weekend slots for busy schedules, and calls, email and booking are answered 24/7. Availability varies by area, so book ahead for the best choice of times." },
       { q: "Do you clean on holidays?", a: "We schedule around major holidays and can arrange holiday-week cleanings — popular before hosting. Let us know your dates early, as those slots fill quickly." },
     ],
   },
