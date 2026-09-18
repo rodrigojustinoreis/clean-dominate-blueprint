@@ -174,12 +174,24 @@ describe("content gate 2 (2026-09-17) — expired promotion, absolute claims, au
       "no chemical residue", "Every drain", "every drain", "all of Maryland", "Most incidents", "standard kit",
       "we use one of those", "we avoid pine-oil", "We prefer fragrance-free", "no legal definition", "Dye et al.",
       "Reproductive Toxicology", "Safer Choice for Your Family", "15% off",
+      // closeout lot (2026-09-17): no operational/protocol attribution, no alarmist heading, no invented duration
+      "6 Common Cleaning Chemicals to Avoid", "our own teams use", "eco protocol", "in every home we clean",
+      "at no extra charge", "standard for every service type", "PT2H", "Zero Recontamination",
     ]) expect(t, phrase).not.toContain(phrase);
     expect(main).toMatch(/<h1[^>]*>Eco-Friendly Cleaning: How to Choose Products and Use Them<\/h1>/);
+    expect(main).toContain('aria-label="On this page"'); // anchored table of contents
+    for (const id of ["labels", "ingredients", "children-pets", "compare", "rooms", "switch", "environment", "faq", "quote"]) {
+      expect(main, id).toContain(`href="#${id}"`);
+      expect(main, id).toMatch(new RegExp(`id="${id}"[^>]*`));
+    }
+    expect(t).toContain("Ingredients and Precautions to Check");
+    expect(count(main, 'href="/services/eco-friendly-cleaning"')).toBeGreaterThanOrEqual(3); // contextual path to the service
+    expect(main).toContain("<table"); // md+ table
+    expect(main).toContain("<dl"); // stacked version for small screens
     expect(t).toContain("Parks et al.");
     expect(t).toContain("Svanes et al.");
     expect(t).toContain("Only an EPA-registered product");
-    expect(t).toContain("Label-Guided Products"); // GreenShield label-based variant rendered here
+    expect(text(renderMain("/spring-cleaning-md"))).toContain("Label-Guided Products"); // GreenShield label-based variant still used on spring
     for (const url of [
       "https://www.ftc.gov/business-guidance/resources/environmental-claims-summary-green-guides",
       "https://www.epa.gov/saferchoice/learn-about-safer-choice-label",
