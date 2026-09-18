@@ -165,7 +165,7 @@ const SilverSpringDeepCleaningPage = () => {
       <FAQSchema faqs={faqs} />
 
       {/* Breadcrumbs */}
-      <div className="pt-24 bg-gradient-to-br from-primary/5 via-background to-accent/5">
+      <div className="pt-12 md:pt-16 bg-gradient-to-br from-primary/5 via-background to-accent/5">
         <div className="container mx-auto px-4 max-w-6xl pb-2">
           <Breadcrumbs
             items={[
@@ -187,6 +187,8 @@ const SilverSpringDeepCleaningPage = () => {
         heroImage="/images/team/power-scrubber-tile.jpg"
         heroImageAlt="Capital Clean Care deep cleaning service in Silver Spring, MD — top-to-bottom professional results"
         ctaPrimary="Schedule a Deep Clean in Silver Spring"
+        ctaAfterHeading
+        stackCtas
       />
 
       {/* Checklist */}

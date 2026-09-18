@@ -165,7 +165,7 @@ const SilverSpringPostConstructionCleaningPage = () => {
       <FAQSchema faqs={faqs} />
 
       {/* Breadcrumbs */}
-      <div className="pt-24 bg-gradient-to-br from-primary/5 via-background to-accent/5">
+      <div className="pt-12 md:pt-16 bg-gradient-to-br from-primary/5 via-background to-accent/5">
         <div className="container mx-auto px-4 max-w-6xl pb-2">
           <Breadcrumbs
             items={[
@@ -186,7 +186,9 @@ const SilverSpringPostConstructionCleaningPage = () => {
         zipRange="20901–20910"
         heroImage="/images/team/team-post-construction.jpg"
         heroImageAlt="Capital Clean Care post-construction cleaning in Silver Spring, MD — HEPA-equipped, move-in ready results"
-        ctaPrimary="Get a Post-Construction Quote in Silver Spring"
+        ctaPrimary="Get a Post-Construction Quote"
+        ctaAfterHeading
+        stackCtas
       />
 
       {/* Checklist */}

@@ -178,7 +178,7 @@ const SilverSpringHouseCleaningPage = () => {
       <WebPageSchema name="House Cleaning Services in Silver Spring, MD" description="Professional one-time and recurring house cleaning in Silver Spring with a written scope and background-checked team." url={PAGE_URL} dateModified="2026-08-30" cityName="Silver Spring" stateCode="Maryland" primaryImage={`https://capitalcleancare.com${HERO_IMAGE}`} />
 
       {/* Breadcrumbs */}
-      <div className="pt-24 bg-gradient-to-br from-primary/5 via-background to-accent/5">
+      <div className="pt-12 md:pt-16 bg-gradient-to-br from-primary/5 via-background to-accent/5">
         <div className="container mx-auto px-4 max-w-6xl pb-2">
           <Breadcrumbs
             items={[
@@ -208,6 +208,8 @@ const SilverSpringHouseCleaningPage = () => {
         ctaNote="No commitment · Written quote before service · 100% satisfaction guaranteed"
         updatedLabel="August 2026"
         updatedDateTime="2026-08-29"
+        ctaAfterHeading
+        stackCtas
       />
 
       {/* Self-contained local answer near the top for commercial intent and AI citation. */}

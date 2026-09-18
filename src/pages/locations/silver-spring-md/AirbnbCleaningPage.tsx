@@ -146,7 +146,7 @@ const SilverSpringAirbnbCleaningPage = () => {
       <FAQSchema faqs={faqs} />
 
       {/* Breadcrumbs */}
-      <div className="pt-24 bg-gradient-to-br from-primary/5 via-background to-accent/5">
+      <div className="pt-12 md:pt-16 bg-gradient-to-br from-primary/5 via-background to-accent/5">
         <div className="container mx-auto px-4 max-w-6xl pb-2">
           <Breadcrumbs
             items={[
@@ -171,9 +171,11 @@ const SilverSpringAirbnbCleaningPage = () => {
         heroImageHeight={640}
         heroImageSrcSet="/images/airbnb/real-turnover-sofa-professional-v3-640.webp 640w, /images/airbnb/real-turnover-sofa-professional-v3-960.webp 960w"
         heroImageSizes="(min-width: 1024px) 54vw, 100vw"
-        ctaPrimary="Set Up Airbnb Turnover Cleaning in Silver Spring"
-        updatedLabel="Reviewed August 31, 2026"
+        ctaPrimary="Get an Airbnb Cleaning Quote"
+        updatedLabel="August 31, 2026"
         updatedDateTime="2026-08-31"
+        ctaAfterHeading
+        stackCtas
       />
 
       <section className="py-10 md:py-12 bg-card border-y border-border/60">
