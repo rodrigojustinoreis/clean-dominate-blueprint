@@ -808,7 +808,7 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
                         ["Deep cleaning", "First visit or seasonal reset", "Standard cleaning plus detail work such as baseboards, buildup, cabinet fronts, fixtures, and other agreed deep-clean items."],
                         ["Move-out cleaning", "Lease turnover or home sale", "An empty-home reset with detailed kitchens, bathrooms, floors, cabinets, and selected appliance interiors."],
                       ].map(([service, bestFor, scope]) => (
-                        <tr key={service} className="border-t border-border align-top"><td className="px-4 py-4 font-bold text-foreground">{service}</td><td className="px-4 py-4 text-muted-foreground">{bestFor}</td><td className="px-4 py-4 text-muted-foreground">{scope}</td></tr>
+                        <tr key={service} className="border-t border-border align-top"><td className="px-4 py-4 font-bold text-foreground">{service === "Move-out cleaning" && c.moveOutPath ? <Link to={c.moveOutPath} className="text-primary underline hover:no-underline">{service}</Link> : service}</td><td className="px-4 py-4 text-muted-foreground">{bestFor}</td><td className="px-4 py-4 text-muted-foreground">{scope}</td></tr>
                       ))}
                     </tbody>
                   </table>

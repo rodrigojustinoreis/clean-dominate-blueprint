@@ -18,6 +18,10 @@ export interface CostCity {
   intro: string;         // unique opening paragraph (neighborhoods, market)
   localTip: string;      // unique local tip callout
   faqs: CostFAQ[];       // 3 city-specific FAQs (template appends 2 shared)
+  /** Optional: dedicated move-out page for this city. When set, the "Move-out cleaning" label of the
+   *  "What Is Included" table renders as a link to it (A02 item 10, 2026-09-18). Only cities whose
+   *  move-out page is indexable should set this; the other guides keep plain text. */
+  moveOutPath?: string;
 }
 
 // Shared regional price ranges (Capital Clean Care prices on the home, not the city).
@@ -64,6 +68,7 @@ export const COST_CITIES: CostCity[] = [
     state: "MD",
     county: "Montgomery County",
     locationPath: "/locations/rockville-md/house-cleaning",
+    moveOutPath: "/locations/rockville-md/move-out-cleaning",
     hero: "/images/blog/cost-rockville/hero.webp",
     positioning: "Rockville, MD · Pricing",
     quick: { recurring: "$165–$310", onetime: "$190–$385", deep: "$285–$540+" },
