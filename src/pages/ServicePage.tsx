@@ -51,27 +51,31 @@ const ServicePage = () => {
   const isMoveOutCleaning = service.slug === "move-out-cleaning";
   const isPostConstruction = service.slug === "post-construction-cleaning";
 
-  // Inline photo for the post-construction sections. Landscape assets ship a -600 variant,
-  // portrait ones a -500; `wide` picks the pair and the aspect box so nothing shifts on load.
-  const JobPhoto = ({ name, alt, caption, wide = true }: { name: string; alt: string; caption: string; wide?: boolean }) => {
+  // Post-construction photos. Three roles, three sizes: one wide establishing shot, narrow
+  // insets that sit beside their own paragraph, and a square pair used as side-by-side proof.
+  // Portrait was removed from this section: 4:5 at text width renders taller than a laptop viewport.
+  const PHOTO_ROLE = {
+    establishing: { box: "aspect-[3/2]", w: 1280, h: 853, sizes: "(min-width: 768px) 640px, 100vw" },
+    inset: { box: "aspect-[4/3]", w: 576, h: 432, sizes: "(min-width: 768px) 288px, 100vw" },
+    solo: { box: "aspect-[4/3]", w: 960, h: 720, sizes: "(min-width: 768px) 480px, 100vw" },
+    square: { box: "aspect-square", w: 680, h: 680, sizes: "(min-width: 768px) 340px, 50vw" },
+  } as const;
+
+  const JobImg = ({ name, alt, role }: { name: string; alt: string; role: keyof typeof PHOTO_ROLE }) => {
     const base = `/images/services/post-construction/${name}`;
-    const small = wide ? `${base}-600.webp 600w` : `${base}-500.webp 500w`;
-    const large = wide ? `${base}.webp 1200w` : `${base}.webp 1000w`;
+    const r = PHOTO_ROLE[role];
     return (
-      <figure className="my-7">
-        <img
-          src={`${base}.webp`}
-          srcSet={`${small}, ${large}`}
-          sizes="(min-width: 768px) 720px, 100vw"
-          alt={alt}
-          width={wide ? 1200 : 1000}
-          height={wide ? 900 : 1250}
-          loading="lazy"
-          decoding="async"
-          className={`w-full rounded-2xl object-cover shadow-sm ring-1 ring-border ${wide ? "aspect-[4/3]" : "aspect-[4/5]"}`}
-        />
-        <figcaption className="mt-2 text-sm text-muted-foreground">{caption}</figcaption>
-      </figure>
+      <img
+        src={`${base}.webp`}
+        srcSet={`${base}-sm.webp ${Math.round(r.w / 2)}w, ${base}.webp ${r.w}w`}
+        sizes={r.sizes}
+        alt={alt}
+        width={r.w}
+        height={r.h}
+        loading="lazy"
+        decoding="async"
+        className={`w-full rounded-xl object-cover ring-1 ring-border ${r.box}`}
+      />
     );
   };
 
@@ -292,17 +296,32 @@ const ServicePage = () => {
               carbon stage for odours from paint, adhesive and sealants, and a true HEPA filter rated at 99.97% of
               particles at 0.3 microns. It has five speeds, so it can run quietly in an occupied part of the house.
             </p>
-            <JobPhoto
-              name="crew-on-site"
-              alt="A Capital Clean Care crew working through a finished basement room after construction, with floor machines, brushes and extension tools laid out"
-              caption="A real job in progress. The equipment on the floor is most of what separates this from a regular clean."
-            />
-            <JobPhoto
-              name="air-equipment"
-              wide={false}
-              alt="A uniformed Capital Clean Care team member setting up air-handling equipment against the baseboard of an empty renovated room"
-              caption="Machines get placed to pull air across the room rather than past it. Where they sit changes how well they work."
-            />
+            <figure className="mx-auto my-8 max-w-2xl">
+              <JobImg
+                role="establishing"
+                name="crew-on-site"
+                alt="A Capital Clean Care crew working through a finished basement room after construction, with floor machines, brushes and extension tools laid out"
+              />
+              <figcaption className="mt-2 text-sm text-muted-foreground">
+                The equipment on the floor is most of what separates this from a regular clean.
+              </figcaption>
+            </figure>
+
+            <div className="mt-8 md:grid md:grid-cols-[1fr_18rem] md:items-start md:gap-8">
+              <p className="text-lg leading-relaxed text-muted-foreground">
+                Where the machine sits matters as much as having one. It has to pull air across the room rather than
+                past it, and it moves as the crew moves, so the zone being worked is always the zone being filtered.
+                In a house where people are still living, the low speeds keep it quiet enough to run in a room next to
+                one in use.
+              </p>
+              <figure className="mt-5 md:mt-0">
+                <JobImg
+                  role="inset"
+                  name="air-equipment"
+                  alt="A uniformed Capital Clean Care team member setting up air-handling equipment against the baseboard of an empty renovated room"
+                />
+              </figure>
+            </div>
             <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
               The outlet takes a duct, which lets us pull the room to negative pressure and vent filtered air out
               instead of pushing dust toward rooms that are already done. That is the same approach used in
@@ -350,7 +369,14 @@ const ServicePage = () => {
                 </li>
               ))}
             </ol>
-            <JobPhoto name="ceiling-first" wide={false} alt="A Capital Clean Care team member on a step ladder cleaning the ceiling above a built-in closet during a post-construction clean" caption="Step one on every job: the ceiling and the surfaces nobody looks at, before anything below them is touched." />
+                        <figure className="mt-6 md:float-right md:ml-6 md:mt-0 md:w-72">
+              <JobImg
+                role="inset"
+                name="ceiling-first"
+                alt="A Capital Clean Care team member on a step ladder cleaning the ceiling above a built-in closet during a post-construction clean"
+              />
+              <figcaption className="mt-2 text-sm text-muted-foreground">Step one, every time.</figcaption>
+            </figure>
 
             <p className="mt-8 text-lg leading-relaxed text-muted-foreground">
               The sequence follows the same logic as the EPA&apos;s guidance for cleaning after renovation work, which
@@ -383,18 +409,24 @@ const ServicePage = () => {
               solution. Its DustReveal light shows fine dust still sitting on the floor, which is useful on exactly
               this kind of job.
             </p>
-            <JobPhoto
-              name="floor-dustreveal"
-              wide={false}
-              alt="A wet-dry floor washer with its green dust-detection light switched on, showing construction dust still on hardwood next to the baseboard"
-              caption="The green light is not decoration. It shows what is still on the floor after a pass that looked finished."
-            />
-            <JobPhoto
-              name="vent-cover"
-              wide={false}
-              alt="A Capital Clean Care team member washing an HVAC return cover heavily caked with construction dust in a bathroom sink"
-              caption="A return cover after a renovation. Wiping the face of this in place would have left most of it there."
-            />
+            <figure className="my-8">
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                <JobImg
+                  role="square"
+                  name="floor-dustreveal"
+                  alt="A wet-dry floor washer with its green dust-detection light switched on, showing construction dust still on hardwood next to the baseboard"
+                />
+                <JobImg
+                  role="square"
+                  name="vent-cover"
+                  alt="A Capital Clean Care team member washing an HVAC return cover heavily caked with construction dust in a bathroom sink"
+                />
+              </div>
+              <figcaption className="mt-3 text-sm text-muted-foreground">
+                Left: the floor washer&apos;s light showing what a finished-looking pass left behind. Right: a return
+                cover that would have kept most of its dust if it had been wiped in place.
+              </figcaption>
+            </figure>
             <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
               Before any water goes down, someone identifies the floor. A renovated property often has three or four
               different materials in it. Sealed hardwood, engineered wood, laminate, luxury vinyl, tile, porcelain
@@ -449,18 +481,13 @@ const ServicePage = () => {
               run behind all of it. A bathroom adds tile and grout, shower glass, the tub, vanity and mirror, and an
               exhaust cover that usually comes down to be washed separately.
             </p>
-            <JobPhoto
-              name="bathroom-detail"
-              wide={false}
-              alt="A masked Capital Clean Care team member using a cordless power scrubber on a bathtub during a post-construction bathroom clean"
-              caption="Bathrooms hold the most separate surfaces of any room, which is why they take the longest."
-            />
-            <JobPhoto
-              name="edge-work"
-              wide={false}
-              alt="Floor edge and baseboard being cleaned next to an HVAC floor register, with the machine's dust-detection light showing residue along the perimeter"
-              caption="Perimeters get their own pass. A room reads as unfinished when the last few inches still hold a line of dust."
-            />
+            <figure className="mx-auto my-7 max-w-md">
+              <JobImg
+                role="solo"
+                name="bathroom-detail"
+                alt="A masked Capital Clean Care team member using a cordless power scrubber on a bathtub during a post-construction bathroom clean"
+              />
+            </figure>
             <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
               Window tracks get treated as their own job. Construction dust does not sit loose in a track, it packs
               into the corners and compacts, and vacuuming alone will not lift it. Walls get matched to their finish:
