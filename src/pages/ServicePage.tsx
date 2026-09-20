@@ -55,7 +55,7 @@ const ServicePage = () => {
   // insets that sit beside their own paragraph, and a square pair used as side-by-side proof.
   // Portrait was removed from this section: 4:5 at text width renders taller than a laptop viewport.
   const PHOTO_ROLE = {
-    establishing: { box: "aspect-[3/2]", w: 1280, h: 853, sizes: "(min-width: 768px) 640px, 100vw" },
+    establishing: { box: "aspect-[4/3]", w: 1280, h: 960, sizes: "(min-width: 768px) 640px, 100vw" },
     inset: { box: "aspect-[4/3]", w: 576, h: 432, sizes: "(min-width: 768px) 288px, 100vw" },
     solo: { box: "aspect-[4/3]", w: 960, h: 720, sizes: "(min-width: 768px) 480px, 100vw" },
     square: { box: "aspect-square", w: 680, h: 680, sizes: "(min-width: 768px) 340px, 50vw" },
@@ -64,7 +64,8 @@ const ServicePage = () => {
   const JobImg = ({ name, alt, role }: { name: string; alt: string; role: keyof typeof PHOTO_ROLE }) => {
     const base = `/images/services/post-construction/${name}`;
     const r = PHOTO_ROLE[role];
-    return (
+    const hero = role === "establishing";
+    const img = (
       <img
         src={`${base}.webp`}
         srcSet={`${base}-sm.webp ${Math.round(r.w / 2)}w, ${base}.webp ${r.w}w`}
@@ -74,8 +75,18 @@ const ServicePage = () => {
         height={r.h}
         loading="lazy"
         decoding="async"
-        className={`w-full rounded-xl object-cover ring-1 ring-border ${r.box}`}
+        className={hero ? "h-full w-full object-cover" : `w-full rounded-xl object-cover ring-1 ring-border ${r.box}`}
       />
+    );
+    if (!hero) return img;
+    // Establishing shot borrows the framing used on the condo page: deeper radius, stronger
+    // shadow and teal corner rules, so the lead photo reads as the anchor of the section.
+    return (
+      <div className="relative">
+        <span className="absolute -left-3 -top-3 hidden h-12 w-12 rounded-tl-xl border-l-4 border-t-4 border-accent sm:block" aria-hidden="true" />
+        <span className="absolute -bottom-3 -right-3 hidden h-12 w-12 rounded-br-xl border-b-4 border-r-4 border-accent sm:block" aria-hidden="true" />
+        <div className={`overflow-hidden rounded-3xl border border-border shadow-xl ${r.box}`}>{img}</div>
+      </div>
     );
   };
 
@@ -94,7 +105,7 @@ const ServicePage = () => {
         serviceType={service.name}
       />
       <FAQSchema faqs={service.faqs} />
-      {(isOfficeCleaning || isMoveOutCleaning) && (
+      {(isOfficeCleaning || isMoveOutCleaning || isPostConstruction) && (
         <>
           <LocalBusinessSchema areaServed={["Maryland", "Washington, DC", "Northern Virginia"]} />
           <WebPageSchema
@@ -103,7 +114,12 @@ const ServicePage = () => {
             url={`https://capitalcleancare.com/services/${service.slug}`}
             cityName="Silver Spring"
             stateCode="Maryland"
-            primaryImage="https://capitalcleancare.com/images/locations/bethesda-house-cleaning/capital-clean-care-team.webp"
+            dateModified={isPostConstruction ? "2026-09-20" : undefined}
+            primaryImage={
+              isPostConstruction
+                ? "https://capitalcleancare.com/images/services/post-construction/crew-on-site.webp"
+                : "https://capitalcleancare.com/images/locations/bethesda-house-cleaning/capital-clean-care-team.webp"
+            }
           />
         </>
       )}
@@ -674,8 +690,11 @@ const ServicePage = () => {
         </div>
       </section>
 
-      {/* Carrossel de vídeos — antes da cotação */}
-      <VideoShowcase heading={`See our ${service.name.toLowerCase()} team in action 👇`} />
+      {/* Carrossel de vídeos — antes da cotação. Fora da pós-obra: a página já carrega as fotos
+          reais do serviço, e os clipes genéricos competiam com elas sem acrescentar nada. */}
+      {!isPostConstruction && (
+        <VideoShowcase heading={`See our ${service.name.toLowerCase()} team in action 👇`} />
+      )}
 
       {/* ── Quote Form ── */}
       <section id="quote" className="py-16 bg-secondary scroll-mt-24">
