@@ -49,6 +49,7 @@ const ServicePage = () => {
   const heroImg = SERVICE_IMAGES[service.slug] || "/images/team/real-team-two-members.webp";
   const isOfficeCleaning = service.slug === "office-cleaning";
   const isMoveOutCleaning = service.slug === "move-out-cleaning";
+  const isPostConstruction = service.slug === "post-construction-cleaning";
 
   const matchedSlService = slServices.find(
     (sl) => sl.slug === service.slug || sl.name.toLowerCase().includes(service.name.toLowerCase().split(" ")[0]),
@@ -176,6 +177,36 @@ const ServicePage = () => {
             <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
               Professional office cleaning covers the shared areas that affect employee comfort and client impressions: entrances, reception, desks and workstations, conference rooms, floors, trash and recycling, restrooms, break rooms, glass, and high-touch points. Capital Clean Care builds a written checklist around the workspace, access rules, business hours, occupancy, and required frequency. Background-checked, insured teams can work before opening, after closing, or on weekends across Maryland, Washington DC, and Northern Virginia. A small office under 1,000 square feet may start around $150–$250 per visit, but the written quote changes with restrooms, floor type, kitchens, traffic, consumable restocking, and daily versus weekly service. Medical treatment areas and regulated biohazards require specialized providers; our scope is routine professional cleaning for offices, waiting rooms, retail, coworking, and similar commercial spaces.
             </p>
+          </div>
+        </section>
+      )}
+
+      {isPostConstruction && (
+        <section className="border-b border-border bg-background py-10 md:py-14" aria-labelledby="post-construction-answer">
+          <div className="container mx-auto max-w-4xl px-4">
+            <p className="mb-3 text-sm font-semibold text-accent">Updated September 20, 2026 · Maryland, Washington DC & Northern Virginia</p>
+            <h2 id="post-construction-answer" className="font-heading text-2xl font-bold text-foreground md:text-3xl">How much does post-construction cleaning cost?</h2>
+            <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
+              Post-construction cleaning is priced by square footage rather than bedroom count, because the amount of
+              settled drywall dust and debris tracks the size of the work area. In the DMV, Capital Clean Care&apos;s
+              published ranges run <strong>$280–$400 for up to 1,000 sq ft</strong>, <strong>$450–$640 for 1,500–2,000 sq ft</strong>,
+              and <strong>$680–$900 for 2,500–3,000 sq ft</strong>; homes above 3,000 sq ft get a custom quote. The scope
+              covers fine dust removal with HEPA-filtered vacuums, debris and paint residue, and a full detail clean —
+              confirmed in writing before the appointment. Construction cleaning after a remodel usually needs more than
+              one pass, because dust keeps settling out of the air for days after the work stops.
+            </p>
+            <div className="mt-7 grid gap-4 sm:grid-cols-3">
+              {[
+                ["Best timing", "After contractors finish and debris is hauled out, before furniture and move-in."],
+                ["Why it is priced by area", "Fine dust spreads through the whole work zone, so square footage predicts the labor better than room count."],
+                ["Built for", "New builds, renovations, remodels, additions and basement finishes — residential and light commercial."],
+              ].map(([title, copy]) => (
+                <div key={title} className="rounded-xl border border-border bg-card p-5 shadow-sm">
+                  <h3 className="font-heading font-bold text-foreground">{title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{copy}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
       )}
