@@ -34,7 +34,7 @@ const SPOKES = [
   "move-in-cleaning-checklist",
 ];
 
-const HERO_IMAGE = "/images/services/post-construction/hero.webp";
+const HERO_IMAGE = "/images/team/team-post-construction.jpg";
 const IMG = "/images/services/post-construction";
 
 // The eight-step order the crews actually work in. Order is the whole point: every surface
@@ -238,12 +238,10 @@ const PostConstructionCleaningPage = () => {
                 <div className="aspect-[4/3] overflow-hidden rounded-3xl border border-border shadow-2xl">
                   <img
                     src={HERO_IMAGE}
-                    srcSet={`${IMG}/hero-400.webp 400w, ${HERO_IMAGE} 800w`}
-                    sizes="(min-width: 1024px) 560px, 100vw"
-                    alt="A Capital Clean Care crew working through a finished basement after construction, with floor machines and detail tools laid out"
+                    alt="Two uniformed Capital Clean Care team members cleaning windows and mopping in an empty newly built home"
                     className="h-full w-full object-cover"
-                    width={800}
-                    height={600}
+                    width={574}
+                    height={760}
                     loading="eager"
                     fetchPriority="high"
                   />
