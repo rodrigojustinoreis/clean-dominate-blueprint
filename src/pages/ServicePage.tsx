@@ -191,7 +191,7 @@ const ServicePage = () => {
               settled drywall dust and debris tracks the size of the work area. In the DMV, Capital Clean Care&apos;s
               published ranges run <strong>$280–$400 for up to 1,000 sq ft</strong>, <strong>$450–$640 for 1,500–2,000 sq ft</strong>,
               and <strong>$680–$900 for 2,500–3,000 sq ft</strong>; homes above 3,000 sq ft get a custom quote. The scope
-              covers fine dust removal with HEPA-filtered vacuums, debris and paint residue, and a full detail clean —
+              covers fine dust removal with HEPA-filtered vacuums, debris and paint residue, and a full detail clean,
               confirmed in writing before the appointment. Construction cleaning after a remodel usually needs more than
               one pass, because dust keeps settling out of the air for days after the work stops.
             </p>
@@ -207,6 +207,71 @@ const ServicePage = () => {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+      )}
+
+      {isPostConstruction && (
+        <section className="bg-secondary/30 py-12 md:py-16" aria-labelledby="post-construction-dust">
+          <div className="container mx-auto max-w-4xl px-4">
+            <h2 id="post-construction-dust" className="font-heading text-2xl font-bold text-foreground md:text-3xl">
+              Why construction dust needs different equipment
+            </h2>
+            <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
+              Construction dust behaves differently from household dust, and the difference is measurable. Particles
+              below 10 microns stay suspended in the air instead of falling. Below 4 microns they pass the nose and
+              throat and reach deep into the lungs. Drywall compound, concrete, mortar and tile cutting all release
+              respirable crystalline silica, which OSHA regulates on jobsites for that reason. Most of the work on a
+              post-construction clean goes into capturing that dust rather than into tidying.
+            </p>
+
+            <h3 className="mt-9 font-heading text-xl font-bold text-foreground">Dust keeps falling after the work stops</h3>
+            <p className="mt-3 text-lg leading-relaxed text-muted-foreground">
+              The finest particles stay airborne long after the contractors leave. Construction dust keeps settling out
+              of the air for 48 to 72 hours. Clean the house once, on the day the crew finishes, and a grey film comes
+              back on every horizontal surface two mornings later. Nothing was done wrong; the dust had not finished
+              falling. This is why the work runs in phases instead of one visit.
+            </p>
+
+            <div className="mt-8 grid gap-5 sm:grid-cols-3">
+              {[
+                ["Rough clean", "During the build, once framing, rough-ins and drywall are done. Bulk debris, packaging and protective film come out and floors get cleared. The site becomes safe to work in. It does not look finished yet."],
+                ["Final clean", "After the trades finish and debris is hauled out. This is the detailed pass: surfaces, cabinet and drawer interiors, appliances, fixtures, windows, frames and tracks, floors edge to edge."],
+                ["Touch-up", "After the punch list closes and the dust has finished falling. Catches what later trades, inspections and the 48 to 72 hour settling window put back."],
+              ].map(([title, copy]) => (
+                <div key={title} className="rounded-xl border border-border bg-card p-5 shadow-sm">
+                  <h4 className="font-heading font-bold text-foreground">{title}</h4>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{copy}</p>
+                </div>
+              ))}
+            </div>
+
+            <h3 className="mt-10 font-heading text-xl font-bold text-foreground">Why a household or shop vacuum makes it worse</h3>
+            <p className="mt-3 text-lg leading-relaxed text-muted-foreground">
+              A standard vacuum pulls fine dust in and pushes much of it back out through the exhaust and the seams of
+              the housing. The body is not sealed and the filter was never built for particles this small. The floor
+              looks clean afterwards while the finest fraction has moved into the air of the room and onto the surfaces
+              someone already wiped. What matters in the equipment is the seal: everything drawn in has to pass through
+              the filter, with no path around it.
+            </p>
+
+            <h3 className="mt-9 font-heading text-xl font-bold text-foreground">What &ldquo;HEPA&rdquo; actually means</h3>
+            <p className="mt-3 text-lg leading-relaxed text-muted-foreground">
+              HEPA rates a filter, not a company. There is no such thing as a HEPA-certified cleaning company, so treat
+              that phrase as a warning sign when you see it. The US Department of Energy standard requires a HEPA
+              filter to capture at least 99.97% of particles at 0.3 microns. The European EN 1822 classes set 99.95%
+              for H13 and 99.995% for H14.
+            </p>
+            <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
+              One detail gets misread constantly. At 0.3 microns a filter is being tested against the particle size it
+              finds hardest to catch, not the smallest size it can catch. Performance improves both above and below
+              that figure, so 99.97% describes the filter at its worst.
+            </p>
+            <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
+              Three questions are worth asking anyone you hire for this work. Is the vacuum body sealed, or does it
+              just take a HEPA cartridge? Is the job scheduled in phases around the settling window? Is the scope
+              written down before anyone starts?
+            </p>
           </div>
         </section>
       )}
