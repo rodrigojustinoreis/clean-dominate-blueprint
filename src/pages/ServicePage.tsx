@@ -199,7 +199,7 @@ const ServicePage = () => {
               {[
                 ["Best timing", "After contractors finish and debris is hauled out, before furniture and move-in."],
                 ["Why it is priced by area", "Fine dust spreads through the whole work zone, so square footage predicts the labor better than room count."],
-                ["Built for", "New builds, renovations, remodels, additions and basement finishes — residential and light commercial."],
+                ["Built for", "New builds, renovations, remodels, additions and basement finishes, residential and light commercial."],
               ].map(([title, copy]) => (
                 <div key={title} className="rounded-xl border border-border bg-card p-5 shadow-sm">
                   <h3 className="font-heading font-bold text-foreground">{title}</h3>
@@ -255,7 +255,22 @@ const ServicePage = () => {
               the filter, with no path around it.
             </p>
 
-            <h3 className="mt-9 font-heading text-xl font-bold text-foreground">What &ldquo;HEPA&rdquo; actually means</h3>
+            <h3 className="mt-10 font-heading text-xl font-bold text-foreground">We filter the air while we work</h3>
+            <p className="mt-3 text-lg leading-relaxed text-muted-foreground">
+              Wiping a surface lifts part of the dust back into the room, where it drifts and lands again on everything
+              already finished. So we run an air scrubber through the job instead of only cleaning surfaces. Ours is an{" "}
+              <strong>XPOWER X-2580</strong>, a 1/2 HP unit moving up to 550 CFM through four stages of filtration:
+              two washable nylon mesh screens that take out around 90% of the medium and large debris, an activated
+              carbon stage for odours from paint, adhesive and sealants, and a true HEPA filter rated at 99.97% of
+              particles at 0.3 microns. It has five speeds, so it can run quietly in an occupied part of the house.
+            </p>
+            <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
+              The outlet takes a duct, which lets us pull the room to negative pressure and vent filtered air out
+              instead of pushing dust toward rooms that are already done. That is the same approach used in
+              remediation work. Very few residential cleaning companies bring this equipment to a house.
+            </p>
+
+            <h3 className="mt-10 font-heading text-xl font-bold text-foreground">What &ldquo;HEPA&rdquo; actually means</h3>
             <p className="mt-3 text-lg leading-relaxed text-muted-foreground">
               HEPA rates a filter, not a company. There is no such thing as a HEPA-certified cleaning company, so treat
               that phrase as a warning sign when you see it. The US Department of Energy standard requires a HEPA
@@ -269,8 +284,130 @@ const ServicePage = () => {
             </p>
             <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
               Three questions are worth asking anyone you hire for this work. Is the vacuum body sealed, or does it
-              just take a HEPA cartridge? Is the job scheduled in phases around the settling window? Is the scope
-              written down before anyone starts?
+              just take a HEPA cartridge? Ask how the visits are spaced against the settling window. And get the
+              scope in writing before anyone starts.
+            </p>
+
+            <h3 className="mt-12 font-heading text-xl font-bold text-foreground">CleanBuild 360: how we work a property, ceiling to floor</h3>
+            <p className="mt-3 text-lg leading-relaxed text-muted-foreground">
+              We named our own sequence because the order of the work decides the result. Every surface we clean sends
+              dust downward. Cleaning a room in the wrong order means cleaning parts of it twice. So the property gets
+              worked from the highest surface to the lowest, and the floor is close to last.
+            </p>
+            <ol className="mt-6 space-y-2 text-lg leading-relaxed text-muted-foreground">
+              {[
+                "Ceilings, upper walls, ledges and corners",
+                "Light fixtures, fans, exhaust and HVAC register covers",
+                "Walls, doors, frames, window glass, sills and tracks",
+                "Cabinets, closets, shelving and built-ins",
+                "Trim, molding and baseboards",
+                "Edges, corners and transitions as a separate detail pass",
+                "Floors: HEPA vacuum first, then wash",
+                "Second look, and another pass wherever dust came back",
+              ].map((step, n) => (
+                <li key={step} className="flex gap-3">
+                  <span className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent/10 text-sm font-bold text-accent">{n + 1}</span>
+                  <span>{step}</span>
+                </li>
+              ))}
+            </ol>
+            {/* Owner-supplied photographs of real jobs. Captions describe only what is visible in each frame. */}
+            <figure className="mt-8">
+              <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
+                {[
+                  {
+                    src: "/images/services/post-construction/ceiling-first",
+                    alt: "A Capital Clean Care team member on a step ladder cleaning the ceiling above a built-in closet during a post-construction clean",
+                    caption: "High surfaces first, before anything below them",
+                  },
+                  {
+                    src: "/images/services/post-construction/air-equipment",
+                    alt: "A uniformed Capital Clean Care team member setting up air-handling equipment against the baseboard of an empty renovated room",
+                    caption: "Equipment set along the baseboard in an empty room",
+                  },
+                  {
+                    src: "/images/services/post-construction/vent-cover",
+                    alt: "A Capital Clean Care team member washing an HVAC return cover heavily caked with construction dust in a bathroom sink",
+                    caption: "A return cover taken down and washed separately",
+                  },
+                  {
+                    src: "/images/services/post-construction/floor-dustreveal",
+                    alt: "A wet-dry floor washer with its green dust-detection light switched on, showing construction dust still on hardwood next to the baseboard",
+                    caption: "The floor washer's green light showing dust still on the boards",
+                  },
+                ].map((img) => (
+                  <div key={img.src}>
+                    <img
+                      src={`${img.src}.webp`}
+                      srcSet={`${img.src}-500.webp 500w, ${img.src}.webp 1000w`}
+                      sizes="(min-width: 768px) 22vw, 45vw"
+                      alt={img.alt}
+                      width={1000}
+                      height={1250}
+                      loading="lazy"
+                      decoding="async"
+                      className="aspect-[4/5] w-full rounded-xl object-cover shadow-sm ring-1 ring-border"
+                    />
+                    <p className="mt-2 text-xs leading-snug text-muted-foreground">{img.caption}</p>
+                  </div>
+                ))}
+              </div>
+              <figcaption className="mt-3 text-xs text-muted-foreground">
+                Photographs from our own post-construction jobs in the DMV.
+              </figcaption>
+            </figure>
+
+            <p className="mt-8 text-lg leading-relaxed text-muted-foreground">
+              The sequence follows the same logic as the EPA&apos;s guidance for cleaning after renovation work, which
+              also runs high to low, uses HEPA vacuuming and wet cleaning, and calls for re-inspecting and re-cleaning
+              while dust or residue remains. We use that as a technical reference for how we work. It is not a
+              certification, and we do not hold one.
+            </p>
+
+            <h3 className="mt-10 font-heading text-xl font-bold text-foreground">The air runs about two hours in each zone</h3>
+            <p className="mt-3 text-lg leading-relaxed text-muted-foreground">
+              In each cleaning zone the scrubber usually runs for around two hours while the detail work happens
+              around it. That figure is our own operating protocol rather than a published standard. Room size,
+              ceiling height and how much dust the job left behind all change it, and so does where the machine has to
+              sit to pull air across the room instead of past it.
+            </p>
+
+            <h3 className="mt-10 font-heading text-xl font-bold text-foreground">The floor gets vacuumed before it gets washed</h3>
+            <p className="mt-3 text-lg leading-relaxed text-muted-foreground">
+              A wet-dry floor washer is built to vacuum and wash in one pass, and in a normal house that is exactly
+              how it should be used. A house after construction carries far more dry particulate than the machine was
+              designed to meet in one go. Put water on that floor first and the fine dust turns into a slurry that
+              spreads into grout lines, board seams and corners instead of leaving the room.
+            </p>
+            <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
+              So we split it. The whole floor gets HEPA vacuumed dry, including the places the machine cannot reach:
+              wall transitions, corners, door jambs, closets, stair treads, cabinet toe kicks and the perimeter. Only
+              then does water come out. For sealed hard floors we use a Tineco FLOOR ONE S7 Master, which pulls at
+              23,000 Pa, senses how dirty the floor is through its iLoop system and adjusts water and suction as it
+              goes, cleans against both edges, and keeps recovered dirty water in a separate tank from the clean
+              solution. Its DustReveal light shows fine dust still sitting on the floor, which is useful on exactly
+              this kind of job.
+            </p>
+            <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
+              Before any water goes down, someone identifies the floor. A renovated property often has three or four
+              different materials in it. Sealed hardwood, engineered wood, laminate, luxury vinyl, tile, porcelain
+              and natural stone do not take the same moisture, the same chemistry or the same machine. Unsealed wood,
+              damaged flooring and anything the manufacturer says not to wet-clean by machine gets handled another
+              way. We do not flood wood.
+            </p>
+
+            <h3 className="mt-10 font-heading text-xl font-bold text-foreground">The second look decides when the job is done</h3>
+            <p className="mt-3 text-lg leading-relaxed text-muted-foreground">
+              One pass is not assumed to be enough. After the first full cycle the room gets inspected again for dust
+              haze, residue, dirty edges, streaking and missed corners, and whatever is still there gets cleaned
+              again. On a job that involved heavy drywall or sanding, that second pass is normal rather than
+              exceptional.
+            </p>
+            <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
+              Some things stay outside our scope on purpose. We clean accessible register and return covers and the
+              surfaces around them, which is not the same as professional duct cleaning. Anything requiring a licensed
+              electrical, HVAC or mechanical trade is not part of a cleaning visit. We assess visually and by hand,
+              and we do not perform measured air quality testing; an environmental testing service does that.
             </p>
           </div>
         </section>
