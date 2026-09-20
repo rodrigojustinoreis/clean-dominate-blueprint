@@ -534,6 +534,8 @@ export const services: ServiceData[] = [
       "Reliable service you can count on — no last-minute cancellations"
     ],
     faqs: [
+      { q: "How much does Airbnb turnover cleaning cost?", a: "An Airbnb turnover typically costs $160–$400+ per clean depending on unit size. A studio or 1-bedroom runs about $160–$195, a 2-bedroom about $215–$255, and a 3-bedroom about $255–$310. Larger homes start around $400. Pricing is flat per clean rather than hourly, so you know the cost before booking — most hosts pass it through as the listing's cleaning fee." },
+      { q: "What is an Airbnb turnover cleaning service?", a: "It's a cleaning scheduled between one guest's checkout and the next guest's check-in that resets the property to listing condition. It covers a full kitchen and bathroom sanitization, stripping and remaking beds with fresh linens, restocking owner-supplied guest essentials, staging the guest areas, and a final photo-ready walkthrough." },
       { q: "Can you work around my Airbnb booking schedule?", a: "Yes. We coordinate directly with your rental calendar and schedule cleanings between guest checkout and check-in, including same-day turnovers when needed." },
       { q: "Do you handle linen changes?", a: "Yes. We strip used beds and remake them with fresh linens as part of every turnover cleaning. We can also handle linen laundry if arranged in advance." },
       { q: "What areas do you serve for Airbnb cleaning?", a: "We serve Airbnb and short-term rental properties throughout Maryland (Montgomery, Frederick, Howard, and Prince George's Counties), Washington DC, and Northern Virginia." },
@@ -546,8 +548,8 @@ export const services: ServiceData[] = [
       { name: "Amanda F.", location: "Bethesda, MD", text: "My Airbnb rating went from 4.6 to 5.0 stars after I switched to Capital Clean Care. Their attention to detail is incredible." },
       { name: "Carlos M.", location: "Arlington, VA", text: "Same-day turnovers used to stress me out. Now I just send them the checkout time and it's done. Professional, fast, and thorough every time." }
     ],
-    metaTitle: "Airbnb Cleaning Services | Turnover Cleaning MD, DC & VA",
-    metaDescription: "Professional Airbnb & VRBO turnover cleaning in Maryland, DC & Northern Virginia. 5-star results, same-day turnovers, linen changes included. Get a free quote!"
+    metaTitle: "Airbnb & Short-Term Rental Turnover Cleaning | MD, DC & VA",
+    metaDescription: "Airbnb & short-term rental cleaning service across MD, DC & Northern Virginia. Turnovers from $160 per clean, same-day available, fresh linens included. Free quote."
   },
   {
     name: "Condo Cleaning",

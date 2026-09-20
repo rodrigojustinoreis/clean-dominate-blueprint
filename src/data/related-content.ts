@@ -59,6 +59,12 @@ export function serviceCardHref(citySlug: string, serviceSlug: string): string |
   return null;
 }
 
+/** National service page href, or null when it doesn't exist, is noindex, or is the Ads landing. */
+export function nationalServiceHref(serviceSlug: string): string | null {
+  if (serviceSlug === "house-cleaning" || !NATIONAL_SERVICE_PAGES.has(serviceSlug)) return null;
+  return isIndexable(`/services/${serviceSlug}`) ? `/services/${serviceSlug}` : null;
+}
+
 /** City hub href, or null when the hub itself is noindex (render the city name as text). */
 export function hubHref(citySlug: string): string | null {
   const hub = `/locations/${citySlug}`;

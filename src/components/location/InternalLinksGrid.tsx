@@ -3,6 +3,7 @@ import {
   isIndexable,
   guidesForCityService,
   cityHubLink,
+  nationalServiceHref,
   type RelatedLink,
 } from "@/data/related-content";
 
@@ -46,7 +47,14 @@ const InternalLinksGrid = ({
   }));
 
   const hub = cityHubLink(citySlug);
+  // The national service page was the one link this grid never emitted, so every city×service spoke
+  // sent equity sideways and never up to its own pillar. Guarded: never the Ads landing, never noindex.
+  const pillarHref = nationalServiceHref(serviceSlug);
+  const pillar: RelatedLink[] = pillarHref
+    ? [{ href: pillarHref, title: `${serviceLabel} across MD, DC & VA` }]
+    : [];
   const serviceLinks: RelatedLink[] = [
+    ...pillar,
     ...services
       .filter((s) => s.slug !== serviceSlug && isIndexable(`/locations/${citySlug}/${s.slug}`))
       .map((s) => ({ href: `/locations/${citySlug}/${s.slug}`, title: `${s.name} in ${cityName}` })),

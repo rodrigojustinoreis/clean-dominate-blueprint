@@ -304,6 +304,13 @@ const AirbnbCleaningPage = () => {
               owner-supplied essentials, stages guest areas and provides a final photo-ready check across Maryland,
               Washington, DC, and Northern Virginia.
             </p>
+            {/* The price answer was missing here while the same figures sat in the table below — GSC shows the
+                cluster's demand is cost-led, so the quotable passage has to carry the number. */}
+            <p className="text-[17px] md:text-lg leading-relaxed text-foreground max-w-3xl mt-4">
+              A professional Airbnb turnover typically costs <strong>$160–$400+ per clean</strong> depending on unit
+              size — a studio runs about $160–$195 and a 3-bedroom about $255–$310 — quoted as a flat per-clean price,
+              never hourly. Most hosts pass this straight through as the listing's cleaning fee.
+            </p>
             <div className="grid sm:grid-cols-3 gap-3 mt-6" aria-label="Airbnb turnover essentials">
               {[
                 ["Timing", "Scheduled between checkout and check-in"],
