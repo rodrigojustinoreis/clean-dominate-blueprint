@@ -189,7 +189,7 @@ export const cities: CityData[] = [
       { q: "Are weekend appointments available?", a: "Yes, we offer Saturday availability for Gaithersburg clients. Weekend slots are popular, so early booking is recommended." },
       { q: "Do you clean Kentlands townhomes?", a: "Absolutely. We're very familiar with Kentlands and Lakelands townhome layouts and provide efficient, thorough cleaning for these properties." }
     ],
-    metaTitle: "House Cleaning Services in Gaithersburg, MD | Capital Clean Care",
+    metaTitle: "Cleaning Services in Gaithersburg, MD — All Services | Capital Clean Care",
     metaDescription: "Professional house cleaning in Gaithersburg, MD. Serving Kentlands, Lakelands, Quince Orchard & more. Eco-friendly, insured. Get your free quote today."
   },
   {
@@ -225,7 +225,7 @@ export const cities: CityData[] = [
       { q: "Do you serve Frederick County outside the city?", a: "Yes. We serve communities throughout Frederick County including Urbana, New Market, Monrovia, Middletown, and surrounding areas." },
       { q: "Is there a travel fee for Frederick?", a: "No hidden fees. Your quote includes everything. Frederick is within our standard service area and there are no additional travel charges." }
     ],
-    metaTitle: "House Cleaning Services in Frederick, MD | Capital Clean Care",
+    metaTitle: "Cleaning Services in Frederick, MD — All Services | Capital Clean Care",
     metaDescription: "Professional house cleaning in Frederick, MD. Serving historic downtown to modern developments. Eco-friendly, licensed & insured. Get a free quote today."
   },
   {

@@ -69,6 +69,11 @@ const UMBRELLA_HUBS = new Set([
   "chevy-chase-md",
   "potomac-md",
   "fairfax-va",
+  // 2026-09-19: GSC showed these two hubs' own metaTitle duplicating their /house-cleaning
+  // spoke's head term (Gaithersburg pos 48.6, Frederick pos 48.6/0 impr on the spoke) —
+  // same fix as the pilot cities above, nothing else changed.
+  "gaithersburg-md",
+  "frederick-md",
 ]);
 
 /** Specific neighborhoods served per city — boosts local SEO relevance */
@@ -239,10 +244,11 @@ const silverSpringServiceGuide = [
 // Hubs that carry a WebPage node with a real dateModified (the date the hub content was last revised).
 const HUB_PAGE_DATES: Record<string, string> = {
   "rockville-md": "2026-08-23",
-  "gaithersburg-md": "2026-08-30",
+  "gaithersburg-md": "2026-09-19",
   "silver-spring-md": "2026-09-03",
   "alexandria-va": "2026-09-03",
   "fairfax-va": "2026-09-03",
+  "frederick-md": "2026-09-19",
 };
 
 const rockvilleRealWorkPhotos = [
