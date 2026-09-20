@@ -187,18 +187,22 @@ const ServicePage = () => {
             <p className="mb-3 text-sm font-semibold text-accent">Updated September 20, 2026 · Maryland, Washington DC & Northern Virginia</p>
             <h2 id="post-construction-answer" className="font-heading text-2xl font-bold text-foreground md:text-3xl">How much does post-construction cleaning cost?</h2>
             <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
-              Post-construction cleaning is priced by square footage rather than bedroom count, because the amount of
-              settled drywall dust and debris tracks the size of the work area. In the DMV, Capital Clean Care&apos;s
-              published ranges run <strong>$280–$400 for up to 1,000 sq ft</strong>, <strong>$450–$640 for 1,500–2,000 sq ft</strong>,
-              and <strong>$680–$900 for 2,500–3,000 sq ft</strong>; homes above 3,000 sq ft get a custom quote. The scope
-              covers fine dust removal with HEPA-filtered vacuums, debris and paint residue, and a full detail clean,
-              confirmed in writing before the appointment. Construction cleaning after a remodel usually needs more than
-              one pass, because dust keeps settling out of the air for days after the work stops.
+              We quote post-construction work after a technician has assessed the property, and we do not publish a
+              price list for it. Two houses of identical size can take very different amounts of work depending on how
+              the trades left them. What the assessment is reading: how much fine dust settled and how far it
+              travelled, whether debris and packaging were hauled out or left behind, how much paint spatter, adhesive,
+              sealant and label residue is on the surfaces, the condition of the floors and whether they can take
+              moisture, and how many separate surfaces the finished rooms actually have.
+            </p>
+            <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
+              Quoting that from a phone call would mean padding the number to cover the unknown, or giving you a figure
+              that changes once we are inside. The assessment costs you nothing, and what comes out of it is a written
+              scope with the price attached before anyone starts.
             </p>
             <div className="mt-7 grid gap-4 sm:grid-cols-3">
               {[
                 ["Best timing", "After contractors finish and debris is hauled out, before furniture and move-in."],
-                ["Why it is priced by area", "Fine dust spreads through the whole work zone, so square footage predicts the labor better than room count."],
+                ["What drives the number", "Dust load, leftover debris, paint and adhesive residue, floor condition, and how many separate surfaces the space holds."],
                 ["Built for", "New builds, renovations, remodels, additions and basement finishes, residential and light commercial."],
               ].map(([title, copy]) => (
                 <div key={title} className="rounded-xl border border-border bg-card p-5 shadow-sm">
@@ -394,6 +398,54 @@ const ServicePage = () => {
               and natural stone do not take the same moisture, the same chemistry or the same machine. Unsealed wood,
               damaged flooring and anything the manufacturer says not to wet-clean by machine gets handled another
               way. We do not flood wood.
+            </p>
+
+            <h3 className="mt-10 font-heading text-xl font-bold text-foreground">What we look at before anyone starts cleaning</h3>
+            <p className="mt-3 text-lg leading-relaxed text-muted-foreground">
+              The first visit is spent reading the property. Where the dust concentrated, which surfaces took the worst
+              of it, what the trades left behind, and which materials need a gentler hand. The kind of project decides
+              a lot of that. A basement finish leaves a sealed box full of drywall dust. A kitchen remodel leaves
+              grease-free but adhesive-heavy cabinetry and appliance film. A flooring job leaves fine sanding dust in
+              every room the crew walked through. A whole-house renovation leaves all of it at once.
+            </p>
+            <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
+              We clean after new builds, whole-house renovations, additions, basement finishes, kitchen and bathroom
+              remodels, flooring installs, drywall work and repaints. The sequence stays the same. What changes is
+              where the time goes, and that is decided before the first surface is touched rather than discovered
+              halfway through.
+            </p>
+
+            <h3 className="mt-10 font-heading text-xl font-bold text-foreground">Three levels of dust control</h3>
+            <div className="mt-5 grid gap-4 sm:grid-cols-3">
+              {[
+                ["Settled dust", "Captured off walls, ceilings, trim and fixtures with sealed HEPA equipment, so what comes off a surface stays in the machine."],
+                ["Airborne dust", "Filtered out of the room while the work happens, because cleaning a surface puts part of its dust back into the air."],
+                ["Dust that comes back", "Caught on the second look, after the settling window has run and the room has had time to show what returned."],
+              ].map(([title, copy]) => (
+                <div key={title} className="rounded-xl border border-border bg-card p-5 shadow-sm">
+                  <h4 className="font-heading font-bold text-foreground">{title}</h4>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{copy}</p>
+                </div>
+              ))}
+            </div>
+            <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
+              Most cleaning handles the first level only. Treating construction dust as a surface problem alone is why
+              a house can look finished on the day and grey again by the weekend.
+            </p>
+
+            <h3 className="mt-10 font-heading text-xl font-bold text-foreground">Where the time actually goes</h3>
+            <p className="mt-3 text-lg leading-relaxed text-muted-foreground">
+              Kitchens and bathrooms take the longest, and not because they are dirtier. They hold the most separate
+              surfaces. A kitchen has cabinet exteriors, interiors and drawers, countertops and backsplash, appliance
+              exteriors, the gaps beside and under them, the toe kicks, the sink and fixtures, and the floor edges that
+              run behind all of it. A bathroom adds tile and grout, shower glass, the tub, vanity and mirror, and an
+              exhaust cover that usually comes down to be washed separately.
+            </p>
+            <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
+              Window tracks get treated as their own job. Construction dust does not sit loose in a track, it packs
+              into the corners and compacts, and vacuuming alone will not lift it. Walls get matched to their finish:
+              flat paint, fresh paint and delicate surfaces each take a different amount of pressure and moisture, and
+              the wrong choice burnishes or marks a wall that was perfect an hour earlier.
             </p>
 
             <h3 className="mt-10 font-heading text-xl font-bold text-foreground">The second look decides when the job is done</h3>
