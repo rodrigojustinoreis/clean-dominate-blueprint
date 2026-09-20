@@ -11,6 +11,7 @@ import DeepCleaningPage from "./pages/DeepCleaningPage";
 import RecurringCleaningPage from "./pages/RecurringCleaningPage";
 import AirbnbCleaningPage from "./pages/AirbnbCleaningPage";
 import CondoCleaningPage from "./pages/CondoCleaningPage";
+import PostConstructionCleaningPage from "./pages/PostConstructionCleaningPage";
 import KitchenCleaningPage from "./pages/KitchenCleaningPage";
 import BathroomCleaningPage from "./pages/BathroomCleaningPage";
 import LivingAreaCleaningPage from "./pages/LivingAreaCleaningPage";
@@ -240,6 +241,7 @@ const AppRoutes = () => (
     <Route path="/services/recurring-cleaning" element={<RecurringCleaningPage />} />
     <Route path="/services/airbnb-cleaning" element={<AirbnbCleaningPage />} />
     <Route path="/services/condo-cleaning" element={<CondoCleaningPage />} />
+    <Route path="/services/post-construction-cleaning" element={<PostConstructionCleaningPage />} />
     <Route path="/services/maid-service" element={<MaidServicePage />} />
     <Route path="/services/kitchen-cleaning" element={<KitchenCleaningPage />} />
     <Route path="/services/bathroom-cleaning" element={<BathroomCleaningPage />} />

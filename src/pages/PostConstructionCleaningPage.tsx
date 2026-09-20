@@ -1,0 +1,763 @@
+import { useSearchParams, Link } from "react-router-dom";
+import { Phone, CheckCircle, Star } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+import QuoteForm from "@/components/QuoteForm";
+import FAQ from "@/components/FAQ";
+import GreenShield5Step from "@/components/GreenShield5Step";
+import TrustBadges from "@/components/TrustBadges";
+import { ServiceSchema, FAQSchema, BreadcrumbSchema, LocalBusinessSchema, WebPageSchema } from "@/components/SchemaMarkup";
+import { useSEO } from "@/hooks/useSEO";
+import { getServiceBySlug } from "@/data/services";
+import { cities } from "@/data/locations";
+import { slCities } from "@/data/service-locations";
+import { GuideCards } from "@/components/RelatedContent";
+import { isIndexable, guidesBySlugs } from "@/data/related-content";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import FadeInSection from "@/components/blog/FadeInSection";
+import LocationSocialProof from "@/components/location/LocationSocialProof";
+import logo from "@/assets/logo.webp";
+
+const PHONE = "(240) 704-2551";
+const PHONE_HREF = "tel:+12407042551";
+
+const service = getServiceBySlug("post-construction-cleaning")!;
+const topCities = cities
+  .filter((c) => !c.slug.includes("county") && isIndexable(`/locations/${c.slug}`))
+  .slice(0, 8);
+
+const SPOKES = [
+  "post-construction-cleaning-montgomery-county-md",
+  "post-renovation-cleaning-guide-maryland",
+  "what-is-included-in-a-deep-cleaning",
+  "move-in-cleaning-checklist",
+];
+
+const HERO_IMAGE = "/images/services/post-construction/hero.webp";
+const IMG = "/images/services/post-construction";
+
+// The eight-step order the crews actually work in. Order is the whole point: every surface
+// cleaned sends dust downward, so a room worked out of sequence gets cleaned twice.
+const SEQUENCE = [
+  "Ceilings, upper walls, ledges and corners",
+  "Light fixtures, fans, exhaust and HVAC register covers",
+  "Walls, doors, frames, window glass, sills and tracks",
+  "Cabinets, closets, shelving and built-ins",
+  "Trim, molding and baseboards",
+  "Edges, corners and transitions, as their own pass",
+  "Floors: HEPA vacuumed dry, then washed",
+  "Second look, and another pass wherever dust came back",
+];
+
+const BY_AREA = [
+  {
+    room: "Kitchen",
+    tasks: [
+      "Cabinet exteriors, interiors and drawers",
+      "Countertops, backsplash and sink",
+      "Appliance exteriors, plus the gaps beside and under them",
+      "Protective film and label adhesive removed",
+      "Toe kicks and floor edges behind the run",
+    ],
+  },
+  {
+    room: "Bathrooms",
+    tasks: [
+      "Tile and grout, including grout haze on new installs",
+      "Shower glass, tub, vanity and mirror",
+      "Fixtures and hardware",
+      "Exhaust cover taken down and washed separately",
+      "Floor edges and behind the door",
+    ],
+  },
+  {
+    room: "Living and sleeping areas",
+    tasks: [
+      "Ceilings, upper walls, ledges and fans",
+      "Window glass, frames, sills and compacted track dust",
+      "Doors, frames, trim and baseboards",
+      "Closets, shelving and built-ins",
+      "Outlet and switch plates",
+    ],
+  },
+  {
+    room: "Throughout",
+    tasks: [
+      "HVAC register and return covers, cleaned off the wall",
+      "Paint spatter, adhesive and sealant residue",
+      "Light fixtures and accessible covers",
+      "Stairs, railings and landings",
+      "Floors identified by material before any moisture",
+    ],
+  },
+];
+
+const PERSONAS = [
+  {
+    title: "You just finished a renovation",
+    body: "The contractors are out, the debris is gone, and every surface in the house carries a grey film. This is the clean that makes the work look finished.",
+  },
+  {
+    title: "You are moving into a new build",
+    body: "New construction leaves protective film, label adhesive, grout haze and drywall dust in places you will not find until you unpack. Better to clear it before the furniture arrives.",
+  },
+  {
+    title: "You finished one room, not the house",
+    body: "A basement finish, a kitchen or a single bathroom still sends dust through the whole floor. The clean can be scoped to the work zone and the rooms it reached.",
+  },
+  {
+    title: "You are a contractor or builder",
+    body: "Final cleans on a schedule, coordinated around the punch list, with a written scope your client can see. We work alongside trades rather than around them.",
+  },
+];
+
+const PostConstructionCleaningPage = () => {
+  const [searchParams] = useSearchParams();
+  const isAdTraffic =
+    searchParams.has("gclid") || searchParams.has("gbraid") || searchParams.get("src") === "google";
+
+  const { seoHelmet } = useSEO({
+    title: service.metaTitle,
+    description: service.metaDescription,
+    canonical: "https://capitalcleancare.com/services/post-construction-cleaning",
+    ogImage: `https://capitalcleancare.com${HERO_IMAGE}`,
+    preloadImage: HERO_IMAGE,
+  });
+
+  const scrollToForm = () => {
+    document.getElementById("quote")?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  return (
+    <div className="min-h-screen bg-background">
+      {seoHelmet}
+      <BreadcrumbSchema
+        items={[
+          { label: "Home", href: "/" },
+          { label: "Services", href: "/services" },
+          { label: service.name, href: "/services/post-construction-cleaning" },
+        ]}
+      />
+      <ServiceSchema
+        serviceName={service.name}
+        description={service.shortDescription}
+        url="https://capitalcleancare.com/services/post-construction-cleaning"
+        serviceType={service.name}
+      />
+      <FAQSchema faqs={service.faqs} />
+      <LocalBusinessSchema areaServed={["Maryland", "Washington, DC", "Northern Virginia"]} />
+      <WebPageSchema
+        name={service.metaTitle}
+        description={service.metaDescription}
+        url="https://capitalcleancare.com/services/post-construction-cleaning"
+        cityName="Silver Spring"
+        stateCode="Maryland"
+        dateModified="2026-09-20"
+        primaryImage={`https://capitalcleancare.com${HERO_IMAGE}`}
+      />
+
+      {/* ── Sticky top bar ── */}
+      <div className="sticky top-0 z-50 bg-[#2E7D32] text-white">
+        <div className="container mx-auto flex h-11 max-w-6xl items-center justify-between gap-3 px-4">
+          <p className="truncate text-sm font-semibold">15% OFF Your First Post-Construction Clean</p>
+          <a href={PHONE_HREF} className="flex shrink-0 items-center gap-1.5 text-sm font-bold hover:underline">
+            <Phone className="h-4 w-4" /> {PHONE}
+          </a>
+        </div>
+      </div>
+
+      {isAdTraffic ? (
+        <header className="border-b border-border bg-background py-3">
+          <div className="container mx-auto flex max-w-6xl items-center justify-between px-4">
+            <Link to="/" className="flex items-center gap-2">
+              <img src={logo} alt="Capital Clean Care logo" className="h-8 w-8 object-contain" />
+              <span className="font-heading text-lg font-bold">Capital Clean Care</span>
+            </Link>
+            <a href={PHONE_HREF} className="text-sm font-bold text-[#2E7D32]">
+              {PHONE}
+            </a>
+          </div>
+        </header>
+      ) : (
+        <Header />
+      )}
+
+      {/* ── Hero ── */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#EAF6EA] via-background to-accent/5 py-10 md:py-16">
+        <div className="container mx-auto max-w-6xl px-4">
+          <Breadcrumbs
+            items={[{ label: "Home", href: "/" }, { label: "Services", href: "/services" }, { label: service.name }]}
+            className="mb-6"
+          />
+          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
+            <FadeInSection>
+              <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#2E7D32]/20 bg-white px-3.5 py-1.5 shadow-sm">
+                <div className="flex gap-0.5">
+                  {Array.from({ length: 5 }).map((_, j) => (
+                    <Star key={j} className="h-4 w-4 fill-amber-400 text-amber-400" />
+                  ))}
+                </div>
+                <span className="text-sm font-bold text-foreground">5.0</span>
+                <span className="text-sm text-muted-foreground">· Google reviews</span>
+              </div>
+
+              <h1 className="mb-5 font-heading text-4xl font-bold leading-[1.1] md:text-5xl">{service.h1}</h1>
+
+              <p className="mb-7 max-w-xl text-lg leading-relaxed text-muted-foreground">
+                {service.shortDescription} We work ceiling to floor with sealed HEPA equipment and filter the
+                air while we clean, because construction dust keeps settling for days after the crew leaves.
+              </p>
+
+              <div className="mb-6 flex flex-col gap-3 sm:flex-row">
+                <button
+                  onClick={scrollToForm}
+                  className="inline-flex items-center justify-center rounded-lg bg-[#2E7D32] px-8 py-3.5 text-base font-bold text-white shadow-lg shadow-[#2E7D32]/20 transition-colors hover:bg-[#1B5E20]"
+                >
+                  Book My Free Assessment →
+                </button>
+                <a
+                  href={PHONE_HREF}
+                  className="inline-flex items-center justify-center rounded-lg border-2 border-[#2E7D32] px-8 py-3.5 text-base font-bold text-[#2E7D32] transition-colors hover:bg-[#2E7D32]/5"
+                >
+                  <Phone className="mr-2 h-4 w-4" /> Call {PHONE}
+                </a>
+              </div>
+
+              <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted-foreground">
+                {["Sealed HEPA equipment", "Air filtered while we work", "Written scope before we start", "Licensed & insured"].map((b) => (
+                  <span key={b} className="flex items-center gap-1.5">
+                    <CheckCircle className="h-4 w-4 shrink-0 text-[#2E7D32]" /> {b}
+                  </span>
+                ))}
+              </div>
+            </FadeInSection>
+
+            <FadeInSection>
+              <div className="relative lg:pl-4">
+                <div className="aspect-[4/3] overflow-hidden rounded-3xl border border-border shadow-2xl">
+                  <img
+                    src={HERO_IMAGE}
+                    srcSet={`${IMG}/hero-400.webp 400w, ${HERO_IMAGE} 800w`}
+                    sizes="(min-width: 1024px) 560px, 100vw"
+                    alt="A Capital Clean Care crew working through a finished basement after construction, with floor machines and detail tools laid out"
+                    className="h-full w-full object-cover"
+                    width={800}
+                    height={600}
+                    loading="eager"
+                    fetchPriority="high"
+                  />
+                </div>
+                <div className="absolute -bottom-5 left-2 flex items-center gap-3 rounded-2xl border border-border bg-white px-5 py-3.5 shadow-xl sm:-left-4">
+                  <span className="font-heading text-3xl font-extrabold leading-none text-[#2E7D32]">9+</span>
+                  <span className="text-xs leading-tight text-muted-foreground">
+                    years keeping
+                    <br />
+                    DMV homes clean
+                  </span>
+                </div>
+              </div>
+            </FadeInSection>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Answer-first summary ── */}
+      <section aria-labelledby="pcc-summary" className="border-b border-border bg-card py-10 md:py-12">
+        <div className="container mx-auto max-w-4xl px-4">
+          <div className="rounded-2xl border border-[#2E7D32]/25 bg-[#F4FAF4] p-6 shadow-sm md:p-8">
+            <span className="text-sm font-semibold uppercase tracking-wider text-[#2E7D32]">Quick answer</span>
+            <h2 id="pcc-summary" className="mb-3 mt-2 font-heading text-2xl font-bold md:text-3xl">
+              What Is Post-Construction Cleaning?
+            </h2>
+            <p className="max-w-3xl text-[17px] leading-relaxed text-foreground md:text-lg">
+              Post-construction cleaning is the detailed clean that takes a property from buildable to liveable
+              after construction or remodeling work is finished. It removes fine dust from every surface, along
+              with debris, paint and adhesive residue, protective film, label glue and grout haze. It is a
+              different job from a regular house cleaning because of the dust: drywall compound, concrete and
+              tile cutting produce particles fine enough to stay suspended in the air and keep settling for 48 to
+              72 hours after the crew leaves.
+            </p>
+            <div className="mt-6 grid gap-3 sm:grid-cols-3" aria-label="Post-construction cleaning essentials">
+              {[
+                ["Best timing", "After debris is hauled out, before move-in"],
+                ["How it is priced", "After a technician assesses the property"],
+                ["What makes it different", "Sealed HEPA capture plus air filtration"],
+              ].map(([label, value]) => (
+                <div key={label} className="rounded-xl border border-[#2E7D32]/15 bg-white p-4">
+                  <span className="block text-xs font-bold uppercase tracking-wide text-[#2E7D32]">{label}</span>
+                  <span className="mt-1 block text-sm font-medium text-foreground">{value}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Intro ── */}
+      <section className="py-12 md:py-16">
+        <div className="container mx-auto max-w-3xl px-4">
+          <FadeInSection>
+            <div className="space-y-4 text-[17px] leading-relaxed text-foreground">
+              {service.intro.split("\n\n").map((p, i) => (
+                <p key={i}>{p}</p>
+              ))}
+            </div>
+          </FadeInSection>
+        </div>
+      </section>
+
+      {/* ── Why the dust behaves differently ── */}
+      <section className="border-t border-border bg-secondary/30 py-12 md:py-16">
+        <div className="container mx-auto max-w-4xl px-4">
+          <FadeInSection>
+            <span className="text-sm font-semibold uppercase tracking-wider text-[#2E7D32]">The problem</span>
+            <h2 className="mb-4 mt-2 font-heading text-2xl font-bold md:text-3xl">Why Construction Dust Needs Different Equipment</h2>
+            <div className="grid gap-8 md:grid-cols-[1fr_16rem] md:items-start">
+              <div className="space-y-4 text-[17px] leading-relaxed text-muted-foreground">
+                <p>
+                  Construction dust behaves differently from household dust, and the difference is measurable.
+                  Particles below 10 microns stay suspended in the air instead of falling. Below 4 microns they pass
+                  the nose and throat and reach deep into the lungs. Drywall compound, concrete, mortar and tile
+                  cutting all release respirable crystalline silica, which OSHA regulates on jobsites for that reason.
+                </p>
+                <p>
+                  The finest particles stay airborne long after the contractors leave, settling out of the air for 48
+                  to 72 hours. Clean the house once, on the day the crew finishes, and a grey film comes back on every
+                  horizontal surface two mornings later. Nothing was done wrong. The dust had not finished falling.
+                </p>
+                <p>
+                  A standard vacuum makes it worse. The body is not sealed and the filter was never built for
+                  particles this small, so much of what it collects goes back out through the exhaust and the housing
+                  seams. The floor looks clean while the finest fraction moves into the air and onto the surfaces
+                  someone already wiped.
+                </p>
+              </div>
+              <figure className="md:pt-1">
+                <img
+                  src={`${IMG}/vent-cover.webp`}
+                  srcSet={`${IMG}/vent-cover-sm.webp 340w, ${IMG}/vent-cover.webp 680w`}
+                  sizes="(min-width: 768px) 256px, 100vw"
+                  alt="An HVAC return cover heavily caked with construction dust being washed in a sink"
+                  className="aspect-square w-full rounded-xl object-cover ring-1 ring-border"
+                  width={680}
+                  height={680}
+                  loading="lazy"
+                />
+                <figcaption className="mt-2 text-sm text-muted-foreground">
+                  A return cover after a renovation. Wiping its face in place leaves most of this behind.
+                </figcaption>
+              </figure>
+            </div>
+          </FadeInSection>
+        </div>
+      </section>
+
+      {/* ── The sequence ── */}
+      <section className="border-t border-border py-12 md:py-16">
+        <div className="container mx-auto max-w-4xl px-4">
+          <FadeInSection>
+            <span className="text-sm font-semibold uppercase tracking-wider text-[#2E7D32]">How we work</span>
+            <h2 className="mb-4 mt-2 font-heading text-2xl font-bold md:text-3xl">Ceiling to Floor, In This Order</h2>
+            <p className="mb-7 max-w-2xl text-[17px] leading-relaxed text-muted-foreground">
+              Every surface we clean sends dust downward, so the order decides the result. Work a room out of
+              sequence and parts of it get cleaned twice. The floor is close to last for the same reason.
+            </p>
+            <div className="grid gap-8 md:grid-cols-[1fr_16rem] md:items-start">
+              <ol className="space-y-2.5">
+                {SEQUENCE.map((step, n) => (
+                  <li key={step} className="flex gap-3 text-[17px] leading-relaxed text-foreground">
+                    <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#2E7D32]/10 text-sm font-bold text-[#2E7D32]">
+                      {n + 1}
+                    </span>
+                    <span>{step}</span>
+                  </li>
+                ))}
+              </ol>
+              <figure className="md:pt-1">
+                <img
+                  src={`${IMG}/ceiling-first.webp`}
+                  srcSet={`${IMG}/ceiling-first-sm.webp 288w, ${IMG}/ceiling-first.webp 576w`}
+                  sizes="(min-width: 768px) 256px, 100vw"
+                  alt="A Capital Clean Care team member on a step ladder cleaning a ceiling during a post-construction clean"
+                  className="aspect-[4/3] w-full rounded-xl object-cover ring-1 ring-border"
+                  width={576}
+                  height={432}
+                  loading="lazy"
+                />
+                <figcaption className="mt-2 text-sm text-muted-foreground">Step one, every time.</figcaption>
+              </figure>
+            </div>
+            <p className="mt-7 text-sm leading-relaxed text-muted-foreground">
+              The sequence follows the same logic as the EPA&apos;s guidance for cleaning after renovation work,
+              which also runs high to low, uses HEPA vacuuming and wet cleaning, and calls for re-inspecting while
+              dust remains. We use that as a technical reference for how we work. It is not a certification, and we
+              do not hold one.
+            </p>
+          </FadeInSection>
+        </div>
+      </section>
+
+      {/* ── Equipment ── */}
+      <section className="border-t border-border bg-secondary/30 py-12 md:py-16">
+        <div className="container mx-auto max-w-4xl px-4">
+          <FadeInSection>
+            <span className="text-sm font-semibold uppercase tracking-wider text-[#2E7D32]">Equipment</span>
+            <h2 className="mb-4 mt-2 font-heading text-2xl font-bold md:text-3xl">We Filter the Air While We Work</h2>
+            <div className="grid gap-8 md:grid-cols-[16rem_1fr] md:items-start">
+              <figure className="md:pt-1">
+                <img
+                  src={`${IMG}/air-equipment.webp`}
+                  srcSet={`${IMG}/air-equipment-sm.webp 288w, ${IMG}/air-equipment.webp 576w`}
+                  sizes="(min-width: 768px) 256px, 100vw"
+                  alt="A uniformed Capital Clean Care team member setting up air-handling equipment against the baseboard of an empty renovated room"
+                  className="aspect-[4/3] w-full rounded-xl object-cover ring-1 ring-border"
+                  width={576}
+                  height={432}
+                  loading="lazy"
+                />
+                <figcaption className="mt-2 text-sm text-muted-foreground">
+                  Placed to pull air across the room, and moved as the crew moves.
+                </figcaption>
+              </figure>
+              <div className="space-y-4 text-[17px] leading-relaxed text-muted-foreground">
+                <p>
+                  Wiping a surface lifts part of its dust back into the room, where it drifts and lands again on
+                  everything already finished. So an air scrubber runs through the job rather than only cleaning
+                  surfaces. Ours is an <strong className="text-foreground">XPOWER X-2580</strong>, a 1/2 HP unit
+                  moving up to 550 CFM through four stages: two washable nylon mesh screens that take out around 90%
+                  of the medium and large debris, an activated carbon stage for paint and adhesive odours, and a true
+                  HEPA filter rated at 99.97% of particles at 0.3 microns.
+                </p>
+                <p>
+                  The outlet takes a duct, which lets us hold a room at negative pressure and vent filtered air away
+                  from the rooms already done. In each zone it usually runs about two hours while the detail work
+                  happens around it. That figure is our own operating protocol rather than a published standard, and
+                  room size, ceiling height and dust load all change it.
+                </p>
+                <p className="rounded-xl border border-border bg-background p-4 text-[15px]">
+                  <strong className="text-foreground">What &ldquo;HEPA&rdquo; actually means.</strong> HEPA rates a
+                  filter, not a company. There is no such thing as a HEPA-certified cleaning company, so treat that
+                  phrase as a warning sign. At 0.3 microns a filter is tested against the particle size it finds
+                  hardest to catch, not the smallest it can catch, so 99.97% describes it at its worst.
+                </p>
+              </div>
+            </div>
+          </FadeInSection>
+        </div>
+      </section>
+
+      {/* ── Floors ── */}
+      <section className="border-t border-border py-12 md:py-16">
+        <div className="container mx-auto max-w-4xl px-4">
+          <FadeInSection>
+            <span className="text-sm font-semibold uppercase tracking-wider text-[#2E7D32]">Floors</span>
+            <h2 className="mb-4 mt-2 font-heading text-2xl font-bold md:text-3xl">Vacuumed Dry Before Anything Gets Wet</h2>
+            <div className="grid gap-8 md:grid-cols-[1fr_16rem] md:items-start">
+              <div className="space-y-4 text-[17px] leading-relaxed text-muted-foreground">
+                <p>
+                  A wet-dry floor washer is built to vacuum and wash in one pass, and in a normal house that is
+                  exactly how it should be used. A house after construction carries far more dry particulate than the
+                  machine was designed to meet at once. Put water on that floor first and the fine dust turns into a
+                  slurry that spreads into grout lines, board seams and corners instead of leaving the room.
+                </p>
+                <p>
+                  So we split it. The whole floor gets HEPA vacuumed dry, including wall transitions, corners, door
+                  jambs, closets, stair treads, cabinet toe kicks and the perimeter. Only then does water come out.
+                  For sealed hard floors we use a Tineco FLOOR ONE S7 Master, which pulls at 23,000 Pa, senses how
+                  dirty the floor is and adjusts as it goes, cleans against both edges, and keeps recovered dirty
+                  water in a separate tank from the clean solution.
+                </p>
+                <p>
+                  Before any water goes down, someone identifies the floor. A renovated property often has three or
+                  four materials in it, and sealed hardwood, engineered wood, laminate, luxury vinyl, tile, porcelain
+                  and natural stone do not take the same moisture or the same machine. We do not flood wood.
+                </p>
+              </div>
+              <figure className="md:pt-1">
+                <img
+                  src={`${IMG}/floor-dustreveal.webp`}
+                  srcSet={`${IMG}/floor-dustreveal-sm.webp 340w, ${IMG}/floor-dustreveal.webp 680w`}
+                  sizes="(min-width: 768px) 256px, 100vw"
+                  alt="A wet-dry floor washer with its green dust-detection light on, showing construction dust still on hardwood beside the baseboard"
+                  className="aspect-square w-full rounded-xl object-cover ring-1 ring-border"
+                  width={680}
+                  height={680}
+                  loading="lazy"
+                />
+                <figcaption className="mt-2 text-sm text-muted-foreground">
+                  The machine&apos;s light showing what a finished-looking pass left behind.
+                </figcaption>
+              </figure>
+            </div>
+          </FadeInSection>
+        </div>
+      </section>
+
+      {/* ── What's included, by area ── */}
+      <section className="border-t border-border bg-secondary/30 py-12 md:py-16">
+        <div className="container mx-auto max-w-4xl px-4">
+          <FadeInSection>
+            <span className="text-sm font-semibold uppercase tracking-wider text-[#2E7D32]">What&apos;s included</span>
+            <h2 className="mb-4 mt-2 font-heading text-2xl font-bold md:text-3xl">What a Post-Construction Clean Covers</h2>
+            <p className="mb-7 max-w-2xl text-[17px] leading-relaxed text-muted-foreground">
+              Kitchens and bathrooms take the longest, and not because they are dirtier. They hold the most separate
+              surfaces. Exact scope is confirmed in writing before the appointment, because a basement finish and a
+              whole-house renovation are not the same job.
+            </p>
+            <div className="mb-7 grid gap-4 sm:grid-cols-2">
+              {BY_AREA.map((r) => (
+                <div key={r.room} className="rounded-xl border border-border bg-card p-5 shadow-sm">
+                  <h3 className="mb-3 font-heading text-lg font-bold">{r.room}</h3>
+                  <ul className="space-y-2">
+                    {r.tasks.map((t) => (
+                      <li key={t} className="flex items-start gap-2 text-[15px] text-muted-foreground">
+                        <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-[#2E7D32]" /> {t}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+            <figure className="mx-auto max-w-md">
+              <img
+                src={`${IMG}/bathroom-detail.webp`}
+                srcSet={`${IMG}/bathroom-detail-sm.webp 480w, ${IMG}/bathroom-detail.webp 960w`}
+                sizes="(min-width: 768px) 448px, 100vw"
+                alt="A masked Capital Clean Care team member using a cordless power scrubber on a bathtub during a post-construction clean"
+                className="aspect-[4/3] w-full rounded-xl object-cover ring-1 ring-border"
+                width={960}
+                height={720}
+                loading="lazy"
+              />
+              <figcaption className="mt-2 text-sm text-muted-foreground">
+                Window tracks get the same treatment. Construction dust compacts into the corners, and vacuuming
+                alone will not lift it.
+              </figcaption>
+            </figure>
+            <p className="mt-7 text-sm leading-relaxed text-muted-foreground">
+              Some things stay outside our scope on purpose. We clean accessible register and return covers and the
+              surfaces around them, which is not professional duct cleaning. Work requiring a licensed electrical,
+              HVAC or mechanical trade is not part of a cleaning visit. We assess visually and by hand, and we do not
+              perform measured air quality testing; an environmental testing service does that. For the longer read,
+              see our{" "}
+              <Link to="/resources/post-renovation-cleaning-guide-maryland" className="font-medium text-accent hover:underline">
+                post-renovation cleaning guide
+              </Link>
+              .
+            </p>
+          </FadeInSection>
+        </div>
+      </section>
+
+      {/* ── Pricing / assessment ── */}
+      <section className="border-t border-border py-12 md:py-16">
+        <div className="container mx-auto max-w-4xl px-4">
+          <FadeInSection>
+            <span className="text-sm font-semibold uppercase tracking-wider text-[#2E7D32]">Pricing</span>
+            <h2 className="mb-4 mt-2 font-heading text-2xl font-bold md:text-3xl">How Much Does Post-Construction Cleaning Cost?</h2>
+            <div className="space-y-4 text-[17px] leading-relaxed text-muted-foreground">
+              <p>
+                We quote post-construction work after a technician has assessed the property, and we do not publish a
+                price list for it. Two houses of identical size can take very different amounts of work depending on
+                how the trades left them.
+              </p>
+              <p>
+                Quoting that from a phone call would mean padding the number to cover the unknown, or giving you a
+                figure that changes once we are inside. The assessment costs you nothing, and what comes out of it is
+                a written scope with the price attached before anyone starts.
+              </p>
+            </div>
+            <div className="mt-6 grid gap-4 sm:grid-cols-2">
+              {[
+                ["Dust load", "How much settled, and how far it travelled through the property"],
+                ["What was left behind", "Debris, packaging and protective film still on site"],
+                ["Surface residue", "Paint spatter, adhesive, sealant and label glue"],
+                ["Floors and surfaces", "Material, condition, moisture tolerance, and how many separate surfaces the rooms hold"],
+              ].map(([label, value]) => (
+                <div key={label} className="rounded-xl border border-border bg-card p-5 shadow-sm">
+                  <h3 className="font-heading font-bold text-foreground">{label}</h3>
+                  <p className="mt-1.5 text-[15px] leading-relaxed text-muted-foreground">{value}</p>
+                </div>
+              ))}
+            </div>
+          </FadeInSection>
+        </div>
+      </section>
+
+      {/* ── Personas ── */}
+      <section className="border-t border-border bg-secondary/30 py-12 md:py-16">
+        <div className="container mx-auto max-w-4xl px-4">
+          <FadeInSection>
+            <span className="text-sm font-semibold uppercase tracking-wider text-[#2E7D32]">Is this you?</span>
+            <h2 className="mb-6 mt-2 font-heading text-2xl font-bold md:text-3xl">When This Is the Right Service</h2>
+            <div className="grid gap-4 sm:grid-cols-2">
+              {PERSONAS.map((p) => (
+                <div key={p.title} className="rounded-xl border border-border bg-card p-5 shadow-sm">
+                  <h3 className="mb-2 font-heading font-bold text-foreground">{p.title}</h3>
+                  <p className="text-[15px] leading-relaxed text-muted-foreground">{p.body}</p>
+                </div>
+              ))}
+            </div>
+            <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
+              If the property is also changing hands, a{" "}
+              <Link to="/services/move-out-cleaning" className="font-medium text-accent hover:underline">
+                move-in or move-out clean
+              </Link>{" "}
+              usually runs alongside this one. If the dust is old rather than new, you may want{" "}
+              <Link to="/services/deep-cleaning" className="font-medium text-accent hover:underline">
+                deep cleaning
+              </Link>{" "}
+              instead.
+            </p>
+          </FadeInSection>
+        </div>
+      </section>
+
+      {/* ── Urgency ── */}
+      <div className="w-full border-y border-yellow-300 bg-[#FFFDE7] px-4 py-4 text-center">
+        <p className="text-base font-bold text-foreground">
+          Now booking final cleans across Maryland, DC &amp; Northern Virginia
+        </p>
+      </div>
+
+      {/* ── Stats ── */}
+      <section className="py-8">
+        <div className="container mx-auto max-w-4xl px-4">
+          <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
+            {[
+              { v: "5.0★", l: "Google rating" },
+              { v: "24h", l: "Re-clean guarantee" },
+              { v: "9+ yrs", l: "Serving the DMV" },
+              { v: "100%", l: "Satisfaction guarantee" },
+            ].map((s) => (
+              <div
+                key={s.l}
+                className="flex flex-col items-center gap-1 rounded-xl border border-border bg-card px-3 py-5 text-center shadow-sm"
+              >
+                <span className="font-heading text-2xl font-extrabold leading-none text-[#2E7D32] md:text-3xl">{s.v}</span>
+                <span className="text-xs font-medium text-muted-foreground">{s.l}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Benefits ── */}
+      <section className="py-12">
+        <div className="container mx-auto max-w-4xl px-4">
+          <FadeInSection>
+            <h2 className="mb-6 font-heading text-2xl font-bold">Why Homeowners and Builders Call Us</h2>
+            <div className="grid gap-3 sm:grid-cols-2">
+              {service.benefits.map((b) => (
+                <div key={b} className="flex items-start gap-2.5 text-[15px] text-muted-foreground">
+                  <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-[#2E7D32]" /> {b}
+                </div>
+              ))}
+            </div>
+          </FadeInSection>
+        </div>
+      </section>
+
+      {/* ── Social proof ── */}
+      <LocationSocialProof
+        cityName="DMV Region"
+        citySlug="services"
+        serviceSlug="post-construction-cleaning"
+        serviceLabel="Post-Construction Cleaning"
+      />
+
+      {/* ── Service areas ── */}
+      <section className="py-12">
+        <div className="container mx-auto max-w-4xl px-4">
+          <h2 className="mb-4 font-heading text-2xl font-bold">Post-Construction Cleaning Near You</h2>
+          <div className="mb-4 flex flex-wrap gap-2">
+            {topCities.map((c) => (
+              <Link
+                key={c.slug}
+                to={`/locations/${c.slug}`}
+                className="rounded-full border border-border bg-card px-3.5 py-1.5 text-sm text-foreground transition-colors hover:border-[#2E7D32]/40 hover:text-[#2E7D32]"
+              >
+                {c.name}, {c.state}
+              </Link>
+            ))}
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {slCities
+              .filter((c) => isIndexable(`/locations/${c.slug}/post-construction-cleaning`))
+              .slice(0, 10)
+              .map((c) => (
+                <Link
+                  key={c.slug}
+                  to={`/locations/${c.slug}/post-construction-cleaning`}
+                  className="rounded-full border border-[#2E7D32]/20 bg-[#F4FAF4] px-3.5 py-1.5 text-sm text-[#2E7D32] transition-colors hover:bg-[#2E7D32]/10"
+                >
+                  Post-Construction Cleaning in {c.name}
+                </Link>
+              ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Guides ── */}
+      <section className="py-12 md:py-16">
+        <div className="container mx-auto max-w-4xl px-4">
+          <GuideCards heading="Post-Construction Cleaning Guides" guides={guidesBySlugs(SPOKES)} />
+        </div>
+      </section>
+
+      <GreenShield5Step compact showCTA={false} />
+      <TrustBadges compact withBackground={false} />
+
+      {/* ── FAQ ── */}
+      <section className="py-12">
+        <div className="container mx-auto max-w-4xl px-4">
+          <h2 className="mb-6 font-heading text-2xl font-bold">Post-Construction Cleaning FAQ</h2>
+          <FAQ faqs={service.faqs} />
+          <div className="mt-8 rounded-xl border border-border bg-secondary/40 p-5 text-sm leading-relaxed text-muted-foreground">
+            <p className="font-semibold text-foreground">Reviewed by Capital Clean Care · Updated September 20, 2026</p>
+            <p className="mt-2">
+              Equipment specifications are the manufacturers&apos; published figures. Dust behaviour and filtration
+              standards reflect published guidance from the EPA, OSHA and the US Department of Energy, cited here as
+              technical reference rather than certification. Scope and price for any property are confirmed in writing
+              after an on-site assessment.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Quote form ── */}
+      <section id="quote" className="bg-secondary py-16" style={{ scrollMarginTop: 120 }}>
+        <div className="container mx-auto max-w-4xl px-4">
+          <div className="mb-8 text-center">
+            <h2 className="mb-2 font-heading text-2xl font-bold md:text-3xl">Book Your Free Post-Construction Assessment</h2>
+            <p className="text-muted-foreground">
+              A technician reads the property, and you get a written scope with the price on it before any work
+              starts.
+            </p>
+          </div>
+          <Card>
+            <CardContent className="p-6 md:p-8">
+              <QuoteForm defaultService="post-construction" />
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      <Footer />
+
+      {/* ── Mobile split CTA ── */}
+      <div className="fixed inset-x-0 bottom-0 z-50 grid grid-cols-2 border-t border-border bg-background shadow-[0_-4px_16px_rgba(0,0,0,0.08)] md:hidden">
+        <a href={PHONE_HREF} className="flex items-center justify-center gap-2 py-3.5 text-sm font-bold text-[#2E7D32]">
+          <Phone className="h-4 w-4" /> Call
+        </a>
+        <button onClick={scrollToForm} className="bg-[#2E7D32] py-3.5 text-sm font-bold text-white">
+          Free Assessment
+        </button>
+      </div>
+      <div className="h-14 md:hidden" aria-hidden="true" />
+    </div>
+  );
+};
+
+export default PostConstructionCleaningPage;
