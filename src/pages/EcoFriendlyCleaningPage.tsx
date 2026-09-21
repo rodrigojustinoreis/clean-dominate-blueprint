@@ -185,7 +185,7 @@ const EcoFriendlyCleaningPage = () => {
                   fetchPriority="high"
                 />
               </div>
-              <div className="absolute -bottom-5 left-2 sm:-left-4 bg-white rounded-2xl shadow-xl border border-border px-5 py-3.5 flex items-center gap-2.5">
+              <div className="absolute bottom-4 left-4 bg-white rounded-2xl shadow-xl border border-border px-5 py-3.5 flex items-center gap-2.5">
                 <Leaf className="h-7 w-7 text-[#2E7D32] shrink-0" />
                 <span className="text-xs text-muted-foreground leading-tight">Product-conscious<br />cleaning methods</span>
               </div>

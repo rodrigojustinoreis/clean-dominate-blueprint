@@ -274,7 +274,7 @@ const DeepCleaningPage = () => {
                     fetchPriority="high"
                   />
                 </div>
-                <div className="absolute -bottom-5 left-2 sm:-left-4 bg-white rounded-2xl shadow-xl border border-border px-5 py-3.5 flex items-center gap-3">
+                <div className="absolute bottom-4 left-4 bg-white rounded-2xl shadow-xl border border-border px-5 py-3.5 flex items-center gap-3">
                   <span className="text-3xl font-heading font-extrabold text-[#2E7D32] leading-none">9+</span>
                   <span className="text-xs text-muted-foreground leading-tight">years deep cleaning<br />the DMV</span>
                 </div>

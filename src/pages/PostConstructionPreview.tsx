@@ -1,12 +1,10 @@
 /**
- * Página de pós-obra. Estrutura vinda do mockup do proprietário (21/09/2026):
- * hero em duas colunas, faixa de provas, processo em seis cartões que levam às
- * seções técnicas, faixa do resultado final e chamada escura no fim.
+ * PRÉ-VISUALIZAÇÃO — não é a página de produção.
  *
- * As duas imagens de ambiente (hero com equipamento HEPA e a cozinha acabada) são
- * geradas e ilustram o padrão do serviço. Não são rotuladas como antes/depois nem
- * apresentadas como registro de um trabalho específico. As fotos de prova dentro da
- * página (teto, retorno de ar, sensor de poeira, janela) são todas reais.
+ * Parte da página publicada (todo o conteúdo e todo o schema) e aplica a estrutura
+ * do mockup enviado pelo proprietário em 21/09/2026: hero em duas colunas, faixa de
+ * provas, processo em seis cartões, faixa do resultado final e chamada escura no fim.
+ * Rota /preview/post-construction, noindex, fora do prerender e do sitemap.
  */
 import { useSearchParams, Link } from "react-router-dom";
 import { Phone, CheckCircle, Star, Wind, Sparkles, MapPin, FileText, Home, Leaf, Shield, ArrowRight, Building2, Building } from "lucide-react";
@@ -164,7 +162,7 @@ const PERSONAS = [
   },
 ];
 
-const PostConstructionCleaningPage = () => {
+const PostConstructionPreview = () => {
   const [searchParams] = useSearchParams();
   const isAdTraffic =
     searchParams.has("gclid") || searchParams.has("gbraid") || searchParams.get("src") === "google";
@@ -172,9 +170,10 @@ const PostConstructionCleaningPage = () => {
   const { seoHelmet } = useSEO({
     title: service.metaTitle,
     description: service.metaDescription,
-    canonical: "https://capitalcleancare.com/services/post-construction-cleaning",
+    canonical: "https://capitalcleancare.com/preview/post-construction",
     ogImage: `https://capitalcleancare.com${IMG}/hero-hepa.webp`,
     preloadImage: `${IMG}/hero-hepa.webp`,
+    noIndex: true,
   });
 
   const scrollToForm = () => {
@@ -184,6 +183,9 @@ const PostConstructionCleaningPage = () => {
   return (
     <div className="min-h-screen bg-background">
       {seoHelmet}
+      <div className="bg-amber-400 px-4 py-2 text-center text-sm font-bold text-amber-950">
+        PRÉ-VISUALIZAÇÃO · não é a página publicada · noindex
+      </div>
       <BreadcrumbSchema
         items={[
           { label: "Home", href: "/" },
@@ -999,4 +1001,4 @@ const PostConstructionCleaningPage = () => {
   );
 };
 
-export default PostConstructionCleaningPage;
+export default PostConstructionPreview;
