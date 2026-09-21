@@ -50,7 +50,6 @@ const ServicePage = () => {
   const isOfficeCleaning = service.slug === "office-cleaning";
   const isMoveOutCleaning = service.slug === "move-out-cleaning";
 
-
   const matchedSlService = slServices.find(
     (sl) => sl.slug === service.slug || sl.name.toLowerCase().includes(service.name.toLowerCase().split(" ")[0]),
   );
@@ -180,10 +179,6 @@ const ServicePage = () => {
           </div>
         </section>
       )}
-
-      
-
-      
 
       {/* ── Intro ── */}
       <section className="py-12 md:py-16">
