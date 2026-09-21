@@ -367,9 +367,9 @@ const PostConstructionCleaningPage = () => {
             {/* Scale is the point of this one, so the measurements lead and the prose follows. */}
             <div id="why-dust" className="scroll-mt-28">
               <h3 className="mb-5 font-heading text-xl font-bold text-foreground md:text-2xl">Why the dust needs different equipment</h3>
-              <dl className="mb-8 grid gap-px overflow-hidden rounded-2xl bg-border sm:grid-cols-3">
+              <dl className="mb-8 grid gap-4 sm:grid-cols-3">
                 {DUST_FACTS.map((f) => (
-                  <div key={f.value} className="bg-background p-5">
+                  <div key={f.value} className="rounded-xl border border-border bg-card p-5 shadow-sm">
                     <dt className="flex items-baseline gap-1.5">
                       <span className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">{f.prefix}</span>
                       <span className="font-heading text-3xl font-extrabold leading-none tabular-nums text-[#2E7D32] md:text-4xl">{f.value}</span>
@@ -397,13 +397,13 @@ const PostConstructionCleaningPage = () => {
                   someone already wiped.
                 </p>
               </div>
-              <div className="mt-8 grid items-center gap-5 rounded-2xl border border-border bg-background p-5 sm:grid-cols-[minmax(0,11rem)_1fr] md:gap-7 md:p-6">
+              <div className="mt-8 grid items-center gap-5 rounded-2xl border border-border bg-card p-5 sm:grid-cols-[minmax(0,11rem)_1fr] md:gap-7 md:p-6">
                 <img
                   src={`${IMG}/vent-cover.webp`}
                   srcSet={`${IMG}/vent-cover-sm.webp 340w, ${IMG}/vent-cover.webp 680w`}
                   sizes="(min-width: 640px) 176px, 100vw"
                   alt="An HVAC return cover heavily caked with construction dust being washed in a sink"
-                  className="aspect-square w-full max-w-[13rem] rounded-xl object-cover ring-1 ring-[oklch(0_0_0/0.1)] sm:max-w-none"
+                  className="aspect-square w-full max-w-[13rem] rounded-xl object-cover ring-1 ring-border sm:max-w-none"
                   width={680}
                   height={680}
                   loading="lazy"
@@ -426,11 +426,14 @@ const PostConstructionCleaningPage = () => {
                 sequence and parts of it get cleaned twice. The floor is close to last for the same reason.
               </p>
               <div className="grid gap-8 md:grid-cols-[1fr_minmax(0,19rem)] md:gap-10">
-                <ol className="relative">
-                  <span aria-hidden="true" className="absolute bottom-4 left-[11.5px] top-4 w-px bg-border" />
+                <ol>
                   {SEQUENCE.map((step, n) => (
-                    <li key={step} className="relative flex gap-4 pb-5 last:pb-0">
-                      <span className="relative z-10 mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#2E7D32] text-xs font-bold tabular-nums text-white">
+                    // The connector is drawn per item, between the dots, so nothing has to mask it.
+                    <li
+                      key={step}
+                      className="relative flex gap-4 pb-5 last:pb-0 after:absolute after:bottom-1 after:left-[11.5px] after:top-8 after:w-px after:bg-border after:content-[''] last:after:hidden"
+                    >
+                      <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#2E7D32]/10 text-sm font-bold tabular-nums text-[#2E7D32]">
                         {n + 1}
                       </span>
                       <span className="text-[17px] leading-relaxed text-foreground">{step}</span>
@@ -443,7 +446,7 @@ const PostConstructionCleaningPage = () => {
                     srcSet={`${IMG}/ceiling-first-sm.webp 288w, ${IMG}/ceiling-first.webp 576w`}
                     sizes="(min-width: 768px) 304px, 100vw"
                     alt="A Capital Clean Care team member on a step ladder cleaning a ceiling during a post-construction clean"
-                    className="aspect-[4/3] w-full rounded-2xl object-cover ring-1 ring-[oklch(0_0_0/0.1)]"
+                    className="aspect-[4/3] w-full rounded-2xl object-cover ring-1 ring-border"
                     width={576}
                     height={432}
                     loading="lazy"
@@ -467,7 +470,7 @@ const PostConstructionCleaningPage = () => {
                 everything already finished. So an air scrubber runs through the job rather than only cleaning
                 surfaces.
               </p>
-              <div className="overflow-hidden rounded-2xl border border-border bg-background shadow-sm md:grid md:grid-cols-2">
+              <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm md:grid md:grid-cols-2">
                 <img
                   src={`${IMG}/air-equipment.webp`}
                   srcSet={`${IMG}/air-equipment-sm.webp 288w, ${IMG}/air-equipment.webp 576w`}
@@ -521,7 +524,7 @@ const PostConstructionCleaningPage = () => {
                 two.
               </p>
               <div className="grid items-start gap-5 md:grid-cols-2">
-                <div className="overflow-hidden rounded-2xl border border-border bg-background">
+                <div className="overflow-hidden rounded-2xl border border-border bg-card">
                   <div className="p-6">
                     <span className="inline-flex rounded-full bg-[#2E7D32]/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#2E7D32]">
                       Stage one &middot; dry
@@ -547,7 +550,7 @@ const PostConstructionCleaningPage = () => {
                     what the dry pass is for.
                   </p>
                 </div>
-                <div className="rounded-2xl border border-border bg-background p-6">
+                <div className="rounded-2xl border border-border bg-card p-6">
                   <span className="inline-flex rounded-full bg-primary/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-primary">
                     Stage two &middot; wet
                   </span>
@@ -603,7 +606,7 @@ const PostConstructionCleaningPage = () => {
                 srcSet={`${IMG}/window-work-sm.webp 480w, ${IMG}/window-work.webp 960w`}
                 sizes="(min-width: 640px) 60vw, 100vw"
                 alt="A uniformed Capital Clean Care team member cleaning a window in a newly built room, with the manufacturer's shipping label still stuck to the glass"
-                className="aspect-[4/3] w-full rounded-2xl object-cover ring-1 ring-[oklch(0_0_0/0.1)]"
+                className="aspect-[4/3] w-full rounded-2xl object-cover ring-1 ring-border"
                 width={960}
                 height={720}
                 loading="lazy"
