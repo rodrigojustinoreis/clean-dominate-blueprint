@@ -5,7 +5,6 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import QuoteForm from "@/components/QuoteForm";
 import FAQ from "@/components/FAQ";
-import GreenShield5Step from "@/components/GreenShield5Step";
 import TrustBadges from "@/components/TrustBadges";
 import { ServiceSchema, FAQSchema, BreadcrumbSchema, LocalBusinessSchema, WebPageSchema } from "@/components/SchemaMarkup";
 import { useSEO } from "@/hooks/useSEO";
@@ -23,9 +22,17 @@ const PHONE = "(240) 704-2551";
 const PHONE_HREF = "tel:+12407042551";
 
 const service = getServiceBySlug("post-construction-cleaning")!;
-const topCities = cities
-  .filter((c) => !c.slug.includes("county") && isIndexable(`/locations/${c.slug}`))
-  .slice(0, 8);
+
+// The cities array lists every Maryland entry first, so a plain slice(0,8) returned MD only
+// and contradicted an H1 that promises DC and Northern Virginia. Spread across all three.
+const indexableCities = cities.filter(
+  (c) => !c.slug.includes("county") && isIndexable(`/locations/${c.slug}`),
+);
+const topCities = [
+  ...indexableCities.filter((c) => c.state === "MD").slice(0, 4),
+  ...indexableCities.filter((c) => c.state === "DC").slice(0, 2),
+  ...indexableCities.filter((c) => c.state === "VA").slice(0, 3),
+];
 
 const SPOKES = [
   "post-construction-cleaning-montgomery-county-md",
@@ -292,6 +299,30 @@ const PostConstructionCleaningPage = () => {
         </div>
       </section>
 
+      {/* ── Jump nav: the page runs long, so give the reader a way past the explainer ── */}
+      <nav aria-label="On this page" className="sticky top-11 z-40 border-b border-border bg-background/95 backdrop-blur">
+        <div className="container mx-auto max-w-4xl px-4">
+          <ul className="flex gap-1 overflow-x-auto py-2 text-sm">
+            {[
+              ["how-it-works", "How it works"],
+              ["equipment", "Equipment"],
+              ["whats-included", "What's included"],
+              ["pricing", "Pricing"],
+              ["quote", "Free assessment"],
+            ].map(([id, label]) => (
+              <li key={id}>
+                <a
+                  href={`#${id}`}
+                  className="block whitespace-nowrap rounded-full px-3.5 py-1.5 font-medium text-muted-foreground transition-colors hover:bg-[#2E7D32]/10 hover:text-[#2E7D32]"
+                >
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </nav>
+
       {/* ── Intro ── */}
       <section className="py-12 md:py-16">
         <div className="container mx-auto max-w-3xl px-4">
@@ -352,7 +383,7 @@ const PostConstructionCleaningPage = () => {
       </section>
 
       {/* ── The sequence ── */}
-      <section className="border-t border-border py-12 md:py-16">
+      <section id="how-it-works" className="scroll-mt-24 border-t border-border py-12 md:py-16">
         <div className="container mx-auto max-w-4xl px-4">
           <FadeInSection>
             <span className="text-sm font-semibold uppercase tracking-wider text-[#2E7D32]">How we work</span>
@@ -397,7 +428,7 @@ const PostConstructionCleaningPage = () => {
       </section>
 
       {/* ── Equipment ── */}
-      <section className="border-t border-border bg-secondary/30 py-12 md:py-16">
+      <section id="equipment" className="scroll-mt-24 border-t border-border bg-secondary/30 py-12 md:py-16">
         <div className="container mx-auto max-w-4xl px-4">
           <FadeInSection>
             <span className="text-sm font-semibold uppercase tracking-wider text-[#2E7D32]">Equipment</span>
@@ -493,7 +524,7 @@ const PostConstructionCleaningPage = () => {
       </section>
 
       {/* ── What's included, by area ── */}
-      <section className="border-t border-border bg-secondary/30 py-12 md:py-16">
+      <section id="whats-included" className="scroll-mt-24 border-t border-border bg-secondary/30 py-12 md:py-16">
         <div className="container mx-auto max-w-4xl px-4">
           <FadeInSection>
             <span className="text-sm font-semibold uppercase tracking-wider text-[#2E7D32]">What&apos;s included</span>
@@ -549,7 +580,7 @@ const PostConstructionCleaningPage = () => {
       </section>
 
       {/* ── Pricing / assessment ── */}
-      <section className="border-t border-border py-12 md:py-16">
+      <section id="pricing" className="scroll-mt-24 border-t border-border py-12 md:py-16">
         <div className="container mx-auto max-w-4xl px-4">
           <FadeInSection>
             <span className="text-sm font-semibold uppercase tracking-wider text-[#2E7D32]">Pricing</span>
@@ -641,22 +672,6 @@ const PostConstructionCleaningPage = () => {
         </div>
       </section>
 
-      {/* ── Benefits ── */}
-      <section className="py-12">
-        <div className="container mx-auto max-w-4xl px-4">
-          <FadeInSection>
-            <h2 className="mb-6 font-heading text-2xl font-bold">Why Homeowners and Builders Call Us</h2>
-            <div className="grid gap-3 sm:grid-cols-2">
-              {service.benefits.map((b) => (
-                <div key={b} className="flex items-start gap-2.5 text-[15px] text-muted-foreground">
-                  <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-[#2E7D32]" /> {b}
-                </div>
-              ))}
-            </div>
-          </FadeInSection>
-        </div>
-      </section>
-
       {/* ── Social proof ── */}
       <LocationSocialProof
         cityName="DMV Region"
@@ -704,7 +719,6 @@ const PostConstructionCleaningPage = () => {
         </div>
       </section>
 
-      <GreenShield5Step compact showCTA={false} />
       <TrustBadges compact withBackground={false} />
 
       {/* ── FAQ ── */}
