@@ -57,6 +57,22 @@ const SEQUENCE = [
   "Second look, and another pass wherever dust came back",
 ];
 
+// The dust section is about scale, so the figures get their own display treatment.
+const DUST_FACTS = [
+  { prefix: "under", value: "10", unit: "µm", label: "Dust this fine stays suspended in the air instead of falling." },
+  { prefix: "under", value: "4", unit: "µm", label: "It passes the nose and throat and reaches deep into the lungs." },
+  { prefix: "for", value: "48–72", unit: "hours", label: "The finest particles keep settling after the crew leaves." },
+];
+
+const SCRUBBER_SPECS = [
+  { k: "Motor", v: "1/2 HP" },
+  { k: "Airflow", v: "up to 550 CFM" },
+  { k: "Filtration", v: "4 stages" },
+  { k: "HEPA filter", v: "99.97% at 0.3 µm" },
+  { k: "Carbon stage", v: "paint and adhesive odours" },
+  { k: "Outlet", v: "ducted, for negative pressure" },
+];
+
 const BY_AREA = [
   {
     room: "Kitchen",
@@ -348,20 +364,31 @@ const PostConstructionCleaningPage = () => {
               filtering the air while the work happens, and leaving the floor until last.
             </p>
             <div className="space-y-14">
+            {/* Scale is the point of this one, so the measurements lead and the prose follows. */}
             <div id="why-dust" className="scroll-mt-28">
-              <h3 className="mb-4 font-heading text-xl font-bold text-foreground md:text-2xl">Why the dust needs different equipment</h3>
-            <div className="space-y-4 text-[17px] leading-relaxed text-muted-foreground">
-              <div className="space-y-4">
+              <h3 className="mb-5 font-heading text-xl font-bold text-foreground md:text-2xl">Why the dust needs different equipment</h3>
+              <dl className="mb-8 grid gap-px overflow-hidden rounded-2xl bg-border sm:grid-cols-3">
+                {DUST_FACTS.map((f) => (
+                  <div key={f.value} className="bg-background p-5">
+                    <dt className="flex items-baseline gap-1.5">
+                      <span className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">{f.prefix}</span>
+                      <span className="font-heading text-3xl font-extrabold leading-none tabular-nums text-[#2E7D32] md:text-4xl">{f.value}</span>
+                      <span className="font-heading text-base font-bold text-[#2E7D32]">{f.unit}</span>
+                    </dt>
+                    <dd className="mt-2 text-[15px] leading-snug text-muted-foreground">{f.label}</dd>
+                  </div>
+                ))}
+              </dl>
+              <div className="max-w-2xl space-y-4 text-[17px] leading-relaxed text-muted-foreground">
                 <p>
                   Construction dust behaves differently from household dust, and the difference is measurable.
-                  Particles below 10 microns stay suspended in the air instead of falling. Below 4 microns they pass
-                  the nose and throat and reach deep into the lungs. Drywall compound, concrete, mortar and tile
-                  cutting all release respirable crystalline silica, which OSHA regulates on jobsites for that reason.
+                  Drywall compound, concrete, mortar and tile cutting all release respirable crystalline silica,
+                  which OSHA regulates on jobsites for that reason.
                 </p>
                 <p>
-                  The finest particles stay airborne long after the contractors leave, settling out of the air for 48
-                  to 72 hours. Clean the house once, on the day the crew finishes, and a grey film comes back on every
-                  horizontal surface two mornings later. Nothing was done wrong. The dust had not finished falling.
+                  Because the finest particles keep settling for days, a house cleaned once on the day the crew
+                  finishes gets a grey film back on every horizontal surface two mornings later. Nothing was done
+                  wrong. The dust had not finished falling.
                 </p>
                 <p>
                   A standard vacuum makes it worse. The body is not sealed and the filter was never built for
@@ -370,90 +397,104 @@ const PostConstructionCleaningPage = () => {
                   someone already wiped.
                 </p>
               </div>
-              <figure className="mx-auto max-w-sm pt-2">
+              <div className="mt-8 grid items-center gap-5 rounded-2xl border border-border bg-background p-5 sm:grid-cols-[minmax(0,11rem)_1fr] md:gap-7 md:p-6">
                 <img
                   src={`${IMG}/vent-cover.webp`}
                   srcSet={`${IMG}/vent-cover-sm.webp 340w, ${IMG}/vent-cover.webp 680w`}
-                  sizes="(min-width: 768px) 384px, 100vw"
+                  sizes="(min-width: 640px) 176px, 100vw"
                   alt="An HVAC return cover heavily caked with construction dust being washed in a sink"
-                  className="aspect-square w-full rounded-xl object-cover ring-1 ring-border"
+                  className="aspect-square w-full max-w-[13rem] rounded-xl object-cover ring-1 ring-[oklch(0_0_0/0.1)] sm:max-w-none"
                   width={680}
                   height={680}
                   loading="lazy"
                 />
-                <figcaption className="mt-2 text-center text-sm text-muted-foreground">
-                  A return cover after a renovation. Wiping its face in place leaves most of this behind.
-                </figcaption>
-              </figure>
-            </div>
+                <div>
+                  <p className="font-heading font-bold text-foreground">What wiping in place leaves behind</p>
+                  <p className="mt-2 text-[15px] leading-relaxed text-muted-foreground">
+                    An HVAC return cover after a renovation. The face wipes clean in seconds. What sits between and
+                    behind the fins does not come out until the cover comes off and goes in the sink.
+                  </p>
+                </div>
+              </div>
             </div>
 
+            {/* A route, so it gets a rail. The photo sits beside it rather than interrupting it. */}
             <div id="how-it-works" className="scroll-mt-28">
               <h3 className="mb-4 font-heading text-xl font-bold text-foreground md:text-2xl">Ceiling to floor, in this order</h3>
-            <p className="mb-7 max-w-2xl text-[17px] leading-relaxed text-muted-foreground">
-              Every surface we clean sends dust downward, so the order decides the result. Work a room out of
-              sequence and parts of it get cleaned twice. The floor is close to last for the same reason.
-            </p>
-            <div>
-              <ol className="space-y-2.5">
-                {SEQUENCE.map((step, n) => (
-                  <li key={step} className="flex gap-3 text-[17px] leading-relaxed text-foreground">
-                    <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#2E7D32]/10 text-sm font-bold text-[#2E7D32]">
-                      {n + 1}
-                    </span>
-                    <span>{step}</span>
-                  </li>
-                ))}
-              </ol>
-              <figure className="mx-auto mt-8 max-w-md">
-                <img
-                  src={`${IMG}/ceiling-first.webp`}
-                  srcSet={`${IMG}/ceiling-first-sm.webp 288w, ${IMG}/ceiling-first.webp 576w`}
-                  sizes="(min-width: 768px) 448px, 100vw"
-                  alt="A Capital Clean Care team member on a step ladder cleaning a ceiling during a post-construction clean"
-                  className="aspect-[4/3] w-full rounded-xl object-cover ring-1 ring-border"
-                  width={576}
-                  height={432}
-                  loading="lazy"
-                />
-                <figcaption className="mt-2 text-center text-sm text-muted-foreground">Step one, every time.</figcaption>
-              </figure>
-            </div>
-            <p className="mt-7 text-sm leading-relaxed text-muted-foreground">
-              The sequence follows the same logic as the EPA&apos;s guidance for cleaning after renovation work,
-              which also runs high to low, uses HEPA vacuuming and wet cleaning, and calls for re-inspecting while
-              dust remains. We use that as a technical reference for how we work. It is not a certification, and we
-              do not hold one.
-            </p>
+              <p className="mb-8 max-w-2xl text-[17px] leading-relaxed text-muted-foreground">
+                Every surface we clean sends dust downward, so the order decides the result. Work a room out of
+                sequence and parts of it get cleaned twice. The floor is close to last for the same reason.
+              </p>
+              <div className="grid gap-8 md:grid-cols-[1fr_minmax(0,19rem)] md:gap-10">
+                <ol className="relative">
+                  <span aria-hidden="true" className="absolute bottom-4 left-[11.5px] top-4 w-px bg-border" />
+                  {SEQUENCE.map((step, n) => (
+                    <li key={step} className="relative flex gap-4 pb-5 last:pb-0">
+                      <span className="relative z-10 mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#2E7D32] text-xs font-bold tabular-nums text-white">
+                        {n + 1}
+                      </span>
+                      <span className="text-[17px] leading-relaxed text-foreground">{step}</span>
+                    </li>
+                  ))}
+                </ol>
+                <figure className="md:sticky md:top-28 md:self-start">
+                  <img
+                    src={`${IMG}/ceiling-first.webp`}
+                    srcSet={`${IMG}/ceiling-first-sm.webp 288w, ${IMG}/ceiling-first.webp 576w`}
+                    sizes="(min-width: 768px) 304px, 100vw"
+                    alt="A Capital Clean Care team member on a step ladder cleaning a ceiling during a post-construction clean"
+                    className="aspect-[4/3] w-full rounded-2xl object-cover ring-1 ring-[oklch(0_0_0/0.1)]"
+                    width={576}
+                    height={432}
+                    loading="lazy"
+                  />
+                  <figcaption className="mt-2 text-sm text-muted-foreground">Step one, every time.</figcaption>
+                </figure>
+              </div>
+              <p className="mt-8 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+                The sequence follows the same logic as the EPA&apos;s guidance for cleaning after renovation work,
+                which also runs high to low, uses HEPA vacuuming and wet cleaning, and calls for re-inspecting while
+                dust remains. We use that as a technical reference for how we work. It is not a certification, and we
+                do not hold one.
+              </p>
             </div>
 
+            {/* A machine with published figures, so it gets a spec sheet instead of a caption. */}
             <div id="equipment" className="scroll-mt-28">
               <h3 className="mb-4 font-heading text-xl font-bold text-foreground md:text-2xl">We filter the air while we work</h3>
-            <div>
-              <figure className="mx-auto mb-8 max-w-md">
+              <p className="mb-8 max-w-2xl text-[17px] leading-relaxed text-muted-foreground">
+                Wiping a surface lifts part of its dust back into the room, where it drifts and lands again on
+                everything already finished. So an air scrubber runs through the job rather than only cleaning
+                surfaces.
+              </p>
+              <div className="overflow-hidden rounded-2xl border border-border bg-background shadow-sm md:grid md:grid-cols-2">
                 <img
                   src={`${IMG}/air-equipment.webp`}
                   srcSet={`${IMG}/air-equipment-sm.webp 288w, ${IMG}/air-equipment.webp 576w`}
-                  sizes="(min-width: 768px) 448px, 100vw"
+                  sizes="(min-width: 768px) 50vw, 100vw"
                   alt="A uniformed Capital Clean Care team member setting up air-handling equipment against the baseboard of an empty renovated room"
-                  className="aspect-[4/3] w-full rounded-xl object-cover ring-1 ring-border"
+                  className="aspect-[4/3] w-full object-cover md:h-full"
                   width={576}
                   height={432}
                   loading="lazy"
                 />
-                <figcaption className="mt-2 text-center text-sm text-muted-foreground">
-                  Placed to pull air across the room, and moved as the crew moves.
-                </figcaption>
-              </figure>
-              <div className="space-y-4 text-[17px] leading-relaxed text-muted-foreground">
-                <p>
-                  Wiping a surface lifts part of its dust back into the room, where it drifts and lands again on
-                  everything already finished. So an air scrubber runs through the job rather than only cleaning
-                  surfaces. Ours is an <strong className="text-foreground">XPOWER X-2580</strong>, a 1/2 HP unit
-                  moving up to 550 CFM through four stages: two washable nylon mesh screens that take out around 90%
-                  of the medium and large debris, an activated carbon stage for paint and adhesive odours, and a true
-                  HEPA filter rated at 99.97% of particles at 0.3 microns.
-                </p>
+                <div className="p-6">
+                  <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">The unit we run</span>
+                  <p className="mt-1 font-heading text-xl font-bold text-foreground">XPOWER X-2580</p>
+                  <dl className="mt-4 divide-y divide-border border-y border-border">
+                    {SCRUBBER_SPECS.map((s) => (
+                      <div key={s.k} className="flex items-baseline justify-between gap-4 py-2.5">
+                        <dt className="text-[15px] text-muted-foreground">{s.k}</dt>
+                        <dd className="text-right text-[15px] font-semibold tabular-nums text-foreground">{s.v}</dd>
+                      </div>
+                    ))}
+                  </dl>
+                  <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                    Placed to pull air across the room, and moved as the crew moves.
+                  </p>
+                </div>
+              </div>
+              <div className="mt-8 max-w-2xl space-y-4 text-[17px] leading-relaxed text-muted-foreground">
                 <p>
                   The outlet takes a duct, which lets us hold a room at negative pressure and vent filtered air away
                   from the rooms already done. In each zone it usually runs about two hours while the detail work
@@ -468,47 +509,63 @@ const PostConstructionCleaningPage = () => {
                 </p>
               </div>
             </div>
-            </div>
 
+            {/* Two stages, so it gets two panels. The proof photo lives inside the stage it proves. */}
             <div id="floors" className="scroll-mt-28">
               <h3 className="mb-4 font-heading text-xl font-bold text-foreground md:text-2xl">Vacuumed dry before anything gets wet</h3>
-            <div>
-              <div className="space-y-4 text-[17px] leading-relaxed text-muted-foreground">
-                <p>
-                  A wet-dry floor washer is built to vacuum and wash in one pass, and in a normal house that is
-                  exactly how it should be used. A house after construction carries far more dry particulate than the
-                  machine was designed to meet at once. Put water on that floor first and the fine dust turns into a
-                  slurry that spreads into grout lines, board seams and corners instead of leaving the room.
-                </p>
-                <p>
-                  So we split it. The whole floor gets HEPA vacuumed dry, including wall transitions, corners, door
-                  jambs, closets, stair treads, cabinet toe kicks and the perimeter. Only then does water come out.
-                  For sealed hard floors we use a Tineco FLOOR ONE S7 Master, which pulls at 23,000 Pa, senses how
-                  dirty the floor is and adjusts as it goes, cleans against both edges, and keeps recovered dirty
-                  water in a separate tank from the clean solution.
-                </p>
-                <p>
-                  Before any water goes down, someone identifies the floor. A renovated property often has three or
-                  four materials in it, and sealed hardwood, engineered wood, laminate, luxury vinyl, tile, porcelain
-                  and natural stone do not take the same moisture or the same machine. We do not flood wood.
-                </p>
+              <p className="mb-8 max-w-2xl text-[17px] leading-relaxed text-muted-foreground">
+                A wet-dry floor washer is built to vacuum and wash in one pass, and in a normal house that is exactly
+                how it should be used. A house after construction carries far more dry particulate than the machine
+                was designed to meet at once. Put water on that floor first and the fine dust turns into a slurry
+                that spreads into grout lines, board seams and corners instead of leaving the room. So we split it in
+                two.
+              </p>
+              <div className="grid items-start gap-5 md:grid-cols-2">
+                <div className="overflow-hidden rounded-2xl border border-border bg-background">
+                  <div className="p-6">
+                    <span className="inline-flex rounded-full bg-[#2E7D32]/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#2E7D32]">
+                      Stage one &middot; dry
+                    </span>
+                    <p className="mt-3 text-[17px] leading-relaxed text-muted-foreground">
+                      The whole floor gets HEPA vacuumed dry, including wall transitions, corners, door jambs,
+                      closets, stair treads, cabinet toe kicks and the perimeter. Nothing gets wet until that is
+                      finished.
+                    </p>
+                  </div>
+                  <img
+                    src={`${IMG}/floor-dustreveal.webp`}
+                    srcSet={`${IMG}/floor-dustreveal-sm.webp 340w, ${IMG}/floor-dustreveal.webp 680w`}
+                    sizes="(min-width: 768px) 50vw, 100vw"
+                    alt="A wet-dry floor washer with its green dust-detection light on, showing construction dust still on hardwood beside the baseboard"
+                    className="aspect-square w-full object-cover"
+                    width={680}
+                    height={680}
+                    loading="lazy"
+                  />
+                  <p className="border-t border-border bg-secondary/40 px-6 py-3 text-sm leading-relaxed text-muted-foreground">
+                    The floor washer&apos;s dust sensor lighting up a floor that already looked finished. That is
+                    what the dry pass is for.
+                  </p>
+                </div>
+                <div className="rounded-2xl border border-border bg-background p-6">
+                  <span className="inline-flex rounded-full bg-primary/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-primary">
+                    Stage two &middot; wet
+                  </span>
+                  <div className="mt-3 space-y-4 text-[17px] leading-relaxed text-muted-foreground">
+                    <p>
+                      Only then does water come out. For sealed hard floors we use a Tineco FLOOR ONE S7 Master,
+                      which pulls at 23,000&nbsp;Pa, senses how dirty the floor is and adjusts as it goes, cleans
+                      against both edges, and keeps recovered dirty water in a separate tank from the clean solution.
+                    </p>
+                    <p>
+                      Before any water goes down, someone identifies the floor. A renovated property often has three
+                      or four materials in it, and sealed hardwood, engineered wood, laminate, luxury vinyl, tile,
+                      porcelain and natural stone do not take the same moisture or the same machine. We do not flood
+                      wood.
+                    </p>
+                  </div>
+                </div>
               </div>
-              <figure className="mx-auto mt-8 max-w-sm">
-                <img
-                  src={`${IMG}/floor-dustreveal.webp`}
-                  srcSet={`${IMG}/floor-dustreveal-sm.webp 340w, ${IMG}/floor-dustreveal.webp 680w`}
-                  sizes="(min-width: 768px) 384px, 100vw"
-                  alt="A wet-dry floor washer with its green dust-detection light on, showing construction dust still on hardwood beside the baseboard"
-                  className="aspect-square w-full rounded-xl object-cover ring-1 ring-border"
-                  width={680}
-                  height={680}
-                  loading="lazy"
-                />
-                <figcaption className="mt-2 text-center text-sm text-muted-foreground">
-                  The machine&apos;s light showing what a finished-looking pass left behind.
-                </figcaption>
-              </figure>
-            </div>
             </div>
             </div>
           </FadeInSection>
@@ -540,18 +597,18 @@ const PostConstructionCleaningPage = () => {
                 </div>
               ))}
             </div>
-            <figure className="mx-auto max-w-md">
+            <figure className="grid gap-5 sm:grid-cols-[1.6fr_1fr] sm:items-end">
               <img
                 src={`${IMG}/window-work.webp`}
                 srcSet={`${IMG}/window-work-sm.webp 480w, ${IMG}/window-work.webp 960w`}
-                sizes="(min-width: 768px) 448px, 100vw"
+                sizes="(min-width: 640px) 60vw, 100vw"
                 alt="A uniformed Capital Clean Care team member cleaning a window in a newly built room, with the manufacturer's shipping label still stuck to the glass"
-                className="aspect-[4/3] w-full rounded-xl object-cover ring-1 ring-border"
+                className="aspect-[4/3] w-full rounded-2xl object-cover ring-1 ring-[oklch(0_0_0/0.1)]"
                 width={960}
                 height={720}
                 loading="lazy"
               />
-              <figcaption className="mt-2 text-center text-sm text-muted-foreground">
+              <figcaption className="text-[15px] leading-relaxed text-muted-foreground">
                 The shipping label is still on the glass. Windows come with film, labels and adhesive from the
                 factory, and the tracks hold dust that has compacted into the corners.
               </figcaption>
