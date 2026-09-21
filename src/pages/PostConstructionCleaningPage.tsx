@@ -311,8 +311,8 @@ const PostConstructionCleaningPage = () => {
           <FadeInSection>
             <span className="text-sm font-semibold uppercase tracking-wider text-[#2E7D32]">The problem</span>
             <h2 className="mb-4 mt-2 font-heading text-2xl font-bold md:text-3xl">Why Construction Dust Needs Different Equipment</h2>
-            <div className="grid gap-8 md:grid-cols-[1fr_16rem] md:items-start">
-              <div className="space-y-4 text-[17px] leading-relaxed text-muted-foreground">
+            <div className="space-y-4 text-[17px] leading-relaxed text-muted-foreground">
+              <div className="space-y-4">
                 <p>
                   Construction dust behaves differently from household dust, and the difference is measurable.
                   Particles below 10 microns stay suspended in the air instead of falling. Below 4 microns they pass
@@ -331,18 +331,18 @@ const PostConstructionCleaningPage = () => {
                   someone already wiped.
                 </p>
               </div>
-              <figure className="md:pt-1">
+              <figure className="mx-auto max-w-sm pt-2">
                 <img
                   src={`${IMG}/vent-cover.webp`}
                   srcSet={`${IMG}/vent-cover-sm.webp 340w, ${IMG}/vent-cover.webp 680w`}
-                  sizes="(min-width: 768px) 256px, 100vw"
+                  sizes="(min-width: 768px) 384px, 100vw"
                   alt="An HVAC return cover heavily caked with construction dust being washed in a sink"
                   className="aspect-square w-full rounded-xl object-cover ring-1 ring-border"
                   width={680}
                   height={680}
                   loading="lazy"
                 />
-                <figcaption className="mt-2 text-sm text-muted-foreground">
+                <figcaption className="mt-2 text-center text-sm text-muted-foreground">
                   A return cover after a renovation. Wiping its face in place leaves most of this behind.
                 </figcaption>
               </figure>
@@ -361,7 +361,7 @@ const PostConstructionCleaningPage = () => {
               Every surface we clean sends dust downward, so the order decides the result. Work a room out of
               sequence and parts of it get cleaned twice. The floor is close to last for the same reason.
             </p>
-            <div className="grid gap-8 md:grid-cols-[1fr_16rem] md:items-start">
+            <div>
               <ol className="space-y-2.5">
                 {SEQUENCE.map((step, n) => (
                   <li key={step} className="flex gap-3 text-[17px] leading-relaxed text-foreground">
@@ -372,18 +372,18 @@ const PostConstructionCleaningPage = () => {
                   </li>
                 ))}
               </ol>
-              <figure className="md:pt-1">
+              <figure className="mx-auto mt-8 max-w-md">
                 <img
                   src={`${IMG}/ceiling-first.webp`}
                   srcSet={`${IMG}/ceiling-first-sm.webp 288w, ${IMG}/ceiling-first.webp 576w`}
-                  sizes="(min-width: 768px) 256px, 100vw"
+                  sizes="(min-width: 768px) 448px, 100vw"
                   alt="A Capital Clean Care team member on a step ladder cleaning a ceiling during a post-construction clean"
                   className="aspect-[4/3] w-full rounded-xl object-cover ring-1 ring-border"
                   width={576}
                   height={432}
                   loading="lazy"
                 />
-                <figcaption className="mt-2 text-sm text-muted-foreground">Step one, every time.</figcaption>
+                <figcaption className="mt-2 text-center text-sm text-muted-foreground">Step one, every time.</figcaption>
               </figure>
             </div>
             <p className="mt-7 text-sm leading-relaxed text-muted-foreground">
@@ -402,19 +402,19 @@ const PostConstructionCleaningPage = () => {
           <FadeInSection>
             <span className="text-sm font-semibold uppercase tracking-wider text-[#2E7D32]">Equipment</span>
             <h2 className="mb-4 mt-2 font-heading text-2xl font-bold md:text-3xl">We Filter the Air While We Work</h2>
-            <div className="grid gap-8 md:grid-cols-[16rem_1fr] md:items-start">
-              <figure className="md:pt-1">
+            <div>
+              <figure className="mx-auto mb-8 max-w-md">
                 <img
                   src={`${IMG}/air-equipment.webp`}
                   srcSet={`${IMG}/air-equipment-sm.webp 288w, ${IMG}/air-equipment.webp 576w`}
-                  sizes="(min-width: 768px) 256px, 100vw"
+                  sizes="(min-width: 768px) 448px, 100vw"
                   alt="A uniformed Capital Clean Care team member setting up air-handling equipment against the baseboard of an empty renovated room"
                   className="aspect-[4/3] w-full rounded-xl object-cover ring-1 ring-border"
                   width={576}
                   height={432}
                   loading="lazy"
                 />
-                <figcaption className="mt-2 text-sm text-muted-foreground">
+                <figcaption className="mt-2 text-center text-sm text-muted-foreground">
                   Placed to pull air across the room, and moved as the crew moves.
                 </figcaption>
               </figure>
@@ -451,7 +451,7 @@ const PostConstructionCleaningPage = () => {
           <FadeInSection>
             <span className="text-sm font-semibold uppercase tracking-wider text-[#2E7D32]">Floors</span>
             <h2 className="mb-4 mt-2 font-heading text-2xl font-bold md:text-3xl">Vacuumed Dry Before Anything Gets Wet</h2>
-            <div className="grid gap-8 md:grid-cols-[1fr_16rem] md:items-start">
+            <div>
               <div className="space-y-4 text-[17px] leading-relaxed text-muted-foreground">
                 <p>
                   A wet-dry floor washer is built to vacuum and wash in one pass, and in a normal house that is
@@ -472,18 +472,18 @@ const PostConstructionCleaningPage = () => {
                   and natural stone do not take the same moisture or the same machine. We do not flood wood.
                 </p>
               </div>
-              <figure className="md:pt-1">
+              <figure className="mx-auto mt-8 max-w-sm">
                 <img
                   src={`${IMG}/floor-dustreveal.webp`}
                   srcSet={`${IMG}/floor-dustreveal-sm.webp 340w, ${IMG}/floor-dustreveal.webp 680w`}
-                  sizes="(min-width: 768px) 256px, 100vw"
+                  sizes="(min-width: 768px) 384px, 100vw"
                   alt="A wet-dry floor washer with its green dust-detection light on, showing construction dust still on hardwood beside the baseboard"
                   className="aspect-square w-full rounded-xl object-cover ring-1 ring-border"
                   width={680}
                   height={680}
                   loading="lazy"
                 />
-                <figcaption className="mt-2 text-sm text-muted-foreground">
+                <figcaption className="mt-2 text-center text-sm text-muted-foreground">
                   The machine&apos;s light showing what a finished-looking pass left behind.
                 </figcaption>
               </figure>
@@ -519,18 +519,18 @@ const PostConstructionCleaningPage = () => {
             </div>
             <figure className="mx-auto max-w-md">
               <img
-                src={`${IMG}/bathroom-detail.webp`}
-                srcSet={`${IMG}/bathroom-detail-sm.webp 480w, ${IMG}/bathroom-detail.webp 960w`}
+                src={`${IMG}/window-work.webp`}
+                srcSet={`${IMG}/window-work-sm.webp 480w, ${IMG}/window-work.webp 960w`}
                 sizes="(min-width: 768px) 448px, 100vw"
-                alt="A masked Capital Clean Care team member using a cordless power scrubber on a bathtub during a post-construction clean"
+                alt="A uniformed Capital Clean Care team member cleaning a window in a newly built room, with the manufacturer's shipping label still stuck to the glass"
                 className="aspect-[4/3] w-full rounded-xl object-cover ring-1 ring-border"
                 width={960}
                 height={720}
                 loading="lazy"
               />
-              <figcaption className="mt-2 text-sm text-muted-foreground">
-                Window tracks get the same treatment. Construction dust compacts into the corners, and vacuuming
-                alone will not lift it.
+              <figcaption className="mt-2 text-center text-sm text-muted-foreground">
+                The shipping label is still on the glass. Windows come with film, labels and adhesive from the
+                factory, and the tracks hold dust that has compacted into the corners.
               </figcaption>
             </figure>
             <p className="mt-7 text-sm leading-relaxed text-muted-foreground">
