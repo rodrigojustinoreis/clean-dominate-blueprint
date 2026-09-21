@@ -200,7 +200,7 @@ const ServicePage = () => {
             {[
               { v: "5.0★", l: "Google rating" },
               { v: "24h", l: "Re-clean guarantee" },
-              { v: "9+ yrs", l: "Serving the DMV" },
+              { v: "10+ yrs", l: "Serving the DMV" },
               { v: "100%", l: "Satisfaction guarantee" },
             ].map((s) => (
               <div key={s.l} className="flex flex-col items-center gap-1 py-5 px-3 rounded-xl border border-border bg-card text-center shadow-sm">

@@ -32,21 +32,21 @@ const steps: { step: string; text: string }[] = [
 ];
 
 const sizing: { size: string; text: string }[] = [
-  { size: "Studio / 1-bedroom", text: "A single-bedroom turnover in the DMV runs roughly $150 for a professional clean, so a $75-$150 cleaning fee keeps you at or near cost without scaring off short bookings." },
-  { size: "2-3 bedroom", text: "More bathrooms and more space mean a longer turnover. A $150-$250 fee typically matches what a professional two-person team charges to reset the unit between guests." },
-  { size: "4+ bedroom / luxury", text: "Larger homes justify a $250-$400+ fee, especially with extras like laundry, a hot tub, or extensive staging. Guests booking a big home expect a higher fee and read it as a sign the place is genuinely cared for." },
+  { size: "Studio / 1-bedroom", text: "A single-bedroom turnover in the DMV runs about $160–$195 for a professional clean. A fee in that range covers the work without scaring off short bookings." },
+  { size: "2-3 bedroom", text: "More bathrooms and more space mean a longer turnover. A $215–$310 fee matches what a professional two-person team charges to reset the unit between guests." },
+  { size: "4+ bedroom / luxury", text: "Larger homes justify a $315–$400+ fee, especially with extras like laundry, a hot tub, or extensive staging. Guests booking a big home expect a higher fee and read it as a sign the place is genuinely cared for." },
 ];
 
 const mistakes: { title: string; text: string }[] = [
   { title: "Charging far above your real cost", text: "A cleaning fee that dwarfs the nightly rate is the number one reason guests abandon a booking. Airbnb shows the total price prominently and guests compare totals, so an inflated fee quietly pushes you down in their results." },
   { title: "Setting it to zero to look cheap", text: "A $0 cleaning fee does not mean free cleaning, it means you are absorbing the cost into thin air or skipping a proper turnover. Both hurt: one eats your margin, the other eats your reviews." },
   { title: "Never updating it", text: "Your turnover cost changes when your cleaner's rates change or you add a bedroom's worth of work. Revisit the fee a couple of times a year so it still covers an actual professional clean." },
-  { title: "Ignoring short stays", text: "On a one-night booking, a $150 fee can more than double the guest's total. If you allow one and two-night stays, consider a lower fee plus a slightly higher nightly rate so the total stays competitive." },
+  { title: "Ignoring short stays", text: "On a one-night booking, a $180 fee can more than double the guest&apos;s total. If you allow one and two-night stays, consider a lower fee plus a slightly higher nightly rate so the total stays competitive." },
 ];
 
 const faqs = [
   { q: "How do I add a cleaning fee on Airbnb?", a: "In your hosting dashboard, open the listing, go to the Pricing tab, scroll to the Fees section, and select Cleaning fee. Enter a flat amount and save. It is charged once per reservation, no matter how many nights the guest books, and it appears as its own line in the guest's price breakdown at checkout." },
-  { q: "How much should an Airbnb cleaning fee be?", a: "Set it to match what a professional turnover of your specific home actually costs. In the DMV that is roughly $75-$150 for a one-bedroom, $150-$250 for a two-to-three bedroom, and $250-$400+ for larger or luxury homes. The goal is to cover a real clean without letting the fee tower over your nightly rate, which suppresses bookings." },
+  { q: "How much should an Airbnb cleaning fee be?", a: "Set it to match what a professional turnover of your specific home actually costs. In the DMV that is roughly $160–$195 for a one-bedroom, $215–$310 for a two-to-three bedroom, and $315–$400+ for larger or luxury homes. The goal is to cover a real clean without letting the fee tower over your nightly rate, which suppresses bookings." },
   { q: "Is the Airbnb cleaning fee charged per night or per stay?", a: "Per stay. The cleaning fee is a single flat charge added once to the reservation total, regardless of whether the guest stays one night or ten. That is exactly why it can feel steep on very short stays and barely noticeable on long ones, and why fee-versus-nightly-rate strategy matters." },
   { q: "Should I charge a cleaning fee or raise my nightly rate?", a: "Both approaches recover your cost; the right mix depends on your typical stay length. A cleaning fee is fairest on longer stays because it spreads across more nights. If most of your bookings are one or two nights, a lower cleaning fee combined with a slightly higher nightly rate keeps the guest's total competitive in search while still covering your turnover." },
 ];
@@ -179,7 +179,7 @@ const AirbnbCleaningFee = () => {
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
               Because the cleaning fee is charged once per stay, it spreads thin over a long booking and lands hard on a
-              short one. A $150 fee on a seven-night stay adds about $21 a night. The same fee on a single night doubles what
+              short one. A $180 fee on a seven-night stay adds about $26 a night. The same fee on a single night doubles what
               the guest expected to pay, and that is where bookings quietly disappear.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-6">

@@ -709,7 +709,7 @@ const PostConstructionCleaningPage = () => {
             {[
               { v: "5.0★", l: "Google rating" },
               { v: "24h", l: "Re-clean guarantee" },
-              { v: "9+ yrs", l: "Serving the DMV" },
+              { v: "10+ yrs", l: "Serving the DMV" },
               { v: "100%", l: "Satisfaction guarantee" },
             ].map((s) => (
               <div
