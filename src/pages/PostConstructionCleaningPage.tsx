@@ -241,9 +241,9 @@ const PostConstructionCleaningPage = () => {
                 </button>
                 <a
                   href={PHONE_HREF}
-                  className="inline-flex items-center justify-center rounded-lg border-2 border-[#2E7D32] px-8 py-3.5 text-base font-bold text-[#2E7D32] transition-colors hover:bg-[#2E7D32]/5"
+                  className="inline-flex items-center justify-center whitespace-nowrap rounded-lg border-2 border-[#2E7D32] px-6 py-3.5 text-base font-bold text-[#2E7D32] transition-colors hover:bg-[#2E7D32]/5"
                 >
-                  <Phone className="mr-2 h-4 w-4" /> Call {PHONE}
+                  <Phone className="mr-2 h-4 w-4 shrink-0" /> Call&nbsp;{PHONE}
                 </a>
               </div>
 
@@ -443,12 +443,12 @@ const PostConstructionCleaningPage = () => {
                 <figure className="md:sticky md:top-28 md:self-start">
                   <img
                     src={`${IMG}/ceiling-first.webp`}
-                    srcSet={`${IMG}/ceiling-first-sm.webp 288w, ${IMG}/ceiling-first.webp 576w`}
+                    srcSet={`${IMG}/ceiling-first-sm.webp 320w, ${IMG}/ceiling-first.webp 640w`}
                     sizes="(min-width: 768px) 304px, 100vw"
-                    alt="A Capital Clean Care team member on a step ladder cleaning a ceiling during a post-construction clean"
-                    className="aspect-[4/3] w-full rounded-2xl object-cover ring-1 ring-border"
-                    width={576}
-                    height={432}
+                    alt="A Capital Clean Care team member reaching the ceiling with an extension tool above a newly installed closet during a post-construction clean"
+                    className="aspect-[3/4] w-full rounded-2xl object-cover ring-1 ring-border"
+                    width={640}
+                    height={853}
                     loading="lazy"
                   />
                   <figcaption className="mt-2 text-sm text-muted-foreground">Step one, every time.</figcaption>
