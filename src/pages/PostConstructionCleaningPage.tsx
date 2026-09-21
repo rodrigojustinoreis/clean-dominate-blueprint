@@ -544,18 +544,20 @@ const PostConstructionCleaningPage = () => {
                     </li>
                   ))}
                 </ol>
-                <figure className="md:sticky md:top-28 md:self-start">
+                <figure className="group md:sticky md:top-28 md:self-start">
                   <img
-                    src={`${IMG}/ceiling-first.webp`}
-                    srcSet={`${IMG}/ceiling-first-sm.webp 320w, ${IMG}/ceiling-first.webp 640w`}
+                    src={`${IMG}/team-crew.webp`}
+                    srcSet={`${IMG}/team-crew-sm.webp 380w, ${IMG}/team-crew.webp 760w`}
                     sizes="(min-width: 768px) 304px, 100vw"
-                    alt="A Capital Clean Care team member reaching the ceiling with an extension tool above a newly installed closet during a post-construction clean"
-                    className="aspect-[3/4] w-full rounded-2xl object-cover ring-1 ring-border"
-                    width={640}
-                    height={853}
+                    alt="Five Capital Clean Care team members in navy company uniforms standing together in a client's home"
+                    className="aspect-[3/4] w-full rounded-2xl object-cover ring-1 ring-border transition-transform duration-700 [transition-timing-function:cubic-bezier(0.2,0,0,1)] group-hover:scale-[1.04] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+                    width={760}
+                    height={1013}
                     loading="lazy"
                   />
-                  <figcaption className="mt-2 text-sm text-muted-foreground">Step one, every time.</figcaption>
+                  <figcaption className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                    The crew that works this sequence. Uniformed, insured and background-checked.
+                  </figcaption>
                 </figure>
               </div>
               <p className="mt-8 max-w-2xl text-sm leading-relaxed text-muted-foreground">
