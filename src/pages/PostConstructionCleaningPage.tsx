@@ -241,7 +241,7 @@ const PostConstructionCleaningPage = () => {
             </FadeInSection>
 
             <FadeInSection>
-              <div className="relative lg:pl-4">
+              <div className="relative lg:ps-4">
                 <div className="aspect-[4/3] overflow-hidden rounded-3xl border border-border shadow-2xl">
                   <img
                     src={HERO_IMAGE}
@@ -336,12 +336,20 @@ const PostConstructionCleaningPage = () => {
         </div>
       </section>
 
-      {/* ── Why the dust behaves differently ── */}
-      <section className="border-t border-border bg-secondary/30 py-12 md:py-16">
+      {/* ── How the work is done: four subsections under one heading, so the technical
+           explainer reads as one topic instead of four competing sections ── */}
+      <section className="border-t border-border bg-secondary/30 py-14 md:py-20">
         <div className="container mx-auto max-w-4xl px-4">
           <FadeInSection>
-            <span className="text-sm font-semibold uppercase tracking-wider text-[#2E7D32]">The problem</span>
-            <h2 className="mb-4 mt-2 font-heading text-2xl font-bold md:text-3xl">Why Construction Dust Needs Different Equipment</h2>
+            <span className="text-sm font-semibold uppercase tracking-wider text-[#2E7D32]">Our process</span>
+            <h2 className="mb-3 mt-2 font-heading text-2xl font-bold md:text-3xl">How the Work Is Done</h2>
+            <p className="mb-10 max-w-2xl text-[17px] leading-relaxed text-muted-foreground">
+              Four things decide the result: understanding how the dust behaves, working in the right order,
+              filtering the air while the work happens, and leaving the floor until last.
+            </p>
+            <div className="space-y-14">
+            <div id="why-dust" className="scroll-mt-28">
+              <h3 className="mb-4 font-heading text-xl font-bold text-foreground md:text-2xl">Why the dust needs different equipment</h3>
             <div className="space-y-4 text-[17px] leading-relaxed text-muted-foreground">
               <div className="space-y-4">
                 <p>
@@ -378,16 +386,10 @@ const PostConstructionCleaningPage = () => {
                 </figcaption>
               </figure>
             </div>
-          </FadeInSection>
-        </div>
-      </section>
+            </div>
 
-      {/* ── The sequence ── */}
-      <section id="how-it-works" className="scroll-mt-24 border-t border-border py-12 md:py-16">
-        <div className="container mx-auto max-w-4xl px-4">
-          <FadeInSection>
-            <span className="text-sm font-semibold uppercase tracking-wider text-[#2E7D32]">How we work</span>
-            <h2 className="mb-4 mt-2 font-heading text-2xl font-bold md:text-3xl">Ceiling to Floor, In This Order</h2>
+            <div id="how-it-works" className="scroll-mt-28">
+              <h3 className="mb-4 font-heading text-xl font-bold text-foreground md:text-2xl">Ceiling to floor, in this order</h3>
             <p className="mb-7 max-w-2xl text-[17px] leading-relaxed text-muted-foreground">
               Every surface we clean sends dust downward, so the order decides the result. Work a room out of
               sequence and parts of it get cleaned twice. The floor is close to last for the same reason.
@@ -423,16 +425,10 @@ const PostConstructionCleaningPage = () => {
               dust remains. We use that as a technical reference for how we work. It is not a certification, and we
               do not hold one.
             </p>
-          </FadeInSection>
-        </div>
-      </section>
+            </div>
 
-      {/* ── Equipment ── */}
-      <section id="equipment" className="scroll-mt-24 border-t border-border bg-secondary/30 py-12 md:py-16">
-        <div className="container mx-auto max-w-4xl px-4">
-          <FadeInSection>
-            <span className="text-sm font-semibold uppercase tracking-wider text-[#2E7D32]">Equipment</span>
-            <h2 className="mb-4 mt-2 font-heading text-2xl font-bold md:text-3xl">We Filter the Air While We Work</h2>
+            <div id="equipment" className="scroll-mt-28">
+              <h3 className="mb-4 font-heading text-xl font-bold text-foreground md:text-2xl">We filter the air while we work</h3>
             <div>
               <figure className="mx-auto mb-8 max-w-md">
                 <img
@@ -472,16 +468,10 @@ const PostConstructionCleaningPage = () => {
                 </p>
               </div>
             </div>
-          </FadeInSection>
-        </div>
-      </section>
+            </div>
 
-      {/* ── Floors ── */}
-      <section className="border-t border-border py-12 md:py-16">
-        <div className="container mx-auto max-w-4xl px-4">
-          <FadeInSection>
-            <span className="text-sm font-semibold uppercase tracking-wider text-[#2E7D32]">Floors</span>
-            <h2 className="mb-4 mt-2 font-heading text-2xl font-bold md:text-3xl">Vacuumed Dry Before Anything Gets Wet</h2>
+            <div id="floors" className="scroll-mt-28">
+              <h3 className="mb-4 font-heading text-xl font-bold text-foreground md:text-2xl">Vacuumed dry before anything gets wet</h3>
             <div>
               <div className="space-y-4 text-[17px] leading-relaxed text-muted-foreground">
                 <p>
@@ -518,6 +508,8 @@ const PostConstructionCleaningPage = () => {
                   The machine&apos;s light showing what a finished-looking pass left behind.
                 </figcaption>
               </figure>
+            </div>
+            </div>
             </div>
           </FadeInSection>
         </div>
