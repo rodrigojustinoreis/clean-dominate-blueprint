@@ -39,7 +39,19 @@ export interface DualLeadResult {
   dbSkipped: boolean;
 }
 
-export const FORMSUBMIT_URL = "https://formsubmit.co/ajax/capitalcleancare@gmail.com";
+/**
+ * Destino crítico dos leads. Era FormSubmit até 21/09/2026, quando se descobriu que o
+ * serviço deixou de responder ao navegador ("Failed to fetch"; do servidor, 403 com
+ * desafio do Cloudflare). Como os commits de 18/09 tornaram a aceitação do FormSubmit
+ * condição para o sucesso, a calculadora, o popup e o chat pararam de produzir lead:
+ * nenhum lead real entrou entre 18/09 09:27 e 21/09.
+ *
+ * Agora usam o mesmo caminho do QuoteForm, que nunca parou: a função receive-lead.
+ */
+export const RECEIVE_LEAD_URL = "https://jzxhejqokcjyxxklnnza.supabase.co/functions/v1/receive-lead";
+const RECEIVE_LEAD_SECRET = "ccc-lead-webhook-2026";
+/** Notificação por e-mail (Resend). Melhor esforço: nunca decide o sucesso do lead. */
+const EMAIL_NOTIFY_URL = "/api/send-quote-email";
 export const DUAL_SUBMIT_TIMEOUT_MS = 15000;
 export const LEAD_SUBMITTED_TEXT = "Your quote request has been submitted. For immediate assistance, call (240) 704-2551.";
 export const LEAD_UNCONFIRMED_TEXT = "We couldn't confirm your request. Please try again or call (240) 704-2551.";
@@ -57,20 +69,22 @@ export function payloadKey(payload: Record<string, unknown>): string {
 const isAbort = (e: unknown) => (e as { name?: string } | null)?.name === "AbortError";
 
 async function sendEmail(body: Record<string, unknown>, signal: AbortSignal): Promise<DestinationState> {
+  // Notificação por e-mail: disparada e esquecida, porque não pode decidir o sucesso do lead.
+  void fetch(EMAIL_NOTIFY_URL, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body),
+  }).catch(() => undefined);
+
   try {
-    const res = await fetch(FORMSUBMIT_URL, {
+    const res = await fetch(RECEIVE_LEAD_URL, {
       method: "POST",
-      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      headers: { "Content-Type": "application/json", "x-webhook-secret": RECEIVE_LEAD_SECRET },
       body: JSON.stringify(body),
       signal,
     });
-    let parsed: unknown = null;
-    try {
-      parsed = await res.json();
-    } catch {
-      parsed = null;
-    }
-    return res.ok && isAcceptedBody(parsed) ? "accepted" : "failed";
+    // receive-lead confirma pelo status; não devolve o envelope {success} do FormSubmit.
+    return res.ok ? "accepted" : "failed";
   } catch (e) {
     return signal.aborted || isAbort(e) ? "uncertain" : "failed";
   }

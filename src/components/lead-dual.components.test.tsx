@@ -29,7 +29,10 @@ if (!Element.prototype.releasePointerCapture) Element.prototype.releasePointerCa
 type Res = { ok: boolean; json: () => Promise<unknown> };
 const okBody = (b: unknown): Res => ({ ok: true, json: () => Promise.resolve(b) });
 let fetchMock: ReturnType<typeof vi.fn>;
-const stubFetch = (impl: () => Promise<Res>) => { fetchMock = vi.fn(impl); global.fetch = fetchMock as unknown as typeof fetch; };
+const CRITICO = "receive-lead";
+/** Chamadas ao destino que decide o sucesso; a notificação por e-mail viaja junto e não conta. */
+const chamadasCriticas = () => fetchMock.mock.calls.filter((c) => String(c[0]).includes(CRITICO));
+const stubFetch = (impl: (url?: unknown) => Promise<Res>) => { fetchMock = vi.fn(impl); global.fetch = fetchMock as unknown as typeof fetch; };
 const track = vi.mocked(trackQuoteFormSubmit);
 
 beforeEach(() => { vi.clearAllMocks(); insertImpl.mockReset(); sessionStorage.clear(); });
@@ -58,42 +61,42 @@ const lastToast = () => toastSpy.mock.calls.at(-1)?.[0] as { title?: string; des
 
 describe("PriceCalculator — dual destination", { timeout: 20000 }, () => {
   it("email accepted + db ok → one event, 'Request submitted', fields reset", async () => {
-    stubFetch(() => Promise.resolve(okBody({ success: true }))); insertImpl.mockResolvedValue({ error: null });
+    stubFetch(() => Promise.resolve(okBody({}))); insertImpl.mockResolvedValue({ error: null });
     await fillCalculatorSafe(); submitCalc();
     await waitFor(() => expect(lastToast()?.title).toBe("Request submitted"));
-    expect(track).toHaveBeenCalledTimes(1); expect(fetchMock).toHaveBeenCalledTimes(1); expect(insertImpl).toHaveBeenCalledTimes(1);
+    expect(track).toHaveBeenCalledTimes(1); expect(chamadasCriticas()).toHaveLength(1); expect(insertImpl).toHaveBeenCalledTimes(1);
     expect((screen.getByLabelText(/full name/i) as HTMLInputElement).value).toBe("");
     expect(lastToast()?.description).toMatch(/has been submitted/);
   });
   it("email accepted + db failed → still submitted, one event", async () => {
-    stubFetch(() => Promise.resolve(okBody({ success: true }))); insertImpl.mockResolvedValue({ error: { message: "db" } });
+    stubFetch(() => Promise.resolve(okBody({}))); insertImpl.mockResolvedValue({ error: { message: "db" } });
     await fillCalculatorSafe(); submitCalc();
     await waitFor(() => expect(lastToast()?.title).toBe("Request submitted")); expect(track).toHaveBeenCalledTimes(1);
   });
   it("email 500 + db ok → not confirmed, no event, fields kept; retry sends only the e-mail then succeeds once", async () => {
-    let n = 0; stubFetch(() => Promise.resolve(n++ === 0 ? { ok: false, json: () => Promise.resolve({ success: false }) } : okBody({ success: true }))); insertImpl.mockResolvedValue({ error: null });
+    let n = 0; stubFetch((url) => !String(url).includes(CRITICO) ? Promise.resolve(okBody({})) : Promise.resolve(n++ === 0 ? { ok: false, json: () => Promise.resolve({}) } : okBody({}))); insertImpl.mockResolvedValue({ error: null });
     await fillCalculatorSafe(); submitCalc();
     await waitFor(() => expect(lastToast()?.title).toBe("Request not confirmed"));
     expect(track).not.toHaveBeenCalled(); expect((screen.getByLabelText(/full name/i) as HTMLInputElement).value).toBe("Jane Doe");
     expect(lastToast()?.description).toMatch(/couldn't confirm/);
     submitCalc();
     await waitFor(() => expect(lastToast()?.title).toBe("Request submitted"));
-    expect(fetchMock).toHaveBeenCalledTimes(2); expect(insertImpl).toHaveBeenCalledTimes(1); expect(track).toHaveBeenCalledTimes(1);
+    expect(chamadasCriticas()).toHaveLength(2); expect(insertImpl).toHaveBeenCalledTimes(1); expect(track).toHaveBeenCalledTimes(1);
   });
   it("double submit in the same tick → one fetch and one insert", async () => {
-    stubFetch(() => Promise.resolve(okBody({ success: true }))); insertImpl.mockResolvedValue({ error: null });
+    stubFetch(() => Promise.resolve(okBody({}))); insertImpl.mockResolvedValue({ error: null });
     await fillCalculatorSafe(); await act(async () => { submitCalc(); submitCalc(); });
     await waitFor(() => expect(lastToast()?.title).toBe("Request submitted"));
-    expect(fetchMock).toHaveBeenCalledTimes(1); expect(insertImpl).toHaveBeenCalledTimes(1); expect(track).toHaveBeenCalledTimes(1);
+    expect(chamadasCriticas()).toHaveLength(1); expect(insertImpl).toHaveBeenCalledTimes(1); expect(track).toHaveBeenCalledTimes(1);
   });
   it("analytics throwing does not revert the confirmation", async () => {
     track.mockImplementationOnce(() => { throw new Error("gtag"); });
-    stubFetch(() => Promise.resolve(okBody({ success: true }))); insertImpl.mockResolvedValue({ error: null });
+    stubFetch(() => Promise.resolve(okBody({}))); insertImpl.mockResolvedValue({ error: null });
     await fillCalculatorSafe(); submitCalc();
     await waitFor(() => expect(lastToast()?.title).toBe("Request submitted"));
   });
   it("no request when the contact fields are empty", async () => {
-    stubFetch(() => Promise.resolve(okBody({ success: true }))); insertImpl.mockResolvedValue({ error: null });
+    stubFetch(() => Promise.resolve(okBody({}))); insertImpl.mockResolvedValue({ error: null });
     await fillCalculatorSafe();
     fireEvent.change(screen.getByLabelText(/full name/i), { target: { value: "" } });
     submitCalc();
@@ -115,7 +118,7 @@ async function openPopup() {
 }
 describe("ExitIntentPopup — dual destination, zero analytics events", { timeout: 20000 }, () => {
   it("email accepted → success toast (submitted wording), popup closes; no analytics", async () => {
-    stubFetch(() => Promise.resolve(okBody({ success: true }))); insertImpl.mockResolvedValue({ error: null });
+    stubFetch(() => Promise.resolve(okBody({}))); insertImpl.mockResolvedValue({ error: null });
     const first = await openPopup(); expect(first).not.toBeNull();
     const inputs = screen.getAllByRole("textbox"); fireEvent.change(inputs[0], { target: { value: "Jane" } }); fireEvent.change(inputs[1], { target: { value: "3015550100" } });
     fireEvent.submit(inputs[0].closest("form")!);
@@ -124,7 +127,7 @@ describe("ExitIntentPopup — dual destination, zero analytics events", { timeou
     expect(track).not.toHaveBeenCalled();
   });
   it("email 500 → error toast, popup stays open with the data; no analytics", async () => {
-    stubFetch(() => Promise.resolve({ ok: false, json: () => Promise.resolve({ success: false }) })); insertImpl.mockResolvedValue({ error: null });
+    stubFetch(() => Promise.resolve({ ok: false, json: () => Promise.resolve({}) })); insertImpl.mockResolvedValue({ error: null });
     const first = await openPopup(); expect(first).not.toBeNull();
     const inputs = screen.getAllByRole("textbox"); fireEvent.change(inputs[0], { target: { value: "Jane" } }); fireEvent.change(inputs[1], { target: { value: "3015550100" } });
     fireEvent.submit(inputs[0].closest("form")!);

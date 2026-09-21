@@ -3,6 +3,7 @@ import { MessageCircle, X, Send, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { trackQuoteFormSubmit } from "@/lib/analytics";
+import { RECEIVE_LEAD_URL } from "@/lib/submit-lead-dual";
 
 interface Message {
   from: "bot" | "user";
@@ -51,12 +52,7 @@ interface QuoteChatbotProps {
 }
 
 const LAUNCHER_SCROLL_THRESHOLD = 320;
-const FORMSUBMIT_URL = "https://formsubmit.co/ajax/capitalcleancare@gmail.com";
 const SUBMIT_TIMEOUT_MS = 15000;
-/** Defensive acceptance policy (M02b, 2026-09-18): HTTP ok AND a JSON object whose `success` is true or "true".
- *  This is a compatibility policy, not a documented contract of the provider; anything else is "unconfirmed". */
-const isAcceptedBody = (body: unknown): boolean =>
-  !!body && typeof body === "object" && ((body as { success?: unknown }).success === true || (body as { success?: unknown }).success === "true");
 type SubmitOutcome = "accepted" | "failed" | "uncertain";
 const UNCONFIRMED_TEXT = "We couldn't confirm your request. Please try again or call (240) 704-2551.";
 
@@ -124,7 +120,7 @@ const QuoteChatbot = ({ launcherAfterScrollOnNarrow = false }: QuoteChatbotProps
     const nextStep = current.next;
 
     if (!nextStep || nextStep === "done") {
-      // All collected — send via FormSubmit (single destination). Success only after the service accepts it.
+      // Tudo coletado. Envia por receive-lead, o mesmo destino do QuoteForm. Sucesso só com aceite.
       if (submittingRef.current || acceptedRef.current) return;
       submittingRef.current = true;
       setSending(true);
@@ -132,29 +128,29 @@ const QuoteChatbot = ({ launcherAfterScrollOnNarrow = false }: QuoteChatbotProps
       const timer = setTimeout(() => controller.abort(), SUBMIT_TIMEOUT_MS);
       let outcome: SubmitOutcome = "failed";
       try {
-        const res = await fetch(FORMSUBMIT_URL, {
+        const lead = {
+          name: newAnswers.name ?? "",
+          phone: newAnswers.phone ?? "",
+          email: "",
+          address: newAnswers.address ?? "",
+          zip: newAnswers.zip ?? "",
+          service: value,
+          message: "Source: chat widget.",
+        };
+        // Notificação por e-mail em paralelo, sem decidir o sucesso.
+        void fetch("/api/send-quote-email", {
           method: "POST",
-          headers: { "Content-Type": "application/json", Accept: "application/json" },
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(lead),
+        }).catch(() => undefined);
+
+        const res = await fetch(RECEIVE_LEAD_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "x-webhook-secret": "ccc-lead-webhook-2026" },
           signal: controller.signal,
-          body: JSON.stringify({
-            _subject: `New Chat Lead — ${newAnswers.name}`,
-            _template: "table",
-            _captcha: "false",
-            Source: "Chat Widget",
-            Name: newAnswers.name,
-            "Zip Code": newAnswers.zip,
-            Phone: newAnswers.phone,
-            "Service Address": newAnswers.address,
-            "Service Type": value,
-          }),
+          body: JSON.stringify(lead),
         });
-        let body: unknown = null;
-        try {
-          body = await res.json();
-        } catch {
-          body = null;
-        }
-        outcome = res.ok && isAcceptedBody(body) ? "accepted" : "failed";
+        outcome = res.ok ? "accepted" : "failed";
       } catch {
         outcome = controller.signal.aborted ? "uncertain" : "failed";
       } finally {

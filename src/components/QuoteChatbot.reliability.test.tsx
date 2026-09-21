@@ -1,7 +1,11 @@
 /**
  * M02b — QuoteChatbot submission reliability (CODEX-M02B-COUNTERPROPOSAL.md / CLAUDE-M02B-ACK.md).
  * TEST-ONLY: fetch and analytics are mocked before any interaction; no real endpoint is ever hit.
- * Acceptance = HTTP ok AND JSON object with success === true | "true" (defensive policy, not a provider contract).
+ * Acceptance = HTTP ok da função receive-lead (mesmo destino do QuoteForm).
+ * O FormSubmit foi removido em 21/09/2026: parou de responder ao navegador e, por ser o
+ * destino crítico desde 18/09, derrubou os leads do chat, da calculadora e do popup.
+ * A notificação por e-mail vai junto, sem decidir o sucesso — por isso a contagem de
+ * chamadas filtra pelo destino crítico.
  */
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 import { render, screen, fireEvent, waitFor, act, cleanup } from "@testing-library/react";
@@ -18,6 +22,9 @@ type Res = { ok: boolean; status: number; json: () => Promise<unknown> };
 const jsonRes = (ok: boolean, body: unknown): Res => ({ ok, status: ok ? 200 : 500, json: () => Promise.resolve(body) });
 const badJsonRes = (): Res => ({ ok: true, status: 200, json: () => Promise.reject(new SyntaxError("bad json")) });
 let fetchMock: ReturnType<typeof vi.fn>;
+const CRITICO = "receive-lead";
+/** Chamadas ao destino que decide o sucesso; ignora a notificação por e-mail. */
+const chamadasCriticas = () => fetchMock.mock.calls.filter((c) => String(c[0]).includes(CRITICO));
 function stubFetch(impl: (url: string, init: RequestInit) => Promise<Res>) {
   fetchMock = vi.fn(impl);
   global.fetch = fetchMock as unknown as typeof fetch;
@@ -41,18 +48,18 @@ afterEach(() => { cleanup(); vi.useRealTimers(); });
 
 describe("QuoteChatbot submit — success only when the service accepts", { timeout: 20000 }, () => {
   it("no fetch before the last step", async () => {
-    stubFetch(() => Promise.resolve(jsonRes(true, { success: true })));
+    stubFetch(() => Promise.resolve(jsonRes(true, {})));
     await fillToService();
-    expect(fetchMock).not.toHaveBeenCalled();
+    expect(chamadasCriticas()).toHaveLength(0);
   });
   it("A) 200 + success:true → one event, done, submission text (no delivery promise)", async () => {
-    stubFetch(() => Promise.resolve(jsonRes(true, { success: true })));
+    stubFetch(() => Promise.resolve(jsonRes(true, {})));
     await fillToService(); clickService();
     await screen.findByText(SUCCESS);
     expect(track).toHaveBeenCalledTimes(1);
     expect(screen.getByText(/Request submitted\./)).toBeInTheDocument();
     expect(screen.queryByText(/Our team will contact you/)).toBeNull();
-    const call = fetchMock.mock.calls[0]; expect(String(call[0])).toContain("formsubmit.co/ajax/"); expect((call[1] as RequestInit).signal).toBeDefined();
+    const call = chamadasCriticas()[0]; expect(String(call[0])).toContain(CRITICO); expect((call[1] as RequestInit).signal).toBeDefined();
   });
   it("B) 200 + success:\"true\" (string) → accepted", async () => {
     stubFetch(() => Promise.resolve(jsonRes(true, { success: "true" })));
@@ -60,28 +67,34 @@ describe("QuoteChatbot submit — success only when the service accepts", { time
     await screen.findByText(SUCCESS); expect(track).toHaveBeenCalledTimes(1);
   });
   it("C1) 200 + success:false → unconfirmed, no event, retry offered", async () => {
-    stubFetch(() => Promise.resolve(jsonRes(true, { success: false })));
+    stubFetch(() => Promise.resolve(jsonRes(false, {})));
     await fillToService(); clickService();
     await screen.findByText(UNCONFIRMED); expect(track).not.toHaveBeenCalled();
     expect(screen.queryByText(SUCCESS)).toBeNull();
     expect(screen.getAllByRole("button", { name: "Standard Cleaning" }).length).toBeGreaterThanOrEqual(2); // options re-offered
   });
-  it("C2) 200 + invalid JSON → unconfirmed, no event", async () => {
+  // receive-lead confirma pelo status HTTP, como o QuoteForm sempre fez. O corpo não é lido,
+  // então um 200 com JSON inválido ou vazio continua sendo aceite — e é o comportamento correto:
+  // ler o corpo foi justamente o que quebrou os leads quando o provedor antigo mudou de resposta.
+  it("C2) 200 com JSON inválido → aceito (quem decide é o status)", async () => {
     stubFetch(() => Promise.resolve(badJsonRes()));
-    await fillToService(); clickService(); await screen.findByText(UNCONFIRMED); expect(track).not.toHaveBeenCalled();
+    await fillToService(); clickService(); await screen.findByText(SUCCESS); expect(track).toHaveBeenCalledTimes(1);
   });
-  it("C3) 200 + empty/unknown body → unconfirmed, no event", async () => {
+  it("C3) 200 com corpo vazio → aceito (quem decide é o status)", async () => {
     stubFetch(() => Promise.resolve(jsonRes(true, null)));
-    await fillToService(); clickService(); await screen.findByText(UNCONFIRMED); expect(track).not.toHaveBeenCalled();
+    await fillToService(); clickService(); await screen.findByText(SUCCESS); expect(track).toHaveBeenCalledTimes(1);
   });
   it("D) HTTP 500 → unconfirmed; manual retry then 200 → exactly one event", async () => {
+    // Conta só o destino crítico: a notificação por e-mail viaja junto e não pode deslocar o contador.
     let n = 0;
-    stubFetch(() => Promise.resolve(n++ === 0 ? jsonRes(false, { success: false }) : jsonRes(true, { success: true })));
+    stubFetch((url) =>
+      Promise.resolve(String(url).includes(CRITICO) ? (n++ === 0 ? jsonRes(false, {}) : jsonRes(true, {})) : jsonRes(true, {})),
+    );
     await fillToService(); clickService();
     await screen.findByText(UNCONFIRMED); expect(track).not.toHaveBeenCalled();
     clickService();
-    await screen.findByText(SUCCESS); expect(track).toHaveBeenCalledTimes(1); expect(fetchMock).toHaveBeenCalledTimes(2);
-    const body = JSON.parse(String((fetchMock.mock.calls[1][1] as RequestInit).body)); expect(body.Name).toBe("Jane"); expect(body.Phone).toBe("3015550100");
+    await screen.findByText(SUCCESS); expect(track).toHaveBeenCalledTimes(1); expect(chamadasCriticas()).toHaveLength(2);
+    const body = JSON.parse(String((chamadasCriticas()[1][1] as RequestInit).body)); expect(body.name).toBe("Jane"); expect(body.phone).toBe("3015550100");
   });
   it("E) network rejection → unconfirmed, no event, answers preserved", async () => {
     stubFetch(() => Promise.reject(new Error("network")));
@@ -95,18 +108,18 @@ describe("QuoteChatbot submit — success only when the service accepts", { time
     clickService();
     await act(async () => { await vi.advanceTimersByTimeAsync(15100); });
     vi.useRealTimers();
-    await screen.findByText(UNCONFIRMED); expect(track).not.toHaveBeenCalled(); expect(fetchMock).toHaveBeenCalledTimes(1);
+    await screen.findByText(UNCONFIRMED); expect(track).not.toHaveBeenCalled(); expect(chamadasCriticas()).toHaveLength(1);
   });
   it("G) two synchronous submits → one fetch; a second accepted submission is impossible without restart", async () => {
-    stubFetch(() => Promise.resolve(jsonRes(true, { success: true })));
+    stubFetch(() => Promise.resolve(jsonRes(true, {})));
     await fillToService();
     await act(async () => { clickService(); clickService(); });
-    await screen.findByText(SUCCESS); expect(fetchMock).toHaveBeenCalledTimes(1); expect(track).toHaveBeenCalledTimes(1);
+    await screen.findByText(SUCCESS); expect(chamadasCriticas()).toHaveLength(1); expect(track).toHaveBeenCalledTimes(1);
   });
   it("H) analytics throwing does not revert an accepted submission nor allow a duplicate", async () => {
     track.mockImplementationOnce(() => { throw new Error("gtag boom"); });
-    stubFetch(() => Promise.resolve(jsonRes(true, { success: true })));
+    stubFetch(() => Promise.resolve(jsonRes(true, {})));
     await fillToService(); clickService();
-    await screen.findByText(SUCCESS); expect(screen.queryByText(UNCONFIRMED)).toBeNull(); expect(fetchMock).toHaveBeenCalledTimes(1);
+    await screen.findByText(SUCCESS); expect(screen.queryByText(UNCONFIRMED)).toBeNull(); expect(chamadasCriticas()).toHaveLength(1);
   });
 });

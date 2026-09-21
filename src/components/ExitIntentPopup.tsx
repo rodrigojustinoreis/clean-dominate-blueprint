@@ -115,22 +115,23 @@ const ExitIntentPopup = () => {
     if (submittingRef.current) return;
     submittingRef.current = true;
     setSubmitting(true);
-    const dbRow = {
+    const origem = july4
+      ? "Exit popup — 4th of July 25% OFF (first clean, bi-weekly plan)"
+      : "Exit intent popup — 15% discount claimed";
+    // O popup só pede nome e telefone. e-mail e CEP são obrigatórios na tabela, então vão
+    // vazios em vez de inventados: quem recebe o lead liga para o telefone informado.
+    const dbRow = { name, phone, email: "", zip: "", service: "recurring", message: origem };
+    const emailBody = {
       name,
       phone,
+      email: "",
+      zip: "",
       service: "recurring",
-      message: july4
-        ? "Exit popup — 4th of July 25% OFF (first clean, bi-weekly plan)"
-        : "Exit intent popup — 15% discount claimed",
-    };
-    const emailBody = {
-      _subject: july4 ? `🎆 July 4th Lead: ${name}` : `Exit Intent Lead: ${name}`,
-      Name: name,
-      Phone: phone,
-      Source: july4 ? "Exit Popup — 4th of July 25% OFF (bi-weekly)" : "Exit Intent Popup — 15% Discount",
+      message: origem,
+      source: july4 ? "Exit Popup — 4th of July 25% OFF (bi-weekly)" : "Exit Intent Popup — 15% Discount",
     };
     try {
-      // E-mail is the critical destination; the Supabase row is backup (see src/lib/submit-lead-dual.ts).
+      // receive-lead é o destino crítico; a linha do Supabase é apoio (ver src/lib/submit-lead-dual.ts).
       const result = await submitLeadDual({ stateRef: leadStateRef, key: payloadKey(emailBody), emailBody, dbRow });
       if (result.email === "accepted") {
         toast.success(`Request submitted. Your ${discount} discount is noted. For immediate assistance, call (240) 704-2551.`);

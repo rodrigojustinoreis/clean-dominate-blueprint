@@ -157,8 +157,8 @@ const PriceCalculator = () => {
     submittingRef.current = true;
     setIsSubmitting(true);
 
-    // Two destinations, attempted concurrently (see src/lib/submit-lead-dual.ts): the e-mail notification is the
-    // channel the team reads (critical); the Supabase row is backup storage and never blocks the e-mail.
+    // Dois destinos em paralelo (ver src/lib/submit-lead-dual.ts): receive-lead é o crítico,
+    // a linha do Supabase é apoio e nunca bloqueia o lead.
     const dbRow = {
       name,
       phone,
@@ -170,20 +170,19 @@ const PriceCalculator = () => {
       zip: address, // mapping address to zip temporarily to satisfy constraints
       message: `Calculated Estimate: $${estimate.low} - $${estimate.high}. SqFt: ${sqft[0]}. Addons: ${selectedAddons.join(', ')}. Full Address: ${address}`,
     };
+    // Mesmo formato que o QuoteForm envia para receive-lead.
     const formPayload = {
       name,
       phone,
       email,
       address,
+      zip: address,
+      sqft: String(sqft[0]),
       service,
       bedrooms,
       bathrooms,
       frequency,
-      square_feet: sqft[0],
-      selected_addons: selectedAddons.join(', '),
-      estimated_price_low: estimate.low,
-      estimated_price_high: estimate.high,
-      _subject: "New Instant Quote Request!",
+      message: `Calculated estimate: $${estimate.low}–$${estimate.high}. Add-ons: ${selectedAddons.join(', ') || 'none'}. Source: price calculator.`,
     };
 
     try {
