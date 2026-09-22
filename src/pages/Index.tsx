@@ -11,7 +11,7 @@ import Layout from "@/components/layout/Layout";
 import QuoteForm from "@/components/QuoteForm";
 import FAQ from "@/components/FAQ";
 import { useSEO } from "@/hooks/useSEO";
-import { mdCities, dcCities, vaCities } from "@/data/locations";
+import { mdCities, dcCities, vaCities } from "@/data/city-nav";
 import { dirVanity as vanityLandingPages } from "@/data/home-directory";
 import { vanityLinkHref } from "@/data/vanity-link-targets";
 import regionMD from "@/assets/region-maryland.webp";

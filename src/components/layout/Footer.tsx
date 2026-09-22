@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Phone, Mail, Clock, Instagram, Facebook, MapPin, Shield, Search, Leaf, Users, Star, CheckCircle, Sparkles, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { dirServiceCards as services } from "@/data/home-directory";
-import { mdCities, dcCities, vaCities } from "@/data/locations";
+import { mdCities, dcCities, vaCities } from "@/data/city-nav";
 import { dirCities as slCities } from "@/data/sl-directory";
 import { isNoIndexPath } from "@/data/noindexPaths";
 
