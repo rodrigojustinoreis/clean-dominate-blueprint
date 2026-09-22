@@ -21,14 +21,13 @@ import InternalLinksGrid from "@/components/location/InternalLinksGrid";
 import LocationSocialProof from "@/components/location/LocationSocialProof";
 import LocationQuoteSection from "@/components/location/LocationQuoteSection";
 import { getServiceLocationOverride } from "@/data/service-location-overrides";
-import { ctaProseVariants, pickVariant } from "@/data/template-variants";
 
 const PAGE_URL = "https://capitalcleancare.com/locations/rockville-md/airbnb-cleaning";
 
 const localFaqs = [
   {
     q: "How quickly can you turn over my Rockville Airbnb between guests?",
-    a: "Most 1–2 bedroom Rockville properties can be turned over in 2–3 hours. Larger homes or properties with extra bedrooms may take longer. We can work within tight same-day check-in windows with advance notice.",
+    a: "Most 1–2 bedroom Rockville properties can be turned over in 2–3 hours. Larger homes or properties with extra bedrooms may take longer. Tighter same-day check-in windows depend on crew availability and the turnover scope, and we confirm the date with you before booking.",
   },
   {
     q: "Can you manage my cleaning schedule automatically?",
@@ -184,6 +183,7 @@ const RockvilleAirbnbCleaningPage = () => {
         heroImage="/images/team/team-making-bed.jpg"
         heroImageAlt="Capital Clean Care Airbnb turnover cleaning team preparing a short-term rental in Rockville, MD — hotel-standard results"
         ctaPrimary="Set Up Airbnb Turnover Cleaning"
+        ctaNote="No commitment · Turnover window confirmed before booking · 100% satisfaction guaranteed"
       />
 
       {/* Checklist */}
@@ -209,7 +209,7 @@ const RockvilleAirbnbCleaningPage = () => {
               },
               {
                 title: "Flexible Scheduling",
-                body: "We work around your checkout and check-in window throughout Rockville's 20850, 20851, 20852, and 20853 ZIP codes. Same-day turnovers available when needed.",
+                body: "We work around your checkout and check-in window throughout Rockville's 20850, 20851, 20852, and 20853 ZIP codes. Same-day turnovers depend on crew availability and the turnover scope, and the date is confirmed before booking.",
               },
               {
                 title: "Locally Owned & Accountable",
@@ -290,8 +290,9 @@ const RockvilleAirbnbCleaningPage = () => {
             <p>
               Capital Clean Care's Airbnb turnover service is built specifically for this
               market. We coordinate directly with your booking calendar — share it once and
-              we handle scheduling every turnover automatically. We work within tight same-day
-              checkout-to-check-in windows common across Rockville's rental season, and we
+              we handle scheduling every turnover automatically. Rockville's rental season brings tight same-day
+              checkout-to-check-in windows, and we schedule inside them when crew
+              availability and the turnover scope allow. We
               understand which Airbnb cleaning signals the platform monitors when calculating
               Superhost eligibility and listing rank: cleanliness score, response time to
               issues, and zero guest complaints.
@@ -331,7 +332,7 @@ const RockvilleAirbnbCleaningPage = () => {
       <TrustBadges compact />
       <ConversionCTA cityName="Rockville" />
 
-      <LocationQuoteSection cityName="Rockville" serviceLabel="Airbnb Cleaning" defaultService="airbnb" zipLine="Serving Rockville across ZIPs 20850, 20851, 20852, and 20853." ctaProse={ctaProseVariants[pickVariant("rockville-md", 2, 3)]("Rockville", "Airbnb Cleaning")} />
+      <LocationQuoteSection cityName="Rockville" serviceLabel="Airbnb Cleaning" defaultService="airbnb" zipLine="Serving Rockville across ZIPs 20850, 20851, 20852, and 20853." ctaProse="Tell us about your Rockville property and we'll send a clear, no-obligation airbnb cleaning quote. Availability is confirmed for your turnover window before you book." availabilityNote="Availability is confirmed for your turnover window before you book." trustLine="Turnover window confirmed before booking · 100% satisfaction guaranteed · Bonded & Insured" />
 
       <StickyMobileCTA />
     </Layout>

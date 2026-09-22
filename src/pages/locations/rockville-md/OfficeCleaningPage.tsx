@@ -42,7 +42,7 @@ const faqs = [
   },
   {
     q: "Do you offer eco-friendly commercial cleaning in Rockville?",
-    a: "Yes. We use EPA Safer Choice™ certified products exclusively — powerful disinfection performance without bleach fumes, ammonia residue, or harsh chemicals. Ideal for medical offices and shared workspaces.",
+    a: "Yes. We use EPA Safer Choice™ certified products exclusively, without bleach fumes, ammonia residue, or harsh chemicals. Tell us about any product restrictions your suite or building requires and the team plans around them.",
   },
   {
     q: "Can you start with a one-time deep clean before regular service?",
@@ -184,6 +184,7 @@ const RockvilleOfficeCleaningPage = () => {
         heroImage="/images/team/team-cleaning-glass-door.jpg"
         heroImageAlt="Capital Clean Care office cleaning service in Rockville, MD — reliable commercial cleaning for businesses"
         ctaPrimary="Get a Commercial Cleaning Quote"
+        ctaNote="No commitment · Schedule confirmed before service · 100% satisfaction guaranteed"
       />
 
       {/* Checklist */}
@@ -325,7 +326,7 @@ const RockvilleOfficeCleaningPage = () => {
       <TrustBadges compact />
       <ConversionCTA cityName="Rockville" />
 
-      <LocationQuoteSection cityName="Rockville" serviceLabel="Office Cleaning" defaultService="office" zipLine="Serving Rockville across ZIPs 20850, 20851, 20852, and 20853." />
+      <LocationQuoteSection cityName="Rockville" serviceLabel="Office Cleaning" defaultService="office" zipLine="Serving Rockville across ZIPs 20850, 20851, 20852, and 20853." availabilityNote="Availability is confirmed from your address and requested schedule." trustLine="Schedule confirmed before service · 100% satisfaction guaranteed · Bonded & Insured" />
 
       <StickyMobileCTA />
     </Layout>
