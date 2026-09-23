@@ -15,6 +15,15 @@ interface LocationSocialProofProps {
   count?: number;
   reviewOverrides?: RealReview[];
   /**
+   * Optional H2 override. The default keeps the existing wording on every page that does not pass
+   * it, so no other page changes. Pages pass this when the default would assert something the data
+   * does not support: `pickReviews` rotates the nine verified Google reviews by hash and
+   * `RealReview` carries no location, so the reviewer's city is unknown.
+   */
+  heading?: string;
+  /** Optional line under the H2. Renders nothing when omitted — the default output is unchanged. */
+  note?: string;
+  /**
    * When set, the video slot shows a real spoken client testimonial as a
    * click-to-play player (poster first, then <video controls> with audio —
    * no autoplay, since it has sound) instead of the muted brand-trust montage.
@@ -34,7 +43,7 @@ interface LocationSocialProofProps {
  * preload="none" in Chromium, so we must gate the element itself to avoid a
  * ~736 KB download on every initial page load.)
  */
-const LocationSocialProof = ({ cityName, citySlug, serviceSlug, serviceLabel, ctaLabel, count = 1, reviewOverrides, testimonialVideo, showVideo = true }: LocationSocialProofProps) => {
+const LocationSocialProof = ({ cityName, citySlug, serviceSlug, serviceLabel, ctaLabel, count = 1, reviewOverrides, heading, note, testimonialVideo, showVideo = true }: LocationSocialProofProps) => {
   // One real review per page (hash-distributed across the 9 verified reviews) so
   // neighbouring city pages rarely share the same review card.
   const reviews = reviewOverrides?.length
@@ -70,8 +79,12 @@ const LocationSocialProof = ({ cityName, citySlug, serviceSlug, serviceLabel, ct
             <Star className="h-3.5 w-3.5 fill-accent" aria-hidden="true" /> Client Reviews
           </span>
           <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground">
-            {cityName} Homeowners Love Our {serviceLabel}
+            {/* Sem `heading`, os filhos do H2 ficam EXATAMENTE como antes: três nós, com os
+                separadores <!-- --> que o SSR do React emite. Um template literal fundiria os
+                três num só e mudaria o HTML de todas as páginas que usam o default. */}
+            {heading ?? <>{cityName} Homeowners Love Our {serviceLabel}</>}
           </h2>
+          {note ? <p className="mt-2 text-sm text-muted-foreground">{note}</p> : null}
         </div>
 
         {showVideo && (testimonialVideo ? (

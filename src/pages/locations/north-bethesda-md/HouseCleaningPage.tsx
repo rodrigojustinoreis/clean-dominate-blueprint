@@ -21,7 +21,7 @@ import InternalLinksGrid from "@/components/location/InternalLinksGrid";
 import LocationSocialProof from "@/components/location/LocationSocialProof";
 import LocationQuoteSection from "@/components/location/LocationQuoteSection";
 import { getServiceLocationOverride } from "@/data/service-location-overrides";
-import { trustBlurbVariants, ctaProseVariants, ecoSafeVariants, satisfactionVariants, arriveStepVariants, pickVariant } from "@/data/template-variants";
+import { trustBlurbVariants, ecoSafeVariants, satisfactionVariants, arriveStepVariants, pickVariant } from "@/data/template-variants";
 
 // ── Page constants ────────────────────────────────────────────────────────────
 
@@ -198,6 +198,7 @@ const NorthBethesdaHouseCleaningPage = () => {
         heroImage="/images/team/team-mopping-bright-room.jpg"
         heroImageAlt="Capital Clean Care team providing house cleaning service in North Bethesda, MD — Latino-owned, background-checked professionals"
         ctaPrimary="Get a Free Quote in North Bethesda"
+        ctaNote="No commitment · Date confirmed before booking · 100% satisfaction guaranteed"
         ctaAfterHeading
         wrapPrimaryCtaOnNarrow
         stackCtas
@@ -210,7 +211,14 @@ const NorthBethesdaHouseCleaningPage = () => {
       />
 
       {/* ── Social Proof (3rd — trust video early) ── */}
-      <LocationSocialProof cityName="North Bethesda" citySlug="north-bethesda-md" serviceSlug="house-cleaning" serviceLabel="House Cleaning" />
+      <LocationSocialProof
+        cityName="North Bethesda"
+        citySlug="north-bethesda-md"
+        serviceSlug="house-cleaning"
+        serviceLabel="House Cleaning"
+        heading="What Capital Clean Care Clients Say"
+        note="Google reviews from clients across our service area. We do not publish reviewer locations."
+      />
 
       {/* ── Why Choose Us ─────────────────────────────────── */}
       <section className="py-12 md:py-16">
@@ -257,7 +265,7 @@ const NorthBethesdaHouseCleaningPage = () => {
               {
                 step: "1",
                 title: "Book online or call",
-                body: "Get a free quote in 60 seconds — no commitment required. Same-day slots are often available throughout North Bethesda (ZIP 20852). Call (240) 704-2551 or use the form below.",
+                body: "Get a free quote in 60 seconds — no commitment required. Same-day slots depend on crew availability and the requested scope, and the date is confirmed before booking. Call (240) 704-2551 or use the form below.",
               },
               {
                 step: "2",
@@ -304,7 +312,8 @@ const NorthBethesdaHouseCleaningPage = () => {
           <div className="space-y-4 text-muted-foreground leading-relaxed">
             <p>
               Capital Clean Care serves all of North Bethesda's ZIP codes — 20852 and 20895.
-              Whether your home is steps from the White Flint Metro station, nestled in the Tilden Woods community,
+              Whether your home is steps from the North Bethesda Metro station, renamed from White Flint in 2022,
+              nestled in the Tilden Woods community,
               in the upscale Luxmanor neighborhood, or near the vibrant Pike & Rose development along Rockville Pike,
               our background-checked cleaning teams are familiar with these neighborhoods and ready to work around
               your schedule.
@@ -354,7 +363,7 @@ const NorthBethesdaHouseCleaningPage = () => {
       <ConversionCTA cityName="North Bethesda" />
 
       {/* ── Final CTA + #quote anchor ─────────────────────── */}
-      <LocationQuoteSection cityName="North Bethesda" serviceLabel="House Cleaning" defaultService="standard" zipLine="Serving North Bethesda and nearby communities." ctaProse={ctaProseVariants[pickVariant("north-bethesda-md", 2, 3)]("North Bethesda", "House Cleaning")} />
+      <LocationQuoteSection cityName="North Bethesda" serviceLabel="House Cleaning" defaultService="standard" zipLine="Serving North Bethesda and nearby communities." ctaProse="Tell us about your North Bethesda home and we'll send a clear, no-obligation house cleaning quote. The date is confirmed before booking." availabilityNote="The date is confirmed before booking." trustLine="Date confirmed before booking · 100% satisfaction guaranteed · Bonded & Insured" />
 
       {/* ── Sticky mobile phone CTA ───────────────────────── */}
       <StickyMobileCTA />
