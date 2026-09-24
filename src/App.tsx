@@ -103,10 +103,19 @@ const App = () => (
       <TooltipProvider>
         <ClientToasters />
         <BrowserRouter>
-          <ScrollToTop />
-          <QuoteAnchorAlignment />
+          {/*
+            Both live INSIDE the Suspense boundary and after the routes, so their effects only run
+            once the lazy route chunk has resolved and its tree has committed.
+
+            Measured on the preview with the cache disabled: outside the boundary, `ScrollToTop` ran
+            against the prerendered DOM, aligned correctly (scrollY 8023 at t=352 ms) and then the
+            route hydrated and replaced that subtree — the focus marker was gone by t=471 ms and the
+            scroll unwound to 3805 ms later. No console error; just a race.
+          */}
           <Suspense fallback={null}>
             <AppRoutesLazy />
+            <ScrollToTop />
+            <QuoteAnchorAlignment />
           </Suspense>
         </BrowserRouter>
       </TooltipProvider>
