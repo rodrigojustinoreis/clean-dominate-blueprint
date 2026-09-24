@@ -9,7 +9,7 @@ import { HelmetProvider } from "react-helmet-async";
 // The prerender uses the eager AppRoutes; both trees share the same <Suspense>
 // boundary so hydration markers match and server HTML is preserved while chunks load.
 import AppRoutesLazy from "./AppRoutesLazy";
-import { keepAnchorAligned, alignQuoteAnchor, cancelQuoteAlignment, QUOTE_ANCHOR_IDS } from "@/lib/hash-anchor";
+import { keepAnchorAligned, alignQuoteAnchor, cancelQuoteAlignment, quoteAnchorFromClick, QUOTE_ANCHOR_IDS } from "@/lib/hash-anchor";
 
 const queryClient = new QueryClient();
 
@@ -69,23 +69,11 @@ const QuoteAnchorAlignment = () => {
   const { pathname } = useLocation();
   useEffect(() => {
     const onClick = (e: MouseEvent) => {
-      if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
-      const anchor = (e.target as Element | null)?.closest?.("a");
+      const anchor = (e.target as Element | null)?.closest?.("a") as HTMLAnchorElement | null;
       if (!anchor) return;
-      const target = anchor.getAttribute("target");
-      if (anchor.hasAttribute("download") || (target && target !== "_self")) return;
-      // Resolved by the DOM, so `#quote`, `/#quote` and `/services/x#quote` are all comparable.
-      // The hash is matched literally against the two known ids: no decoding, so a malformed hash
-      // elsewhere on the page can never throw URIError here.
-      const link = anchor as HTMLAnchorElement;
-      const id = (link.hash || "").slice(1);
-      if (!(QUOTE_ANCHOR_IDS as readonly string[]).includes(id)) return;
-      // Only same-page links. A link to another path must navigate; ScrollToTop aligns on arrival.
-      const samePath = (a: string, b: string) => a.replace(/\/+$/, "") === b.replace(/\/+$/, "");
-      if (link.origin !== window.location.origin) return;
-      if (!samePath(link.pathname, window.location.pathname)) return;
-      // No anchor on this page: leave the browser to do whatever it already does.
-      alignQuoteAnchor(id);
+      const id = quoteAnchorFromClick(anchor, window.location, e);
+      // No match, or no anchor on this page: leave the browser to do whatever it already does.
+      if (id) alignQuoteAnchor(id);
     };
     document.addEventListener("click", onClick);
     return () => {

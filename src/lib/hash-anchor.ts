@@ -199,6 +199,32 @@ export function alignQuoteAnchor(id: string): boolean {
   return true;
 }
 
+/**
+ * Should this click be aligned by us, or left to the browser?
+ *
+ * Only a plain left click on a same-page link whose hash is one of the quote anchors. Anything the
+ * visitor meant to do with the href itself — new tab, new window, download, another path — is left
+ * alone. The hash is compared literally, never decoded, so a malformed hash elsewhere on the page
+ * cannot throw.
+ */
+export function quoteAnchorFromClick(
+  anchor: HTMLAnchorElement,
+  loc: { origin: string; pathname: string },
+  modifiers: { button: number; metaKey: boolean; ctrlKey: boolean; shiftKey: boolean; altKey: boolean; defaultPrevented: boolean },
+): string | null {
+  if (modifiers.defaultPrevented || modifiers.button !== 0) return null;
+  if (modifiers.metaKey || modifiers.ctrlKey || modifiers.shiftKey || modifiers.altKey) return null;
+  if (anchor.hasAttribute("download")) return null;
+  const target = anchor.getAttribute("target");
+  if (target && target !== "_self") return null;
+  const id = (anchor.hash || "").slice(1);
+  if (!(QUOTE_ANCHOR_IDS as readonly string[]).includes(id)) return null;
+  if (anchor.origin && anchor.origin !== loc.origin) return null;
+  const strip = (p: string) => p.replace(/\/+$/, "");
+  if (strip(anchor.pathname) !== strip(loc.pathname)) return null;
+  return id;
+}
+
 /** Cancels any alignment in flight — used on navigation. */
 export function cancelQuoteAlignment(): void {
   activeAlignment?.();

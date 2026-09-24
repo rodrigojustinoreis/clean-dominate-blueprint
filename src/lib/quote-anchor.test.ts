@@ -9,7 +9,7 @@
  * Nenhuma requisição de rede e nenhum envio de formulário.
  */
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
-import { alignQuoteAnchor, cancelQuoteAlignment, QUOTE_ANCHOR_IDS } from "./hash-anchor";
+import { alignQuoteAnchor, cancelQuoteAlignment, quoteAnchorFromClick, QUOTE_ANCHOR_IDS } from "./hash-anchor";
 
 const HEADER_H = 102;   // medido em produção a 1280 px
 const GAP = 12;         // folga do helper
@@ -117,5 +117,60 @@ describe("alignQuoteAnchor", () => {
     alignQuoteAnchor("quote");
     const suave = spy.mock.calls.some(([o]) => (o as ScrollIntoViewOptions | undefined)?.behavior === "smooth");
     expect(suave).toBe(false);
+  });
+});
+
+describe("quoteAnchorFromClick — contrato do clique", () => {
+  const loc = { origin: "https://capitalcleancare.com", pathname: "/services/deep-cleaning" };
+  const plain = { button: 0, metaKey: false, ctrlKey: false, shiftKey: false, altKey: false, defaultPrevented: false };
+  const link = (href: string, attrs: Record<string, string> = {}) => {
+    const a = document.createElement("a");
+    a.href = new URL(href, loc.origin + loc.pathname).toString();
+    for (const [k, v] of Object.entries(attrs)) a.setAttribute(k, v);
+    return a;
+  };
+
+  it("aceita #quote e /#... no mesmo caminho, inclusive com barra final", () => {
+    expect(quoteAnchorFromClick(link("#quote"), loc, plain)).toBe("quote");
+    expect(quoteAnchorFromClick(link("/services/deep-cleaning#quote"), loc, plain)).toBe("quote");
+    expect(quoteAnchorFromClick(link("/services/deep-cleaning/#quote"), loc, plain)).toBe("quote");
+  });
+
+  it("aceita #cotizacion na página ES correspondente", () => {
+    const es = { origin: loc.origin, pathname: "/es/contacto" };
+    const a = document.createElement("a");
+    a.href = new URL("#cotizacion", es.origin + es.pathname).toString();
+    expect(quoteAnchorFromClick(a, es, plain)).toBe("cotizacion");
+    // e continua recusando quando o caminho atual é outro
+    expect(quoteAnchorFromClick(a, loc, plain)).toBeNull();
+  });
+
+  it("recusa outro caminho — a navegação tem de acontecer", () => {
+    expect(quoteAnchorFromClick(link("/contact#quote"), loc, plain)).toBeNull();
+  });
+
+  it("recusa outra âncora e âncora vazia", () => {
+    expect(quoteAnchorFromClick(link("#pricing"), loc, plain)).toBeNull();
+    expect(quoteAnchorFromClick(link("/services/deep-cleaning"), loc, plain)).toBeNull();
+  });
+
+  it("recusa hash malformado sem lançar", () => {
+    const a = document.createElement("a");
+    a.setAttribute("href", "#%E0%A4%A");
+    expect(() => quoteAnchorFromClick(a, loc, plain)).not.toThrow();
+    expect(quoteAnchorFromClick(a, loc, plain)).toBeNull();
+  });
+
+  it("recusa modificadores, botão do meio e evento já tratado", () => {
+    const a = link("#quote");
+    for (const m of [{ metaKey: true }, { ctrlKey: true }, { shiftKey: true }, { altKey: true }, { button: 1 }, { defaultPrevented: true }]) {
+      expect(quoteAnchorFromClick(a, loc, { ...plain, ...m })).toBeNull();
+    }
+  });
+
+  it("recusa target e download", () => {
+    expect(quoteAnchorFromClick(link("#quote", { target: "_blank" }), loc, plain)).toBeNull();
+    expect(quoteAnchorFromClick(link("#quote", { download: "" }), loc, plain)).toBeNull();
+    expect(quoteAnchorFromClick(link("#quote", { target: "_self" }), loc, plain)).toBe("quote");
   });
 });
