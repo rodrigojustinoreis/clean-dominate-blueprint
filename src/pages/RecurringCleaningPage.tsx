@@ -23,7 +23,6 @@ import FadeInSection from "@/components/blog/FadeInSection";
 import LocationSocialProof from "@/components/location/LocationSocialProof";
 import TestimonialVideo from "@/components/TestimonialVideo";
 import logo from "@/assets/logo.webp";
-import { alignQuoteAnchor } from "@/lib/hash-anchor";
 
 const PHONE = "(240) 704-2551";
 const PHONE_HREF = "tel:+12407042551";
@@ -150,11 +149,6 @@ const RecurringCleaningPage = () => {
     preloadImage: HERO_IMAGE,
   });
 
-  const scrollToForm = (e: React.MouseEvent) => {
-    e.preventDefault();
-    // Aims at the form and keeps it aligned while the layout settles (see hash-anchor.ts).
-    alignQuoteAnchor("quote");
-  };
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -254,12 +248,12 @@ const RecurringCleaningPage = () => {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 mb-6">
-                <button
-                  onClick={scrollToForm}
+                <a
+                  href="#quote"
                   className="inline-flex items-center justify-center bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-bold text-base px-8 py-3.5 rounded-lg shadow-lg shadow-[#2E7D32]/20 transition-colors"
                 >
                   Get My Free Quote →
-                </button>
+                </a>
                 <a
                   href={PHONE_HREF}
                   className="inline-flex items-center justify-center border-2 border-[#2E7D32] text-[#2E7D32] hover:bg-[#2E7D32]/5 font-bold text-base px-8 py-3.5 rounded-lg transition-colors"
@@ -670,12 +664,12 @@ const RecurringCleaningPage = () => {
         >
           <Phone className="h-4 w-4" /> Call Now
         </a>
-        <button
-          onClick={scrollToForm}
-          className="flex-1 flex items-center justify-center bg-gray-900 text-white font-bold text-sm"
+        <a
+                  href="#quote"
+                  className="flex-1 flex items-center justify-center bg-gray-900 text-white font-bold text-sm"
         >
           Get Quote
-        </button>
+        </a>
       </div>
 
       {/* Bottom padding for mobile CTA */}

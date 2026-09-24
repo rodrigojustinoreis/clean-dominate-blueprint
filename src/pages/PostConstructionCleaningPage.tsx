@@ -27,7 +27,6 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FadeInSection from "@/components/blog/FadeInSection";
 import LocationSocialProof from "@/components/location/LocationSocialProof";
 import logo from "@/assets/logo.webp";
-import { alignQuoteAnchor } from "@/lib/hash-anchor";
 
 const PHONE = "(240) 704-2551";
 const PHONE_HREF = "tel:+12407042551";
@@ -178,10 +177,6 @@ const PostConstructionCleaningPage = () => {
     preloadImage: `${IMG}/hero-hepa.webp`,
   });
 
-  const scrollToForm = () => {
-    // Aims at the form and keeps it aligned while the layout settles (see hash-anchor.ts).
-    alignQuoteAnchor("quote");
-  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -267,12 +262,12 @@ const PostConstructionCleaningPage = () => {
               </p>
 
               <div className="mb-6 flex flex-col gap-3 sm:flex-row">
-                <button
-                  onClick={scrollToForm}
+                <a
+                  href="#quote"
                   className="inline-flex items-center justify-center rounded-lg bg-[#2E7D32] px-8 py-3.5 text-base font-bold text-white shadow-lg shadow-[#2E7D32]/20 transition-[background-color,scale] duration-150 hover:bg-[#1B5E20] active:scale-[0.96] motion-reduce:transition-none motion-reduce:active:scale-100"
                 >
                   Book My Free Assessment →
-                </button>
+                </a>
                 <a
                   href={PHONE_HREF}
                   className="inline-flex items-center justify-center whitespace-nowrap rounded-lg border-2 border-[#2E7D32] px-6 py-3.5 text-base font-bold text-[#2E7D32] transition-colors hover:bg-[#2E7D32]/5"
@@ -963,12 +958,12 @@ const PostConstructionCleaningPage = () => {
               be left in very different states. The assessment is free and the scope comes in writing.
             </p>
             <div className="flex flex-col gap-3 sm:flex-row">
-              <button
-                onClick={scrollToForm}
-                className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#2E7D32] px-7 py-3.5 text-base font-bold text-white transition-colors hover:bg-[#1B5E20]"
+              <a
+                  href="#quote"
+                  className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#2E7D32] px-7 py-3.5 text-base font-bold text-white transition-colors hover:bg-[#1B5E20]"
               >
                 Request Estimate <ArrowRight className="h-4 w-4" />
-              </button>
+              </a>
               <a
                 href={PHONE_HREF}
                 className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg border-2 border-white/40 px-7 py-3.5 text-base font-bold text-white transition-colors hover:bg-white/10"
@@ -994,9 +989,9 @@ const PostConstructionCleaningPage = () => {
         <a href={PHONE_HREF} className="flex items-center justify-center gap-2 py-3.5 text-sm font-bold text-[#2E7D32]">
           <Phone className="h-4 w-4" /> Call
         </a>
-        <button onClick={scrollToForm} className="bg-[#2E7D32] py-3.5 text-sm font-bold text-white">
+        <a href="#quote" className="flex items-center justify-center bg-[#2E7D32] py-3.5 text-sm font-bold text-white">
           Free Assessment
-        </button>
+        </a>
       </div>
       <div className="h-14 md:hidden" aria-hidden="true" />
     </div>

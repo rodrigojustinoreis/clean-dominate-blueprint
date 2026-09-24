@@ -201,9 +201,9 @@ const LivingAreaCleaningPage = () => {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 mb-6">
-                <button onClick={scrollToForm} className="inline-flex items-center justify-center bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-bold text-base px-8 py-3.5 rounded-lg shadow-lg shadow-[#2E7D32]/20 transition-colors">
+                <a href="#quote" className="inline-flex items-center justify-center bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-bold text-base px-8 py-3.5 rounded-lg shadow-lg shadow-[#2E7D32]/20 transition-colors">
                   Get My Free Quote →
-                </button>
+                </a>
                 <a href={PHONE_HREF} className="inline-flex items-center justify-center border-2 border-[#2E7D32] text-[#2E7D32] hover:bg-[#2E7D32]/5 font-bold text-base px-8 py-3.5 rounded-lg transition-colors">
                   <Phone className="h-4 w-4 mr-2" /> Call {PHONE}
                 </a>
@@ -484,9 +484,9 @@ const LivingAreaCleaningPage = () => {
         <a href={PHONE_HREF} className="flex-1 flex items-center justify-center bg-[#2E7D32] text-white font-bold text-sm gap-1.5">
           <Phone className="h-4 w-4" /> Call Now
         </a>
-        <button onClick={scrollToForm} className="flex-1 flex items-center justify-center bg-gray-900 text-white font-bold text-sm">
+        <a href="#quote" className="flex-1 flex items-center justify-center bg-gray-900 text-white font-bold text-sm">
           Get Quote
-        </button>
+        </a>
       </div>
       <div className="h-14 md:hidden" />
     </div>

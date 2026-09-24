@@ -16,7 +16,6 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { cities } from "@/data/locations";
 import ServiceRelatedContent from "@/components/ServiceRelatedContent";
 import { isIndexable } from "@/data/related-content";
-import { alignQuoteAnchor } from "@/lib/hash-anchor";
 
 const PHONE = "(240) 704-2551";
 const PHONE_HREF = "tel:+12407042551";
@@ -102,11 +101,6 @@ const EcoFriendlyCleaningPage = () => {
     canonical: "https://capitalcleancare.com/services/eco-friendly-cleaning",
   });
 
-  const scrollToForm = (e: React.MouseEvent) => {
-    e.preventDefault();
-    // Aims at the form and keeps it aligned while the layout settles (see hash-anchor.ts).
-    alignQuoteAnchor("quote");
-  };
 
   return (
     <Layout>
@@ -152,12 +146,12 @@ const EcoFriendlyCleaningPage = () => {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 mb-6">
-                <button
-                  onClick={scrollToForm}
+                <a
+                  href="#quote"
                   className="inline-flex items-center justify-center bg-[#2E7D32] hover:bg-[#1B5E20] text-white font-bold text-base px-8 py-3.5 rounded-lg shadow-lg shadow-[#2E7D32]/20 transition-colors"
                 >
                   Get My Free Quote →
-                </button>
+                </a>
                 <a
                   href={PHONE_HREF}
                   className="inline-flex items-center justify-center border-2 border-[#2E7D32] text-[#2E7D32] hover:bg-[#2E7D32]/5 font-bold text-base px-8 py-3.5 rounded-lg transition-colors"
