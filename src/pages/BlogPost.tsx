@@ -549,19 +549,19 @@ const blogContent: Record<string, React.ReactNode> = {
       <p>Maryland winters bring unique cleaning challenges — road salt tracked indoors, dry air creating static dust buildup, and holiday gatherings leaving extra messes. At <Link to="/" className="text-accent hover:underline">Capital Clean Care</Link>, we help families across <Link to="/locations/rockville-md" className="text-accent hover:underline">Rockville</Link>, <Link to="/locations/bethesda-md" className="text-accent hover:underline">Bethesda</Link>, and <Link to="/locations/germantown-md/house-cleaning" className="text-accent hover:underline">Germantown</Link> keep their homes spotless through the coldest months — using only eco-friendly methods.</p>
 
       <h2>1. Tackle Salt and Slush Stains Immediately</h2>
-      <p>Road salt from Maryland's treated highways gets tracked onto hardwood, tile, and carpet. White residue can damage finishes over time. Mix equal parts water and white vinegar — a natural, non-toxic solution — and wipe entryway floors daily during snowy weeks. Place washable mats at every entrance to reduce salt spread.</p>
+      <p>Road salt from Maryland's treated highways gets tracked onto hardwood, tile, and carpet. White residue can damage finishes over time. Sweep or vacuum the dry residue first, then wipe entryway floors with a cleaner made for that floor's finish and with as little water as possible. Vinegar is not safe for every hardwood finish or for natural stone, so check the care instructions before reaching for it. Place washable mats at every entrance to reduce salt spread.</p>
 
       <h2>2. Combat Dry Indoor Air and Dust</h2>
       <p>Heating systems running constantly in Silver Spring and Frederick homes circulate dust and lower humidity. Use a HEPA-filter vacuum at least twice weekly and dust with damp microfiber cloths to trap particles instead of spreading them. Consider adding a humidifier to keep humidity between 30-50%, which reduces static dust.</p>
 
       <h2>3. Deep Clean Carpets and Rugs Before Holiday Guests</h2>
-      <p>Maryland families host frequently during winter holidays. A professional <Link to="/services/deep-cleaning" className="text-accent hover:underline">deep cleaning</Link> before Thanksgiving or Christmas ensures carpets, upholstery, and guest rooms are fresh. Our eco-friendly steam cleaning eliminates allergens without harsh chemicals — perfect for homes with children and pets.</p>
+      <p>Maryland families host frequently during winter holidays. A professional <Link to="/services/deep-cleaning" className="text-accent hover:underline">deep cleaning</Link> before Thanksgiving or Christmas ensures carpets, upholstery, and guest rooms are fresh.</p>
 
       <h2>4. Clean Air Vents and Heating Registers</h2>
-      <p>Before cranking up the heat, remove vent covers and wash them in warm soapy water. Vacuum inside the duct openings to remove accumulated dust. This simple step improves indoor air quality and heating efficiency — saving energy costs during Maryland's coldest months.</p>
+      <p>Before cranking up the heat, remove vent covers and wash them in warm soapy water. Vacuum inside the duct openings to remove accumulated dust. That keeps the dust that settled over the summer from being blown back into the room once the heat runs.</p>
 
       <h2>5. Use Plant-Based Disinfectants for Cold & Flu Season</h2>
-      <p>Winter means cold and flu season. Disinfect high-touch surfaces — doorknobs, light switches, remote controls, faucets — with thymol-based or hydrogen peroxide cleaners. These EPA Safer Choice products kill 99.9% of germs without releasing harmful fumes into your sealed winter home.</p>
+      <p>Winter means cold and flu season. Disinfect high-touch surfaces — doorknobs, light switches, remote controls, faucets — with thymol-based or hydrogen peroxide cleaners. Choose a product whose label carries an EPA registration for disinfecting and follow the contact time printed on it. A Safer Choice label identifies safer ingredients; it is not a germ-kill claim.</p>
 
       <h2>6. Protect Hardwood from Winter Moisture</h2>
       <p>Melting snow and wet boots can warp hardwood floors common in <Link to="/locations/kensington-md" className="text-accent hover:underline">Kensington</Link> and <Link to="/locations/chevy-chase-md" className="text-accent hover:underline">Chevy Chase</Link> homes. Wipe spills immediately, avoid excess water when mopping, and use a plant-based floor cleaner designed for sealed hardwood.</p>
@@ -1006,7 +1006,7 @@ const blogContent: Record<string, React.ReactNode> = {
         <li>Wipe down all cabinet doors and interior shelves</li>
         <li>Clean refrigerator coils (underneath or behind) for winter efficiency</li>
         <li>Descale coffee maker and small appliances</li>
-        <li>Deep clean the sink and disposal — sanitize with enzyme cleaner</li>
+        <li>Deep clean the sink and disposal with an enzyme cleaner</li>
       </ul>
 
       <h2>Bathrooms — Mold Prevention Before Sealing Up</h2>
@@ -1046,11 +1046,11 @@ const blogContent: Record<string, React.ReactNode> = {
       </ul>
 
       <h2>Why Fall Is the Best Time for a Professional Deep Clean</h2>
-      <p>Fall cleaning is the mirror of <Link to="/resources/spring-cleaning-checklist-maryland-2026" className="text-accent hover:underline">spring cleaning</Link> — while spring addresses post-winter buildup, fall resets the home after summer and prepares for the months ahead. Once winter arrives, follow up with our <Link to="/resources/eco-cleaning-tips-winters-maryland" className="text-accent hover:underline">eco-friendly winter cleaning guide →</Link> Our <Link to="/services/deep-cleaning" className="text-accent hover:underline">fall deep cleaning service</Link> covers 60+ checklist items and uses only <Link to="/services/eco-friendly-cleaning" className="text-accent hover:underline">eco-friendly, non-toxic products</Link> — no harsh fumes in your sealed winter home. Learn more: <Link to="/why-eco-friendly-cleaning" className="text-accent hover:underline">why eco-friendly cleaning matters when homes are sealed tight</Link>.</p>
+      <p>Fall cleaning is the mirror of <Link to="/resources/spring-cleaning-checklist-maryland-2026" className="text-accent hover:underline">spring cleaning</Link> — while spring addresses post-winter buildup, fall resets the home after summer and prepares for the months ahead. Once winter arrives, follow up with our <Link to="/resources/eco-cleaning-tips-winters-maryland" className="text-accent hover:underline">eco-friendly winter cleaning guide →</Link> Our <Link to="/services/deep-cleaning" className="text-accent hover:underline">fall deep cleaning service</Link> covers 60+ checklist items and uses <Link to="/services/eco-friendly-cleaning" className="text-accent hover:underline">eco-friendly products</Link>. Learn more: <Link to="/why-eco-friendly-cleaning" className="text-accent hover:underline">why eco-friendly cleaning matters when homes are sealed tight</Link>.</p>
 
       <BlogInlineCTA
         headline="Get Your Maryland Home Fall-Ready"
-        subtext="Pre-winter deep cleaning covering HVAC prep, mold prevention, and 60+ checklist items. Serving Rockville, Bethesda, Silver Spring, Germantown, and all of MD, DC & VA."
+        subtext="Pre-winter deep cleaning with 60+ checklist items. Serving Rockville, Bethesda, Silver Spring, Germantown, and all of MD, DC & VA."
         ctaLabel="Book My Fall Deep Clean →"
         ctaTo="/contact"
       />
