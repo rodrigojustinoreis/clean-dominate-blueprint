@@ -20,32 +20,65 @@ export interface KeepAnchorAlignedOptions {
   settleMs?: number;
   /** Hard cap for the whole re-alignment window (ms). */
   maxMs?: number;
+  /**
+   * Element to bring into view instead of the anchor itself — the quote form inside `#quote`, so the
+   * visitor lands on the fields and not on the section heading, photo and badges above them.
+   */
+  target?: HTMLElement;
+  /** Viewport offset for `target`, in px; a function is resolved on every alignment. */
+  offsetPx?: number | (() => number);
 }
 
 const USER_INTENT_EVENTS = ["wheel", "touchstart", "keydown", "pointerdown"] as const;
 
+/**
+ * Only one alignment window may be open at a time. A new request (another click, a route change)
+ * cancels the previous one, so no listener, observer, timer or animation frame survives it.
+ */
+let activeAlignment: (() => void) | undefined;
+
 export function keepAnchorAligned(el: HTMLElement, opts: KeepAnchorAlignedOptions = {}): () => void {
+  activeAlignment?.();
   const settleMs = opts.settleMs ?? 600;
   const maxMs = opts.maxMs ?? 8000;
+  // When a `target` is given the alignment brings THAT element to `offsetPx` from the top of the
+  // viewport (the quote form under a sticky header), instead of the anchor to its scroll-margin.
+  const aimEl = opts.target ?? el;
+  const usingTarget = opts.target !== undefined;
   let stopped = false;
   let observer: ResizeObserver | null = null;
   let settleTimer: ReturnType<typeof setTimeout> | undefined;
 
-  // Where the anchor should sit once aligned: its CSS scroll-margin-top (e.g. `scroll-mt-20` → 80px).
-  // Derived from the stylesheet, not from a measurement taken right after the scroll, so a transient
-  // layout at the moment of the scroll (which lands the page in the wrong place) is detected as drift.
-  const expectedTop = (() => {
+  // Where the aim element should sit once aligned. Without a `target` this is the anchor's CSS
+  // scroll-margin-top (e.g. `scroll-mt-20` → 80px), derived from the stylesheet and not from a
+  // measurement taken right after the scroll, so a transient layout is detected as drift. With a
+  // `target` the offset is resolved on every alignment, because a sticky header can change height.
+  const cssScrollMargin = (() => {
     const css = typeof getComputedStyle === "function" ? getComputedStyle(el).scrollMarginTop : "";
     const n = parseFloat(css || "0");
     return Number.isFinite(n) ? n : 0;
   })();
+  const expectedTopOf = () => {
+    if (!usingTarget) return cssScrollMargin;
+    const o = opts.offsetPx;
+    const n = typeof o === "function" ? o() : o ?? 0;
+    return Number.isFinite(n) ? n : 0;
+  };
   let aligns = 0;
   let unchangedAligns = 0;
   const align = () => {
     if (stopped) return;
-    const drifted = Math.abs(el.getBoundingClientRect().top - expectedTop) > 2;
+    const expectedTop = expectedTopOf();
+    const drifted = Math.abs(aimEl.getBoundingClientRect().top - expectedTop) > 2;
     const before = window.scrollY;
-    el.scrollIntoView();
+    if (usingTarget) {
+      // Absolute position, so the sticky header never covers the target. No smooth behaviour: the
+      // destination must be final immediately, which is exactly what the animated scroll got wrong.
+      const top = aimEl.getBoundingClientRect().top + window.scrollY - expectedTop;
+      window.scrollTo(0, Math.max(0, top));
+    } else {
+      el.scrollIntoView();
+    }
     aligns += 1;
     // Converged only when the anchor is off target AND scrolling cannot move it (e.g. near the document
     // end) — three such attempts, or 40 alignments overall, end the window. Alignments that were already
@@ -63,7 +96,9 @@ export function keepAnchorAligned(el: HTMLElement, opts: KeepAnchorAlignedOption
     clearTimeout(maxTimer);
     for (const type of USER_INTENT_EVENTS) window.removeEventListener(type, stop);
     window.removeEventListener("load", onLoad);
+    if (activeAlignment === stop) activeAlignment = undefined;
   };
+  activeAlignment = stop;
 
   // The window only closes after the document has finished loading: third-party embeds (YouTube
   // players on the service pages) grab focus ~20 ms after `load`, which scrolls the page to the
@@ -101,7 +136,7 @@ export function keepAnchorAligned(el: HTMLElement, opts: KeepAnchorAlignedOption
   if (typeof requestAnimationFrame !== "undefined") {
     const watch = () => {
       if (stopped) return;
-      if (Math.abs(el.getBoundingClientRect().top - expectedTop) > 2) {
+      if (Math.abs(aimEl.getBoundingClientRect().top - expectedTopOf()) > 2) {
         align();
         armSettle();
       }
@@ -111,4 +146,61 @@ export function keepAnchorAligned(el: HTMLElement, opts: KeepAnchorAlignedOption
   }
 
   return stop;
+}
+
+/** The two in-page quote anchors: English and Spanish. */
+export const QUOTE_ANCHOR_IDS = ["quote", "cotizacion"] as const;
+
+/** Gap kept between the sticky header and the top of the form. */
+const HEADER_GAP_PX = 12;
+
+const headerOffset = () => {
+  const header = document.querySelector("header");
+  const h = header ? header.getBoundingClientRect().height : 0;
+  return (Number.isFinite(h) ? h : 0) + HEADER_GAP_PX;
+};
+
+/**
+ * Bring the quote FORM into view and keep it there while the layout settles.
+ *
+ * Why the form and not the section: the anchor is the section container, and above the fields sit a
+ * heading, prose, a photo and trust badges, so aligning the section leaves the first field off
+ * screen (measured: section at 79.5 px with the first field at 772 px in a 720 px viewport).
+ *
+ * Why no smooth behaviour: an animated `scrollIntoView` commits to the offset computed when it
+ * starts. On `/services/post-construction-cleaning` the document grew 3,455 px while the animation
+ * ran, and the page stopped 3,574 px above the anchor. Aligning without animation and then
+ * re-aligning while the layout settles is what the hash path already does.
+ *
+ * Returns false when the anchor is not on this page, so the caller can leave the browser alone.
+ */
+export function alignQuoteAnchor(id: string): boolean {
+  if (typeof document === "undefined") return false;
+  const section = document.getElementById(id);
+  if (!section) return false;
+  const form = section.querySelector("form");
+  keepAnchorAligned(section, form ? { target: form as HTMLElement, offsetPx: headerOffset } : {});
+
+  // Keyboard journey: move the sequential navigation starting point to the quote section, so the
+  // next Tab continues INTO the form instead of returning to whatever follows the CTA in the hero
+  // (which drags the viewport back up).
+  //
+  // The SECTION is focused, never the form or a field:
+  //  - focusing a field would open the mobile keyboard;
+  //  - the form carries `onFocusCapture` for `form_start`, so focusing it (or anything inside it)
+  //    would report a form start that the visitor never made.
+  // `preventScroll` keeps the alignment above untouched.
+  if (!section.hasAttribute("tabindex")) section.setAttribute("tabindex", "-1");
+  try {
+    (section as HTMLElement).focus({ preventScroll: true });
+  } catch {
+    /* focus is a convenience here; never let it break the scroll */
+  }
+  return true;
+}
+
+/** Cancels any alignment in flight — used on navigation. */
+export function cancelQuoteAlignment(): void {
+  activeAlignment?.();
+  activeAlignment = undefined;
 }

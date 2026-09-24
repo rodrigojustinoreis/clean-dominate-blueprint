@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { Phone, ArrowRight, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { trackPhoneClick, trackBookNowClick } from "@/lib/analytics";
+import { alignQuoteAnchor } from "@/lib/hash-anchor";
 
 interface StickyMobileCTAProps {
   /** Native href of the "Free Quote" button. The bar only mounts after hydration (on scroll), and the
@@ -36,11 +37,22 @@ const StickyMobileCTA = ({ quoteHref }: StickyMobileCTAProps = {}) => {
   const handleQuoteClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
     trackBookNowClick("sticky_mobile_cta");
 
-    const quoteSection = document.getElementById(isSpanish ? "cotizacion" : "quote");
-    if (!quoteSection) return;
+    // Same contract as the delegated listener: a modifier, the middle button, `target` or
+    // `download` means the visitor wants the href, not an in-page scroll. Tracking already ran.
+    if (
+      event.defaultPrevented ||
+      event.button !== 0 ||
+      event.metaKey ||
+      event.ctrlKey ||
+      event.shiftKey ||
+      event.altKey
+    ) return;
+    const link = event.currentTarget;
+    if (link.hasAttribute("download") || (link.target && link.target !== "_self")) return;
 
-    event.preventDefault();
-    quoteSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    // With a local quote section, aim at the form and keep it aligned while the layout settles;
+    // without one, the href (which may point at another page) is left to do its job.
+    if (alignQuoteAnchor(isSpanish ? "cotizacion" : "quote")) event.preventDefault();
   };
 
   return (

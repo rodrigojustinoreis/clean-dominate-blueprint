@@ -16,6 +16,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { cities } from "@/data/locations";
 import ServiceRelatedContent from "@/components/ServiceRelatedContent";
 import { isIndexable } from "@/data/related-content";
+import { alignQuoteAnchor } from "@/lib/hash-anchor";
 
 const PHONE = "(240) 704-2551";
 const PHONE_HREF = "tel:+12407042551";
@@ -103,7 +104,8 @@ const EcoFriendlyCleaningPage = () => {
 
   const scrollToForm = (e: React.MouseEvent) => {
     e.preventDefault();
-    document.getElementById("quote")?.scrollIntoView({ behavior: "smooth" });
+    // Aims at the form and keeps it aligned while the layout settles (see hash-anchor.ts).
+    alignQuoteAnchor("quote");
   };
 
   return (

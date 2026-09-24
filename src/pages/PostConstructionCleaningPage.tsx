@@ -27,6 +27,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FadeInSection from "@/components/blog/FadeInSection";
 import LocationSocialProof from "@/components/location/LocationSocialProof";
 import logo from "@/assets/logo.webp";
+import { alignQuoteAnchor } from "@/lib/hash-anchor";
 
 const PHONE = "(240) 704-2551";
 const PHONE_HREF = "tel:+12407042551";
@@ -178,7 +179,8 @@ const PostConstructionCleaningPage = () => {
   });
 
   const scrollToForm = () => {
-    document.getElementById("quote")?.scrollIntoView({ behavior: "smooth" });
+    // Aims at the form and keeps it aligned while the layout settles (see hash-anchor.ts).
+    alignQuoteAnchor("quote");
   };
 
   return (
