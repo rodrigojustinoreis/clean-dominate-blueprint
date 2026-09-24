@@ -81,18 +81,42 @@ describe("alignQuoteAnchor", () => {
     expect(segundo).toBe(primeiro);
   });
 
-  it("move o foco para a SEÇÃO — nunca para o form nem para um campo", () => {
-    const { secao, form } = montar("quote");
+  it("foca um marcador logo antes do form — nunca o form nem um campo", () => {
+    const { form } = montar("quote");
     const focoNoForm = vi.fn();
     form.addEventListener("focusin", focoNoForm);
     alignQuoteAnchor("quote");
-    expect(document.activeElement).toBe(secao);
-    expect(secao.getAttribute("tabindex")).toBe("-1");
+    const marcador = document.activeElement as HTMLElement;
+    expect(marcador.getAttribute("data-quote-focus")).toBe("");
+    expect(marcador.getAttribute("tabindex")).toBe("-1");
+    expect(marcador.nextElementSibling).toBe(form);       // imediatamente antes do form
+    expect(form.contains(marcador)).toBe(false);          // e fora dele
+    expect(marcador.getAttribute("aria-label")).toBe("Quote form");
+    expect(marcador.hasAttribute("aria-hidden")).toBe(false);
+    expect(marcador.style.display).not.toBe("none");
     // `onFocusCapture` do QuoteForm dispara form_start: nada pode focar dentro do form.
     expect(focoNoForm).not.toHaveBeenCalled();
   });
 
-  it("o honeypot bot-field não é o alvo", () => {
+  it("o marcador é reutilizado, não se acumula, e fala espanhol em #cotizacion", () => {
+    const { form } = montar("quote");
+    alignQuoteAnchor("quote"); alignQuoteAnchor("quote"); alignQuoteAnchor("quote");
+    expect(form.parentElement!.querySelectorAll("[data-quote-focus]").length).toBe(1);
+    montar("cotizacion");
+    alignQuoteAnchor("cotizacion");
+    expect((document.activeElement as HTMLElement).getAttribute("aria-label")).toBe("Formulario de cotización");
+  });
+
+  it("sem form na seção, o foco recai na própria seção", () => {
+    document.body.innerHTML = `<header></header><section id="quote"><p>sem formulario</p></section>`;
+    const sec = document.getElementById("quote")!;
+    sec.getBoundingClientRect = () => ({ top: 500, height: 100 }) as DOMRect;
+    (Element.prototype as unknown as { scrollIntoView: () => void }).scrollIntoView = () => {};
+    expect(alignQuoteAnchor("quote")).toBe(true);
+    expect(document.activeElement).toBe(sec);
+  });
+
+  it("o honeypot bot-field não é o alvo, e o foco fica fora do form", () => {
     const { form } = montar("quote");
     alignQuoteAnchor("quote");
     expect((document.activeElement as HTMLElement)?.getAttribute("name")).not.toBe("bot-field");
@@ -181,11 +205,14 @@ describe("jornada por teclado", () => {
     alignQuoteAnchor("quote");
     // O foco fica na seção; o Tab seguinte segue a ordem do documento, e o próximo
     // elemento focável é um campo do formulário — não algo acima, no hero.
-    expect(document.activeElement).toBe(secao);
+    const marcador = document.activeElement as HTMLElement;
+    expect(marcador.getAttribute("data-quote-focus")).toBe("");
+    // O próximo focável em ordem de documento, depois do marcador, é um campo do formulário.
     const focaveis = Array.from(document.querySelectorAll<HTMLElement>("input, button, select, textarea, a[href]"));
-    const proximo = focaveis.find((el) => secao.compareDocumentPosition(el) & Node.DOCUMENT_POSITION_CONTAINED_BY);
+    const proximo = focaveis.find((el) => marcador.compareDocumentPosition(el) & Node.DOCUMENT_POSITION_FOLLOWING);
     expect(proximo).toBeDefined();
     expect(form.contains(proximo!)).toBe(true);
+    void secao;
   });
 
   it("prefers-reduced-motion é respeitado por construção: nenhuma rolagem animada é solicitada", () => {

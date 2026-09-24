@@ -154,6 +154,32 @@ export const QUOTE_ANCHOR_IDS = ["quote", "cotizacion"] as const;
 /** Gap kept between the sticky header and the top of the form. */
 const HEADER_GAP_PX = 12;
 
+/** Marker attribute, so the same node is reused instead of piling up on every click. */
+const FOCUS_MARKER_ATTR = "data-quote-focus";
+
+/**
+ * A focus target immediately before the form and outside it. Created at runtime, so the prerendered
+ * HTML is untouched and nothing changes for a visitor without JavaScript.
+ *
+ * Takes no space and is not hidden from assistive technology: it has an accessible name and is
+ * reachable only programmatically (`tabindex="-1"`), which is exactly what a skip target should be.
+ */
+function ensureFocusMarker(form: HTMLElement, spanish: boolean): HTMLElement | null {
+  const parent = form.parentElement;
+  if (!parent) return null;
+  let marker = parent.querySelector<HTMLElement>(`:scope > [${FOCUS_MARKER_ATTR}]`);
+  if (!marker) {
+    marker = document.createElement("span");
+    marker.setAttribute(FOCUS_MARKER_ATTR, "");
+    marker.setAttribute("tabindex", "-1");
+    // No layout impact and no `display:none`, which would make it unfocusable.
+    marker.style.cssText = "display:inline-block;width:0;height:0;overflow:hidden;outline:none";
+  }
+  marker.setAttribute("aria-label", spanish ? "Formulario de cotización" : "Quote form");
+  if (marker.nextElementSibling !== form) parent.insertBefore(marker, form);
+  return marker;
+}
+
 const headerOffset = () => {
   const header = document.querySelector("header");
   const h = header ? header.getBoundingClientRect().height : 0;
@@ -181,18 +207,23 @@ export function alignQuoteAnchor(id: string): boolean {
   const form = section.querySelector("form");
   keepAnchorAligned(section, form ? { target: form as HTMLElement, offsetPx: headerOffset } : {});
 
-  // Keyboard journey: move the sequential navigation starting point to the quote section, so the
-  // next Tab continues INTO the form instead of returning to whatever follows the CTA in the hero
-  // (which drags the viewport back up).
+  // Keyboard journey: put the sequential navigation starting point immediately before the form, so
+  // the next Tab enters the first field.
   //
-  // The SECTION is focused, never the form or a field:
-  //  - focusing a field would open the mobile keyboard;
-  //  - the form carries `onFocusCapture` for `form_start`, so focusing it (or anything inside it)
-  //    would report a form start that the visitor never made.
-  // `preventScroll` keeps the alignment above untouched.
-  if (!section.hasAttribute("tabindex")) section.setAttribute("tabindex", "-1");
+  // Measured on the preview: focusing the SECTION sent the next Tab to the phone / Google / Facebook
+  // links, which sit inside the same `space-y-4` wrapper right before the form, and on Bethesda that
+  // scrolled the page back up 687 px. Focusing the form itself is not an option either: it carries
+  // `onFocusCapture` for `form_start`, so it would report a form start the visitor never made — and a
+  // field would also open the mobile keyboard. The form's previous sibling is no good as a target
+  // either: it is `hidden` below `lg`.
+  //
+  // So a marker of our own goes immediately before the form and outside it: non-interactive, reused,
+  // focusable only programmatically, with an accessible name, no `display:none`, no `aria-hidden`
+  // and no layout impact. Tab stays native; nothing is intercepted.
+  const alvoFoco = (form && ensureFocusMarker(form as HTMLElement, id === "cotizacion")) || section;
+  if (alvoFoco === section && !section.hasAttribute("tabindex")) section.setAttribute("tabindex", "-1");
   try {
-    (section as HTMLElement).focus({ preventScroll: true });
+    (alvoFoco as HTMLElement).focus({ preventScroll: true });
   } catch {
     /* focus is a convenience here; never let it break the scroll */
   }
