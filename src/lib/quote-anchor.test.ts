@@ -174,3 +174,26 @@ describe("quoteAnchorFromClick — contrato do clique", () => {
     expect(quoteAnchorFromClick(link("#quote", { target: "_self" }), loc, plain)).toBe("quote");
   });
 });
+
+describe("jornada por teclado", () => {
+  it("depois do alinhamento, o próximo tabulável em ordem de documento está dentro do formulário", () => {
+    const { secao, form } = montar("quote");
+    alignQuoteAnchor("quote");
+    // O foco fica na seção; o Tab seguinte segue a ordem do documento, e o próximo
+    // elemento focável é um campo do formulário — não algo acima, no hero.
+    expect(document.activeElement).toBe(secao);
+    const focaveis = Array.from(document.querySelectorAll<HTMLElement>("input, button, select, textarea, a[href]"));
+    const proximo = focaveis.find((el) => secao.compareDocumentPosition(el) & Node.DOCUMENT_POSITION_CONTAINED_BY);
+    expect(proximo).toBeDefined();
+    expect(form.contains(proximo!)).toBe(true);
+  });
+
+  it("prefers-reduced-motion é respeitado por construção: nenhuma rolagem animada é solicitada", () => {
+    montar("quote");
+    const chamadas: unknown[] = [];
+    window.scrollTo = ((...a: unknown[]) => { chamadas.push(a); }) as unknown as typeof window.scrollTo;
+    alignQuoteAnchor("quote");
+    // window.scrollTo(x, y) posicional: nunca o objeto com behavior:"smooth".
+    expect(chamadas.every((a) => typeof (a as unknown[])[0] === "number")).toBe(true);
+  });
+});
