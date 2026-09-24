@@ -172,10 +172,17 @@ function ensureFocusMarker(form: HTMLElement, spanish: boolean): HTMLElement | n
     marker = document.createElement("span");
     marker.setAttribute(FOCUS_MARKER_ATTR, "");
     marker.setAttribute("tabindex", "-1");
-    // No layout impact and no `display:none`, which would make it unfocusable.
-    marker.style.cssText = "display:inline-block;width:0;height:0;overflow:hidden;outline:none";
+    // Out of flow, so it neither opens a line box nor becomes a `space-y-*` sibling that would push
+    // the form down: the wrapper is `space-y-4`, whose `> * + *` rule adds a top margin to every
+    // child after the first. `margin:0` inline beats that rule, and `position:absolute` removes it
+    // from the flow entirely. Visually hidden by clip, never `display:none` (which is unfocusable)
+    // and never `aria-hidden` (which would strip the name).
+    marker.style.cssText =
+      "position:absolute;width:1px;height:1px;margin:0;padding:0;border:0;overflow:hidden;" +
+      "clip-path:inset(50%);white-space:nowrap;outline:none";
   }
-  marker.setAttribute("aria-label", spanish ? "Formulario de cotización" : "Quote form");
+  // The name comes from real text, which a generic span with only `aria-label` may not expose.
+  marker.textContent = spanish ? "Formulario de cotización" : "Quote form";
   if (marker.nextElementSibling !== form) parent.insertBefore(marker, form);
   return marker;
 }

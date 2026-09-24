@@ -91,7 +91,9 @@ describe("alignQuoteAnchor", () => {
     expect(marcador.getAttribute("tabindex")).toBe("-1");
     expect(marcador.nextElementSibling).toBe(form);       // imediatamente antes do form
     expect(form.contains(marcador)).toBe(false);          // e fora dele
-    expect(marcador.getAttribute("aria-label")).toBe("Quote form");
+    expect(marcador.textContent).toBe("Quote form");
+    expect(marcador.style.position).toBe("absolute");
+    expect(marcador.style.margin).toBe("0px");
     expect(marcador.hasAttribute("aria-hidden")).toBe(false);
     expect(marcador.style.display).not.toBe("none");
     // `onFocusCapture` do QuoteForm dispara form_start: nada pode focar dentro do form.
@@ -104,7 +106,7 @@ describe("alignQuoteAnchor", () => {
     expect(form.parentElement!.querySelectorAll("[data-quote-focus]").length).toBe(1);
     montar("cotizacion");
     alignQuoteAnchor("cotizacion");
-    expect((document.activeElement as HTMLElement).getAttribute("aria-label")).toBe("Formulario de cotización");
+    expect((document.activeElement as HTMLElement).textContent).toBe("Formulario de cotización");
   });
 
   it("sem form na seção, o foco recai na própria seção", () => {
