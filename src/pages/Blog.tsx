@@ -872,7 +872,8 @@ export const blogPosts: BlogPost[] = [
     date: "2026-01-15",
     readTime: "7 min read",
     category: "Seasonal Guides",
-    coverImage: "https://images.pexels.com/photos/667838/pexels-photo-667838.jpeg?auto=compress&cs=tinysrgb&w=800&h=450",
+    // 25/09/2026: capa própria (antes era foto de banco do Pexels); a mesma cena abre o artigo.
+    coverImage: "/images/resources/eco-cleaning-tips-winters-maryland/og.jpg",
   },
   {
     slug: "best-cleaning-schedule-busy-families-dmv",

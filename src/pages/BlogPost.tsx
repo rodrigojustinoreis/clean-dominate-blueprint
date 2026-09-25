@@ -546,6 +546,18 @@ const blogContent: Record<string, React.ReactNode> = {
   ),
   "eco-cleaning-tips-winters-maryland": (
     <article className="prose prose-lg max-w-none">
+      <img
+        src="/images/resources/eco-cleaning-tips-winters-maryland/hero.webp"
+        srcSet="/images/resources/eco-cleaning-tips-winters-maryland/hero-640.webp 640w, /images/resources/eco-cleaning-tips-winters-maryland/hero.webp 1280w"
+        sizes="(max-width: 768px) 100vw, 768px"
+        alt="Bright mudroom entryway of a Maryland home in winter, with a cleaning caddy, folded microfiber cloths, a flat mop and a boot tray by the door"
+        className="w-full rounded-2xl shadow-md"
+        width={1280}
+        height={853}
+        loading="eager"
+        fetchPriority="high"
+        decoding="async"
+      />
       <p>Maryland winters bring unique cleaning challenges — road salt tracked indoors, dry air creating static dust buildup, and holiday gatherings leaving extra messes. At <Link to="/" className="text-accent hover:underline">Capital Clean Care</Link>, we help families across <Link to="/locations/rockville-md" className="text-accent hover:underline">Rockville</Link>, <Link to="/locations/bethesda-md" className="text-accent hover:underline">Bethesda</Link>, and <Link to="/locations/germantown-md/house-cleaning" className="text-accent hover:underline">Germantown</Link> keep their homes spotless through the coldest months — using only eco-friendly methods.</p>
 
       <h2>1. Tackle Salt and Slush Stains Immediately</h2>
