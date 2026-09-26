@@ -243,6 +243,49 @@ const ChevyChaseMoveOutCleaningPage = () => {
         </div>
       </section>
 
+      {/* ── Our team at work (real photos; no city named, they were not taken in Chevy Chase) ── */}
+      <section className="py-12 md:py-16">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-3">
+            The Team That Does the Work
+          </h2>
+          <p className="text-muted-foreground leading-relaxed mb-6">
+            Real photographs of Capital Clean Care employees on residential jobs. Window tracks, frames and latches
+            are on every move out checklist, and they are the detail landlords check with a fingertip.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4" aria-label="Photographs of Capital Clean Care employees at work">
+            <figure className="overflow-hidden rounded-xl border border-border bg-card shadow-sm">
+              <img
+                src="/images/team/real-team-two-members-640.webp"
+                srcSet="/images/team/real-team-two-members-640.webp 640w, /images/team/real-team-two-members.webp 800w"
+                sizes="(max-width: 639px) 92vw, 440px"
+                alt="Two Capital Clean Care employees in navy uniforms preparing a bedroom during a residential cleaning"
+                width="640"
+                height="854"
+                className="aspect-[3/4] w-full object-cover"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption className="px-4 py-3 text-sm leading-snug text-muted-foreground">Two of our team members on a residential job</figcaption>
+            </figure>
+            <figure className="overflow-hidden rounded-xl border border-border bg-card shadow-sm">
+              <img
+                src="/images/locations/rockville-real-work/window-detailing-480.webp"
+                srcSet="/images/locations/rockville-real-work/window-detailing-480.webp 480w, /images/locations/rockville-real-work/window-detailing-768.webp 768w"
+                sizes="(max-width: 639px) 92vw, 440px"
+                alt="Capital Clean Care employee detailing the upper frame of an open window during a residential cleaning"
+                width="480"
+                height="640"
+                className="aspect-[3/4] w-full object-cover"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption className="px-4 py-3 text-sm leading-snug text-muted-foreground">Upper window frame and track detailing</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
       {/* ── How It Works ──────────────────────────────────── */}
       <section className="py-12 md:py-16 bg-muted/30">
         <div className="container mx-auto px-4 max-w-4xl">
