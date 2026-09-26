@@ -187,6 +187,11 @@ const ChevyChaseMoveOutCleaningPage = () => {
         zipRange="20815"
         heroImage="/images/team/team-mopping-dark-floor.jpg"
         heroImageAlt="Capital Clean Care team member mopping a dark floor during a move out cleaning"
+        heroAspectRatio="3/4"
+        // The shared team photo (760x570) is stored sideways; the file is used by six pages, so it stays as is.
+        // Same fix as the Rockville move-out page: 3:4 frame, img sized to the frame's swapped dimensions,
+        // centred, rotated 90° clockwise, object-fit contain. Whole photo, no crop, same src, alt and preload.
+        heroImageContainerClassName="chevy-chase-moveout-hero max-w-[420px] mx-auto [&>img]:absolute [&>img]:left-1/2 [&>img]:top-1/2 [&>img]:h-3/4 [&>img]:w-[133.333333%] [&>img]:max-w-none [&>img]:-translate-x-1/2 [&>img]:-translate-y-1/2 [&>img]:rotate-90 [&>img]:object-contain"
         ctaPrimary="Book Your Move Out Clean in Chevy Chase"
         ctaBeforePills
         stackCtas
