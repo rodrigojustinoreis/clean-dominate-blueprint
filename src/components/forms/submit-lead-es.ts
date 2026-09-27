@@ -12,9 +12,17 @@
  * - Um limite duro cobre import do client, insert, fetch e parse do e-mail. A lentidão ou a falha
  *   de um destino não apaga o aceite conhecido do outro: o que já resolveu é registrado como tal e
  *   um aceite que chega depois do limite é gravado para a próxima tentativa, sem repetir o envio.
- * - Estado por payload e por montagem (ref do componente). Um destino aceito nunca é reenviado no
- *   mesmo fluxo; um insert "uncertain" (pode ter acontecido) também não é repetido. Um e-mail
- *   "uncertain" pode ser reenviado numa nova tentativa, o que pode gerar segunda notificação.
+ * - Estado por payload e por montagem (ref do componente). Um destino ACEITO nunca é reenviado no
+ *   mesmo fluxo. Um destino "uncertain" (abortado pelo limite, ou que nunca respondeu) pode ser
+ *   tentado de novo, mas só por uma nova ação manual do visitante, nunca automaticamente: o banco
+ *   é o destino crítico deste formulário, e travar o insert para sempre depois de um timeout
+ *   deixaria a tela pedindo "inténtalo de nuevo" sem nada para tentar. (Diferente do N02, onde o
+ *   banco é backup e um insert incerto não se repete.)
+ *
+ * Risco residual, igual ao do receiver crítico do N02: se o servidor aceitou o insert mas a
+ * resposta não chegou dentro do limite, o retry manual produz um registro duplicado. Um e-mail
+ * incerto reenviado pode gerar segunda notificação. Só uma chave de idempotência no servidor
+ * eliminaria isso; não existe.
  *
  * Limites declarados: nada disto sobrevive a remount, reload ou troca de dispositivo, e não há
  * chave de idempotência no servidor. Não é idempotência global.
@@ -48,12 +56,16 @@ export function esPayloadKey(payload: Record<string, unknown>): string {
   return JSON.stringify(payload, Object.keys(payload).sort());
 }
 
-/** A API de e-mail aceitou a chamada: HTTP ok, `channel === "resend"`, `success` ausente ou true. */
+/**
+ * A API de e-mail aceitou a chamada: HTTP ok, corpo-objeto com `channel === "resend"` e `success`
+ * ausente ou o booleano `true`. A string "true" NÃO conta: este contrato é novo e não carrega o
+ * legado do FormSubmit. Nunca significa entrega na caixa de entrada.
+ */
 export function isEmailAccepted(ok: boolean, body: unknown): boolean {
-  if (!ok || !body || typeof body !== "object") return false;
+  if (!ok || !body || typeof body !== "object" || Array.isArray(body)) return false;
   const b = body as { channel?: unknown; success?: unknown };
   if (b.channel !== "resend") return false;
-  return b.success === undefined || b.success === true || b.success === "true";
+  return b.success === undefined || b.success === true;
 }
 
 const isAbort = (e: unknown) => (e as { name?: string } | null)?.name === "AbortError";
@@ -110,7 +122,9 @@ export async function submitLeadES(opts: SubmitLeadEsOptions): Promise<EsLeadRes
   const state = stateRef.current;
   const attempt = ++state.attempt;
 
-  const tryDb = state.db === "not_tried" || state.db === "failed"; // nunca repete insert aceito ou incerto
+  // Só o que já foi ACEITO fica intocável. "uncertain" volta a ser tentável porque esta função só roda
+  // por ação manual do visitante (submit); não há retry automático em lugar nenhum.
+  const tryDb = state.db !== "accepted";
   const tryEmail = state.email !== "accepted";
   const dbCtl = new AbortController();
   const emailCtl = new AbortController();

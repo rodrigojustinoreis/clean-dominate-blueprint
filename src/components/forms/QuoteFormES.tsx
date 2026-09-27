@@ -199,7 +199,7 @@ const QuoteFormES = ({ id = "cotizacion", defaultService = "", submitLabel = "So
               <div className="max-w-[85%] bg-white rounded-2xl rounded-bl-sm px-4 py-3 shadow-sm">
                 <p className="text-[13px] text-gray-800 leading-relaxed">
                   {notification === "confirmed"
-                    ? <>Recibimos tu solicitud y ya avisamos al equipo. Te contactaremos lo antes posible; si es urgente, llámanos al <strong>{PHONE_DISPLAY}</strong>.</>
+                    ? <>Tu solicitud quedó registrada. Para ayuda inmediata con tu cotización, llámanos al <strong>{PHONE_DISPLAY}</strong>.</>
                     : <>Tu solicitud quedó registrada, pero <strong>no pudimos confirmar el aviso al equipo</strong>. Por favor llámanos al <strong>{PHONE_DISPLAY}</strong> para asegurar tu cotización.</>}
                 </p>
               </div>

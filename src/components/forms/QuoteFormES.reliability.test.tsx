@@ -51,6 +51,7 @@ vi.mock("@/components/ui/select", () => ({
 }));
 
 import QuoteFormES from "./QuoteFormES";
+import { isEmailAccepted } from "./submit-lead-es";
 import { trackQuoteFormSubmit } from "@/lib/analytics";
 
 const trackMock = vi.mocked(trackQuoteFormSubmit);
@@ -89,9 +90,27 @@ function fill(container: HTMLElement, overrides: Partial<typeof FIELDS> = {}) {
 const form = (c: HTMLElement) => c.querySelector("form");
 const submit = (c: HTMLElement) => fireEvent.submit(form(c)!);
 const ERROR = /No pudimos confirmar tu solicitud/;
-const CONFIRMED = /ya avisamos al equipo/;
+const CONFIRMED = /Tu solicitud quedó registrada\. Para ayuda inmediata/;
 const UNCONFIRMED = /no pudimos confirmar el aviso al equipo/;
-const OLD_PROMISE = /menos de 2 horas/;
+const OLD_PROMISE = /menos de 2 horas|ya avisamos al equipo/;
+
+describe("isEmailAccepted — aceite da API do Resend, nunca inbox", () => {
+  it("aceita só HTTP ok + objeto com channel resend e success ausente ou booleano true", () => {
+    expect(isEmailAccepted(true, { channel: "resend" })).toBe(true);
+    expect(isEmailAccepted(true, { channel: "resend", success: true })).toBe(true);
+  });
+  it("recusa string 'true', false, null, array, corpo não-objeto, outro channel e HTTP não-ok", () => {
+    expect(isEmailAccepted(true, { channel: "resend", success: "true" })).toBe(false);
+    expect(isEmailAccepted(true, { channel: "resend", success: false })).toBe(false);
+    expect(isEmailAccepted(true, { channel: "resend", success: null })).toBe(false);
+    expect(isEmailAccepted(true, null)).toBe(false);
+    expect(isEmailAccepted(true, "resend")).toBe(false);
+    expect(isEmailAccepted(true, [{ channel: "resend" }])).toBe(false);
+    expect(isEmailAccepted(true, { channel: "netlify-forms-only", success: true })).toBe(false);
+    expect(isEmailAccepted(true, { channel: "netlify-forms-fallback", success: true })).toBe(false);
+    expect(isEmailAccepted(false, { channel: "resend", success: true })).toBe(false);
+  });
+});
 
 beforeEach(() => {
   vi.clearAllMocks();
@@ -204,6 +223,45 @@ describe("QuoteFormES — o registro no Supabase decide; e-mail é observável",
     submit(container); // mesmo payload
     await waitFor(() => expect(form(container)).toBeNull());
     expect(insertMock).toHaveBeenCalledTimes(1); // insert aceito não repetido
+    expect(trackMock).toHaveBeenCalledTimes(1);
+  });
+
+  it("E2) timeout SEM aceite tardio → o retry manual chama o banco de novo e pode concluir (banco é crítico, não backup)", async () => {
+    insertMock.mockReturnValueOnce(new Promise(() => {})); // 1ª tentativa: nunca responde → uncertain
+    stubFetch(() => new Promise<Res>(() => {}));
+    const { container } = mount();
+    fill(container);
+    vi.useFakeTimers();
+    submit(container);
+    await vi.advanceTimersByTimeAsync(16000);
+    vi.useRealTimers();
+    await waitFor(() => expect(screen.getByText(ERROR)).toBeTruthy());
+    expect(insertMock).toHaveBeenCalledTimes(1);
+
+    insertMock.mockResolvedValue({ error: null }); // 2ª tentativa responde
+    stubFetch(resendOk);
+    submit(container); // mesmo payload, ação manual
+    await waitFor(() => expect(form(container)).toBeNull());
+    expect(insertMock).toHaveBeenCalledTimes(2); // insert incerto foi tentado de novo
+    expect(screen.getByText(CONFIRMED)).toBeTruthy();
+    expect(trackMock).toHaveBeenCalledTimes(1);
+  });
+
+  it("E3) e-mail já aceito não é reenviado: insert falha + Resend aceito, retry → banco de novo, e-mail NÃO", async () => {
+    insertMock.mockResolvedValueOnce({ error: { message: "PGRST" } });
+    stubFetch(resendOk);
+    const { container } = mount();
+    fill(container);
+    submit(container);
+    await waitFor(() => expect(screen.getByText(ERROR)).toBeTruthy());
+    expect(calls.email).toBe(1);
+
+    insertMock.mockResolvedValue({ error: null });
+    submit(container); // mesmo payload
+    await waitFor(() => expect(form(container)).toBeNull());
+    expect(insertMock).toHaveBeenCalledTimes(2);
+    expect(calls.email).toBe(1); // aceite conhecido do e-mail não se repete
+    expect(screen.getByText(CONFIRMED)).toBeTruthy(); // e o aceite conhecido conta na tela
     expect(trackMock).toHaveBeenCalledTimes(1);
   });
 
