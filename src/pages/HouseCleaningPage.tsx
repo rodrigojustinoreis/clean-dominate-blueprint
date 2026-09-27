@@ -14,6 +14,7 @@ import { ServiceSchema, FAQSchema, BreadcrumbSchema } from "@/components/SchemaM
 import { useSEO } from "@/hooks/useSEO";
 import { getServiceBySlug } from "@/data/services";
 import { trackPhoneClick, trackBookNowClick, trackQuoteFormStart, trackQuoteFormSubmit } from "@/lib/analytics";
+import { submitLeadDual, payloadKey, LEAD_UNCONFIRMED_TEXT, type DualLeadState, type QuoteRequestInsert } from "@/lib/submit-lead-dual";
 import { toast } from "sonner";
 import teamPhoto from "@/assets/luana-cleaning.webp";
 import kitchenGraniteBefore from "@/assets/real-work/kitchen-granite-before.webp";
@@ -77,13 +78,19 @@ const LazyYouTube = ({ id, title }: { id: string; title: string }) => {
 };
 
 /* ── Quote Form ────────────────────────────────────────────────── */
-const QuoteFormInline = ({ variant = "hero" }: { variant?: "hero" | "footer" }) => {
+export const QuoteFormInline = ({ variant = "hero" }: { variant?: "hero" | "footer" }) => {
   const isFooter = variant === "footer";
   const [form, setForm] = useState({ name: "", phone: "", email: "", zip: "", address: "", bedrooms: "2", bathrooms: "1" });
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [submittedName, setSubmittedName] = useState("");
   const formStarted = useRef(false);
+  // Per-payload destination states for this mount (see submit-lead-dual.ts). Nothing survives a remount or reload.
+  const leadStateRef = useRef<DualLeadState | null>(null);
+  // Synchronous guard: React's `disabled` only lands after a re-render, so a double click could start two flows.
+  const submittingRef = useRef(false);
+  // Netlify Forms is auxiliary and never decides success; it is posted once per payload in this mount.
+  const netlifySentKeyRef = useRef<string | null>(null);
   const set = (k: string, v: string) => setForm(p => ({ ...p, [k]: v }));
 
   const handleFormStart = () => {
@@ -96,24 +103,41 @@ const QuoteFormInline = ({ variant = "hero" }: { variant?: "hero" | "footer" }) 
   const bedNum = Math.min(5, Math.max(1, parseInt(form.bedrooms, 10) || 1));
   const bathNum = Math.min(4, Math.max(1, parseFloat(form.bathrooms) || 1));
 
+  // Success is announced only after the critical destination (receive-lead) accepts. Until 2026-09 this
+  // handler fired four requests without awaiting any of them and showed the success screen regardless,
+  // so an accepted-looking submission could have reached nothing. submitLeadDual owns the receiver POST,
+  // the Supabase backup insert and the e-mail notification, so none of those is sent from here any more
+  // (sending them here too would duplicate the row and the notification).
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.name || !form.phone || !form.zip || (!isFooter && !form.address)) { toast.error("Please fill in all required fields, including your full address."); return; }
+    if (submittingRef.current) return;
+    submittingRef.current = true;
     setSubmitting(true);
+    const payload = { ...form, service: "House Cleaning" };
+    const key = payloadKey(payload);
+    const dbRow: QuoteRequestInsert = { name: form.name, phone: form.phone, email: form.email, zip: form.zip, service: "House Cleaning", bedrooms: form.bedrooms, bathrooms: form.bathrooms, message: form.address ? `Address: ${form.address}` : null, sms_consent: false, email_consent: false };
     try {
-      import("@/integrations/supabase/client").then(({ supabase }) =>
-        supabase.from("quote_requests").insert({ name: form.name, phone: form.phone, email: form.email, zip: form.zip, service: "House Cleaning", bedrooms: form.bedrooms, bathrooms: form.bathrooms, message: form.address ? `Address: ${form.address}` : null, sms_consent: false, email_consent: false })
-          .then(({ error }) => { if (error) console.error("DB:", error); })
-      ).catch((err) => console.error("Supabase load:", err));
-      const encode = (d: Record<string,string>) => Object.keys(d).map(k => `${encodeURIComponent(k)}=${encodeURIComponent(d[k])}`).join("&");
-      fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: encode({ "form-name": "quote", ...form, service: "House Cleaning" }) }).catch(console.error);
-      fetch("https://jzxhejqokcjyxxklnnza.supabase.co/functions/v1/receive-lead", { method: "POST", headers: { "Content-Type": "application/json", "x-webhook-secret": "ccc-lead-webhook-2026" }, body: JSON.stringify({ ...form, service: "House Cleaning" }) }).catch(() => {});
-      fetch("/api/send-quote-email", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ ...form, service: "House Cleaning" }) }).catch(() => {});
-      trackQuoteFormSubmit("house-cleaning", `${window.location.pathname}:${variant}`);
-      setSubmittedName(form.name.split(" ")[0]);
-      setSubmitted(true);
-    } catch { toast.error("Something went wrong. Please call us directly."); }
-    finally { setSubmitting(false); }
+      if (netlifySentKeyRef.current !== key) {
+        netlifySentKeyRef.current = key;
+        const encode = (d: Record<string,string>) => Object.keys(d).map(k => `${encodeURIComponent(k)}=${encodeURIComponent(d[k])}`).join("&");
+        fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: encode({ "form-name": "quote", ...payload }) }).catch(() => {});
+      }
+      const result = await submitLeadDual({ stateRef: leadStateRef, key, emailBody: payload, dbRow });
+      if (result.email === "accepted") {
+        if (result.emailJustAccepted) {
+          try { trackQuoteFormSubmit("house-cleaning", `${window.location.pathname}:${variant}`); } catch { /* analytics never invalidates an accepted lead */ }
+        }
+        setSubmittedName(form.name.split(" ")[0]);
+        setSubmitted(true);
+        // leadStateRef is kept: the acceptance stays known for this payload while this mount lives, and the
+        // helper replaces the state by itself when the payload key changes.
+      } else {
+        // Failed or uncertain (timeout): keep every field for a manual retry; no event; no claim that nothing was sent.
+        toast.error(LEAD_UNCONFIRMED_TEXT);
+      }
+    } catch { toast.error(LEAD_UNCONFIRMED_TEXT); }
+    finally { submittingRef.current = false; setSubmitting(false); }
   };
 
   if (submitted) return (

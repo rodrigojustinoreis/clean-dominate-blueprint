@@ -78,6 +78,9 @@ describe("gtag deferral (index.html loader) — documented limits", () => {
     expect(LOADER).toContain("setTimeout(loadGtag, 2000)");
     expect(LOADER).toContain("/services/house-cleaning");
     expect(LOADER).toMatch(/gclid\|gbraid\|wbraid/);
-    expect(LOADER).toContain("'127.0.0.1'"); // local previews never load the tag
+    // 2026-09-27: the tag loads only on the production hostnames (allowlist), so localhost AND deploy
+    // previews never load it. The allowlist itself is exercised in gtag-hostname-allowlist.test.ts.
+    expect(LOADER).toContain("PROD_HOSTS.indexOf(location.hostname) === -1");
+    expect(LOADER).toContain("'capitalcleancare.com', 'www.capitalcleancare.com'");
   });
 });

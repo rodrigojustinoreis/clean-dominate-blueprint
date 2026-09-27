@@ -45,7 +45,11 @@
          previous timing so call-conversion tracking is unchanged. -->
     <script>
       (function () {
-        if (location.hostname === '127.0.0.1' || location.hostname === 'localhost') return;
+        // Measurement runs only on the production hostnames. Until 2026-09-27 the only exclusion was
+        // localhost, so deploy previews (*.netlify.app) and any other host loaded the same GA4/Ads tag;
+        // whether their events reached the production property was not measured, only the risk.
+        var PROD_HOSTS = ['capitalcleancare.com', 'www.capitalcleancare.com'];
+        if (PROD_HOSTS.indexOf(location.hostname) === -1) return;
         var loaded = false;
         function loadGtag() {
           if (loaded) return; loaded = true;
@@ -75,7 +79,7 @@
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-      if (location.hostname !== '127.0.0.1' && location.hostname !== 'localhost') {
+      if (['capitalcleancare.com', 'www.capitalcleancare.com'].indexOf(location.hostname) !== -1) {
         gtag('js', new Date());
         gtag('config', 'G-5NQK4RH08J');
         gtag('config', 'AW-16450100951');
