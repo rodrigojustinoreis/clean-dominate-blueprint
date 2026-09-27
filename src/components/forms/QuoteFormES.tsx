@@ -14,6 +14,8 @@ import {
 import { CheckCircle, Phone, Clock, MessageCircle } from "lucide-react";
 import { BUSINESS_INFO } from "@/data/business-info";
 import { trackQuoteFormStart, trackQuoteFormSubmit } from "@/lib/analytics";
+import type { QuoteRequestInsert } from "@/lib/submit-lead-dual";
+import { submitLeadES, esPayloadKey, type EsLeadState } from "./submit-lead-es";
 
 interface QuoteFormESProps {
   id?: string;
@@ -67,7 +69,15 @@ const QuoteFormES = ({ id = "cotizacion", defaultService = "", submitLabel = "So
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [submittedName, setSubmittedName] = useState("");
+  // "confirmed" = a API de e-mail aceitou o aviso ao equipe; "unconfirmed" = registro salvo, aviso não confirmado.
+  const [notification, setNotification] = useState<"confirmed" | "unconfirmed">("confirmed");
   const formStarted = useRef(false);
+  // Estado por payload nesta montagem (ver submit-lead-es.ts). Nada sobrevive a remount ou reload.
+  const leadStateRef = useRef<EsLeadState | null>(null);
+  // Trava síncrona: o `disabled` do React só chega depois do re-render, e um duplo clique abriria dois fluxos.
+  const submittingRef = useRef(false);
+  // Netlify Forms é auxiliar, nunca decide, e é enviado uma vez por payload nesta montagem.
+  const netlifySentKeyRef = useRef<string | null>(null);
 
   const handleFormStart = () => {
     if (formStarted.current) return;
@@ -97,50 +107,59 @@ const QuoteFormES = ({ id = "cotizacion", defaultService = "", submitLabel = "So
     e.preventDefault();
     const errs = validate();
     if (Object.keys(errs).length > 0) { setErrors(errs); return; }
+    if (submittingRef.current) return;
+    submittingRef.current = true;
     setErrors({});
     setSubmitting(true);
 
+    // Até 2026-09 este handler disparava Supabase, Netlify Forms e e-mail sem aguardar nenhum deles e
+    // mostrava a tela de sucesso de qualquer jeito. Agora o registro no Supabase decide; o e-mail é
+    // observado (aceite da API do Resend, nunca "entregue"); Netlify Forms segue auxiliar.
+    const key = esPayloadKey(formData);
+    // Sem `source`: a coluna não existe em `quote_requests` (verificado em 27/09/2026) e o insert era
+    // rejeitado. `email` é NOT NULL no schema; ausência vira string vazia só aqui, como nos outros
+    // formulários, sem tornar o campo obrigatório.
+    const dbRow: QuoteRequestInsert = {
+      name: formData.name, phone: formData.phone, email: formData.email || "",
+      zip: formData.zip, service: formData.service,
+      message: [formData.size && `Tamaño: ${formData.size}`, formData.timing && `Cuándo: ${formData.timing}`, formData.message].filter(Boolean).join(" | ") || null,
+      sms_consent: formData.smsConsent, email_consent: false,
+    };
+    // Payload da notificação inalterado.
+    const emailBody = {
+      name: formData.name, phone: formData.phone, email: formData.email || null,
+      zip: formData.zip, service: formData.service,
+      message: `[ES FORM] Tamaño: ${formData.size} | Cuándo: ${formData.timing || "N/A"} | ${formData.message}`,
+    };
+
     try {
-      // 1. Supabase (primary record; loaded on demand to keep it off the initial bundle)
-      import("@/integrations/supabase/client").then(({ supabase }) =>
-        supabase.from("quote_requests").insert({
-          name: formData.name, phone: formData.phone, email: formData.email || null,
-          zip: formData.zip, service: formData.service,
-          message: [formData.size && `Tamaño: ${formData.size}`, formData.timing && `Cuándo: ${formData.timing}`, formData.message].filter(Boolean).join(" | ") || null,
-          sms_consent: formData.smsConsent, email_consent: false,
-          source: "es_form",
-        }).then(({ error }) => { if (error) console.error("DB error:", error); })
-      ).catch((err) => console.error("Supabase load error:", err));
+      if (netlifySentKeyRef.current !== key) {
+        netlifySentKeyRef.current = key;
+        fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams({ "form-name": "quote-es", ...Object.fromEntries(Object.entries(formData).map(([k, v]) => [k, String(v)])) }).toString(),
+        }).catch(() => {});
+      }
 
-      // 2. Netlify Forms (backup)
-      fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams({ "form-name": "quote-es", ...Object.fromEntries(Object.entries(formData).map(([k, v]) => [k, String(v)])) }).toString(),
-      }).catch(console.error);
+      const result = await submitLeadES({ stateRef: leadStateRef, key, dbRow, emailBody });
 
-      // 3. Email notification via Resend (non-blocking)
-      // Setup: set RESEND_API_KEY env var in Netlify UI → Site configuration → Environment variables
-      fetch("/api/send-quote-email", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: formData.name, phone: formData.phone, email: formData.email || null,
-          zip: formData.zip, service: formData.service,
-          message: `[ES FORM] Tamaño: ${formData.size} | Cuándo: ${formData.timing || "N/A"} | ${formData.message}`,
-        }),
-      }).catch(console.error);
-
-      // 4. GA4 + Google Ads conversion (centralized to avoid duplicate events)
-      trackQuoteFormSubmit(formData.service, pathname, "es");
-
-      setSubmittedName(formData.name.split(" ")[0]);
-      setFormData({ name: "", phone: "", email: "", zip: "", service: "", size: "", timing: "", message: "", smsConsent: false });
-      setSubmitted(true);
-    } catch (err) {
-      console.error("Submit error:", err);
-      setErrors({ form: "Algo salió mal. Por favor llámanos al " + PHONE_DISPLAY } as typeof errors);
+      if (result.db === "accepted") {
+        if (result.dbJustAccepted) {
+          try { trackQuoteFormSubmit(formData.service, pathname, "es"); } catch { /* analytics nunca invalida um registro aceito */ }
+        }
+        setNotification(result.email === "accepted" ? "confirmed" : "unconfirmed");
+        setSubmittedName(formData.name.split(" ")[0]);
+        setFormData({ name: "", phone: "", email: "", zip: "", service: "", size: "", timing: "", message: "", smsConsent: false });
+        setSubmitted(true);
+      } else {
+        // Falhou ou incerto (limite de tempo): campos preservados para nova tentativa; sem evento; sem afirmar que nada foi enviado.
+        setErrors({ form: "No pudimos confirmar tu solicitud. Inténtalo de nuevo o llámanos al " + PHONE_DISPLAY } as typeof errors);
+      }
+    } catch {
+      setErrors({ form: "No pudimos confirmar tu solicitud. Inténtalo de nuevo o llámanos al " + PHONE_DISPLAY } as typeof errors);
     } finally {
+      submittingRef.current = false;
       setSubmitting(false);
     }
   };
@@ -179,7 +198,9 @@ const QuoteFormES = ({ id = "cotizacion", defaultService = "", submitLabel = "So
               <div className="w-7 h-7 shrink-0" />
               <div className="max-w-[85%] bg-white rounded-2xl rounded-bl-sm px-4 py-3 shadow-sm">
                 <p className="text-[13px] text-gray-800 leading-relaxed">
-                  Recibimos tu solicitud. Rodrigo o alguien del equipo te va a contactar en <strong>menos de 2 horas</strong> ✨
+                  {notification === "confirmed"
+                    ? <>Recibimos tu solicitud y ya avisamos al equipo. Te contactaremos lo antes posible; si es urgente, llámanos al <strong>{PHONE_DISPLAY}</strong>.</>
+                    : <>Tu solicitud quedó registrada, pero <strong>no pudimos confirmar el aviso al equipo</strong>. Por favor llámanos al <strong>{PHONE_DISPLAY}</strong> para asegurar tu cotización.</>}
                 </p>
               </div>
             </div>
@@ -208,7 +229,7 @@ const QuoteFormES = ({ id = "cotizacion", defaultService = "", submitLabel = "So
         </div>
         <div className="flex items-center gap-2 text-xs text-muted-foreground bg-accent/5 border border-accent/15 rounded-full px-4 py-2">
           <Clock className="h-3.5 w-3.5 text-accent shrink-0" />
-          <span>Llamadas, e-mail y reservas 24/7 · Respuesta en <strong className="text-foreground">menos de 2 horas</strong></span>
+          <span>Llamadas, e-mail y reservas 24/7</span>
         </div>
       </div>
     );
