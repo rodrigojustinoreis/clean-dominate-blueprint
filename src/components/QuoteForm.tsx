@@ -579,7 +579,10 @@ const QuoteForm = ({ submitLabel = "GET MY FREE QUOTE →", defaultService = "",
               className="mt-0.5 h-4 w-4 rounded border-border accent-accent"
             />
             <span className="text-xs text-muted-foreground">
-              I agree to receive SMS updates about my cleaning service. Message & data rates may apply. Reply STOP to opt out.
+              I agree to receive SMS appointment confirmations, reminders, and service updates from Capital Clean Care at the phone number provided. Message frequency varies (up to 4 msgs/month). Msg &amp; data rates may apply. Reply HELP for help, STOP to opt out. Consent is not a condition of purchase.{" "}
+              <a href="/terms-of-service#sms" target="_blank" rel="noopener" className="underline">Terms &amp; Conditions</a>
+              {" | "}
+              <a href="/privacy-policy#sms-privacy" target="_blank" rel="noopener" className="underline">Privacy Policy</a>
             </span>
           </label>
           <label className="flex items-start gap-2 cursor-pointer">

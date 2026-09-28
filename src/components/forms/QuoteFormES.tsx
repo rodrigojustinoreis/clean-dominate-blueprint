@@ -85,7 +85,6 @@ const QuoteFormES = ({ id = "cotizacion", defaultService = "", submitLabel = "So
     if (!formData.zip || !/^\d{5}$/.test(formData.zip)) e.zip = "Código postal: 5 dígitos";
     if (!formData.service) e.service = "Selecciona un servicio";
     if (!formData.size) e.size = "Selecciona el tamaño";
-    if (!formData.smsConsent) e.smsConsent = "Acepta el checkbox para continuar" as unknown as boolean;
     return e;
   };
 
@@ -353,12 +352,12 @@ const QuoteFormES = ({ id = "cotizacion", defaultService = "", submitLabel = "So
             checked={formData.smsConsent}
             onChange={(e) => set("smsConsent", e.target.checked)}
             className="mt-0.5 h-4 w-4 rounded border-border accent-accent"
-            aria-required="true"
-            aria-describedby={errors.smsConsent ? "consent-err" : undefined}
           />
           <span className="text-sm text-muted-foreground leading-relaxed">
-            Acepto recibir SMS y correo electrónico de Capital Clean Care sobre mi solicitud.
-            Puedo cancelar respondiendo <strong>STOP</strong> en cualquier momento.
+            (Opcional) Acepto recibir SMS de confirmación de citas, recordatorios y actualizaciones de servicio de Capital Clean Care al número proporcionado. La frecuencia varía (hasta 4 msgs/mes). Pueden aplicarse tarifas de mensajes y datos. Responde HELP para ayuda o <strong>STOP</strong> para cancelar. El consentimiento no es condición de compra.{" "}
+            <a href="/terms-of-service#sms" target="_blank" rel="noopener" className="underline">Términos</a>
+            {" | "}
+            <a href="/privacy-policy#sms-privacy" target="_blank" rel="noopener" className="underline">Privacidad</a>
           </span>
         </label>
         <span id="consent-err">{err("smsConsent")}</span>

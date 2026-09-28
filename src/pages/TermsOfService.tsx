@@ -1,4 +1,4 @@
-import { BadgeCheck, Calendar, CalendarX, DollarSign, FileText, KeyRound, Phone, Scale, ShieldCheck, Sparkles, Tag } from "lucide-react";
+import { BadgeCheck, Calendar, CalendarX, DollarSign, FileText, KeyRound, MessageSquare, Phone, Scale, ShieldCheck, Sparkles, Tag } from "lucide-react";
 import LegalDoc, { LegalSection, LEGAL_LIST, LEGAL_LINK } from "@/components/LegalDoc";
 import { useSEO } from "@/hooks/useSEO";
 
@@ -22,7 +22,7 @@ const TermsOfService = () => {
       accentWord="Service"
       href="/terms-of-service"
       icon={FileText}
-      updated={{ iso: "2026-03-01", label: "March 1, 2026" }}
+      updated={{ iso: "2026-09-26", label: "September 26, 2026" }}
       lede={DESCRIPTION}
       chips={[
         { label: "Booking", href: "#booking", icon: Calendar },
@@ -66,6 +66,19 @@ const TermsOfService = () => {
 
       <LegalSection id="promotions" title="8. Promotional Offers" icon={Tag}>
         <p>Promotional codes and discounts are subject to terms specified at the time of offer. They cannot be combined unless explicitly stated and may have expiration dates.</p>
+      </LegalSection>
+
+      <LegalSection id="sms" title="SMS Messaging Terms" icon={MessageSquare}>
+        <p>Capital Clean Care is operated by DDA Construction LLC. By checking the optional SMS consent box on our quote request form, you agree to receive text messages from Capital Clean Care at the phone number you provided.</p>
+        <ul className={LEGAL_LIST}>
+          <li><strong>Program:</strong> appointment confirmations and reminders, estimate/quote follow-ups, arrival-time updates, and customer support replies related to a requested or scheduled cleaning.</li>
+          <li><strong>Frequency:</strong> message frequency varies, typically 1–4 messages per month.</li>
+          <li><strong>Cost:</strong> message and data rates may apply.</li>
+          <li><strong>Opt out:</strong> reply STOP at any time to stop receiving messages. You will receive one confirmation message and no further texts.</li>
+          <li><strong>Help:</strong> reply HELP, call <a href="tel:+12407042551" className={LEGAL_LINK}>(240) 704-2551</a>, or email <a href="mailto:info@capitalcleancare.com" className={LEGAL_LINK}>info@capitalcleancare.com</a>.</li>
+          <li>Consent to receive text messages is not a condition of purchase. Carriers are not liable for delayed or undelivered messages.</li>
+          <li>See our <a href="/privacy-policy#sms-privacy" className={LEGAL_LINK}>Privacy Policy</a> for how we handle your information. Mobile information is never shared with third parties for marketing purposes.</li>
+        </ul>
       </LegalSection>
 
       <LegalSection id="governing-law" title="9. Governing Law" icon={Scale}>

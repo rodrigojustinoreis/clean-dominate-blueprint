@@ -1,4 +1,4 @@
-import { ClipboardList, Cookie, History, Lock, Mail, Share2, ShieldCheck, UserCheck, Workflow } from "lucide-react";
+import { ClipboardList, Cookie, History, Lock, Mail, MessageSquare, Share2, ShieldCheck, UserCheck, Workflow } from "lucide-react";
 import LegalDoc, { LegalSection, LEGAL_LIST, LEGAL_LINK } from "@/components/LegalDoc";
 import { useSEO } from "@/hooks/useSEO";
 
@@ -22,7 +22,7 @@ const PrivacyPolicy = () => {
       accentWord="Policy"
       href="/privacy-policy"
       icon={ShieldCheck}
-      updated={{ iso: "2026-03-01", label: "March 1, 2026" }}
+      updated={{ iso: "2026-09-26", label: "September 26, 2026" }}
       lede={DESCRIPTION}
       chips={[
         { label: "What we collect", href: "#information-we-collect", icon: ClipboardList },
@@ -62,6 +62,12 @@ const PrivacyPolicy = () => {
           <li>Service providers who assist our operations (payment processing, scheduling software)</li>
           <li>Legal authorities when required by law</li>
         </ul>
+      </LegalSection>
+
+      <LegalSection id="sms-privacy" title="SMS Messaging Privacy" icon={MessageSquare}>
+        <p>Capital Clean Care is operated by DDA Construction LLC. If you opt in to text messages, we use your mobile number only to send the appointment confirmations, reminders, estimate follow-ups, and service updates you requested.</p>
+        <p><strong>No mobile information will be shared with third parties or affiliates for marketing or promotional purposes.</strong> Text messaging originator opt-in data and consent will not be shared with any third parties, except service providers (such as our SMS delivery platform) that process messages on our behalf.</p>
+        <p>You can opt out at any time by replying STOP, or reply HELP for help. Message frequency varies (up to 4 msgs/month). Msg &amp; data rates may apply.</p>
       </LegalSection>
 
       <LegalSection id="security" title="4. Data Security" icon={Lock}>
