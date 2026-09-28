@@ -103,6 +103,16 @@ const QuoteFormES = ({ id = "cotizacion", defaultService = "", submitLabel = "So
     return Object.keys(e).length === 0;
   };
 
+  // "Otra solicitud" só existe na tela de sucesso e significa um pedido NOVO e explícito. Sem este
+  // reset, um payload idêntico ao anterior reaproveitava o aceite guardado por chave e "concluía"
+  // sem chamar destino algum (QA do Codex no navegador, 27/09/2026). Nunca chamar em falha/retry:
+  // ali o estado precisa sobreviver para não repetir um destino já aceito.
+  const startNewRequest = () => {
+    leadStateRef.current = null;
+    netlifySentKeyRef.current = null;
+    setSubmitted(false);
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const errs = validate();
@@ -223,7 +233,7 @@ const QuoteFormES = ({ id = "cotizacion", defaultService = "", submitLabel = "So
           <Button asChild size="sm" variant="outline" className="flex-1 rounded-full gap-2">
             <a href={PHONE_TEL}><Phone className="h-3.5 w-3.5" /> Llamar ahora</a>
           </Button>
-          <Button size="sm" variant="ghost" className="flex-1 rounded-full text-muted-foreground gap-2" onClick={() => setSubmitted(false)}>
+          <Button size="sm" variant="ghost" className="flex-1 rounded-full text-muted-foreground gap-2" onClick={startNewRequest}>
             <MessageCircle className="h-3.5 w-3.5" /> Otra solicitud
           </Button>
         </div>

@@ -339,6 +339,51 @@ describe("QuoteFormES — o registro no Supabase decide; e-mail é observável",
     expect(container.querySelector("#consent-err")?.textContent ?? "").toBe(""); // sem erro de consentimento
   });
 
+  it("K) sucesso → 'Otra solicitud' → MESMO payload: pedido novo e explícito NÃO reaproveita o aceite anterior (QA do Codex, 27/09)", async () => {
+    stubFetch(resendOk);
+    const { container } = mount();
+    fill(container);
+    submit(container);
+    await waitFor(() => expect(form(container)).toBeNull());
+    expect(insertMock).toHaveBeenCalledTimes(1);
+    expect(calls).toEqual({ email: 1, netlify: 1 });
+    expect(trackMock).toHaveBeenCalledTimes(1);
+
+    fireEvent.click(screen.getByRole("button", { name: /Otra solicitud/ }));
+    expect(form(container)).not.toBeNull();
+    fill(container); // exatamente os mesmos dados do pedido anterior
+    insertMock.mockResolvedValueOnce({ error: { code: "503", message: "unavailable" } });
+    submit(container);
+    // Falha do banco no pedido novo → NÃO pode mostrar sucesso; destinos foram chamados de novo.
+    await waitFor(() => expect(screen.getByText(ERROR)).toBeTruthy());
+    expect(form(container)).not.toBeNull();
+    expect(insertMock).toHaveBeenCalledTimes(2);
+    expect(calls.netlify).toBe(2);
+    expect(trackMock).toHaveBeenCalledTimes(1);
+
+    // Retry desse segundo pedido → aceito; tracking uma vez por fluxo (2 no total).
+    submit(container);
+    await waitFor(() => expect(insertMock).toHaveBeenCalledTimes(3));
+    await waitFor(() => expect(form(container)).toBeNull());
+    expect(trackMock).toHaveBeenCalledTimes(2);
+  });
+
+  it("K2) 'Otra solicitud' não existe em falha/retry: o retry do MESMO pedido continua sem repetir destino já aceito", async () => {
+    // Regressão guardada por E3/H: o reset é exclusivo do botão pós-sucesso; falha mantém o estado.
+    stubFetch(resendOk);
+    const { container } = mount();
+    fill(container);
+    insertMock.mockResolvedValueOnce({ error: { code: "503", message: "unavailable" } });
+    submit(container);
+    await waitFor(() => expect(screen.getByText(ERROR)).toBeTruthy());
+    expect(screen.queryByRole("button", { name: /Otra solicitud/ })).toBeNull();
+    submit(container);
+    await waitFor(() => expect(insertMock).toHaveBeenCalledTimes(2));
+    await waitFor(() => expect(form(container)).toBeNull());
+    expect(calls).toEqual({ email: 1, netlify: 1 }); // e-mail aceito na 1ª não repete; Netlify uma vez por payload
+    expect(trackMock).toHaveBeenCalledTimes(1);
+  });
+
   it("J2) consentimento marcado continua sendo gravado como true", async () => {
     stubFetch(resendOk);
     const { container } = mount();
