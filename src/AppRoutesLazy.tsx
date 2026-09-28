@@ -78,6 +78,7 @@ const SchoolAgeCleaningRoutine = lazy(() => import("./pages/SchoolAgeCleaningRou
 const WhyIsMyDogCoughingAfterCleaning = lazy(() => import("./pages/WhyIsMyDogCoughingAfterCleaning"));
 const HowToCleanHardwoodFloorsNaturally = lazy(() => import("./pages/HowToCleanHardwoodFloorsNaturally"));
 const HowToCleanHardwoodFloorsAfterConstruction = lazy(() => import("./pages/HowToCleanHardwoodFloorsAfterConstruction"));
+const PostConstructionCleaningWashingtonDcTownhouse = lazy(() => import("./pages/PostConstructionCleaningWashingtonDcTownhouse"));
 const RealDeepCleaningProjectBethesda = lazy(() => import("./pages/RealDeepCleaningProjectBethesda"));
 const HowOftenHireCleaningService = lazy(() => import("./pages/HowOftenHireCleaningService"));
 const OneTimeVsRecurringCleaning = lazy(() => import("./pages/OneTimeVsRecurringCleaning"));
@@ -314,6 +315,7 @@ const AppRoutesLazy = () => (
     <Route path="/resources/why-is-my-dog-coughing-after-house-cleaning" element={<WhyIsMyDogCoughingAfterCleaning />} />
     <Route path="/resources/how-to-clean-hardwood-floors-naturally" element={<HowToCleanHardwoodFloorsNaturally />} />
     <Route path="/resources/how-to-clean-hardwood-floors-after-construction" element={<HowToCleanHardwoodFloorsAfterConstruction />} />
+    <Route path="/resources/post-construction-cleaning-washington-dc-townhouse" element={<PostConstructionCleaningWashingtonDcTownhouse />} />
     <Route path="/resources/real-deep-cleaning-project-bethesda-home" element={<RealDeepCleaningProjectBethesda />} />
     <Route path="/resources/how-often-should-you-hire-a-cleaning-service" element={<HowOftenHireCleaningService />} />
     <Route path="/resources/one-time-vs-recurring-cleaning" element={<OneTimeVsRecurringCleaning />} />

@@ -70,6 +70,7 @@ function getAllRoutes(): string[] {
     "/resources/why-is-my-dog-coughing-after-house-cleaning",
     "/resources/how-to-clean-hardwood-floors-naturally",
     "/resources/how-to-clean-hardwood-floors-after-construction",
+    "/resources/post-construction-cleaning-washington-dc-townhouse",
     "/resources/real-deep-cleaning-project-bethesda-home",
     "/resources/how-often-should-you-hire-a-cleaning-service",
     "/resources/one-time-vs-recurring-cleaning",
