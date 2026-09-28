@@ -325,15 +325,26 @@ describe("QuoteFormES — o registro no Supabase decide; e-mail é observável",
     for (const pii of [FIELDS.name, FIELDS.phone, FIELDS.email]) expect(args).not.toContain(pii);
   });
 
-  it("J) sem consentimento (regra da base) → nada é enviado", async () => {
+  it("J) SMS desmarcado é PERMITIDO (consentimento opcional, fonte de produção 26/09): envia, registra sms_consent=false e mostra sucesso", async () => {
     stubFetch(resendOk);
     const { container } = mount();
     fill(container);
-    fireEvent.click(container.querySelector('input[type="checkbox"]')!); // desmarca
+    fireEvent.click(container.querySelector('input[type="checkbox"]')!); // desmarca: continua válido
     submit(container);
-    await new Promise((r) => setTimeout(r, 20));
-    expect(insertMock).not.toHaveBeenCalled();
-    expect(calls).toEqual({ email: 0, netlify: 0 });
-    expect(form(container)).not.toBeNull();
+    await waitFor(() => expect(form(container)).toBeNull());
+    expect(insertMock).toHaveBeenCalledTimes(1);
+    expect((insertMock.mock.calls[0][0] as Record<string, unknown>).sms_consent).toBe(false);
+    expect(calls).toEqual({ email: 1, netlify: 1 });
+    expect(trackMock).toHaveBeenCalledTimes(1);
+    expect(container.querySelector("#consent-err")?.textContent ?? "").toBe(""); // sem erro de consentimento
+  });
+
+  it("J2) consentimento marcado continua sendo gravado como true", async () => {
+    stubFetch(resendOk);
+    const { container } = mount();
+    fill(container); // fill marca o checkbox
+    submit(container);
+    await waitFor(() => expect(form(container)).toBeNull());
+    expect((insertMock.mock.calls[0][0] as Record<string, unknown>).sms_consent).toBe(true);
   });
 });
