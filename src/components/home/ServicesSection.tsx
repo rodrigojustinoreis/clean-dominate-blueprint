@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { dirServiceCards as services } from "@/data/home-directory";
@@ -23,18 +24,29 @@ const SERVICE_CARD_IMAGES: Record<string, string> = {
   "office-cleaning": "/images/services/office-cleaning.webp",
 };
 
-const ServicesSection = () => (
-  <section className="py-20 md:py-28 bg-secondary">
+// Phones (<md) show the first MOBILE_VISIBLE cards and a "show all" toggle; the remaining cards stay
+// in the prerendered HTML (CSS-hidden only), so nothing changes for crawlers or for md+ screens.
+const MOBILE_VISIBLE = 6;
+
+const ServicesSection = () => {
+  const [showAll, setShowAll] = useState(false);
+  const hiddenCount = services.length - MOBILE_VISIBLE;
+
+  return (
+  <section className="py-14 md:py-28 bg-secondary">
     <div className="container mx-auto px-4">
-      <div className="text-center mb-14">
+      <div className="text-center mb-8 md:mb-14">
         <span className="text-accent font-semibold text-sm uppercase tracking-wider">What We Offer</span>
         <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mt-2 mb-4">Our Cleaning Services</h2>
         <p className="text-muted-foreground max-w-2xl mx-auto text-base md:text-lg">From routine maintenance to intensive deep cleans, comprehensive solutions for every need.</p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-        {services.map((s) => (
-          <Card key={s.slug} className="group overflow-hidden flex flex-col hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-            <Link to={`/services/${s.slug}`} className="block relative aspect-[16/10] overflow-hidden" aria-label={`Learn more about ${s.name}`}>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-6xl mx-auto">
+        {services.map((s, i) => (
+          <Card
+            key={s.slug}
+            className={`group overflow-hidden flex flex-col hover:shadow-xl transition-all duration-300 hover:-translate-y-1 ${i >= MOBILE_VISIBLE && !showAll ? "hidden md:flex" : ""}`}
+          >
+            <Link to={`/services/${s.slug}`} className="block relative aspect-[16/7] md:aspect-[16/10] overflow-hidden" aria-label={`Learn more about ${s.name}`}>
               <img
                 src={SERVICE_CARD_IMAGES[s.slug] || "/images/team/real-team-two-members.webp"}
                 {...imgDims(SERVICE_CARD_IMAGES[s.slug] || "/images/team/real-team-two-members.webp")}
@@ -43,10 +55,10 @@ const ServicesSection = () => (
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/45 via-primary/5 to-transparent" aria-hidden="true" />
-              <h3 className="absolute bottom-3 left-4 right-4 font-heading text-xl font-bold text-white drop-shadow-sm">{s.name}</h3>
+              <h3 className="absolute bottom-3 left-4 right-4 font-heading text-lg md:text-xl font-bold text-white drop-shadow-sm">{s.name}</h3>
             </Link>
-            <div className="p-6 flex flex-col flex-1">
-              <p className="text-muted-foreground text-sm mb-5 leading-relaxed flex-1">{s.shortDescription}</p>
+            <div className="p-4 md:p-6 flex flex-col flex-1">
+              <p className="text-muted-foreground text-sm mb-3 md:mb-5 leading-relaxed flex-1">{s.shortDescription}</p>
               <div className="flex items-center justify-between gap-3">
                 <Link to={`/services/${s.slug}`} className="text-accent font-semibold text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">
                   Learn more <ArrowRight className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
@@ -59,13 +71,26 @@ const ServicesSection = () => (
           </Card>
         ))}
       </div>
-      <div className="text-center mt-12">
+      {hiddenCount > 0 && !showAll && (
+        <div className="mt-4 text-center md:hidden">
+          <button
+            type="button"
+            onClick={() => setShowAll(true)}
+            aria-expanded={false}
+            className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-5 py-2.5 text-sm font-semibold text-foreground hover:bg-accent/5 transition-colors"
+          >
+            Show all {services.length} services <ChevronDown className="h-4 w-4" aria-hidden="true" />
+          </button>
+        </div>
+      )}
+      <div className="text-center mt-8 md:mt-12">
         <Button variant="cta" size="lg" asChild>
           <a href="/#quote">Get a Free Quote <ArrowRight className="ml-1 h-4 w-4" aria-hidden="true" /></a>
         </Button>
       </div>
     </div>
   </section>
-);
+  );
+};
 
 export default ServicesSection;

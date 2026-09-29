@@ -142,7 +142,7 @@ const Index = () => {
 
       {/* ══════════════ 2.5. CAPITAL AREA AUTHORITY ══════════════ */}
       <ScrollReveal>
-        <section className="py-16 md:py-20 bg-stripe-mesh">
+        <section className="py-12 md:py-20 bg-stripe-mesh">
           <div className="container mx-auto px-4 max-w-5xl">
             <div className="text-center mb-10">
               <span className="inline-block bg-primary/10 text-primary font-semibold text-sm uppercase tracking-wider px-3 py-1 rounded-full mb-3">
@@ -260,7 +260,7 @@ const Index = () => {
 
       {/* ══════════════ 5. COMO FUNCIONA ══════════════ */}
       <ScrollReveal>
-        <section className="py-20 md:py-28 relative">
+        <section className="py-14 md:py-28 relative">
           <div className="container mx-auto px-4 max-w-5xl">
             <div className="text-center mb-16">
               <span className="inline-block bg-accent/10 text-accent font-semibold text-sm uppercase tracking-wider px-3 py-1 rounded-full mb-3">The Process</span>
@@ -303,7 +303,7 @@ const Index = () => {
 
       {/* ══════════════ 9. SOBRE + ECO + GREENSHIELD ══════════════ */}
       <ScrollReveal>
-        <section className="py-20 md:py-28">
+        <section className="py-14 md:py-28">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
               <div className="relative order-2 lg:order-1">
@@ -354,7 +354,7 @@ const Index = () => {
 
       {/* ══════════════ 10. PREÇOS ══════════════ */}
       <ScrollReveal>
-        <section id="pricing" className="scroll-mt-24 py-20 md:py-28">
+        <section id="pricing" className="scroll-mt-24 py-14 md:py-28">
           <div className="container mx-auto px-4 max-w-3xl">
             <div className="text-center mb-10">
               <span className="text-accent font-semibold text-sm uppercase tracking-wider">Pricing</span>
@@ -381,7 +381,7 @@ const Index = () => {
 
       {/* ══════════════ 11. FORMULÁRIO DE ORÇAMENTO ══════════════ */}
       <ScrollReveal>
-        <section className="pt-8 pb-20 md:py-28 bg-mesh scroll-mt-20" id="quote">
+        <section className="pt-8 pb-14 md:py-28 bg-mesh scroll-mt-20" id="quote">
           <div className="container mx-auto px-4 max-w-6xl">
             <div className="text-center mb-6 md:mb-10">
               <div className="inline-flex items-center gap-2 bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-700 text-amber-800 dark:text-amber-300 rounded-full px-4 py-1.5 text-xs font-bold mb-4 uppercase tracking-wide">
@@ -440,7 +440,7 @@ const Index = () => {
 
       {/* ══════════════ 12. FAQ ══════════════ */}
       <ScrollReveal>
-        <section className="py-20 md:py-28 bg-secondary">
+        <section className="py-14 md:py-28 bg-secondary">
           <div className="container mx-auto px-4 max-w-3xl">
             <div className="text-center mb-10">
               <span className="text-accent font-semibold text-sm uppercase tracking-wider">FAQ</span>
@@ -458,7 +458,7 @@ const Index = () => {
 
       {/* ══════════════ 13. ÁREAS DE SERVIÇO + PÁGINAS LOCAIS ══════════════ */}
       <ScrollReveal>
-        <section className="py-20 md:py-28 bg-mesh relative">
+        <section className="py-14 md:py-28 bg-mesh relative">
           <div className="container mx-auto px-4 relative z-10">
             <div className="text-center mb-16">
               <span className="inline-block bg-accent/10 text-accent font-semibold text-sm uppercase tracking-wider px-3 py-1 rounded-full mb-3">Service Areas</span>
@@ -497,7 +497,7 @@ const Index = () => {
       </ScrollReveal>
 
       <ScrollReveal>
-        <section className="py-20 md:py-28 bg-background relative overflow-hidden">
+        <section className="py-14 md:py-28 bg-background relative overflow-hidden">
           <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/5 rounded-full mix-blend-multiply filter blur-[100px] opacity-70 animate-blob pointer-events-none" />
           <div className="container mx-auto px-4 max-w-5xl relative z-10">
             <div className="text-center mb-14">

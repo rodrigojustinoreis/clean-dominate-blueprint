@@ -56,15 +56,17 @@ const HeroSection = () => {
       </picture>
       {/* Richer gradient overlays for depth */}
       {/* Mobile: vertical backing for the full-width text. Desktop: left→right so the team photo stays visible on the right. */}
-      <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/70 to-background/30 md:bg-gradient-to-r md:from-background md:via-background/60 md:to-transparent" />
+      {/* Phones (<md): stronger backing so the headline and copy stay legible over the team's faces. Desktop unchanged. */}
+      <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/85 to-background/60 md:bg-gradient-to-r md:from-background md:via-background/60 md:to-transparent" />
       <div className="absolute inset-0 bg-mesh opacity-20" />
     </div>
 
     {/* Content */}
-    <div className="relative z-10 container mx-auto px-4 py-16 md:py-24">
+    {/* Phones: tighter vertical rhythm so the primary CTA lands inside the first screen (360x740). md+ unchanged. */}
+    <div className="relative z-10 container mx-auto px-4 py-10 md:py-24">
       <div className="max-w-2xl">
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 glass rounded-full px-5 py-2.5 mb-8 animate-fade-up">
+        <div className="inline-flex items-center gap-2 glass rounded-full px-4 py-2 md:px-5 md:py-2.5 mb-5 md:mb-8 animate-fade-up">
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
@@ -72,24 +74,24 @@ const HeroSection = () => {
           <span className="text-xs font-semibold text-foreground uppercase tracking-wider">Same-day slots available · 15% OFF first clean</span>
         </div>
 
-        <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] font-bold text-foreground leading-[1.1] tracking-[-0.03em] mb-6 animate-fade-up drop-shadow-sm" style={{ animationDelay: "100ms" }}>
+        <h1 className="font-heading text-[2.125rem] sm:text-5xl md:text-6xl lg:text-[4rem] font-bold text-foreground leading-[1.1] tracking-[-0.03em] mb-4 md:mb-6 animate-fade-up drop-shadow-sm" style={{ animationDelay: "100ms" }}>
           Professional Eco-Friendly House Cleaning
           <br />
           <span className="text-gradient">in Maryland, DC & Virginia</span>
         </h1>
 
-        <p className="text-muted-foreground text-sm md:text-lg mb-8 leading-relaxed max-w-xl animate-fade-up" style={{ animationDelay: "200ms" }}>
+        <p className="text-muted-foreground text-sm md:text-lg mb-5 md:mb-8 leading-relaxed max-w-xl animate-fade-up" style={{ animationDelay: "200ms" }}>
           Eco-friendly cleaning by background-checked professionals. Safe for kids and pets. Licensed & insured, with a 24-hour satisfaction guarantee.
         </p>
 
         {/* Trust pills */}
-        <div className="flex flex-wrap gap-3 mb-12 animate-fade-up" style={{ animationDelay: "300ms" }}>
+        <div className="flex flex-wrap gap-2 md:gap-3 mb-6 md:mb-12 animate-fade-up" style={{ animationDelay: "300ms" }}>
           {[
             { icon: Star, label: "5-Star Rated" },
             { icon: Shield, label: "Licensed & Insured" },
             { icon: Leaf, label: "Eco-Friendly" },
           ].map(({ icon: Icon, label }) => (
-            <span key={label} className="inline-flex items-center gap-2 glass rounded-full px-4 py-2 text-sm font-medium text-foreground">
+            <span key={label} className="inline-flex items-center gap-2 glass rounded-full px-3 py-1.5 text-xs md:px-4 md:py-2 md:text-sm font-medium text-foreground">
               <Icon className="h-4 w-4 text-accent" />
               {label}
             </span>
@@ -115,7 +117,7 @@ const HeroSection = () => {
         </div>
 
         {/* Social proof */}
-        <div className="flex flex-col gap-4 mt-12 pt-8 border-t border-border/50 animate-fade-up" style={{ animationDelay: "500ms" }}>
+        <div className="flex flex-col gap-4 mt-8 pt-6 md:mt-12 md:pt-8 border-t border-border/50 animate-fade-up" style={{ animationDelay: "500ms" }}>
           <div className="flex items-center gap-4">
             <div className="flex -space-x-3">
               {avatars.map((a) => (

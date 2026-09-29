@@ -49,11 +49,11 @@ const pillars = [
 ];
 
 const WhyChooseUs = () => (
-  <section className="py-20 md:py-28 bg-gradient-to-b from-[#F0FBF5] to-background dark:from-[#0d1f0d] dark:to-background">
+  <section className="py-14 md:py-28 bg-gradient-to-b from-[#F0FBF5] to-background dark:from-[#0d1f0d] dark:to-background">
     <div className="container mx-auto px-4 max-w-5xl">
 
       {/* Header */}
-      <div className="text-center mb-14">
+      <div className="text-center mb-10 md:mb-14">
         <span className="inline-flex items-center gap-2 bg-accent/10 text-accent font-semibold text-sm uppercase tracking-wider px-4 py-1.5 rounded-full mb-4">
           🏠 Your Home
         </span>
@@ -74,7 +74,7 @@ const WhyChooseUs = () => (
             className={`flex flex-col ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"} items-stretch bg-card rounded-3xl border border-border shadow-sm overflow-hidden hover:shadow-lg transition-all duration-300 group`}
           >
             {/* Photo */}
-            <div className="w-full md:w-2/5 h-52 md:h-auto flex-shrink-0 overflow-hidden">
+            <div className="w-full md:w-2/5 h-44 md:h-auto flex-shrink-0 overflow-hidden">
               <img
                 src={p.photo}
                 {...imgDims(p.photo)}
@@ -85,7 +85,7 @@ const WhyChooseUs = () => (
             </div>
 
             {/* Content */}
-            <div className="flex-1 p-6 md:p-10 flex flex-col justify-center gap-4">
+            <div className="flex-1 p-5 md:p-10 flex flex-col justify-center gap-3 md:gap-4">
               {/* Icon + badge row */}
               <div className="flex items-center gap-3 flex-wrap">
                 <div className={`w-12 h-12 rounded-2xl ${p.iconBg} flex items-center justify-center shadow-lg shrink-0`}>
