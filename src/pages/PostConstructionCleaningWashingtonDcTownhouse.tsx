@@ -81,7 +81,8 @@ const steps: { n: string; title: string; text: string; detail: string; photo: { 
     n: "04", title: "Bathrooms get their own protocol",
     text: "The crew used these bathrooms for weeks. Wiping is not sanitizing.",
     detail: "Rotary machine on shower walls, glass and tile scraped, toilet seats taken apart, steam plus EPA-registered disinfectants.",
-    photo: { src: `${IMG}/bathroom-light-shades.webp`, alt: "Three frosted glass light shades taken down from the bathroom vanity fixture, with the screws and tools on the counter", caption: "Vanity shades come down so the bulbs and the inside of the fixture get cleaned too." },
+    // Owner-provided photo (29/09/2026), placed here at the owner's request.
+    photo: { src: `${IMG}/bathroom-towel-bar.webp`, alt: "Team member in pink gloves detailing the chrome towel bar and the wall behind it with a brush", caption: "Every touch surface by hand, down to the towel bar and the wall behind it.", position: "object-[center_30%]" },
   },
   {
     n: "05", title: "Kitchen, closets and final handoff",
