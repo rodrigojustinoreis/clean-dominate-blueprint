@@ -1,9 +1,15 @@
-import { ArrowRight, Phone, Check, Star, Shield, Leaf } from "lucide-react";
+import { ArrowRight, Phone, Star, Shield, Leaf, Home, Sparkles, Package, HardHat } from "lucide-react";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { dirServiceCards } from "@/data/home-directory";
 
-// Served from /public (stable URL) so it can be <link rel="preload">-ed for the fastest LCP.
-const teamPhoto = "/images/hero/team-hero.webp";
+// Served from /public (stable URLs) so they can be <link rel="preload">-ed for the fastest LCP
+// (the media-scoped preload pair is declared by Index.tsx via useSEO).
+const teamPhoto = "/images/hero/team-hero.webp";          // md+: the real team, full-bleed
+const mobileInterior = "/images/hero/home-hero-m.webp";   // <md: bright, clean living room (owner's mockup)
+// 1x1 transparent GIF: keeps the browser from downloading the other breakpoint's photo.
+const BLANK = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
 import { trackPhoneClick, trackBookNowClick } from "@/lib/analytics";
 
 // Real Google reviews (trimmed) — see src/data/realReviews.ts. Never invent testimonials.
@@ -21,6 +27,29 @@ const avatars = [
   { src: "/images/team/avatars/team-mopping-uniform-96.webp",       alt: "Capital Clean Care team member" },
 ];
 
+const trustItems = [
+  { icon: Star, label: "5-Star Rated" },
+  { icon: Shield, label: "Licensed & Insured" },
+  { icon: Leaf, label: "Eco-Friendly" },
+];
+
+// Phone-only shortcuts strip (owner's mockup, 28/09/2026). Labels come from the same directory data
+// as the services grid, so no new wording is introduced.
+const SHORTCUTS: { slug: string; icon: typeof Home; tone: string }[] = [
+  { slug: "house-cleaning", icon: Home, tone: "bg-sky-100 text-sky-700" },
+  { slug: "deep-cleaning", icon: Sparkles, tone: "bg-emerald-100 text-emerald-700" },
+  { slug: "move-out-cleaning", icon: Package, tone: "bg-amber-100 text-amber-700" },
+  { slug: "post-construction-cleaning", icon: HardHat, tone: "bg-rose-100 text-rose-700" },
+];
+const shortcuts = SHORTCUTS.map((sc) => {
+  const s = dirServiceCards.find((c) => c.slug === sc.slug);
+  return s ? { ...sc, name: s.name } : null;
+}).filter((x): x is NonNullable<typeof x> => x !== null);
+
+// Phones (<md) follow the owner's mockup (28/09/2026): bright living-room photo behind a white
+// left-to-right wash, eyebrow line, H1 with the second line in solid blue, the same copy, one CTA,
+// three trust items with outline icons, a four-item shortcuts card and the rating row. No wording
+// changes. md+ keeps the original hero: team photo full-bleed, pills, two CTAs, social proof.
 const HeroSection = () => {
   const [testimonialIdx, setTestimonialIdx] = useState(0);
 
@@ -36,13 +65,25 @@ const HeroSection = () => {
     <div className="hidden md:block absolute top-0 -right-1/4 w-96 h-96 bg-primary/30 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-2000" />
     <div className="hidden md:block absolute -bottom-32 left-1/3 w-96 h-96 bg-blue-400/30 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-4000" />
 
-    {/* Background image */}
+    {/* Background: phones get the bright interior, md+ the team photo. Each <picture> hands the
+        other breakpoint a 1x1 GIF so only one photo is ever downloaded. */}
     <div className="absolute inset-0 z-0">
-      {/* Phones get a 640w/q50 variant (19KB vs 49KB): on <md the photo sits under a 30–95% white
-          overlay, so the extra compression is invisible, and the LCP image lands ~0.5s sooner on 4G.
-          The matching media-scoped <link rel="preload"> pair is emitted by scripts/inline-critical-css.mjs. */}
-      <picture>
-        <source media="(max-width: 767px)" srcSet="/images/hero/team-hero-m.webp" type="image/webp" />
+      <picture className="md:hidden">
+        <source media="(min-width: 768px)" srcSet={BLANK} />
+        <img
+          src={mobileInterior}
+          alt=""
+          aria-hidden="true"
+          className="w-full h-full object-cover object-[70%_center]"
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
+          width={640}
+          height={800}
+        />
+      </picture>
+      <picture className="hidden md:block">
+        <source media="(max-width: 767px)" srcSet={BLANK} />
         <img
           src={teamPhoto}
           alt="Capital Clean Care team of professional cleaners"
@@ -54,70 +95,99 @@ const HeroSection = () => {
           height={1140}
         />
       </picture>
-      {/* Richer gradient overlays for depth */}
-      {/* Mobile: vertical backing for the full-width text. Desktop: left→right so the team photo stays visible on the right. */}
-      {/* Phones (<md): stronger backing so the headline and copy stay legible over the team's faces. Desktop unchanged. */}
-      <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/85 to-background/60 md:bg-gradient-to-r md:from-background md:via-background/60 md:to-transparent" />
-      <div className="absolute inset-0 bg-mesh opacity-20" />
+      {/* Phones: white wash from the left so the copy reads on the photo, fading to white at the
+          bottom under the cards. Desktop: the original left-to-right gradient. */}
+      <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/70 to-background/25 md:bg-gradient-to-r md:from-background md:via-background/60 md:to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background md:hidden" />
+      <div className="hidden md:block absolute inset-0 bg-mesh opacity-20" />
     </div>
 
     {/* Content */}
-    {/* Phones: tighter vertical rhythm so the primary CTA lands inside the first screen (360x740). md+ unchanged. */}
-    <div className="relative z-10 container mx-auto px-4 py-10 md:py-24">
-      <div className="max-w-2xl">
-        {/* Badge */}
-        <div className="inline-flex items-center gap-2 glass rounded-full px-4 py-2 md:px-5 md:py-2.5 mb-5 md:mb-8 animate-fade-up">
+    <div className="relative z-10 container mx-auto px-4 pt-10 pb-8 md:py-24">
+      {/* flex-col so phones can reorder (CTA before the trust row) without changing the desktop DOM order */}
+      <div className="max-w-2xl flex flex-col md:block">
+        {/* Badge: eyebrow line on phones, glass pill on md+ */}
+        <div className="inline-flex items-center gap-2 mb-5 md:glass md:rounded-full md:px-5 md:py-2.5 md:mb-8 animate-fade-up">
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
           </span>
-          <span className="text-xs font-semibold text-foreground uppercase tracking-wider">Same-day slots available · 15% OFF first clean</span>
+          <span className="text-[11px] md:text-xs font-semibold text-muted-foreground md:text-foreground uppercase tracking-[0.2em] md:tracking-wider">Same-day slots available · 15% OFF first clean</span>
         </div>
 
-        <h1 className="font-heading text-[2.125rem] sm:text-5xl md:text-6xl lg:text-[4rem] font-bold text-foreground leading-[1.1] tracking-[-0.03em] mb-4 md:mb-6 animate-fade-up drop-shadow-sm" style={{ animationDelay: "100ms" }}>
+        <h1 className="font-heading text-[2.35rem] sm:text-5xl md:text-6xl lg:text-[4rem] font-bold text-foreground leading-[1.05] md:leading-[1.1] tracking-[-0.03em] mb-5 md:mb-6 animate-fade-up drop-shadow-sm" style={{ animationDelay: "100ms" }}>
           Professional Eco-Friendly House Cleaning
           <br />
-          <span className="text-gradient">in Maryland, DC & Virginia</span>
+          <span className="text-sky-600 md:text-gradient">in Maryland, DC & Virginia</span>
         </h1>
 
-        <p className="text-muted-foreground text-sm md:text-lg mb-5 md:mb-8 leading-relaxed max-w-xl animate-fade-up" style={{ animationDelay: "200ms" }}>
+        <p className="text-muted-foreground text-base md:text-lg mb-6 md:mb-8 leading-relaxed max-w-xl animate-fade-up" style={{ animationDelay: "200ms" }}>
           Eco-friendly cleaning by background-checked professionals. Safe for kids and pets. Licensed & insured, with a 24-hour satisfaction guarantee.
         </p>
 
-        {/* Trust pills */}
-        <div className="flex flex-wrap gap-2 md:gap-3 mb-6 md:mb-12 animate-fade-up" style={{ animationDelay: "300ms" }}>
-          {[
-            { icon: Star, label: "5-Star Rated" },
-            { icon: Shield, label: "Licensed & Insured" },
-            { icon: Leaf, label: "Eco-Friendly" },
-          ].map(({ icon: Icon, label }) => (
-            <span key={label} className="inline-flex items-center gap-2 glass rounded-full px-3 py-1.5 text-xs md:px-4 md:py-2 md:text-sm font-medium text-foreground">
-              <Icon className="h-4 w-4 text-accent" />
-              {label}
+        {/* Trust items: DOM order is the desktop order (before the CTAs). Phones render them after the
+            CTA as three outline-icon items (order-3); md+ keeps the original glass pills. */}
+        <div className="order-3 md:order-none grid grid-cols-3 gap-3 mt-6 md:mt-0 md:flex md:flex-wrap md:gap-3 md:mb-12 animate-fade-up" style={{ animationDelay: "400ms" }}>
+          {trustItems.map(({ icon: Icon, label }) => (
+            <span key={label} className="flex items-center gap-2 md:inline-flex md:glass md:rounded-full md:px-4 md:py-2 text-xs md:text-sm font-medium text-foreground">
+              <Icon className="h-7 w-7 md:h-4 md:w-4 shrink-0 text-primary md:text-accent stroke-[1.5] md:stroke-2" />
+              <span className="leading-tight">{label}</span>
             </span>
           ))}
         </div>
 
-        {/* CTAs */}
-        <div className="flex flex-col sm:flex-row gap-4 animate-fade-up" style={{ animationDelay: "400ms" }}>
-          <div className="flex flex-col items-start gap-1">
+        {/* CTAs: one full-width button on phones (the phone number lives in the header and the sticky bar), both on md+ */}
+        <div className="order-1 md:order-none flex flex-col sm:flex-row gap-4 animate-fade-up" style={{ animationDelay: "300ms" }}>
+          <div className="flex flex-col items-stretch sm:items-start gap-1">
             <Button variant="cta" size="lg" className="text-sm px-8 h-14 rounded-full shadow-lg shadow-accent/25 hover:shadow-accent/40 hover:-translate-y-0.5 transition-all duration-300" asChild>
               <a href="#quote" onClick={() => trackBookNowClick("hero_section")}>Get My Free Quote <ArrowRight className="ml-2 h-4 w-4" /></a>
             </Button>
-            <span className="text-xs text-muted-foreground pl-2">No commitment · Response within hours</span>
+            <span className="text-xs text-muted-foreground pl-2 mt-1 md:mt-0">No commitment · Response within hours</span>
           </div>
           <Button
             size="lg"
             variant="outline"
-            className="text-sm px-8 h-14 rounded-full glass hover:bg-white/40 dark:hover:bg-black/40 transition-all duration-300"
+            className="hidden md:inline-flex text-sm px-8 h-14 rounded-full glass hover:bg-white/40 dark:hover:bg-black/40 transition-all duration-300"
             asChild
           >
             <a href="tel:+12407042551" onClick={() => trackPhoneClick("hero_section")}><Phone className="mr-2 h-4 w-4" /> (240) 704-2551</a>
           </Button>
         </div>
 
-        {/* Social proof */}
-        <div className="flex flex-col gap-4 mt-8 pt-6 md:mt-12 md:pt-8 border-t border-border/50 animate-fade-up" style={{ animationDelay: "500ms" }}>
+        {/* Phone-only shortcuts card (md+ has the full services grid further down) */}
+        {shortcuts.length > 0 && (
+          <nav aria-label="Popular services" className="order-4 md:hidden mt-7 grid grid-cols-4 divide-x divide-border rounded-2xl bg-background/85 backdrop-blur border border-border shadow-sm animate-fade-up" style={{ animationDelay: "450ms" }}>
+            {shortcuts.map((sc) => (
+              <Link key={sc.slug} to={`/services/${sc.slug}`} className="flex flex-col items-center gap-2 px-1 py-4 text-center hover:bg-accent/5">
+                <span className={`flex h-12 w-12 items-center justify-center rounded-full ${sc.tone}`}><sc.icon className="h-5 w-5" aria-hidden="true" /></span>
+                <span className="text-[11px] font-medium leading-tight text-foreground break-words">{sc.name}</span>
+              </Link>
+            ))}
+          </nav>
+        )}
+
+        {/* Phone-only rating row */}
+        <div className="order-5 md:hidden flex items-center gap-3 mt-6 animate-fade-up" style={{ animationDelay: "500ms" }}>
+          <div className="flex -space-x-3 shrink-0">
+            {avatars.slice(0, 3).map((a) => (
+              <div key={a.src} className="w-11 h-11 rounded-full border-2 border-background shadow-sm overflow-hidden">
+                <img src={a.src} alt={a.alt} width={44} height={44} className="w-full h-full object-cover" loading="lazy" decoding="async" />
+              </div>
+            ))}
+          </div>
+          <div className="min-w-0">
+            <div className="flex items-center gap-1">
+              {[1, 2, 3, 4, 5].map((i) => (
+                <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" aria-hidden="true" />
+              ))}
+              <span className="text-sm text-foreground ml-1.5 font-bold">5.0</span>
+            </div>
+            <p className="text-xs text-muted-foreground mt-0.5 font-medium">Trusted by homeowners in MD, DC & VA</p>
+          </div>
+        </div>
+
+        {/* Social proof: desktop only */}
+        <div className="hidden md:flex flex-col gap-4 mt-12 pt-8 border-t border-border/50 animate-fade-up" style={{ animationDelay: "500ms" }}>
           <div className="flex items-center gap-4">
             <div className="flex -space-x-3">
               {avatars.map((a) => (
