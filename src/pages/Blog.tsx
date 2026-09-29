@@ -155,7 +155,7 @@ export const blogPosts: BlogPost[] = [
     title: "Post Construction Cleaning in Washington, DC: Inside a 3-Story Townhouse",
     excerpt: "A real post construction cleaning project in Washington DC: how we removed construction dust from a furnished 3-story townhouse, filtered the air with a HEPA scrubber and sanitized the bathrooms.",
     date: "2026-09-28", readTime: "8 min read", category: "Local Guides",
-    coverImage: "/images/blog/post-construction-dc-townhouse/hero-kitchen-living.webp",
+    coverImage: "/images/blog/post-construction-dc-townhouse/hero-team.webp",
   },
   {
     slug: "how-to-clean-hardwood-floors-after-construction",

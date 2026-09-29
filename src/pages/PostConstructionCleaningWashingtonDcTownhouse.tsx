@@ -26,8 +26,9 @@ import FAQAccordion from "@/components/blog/FAQAccordion";
 const SLUG = "post-construction-cleaning-washington-dc-townhouse";
 const URL = `https://capitalcleancare.com/resources/${SLUG}`;
 const IMG = "/images/blog/post-construction-dc-townhouse";
-const HERO_IMAGE = `${IMG}/hero-kitchen-living.webp`;
-const HERO_IMAGE_640 = `${IMG}/hero-kitchen-living-640.webp`;
+// Cover: the owner's team photo taken inside this townhouse's home gym (owner-provided, 29/09/2026).
+const HERO_IMAGE = `${IMG}/hero-team.webp`;
+const HERO_IMAGE_640 = `${IMG}/hero-team-640.webp`;
 const OG_IMAGE = `${IMG}/hero-og.jpg`;
 const DATE_ISO = "2026-09-28";
 // Filled in by the owner before publication; until then the copy says "Washington, DC" only.
@@ -55,39 +56,42 @@ const snapshot: { icon: typeof MapPin; k: string; v: string }[] = [
   { icon: Layers, k: "Order of work", v: "Top floor down, one room at a time, each room sealed after cleaning" },
 ];
 
-const steps: { n: string; title: string; text: string; detail: string }[] = [
+// One owner-provided photo per step (29/09/2026: the owner sent the floor and air-scrubber photos
+// and asked for each photo in its own step).
+const steps: { n: string; title: string; text: string; detail: string; photo: { src: string; alt: string; caption: string; position?: string } }[] = [
   {
     n: "01", title: "Top floor first",
     text: "Dust falls, so we start at the top. Third floor: home gym, guest room, bathroom and office.",
     detail: "Ceiling, then light fixtures (taken down, bulbs cleaned), then walls, then every object, then the floor last.",
+    photo: { src: `${IMG}/office-bookshelf.webp`, alt: "Team member wiping each shelf of the office bookcase by hand, with books and boxes set aside", caption: "The office, shelf by shelf, object by object." },
   },
   {
     n: "02", title: "Read the floor before cleaning it",
     text: "After three vacuum passes we inspect the whole floor for paint drips, glue, chemicals and stains.",
     detail: "Each mark comes off with the right method for that material before any mopping starts.",
+    photo: { src: `${IMG}/floor-vacuum.webp`, alt: "Team member running a cordless vacuum with a green headlight over the new hardwood floor in a bedroom", caption: "One of the three vacuum passes on the new hardwood, headlight on to show the dust.", position: "object-[center_60%]" },
   },
   {
     n: "03", title: "Seal the room and clean the air",
     text: "When a room is done, the XPOWER X-2580 HEPA air scrubber goes in and every opening is sealed with plastic.",
     detail: "It runs for up to 24 hours, so airborne dust is captured instead of settling back on clean surfaces.",
+    photo: { src: `${IMG}/air-scrubber.webp`, alt: "Team member kneeling on the new hardwood floor to set the blue XPOWER HEPA air scrubber next to a wall vent", caption: "The XPOWER X-2580 goes in before the room is sealed.", position: "object-[center_40%]" },
   },
   {
     n: "04", title: "Bathrooms get their own protocol",
     text: "The crew used these bathrooms for weeks. Wiping is not sanitizing.",
     detail: "Rotary machine on shower walls, glass and tile scraped, toilet seats taken apart, steam plus EPA-registered disinfectants.",
+    photo: { src: `${IMG}/bathroom-light-shades.webp`, alt: "Three frosted glass light shades taken down from the bathroom vanity fixture, with the screws and tools on the counter", caption: "Vanity shades come down so the bulbs and the inside of the fixture get cleaned too." },
   },
   {
     n: "05", title: "Kitchen, closets and final handoff",
     text: "The new kitchen was cleaned ceiling to floor, including the refrigerator, range, hood and every cabinet inside and out.",
     detail: "Closets emptied, cleaned inside, everything put back where it was. Construction trash bagged and taken out.",
+    photo: { src: `${IMG}/kitchen-refrigerator.webp`, alt: "Team member cleaning the empty shelves inside the new refrigerator", caption: "The new refrigerator, inside and out." },
   },
 ];
 
-const projectPhotos = [
-  { src: `${IMG}/office-bookshelf.webp`, alt: "Team member wiping each shelf of the office bookcase by hand, with books and boxes set aside", caption: "Step 1: the office, shelf by shelf, object by object." },
-  { src: `${IMG}/bathroom-light-shades.webp`, alt: "Three frosted glass light shades taken down from the bathroom vanity fixture, with the screws and tools on the counter", caption: "Step 4: vanity shades come down so the bulbs and the inside of the fixture get cleaned too." },
-  { src: `${IMG}/kitchen-refrigerator.webp`, alt: "Team member cleaning the empty shelves inside the new refrigerator", caption: "Step 5: the new refrigerator, inside and out." },
-];
+const projectPhotos = steps.map((s) => ({ ...s.photo, caption: `Step ${Number(s.n)}: ${s.photo.caption}` }));
 
 const equipmentChips = ["HEPA filtration", "Up to 550 CFM airflow", "Four filter stages", "Runs in every finished room"];
 const equipmentWhy = [
@@ -152,10 +156,11 @@ const faqs: { q: string; a: string }[] = [
   },
 ];
 
-const HERO_ALT = "Capital Clean Care team cleaning the new kitchen and living area of a renovated Washington, DC townhouse, island covered in plastic during the post-construction clean";
+const HERO_ALT = "The Capital Clean Care team, five people in navy uniforms, standing in the finished home gym of the renovated Washington, DC townhouse";
+const HERO_CAPTION = "Owner-provided project photo: the team in the townhouse's home gym, the first room we cleaned.";
 // Every photo on the page, in reading order, for the tap-to-enlarge viewer (hero first).
 const lightboxImages = [
-  { src: HERO_IMAGE, alt: HERO_ALT, caption: "Owner-provided project photo: the new kitchen, mid-clean. Our team working the kitchen and living level." },
+  { src: HERO_IMAGE, alt: HERO_ALT, caption: HERO_CAPTION },
   ...projectPhotos.map((p) => ({ src: p.src, alt: p.alt, caption: `Owner-provided photo. ${p.caption}` })),
 ];
 
@@ -193,7 +198,7 @@ const PostConstructionCleaningWashingtonDcTownhouse = () => {
       <ReadingProgress />
       <Helmet>
         <meta name="keywords" content="post construction cleaning washington dc, post construction cleaning services, construction dust removal, after construction cleaning, post remodel cleaning dc, hepa air scrubber after renovation" />
-        <link rel="preload" as="image" href={HERO_IMAGE} imageSrcSet={`${HERO_IMAGE_640} 640w, ${HERO_IMAGE} 1600w`} imageSizes="(min-width: 1024px) 560px, 100vw" fetchPriority="high" />
+        <link rel="preload" as="image" href={HERO_IMAGE} imageSrcSet={`${HERO_IMAGE_640} 640w, ${HERO_IMAGE} 1200w`} imageSizes="(min-width: 1024px) 480px, 100vw" fetchPriority="high" />
       </Helmet>
       <ArticleSchema
         title="Post Construction Cleaning in Washington, DC: Inside a 3-Story Townhouse"
@@ -201,9 +206,9 @@ const PostConstructionCleaningWashingtonDcTownhouse = () => {
         url={URL}
         datePublished={DATE_ISO}
         image={HERO_IMAGE}
-        imageWidth={1600}
-        imageHeight={1200}
-        imageCaption="Owner-provided project photo: the new kitchen, mid-clean, during the post-construction clean of a Washington, DC townhouse."
+        imageWidth={1200}
+        imageHeight={1500}
+        imageCaption={HERO_CAPTION}
         about={["Post-construction cleaning", "Construction dust", "HEPA air scrubber", "Particulate matter", "Washington, DC"]}
       />
       <FAQSchema faqs={faqs} />
@@ -243,26 +248,26 @@ const PostConstructionCleaningWashingtonDcTownhouse = () => {
             </div>
 
             <div className="relative animate-fade-up" style={{ animationDelay: "250ms" }}>
-              <div className="group relative rounded-[2rem] overflow-hidden shadow-2xl shadow-primary/20 ring-1 ring-black/5 aspect-[4/3] max-w-xl mx-auto lg:ml-auto">
-                <button type="button" onClick={() => setLightbox(0)} className="block h-full w-full cursor-zoom-in" aria-label="Enlarge photo: the new kitchen, mid-clean">
+              <div className="group relative rounded-[2rem] overflow-hidden shadow-2xl shadow-primary/20 ring-1 ring-black/5 aspect-[4/5] max-w-md mx-auto lg:ml-auto">
+                <button type="button" onClick={() => setLightbox(0)} className="block h-full w-full cursor-zoom-in" aria-label="Enlarge photo: the team in the townhouse's home gym">
                   <img
                     src={HERO_IMAGE}
-                    srcSet={`${HERO_IMAGE_640} 640w, ${HERO_IMAGE} 1600w`}
-                    sizes="(min-width: 1024px) 560px, 100vw"
+                    srcSet={`${HERO_IMAGE_640} 640w, ${HERO_IMAGE} 1200w`}
+                    sizes="(min-width: 1024px) 480px, 100vw"
                     alt={HERO_ALT}
                     className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
                     loading="eager"
                     fetchPriority="high"
                     decoding="async"
-                    width={1600}
-                    height={1200}
+                    width={1200}
+                    height={1500}
                   />
                 </button>
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-primary/50 via-transparent to-transparent" aria-hidden="true" />
                 <span className="pointer-events-none absolute right-4 top-4 inline-flex items-center gap-1 rounded-full bg-background/90 px-2.5 py-1 text-[11px] font-semibold text-foreground shadow-sm backdrop-blur"><ZoomIn className="h-3.5 w-3.5" aria-hidden="true" />Tap to enlarge</span>
                 <div className="pointer-events-none absolute left-4 right-4 bottom-4 rounded-xl bg-background/90 backdrop-blur px-4 py-3 shadow-lg">
                   <p className="text-xs font-bold text-foreground leading-snug">Owner-provided project photo</p>
-                  <p className="text-xs text-muted-foreground leading-snug">The new kitchen, mid-clean. Our team working the kitchen and living level.</p>
+                  <p className="text-xs text-muted-foreground leading-snug">The team in the townhouse's home gym, the first room we cleaned.</p>
                 </div>
               </div>
             </div>
@@ -364,31 +369,27 @@ const PostConstructionCleaningWashingtonDcTownhouse = () => {
               <p className="text-muted-foreground md:max-w-sm md:text-right">The same order in every room: ceiling, fixtures, walls, every object, floor last.</p>
             </div>
             <ol className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
-              {steps.map((s) => (
-                <li key={s.n} className="group rounded-2xl bg-white border border-border p-5 flex flex-col transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-lg">
-                  <div className="flex items-center gap-3 mb-3">
-                    <span className="h-9 w-9 rounded-full bg-primary text-primary-foreground text-sm font-bold flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110">{s.n}</span>
-                    <h3 className="font-heading text-base font-bold text-foreground leading-snug">{s.title}</h3>
+              {steps.map((s, i) => (
+                <li key={s.n} className="group rounded-2xl bg-white border border-border overflow-hidden flex flex-col transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-lg">
+                  <button type="button" onClick={() => setLightbox(i + 1)} className="relative block w-full cursor-zoom-in overflow-hidden" aria-label={`Enlarge photo: ${s.photo.alt}`}>
+                    <img src={s.photo.src} srcSet={`${s.photo.src.replace(".webp", "-640.webp")} 640w, ${s.photo.src} 1200w`} sizes="(min-width: 1024px) 20vw, (min-width: 640px) 50vw, 100vw" alt={s.photo.alt} loading="lazy" decoding="async" width={1200} height={1600} className={`w-full aspect-[4/3] sm:aspect-[5/4] object-cover transition-transform duration-700 ease-out group-hover:scale-105 ${s.photo.position ?? ""}`} />
+                    <span className="absolute right-3 top-3 inline-flex h-8 w-8 items-center justify-center rounded-full bg-background/90 text-foreground shadow-sm opacity-90 transition-opacity group-hover:opacity-100"><ZoomIn className="h-4 w-4" aria-hidden="true" /></span>
+                  </button>
+                  <div className="p-5 flex flex-col flex-1">
+                    <div className="flex items-center gap-3 mb-3">
+                      <span className="h-9 w-9 rounded-full bg-primary text-primary-foreground text-sm font-bold flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110">{s.n}</span>
+                      <h3 className="font-heading text-base font-bold text-foreground leading-snug">{s.title}</h3>
+                    </div>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-3">{s.text}</p>
+                    <p className="text-xs text-muted-foreground leading-relaxed border-t border-border pt-3 mt-auto">{s.detail}</p>
+                    <p className="text-[11px] text-muted-foreground leading-snug mt-2"><span className="font-semibold text-foreground">Owner-provided photo.</span> {s.photo.caption}</p>
                   </div>
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-3">{s.text}</p>
-                  <p className="text-xs text-muted-foreground leading-relaxed border-t border-border pt-3 mt-auto">{s.detail}</p>
                 </li>
               ))}
             </ol>
           </FadeInSection>
 
           <FadeInSection>
-            <div className="grid sm:grid-cols-3 gap-4 mt-6">
-              {projectPhotos.map((p, i) => (
-                <figure key={p.src} className="group rounded-2xl overflow-hidden bg-white border border-border transition-shadow duration-300 hover:shadow-lg">
-                  <button type="button" onClick={() => setLightbox(i + 1)} className="relative block w-full cursor-zoom-in overflow-hidden" aria-label={`Enlarge photo: ${p.alt}`}>
-                    <img src={p.src} srcSet={`${p.src.replace(".webp", "-640.webp")} 640w, ${p.src} 1200w`} sizes="(min-width: 640px) 33vw, 100vw" alt={p.alt} loading="lazy" decoding="async" width={1200} height={1600} className="w-full aspect-[4/3] object-cover transition-transform duration-700 ease-out group-hover:scale-105" />
-                    <span className="absolute right-3 top-3 inline-flex h-8 w-8 items-center justify-center rounded-full bg-background/90 text-foreground shadow-sm opacity-90 transition-opacity group-hover:opacity-100"><ZoomIn className="h-4 w-4" aria-hidden="true" /></span>
-                  </button>
-                  <figcaption className="px-4 py-3 text-xs text-muted-foreground leading-snug"><span className="font-semibold text-foreground">Owner-provided photo.</span> {p.caption}</figcaption>
-                </figure>
-              ))}
-            </div>
             <p className="text-sm text-muted-foreground leading-relaxed mt-6 max-w-3xl">
               On the new hardwood we finish with a rotary machine that controls the moisture going into the wood, using a product
               made for that finish. Too much water and boards can cup or warp. The full sequence is in our{" "}
