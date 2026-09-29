@@ -1,9 +1,13 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import {
   ArrowRight, ExternalLink, HardHat, Wind, Home, ShieldCheck, MapPin, Lightbulb, Building2, Layers,
-  Sofa, Fan, Phone, CheckCircle2, Sparkles, Wrench, PlayCircle,
+  Sofa, Fan, Phone, CheckCircle2, Sparkles, Wrench, PlayCircle, ZoomIn,
 } from "lucide-react";
+import ReadingProgress from "@/components/blog/ReadingProgress";
+import SectionJumpNav from "@/components/blog/SectionJumpNav";
+import Lightbox from "@/components/blog/Lightbox";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import { useSEO } from "@/hooks/useSEO";
@@ -144,8 +148,24 @@ const faqs: { q: string; a: string }[] = [
   },
   {
     q: "Is Capital Clean Care insured?",
-    a: "Yes, we are fully insured.",
+    a: "Yes. Capital Clean Care is fully insured, and the crew that cleaned this townhouse is the same background-checked team that cleans our homes in Washington, DC and Maryland. The walkthrough before the cleaning day is also when we confirm access, protection of finished surfaces and the room order.",
   },
+];
+
+const HERO_ALT = "Capital Clean Care team cleaning the new kitchen and living area of a renovated Washington, DC townhouse, island covered in plastic during the post-construction clean";
+// Every photo on the page, in reading order, for the tap-to-enlarge viewer (hero first).
+const lightboxImages = [
+  { src: HERO_IMAGE, alt: HERO_ALT, caption: "Owner-provided project photo: the new kitchen, mid-clean. Our team working the kitchen and living level." },
+  ...projectPhotos.map((p) => ({ src: p.src, alt: p.alt, caption: `Owner-provided photo. ${p.caption}` })),
+];
+
+const jumpItems = [
+  { id: "process", label: "Process" },
+  { id: "equipment", label: "Air scrubbing" },
+  { id: "dust", label: "Construction dust" },
+  { id: "included", label: "What's included" },
+  { id: "areas", label: "DC, MD areas" },
+  { id: "faq", label: "FAQ" },
 ];
 
 const H2 = "font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-foreground leading-tight";
@@ -153,9 +173,11 @@ const EYEBROW = "text-xs font-semibold uppercase tracking-wider text-primary mb-
 
 const PostConstructionCleaningWashingtonDcTownhouse = () => {
   const { seoHelmet } = useSEO({
-    title: "Post Construction Cleaning in Washington DC: Why Complete Dust Removal Matters",
+    // Title, H1, JSON-LD headline and breadcrumb aligned on one framing (SEO review, 28/09/2026);
+    // title kept at 60 characters, description at 145.
+    title: "Post Construction Cleaning in Washington, DC: A Real Project",
     description:
-      "Post construction cleaning services in Washington DC, shown on a real 3-story townhouse: how we remove construction dust from every room, filter the air with a HEPA scrubber and sanitize the bathrooms.",
+      "See how we removed construction dust from a real Washington DC townhouse: room by room cleaning, a HEPA air scrubber and full bathroom sanitizing.",
     canonical: URL,
     ogType: "article",
     ogImage: OG_IMAGE,
@@ -163,23 +185,29 @@ const PostConstructionCleaningWashingtonDcTownhouse = () => {
 
   const faqLeft = faqs.slice(0, Math.ceil(faqs.length / 2));
   const faqRight = faqs.slice(Math.ceil(faqs.length / 2));
+  const [lightbox, setLightbox] = useState<number | null>(null);
 
   return (
     <Layout>
       {seoHelmet}
+      <ReadingProgress />
       <Helmet>
         <meta name="keywords" content="post construction cleaning washington dc, post construction cleaning services, construction dust removal, after construction cleaning, post remodel cleaning dc, hepa air scrubber after renovation" />
         <link rel="preload" as="image" href={HERO_IMAGE} imageSrcSet={`${HERO_IMAGE_640} 640w, ${HERO_IMAGE} 1600w`} imageSizes="(min-width: 1024px) 560px, 100vw" fetchPriority="high" />
       </Helmet>
       <ArticleSchema
-        title="Post Construction Cleaning in Washington, DC: Inside a Real 3-Story Townhouse Project"
-        description="Post construction cleaning services in Washington DC, shown on a real 3-story townhouse: how we remove construction dust from every room, filter the air with a HEPA scrubber and sanitize the bathrooms."
+        title="Post Construction Cleaning in Washington, DC: Inside a 3-Story Townhouse"
+        description="See how we removed construction dust from a real Washington DC townhouse: room by room cleaning, a HEPA air scrubber and full bathroom sanitizing."
         url={URL}
         datePublished={DATE_ISO}
         image={HERO_IMAGE}
+        imageWidth={1600}
+        imageHeight={1200}
+        imageCaption="Owner-provided project photo: the new kitchen, mid-clean, during the post-construction clean of a Washington, DC townhouse."
+        about={["Post-construction cleaning", "Construction dust", "HEPA air scrubber", "Particulate matter", "Washington, DC"]}
       />
       <FAQSchema faqs={faqs} />
-      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Resource Center", href: "/resources" }, { label: "Post-Construction Cleaning in Washington, DC", href: URL }]} />
+      <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Resource Center", href: "/resources" }, { label: "Post Construction Cleaning in Washington, DC", href: URL }]} />
 
       {/* ===== HERO ===== */}
       <section className="relative overflow-hidden bg-mesh">
@@ -187,7 +215,7 @@ const PostConstructionCleaningWashingtonDcTownhouse = () => {
         <div className="hidden md:block absolute top-10 -right-24 w-96 h-96 bg-primary/25 rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-blob animation-delay-2000" />
 
         <div className="relative container mx-auto px-4 pt-8 pb-12 md:pt-10 md:pb-16">
-          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Resource Center", href: "/resources" }, { label: "Post-Construction Cleaning in Washington, DC" }]} className="mb-6" />
+          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Resource Center", href: "/resources" }, { label: "Post Construction Cleaning in Washington, DC" }]} className="mb-6" />
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
             <div>
               <div className="inline-flex items-center gap-2 glass rounded-full px-4 py-2 mb-5 animate-fade-up">
@@ -215,21 +243,24 @@ const PostConstructionCleaningWashingtonDcTownhouse = () => {
             </div>
 
             <div className="relative animate-fade-up" style={{ animationDelay: "250ms" }}>
-              <div className="relative rounded-[2rem] overflow-hidden shadow-2xl shadow-primary/20 ring-1 ring-black/5 aspect-[4/3] max-w-xl mx-auto lg:ml-auto">
-                <img
-                  src={HERO_IMAGE}
-                  srcSet={`${HERO_IMAGE_640} 640w, ${HERO_IMAGE} 1600w`}
-                  sizes="(min-width: 1024px) 560px, 100vw"
-                  alt="Capital Clean Care team cleaning the new kitchen and living area of a renovated Washington, DC townhouse, island covered in plastic during the post-construction clean"
-                  className="w-full h-full object-cover"
-                  loading="eager"
-                  fetchPriority="high"
-                  decoding="async"
-                  width={1600}
-                  height={1200}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/50 via-transparent to-transparent" aria-hidden="true" />
-                <div className="absolute left-4 right-4 bottom-4 rounded-xl bg-background/90 backdrop-blur px-4 py-3 shadow-lg">
+              <div className="group relative rounded-[2rem] overflow-hidden shadow-2xl shadow-primary/20 ring-1 ring-black/5 aspect-[4/3] max-w-xl mx-auto lg:ml-auto">
+                <button type="button" onClick={() => setLightbox(0)} className="block h-full w-full cursor-zoom-in" aria-label="Enlarge photo: the new kitchen, mid-clean">
+                  <img
+                    src={HERO_IMAGE}
+                    srcSet={`${HERO_IMAGE_640} 640w, ${HERO_IMAGE} 1600w`}
+                    sizes="(min-width: 1024px) 560px, 100vw"
+                    alt={HERO_ALT}
+                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                    loading="eager"
+                    fetchPriority="high"
+                    decoding="async"
+                    width={1600}
+                    height={1200}
+                  />
+                </button>
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-primary/50 via-transparent to-transparent" aria-hidden="true" />
+                <span className="pointer-events-none absolute right-4 top-4 inline-flex items-center gap-1 rounded-full bg-background/90 px-2.5 py-1 text-[11px] font-semibold text-foreground shadow-sm backdrop-blur"><ZoomIn className="h-3.5 w-3.5" aria-hidden="true" />Tap to enlarge</span>
+                <div className="pointer-events-none absolute left-4 right-4 bottom-4 rounded-xl bg-background/90 backdrop-blur px-4 py-3 shadow-lg">
                   <p className="text-xs font-bold text-foreground leading-snug">Owner-provided project photo</p>
                   <p className="text-xs text-muted-foreground leading-snug">The new kitchen, mid-clean. Our team working the kitchen and living level.</p>
                 </div>
@@ -251,6 +282,8 @@ const PostConstructionCleaningWashingtonDcTownhouse = () => {
           </div>
         </div>
       </section>
+
+      <SectionJumpNav items={jumpItems} />
 
       {/* ===== QUICK ANSWER + SNAPSHOT ===== */}
       <section className="bg-white py-12 md:py-16">
@@ -332,9 +365,9 @@ const PostConstructionCleaningWashingtonDcTownhouse = () => {
             </div>
             <ol className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
               {steps.map((s) => (
-                <li key={s.n} className="rounded-2xl bg-white border border-border p-5 flex flex-col">
+                <li key={s.n} className="group rounded-2xl bg-white border border-border p-5 flex flex-col transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-lg">
                   <div className="flex items-center gap-3 mb-3">
-                    <span className="h-9 w-9 rounded-full bg-primary text-primary-foreground text-sm font-bold flex items-center justify-center shrink-0">{s.n}</span>
+                    <span className="h-9 w-9 rounded-full bg-primary text-primary-foreground text-sm font-bold flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110">{s.n}</span>
                     <h3 className="font-heading text-base font-bold text-foreground leading-snug">{s.title}</h3>
                   </div>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-3">{s.text}</p>
@@ -346,9 +379,12 @@ const PostConstructionCleaningWashingtonDcTownhouse = () => {
 
           <FadeInSection>
             <div className="grid sm:grid-cols-3 gap-4 mt-6">
-              {projectPhotos.map((p) => (
-                <figure key={p.src} className="rounded-2xl overflow-hidden bg-white border border-border">
-                  <img src={p.src} srcSet={`${p.src.replace(".webp", "-640.webp")} 640w, ${p.src} 1200w`} sizes="(min-width: 640px) 33vw, 100vw" alt={p.alt} loading="lazy" decoding="async" width={1200} height={1600} className="w-full aspect-[4/3] object-cover" />
+              {projectPhotos.map((p, i) => (
+                <figure key={p.src} className="group rounded-2xl overflow-hidden bg-white border border-border transition-shadow duration-300 hover:shadow-lg">
+                  <button type="button" onClick={() => setLightbox(i + 1)} className="relative block w-full cursor-zoom-in overflow-hidden" aria-label={`Enlarge photo: ${p.alt}`}>
+                    <img src={p.src} srcSet={`${p.src.replace(".webp", "-640.webp")} 640w, ${p.src} 1200w`} sizes="(min-width: 640px) 33vw, 100vw" alt={p.alt} loading="lazy" decoding="async" width={1200} height={1600} className="w-full aspect-[4/3] object-cover transition-transform duration-700 ease-out group-hover:scale-105" />
+                    <span className="absolute right-3 top-3 inline-flex h-8 w-8 items-center justify-center rounded-full bg-background/90 text-foreground shadow-sm opacity-90 transition-opacity group-hover:opacity-100"><ZoomIn className="h-4 w-4" aria-hidden="true" /></span>
+                  </button>
                   <figcaption className="px-4 py-3 text-xs text-muted-foreground leading-snug"><span className="font-semibold text-foreground">Owner-provided photo.</span> {p.caption}</figcaption>
                 </figure>
               ))}
@@ -363,13 +399,18 @@ const PostConstructionCleaningWashingtonDcTownhouse = () => {
       </section>
 
       {/* ===== EQUIPMENT ===== */}
-      <section className="bg-white py-14 md:py-20">
+      <section id="equipment" className="bg-white py-14 md:py-20 scroll-mt-32">
         <div className="container mx-auto px-4">
           <FadeInSection>
             <div className="rounded-3xl border border-primary/15 bg-gradient-to-br from-primary/5 via-white to-accent/5 p-6 md:p-10 grid lg:grid-cols-[1.4fr_1fr] gap-8 items-center">
               <div>
                 <p className={EYEBROW}>The equipment that makes the difference</p>
                 <h2 className={`${H2} mb-4`}>How we remove dust from the air, not just the surfaces</h2>
+                <p className="text-foreground leading-relaxed mb-4 font-medium">
+                  We finish the surfaces first, then seal the room in plastic and run a HEPA air scrubber for up to 24 hours: an
+                  XPOWER X-2580 rated to move up to 550 cubic feet of air per minute and capture 99.97% of particles as small as
+                  0.3 microns.
+                </p>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   Here's what most people don't know about construction dust: a lot of it is still floating after the surfaces are
                   clean. You can wipe every shelf perfectly and, in a few hours, a new layer settles on top.
@@ -404,7 +445,7 @@ const PostConstructionCleaningWashingtonDcTownhouse = () => {
       </section>
 
       {/* ===== WHY IT IS DIFFERENT / DUST ===== */}
-      <section className="bg-secondary/40 py-14 md:py-20">
+      <section id="dust" className="bg-secondary/40 py-14 md:py-20 scroll-mt-32">
         <div className="container mx-auto px-4">
           <FadeInSection>
             <p className={EYEBROW}>Construction dust</p>
@@ -430,11 +471,16 @@ const PostConstructionCleaningWashingtonDcTownhouse = () => {
       </section>
 
       {/* ===== WHAT IS INCLUDED ===== */}
-      <section className="bg-white py-14 md:py-20">
+      <section id="included" className="bg-white py-14 md:py-20 scroll-mt-32">
         <div className="container mx-auto px-4">
           <FadeInSection>
             <p className={EYEBROW}>Scope</p>
             <h2 className={`${H2} mb-3`}>What's included in post construction cleaning</h2>
+            <p className="text-foreground leading-relaxed max-w-3xl mb-3 font-medium">
+              Post construction cleaning removes dust from ceilings, walls, light fixtures, floors and every object in the home,
+              then sanitizes the bathrooms and cleans the kitchen inside and out, with the scope confirmed in a walkthrough before
+              the cleaning day.
+            </p>
             <p className="text-muted-foreground leading-relaxed max-w-3xl mb-8">
               This is the scope we delivered on the townhouse. The walkthrough confirms it for each project, because every
               renovation leaves different problems behind.
@@ -479,7 +525,7 @@ const PostConstructionCleaningWashingtonDcTownhouse = () => {
       </section>
 
       {/* ===== AREAS ===== */}
-      <section className="bg-white py-14 md:py-20">
+      <section id="areas" className="bg-white py-14 md:py-20 scroll-mt-32">
         <div className="container mx-auto px-4">
           <FadeInSection>
             <div className="grid lg:grid-cols-[1fr_1.2fr] gap-8 lg:gap-12">
@@ -498,6 +544,8 @@ const PostConstructionCleaningWashingtonDcTownhouse = () => {
               <ul className="grid sm:grid-cols-2 gap-3 self-start">
                 {[
                   { to: "/services/post-construction-cleaning", label: "Post-construction cleaning service", sub: "Scope, what to confirm in the quote" },
+                  { to: "/locations/washington-dc/post-construction-cleaning", label: "Washington, DC", sub: "Post-construction cleaning" },
+                  { to: "/washington-dc", label: "Washington, DC service area", sub: "Neighborhoods we clean" },
                   { to: "/locations/bethesda-md/post-construction-cleaning", label: "Bethesda, MD", sub: "Post-construction cleaning" },
                   { to: "/locations/silver-spring-md/post-construction-cleaning", label: "Silver Spring, MD", sub: "Post-construction cleaning" },
                   { to: "/locations/rockville-md/post-construction-cleaning", label: "Rockville, MD", sub: "Post-construction cleaning" },
@@ -521,11 +569,11 @@ const PostConstructionCleaningWashingtonDcTownhouse = () => {
       </section>
 
       {/* ===== FAQ ===== */}
-      <section className="bg-secondary/40 py-14 md:py-20">
+      <section id="faq" className="bg-secondary/40 py-14 md:py-20 scroll-mt-32">
         <div className="container mx-auto px-4">
           <FadeInSection>
             <p className={EYEBROW}>FAQ</p>
-            <h2 id="faq" className={`${H2} mb-8 scroll-mt-32`}>Frequently asked questions</h2>
+            <h2 className={`${H2} mb-8`}>Frequently asked questions</h2>
             <div className="grid lg:grid-cols-2 gap-x-6 gap-y-3 items-start [&_.space-y-3>div]:bg-white">
               <FAQAccordion faqs={faqLeft} />
               <FAQAccordion faqs={faqRight} />
@@ -554,6 +602,7 @@ const PostConstructionCleaningWashingtonDcTownhouse = () => {
 
       <RelatedPosts currentSlug={SLUG} showVideos={false} />
       <StickyCTA />
+      <Lightbox images={lightboxImages} index={lightbox} onClose={() => setLightbox(null)} onIndex={setLightbox} />
     </Layout>
   );
 };

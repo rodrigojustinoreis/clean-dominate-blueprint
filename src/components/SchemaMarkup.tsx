@@ -367,6 +367,12 @@ interface ArticleSchemaProps {
   datePublished: string;
   dateModified?: string;
   image?: string;
+  /** Optional: intrinsic size and caption of `image` when the page knows them (overrides imgDims). */
+  imageWidth?: number;
+  imageHeight?: number;
+  imageCaption?: string;
+  /** Optional: topical entities the article is about (schema.org `about`, as Thing names). */
+  about?: string[];
 }
 
 export const ArticleSchema = ({
@@ -376,6 +382,10 @@ export const ArticleSchema = ({
   datePublished,
   dateModified,
   image,
+  imageWidth,
+  imageHeight,
+  imageCaption,
+  about,
 }: ArticleSchemaProps) => {
   const schema: Record<string, unknown> = {
     "@context": "https://schema.org",
@@ -417,7 +427,17 @@ export const ArticleSchema = ({
     const absoluteImage = image.startsWith("http") ? image : `${BUSINESS.url}${image}`;
     // width/height are optional: use the real intrinsic size when it is known (src/lib/image-dims.ts)
     // and omit them otherwise — the former 800×450 constant was wrong for most article images.
-    schema.image = { "@type": "ImageObject", url: absoluteImage, ...imgDims(image) };
+    schema.image = {
+      "@type": "ImageObject",
+      url: absoluteImage,
+      ...imgDims(image),
+      ...(imageWidth && imageHeight ? { width: imageWidth, height: imageHeight } : {}),
+      ...(imageCaption ? { caption: imageCaption } : {}),
+    };
+  }
+
+  if (about && about.length > 0) {
+    schema.about = about.map((name) => ({ "@type": "Thing", name }));
   }
 
   const id = `article-schema-${title.replace(/\s/g, "-").toLowerCase().slice(0, 40)}`;
