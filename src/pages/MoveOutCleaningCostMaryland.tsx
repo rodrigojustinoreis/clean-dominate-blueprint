@@ -146,7 +146,7 @@ const MoveOutCleaningCostMaryland = () => {
           <FadeInSection>
             <div className="bg-primary text-primary-foreground rounded-2xl p-8 text-center shadow-lg mt-14">
               <h2 className="font-heading text-2xl md:text-3xl font-bold mb-4">Get Your Move-Out Cleaning Quote</h2>
-              <p className="text-primary-foreground/80 mb-6 leading-relaxed">Eco-friendly{" "}<Link to="/services/move-out-cleaning" className="underline text-primary-foreground/90 hover:text-white">move-out cleaning</Link>{" "}across Maryland, DC, and Northern Virginia — background-checked, locally owned, satisfaction guaranteed.</p>
+              <p className="text-primary-foreground/80 mb-6 leading-relaxed">Eco-friendly{" "}<Link to="/services/move-out-cleaning" className="underline text-primary-foreground/90 hover:text-white">move-out cleaning</Link>{" "}across Maryland, DC, and Northern Virginia — background-checked, locally owned, satisfaction guaranteed. See all our{" "}<Link to="/pricing" className="underline text-primary-foreground/90 hover:text-white">house cleaning prices</Link>{" "}by home size.</p>
               <Button size="lg" className="bg-accent hover:bg-accent/90 text-white px-8 py-6 rounded-full text-base font-semibold shadow-md" asChild>
                 <a href="/#quote">Get My Free Quote <ArrowRight className="ml-2 h-4 w-4" /></a>
               </Button>

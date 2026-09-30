@@ -45,6 +45,19 @@ const QuickPriceEstimator = ({ quoteHref = "#quote" }: { quoteHref?: string }) =
         <p className="font-heading text-lg font-bold text-foreground">Instant price estimate</p>
       </div>
 
+      {/* Phones: the live price sits on top of the options, so it is on screen without scrolling. */}
+      <a href="#estimate-result" className="mb-4 flex items-center justify-between gap-3 rounded-xl bg-primary px-4 py-3 text-primary-foreground md:hidden" aria-hidden="true" tabIndex={-1}>
+        <span className="min-w-0">
+          <span className="block text-[11px] font-semibold uppercase tracking-wider text-primary-foreground/75 truncate">{SHORT_SERVICE[serviceId] ?? service.label} · {row.config}</span>
+          <span className="block font-heading text-2xl font-bold leading-tight">
+            {result.kind === "range" && <>{money(result.low)} – {money(result.high)}</>}
+            {result.kind === "from" && <>From {money(result.low)}</>}
+            {result.kind === "custom" && <>Custom quote</>}
+          </span>
+        </span>
+        <ArrowRight className="h-5 w-5 shrink-0 rotate-90" aria-hidden="true" />
+      </a>
+
       {/* 1. Service */}
       <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">1. Type of clean</p>
       <div className="mb-4 flex flex-wrap gap-2" role="radiogroup" aria-label="Type of clean">
@@ -94,7 +107,7 @@ const QuickPriceEstimator = ({ quoteHref = "#quote" }: { quoteHref?: string }) =
       </details>
 
       {/* Result */}
-      <div className="rounded-2xl bg-gradient-to-br from-primary to-sky-700 p-5 text-primary-foreground" aria-live="polite">
+      <div id="estimate-result" className="scroll-mt-28 rounded-2xl bg-gradient-to-br from-primary to-sky-700 p-5 text-primary-foreground" aria-live="polite">
         <p className="text-xs font-semibold uppercase tracking-wider text-primary-foreground/75">
           Estimated {serviceId === "recurring" ? "price per visit (bi-weekly)" : "price"}
         </p>

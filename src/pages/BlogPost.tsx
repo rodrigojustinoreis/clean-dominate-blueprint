@@ -128,7 +128,7 @@ const blogContent: Record<string, React.ReactNode> = {
         </div>
       </div>
 
-      <p>One of the most common questions from <Link to="/maryland" className="text-accent hover:underline">Maryland</Link> homeowners is simple: <em>How much does house cleaning cost?</em> The answer depends on your home's size, the type of service, how often you book, and your location. This guide breaks it all down with real pricing for the DMV market in 2026.</p>
+      <p>One of the most common questions from <Link to="/maryland" className="text-accent hover:underline">Maryland</Link> homeowners is simple: <em>How much does house cleaning cost?</em> The answer depends on your home's size, the type of service, how often you book, and your location. This guide breaks it all down with real pricing for the DMV market in 2026. To price your own home in a few taps, use the instant estimator on our <Link to="/pricing" className="text-accent hover:underline">house cleaning prices</Link> page.</p>
 
       <figure className="not-prose my-10 overflow-hidden rounded-3xl border border-sky-100 bg-white shadow-[0_24px_70px_-36px_rgba(15,76,129,0.55)]">
         <div className="grid items-stretch md:grid-cols-[minmax(0,1.25fr)_minmax(250px,0.75fr)]">

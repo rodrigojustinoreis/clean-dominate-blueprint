@@ -5,6 +5,8 @@ import Layout from "@/components/layout/Layout";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { useSEO } from "@/hooks/useSEO";
 import { ServiceSchema, FAQSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
+import { PRICE_SERVICES } from "@/components/PricingTable";
+import { REAL_REVIEWS, GOOGLE_LISTING_URL } from "@/data/realReviews";
 import PricingTable from "@/components/PricingTable";
 import QuickPriceEstimator from "@/components/pricing/QuickPriceEstimator";
 import QuoteForm from "@/components/QuoteForm";
@@ -12,6 +14,54 @@ import { trackPhoneClick } from "@/lib/analytics";
 
 const URL = "https://capitalcleancare.com/pricing";
 const PHONE = "(240) 704-2551";
+// Last content review of this page (visible byline + WebPage.dateModified).
+const UPDATED_ISO = "2026-09-30";
+const UPDATED_LABEL = "September 30, 2026";
+
+const toNums = (price: string) => (price.match(/\d[\d,]*/g) || []).map((x) => Number(x.replace(/,/g, "")));
+// One Offer per service, built from the same rows the table shows (low of the smallest home to
+// high of the largest priced home). "From $X" / "Custom quote" rows only extend the low end.
+const offerCatalogSchema = {
+  "@context": "https://schema.org",
+  "@type": "OfferCatalog",
+  "@id": "https://capitalcleancare.com/pricing#offers",
+  name: "House cleaning prices in Montgomery County, Washington DC and Northern Virginia",
+  url: "https://capitalcleancare.com/pricing",
+  itemListElement: PRICE_SERVICES.map((svc) => {
+    const all = svc.rows.flatMap((r) => toNums(r.price));
+    const ranged = svc.rows.map((r) => toNums(r.price)).filter((n) => n.length === 2);
+    return {
+      "@type": "Offer",
+      itemOffered: { "@type": "Service", name: `${svc.label} house cleaning`, provider: { "@id": "https://capitalcleancare.com/#business" } },
+      priceSpecification: {
+        "@type": "PriceSpecification",
+        priceCurrency: "USD",
+        minPrice: Math.min(...all),
+        maxPrice: Math.max(...ranged.map((n) => n[1])),
+      },
+      areaServed: ["Montgomery County, MD", "Washington, DC", "Northern Virginia"],
+    };
+  }),
+};
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://capitalcleancare.com/pricing",
+  url: "https://capitalcleancare.com/pricing",
+  name: "House Cleaning Prices in Montgomery County & the DMV",
+  dateModified: UPDATED_ISO,
+  author: { "@type": "Person", "@id": "https://capitalcleancare.com/#founder", name: "Rodrigo Reis", url: "https://capitalcleancare.com/about" },
+  publisher: { "@id": "https://capitalcleancare.com/#business" },
+  mainEntity: { "@id": "https://capitalcleancare.com/pricing#offers" },
+};
+
+// Real Google reviews that talk about price or value (src/data/realReviews.ts). Never invented.
+const PRICE_REVIEWS = ["Grace J.", "David Reed", "Lisa Phillips"]
+  .map((n) => REAL_REVIEWS.find((r) => r.name === n))
+  .filter((r): r is NonNullable<typeof r> => Boolean(r));
+
+// Washington, DC examples read from the table rows (same flat rates across the service area).
+const rowPrice = (serviceId: string, config: string) => PRICE_SERVICES.find((s) => s.id === serviceId)?.rows.find((r) => r.config === config)?.price ?? "";
 
 const FACTORS: { title: string; text: string }[] = [
   { title: "Home size & bathrooms", text: "The biggest driver. Bathrooms move the price more than bedrooms do — a 3-bedroom home with three-and-a-half baths can cost more than a larger home with two." },
@@ -30,6 +80,7 @@ const FREQUENCY: { freq: string; perVisit: string; best: string }[] = [
 ];
 
 const faqs = [
+  { q: "How much does house cleaning cost in Washington, DC?", a: `Washington, DC homes are priced from the same table as the rest of our service area. For a 2-bedroom, 2-bath DC home, recurring (bi-weekly) cleaning runs ${rowPrice("recurring", "2 Bed · 2 Bath")} per visit, a one-time standard clean ${rowPrice("standard", "2 Bed · 2 Bath")}, and a deep clean ${rowPrice("deep", "2 Bed · 2 Bath")}. Products and equipment are included, with no hourly meter.` },
   { q: "How much does house cleaning cost in Montgomery County?", a: "For a typical 3-bedroom home in Montgomery County, expect roughly $215–$260 for a recurring (bi-weekly) clean, $255–$310 for a one-time standard clean, and $375–$445 for a deep clean. Smaller homes cost less and larger homes more — the table above breaks it down by size. Every quote is a flat price with all products and equipment included." },
   { q: "Do you charge by the room, the hour, or a flat rate?", a: "We charge a flat rate per job — not by the room or the hour. You get one clear price upfront based on your home's size, condition, and the type of clean, so the cost never changes if a visit takes longer than expected. That's the core of our no-surprise pricing." },
   { q: "Why does the first cleaning cost more?", a: "The first visit is usually a deep clean that removes months or years of built-up grime and resets the whole home to a baseline. That takes longer than the maintenance cleanings that follow, which is why it costs more. After that first reset, recurring cleans keep the home in shape at a lower per-visit price." },
@@ -43,7 +94,7 @@ const PricingPage = () => {
     // Differs from the H1 (Semrush "H1 == title") while staying ≤ 49 chars so useSEO keeps the brand suffix.
     title: "House Cleaning Prices: Montgomery County & DMV",
     description:
-      "Transparent, flat-rate house cleaning prices for Montgomery County, DC & Northern Virginia — recurring, one-time, and deep cleaning costs by home size, plus add-ons and what affects the price.",
+      "House cleaning prices for Montgomery County, DC & Northern Virginia: recurring from $140 a visit, deep cleaning from $230. Flat rates by home size.",
     canonical: URL,
     ogImage: "/images/cluster/cost-og.jpg",
   });
@@ -60,6 +111,8 @@ const PricingPage = () => {
         serviceType="House Cleaning"
       />
       <FAQSchema faqs={faqs} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(offerCatalogSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
       <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Pricing", href: "/pricing" }]} />
 
       {/* ── Hero (owner request 30/09/2026): working estimator with a price on screen at load, next to
@@ -70,6 +123,9 @@ const PricingPage = () => {
           <div className="grid items-start gap-5 md:gap-8 lg:grid-cols-2 lg:gap-12">
             <div>
               <h1 className="font-heading text-[1.9rem] leading-[1.1] sm:text-4xl md:text-5xl font-bold mb-3 md:mb-4">House Cleaning Prices in Montgomery County &amp; the DMV</h1>
+              <p className="mb-4 text-xs text-muted-foreground">
+                By <Link to="/about" className="font-semibold text-foreground hover:underline">Rodrigo Reis</Link>, owner · <time dateTime={UPDATED_ISO}>Updated {UPDATED_LABEL}</time>
+              </p>
               <div className="mb-4 grid grid-cols-2 gap-x-3 gap-y-1.5 text-xs text-muted-foreground sm:flex sm:flex-wrap sm:gap-x-4 sm:gap-y-2 sm:text-sm md:mb-5">
                 {["Flat-rate — no hourly surprises", "All products & equipment included", "Free, no-obligation quotes", "Licensed, insured & background-checked"].map((b) => (
                   <span key={b} className="flex items-center gap-1.5"><CheckCircle2 className="h-4 w-4 text-accent shrink-0" /> {b}</span>
@@ -86,7 +142,7 @@ const PricingPage = () => {
                   loading="eager"
                   fetchPriority="high"
                   decoding="async"
-                  className="aspect-[2/1] w-full object-cover object-[center_30%] sm:aspect-[16/10]"
+                  className="aspect-[5/2] w-full object-cover object-[center_28%] sm:aspect-[16/10]"
                 />
                 <figcaption className="absolute bottom-3 left-3 right-3 flex flex-wrap items-center gap-x-2 gap-y-0.5 rounded-xl bg-background/95 px-3 py-2 shadow-sm">
                   <span className="inline-flex items-center gap-0.5">{[1, 2, 3, 4, 5].map((i) => <Star key={i} className="h-3.5 w-3.5 fill-amber-400 text-amber-400" aria-hidden="true" />)}</span>
@@ -140,6 +196,25 @@ const PricingPage = () => {
             <Link to="/services/maid-service" className="text-accent underline hover:no-underline">maid service</Link>, and{" "}
             <Link to="/services/office-cleaning" className="text-accent underline hover:no-underline">office cleaning</Link>.
           </p>
+
+          {/* ── Real Google reviews about price and value (src/data/realReviews.ts) ── */}
+          <section aria-labelledby="price-reviews" className="mb-12">
+            <h2 id="price-reviews" className="font-heading text-2xl md:text-3xl font-bold mb-2">What Clients Say About Our Prices</h2>
+            <p className="mb-5 flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
+              <span className="inline-flex items-center gap-0.5">{[1, 2, 3, 4, 5].map((i) => <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" aria-hidden="true" />)}</span>
+              <span className="font-semibold text-foreground">5.0 on Google</span>
+              <a href={GOOGLE_LISTING_URL} target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">Read all reviews</a>
+            </p>
+            <div className="grid gap-4 md:grid-cols-3">
+              {PRICE_REVIEWS.map((r) => (
+                <figure key={r.name} className="flex flex-col rounded-2xl border border-border bg-card p-5 shadow-sm">
+                  <span className="mb-2 inline-flex items-center gap-0.5">{[1, 2, 3, 4, 5].map((i) => <Star key={i} className="h-3.5 w-3.5 fill-amber-400 text-amber-400" aria-hidden="true" />)}</span>
+                  <blockquote className="flex-1 text-sm leading-relaxed text-foreground">"{r.text}"</blockquote>
+                  <figcaption className="mt-3 text-xs font-semibold text-muted-foreground">{r.name} · Google review</figcaption>
+                </figure>
+              ))}
+            </div>
+          </section>
 
           {/* ── What affects the price ── */}
           <h2 className="font-heading text-2xl md:text-3xl font-bold mb-4">What Affects Your Price</h2>
@@ -224,6 +299,31 @@ const PricingPage = () => {
           </div>
 
           {/* ── Prices by city ── */}
+          {/* ── Washington, DC (query "cleaning services dc prices" already shows this page) ── */}
+          <section aria-labelledby="dc-prices" className="mb-12 rounded-2xl border border-border bg-secondary/40 p-6">
+            <h2 id="dc-prices" className="font-heading text-2xl md:text-3xl font-bold mb-3">House Cleaning Prices in Washington, DC</h2>
+            <p className="mb-4 text-muted-foreground leading-relaxed">
+              Washington, DC homes are priced from the same table as the rest of our service area; your exact flat price
+              depends on the home. Typical ranges for a 2-bedroom, 2-bath DC home:
+            </p>
+            <ul className="mb-4 grid gap-2 sm:grid-cols-3">
+              {[
+                ["Recurring, per visit", rowPrice("recurring", "2 Bed · 2 Bath")],
+                ["One-time standard", rowPrice("standard", "2 Bed · 2 Bath")],
+                ["Deep clean", rowPrice("deep", "2 Bed · 2 Bath")],
+              ].map(([k, v]) => (
+                <li key={k} className="rounded-xl border border-border bg-card p-3">
+                  <span className="block text-xs text-muted-foreground">{k}</span>
+                  <span className="block font-heading text-xl font-bold text-accent">{v}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="text-sm text-muted-foreground">
+              See our <Link to="/washington-dc" className="text-accent underline hover:no-underline">Washington, DC service area</Link> and the{" "}
+              <Link to="/resources/house-cleaning-washington-dc" className="text-accent underline hover:no-underline">DC house cleaning guide</Link>.
+            </p>
+          </section>
+
           <h2 className="font-heading text-2xl md:text-3xl font-bold mb-4">Cleaning Prices by City</h2>
           <p className="text-muted-foreground leading-relaxed mb-4 max-w-3xl">
             Prices are consistent across our service area, with small local variations. See rates and details for your city:
