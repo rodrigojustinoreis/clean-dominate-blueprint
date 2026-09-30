@@ -27,6 +27,19 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import FadeInSection from "@/components/blog/FadeInSection";
 import LocationSocialProof from "@/components/location/LocationSocialProof";
 import logo from "@/assets/logo.webp";
+import YouTubeFacade, { type YouTubeVideo } from "@/components/YouTubeFacade";
+
+// Owner's YouTube video (public since 29/09/2026), filmed on the Washington, DC townhouse
+// post-construction project. Date and duration copied from the YouTube watch page.
+const TEAM_VIDEO: YouTubeVideo = {
+  id: "_iV8Vy_KenU",
+  title: "Capital Clean Care Team on a Post-Construction Clean",
+  description: "The Capital Clean Care team at work on a post-construction clean of a renovated Washington, DC townhouse: new kitchen, cabinets, fixtures and floors, cleaned by our own crew.",
+  poster: "/images/video/post-construction-team-video.webp",
+  schemaThumbnail: "/images/video/post-construction-team-video.jpg",
+  uploadDate: "2026-09-29T17:45:27-07:00",
+  duration: "PT56S",
+};
 
 const PHONE = "(240) 704-2551";
 const PHONE_HREF = "tel:+12407042551";
@@ -392,6 +405,22 @@ const PostConstructionCleaningPage = () => {
                 <p key={i}>{p}</p>
               ))}
             </div>
+          </FadeInSection>
+        </div>
+      </section>
+
+      {/* ── Owner's video from the DC townhouse project (lazy YouTube embed + VideoObject) ── */}
+      <section aria-labelledby="pcc-video" className="border-t border-border py-12 md:py-16">
+        <div className="container mx-auto max-w-3xl px-4">
+          <FadeInSection>
+            <span className="text-xs font-semibold uppercase tracking-widest text-[#2E7D32]">Real project video</span>
+            <h2 id="pcc-video" className="mb-3 mt-2 font-heading text-2xl font-bold md:text-3xl">Watch Our Team on a Post-Construction Clean</h2>
+            <p className="mb-6 text-muted-foreground leading-relaxed">
+              Filmed on a renovated townhouse in Washington, DC. Read the{" "}
+              <Link to="/resources/post-construction-cleaning-washington-dc-townhouse" className="font-semibold text-primary hover:underline">full project write-up</Link>{" "}
+              for the room order, the HEPA air scrubbing and the bathroom protocol.
+            </p>
+            <YouTubeFacade video={TEAM_VIDEO} />
           </FadeInSection>
         </div>
       </section>
