@@ -1,11 +1,14 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Phone, CheckCircle2, Shield } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ArrowRight, Phone, CheckCircle2, Shield, Calculator, ListChecks, Star, Users, Leaf } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
 import Layout from "@/components/layout/Layout";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { useSEO } from "@/hooks/useSEO";
 import { ServiceSchema, FAQSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import PricingTable from "@/components/PricingTable";
+import PriceCalculator from "@/components/PriceCalculator";
+import QuoteForm from "@/components/QuoteForm";
+import { trackPhoneClick } from "@/lib/analytics";
 
 const URL = "https://capitalcleancare.com/pricing";
 const PHONE = "(240) 704-2551";
@@ -45,10 +48,10 @@ const PricingPage = () => {
     ogImage: "/images/cluster/cost-og.jpg",
   });
 
-  const scrollLink = "/#quote";
-
+  // Lead lot (30/09/2026): every quote CTA on this page stays on this page (#quote) instead of
+  // sending the visitor to the home form.
   return (
-    <Layout>
+    <Layout stickyQuoteHref="#quote">
       {seoHelmet}
       <ServiceSchema
         serviceName="House Cleaning"
@@ -69,10 +72,26 @@ const PricingPage = () => {
             meter, no surprise charges, and all products and equipment included. Below are our real 2026 rates by home
             size and service type across Maryland, DC, and Northern Virginia.
           </p>
-          <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted-foreground mb-10">
+          <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted-foreground mb-7">
             {["Flat-rate — no hourly surprises", "All products & equipment included", "Free, no-obligation quotes", "Licensed, insured & background-checked"].map((b) => (
               <span key={b} className="flex items-center gap-1.5"><CheckCircle2 className="h-4 w-4 text-accent shrink-0" /> {b}</span>
             ))}
+          </div>
+
+          {/* Three ways in, above the fold: estimate, price list, or talk to us. */}
+          <div className="mb-10 grid gap-3 sm:grid-cols-3">
+            <a href="#estimate" className="group flex items-center gap-3 rounded-2xl border-2 border-accent bg-accent/5 p-4 transition-all hover:-translate-y-0.5 hover:shadow-md">
+              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-accent text-white"><Calculator className="h-5 w-5" aria-hidden="true" /></span>
+              <span className="min-w-0"><span className="block font-semibold text-foreground leading-tight">Instant estimate</span><span className="block text-xs text-muted-foreground">Pick your home, see a price range</span></span>
+            </a>
+            <a href="#prices" className="group flex items-center gap-3 rounded-2xl border border-border bg-card p-4 transition-all hover:-translate-y-0.5 hover:shadow-md">
+              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary"><ListChecks className="h-5 w-5" aria-hidden="true" /></span>
+              <span className="min-w-0"><span className="block font-semibold text-foreground leading-tight">Full price list</span><span className="block text-xs text-muted-foreground">Every service by home size</span></span>
+            </a>
+            <a href="tel:+12407042551" onClick={() => trackPhoneClick("pricing_hero")} className="group flex items-center gap-3 rounded-2xl border border-border bg-card p-4 transition-all hover:-translate-y-0.5 hover:shadow-md">
+              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary"><Phone className="h-5 w-5" aria-hidden="true" /></span>
+              <span className="min-w-0"><span className="block font-semibold text-foreground leading-tight">Call {PHONE}</span><span className="block text-xs text-muted-foreground">Talk to us before you book</span></span>
+            </a>
           </div>
 
           {/* Entity-first passage (AI/LLM citability): legal name + offer + place + verifiable facts. */}
@@ -83,13 +102,18 @@ const PricingPage = () => {
           {/* ── Interactive price matrix (same component + data as the homepage — zero number
                  duplication). forceMount makes every tab's prices render in the static HTML,
                  so recurring/one-time/deep/move/post-construction are all crawlable via curl. ── */}
-          <h2 className="font-heading text-2xl md:text-3xl font-bold mb-4">Prices by Home Size, Service &amp; Frequency</h2>
+          {/* ── Instant estimator (same component as the home; submits a lead with the estimate) ── */}
+          <div id="estimate" className="scroll-mt-28 mb-12">
+            <PriceCalculator />
+          </div>
+
+          <h2 id="prices" className="scroll-mt-28 font-heading text-2xl md:text-3xl font-bold mb-4">Prices by Home Size, Service &amp; Frequency</h2>
           <p className="text-muted-foreground leading-relaxed mb-6 max-w-3xl">
             Real 2026 flat-rate ranges by home size for every service — switch tabs to compare <strong>recurring</strong>,
             <strong> one-time</strong>, <strong>deep</strong>, <strong>move-in/out</strong>, and <strong>post-construction</strong>{" "}
             cleaning. Recurring is shown per visit at bi-weekly frequency; all prices include products and equipment.
           </p>
-          <PricingTable />
+          <PricingTable ctaHref="#quote" />
           <p className="text-xs text-muted-foreground mt-4 mb-10 max-w-3xl">
             Ranges are typical 2026 DMV rates; your exact flat price depends on bathrooms, condition, and any add-ons.
             Deeper dives: our{" "}
@@ -153,21 +177,39 @@ const PricingPage = () => {
             <Link to="/resources/how-often-should-you-deep-clean" className="text-accent underline hover:no-underline">how often you should deep clean</Link>.
           </p>
 
-          {/* ── Mid CTA ── */}
-          <div className="rounded-2xl bg-primary text-primary-foreground p-8 text-center shadow-lg mb-12">
-            <Shield className="h-8 w-8 mx-auto mb-3 text-accent" />
-            <h2 className="font-heading text-2xl md:text-3xl font-bold mb-3">Get Your Exact Flat Price — Free</h2>
-            <p className="text-primary-foreground/80 mb-6 leading-relaxed max-w-2xl mx-auto">
-              Tell us your home size and what you need, and we'll send a clear, no-obligation quote — usually within a few
-              hours. No hidden fees, ever. 5.0 stars on Google, serving the DMV since 2015.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Button size="lg" className="bg-accent hover:bg-accent/90 text-white px-8 py-6 rounded-full text-base font-semibold shadow-md" asChild>
-                <a href={scrollLink}>Get a Free Quote <ArrowRight className="ml-2 h-4 w-4" /></a>
-              </Button>
-              <Button size="lg" className="bg-white/10 hover:bg-white/20 text-white border border-white/40 px-8 py-6 rounded-full text-base font-semibold" asChild>
-                <a href="tel:+12407042551"><Phone className="mr-2 h-4 w-4" /> Call {PHONE}</a>
-              </Button>
+          {/* ── Quote form on this page (was a CTA box that sent visitors to the home form) ── */}
+          <div id="quote" className="scroll-mt-24 mb-12 overflow-hidden rounded-2xl border border-border shadow-lg">
+            <div className="bg-primary p-6 text-center text-primary-foreground md:p-8">
+              <Shield className="mx-auto mb-3 h-8 w-8 text-accent" />
+              <h2 className="font-heading text-2xl md:text-3xl font-bold mb-3">Get Your Exact Flat Price — Free</h2>
+              <p className="mx-auto max-w-2xl leading-relaxed text-primary-foreground/80">
+                Tell us your home size and what you need, and we'll send a clear, no-obligation quote — usually within a few
+                hours. No hidden fees, ever. 5.0 stars on Google, serving the DMV since 2015.
+              </p>
+            </div>
+            <div className="grid gap-8 bg-card p-6 md:p-8 lg:grid-cols-5">
+              <Card className="shadow-none border-0 lg:col-span-3">
+                <CardContent className="p-0">
+                  <QuoteForm compact />
+                </CardContent>
+              </Card>
+              <div className="space-y-4 lg:col-span-2">
+                {[
+                  { icon: Star, title: "5.0 on Google", desc: "Real reviews from DMV homeowners." },
+                  { icon: Users, title: "Background-checked team", desc: "Licensed and insured." },
+                  { icon: Leaf, title: "Products included", desc: "EPA Safer Choice cleaners and HEPA vacuums." },
+                  { icon: CheckCircle2, title: "Flat price", desc: "The price we quote is the price you pay." },
+                ].map((item) => (
+                  <div key={item.title} className="flex items-start gap-3">
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-accent/10"><item.icon className="h-4 w-4 text-accent" aria-hidden="true" /></span>
+                    <div><p className="text-sm font-semibold text-foreground">{item.title}</p><p className="text-xs text-muted-foreground">{item.desc}</p></div>
+                  </div>
+                ))}
+                <div className="rounded-xl border border-border bg-secondary p-4">
+                  <p className="text-sm font-semibold">Prefer to talk first?</p>
+                  <a href="tel:+12407042551" onClick={() => trackPhoneClick("pricing_quote_section")} className="mt-1 inline-flex items-center gap-2 text-sm font-semibold text-accent hover:underline"><Phone className="h-4 w-4" aria-hidden="true" /> Call {PHONE}</a>
+                </div>
+              </div>
             </div>
           </div>
 

@@ -121,7 +121,9 @@ const whatsIncluded = [
   "Satisfaction guarantee — free re-clean if needed",
 ];
 
-const PricingTable = () => {
+/** ctaHref: where "Get Your Free Quote" points. Default "/#quote" (home form); pages with their own
+ *  #quote section (e.g. /pricing) pass "#quote" so the visitor stays on the page. */
+const PricingTable = ({ ctaHref = "/#quote" }: { ctaHref?: string } = {}) => {
   const [active, setActive] = useState("recurring");
   return (
     <div className="space-y-8">
@@ -263,7 +265,7 @@ const PricingTable = () => {
 
       <div className="text-center">
         <Button variant="cta" size="lg" asChild>
-          <a href="/#quote">
+          <a href={ctaHref}>
             Get Your Free Quote <ArrowRight className="ml-1 h-4 w-4" />
           </a>
         </Button>
