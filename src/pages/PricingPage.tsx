@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Phone, CheckCircle2, Shield, Calculator, ListChecks, Star, Users, Leaf } from "lucide-react";
+import { ArrowRight, Phone, CheckCircle2, Shield, Star, Users, Leaf } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import Layout from "@/components/layout/Layout";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { useSEO } from "@/hooks/useSEO";
 import { ServiceSchema, FAQSchema, BreadcrumbSchema } from "@/components/SchemaMarkup";
 import PricingTable from "@/components/PricingTable";
-import PriceCalculator from "@/components/PriceCalculator";
+import QuickPriceEstimator from "@/components/pricing/QuickPriceEstimator";
 import QuoteForm from "@/components/QuoteForm";
 import { trackPhoneClick } from "@/lib/analytics";
 
@@ -62,51 +62,61 @@ const PricingPage = () => {
       <FAQSchema faqs={faqs} />
       <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Pricing", href: "/pricing" }]} />
 
-      <section className="py-14 md:py-20">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Pricing" }]} className="mb-6" />
+      {/* ── Hero (owner request 30/09/2026): working estimator with a price on screen at load, next to
+             the real team photo. Copy is the page's existing text; the long paragraphs move just below. ── */}
+      <section className="relative overflow-hidden bg-gradient-to-b from-sky-50 via-background to-background pb-10 pt-6 md:pb-16 md:pt-10">
+        <div className="container mx-auto max-w-6xl px-4">
+          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Pricing" }]} className="mb-5" />
+          <div className="grid items-start gap-5 md:gap-8 lg:grid-cols-2 lg:gap-12">
+            <div>
+              <h1 className="font-heading text-[1.9rem] leading-[1.1] sm:text-4xl md:text-5xl font-bold mb-3 md:mb-4">House Cleaning Prices in Montgomery County &amp; the DMV</h1>
+              <div className="mb-4 grid grid-cols-2 gap-x-3 gap-y-1.5 text-xs text-muted-foreground sm:flex sm:flex-wrap sm:gap-x-4 sm:gap-y-2 sm:text-sm md:mb-5">
+                {["Flat-rate — no hourly surprises", "All products & equipment included", "Free, no-obligation quotes", "Licensed, insured & background-checked"].map((b) => (
+                  <span key={b} className="flex items-center gap-1.5"><CheckCircle2 className="h-4 w-4 text-accent shrink-0" /> {b}</span>
+                ))}
+              </div>
+              <figure className="relative overflow-hidden rounded-2xl shadow-lg ring-1 ring-black/5">
+                <img
+                  src="/images/team/team-group-uniforms.webp"
+                  srcSet="/images/team/team-group-uniforms-640.webp 640w, /images/team/team-group-uniforms.webp 1200w"
+                  sizes="(min-width: 1024px) 560px, 100vw"
+                  alt="The Capital Clean Care team in navy uniforms, standing together in a client's home"
+                  width={1200}
+                  height={773}
+                  loading="eager"
+                  fetchPriority="high"
+                  decoding="async"
+                  className="aspect-[2/1] w-full object-cover object-[center_30%] sm:aspect-[16/10]"
+                />
+                <figcaption className="absolute bottom-3 left-3 right-3 flex flex-wrap items-center gap-x-2 gap-y-0.5 rounded-xl bg-background/95 px-3 py-2 shadow-sm">
+                  <span className="inline-flex items-center gap-0.5">{[1, 2, 3, 4, 5].map((i) => <Star key={i} className="h-3.5 w-3.5 fill-amber-400 text-amber-400" aria-hidden="true" />)}</span>
+                  <span className="text-xs font-bold text-foreground">5.0 on Google</span>
+                  <span className="hidden text-xs text-muted-foreground sm:inline">· Our own team, serving the DMV since 2015</span>
+                </figcaption>
+              </figure>
+            </div>
+            <div className="lg:sticky lg:top-24">
+              <QuickPriceEstimator quoteHref="#quote" />
+            </div>
+          </div>
+        </div>
+      </section>
 
-          <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4">House Cleaning Prices in Montgomery County &amp; the DMV</h1>
+      <section className="pb-14 md:pb-20">
+        <div className="container mx-auto px-4 max-w-4xl">
           <p className="text-lg text-muted-foreground leading-relaxed mb-6 max-w-3xl">
             Straightforward, <strong>flat-rate pricing</strong> — the price we quote is the price you pay. No hourly
             meter, no surprise charges, and all products and equipment included. Below are our real 2026 rates by home
             size and service type across Maryland, DC, and Northern Virginia.
           </p>
-          <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted-foreground mb-7">
-            {["Flat-rate — no hourly surprises", "All products & equipment included", "Free, no-obligation quotes", "Licensed, insured & background-checked"].map((b) => (
-              <span key={b} className="flex items-center gap-1.5"><CheckCircle2 className="h-4 w-4 text-accent shrink-0" /> {b}</span>
-            ))}
-          </div>
-
-          {/* Three ways in, above the fold: estimate, price list, or talk to us. */}
-          <div className="mb-10 grid gap-3 sm:grid-cols-3">
-            <a href="#estimate" className="group flex items-center gap-3 rounded-2xl border-2 border-accent bg-accent/5 p-4 transition-all hover:-translate-y-0.5 hover:shadow-md">
-              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-accent text-white"><Calculator className="h-5 w-5" aria-hidden="true" /></span>
-              <span className="min-w-0"><span className="block font-semibold text-foreground leading-tight">Instant estimate</span><span className="block text-xs text-muted-foreground">Pick your home, see a price range</span></span>
-            </a>
-            <a href="#prices" className="group flex items-center gap-3 rounded-2xl border border-border bg-card p-4 transition-all hover:-translate-y-0.5 hover:shadow-md">
-              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary"><ListChecks className="h-5 w-5" aria-hidden="true" /></span>
-              <span className="min-w-0"><span className="block font-semibold text-foreground leading-tight">Full price list</span><span className="block text-xs text-muted-foreground">Every service by home size</span></span>
-            </a>
-            <a href="tel:+12407042551" onClick={() => trackPhoneClick("pricing_hero")} className="group flex items-center gap-3 rounded-2xl border border-border bg-card p-4 transition-all hover:-translate-y-0.5 hover:shadow-md">
-              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary"><Phone className="h-5 w-5" aria-hidden="true" /></span>
-              <span className="min-w-0"><span className="block font-semibold text-foreground leading-tight">Call {PHONE}</span><span className="block text-xs text-muted-foreground">Talk to us before you book</span></span>
-            </a>
-          </div>
 
           {/* Entity-first passage (AI/LLM citability): legal name + offer + place + verifiable facts. */}
           <p className="text-base leading-relaxed text-muted-foreground mb-10 max-w-3xl">
             Capital Clean Care LLC offers flat-rate house cleaning pricing across Maryland, Washington DC, and Northern Virginia — no hourly meter, no surprise charges. We've served the DMV since 2015 as a licensed, insured, background-checked team using EPA Safer Choice products, backed by a 24-hour re-clean guarantee and a 5.0-star rating on Google.
           </p>
 
-          {/* ── Interactive price matrix (same component + data as the homepage — zero number
-                 duplication). forceMount makes every tab's prices render in the static HTML,
-                 so recurring/one-time/deep/move/post-construction are all crawlable via curl. ── */}
-          {/* ── Instant estimator (same component as the home; submits a lead with the estimate) ── */}
-          <div id="estimate" className="scroll-mt-28 mb-12">
-            <PriceCalculator />
-          </div>
-
+          {/* ── Interactive price matrix (same data the estimator above reads). forceMount makes every
+                 tab's prices render in the static HTML, so all services are crawlable via curl. ── */}
           <h2 id="prices" className="scroll-mt-28 font-heading text-2xl md:text-3xl font-bold mb-4">Prices by Home Size, Service &amp; Frequency</h2>
           <p className="text-muted-foreground leading-relaxed mb-6 max-w-3xl">
             Real 2026 flat-rate ranges by home size for every service — switch tabs to compare <strong>recurring</strong>,

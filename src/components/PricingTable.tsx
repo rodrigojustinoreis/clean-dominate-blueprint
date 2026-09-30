@@ -4,7 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Info, CheckCircle2, Plus } from "lucide-react";
 
-const services = [
+// Exported so the /pricing estimator reads the exact same ranges (single source for the page).
+export const PRICE_SERVICES = [
   {
     id: "recurring",
     label: "Recurring",
@@ -103,7 +104,7 @@ const frequencyDiscounts = [
   { label: "Monthly",    discount: "5% off"  },
 ];
 
-const addons = [
+export const PRICE_ADDONS = [
   { label: "Inside Refrigerator",      price: "$30" },
   { label: "Inside Oven",              price: "$35" },
   { label: "Inside Cabinets",          price: "$45" },
@@ -142,7 +143,7 @@ const PricingTable = ({ ctaHref = "/#quote" }: { ctaHref?: string } = {}) => {
           every price table remains present in the crawlable HTML. */}
       <div className="w-full">
         <div className="flex flex-wrap h-auto gap-1 rounded-md bg-secondary p-1 w-full" role="group" aria-label="Choose a cleaning service">
-          {services.map((s) => (
+          {PRICE_SERVICES.map((s) => (
             <button
               type="button"
               key={s.id}
@@ -160,7 +161,7 @@ const PricingTable = ({ ctaHref = "/#quote" }: { ctaHref?: string } = {}) => {
           ))}
         </div>
 
-        {services.map((s) => (
+        {PRICE_SERVICES.map((s) => (
           <section
             key={s.id}
             aria-label={`${s.label} cleaning prices`}
@@ -240,7 +241,7 @@ const PricingTable = ({ ctaHref = "/#quote" }: { ctaHref?: string } = {}) => {
           <Plus className="h-4 w-4 text-accent" /> Optional Add-Ons
         </h4>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-          {addons.map((a, i) => (
+          {PRICE_ADDONS.map((a, i) => (
             <div
               key={i}
               className="flex items-center justify-between rounded-lg border border-border px-4 py-2.5 bg-secondary/20 hover:bg-accent/5 transition-colors"
