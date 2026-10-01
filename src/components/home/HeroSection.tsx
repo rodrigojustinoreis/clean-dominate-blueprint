@@ -172,7 +172,7 @@ const HeroSection = () => {
 
         {/* Phone-only rating row, right under the CTA: real team photo + 5.0 (SEO + design review 30/09/2026) */}
         <div className="order-3 md:hidden mt-4 mr-14 flex items-center gap-3 rounded-2xl border border-border bg-background/90 p-2.5 pr-3 shadow-sm min-[400px]:mr-0 animate-fade-up" style={{ animationDelay: "350ms" }}>
-          <img src="/images/team/team-group-uniforms-640.webp" alt="The Capital Clean Care team in navy uniforms" width={640} height={412} loading="lazy" decoding="async" className="h-14 w-20 shrink-0 rounded-xl object-cover object-[center_30%]" />
+          <img src="/images/team/team-group-uniforms-640.webp" alt="The Capital Clean Care team in navy uniforms" width={640} height={412} loading="eager" decoding="async" className="h-14 w-20 shrink-0 rounded-xl object-cover object-[center_30%]" />
           <div className="min-w-0">
             <div className="flex items-center gap-1">
               {[1, 2, 3, 4, 5].map((i) => (
