@@ -97,7 +97,7 @@ const HeroSection = () => {
       </picture>
       {/* Phones: white wash from the left so the copy reads on the photo, fading to white at the
           bottom under the cards. Desktop: the original left-to-right gradient. */}
-      <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/70 to-background/25 md:bg-gradient-to-r md:from-background md:via-background/60 md:to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/85 via-60% to-background/40 md:via-100% md:bg-gradient-to-r md:from-background md:via-background/60 md:to-transparent" />
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background md:hidden" />
       <div className="hidden md:block absolute inset-0 bg-mesh opacity-20" />
     </div>
@@ -112,7 +112,7 @@ const HeroSection = () => {
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
           </span>
-          <span className="text-[11px] md:text-xs font-semibold text-muted-foreground md:text-foreground uppercase tracking-[0.2em] md:tracking-wider">Same-day slots available · 15% OFF first clean</span>
+          <span className="whitespace-nowrap text-[10.5px] min-[400px]:text-[11px] md:text-xs font-semibold text-slate-700 md:text-foreground uppercase tracking-[0.04em] min-[400px]:tracking-[0.08em] md:tracking-wider">Same-day slots available · 15% OFF first clean</span>
         </div>
 
         <h1 className="font-heading text-[2.35rem] sm:text-5xl md:text-6xl lg:text-[4rem] font-bold text-foreground leading-[1.05] md:leading-[1.1] tracking-[-0.03em] mb-5 md:mb-6 animate-fade-up drop-shadow-sm" style={{ animationDelay: "100ms" }}>
@@ -122,16 +122,16 @@ const HeroSection = () => {
           <span className="text-sky-600 md:text-gradient">in Maryland, DC & Virginia</span>
         </h1>
 
-        <p className="text-muted-foreground text-base md:text-lg mb-6 md:mb-8 leading-relaxed max-w-xl animate-fade-up" style={{ animationDelay: "200ms" }}>
+        <p className="text-slate-700 md:text-muted-foreground text-base md:text-lg mb-6 md:mb-8 leading-relaxed max-w-xl animate-fade-up" style={{ animationDelay: "200ms" }}>
           Eco-friendly cleaning by background-checked professionals. Safe for kids and pets. Licensed & insured, with a 24-hour satisfaction guarantee.
         </p>
 
         {/* Trust items: DOM order is the desktop order (before the CTAs). Phones render them after the
             CTA as three outline-icon items (order-3); md+ keeps the original glass pills. */}
-        <div className="order-3 md:order-none grid grid-cols-3 gap-3 mt-6 md:mt-0 md:flex md:flex-wrap md:gap-3 md:mb-12 animate-fade-up" style={{ animationDelay: "400ms" }}>
+        <div className="order-4 md:order-none flex flex-wrap gap-x-4 gap-y-2 mt-5 md:mt-0 md:gap-3 md:mb-12 animate-fade-up" style={{ animationDelay: "400ms" }}>
           {trustItems.map(({ icon: Icon, label }) => (
-            <span key={label} className="flex items-center gap-2 md:inline-flex md:glass md:rounded-full md:px-4 md:py-2 text-xs md:text-sm font-medium text-foreground">
-              <Icon className="h-7 w-7 md:h-4 md:w-4 shrink-0 text-primary md:text-accent stroke-[1.5] md:stroke-2" />
+            <span key={label} className="inline-flex items-center gap-1.5 whitespace-nowrap md:gap-2 md:glass md:rounded-full md:px-4 md:py-2 text-xs md:text-sm font-medium text-foreground">
+              <Icon className="h-5 w-5 md:h-4 md:w-4 shrink-0 text-primary md:text-accent stroke-[1.75] md:stroke-2" />
               <span className="leading-tight">{label}</span>
             </span>
           ))}
@@ -144,6 +144,9 @@ const HeroSection = () => {
               <a href="#quote" onClick={() => trackBookNowClick("hero_section")}>Get My Free Quote <ArrowRight className="ml-2 h-4 w-4" /></a>
             </Button>
             <span className="text-xs text-muted-foreground pl-2 mt-1 md:mt-0">No commitment · Response within hours</span>
+            <a href="tel:+12407042551" onClick={() => trackPhoneClick("hero_section_mobile")} className="md:hidden inline-flex min-h-11 items-center justify-center gap-2 text-sm font-semibold text-primary">
+              <Phone className="h-4 w-4" aria-hidden="true" /> or call (240) 704-2551
+            </a>
           </div>
           <Button
             size="lg"
@@ -157,25 +160,19 @@ const HeroSection = () => {
 
         {/* Phone-only shortcuts card (md+ has the full services grid further down) */}
         {shortcuts.length > 0 && (
-          <nav aria-label="Popular services" className="order-4 md:hidden mt-7 grid grid-cols-4 divide-x divide-border rounded-2xl bg-background/85 backdrop-blur border border-border shadow-sm animate-fade-up" style={{ animationDelay: "450ms" }}>
+          <nav aria-label="Popular services" className="order-5 md:hidden mt-6 grid grid-cols-2 min-[400px]:grid-cols-4 min-[400px]:divide-x divide-border rounded-2xl overflow-hidden bg-background/85 backdrop-blur border border-border shadow-sm animate-fade-up" style={{ animationDelay: "450ms" }}>
             {shortcuts.map((sc) => (
-              <Link key={sc.slug} to={`/services/${sc.slug}`} className="flex flex-col items-center gap-2 px-1 py-4 text-center hover:bg-accent/5">
+              <Link key={sc.slug} to={`/services/${sc.slug}`} className="flex flex-col items-center gap-2 px-2 py-4 text-center hover:bg-accent/5 max-[399px]:border-b max-[399px]:odd:border-r border-border">
                 <span className={`flex h-12 w-12 items-center justify-center rounded-full ${sc.tone}`}><sc.icon className="h-5 w-5" aria-hidden="true" /></span>
-                <span className="text-[11px] font-medium leading-tight text-foreground break-words">{sc.name}</span>
+                <span className="text-xs min-[400px]:text-[11px] font-medium leading-tight text-foreground">{sc.name}</span>
               </Link>
             ))}
           </nav>
         )}
 
-        {/* Phone-only rating row */}
-        <div className="order-5 md:hidden flex items-center gap-3 mt-6 animate-fade-up" style={{ animationDelay: "500ms" }}>
-          <div className="flex -space-x-3 shrink-0">
-            {avatars.slice(0, 3).map((a) => (
-              <div key={a.src} className="w-11 h-11 rounded-full border-2 border-background shadow-sm overflow-hidden">
-                <img src={a.src} alt={a.alt} width={44} height={44} className="w-full h-full object-cover" loading="lazy" decoding="async" />
-              </div>
-            ))}
-          </div>
+        {/* Phone-only rating row, right under the CTA: real team photo + 5.0 (SEO + design review 30/09/2026) */}
+        <div className="order-3 md:hidden mt-4 mr-14 flex items-center gap-3 rounded-2xl border border-border bg-background/90 p-2.5 pr-3 shadow-sm min-[400px]:mr-0 animate-fade-up" style={{ animationDelay: "350ms" }}>
+          <img src="/images/team/team-group-uniforms-640.webp" alt="The Capital Clean Care team in navy uniforms" width={640} height={412} loading="lazy" decoding="async" className="h-14 w-20 shrink-0 rounded-xl object-cover object-[center_30%]" />
           <div className="min-w-0">
             <div className="flex items-center gap-1">
               {[1, 2, 3, 4, 5].map((i) => (
