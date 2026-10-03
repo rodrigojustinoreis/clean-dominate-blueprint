@@ -97,7 +97,7 @@ const projectPhotos = steps.map((s) => ({ ...s.photo, caption: `Step ${Number(s.
 
 const equipmentChips = ["HEPA filtration", "Up to 550 CFM airflow", "Four filter stages", "Runs in every finished room"];
 const equipmentWhy = [
-  "Captures fine construction dust that is still floating after the surfaces are clean",
+  "Construction dust removal from the air: captures the fine dust that is still floating after the surfaces are clean",
   "Runs inside a sealed room, so the air it cleans stays clean",
   "Keeps dust from rooms still being cleaned out of rooms already finished",
   "Final HEPA stage rated for 99.97% of particles as small as 0.3 microns",
@@ -126,7 +126,7 @@ const faqs: { q: string; a: string }[] = [
   },
   {
     q: "How do you clean dust from the air after construction?",
-    a: "Finish the surfaces first, then place a HEPA air scrubber in the room, seal every opening with plastic and let it run for up to 24 hours. The XPOWER X-2580 we use moves up to 550 cubic feet of air per minute through four stages and captures 99.97% of particles as small as 0.3 microns.",
+    a: "In an after construction cleaning, finish the surfaces first, then place a HEPA air scrubber in the room, seal every opening with plastic and let it run for up to 24 hours. The XPOWER X-2580 we use moves up to 550 cubic feet of air per minute through four stages and captures 99.97% of particles as small as 0.3 microns.",
   },
   {
     q: "How long does post-construction cleaning take in Washington, DC?",
@@ -205,8 +205,8 @@ const EYEBROW = "text-xs font-semibold uppercase tracking-wider text-primary mb-
 
 const PostConstructionCleaningWashingtonDcTownhouse = () => {
   const { seoHelmet } = useSEO({
-    // Title, H1, JSON-LD headline and breadcrumb aligned on one framing (SEO review, 28/09/2026);
-    // title kept at 60 characters, description at 145.
+    // <title> is the 60-character SERP variant; the H1 and the JSON-LD headline share the longer page framing
+    // ("Inside a 3-Story Townhouse"), as Google asks the headline to match the visible title. Description at 145.
     title: "Post Construction Cleaning in Washington, DC: A Real Project",
     description:
       "See how we removed construction dust from a real Washington DC townhouse: room by room cleaning, a HEPA air scrubber and full bathroom sanitizing.",
