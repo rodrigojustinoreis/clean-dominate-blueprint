@@ -17,6 +17,7 @@ import FadeInSection from "@/components/blog/FadeInSection";
 import StickyCTA from "@/components/blog/StickyCTA";
 import RelatedPosts from "@/components/blog/RelatedPosts";
 import FAQAccordion from "@/components/blog/FAQAccordion";
+import YouTubeFacade, { type YouTubeVideo } from "@/components/YouTubeFacade";
 
 // Case study written by the owner (2026-09-28): one real post-renovation clean of a furnished
 // three-story townhouse in Washington, DC. Every photo on this page is an owner-provided photo of
@@ -165,7 +166,29 @@ const lightboxImages = [
   ...projectPhotos.map((p) => ({ src: p.src, alt: p.alt, caption: `Owner-provided photo. ${p.caption}` })),
 ];
 
+// Owner's YouTube video of this same project (published 29/09/2026). Chapters come from the video
+// description on YouTube; the poster is the video's own thumbnail, hosted here.
+const PROJECT_VIDEO: YouTubeVideo = {
+  id: "XsVTzealxxY",
+  title: "Post-Construction Cleaning Washington DC | Dirty to Move-In Ready",
+  description:
+    "Before and after of a post-construction clean on a renovated 3-story Washington, DC townhouse: construction dust on every surface, then kitchen, oven and fridge inside and out, stairs, bedrooms and every bathroom the workers used, sanitized. Filmed by the Capital Clean Care team on the job.",
+  poster: "/images/video/post-construction-dc-townhouse-video.webp",
+  schemaThumbnail: "/images/video/post-construction-dc-townhouse-video.jpg",
+  uploadDate: "2026-09-29T18:30:22-07:00",
+  duration: "PT58S",
+  schemaId: `${URL}#video`,
+  contentLocation: "Washington, DC",
+  about: ["Post-construction cleaning", "Construction dust", "Washington, DC"],
+  chapters: [
+    { name: "Before: the dirty house after renovation", start: 0, end: 23 },
+    { name: "After: the clean walkthrough", start: 23, end: 39 },
+    { name: "Showers, bedrooms and final result", start: 39, end: 58 },
+  ],
+};
+
 const jumpItems = [
+  { id: "video", label: "Video" },
   { id: "process", label: "Process" },
   { id: "equipment", label: "Air scrubbing" },
   { id: "dust", label: "Construction dust" },
@@ -200,6 +223,10 @@ const PostConstructionCleaningWashingtonDcTownhouse = () => {
       <Helmet>
         <meta name="keywords" content="post construction cleaning washington dc, post construction cleaning services, construction dust removal, after construction cleaning, post remodel cleaning dc, hepa air scrubber after renovation" />
         <link rel="preload" as="image" href={HERO_IMAGE} imageSrcSet={`${HERO_IMAGE_640} 640w, ${HERO_IMAGE} 1200w`} imageSizes="(min-width: 1024px) 480px, 100vw" fetchPriority="high" />
+        <meta property="og:video" content={`https://www.youtube.com/embed/${PROJECT_VIDEO.id}`} />
+        <meta property="og:video:type" content="text/html" />
+        <meta property="og:video:width" content="1280" />
+        <meta property="og:video:height" content="720" />
       </Helmet>
       <ArticleSchema
         title="Post Construction Cleaning in Washington, DC: Inside a 3-Story Townhouse"
@@ -211,6 +238,7 @@ const PostConstructionCleaningWashingtonDcTownhouse = () => {
         imageHeight={1500}
         imageCaption={HERO_CAPTION}
         about={["Post-construction cleaning", "Construction dust", "HEPA air scrubber", "Particulate matter", "Washington, DC"]}
+        video={{ "@type": "VideoObject", "@id": PROJECT_VIDEO.schemaId }}
       />
       <FAQSchema faqs={faqs} />
       <BreadcrumbSchema items={[{ label: "Home", href: "/" }, { label: "Resource Center", href: "/resources" }, { label: "Post Construction Cleaning in Washington, DC", href: URL }]} />
@@ -318,6 +346,26 @@ const PostConstructionCleaningWashingtonDcTownhouse = () => {
                     </div>
                   ))}
                 </dl>
+              </div>
+            </div>
+          </FadeInSection>
+
+          {/* ===== VIDEO: the same project, before and after, 58 s ===== */}
+          <FadeInSection>
+            <div id="video" className="scroll-mt-28 mt-12 md:mt-14 grid lg:grid-cols-[1.35fr_1fr] gap-6 lg:gap-10 items-start">
+              <YouTubeFacade video={PROJECT_VIDEO} />
+              <div>
+                <p className={EYEBROW}>Watch the project</p>
+                <h2 className={`${H2} mb-4`}>The same townhouse, before and after, in 58 seconds</h2>
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  Our team filmed this on the job: the dust the contractor left on every surface, then the walkthrough after
+                  the clean. The kitchen, the oven and fridge inside and out, the stairs, the bedrooms and the bathrooms the
+                  workers used are the same rooms described step by step below.
+                </p>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Tap a chapter to jump to that part. The video plays from YouTube only after you press play, so the page stays
+                  light until then. Prefer to watch it there? <a href={`https://www.youtube.com/watch?v=${PROJECT_VIDEO.id}`} target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline-offset-4 hover:underline">Open on YouTube</a>.
+                </p>
               </div>
             </div>
           </FadeInSection>

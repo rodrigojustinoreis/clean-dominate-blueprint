@@ -373,6 +373,8 @@ interface ArticleSchemaProps {
   imageCaption?: string;
   /** Optional: topical entities the article is about (schema.org `about`, as Thing names). */
   about?: string[];
+  /** VideoObject (or an @id reference to one emitted elsewhere on the page). */
+  video?: Record<string, unknown>;
 }
 
 export const ArticleSchema = ({
@@ -386,6 +388,7 @@ export const ArticleSchema = ({
   imageHeight,
   imageCaption,
   about,
+  video,
 }: ArticleSchemaProps) => {
   const schema: Record<string, unknown> = {
     "@context": "https://schema.org",
@@ -435,6 +438,8 @@ export const ArticleSchema = ({
       ...(imageCaption ? { caption: imageCaption } : {}),
     };
   }
+
+  if (video) schema.video = video;
 
   if (about && about.length > 0) {
     schema.about = about.map((name) => ({ "@type": "Thing", name }));
