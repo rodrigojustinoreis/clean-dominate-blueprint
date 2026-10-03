@@ -37,7 +37,7 @@ const TEAM_VIDEO: YouTubeVideo = {
   description: "The Capital Clean Care team at work on a post-construction clean of a renovated Washington, DC townhouse: new kitchen, cabinets, fixtures and floors, cleaned by our own crew.",
   poster: "/images/video/post-construction-team-video.webp",
   schemaThumbnail: "/images/video/post-construction-team-video.jpg",
-  uploadDate: "2026-09-29T17:45:27-07:00",
+  uploadDate: "2026-09-29T20:45:27-04:00", // same instant as YouTube's Pacific timestamp, in Eastern
   duration: "PT56S",
 };
 

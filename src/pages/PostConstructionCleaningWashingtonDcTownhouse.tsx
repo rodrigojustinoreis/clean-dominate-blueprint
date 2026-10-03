@@ -175,7 +175,10 @@ const PROJECT_VIDEO: YouTubeVideo = {
     "Before and after of a post-construction clean on a renovated 3-story Washington, DC townhouse: construction dust on every surface, then kitchen, oven and fridge inside and out, stairs, bedrooms and every bathroom the workers used, sanitized. Filmed by the Capital Clean Care team on the job.",
   poster: "/images/video/post-construction-dc-townhouse-video.webp",
   schemaThumbnail: "/images/video/post-construction-dc-townhouse-video.jpg",
-  uploadDate: "2026-09-29T18:30:22-07:00",
+  schemaThumbnails: ["/images/video/post-construction-dc-townhouse-video-4x3.jpg", "/images/video/post-construction-dc-townhouse-video-1x1.jpg"],
+  posterAlt: "Before and after of the post-construction clean in the Washington, DC townhouse: the stairs, spotless",
+  // YouTube reports Pacific time; same instant in Eastern (EDT), where the business operates.
+  uploadDate: "2026-09-29T21:30:22-04:00",
   duration: "PT58S",
   schemaId: `${URL}#video`,
   contentLocation: "Washington, DC",
@@ -224,6 +227,7 @@ const PostConstructionCleaningWashingtonDcTownhouse = () => {
         <meta name="keywords" content="post construction cleaning washington dc, post construction cleaning services, construction dust removal, after construction cleaning, post remodel cleaning dc, hepa air scrubber after renovation" />
         <link rel="preload" as="image" href={HERO_IMAGE} imageSrcSet={`${HERO_IMAGE_640} 640w, ${HERO_IMAGE} 1200w`} imageSizes="(min-width: 1024px) 480px, 100vw" fetchPriority="high" />
         <meta property="og:video" content={`https://www.youtube.com/embed/${PROJECT_VIDEO.id}`} />
+        <meta property="og:video:secure_url" content={`https://www.youtube.com/embed/${PROJECT_VIDEO.id}`} />
         <meta property="og:video:type" content="text/html" />
         <meta property="og:video:width" content="1280" />
         <meta property="og:video:height" content="720" />
@@ -353,8 +357,8 @@ const PostConstructionCleaningWashingtonDcTownhouse = () => {
           {/* ===== VIDEO: the same project, before and after, 58 s ===== */}
           <FadeInSection>
             <div id="video" className="scroll-mt-28 mt-12 md:mt-14 grid lg:grid-cols-[1.35fr_1fr] gap-6 lg:gap-10 items-start">
-              <YouTubeFacade video={PROJECT_VIDEO} />
-              <div>
+              {/* Text first in the DOM (heading introduces the media on phones); the player sits left on lg+. */}
+              <div className="lg:order-2">
                 <p className={EYEBROW}>Watch the project</p>
                 <h2 className={`${H2} mb-4`}>The same townhouse, before and after, in 58 seconds</h2>
                 <p className="text-muted-foreground leading-relaxed mb-4">
@@ -362,9 +366,15 @@ const PostConstructionCleaningWashingtonDcTownhouse = () => {
                   the clean. The kitchen, the oven and fridge inside and out, the stairs, the bedrooms and the bathrooms the
                   workers used are the same rooms described step by step below.
                 </p>
-                <p className="text-sm text-muted-foreground leading-relaxed">
+                <p className="hidden lg:block text-sm text-muted-foreground leading-relaxed">
                   Tap a chapter to jump to that part. The video plays from YouTube only after you press play, so the page stays
                   light until then. Prefer to watch it there? <a href={`https://www.youtube.com/watch?v=${PROJECT_VIDEO.id}`} target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline-offset-4 hover:underline">Open on YouTube</a>.
+                </p>
+              </div>
+              <div className="lg:order-1">
+                <YouTubeFacade video={PROJECT_VIDEO} />
+                <p className="lg:hidden mt-3 text-sm text-muted-foreground leading-relaxed">
+                  Tap a chapter to jump to that part. The video plays from YouTube only after you press play. Prefer to watch it there? <a href={`https://www.youtube.com/watch?v=${PROJECT_VIDEO.id}`} target="_blank" rel="noopener noreferrer" className="font-semibold text-primary underline-offset-4 hover:underline">Open on YouTube</a>.
                 </p>
               </div>
             </div>

@@ -11,6 +11,10 @@ export interface YouTubeVideo {
   poster: string;
   /** Absolute or site-relative JPG used as schema thumbnailUrl (Google accepts webp too, jpg is safest). */
   schemaThumbnail: string;
+  /** Extra thumbnails in other aspect ratios (4:3, 1:1) for wider rich-result coverage. */
+  schemaThumbnails?: string[];
+  /** Descriptive alt for the poster image (defaults to the video title). */
+  posterAlt?: string;
   uploadDate: string; // ISO 8601 with offset, as published on YouTube
   duration: string; // ISO 8601, e.g. "PT56S"
   /** Chapters from the YouTube description. Emitted as Clip (key moments) and rendered as seek buttons. */
@@ -49,7 +53,7 @@ const YouTubeFacade = ({ video, withSchema = true, className = "" }: { video: Yo
     ...(video.schemaId ? { "@id": video.schemaId } : {}),
     name: video.title,
     description: video.description,
-    thumbnailUrl: [abs(video.schemaThumbnail), `https://i.ytimg.com/vi/${video.id}/maxresdefault.jpg`],
+    thumbnailUrl: [abs(video.schemaThumbnail), ...(video.schemaThumbnails ?? []).map(abs), `https://i.ytimg.com/vi/${video.id}/maxresdefault.jpg`],
     uploadDate: video.uploadDate,
     duration: video.duration,
     embedUrl: `https://www.youtube.com/embed/${video.id}`,
@@ -91,7 +95,7 @@ const YouTubeFacade = ({ video, withSchema = true, className = "" }: { video: Yo
               src={video.poster}
               srcSet={`${video.poster.replace(".webp", "-640.webp")} 640w, ${video.poster} 1280w`}
               sizes="(min-width: 768px) 768px, 100vw"
-              alt=""
+              alt={video.posterAlt ?? video.title}
               loading="lazy"
               decoding="async"
               width={1280}
