@@ -110,6 +110,7 @@ const HowToGetRidOfMildewSmellNaturally = () => {
         description="Eliminate mildew and musty odor from basements, bathrooms, clothes, and furniture using vinegar, baking soda, and ventilation — no bleach needed."
         url="https://capitalcleancare.com/resources/how-to-get-rid-of-mildew-smell-naturally"
         datePublished="2026-05-23"
+        dateModified="2026-10-04"
         image={HERO_IMAGE}
       />
       <HowToSchema
@@ -178,6 +179,12 @@ const HowToGetRidOfMildewSmellNaturally = () => {
               The good news is that mildew smell is one of the most treatable household problems — and you can eliminate it without bleach, without toxic sprays, and without a contractor. This guide covers every surface and every room, with methods proven safe for kids, pets, and the{" "}
               <Link to="/maryland" className="text-accent underline hover:no-underline">
                 Maryland watershed
+              </Link>.
+            </p>
+            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+              If what you smell is smoke and not damp, the cause and the fix are different. That is covered in{" "}
+              <Link to="/resources/how-to-get-cigarette-smell-out-of-your-house" className="text-primary underline hover:no-underline">
+                how to get cigarette smell out of your house
               </Link>.
             </p>
           </FadeInSection>

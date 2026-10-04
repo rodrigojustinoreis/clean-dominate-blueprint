@@ -40,6 +40,15 @@ const teamPhotos = [
   "/images/team/team-window-blinds-pro.webp",
 ];
 
+// Real revision dates for city×service pages rendered by this template, keyed "city/service".
+// Only pages whose content or links actually changed on that date belong here; a page that is not
+// listed keeps emitting its WebPage node without dateModified (and so no sitemap <lastmod>).
+// 04/10/2026: both pages gained the "House Cleaning in Damascus" link (InternalLinksGrid).
+const PAGE_DATES: Readonly<Record<string, string>> = {
+  "damascus-md/move-out-cleaning": "2026-10-04",
+  "damascus-md/office-cleaning": "2026-10-04",
+};
+
 function cityPhotoIndex(slug: string): number {
   let h = 0;
   for (const c of slug) h = (h * 31 + c.charCodeAt(0)) & 0xffff;
@@ -124,7 +133,7 @@ const ServiceLocationPage = () => {
         url={pageUrl}
       />
       <FAQSchema faqs={faqs} />
-      <WebPageSchema name={metaTitle} description={metaDescription} url={pageUrl} cityName={city.name} stateCode={city.state === "VA" ? "Virginia" : city.state === "MD" ? "Maryland" : city.state} primaryImage={`https://capitalcleancare.com${cityImages[city.slug] ?? teamPhotos[cityPhotoIndex(city.slug)]}`} />
+      <WebPageSchema name={metaTitle} description={metaDescription} url={pageUrl} dateModified={PAGE_DATES[`${city.slug}/${service.slug}`]} cityName={city.name} stateCode={city.state === "VA" ? "Virginia" : city.state === "MD" ? "Maryland" : city.state} primaryImage={`https://capitalcleancare.com${cityImages[city.slug] ?? teamPhotos[cityPhotoIndex(city.slug)]}`} />
 
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-primary/5 via-background to-accent/5 pt-24 pb-12 md:pt-32 md:pb-16">

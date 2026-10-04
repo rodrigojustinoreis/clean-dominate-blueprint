@@ -106,6 +106,7 @@ const HowToRemoveStickerResidueNatural = () => {
         description="Remove sticker residue and label glue from glass, plastic, wood, metal, and fabric using oil, vinegar, heat, baking soda, and rubbing alcohol — no VOC solvents needed."
         url="https://capitalcleancare.com/resources/how-to-remove-sticker-residue-natural"
         datePublished="2026-05-23"
+        dateModified="2026-10-04"
         image={HERO_IMAGE}
       />
       <HowToSchema
@@ -300,7 +301,8 @@ const HowToRemoveStickerResidueNatural = () => {
               />
             </div>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              Heat is the only method that requires no liquid contact with the surface — making it the safest option for painted walls, finished wood furniture, and delicate plastics that could be damaged by solvents or moisture.
+              Heat is the only method that requires no liquid contact with the surface — making it the safest option for painted walls, finished wood furniture, and delicate plastics that could be damaged by solvents or moisture. Marker on one of those same surfaces is a different problem, covered in our guide to{" "}
+              <Link to="/resources/how-to-remove-sharpie-safely" className="text-primary underline hover:no-underline">Sharpie removal by surface type</Link>.
             </p>
             <div className="space-y-6 mb-10">
               {[

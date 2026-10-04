@@ -171,6 +171,7 @@ const CondoCleaningPage = () => {
         </div>
       )}
 
+      <main id="main-content">
       {/* ── Hero ── */}
       <section className="relative overflow-hidden bg-gradient-to-br from-[#EAF6EA] via-background to-accent/5 py-10 md:py-16">
         <div className="container mx-auto px-4 max-w-6xl">
@@ -527,6 +528,8 @@ const CondoCleaningPage = () => {
           </p>
         </div>
       </section>
+
+      </main>
 
       {!isAdTraffic && <Footer />}
 

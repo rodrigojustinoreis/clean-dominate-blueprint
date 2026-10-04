@@ -51,6 +51,7 @@ const PrepareHomeForCleaning = () => {
         description="A simple checklist to prepare for a house cleaning service and get a better, faster clean."
         url="https://capitalcleancare.com/resources/how-to-prepare-home-for-professional-cleaning"
         datePublished="2026-06-16"
+        dateModified="2026-10-04"
         image={HERO_IMAGE}
       />
       <HowToSchema
@@ -84,7 +85,8 @@ const PrepareHomeForCleaning = () => {
         <div className="container mx-auto px-4 max-w-3xl">
           <FadeInSection>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              You don't need to clean before a cleaning service arrives — but a few minutes of prep makes the clean noticeably better and faster. Here's exactly what to do (and what not to bother with) so you get the most from every visit.
+              You don't need to clean before a cleaning service arrives — but a few minutes of prep makes the clean noticeably better and faster. Here's exactly what to do (and what not to bother with) so you get the most from every visit. Worried the house is too far gone to book at all? Start with our guide on{" "}
+              <Link to="/resources/house-too-messy-for-cleaning-service" className="text-primary underline hover:no-underline">booking a cleaning service for a messy house</Link>.
             </p>
           </FadeInSection>
 

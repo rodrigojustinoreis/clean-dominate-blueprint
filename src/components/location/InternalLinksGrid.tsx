@@ -27,6 +27,16 @@ interface InternalLinksGridProps {
   nearbyCities: CityLink[];
 }
 
+// Weekly audit 03/10/2026. Two indexable pages each had a single origin inside the sitemap because
+// the "Other Services in <city>" column cannot reach them: the Damascus house-cleaning page is a
+// vanity URL (its /locations twin and the Damascus hub are noindex), and Wheaton apartment cleaning
+// is an off-grid pair that is not in the services list passed to this grid. Explicit, per city, so
+// no other city changes. Every target here must stay indexable (checked with isIndexable below).
+const EXTRA_CITY_SERVICE_LINKS: Readonly<Record<string, RelatedLink[]>> = {
+  "damascus-md": [{ href: "/house-cleaning-damascus-md", title: "House Cleaning in Damascus" }],
+  "wheaton-md": [{ href: "/locations/wheaton-md/apartment-cleaning", title: "Apartment Cleaning in Wheaton" }],
+};
+
 // Related-pages block for city×service pages (all 77 dedicated pages + reused elsewhere).
 // Fase 1.3: everything here is filtered to INDEXABLE targets (the city/service lists passed in
 // previously included noindex pages), and two contextual columns were added — local guides
@@ -53,11 +63,20 @@ const InternalLinksGrid = ({
   const pillar: RelatedLink[] = pillarHref
     ? [{ href: pillarHref, title: `${serviceLabel} across MD, DC & VA` }]
     : [];
+  const localServiceLinks: RelatedLink[] = services
+    .filter((s) => s.slug !== serviceSlug && isIndexable(`/locations/${citySlug}/${s.slug}`))
+    .map((s) => ({ href: `/locations/${citySlug}/${s.slug}`, title: `${s.name} in ${cityName}` }));
+  const selfHref = `/locations/${citySlug}/${serviceSlug}`;
+  // Only indexable origins carry the extra link: noindex twins of the same city keep their HTML as is.
+  const extraLinks: RelatedLink[] = isIndexable(selfHref)
+    ? (EXTRA_CITY_SERVICE_LINKS[citySlug] ?? []).filter(
+        (l) => l.href !== selfHref && isIndexable(l.href) && !localServiceLinks.some((s) => s.href === l.href),
+      )
+    : [];
   const serviceLinks: RelatedLink[] = [
     ...pillar,
-    ...services
-      .filter((s) => s.slug !== serviceSlug && isIndexable(`/locations/${citySlug}/${s.slug}`))
-      .map((s) => ({ href: `/locations/${citySlug}/${s.slug}`, title: `${s.name} in ${cityName}` })),
+    ...localServiceLinks,
+    ...extraLinks,
     ...(hub ? [hub] : []),
   ];
 

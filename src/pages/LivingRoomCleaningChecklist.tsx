@@ -63,6 +63,7 @@ const LivingRoomCleaningChecklist = () => {
         description="A step-by-step living room cleaning checklist — how to clean the living room, dining room, and home office: dusting, upholstery, floors, and touchpoints — with a daily, weekly and monthly routine."
         url={URL}
         datePublished="2026-08-06"
+        dateModified="2026-10-04"
         image={HERO_IMAGE}
       />
       <FAQSchema faqs={faqs} />
@@ -158,6 +159,11 @@ const LivingRoomCleaningChecklist = () => {
               <strong>What you'll need:</strong> a microfiber duster and cloths, a vacuum with an upholstery attachment,
               an all-purpose (or EPA Safer Choice™) cleaner, glass cleaner for screens and windows, and a mop for hard
               floors. That's it — no specialty products required for routine living area cleaning.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-8">
+              Before you wipe the TV, read{" "}
+              <Link to="/resources/how-to-clean-oled-tv-screen-safely" className="text-primary underline hover:no-underline">how to clean an OLED TV screen safely</Link>:
+              OLED, QLED and LED panels need a gentler method than window glass.
             </p>
           </FadeInSection>
 

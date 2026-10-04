@@ -20,7 +20,10 @@ const DEFAULT_FAQS: FAQItem[] = [
   },
   {
     q: "¿Qué pasa si rompen algo durante la limpieza?",
-    a: "Capital Clean Care LLC tiene seguro de responsabilidad civil activo y fianza. Si algo se daña durante el servicio, cubrimos el 100% del costo de reposición o reparación. En más de 10 años, los incidentes han sido mínimos — pero si ocurren, estás protegido.",
+    // Auditoria semanal 03/10/2026: retirada a promessa de cobertura de 100% e a frase sobre
+    // incidentes. Ver capitalcleancare.com-audit/weekly-2026-10-03/REGISTRO-DE-ALEGACOES.md antes
+    // de reintroduzir qualquer condição de cobertura (depende de apólice confirmada pelo proprietário).
+    a: "Capital Clean Care LLC tiene seguro de responsabilidad civil activo y fianza. Si algo se daña durante el servicio, llámanos al (240) 704-2551 para reportarlo.",
   },
   {
     q: "¿Puedo conocer al equipo antes de la primera limpieza?",
@@ -56,6 +59,12 @@ const DEFAULT_FAQS: FAQItem[] = [
   },
 ];
 
+// Date the default answers above were last revised (04/10/2026: damage-coverage answer). Emitted in
+// the FAQPage node only when the default set is rendered, so the /es pages that show it carry a real
+// dateModified, which scripts/generate-sitemap.mjs turns into <lastmod>. Update it only when the
+// default text changes.
+const DEFAULT_FAQS_UPDATED = "2026-10-04";
+
 const FAQExpandedSection = ({ faqs = DEFAULT_FAQS, title = "Preguntas Frecuentes", schemaId = "faq-expanded" }: FAQExpandedSectionProps) => {
   const [open, setOpen] = useState<number | null>(null);
 
@@ -63,6 +72,7 @@ const FAQExpandedSection = ({ faqs = DEFAULT_FAQS, title = "Preguntas Frecuentes
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "@id": `#${schemaId}`,
+    ...(faqs === DEFAULT_FAQS ? { dateModified: DEFAULT_FAQS_UPDATED } : {}),
     mainEntity: faqs.map(({ q, a }) => ({
       "@type": "Question",
       name: q,

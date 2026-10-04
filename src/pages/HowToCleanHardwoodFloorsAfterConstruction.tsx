@@ -243,17 +243,24 @@ const HowToCleanHardwoodFloorsAfterConstruction = () => {
             </div>
           </FadeInSection>
 
-          {/* Quotable full answer (134-167 words) */}
+          {/* Quotable full answer. Weekly audit 03/10/2026: the single 167-word paragraph is now three,
+              one idea each (dry removal, the damp step, when to stop). Wording and order unchanged. */}
           <FadeInSection>
-            <blockquote className="border border-border rounded-2xl p-6 bg-secondary/30 mb-10 text-foreground leading-relaxed">
+            <blockquote className="border border-border rounded-2xl p-6 bg-secondary/30 mb-10 text-foreground leading-relaxed space-y-4">
               <p>
                 The safest way to clean hardwood floors after construction is to remove every layer of dust dry before any
                 moisture touches the finish. Start at the top of the room and work down so that ceiling, trim, sill and
                 baseboard dust falls to the floor before you vacuum it. Use a vacuum with a sealed HEPA filter, a soft floor
                 brush and the beater bar switched off; a dry broom or an unfiltered vacuum can lift fine drywall dust
-                back into the air. Because that dust keeps settling for hours, the floor needs a second dry pass and a
+                back into the air.
+              </p>
+              <p>
+                Because that dust keeps settling for hours, the floor needs a second dry pass and a
                 side-light inspection before it is really clean. Only on sealed hardwood, and only after the dry passes, use
-                a pH-neutral wood-floor cleaner on a microfiber pad wrung nearly dry, then buff the surface dry. Steam mops,
+                a pH-neutral wood-floor cleaner on a microfiber pad wrung nearly dry, then buff the surface dry.
+              </p>
+              <p>
+                Steam mops,
                 wet mops, vinegar and abrasive pads stay off the floor. If the renovation disturbed painted surfaces in a
                 home built before 1978, stop and follow lead-safe guidance instead of cleaning it yourself.
               </p>
@@ -452,7 +459,10 @@ const HowToCleanHardwoodFloorsAfterConstruction = () => {
               removed or damaged (possible asbestos: the EPA says it cannot be identified by looking, suspect material should
               be left undisturbed rather than vacuumed or swept, and inspection or sampling is a job for a trained
               professional), when large volumes of concrete, tile or stone dust
-              are involved, or when you cannot identify the floor's finish. Scratches, dull patches, grey boards or a finish
+              are involved, or when you cannot identify the floor's finish.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              Scratches, dull patches, grey boards or a finish
               that is coming off with the residue are a flooring professional's territory: screening, recoating or
               refinishing, which no cleaning process replaces.
             </p>
@@ -462,10 +472,16 @@ const HowToCleanHardwoodFloorsAfterConstruction = () => {
               <Link to="/services/post-construction-cleaning" className="text-accent underline hover:no-underline">post-construction cleaning service</Link>{" "}
               brings sealed HEPA vacuums, the right pad and cleaner for the finish, and crews who do the two dry passes and
               the settling check as a routine. That is what our teams do on renovated homes across Maryland, Washington DC
-              and Northern Virginia, and the seven steps above are the hardwood part of that visit. If you are searching
+              and Northern Virginia, and the seven steps above are the hardwood part of that visit.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              If you are searching
               for a hardwood floor cleaning service or a wood floor cleaning service after a renovation, that is the right
               category to look in; it is not the same as hiring a flooring contractor, and a good cleaning company will say
-              so when a floor needs one. For the wider job, room by room, see our{" "}
+              so when a floor needs one.
+            </p>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              For the wider job, room by room, see our{" "}
               <Link to="/resources/post-construction-cleaning-montgomery-county-md" className="text-accent underline hover:no-underline">post-construction cleaning guide for Montgomery County</Link>.
               For ongoing care once the dust is gone, the routine in our{" "}
               <Link to="/resources/how-to-clean-hardwood-floors-naturally" className="text-accent underline hover:no-underline">guide to cleaning hardwood floors naturally</Link>{" "}

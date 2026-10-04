@@ -23,8 +23,10 @@ const reviews = [
 
 export default function HomeES() {
   const { seoHelmet } = useSEO({
-    title: "Limpieza de Casas en Montgomery County, MD | Capital Clean Care",
-    description: "Servicio profesional de limpieza de casas en Montgomery County, MD. Negocio familiar, 5★ en Google, asegurados y con fianza. ¡Hablamos español! Llama (240) 704-2551",
+    // Auditoria semanal 03/10/2026: /es é o hub da empresa e dos serviços em espanhol; o serviço
+    // residencial vive em /es/limpieza-de-casas. Títulos e introduções deixam de ser quase iguais.
+    title: "Capital Clean Care: Servicios de Limpieza en Español",
+    description: "Capital Clean Care atiende en español en Montgomery County, MD: limpieza de casas, profunda, recurrente, de mudanza y post-construcción. Llama (240) 704-2551",
     canonical: CANONICAL,
   });
 
@@ -50,10 +52,10 @@ export default function HomeES() {
           <div className="container mx-auto px-4 max-w-5xl">
             <p className="text-sm font-medium text-accent mb-3">🏡 Negocio Familiar · Montgomery County, MD · Desde 2015</p>
             <h1 className="font-heading text-3xl md:text-5xl font-bold text-foreground mb-5 leading-tight">
-              Limpieza de Casas en Montgomery County, MD —<br className="hidden md:block" /> Hecha con Cariño
+              Servicios de Limpieza en Español<br className="hidden md:block" /> en Montgomery County, MD
             </h1>
             <p className="text-lg text-muted-foreground mb-6 max-w-2xl leading-relaxed">
-              Atendemos a familias en Silver Spring, Rockville, Bethesda, Wheaton, Gaithersburg y toda Montgomery County. Equipo bilingüe, asegurados y con fianza. Reseñas 5★ de tus vecinos.
+              Somos Capital Clean Care, un negocio familiar que atiende en español a familias en Silver Spring, Rockville, Bethesda, Wheaton, Gaithersburg y toda Montgomery County. Elige el servicio que necesitas, desde la <Link to="/es/limpieza-de-casas" className="text-primary font-medium hover:underline">limpieza de casas</Link> hasta la limpieza profunda, de mudanza o post-construcción. Equipo bilingüe, asegurados y con fianza. Reseñas 5★ de tus vecinos.
             </p>
 
             <div className="flex flex-wrap gap-2 mb-8">
@@ -87,7 +89,7 @@ export default function HomeES() {
               {[
                 { icon: Home, title: "Negocio Familiar de Verdad", text: "Capital Clean Care empezó en 2015 como un negocio familiar, y así sigue. Cuando llamas, hablas con Rodrigo, el dueño. Mismo equipo cada visita — no extraños nuevos cada semana." },
                 { icon: Users, title: "Hablamos Tu Idioma", text: "Atendemos por teléfono, mensaje de texto y en persona en español. No tienes que explicar tu casa dos veces ni preocuparte por malentendidos." },
-                { icon: Shield, title: "Asegurados y con Fianza", text: "Capital Clean Care LLC está registrada en Maryland, con seguro de responsabilidad civil y fianza para cada empleada. Si algo se rompe, estás cubierto al 100%." },
+                { icon: Shield, title: "Asegurados y con Fianza", text: "Capital Clean Care LLC está registrada en Maryland, con seguro de responsabilidad civil y fianza." },
                 { icon: Leaf, title: "Productos Seguros para Familia", text: "Usamos productos amigables con niños, mascotas y personas con alergias. Si prefieres productos específicos o quieres que usemos los tuyos, no hay problema." },
               ].map(({ icon: Icon, title, text }) => (
                 <div key={title} className="bg-background border border-border rounded-xl p-6 shadow-sm">

@@ -97,7 +97,7 @@ export default function NosotrosPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
                 { icon: Heart, title: "Familia Primero", text: "Tratamos cada casa como si fuera la nuestra. No enviamos desconocidos — siempre el mismo equipo." },
-                { icon: Shield, title: "Confianza Total", text: "Asegurados, con fianza, verificados en antecedentes. Si algo se daña, estás 100% cubierto." },
+                { icon: Shield, title: "Confianza Total", text: "Asegurados, con fianza, verificados en antecedentes." },
                 { icon: Leaf, title: "Productos Seguros", text: "EPA Safer Choice — seguros para niños, mascotas y personas con alergias." },
                 { icon: Users, title: "Tu Idioma", text: "Atendemos en español e inglés. No tendrás que explicar lo que quieres dos veces." },
               ].map(({ icon: Icon, title, text }) => (

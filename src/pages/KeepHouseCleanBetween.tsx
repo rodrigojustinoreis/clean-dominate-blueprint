@@ -51,6 +51,7 @@ const KeepHouseCleanBetween = () => {
         description="Simple daily habits to keep your house tidy between professional cleanings."
         url="https://capitalcleancare.com/resources/how-to-keep-house-clean-between-cleanings"
         datePublished="2026-06-16"
+        dateModified="2026-10-04"
         image={HERO_IMAGE}
       />
       <FAQSchema faqs={faqs} />
@@ -76,7 +77,8 @@ const KeepHouseCleanBetween = () => {
         <div className="container mx-auto px-4 max-w-3xl">
           <FadeInSection>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              A clean home isn't about one big effort — it's about small habits that stop mess from ever piling up. These six routines keep your house consistently tidy between professional visits, so it always feels fresh and each clean stays quick and effective.
+              A clean home isn't about one big effort — it's about small habits that stop mess from ever piling up. These six routines keep your house consistently tidy between professional visits, so it always feels fresh and each clean stays quick and effective. If your weekdays leave almost no time for any of it, start with our{" "}
+              <Link to="/resources/cleaning-tips-for-working-professionals" className="text-primary underline hover:no-underline">cleaning tips for busy working professionals</Link>.
             </p>
           </FadeInSection>
 

@@ -178,6 +178,26 @@ const RETARGET_TO_VANITY: Record<string, string> = {
   "frederick-md/house-cleaning": "/house-cleaning-frederick-md",
 };
 
+// Weekly audit 03/10/2026: one contextual sentence in the "Service Area" section of two hubs, each
+// pointing at an indexable page that answers a different question and had a single origin inside
+// the sitemap. Explicit per hub, not a rule: no other hub changes. Place names in the Frederick
+// sentence come from cityNeighborhoods["frederick-county-md"] above; the Georgetown label follows
+// that guide's own title.
+const HUB_CONTEXT_LINK: Readonly<Record<string, { before: string; label: string; href: string; after: string }>> = {
+  "frederick-md": {
+    before: "Outside the city limits? See our ",
+    label: "cleaning services across Frederick County",
+    href: "/locations/frederick-county-md",
+    after: ", from Urbana and New Market to Middletown.",
+  },
+  "georgetown-dc": {
+    before: "Living in one of the neighborhood's older rowhouses? Read our guide to ",
+    label: "cleaning historic Georgetown homes",
+    href: "/resources/cleaning-service-georgetown-dc",
+    after: ".",
+  },
+};
+
 const rockvilleServiceGuide = [
   {
     name: "House cleaning",
@@ -242,13 +262,16 @@ const silverSpringServiceGuide = [
 ];
 
 // Hubs that carry a WebPage node with a real dateModified (the date the hub content was last revised).
+// Weekly audit 04/10/2026: Rockville, Frederick and Georgetown got new body text and links on that
+// date (HUB_CONTEXT_LINK and the Rockville booking sentence), so their date moves. Other hubs keep theirs.
 const HUB_PAGE_DATES: Record<string, string> = {
-  "rockville-md": "2026-08-23",
+  "rockville-md": "2026-10-04",
   "gaithersburg-md": "2026-09-19",
   "silver-spring-md": "2026-09-03",
   "alexandria-va": "2026-09-03",
   "fairfax-va": "2026-09-03",
-  "frederick-md": "2026-09-19",
+  "frederick-md": "2026-10-04",
+  "georgetown-dc": "2026-10-04",
 };
 
 const rockvilleRealWorkPhotos = [
@@ -514,7 +537,7 @@ const CityPage = () => {
       {isRockvilleHub && (
         <section className="py-12 md:py-16 border-b border-border" aria-labelledby="rockville-cleaning-answer">
           <div className="container mx-auto px-4 max-w-4xl">
-            <p className="text-sm font-semibold text-accent mb-3">Updated August 23, 2026 · Serving Rockville ZIP codes 20850–20853</p>
+            <p className="text-sm font-semibold text-accent mb-3">Updated October 4, 2026 · Serving Rockville ZIP codes 20850–20853</p>
             <h2 id="rockville-cleaning-answer" className="font-heading text-2xl md:text-3xl font-bold mb-5">
               What cleaning services are available in Rockville, MD?
             </h2>
@@ -541,7 +564,14 @@ const CityPage = () => {
               ))}
             </div>
 
+            {/* Weekly audit 03/10/2026: this hub compares services; hiring house cleaning happens on its
+                own page. One sentence states that split (GSC shows both URLs for "house cleaning rockville md"). */}
             <p className="mt-5 text-sm text-muted-foreground">
+              This page compares every service we offer in Rockville. To book regular house cleaning, go to the{" "}
+              <Link to="/locations/rockville-md/house-cleaning" className="text-primary font-semibold underline underline-offset-2 hover:no-underline">Rockville house cleaning page</Link>,
+              which covers what each visit includes and how to request a written quote.
+            </p>
+            <p className="mt-3 text-sm text-muted-foreground">
               Comparing budgets? See our transparent <Link to="/resources/house-cleaning-cost-rockville-md" className="text-accent font-semibold hover:underline">2026 Rockville cleaning cost guide</Link>.
             </p>
           </div>
@@ -888,6 +918,13 @@ const CityPage = () => {
         <div className="container mx-auto px-4 max-w-4xl">
           <h2 className="font-heading text-2xl font-bold mb-4">Our {city.name} Service Area</h2>
           <p className="text-muted-foreground mb-6">We serve all neighborhoods in and around {cityLabel}. See our coverage area below.</p>
+          {HUB_CONTEXT_LINK[city.slug] && (
+            <p className="text-muted-foreground mb-6">
+              {HUB_CONTEXT_LINK[city.slug].before}
+              <Link to={HUB_CONTEXT_LINK[city.slug].href} className="text-primary font-semibold underline underline-offset-2 hover:no-underline">{HUB_CONTEXT_LINK[city.slug].label}</Link>
+              {HUB_CONTEXT_LINK[city.slug].after}
+            </p>
+          )}
           <GoogleMapEmbed cityName={city.name} state={city.state === "DC" ? "DC" : city.state} />
           <div className="mt-6">
             <GoogleBusinessLinks />

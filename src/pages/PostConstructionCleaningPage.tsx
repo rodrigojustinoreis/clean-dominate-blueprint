@@ -246,6 +246,7 @@ const PostConstructionCleaningPage = () => {
         <Header />
       )}
 
+      <main id="main-content">
       {/* ── Hero ── */}
       <section className="relative bg-gradient-to-br from-[#EAF6EA] via-background to-accent/5 py-10 pb-16 md:py-16 md:pb-24">
         <div className="container mx-auto max-w-6xl px-4">
@@ -1011,6 +1012,8 @@ const PostConstructionCleaningPage = () => {
           </ul>
         </div>
       </section>
+
+      </main>
 
       <Footer />
 

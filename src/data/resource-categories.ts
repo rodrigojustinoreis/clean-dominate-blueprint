@@ -69,7 +69,9 @@ export const RESOURCE_CATEGORIES: ResourceCategory[] = [
     h1: "Recurring & Maintenance Cleaning Guides",
     intro:
       "The homes that stay effortlessly clean almost always run on a rhythm — a recurring service plus a few small habits between visits. These guides help you choose the right frequency for your household, whether that's weekly, bi-weekly, or monthly, and explain why recurring cleaning costs less per visit than one-off bookings. You'll find honest comparisons of one-time versus recurring service, how often busy DMV families actually schedule, and simple systems for keeping a home tidy in the days between professional cleanings. We break the decision down by what really drives it — pets, kids, schedules, home size, and budget — so you land on a plan you'll keep, instead of paying for one that looks good on paper but never fits your week.",
-    seoTitle: "Recurring Cleaning Guides — Weekly, Bi-Weekly or Monthly | Capital Clean Care",
+    // Weekly audit 03/10/2026: was 77 characters. At 52 the brand suffix would take it to 73, so
+    // useSEO leaves it without the suffix (its 70-character rule).
+    seoTitle: "Recurring Cleaning: Weekly, Biweekly & Monthly Guides",
     seoDescription:
       "How to choose a recurring house cleaning frequency in the DMV — weekly vs bi-weekly vs monthly, cost per visit, and habits that keep a home clean between visits.",
   },

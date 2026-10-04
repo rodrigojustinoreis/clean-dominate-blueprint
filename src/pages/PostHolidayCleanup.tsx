@@ -57,6 +57,7 @@ const PostHolidayCleanup = () => {
         description="A fast, room-by-room plan to reset your home after a party or holiday weekend like July 4th: triage order, stain rescue, grill and patio cleanup, and when to bring in a pro."
         url={URL}
         datePublished="2026-07-08"
+        dateModified="2026-10-04"
         image={HERO_IMAGE}
       />
       <FAQSchema faqs={faqs} />
@@ -125,7 +126,9 @@ const PostHolidayCleanup = () => {
             <p className="text-muted-foreground leading-relaxed mb-4">
               Ketchup on the couch, fruit punch on the carpet, grass tracked over the rug: every one of these is dramatically
               easier to remove in the first 24 hours. Blot with a clean cloth (never rub), treat with cold water and a drop of
-              dish soap, and work from the outside of the stain inward. Club soda helps with red wine and punch.
+              dish soap, and work from the outside of the stain inward. Club soda helps with red wine and punch. For wine
+              on carpet, upholstery or fabric, the full method is in{" "}
+              <Link to="/resources/how-to-remove-red-wine-stains" className="text-primary underline hover:no-underline">how to remove red wine stains</Link>.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-8">
               Guest bathroom next: fresh towels, sanitize the toilet and sink, restock paper, empty the trash. Ten minutes, big
