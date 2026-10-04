@@ -133,11 +133,15 @@ const cityToken = (slug: string) => slug.replace(/-(md|va|dc)$/, "");
 // ── Post universe (only posts that are safe to link to) ─────────────────────────
 // Exclude noindex posts and posts canonicalised to a different URL (never link to a page
 // that tells Google "index that other URL instead").
-const LINKABLE_POSTS: BlogPost[] = allPosts.filter(
-  (p) =>
-    !isNoIndexPath(`/resources/${p.slug}`) &&
-    (!p.canonical || p.canonical === `${ORIGIN}/resources/${p.slug}`)
-);
+// allPosts mixes hand-written BlogPost entries with AutoBlogPost entries, and only BlogPost
+// declares `canonical`. Read it through an `in` narrowing so the union is handled by type, with
+// the same result as before: no canonical field means "not canonicalised away".
+const canonicalOf = (p: (typeof allPosts)[number]): string | undefined => ("canonical" in p ? p.canonical : undefined);
+
+const LINKABLE_POSTS: BlogPost[] = allPosts.filter((p) => {
+  const canonical = canonicalOf(p);
+  return !isNoIndexPath(`/resources/${p.slug}`) && (!canonical || canonical === `${ORIGIN}/resources/${p.slug}`);
+});
 
 const toGuide = (p: BlogPost): GuideLink => ({
   href: `/resources/${p.slug}`,
@@ -240,7 +244,25 @@ export function guidesForCategories(categorySlugs: string[], excludeSlug: string
     .map(toGuide);
 }
 
-/** Related guides for a post: same-category (priority) then manual relations, capped at `limit`. */
+// Origins whose hand-curated relations LEAD the "Related Guides" block instead of trailing the
+// category feed. With six slots and categories of six or more posts, the trailing relations were
+// always cut. Editorial approval on 04/10/2026 covers exactly these three origins and their three
+// existing MANUAL_RELATED_POSTS entries each (nine pairs); see
+// capitalcleancare.com-audit/followup-2026-10-04/PARECER-CONTEUDO-ESCOPO.md. Every other origin
+// keeps the category-first order. Do not add an origin here without an editorial review of its
+// pairs: "how-much-does-deep-cleaning-cost" was reviewed and deliberately left out.
+export const MANUAL_FIRST_ORIGINS: ReadonlySet<string> = new Set([
+  "how-long-does-deep-cleaning-take",
+  "questions-to-ask-before-hiring-house-cleaner",
+  "cleaning-company-vs-independent-cleaner",
+]);
+
+/**
+ * Related guides for a post, capped at `limit`: same-category first, then manual relations.
+ * For the origins in MANUAL_FIRST_ORIGINS the order is reversed: manual relations first, in map
+ * order, completed with the category feed. Filters are the same in both orders (linkable posts
+ * only, never the post itself, no duplicates).
+ */
 export function guidesForPost(slug: string, limit = 6): GuideLink[] {
   const post = LINKABLE_POSTS.find((p) => p.slug === slug) || allPosts.find((p) => p.slug === slug);
   if (!post) return [];
@@ -250,7 +272,8 @@ export function guidesForPost(slug: string, limit = 6): GuideLink[] {
     .map((s) => LINKABLE_POSTS.find((p) => p.slug === s))
     .filter((p): p is BlogPost => Boolean(p) && p!.slug !== slug)
     .map(toGuide);
-  return dedupe([...category, ...manual]).slice(0, limit);
+  const ordered = MANUAL_FIRST_ORIGINS.has(slug) ? [...manual, ...category] : [...category, ...manual];
+  return dedupe(ordered).slice(0, limit);
 }
 
 /** Guide links for an explicit, ordered list of post slugs — indexable/linkable only (drops
