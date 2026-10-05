@@ -669,7 +669,7 @@ const About = () => {
           <div className="text-center mb-6">
             <h2 className="font-heading text-3xl font-bold">Get Your Free Quote</h2>
             <p className="text-muted-foreground mt-2">
-              New clients get <strong className="text-accent">15% off</strong> their first GreenShield Clean. Fill out the form and we'll respond within hours.
+              Fill out the form and we'll respond within hours.
             </p>
           </div>
           <Card><CardContent className="p-6 md:p-8"><QuoteForm compact /></CardContent></Card>

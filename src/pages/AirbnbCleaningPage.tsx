@@ -174,7 +174,7 @@ const AirbnbCleaningPage = () => {
             ⭐⭐⭐⭐⭐ 5-Star Rated Across the DMV
           </span>
           <span className="text-sm font-bold text-center flex-1 md:flex-none">
-            🎁 15% OFF Your First Airbnb Turnover
+            Get Your Free Airbnb Cleaning Quote
           </span>
           <a
             href={PHONE_HREF}
@@ -702,11 +702,6 @@ const AirbnbCleaningPage = () => {
           <p className="text-center text-muted-foreground text-sm mb-6">
             Serving short-term rental hosts across Maryland, Washington, DC &amp; Northern Virginia
           </p>
-
-          {/* Offer callout */}
-          <div className="bg-[#2E7D32] text-white rounded-lg py-3 px-5 text-center mb-6 font-medium text-sm">
-            🎁 15% OFF your first Airbnb turnover — mention this offer when booking
-          </div>
 
           <Card>
             <CardContent className="p-6 md:p-8">

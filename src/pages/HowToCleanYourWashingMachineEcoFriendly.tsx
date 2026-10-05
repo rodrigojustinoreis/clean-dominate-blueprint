@@ -267,7 +267,7 @@ const HowToCleanYourWashingMachineEcoFriendly = () => {
 
           <BlogInlineCTA
             headline="Want a professionally cleaned home — from washer to windows?"
-            subtext="Capital Clean Care serves Montgomery County with eco-certified products and background-checked teams. New clients get 15% OFF their first visit."
+            subtext="Capital Clean Care serves Montgomery County with eco-certified products and background-checked teams."
             ctaLabel="Get My Free Quote"
             ctaTo="/contact"
           />

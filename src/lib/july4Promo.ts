@@ -1,12 +1,12 @@
 // Single source of truth for the 4th of July promo (used by the popup + top bar).
-// Festive 25% OFF runs Jun 24 → Jul 6, 2026; outside that window the standard
-// offer shows. Excluded from the active Google Ads landing (/services/house-cleaning).
+// Festive 25% OFF runs Jun 24 → Jul 6, 2026; outside that window no offer shows. Excluded from the active Google Ads landing (/services/house-cleaning).
 
 export const OFFER_END = new Date("2026-07-06T23:59:59-04:00").getTime();
 const PROMO_START = new Date("2026-06-24T00:00:00-04:00").getTime();
 
 // Master switch — the 4th of July promo is OVER. Flip back to true (within the date
-// window above) to re-run it; the popup + top bar both revert to the standard 15% offer.
+// window above) to re-run it. Outside it the top bar shows nothing: the standing 15% new-client
+// offer was ended by the owner on 05/10/2026.
 const PROMO_ACTIVE = false;
 
 export const isJuly4Promo = (): boolean => {

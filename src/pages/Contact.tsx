@@ -14,7 +14,7 @@ import PricingTable from "@/components/PricingTable";
 const Contact = () => {
   const { seoHelmet } = useSEO({
     title: "Get a Free Cleaning Quote in MD, DC & VA | Capital Clean Care",
-    description: "Request your free house cleaning quote from Capital Clean Care. Serving Maryland, DC & Virginia. Call (240) 704-2551 or fill out our form — 15% off first clean!",
+    description: "Request your free house cleaning quote from Capital Clean Care. Serving Maryland, DC & Virginia. Call (240) 704-2551 or fill out our form.",
     canonical: "https://capitalcleancare.com/contact",
   });
 
@@ -98,13 +98,6 @@ const Contact = () => {
             <span className="text-accent font-semibold text-sm uppercase tracking-wider">Pricing</span>
             <h2 className="font-heading text-3xl md:text-4xl font-bold mt-2 mb-4">Transparent Pricing</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">Honest pricing based on home size and frequency. No hidden fees, ever.</p>
-            <div className="inline-flex items-center gap-2 mt-4 bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800 text-amber-800 dark:text-amber-300 rounded-full px-4 py-1.5 text-xs font-semibold">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-400"></span>
-              </span>
-              New clients save 15% on their first clean — limited availability
-            </div>
           </div>
           <PriceCalculator />
           <div className="mt-12">

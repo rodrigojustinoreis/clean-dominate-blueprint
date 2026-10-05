@@ -443,11 +443,6 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
                   <strong>Most popular:</strong> bi-weekly service for {c.city} homes, with a free exact quote before booking and no obligation.
                 </p>
               )}
-              {(isAlexandria || isRockville || isSilverSpring || isArlington) && (
-                <p className="mt-3 rounded-xl bg-accent/10 px-4 py-3 text-sm text-foreground">
-                  <strong>New-client savings:</strong> get 15% off your first {c.city} clean. Request a written quote to confirm the scope, total price, and offer details before booking.
-                </p>
-              )}
             </div>
             {isAlexandria && <AlexandriaPricePlanner />}
             {isBethesda && <AlexandriaPricePlanner city="Bethesda" idPrefix="bethesda" analyticsLocation="bethesda_cost_planner" />}

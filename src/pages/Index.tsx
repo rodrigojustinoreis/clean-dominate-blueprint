@@ -35,7 +35,6 @@ const homeFaqs = [
   { q: "How much does a standard cleaning cost?", a: "A standard cleaning for a 1-2 bedroom home starts at $150–$180, while larger homes range from $200–$400+. Recurring clients save up to 25% with weekly plans. Request a free quote for your exact price." },
   { q: "Do you offer a satisfaction guarantee?", a: "Yes! We offer a 100% satisfaction guarantee. If you're not completely happy with any aspect of our cleaning, contact us within 24 hours and we'll return to re-clean the area at no extra charge." },
   { q: "How do recurring cleaning discounts work?", a: "Weekly clients save up to 25%, bi-weekly clients save 15%, and monthly clients save 5% compared to one-time pricing. The more frequently we clean, the less time each visit takes — savings we pass on to you." },
-  { q: "Is there a new client discount?", a: "Yes! New clients get 15% off their first cleaning service. This applies to all service types and is automatically applied when you mention it during booking." },
 ];
 
 const locationAreas = [
@@ -47,7 +46,7 @@ const locationAreas = [
 const Index = () => {
   const { seoHelmet } = useSEO({
     title: "Eco-Friendly House Cleaning MD, DC & VA | Capital Clean Care",
-    description: "Professional eco-friendly house cleaning in Maryland, DC & Virginia. EPA Safer Choice certified. 5.0 stars. 15% OFF first clean. Call (240) 704-2551.",
+    description: "Professional eco-friendly house cleaning in Maryland, DC & Virginia. EPA Safer Choice certified. 5.0 stars. Call (240) 704-2551.",
     canonical: "https://capitalcleancare.com/",
     preloadImage: [
       { href: "/images/hero/home-hero-m.webp", media: "(max-width: 767px)" },
@@ -233,7 +232,7 @@ const Index = () => {
       <div className="bg-primary py-5 px-4">
         <div className="container mx-auto max-w-4xl flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
           <div>
-            <p className="font-heading font-bold text-white text-lg leading-snug">Ready to book? New clients save 15% this week.</p>
+            <p className="font-heading font-bold text-white text-lg leading-snug">Ready to book your cleaning?</p>
             <p className="text-primary-foreground/70 text-sm mt-0.5">Same-day availability · Eco-friendly · No commitment</p>
           </div>
           <div className="flex gap-3 shrink-0">
@@ -288,7 +287,7 @@ const Index = () => {
               <Button variant="cta" size="lg" className="rounded-full" asChild>
                 <a href="#quote">Start with a Free Quote <ArrowRight className="ml-2 h-4 w-4" /></a>
               </Button>
-              <p className="text-xs text-muted-foreground mt-3">No commitment • Response within hours • 15% OFF first clean</p>
+              <p className="text-xs text-muted-foreground mt-3">No commitment • Response within hours</p>
             </div>
           </div>
         </section>
@@ -360,13 +359,6 @@ const Index = () => {
               <span className="text-accent font-semibold text-sm uppercase tracking-wider">Pricing</span>
               <h2 className="font-heading text-3xl md:text-4xl font-bold mt-2 mb-4">Transparent Pricing</h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">Honest pricing based on home size and frequency. No hidden fees, ever.</p>
-              <div className="inline-flex items-center gap-2 mt-4 bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800 text-amber-800 dark:text-amber-300 rounded-full px-4 py-1.5 text-xs font-semibold">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-400"></span>
-                </span>
-                New clients save 15% on their first clean — limited availability
-              </div>
             </div>
             {/* Interactive instant price estimator (restored — pick your home details, get a live estimate) */}
             <PriceCalculator />
@@ -393,7 +385,7 @@ const Index = () => {
               </div>
               <span className="text-accent font-semibold text-sm uppercase tracking-wider block">Free Estimate</span>
               <h2 className="font-heading text-3xl md:text-4xl font-bold mt-2 mb-4">
-                Claim Your <span className="text-accent">15% OFF</span> — Free Quote
+                Get Your Free Quote
               </h2>
               <p className="text-muted-foreground">No commitment required. We respond within a few hours with a personalized estimate.</p>
             </div>

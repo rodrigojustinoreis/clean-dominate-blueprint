@@ -92,12 +92,12 @@ const blogContent: Record<string, React.ReactNode> = {
 
       <BlogInlineCTA
         headline="Ready for a Professional Spring Deep Clean?"
-        subtext="We serve Rockville, Bethesda, Silver Spring, Germantown, Gaithersburg, and 20+ more Maryland communities. Eco-friendly, background-checked teams. 15% OFF your first visit."
+        subtext="We serve Rockville, Bethesda, Silver Spring, Germantown, Gaithersburg, and 20+ more Maryland communities. Eco-friendly, background-checked teams."
         ctaLabel="Book My Spring Clean →"
         ctaTo="/contact"
       />
 
-      <p><Link to="/contact" className="text-accent hover:underline font-semibold">Book your spring deep clean today</Link> — 15% off your first service for new clients.</p>
+      <p><Link to="/contact" className="text-accent hover:underline font-semibold">Book your spring deep clean today</Link>.</p>
     </article>
   ),
   "house-cleaning-prices-maryland-2026": (
@@ -378,12 +378,12 @@ const blogContent: Record<string, React.ReactNode> = {
 
       <BlogInlineCTA
         headline="Pet-Friendly Cleaning for DMV Families"
-        subtext="HEPA-filtered vacuums, enzyme odor eliminators, and 100% pet-safe products. Serving Potomac, Arlington, Laurel, and 20+ more DMV communities. 15% OFF your first visit."
+        subtext="HEPA-filtered vacuums, enzyme odor eliminators, and 100% pet-safe products. Serving Potomac, Arlington, Laurel, and 20+ more DMV communities."
         ctaLabel="Get My Pet-Friendly Cleaning Quote →"
         ctaTo="/contact"
       />
 
-      <p><Link to="/contact" className="text-accent hover:underline font-semibold">Get your free pet-friendly cleaning quote today</Link> — 15% off your first service!</p>
+      <p><Link to="/contact" className="text-accent hover:underline font-semibold">Get your free pet-friendly cleaning quote today</Link>.</p>
     </article>
   ),
   "recurring-cleaning-weekly-biweekly-monthly": (
@@ -439,7 +439,7 @@ const blogContent: Record<string, React.ReactNode> = {
         ctaTo="/contact"
       />
 
-      <p><Link to="/contact" className="text-accent hover:underline font-semibold">Start your recurring cleaning plan today</Link> — 15% off your first visit, flexible scheduling across MD, DC & VA.</p>
+      <p><Link to="/contact" className="text-accent hover:underline font-semibold">Start your recurring cleaning plan today</Link>, with flexible scheduling across MD, DC & VA.</p>
     </article>
   ),
   "eco-cleaning-tips-maryland-homes": (
@@ -467,7 +467,7 @@ const blogContent: Record<string, React.ReactNode> = {
 
       <BlogInlineCTA
         headline="Switch to Non-Toxic Cleaning Today"
-        subtext="Every Capital Clean Care visit uses 100% plant-based, EPA Safer Choice products — safe for your kids, pets, and the Chesapeake Bay. 15% OFF your first clean."
+        subtext="Every Capital Clean Care visit uses 100% plant-based, EPA Safer Choice products — safe for your kids, pets, and the Chesapeake Bay."
         ctaLabel="Get My Free Eco-Clean Quote"
         ctaTo="/contact"
       />
@@ -588,7 +588,7 @@ const blogContent: Record<string, React.ReactNode> = {
         ctaTo="/contact"
       />
 
-      <p><Link to="/contact" className="text-accent hover:underline font-semibold">Get your free winter cleaning quote today</Link> — 15% off your first service!</p>
+      <p><Link to="/contact" className="text-accent hover:underline font-semibold">Get your free winter cleaning quote today</Link>.</p>
     </article>
   ),
   "best-cleaning-schedule-busy-families-dmv": (
@@ -645,7 +645,7 @@ const blogContent: Record<string, React.ReactNode> = {
         ctaTo="/contact"
       />
 
-      <p><Link to="/contact" className="text-accent hover:underline font-semibold">Start your recurring cleaning plan today</Link> — 15% off your first visit for new clients!</p>
+      <p><Link to="/contact" className="text-accent hover:underline font-semibold">Start your recurring cleaning plan today</Link>.</p>
     </article>
   ),
   "cleaning-service-arlington-va": (
@@ -684,7 +684,7 @@ const blogContent: Record<string, React.ReactNode> = {
 
       <BlogInlineCTA
         headline="Arlington's Go-To Professional Cleaning Service"
-        subtext="Serving Clarendon, Ballston, Pentagon City, Crystal City, Lyon Village, and all of Arlington. Eco-friendly products, background-checked teams, 15% OFF first visit."
+        subtext="Serving Clarendon, Ballston, Pentagon City, Crystal City, Lyon Village, and all of Arlington. Eco-friendly products, background-checked teams."
         ctaLabel="Get My Arlington Quote →"
         ctaTo="/contact"
       />
@@ -728,7 +728,7 @@ const blogContent: Record<string, React.ReactNode> = {
 
       <BlogInlineCTA
         headline="Rockville's Deep Cleaning Specialists"
-        subtext="Full home deep cleans for Rockville families — inside appliances, grout scrubbing, HEPA vacuuming, eco-friendly products. 15% OFF your first visit."
+        subtext="Full home deep cleans for Rockville families — inside appliances, grout scrubbing, HEPA vacuuming, eco-friendly products."
         ctaLabel="Book My Rockville Deep Clean →"
         ctaTo="/contact"
       />
@@ -777,7 +777,7 @@ const blogContent: Record<string, React.ReactNode> = {
         ctaTo="/contact"
       />
 
-      <p>Capital Clean Care has served the DC metro for 10+ years. <Link to="/contact" className="text-accent hover:underline font-semibold">Get your free quote today</Link> — 15% off your first visit.</p>
+      <p>Capital Clean Care has served the DC metro for 10+ years. <Link to="/contact" className="text-accent hover:underline font-semibold">Get your free quote today</Link>.</p>
     </article>
   ),
   "cleaning-service-fairfax-va": (
@@ -809,7 +809,7 @@ const blogContent: Record<string, React.ReactNode> = {
         ctaTo="/contact"
       />
 
-      <p><Link to="/contact" className="text-accent hover:underline font-semibold">Start your Fairfax cleaning plan today</Link> — 15% off your first visit for new clients.</p>
+      <p><Link to="/contact" className="text-accent hover:underline font-semibold">Start your Fairfax cleaning plan today</Link>.</p>
     </article>
   ),
   "cleaning-service-georgetown-dc": (
@@ -847,7 +847,7 @@ const blogContent: Record<string, React.ReactNode> = {
         ctaTo="/contact"
       />
 
-      <p><Link to="/contact" className="text-accent hover:underline font-semibold">Book your Georgetown cleaning today</Link> — 15% off for new clients.</p>
+      <p><Link to="/contact" className="text-accent hover:underline font-semibold">Book your Georgetown cleaning today</Link>.</p>
     </article>
   ),
   "cleaning-service-alexandria-va": (
@@ -884,7 +884,7 @@ const blogContent: Record<string, React.ReactNode> = {
 
       <BlogInlineCTA
         headline="Alexandria's Trusted House Cleaning Service"
-        subtext="From Old Town rowhouses to Del Ray bungalows and Potomac Yard condos — we know Alexandria. Eco-friendly, background-checked, 15% OFF your first visit."
+        subtext="From Old Town rowhouses to Del Ray bungalows and Potomac Yard condos — we know Alexandria. Eco-friendly, background-checked."
         ctaLabel="Get My Alexandria Quote →"
         ctaTo="/contact"
       />
@@ -938,7 +938,7 @@ const blogContent: Record<string, React.ReactNode> = {
         ctaTo="/contact"
       />
 
-      <p><Link to="/contact" className="text-accent hover:underline font-semibold">Book your move-in cleaning today</Link> — 15% off for new clients across MD, DC & VA.</p>
+      <p><Link to="/contact" className="text-accent hover:underline font-semibold">Book your move-in cleaning today</Link>. Available across MD, DC & VA.</p>
     </article>
   ),
   "allergy-proofing-home-dmv": (
@@ -989,7 +989,7 @@ const blogContent: Record<string, React.ReactNode> = {
 
       <BlogInlineCTA
         headline="Breathe Easier in Your DMV Home"
-        subtext="HEPA vacuums, allergen-safe products, and professional deep cleaning for allergy-prone households. Serving MD, DC & VA — with 15% OFF your first visit."
+        subtext="HEPA vacuums, allergen-safe products, and professional deep cleaning for allergy-prone households. Serving MD, DC & VA."
         ctaLabel="Book My Allergy-Safe Clean →"
         ctaTo="/contact"
       />
@@ -1067,7 +1067,7 @@ const blogContent: Record<string, React.ReactNode> = {
         ctaTo="/contact"
       />
 
-      <p><Link to="/contact" className="text-accent hover:underline font-semibold">Schedule your fall cleaning today</Link> — 15% off for new clients across Maryland, DC & Northern Virginia.</p>
+      <p><Link to="/contact" className="text-accent hover:underline font-semibold">Schedule your fall cleaning today</Link>. Available across Maryland, DC & Northern Virginia.</p>
     </article>
   ),
   "house-cleaning-gaithersburg-md": (
@@ -1103,12 +1103,12 @@ const blogContent: Record<string, React.ReactNode> = {
 
       <BlogInlineCTA
         headline="Gaithersburg's Eco-Friendly Cleaning Specialists"
-        subtext="Serving Kentlands, Crown Farm, Lakelands, Shady Grove, Quince Orchard, and all of Gaithersburg. Background-checked teams, plant-based products, 15% OFF your first visit."
+        subtext="Serving Kentlands, Crown Farm, Lakelands, Shady Grove, Quince Orchard, and all of Gaithersburg. Background-checked teams, plant-based products."
         ctaLabel="Get My Gaithersburg Quote →"
         ctaTo="/contact"
       />
 
-      <p>Capital Clean Care has served <Link to="/locations/gaithersburg-md/house-cleaning" className="text-accent hover:underline">Gaithersburg</Link> for 10+ years. <Link to="/contact" className="text-accent hover:underline font-semibold">Get your free quote today</Link> — 15% off for new clients.</p>
+      <p>Capital Clean Care has served <Link to="/locations/gaithersburg-md/house-cleaning" className="text-accent hover:underline">Gaithersburg</Link> for 10+ years. <Link to="/contact" className="text-accent hover:underline font-semibold">Get your free quote today</Link>.</p>
     </article>
   ),
   "cleaning-service-mclean-va": (
@@ -1140,12 +1140,12 @@ const blogContent: Record<string, React.ReactNode> = {
 
       <BlogInlineCTA
         headline="McLean's Trusted Professional Cleaning Service"
-        subtext="Discretion, precision, and plant-based products for McLean's finest homes. Background-checked, fully insured, 15% OFF first visit. Throughout Northern Virginia."
+        subtext="Discretion, precision, and plant-based products for McLean's finest homes. Background-checked, fully insured. Throughout Northern Virginia."
         ctaLabel="Get My McLean Quote →"
         ctaTo="/contact"
       />
 
-      <p><Link to="/contact" className="text-accent hover:underline font-semibold">Get your free McLean cleaning quote today</Link> — 15% off for new clients.</p>
+      <p><Link to="/contact" className="text-accent hover:underline font-semibold">Get your free McLean cleaning quote today</Link>.</p>
     </article>
   ),
   "cleaning-service-columbia-md": (
@@ -1179,7 +1179,7 @@ const blogContent: Record<string, React.ReactNode> = {
 
       <BlogInlineCTA
         headline="Professional Cleaning for Columbia's Diverse Homes"
-        subtext="Serving all villages — Wilde Lake, Owen Brown, River Hill, Harper's Choice, and more. Eco-friendly, background-checked, 15% OFF first visit."
+        subtext="Serving all villages — Wilde Lake, Owen Brown, River Hill, Harper's Choice, and more. Eco-friendly, background-checked."
         ctaLabel="Get My Columbia Quote →"
         ctaTo="/contact"
       />
@@ -1218,7 +1218,7 @@ const blogContent: Record<string, React.ReactNode> = {
         ctaTo="/contact"
       />
 
-      <p><Link to="/contact" className="text-accent hover:underline font-semibold">Book your Potomac cleaning today</Link> — 15% off first visit for new clients.</p>
+      <p><Link to="/contact" className="text-accent hover:underline font-semibold">Book your Potomac cleaning today</Link>.</p>
     </article>
   ),
   "cleaning-service-chevy-chase-md": (
@@ -1251,12 +1251,12 @@ const blogContent: Record<string, React.ReactNode> = {
 
       <BlogInlineCTA
         headline="Chevy Chase's Trusted House Cleaning Service"
-        subtext="Historic homes, modern renovations — handled with care. Eco-friendly, background-checked, 10+ years in the DMV. 15% OFF your first visit."
+        subtext="Historic homes, modern renovations — handled with care. Eco-friendly, background-checked, 10+ years in the DMV."
         ctaLabel="Get My Chevy Chase Quote →"
         ctaTo="/contact"
       />
 
-      <p><Link to="/contact" className="text-accent hover:underline font-semibold">Book your Chevy Chase cleaning today</Link> — 15% off for new clients.</p>
+      <p><Link to="/contact" className="text-accent hover:underline font-semibold">Book your Chevy Chase cleaning today</Link>.</p>
     </article>
   ),
   "house-cleaning-frederick-md": (
@@ -1289,7 +1289,7 @@ const blogContent: Record<string, React.ReactNode> = {
 
       <BlogInlineCTA
         headline="Frederick's Professional Eco-Friendly Cleaning Service"
-        subtext="Serving historic downtown, Urbana, New Market, Linton, and all of Frederick County. Background-checked teams, plant-based products, 15% OFF your first visit."
+        subtext="Serving historic downtown, Urbana, New Market, Linton, and all of Frederick County. Background-checked teams, plant-based products."
         ctaLabel="Get My Frederick Quote →"
         ctaTo="/contact"
       />
@@ -1332,11 +1332,11 @@ const blogContent: Record<string, React.ReactNode> = {
       </ul>
 
       <h2>What Does It Cost in Montgomery County?</h2>
-      <p>Deep-clean pricing depends mostly on home size and how long it's been since the last reset — not on which part of the county you're in. We keep current DMV pricing in one place rather than restating it: <Link to="/resources/how-much-does-deep-cleaning-cost" className="text-accent hover:underline">how much a deep cleaning costs (2026 prices) →</Link>. New clients also get 15% off the first visit.</p>
+      <p>Deep-clean pricing depends mostly on home size and how long it's been since the last reset — not on which part of the county you're in. We keep current DMV pricing in one place rather than restating it: <Link to="/resources/how-much-does-deep-cleaning-cost" className="text-accent hover:underline">how much a deep cleaning costs (2026 prices) →</Link>.</p>
 
       <BlogInlineCTA
         headline="Montgomery County's Eco-Friendly Deep Cleaning Team"
-        subtext="Plant-based, EPA Safer Choice products. Serving Rockville, Bethesda, Silver Spring, Gaithersburg, Germantown, Potomac, Chevy Chase, Kensington and all of Montgomery County. 15% OFF your first visit."
+        subtext="Plant-based, EPA Safer Choice products. Serving Rockville, Bethesda, Silver Spring, Gaithersburg, Germantown, Potomac, Chevy Chase, Kensington and all of Montgomery County."
         ctaLabel="Book My Montgomery County Deep Clean →"
         ctaTo="/contact"
       />
@@ -1378,12 +1378,12 @@ const blogContent: Record<string, React.ReactNode> = {
 
       <BlogInlineCTA
         headline="Reston's Professional Eco-Friendly Cleaning Service"
-        subtext="Serving Lake Anne, North Point, Town Center, Hunters Woods, and all of Reston. Background-checked, plant-based products, 15% OFF your first visit."
+        subtext="Serving Lake Anne, North Point, Town Center, Hunters Woods, and all of Reston. Background-checked, plant-based products."
         ctaLabel="Get My Reston Cleaning Quote →"
         ctaTo="/contact"
       />
 
-      <p><Link to="/contact" className="text-accent hover:underline font-semibold">Book your Reston cleaning today</Link> — 15% off for new clients.</p>
+      <p><Link to="/contact" className="text-accent hover:underline font-semibold">Book your Reston cleaning today</Link>.</p>
     </article>
   ),
   "office-cleaning-small-business-dmv": (
@@ -1689,7 +1689,7 @@ const BlogPost = () => {
 
           <BlogInlineCTA
             headline="Ready to Have Your Home Professionally Cleaned?"
-            subtext="Capital Clean Care serves Maryland, DC & Northern Virginia with eco-friendly, background-checked teams. New clients get 15% OFF their first visit — no commitment needed."
+            subtext="Capital Clean Care serves Maryland, DC & Northern Virginia with eco-friendly, background-checked teams."
             ctaLabel="Request a Free Quote →"
             ctaTo="/contact"
           />

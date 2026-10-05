@@ -169,7 +169,7 @@ const DeepCleaningPage = () => {
             ⭐⭐⭐⭐⭐ 5-Star Rated in Montgomery County
           </span>
           <span className="text-sm font-bold text-center flex-1 md:flex-none">
-            🎁 15% OFF Your First Deep Clean
+            Get Your Free Deep Cleaning Quote
           </span>
           <a
             href={PHONE_HREF}
@@ -714,11 +714,6 @@ const DeepCleaningPage = () => {
           <p className="text-center text-muted-foreground text-sm mb-6">
             Serving Rockville, Bethesda, Silver Spring, Germantown &amp; all of Montgomery County
           </p>
-
-          {/* Offer callout */}
-          <div className="bg-[#2E7D32] text-white rounded-lg py-3 px-5 text-center mb-6 font-medium text-sm">
-            🎁 15% OFF your first deep cleaning — mention this offer when booking
-          </div>
 
           <Card>
             <CardContent className="p-6 md:p-8">

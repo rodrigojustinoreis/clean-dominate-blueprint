@@ -33,7 +33,6 @@ Pricing estimates:
 - Standard: 1-2bd $100-150 | 3bd $150-220 | 4bd+ $220-350
 - Deep cleaning: add ~40-60% to standard price
 - Recurring discount: weekly -25% | bi-weekly -15% | monthly -5%
-- New clients: 15% OFF first clean
 
 SMS conversation rules:
 1. Keep messages SHORT — max 2-3 sentences per reply. This is SMS, not email.

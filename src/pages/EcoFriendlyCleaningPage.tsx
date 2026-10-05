@@ -161,7 +161,7 @@ const EcoFriendlyCleaningPage = () => {
               </div>
 
               <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted-foreground">
-                {["Product Preferences Documented", "Lower-Odor Options", "Label-Directed Use", "15% Off First Clean"].map((b) => (
+                {["Product Preferences Documented", "Lower-Odor Options", "Label-Directed Use"].map((b) => (
                   <span key={b} className="flex items-center gap-1.5">
                     <CheckCircle className="h-4 w-4 text-[#2E7D32] shrink-0" /> {b}
                   </span>
@@ -426,7 +426,7 @@ const EcoFriendlyCleaningPage = () => {
             Get Your Free Eco-Friendly Cleaning Quote
           </h2>
           <p className="text-center text-muted-foreground text-sm mb-6">
-            Serving MD, DC & VA — 15% off your first eco-clean, new clients only
+            Serving MD, DC & VA
           </p>
           <div className="bg-[#2E7D32] text-white rounded-lg py-3 px-5 text-center mb-6 font-medium text-sm">
             🌿 Product-conscious methods and lower-odor options — preferences confirmed before service

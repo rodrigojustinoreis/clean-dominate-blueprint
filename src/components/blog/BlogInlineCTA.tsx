@@ -13,7 +13,7 @@ interface BlogInlineCTAProps {
 
 const BlogInlineCTA = ({
   headline = "Ready for a Professionally Clean Home?",
-  subtext = "Capital Clean Care serves Maryland, DC & Northern Virginia with eco-friendly, background-checked cleaning teams. New clients get 15% OFF their first visit.",
+  subtext = "Capital Clean Care serves Maryland, DC & Northern Virginia with eco-friendly, background-checked cleaning teams.",
   ctaLabel = "Get My Free Quote →",
   ctaTo = "/contact",
   analyticsLocation = "blog_inline_cta",

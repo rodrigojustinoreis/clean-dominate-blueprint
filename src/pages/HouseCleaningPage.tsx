@@ -467,9 +467,6 @@ const HouseCleaningPage = () => {
                   <span className="w-2 h-2 rounded-full animate-pulse" style={{ background: "#10B981" }} />
                   <span className="text-[10px] font-bold uppercase tracking-wide text-gray-700">Real Team · Real Results</span>
                 </div>
-                <div className="absolute top-3 right-3 text-white text-xs font-extrabold px-3 py-1 rounded-full shadow-lg animate-pulse-subtle" style={{ background: "linear-gradient(135deg,#059669,#10B981)", boxShadow: "0 4px 14px rgba(16,185,129,0.5)" }}>
-                  15% OFF
-                </div>
               </div>
 
               {/* Form card */}
@@ -865,7 +862,7 @@ const HouseCleaningPage = () => {
               {[...Array(5)].map((_,i) => <Star key={i} className="h-5 w-5 fill-amber-400 text-amber-400" />)}
             </div>
             <h2 className="font-heading text-2xl md:text-3xl font-bold text-white mb-2">Ready For A Cleaner Home?</h2>
-            <p className="text-white/50 text-sm">Trusted Across Maryland, DC & Virginia · 15% OFF First Clean</p>
+            <p className="text-white/50 text-sm">Trusted Across Maryland, DC & Virginia</p>
           </div>
           <div className="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8">
             <QuoteFormInline variant="footer" />

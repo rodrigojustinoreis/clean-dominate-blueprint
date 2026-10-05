@@ -178,8 +178,8 @@ const Header = () => {
                       </div>
                       <div className="mt-5 flex items-center justify-between gap-4 bg-[#1A6BAD] text-white rounded-lg px-5 py-4">
                         <div>
-                          <p className="font-heading font-bold text-base">🎁 15% OFF Your First Clean</p>
-                          <p className="text-white/85 text-xs">New clients in MD, DC &amp; VA — mention it when you book.</p>
+                          <p className="font-heading font-bold text-base">Ready for a cleaner home?</p>
+                          <p className="text-white/85 text-xs">Serving MD, DC &amp; VA.</p>
                         </div>
                         <Button variant="cta" size="sm" asChild>
                           <a href="/#quote">Get a Free Quote →</a>

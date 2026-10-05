@@ -352,12 +352,6 @@ const QuoteForm = ({ submitLabel = "GET MY FREE QUOTE →", defaultService = "",
             <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
             <span className="text-[10px] font-bold uppercase tracking-wide text-gray-700">Real Team · Real Results</span>
           </div>
-          <div
-            className="absolute top-3 right-3 text-white text-xs font-extrabold px-3 py-1 rounded-full shadow-lg animate-pulse-soft"
-            style={{ background: CTA_GRADIENT, boxShadow: "0 4px 14px hsl(195 85% 45% / 0.5)" }}
-          >
-            15% OFF
-          </div>
         </div>
       )}
 

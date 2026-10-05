@@ -168,7 +168,7 @@ const QuoteChatbot = ({ launcherAfterScrollOnNarrow = false }: QuoteChatbotProps
         }
         setDone(true);
         addBot(
-          `Thank you, ${newAnswers.name}! Your quote request has been submitted. For immediate assistance, call (240) 704-2551.\n\n🎉 New clients get 15% OFF their first cleaning!`
+          `Thank you, ${newAnswers.name}! Your quote request has been submitted. For immediate assistance, call (240) 704-2551.`
         );
         return;
       }

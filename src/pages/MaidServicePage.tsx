@@ -136,7 +136,7 @@ const MaidServicePage = () => {
             ⭐⭐⭐⭐⭐ 5-Star Rated in Montgomery County
           </span>
           <span className="text-sm font-bold text-center flex-1 md:flex-none">
-            🎁 15% OFF Your First Maid Service
+            Get Your Free Maid Service Quote
           </span>
           <a href={PHONE_HREF} className="hidden sm:block bg-white text-[#2E7D32] font-bold text-xs px-3 py-1.5 rounded-full hover:bg-gray-100 transition-colors whitespace-nowrap">
             Call {PHONE}
@@ -473,9 +473,6 @@ const MaidServicePage = () => {
           <p className="text-center text-muted-foreground text-sm mb-6">
             Serving Rockville, Bethesda, Silver Spring, Germantown &amp; all of Montgomery County
           </p>
-          <div className="bg-[#2E7D32] text-white rounded-lg py-3 px-5 text-center mb-6 font-medium text-sm">
-            🎁 15% OFF your first maid service — mention this offer when booking
-          </div>
           <Card>
             <CardContent className="p-6 md:p-8">
               <QuoteForm submitLabel="Send My Free Quote Request →" defaultService="maid" compact />

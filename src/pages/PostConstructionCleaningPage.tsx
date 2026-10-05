@@ -223,7 +223,7 @@ const PostConstructionCleaningPage = () => {
       {/* ── Sticky top bar ── */}
       <div className="sticky top-0 z-50 bg-[#2E7D32] text-white">
         <div className="container mx-auto flex h-11 max-w-6xl items-center justify-between gap-3 px-4">
-          <p className="truncate text-sm font-semibold">15% OFF Your First Post-Construction Clean</p>
+          <p className="truncate text-sm font-semibold">Book Your Free Post-Construction Assessment</p>
           <a href={PHONE_HREF} className="flex shrink-0 items-center gap-1.5 text-sm font-bold hover:underline">
             <Phone className="h-4 w-4" /> {PHONE}
           </a>

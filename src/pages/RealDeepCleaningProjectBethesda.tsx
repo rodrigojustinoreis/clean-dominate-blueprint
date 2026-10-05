@@ -368,7 +368,7 @@ const RealDeepCleaningProjectBethesda = () => {
           <FadeInSection>
             <BlogInlineCTA
               headline="Ready for your home's reset?"
-              subtext="Tell us about your home and get a free, no-obligation quote — same five-step process as the project above. New clients get 15% OFF their first clean, and we're rated 5.0★ on Google."
+              subtext="Tell us about your home and get a free, no-obligation quote — same five-step process as the project above. We're rated 5.0★ on Google."
               ctaLabel="Get My Free Quote"
               ctaTo="/#quote"
             />

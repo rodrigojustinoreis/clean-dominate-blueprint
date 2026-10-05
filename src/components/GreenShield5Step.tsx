@@ -192,9 +192,6 @@ const GreenShield5Step = ({ showCTA = true, compact = false, claims = "default" 
                 Experience the GreenShield Clean <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
-            <p className="text-xs text-muted-foreground mt-3">
-              15% OFF your first GreenShield Clean — new clients only
-            </p>
           </div>
         )}
       </div>

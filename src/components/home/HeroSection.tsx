@@ -112,7 +112,7 @@ const HeroSection = () => {
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
           </span>
-          <span className="whitespace-nowrap text-[10.5px] min-[400px]:text-[11px] md:text-xs font-semibold text-slate-700 md:text-foreground uppercase tracking-[0.04em] min-[400px]:tracking-[0.08em] md:tracking-wider">Same-day slots available · 15% OFF first clean</span>
+          <span className="whitespace-nowrap text-[10.5px] min-[400px]:text-[11px] md:text-xs font-semibold text-slate-700 md:text-foreground uppercase tracking-[0.04em] min-[400px]:tracking-[0.08em] md:tracking-wider">Same-day slots available</span>
         </div>
 
         <h1 className="font-heading text-[2.35rem] sm:text-5xl md:text-6xl lg:text-[4rem] font-bold text-foreground leading-[1.05] md:leading-[1.1] tracking-[-0.03em] mb-5 md:mb-6 animate-fade-up drop-shadow-sm" style={{ animationDelay: "100ms" }}>

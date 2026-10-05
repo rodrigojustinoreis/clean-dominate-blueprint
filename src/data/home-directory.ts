@@ -5,17 +5,17 @@ export const dirVanity: { slug: string; h1: string; metaDescription: string }[] 
   {
     "slug": "house-cleaning-wheaton-md",
     "h1": "House Cleaning in Wheaton, MD",
-    "metaDescription": "Professional house cleaning in Wheaton, MD near Silver Spring. Non-toxic products, insured teams. Get 15% off your first eco-clean in Wheaton! Free quotes."
+    "metaDescription": "Professional house cleaning in Wheaton, MD near Silver Spring. Non-toxic products, insured teams. Free quotes."
   },
   {
     "slug": "eco-cleaning-bethesda-md",
     "h1": "Eco-Friendly Cleaning in Bethesda, MD",
-    "metaDescription": "Non-toxic, plant-based house cleaning in Bethesda, MD. Safe for families, pets & luxury finishes. 15% off your first eco-clean — book a free quote today!"
+    "metaDescription": "Non-toxic, plant-based house cleaning in Bethesda, MD. Safe for families, pets & luxury finishes. Book a free quote today!"
   },
   {
     "slug": "deep-cleaning-germantown-md",
     "h1": "Deep Cleaning Services in Germantown, MD",
-    "metaDescription": "Intensive deep cleaning in Germantown, MD — inside appliances, baseboards & vents. Eco-friendly, licensed & insured. Get 15% off your first deep clean!"
+    "metaDescription": "Intensive deep cleaning in Germantown, MD — inside appliances, baseboards & vents. Eco-friendly, licensed & insured."
   },
   {
     "slug": "house-cleaning-frederick-md",
@@ -30,7 +30,7 @@ export const dirVanity: { slug: string; h1: string; metaDescription: string }[] 
   {
     "slug": "house-cleaning-silver-spring-md",
     "h1": "House Cleaning in Silver Spring, MD",
-    "metaDescription": "Professional house cleaning in Silver Spring, MD. Non-toxic products, background-checked teams. Serving Downtown, Woodside & Forest Glen. 15% off first clean!"
+    "metaDescription": "Professional house cleaning in Silver Spring, MD. Non-toxic products, background-checked teams. Serving Downtown, Woodside & Forest Glen."
   },
   {
     "slug": "eco-cleaning-potomac-md",
