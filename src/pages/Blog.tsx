@@ -273,6 +273,17 @@ export const blogPosts: BlogPost[] = [
     coverImage: "/images/blog/dust-buildup/hero.webp",
   },
   {
+    // Cover is the guide's hero photo, the air scrubber (owner's choice, 04/10/2026). In the centred
+    // card crop the machine and the uniform stay in frame; the head is cut at the top.
+    slug: "can-house-dust-make-you-sick",
+    title: "Can House Dust Make You Sick? A Practical Guide to Dust and Indoor Air",
+    excerpt: "What house dust can carry, why symptoms alone do not identify a cause, how to tell settled dust from a moisture problem, and a practical order for lowering dust at home.",
+    date: "2026-10-04",
+    readTime: "6 min read",
+    category: "Home Care Guides",
+    coverImage: "/images/blog/post-construction-dc-townhouse/air-scrubber.webp",
+  },
+  {
     slug: "how-to-prepare-home-for-professional-cleaning",
     title: "How to Prepare Your Home for a Professional Cleaning",
     excerpt: "A simple 15-minute checklist to get a better, faster clean — tidy clutter, secure valuables, plan for pets, and sort out access and parking before the team arrives.",

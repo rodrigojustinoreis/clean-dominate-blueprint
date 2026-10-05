@@ -106,6 +106,7 @@ function getAllRoutes(): string[] {
     "/resources/move-in-cleaning-checklist",
     "/resources/most-forgotten-areas-when-cleaning",
     "/resources/why-dust-builds-up-maryland-homes",
+    "/resources/can-house-dust-make-you-sick",
     "/resources/how-to-prepare-home-for-professional-cleaning",
     "/resources/how-to-keep-house-clean-between-cleanings",
     "/resources/summer-cleaning-checklist-maryland",

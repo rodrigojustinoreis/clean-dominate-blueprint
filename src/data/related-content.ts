@@ -202,6 +202,7 @@ export const MANUAL_RELATED_POSTS: Record<string, string[]> = {
   "how-to-clean-oled-tv-screen-safely": ["how-to-remove-sharpie-safely", "mrs-meyers-clean-day-review-how-to-use", "how-to-remove-candle-wax-eco-friendly"],
   "how-to-clean-your-washing-machine-eco-friendly": ["how-to-get-rid-of-mildew-smell-naturally", "how-to-remove-hard-water-stains-naturally", "mrs-meyers-clean-day-review-how-to-use"],
   "why-dust-builds-up-maryland-homes": ["how-to-clean-carpet-home-apartment", "how-to-deep-clean-a-stove-maryland", "how-to-get-cigarette-smell-out-of-your-house"],
+  "can-house-dust-make-you-sick": ["why-dust-builds-up-maryland-homes", "most-forgotten-areas-when-cleaning", "what-is-included-in-a-deep-cleaning"],
   "how-much-does-deep-cleaning-cost": ["move-out-cleaning-cost-maryland", "is-professional-house-cleaning-worth-it", "house-cleaning-prices-maryland-2026"],
   "one-time-vs-recurring-cleaning": ["is-professional-house-cleaning-worth-it", "move-out-cleaning-cost-maryland", "cleaning-tips-for-working-professionals"],
   "how-often-should-you-hire-a-cleaning-service": ["cleaning-tips-for-working-professionals", "is-professional-house-cleaning-worth-it", "recurring-cleaning-weekly-biweekly-monthly"],
@@ -251,10 +252,19 @@ export function guidesForCategories(categorySlugs: string[], excludeSlug: string
 // capitalcleancare.com-audit/followup-2026-10-04/PARECER-CONTEUDO-ESCOPO.md. Every other origin
 // keeps the category-first order. Do not add an origin here without an editorial review of its
 // pairs: "how-much-does-deep-cleaning-cost" was reviewed and deliberately left out.
+//
+// "can-house-dust-make-you-sick" (dust guide candidate, 04/10/2026) is a new origin: the priority
+// rule of every existing origin stays as it was. That is separate from the cards those origins
+// show, which do change where the new post enters their category feed by date (inventory in
+// capitalcleancare.com-audit/dust-health-guide-2026-10-04/RESULTADO.md). The new post's only
+// computed category is the cleaning-tips fallback, whose newest-first feed would fill all six
+// slots with unrelated guides; leading with its three relations keeps the Maryland dust guide in
+// the block. Proposed with the candidate and pending the same editorial review.
 export const MANUAL_FIRST_ORIGINS: ReadonlySet<string> = new Set([
   "how-long-does-deep-cleaning-take",
   "questions-to-ask-before-hiring-house-cleaner",
   "cleaning-company-vs-independent-cleaner",
+  "can-house-dust-make-you-sick",
 ]);
 
 /**

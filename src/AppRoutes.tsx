@@ -106,6 +106,7 @@ import HouseCleaningGuideClarksburg from "./pages/HouseCleaningGuideClarksburg";
 import PostConstructionCleaningMontgomeryCounty from "./pages/PostConstructionCleaningMontgomeryCounty";
 import MostForgottenCleaningAreas from "./pages/MostForgottenCleaningAreas";
 import WhyDustBuildsUpMaryland from "./pages/WhyDustBuildsUpMaryland";
+import CanHouseDustMakeYouSick from "./pages/CanHouseDustMakeYouSick";
 import PrepareHomeForCleaning from "./pages/PrepareHomeForCleaning";
 import KeepHouseCleanBetween from "./pages/KeepHouseCleanBetween";
 import SummerCleaningChecklist from "./pages/SummerCleaningChecklist";
@@ -343,6 +344,7 @@ const AppRoutes = () => (
     <Route path="/resources/move-in-cleaning-checklist" element={<MoveInCleaningChecklist />} />
     <Route path="/resources/most-forgotten-areas-when-cleaning" element={<MostForgottenCleaningAreas />} />
     <Route path="/resources/why-dust-builds-up-maryland-homes" element={<WhyDustBuildsUpMaryland />} />
+    <Route path="/resources/can-house-dust-make-you-sick" element={<CanHouseDustMakeYouSick />} />
     <Route path="/resources/how-to-prepare-home-for-professional-cleaning" element={<PrepareHomeForCleaning />} />
     <Route path="/resources/how-to-keep-house-clean-between-cleanings" element={<KeepHouseCleanBetween />} />
     <Route path="/resources/summer-cleaning-checklist-maryland" element={<SummerCleaningChecklist />} />
