@@ -273,6 +273,17 @@ export const blogPosts: BlogPost[] = [
     coverImage: "/images/blog/dust-buildup/hero.webp",
   },
   {
+    // Carpet stain guide candidate (05/10/2026). Cover = the page's hero illustration (AI-generated
+    // from the team reference photo at the owner's request, 06/10/2026; captioned as such on the page).
+    slug: "carpet-stain-guide-pets-wine-milk",
+    title: "Carpet Stain Guide: Pet Accidents, Wine, Milk, Blood and Coffee",
+    excerpt: "What to do in the first minutes after a pet accident or spill on carpet, the Carpet and Rug Institute steps for each stain, why spots come back, wool limits, winter mud and road salt, and when to call a professional.",
+    date: "2026-10-07",
+    readTime: "9 min read",
+    category: "Home Care Guides",
+    coverImage: "/images/blog/carpet-stain-guide/hero.webp",
+  },
+  {
     // Cover is the guide's hero photo, the air scrubber (owner's choice, 04/10/2026). In the centred
     // card crop the machine and the uniform stay in frame; the head is cut at the top.
     slug: "can-house-dust-make-you-sick",

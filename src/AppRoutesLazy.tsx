@@ -115,6 +115,7 @@ const PostConstructionCleaningMontgomeryCounty = lazy(() => import("./pages/Post
 const MostForgottenCleaningAreas = lazy(() => import("./pages/MostForgottenCleaningAreas"));
 const WhyDustBuildsUpMaryland = lazy(() => import("./pages/WhyDustBuildsUpMaryland"));
 const CanHouseDustMakeYouSick = lazy(() => import("./pages/CanHouseDustMakeYouSick"));
+const CarpetStainGuide = lazy(() => import("./pages/CarpetStainGuide"));
 const PrepareHomeForCleaning = lazy(() => import("./pages/PrepareHomeForCleaning"));
 const KeepHouseCleanBetween = lazy(() => import("./pages/KeepHouseCleanBetween"));
 const SummerCleaningChecklist = lazy(() => import("./pages/SummerCleaningChecklist"));
@@ -353,6 +354,7 @@ const AppRoutesLazy = () => (
     <Route path="/resources/most-forgotten-areas-when-cleaning" element={<MostForgottenCleaningAreas />} />
     <Route path="/resources/why-dust-builds-up-maryland-homes" element={<WhyDustBuildsUpMaryland />} />
     <Route path="/resources/can-house-dust-make-you-sick" element={<CanHouseDustMakeYouSick />} />
+    <Route path="/resources/carpet-stain-guide-pets-wine-milk" element={<CarpetStainGuide />} />
     <Route path="/resources/how-to-prepare-home-for-professional-cleaning" element={<PrepareHomeForCleaning />} />
     <Route path="/resources/how-to-keep-house-clean-between-cleanings" element={<KeepHouseCleanBetween />} />
     <Route path="/resources/summer-cleaning-checklist-maryland" element={<SummerCleaningChecklist />} />

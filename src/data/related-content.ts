@@ -196,13 +196,15 @@ export const MANUAL_RELATED_POSTS: Record<string, string[]> = {
   "what-pet-safe-cleaning-really-means": ["why-is-my-dog-coughing-after-house-cleaning", "cleaning-product-poisoning-in-pets", "allergen-free-home-dog-cat-owners", "pet-dander-air-quality"],
   "how-to-get-rid-of-dog-smell-pet-safe": ["pet-sneezing-household-dust", "hepa-filters-pets-asthma", "allergen-free-home-dog-cat-owners"],
   "how-to-clean-a-bathroom-step-by-step": ["how-to-clean-grout-without-bleach", "how-to-remove-hard-water-stains-naturally", "how-to-get-rid-of-mildew-smell-naturally"],
-  "how-to-remove-red-wine-stains": ["how-to-remove-candle-wax-eco-friendly", "how-to-remove-sharpie-safely", "mrs-meyers-clean-day-review-how-to-use"],
+  "how-to-remove-red-wine-stains": ["how-to-remove-candle-wax-eco-friendly", "how-to-remove-sharpie-safely", "mrs-meyers-clean-day-review-how-to-use", "carpet-stain-guide-pets-wine-milk"],
   "how-to-remove-sticker-residue-natural": ["how-to-remove-sharpie-safely", "how-to-remove-candle-wax-eco-friendly", "mrs-meyers-clean-day-review-how-to-use"],
   "most-forgotten-areas-when-cleaning": ["how-to-deep-clean-a-stove-maryland", "how-to-clean-carpet-home-apartment", "how-to-clean-grout-without-bleach"],
   "how-to-clean-oled-tv-screen-safely": ["how-to-remove-sharpie-safely", "mrs-meyers-clean-day-review-how-to-use", "how-to-remove-candle-wax-eco-friendly"],
   "how-to-clean-your-washing-machine-eco-friendly": ["how-to-get-rid-of-mildew-smell-naturally", "how-to-remove-hard-water-stains-naturally", "mrs-meyers-clean-day-review-how-to-use"],
   "why-dust-builds-up-maryland-homes": ["how-to-clean-carpet-home-apartment", "how-to-deep-clean-a-stove-maryland", "how-to-get-cigarette-smell-out-of-your-house"],
   "can-house-dust-make-you-sick": ["why-dust-builds-up-maryland-homes", "most-forgotten-areas-when-cleaning", "what-is-included-in-a-deep-cleaning"],
+  "carpet-stain-guide-pets-wine-milk": ["how-to-remove-red-wine-stains", "how-to-clean-carpet-home-apartment", "how-to-get-rid-of-dog-smell-pet-safe"],
+  "how-to-clean-carpet-home-apartment": ["carpet-stain-guide-pets-wine-milk"],
   "how-much-does-deep-cleaning-cost": ["move-out-cleaning-cost-maryland", "is-professional-house-cleaning-worth-it", "house-cleaning-prices-maryland-2026"],
   "one-time-vs-recurring-cleaning": ["is-professional-house-cleaning-worth-it", "move-out-cleaning-cost-maryland", "cleaning-tips-for-working-professionals"],
   "how-often-should-you-hire-a-cleaning-service": ["cleaning-tips-for-working-professionals", "is-professional-house-cleaning-worth-it", "recurring-cleaning-weekly-biweekly-monthly"],
@@ -265,6 +267,10 @@ export const MANUAL_FIRST_ORIGINS: ReadonlySet<string> = new Set([
   "questions-to-ask-before-hiring-house-cleaner",
   "cleaning-company-vs-independent-cleaner",
   "can-house-dust-make-you-sick",
+  // Carpet stain guide candidate (05/10/2026): same reasoning. Its only computed category is
+  // eco-friendly-cleaning (the slug contains "-pets"), whose newest-first feed would push the two
+  // carpet posts and the wine guide out of the block.
+  "carpet-stain-guide-pets-wine-milk",
 ]);
 
 /**

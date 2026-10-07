@@ -43,6 +43,8 @@ const APPROVED: Record<string, [string, string, string]> = {
   // This file compares two rules over the CURRENT catalogue; it does not prove that the cards of
   // existing posts are the same as on the previous commit (the new post enters their feeds).
   "can-house-dust-make-you-sick": ["why-dust-builds-up-maryland-homes", "most-forgotten-areas-when-cleaning", "what-is-included-in-a-deep-cleaning"],
+  // Carpet stain guide candidate (05/10/2026), same status as the dust guide above.
+  "carpet-stain-guide-pets-wine-milk": ["how-to-remove-red-wine-stains", "how-to-clean-carpet-home-apartment", "how-to-get-rid-of-dog-smell-pet-safe"],
 };
 const ORIGINS = Object.keys(APPROVED);
 
