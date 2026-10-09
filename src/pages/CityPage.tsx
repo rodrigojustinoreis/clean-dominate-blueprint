@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import { CheckCircle, MapPin, ArrowRight, Phone, Shield, Leaf, Star, Sparkles } from "lucide-react";
+import { CheckCircle, MapPin, ArrowRight, Phone, Shield, Leaf, Star, Sparkles, ChevronDown } from "lucide-react";
 
 const teamPhotos = [
   "/images/team/team-mopping-dark-floor.jpg",
@@ -41,6 +41,7 @@ import { getCityBySlug, getExpandedCityFaqs } from "@/data/locations";
 import { services } from "@/data/services";
 import { slServices, slCities } from "@/data/service-locations";
 import { serviceCardHref, hubHref } from "@/data/related-content";
+import { hubServiceSelection } from "@/data/hub-service-selection";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import GoogleMapEmbed from "@/components/GoogleMapEmbed";
 import GoogleBusinessLinks from "@/components/GoogleBusinessLinks";
@@ -74,6 +75,10 @@ const UMBRELLA_HUBS = new Set([
   // same fix as the pilot cities above, nothing else changed.
   "gaithersburg-md",
   "frederick-md",
+  // 2026-10-08 (recovery lot): the hub already carried the "All Services" metaTitle while its
+  // H1 said "House Cleaning Services in Alexandria, VA", the head term of its indexable
+  // /house-cleaning spoke. Alignment of H1 and ServiceSchema name/type, nothing else.
+  "alexandria-va",
 ]);
 
 /** Specific neighborhoods served per city — boosts local SEO relevance */
@@ -266,10 +271,12 @@ const silverSpringServiceGuide = [
 // date (HUB_CONTEXT_LINK and the Rockville booking sentence), so their date moves. Other hubs keep theirs.
 const HUB_PAGE_DATES: Record<string, string> = {
   "rockville-md": "2026-10-04",
-  "gaithersburg-md": "2026-09-19",
+  // Four hubs with the curated service selection (recovery lot, candidate date 2026-10-08).
+  "bethesda-md": "2026-10-08",
+  "gaithersburg-md": "2026-10-08",
   "silver-spring-md": "2026-09-03",
-  "alexandria-va": "2026-09-03",
-  "fairfax-va": "2026-09-03",
+  "alexandria-va": "2026-10-08",
+  "fairfax-va": "2026-10-08",
   "frederick-md": "2026-10-04",
   "georgetown-dc": "2026-10-04",
 };
@@ -403,6 +410,8 @@ const CityPage = () => {
   const visibleGeneralServices = isRockvilleHub
     ? services.filter((service) => rockvilleSupportingServiceSlugs.has(service.slug))
     : services;
+  // Opt-in curated selection (Bethesda, Gaithersburg, Fairfax, Alexandria): null elsewhere.
+  const curated = hubServiceSelection(city.slug, city.name, RETARGET_TO_VANITY);
   const serviceSchemaName = isUmbrellaHub
     ? `Cleaning Services in ${city.name}, ${city.state}`
     : `House Cleaning in ${city.name}`;
@@ -695,8 +704,54 @@ const CityPage = () => {
           <h2 className="font-heading text-2xl md:text-3xl font-bold mb-3">Cleaning Services in {city.name}</h2>
           <p className="text-muted-foreground mb-8">We bring the full range of Capital Clean Care services to {city.name}. Click any service to learn more about how we serve your area.</p>
 
+          {/* Curated selection (opt-in hubs): up to eight main choices, each destination once, then a
+              native complement with the other overviews. Labels with the city name are pages about
+              this city; the others are the MD/DC/VA service guides. */}
+          {curated && (
+            <>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                {curated.primary.map((c) => (
+                  <li key={c.href}>
+                    <Link
+                      to={c.href}
+                      className="group flex min-h-11 items-center gap-3 rounded-xl border border-border bg-card p-5 hover:shadow-md motion-safe:transition-all motion-safe:duration-200 motion-safe:hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+                    >
+                      <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center shrink-0">
+                        <Sparkles className="h-5 w-5 text-accent" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <h3 className="font-medium text-foreground group-hover:text-primary motion-safe:transition-colors">{c.label}</h3>
+                        <p className="mt-0.5 text-sm leading-snug text-muted-foreground">{c.description}</p>
+                        {c.national && <p className="mt-1 text-xs font-medium text-muted-foreground">Service guide for MD, DC &amp; VA</p>}
+                      </div>
+                      <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary motion-safe:transition-colors shrink-0" />
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              {curated.more.length > 0 && (
+                <details className="group/more mb-2 rounded-xl border border-border bg-card">
+                  <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-3 p-5 font-medium text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary [&::-webkit-details-marker]:hidden">
+                    <span>More services and overviews ({curated.more.length})</span>
+                    <ChevronDown aria-hidden="true" className="h-5 w-5 shrink-0 text-muted-foreground motion-safe:transition-transform group-open/more:rotate-180" />
+                  </summary>
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1 border-t border-border px-5 pb-5 pt-4">
+                    {curated.more.map((c) => (
+                      <li key={c.href}>
+                        <Link to={c.href} className="block min-h-11 py-2 text-[15px] leading-snug text-foreground underline-offset-2 hover:text-primary hover:underline focus-visible:underline">
+                          <span className="block">{c.label}</span>
+                          {c.national && <span className="block text-sm text-muted-foreground">MD, DC &amp; VA service guide</span>}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </details>
+              )}
+            </>
+          )}
+
           {/* Service-location specific links */}
-          {hasServiceLocationPages && (
+          {!curated && hasServiceLocationPages && (
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
               {visibleServiceLocationPages
                 .filter((sl) => !(city.slug === "georgetown-dc" && sl.slug === "house-cleaning"))
@@ -732,6 +787,7 @@ const CityPage = () => {
           )}
 
           {/* General service links */}
+          {!curated && (
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {visibleGeneralServices.map((s) => (
               <Card key={s.slug} className="group hover:shadow-md transition-all duration-200 hover:-translate-y-0.5">
@@ -750,6 +806,7 @@ const CityPage = () => {
               </Card>
             ))}
           </div>
+          )}
 
           {/* Senior Home Cleaning — region-aware hub (MoCo / DC / Northern Virginia) */}
           {seniorHub && (

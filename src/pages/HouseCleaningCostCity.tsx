@@ -176,7 +176,8 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
   const isEnhanced = isAlexandria || isBethesda || isRockville || isSilverSpring || isArlington;
   const estimateRanges = cityEstimateRanges[c.slug] ?? alexandriaEstimateRanges;
   const monthlyBudgets = cityMonthlyBudgets[c.slug] ?? { monthly: "$215–$400", biweekly: "$390–$705", weekly: "$780–$1,410" };
-  const modifiedDate = isRockville || isSilverSpring || isArlington ? "2026-08-26" : isAlexandria || isBethesda ? "2026-08-25" : undefined;
+  // Alexandria: three contextual links added 2026-10-08 (recovery lot); Bethesda keeps its date.
+  const modifiedDate = isRockville || isSilverSpring || isArlington ? "2026-08-26" : isAlexandria ? "2026-10-08" : isBethesda ? "2026-08-25" : undefined;
   const title = isArlington
     ? "Arlington House Cleaning Cost: $185–$580+ (2026)"
     : isSilverSpring
@@ -397,7 +398,7 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
             : "Real 2026 price ranges by home size — plus what actually drives the cost"}
         </p>
         <p className="text-gray-300 mb-8 text-sm uppercase tracking-widest">
-          By Rodrigo Reis, Owner · {where} · {modifiedDate ? `Updated ${modifiedDate === "2026-08-26" ? "August 26, 2026" : "August 25, 2026"}` : "June 2026"}
+          By Rodrigo Reis, Owner · {where} · {modifiedDate ? `Updated ${modifiedDate === "2026-08-26" ? "August 26, 2026" : modifiedDate === "2026-10-08" ? "October 8, 2026" : "August 25, 2026"}` : "June 2026"}
         </p>
         <Button size="lg" className="bg-accent hover:bg-accent/90 text-white text-lg px-8 py-6 rounded-full shadow-lg" asChild>
           <Link to="/contact" onClick={() => trackBookNowClick(`${c.slug}_cost_hero`)}>Get My Free {c.city} Quote</Link>
@@ -441,6 +442,12 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
               {isEnhanced && (
                 <p className="mt-4 pt-4 border-t border-accent/20 text-sm text-foreground">
                   <strong>Most popular:</strong> bi-weekly service for {c.city} homes, with a free exact quote before booking and no obligation.
+                  {isAlexandria && (
+                    <>
+                      {" "}What a plan includes and how weekly, bi-weekly and monthly differ is on our{" "}
+                      <Link to="/services/recurring-cleaning" className="text-primary underline underline-offset-2 hover:no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-sm">recurring cleaning page</Link>.
+                    </>
+                  )}
                 </p>
               )}
             </div>
@@ -475,6 +482,8 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
                 />
                 <figcaption className="px-5 py-3 text-sm text-muted-foreground">
                   Old Town Alexandria's historic rowhouses require careful cleaning methods for original hardwood, tile, millwork, and narrow multi-level layouts.
+                  Every service we offer in the city is listed on the{" "}
+                  <Link to="/locations/alexandria-va" className="text-primary underline underline-offset-2 hover:no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-sm">Alexandria cleaning services page</Link>.
                 </figcaption>
               </figure>
             )}
@@ -758,7 +767,8 @@ const HouseCleaningCostCity = ({ citySlug }: { citySlug: string }) => {
                   Realistic Alexandria House Cleaning Cost Examples
                 </h2>
                 <p className="text-muted-foreground leading-relaxed mb-6">
-                  These examples apply the price table above to common Alexandria home types. They are planning ranges, not binding quotes; bathrooms, condition, pets, stairs, access, and requested extras determine the final number.
+                  These examples apply the price table above to common Alexandria home types. For a broader comparison by service and home size, see our{" "}
+                  <Link to="/pricing" className="text-primary underline underline-offset-2 hover:no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-sm">full price list</Link>. They are planning ranges, not binding quotes; bathrooms, condition, pets, stairs, access, and requested extras determine the final number.
                 </p>
                 <div className="space-y-4">
                   {[
