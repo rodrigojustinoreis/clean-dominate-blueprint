@@ -29,7 +29,9 @@ import RelatedPosts from "@/components/blog/RelatedPosts";
 
 const SLUG = "carpet-stain-guide-pets-wine-milk";
 const URL = `https://capitalcleancare.com/resources/${SLUG}`;
-const TITLE = "Carpet Stain Guide: Pet Accidents, Wine, Milk, Blood and Coffee";
+const TITLE = "How to Get Stains Out of Carpet";
+// Revision of 2026-10-08 (shorter page, answer and stain selector first). Publication date unchanged.
+const MODIFIED = "2026-10-08";
 // Publication date (authorized by the owner on 2026-10-07).
 const PUBLISHED = "2026-10-07";
 const WINE_GUIDE = "/resources/how-to-remove-red-wine-stains";
@@ -63,6 +65,7 @@ const REAL_VACUUM = {
   height: 760,
 };
 const HERO_SIZES = "(min-width: 1024px) 384px, 100vw";
+const HERO_FIGURE_SIZES = "(min-width: 768px) 720px, 100vw";
 const PANEL_SIZES = "(min-width: 768px) 720px, 100vw";
 // 1200x630 crop of the hero illustration, so the size useSEO declares is the real one.
 const OG_IMAGE = `${IMG}/og.jpg`;
@@ -116,26 +119,25 @@ const sources: [string, string][] = [
 ];
 
 const toc: [string, string][] = [
-  ["first-minutes", "The First Five Minutes, for Any Spill"],
-  ["stains", "Stain by Stain"],
-  ["comes-back", "Why a Spot or Smell Comes Back"],
-  ["disinfecting", "Spot Cleaning Is Not Disinfecting"],
-  ["fibers", "Wool, Silk and Unknown Fibers"],
-  ["winter", "Winter: Mud, Road Salt and Wet Boots"],
-  ["call-a-pro", "When to Call a Professional"],
-  ["faq", "Frequently Asked Questions"],
-  ["sources", "Sources"],
-];
+  ["stains", "Stain by stain"],
+  ["first-minutes", "First five minutes"],
+  ["comes-back", "Why it comes back"],
+  ["disinfecting", "Disinfecting"],
+  ["fibers", "Wool and silk"],
+  ["winter", "Winter"],
+  ["call-a-pro", "Who to call"],
+  ["faq", "FAQ"],
+]
 
 // The six moves that apply to every spill on synthetic carpet. Each is attributed in the rail.
 const firstSteps: [string, ReactNode][] = [
-  ["Pick up what you can", "Lift solids with a spoon or plastic scraper. Do not press them into the pile. Blot liquids with a dry white cloth or plain white paper towels (CRI, IICRC)."],
-  ["Blot, do not rub", "Rubbing frays the fibers and pushes the spill deeper (CRI, Shaw Floors). Press and lift, then move to a clean part of the cloth."],
-  ["Work from the edge in", "Start at the outside of the spot and move toward the center, so it does not spread (CRI, WoolSafe)."],
-  ["Pretest anything you apply", "Try the product on a hidden spot first, such as inside a closet, and check the cloth for color (CRI)."],
-  ["Small amounts, on the cloth", "Apply the solution to the cloth, not straight onto the carpet, and never a stronger mix than the label or the CRI page gives (CRI, WoolSafe)."],
-  ["Rinse and dry", "Blot with clear water until no product is left, then blot dry. Avoid soaking the carpet (CRI)."],
-];
+  ["Pick up what you can", "Solids with a spoon or plastic scraper, without pressing them in. Liquids with a dry white cloth or plain white paper towels (CRI, IICRC)."],
+  ["Blot, do not rub", "Rubbing frays the fibers and pushes the spill deeper (CRI, Shaw Floors)."],
+  ["Work from the edge in", "So the spot does not spread (CRI, WoolSafe)."],
+  ["Pretest anything you apply", "In a hidden spot, such as inside a closet; check the cloth for color (CRI)."],
+  ["Small amounts, on the cloth", "Not poured on the carpet, never a stronger mix than the label or the CRI page gives (CRI, WoolSafe)."],
+  ["Rinse and blot dry", "Clear water until no product is left, without soaking the carpet (CRI)."],
+]
 
 const pClass = "text-lg text-muted-foreground leading-relaxed mb-4";
 const linkClass = "text-primary underline underline-offset-2 hover:no-underline";
@@ -217,7 +219,7 @@ const stains: Stain[] = [
     image: pic("vomit", "Illustration: a gloved team member dropping used paper towels into a plastic trash bag on a living room rug."),
     label: "Vomit",
     first:
-      "Remove solids, then take up as much liquid as you can. The IICRC suggests a wet/dry vacuum before any spotting.",
+      "If it came from someone who is sick, do not spot clean first: gloves on, lift everything with paper towels into a plastic bag, wash your hands, and read the disinfecting section before anything else. Otherwise, remove solids with a scraper and blot the liquid with paper towels.",
     then: (
       <>
         The <Ext href={SRC.criVomit}>CRI vomit page</Ext> applies the detergent solution, blots, rinses, then
@@ -225,7 +227,7 @@ const stains: Stain[] = [
       </>
     ),
     caution:
-      "Stomach acid and food or medicine dyes can stain permanently, and the longer vomit sits, the more likely the stain and the odor (IICRC). If it came from someone who is sick, read the disinfecting section below.",
+      "Stomach acid and food or medicine dyes can stain permanently, and the longer vomit sits, the more likely the stain and the odor (IICRC). Cleaning the spot is not disinfecting it.",
     pro: "A large amount, a pad that got wet (the IICRC says it may need treatment under the surface or replacement), or a color that remains.",
   },
   {
@@ -236,9 +238,10 @@ const stains: Stain[] = [
       "Blot at once. For a big spill the IICRC suggests extracting with a wet/dry vacuum first, then blotting with a cloth dampened with clear water.",
     then: (
       <>
-        The <Ext href={SRC.criWine}>CRI wine page</Ext> uses the detergent solution and a water rinse. It warns
-        that using the vinegar solution before the wine is completely removed can set a permanent stain. The
-        full walkthrough, with photos, is in our{" "}
+        The <Ext href={SRC.criWine}>CRI wine page</Ext> uses the detergent solution, then the vinegar solution to
+        lower the alkalinity the detergent leaves, then a water rinse. Its warning about a permanent stain is for
+        the stain-resist solution of a spot removal kit used before the wine is completely removed. The full
+        walkthrough, with photos, is in our{" "}
         <Link to={WINE_GUIDE} className={linkClass}>red wine stain guide</Link>.
       </>
     ),
@@ -274,7 +277,7 @@ const stains: Stain[] = [
       </>
     ),
     caution:
-      "Medications in the bloodstream of a person or a pet can prevent full removal (IICRC).",
+      "Peroxide only after the detergent step has been rinsed out, on its own, never mixed with anything. Medications in the bloodstream of a person or a pet can prevent full removal (IICRC).",
     pro: "Anything larger than small droplets. The IICRC says larger spills need a technician trained in that kind of cleanup.",
   },
   {
@@ -290,7 +293,7 @@ const stains: Stain[] = [
       </>
     ),
     caution:
-      "Coffee and tea are dyes; the IICRC notes that full removal is not always possible on every fiber.",
+      "Vinegar and peroxide are separate steps with a water rinse between them, never mixed and never on wool. Coffee and tea are dyes; the IICRC notes that full removal is not always possible on every fiber.",
     pro: "A tan ring that comes back after the spot dries.",
   },
 ];
@@ -298,40 +301,36 @@ const stains: Stain[] = [
 const faqs = [
   {
     q: "How do I get cat pee out of carpet?",
-    a: "Blot with white paper towels until nothing more transfers. The Carpet and Rug Institute's pet urine bulletin then blots in a solution of 1/4 teaspoon of liquid dish detergent in 1 cup of lukewarm water, rinses with water, repeats while there is transfer, and finishes with 1 cup of white vinegar in 2 cups of water, blotted dry. Enzyme products from pet stores are an option; follow the label and pretest. The CRI warns that unless cat urine is completely removed, complete odor removal is unlikely, so old or repeated spots are usually a job for a carpet cleaning professional.",
+    a: "Blot with white paper towels until nothing transfers, then follow the CRI pet urine bulletin: 1/4 teaspoon of liquid dish detergent in 1 cup of lukewarm water blotted in, a water rinse, repeated while there is transfer, then 1 cup of white vinegar in 2 cups of water, blotted dry. Enzyme products are an option if you follow the label and pretest. The CRI says odor removal is unlikely unless the urine is completely removed, so old or repeated spots usually need a carpet cleaning professional. Synthetic carpet only, with a pretest and the product label; wool, silk or an unknown fiber is a job for a professional.",
   },
   {
     q: "How do I get dog poop out of carpet?",
-    a: "Put on gloves, lift the solids with a plastic scraper or spoon without pressing down, and bag them. The CRI feces page then works in the detergent solution, blots, rinses with lukewarm water, uses the vinegar solution, and finishes with a cold water rinse blotted dry. For loose stools the IICRC treats the area like fresh urine and follows with a disinfectant whose label allows soft surfaces.",
+    a: "Gloves on, lift solids with a plastic scraper or spoon without pressing, bag them, then the CRI feces steps: detergent solution, blot, lukewarm rinse, vinegar solution, cold rinse, blot dry. Loose stools: treat like fresh urine and follow with a disinfectant whose label allows carpet (IICRC). Synthetic carpet only, with a pretest and the product label; wool, silk or an unknown fiber is a job for a professional.",
   },
   {
     q: "How do I get throw up out of carpet?",
-    a: "Remove the solids, take up as much liquid as you can (the IICRC suggests a wet/dry vacuum), then follow the CRI vomit page: detergent solution, blot, rinse, vinegar solution, cold rinse, blot dry. If the person may have a stomach virus, the CDC's norovirus guidance is to wear gloves, wipe up with paper towels into a plastic bag, use an EPA-registered product effective against norovirus, and wash your hands. On carpet, that product's label also has to allow use on carpet or soft surfaces, and you follow its directions and contact time. If no product meets both, have the area assessed by a specialist rather than relying on spot cleaning.",
+    a: "First ask who it came from. If the person may have a stomach virus, follow the CDC norovirus cleanup before anything else: gloves, everything lifted with paper towels into a plastic bag, hands washed, then a product only if its label claims norovirus and allows carpet, with its contact time; if no such product, have the area assessed instead of spot cleaning. Otherwise, remove solids, blot the liquid, then the CRI vomit steps: detergent solution, blot, rinse, vinegar solution, cold rinse, blot dry. Synthetic carpet only, with a pretest and the product label; wool, silk or an unknown fiber is a job for a professional.",
   },
   {
     q: "How do I get milk out of carpet, and the sour smell?",
-    a: "Blot promptly, work in the detergent solution, and rinse several times with lukewarm water, then blot dry and let it dry completely. If a sour smell stays after the spot has dried, some milk may be left in the fibers, the backing or the pad. The smell alone does not tell you where, so a smell that persists is the point to have the carpet assessed by a carpet cleaning professional.",
+    a: "Blot promptly, work in the detergent solution, rinse several times with lukewarm water and let it dry completely. A sour smell that stays means residue is left somewhere in the fibers, backing or pad; the smell does not tell you where, so have it assessed. Synthetic carpet only, with a pretest and the product label; wool, silk or an unknown fiber is a job for a professional.",
   },
   {
     q: "Can I use a steam cleaner on pet urine?",
-    a: "Not as a first step. Treat and rinse the spot by hand first. The IICRC notes that the heat and humidity of cleaning can amplify odors, and its tip sheet only uses a home machine to rinse with clear water after no evidence of the stain remains. Check your carpet's care guide before using any machine on it.",
+    a: "Not as a first step. Treat and rinse the spot by hand first. The IICRC notes that heat and humidity from cleaning can amplify odors, and uses a home machine only to rinse with clear water once no stain shows. Check your carpet's care guide before using any machine.",
   },
   {
     q: "Is vinegar safe on carpet?",
-    a: "On synthetic carpet, the CRI uses 1 cup of white vinegar in 2 cups of water after the detergent step for several stains, to reduce the alkalinity left by detergent. It is not a first step, and on wine the CRI warns that using it before the spill is removed can set the stain. On wool, WoolSafe says to use only WoolSafe-approved products. Pretest in a hidden spot either way.",
+    a: "On synthetic carpet the CRI uses 1 cup of white vinegar in 2 cups of water after the detergent step, to lower the alkalinity the detergent leaves; it is not a first step and not a stain remover on its own. On wool, WoolSafe allows only WoolSafe-approved products. Pretest either way.",
   },
-  {
-    q: "How do I dry a wet carpet spot in winter?",
-    a: "Blot with dry towels until no moisture transfers, and do not soak the area while cleaning. The EPA says that if wet materials are dried within 24 to 48 hours, in most cases mold will not grow. The IICRC points out that the pad can stay wet while the surface feels dry. That window is for prevention, not for waiting. If the pad is soaked, the water came from a leak or is contaminated, or you cannot get the spot drying promptly, ask for a water-damage assessment early rather than doing more spot cleaning.",
-  },
-];
+]
 
 const whoToCall: [string, string][] = [
-  ["Carpet cleaning professional", "Spots that return, odors that linger, old pet urine, large spills, and anything the carpet's warranty asks a professional to handle. The IICRC has a locator for certified firms."],
-  ["WoolSafe approved cleaner", "Wool and wool-rich carpets and rugs. WoolSafe keeps a directory of approved service providers."],
-  ["Water damage or restoration specialist", "Carpet that stays wet, a musty smell that keeps coming back, or water from a leak or sewage. The EPA says contaminated water calls for a professional with that experience."],
-  ["Veterinarian", "A pet that keeps having accidents. That is not a carpet question, and no cleaning method answers it."],
-];
+  ["Carpet cleaning professional", "Spots that return, lingering odor, old pet urine, large spills, or whatever your warranty asks a professional to handle."],
+  ["WoolSafe approved cleaner", "Wool and wool-rich carpets and rugs."],
+  ["Water damage specialist", "Carpet that stays wet, a musty smell that returns, or water from a leak or sewage (EPA)."],
+  ["Veterinarian", "A pet that keeps having accidents. No cleaning method answers that."],
+]
 
 // One full-width band per topic, alternating white and tinted. The heading block carries the
 // anchor: scroll-mt-28 clears the sticky header (102px on desktop). `still` keeps the content out
@@ -534,10 +533,37 @@ const EdgeToCenterDiagram = () => {
 
 // Stain selector: a row of tabs (two columns on phones) and one panel per stain. All panels are in
 // the HTML, hidden with the `hidden` attribute, so the answers are prerendered and reachable.
+const SAFETY: ReactNode[] = [
+  <>Pretest every product in a hidden spot.</>,
+  <>Wool, silk or unknown fiber: a dry white cloth only, then the care label and <a href="#fibers" className={linkClass}>wool and silk</a>.</>,
+  <>Never mix products, and never bleach with ammonia.</>,
+  <>Vomit or diarrhea from someone who is sick: cleaning is not disinfecting; see <a href="#disinfecting" className={linkClass}>disinfecting</a>.</>,
+  <>Water still coming in or a soaked pad: start drying now and get an assessment; see <a href="#winter" className={linkClass}>drying</a>.</>,
+];
+
 const StainSelector = () => {
   const [active, setActive] = useState(0);
+  // Before hydration (and without JavaScript) every panel is visible in order, so the answers do
+  // not depend on the script. The tabs take over once the component is live.
+  const [live, setLive] = useState(false);
+  useEffect(() => setLive(true), []);
+  // Deep link: #stain-tab-<id> or #stain-panel-<id> in the URL selects that stain after hydration.
+  useEffect(() => {
+    const m = window.location.hash.match(/^#stain-(?:tab|panel)-([a-z-]+)$/);
+    if (!m) return;
+    const i = stains.findIndex((s) => s.id === m[1]);
+    if (i >= 0) setActive(i);
+  }, []);
   return (
     <div>
+      <ul aria-label="Before you start" className="mb-5 grid gap-1.5 rounded-xl border border-amber-200 bg-amber-50 p-4 text-sm leading-snug text-foreground sm:grid-cols-2">
+        {SAFETY.map((s, i) => (
+          <li key={i} className="flex gap-2">
+            <span aria-hidden="true" className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-amber-500" />
+            <span>{s}</span>
+          </li>
+        ))}
+      </ul>
       <div role="tablist" aria-label="Choose a stain" className="mb-4 grid grid-cols-2 gap-2 sm:flex sm:flex-wrap">
         {stains.map((s, i) => {
           const selected = active === i;
@@ -558,7 +584,7 @@ const StainSelector = () => {
                 setActive(next);
                 document.getElementById(`stain-tab-${stains[next].id}`)?.focus();
               }}
-              className={`min-h-11 rounded-full border px-3 py-2 text-sm font-semibold leading-tight transition-colors sm:min-h-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 ${
+              className={`min-h-11 rounded-full border px-3 py-2 text-sm font-semibold leading-tight transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 ${
                 selected ? "border-primary bg-primary text-white" : "border-border bg-white text-foreground hover:border-primary/50"
               }`}
             >
@@ -567,17 +593,29 @@ const StainSelector = () => {
           );
         })}
       </div>
+      <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
+        Each card follows the Carpet and Rug Institute (CRI) page it links to. "Detergent solution" means 1/4 teaspoon
+        of liquid dish detergent in 1 cup of lukewarm water, never stronger; "vinegar solution" means 1 cup of white
+        vinegar in 2 cups of water. Both are for synthetic carpet.
+      </p>
       {stains.map((s, i) => (
         <div
           key={s.id}
           role="tabpanel"
           id={`stain-panel-${s.id}`}
           aria-labelledby={`stain-tab-${s.id}`}
-          hidden={active !== i}
-          className="overflow-hidden rounded-2xl border border-border bg-white p-5 sm:p-6"
+          hidden={live && active !== i}
+          className={`overflow-hidden rounded-2xl border border-border bg-white p-5 sm:p-6 ${live ? "motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-bottom-2 motion-safe:duration-300" : "mb-4"}`}
         >
+          <h3 className="mb-3 font-heading text-xl font-bold text-foreground">{s.label}</h3>
+          <dl className="space-y-4 text-base leading-relaxed text-muted-foreground">
+            <div>
+              <dt className="font-semibold text-foreground">First</dt>
+              <dd>{s.first}</dd>
+            </div>
+          </dl>
           {s.image ? (
-            <figure className="-mx-5 -mt-5 mb-5 sm:-mx-6 sm:-mt-6">
+            <figure className="my-5">
               <img
                 src={s.image.src}
                 srcSet={s.image.srcSet}
@@ -587,17 +625,12 @@ const StainSelector = () => {
                 height={s.image.height}
                 loading="lazy"
                 decoding="async"
-                className="aspect-[3/2] w-full rounded-t-2xl object-cover"
+                className="aspect-[3/2] w-full rounded-xl object-cover"
               />
-              <figcaption className="px-5 pt-2 text-xs text-muted-foreground sm:px-6">{ILLUSTRATION_NOTE}</figcaption>
+              <figcaption className="mt-2 text-xs text-muted-foreground">{ILLUSTRATION_NOTE}</figcaption>
             </figure>
           ) : null}
-          <h3 className="mb-4 font-heading text-xl font-bold text-foreground">{s.label}</h3>
           <dl className="space-y-4 text-base leading-relaxed text-muted-foreground">
-            <div>
-              <dt className="font-semibold text-foreground">First</dt>
-              <dd>{s.first}</dd>
-            </div>
             <div>
               <dt className="font-semibold text-foreground">Then</dt>
               <dd>{s.then}</dd>
@@ -619,6 +652,9 @@ const StainSelector = () => {
 
 const FaqList = ({ items }: { items: { q: string; a: string }[] }) => {
   const [open, setOpen] = useState<number | null>(null);
+  // Same idea as the stain panels: answers are visible until the accordion is live.
+  const [live, setLive] = useState(false);
+  useEffect(() => setLive(true), []);
   return (
     <div className="space-y-3">
       {items.map((faq, i) => {
@@ -629,7 +665,7 @@ const FaqList = ({ items }: { items: { q: string; a: string }[] }) => {
               <button
                 type="button"
                 id={`carpet-faq-q-${i}`}
-                aria-expanded={isOpen}
+                aria-expanded={live ? isOpen : true}
                 aria-controls={`carpet-faq-a-${i}`}
                 onClick={() => setOpen(isOpen ? null : i)}
                 className="w-full flex items-center justify-between gap-3 p-5 text-left font-semibold text-foreground hover:bg-secondary/50 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary"
@@ -645,8 +681,8 @@ const FaqList = ({ items }: { items: { q: string; a: string }[] }) => {
               id={`carpet-faq-a-${i}`}
               role="region"
               aria-labelledby={`carpet-faq-q-${i}`}
-              hidden={!isOpen}
-              className="px-5 pb-5 pt-4 border-t border-border text-muted-foreground leading-relaxed"
+              hidden={live && !isOpen}
+              className="px-5 pb-5 pt-4 border-t border-border text-muted-foreground leading-relaxed motion-safe:animate-in motion-safe:fade-in motion-safe:duration-200"
             >
               {faq.a}
             </div>
@@ -657,11 +693,64 @@ const FaqList = ({ items }: { items: { q: string; a: string }[] }) => {
   );
 };
 
+// The six moves as a checklist you can tick while you work (state only, nothing stored).
+const FirstMinutesChecklist = () => {
+  const [done, setDone] = useState<boolean[]>(() => firstSteps.map(() => false));
+  const count = done.filter(Boolean).length;
+  const toggle = (i: number) => setDone((d) => d.map((v, j) => (j === i ? !v : v)));
+  return (
+    <div className="mb-6">
+      <div className="mb-4 flex items-center justify-between gap-3">
+        <p className="text-sm font-semibold text-foreground">Tick each move as you go</p>
+        <span aria-live="polite" className="text-sm tabular-nums text-muted-foreground">
+          {count} of {firstSteps.length}
+        </span>
+      </div>
+      <div aria-hidden="true" className="mb-5 h-1.5 overflow-hidden rounded-full bg-secondary">
+        <div className="h-full rounded-full bg-primary motion-safe:transition-[width] motion-safe:duration-300" style={{ width: `${(count / firstSteps.length) * 100}%` }} />
+      </div>
+      <ol>
+        {firstSteps.map(([step, why], i) => (
+          <li key={step} className={railItem}>
+            <button
+              type="button"
+              aria-pressed={done[i]}
+              aria-label={`${done[i] ? "Done" : "Mark done"}: ${step}`}
+              onClick={() => toggle(i)}
+              className={`mt-0.5 flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-sm font-bold tabular-nums transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 ${
+                done[i] ? "bg-primary text-white" : "bg-primary/10 text-primary"
+              }`}
+            >
+              <span aria-hidden="true">{done[i] ? "✓" : i + 1}</span>
+            </button>
+            <div className={done[i] ? "opacity-60 motion-safe:transition-opacity" : "motion-safe:transition-opacity"}>
+              <strong className="block font-heading text-base text-foreground">{step}</strong>
+              <span className="mt-1 block text-base leading-relaxed text-muted-foreground">{why}</span>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  );
+};
+
 const railItem =
-  "relative flex gap-4 pb-6 last:pb-0 after:absolute after:bottom-1 after:left-[13.5px] after:top-9 after:w-px after:bg-border after:content-[''] last:after:hidden";
+  "relative flex gap-4 pb-6 last:pb-0 after:absolute after:bottom-1 after:left-[21.5px] after:top-12 after:w-px after:bg-border after:content-[''] last:after:hidden";
 const railDot = "mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary/10 text-sm font-bold tabular-nums text-primary";
+const cardHover = "motion-safe:transition-[transform,box-shadow] motion-safe:duration-200 motion-safe:hover:-translate-y-0.5 hover:shadow-md";
 
 const CarpetStainGuide = () => {
+  // Smooth in-page jumps while this page is mounted, unless the device asks for reduced motion.
+  // Set on <html> here and removed on unmount, so no global stylesheet changes.
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const html = document.documentElement;
+    const prev = html.style.scrollBehavior;
+    html.style.scrollBehavior = "smooth";
+    return () => {
+      html.style.scrollBehavior = prev;
+    };
+  }, []);
   const { seoHelmet } = useSEO({
     title: "How to Get Stains Out of Carpet: Pet, Wine, Milk, Blood",
     description:
@@ -676,7 +765,7 @@ const CarpetStainGuide = () => {
       {seoHelmet}
       <Helmet>
         {/* Hero illustration is the LCP image on desktop; the preload mirrors the <img>. */}
-        <link rel="preload" as="image" href={HERO.src} imageSrcSet={HERO.srcSet} imageSizes={HERO_SIZES} fetchPriority="high" />
+        <link rel="preload" as="image" href={HERO.src} imageSrcSet={HERO.srcSet} imageSizes={HERO_SIZES} fetchPriority="high" media="(min-width: 1024px)" />
       </Helmet>
 
       <ArticleSchema
@@ -684,6 +773,7 @@ const CarpetStainGuide = () => {
         description="First-response steps for any carpet spill, stain-by-stain guidance for pet urine, feces, vomit, red wine, milk, blood and coffee, why spots come back, wool and fiber limits, winter mud and road salt, and when to call a professional. Sourced from the Carpet and Rug Institute, IICRC, WoolSafe, CDC and EPA."
         url={URL}
         datePublished={PUBLISHED}
+        dateModified={MODIFIED}
         image={HERO.src}
         imageWidth={HERO.width}
         imageHeight={HERO.height}
@@ -700,12 +790,11 @@ const CarpetStainGuide = () => {
       />
 
       <article>
-        {/* Hero: text left, the first-five-minutes card right. No photo (see the file comment). */}
+        {/* Compact hero: title, one-line answer, jump links. On desktop the illustration sits on the
+            right; on phones nothing large comes before the stain selector, which starts right under. */}
         <section className="bg-gradient-to-br from-primary/[0.08] via-background to-accent/[0.08]">
-          <div className="container mx-auto max-w-6xl px-4 pb-10 pt-6 lg:pb-16 lg:pt-10">
-            {/* Fixed-height slot: the breadcrumb separator icons are 24px until the full stylesheet
-                arrives, which otherwise shifts the page on phones (measured on the dust guide). */}
-            <div className="mb-6 flex min-h-14 items-start sm:min-h-6">
+          <div className="container mx-auto max-w-6xl px-4 pb-8 pt-5 lg:pb-12 lg:pt-8">
+            <div className="mb-4 flex min-h-14 items-start sm:min-h-6">
               <Breadcrumbs
                 items={[
                   { label: "Home", href: "/" },
@@ -714,28 +803,34 @@ const CarpetStainGuide = () => {
                 ]}
               />
             </div>
-            <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_24rem] lg:items-center lg:gap-14">
+            <div className="grid items-center gap-8 lg:grid-cols-[minmax(0,1fr)_24rem] lg:gap-14">
               <div>
-                <p className="mb-3 text-xs font-bold uppercase tracking-[0.18em] text-primary">Home Care Guides</p>
-                <h1 className="mb-4 font-heading text-3xl font-bold leading-[1.12] text-foreground md:text-4xl lg:text-[2.75rem]">{TITLE}</h1>
-                <p className="mb-4 max-w-xl text-lg leading-relaxed text-muted-foreground">
-                  What to do first, what the carpet industry's own instructions say for each stain, and when to stop and call someone
+                <p className="mb-2 text-xs font-bold uppercase tracking-[0.18em] text-primary">Home Care Guides</p>
+                <h1 className="mb-3 font-heading text-3xl font-bold leading-[1.12] text-foreground md:text-4xl lg:text-[2.75rem]">{TITLE}</h1>
+                <p className="mb-3 max-w-xl text-lg leading-relaxed text-muted-foreground">
+                  Pet urine and feces, vomit, red wine, milk, blood, coffee, and winter mud and road salt. What to do
+                  first, the carpet industry's own steps for each, and when to stop and call someone.
                 </p>
-                <p className="mb-6 text-sm text-muted-foreground">
-                  By Rodrigo Reis, Owner, Capital Clean Care · Published <time dateTime={PUBLISHED}>October 7, 2026</time>
+                <p className="mb-5 text-sm text-muted-foreground">
+                  By Rodrigo Reis, Owner, Capital Clean Care · Published <time dateTime={PUBLISHED}>October 7, 2026</time> ·
+                  Updated <time dateTime={MODIFIED}>October 8, 2026</time>
                 </p>
-                <aside aria-label="Short answer" className="rounded-2xl border border-primary/20 bg-white p-5 shadow-sm sm:p-6">
+                <aside aria-label="Short answer" className="rounded-2xl border border-primary/20 bg-white p-5 shadow-sm">
                   <p className="font-heading text-sm font-bold uppercase tracking-wider text-primary mb-2">Short answer</p>
                   <p className="text-base md:text-lg leading-relaxed text-foreground">
-                    For almost any spill on carpet: pick up the solids, blot with a white cloth or paper towel,
-                    never rub, and work from the edge of the spot toward the center. Pretest any cleaner in a
-                    hidden spot, use small amounts on a cloth, then rinse with water and blot dry. Pet urine, wool
-                    rugs and anything from a sick person have extra rules, covered below.
+                    Pick up the solids, blot with a white cloth from the edge of the spot inward, never rub, pretest
+                    any cleaner, then rinse with water and blot dry. Pick your stain below for the exact steps.
                   </p>
                 </aside>
+                <nav aria-label="Jump to" className="mt-4 flex flex-wrap gap-x-4 gap-y-1 text-sm">
+                  {toc.map(([id, label]) => (
+                    <a key={id} href={`#${id}`} className="text-primary underline-offset-2 hover:underline focus-visible:underline">
+                      {label}
+                    </a>
+                  ))}
+                </nav>
               </div>
-              <div className="space-y-6">
-              <figure>
+              <figure className="hidden lg:block">
                 <img
                   src={HERO.src}
                   srcSet={HERO.srcSet}
@@ -749,195 +844,119 @@ const CarpetStainGuide = () => {
                 />
                 <figcaption className="mt-2 text-xs text-muted-foreground">{ILLUSTRATION_NOTE}</figcaption>
               </figure>
-              {/* Desktop only: on phones it would sit under the short answer and repeat the rail below. */}
-              <aside aria-label="Any spill, first five minutes" className="hidden rounded-2xl border border-border bg-white p-5 shadow-sm sm:p-6 lg:block">
-                <p className="font-heading text-sm font-bold uppercase tracking-wider text-primary mb-3">Any spill, the first five minutes</p>
-                <ol className="space-y-2 text-sm leading-snug text-foreground">
-                  {firstSteps.map(([step], i) => (
-                    <li key={step} className="flex gap-3">
-                      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-bold tabular-nums text-primary">{i + 1}</span>
-                      <span className="pt-0.5 font-medium">{step}</span>
-                    </li>
-                  ))}
-                </ol>
-                <a href="#first-minutes" className={`mt-4 inline-block text-sm ${linkClass}`}>
-                  Why each step matters
-                </a>
-              </aside>
-              </div>
             </div>
           </div>
         </section>
 
-        <section className="border-t border-border bg-white py-10 md:py-16">
-          <div className="container mx-auto max-w-3xl px-4">
-            <p className={pClass}>
-              This guide is written by a house cleaning company, not a carpet mill or a restoration firm. Where it
-              gives a procedure, the procedure is the Carpet and Rug Institute's, the IICRC's or WoolSafe's, with a
-              link to the page it came from, so you can check the exact wording and the exact mix. Your carpet's
-              own care guide and warranty come first when they say something different.
-            </p>
+        <Band id="stains" eyebrow="Pick your stain" title="Stain by Stain" still>
+          <StainSelector />
+        </Band>
 
-            <nav aria-label="Table of contents" className="my-8 rounded-2xl border border-border bg-gray-50 p-5 sm:p-6">
-              <p className="font-heading text-sm font-bold uppercase tracking-wider text-muted-foreground mb-3">In this guide</p>
-              <ol className="grid gap-2 sm:grid-cols-2 text-sm">
-                {toc.map(([id, label], i) => (
-                  <li key={id}>
-                    <a href={`#${id}`} className="flex gap-2 text-foreground underline-offset-2 hover:underline focus-visible:underline">
-                      <span className="text-primary font-semibold">{i + 1}.</span> {label}
-                    </a>
-                  </li>
-                ))}
-              </ol>
-            </nav>
-
-            <aside aria-label="Key facts">
-              <p className="font-heading font-bold text-foreground mb-3">Key facts, with sources</p>
-              <ul className="grid gap-4 sm:grid-cols-3">
-                <li className="rounded-xl border border-border bg-card p-5 shadow-sm">
-                  <span aria-hidden="true" className="block font-heading text-3xl font-extrabold leading-none tabular-nums text-primary md:text-4xl">1/4 tsp</span>
-                  <span className="mt-2 block text-[15px] leading-snug text-muted-foreground">
-                    The CRI's home spotting solution is 1/4 teaspoon of liquid dish detergent in 1 cup of lukewarm water,
-                    never stronger, pretested first (<Ext href={SRC.criBlood}>CRI</Ext>).
-                  </span>
-                </li>
-                <li className="rounded-xl border border-border bg-card p-5 shadow-sm">
-                  <span aria-hidden="true" className="block font-heading text-3xl font-extrabold leading-none text-primary md:text-4xl">Not on wool</span>
-                  <span className="mt-2 block text-[15px] leading-snug text-muted-foreground">
-                    WoolSafe says never to use dish washing liquids or other general household cleaners on wool carpets
-                    and rugs (<Ext href={SRC.woolsafe}>WoolSafe</Ext>).
-                  </span>
-                </li>
-                <li className="rounded-xl border border-border bg-card p-5 shadow-sm">
-                  <span aria-hidden="true" className="block font-heading text-3xl font-extrabold leading-none tabular-nums text-primary md:text-4xl">24 to 48 h</span>
-                  <span className="mt-2 block text-[15px] leading-snug text-muted-foreground">
-                    If wet materials are dried within 24 to 48 hours, in most cases mold will not grow (
-                    <Ext href={SRC.epaMold}>EPA</Ext>).
-                  </span>
-                </li>
-              </ul>
-            </aside>
-          </div>
-        </section>
-
-        <Band id="first-minutes" eyebrow="Any spill" title="The First Five Minutes, for Any Spill" tinted>
+        <Band id="first-minutes" eyebrow="Any spill" title="The First Five Minutes" tinted>
           <p className={pClass}>
-            The CRI's stain pages open with the same line every time: act quickly, because delay can turn a spill
-            into a permanent stain. The six moves below are the common ground of the{" "}
-            <Ext href={SRC.criCare}>CRI</Ext>, <Ext href={SRC.shaw}>Shaw Floors</Ext>, the{" "}
-            <Ext href={SRC.iicrc}>IICRC tip sheet</Ext> and <Ext href={SRC.woolsafe}>WoolSafe</Ext>. They apply to
-            synthetic carpet; wool and silk have their own section.
+            The CRI opens every stain page the same way: act quickly, because delay can make a spill permanent. These
+            six moves are the common ground of the <Ext href={SRC.criCare}>CRI</Ext>,{" "}
+            <Ext href={SRC.shaw}>Shaw Floors</Ext>, the <Ext href={SRC.iicrc}>IICRC tip sheet</Ext> and{" "}
+            <Ext href={SRC.woolsafe}>WoolSafe</Ext>, for synthetic carpet.
           </p>
           <div className="mb-6 rounded-2xl border border-border bg-white p-5">
             <EdgeToCenterDiagram />
           </div>
-          <ol className="mb-6">
-            {firstSteps.map(([step, why], i) => (
-              <li key={step} className={railItem}>
-                <span aria-hidden="true" className={railDot}>{i + 1}</span>
-                <div>
-                  <strong className="block font-heading text-base text-foreground">{step}</strong>
-                  <span className="mt-1 block text-base leading-relaxed text-muted-foreground">{why}</span>
-                </div>
-              </li>
-            ))}
-          </ol>
+          <FirstMinutesChecklist />
           <p className="rounded-2xl border border-border bg-white p-5 text-base text-muted-foreground leading-relaxed">
-            <strong className="text-foreground">What to keep out of it.</strong> Laundry detergent and dishwasher
-            detergent (the CRI says never; they carry brighteners and bleaching agents), a stronger mix than the one
-            given, and any product that claims no rinsing is needed (the IICRC's own
-            test: let a half ounce evaporate in a glass; sticky residue in the glass means sticky residue in your
-            carpet). For a large wet spill, the IICRC's first tool is a small wet/dry vacuum. With pets in the
-            house, read the label the way our guide to{" "}
+            <strong className="text-foreground">Keep out of it:</strong> laundry or dishwasher detergent (brighteners
+            and bleaching agents, says the CRI), any product that claims no rinsing is needed (the IICRC's test: let
+            half an ounce evaporate in a glass and look for sticky residue), and anything the carpet's care guide
+            excludes. For a large wet spill, the IICRC's first tool is a small wet/dry vacuum. With pets at home, read
+            labels the way our guide to{" "}
             <Link to={PET_SAFE_LABELS} className={linkClass}>what "pet-safe" cleaning really means</Link> explains.
           </p>
         </Band>
 
-        <Band id="stains" eyebrow="Pick your stain" title="Stain by Stain" still>
+        <Band id="comes-back" eyebrow="The second day" title="Why a Spot or Smell Comes Back">
           <p className={pClass}>
-            Each card names the CRI page it follows. "Detergent solution" and "vinegar solution" mean the CRI
-            mixes from the key facts: 1/4 teaspoon of liquid dish detergent per cup of lukewarm water, and 1 cup of
-            white vinegar per 2 cups of water. Pretest both in a hidden spot.
-          </p>
-          <StainSelector />
-        </Band>
-
-        <Band id="comes-back" eyebrow="The second day" title="Why a Spot or Smell Comes Back" tinted>
-          <p className={pClass}>
-            The IICRC calls it wicking: as the carpet dries, whatever is left at the base of the yarn and in the
-            backing travels up to the tips and shows again. Wine, coffee and urine that reached the backing or the
-            pad are the usual cases. The surface can look clean while the pad still holds the spill, which is why
-            an odor can return on a humid day even after a good cleaning (<Ext href={SRC.iicrc}>IICRC</Ext>).
+            The IICRC calls it wicking: as the carpet dries, what is left at the base of the yarn or in the backing
+            travels up to the tips and shows again. Wine, coffee and urine that reached the pad are the usual cases,
+            and a pad that still holds the spill can bring an odor back on a humid day (
+            <Ext href={SRC.iicrc}>IICRC</Ext>).
           </p>
           <p className={pClass}>
-            For a stain that reappears after the carpet has been cleaned and dried, and only for that (not for a
-            soaked pad or water still coming in), the IICRC tip sheet gives a patient routine: let the carpet dry for
-            at least 48 hours, vacuum the area slowly from three or more directions, lightly mist distilled
-            water and blot with a white towel while it keeps picking up soil, then cover the spot with a thick pad
-            of white paper towels weighed down with a few books for 6 to 8 hours, changing them as they absorb.
-          </p>
-          <p className={pClass}>
-            Odor is a different problem. The CRI notes that an odor, especially from cat urine, is unlikely to go
-            completely unless the urine itself is completely removed. If the smell keeps coming back, more surface
-            cleaning will not fix it. For the rest of the house, our{" "}
-            <Link to={DOG_SMELL_GUIDE} className={linkClass}>guide to dog smell</Link> covers bedding, furniture and air,
-            and <Link to={PET_HAIR_ODORS} className={linkClass}>removing pet hair and odors</Link> goes room by room. A
-            musty smell is a moisture question rather than a pet one; see{" "}
-            <Link to={MILDEW_SMELL} className={linkClass}>how to get rid of a mildew smell</Link>.
+            For a stain that reappears after the carpet has been cleaned and dried (not for a soaked pad or water
+            still coming in), the IICRC's routine is patient: let it dry at least 48 hours, vacuum slowly from three
+            directions, mist distilled water and blot while the towel still picks up soil, then weigh a thick pad of
+            white paper towels on the spot for 6 to 8 hours. Odor is different: the CRI says cat urine odor is
+            unlikely to go unless the urine itself is completely removed. For the rest of the house, see{" "}
+            <Link to={DOG_SMELL_GUIDE} className={linkClass}>dog smell</Link>,{" "}
+            <Link to={PET_HAIR_ODORS} className={linkClass}>pet hair and odors</Link> and, for a musty smell,{" "}
+            <Link to={MILDEW_SMELL} className={linkClass}>mildew</Link>.
           </p>
         </Band>
 
-        <Band id="disinfecting" eyebrow="Body fluids" title="Spot Cleaning Is Not Disinfecting" still>
+        <Band id="disinfecting" eyebrow="Body fluids" title="Spot Cleaning Is Not Disinfecting" tinted still>
           <p className={pClass}>
-            Everything above removes the spill. It does not kill germs. The CDC separates the two: cleaning removes
-            most germs and dirt with water, soap and scrubbing; disinfecting kills most germs on a surface. For
-            soft surfaces such as carpet and rugs, the CDC's advice is to clean with products made for those
-            surfaces, launder what can be laundered, and vacuum. It suggests disinfecting in addition when someone
-            in the home is sick or at higher risk (<Ext href={SRC.cdcClean}>CDC</Ext>).
+            Everything above removes the spill; it does not kill germs. The CDC separates cleaning (soap, water,
+            scrubbing) from disinfecting (killing most germs), tells you to clean soft surfaces with products made
+            for them and to disinfect in addition when someone at home is sick or at higher risk, and says never to
+            mix products (<Ext href={SRC.cdcClean}>CDC</Ext>).
           </p>
           <p className={pClass}>
-            After vomiting or diarrhea from a person who may have a stomach virus, the CDC's norovirus page says
-            to wear gloves, wipe the area up with paper towels into a plastic trash bag, use an EPA-registered
-            product effective against norovirus, and wash your hands afterward (<Ext href={SRC.cdcNoro}>CDC</Ext>).
-            The CDC does not give a carpet procedure. On carpet, a product is an option only when its label claims
-            effectiveness against norovirus and also allows use on carpet or soft surfaces; follow its directions
-            and contact time. Cleaning the spot is not the same as disinfecting it against this virus. If no product
-            fits both, have the area assessed by a specialist. Never mix products, and never mix bleach
-            with ammonia or with an ammonia-based spotter.
-          </p>
-          <p className={pClass}>
-            Blood and larger body-fluid spills are outside home cleaning. The IICRC says they need a technician
-            trained in that kind of removal. Capital Clean Care does not do biohazard cleanup.
+            After vomiting or diarrhea from someone who may have a stomach virus, the CDC's norovirus page says to
+            wear gloves, wipe up with paper towels into a plastic bag, use an EPA-registered product effective
+            against norovirus, and wash your hands (<Ext href={SRC.cdcNoro}>CDC</Ext>). It gives no carpet procedure.
+            On carpet, a product is an option only when its label claims norovirus and also allows carpet or soft
+            surfaces; follow its directions and contact time. If no product fits both, have the area assessed.
+            Blood beyond small droplets and larger body-fluid spills need a trained technician (IICRC); Capital
+            Clean Care does not do biohazard cleanup.
           </p>
         </Band>
 
-        <Band id="fibers" eyebrow="Know the fiber" title="Wool, Silk and Unknown Fibers" tinted>
+        <Band id="fibers" eyebrow="Know the fiber" title="Wool, Silk and Unknown Fibers" still>
           <p className={pClass}>
-            Most wall-to-wall carpet in the area is nylon, polyester or olefin, and the CRI procedures above are
-            written for it. Wool is different. WoolSafe's consumer guide says never to use dish washing liquids,
-            soaps or other general household cleaners on wool carpets and rugs: they can cause rapid resoiling,
-            color bleeding or damage to the pile or backing. It recommends only products carrying the WoolSafe
-            mark, no rubbing, small amounts on a cloth, a thorough rinse of any water-based spotter, and drying the
-            spot afterward (<Ext href={SRC.woolsafe}>WoolSafe</Ext>). The IICRC adds that 3% hydrogen peroxide is
-            not recommended on wool or other natural fibers without extensive testing for color loss.
+            The CRI steps above are written for nylon, polyester and olefin. WoolSafe says never to use dish washing
+            liquids, soaps or other household cleaners on wool carpets and rugs (rapid resoiling, color bleeding,
+            damage to pile or backing), only products carrying the WoolSafe mark, in small amounts on a cloth, rinsed
+            and dried (<Ext href={SRC.woolsafe}>WoolSafe</Ext>). The IICRC adds that 3% hydrogen peroxide is not
+            recommended on wool or other natural fibers without extensive testing for color loss.
           </p>
           <p className={pClass}>
-            Silk, viscose, jute and antique or hand-knotted rugs are a professional's job from the first minute:
-            blot with a dry white cloth, nothing else, and call. If you do not know what a rug is made of, treat it
-            the same way. A label on the back, the retailer, or the mill's care guide will tell you the fiber and
-            the warranty's own cleaning rules.
+            Silk, viscose, jute, antique or hand-knotted rugs, and any rug whose fiber you do not know: blot with a
+            dry white cloth, nothing else, and call. The label on the back, the retailer or the mill's care guide will
+            tell you the fiber and the warranty's own rules.
           </p>
         </Band>
 
-        <Band id="winter" eyebrow="Maryland winters" title="Winter: Mud, Road Salt and Wet Boots" still>
+        <Band id="winter" eyebrow="Maryland winters" title="Winter: Mud, Road Salt and Wet Boots" tinted still>
           <p className={pClass}>
-            From the first snow to the last thaw, the entry rug and the first few feet of hallway carpet take
-            snowmelt, mud and road salt every day. Treat the two halves differently. Water from snowmelt or wet boots
-            gets blotted up right away so the area starts drying. Mud is the exception: once it has dried, it lifts
-            out with a vacuum instead of smearing. Our{" "}
-            <Link to={WINTER_TIPS} className={linkClass}>eco cleaning tips for Maryland winters</Link> cover the rest of
-            the house in the same season.
+            From the first snow to the last thaw, the entry rug and the first feet of hallway carpet take snowmelt,
+            mud and road salt daily. Water from snowmelt or wet boots gets blotted up right away so the area starts
+            drying. Mud is the exception: once dry, it lifts out with a vacuum instead of smearing. Our{" "}
+            <Link to={WINTER_TIPS} className={linkClass}>eco cleaning tips for Maryland winters</Link> cover the rest
+            of the house.
           </p>
+          <ul className="mb-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <li className={`rounded-2xl border border-border bg-white p-5 ${cardHover}`}>
+              <strong className="block font-heading text-base text-foreground">Mud</strong>
+              <span className="mt-1 block text-[15px] leading-snug text-muted-foreground">
+                Dry, break up, vacuum, then the <Ext href={SRC.criMud}>CRI mud page</Ext>: detergent solution, blot,
+                lukewarm rinse, cold rinse, blot dry.
+              </span>
+            </li>
+            <li className={`rounded-2xl border border-border bg-white p-5 ${cardHover}`}>
+              <strong className="block font-heading text-base text-foreground">Road salt and ice melt</strong>
+              <span className="mt-1 block text-[15px] leading-snug text-muted-foreground">
+                The <Ext href={SRC.criSalt}>CRI salt page</Ext> vacuums the dry residue first, then detergent solution,
+                lukewarm and cold rinses, blot dry. A white crust that returns as it dries is wicking: rinse and blot
+                again, or have it cleaned.
+              </span>
+            </li>
+            <li className={`rounded-2xl border border-border bg-white p-5 ${cardHover}`}>
+              <strong className="block font-heading text-base text-foreground">Wet boots</strong>
+              <span className="mt-1 block text-[15px] leading-snug text-muted-foreground">
+                An entry mat at every outside door, cleaned regularly, that lies flat and stays put (
+                <Ext href={SRC.criWinter}>CRI</Ext>). Boots off at the mat does more than any cleaner.
+              </span>
+            </li>
+          </ul>
           <figure className="mb-6">
             <img
               src={WINTER.src}
@@ -952,65 +971,35 @@ const CarpetStainGuide = () => {
             />
             <figcaption className="mt-2 text-xs text-muted-foreground">{ILLUSTRATION_NOTE}</figcaption>
           </figure>
-          <ul className="mb-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            <li className="rounded-2xl border border-border bg-white p-5">
-              <strong className="block font-heading text-base text-foreground">Mud</strong>
-              <span className="mt-1 block text-[15px] leading-snug text-muted-foreground">
-                Let it dry, break it up and vacuum it out, then the <Ext href={SRC.criMud}>CRI mud page</Ext>:
-                detergent solution, blot, lukewarm rinse, cold rinse, blot dry. Wet mud smears; dry mud lifts.
-              </span>
-            </li>
-            <li className="rounded-2xl border border-border bg-white p-5">
-              <strong className="block font-heading text-base text-foreground">Road salt and ice melt</strong>
-              <span className="mt-1 block text-[15px] leading-snug text-muted-foreground">
-                The <Ext href={SRC.criSalt}>CRI salt page</Ext> starts by vacuuming the dry residue, then the
-                detergent solution, a lukewarm rinse and a cold rinse, blotted dry. A white crust that shows again
-                as the spot dries is wicking: repeat the rinse and blot, or have the area cleaned.
-              </span>
-            </li>
-            <li className="rounded-2xl border border-border bg-white p-5">
-              <strong className="block font-heading text-base text-foreground">Wet boots</strong>
-              <span className="mt-1 block text-[15px] leading-snug text-muted-foreground">
-                The CRI's winter advice is an entry mat at every outside door, cleaned regularly through the season,
-                that lies flat and stays put (<Ext href={SRC.criWinter}>CRI</Ext>). WoolSafe says the same for wool.
-                Boots off at the mat does more than any cleaner.
-              </span>
-            </li>
-          </ul>
           <p className={pClass}>
-            Drying is the winter problem. Windows stay shut, air moves less, and the IICRC warns that the pad can
-            stay wet long after the surface feels dry. Blot until nothing transfers, keep the area from being
-            soaked while you clean (the CRI's one rule for every stain), and give it air. The EPA says to act quickly:
-            materials dried within 24 to 48 hours usually do not grow mold (<Ext href={SRC.epaMold}>EPA</Ext>). That
-            is a prevention window, not a time to wait. If the pad is soaked, the water came from a leak or is
-            contaminated, or you cannot get the area drying promptly, ask for a water-damage assessment early
-            instead of waiting to see. For
-            the rest of the season's carpet care, see{" "}
+            <strong className="text-foreground">Drying is the winter problem.</strong> Windows stay shut, and the
+            IICRC warns that the pad can stay wet long after the surface feels dry. Blot until nothing transfers, do
+            not soak the area while cleaning, and give it air. The EPA says to act quickly: materials dried within 24
+            to 48 hours usually do not grow mold (<Ext href={SRC.epaMold}>EPA</Ext>), a prevention window, not a time
+            to wait. A soaked pad, water from a leak or contaminated water, or an area you cannot get drying
+            promptly: ask for a water-damage assessment early. Season-long carpet care is in{" "}
             <Link to={CARPET_GUIDE} className={linkClass}>how to clean the carpet in your home or apartment</Link>.
           </p>
         </Band>
 
-        <Band id="call-a-pro" eyebrow="Being straight about it" title="When to Call a Professional" tinted still>
+        <Band id="call-a-pro" eyebrow="Being straight about it" title="When to Call a Professional" still>
           <p className={pClass}>
-            The CRI ends every stain page the same way: professional cleaners have the ability and the equipment
-            to use more aggressive cleaning solutions. Who to call depends on what you are looking at:
+            The CRI ends every stain page the same way: professional cleaners have the ability and the equipment to
+            use more aggressive cleaning solutions. Who to call depends on what you see. Directories:{" "}
+            <Ext href={SRC.iicrcLocator}>IICRC certified firms</Ext> and{" "}
+            <Ext href={SRC.woolsafeFind}>WoolSafe approved providers</Ext>.
           </p>
           <ul className="mb-8 grid gap-4 sm:grid-cols-2">
             {whoToCall.map(([who, when]) => (
-              <li key={who} className="rounded-2xl border border-border bg-white p-5">
+              <li key={who} className={`rounded-2xl border border-border bg-white p-5 ${cardHover}`}>
                 <strong className="block font-heading text-base text-foreground">{who}</strong>
-                <span className="mt-1 block text-base leading-relaxed text-muted-foreground">{when}</span>
+                <span className="mt-1 block text-[15px] leading-snug text-muted-foreground">{when}</span>
               </li>
             ))}
           </ul>
-          <p className="mb-6 text-base text-muted-foreground leading-relaxed">
-            Directories: <Ext href={SRC.iicrcLocator}>IICRC certified firms</Ext> and{" "}
-            <Ext href={SRC.woolsafeFind}>WoolSafe approved service providers</Ext>.
-          </p>
-          {/* Bridge to house cleaning (owner's objective, 05/10/2026). The scope named here is the
-              published one of the recurring service (vacuuming carpets and rugs, mopping hard floors,
-              entryway and mudroom). Carpet extraction, rug washing, water damage and biohazard work are
-              named as separate trades; nothing here says we provide them. */}
+          {/* Bridge to house cleaning (owner's objective). The scope named is the published one of the
+              recurring service; extraction, rug washing, water damage and biohazard work are named as
+              separate trades, and nothing here says we provide them. */}
           <aside aria-label="House cleaning" className="grid gap-5 rounded-2xl border border-primary/20 bg-white p-5 sm:grid-cols-[minmax(0,1fr)_11rem] md:p-6">
             <figure className="sm:order-2">
               <img
@@ -1025,46 +1014,53 @@ const CarpetStainGuide = () => {
               <figcaption className="mt-2 text-xs text-muted-foreground">A Capital Clean Care team member vacuuming a wood floor beneath lifted furniture on a house cleaning visit. Real photo.</figcaption>
             </figure>
             <div className="sm:order-1">
-            <h3 className="mb-2 font-heading text-xl font-bold text-foreground">The rest of the house, after the spot</h3>
-            <p className="mb-4 text-lg leading-relaxed text-muted-foreground">
-              A stain is one afternoon. What a Maryland winter does to a home is daily: grit and salt at the
-              door, hallway carpet that needs slow vacuuming, hard floors that need a damp mop before the residue
-              dulls them, baseboards and the mudroom. That ongoing work is house cleaning, which is what we do.
-              Our <Link to={RECURRING} className={linkClass}>recurring cleaning</Link> covers vacuuming carpets and
-              rugs, mopping hard floors and the entryway on a schedule you choose. After a long winter, a{" "}
-              <Link to={DEEP_CLEANING} className={linkClass}>deep cleaning</Link> adds the detail work, baseboards and
-              vents included. Leaving a rental? Start with our{" "}
-              <Link to={MOVE_OUT_CHECKLIST} className={linkClass}>move-out cleaning checklist for Maryland tenants</Link>.
-              Carpet extraction, rug washing, water damage and biohazard cleanup are separate trades from house
-              cleaning.
-            </p>
-            <Link
-              to={CONTACT}
-              className="inline-flex min-h-11 items-center justify-center rounded-full bg-primary px-6 py-3 text-base font-semibold text-white transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
-            >
-              Get a House Cleaning Quote
-            </Link>
+              <h3 className="mb-2 font-heading text-xl font-bold text-foreground">The rest of the house, after the spot</h3>
+              <p className="mb-3 text-base leading-relaxed text-muted-foreground">
+                A stain is one afternoon. A Maryland winter is daily: grit and salt at the door, hallway carpet that
+                needs slow vacuuming, hard floors that need a damp mop, baseboards and the mudroom. That ongoing work
+                is house cleaning, which is what we do.
+              </p>
+              <p className="mb-4 text-base leading-relaxed text-muted-foreground">
+                Our <Link to={RECURRING} className={linkClass}>recurring cleaning</Link> covers vacuuming carpets and
+                rugs, mopping hard floors and the entryway on a schedule you choose; after a long winter, a{" "}
+                <Link to={DEEP_CLEANING} className={linkClass}>deep cleaning</Link> adds baseboards and vents. Leaving
+                a rental? See the{" "}
+                <Link to={MOVE_OUT_CHECKLIST} className={linkClass}>move-out cleaning checklist for Maryland tenants</Link>.
+                Carpet extraction, rug washing, water damage and biohazard cleanup are separate trades from house
+                cleaning.
+              </p>
+              <Link
+                to={CONTACT}
+                className="inline-flex min-h-11 items-center justify-center rounded-full bg-primary px-6 py-3 text-base font-semibold text-white transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+              >
+                Get a House Cleaning Quote
+              </Link>
             </div>
           </aside>
         </Band>
 
-        <Band id="faq" eyebrow="Questions" title="Frequently Asked Questions">
+        <Band id="faq" eyebrow="Questions" title="Frequently Asked Questions" tinted>
           <FaqList items={faqs} />
         </Band>
 
-        <Band id="sources" eyebrow="References" title="Sources" tinted still>
-          <ul className="space-y-2 mb-6 list-disc pl-6 text-base text-muted-foreground leading-relaxed">
-            {sources.map(([label, href]) => (
-              <li key={href}>
-                <Ext href={href}>{label}</Ext>
-              </li>
-            ))}
-          </ul>
+        <Band id="sources" eyebrow="References" title="Sources" still>
+          {/* Native disclosure: the list is in the HTML, collapsed by default on every width. */}
+          <details className="mb-6 rounded-2xl border border-border bg-white">
+            <summary className="cursor-pointer list-none p-5 font-semibold text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary [&::-webkit-details-marker]:hidden">
+              {sources.length} primary sources, read on October 5, 2026
+            </summary>
+            <ul className="space-y-2 border-t border-border px-5 pb-5 pt-4 list-disc pl-10 text-base text-muted-foreground leading-relaxed">
+              {sources.map(([label, href]) => (
+                <li key={href}>
+                  <Ext href={href}>{label}</Ext>
+                </li>
+              ))}
+            </ul>
+          </details>
           <p className="rounded-2xl border border-border bg-white p-5 text-sm text-muted-foreground leading-relaxed">
-            This guide is general information from a house cleaning company. Carpet fibers, dyes, backings and
-            warranties differ; the manufacturer's care instructions and the product label take precedence over
-            anything here. Capital Clean Care does not provide biohazard cleanup, water damage restoration or mold
-            remediation.
+            General information from a house cleaning company. Carpet fibers, dyes, backings and warranties differ;
+            the manufacturer's care instructions and the product label take precedence over anything here. Capital
+            Clean Care does not provide biohazard cleanup, water damage restoration or mold remediation.
           </p>
         </Band>
       </article>
