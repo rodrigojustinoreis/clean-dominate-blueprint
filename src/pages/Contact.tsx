@@ -10,6 +10,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import TrustBadges from "@/components/TrustBadges";
 import PriceCalculator from "@/components/PriceCalculator";
 import PricingTable from "@/components/PricingTable";
+import { CredentialsCompact } from "@/components/VerifiedCredentials";
 
 const Contact = () => {
   const { seoHelmet } = useSEO({
@@ -37,6 +38,8 @@ const Contact = () => {
           <div className="max-w-6xl mx-auto mb-12 lg:grid lg:grid-cols-[minmax(0,1fr)_340px] lg:gap-8 lg:items-start">
             <Card id="quote" className="scroll-mt-24 mb-8 lg:mb-0">
               <CardContent className="p-4 md:p-8">
+                {/* 2026-10-09: verifiable credentials next to the form, outside QuoteForm. */}
+                <CredentialsCompact />
                 <QuoteForm />
               </CardContent>
             </Card>

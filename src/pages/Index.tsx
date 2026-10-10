@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { CheckCircle, Shield, Leaf, Star, MapPin, Sparkles, ArrowRight, Phone, Users, Check } from "lucide-react";
+import { CredentialChips, CredentialsDisclosure } from "@/components/VerifiedCredentials";
 import { trackPhoneClick, trackBookNowClick } from "@/lib/analytics";
 import PricingTable from "@/components/PricingTable";
 import PriceCalculator from "@/components/PriceCalculator";
@@ -76,11 +77,14 @@ const Index = () => {
               Capital Clean Care LLC is a licensed, bonded, and insured house cleaning company in Silver Spring, MD, serving Maryland, DC, and Northern Virginia since 2015, using EPA Safer Choice, plant-based products safe for kids and pets — 5.0 stars on Google.
             </p>
             {/* Compact trust chips: label only. "5-Star Rated" and "Since 2015" were dropped here because the
-                sentence above and the counters below already state both. */}
+                sentence above and the counters below already state both.
+                2026-10-09: the two generic chips (Licensed & Insured, Background-Checked) became two
+                verifiable, clickable credentials (BBB accreditation, Google Local Services Ads
+                verification); the product and re-clean chips are unchanged. The generic facts remain in
+                the sentence above and in the "Why" section below. */}
             <div className="grid grid-cols-2 gap-x-3 gap-y-3 mb-6 sm:flex sm:flex-wrap sm:justify-center sm:items-center sm:gap-x-8">
+              <CredentialChips />
               {[
-                { icon: Shield, label: "Licensed & Insured" },
-                { icon: Users, label: "Background-Checked" },
                 { icon: Leaf, label: "EPA Safer Choice" },
                 { icon: CheckCircle, label: "24-Hour Re-Clean Guarantee" },
               ].map((item) => (
@@ -91,6 +95,9 @@ const Index = () => {
                   <p className="font-semibold text-sm text-foreground leading-tight">{item.label}</p>
                 </div>
               ))}
+            </div>
+            <div className="mx-auto mb-6 max-w-3xl">
+              <CredentialsDisclosure />
             </div>
             <div className="mx-auto max-w-4xl border-t border-border pt-5">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto text-center">
