@@ -32,6 +32,8 @@ const HERO_IMAGE = `${IMG}/hero-team.webp`;
 const HERO_IMAGE_640 = `${IMG}/hero-team-640.webp`;
 const OG_IMAGE = `${IMG}/hero-og.jpg`;
 const DATE_ISO = "2026-09-28";
+// 2026-10-10: case-study title, link to the service page in the lead, cost FAQ, noindex DC link removed.
+const MODIFIED_ISO = "2026-10-10";
 // Filled in by the owner before publication; until then the copy says "Washington, DC" only.
 const NEIGHBORHOOD: string | null = null;
 const PLACE = NEIGHBORHOOD ? `${NEIGHBORHOOD}, Washington, DC` : "Washington, DC";
@@ -133,6 +135,10 @@ const faqs: { q: string; a: string }[] = [
     a: "An empty unit can often be done in a day. A furnished, multi-level townhouse takes longer, because every object is cleaned by hand, and each finished room also gets up to 24 hours of HEPA air scrubbing.",
   },
   {
+    q: "How much does post construction cleaning cost in Washington, DC?",
+    a: "We do not price post construction cleaning from a published rate. A technician walks the property first, at no charge, and you get a written scope with the price on it before any work starts. What moves the estimate: how much dust there is and how far it travelled through the house, whether the trades hauled out their debris and packaging, how much paint spatter, adhesive and label residue sits on the surfaces, the floor material and whether it can take moisture, how many separate surfaces the finished rooms hold (a kitchen or bathroom remodel has far more than an empty room of the same size), and whether the home is furnished. This townhouse took more hours than an empty unit of the same size because every object in it had to be cleaned by hand.",
+  },
+  {
     q: "What is the difference between post-renovation and new-construction cleaning?",
     a: "In new construction the house is usually empty, so you clean surfaces. After a renovation, furniture and belongings are often still inside, and the dust settles on all of them. Each item has to be cleaned individually.",
   },
@@ -205,11 +211,14 @@ const EYEBROW = "text-xs font-semibold uppercase tracking-wider text-primary mb-
 
 const PostConstructionCleaningWashingtonDcTownhouse = () => {
   const { seoHelmet } = useSEO({
-    // <title> is the 60-character SERP variant; the H1 and the JSON-LD headline share the longer page framing
-    // ("Inside a 3-Story Townhouse"), as Google asks the headline to match the visible title. Description at 145.
-    title: "Post Construction Cleaning in Washington, DC: A Real Project",
+    // <title> is the 56-character SERP variant; the H1 and the JSON-LD headline share the longer page framing
+    // ("Inside a 3-Story Townhouse"), as Google asks the headline to match the visible title. Description at 159.
+    // 2026-10-10 audit: "Case Study" names the informational angle so the post reads as the story and
+    // /services/post-construction-cleaning (indexable; the DC city×service page is noindex) stays the selling
+    // page, linked from the hero lead. The DC keywords stay: this is the only indexable DC post-construction URL.
+    title: "Post Construction Cleaning in Washington, DC: Case Study",
     description:
-      "See how we removed construction dust from a real Washington DC townhouse: room by room cleaning, a HEPA air scrubber and full bathroom sanitizing.",
+      "Case study: how we cleared construction dust from a furnished 3-story Washington, DC townhouse, room by room, with HEPA vacuums and a sealed-room air scrubber.",
     canonical: URL,
     ogType: "article",
     ogImage: OG_IMAGE,
@@ -224,7 +233,7 @@ const PostConstructionCleaningWashingtonDcTownhouse = () => {
       {seoHelmet}
       <ReadingProgress />
       <Helmet>
-        <meta name="keywords" content="post construction cleaning washington dc, post construction cleaning services, construction dust removal, after construction cleaning, post remodel cleaning dc, hepa air scrubber after renovation" />
+        <meta name="keywords" content="post construction cleaning washington dc, post construction cleaning case study, post renovation cleaning furnished townhouse, construction dust removal, hepa air scrubber after renovation, post remodel cleaning dc" />
         <link rel="preload" as="image" href={HERO_IMAGE} imageSrcSet={`${HERO_IMAGE_640} 640w, ${HERO_IMAGE} 1200w`} imageSizes="(min-width: 1024px) 480px, 100vw" fetchPriority="high" />
         <meta property="og:video" content={`https://www.youtube.com/embed/${PROJECT_VIDEO.id}`} />
         <meta property="og:video:secure_url" content={`https://www.youtube.com/embed/${PROJECT_VIDEO.id}`} />
@@ -234,9 +243,10 @@ const PostConstructionCleaningWashingtonDcTownhouse = () => {
       </Helmet>
       <ArticleSchema
         title="Post Construction Cleaning in Washington, DC: Inside a 3-Story Townhouse"
-        description="See how we removed construction dust from a real Washington DC townhouse: room by room cleaning, a HEPA air scrubber and full bathroom sanitizing."
+        description="Case study: how we cleared construction dust from a furnished 3-story Washington, DC townhouse, room by room, with HEPA vacuums and a sealed-room air scrubber."
         url={URL}
         datePublished={DATE_ISO}
+        dateModified={MODIFIED_ISO}
         image={HERO_IMAGE}
         imageWidth={1200}
         imageHeight={1500}
@@ -265,10 +275,11 @@ const PostConstructionCleaningWashingtonDcTownhouse = () => {
               </h1>
               <p className="text-muted-foreground text-base md:text-lg leading-relaxed max-w-xl mb-4 animate-fade-up" style={{ animationDelay: "200ms" }}>
                 A furnished townhouse, freshly repainted and refloored, cleaned room by room with HEPA vacuums and a sealed-room
-                air scrubber, so the family could move back into a home without construction dust.
+                air scrubber, so the family could move back into a home without construction dust. One real job from our{" "}
+                <Link to="/services/post-construction-cleaning" className="font-semibold text-primary underline-offset-4 hover:underline">post-construction cleaning service</Link>, which covers Washington, DC, Montgomery County and Northern Virginia.
               </p>
               <p className="text-xs sm:text-sm text-muted-foreground uppercase tracking-widest mb-7 animate-fade-up" style={{ animationDelay: "250ms" }}>
-                By Rodrigo Reis, Owner · MD · DC · VA · <time dateTime={DATE_ISO}>September 28, 2026</time>
+                By Rodrigo Reis, Owner · MD · DC · VA · <time dateTime={DATE_ISO}>September 28, 2026</time> · <span className="whitespace-nowrap">Updated <time dateTime={MODIFIED_ISO}>October 10, 2026</time></span>
               </p>
               <div className="flex flex-col sm:flex-row gap-4 animate-fade-up" style={{ animationDelay: "300ms" }}>
                 <Button variant="cta" size="lg" className="text-sm px-8 h-14 rounded-full shadow-lg shadow-accent/25 hover:shadow-accent/40 hover:-translate-y-0.5 transition-all duration-300" asChild>
@@ -604,7 +615,6 @@ const PostConstructionCleaningWashingtonDcTownhouse = () => {
               <ul className="grid sm:grid-cols-2 gap-3 self-start">
                 {[
                   { to: "/services/post-construction-cleaning", label: "Post-construction cleaning service", sub: "Scope, what to confirm in the quote" },
-                  { to: "/locations/washington-dc/post-construction-cleaning", label: "Washington, DC", sub: "Post-construction cleaning" },
                   { to: "/washington-dc", label: "Washington, DC service area", sub: "Neighborhoods we clean" },
                   { to: "/locations/bethesda-md/post-construction-cleaning", label: "Bethesda, MD", sub: "Post-construction cleaning" },
                   { to: "/locations/silver-spring-md/post-construction-cleaning", label: "Silver Spring, MD", sub: "Post-construction cleaning" },

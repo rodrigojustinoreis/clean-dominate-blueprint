@@ -562,6 +562,15 @@ Our DC deep cleaning protocol starts with a surface-type inventory: what floors 
     ],
   },
 
+  // 2026-10-10: the template renders `${city.name}, ${city.state}` = "Washington DC, DC" for this city.
+  // Title/H1 only, so the page that sells post-construction work in DC reads correctly in the SERP
+  // (the case-study post now links here with the exact anchor "post construction cleaning in Washington, DC").
+  "washington-dc/post-construction-cleaning": {
+    metaTitle: "Post Construction Cleaning Washington, DC | Capital Clean Care",
+    metaDescription: "Post construction cleaning in Washington, DC: construction dust removal, HEPA air scrubbing and bathroom sanitizing after a renovation. Insured teams.",
+    h1: "Professional Post Construction Cleaning in Washington, DC",
+  },
+
   "arlington-va/house-cleaning": {
     // top queries GSC: "cleaning services arlington va" / "apartment cleaning arlington va"
     metaTitle: "House Cleaning Arlington VA | Home & Apartment Cleaning",

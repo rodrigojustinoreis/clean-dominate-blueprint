@@ -177,7 +177,8 @@ describe("Montgomery County post-construction guide — CTAs go to the service p
     const target = 'href="/services/post-construction-cleaning#quote"';
     expect(main.split(target).length - 1).toBe(3);
     expect(main).not.toContain('href="/#quote"');
-    expect(main.split('href="/services/post-construction-cleaning"').length - 1).toBe(2); // the two plain service links stay
+    // the two plain service links stay + the "Related Services" link (post-construction posts lead with their own service since 2026-10-10)
+    expect(main.split('href="/services/post-construction-cleaning"').length - 1).toBe(3);
     expect(main).toContain('href="/locations/rockville-md/post-construction-cleaning"');
     expect(main).toContain('href="/locations/silver-spring-md/post-construction-cleaning"');
   });

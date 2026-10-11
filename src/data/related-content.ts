@@ -327,16 +327,26 @@ export function guidesForCityService(citySlug: string, serviceSlug: string, limi
 
 // ── Service / city selectors ────────────────────────────────────────────────────
 
-/** The service pages relevant to a post (from its categories) + a matching local city×service. */
+// Post-construction / post-renovation posts live under "move-out-guides" (no category of their own),
+// so the category map alone would send their "Related Services" to move-out cleaning. Their own
+// service page comes first (2026-10-10, DC townhouse case-study audit).
+const SERVICE_FOR_SLUG_TOKEN: ReadonlyArray<readonly [string, string]> = [
+  ["post-construction", "post-construction-cleaning"],
+  ["post-renovation", "post-construction-cleaning"],
+];
+
+/** The service pages relevant to a post (slug-token services first, then its categories) + a matching local city×service. */
 export function servicesForPost(slug: string, limit = 4): RelatedLink[] {
   const post = allPosts.find((p) => p.slug === slug);
   if (!post) return [];
   const cats = categoriesForPost(post);
   const cityMatch = ALL_CITY_SLUGS.find((cs) => post.slug.includes(cityToken(cs)));
   const links: RelatedLink[] = [];
-  for (const cat of cats) {
-    const svc = SERVICE_FOR_CATEGORY[cat];
-    if (!svc) continue;
+  const services = Array.from(new Set<string>([
+    ...SERVICE_FOR_SLUG_TOKEN.filter(([token]) => post.slug.includes(token)).map(([, svc]) => svc),
+    ...cats.map((cat) => SERVICE_FOR_CATEGORY[cat]).filter((svc): svc is string => Boolean(svc)),
+  ]));
+  for (const svc of services) {
     if (cityMatch && isIndexable(`/locations/${cityMatch}/${svc}`)) {
       links.push({ href: `/locations/${cityMatch}/${svc}`, title: `${SERVICE_LABEL[svc]} in ${cityLabel(cityMatch)}` });
     }

@@ -157,9 +157,10 @@ describe("Montgomery County post-construction guide (P5)", () => {
     expect(page.count('href="/locations/silver-spring-md/post-construction-cleaning"')).toBe(1);
     // UX batch 2026-09-16: the inline CTA (one of the former 3 plain links) now targets the service page #quote,
     // and the hero/final CTAs moved from /#quote to the same target — total service-page links 3 → 5.
-    expect(page.count('href="/services/post-construction-cleaning"')).toBe(2);
+    // 2 plain links in the body + 1 in "Related Services" (post-construction posts lead with their own service since 2026-10-10)
+    expect(page.count('href="/services/post-construction-cleaning"')).toBe(3);
     expect(page.count('href="/services/post-construction-cleaning#quote"')).toBe(3);
-    expect(page.count('href="/services/post-construction-cleaning')).toBe(5);
+    expect(page.count('href="/services/post-construction-cleaning')).toBe(6);
     expect(page.count('href="/#quote"')).toBe(0);
   });
   it("keeps its H1", () => {
