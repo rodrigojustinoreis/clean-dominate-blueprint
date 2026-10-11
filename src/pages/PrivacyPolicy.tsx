@@ -91,7 +91,7 @@ const PrivacyPolicy = () => {
       <LegalSection id="contact" title="7. Contact Us" icon={Mail}>
         <p>For privacy questions or data requests, contact us at:</p>
         <ul className={LEGAL_LIST}>
-          <li>Email: <a href="mailto:info@capitalcleancare.com" className={LEGAL_LINK}>info@capitalcleancare.com</a></li>
+          <li>Email: <a href="mailto:capitalcleancare@gmail.com" className={LEGAL_LINK}>capitalcleancare@gmail.com</a></li>
           <li>Phone: <a href="tel:+12407042551" className={LEGAL_LINK}>(240) 704-2551</a></li>
           <li>Address: 4111 Postgate Terrace, Silver Spring, MD 20906</li>
         </ul>

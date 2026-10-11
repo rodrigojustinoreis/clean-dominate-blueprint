@@ -173,7 +173,7 @@ const LegalDoc = ({ head, title, accentWord, href, icon: PillIcon, updated, lede
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Button variant="cta" size="lg" className="rounded-full shadow-lg shadow-accent/25 hover:shadow-accent/40 hover:-translate-y-0.5 transition-all duration-300" asChild>
-              <a href="mailto:info@capitalcleancare.com">Email info@capitalcleancare.com <ArrowRight className="ml-1 h-4 w-4" /></a>
+              <a href="mailto:capitalcleancare@gmail.com">Email capitalcleancare@gmail.com <ArrowRight className="ml-1 h-4 w-4" /></a>
             </Button>
             <Button variant="secondary" size="lg" className="rounded-full" asChild>
               <a href="tel:+12407042551" onClick={() => trackPhoneClick("legal_page")}>Call (240) 704-2551</a>

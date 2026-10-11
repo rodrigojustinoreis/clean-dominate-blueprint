@@ -1,4 +1,4 @@
-import { Phone, Mail, Clock, MapPin } from "lucide-react";
+import { Phone, Mail, Clock } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import Layout from "@/components/layout/Layout";
 import QuoteForm from "@/components/QuoteForm";
@@ -51,10 +51,9 @@ const Contact = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
             {[
               { icon: Phone, label: "Phone", value: "(240) 704-2551", href: "tel:+12407042551" },
-              // Domain email configured: info@capitalcleancare.com
-              { icon: Mail, label: "Email", value: "info@capitalcleancare.com", href: "mailto:info@capitalcleancare.com" },
+              // Domain email configured: capitalcleancare@gmail.com
+              { icon: Mail, label: "Email", value: "capitalcleancare@gmail.com", href: "mailto:capitalcleancare@gmail.com" },
               { icon: Clock, label: "Hours", value: "24/7 (calls, email & booking)" },
-              { icon: MapPin, label: "Address", value: "4111 Postgate Terrace, Silver Spring, MD 20906" },
             ].map((item) => (
               <Card key={item.label}>
                 <CardContent className="p-4 flex items-start gap-3">
@@ -74,22 +73,6 @@ const Contact = () => {
             ))}
           </div>
 
-          {/* Google Maps */}
-          <Card className="max-w-5xl mx-auto mt-8">
-            <CardContent className="p-0 overflow-hidden rounded-lg">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3098.5!2d-77.02!3d39.08!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s4111+Postgate+Terrace+Silver+Spring+MD+20906!5e0!3m2!1sen!2sus!4v1"
-                width="100%"
-                height="250"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Capital Clean Care location"
-                className="rounded-lg"
-              />
-            </CardContent>
-          </Card>
         </div>
       </section>
 

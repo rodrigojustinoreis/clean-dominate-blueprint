@@ -75,7 +75,7 @@ const TermsOfService = () => {
           <li><strong>Frequency:</strong> message frequency varies, typically 1–4 messages per month.</li>
           <li><strong>Cost:</strong> message and data rates may apply.</li>
           <li><strong>Opt out:</strong> reply STOP at any time to stop receiving messages. You will receive one confirmation message and no further texts.</li>
-          <li><strong>Help:</strong> reply HELP, call <a href="tel:+12407042551" className={LEGAL_LINK}>(240) 704-2551</a>, or email <a href="mailto:info@capitalcleancare.com" className={LEGAL_LINK}>info@capitalcleancare.com</a>.</li>
+          <li><strong>Help:</strong> reply HELP, call <a href="tel:+12407042551" className={LEGAL_LINK}>(240) 704-2551</a>, or email <a href="mailto:capitalcleancare@gmail.com" className={LEGAL_LINK}>capitalcleancare@gmail.com</a>.</li>
           <li>Consent to receive text messages is not a condition of purchase. Carriers are not liable for delayed or undelivered messages.</li>
           <li>See our <a href="/privacy-policy#sms-privacy" className={LEGAL_LINK}>Privacy Policy</a> for how we handle your information. Mobile information is never shared with third parties for marketing purposes.</li>
         </ul>
@@ -88,7 +88,7 @@ const TermsOfService = () => {
       <LegalSection id="contact" title="10. Contact" icon={Phone}>
         <p>For questions about these terms:</p>
         <ul className={LEGAL_LIST}>
-          <li>Email: <a href="mailto:info@capitalcleancare.com" className={LEGAL_LINK}>info@capitalcleancare.com</a></li>
+          <li>Email: <a href="mailto:capitalcleancare@gmail.com" className={LEGAL_LINK}>capitalcleancare@gmail.com</a></li>
           <li>Phone: <a href="tel:+12407042551" className={LEGAL_LINK}>(240) 704-2551</a></li>
           <li>Address: 4111 Postgate Terrace, Silver Spring, MD 20906</li>
         </ul>

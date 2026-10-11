@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { GOOGLE_LISTING_URL } from "@/data/realReviews";
 import { BUSINESS_INFO } from "@/data/business-info";
 import { Button } from "@/components/ui/button";
@@ -6,14 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Slider } from "@/components/ui/slider";
-import { CheckCircle, MessageCircle, Clock, Phone, Star, BedDouble, Bath, Lock, Home, ChevronLeft, ChevronRight } from "lucide-react";
-import { CREDENTIALS } from "@/data/verified-credentials";
-
-/* /contact trust-row variant only. BBB link = the accredited profile from the shared source; the
- * Google card goes to the owner's Business Profile share link (2026-10-10), not to GOOGLE_LISTING_URL
- * used by the reviews card, which is unchanged. */
-const BBB = CREDENTIALS.find((c) => c.id === "bbb")!;
-const CONTACT_GOOGLE_PROFILE_URL = "https://share.google/FhWh6I5kFwqwg8mnN";
+import { CheckCircle, MessageCircle, Clock, Phone, Star, BedDouble, Bath, Lock, Home } from "lucide-react";
 import {
   Select,
   SelectContent,
@@ -24,6 +17,7 @@ import {
 import { toast } from "sonner";
 import { trackQuoteFormStart, trackQuoteFormSubmit } from "@/lib/analytics";
 import quotePhoto from "@/assets/luana-cleaning.webp";
+import TrustMarquee from "@/components/TrustMarquee";
 
 interface QuoteFormProps {
   submitLabel?: string;
@@ -38,10 +32,10 @@ interface QuoteFormProps {
    *  validates the service area. The /services/house-cleaning ads landing uses its
    *  own inline form (QuoteFormInline) and is unaffected by this prop. */
   requireAddress?: boolean;
-  /** Trust row variant. "credentials" (opt-in, /contact only, 2026-10-10) swaps the Facebook and
-   *  Nextdoor cards for two verifiable credentials from src/data/verified-credentials.ts
-   *  (BBB accreditation, Google Local Services Ads verification). Visual only: fields, validation,
-   *  submit, analytics and success states are the same in both variants. */
+  /** Trust row variant. "credentials" (opt-in, /contact only, 2026-10-11) keeps only the
+   *  Licensed & Insured and Google reviews cards above the form and adds the credentials marquee
+   *  (TrustMarquee) right after it. Visual only: fields, validation, submit, analytics and success
+   *  states are the same in both variants. */
   trustVariant?: "default" | "credentials";
 }
 
@@ -71,177 +65,6 @@ const card3dClass = "group relative flex items-center gap-2.5 rounded-2xl px-2 p
 const glossOverlay = (
   <span className="pointer-events-none absolute inset-x-0 top-0 h-1/2 rounded-t-2xl" style={{ background: "linear-gradient(to bottom,rgba(255,255,255,0.55),transparent)" }} />
 );
-
-const trustSlide = "shrink-0";
-/* Trust cards: uniform 80px tiles, slightly larger type than the default row for legibility. */
-const trustCard =
-  "group relative flex h-20 w-[180px] items-center gap-2.5 overflow-hidden rounded-2xl pl-2.5 pr-3 text-left sm:w-[188px] transition-all duration-300 hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2";
-const trustCardStyle = (glow: string): React.CSSProperties => ({
-  background: "linear-gradient(145deg,#ffffff 0%,#f4f7fb 100%)",
-  boxShadow: `0 1px 1px rgba(255,255,255,0.95) inset, 0 -1px 2px rgba(0,0,0,0.04) inset, 0 10px 22px ${glow}, 0 2px 4px rgba(15,30,54,0.06)`,
-  border: "1px solid rgba(23,69,130,0.10)",
-});
-const trustIconBox = "relative flex h-11 w-11 shrink-0 items-center justify-center rounded-xl transition-transform duration-300 group-hover:scale-105";
-const trustIconStyle: React.CSSProperties = { background: "linear-gradient(145deg,#ffffff,#eaf0f8)", boxShadow: "0 3px 8px rgba(15,30,54,0.12), 0 1px 1px rgba(255,255,255,0.9) inset" };
-const trustTitle = "block text-[13px] font-extrabold leading-tight text-gray-900";
-const trustSub = "block text-[11px] font-medium leading-tight text-gray-600";
-/* Marquee speed in CSS px per second (uniform, linear). */
-const MARQUEE_PX_PER_S = 36;
-
-/** The four trust cards. `clone` marks the second copy used only to make the loop seamless. */
-const TrustCards = ({ clone = false }: { clone?: boolean }) => (
-  <>
-          {/* Google Verified — official badge (public/images/trust/SOURCES.md), current program name,
-              whole card links to the owner's Google Business Profile (share link, 2026-10-10). */}
-          <li className={trustSlide} aria-hidden={clone || undefined}>
-            <a href={CONTACT_GOOGLE_PROFILE_URL} target="_blank" rel="noopener noreferrer"
-              aria-label="Google Verified, Local Services Ads: open our Google Business Profile (opens in a new tab)"
-              className={trustCard} style={trustCardStyle("rgba(26,115,232,0.18)")}>
-              {glossOverlay}
-              <span className={trustIconBox} style={trustIconStyle}>
-                <img src="/images/trust/google-verified.svg" alt="" width={25} height={25} className="h-7 w-7" decoding="async" />
-              </span>
-              <span className="relative min-w-0">
-                <span className={trustTitle}>Google Verified</span>
-                <span className={trustSub}>Local Services Ads</span>
-              </span>
-            </a>
-          </li>
-          {/* BBB Accredited Business — official seal only; the PNG is 1200x1030 with the mark (incl. TM)
-              between 28.4% and 71.6% of its height, so the box hides only the transparent 24% above
-              and below; the file is untouched. Whole card links to the BBB profile from CREDENTIALS. */}
-          <li className={trustSlide} aria-hidden={clone || undefined}>
-            <a href={BBB.href} target="_blank" rel="noopener noreferrer"
-              aria-label="BBB Accredited Business since October 2026: open our BBB profile (opens in a new tab)"
-              className={`${trustCard} justify-center px-3 lg:px-1.5`} style={trustCardStyle("rgba(23,69,130,0.18)")}>
-              {glossOverlay}
-              <span className="relative block w-[136px] overflow-hidden transition-transform duration-300 group-hover:scale-105 lg:w-[122px]" style={{ aspectRatio: "1200 / 535" }}>
-                <img src="/images/trust/bbb-accredited-business.png" alt="BBB Accredited Business seal" width={1200} height={1030}
-                  className="h-auto w-full" style={{ marginTop: "-24%" }} decoding="async" />
-              </span>
-            </a>
-          </li>
-  </>
-);
-
-/* Continuous, uniform motion (owner's request, 10/10/2026): the row glides like a ticker, using the
- * Web Animations API on the track (no library, no CSS file changes). A second, aria-hidden copy of the
- * four cards makes the loop seamless. It pauses while the pointer is over it, while anything inside
- * has keyboard focus, while the user touches it, and when the tab is hidden. With
- * prefers-reduced-motion the row does not move: it becomes a plain horizontal scroller with arrows. */
-const TrustCarousel = () => {
-  const track = useRef<HTMLUListElement>(null);
-  const anim = useRef<Animation | null>(null);
-  const [reduced, setReduced] = useState(false);
-  // The seamless clone is added only on the client, so the prerendered HTML has the four cards once.
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
-  const [canPrev, setCanPrev] = useState(false);
-  const [canNext, setCanNext] = useState(true);
-
-  useEffect(() => {
-    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const apply = () => setReduced(mq.matches);
-    apply();
-    mq.addEventListener("change", apply);
-    return () => mq.removeEventListener("change", apply);
-  }, []);
-
-  // Marquee animation (not in reduced motion).
-  useEffect(() => {
-    const el = track.current;
-    if (!el || reduced || !mounted || typeof el.animate !== "function") return;
-    const start = () => {
-      anim.current?.cancel();
-      const distance = el.scrollWidth / 2; // one full set of cards plus its gap
-      if (distance < 10) return;
-      anim.current = el.animate([{ transform: "translateX(0)" }, { transform: `translateX(-${distance}px)` }], {
-        duration: (distance / MARQUEE_PX_PER_S) * 1000,
-        iterations: Infinity,
-        easing: "linear",
-      });
-    };
-    start();
-    const ro = typeof ResizeObserver !== "undefined" ? new ResizeObserver(start) : null;
-    ro?.observe(el);
-    const onVis = () => (document.hidden ? anim.current?.pause() : anim.current?.play());
-    document.addEventListener("visibilitychange", onVis);
-    return () => {
-      ro?.disconnect();
-      document.removeEventListener("visibilitychange", onVis);
-      anim.current?.cancel();
-      anim.current = null;
-    };
-  }, [reduced, mounted]);
-  const pause = () => anim.current?.pause();
-  const play = () => anim.current?.play();
-
-  // Reduced-motion fallback: manual scroll with arrows.
-  const update = () => {
-    const el = track.current;
-    if (!el) return;
-    setCanPrev(el.scrollLeft > 2);
-    setCanNext(el.scrollLeft + el.clientWidth < el.scrollWidth - 2);
-  };
-  useEffect(() => {
-    if (!reduced) return;
-    update();
-    window.addEventListener("resize", update);
-    return () => window.removeEventListener("resize", update);
-  }, [reduced]);
-  const scrollByCard = (dir: 1 | -1) => {
-    const el = track.current;
-    if (!el) return;
-    const card = el.querySelector("li");
-    el.scrollBy({ left: dir * (card ? card.getBoundingClientRect().width + 12 : 200), behavior: "auto" });
-  };
-  const arrow =
-    "flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-primary/15 bg-white text-primary shadow-sm transition-colors hover:bg-primary hover:text-white disabled:cursor-default disabled:opacity-30 disabled:hover:bg-white disabled:hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2";
-
-  return (
-    <div
-      role="region"
-      aria-label="Trust and verification"
-      className="rounded-2xl bg-gradient-to-br from-primary/[0.05] via-white to-accent/[0.06] px-3 pb-1 pt-3 sm:px-4"
-      onMouseEnter={pause}
-      onMouseLeave={play}
-      onFocusCapture={pause}
-      onBlurCapture={(e) => { if (!e.currentTarget.contains(e.relatedTarget as Node | null)) play(); }}
-      onTouchStart={pause}
-      onTouchEnd={play}
-      onTouchCancel={play}
-    >
-      <p className="mb-1 text-center text-[11px] font-bold uppercase tracking-[0.16em] text-primary">Verified by</p>
-      <div className="flex items-center gap-2">
-        {reduced && (
-          <button type="button" onClick={() => scrollByCard(-1)} disabled={!canPrev} aria-label="Previous trust card" className={arrow}>
-            <ChevronLeft className="h-5 w-5" aria-hidden="true" />
-          </button>
-        )}
-        {/* Edge fades so cards glide in and out instead of being cut. */}
-        <div
-          className="relative min-w-0 flex-1 overflow-hidden"
-          style={{ maskImage: "linear-gradient(to right, transparent, #000 8%, #000 92%, transparent)", WebkitMaskImage: "linear-gradient(to right, transparent, #000 8%, #000 92%, transparent)" }}
-        >
-          <ul
-            ref={track}
-            onScroll={reduced ? update : undefined}
-            className={`flex gap-3 py-4 ${reduced ? "w-full snap-x snap-mandatory overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden" : "w-max"}`}
-            style={{ perspective: "800px" }}
-          >
-            <TrustCards />
-            {mounted && !reduced && <TrustCards clone />}
-          </ul>
-        </div>
-        {reduced && (
-          <button type="button" onClick={() => scrollByCard(1)} disabled={!canNext} aria-label="Next trust card" className={arrow}>
-            <ChevronRight className="h-5 w-5" aria-hidden="true" />
-          </button>
-        )}
-      </div>
-    </div>
-  );
-};
 
 const QuoteForm = ({ submitLabel = "GET MY FREE QUOTE →", defaultService = "", showPhoto = true, compact = false, requireAddress = false, trustVariant = "default" }: QuoteFormProps) => {
   const [formData, setFormData] = useState({
@@ -546,7 +369,7 @@ const QuoteForm = ({ submitLabel = "GET MY FREE QUOTE →", defaultService = "",
 
       {/* ── 3D trust badge cards (landing style). In the "credentials" variant every card moves to
           the carousel after the form, so nothing renders here. ── */}
-      <div className={`flex flex-wrap items-center justify-center gap-2 sm:gap-3${compact ? " hidden lg:flex" : ""}`} style={{ perspective: "800px" }}>
+      <div className={`flex flex-wrap items-stretch justify-center gap-2 sm:gap-3${compact ? " hidden lg:flex" : ""}`} style={{ perspective: "800px" }}>
         {/* Crest — Licensed & Insured */}
         <div className={card3dClass} style={card3dStyle("hsl(195 85% 45% / 0.16)")}>
           {glossOverlay}
@@ -559,8 +382,8 @@ const QuoteForm = ({ submitLabel = "GET MY FREE QUOTE →", defaultService = "",
             </svg>
           </span>
           <span className="relative leading-tight">
-            <span className="block text-[12px] font-extrabold text-gray-800">Licensed &amp; Insured</span>
-            <span className="block text-[10px] text-gray-500">Guaranteed</span>
+            <span className="block text-[12px] font-extrabold text-gray-900">Licensed &amp; Insured</span>
+            <span className="block text-[11px] font-medium text-gray-600">Guaranteed</span>
           </span>
         </div>
 
@@ -578,11 +401,11 @@ const QuoteForm = ({ submitLabel = "GET MY FREE QUOTE →", defaultService = "",
             </svg>
           </span>
           <span className="relative leading-tight">
-            <span className="block text-[12px] font-extrabold text-gray-800">Google</span>
+            <span className="block text-[12px] font-extrabold text-gray-900">Google</span>
             <span className="flex items-center gap-0.5">
               {[...Array(5)].map((_, i) => <Star key={i} className="h-2.5 w-2.5 fill-amber-400 text-amber-400" />)}
             </span>
-            <span className="block text-[10px] text-gray-500">{BUSINESS_INFO.rating.value} on Google</span>
+            <span className="block text-[11px] font-medium text-gray-600">{BUSINESS_INFO.rating.value} on Google</span>
           </span>
         </a>
 
@@ -622,9 +445,6 @@ const QuoteForm = ({ submitLabel = "GET MY FREE QUOTE →", defaultService = "",
         )}
       </div>
 
-      {/* ── Credentials marquee (opt-in variant, /contact): in the slot the Facebook and Nextdoor
-          cards used to take, right under the two static cards and above the form. ── */}
-      {trustVariant === "credentials" && <TrustCarousel />}
 
       <form onSubmit={handleSubmit} onFocusCapture={handleFormStart} className="space-y-4">
         {/* Honeypot — visually hidden, off-tab, no autofill. Bots fill it; real users never do. */}
@@ -764,7 +584,7 @@ const QuoteForm = ({ submitLabel = "GET MY FREE QUOTE →", defaultService = "",
               onChange={(e) => setFormData((p) => ({ ...p, smsConsent: e.target.checked }))}
               className="mt-0.5 h-4 w-4 rounded border-border accent-accent"
             />
-            <span className="text-xs text-muted-foreground">
+            <span className="text-xs leading-5 text-muted-foreground">
               I agree to receive SMS appointment confirmations, reminders, and service updates from Capital Clean Care at the phone number provided. Message frequency varies (up to 4 msgs/month). Msg &amp; data rates may apply. Reply HELP for help, STOP to opt out. Consent is not a condition of purchase.{" "}
               <a href="/terms-of-service#sms" target="_blank" rel="noopener" className="underline">Terms &amp; Conditions</a>
               {" | "}
@@ -778,7 +598,7 @@ const QuoteForm = ({ submitLabel = "GET MY FREE QUOTE →", defaultService = "",
               onChange={(e) => setFormData((p) => ({ ...p, emailConsent: e.target.checked }))}
               className="mt-0.5 h-4 w-4 rounded border-border accent-accent"
             />
-            <span className="text-xs text-muted-foreground">
+            <span className="text-xs leading-5 text-muted-foreground">
               I'd like to receive email promotions and cleaning tips. Unsubscribe anytime.
             </span>
           </label>
@@ -794,11 +614,14 @@ const QuoteForm = ({ submitLabel = "GET MY FREE QUOTE →", defaultService = "",
           {submitting ? "Sending…" : submitLabel}
         </Button>
 
-        <p className="flex items-center justify-center gap-1.5 text-[11px] text-muted-foreground">
-          <Lock className="h-3 w-3" /> Your information is 100% secure and will never be shared.
+        <p className="text-center text-[11px] text-muted-foreground">
+          <Lock className="-mt-px mr-1.5 inline-block h-3 w-3 align-middle" /> Your information is 100% secure and will never be shared.
         </p>
       </form>
 
+      {/* ── Credentials marquee (opt-in variant, /contact): right after the form, near the submit
+          button. Official marks, whole cards are the links (TrustMarquee). ── */}
+      {trustVariant === "credentials" && <TrustMarquee />}
     </div>
   );
 };

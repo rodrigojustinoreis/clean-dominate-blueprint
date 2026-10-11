@@ -32,46 +32,29 @@ describe("QuoteForm trust row variant", () => {
     expect(def).not.toContain("/images/trust/");
   });
 
-  it("credentials variant: Licensed & Insured and Google reviews stay at the top, the marquee with the two credentials replaces Facebook/Nextdoor, nothing after the form", () => {
-    const formStart = cred.indexOf("<form");
-    const before = cred.slice(0, formStart);
+  it("credentials variant: only Licensed & Insured and Google reviews above the form; the marquee (five cards) right after the form", () => {
+    const before = cred.slice(0, cred.indexOf("<form"));
     const after = cred.slice(cred.indexOf("</form>") + 7);
-    expect(after).toBe("</div>");
-    for (const s of ["Licensed &amp; Insured", "on Google", BBB, GOOGLE_PROFILE, "Google Verified", "Local Services Ads", "/images/trust/google-verified.svg", "/images/trust/bbb-accredited-business.png", "BBB Accredited Business seal", 'role="region"', 'aria-label="Trust and verification"']) {
-      expect(before, `${s} must appear above the form`).toContain(s);
-    }
-    expect(before.split(`href="${BBB}"`).length - 1).toBe(1);
-    expect(before.split(`href="${GOOGLE_PROFILE}"`).length - 1).toBe(1);
-    expect(before.split("https://www.google.com/maps?cid=1774420840079969097").length - 1).toBe(1);
-    expect(before.split("<li").length - 1).toBe(2);
-    expect(cred).not.toContain("https://www.facebook.com/capital.clean.care");
-    expect(cred).not.toContain("Nextdoor");
+    expect(before).toContain("Licensed &amp; Insured");
+    expect(before).toContain("on Google");
+    for (const s of ["Trust and verification", BBB, GOOGLE_PROFILE, "/images/trust/", "Google Verified", "Nextdoor", "facebook.com/capital"]) expect(before, `${s} above the form`).not.toContain(s);
+    expect(after).toContain('aria-label="Trust and verification"');
+    expect(after.split("<li").length - 1).toBe(5);
+    expect(after.split(`href="${BBB}"`).length - 1).toBe(1);
+    expect(after.split(`href="${GOOGLE_PROFILE}"`).length - 1).toBe(1);
+    expect(after).toContain("Nextdoor");
+    expect(after).not.toMatch(/<button/);
+    expect(cred).not.toContain("facebook.com/capital");
     expect(cred).not.toContain(GOOGLE_HELP);
-    for (const bad of ["A+", "Google Guaranteed", "money-back", "Nextdoor", "Facebook"]) expect(cred).not.toMatch(new RegExp(bad.replace("+", "\\+")));
-  });
-
-  it("the marquee region has no button in the server HTML (arrows exist only for reduced motion) and sits before the form", () => {
-    const region = cred.slice(cred.indexOf('aria-label="Trust and verification"'), cred.indexOf("<form"));
-    expect(region.length).toBeGreaterThan(0);
-    expect(region).not.toMatch(/<button/);
+    for (const bad of ["A+", "Google Guaranteed", "money-back"]) expect(cred).not.toMatch(new RegExp(bad.replace("+", "\\+")));
   });
 
   it("the form markup (fields, names, types, required flags, submit) is byte-identical in both variants, and the default has nothing after the form", () => {
     expect(formPart(cred)).toBe(formPart(def));
     expect(def.slice(def.indexOf("</form>") + 7)).toBe("</div>");
     expect(def).toContain("Nextdoor");
+    expect(def).not.toContain("Trust and verification");
     expect(fields(formPart(cred))).toEqual(fields(formPart(def)));
     expect(fields(formPart(def)).length).toBeGreaterThan(8);
-  });
-
-  it("shows no visible link captions and the official marks have alt/aria text", () => {
-    for (const caption of ["View Google profile", "Verify BBB profile", "About verification", "Verify profile"]) expect(cred).not.toContain(caption);
-    expect(cred).toContain('alt="BBB Accredited Business seal"');
-    expect(cred.indexOf("Google Verified")).toBeLessThan(cred.indexOf("BBB Accredited Business seal"));
-  });
-
-  it("credential cards are links that open in a new tab with an accessible name", () => {
-    expect(cred).toMatch(new RegExp(`<a[^>]*href="${BBB.replace(/[.?]/g, "\\$&")}"[^>]*target="_blank"[^>]*rel="noopener noreferrer"[^>]*aria-label="BBB Accredited Business since October 2026: open our BBB profile \\(opens in a new tab\\)"`));
-    expect(cred).toMatch(new RegExp(`<a[^>]*href="${GOOGLE_PROFILE.replace(/[./?]/g, "\\$&")}"[^>]*target="_blank"[^>]*rel="noopener noreferrer"[^>]*aria-label="Google Verified, Local Services Ads: open our Google Business Profile \\(opens in a new tab\\)"`));
   });
 });
