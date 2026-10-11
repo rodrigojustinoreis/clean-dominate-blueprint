@@ -4,7 +4,7 @@ import { isIndexable, serviceCardHref, nationalServiceHref } from "./related-con
 import { services } from "./services";
 import { slServices } from "./service-locations";
 
-const NAMES: Record<string, string> = { "bethesda-md": "Bethesda", "gaithersburg-md": "Gaithersburg", "fairfax-va": "Fairfax", "alexandria-va": "Alexandria" };
+const NAMES: Record<string, string> = { "bethesda-md": "Bethesda", "gaithersburg-md": "Gaithersburg", "fairfax-va": "Fairfax", "alexandria-va": "Alexandria", "rockville-md": "Rockville" };
 
 /** Every destination the default hub cards link today (local list + national grid), indexable only. */
 function legacyDestinations(citySlug: string): Set<string> {
@@ -21,10 +21,10 @@ function legacyDestinations(citySlug: string): Set<string> {
 }
 
 describe("hub service selection (opt-in hubs)", () => {
-  it("is null for hubs that are not curated (negative control: Rockville, Silver Spring)", () => {
-    expect(hubServiceSelection("rockville-md", "Rockville")).toBeNull();
+  it("is null for hubs that are not curated (negative control: Silver Spring, Germantown)", () => {
     expect(hubServiceSelection("silver-spring-md", "Silver Spring")).toBeNull();
-    expect(CURATED_HUBS.size).toBe(4);
+    expect(hubServiceSelection("germantown-md", "Germantown")).toBeNull();
+    expect(CURATED_HUBS.size).toBe(5);
   });
 
   for (const slug of CURATED_HUBS) {

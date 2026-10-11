@@ -1,5 +1,6 @@
 import { useParams, Link } from "react-router-dom";
-import { CheckCircle, MapPin, ArrowRight, Phone, Shield, Leaf, Star, Sparkles, ChevronDown } from "lucide-react";
+import { CheckCircle, MapPin, ArrowRight, Phone, Shield, Leaf, Star, Sparkles, ChevronDown, Award, Clock } from "lucide-react";
+import { COST_PRICE_ROWS } from "@/data/cost-cities";
 
 const teamPhotos = [
   "/images/team/team-mopping-dark-floor.jpg",
@@ -203,37 +204,76 @@ const HUB_CONTEXT_LINK: Readonly<Record<string, { before: string; label: string;
   },
 };
 
+// 2026-10-11: each row carries a real photo of our team doing that kind of work (thumbnails cut from
+// the owner's photo bank in public/images/team; see public/images/locations/rockville-md/services).
+const ROCKVILLE_THUMB = "/images/locations/rockville-md/services";
 const rockvilleServiceGuide = [
   {
     name: "House cleaning",
     bestFor: "Routine home care and a dependable reset",
     href: "/locations/rockville-md/house-cleaning",
+    img: "house-cleaning", imgAlt: "Capital Clean Care employee mopping a hardwood floor in a bright bedroom",
   },
   {
     name: "Recurring cleaning",
     bestFor: "Weekly, bi-weekly, or monthly maintenance",
     href: "/locations/rockville-md/recurring-cleaning",
+    img: "recurring-cleaning", imgAlt: "Two Capital Clean Care employees cleaning a living room on a scheduled visit",
   },
   {
     name: "Deep cleaning",
     bestFor: "First visits, seasonal buildup, or neglected details",
     href: "/locations/rockville-md/deep-cleaning",
+    img: "deep-cleaning", imgAlt: "Capital Clean Care employee scrubbing shower tile with a power scrubber",
   },
   {
     name: "Move-out cleaning",
     bestFor: "Turnovers, final walkthroughs, and deposit-ready homes",
     href: "/locations/rockville-md/move-out-cleaning",
+    img: "move-out-cleaning", imgAlt: "Capital Clean Care employee mopping the floor of an empty living room with tall windows",
   },
   {
     name: "Apartment cleaning",
     bestFor: "Condos, apartments, elevators, and managed buildings",
     href: "/services/condo-cleaning", // Fase 3 / Lote 1: the Rockville apartment twin is noindex
+    img: "apartment-cleaning", imgAlt: "Capital Clean Care employee making a bed in a condo bedroom",
   },
   {
     name: "Eco-friendly cleaning",
     bestFor: "Homes with children, pets, allergies, or fragrance concerns",
     href: "/locations/rockville-md/eco-friendly-cleaning",
+    img: "eco-friendly-cleaning", imgAlt: "Capital Clean Care employee carrying a basket of plant-based cleaning products",
   },
+];
+
+// Rockville hub trust row and "why" list (2026-10-11): verifiable facts only, no "100%" or
+// "satisfaction guaranteed" wording (the 24-hour re-clean guarantee is the one the owner stands behind).
+const rockvilleTrustItems = [
+  { icon: Shield, label: "Licensed & Insured" },
+  { icon: CheckCircle, label: "Background-Checked Employees" },
+  { icon: Leaf, label: "EPA Safer Choice Products" },
+  { icon: Star, label: "24-Hour Re-Clean Guarantee" },
+  { icon: Award, label: "BBB Accredited Business" },
+  { icon: Clock, label: "Weekday & Saturday Appointments" },
+];
+const rockvilleWhyItems = [
+  { icon: Leaf, text: "EPA Safer Choice, plant-based products that are safe around kids and pets" },
+  { icon: Shield, text: "Insured company; every employee is background-checked and trained before the first visit" },
+  { icon: Star, text: "24-hour re-clean guarantee: tell us within a day and we come back to fix it" },
+  { icon: MapPin, text: "Teams that know King Farm, Fallsgrove, Twinbrook, West End and Town Center homes" },
+  { icon: Sparkles, text: "Weekday and Saturday appointments, planned around building access and pets" },
+  { icon: CheckCircle, text: "BBB Accredited Business since October 2026 and Google Verified for Local Services Ads" },
+];
+// "Rockville at a glance": the facts an AI assistant or a homeowner can quote. Prices are the
+// published table (COST_PRICE_ROWS): bi-weekly, one-time and deep columns, studio to 4 bedrooms.
+const rockvilleFacts = [
+  { label: "Service area", value: "Rockville, MD (ZIP 20850, 20851, 20852, 20853), Montgomery County" },
+  { label: "Services", value: "House cleaning, recurring (weekly, bi-weekly, monthly), deep cleaning, move-in and move-out, apartment and condo, post-construction, eco-friendly" },
+  { label: "Pricing", value: `Bi-weekly ${COST_PRICE_ROWS[0][2].split(" – ")[0]} to ${COST_PRICE_ROWS[3][2].split(" – ")[1]} per visit (studio to 4 bedrooms); one-time from ${COST_PRICE_ROWS[0][3].split(" – ")[0]}; deep cleaning from ${COST_PRICE_ROWS[0][4].split(" – ")[0]}; 5+ bedrooms quoted from ${COST_PRICE_ROWS[4][2].replace("From ", "")}` },
+  { label: "Team", value: "Insured company, background-checked employees, serving Rockville since 2015" },
+  { label: "Products", value: "EPA Safer Choice, plant-based products; equipment and supplies included" },
+  { label: "Credentials", value: "BBB Accredited Business (since October 2026), Google Verified (Local Services Ads), 5.0-star Google rating" },
+  { label: "Availability", value: "Calls and booking 24/7; cleaning appointments on weekdays and Saturdays, subject to crew availability" },
 ];
 
 // Silver Spring intent-routing table — only the city's INDEXABLE service pages (move-out, office and
@@ -270,7 +310,7 @@ const silverSpringServiceGuide = [
 // Weekly audit 04/10/2026: Rockville, Frederick and Georgetown got new body text and links on that
 // date (HUB_CONTEXT_LINK and the Rockville booking sentence), so their date moves. Other hubs keep theirs.
 const HUB_PAGE_DATES: Record<string, string> = {
-  "rockville-md": "2026-10-04",
+  "rockville-md": "2026-10-11",
   // Four hubs with the curated service selection (recovery lot, candidate date 2026-10-08).
   "bethesda-md": "2026-10-08",
   "gaithersburg-md": "2026-10-08",
@@ -336,7 +376,7 @@ const rockvilleFaqs = [
   },
   {
     q: "How much does house cleaning cost in Rockville, MD?",
-    a: "Pricing depends on the size and condition of the home, the number of bathrooms, service type, and frequency. As a planning range, many bi-weekly Rockville cleanings run about $165–$310 per visit. First-time deep cleaning and move-in or move-out cleaning generally cost more because more detailed tasks are included. We confirm the scope and price in writing before service.",
+    a: "Pricing depends on the size and condition of the home, the number of bathrooms, service type, and frequency. From our published table, bi-weekly cleaning runs $140 to $325 per visit for a studio up to a 4-bedroom home, a one-time standard clean starts at $160, and a deep clean starts at $230; homes with five or more bedrooms are quoted from $350. First-time deep cleaning and move-in or move-out cleaning cost more because more detailed tasks are included. We confirm the scope and price in writing before service.",
   },
   {
     q: "Do you offer weekly, bi-weekly, and monthly cleaning in Rockville?",
@@ -505,8 +545,8 @@ const CityPage = () => {
         </section>
       )}
 
-      {/* Trust Bar */}
-      <TrustBar variant="dark" />
+      {/* Trust Bar (Rockville: verifiable facts only) */}
+      <TrustBar variant="dark" items={isRockvilleHub ? rockvilleTrustItems : undefined} />
 
       {isGaithersburgHub && (
         <section className="border-b border-border bg-background py-10 md:py-14" aria-labelledby="gaithersburg-cleaning-answer">
@@ -546,16 +586,17 @@ const CityPage = () => {
       {isRockvilleHub && (
         <section className="py-12 md:py-16 border-b border-border" aria-labelledby="rockville-cleaning-answer">
           <div className="container mx-auto px-4 max-w-4xl">
-            <p className="text-sm font-semibold text-accent mb-3">Updated October 4, 2026 · Serving Rockville ZIP codes 20850–20853</p>
+            <p className="text-sm font-semibold text-accent mb-3">Updated October 11, 2026 · Serving Rockville ZIP codes 20850–20853</p>
             <h2 id="rockville-cleaning-answer" className="font-heading text-2xl md:text-3xl font-bold mb-5">
               What cleaning services are available in Rockville, MD?
             </h2>
             <p className="text-foreground leading-relaxed text-lg">
-              Capital Clean Care provides residential cleaning throughout Rockville, including weekly and bi-weekly recurring care, one-time deep cleaning, move-in and move-out cleaning, apartment and condo cleaning, and eco-friendly service. Our insured, background-checked employees bring the equipment and plant-based products, follow a room-by-room checklist, and back every visit with a satisfaction guarantee. We serve homes in King Farm, Fallsgrove, Twinbrook, West End, College Gardens, Woodley Gardens, Rockville Town Center, and nearby neighborhoods. Choose a service below for its complete scope, or request a written quote based on your home size, number of bathrooms, condition, and preferred frequency. Most Rockville appointments can be planned around building access, elevator windows, pets, and household priorities.
+              Capital Clean Care is a Rockville cleaning company providing home cleaning on a weekly, bi-weekly or monthly schedule, one-time deep cleaning, move-in and move-out cleaning, apartment and condo cleaning, post-construction cleanup and eco-friendly service across ZIP codes 20850 to 20853, from King Farm and Fallsgrove to Twinbrook and Rockville Town Center. Our insured, background-checked employees bring the equipment and plant-based products, follow a room-by-room checklist, and every visit is backed by our 24-hour re-clean guarantee. Choose a service below for its complete scope, or request a written quote based on home size, bathrooms, condition and frequency.
             </p>
 
             <div className="mt-8 overflow-hidden rounded-2xl border border-border bg-card">
-              <div className="grid grid-cols-[minmax(0,0.8fr)_minmax(0,1.5fr)] bg-secondary px-4 py-3 text-sm font-semibold">
+              <div className="hidden sm:grid grid-cols-[5rem_minmax(0,0.8fr)_minmax(0,1.5fr)] gap-4 bg-secondary px-4 py-3 text-sm font-semibold">
+                <span aria-hidden="true" />
                 <span>Service</span>
                 <span>Best for</span>
               </div>
@@ -563,14 +604,43 @@ const CityPage = () => {
                 <Link
                   key={service.name}
                   to={service.href}
-                  className="grid grid-cols-[minmax(0,0.8fr)_minmax(0,1.5fr)] items-center gap-4 border-t border-border px-4 py-4 hover:bg-accent/5 transition-colors"
+                  className="group grid grid-cols-[5rem_minmax(0,1fr)_auto] sm:grid-cols-[5rem_minmax(0,0.8fr)_minmax(0,1.5fr)] items-center gap-3 sm:gap-4 border-t border-border px-4 py-3 hover:bg-accent/5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary"
                 >
-                  <span className="font-semibold text-accent">{service.name}</span>
-                  <span className="text-sm text-muted-foreground flex items-center justify-between gap-3">
+                  <img
+                    src={`${ROCKVILLE_THUMB}/${service.img}-160.webp`}
+                    srcSet={`${ROCKVILLE_THUMB}/${service.img}-160.webp 160w, ${ROCKVILLE_THUMB}/${service.img}-320.webp 320w`}
+                    sizes="80px"
+                    alt={service.imgAlt}
+                    width={160}
+                    height={120}
+                    loading="lazy"
+                    decoding="async"
+                    className="h-[60px] w-20 rounded-lg object-cover shadow-sm transition-transform duration-300 motion-safe:group-hover:scale-105"
+                  />
+                  <span className="min-w-0">
+                    <span className="block font-semibold text-primary">{service.name}</span>
+                    <span className="mt-0.5 block text-sm leading-snug text-muted-foreground sm:hidden">{service.bestFor}</span>
+                  </span>
+                  <span className="hidden sm:flex text-sm text-muted-foreground items-center justify-between gap-3">
                     {service.bestFor}<ArrowRight className="h-4 w-4 shrink-0" aria-hidden="true" />
                   </span>
+                  <ArrowRight className="h-4 w-4 shrink-0 text-muted-foreground sm:hidden" aria-hidden="true" />
                 </Link>
               ))}
+            </div>
+
+            {/* Rockville at a glance: a compact fact sheet (definition list) that search engines and AI
+                assistants can quote directly. Every value is already stated elsewhere on the site. */}
+            <div className="mt-8 rounded-2xl border border-border bg-secondary/60 p-5 md:p-6">
+              <h3 className="font-heading text-lg font-bold mb-4">Rockville at a glance</h3>
+              <dl className="grid grid-cols-1 gap-x-8 gap-y-3 sm:grid-cols-[max-content_minmax(0,1fr)]">
+                {rockvilleFacts.map((f) => (
+                  <div key={f.label} className="contents">
+                    <dt className="text-sm font-semibold text-foreground">{f.label}</dt>
+                    <dd className="text-sm leading-relaxed text-muted-foreground">{f.value}</dd>
+                  </div>
+                ))}
+              </dl>
             </div>
 
             {/* Weekly audit 03/10/2026: this hub compares services; hiring house cleaning happens on its
@@ -667,12 +737,15 @@ const CityPage = () => {
                   <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
                     These original photographs document a Capital Clean Care residential cleaning visit in Rockville on <time dateTime="2026-08-17">August 17, 2026</time>. The work shown includes interior window-frame, track, latch, bathroom mirror-area, and light-fixture detailing. The client's identity and exact address are withheld for privacy.
                   </p>
-                  <div className="mt-5 rounded-xl border border-accent/25 bg-accent/5 p-5">
-                    <h3 className="font-heading text-lg font-bold mb-3">Rockville service note: what this visit documents</h3>
-                    <p className="text-sm leading-relaxed text-foreground">
+                  <details className="group/note mt-5 rounded-xl border border-accent/25 bg-accent/5">
+                    <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-3 px-5 py-3 font-heading text-base font-bold text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary [&::-webkit-details-marker]:hidden">
+                      <span>What this visit documents</span>
+                      <ChevronDown aria-hidden="true" className="h-5 w-5 shrink-0 text-muted-foreground motion-safe:transition-transform group-open/note:rotate-180" />
+                    </summary>
+                    <p className="border-t border-accent/20 px-5 pb-5 pt-3 text-sm leading-relaxed text-foreground">
                       On August 17, 2026, a Capital Clean Care team completed residential detail work in Rockville, Maryland. The photographs on this page show the team cleaning an interior window's upper frame, track, and latch, then detailing the bathroom mirror area and light fixtures. These are original photographs from that Rockville appointment, not stock images or AI illustrations. They document the type of reachable-detail work that may be included when it appears in the client's confirmed cleaning scope. Because every home and service package is different, the photographs are evidence of work completed on this visit rather than a promise that every item is included automatically. Capital Clean Care protects the client's privacy by publishing neither the resident's identity nor the property's street address. Homeowners who need window tracks, light fixtures, or another detail handled should list it when requesting a quote so the written scope can confirm it before the appointment.
                     </p>
-                  </div>
+                  </details>
                 </div>
               ) : (
                 <>
@@ -838,14 +911,14 @@ const CityPage = () => {
           <h2 className="font-heading text-2xl md:text-3xl font-bold mb-3">Why {city.name} Homeowners Choose Us</h2>
           <p className="text-muted-foreground mb-8 leading-relaxed">{whyIntro}</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {[
+            {(isRockvilleHub ? rockvilleWhyItems : [
               { icon: Leaf, text: "Eco-friendly, non-toxic products safe for your family and pets" },
               { icon: Shield, text: "Fully licensed and insured for your complete protection" },
               { icon: CheckCircle, text: "Every team member is background-checked and trained" },
               { icon: Star, text: "100% satisfaction guarantee — we'll re-clean if needed" },
               { icon: MapPin, text: `Local teams that know ${city.name} neighborhoods` },
               { icon: Sparkles, text: "Flexible scheduling including weekday and Saturday" },
-            ].map((item, i) => (
+            ]).map((item, i) => (
               <div key={i} className="flex gap-3 items-start p-4 rounded-xl border border-border bg-card hover:shadow-sm transition-shadow">
                 <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center shrink-0">
                   <item.icon className="h-4.5 w-4.5 text-accent" />
@@ -865,7 +938,7 @@ const CityPage = () => {
               Client Reviews
             </span>
             <h2 className="font-heading text-2xl md:text-3xl font-bold">
-              What {city.name} Homeowners Say
+              {isRockvilleHub ? "What Our Clients Say on Google" : `What ${city.name} Homeowners Say`}
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">

@@ -3,7 +3,7 @@
  *
  * The default hub lists 20 "local" cards (including synonyms such as "Best Cleaning Company in X"
  * that have no destination) plus 13 national cards, with the same href repeated under two labels.
- * For the hubs in CURATED_HUBS the page shows instead up to eight main choices and a native
+ * For the hubs in CURATED_HUBS (Rockville since 2026-10-11) the page shows instead up to eight main choices and a native
  * <details> complement that keeps every other useful indexable destination, each href once.
  *
  * Rules (same as the cards they replace): never a noindex page, never the Ads landing as a city
@@ -14,7 +14,8 @@ import { services } from "@/data/services";
 import { slServices } from "@/data/service-locations";
 import { isIndexable, serviceCardHref, nationalServiceHref } from "@/data/related-content";
 
-export const CURATED_HUBS: ReadonlySet<string> = new Set(["bethesda-md", "gaithersburg-md", "fairfax-va", "alexandria-va"]);
+// 2026-10-11: Rockville added (owner, "premium page" lot): the hub showed 16 cards, 7 of them national.
+export const CURATED_HUBS: ReadonlySet<string> = new Set(["bethesda-md", "gaithersburg-md", "fairfax-va", "alexandria-va", "rockville-md"]);
 
 /** Main choices, in the order homeowners ask for them. At most eight are shown. */
 const PRIMARY_ORDER = [
