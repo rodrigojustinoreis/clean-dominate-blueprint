@@ -66,13 +66,14 @@ export const CredentialMark = ({ id }: { id: (typeof CREDENTIALS)[number]["id"] 
 };
 
 /** The two credential chips (label + detail, no link). Rendered as <li> inside the home strip. */
-export const CredentialChips = ({ as: Tag = "div", className = "", clone = false }: { as?: "div" | "li"; className?: string; clone?: boolean }) =>
+export const CredentialChips = ({ as: Tag = "div", className = "", clone = false, stackDetail = false }: { as?: "div" | "li"; className?: string; clone?: boolean; stackDetail?: boolean }) =>
   CREDENTIALS.map((c) => (
     <Tag key={c.id} className={`group flex min-h-11 cursor-default items-center gap-2.5 ${className}`} aria-hidden={clone || undefined}>
       <CredentialMark id={c.id} />
       <p className="text-sm font-semibold leading-tight text-foreground">
         {c.label}
-        <span className="block font-normal text-muted-foreground sm:inline sm:whitespace-nowrap sm:before:content-['_·_']">{c.detail}</span>
+        {/* Detail under the label on phones (and always when stacked, e.g. a narrow hero column); inline with a dot from sm up. */}
+        <span className={`block font-normal text-muted-foreground ${stackDetail ? "" : "sm:inline sm:whitespace-nowrap sm:before:content-['_·_']"}`}>{c.detail}</span>
       </p>
     </Tag>
   ));

@@ -26,6 +26,7 @@ import { isIndexable, guidesBySlugs } from "@/data/related-content";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import FadeInSection from "@/components/blog/FadeInSection";
 import LocationSocialProof from "@/components/location/LocationSocialProof";
+import HomeTrustMarquee from "@/components/home/HomeTrustMarquee";
 import logo from "@/assets/logo.webp";
 import YouTubeFacade, { type YouTubeVideo } from "@/components/YouTubeFacade";
 
@@ -66,6 +67,9 @@ const SPOKES = [
 ];
 
 const HERO_IMAGE = "/images/team/team-post-construction.jpg";
+// Hero card photo (owner, 2026-10-11): the real team in uniform, 1200x773 + 640 variant.
+const TEAM_HERO = "/images/team/team-group-uniforms.webp";
+const TEAM_HERO_640 = "/images/team/team-group-uniforms-640.webp";
 const IMG = "/images/services/post-construction";
 
 // The eight-step order the crews actually work in. Order is the whole point: every surface
@@ -159,23 +163,63 @@ const PASSOS = [
   { n: 6, icon: Shield, t: "Second look", href: "#why-dust", d: "Edges, corners and transitions get their own pass, then another wherever dust came back." },
 ];
 
+// 2026-10-11 (Rockville-hub structure): each situation carries a real photo from this service's own
+// project set (the -sm files already used on the page, so no extra bytes).
 const PERSONAS = [
   {
     title: "You just finished a renovation",
     body: "The contractors are out, the debris is gone, and every surface in the house carries a grey film. This is the clean that makes the work look finished.",
+    img: "kitchen-finished", w: 640, h: 427, alt: "Renovated kitchen after the final post-construction clean, cabinets and counters free of dust",
   },
   {
     title: "You are moving into a new build",
     body: "New construction leaves protective film, label adhesive, grout haze and drywall dust in places you will not find until you unpack. Better to clear it before the furniture arrives.",
+    img: "window-work", w: 480, h: 360, alt: "Capital Clean Care employee cleaning a window in a newly built room",
   },
   {
     title: "You finished one room, not the house",
     body: "A basement finish, a kitchen or a single bathroom still sends dust through the whole floor. The clean can be scoped to the work zone and the rooms it reached.",
+    img: "floor-dustreveal", w: 340, h: 340, alt: "Floor washer with its dust-detection light showing construction dust on a finished floor",
   },
   {
     title: "You are a contractor or builder",
     body: "Final cleans on a schedule, coordinated around the punch list, with a written scope your client can see. We work alongside trades rather than around them.",
+    img: "team-crew", w: 380, h: 507, alt: "Five Capital Clean Care employees in uniform at a post-construction job",
   },
+];
+
+// Service page FAQ (2026-10-11): the 14 questions homeowners and AI assistants actually ask, out of the
+// 23 in services.ts (the rest repeat the Quick answer, the checklist or the cost section).
+const FAQ_QUESTIONS = [
+  "When should I schedule post-construction cleaning?",
+  "How many cleaning phases are involved?",
+  "How much does post-construction cleaning cost?",
+  "How long does post-construction cleaning take?",
+  "What equipment do you use for post-construction cleaning?",
+  "Is post-construction dust harmful?",
+  "Who is responsible for cleanup after construction, me or the contractor?",
+  "Do you work with contractors?",
+  "Can you clean while some construction is still ongoing?",
+  "Can you remove paint overspray from surfaces?",
+  "Do you remove protective films from new appliances?",
+  "Will the final cleaning damage new finishes?",
+  "Do you clean newly built homes?",
+  "Can I schedule a walkthrough before booking?",
+];
+const PAGE_FAQS = FAQ_QUESTIONS.map((q) => service.faqs.find((f) => f.q === q)).filter((f): f is (typeof service.faqs)[number] => Boolean(f));
+
+// "At a glance" (AI-citable fact sheet, same pattern as the Rockville hub). Every value is stated
+// elsewhere on this page or on the DC townhouse case study.
+const AT_A_GLANCE = [
+  { label: "Service", value: "Post-construction cleaning services for homes after a renovation, remodel or new build, for homeowners, contractors and builders" },
+  { label: "Where", value: "Maryland (Montgomery County), Washington, DC and Northern Virginia" },
+  { label: "Best timing", value: "After debris is hauled out and before move-in; fine dust keeps settling for 48 to 72 hours after the trades leave" },
+  { label: "What it removes", value: "Drywall, concrete and tile dust, paint spatter, adhesive and label glue, protective film, grout haze, construction trash" },
+  { label: "The 3 phases", value: "Rough clean (bulk debris and dust), detailed clean (every surface, fixture and finish), final pass (edges, corners, anything that settled again)" },
+  { label: "Equipment", value: "HEPA air scrubber (XPOWER X-2580, 99.97% at 0.3 µm, up to 550 CFM), HEPA vacuums, wet-dry floor washer; ceiling-to-floor order" },
+  { label: "Pricing", value: "No published rate: free on-site assessment, then a written scope with the price before work starts" },
+  { label: "Team", value: "Insured company, background-checked employees, serving the DMV since 2015" },
+  { label: "Credentials", value: "BBB Accredited Business (since October 2026), Google Verified (Local Services Ads), 5.0-star Google rating, 24-hour re-clean guarantee" },
 ];
 
 const PostConstructionCleaningPage = () => {
@@ -187,8 +231,8 @@ const PostConstructionCleaningPage = () => {
     title: service.metaTitle,
     description: service.metaDescription,
     canonical: "https://capitalcleancare.com/services/post-construction-cleaning",
-    ogImage: `https://capitalcleancare.com${IMG}/hero-hepa.webp`,
-    preloadImage: `${IMG}/hero-hepa.webp`,
+    ogImage: `https://capitalcleancare.com${TEAM_HERO}`,
+    preloadImage: TEAM_HERO,
   });
 
 
@@ -208,7 +252,7 @@ const PostConstructionCleaningPage = () => {
         url="https://capitalcleancare.com/services/post-construction-cleaning"
         serviceType={service.name}
       />
-      <FAQSchema faqs={service.faqs} />
+      <FAQSchema faqs={PAGE_FAQS} />
       <LocalBusinessSchema areaServed={["Maryland", "Washington, DC", "Northern Virginia"]} />
       <WebPageSchema
         name={service.metaTitle}
@@ -216,7 +260,7 @@ const PostConstructionCleaningPage = () => {
         url="https://capitalcleancare.com/services/post-construction-cleaning"
         cityName="Silver Spring"
         stateCode="Maryland"
-        dateModified="2026-09-20"
+        dateModified="2026-10-11"
         primaryImage={`https://capitalcleancare.com${HERO_IMAGE}`}
       />
 
@@ -255,7 +299,8 @@ const PostConstructionCleaningPage = () => {
             className="mb-6"
           />
           <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
-            <FadeInSection>
+            {/* min-w-0: the credentials strip inside is a w-max track; without it the grid column can grow past the viewport on phones. */}
+            <FadeInSection className="min-w-0">
               <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#2E7D32]/20 bg-white px-3.5 py-1.5 shadow-sm">
                 <div className="flex gap-0.5">
                   {Array.from({ length: 5 }).map((_, j) => (
@@ -291,26 +336,24 @@ const PostConstructionCleaningPage = () => {
                 </a>
               </div>
 
-              <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted-foreground">
-                {["Sealed HEPA equipment", "Air filtered while we work", "Written scope before we start", "Licensed & insured"].map((b) => (
-                  <span key={b} className="flex items-center gap-1.5">
-                    <CheckCircle className="h-4 w-4 shrink-0 text-[#2E7D32]" /> {b}
-                  </span>
-                ))}
-              </div>
+              {/* Owner, 2026-10-11: the four verified credentials glide here (same strip as the home page),
+                  replacing the four generic check lines; tighter and a little faster than the home strip. */}
+              <HomeTrustMarquee className="-mt-2 max-w-xl" pxPerSecond={28} trackClassName="gap-6 py-1 sm:gap-8" />
             </FadeInSection>
 
             <FadeInSection>
               <div className="relative lg:ps-4">
                 <div className="group aspect-[4/3] overflow-hidden rounded-3xl border border-border shadow-2xl">
+                  {/* Owner, 2026-10-11: the team photo (taken in the DC townhouse home gym after that
+                      post-construction clean) replaces the air scrubber photo. */}
                   <img
-                    src={`${IMG}/hero-hepa.webp`}
-                    srcSet={`${IMG}/hero-hepa-sm.webp 640w, ${IMG}/hero-hepa.webp 1280w`}
+                    src={TEAM_HERO}
+                    srcSet={`${TEAM_HERO_640} 640w, ${TEAM_HERO} 1200w`}
                     sizes="(min-width: 1024px) 50vw, 100vw"
-                    alt="A professional HEPA air scrubber and a HEPA canister vacuum set up in a bright, empty, newly renovated room"
+                    alt="The Capital Clean Care team, five people in navy uniforms, in the home gym of a renovated townhouse after its post-construction clean"
                     className="h-full w-full object-cover transition-transform duration-700 [transition-timing-function:cubic-bezier(0.2,0,0,1)] group-hover:scale-[1.04] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
-                    width={1280}
-                    height={853}
+                    width={1200}
+                    height={773}
                     loading="eager"
                     fetchPriority="high"
                   />
@@ -326,6 +369,22 @@ const PostConstructionCleaningPage = () => {
               </div>
             </FadeInSection>
           </div>
+        </div>
+      </section>
+
+      {/* ── Owner's video from the DC townhouse project (lazy YouTube embed + VideoObject) ── */}
+      <section aria-labelledby="pcc-video" className="border-b border-border bg-card py-12 md:py-16">
+        <div className="container mx-auto max-w-3xl px-4">
+          <FadeInSection>
+            <span className="text-xs font-semibold uppercase tracking-widest text-[#2E7D32]">Real project video</span>
+            <h2 id="pcc-video" className="mb-3 mt-2 font-heading text-2xl font-bold md:text-3xl">Watch Our Team on a Post-Construction Clean</h2>
+            <p className="mb-6 text-muted-foreground leading-relaxed">
+              Filmed on a renovated townhouse in Washington, DC. Read the{" "}
+              <Link to="/resources/post-construction-cleaning-washington-dc-townhouse" className="font-semibold text-primary hover:underline">full project write-up</Link>{" "}
+              for the room order, the HEPA air scrubbing and the bathroom protocol.
+            </p>
+            <YouTubeFacade video={TEAM_VIDEO} />
+          </FadeInSection>
         </div>
       </section>
 
@@ -355,19 +414,20 @@ const PostConstructionCleaningPage = () => {
               with debris, paint and adhesive residue, protective film, label glue and grout haze. It is a
               different job from a regular house cleaning because of the dust: drywall compound, concrete and
               tile cutting produce particles fine enough to stay suspended in the air and keep settling for 48 to
-              72 hours after the crew leaves.
+              72 hours after the crew leaves. Capital Clean Care is a post construction cleaning company serving
+              Maryland, DC and Northern Virginia, and every job is quoted in writing after a free on-site
+              assessment.
             </p>
-            <div className="mt-6 grid gap-3 sm:grid-cols-3" aria-label="Post-construction cleaning essentials">
-              {[
-                ["Best timing", "After debris is hauled out, before move-in"],
-                ["How it is priced", "After a technician assesses the property"],
-                ["What makes it different", "Sealed HEPA capture plus air filtration"],
-              ].map(([label, value]) => (
-                <div key={label} className="rounded-xl border border-[#2E7D32]/15 bg-white p-4">
-                  <span className="block text-xs font-bold uppercase tracking-wide text-[#2E7D32]">{label}</span>
-                  <span className="mt-1 block text-sm font-medium text-foreground">{value}</span>
-                </div>
-              ))}
+            <div className="mt-6 rounded-xl border border-[#2E7D32]/15 bg-white p-5 md:p-6">
+              <h3 className="mb-4 font-heading text-lg font-bold">Post-construction cleaning at a glance</h3>
+              <dl className="grid grid-cols-1 gap-x-8 gap-y-3 sm:grid-cols-[max-content_minmax(0,1fr)]">
+                {AT_A_GLANCE.map((f) => (
+                  <div key={f.label} className="contents">
+                    <dt className="text-sm font-semibold text-foreground">{f.label}</dt>
+                    <dd className="text-sm leading-relaxed text-muted-foreground">{f.value}</dd>
+                  </div>
+                ))}
+              </dl>
             </div>
           </div>
         </div>
@@ -406,22 +466,6 @@ const PostConstructionCleaningPage = () => {
                 <p key={i}>{p}</p>
               ))}
             </div>
-          </FadeInSection>
-        </div>
-      </section>
-
-      {/* ── Owner's video from the DC townhouse project (lazy YouTube embed + VideoObject) ── */}
-      <section aria-labelledby="pcc-video" className="border-t border-border py-12 md:py-16">
-        <div className="container mx-auto max-w-3xl px-4">
-          <FadeInSection>
-            <span className="text-xs font-semibold uppercase tracking-widest text-[#2E7D32]">Real project video</span>
-            <h2 id="pcc-video" className="mb-3 mt-2 font-heading text-2xl font-bold md:text-3xl">Watch Our Team on a Post-Construction Clean</h2>
-            <p className="mb-6 text-muted-foreground leading-relaxed">
-              Filmed on a renovated townhouse in Washington, DC. Read the{" "}
-              <Link to="/resources/post-construction-cleaning-washington-dc-townhouse" className="font-semibold text-primary hover:underline">full project write-up</Link>{" "}
-              for the room order, the HEPA air scrubbing and the bathroom protocol.
-            </p>
-            <YouTubeFacade video={TEAM_VIDEO} />
           </FadeInSection>
         </div>
       </section>
@@ -714,7 +758,7 @@ const PostConstructionCleaningPage = () => {
         <div className="container mx-auto max-w-4xl px-4">
           <FadeInSection>
             <span className="text-sm font-semibold uppercase tracking-wider text-[#2E7D32]">What&apos;s included</span>
-            <h2 className="mb-4 mt-2 font-heading text-2xl font-bold md:text-3xl">What a Post-Construction Clean Covers</h2>
+            <h2 className="mb-4 mt-2 font-heading text-2xl font-bold md:text-3xl">Post-Construction Cleaning Checklist: What the Clean Covers</h2>
             <p className="mb-7 max-w-2xl text-[17px] leading-relaxed text-muted-foreground">
               Kitchens and bathrooms take the longest, and not because they are dirtier. They hold the most separate
               surfaces. Exact scope is confirmed in writing before the appointment, because a basement finish and a
@@ -840,9 +884,20 @@ const PostConstructionCleaningPage = () => {
             <h2 className="mb-6 mt-2 font-heading text-2xl font-bold md:text-3xl">When This Is the Right Service</h2>
             <div className="grid gap-4 sm:grid-cols-2">
               {PERSONAS.map((p) => (
-                <div key={p.title} className="rounded-xl border border-border bg-card p-5 shadow-sm">
-                  <h3 className="mb-2 font-heading font-bold text-foreground">{p.title}</h3>
-                  <p className="text-[15px] leading-relaxed text-muted-foreground">{p.body}</p>
+                <div key={p.title} className="flex gap-4 rounded-xl border border-border bg-card p-5 shadow-sm">
+                  <img
+                    src={`${IMG}/${p.img}-sm.webp`}
+                    alt={p.alt}
+                    width={p.w}
+                    height={p.h}
+                    loading="lazy"
+                    decoding="async"
+                    className="h-[60px] w-20 shrink-0 rounded-lg object-cover shadow-sm"
+                  />
+                  <div className="min-w-0">
+                    <h3 className="mb-2 font-heading font-bold text-foreground">{p.title}</h3>
+                    <p className="text-[15px] leading-relaxed text-muted-foreground">{p.body}</p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -876,7 +931,7 @@ const PostConstructionCleaningPage = () => {
               { v: "5.0★", l: "Google rating" },
               { v: "24h", l: "Re-clean guarantee" },
               { v: "10+ yrs", l: "Serving the DMV" },
-              { v: "100%", l: "Satisfaction guarantee" },
+              { v: "BBB", l: "Accredited Business" },
             ].map((s) => (
               <div
                 key={s.l}
@@ -943,9 +998,9 @@ const PostConstructionCleaningPage = () => {
       <section className="py-12">
         <div className="container mx-auto max-w-4xl px-4">
           <h2 className="mb-6 font-heading text-2xl font-bold">Post-Construction Cleaning FAQ</h2>
-          <FAQ faqs={service.faqs} />
+          <FAQ faqs={PAGE_FAQS} />
           <div className="mt-8 rounded-xl border border-border bg-secondary/40 p-5 text-sm leading-relaxed text-muted-foreground">
-            <p className="font-semibold text-foreground">Reviewed by Capital Clean Care · Updated September 20, 2026</p>
+            <p className="font-semibold text-foreground">Reviewed by Capital Clean Care · Updated October 11, 2026</p>
             <p className="mt-2">
               Equipment specifications are the manufacturers&apos; published figures. Dust behaviour and filtration
               standards reflect published guidance from the EPA, OSHA and the US Department of Energy, cited here as
@@ -968,7 +1023,7 @@ const PostConstructionCleaningPage = () => {
           </div>
           <Card>
             <CardContent className="p-6 md:p-8">
-              <QuoteForm defaultService="post-construction" />
+              <QuoteForm defaultService="post-construction" trustVariant="credentials-row" trustMarqueeSpeed={28} />
             </CardContent>
           </Card>
         </div>

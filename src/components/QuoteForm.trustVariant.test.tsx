@@ -49,6 +49,24 @@ describe("QuoteForm trust row variant", () => {
     for (const bad of ["A+", "Google Guaranteed", "money-back"]) expect(cred).not.toMatch(new RegExp(bad.replace("+", "\\+")));
   });
 
+  it("credentials-row variant (service pages): Licensed, Google, BBB and Google Verified cards in a carousel above the form, nothing after it", () => {
+    const row = renderToString(<QuoteForm trustVariant="credentials-row" />);
+    const before = row.slice(0, row.indexOf("<form"));
+    expect(before).toContain("Licensed &amp; Insured");
+    expect(before).toContain("on Google");
+    expect(before.split(`href="${BBB}"`).length - 1).toBe(1);
+    expect(before.split(`href="${GOOGLE_PROFILE}"`).length - 1).toBe(1);
+    expect(before).toContain('src="/images/trust/bbb-logo.png"');
+    expect(before).toContain('src="/images/trust/google-verified.svg"');
+    for (const s of ["facebook.com/capital", "Nextdoor", "Trust and verification", GOOGLE_HELP]) expect(row, s).not.toContain(s);
+    expect(before).toContain('aria-label="Credentials"');
+    expect(before.split("<li").length - 1).toBe(4); // clone only on the client
+    expect(before).not.toContain("<button");
+    expect(row.slice(row.indexOf("</form>") + 7)).toBe("</div>");
+    expect(formPart(row)).toBe(formPart(def));
+    for (const bad of [/A\+/, /Google Guaranteed/i, /money[- ]back/i]) expect(row).not.toMatch(bad);
+  });
+
   it("the form markup (fields, names, types, required flags, submit) is byte-identical in both variants, and the default has nothing after the form", () => {
     expect(formPart(cred)).toBe(formPart(def));
     expect(def.slice(def.indexOf("</form>") + 7)).toBe("</div>");
