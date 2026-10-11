@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { CheckCircle, Shield, Leaf, Star, MapPin, Sparkles, ArrowRight, Phone, Users, Check } from "lucide-react";
 import { CredentialChips, CredentialsDisclosure } from "@/components/VerifiedCredentials";
+import StaggerReveal from "@/components/StaggerReveal";
 import { trackPhoneClick, trackBookNowClick } from "@/lib/analytics";
 import PricingTable from "@/components/PricingTable";
 import PriceCalculator from "@/components/PriceCalculator";
@@ -79,10 +80,11 @@ const Index = () => {
             {/* Compact trust chips: label only. "5-Star Rated" and "Since 2015" were dropped here because the
                 sentence above and the counters below already state both.
                 2026-10-09: the two generic chips (Licensed & Insured, Background-Checked) became two
-                verifiable, clickable credentials (BBB accreditation, Google Local Services Ads
-                verification); the product and re-clean chips are unchanged. The generic facts remain in
-                the sentence above and in the "Why" section below. */}
-            <div className="grid grid-cols-2 gap-x-3 gap-y-3 mb-6 sm:flex sm:flex-wrap sm:justify-center sm:items-center sm:gap-x-8">
+                verifiable credentials (BBB accreditation, Google Local Services Ads verification).
+                2026-10-11 (owner): those two chips lost their exposed external links and show the official
+                marks in the same layout as the two chips beside them; the proof links stay only inside the
+                on-page disclosure below. The four chips reveal in sequence (StaggerReveal, no-JS safe). */}
+            <StaggerReveal className="grid grid-cols-2 gap-x-3 gap-y-3 mb-6 sm:flex sm:flex-wrap sm:justify-center sm:items-center sm:gap-x-8">
               <CredentialChips />
               {[
                 { icon: Leaf, label: "EPA Safer Choice" },
@@ -95,7 +97,7 @@ const Index = () => {
                   <p className="font-semibold text-sm text-foreground leading-tight">{item.label}</p>
                 </div>
               ))}
-            </div>
+            </StaggerReveal>
             <div className="mx-auto mb-6 max-w-3xl">
               <CredentialsDisclosure />
             </div>

@@ -1,14 +1,15 @@
 /**
- * Two verifiable credentials (BBB accreditation, Google Local Services Ads verification) as plain
- * text links, plus a native <details> that explains what each one is and is not. Used on the home
- * trust band ("chips" variant) and next to the contact form ("compact" variant). No seal graphics,
- * no rating, no guarantee wording. Data: src/data/verified-credentials.ts.
+ * Two verifiable credentials (BBB accreditation, Google Local Services Ads verification): label-only
+ * chips with the official marks on the home trust band, plus a native <details> that explains what
+ * each one is and is not and holds the proof links. "Compact" variant (text links) is kept for the
+ * contact page history but is unused since the contact marquee. No rating, no guarantee wording.
+ * Data: src/data/verified-credentials.ts.
  */
 import type { ReactNode } from "react";
 import { ExternalLink, Info, ChevronDown } from "lucide-react";
 import { CREDENTIALS, CREDENTIALS_FAQ, GOOGLE_REVIEWS } from "@/data/verified-credentials";
 
-// Neutral icons on purpose (no seal look): the credential is the text and the link.
+// Compact variant only: neutral icons, the credential is the text and the link.
 const ICONS = { bbb: ExternalLink, google: Info } as const;
 const linkClass =
   "inline-flex min-h-11 items-center text-primary underline underline-offset-2 hover:no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-sm";
@@ -45,28 +46,47 @@ const Disclosure = ({ summary }: { summary: string }) => (
   </details>
 );
 
-/** Home trust band: two chips in the same visual language as the existing ones, each a link. */
+/**
+ * Home trust band (2026-10-11): the two credentials use the same layout as the "EPA Safer Choice"
+ * and "24-Hour Re-Clean Guarantee" chips next to them (mark on the left, bold label on the right)
+ * and carry no external link; the official marks replace the generic icons. The proof links live
+ * only in the on-page disclosure below the row (CredentialsDisclosure). Marks are the unmodified
+ * official files: the BBB Accredited Business artwork (transparent margins hidden by the fixed box,
+ * nothing cropped from the artwork itself) and Google's "Google Verified" badge.
+ */
+const BBB_MARK = "/images/trust/bbb-accredited-business.png"; // 1200x1030; artwork spans x 21-1179, y 293-738
+const GOOGLE_MARK = "/images/trust/google-verified.svg";
+
+const CredentialMark = ({ id }: { id: (typeof CREDENTIALS)[number]["id"] }) =>
+  id === "bbb" ? (
+    <span className="relative block h-9 w-[94px] shrink-0 overflow-hidden rounded-lg transition-transform duration-300 motion-safe:group-hover:scale-105">
+      <img
+        src={BBB_MARK}
+        alt="BBB Accredited Business"
+        width={1200}
+        height={1030}
+        loading="lazy"
+        decoding="async"
+        className="absolute max-w-none"
+        style={{ width: "103.6%", left: "-1.8%", top: "-65.8%" }}
+      />
+    </span>
+  ) : (
+    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-accent/10 transition-all duration-300 group-hover:bg-accent/20 motion-safe:group-hover:scale-110">
+      <img src={GOOGLE_MARK} alt="" aria-hidden="true" width={25} height={25} loading="lazy" decoding="async" className="h-6 w-6" />
+    </span>
+  );
+
 export const CredentialChips = () =>
-  CREDENTIALS.map((c) => {
-    const Icon = ICONS[c.id];
-    return (
-      <Ext
-        key={c.id}
-        href={c.href}
-        className="group col-span-2 flex min-h-11 items-center gap-2.5 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 sm:col-auto"
-      >
-        <span className="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center shrink-0 transition-all duration-300 group-hover:bg-accent/20 motion-safe:group-hover:scale-110">
-          <Icon className="h-4 w-4 text-accent" aria-hidden="true" />
-        </span>
-        <span className="leading-tight">
-          <span className="block font-semibold text-sm text-foreground">
-            {c.label} <span className="whitespace-nowrap font-normal text-muted-foreground">· {c.detail}</span>
-          </span>
-          <span className="block text-sm text-primary underline underline-offset-2 group-hover:no-underline">{c.linkText}</span>
-        </span>
-      </Ext>
-    );
-  });
+  CREDENTIALS.map((c) => (
+    <div key={c.id} className="group col-span-2 flex min-h-11 cursor-default items-center gap-2.5 sm:col-auto">
+      <CredentialMark id={c.id} />
+      <p className="text-sm font-semibold leading-tight text-foreground">
+        {c.label}
+        <span className="block font-normal text-muted-foreground sm:inline sm:whitespace-nowrap sm:before:content-['_·_']">{c.detail}</span>
+      </p>
+    </div>
+  ));
 
 export const CredentialsDisclosure = () => <Disclosure summary="What do these credentials mean?" />;
 

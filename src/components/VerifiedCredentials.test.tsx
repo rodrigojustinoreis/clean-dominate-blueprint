@@ -1,6 +1,7 @@
 /**
- * Verifiable credentials (2026-10-09): exact links, honest link names, no rating/guarantee/seal
- * wording, native disclosure present in SSR, external links announce the new tab.
+ * Verifiable credentials (2026-10-09, chips reworked 2026-10-11): exact links, honest link names, no
+ * rating/guarantee/seal wording, label-only chips with the official marks, native disclosure present
+ * in SSR holding the external links, which announce the new tab.
  */
 import { describe, expect, it } from "vitest";
 import { render, screen } from "@testing-library/react";
@@ -37,10 +38,23 @@ describe("rendered components", () => {
     });
   }
 
-  it("chips are links with the new-tab notice and open the real destinations", () => {
+  it("chips (2026-10-11): label-only, no links, official marks, same layout as the product chips", () => {
+    const html = renderToString(<div>{CredentialChips()}</div>);
+    expect(html).not.toContain("<a ");
+    expect(html).not.toContain(BBB);
+    expect(html).not.toContain(GOOGLE_HELP);
+    expect(html).toContain('src="/images/trust/bbb-accredited-business.png"');
+    expect(html).toContain('alt="BBB Accredited Business"');
+    expect(html).toContain('src="/images/trust/google-verified.svg"');
+    for (const s of ["BBB Accredited", "Since October 2026", "Google Verified", "Local Services Ads"]) expect(html).toContain(s);
     render(<div>{CredentialChips()}</div>);
+    expect(screen.queryAllByRole("link")).toHaveLength(0);
+  });
+
+  it("the proof links survive in the on-page disclosure with the new-tab notice", () => {
+    render(<CredentialsDisclosure />);
     const links = screen.getAllByRole("link");
-    expect(links.map((a) => a.getAttribute("href"))).toEqual([BBB, GOOGLE_HELP]);
+    expect(links.map((a) => a.getAttribute("href"))).toEqual([BBB, GOOGLE_HELP, MAPS]);
     for (const a of links) {
       expect(a.getAttribute("target")).toBe("_blank");
       expect(a.getAttribute("rel")).toBe("noopener noreferrer");
