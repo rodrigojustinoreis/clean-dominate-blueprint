@@ -39,15 +39,14 @@ describe("rendered components", () => {
   }
 
   it("chips (2026-10-11): label-only, no links, official marks, same layout as the product chips", () => {
-    const html = renderToString(<div>{CredentialChips()}</div>);
+    const html = renderToString(<div>{CredentialChips({})}</div>);
     expect(html).not.toContain("<a ");
     expect(html).not.toContain(BBB);
     expect(html).not.toContain(GOOGLE_HELP);
-    expect(html).toContain('src="/images/trust/bbb-accredited-business.png"');
-    expect(html).toContain('alt="BBB Accredited Business"');
+    expect(html).toContain('src="/images/trust/bbb-logo.png"');
     expect(html).toContain('src="/images/trust/google-verified.svg"');
     for (const s of ["BBB Accredited", "Since October 2026", "Google Verified", "Local Services Ads"]) expect(html).toContain(s);
-    render(<div>{CredentialChips()}</div>);
+    render(<div>{CredentialChips({})}</div>);
     expect(screen.queryAllByRole("link")).toHaveLength(0);
   });
 

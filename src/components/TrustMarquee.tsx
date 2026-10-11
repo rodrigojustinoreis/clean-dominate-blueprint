@@ -6,7 +6,7 @@
  * with arrows. Official marks only (public/images/trust/SOURCES.md); the whole card is the link
  * where a destination exists. Shared credential data: src/data/verified-credentials.ts.
  */
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 import { GOOGLE_LISTING_URL } from "@/data/realReviews";
 import { BUSINESS_INFO } from "@/data/business-info";
@@ -35,7 +35,7 @@ const trustIconStyle: React.CSSProperties = { background: "linear-gradient(145de
 const trustTitle = "block text-[14px] font-extrabold leading-tight tracking-tight text-gray-900";
 const trustSub = "mt-0.5 block text-[11.5px] font-medium leading-tight text-gray-600";
 /* Marquee speed in CSS px per second (uniform, linear). */
-const MARQUEE_PX_PER_S = 36;
+export const MARQUEE_PX_PER_S = 36;
 
 /** The four trust cards. `clone` marks the second copy used only to make the loop seamless. */
 const TrustCards = ({ clone = false }: { clone?: boolean }) => (
@@ -132,7 +132,21 @@ const TrustCards = ({ clone = false }: { clone?: boolean }) => (
  * four cards makes the loop seamless. It pauses while the pointer is over it, while anything inside
  * has keyboard focus, while the user touches it, and when the tab is hidden. With
  * prefers-reduced-motion the row does not move: it becomes a plain horizontal scroller with arrows. */
-const TrustMarquee = ({ tone = "light", label = "Verified by" }: { tone?: "light" | "dark"; label?: string }) => {
+export interface MarqueeProps {
+  /** Renders the set of <li> cards; called twice on the client (the second time with clone=true). */
+  cards: (clone: boolean) => ReactNode;
+  /** "plain" = no frame, no label: the strip sits directly in the host section (home trust band). */
+  tone?: "light" | "dark" | "plain";
+  label?: string;
+  ariaLabel?: string;
+  pxPerSecond?: number;
+  /** Gap/padding classes of the track (defaults to the contact cards' spacing). */
+  trackClassName?: string;
+  /** Pause while the pointer is over the strip (default true). */
+  pauseOnHover?: boolean;
+}
+
+export const Marquee = ({ cards, tone = "light", label, ariaLabel = "Trust and verification", pxPerSecond = MARQUEE_PX_PER_S, trackClassName = "gap-3 py-6", pauseOnHover = true }: MarqueeProps) => {
   const track = useRef<HTMLUListElement>(null);
   const anim = useRef<Animation | null>(null);
   const [reduced, setReduced] = useState(false);
@@ -160,7 +174,7 @@ const TrustMarquee = ({ tone = "light", label = "Verified by" }: { tone?: "light
       const distance = first ? first.offsetLeft : el.scrollWidth / 2; // start of the clone set
       if (distance < 10) return;
       anim.current = el.animate([{ transform: "translateX(0)" }, { transform: `translateX(-${distance}px)` }], {
-        duration: (distance / MARQUEE_PX_PER_S) * 1000,
+        duration: (distance / pxPerSecond) * 1000,
         iterations: Infinity,
         easing: "linear",
       });
@@ -176,7 +190,7 @@ const TrustMarquee = ({ tone = "light", label = "Verified by" }: { tone?: "light
       anim.current?.cancel();
       anim.current = null;
     };
-  }, [reduced, mounted]);
+  }, [reduced, mounted, pxPerSecond]);
   const pause = () => anim.current?.pause();
   const play = () => anim.current?.play();
 
@@ -205,17 +219,17 @@ const TrustMarquee = ({ tone = "light", label = "Verified by" }: { tone?: "light
   return (
     <div
       role="region"
-      aria-label="Trust and verification"
-      className={`rounded-2xl px-3 pb-0 pt-3 sm:px-4 ${tone === "dark" ? "bg-white/[0.06] ring-1 ring-white/10" : "bg-gradient-to-br from-primary/[0.05] via-white to-accent/[0.06]"}`}
-      onMouseEnter={pause}
-      onMouseLeave={play}
+      aria-label={ariaLabel}
+      className={tone === "plain" ? "" : `rounded-2xl px-3 pb-0 pt-3 sm:px-4 ${tone === "dark" ? "bg-white/[0.06] ring-1 ring-white/10" : "bg-gradient-to-br from-primary/[0.05] via-white to-accent/[0.06]"}`}
+      onMouseEnter={pauseOnHover ? pause : undefined}
+      onMouseLeave={pauseOnHover ? play : undefined}
       onFocusCapture={pause}
       onBlurCapture={(e) => { if (!e.currentTarget.contains(e.relatedTarget as Node | null)) play(); }}
       onTouchStart={pause}
       onTouchEnd={play}
       onTouchCancel={play}
     >
-      <p className={`mb-1 text-center text-[11px] font-bold uppercase tracking-[0.16em] ${tone === "dark" ? "text-white/85" : "text-primary"}`}>{label}</p>
+      {label && <p className={`mb-1 text-center text-[11px] font-bold uppercase tracking-[0.16em] ${tone === "dark" ? "text-white/85" : "text-primary"}`}>{label}</p>}
       <div className="flex items-center gap-2">
         {reduced && (
           <button type="button" onClick={() => scrollByCard(-1)} disabled={!canPrev} aria-label="Previous trust card" className={arrow}>
@@ -230,11 +244,11 @@ const TrustMarquee = ({ tone = "light", label = "Verified by" }: { tone?: "light
           <ul
             ref={track}
             onScroll={reduced ? update : undefined}
-            className={`flex gap-3 py-6 ${reduced ? "w-full snap-x snap-mandatory overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden" : "w-max"}`}
+            className={`flex ${trackClassName} ${reduced ? "w-full snap-x snap-mandatory overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden" : "w-max"}`}
             style={{ perspective: "800px" }}
           >
-            <TrustCards />
-            {mounted && !reduced && <TrustCards clone />}
+            {cards(false)}
+            {mounted && !reduced && cards(true)}
           </ul>
         </div>
         {reduced && (
@@ -247,5 +261,9 @@ const TrustMarquee = ({ tone = "light", label = "Verified by" }: { tone?: "light
   );
 };
 
+/** Contact page strip: the five credential cards, framed, with the "Verified by" label. */
+const TrustMarquee = ({ tone = "light", label = "Verified by" }: { tone?: "light" | "dark"; label?: string }) => (
+  <Marquee tone={tone} label={label} cards={(clone) => <TrustCards clone={clone} />} />
+);
 
 export default TrustMarquee;

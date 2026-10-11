@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { CheckCircle, Shield, Leaf, Star, MapPin, Sparkles, ArrowRight, Phone, Users, Check } from "lucide-react";
-import { CredentialChips, CredentialsDisclosure } from "@/components/VerifiedCredentials";
-import StaggerReveal from "@/components/StaggerReveal";
+import { CredentialsDisclosure } from "@/components/VerifiedCredentials";
+import HomeTrustMarquee from "@/components/home/HomeTrustMarquee";
 import { trackPhoneClick, trackBookNowClick } from "@/lib/analytics";
 import PricingTable from "@/components/PricingTable";
 import PriceCalculator from "@/components/PriceCalculator";
@@ -83,21 +83,8 @@ const Index = () => {
                 verifiable credentials (BBB accreditation, Google Local Services Ads verification).
                 2026-10-11 (owner): those two chips lost their exposed external links and show the official
                 marks in the same layout as the two chips beside them; the proof links stay only inside the
-                on-page disclosure below. The four chips reveal in sequence (StaggerReveal, no-JS safe). */}
-            <StaggerReveal className="grid grid-cols-2 gap-x-3 gap-y-3 mb-6 sm:flex sm:flex-wrap sm:justify-center sm:items-center sm:gap-x-8">
-              <CredentialChips />
-              {[
-                { icon: Leaf, label: "EPA Safer Choice" },
-                { icon: CheckCircle, label: "24-Hour Re-Clean Guarantee" },
-              ].map((item) => (
-                <div key={item.label} className="group flex items-center gap-2.5 cursor-default">
-                  <div className="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center shrink-0 transition-all duration-300 group-hover:bg-accent/20 group-hover:scale-110">
-                    <item.icon className="h-4 w-4 text-accent transition-transform duration-300 group-hover:scale-110" />
-                  </div>
-                  <p className="font-semibold text-sm text-foreground leading-tight">{item.label}</p>
-                </div>
-              ))}
-            </StaggerReveal>
+                on-page disclosure below. The four chips now glide in one slow strip (HomeTrustMarquee). */}
+            <HomeTrustMarquee />
             <div className="mx-auto mb-6 max-w-3xl">
               <CredentialsDisclosure />
             </div>

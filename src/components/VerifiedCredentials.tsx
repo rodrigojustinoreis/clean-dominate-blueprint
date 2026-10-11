@@ -50,42 +50,31 @@ const Disclosure = ({ summary }: { summary: string }) => (
  * Home trust band (2026-10-11): the two credentials use the same layout as the "EPA Safer Choice"
  * and "24-Hour Re-Clean Guarantee" chips next to them (mark on the left, bold label on the right)
  * and carry no external link; the official marks replace the generic icons. The proof links live
- * only in the on-page disclosure below the row (CredentialsDisclosure). Marks are the unmodified
- * official files: the BBB Accredited Business artwork (transparent margins hidden by the fixed box,
- * nothing cropped from the artwork itself) and Google's "Google Verified" badge.
+ * only in the on-page disclosure below the strip (CredentialsDisclosure). Marks: the BBB torch logo
+ * supplied by the owner (bbb-logo.png) and Google's "Google Verified" badge, both inside the same
+ * 36px tile as the product chips.
  */
-const BBB_MARK = "/images/trust/bbb-accredited-business.png"; // 1200x1030; artwork spans x 21-1179, y 293-738
-const GOOGLE_MARK = "/images/trust/google-verified.svg";
+const MARKS = { bbb: { src: "/images/trust/bbb-logo.png", w: 194, h: 283 }, google: { src: "/images/trust/google-verified.svg", w: 25, h: 25 } } as const;
 
-const CredentialMark = ({ id }: { id: (typeof CREDENTIALS)[number]["id"] }) =>
-  id === "bbb" ? (
-    <span className="relative block h-9 w-[94px] shrink-0 overflow-hidden rounded-lg transition-transform duration-300 motion-safe:group-hover:scale-105">
-      <img
-        src={BBB_MARK}
-        alt="BBB Accredited Business"
-        width={1200}
-        height={1030}
-        loading="lazy"
-        decoding="async"
-        className="absolute max-w-none"
-        style={{ width: "103.6%", left: "-1.8%", top: "-65.8%" }}
-      />
-    </span>
-  ) : (
+export const CredentialMark = ({ id }: { id: (typeof CREDENTIALS)[number]["id"] }) => {
+  const m = MARKS[id];
+  return (
     <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-accent/10 transition-all duration-300 group-hover:bg-accent/20 motion-safe:group-hover:scale-110">
-      <img src={GOOGLE_MARK} alt="" aria-hidden="true" width={25} height={25} loading="lazy" decoding="async" className="h-6 w-6" />
+      <img src={m.src} alt="" aria-hidden="true" width={m.w} height={m.h} loading="lazy" decoding="async" className={id === "bbb" ? "h-8 w-auto" : "h-6 w-6"} />
     </span>
   );
+};
 
-export const CredentialChips = () =>
+/** The two credential chips (label + detail, no link). Rendered as <li> inside the home strip. */
+export const CredentialChips = ({ as: Tag = "div", className = "", clone = false }: { as?: "div" | "li"; className?: string; clone?: boolean }) =>
   CREDENTIALS.map((c) => (
-    <div key={c.id} className="group col-span-2 flex min-h-11 cursor-default items-center gap-2.5 sm:col-auto">
+    <Tag key={c.id} className={`group flex min-h-11 cursor-default items-center gap-2.5 ${className}`} aria-hidden={clone || undefined}>
       <CredentialMark id={c.id} />
       <p className="text-sm font-semibold leading-tight text-foreground">
         {c.label}
         <span className="block font-normal text-muted-foreground sm:inline sm:whitespace-nowrap sm:before:content-['_·_']">{c.detail}</span>
       </p>
-    </div>
+    </Tag>
   ));
 
 export const CredentialsDisclosure = () => <Disclosure summary="What do these credentials mean?" />;

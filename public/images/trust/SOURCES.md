@@ -9,3 +9,8 @@
   linked from https://www.bbb.org/business/accreditation/download-the-seal. Use by accredited
   businesses per BBB; Capital Clean Care LLC is BBB Accredited since 2026-10-08 (rating NR). Not
   cropped, recoloured or redrawn; no rating letter shown.
+
+- `bbb-logo.png` (torch + "BBB®" mark, BBB blue #005A78): supplied by the owner on 2026-10-11 for
+  the home trust band. White background made transparent and the canvas trimmed to the mark; the
+  artwork itself is not recoloured or redrawn. Shown next to the words "BBB Accredited · Since
+  October 2026"; the Accredited Business seal file stays in use on /contact.
