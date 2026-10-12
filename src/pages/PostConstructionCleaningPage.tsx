@@ -461,6 +461,23 @@ const PostConstructionCleaningPage = () => {
       <section className="py-12 md:py-16">
         <div className="container mx-auto max-w-3xl px-4">
           <FadeInSection>
+            {/* Owner-provided photo (2026-10-11), placed right above the intro at the owner's request. */}
+            <figure className="mb-8 overflow-hidden rounded-3xl border border-border shadow-lg">
+              <img
+                src={`${IMG}/stairs-hepa-vacuum.webp`}
+                srcSet={`${IMG}/stairs-hepa-vacuum-640.webp 640w, ${IMG}/stairs-hepa-vacuum.webp 1200w`}
+                sizes="(min-width: 768px) 736px, 100vw"
+                alt="Capital Clean Care employee in shoe covers HEPA vacuuming new oak stairs while the walls and doors are still masked with plastic"
+                width={1200}
+                height={1600}
+                loading="lazy"
+                decoding="async"
+                className="aspect-[4/3] w-full object-cover object-bottom"
+              />
+              <figcaption className="px-4 py-2.5 text-xs leading-snug text-muted-foreground">
+                HEPA vacuuming new oak stairs on a renovation, with the walls still masked. Capital Clean Care team, 2026.
+              </figcaption>
+            </figure>
             <div className="space-y-4 text-[17px] leading-relaxed text-foreground">
               {service.intro.split("\n\n").map((p, i) => (
                 <p key={i}>{p}</p>
