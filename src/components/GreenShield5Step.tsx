@@ -73,13 +73,21 @@ const steps = [
 
 /** Per-step overrides for the label-based variant; untouched fields fall back to `steps`. */
 const LABEL_BASED_STEPS: Record<string, Partial<Pick<(typeof steps)[number], "description" | "badge">>> = {
-  "02": { badge: "Dry Dusting First" },
+  "02": {
+    badge: "Dry Dusting First",
+    description:
+      "Top-to-bottom dry dusting of ceiling fans, vents, blinds, baseboards and high surfaces, always before any wet cleaning, so dust does not settle back on surfaces we already cleaned.",
+  },
   "03": {
     description:
       "We clean every high-touch surface, bathroom and kitchen area with products chosen by their labels. Sanitizing and disinfecting are label claims: only an EPA-registered product disinfects, for the contact time on its label. Tell us about pets, allergies or fragrance sensitivities before the visit.",
     badge: "Label-Guided Products",
   },
-  "04": { badge: "Checklist-Based" },
+  "04": {
+    badge: "Checklist-Based",
+    description:
+      "Detailed scrubbing of sinks, fixtures, stovetops, shower tile and grout, appliance fronts and floors, following the checklist for the service you booked.",
+  },
   "05": {
     description:
       "Before we leave, we run a quality inspection against our checklist. If something was missed, contact us and we come back to re-clean it under our satisfaction guarantee.",

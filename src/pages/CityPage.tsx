@@ -33,6 +33,7 @@ import QuoteForm from "@/components/QuoteForm";
 import FAQ from "@/components/FAQ";
 import PricingTable from "@/components/PricingTable";
 import TrustBar from "@/components/TrustBar";
+import GreenShield5Step from "@/components/GreenShield5Step";
 import TrustBadges from "@/components/TrustBadges";
 import ConversionCTA from "@/components/ConversionCTA";
 import { FAQSchema, ServiceSchema, BreadcrumbSchema, LocalBusinessSchema, WebPageSchema } from "@/components/SchemaMarkup";
@@ -310,7 +311,7 @@ const silverSpringServiceGuide = [
 // Weekly audit 04/10/2026: Rockville, Frederick and Georgetown got new body text and links on that
 // date (HUB_CONTEXT_LINK and the Rockville booking sentence), so their date moves. Other hubs keep theirs.
 const HUB_PAGE_DATES: Record<string, string> = {
-  "rockville-md": "2026-10-11",
+  "rockville-md": "2026-10-12",
   // Four hubs with the curated service selection (recovery lot, candidate date 2026-10-08).
   "bethesda-md": "2026-10-08",
   "gaithersburg-md": "2026-10-08",
@@ -388,7 +389,7 @@ const rockvilleFaqs = [
   },
   {
     q: "What is included in a Rockville deep cleaning?",
-    a: "A deep clean is designed for buildup and details beyond routine maintenance. Depending on the agreed scope, it can include baseboards, reachable trim, doors, window sills and tracks, cabinet fronts, bathroom fixtures, kitchen surfaces, and more detailed dust removal. Inside appliances, interior windows, and other add-ons should be confirmed in the written quote rather than assumed.",
+    a: "A deep clean is designed for buildup and details beyond routine maintenance. Depending on the agreed scope, it can include baseboards, reachable trim, doors, window sills and tracks, cabinet fronts, bathroom fixtures, kitchen surfaces, and more detailed dust removal. Inside appliances, interior windows and other add-ons are listed on the written quote, so you know before the visit whether they are included.",
   },
   {
     q: "Do you clean Rockville apartments, condos, townhomes, and single-family homes?",
@@ -509,7 +510,9 @@ const CityPage = () => {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/80 to-primary/60" />
         </div>
-        <div className="relative container mx-auto px-4 max-w-4xl py-16 md:py-24">
+        <div className={`relative container mx-auto px-4 py-16 md:py-24 ${isRockvilleHub ? "max-w-6xl" : "max-w-4xl"}`}>
+          <div className={isRockvilleHub ? "grid items-center gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-14" : undefined}>
+          <div className="min-w-0">
           <Breadcrumbs
             items={[{ label: "Home", href: "/" }, { label: stateLabel, href: `/${city.stateSlug}` }, { label: city.name }]}
             className="mb-4 text-primary-foreground/60 [&_a]:text-primary-foreground/60 [&_a:hover]:text-primary-foreground [&_span[aria-current]]:text-primary-foreground/80 [&_svg]:text-primary-foreground/40"
@@ -529,6 +532,27 @@ const CityPage = () => {
             <Button variant="secondary" size="lg" className="text-base" asChild>
               <a href="tel:+12407042551"><Phone className="h-4 w-4 mr-2" /> (240) 704-2551</a>
             </Button>
+          </div>
+          </div>
+          {/* Owner, 2026-10-12: the real team photo on the Rockville hub hero. */}
+          {isRockvilleHub && (
+            <figure className="mx-auto w-full max-w-md lg:max-w-none">
+              <div className="overflow-hidden rounded-3xl border border-white/20 shadow-2xl">
+                <img
+                  src="/images/team/team-group-uniforms.webp"
+                  srcSet="/images/team/team-group-uniforms-640.webp 640w, /images/team/team-group-uniforms.webp 1200w"
+                  sizes="(min-width: 1024px) 480px, 100vw"
+                  alt="The Capital Clean Care team, five employees in navy uniforms"
+                  width={1200}
+                  height={773}
+                  loading="eager"
+                  decoding="async"
+                  className="aspect-[4/3] w-full object-cover"
+                />
+              </div>
+              <figcaption className="mt-2 text-center text-xs text-primary-foreground/80">Our team, serving Rockville and Montgomery County since 2015.</figcaption>
+            </figure>
+          )}
           </div>
         </div>
       </section>
@@ -586,7 +610,7 @@ const CityPage = () => {
       {isRockvilleHub && (
         <section className="py-12 md:py-16 border-b border-border" aria-labelledby="rockville-cleaning-answer">
           <div className="container mx-auto px-4 max-w-4xl">
-            <p className="text-sm font-semibold text-accent mb-3">Updated October 11, 2026 · Serving Rockville ZIP codes 20850–20853</p>
+            <p className="text-sm font-semibold text-accent mb-3">Updated October 12, 2026 · Serving Rockville ZIP codes 20850–20853</p>
             <h2 id="rockville-cleaning-answer" className="font-heading text-2xl md:text-3xl font-bold mb-5">
               What cleaning services are available in Rockville, MD?
             </h2>
@@ -743,7 +767,7 @@ const CityPage = () => {
                       <ChevronDown aria-hidden="true" className="h-5 w-5 shrink-0 text-muted-foreground motion-safe:transition-transform group-open/note:rotate-180" />
                     </summary>
                     <p className="border-t border-accent/20 px-5 pb-5 pt-3 text-sm leading-relaxed text-foreground">
-                      On August 17, 2026, a Capital Clean Care team completed residential detail work in Rockville, Maryland. The photographs on this page show the team cleaning an interior window's upper frame, track, and latch, then detailing the bathroom mirror area and light fixtures. These are original photographs from that Rockville appointment, not stock images or AI illustrations. They document the type of reachable-detail work that may be included when it appears in the client's confirmed cleaning scope. Because every home and service package is different, the photographs are evidence of work completed on this visit rather than a promise that every item is included automatically. Capital Clean Care protects the client's privacy by publishing neither the resident's identity nor the property's street address. Homeowners who need window tracks, light fixtures, or another detail handled should list it when requesting a quote so the written scope can confirm it before the appointment.
+                      On August 17, 2026, a Capital Clean Care team completed residential detail work in Rockville, Maryland. The photographs on this page show the team cleaning an interior window's upper frame, track, and latch, then detailing the bathroom mirror area and light fixtures. These are original photographs from that Rockville appointment, not stock images or AI illustrations. They document the type of reachable-detail work that may be included when it appears in the client's confirmed cleaning scope. Because every home and service package is different, the photographs show work completed on this visit. They are not a promise that every item is included automatically. Capital Clean Care protects the client's privacy by publishing neither the resident's identity nor the property's street address. Homeowners who need window tracks, light fixtures, or another detail handled should list it when requesting a quote so the written scope can confirm it before the appointment.
                     </p>
                   </details>
                 </div>
@@ -930,6 +954,9 @@ const CityPage = () => {
         </div>
       </section>
 
+      {/* Owner, 2026-10-12: Capital Clean Care's own order of work, in its approved label-based wording. */}
+      {isRockvilleHub && <GreenShield5Step compact showCTA={false} claims="label-based" />}
+
       {/* Testimonials */}
       <section className="py-14 md:py-20 bg-secondary">
         <div className="container mx-auto px-4 max-w-4xl">
@@ -1023,7 +1050,8 @@ const CityPage = () => {
               Neighborhoods We Serve in {city.name}
             </h2>
             <p className="text-muted-foreground mb-8">
-              Our cleaning teams are familiar with {city.name}'s specific neighborhoods — from the street layout to the home styles. We serve all of the following areas and everything in between.
+              {isRockvilleHub ? "Our teams know these Rockville neighborhoods, their street layouts and their home styles. We serve every area below and the streets between them." : <>Our cleaning teams are familiar with {city.name}'s specific neighborhoods — from the street layout to the home styles. We serve all of the following areas and everything in between.
+            </>}
             </p>
             <div className="flex flex-wrap gap-2">
               {cityNeighborhoods[city.slug].map((neighborhood) => (
