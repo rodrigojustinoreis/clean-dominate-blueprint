@@ -24,6 +24,19 @@ export interface ResourceCategory {
   intro: string;
   seoTitle: string;
   seoDescription: string;
+  /** Optional premium layout (owner, 2026-10-11): real-photo hero, credentials, fact sheet, service
+   *  routes, FAQ and quote form. Categories without it render exactly as before. */
+  premium?: ResourceCategoryPremium;
+}
+
+export interface ResourceCategoryPremium {
+  heroImage: { src: string; src640: string; alt: string; width: number; height: number; caption: string };
+  /** Short answer under the H1 (what the hub covers and who it is for). */
+  lead: string;
+  facts: { label: string; value: string }[];
+  /** Where to hire, with the scope line; indexable national service pages only. */
+  services: { label: string; href: string; scope: string }[];
+  faqs: { q: string; a: string }[];
 }
 
 // Order matters: when a post matches more than 2 categories, the FIRST two in this list win.
@@ -79,12 +92,60 @@ export const RESOURCE_CATEGORIES: ResourceCategory[] = [
     slug: "apartment-cleaning",
     label: "Apartments & Rentals",
     emoji: "🏢",
-    h1: "Apartment & Rental Cleaning Guides",
+    h1: "Apartment Cleaning Guides: Condos, Rentals & Airbnb",
+    // 2026-10-11 (owner, premium lot): intro rewritten without em dashes or filler; H1/title aim at the
+    // informational "apartment cleaning" / checklist / Airbnb queries (Semrush). Hiring intent
+    // ("apartment cleaning services") is routed to /services/condo-cleaning, not targeted here.
     intro:
-      "Apartments, condos, and short-term rentals clean differently than single-family houses — smaller footprints, shared walls and hallways, building access rules, and, for hosts, tight turnover windows between guests. These guides cover cleaning your own apartment or condo efficiently, renter-friendly methods that won't risk your deposit, and the professional turnover routines Airbnb and short-term-rental hosts use to earn consistent 5-star reviews across Washington DC, Montgomery County, and Northern Virginia. You'll find realistic timelines, restocking and linen tips, and the details guests and inspectors actually notice. Whether you rent your home, live in one, or manage a rental for someone else, these are the practical, space-appropriate systems that keep compact homes genuinely clean without wasting an entire day on them.",
-    seoTitle: "Apartment & Rental Cleaning Guides — Condos & Airbnb | Capital Clean Care",
+      "Apartments, condos and short-term rentals are cleaned differently from single-family houses. The rooms are smaller, the walls and hallways are shared, buildings have access and elevator rules, and hosts have a few hours between guests. These guides cover cleaning your own apartment or condo in less time, methods that protect a renter's deposit, and the turnover routine Airbnb hosts in Washington, DC, Montgomery County and Northern Virginia use between stays. You will find realistic timelines, linen and restocking tips, and the details guests and building managers check first. If you would rather hand it off, each guide links to the service that does that job.",
+    seoTitle: "Apartment Cleaning Guides: Condos, Rentals & Airbnb",
     seoDescription:
-      "Cleaning guides for apartments, condos, and short-term rentals in the DMV — renter-safe methods, Airbnb turnover routines, and 5-star host checklists.",
+      "Apartment and condo cleaning guides for the DMV: a room-by-room apartment checklist, renter-safe methods, Airbnb turnover routines and what each clean costs.",
+    premium: {
+      heroImage: {
+        src: "/images/team/bethesda-airbnb-turnover-team.webp",
+        src640: "/images/team/bethesda-airbnb-turnover-team.webp",
+        alt: "Capital Clean Care employee in uniform making the bed during a rental turnover in Bethesda, MD",
+        width: 570,
+        height: 760,
+        caption: "Our team on a short-term rental turnover in Bethesda, MD.",
+      },
+      lead:
+        "Practical guides for cleaning an apartment, condo or short-term rental in the DMV, written by the team that cleans them every week, plus the service to book when you would rather not do it yourself.",
+      facts: [
+        { label: "Covers", value: "Apartments, condos, townhome rentals and Airbnb or short-term rentals" },
+        { label: "Where", value: "Washington, DC, Montgomery County, MD and Northern Virginia" },
+        { label: "Apartment pricing", value: "Studio or 1 bedroom: bi-weekly $140 to $165, one-time $160 to $195, deep clean $230 to $285; 2 bed, 2 bath: bi-weekly $180 to $215 (published table)" },
+        { label: "Buildings", value: "We plan around parking, concierge, elevator reservations, key or fob access and permitted service hours" },
+        { label: "Rentals", value: "Turnovers with linen change, restocking and a photo-ready finish between guests" },
+        { label: "Team", value: "Insured company, background-checked employees, EPA Safer Choice products, serving the DMV since 2015" },
+        { label: "Credentials", value: "BBB Accredited Business (since October 2026), Google Verified (Local Services Ads), 5.0-star Google rating, 24-hour re-clean guarantee" },
+      ],
+      services: [
+        { label: "Condo & Apartment Cleaning", href: "/services/condo-cleaning", scope: "Recurring or one-time cleaning for apartments and condos, planned around building rules." },
+        { label: "Airbnb & Short-Term Rental Cleaning", href: "/services/airbnb-cleaning", scope: "Turnovers between guests: linens, restocking, kitchen and bathrooms reset." },
+        { label: "Deep Cleaning", href: "/services/deep-cleaning", scope: "First visit or a reset: baseboards, vents, inside appliances on request." },
+        { label: "Move-Out Cleaning", href: "/services/move-out-cleaning", scope: "Empty-unit clean before the final walkthrough and the deposit check." },
+      ],
+      faqs: [
+        {
+          q: "How much does apartment cleaning cost in the DMV?",
+          a: "From our published table, a studio or 1-bedroom apartment runs $140 to $165 per visit on a bi-weekly plan, $160 to $195 for a one-time standard clean and $230 to $285 for a deep clean. A 2-bedroom, 2-bath apartment runs $180 to $215 bi-weekly. The written quote reflects the size, bathrooms, condition and any add-ons such as inside the oven or refrigerator.",
+        },
+        {
+          q: "What is on an apartment cleaning checklist?",
+          a: "Our condo and apartment clean covers kitchen counters, stovetop, sink and appliance exteriors; toilet, shower, tub, tile and sink scrubbed and disinfected; mirrors and fixtures polished; beds made and surfaces dusted; interior glass, windowsills and window tracks; baseboards, light switches, door handles and remotes; every hard floor mopped and carpets vacuumed; trash emptied. Inside the oven, refrigerator or cabinets are add-ons you list on the quote.",
+        },
+        {
+          q: "Can you clean an apartment in a building with access rules?",
+          a: "Yes. Tell us about parking, the concierge, elevator reservations, key or fob access and permitted service hours when you request the quote, so the team arrives at a time the building allows and with access already arranged.",
+        },
+        {
+          q: "Do you clean Airbnb and short-term rentals between guests?",
+          a: "Yes. A turnover covers a full reset of the kitchen and bathrooms, a linen change, floors, trash and restocking to your list, scheduled around your check-out and check-in times.",
+        },
+      ],
+    },
   },
   {
     slug: "pricing-guides",
