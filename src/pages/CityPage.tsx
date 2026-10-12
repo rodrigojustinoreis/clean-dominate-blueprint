@@ -34,6 +34,7 @@ import FAQ from "@/components/FAQ";
 import PricingTable from "@/components/PricingTable";
 import TrustBar from "@/components/TrustBar";
 import GreenShield5Step from "@/components/GreenShield5Step";
+import RockvilleHub from "@/pages/locations/rockville-md/RockvilleHub";
 import TrustBadges from "@/components/TrustBadges";
 import ConversionCTA from "@/components/ConversionCTA";
 import { FAQSchema, ServiceSchema, BreadcrumbSchema, LocalBusinessSchema, WebPageSchema } from "@/components/SchemaMarkup";
@@ -456,6 +457,30 @@ const CityPage = () => {
   const serviceSchemaName = isUmbrellaHub
     ? `Cleaning Services in ${city.name}, ${city.state}`
     : `House Cleaning in ${city.name}`;
+
+  // 2026-10-12: Rockville renders its own premium layout with the same data, schemas and links.
+  if (isRockvilleHub) {
+    return (
+      <RockvilleHub
+        city={city}
+        seoHelmet={seoHelmet}
+        nearbyCities={nearbyCities.filter((c): c is NonNullable<typeof c> => Boolean(c))}
+        curated={curated}
+        testimonials={testimonials}
+        data={{
+          thumb: ROCKVILLE_THUMB,
+          serviceGuide: rockvilleServiceGuide,
+          facts: rockvilleFacts,
+          photos: rockvilleRealWorkPhotos,
+          why: rockvilleWhyItems,
+          whyIntro,
+          faqs: rockvilleFaqs,
+          dateModified: HUB_PAGE_DATES[city.slug],
+          neighborhoods: cityNeighborhoods[city.slug] ?? [],
+        }}
+      />
+    );
+  }
 
   return (
     <Layout>
