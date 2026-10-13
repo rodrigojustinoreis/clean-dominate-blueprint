@@ -12,7 +12,6 @@ import { autoBlogPosts } from "@/data/auto-blog-posts";
 import NotFound from "./NotFound";
 import RelatedPosts from "@/components/blog/RelatedPosts";
 import BlogInlineCTA from "@/components/blog/BlogInlineCTA";
-import WinterCleaningArticle from "@/components/blog/WinterCleaningArticle";
 import TrustBadges from "@/components/TrustBadges";
 import PricingTable from "@/components/PricingTable";
 
@@ -545,9 +544,7 @@ const blogContent: Record<string, React.ReactNode> = {
       <p>Ready to experience Silver Spring's most trusted cleaning service? <Link to="/contact" className="text-accent hover:underline font-semibold">Get your free quote today</Link>.</p>
     </article>
   ),
-  // 2026-10-12: rewritten as the winter cleaning checklist from Rodrigo's own account (Codex V3 package,
-  // re-edited). The old body and its generated mudroom image are replaced; same URL, original date kept.
-  "eco-cleaning-tips-winters-maryland": <WinterCleaningArticle />,
+  // 2026-10-12: "eco-cleaning-tips-winters-maryland" moved to its own page (WinterCleaningChecklist.tsx).
   "best-cleaning-schedule-busy-families-dmv": (
     <article className="prose prose-lg max-w-none">
       <p>Between commutes to DC, kids' activities, and weekend plans, DMV families are busy. Keeping a clean home shouldn't add stress. Here's a practical cleaning schedule designed for real life in <Link to="/locations/silver-spring-md" className="text-accent hover:underline">Silver Spring</Link>, <Link to="/locations/arlington-va" className="text-accent hover:underline">Arlington</Link>, and across the region.</p>
@@ -1552,9 +1549,6 @@ const FAQ_DATA: Record<string, { q: string; a: string }[]> = {
   ],
 };
 
-// Posts whose body already ends with its own explicit quote CTA (avoid a second, generic one).
-const OWN_CTA_SLUGS: ReadonlySet<string> = new Set(["eco-cleaning-tips-winters-maryland"]);
-
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
 
@@ -1579,8 +1573,6 @@ const BlogPost = () => {
     // SEO Fase 2 (2026-09-06): impressions +127% WoW with flat clicks; the title was the only element
     // saying "MD" while the H1, listing title, meta and opening answer say "Maryland … (2026)".
     "house-cleaning-prices-maryland-2026": "Maryland House Cleaning Cost (2026): $150–$480+",
-    // 2026-10-12 winter checklist rewrite: 56-character SERP title; the H1 keeps "Maryland ... Homes".
-    "eco-cleaning-tips-winters-maryland": "Winter Cleaning Checklist for MD, DC & Northern Virginia",
   };
   const withBrand = `${post.title} | Capital Clean Care`;
   const postTitle = seoTitleOverrides[post.slug] ?? (withBrand.length <= 70 ? withBrand : post.title);
@@ -1638,12 +1630,12 @@ const BlogPost = () => {
             </section>
           )}
 
-          {!OWN_CTA_SLUGS.has(post.slug) && <BlogInlineCTA
+          <BlogInlineCTA
             headline="Ready to Have Your Home Professionally Cleaned?"
             subtext="Capital Clean Care serves Maryland, DC & Northern Virginia with eco-friendly, background-checked teams."
             ctaLabel="Request a Free Quote →"
             ctaTo="/contact"
-          />}
+          />
 
           <RelatedPosts currentSlug={post.slug} />
 
