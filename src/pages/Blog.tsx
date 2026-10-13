@@ -896,10 +896,11 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "eco-cleaning-tips-winters-maryland",
-    title: "Eco Cleaning Tips for Winters in Maryland",
-    excerpt: "Keep your Maryland home clean and healthy through winter with these eco-friendly strategies — from salt stain removal to humidity control in Rockville, Bethesda & beyond.",
+    // 2026-10-12: rewritten as the winter cleaning checklist; original publication date kept.
+    title: "Winter Cleaning Checklist for Maryland, DC & Northern Virginia Homes",
+    excerpt: "Use our winter cleaning checklist for Maryland, DC and Northern Virginia homes. Tackle dust, floors and filters, then request a custom cleaning quote.",
     date: "2026-01-15",
-    readTime: "7 min read",
+    readTime: "12 min read",
     category: "Seasonal Guides",
     // 25/09/2026: capa própria (antes era foto de banco do Pexels); a mesma cena abre o artigo.
     coverImage: "/images/resources/eco-cleaning-tips-winters-maryland/og.jpg",

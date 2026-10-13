@@ -12,6 +12,7 @@ import { autoBlogPosts } from "@/data/auto-blog-posts";
 import NotFound from "./NotFound";
 import RelatedPosts from "@/components/blog/RelatedPosts";
 import BlogInlineCTA from "@/components/blog/BlogInlineCTA";
+import WinterCleaningArticle from "@/components/blog/WinterCleaningArticle";
 import TrustBadges from "@/components/TrustBadges";
 import PricingTable from "@/components/PricingTable";
 
@@ -544,53 +545,9 @@ const blogContent: Record<string, React.ReactNode> = {
       <p>Ready to experience Silver Spring's most trusted cleaning service? <Link to="/contact" className="text-accent hover:underline font-semibold">Get your free quote today</Link>.</p>
     </article>
   ),
-  "eco-cleaning-tips-winters-maryland": (
-    <article className="prose prose-lg max-w-none">
-      <img
-        src="/images/resources/eco-cleaning-tips-winters-maryland/hero.webp"
-        srcSet="/images/resources/eco-cleaning-tips-winters-maryland/hero-640.webp 640w, /images/resources/eco-cleaning-tips-winters-maryland/hero.webp 1280w"
-        sizes="(max-width: 768px) 100vw, 768px"
-        alt="Bright mudroom entryway of a Maryland home in winter, with a cleaning caddy, folded microfiber cloths, a flat mop and a boot tray by the door"
-        className="w-full rounded-2xl shadow-md mb-8"
-        width={1280}
-        height={853}
-        loading="eager"
-        fetchPriority="high"
-        decoding="async"
-      />
-      <p>Maryland winters bring unique cleaning challenges — road salt tracked indoors, dry air creating static dust buildup, and holiday gatherings leaving extra messes. At <Link to="/" className="text-accent hover:underline">Capital Clean Care</Link>, we help families across <Link to="/locations/rockville-md" className="text-accent hover:underline">Rockville</Link>, <Link to="/locations/bethesda-md" className="text-accent hover:underline">Bethesda</Link>, and <Link to="/locations/germantown-md/house-cleaning" className="text-accent hover:underline">Germantown</Link> keep their homes spotless through the coldest months — using only eco-friendly methods.</p>
-
-      <h2>1. Tackle Salt and Slush Stains Immediately</h2>
-      <p>Road salt from Maryland's treated highways gets tracked onto hardwood, tile, and carpet. White residue can damage finishes over time. Sweep or vacuum the dry residue first, then wipe entryway floors with a cleaner made for that floor's finish and with as little water as possible. Vinegar is not safe for every hardwood finish or for natural stone, so check the care instructions before reaching for it. Place washable mats at every entrance to reduce salt spread.</p>
-
-      <h2>2. Combat Dry Indoor Air and Dust</h2>
-      <p>Heating systems running constantly in Silver Spring and Frederick homes circulate dust and lower humidity. Use a HEPA-filter vacuum at least twice weekly and dust with damp microfiber cloths to trap particles instead of spreading them. Consider adding a humidifier to keep humidity between 30-50%, which reduces static dust.</p>
-
-      <h2>3. Deep Clean Carpets and Rugs Before Holiday Guests</h2>
-      <p>Maryland families host frequently during winter holidays. A professional <Link to="/services/deep-cleaning" className="text-accent hover:underline">deep cleaning</Link> before Thanksgiving or Christmas ensures carpets, upholstery, and guest rooms are fresh.</p>
-
-      <h2>4. Clean Air Vents and Heating Registers</h2>
-      <p>Before cranking up the heat, remove vent covers and wash them in warm soapy water. Vacuum inside the duct openings to remove accumulated dust. That keeps the dust that settled over the summer from being blown back into the room once the heat runs.</p>
-
-      <h2>5. Use Plant-Based Disinfectants for Cold & Flu Season</h2>
-      <p>Winter means cold and flu season. Disinfect high-touch surfaces — doorknobs, light switches, remote controls, faucets — with thymol-based or hydrogen peroxide cleaners. Choose a product whose label carries an EPA registration for disinfecting and follow the contact time printed on it. A Safer Choice label identifies safer ingredients; it is not a germ-kill claim.</p>
-
-      <h2>6. Protect Hardwood from Winter Moisture</h2>
-      <p>Melting snow and wet boots can warp hardwood floors common in <Link to="/locations/kensington-md" className="text-accent hover:underline">Kensington</Link> and <Link to="/locations/chevy-chase-md" className="text-accent hover:underline">Chevy Chase</Link> homes. Wipe spills immediately, avoid excess water when mopping, and use a plant-based floor cleaner designed for sealed hardwood.</p>
-
-      <h2>Schedule Your Winter Deep Clean</h2>
-      <p>Don't let winter grime build up. Our <Link to="/services/eco-friendly-cleaning" className="text-accent hover:underline">eco-friendly cleaning service</Link> is available throughout Maryland, DC, and Northern Virginia. Read our full guide on <Link to="/why-eco-friendly-cleaning" className="text-accent hover:underline">why eco-friendly cleaning matters</Link> — especially in winter when homes are sealed tight.</p>
-
-      <BlogInlineCTA
-        headline="Winter-Ready Cleaning for Maryland Homes"
-        subtext="Salt stains, holiday prep, dry-air dust — we handle it all with plant-based, non-toxic products. Serving Rockville, Bethesda, Germantown, Kensington, Chevy Chase, and more."
-        ctaLabel="Get My Winter Cleaning Quote →"
-        ctaTo="/contact"
-      />
-
-      <p><Link to="/contact" className="text-accent hover:underline font-semibold">Get your free winter cleaning quote today</Link>.</p>
-    </article>
-  ),
+  // 2026-10-12: rewritten as the winter cleaning checklist from Rodrigo's own account (Codex V3 package,
+  // re-edited). The old body and its generated mudroom image are replaced; same URL, original date kept.
+  "eco-cleaning-tips-winters-maryland": <WinterCleaningArticle />,
   "best-cleaning-schedule-busy-families-dmv": (
     <article className="prose prose-lg max-w-none">
       <p>Between commutes to DC, kids' activities, and weekend plans, DMV families are busy. Keeping a clean home shouldn't add stress. Here's a practical cleaning schedule designed for real life in <Link to="/locations/silver-spring-md" className="text-accent hover:underline">Silver Spring</Link>, <Link to="/locations/arlington-va" className="text-accent hover:underline">Arlington</Link>, and across the region.</p>
@@ -1565,17 +1522,6 @@ const HOWTO_DATA: Record<string, { steps: { name: string; text: string }[]; tota
       { name: "Declutter to Reduce Dust Traps", text: "Remove unnecessary items from shelves and floors that collect dust. Use closed storage bins. Wash throw rugs or replace with washable alternatives." },
     ],
   },
-  "eco-cleaning-tips-winters-maryland": {
-    totalTime: "PT3H",
-    steps: [
-      { name: "Switch to Plant-Based All-Purpose Cleaners", text: "Replace conventional sprays with EPA Safer Choice certified plant-based formulas for kitchen counters, bathroom surfaces, and appliance exteriors." },
-      { name: "Use Microfiber Cloths Instead of Paper Towels", text: "Microfiber cloths trap and remove bacteria and dust with water alone, eliminating the need for chemical sprays. Wash them in hot water after use." },
-      { name: "Make a DIY Non-Toxic Scrub for Grout", text: "Mix baking soda and hydrogen peroxide into a paste. Apply to grout lines, let sit for 10 minutes, and scrub with a stiff brush — no bleach required." },
-      { name: "Ventilate While Cleaning", text: "Open windows and run exhaust fans even in winter. Good ventilation prevents moisture buildup and ensures any cleaning product vapors dissipate quickly." },
-      { name: "Replace Plug-In Air Fresheners", text: "Synthetic air fresheners release VOCs. Switch to essential-oil diffusers or simmer orange peels with cinnamon sticks for a natural winter scent." },
-      { name: "Dispose of Old Products Responsibly", text: "Take conventional cleaning chemicals to your county's household hazardous waste facility rather than pouring them down the drain or into recycling." },
-    ],
-  },
   "airbnb-cleaning-tips-dmv-hosts": {
     totalTime: "PT3H",
     steps: [
@@ -1606,6 +1552,9 @@ const FAQ_DATA: Record<string, { q: string; a: string }[]> = {
   ],
 };
 
+// Posts whose body already ends with its own explicit quote CTA (avoid a second, generic one).
+const OWN_CTA_SLUGS: ReadonlySet<string> = new Set(["eco-cleaning-tips-winters-maryland"]);
+
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
 
@@ -1630,6 +1579,8 @@ const BlogPost = () => {
     // SEO Fase 2 (2026-09-06): impressions +127% WoW with flat clicks; the title was the only element
     // saying "MD" while the H1, listing title, meta and opening answer say "Maryland … (2026)".
     "house-cleaning-prices-maryland-2026": "Maryland House Cleaning Cost (2026): $150–$480+",
+    // 2026-10-12 winter checklist rewrite: 56-character SERP title; the H1 keeps "Maryland ... Homes".
+    "eco-cleaning-tips-winters-maryland": "Winter Cleaning Checklist for MD, DC & Northern Virginia",
   };
   const withBrand = `${post.title} | Capital Clean Care`;
   const postTitle = seoTitleOverrides[post.slug] ?? (withBrand.length <= 70 ? withBrand : post.title);
@@ -1687,12 +1638,12 @@ const BlogPost = () => {
             </section>
           )}
 
-          <BlogInlineCTA
+          {!OWN_CTA_SLUGS.has(post.slug) && <BlogInlineCTA
             headline="Ready to Have Your Home Professionally Cleaned?"
             subtext="Capital Clean Care serves Maryland, DC & Northern Virginia with eco-friendly, background-checked teams."
             ctaLabel="Request a Free Quote →"
             ctaTo="/contact"
-          />
+          />}
 
           <RelatedPosts currentSlug={post.slug} />
 
