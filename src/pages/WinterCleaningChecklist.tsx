@@ -27,6 +27,8 @@ const URL = `https://capitalcleancare.com/resources/${SLUG}`;
 const H1 = "Winter Cleaning Checklist for Maryland, DC & Northern Virginia Homes";
 const DESCRIPTION = "Use our winter cleaning checklist for Maryland, DC and Northern Virginia homes. Tackle dust, floors and filters, then request a custom cleaning quote.";
 const DATE_PUBLISHED = "2026-01-15";
+// Content rewritten and published 2026-10-12 (winter checklist from Rodrigo's account).
+const DATE_MODIFIED = "2026-10-12";
 const IMG = "/images/blog/winter-cleaning";
 const PHONE = "(240) 704-2551";
 const PHONE_HREF = "tel:+12407042551";
@@ -206,6 +208,7 @@ const WinterCleaningChecklist = () => {
         description={DESCRIPTION}
         url={URL}
         datePublished={DATE_PUBLISHED}
+        dateModified={DATE_MODIFIED}
         image={`${IMG}/team-cleaning-living-room-840.webp`}
         imageWidth={840}
         imageHeight={1111}
@@ -232,7 +235,7 @@ const WinterCleaningChecklist = () => {
                 Most winter lists stop at the gutters, the pipes and the furnace. This one starts inside the house: get the built-up dust out first, in the right order, then decide what extra filtration is worth adding.
               </p>
               <p className="mb-7 text-xs uppercase tracking-widest text-muted-foreground">
-                By <Link to="/about" className="font-semibold text-foreground hover:underline">Rodrigo Reis</Link>, founder · <time dateTime={DATE_PUBLISHED}>January 15, 2026</time>
+                By <Link to="/about" className="font-semibold text-foreground hover:underline">Rodrigo Reis</Link>, founder · <time dateTime={DATE_PUBLISHED}>January 15, 2026</time> · <span className="whitespace-nowrap">Updated <time dateTime={DATE_MODIFIED}>October 12, 2026</time></span>
               </p>
               <div className="mb-6 flex flex-col gap-3 sm:flex-row">
                 <a href="#quote" className="inline-flex items-center justify-center rounded-lg bg-[#2E7D32] px-8 py-3.5 text-base font-bold text-white shadow-lg shadow-[#2E7D32]/20 transition-colors hover:bg-[#1B5E20]">
