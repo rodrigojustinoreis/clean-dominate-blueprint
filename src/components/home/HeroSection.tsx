@@ -1,4 +1,4 @@
-import { ArrowRight, Phone, Star, Shield, Leaf, Home, Sparkles, Package, HardHat } from "lucide-react";
+import { ArrowRight, Phone, Star, Shield, ShieldCheck, Leaf, Home, Sparkles, Package, HardHat } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -158,17 +158,22 @@ const HeroSection = () => {
           </Button>
         </div>
 
-        {/* Phone-only shortcuts card (md+ has the full services grid further down) */}
-        {shortcuts.length > 0 && (
-          <nav aria-label="Popular services" className="order-5 md:hidden mt-6 grid grid-cols-2 min-[400px]:grid-cols-4 min-[400px]:divide-x divide-border rounded-2xl overflow-hidden bg-background/85 backdrop-blur border border-border shadow-sm animate-fade-up" style={{ animationDelay: "450ms" }}>
-            {shortcuts.map((sc) => (
-              <Link key={sc.slug} to={`/services/${sc.slug}`} className="flex flex-col items-center gap-2 px-2 py-4 text-center hover:bg-accent/5 max-[399px]:border-b max-[399px]:odd:border-r border-border">
-                <span className={`flex h-12 w-12 items-center justify-center rounded-full ${sc.tone}`}><sc.icon className="h-5 w-5" aria-hidden="true" /></span>
-                <span className="text-xs min-[400px]:text-[11px] font-medium leading-tight text-foreground">{sc.name}</span>
-              </Link>
-            ))}
-          </nav>
-        )}
+        {/* Phone-only credentials card (owner test 2026-10-13): replaces the four service shortcuts with the
+            verified credentials, same card shape. md+ unchanged; the services grid below still links every service. */}
+        <ul aria-label="Our credentials" className="order-5 md:hidden mt-6 grid grid-cols-2 min-[400px]:grid-cols-4 min-[400px]:divide-x divide-border rounded-2xl overflow-hidden bg-background/85 backdrop-blur border border-border shadow-sm animate-fade-up" style={{ animationDelay: "450ms" }}>
+          {[
+            { key: "bbb", title: "BBB Accredited", sub: "Since Oct 2026", mark: <img src="/images/trust/bbb-logo.png" alt="" aria-hidden="true" width={194} height={283} className="h-8 w-auto" /> },
+            { key: "gv", title: "Google Verified", sub: "Local Services", mark: <img src="/images/trust/google-verified.svg" alt="" aria-hidden="true" width={25} height={25} className="h-7 w-7" /> },
+            { key: "g5", title: "5.0 on Google", sub: "Real reviews", mark: <Star className="h-6 w-6 fill-amber-400 text-amber-400" aria-hidden="true" /> },
+            { key: "li", title: "Licensed & Insured", sub: "Background-checked", mark: <ShieldCheck className="h-6 w-6 text-primary" aria-hidden="true" /> },
+          ].map((c) => (
+            <li key={c.key} className="flex flex-col items-center gap-2 px-2 py-4 text-center max-[399px]:border-b max-[399px]:odd:border-r border-border">
+              <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-sm ring-1 ring-border">{c.mark}</span>
+              <span className="text-xs min-[400px]:text-[11px] font-semibold leading-tight text-foreground">{c.title}</span>
+              <span className="-mt-1 text-[11px] leading-tight text-muted-foreground">{c.sub}</span>
+            </li>
+          ))}
+        </ul>
 
         {/* Phone-only rating row, right under the CTA: real team photo + 5.0 (SEO + design review 30/09/2026) */}
         <div className="order-3 md:hidden mt-4 mr-14 flex items-center gap-3 rounded-2xl border border-border bg-background/90 p-2.5 pr-3 shadow-sm min-[400px]:mr-0 animate-fade-up" style={{ animationDelay: "350ms" }}>
