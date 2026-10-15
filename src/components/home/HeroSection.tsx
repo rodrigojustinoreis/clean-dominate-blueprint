@@ -175,7 +175,7 @@ const HeroSection = () => {
               <>
                 <span className="relative flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-sm ring-1 ring-border transition-transform duration-300 group-hover:scale-110 group-active:scale-95 motion-reduce:transition-none">
                   {/* Pulse layer (owner 2026-10-15): soft halo that keeps pulsing, staggered per badge; off under reduced motion. */}
-                  <span aria-hidden="true" className="pointer-events-none absolute inset-0 rounded-full motion-safe:animate-badge-pulse" style={{ animationDelay: `${700 + i * 650}ms` }} />
+                  <span aria-hidden="true" className="pointer-events-none absolute inset-0 rounded-full motion-safe:animate-badge-pulse" style={{ animationDelay: `${700 + i * 1000}ms` }} />
                   {c.mark}
                 </span>
                 <span className="text-xs min-[400px]:text-[11px] font-semibold leading-tight text-foreground group-hover:text-primary">{c.title}</span>
