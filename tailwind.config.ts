@@ -142,6 +142,8 @@ export default {
         "kenburns": "kenburns 18s ease-in-out infinite alternate",
         "badge-in": "badge-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) both",
         "badge-halo": "badge-halo 1.4s ease-out",
+        // Continuous, gentle pulse (owner 2026-10-15); each badge offset so they pulse one after another.
+        "badge-pulse": "badge-halo 2.6s ease-out infinite",
       },
       backgroundImage: {
         'mesh-light': 'radial-gradient(at 40% 20%, hsla(197, 62%, 93%, 1) 0px, transparent 50%), radial-gradient(at 80% 0%, hsla(207, 70%, 95%, 1) 0px, transparent 50%), radial-gradient(at 0% 50%, hsla(210, 20%, 98%, 1) 0px, transparent 50%)',
