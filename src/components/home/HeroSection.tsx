@@ -35,6 +35,10 @@ const trustItems = [
 
 // Phone-only shortcuts strip (owner's mockup, 28/09/2026). Labels come from the same directory data
 // as the services grid, so no new wording is introduced.
+// Credential destinations for the phone hero card (owner, 2026-10-14).
+const BBB_PROFILE = "https://www.bbb.org/us/md/silver-spring/profile/house-cleaning/capital-clean-care-llc-0241-236108525";
+const GOOGLE_PROFILE = "https://share.google/FhWh6I5kFwqwg8mnN";
+
 const SHORTCUTS: { slug: string; icon: typeof Home; tone: string }[] = [
   { slug: "house-cleaning", icon: Home, tone: "bg-sky-100 text-sky-700" },
   { slug: "deep-cleaning", icon: Sparkles, tone: "bg-emerald-100 text-emerald-700" },
@@ -160,19 +164,36 @@ const HeroSection = () => {
 
         {/* Phone-only credentials card (owner test 2026-10-13): replaces the four service shortcuts with the
             verified credentials, same card shape. md+ unchanged; the services grid below still links every service. */}
-        <ul aria-label="Our credentials" className="order-5 md:hidden mt-6 grid grid-cols-2 min-[400px]:grid-cols-4 min-[400px]:divide-x divide-border rounded-2xl overflow-hidden bg-background/85 backdrop-blur border border-border shadow-sm animate-fade-up" style={{ animationDelay: "450ms" }}>
+        <ul aria-label="Our credentials" className="order-5 md:hidden mt-6 grid grid-cols-2 min-[400px]:grid-cols-4 min-[400px]:divide-x divide-border rounded-2xl overflow-hidden bg-background/85 backdrop-blur border border-border shadow-sm">
           {[
-            { key: "bbb", title: "BBB Accredited", sub: "Since Oct 2026", mark: <img src="/images/trust/bbb-logo.png" alt="" aria-hidden="true" width={194} height={283} className="h-8 w-auto" /> },
-            { key: "gv", title: "Google Verified", sub: "Local Services", mark: <img src="/images/trust/google-verified.svg" alt="" aria-hidden="true" width={25} height={25} className="h-7 w-7" /> },
-            { key: "g5", title: "5.0 on Google", sub: "Real reviews", mark: <Star className="h-6 w-6 fill-amber-400 text-amber-400" aria-hidden="true" /> },
-            { key: "li", title: "Licensed & Insured", sub: "Background-checked", mark: <ShieldCheck className="h-6 w-6 text-primary" aria-hidden="true" /> },
-          ].map((c) => (
-            <li key={c.key} className="flex flex-col items-center gap-2 px-2 py-4 text-center max-[399px]:border-b max-[399px]:odd:border-r border-border">
-              <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-sm ring-1 ring-border">{c.mark}</span>
-              <span className="text-xs min-[400px]:text-[11px] font-semibold leading-tight text-foreground">{c.title}</span>
-              <span className="-mt-1 text-[11px] leading-tight text-muted-foreground">{c.sub}</span>
-            </li>
-          ))}
+            { key: "bbb", title: "BBB Accredited", sub: "Since Oct 2026", href: BBB_PROFILE, ext: true, label: "BBB Accredited Business since October 2026: open our BBB profile (opens in a new tab)", mark: <img src="/images/trust/bbb-logo.png" alt="" aria-hidden="true" width={194} height={283} className="h-8 w-auto" /> },
+            { key: "gv", title: "Google Verified", sub: "Local Services", href: GOOGLE_PROFILE, ext: true, label: "Google Verified, Local Services Ads: open our Google Business Profile (opens in a new tab)", mark: <img src="/images/trust/google-verified.svg" alt="" aria-hidden="true" width={25} height={25} className="h-7 w-7" /> },
+            { key: "g5", title: "5.0 on Google", sub: "Real reviews", href: "/reviews", ext: false, label: "5.0 on Google: read our client reviews", mark: <Star className="h-6 w-6 fill-amber-400 text-amber-400" aria-hidden="true" /> },
+            { key: "li", title: "Licensed & Insured", sub: "Background-checked", href: "/about", ext: false, label: "Licensed and insured, background-checked team: about Capital Clean Care", mark: <ShieldCheck className="h-6 w-6 text-primary" aria-hidden="true" /> },
+          ].map((c, i) => {
+            const inner = (
+              <>
+                <span
+                  className="flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-sm ring-1 ring-border transition-transform duration-300 group-hover:scale-110 group-active:scale-95 motion-safe:animate-badge-halo motion-reduce:transition-none"
+                  style={{ animationDelay: `${700 + i * 150}ms` }}
+                >
+                  {c.mark}
+                </span>
+                <span className="text-xs min-[400px]:text-[11px] font-semibold leading-tight text-foreground group-hover:text-primary">{c.title}</span>
+                <span className="-mt-1 text-[11px] leading-tight text-muted-foreground">{c.sub}</span>
+              </>
+            );
+            const cls = "group flex h-full min-h-11 flex-col items-center gap-2 px-2 py-4 text-center transition-colors hover:bg-primary/[0.04] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary";
+            return (
+              <li key={c.key} className="max-[399px]:border-b max-[399px]:odd:border-r border-border motion-safe:animate-badge-in" style={{ animationDelay: `${450 + i * 110}ms` }}>
+                {c.ext ? (
+                  <a href={c.href} target="_blank" rel="noopener noreferrer" aria-label={c.label} className={cls}>{inner}</a>
+                ) : (
+                  <Link to={c.href} aria-label={c.label} className={cls}>{inner}</Link>
+                )}
+              </li>
+            );
+          })}
         </ul>
 
         {/* Phone-only rating row, right under the CTA: real team photo + 5.0 (SEO + design review 30/09/2026) */}

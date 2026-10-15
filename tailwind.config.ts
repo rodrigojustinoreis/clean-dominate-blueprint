@@ -116,6 +116,15 @@ export default {
           "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(-50%)" },
         },
+        // Credential badges (home phone hero, 2026-10-14): pop in, then one soft halo around the mark.
+        "badge-in": {
+          "0%": { opacity: "0", transform: "translateY(10px) scale(0.92)" },
+          "100%": { opacity: "1", transform: "translateY(0) scale(1)" },
+        },
+        "badge-halo": {
+          "0%": { boxShadow: "0 0 0 0 hsl(var(--primary) / 0.28)" },
+          "100%": { boxShadow: "0 0 0 12px hsl(var(--primary) / 0)" },
+        },
         "kenburns": {
           "0%": { transform: "scale(1) translate(0, 0)" },
           "100%": { transform: "scale(1.12) translate(-1.5%, -1.5%)" },
@@ -131,6 +140,8 @@ export default {
         "fade-up": "fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards",
         "marquee": "marquee 40s linear infinite",
         "kenburns": "kenburns 18s ease-in-out infinite alternate",
+        "badge-in": "badge-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) both",
+        "badge-halo": "badge-halo 1.4s ease-out",
       },
       backgroundImage: {
         'mesh-light': 'radial-gradient(at 40% 20%, hsla(197, 62%, 93%, 1) 0px, transparent 50%), radial-gradient(at 80% 0%, hsla(207, 70%, 95%, 1) 0px, transparent 50%), radial-gradient(at 0% 50%, hsla(210, 20%, 98%, 1) 0px, transparent 50%)',
