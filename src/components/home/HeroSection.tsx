@@ -126,9 +126,9 @@ const HeroSection = () => {
           Eco-friendly cleaning by background-checked professionals. Safe for kids and pets. Licensed & insured, with a 24-hour satisfaction guarantee.
         </p>
 
-        {/* Trust items: DOM order is the desktop order (before the CTAs). Phones render them after the
-            CTA as three outline-icon items (order-3); md+ keeps the original glass pills. */}
-        <div className="order-4 md:order-none flex flex-wrap gap-x-4 gap-y-2 mt-5 md:mt-0 md:gap-3 md:mb-12 animate-fade-up" style={{ animationDelay: "400ms" }}>
+        {/* Trust items: desktop only (glass pills). Owner 2026-10-14: on phones the credentials card below
+            replaces this row. */}
+        <div className="hidden md:order-none md:flex md:flex-wrap md:gap-3 md:mb-12 animate-fade-up" style={{ animationDelay: "400ms" }}>
           {trustItems.map(({ icon: Icon, label }) => (
             <span key={label} className="inline-flex items-center gap-1.5 whitespace-nowrap md:gap-2 md:glass md:rounded-full md:px-4 md:py-2 text-xs md:text-sm font-medium text-foreground">
               <Icon className="h-5 w-5 md:h-4 md:w-4 shrink-0 text-primary md:text-accent stroke-[1.75] md:stroke-2" />
