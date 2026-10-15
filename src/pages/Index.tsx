@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { CheckCircle, Shield, Leaf, Star, MapPin, Sparkles, ArrowRight, Phone, Users, Check } from "lucide-react";
 import { CredentialsDisclosure } from "@/components/VerifiedCredentials";
-import HomeTrustMarquee from "@/components/home/HomeTrustMarquee";
 import { trackPhoneClick, trackBookNowClick } from "@/lib/analytics";
 import PricingTable from "@/components/PricingTable";
 import PriceCalculator from "@/components/PriceCalculator";
@@ -83,8 +82,7 @@ const Index = () => {
                 verifiable credentials (BBB accreditation, Google Local Services Ads verification).
                 2026-10-11 (owner): those two chips lost their exposed external links and show the official
                 marks in the same layout as the two chips beside them; the proof links stay only inside the
-                on-page disclosure below. The four chips now glide in one slow strip (HomeTrustMarquee). */}
-            <HomeTrustMarquee />
+                on-page disclosure below. 2026-10-14: the credentials strip moved into the quote form (credentials-row). */}
             <div className="mx-auto mb-6 max-w-3xl">
               <CredentialsDisclosure />
             </div>
@@ -417,7 +415,8 @@ const Index = () => {
               <div className="order-1 lg:order-2 lg:col-span-3">
                 <Card className="shadow-xl">
                   <CardContent className="p-6 md:p-10">
-                    <QuoteForm compact />
+                    {/* Owner, 2026-10-14: the credentials carousel moved here from the trust band, next to "Get Your Free Quote". */}
+                    <QuoteForm compact trustVariant="credentials-row" trustMarqueeSpeed={28} />
                   </CardContent>
                 </Card>
               </div>

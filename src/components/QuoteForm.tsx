@@ -457,7 +457,8 @@ const QuoteForm = ({ submitLabel = "GET MY FREE QUOTE →", defaultService = "",
       {/* ── 3D trust badge cards (landing style). In the "credentials" variant every card moves to
           the carousel after the form, so nothing renders here. ── */}
       {trustVariant === "credentials-row" ? (
-        <div className={`-mx-2 sm:-mx-4${compact ? " hidden lg:block" : ""}`}>
+        // Shown in compact mode too (home, 2026-10-14): the credentials are the trust row on every size.
+        <div className="-mx-2 sm:-mx-4">
           <Marquee tone="plain" ariaLabel="Credentials" pxPerSecond={trustMarqueeSpeed} trackClassName="gap-3 px-2 py-2 sm:px-4" cards={(clone) => <CredentialRowCards clone={clone} />} />
         </div>
       ) : (
