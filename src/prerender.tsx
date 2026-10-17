@@ -20,6 +20,9 @@ function getAllRoutes(): string[] {
     "/gift-cards",
     "/faq",
     "/pricing",
+    // Online booking (2026-10-17): noindex, prerendered so the URL answers 200 instead of the 404 fallback.
+    "/book",
+    "/book/confirmed",
     // Fase 3 / Lote 2: prerendered 404 body — netlify.toml serves dist/404.html (flatten alias) with status 404.
     "/404",
     "/es/404",

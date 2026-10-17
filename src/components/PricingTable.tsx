@@ -4,99 +4,9 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Info, CheckCircle2, Plus } from "lucide-react";
 
-// Exported so the /pricing estimator reads the exact same ranges (single source for the page).
-export const PRICE_SERVICES = [
-  {
-    id: "recurring",
-    label: "Recurring",
-    sublabel: "Weekly · Bi-weekly · Monthly",
-    color: "bg-emerald-50 border-emerald-200",
-    badge: "Most Popular",
-    badgeColor: "bg-emerald-600 text-white",
-    description: "Ongoing maintenance cleaning. Price shown is per visit at bi-weekly frequency.",
-    note: "Bi-weekly pricing shown (15% off our one-time rate). Weekly is 25% off and monthly 5% off the same one-time rate.",
-    rows: [
-      { config: "Studio / 1 Bed · 1 Bath", sqft: "up to 900 sq ft",   price: "$140 – $165" },
-      { config: "2 Bed · 1 Bath",           sqft: "900 – 1,300 sq ft", price: "$160 – $190" },
-      { config: "2 Bed · 2 Bath",           sqft: "1,300 – 1,700 sq ft", price: "$180 – $215" },
-      { config: "3 Bed · 2 Bath",           sqft: "1,700 – 2,200 sq ft", price: "$215 – $260" },
-      { config: "4 Bed · 2–3 Bath",         sqft: "2,200 – 3,000 sq ft", price: "$265 – $325" },
-      { config: "5+ Bed · 3+ Bath",         sqft: "3,000+ sq ft",       price: "From $350" },
-    ],
-  },
-  {
-    id: "standard",
-    label: "One-Time",
-    sublabel: "Standard clean",
-    color: "bg-blue-50 border-blue-200",
-    badge: null,
-    badgeColor: "",
-    description: "Single visit standard cleaning. No commitment required.",
-    note: "Includes all main areas, kitchen, bathrooms, vacuuming and mopping.",
-    rows: [
-      { config: "Studio / 1 Bed · 1 Bath", sqft: "up to 900 sq ft",      price: "$160 – $195" },
-      { config: "2 Bed · 1 Bath",           sqft: "900 – 1,300 sq ft",    price: "$190 – $225" },
-      { config: "2 Bed · 2 Bath",           sqft: "1,300 – 1,700 sq ft",  price: "$215 – $255" },
-      { config: "3 Bed · 2 Bath",           sqft: "1,700 – 2,200 sq ft",  price: "$255 – $310" },
-      { config: "4 Bed · 2–3 Bath",         sqft: "2,200 – 3,000 sq ft",  price: "$315 – $385" },
-      { config: "5+ Bed · 3+ Bath",         sqft: "3,000+ sq ft",         price: "From $400" },
-    ],
-  },
-  {
-    id: "deep",
-    label: "Deep Clean",
-    sublabel: "Top-to-bottom",
-    color: "bg-violet-50 border-violet-200",
-    badge: "Best Value",
-    badgeColor: "bg-violet-600 text-white",
-    description: "Detailed, top-to-bottom clean of every surface, corner, and fixture.",
-    note: "Includes baseboards, blinds, ceiling fans, grout scrubbing and interior appliances.",
-    rows: [
-      { config: "Studio / 1 Bed · 1 Bath", sqft: "up to 900 sq ft",      price: "$230 – $285" },
-      { config: "2 Bed · 1 Bath",           sqft: "900 – 1,300 sq ft",    price: "$275 – $330" },
-      { config: "2 Bed · 2 Bath",           sqft: "1,300 – 1,700 sq ft",  price: "$310 – $375" },
-      { config: "3 Bed · 2 Bath",           sqft: "1,700 – 2,200 sq ft",  price: "$375 – $445" },
-      { config: "4 Bed · 2–3 Bath",         sqft: "2,200 – 3,000 sq ft",  price: "$450 – $540" },
-      { config: "5+ Bed · 3+ Bath",         sqft: "3,000+ sq ft",         price: "From $570" },
-    ],
-  },
-  {
-    id: "move",
-    label: "Move In/Out",
-    sublabel: "Lease-end ready",
-    color: "bg-amber-50 border-amber-200",
-    badge: null,
-    badgeColor: "",
-    description: "Complete cleaning for move-out or move-in. Security deposit approved.",
-    note: "Includes inside cabinets, all appliances, closets, and garage sweep upon request.",
-    rows: [
-      { config: "Studio / 1 Bed · 1 Bath", sqft: "up to 900 sq ft",      price: "$260 – $320" },
-      { config: "2 Bed · 1 Bath",           sqft: "900 – 1,300 sq ft",    price: "$310 – $375" },
-      { config: "2 Bed · 2 Bath",           sqft: "1,300 – 1,700 sq ft",  price: "$355 – $420" },
-      { config: "3 Bed · 2 Bath",           sqft: "1,700 – 2,200 sq ft",  price: "$420 – $500" },
-      { config: "4 Bed · 2–3 Bath",         sqft: "2,200 – 3,000 sq ft",  price: "$505 – $600" },
-      { config: "5+ Bed · 3+ Bath",         sqft: "3,000+ sq ft",         price: "From $625" },
-    ],
-  },
-  {
-    id: "post-construction",
-    label: "Post-Construction",
-    sublabel: "After renovation",
-    color: "bg-orange-50 border-orange-200",
-    badge: null,
-    badgeColor: "",
-    description: "Heavy-duty clean after construction, renovation or remodeling work.",
-    note: "Priced by square footage. Includes dust removal, debris, paint residue and detail clean.",
-    rows: [
-      { config: "Up to 1,000 sq ft",    sqft: "~Studio / 1 Bed",  price: "$280 – $400" },
-      { config: "1,000 – 1,500 sq ft",  sqft: "~1–2 Bed",         price: "$360 – $510" },
-      { config: "1,500 – 2,000 sq ft",  sqft: "~2–3 Bed",         price: "$450 – $640" },
-      { config: "2,000 – 2,500 sq ft",  sqft: "~3 Bed",           price: "$560 – $770" },
-      { config: "2,500 – 3,000 sq ft",  sqft: "~4 Bed",           price: "$680 – $900" },
-      { config: "3,000+ sq ft",         sqft: "~5+ Bed",          price: "Custom quote" },
-    ],
-  },
-];
+import { PRICE_SERVICES, PRICE_ADDONS } from "@/data/price-data";
+// Re-exported so existing imports from this file keep working.
+export { PRICE_SERVICES, PRICE_ADDONS };
 
 const frequencyDiscounts = [
   { label: "Weekly",     discount: "25% off" },
@@ -104,16 +14,7 @@ const frequencyDiscounts = [
   { label: "Monthly",    discount: "5% off"  },
 ];
 
-export const PRICE_ADDONS = [
-  { label: "Inside Refrigerator",      price: "$30" },
-  { label: "Inside Oven",              price: "$35" },
-  { label: "Inside Cabinets",          price: "$45" },
-  { label: "Laundry (wash & fold)",    price: "$25" },
-  { label: "Interior Windows",         price: "$40" },
-  { label: "Garage Sweep & Mop",       price: "$35" },
-  { label: "Blinds / Shutters",        price: "$25" },
-  { label: "Baseboards Detail Clean",  price: "$20" },
-];
+
 
 const whatsIncluded = [
   "Eco-friendly, EPA Safer Choice products",

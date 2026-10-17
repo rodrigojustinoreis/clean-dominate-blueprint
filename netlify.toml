@@ -370,12 +370,12 @@
 
 [[redirects]]
   from = "/book-now"
-  to = "/"
+  to = "/book"
   status = 301
 
 [[redirects]]
   from = "/book-now.html"
-  to = "/"
+  to = "/book"
   status = 301
 
 # ── Old Wix .html extension URLs ─────────────────────────────────────────────
