@@ -27,6 +27,8 @@ import BlogPost from "./pages/BlogPost";
 import ResourceCategory from "./pages/ResourceCategory";
 import FaqHub from "./pages/FaqHub";
 import PricingPage from "./pages/PricingPage";
+import BookingPage from "./pages/BookingPage";
+import BookingConfirmed from "./pages/BookingConfirmed";
 import { RESOURCE_CATEGORIES } from "./data/resource-categories";
 import HowToCleanCarpetBlog from "./pages/HowToCleanCarpetBlog";
 import HowToRemoveCandleWaxBlog from "./pages/HowToRemoveCandleWaxBlog";
@@ -256,6 +258,8 @@ const AppRoutes = () => (
     <Route path="/why-eco-friendly-cleaning" element={<WhyEcoFriendlyPage />} />
     <Route path="/faq" element={<FAQPage />} />
     <Route path="/pricing" element={<PricingPage />} />
+    <Route path="/book" element={<BookingPage />} />
+    <Route path="/book/confirmed" element={<BookingConfirmed />} />
     <Route path="/resources" element={<Blog />} />
     {/* /resources/faq is the central FAQ hub (not the category listing). */}
     <Route path="/resources/faq" element={<FaqHub />} />
@@ -386,7 +390,7 @@ const AppRoutes = () => (
     <Route path="/eco-friendly-cleaning-service" element={<Navigate to="/services/eco-friendly-cleaning" replace />} />
     <Route path="/about-us" element={<Navigate to="/about" replace />} />
     <Route path="/contact-us" element={<Navigate to="/contact" replace />} />
-    <Route path="/book-now" element={<Navigate to="/#quote" replace />} />
+    <Route path="/book-now" element={<Navigate to="/book" replace />} />
     {/* Vanity landing pages */}
     <Route path="/house-cleaning-wheaton-md" element={<VanityLandingPage />} />
     <Route path="/eco-cleaning-bethesda-md" element={<VanityLandingPage />} />

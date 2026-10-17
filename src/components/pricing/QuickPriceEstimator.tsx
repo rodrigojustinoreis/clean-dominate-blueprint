@@ -131,7 +131,11 @@ const QuickPriceEstimator = ({ quoteHref = "#quote" }: { quoteHref?: string }) =
           </a>
         </div>
       </div>
-      <p className="mt-3 text-center text-[11px] text-muted-foreground">Typical 2026 DMV ranges. Flat price, products and equipment included.</p>
+      <a href="/book" onClick={() => trackBookNowClick("pricing_estimator_book_online")}
+        className="mt-3 flex items-center justify-center gap-1.5 text-sm font-semibold text-accent hover:underline">
+        Or book online now — pick your date &amp; time <ArrowRight className="h-4 w-4" aria-hidden="true" />
+      </a>
+      <p className="mt-2 text-center text-[11px] text-muted-foreground">Typical 2026 DMV ranges. Flat price, products and equipment included.</p>
     </div>
   );
 };

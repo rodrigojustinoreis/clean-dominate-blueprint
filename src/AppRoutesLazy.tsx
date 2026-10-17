@@ -36,6 +36,8 @@ const BlogPost = lazy(() => import("./pages/BlogPost"));
 const ResourceCategory = lazy(() => import("./pages/ResourceCategory"));
 const FaqHub = lazy(() => import("./pages/FaqHub"));
 const PricingPage = lazy(() => import("./pages/PricingPage"));
+const BookingPage = lazy(() => import("./pages/BookingPage"));
+const BookingConfirmed = lazy(() => import("./pages/BookingConfirmed"));
 const HowToCleanCarpetBlog = lazy(() => import("./pages/HowToCleanCarpetBlog"));
 const HowToRemoveCandleWaxBlog = lazy(() => import("./pages/HowToRemoveCandleWaxBlog"));
 const HowToCleanYourWashingMachineEcoFriendly = lazy(() => import("./pages/HowToCleanYourWashingMachineEcoFriendly"));
@@ -264,6 +266,8 @@ const AppRoutesLazy = () => (
     <Route path="/why-eco-friendly-cleaning" element={<WhyEcoFriendlyPage />} />
     <Route path="/faq" element={<FAQPage />} />
     <Route path="/pricing" element={<PricingPage />} />
+    <Route path="/book" element={<BookingPage />} />
+    <Route path="/book/confirmed" element={<BookingConfirmed />} />
     <Route path="/resources" element={<Blog />} />
     {/* /resources/faq is the central FAQ hub (not the category listing). */}
     <Route path="/resources/faq" element={<FaqHub />} />
@@ -394,7 +398,7 @@ const AppRoutesLazy = () => (
     <Route path="/eco-friendly-cleaning-service" element={<Navigate to="/services/eco-friendly-cleaning" replace />} />
     <Route path="/about-us" element={<Navigate to="/about" replace />} />
     <Route path="/contact-us" element={<Navigate to="/contact" replace />} />
-    <Route path="/book-now" element={<Navigate to="/#quote" replace />} />
+    <Route path="/book-now" element={<Navigate to="/book" replace />} />
     {/* Vanity landing pages */}
     <Route path="/house-cleaning-wheaton-md" element={<VanityLandingPage />} />
     <Route path="/eco-cleaning-bethesda-md" element={<VanityLandingPage />} />
