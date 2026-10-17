@@ -80,7 +80,9 @@ const BookingPage = () => {
   const loadAvailability = () => {
     setAvailState("loading");
     fetch("/api/booking-availability")
-      .then((r) => (r.ok ? r.json() : Promise.reject(r)))
+      // 503 = backend not configured yet (e.g. a deploy preview): show the calendar from the date rules
+      // alone; the pay button then returns the server's "not configured" message instead of charging.
+      .then((r) => (r.ok ? r.json() : r.status === 503 ? { unavailable: {} } : Promise.reject(r)))
       .then((d) => {
         setUnavailable(d.unavailable ?? {});
         setAvailState("ok");
